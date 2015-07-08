@@ -20,9 +20,12 @@ from dataportal3 import views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
+    url(r'^$', views.index, name='index'),
     url(r'^index', views.index, name='index'),
 
     url(r'^tables', views.tables, name='tables'),
+
+    url(r'^map', views.map, name='map'),
 
     url(r'^blank', views.blank, name='blank'),
 

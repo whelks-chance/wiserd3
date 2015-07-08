@@ -1,0 +1,493 @@
+{% extends "navigation.html" %}
+{% load staticfiles %}
+
+{% block extra_head %}
+
+    <script type="text/javascript" src="{% static "startbootstrap-sb-admin-2-1.0.7/bower_components/datatables/media/js/jquery.dataTables.min.js" %}"></script>
+
+    <script type="text/javascript" src="{% static "jquery/ui/jquery-ui-1.11.4.custom/jquery-ui.min.js" %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'jquery/ui/jquery-ui-1.11.4.custom/jquery-ui.min.css' %}" />
+
+    <script type="text/javascript" src="{% static "jquery/ui/dialogextend/jquery.dialogextend.min.js" %}"></script>
+
+    {#        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>#}
+    <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
+
+    {#    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css' rel='stylesheet' />#}
+    <link rel="stylesheet" type="text/css" href="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.css' %}"/>
+
+    {#            <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>#}
+    <script type="text/javascript" src="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.js' %}"></script>
+
+    {#    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js'></script>#}
+    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js' %}"></script>
+
+    {#    <script src="http://code.jquerygeo.com/jquery.geo-1.0.0-b2.min.js"></script>#}
+    <script type="text/javascript" src="{% static 'code.jquerygeo.com/jquery.geo-1.0.0-b2.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'jscoord-1.1.1.js' %}"></script>
+
+{% endblock %}
+
+{% block content %}
+    <script>
+
+
+        var uid_counter = 0;
+        function nextUID(){
+            uid_counter ++;
+            return uid_counter;
+        }
+
+        function AddNewTab(survey_id) {
+            var dialogID = nextUID();
+            var survey_table_description = {
+                'tabs' : [
+                    {
+                        'title': 'Survey',
+                        'style': 'form',
+                        'id': 'survey_tab_' + dialogID,
+                        'url': '/metadata/survey/' + survey_id,
+                        'columns': [],
+                        'fields': [{'display': true, 'displayName': 'surveyid', 'id': 'surveyid'},  {'display': true, 'displayName': 'identifier', 'id': 'identifier'},  {'display': true, 'displayName': 'survey_title', 'id': 'survey_title'},  {'display': true, 'displayName': 'datacollector', 'id': 'datacollector'},  {'display': true,   'displayName': 'collectionstartdate',   'id': 'collectionstartdate'},  {'display': true,   'displayName': 'collectionenddate',   'id': 'collectionenddate'},  {'display': true, 'displayName': 'moc_description', 'id': 'moc_description'},  {'display': true, 'displayName': 'samp_procedure', 'id': 'samp_procedure'},  {'display': true,   'displayName': 'collectionsituation',   'id': 'collectionsituation'},  {'display': true, 'displayName': 'surveyfrequency', 'id': 'surveyfrequency'},  {'display': true, 'displayName': 'surveystartdate', 'id': 'surveystartdate'},  {'display': true, 'displayName': 'surveyenddate', 'id': 'surveyenddate'},  {'display': true, 'displayName': 'des_weighting', 'id': 'des_weighting'},  {'display': true, 'displayName': 'samplesize', 'id': 'samplesize'},  {'display': true, 'displayName': 'responserate', 'id': 'responserate'},  {'display': true,   'displayName': 'descriptionofsamplingerror',   'id': 'descriptionofsamplingerror'},  {'display': true, 'displayName': 'dataproduct', 'id': 'dataproduct'},  {'display': true, 'displayName': 'dataproductid', 'id': 'dataproductid'},  {'display': true, 'displayName': 'location', 'id': 'location'},  {'display': true, 'displayName': 'link', 'id': 'link'},  {'display': true, 'displayName': 'notes', 'id': 'notes'},  {'display': true, 'displayName': 'user_id', 'id': 'user_id'},  {'display': true, 'displayName': 'created', 'id': 'created'},  {'display': true, 'displayName': 'updated', 'id': 'updated'},  {'display': true, 'displayName': 'long', 'id': 'long'},  {'display': true, 'displayName': 'short_title', 'id': 'short_title'},  {'display': true, 'displayName': 'spatialdata', 'id': 'spatialdata'}]
+                    },
+                    {
+                        'title': 'Dublin Core',
+                        'style': 'form',
+                        'id': 'dublin_core_tab_' + dialogID,
+                        'url': '/metadata/survey/dublin_core/' + survey_id,
+                        'columns': [],
+                        'fields': [{'display': true, 'displayName': 'identifier', 'id': 'identifier'}, {'display': true, 'displayName': 'title', 'id': 'title'}, {'display': true, 'displayName': 'creator', 'id': 'creator'}, {'display': true, 'displayName': 'subject', 'id': 'subject'}, {'display': true, 'displayName': 'description', 'id': 'description'}, {'display': true, 'displayName': 'publisher', 'id': 'publisher'}, {'display': true, 'displayName': 'contributor', 'id': 'contributor'}, {'display': true, 'displayName': 'date', 'id': 'date'}, {'display': true, 'displayName': 'type', 'id': 'type'}, {'display': true, 'displayName': 'format', 'id': 'format'}, {'display': true, 'displayName': 'source', 'id': 'source'}, {'display': true, 'displayName': 'language', 'id': 'language'}, {'display': true, 'displayName': 'relation', 'id': 'relation'}, {'display': true, 'displayName': 'coverage', 'id': 'coverage'}, {'display': true, 'displayName': 'rights', 'id': 'rights'}, {'display': true, 'displayName': 'user_id', 'id': 'user_id'}, {'display': true, 'displayName': 'created', 'id': 'created'}, {'display': true, 'displayName': 'updated', 'id': 'updated'}]
+                    },
+                    {
+                        'title': 'Question',
+                        'style': 'table',
+                        'id': 'question_tab_' + dialogID,
+                        'url': '/metadata/survey/questions/' + survey_id,
+                        'columns': [
+                            {'data': 'qid'},
+                            {'data': 'literal_question_text'},
+                            {'data': 'questionnumber'},
+                            {#                            {'data': 'thematic_groups'},#}
+                            {#                            {'data': 'thematic_tags'},#}
+                            {'data': 'link_from'},
+                            {'data': 'subof'},
+                            {'data': 'type'},
+                            {#                            {'data': 'variableid'},#}
+                            {'data': 'notes'},
+                            {#                            {'data': 'user_id'},#}
+                            {#                            {'data': 'created'},#}
+                            {#                            {'data': 'updated'}#}
+                        ]
+                    }
+                    {#                    {#}
+                    {#                        'title': 'Results',#}
+                    {#                        'style': 'table',#}
+                    {#                        'id': 'results_tab_' + dialogID,#}
+                    {#                        'url': '/get_metadata',#}
+                    {#                        'columns': [#}
+                    {#                            {data: "a"},#}
+                    {#                            {data: "b"},#}
+                    {#                            {data: "c"},#}
+                    {#                            {data: "d"}#}
+                    {#                        ]#}
+                    {#                    }#}
+                ]
+            };
+
+
+            var surveyDialog = $('<div id="survey_dialog_' + dialogID + '" title="Surveys Description ' + survey_id + ' ' + dialogID + '"/>').css({padding: 0});
+            var surveyDialogTabList = $('<ul id="surveyDialogTabList_' + dialogID + '">');
+            surveyDialog.append(surveyDialogTabList);
+
+            for(var i = 0; i < survey_table_description.tabs.length; i++) {
+                var tabData = survey_table_description.tabs[i];
+
+                var tabWrapping = $('<div id="tabWrapping_' + tabData.id + '" style="padding: 10px"/>');
+                surveyDialogTabList.html(surveyDialogTabList.html()
+                + "<li><a href='#tabWrapping_" + tabData.id + "'>" + tabData.title + "</a></li>");
+
+                if (tabData.style == 'table') {
+
+                    var tableContent = "<table id='table_" + tabData.id + "' class='display'>";
+                    tableContent += '<thead><tr>';
+                    for (var j = 0; j < tabData.columns.length; j++) {
+                        var columnData = tabData.columns[j];
+                        tableContent += '<td>' + columnData.data + '</td>';
+                    }
+                    tableContent += '</tr></thead>';
+                    tabWrapping.append(tableContent);
+                }
+                if (tabData.style == 'form') {
+                    var dataContent = "<form id='data_" + tabData.id + "' class='form form-horizontal well' style='padding: 0; height: 100%'>";
+                    {#                    dataContent += "<div>{0}</div>".format(tabData.id);#}
+                    for (var m = 0; m < tabData.fields.length; m++) {
+                        dataContent += ('<div class="control-group">' +
+                        '<label for="text_input_{0}_{4}" class="control-label col-sm-6">{1}</label>' +
+                        '<div class="controls">' +
+                        '<input type="text" class="input-block-level col-sm-6" name="text_input_{2}_{4}" id="text_input_{3}_{4}" size="20" value=""/>' +
+                        '</div></div>').format(
+                                tabData.fields[m].id,
+                                tabData.fields[m].displayName,
+                                tabData.fields[m].id,
+                                tabData.fields[m].id,
+                                tabData.id
+                        );
+                    }
+                    dataContent += "</form>";
+                    tabWrapping.append(dataContent);
+                }
+
+                surveyDialog.append(tabWrapping);
+            }
+
+            var dialogOptions = {
+                modal: false,
+                autoOpen: false,
+                height: window.innerHeight * 0.8,
+                width: window.innerWidth * 0.8,
+                buttons: {
+                    {#                    Close: function() {#}
+                    {#                        $(this).remove(); #}
+                    {#                    }#}
+                },
+                close: function() {
+                    $(this).remove();
+                }
+            };
+
+            var dialogExtendOptions = {
+                "closable" : true,
+                "maximizable" : true,
+                "minimizable" : true,
+                "minimizeLocation" : 'left',
+                "collapsable" : true,
+                "dblclick" : 'minimize',
+                "titlebar" : false
+            };
+
+            surveyDialog.dialog(dialogOptions).dialogExtend(dialogExtendOptions);
+
+            {#            surveyDialog.tabbedDialog(dialogOptions, dialogExtendOptions);#}
+
+            surveyDialog.on( "dialogopen", function( event, ui ) {
+                surveyDialog.css('overflow', 'hidden');
+
+                for(var k = 0; k < survey_table_description.tabs.length; k++) {
+                    var tabData2 = survey_table_description.tabs[k];
+
+                    console.log(tabData2.id);
+
+                    if (tabData2.style == 'table') {
+                        $('#table_' + tabData2.id).DataTable({
+                            serverSide: false,
+                            processing: true,
+                            ajax: {
+                                url: tabData2.url,
+                                type: 'POST',
+                                data: function (d) {
+                                    d.test = true;
+                                    d.words = 'some stuff';
+                                    d.table = tabData2.id
+                                },
+                                dataSrc: function ( json ) {
+                                    {#                                    console.log(json['search_result_data']);#}
+                                    return json['search_result_data'];
+                                }
+                            },
+                            columns: tabData2.columns
+                        });
+                    }
+                    if (tabData2.style == 'form') {
+                        $.ajax({
+                            url: tabData2.url,
+                            type: 'POST',
+                            tabDataRef : tabData2,
+                            data: {
+                                'tabData': tabData2
+                            },
+                            success: function(data) {
+                                for (var m = 0; m < this.tabDataRef.fields.length; m++) {
+                                    var field = this.tabDataRef.fields[m];
+                                    console.log('#text_input_{0}_{1}'.format(field.id, this.tabDataRef.id));
+                                    $('#text_input_{0}_{1}'.format(field.id, this.tabDataRef.id)).val(data['search_result_data'][0]['data'][field.id]);
+                                }
+                            }
+                        });
+                    }
+
+                }
+            }).dialog("open");
+
+
+            surveyDialog.tabs({
+                heightStyle: "fill",
+                active: 0,
+                resize: function(event, ui) {
+                    $( $.fn.dataTable.tables( true ) ).DataTable().columns.adjust();
+
+                },
+                activate: function(event, ui) {
+                    console.log('fired 3');
+
+                    $( $.fn.dataTable.tables( true ) ).DataTable().columns.adjust();
+                }
+            });
+
+        }
+
+
+        $(document).ready(function () {
+            var wkt = '';
+
+            var map_height = window.innerHeight;
+            var header_height = $('#navbar').height();
+
+            $('#map').css({height: map_height - header_height});
+
+            var map = L.map('map').setView([51.53181, -3.24687], 10);
+
+            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+                maxZoom: 15,
+                id: 'your.mapbox.project.id',
+                accessToken: 'your.mapbox.public.access.token'
+            }).addTo(map);
+
+            function onMapClick(e) {
+                var popup = L.marker()
+                        .setLatLng(e.latlng)
+                        .setContent(e.latlng)
+                        .openOn(map);
+            }
+
+            map.on('click', onMapClick);
+
+            var featureGroup = L.featureGroup().addTo(map);
+
+            var drawControl = new L.Control.Draw({
+                edit: {
+                    featureGroup: featureGroup
+                },
+                draw: {
+                    polygon: true,
+                    polyline: false,
+                    rectangle: {
+                        shapeOptions : {
+                            color : '#888888'
+                        }
+                    },
+                    circle: false,
+                    marker: false
+                }
+            }).addTo(map);
+
+            map.on('draw:created', showPolygonArea);
+            map.on('draw:edited', showPolygonAreaEdited);
+
+            function convertPolygonToOS(shape_geojson){
+
+                var new_coordinates = [];
+                var new_geometry = {
+                    "type": "Polygon",
+                    "coordinates": [[]]
+                };
+
+                for (var a = 0; a < shape_geojson['geometry']['coordinates'][0].length; a++) {
+                    var ll2 = new LatLng(shape_geojson['geometry']['coordinates'][0][a][1],
+                            shape_geojson['geometry']['coordinates'][0][a][0]);
+                    var os2 = ll2.toOSRef();
+                    {#                    var coords = os2.toString().replace('(', '').replace(')', '').split(',');#}
+                    new_coordinates.push([os2.easting, os2.northing]);
+                }
+
+                new_geometry['coordinates'] = [new_coordinates];
+
+                return new_geometry
+
+            }
+            function showPolygonAreaEdited(e) {
+                e.layers.eachLayer(function(layer) {
+                    showPolygonArea({ layer: layer });
+                });
+            }
+
+            function showPolygonArea(e) {
+                featureGroup.clearLayers();
+                featureGroup.addLayer(e.layer);
+                e.layer.bindPopup((LGeo.area(e.layer) / 1000000).toFixed(2) + ' km<sup>2</sup>');
+                e.layer.openPopup();
+
+                var shape_geojson = e.layer.toGeoJSON();
+                var new_geojson = convertPolygonToOS(shape_geojson);
+                wkt = $.geo.WKT.stringify(new_geojson);
+
+                show_res_dialog();
+
+            }
+
+            var res_table = $('#res_table').DataTable({
+                serverSide: false,
+                processing: true,
+                {#                scrollY: "50px",#}
+                {#                dom: "frtiS",#}
+                {#                paging: false,#}
+                ajax: {
+                    url: '/spatial_search',
+                    type: 'POST',
+                    data: function ( d ) {
+                        d.geography = wkt;
+                        d.start = 0;
+                        d.limit = 15;
+                        d.type = "Qual";
+                        d.test = "yes";
+                    }
+
+                },
+                columns: [
+                    { data: "survey_short_title" },
+                    { data: "date" },
+                    { data: "survey_id" },
+                    { data: "area" },
+                    {
+                        "targets": -1,
+                        "data": null,
+                        "defaultContent": "<div class='btn btn-info show_questions'>Info</div>"
+                    }
+                ]
+            });
+
+
+            function attach_question_buttons() {
+                $('#res_table').find('tbody').on('click', '.show_questions', function () {
+                    var data = res_table.row($(this).parents('tr')).data();
+                    var questions = '<to be added here>';
+                    {#                    alert(data['survey_id'] + " questions are " + questions);#}
+                    {#                    show_survey_dialog(data['survey_id']);#}
+
+                    AddNewTab(data['survey_id'] );
+                });
+            }
+            attach_question_buttons();
+
+            var spatial_dialog = $( "#spatial_results_dialog_form" ).dialog({
+                modal: false,
+                autoOpen: false,
+                height: window.innerHeight * 0.8,
+                width: window.innerWidth * 0.8,
+                buttons: {
+                    {#                    Close: function() {#}
+                    {#                        spatial_dialog.dialog( "close" );#}
+                    {#                    }#}
+                },
+                close: function() {}
+            }).dialogExtend(
+                    {
+                        "closable" : true,
+                        "maximizable" : true,
+                        "minimizable" : true,
+                        "minimizeLocation" : 'left',
+                        "collapsable" : true,
+                        "dblclick" : 'minimize',
+                        "titlebar" : false
+                    }
+            );
+
+            function show_res_dialog() {
+                spatial_dialog.dialog("open");
+                res_table.clear().draw();
+                res_table.ajax.reload();
+            }
+
+
+            $('#survey_tabs').tabs({
+                activate: function(event, ui) {
+                    $( $.fn.dataTable.tables( true ) ).DataTable().draw();
+                }
+            });
+
+            String.prototype.format = function() {
+                var formatted = this;
+                for (var i = 0; i < arguments.length; i++) {
+                    var regexp = new RegExp('\\{'+i+'\\}', 'gi');
+                    formatted = formatted.replace(regexp, arguments[i]);
+                }
+                return formatted;
+            };
+
+            $.fn.tabbedDialog = function (dialogOptions, dialogExtendOptions) {
+                this.tabs();
+                this.dialog(dialogOptions);
+                {#                        .dialogExtend(dialogExtendOptions);#}
+                var buttons = this.find('.ui-dialog-titlebar-buttonpane');
+                console.log(buttons);
+                var tabnav = this.find('.ui-tabs-nav');
+                console.log(tabnav);
+                tabnav.append($(buttons));
+
+                this.find('.ui-tab-dialog-close').append($('a.ui-dialog-titlebar-close'));
+                this.find('.ui-tab-dialog-close').css({'position':'absolute','right':'0', 'top':'23px'});
+                this.find('.ui-tab-dialog-close > a').css({'float':'none','padding':'0'});
+                var tabul = this.find('ul:first');
+                this.parent().addClass('ui-tabs').prepend(tabul).draggable('option','handle',tabul);
+                {#                this.siblings('.ui-dialog-titlebar').remove();#}
+                {#                tabul.addClass('ui-dialog-titlebar');#}
+            };
+
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        });
+
+    </script>
+
+
+
+
+    <div id="map" style="height: 180px;"></div>
+
+
+    <div id="spatial_results_dialog_form" title="Surveys available for this area">
+        <form>
+            <fieldset>
+                <table id="res_table" class="display" style="height: 100px;">
+                    <thead>
+                    <tr>
+                        <th>Survey Title</th>
+                        <th>Date</th>
+                        <th>Survey ID</th>
+                        <th>Area</th>
+                        <th>Options</th>
+                    </tr>
+                    </thead>
+                    {#                    <tfoot>#}
+                    {#                    <tr>#}
+                    {#                        <th>Survey Title</th>#}
+                    {#                        <th>Date</th>#}
+                    {#                        <th>Survey ID</th>#}
+                    {#                        <th>Area</th>#}
+                    {#                        <th>Options</th>#}
+                    {#                    </tr>#}
+                    {#                    </tfoot>#}
+                    <tbody>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+
+                <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                {#                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">#}
+            </fieldset>
+        </form>
+
+
+    </div>
+{% endblock %}
+

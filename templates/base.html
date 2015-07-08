@@ -7,8 +7,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="WISERD DataPortal">
+    <meta name="author" content="WISERD / Cardiff University">
 
     <title>WISERD DataPortal v3.0a</title>
 
@@ -31,14 +31,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    {% block extra_head %}
-    {% endblock %}
-</head>
-
-<body>
-    {% block navigation %}
-    {% endblock %}
-
     <!-- jQuery -->
     <script src="{% static 'startbootstrap-sb-admin-2-1.0.7/bower_components/jquery/dist/jquery.min.js' %}"></script>
 
@@ -50,5 +42,18 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{% static 'startbootstrap-sb-admin-2-1.0.7/dist/js/sb-admin-2.js' %}"></script>
+
+    {% block extra_head %}
+    {% endblock %}
+</head>
+
+<body>
+    {% block navigation %}
+    {% endblock %}
+
+
+    {% block extra_tail %}
+    {% endblock %}
+
 </body>
 </html>

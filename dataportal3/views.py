@@ -12,3 +12,7 @@ def blank(request):
 
 def tables(request):
     return render(request, 'tables.html', {}, context_instance=RequestContext(request))
+
+
+def map(request):
+    return render(request, 'map.html', {}, context_instance=RequestContext(request))

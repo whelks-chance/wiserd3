@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dataportal3',
+    'old'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,6 +83,7 @@ DATABASES = {
     }
 }
 
+DATABASE_ROUTERS = ['dataportal3.dbrouter.DBRouter', 'old.old_dbrouter.OldDBRouter']
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -115,6 +117,6 @@ STATICFILES_FINDERS = (
 )
 
 try:
-    from wiserd.local_settings import *
+    from wiserd3.settings_local import *
 except ImportError:
     pass

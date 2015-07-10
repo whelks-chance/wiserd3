@@ -30,6 +30,8 @@
 
     <script type="text/javascript" src="{% static 'jscoord-1.1.1.js' %}"></script>
 
+    <link rel="stylesheet" type="text/css" href="{% static 'DataTables-1.10.7/media/css/jquery.dataTables.min.css' %}" />
+
 {% endblock %}
 
 {% block content %}
@@ -244,9 +246,9 @@
             var wkt = '';
 
             var map_height = window.innerHeight;
-            var header_height = $('#navbar').height();
+            var header_height = $('.navbar').height();
 
-            $('#map').css({height: map_height - header_height});
+            $('#map').css({height: map_height - header_height - 5});
 
             var map = L.map('map').setView([51.53181, -3.24687], 10);
 

@@ -26,7 +26,7 @@ urlpatterns = [
 
     url(r'^tables', views.tables, name='tables'),
 
-    url(r'^map', views.map, name='map'),
+    url(r'^map', views.map_search, name='map'),
 
     url(r'^blank', views.blank, name='blank'),
 

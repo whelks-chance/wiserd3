@@ -43,17 +43,28 @@
     <!-- Custom Theme JavaScript -->
     <script src="{% static 'startbootstrap-sb-admin-2-1.0.7/dist/js/sb-admin-2.js' %}"></script>
 
+    <!-- jQuery ui-->
+    <script type="text/javascript" src="{% static "jquery/ui/jquery-ui-1.11.4.custom/jquery-ui.min.js" %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'jquery/ui/jquery-ui-1.11.4.custom/jquery-ui.min.css' %}" />
+
+    <!-- DataTables-->
+    <script type="text/javascript" src="{% static "startbootstrap-sb-admin-2-1.0.7/bower_components/datatables/media/js/jquery.dataTables.min.js" %}"></script>
+
+    <!-- DataTables CSS ( external )-->
+    <link rel="stylesheet" type="text/css" href="{% static 'DataTables-1.10.7/media/css/jquery.dataTables.min.css' %}" />
+
     {% block extra_head %}
     {% endblock %}
 </head>
 
 <body>
-    {% block navigation %}
-    {% endblock %}
+{% block navigation %}
+{% endblock %}
 
 
-    {% block extra_tail %}
-    {% endblock %}
+{% block extra_tail %}
+{% endblock %}
 
 </body>
 </html>

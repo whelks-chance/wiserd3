@@ -54,6 +54,17 @@
     <!-- DataTables CSS ( external )-->
     <link rel="stylesheet" type="text/css" href="{% static 'DataTables-1.10.7/media/css/jquery.dataTables.min.css' %}" />
 
+    <script>
+        String.prototype.format = function() {
+            var formatted = this;
+            for (var i = 0; i < arguments.length; i++) {
+                var regexp = new RegExp('\\{'+i+'\\}', 'gi');
+                formatted = formatted.replace(regexp, arguments[i]);
+            }
+            return formatted;
+        };
+    </script>
+
     {% block extra_head %}
     {% endblock %}
 </head>

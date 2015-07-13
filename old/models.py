@@ -3,6 +3,72 @@ from django.db import models
 __author__ = 'ubuntu'
 
 
+class DcInfo(models.Model):
+#    id = models.IntegerField(primary_key=True)
+    identifier = models.CharField(primary_key=True, max_length=50)
+    title = models.TextField(blank=True, null=True)
+    creator = models.TextField(blank=True, null=True)
+    subject = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    publisher = models.CharField(max_length=255, blank=True, null=True)
+    contributor = models.CharField(max_length=255, blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    format = models.CharField(max_length=255, blank=True, null=True)
+    source = models.CharField(max_length=255, blank=True, null=True)
+    language = models.CharField(max_length=50, blank=True, null=True)
+    relation = models.CharField(max_length=255, blank=True, null=True)
+    coverage = models.TextField(blank=True, null=True)
+    rights = models.TextField(blank=True, null=True)
+    user_id = models.CharField(max_length=25, blank=True, null=True)
+    created = models.DateTimeField(blank=True, null=True)
+    updated = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'dc_info'
+
+
+class SurveyQuestionsLink(models.Model):
+    surveyid = models.CharField(max_length=50, blank=True, null=True)
+    qid = models.CharField(max_length=50, blank=True, null=True)
+    pkid = models.IntegerField(verbose_name='pk')
+
+    class Meta:
+        managed = False
+        db_table = 'survey_questions_link'
+
+
+class Questions(models.Model):
+    qid = models.CharField(primary_key=True, max_length=300)
+    literal_question_text = models.TextField(blank=True, null=True)
+    questionnumber = models.CharField(max_length=300, blank=True, null=True)
+    thematic_groups = models.TextField(blank=True, null=True)
+    thematic_tags = models.TextField(blank=True, null=True)
+    link_from = models.CharField(max_length=50, blank=True, null=True)
+    subof = models.CharField(max_length=50, blank=True, null=True)
+    type = models.CharField(max_length=50, blank=True, null=True)
+    variableid = models.CharField(max_length=50, blank=True, null=True)
+    notes = models.TextField(blank=True, null=True)
+    user_id = models.CharField(max_length=25, blank=True, null=True)
+    created = models.DateTimeField(blank=True, null=True)
+    updated = models.DateTimeField(blank=True, null=True)
+    qtext_index = models.TextField(blank=True, null=True)  # This field type is a guess.
+
+    # qtext_index = VectorField()
+    #
+    # objects = SearchManager(
+    #     fields = ('literal_question_text', 'notes'),
+    #     config = 'pg_catalog.english', # this is default
+    #     search_field = 'qtext_index', # this is default
+    #     auto_update_search_field = True
+    # )
+
+    class Meta:
+        managed = False
+        db_table = 'questions'
+
+
 class SurveySpatialLink(models.Model):
     surveyid = models.CharField(max_length=255)
     spatial_id = models.CharField(max_length=300)

@@ -295,7 +295,7 @@
                             <ul class="nav nav-second-level">
                                 {% for s in searches %}
                                 <li>
-                                    <a href="tables?search_id={{ s.uid }}">{{ s.type }} - {{ forloop.counter }}</a>
+                                    <a href="{% url 'tables' %}?search_id={{ s.uid }}">{{ s.type }} - {{ forloop.counter }}</a>
                                 </li>
                                 {% endfor %}
 
@@ -303,7 +303,7 @@
                                     <a href="#">Third Level <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="#">Third Level Item</a>
+                                            <a href="{% url 'survey_detail' survey_id='wisid_liwhh2006' %}">Survey</a>
                                         </li>
                                         <li>
                                             <a href="#">Third Level Item</a>

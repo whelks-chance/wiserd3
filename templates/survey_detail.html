@@ -1,0 +1,108 @@
+{% extends "navigation.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <script>
+        var survey_tabs = {
+            'dc_fields' : ["identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "source", "language", "relation", "coverage", "rights", "user_id", "created", "updated"]
+        };
+
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "{% url 'survey_dc_data' survey_id %}",
+                type: 'POST',
+                {#                tabDataRef : tabData2,#}
+                data: {
+                    {#                    'tabData': tabData2#}
+                },
+                success: function(data) {
+                    console.log(data['search_result_data'][0]);
+
+                    var dataContent = '';
+
+                    for (var j = 0; j < survey_tabs['dc_fields'].length; j++) {
+
+                        var field = survey_tabs['dc_fields'][j];
+
+                        console.log(field + data['search_result_data'][0]['data'][field]);
+
+                        var value = data['search_result_data'][0]['data'][field];
+                        var display_name = field;
+
+                        dataContent += ('<div class="control-group">' +
+                        '<label for="text_input_{0}" class="control-label col-sm-6">{1}</label>' +
+                        '<div class="controls">' +
+                        '<input type="text" class="input-block-level col-sm-6" name="text_input_{0}" ' +
+                        'id="text_input_{0}" size="20" value="{2}"/>' +
+                        '</div></div>').format(
+                                field, display_name, value
+                        );
+                    }
+
+                    $('#dc_info').append(dataContent);
+                }
+            });
+        });
+    </script>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Survey Details for {{ survey_id }}</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Pill Tabs
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-pills">
+                        <li class="active"><a href="#home-pills" data-toggle="tab">Home</a>
+                        </li>
+                        <li><a href="#profile-pills" data-toggle="tab">Profile</a>
+                        </li>
+                        <li><a href="#messages-pills" data-toggle="tab">Messages</a>
+                        </li>
+                        <li><a href="#settings-pills" data-toggle="tab">Settings</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="home-pills">
+                            <h4>Dublin Core</h4>
+                            <div id="dc_info"></div>
+                            {#                            <div class="control-group">#}
+                            {#                                <label for="text_input" class="control-label col-sm-6">Header</label>#}
+                            {#                                <div class="controls">#}
+                            {#                                    <input type="text" class="input-block-level col-sm-6" name="text_input" id="text_input" size="20" value="values"/>#}
+                            {#                                </div>#}
+                            {#                            </div>#}
+                        </div>
+                        <div class="tab-pane fade" id="profile-pills">
+                            <h4>Profile Tab</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="tab-pane fade" id="messages-pills">
+                            <h4>Messages Tab</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="tab-pane fade" id="settings-pills">
+                            <h4>Settings Tab</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+    </div>
+
+{% endblock %}

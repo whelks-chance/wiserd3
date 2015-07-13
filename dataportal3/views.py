@@ -22,6 +22,15 @@ def blank(request):
     return render(request, 'blank.html', {}, context_instance=RequestContext(request))
 
 
+def survey_detail(request, survey_id):
+    return render(request, 'survey_detail.html',
+                  {
+                      'searches': get_user_searches(request),
+                      'survey_id': survey_id}
+                  ,
+                  context_instance=RequestContext(request))
+
+
 def tables(request):
     search_id = request.GET.get('search_id', '')
     geom = ''
@@ -33,6 +42,7 @@ def tables(request):
     return render(request, 'tables.html',
                   {
                       'searches': get_user_searches(request),
+                      'search_id': search_id,
                       'geom': geom
                   },
                   context_instance=RequestContext(request))

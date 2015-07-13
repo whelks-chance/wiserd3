@@ -1,5 +1,8 @@
 from django.db import models
 
+from djorm_pgfulltext.models import SearchManager
+from djorm_pgfulltext.fields import VectorField
+
 __author__ = 'ubuntu'
 
 
@@ -53,16 +56,16 @@ class Questions(models.Model):
     user_id = models.CharField(max_length=25, blank=True, null=True)
     created = models.DateTimeField(blank=True, null=True)
     updated = models.DateTimeField(blank=True, null=True)
-    qtext_index = models.TextField(blank=True, null=True)  # This field type is a guess.
+    # qtext_index = models.TextField(blank=True, null=True)  # This field type is a guess.
 
-    # qtext_index = VectorField()
-    #
-    # objects = SearchManager(
-    #     fields = ('literal_question_text', 'notes'),
-    #     config = 'pg_catalog.english', # this is default
-    #     search_field = 'qtext_index', # this is default
-    #     auto_update_search_field = True
-    # )
+    qtext_index = VectorField()
+
+    objects = SearchManager(
+        fields = ('literal_question_text', 'notes'),
+        config = 'pg_catalog.english', # this is default
+        search_field = 'qtext_index', # this is default
+        auto_update_search_field = True
+    )
 
     class Meta:
         managed = False
@@ -87,6 +90,7 @@ class SurveySpatialLink(models.Model):
 
 
 class Survey(models.Model):
+    # a = ["surveyid", "identifier", "survey_title", "datacollector", "collectionstartdate", "collectionenddate", "moc_description", "samp_procedure", "collectionsituation", "surveyfrequency", "surveystartdate", "surveyenddate", "des_weighting", "samplesize", "responserate", "descriptionofsamplingerror", "dataproduct", "dataproductid", "location", "link", "notes", "user_id", "created", "updated", "long", "short_title", "spatialdata"]
     surveyid = models.CharField(primary_key=True, max_length=255)
     identifier = models.CharField(max_length=50)
     survey_title = models.TextField(blank=True, null=True)

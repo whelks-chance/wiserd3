@@ -5,6 +5,8 @@ from django.contrib import auth
 from django.contrib.auth.models import AnonymousUser
 from django.db import connections
 from django.http.response import HttpResponse
+from django.shortcuts import render
+from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 from dataportal3 import models
 from dataportal3.utils.userAdmin import get_anon_user
@@ -179,6 +181,46 @@ def survey_metadata(request, wiserd_id):
     }
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
+
+def search_survey_question(request):
+    search_terms = request.GET.get('search_terms', '')
+
+    print pprint.pformat(request.GET)
+
+    ors = search_terms.split(',')
+    api_data = text_search(search_terms)
+    api_data['url'] = request.get_full_path()
+    return render(request, 'index.html',
+                  {'data': api_data},
+                  context_instance=RequestContext(request))
+
+
+def text_search(search_terms):
+    fields = ("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "type", "notes", "updated")
+
+    # q_terms = []
+    # for term in search_terms.split():
+    #     q_terms.append(Q())
+
+    search_terms = search_terms.replace(' ', ' & ')
+    search_terms = search_terms.replace('+', ' & ')
+
+    questions_models = old_models.Questions.objects.search(search_terms, raw=True).using('survey').values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+
+    data = []
+    for question_model in questions_models:
+        if question_model['thematic_tags'] == 'System.Windows.Forms.ListBox+SelectedObjectCollection':
+            question_model['thematic_tags'] = ''
+        data.append(question_model)
+
+    api_data = {
+        'fields': fields,
+        'method': 'search_survey_question',
+        'search_result_data': data,
+        'results_count': len(data),
+        'search_term': search_terms
+    }
+    return api_data
 
 
 def date_handler(obj):

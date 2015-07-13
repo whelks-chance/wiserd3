@@ -44,8 +44,7 @@ urlpatterns = [
     url(r'^metadata/survey/(?P<wiserd_id>\S+)', old_views.survey_metadata, name='survey_metadata'),
     #
     url(r'^spatial_search', old_views.spatial_search, name='spatial_search'),
-    # url(r'^search_survey_question_gui/(?P<search_terms>\S+)',
-    #     views.search_survey_question_gui, name='search_survey_question_gui'),
+    url(r'^search', old_views.search_survey_question, name='search_survey_question'),
     #
     # url(r'^metadata/search/survey/questions/(?P<search_terms>\S+)',
     #     views.search_survey_question, name='search_survey_question'),

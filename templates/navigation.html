@@ -295,27 +295,28 @@
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Search Results<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                {% for s in searches %}
-                                    <li>
-                                        <a href="{% url 'tables' %}?search_id={{ s.uid }}">{{ s.type }} - {{ forloop.counter }}</a>
-                                    </li>
-                                {% endfor %}
-
                                 <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <a href="#"> Spatial Results<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="{% url 'survey_detail' survey_id='wisid_liwhh2006' %}">Survey</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
+                                        {% for s in searches %}
+                                            {% if s.type == 'spatial' %}
+                                                <li>
+                                                    <a href="{% url 'tables' %}?search_id={{ s.uid }}">{{ s.type }} - {{ forloop.counter }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"> Surveys<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        {% for s in searches %}
+                                            {% if s.type == 'survey' %}
+                                                <li>
+                                                    <a href="{% url 'survey_detail' survey_id=s.query %}">{{s.query}}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
                                     </ul>
                                     <!-- /.nav-third-level -->
                                 </li>

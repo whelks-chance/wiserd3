@@ -182,6 +182,26 @@ def survey_metadata(request, wiserd_id):
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 
+@csrf_exempt
+def survey_questions_results(request, question_id):
+    question_id = question_id.strip()
+    question_response_link_models = old_models.QuestionsResponsesLink.objects.using('survey').all().filter(qid__icontains=question_id).values('responseid')
+    question_responses = []
+    if len(question_response_link_models):
+        question_response_models = old_models.Responses.objects.using('survey').all().filter(responseid__in=question_response_link_models).values()
+        for question_response_model in question_response_models:
+            question_responses.append({
+                'data': question_response_model,
+                'question_id': question_id
+            })
+    api_data = {
+        'url': request.get_full_path(),
+        'method': 'survey_questions_results',
+        'search_result_data': question_responses,
+        'results_count': len(question_responses),
+    }
+    return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
+
 def search_survey_question(request):
     search_terms = request.GET.get('search_terms', '')
 

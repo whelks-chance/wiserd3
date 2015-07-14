@@ -122,3 +122,28 @@ class Survey(models.Model):
     class Meta:
         managed = False
         db_table = 'survey'
+
+class Responses(models.Model):
+    responseid = models.CharField(primary_key=True, max_length=100)
+    responsetext = models.TextField(blank=True, null=True)
+    response_type = models.CharField(max_length=255)
+    routetype = models.CharField(max_length=255, blank=True, null=True)
+    table_ids = models.TextField(blank=True, null=True)
+    computed_var = models.TextField(blank=True, null=True)
+    checks = models.TextField(blank=True, null=True)
+    route_notes = models.TextField(blank=True, null=True)
+    user_id = models.CharField(max_length=255, blank=True, null=True)
+    created = models.DateTimeField(blank=True, null=True)
+    updated = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'responses'
+
+class QuestionsResponsesLink(models.Model):
+    qid = models.CharField(primary_key=True, max_length=50)
+    responseid = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'questions_responses_link'

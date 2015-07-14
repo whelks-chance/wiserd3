@@ -3,10 +3,6 @@
 
 {% block content %}
     <script>
-        {#        var survey_tabs = {#}
-        {#            'dc_fields' : ["identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "source", "language", "relation", "coverage", "rights", "user_id", "created", "updated"],#}
-        {#            'survey_fields' : ["surveyid", "identifier", "survey_title", "datacollector", "collectionstartdate", "collectionenddate", "moc_description", "samp_procedure", "collectionsituation", "surveyfrequency", "surveystartdate", "surveyenddate", "des_weighting", "samplesize", "responserate", "descriptionofsamplingerror", "dataproduct", "dataproductid", "location", "link", "notes", "user_id", "created", "updated", "long", "short_title", "spatialdata"]#}
-        {#        };#}
 
         var survey_description = {
             'tabs' : {
@@ -75,8 +71,16 @@
             }
         };
 
-
         $(document).ready(function () {
+            $.extend( $.fn.dataTable.defaults, {
+                fnInitComplete: function(oSettings, json) {
+                    var btnClear = $('<button class="btnClearDataTableFilter btn btn-warning btn-circle"><i class="fa fa-times"></button>');
+                    btnClear.appendTo($('#' + oSettings.sTableId).parents('.dataTables_wrapper').find('.dataTables_filter'));
+                    $('#' + oSettings.sTableId + '_wrapper .btnClearDataTableFilter').click(function () {
+                        $('#' + oSettings.sTableId).dataTable().fnFilter('');
+                    });
+                }
+            });
 
             $.ajax({
                 url: "{% url 'survey_metadata' survey_id %}",
@@ -118,16 +122,13 @@
                 }
             });
 
-            $('#survey_questions_table').DataTable({
+            var survey_questions_table = $('#survey_questions_table').DataTable({
                 serverSide: false,
                 processing: true,
                 ajax: {
                     url: "{% url 'survey_questions' survey_id%}",
                     type: 'POST',
-                    data: function (d) {
-                        {#                                    d.test = true;#}
-                        {#                                    d.words = 'some stuff';#}
-                    },
+                    data: function (d) {},
                     dataSrc: function ( json ) {
                         return json['search_result_data'];
                     }
@@ -143,19 +144,42 @@
                     {
                         "targets": -2,
                         "data": null,
-                        "defaultContent": "<div class='btn btn-info show_questions'>From</div>"
+                        "render": function ( data, type, full, meta ) {
+                            if (data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {
+                                return "<div class='btn btn-info search_from'>Previous</div>";
+                            } else {
+                                return ""
+                            }
+                        }
                     },
                     {
                         "targets": -1,
                         "data": null,
-                        "defaultContent": "<div class='btn btn-info show_questions'>Parent</div>"
+                        "render": function ( data, type, full, meta ) {
+                            if (data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {
+                                return "<div class='btn btn-info search_parent'>Parent</div>";
+                            } else {
+                                return ""
+                            }
+                        }
                     },
-                    {#                            {'data': 'variableid'},#}
-                    {#                            {'data': 'user_id'},#}
-                    {#                            {'data': 'created'},#}
-                    {#                            {'data': 'updated'}#}
                 ]
+            }).on( 'stateLoaded.dt', function (e, settings, data) {
+                attach_question_buttons();
             });
+
+            function attach_question_buttons() {
+                var table_body = $('#survey_questions_table').find('tbody');
+                table_body.on('click', '.search_from', function () {
+                    var data = survey_questions_table.row($(this).parents('tr')).data();
+                    survey_questions_table.search( data['link_from'].trim() ).draw();
+                });
+                table_body.on('click', '.search_parent', function () {
+                    var data = survey_questions_table.row($(this).parents('tr')).data();
+                    survey_questions_table.search( data['subof'].trim() ).draw();
+                });
+            }
+            attach_question_buttons();
 
             $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                 tidy_tab_fields()
@@ -224,27 +248,25 @@
                 <div class="panel-body">
                     <!-- Nav tabs -->
                     <ul class="nav nav-pills">
-                        <li class="active"><a href="#home-pills" data-toggle="tab">Dublin Core</a>
+                        <li class="active"><a href="#survey_dc_tab" data-toggle="tab">Dublin Core</a>
                         </li>
-                        <li><a href="#profile-pills" data-toggle="tab">Survey</a>
+                        <li><a href="#survey_tab" data-toggle="tab">Survey</a>
                         </li>
-                        <li><a href="#messages-pills" data-toggle="tab">Questions</a>
-                        </li>
-                        <li><a href="#settings-pills" data-toggle="tab">Settings</a>
+                        <li><a href="#survey_questions" data-toggle="tab">Questions</a>
                         </li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div class="tab-pane fade in active" id="home-pills">
+                        <div class="tab-pane fade in active" id="survey_dc_tab">
                             <h4>Dublin Core</h4>
                             <div id="dc_info"></div>
                         </div>
-                        <div class="tab-pane fade" id="profile-pills">
+                        <div class="tab-pane fade" id="survey_tab">
                             <h4>Survey</h4>
                             <div id="survey_info"></div>
                         </div>
-                        <div class="tab-pane fade" id="messages-pills">
+                        <div class="tab-pane fade" id="survey_questions">
                             <h4>Questions</h4>
 
                             <div class="panel-body">
@@ -277,10 +299,6 @@
                                 </div>
                             </div>
 
-                        </div>
-                        <div class="tab-pane fade" id="settings-pills">
-                            <h4>Settings Tab</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                     </div>
                 </div>

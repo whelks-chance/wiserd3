@@ -23,6 +23,16 @@ def blank(request):
 
 
 def survey_detail(request, survey_id):
+
+    print request.user
+    user = auth.get_user(request)
+    if type(user) is AnonymousUser:
+        user = get_anon_user()
+    user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
+
+    search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=survey_id, type='survey')
+    search.save()
+
     return render(request, 'survey_detail.html',
                   {
                       'searches': get_user_searches(request),

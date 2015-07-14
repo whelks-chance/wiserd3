@@ -26,6 +26,7 @@ urlpatterns = [
 
     url(r'^tables', views.tables, name='tables'),
     url(r'^survey/(?P<survey_id>\S+)', views.survey_detail, name='survey_detail'),
+    url(r'^question/(?P<question_id>\S+)', views.question, name='question_detail'),
 
     url(r'^map', views.map_search, name='map'),
 
@@ -34,13 +35,14 @@ urlpatterns = [
     # url(r'^map_search', views.map_search, name='map_search'),
     #
     # url(r'^data_autocomplete', views.data_autocomplete, name='data.autocomplete'),
-    #
-    # url(r'^metadata/dublin_core', views.dc_info, name='dc_info'),
-    #
+
     url(r'^metadata/survey/dublin_core/(?P<wiserd_id>\S+)', old_views.survey_dc_data, name='survey_dc_data'),
     url(r'^metadata/survey/questions/(?P<wiserd_id>\S+)', old_views.survey_questions, name='survey_questions'),
+
     url(r'^metadata/survey/question/(?P<question_id>\S+)/results', old_views.survey_questions_results, name='survey_question_results'),
     # url(r'^metadata/survey/question/(?P<question_id>\S+)/result_table', views.survey_questions_results_table, name='survey_question_result_table'),
+
+    url(r'^metadata/survey/question/(?P<question_id>\S+)', old_views.survey_question, name='survey_single_question'),
     url(r'^metadata/survey/(?P<wiserd_id>\S+)', old_views.survey_metadata, name='survey_metadata'),
     #
     url(r'^spatial_search', old_views.spatial_search, name='spatial_search'),

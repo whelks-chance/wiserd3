@@ -63,3 +63,20 @@ def map_search(request):
                   {'searches': get_user_searches(request)},
                   context_instance=RequestContext(request))
 
+
+def question(request, question_id):
+    print request.user
+    user = auth.get_user(request)
+    if type(user) is AnonymousUser:
+        user = get_anon_user()
+    user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
+
+    search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=question_id, type='question')
+    search.save()
+
+    return render(request, 'question_detail.html',
+                  {
+                      'searches': get_user_searches(request),
+                      'question_id': question_id
+                  },
+                  context_instance=RequestContext(request))

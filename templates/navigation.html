@@ -320,6 +320,19 @@
                                     </ul>
                                     <!-- /.nav-third-level -->
                                 </li>
+                            <li>
+                                    <a href="#"> Questions<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        {% for s in searches %}
+                                            {% if s.type == 'question' %}
+                                                <li>
+                                                    <a href="{% url 'question_detail' question_id=s.query %}">{{s.query}}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

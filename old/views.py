@@ -202,6 +202,7 @@ def survey_questions_results(request, question_id):
     }
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
+
 def search_survey_question(request):
     search_terms = request.GET.get('search_terms', '')
 
@@ -255,3 +256,20 @@ def date_handler(obj):
         enc = json.JSONEncoder()
         return enc.default(enc, obj)
         # return obj
+
+
+@csrf_exempt
+def survey_question(request, question_id):
+    questions_models = old_models.Questions.objects.using('survey').filter(qid__icontains=question_id).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    data = []
+    for question_model in questions_models:
+        # question_model_tidy = [a.strip() for a in question_model if type(a) == 'unicode']
+        data.append(question_model)
+    api_data = {
+        'url': request.get_full_path(),
+        'method': 'question_data',
+        'search_result_data': data,
+        'results_count': len(data),
+        'question_id': question_id,
+    }
+    return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")

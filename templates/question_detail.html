@@ -1,0 +1,289 @@
+{% extends "navigation.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <script>
+
+        var question_description = {
+            'tabs' : {
+                'question':{
+                    'title': 'Question',
+                    'style': 'form',
+                    'url': "{% url 'survey_single_question' question_id %}",
+                    'fields': [
+                        {'display': true, 'displayName': 'qid', 'id': 'qid'},
+                        {'display': true, 'displayName': 'literal_question_text', 'id': 'literal_question_text'},
+                        {'display': true, 'displayName': 'questionnumber', 'id': 'questionnumber'},
+                        {'display': true, 'displayName': 'thematic_groups', 'id': 'thematic_groups'},
+                        {'display': true, 'displayName': 'thematic_tags', 'id': 'thematic_tags'},
+                        {'display': true, 'displayName': 'link_from', 'id': 'link_from'},
+                        {'display': true, 'displayName': 'subof', 'id': 'subof'},
+                        {'display': true, 'displayName': 'type', 'id': 'type'},
+                        {'display': true, 'displayName': 'variableid', 'id': 'variableid'},
+                        {'display': true, 'displayName': 'notes', 'id': 'notes'},
+                        {'display': true, 'displayName': 'user_id', 'id': 'user_id'},
+                        {'display': true, 'displayName': 'created', 'id': 'created'},
+                        {'display': true, 'displayName': 'updated', 'id': 'updated'}
+                    ]
+                },
+
+                'results':{
+                    'title': 'Results',
+                    'style': 'form',
+                    'url': "{% url 'survey_question_results' question_id %}",
+                    'fields': [
+                        {'display': true, 'displayName': 'updated', 'id': 'updated'},
+                        {'display': true, 'displayName': 'responsetext', 'id': 'responsetext'},
+                        {'display': true, 'displayName': 'created', 'id': 'created'},
+                        {'display': true, 'displayName': 'route_notes', 'id': 'route_notes'},
+                        {'display': true, 'displayName': 'responseid', 'id': 'responseid'},
+                        {'display': true, 'displayName': 'table_ids', 'id': 'table_ids'},
+                        {'display': true, 'displayName': 'computed_var', 'id': 'computed_var'},
+                        {'display': true, 'displayName': 'response_type', 'id': 'response_type'},
+                        {'display': true, 'displayName': 'user_id', 'id': 'user_id'},
+                        {'display': true, 'displayName': 'checks', 'id': 'checks'},
+                        {'display': true, 'displayName': 'routetype', 'id': 'routetype'}
+                    ]
+                }
+
+            }
+        };
+
+        $(document).ready(function () {
+            $.extend( $.fn.dataTable.defaults, {
+                fnInitComplete: function(oSettings, json) {
+                    var btnClear = $('<button class="btnClearDataTableFilter btn btn-warning btn-circle"><i class="fa fa-times"></button>');
+                    btnClear.appendTo($('#' + oSettings.sTableId).parents('.dataTables_wrapper').find('.dataTables_filter'));
+                    $('#' + oSettings.sTableId + '_wrapper .btnClearDataTableFilter').click(function () {
+                        $('#' + oSettings.sTableId).dataTable().fnFilter('');
+                    });
+                }
+            });
+
+            $.ajax({
+                url: "{% url 'survey_single_question' question_id %}",
+                type: 'POST',
+                success: function(data) {
+                    var dataContent = '';
+                    for (var j = 0; j < question_description['tabs']['question']['fields'].length; j++) {
+                        if (question_description['tabs']['question']['fields'][j]['display']) {
+                            var field = question_description['tabs']['question']['fields'][j]['id'];
+                            var value = data['search_result_data'][0][field];
+                            var display_name = question_description['tabs']['question']['fields'][j]['displayName'];
+                            var type = question_description['tabs']['question']['fields'][j]['type'];
+
+                            dataContent += get_data_row_html(field, display_name, value, type);
+                        }
+                    }
+                    $('#question_info').append(dataContent);
+                    tidy_tab_fields()
+                }
+            });
+
+            $.ajax({
+                url: "{% url 'survey_question_results' question_id %}",
+                type: 'POST',
+                success: function(data) {
+                    var dataContent = '';
+                    for (var j = 0; j < question_description['tabs']['results']['fields'].length; j++) {
+                        if (question_description['tabs']['results']['fields'][j]['display']) {
+                            var field = question_description['tabs']['results']['fields'][j]['id'];
+                            var value = data['search_result_data'][0]['data'][field];
+                            var display_name = question_description['tabs']['results']['fields'][j]['displayName'];
+                            var type = question_description['tabs']['results']['fields'][j]['type'];
+
+                            dataContent += get_data_row_html(field, display_name, value, type);
+                        }
+                    }
+                    $('#results_info').append(dataContent);
+                    tidy_tab_fields()
+                }
+            });
+
+            var survey_questions_table = $('#survey_questions_table').DataTable({
+                serverSide: false,
+                processing: true,
+                ajax: {
+                    url: "{% url 'survey_single_question' question_id%}",
+                    type: 'POST',
+                    data: function (d) {},
+                    dataSrc: function ( json ) {
+                        return json['search_result_data'];
+                    }
+                },
+                columns: [
+                    {'data': 'qid'},
+                    {'data': 'literal_question_text'},
+                    {#                    {'data': 'questionnumber'},#}
+                    {#                            {'data': 'thematic_groups'},#}
+                    {#                            {'data': 'thematic_tags'},#}
+                    {'data': 'type'},
+                    {'data': 'notes'},
+                    {
+                        "targets": -2,
+                        "data": null,
+                        "render": function ( data, type, full, meta ) {
+                            if (data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {
+                                return "<div class='btn btn-info search_from'>Previous</div>";
+                            } else {
+                                return ""
+                            }
+                        }
+                    },
+                    {
+                        "targets": -1,
+                        "data": null,
+                        "render": function ( data, type, full, meta ) {
+                            if (data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {
+                                return "<div class='btn btn-info search_parent'>Parent</div>";
+                            } else {
+                                return ""
+                            }
+                        }
+                    }
+                ]
+            }).on( 'stateLoaded.dt', function (e, settings, data) {
+                attach_question_buttons();
+            });
+
+            function attach_question_buttons() {
+                var table_body = $('#survey_questions_table').find('tbody');
+                table_body.on('click', '.search_from', function () {
+                    var data = survey_questions_table.row($(this).parents('tr')).data();
+                    survey_questions_table.search( data['link_from'].trim() ).draw();
+                });
+                table_body.on('click', '.search_parent', function () {
+                    var data = survey_questions_table.row($(this).parents('tr')).data();
+                    survey_questions_table.search( data['subof'].trim() ).draw();
+                });
+            }
+            attach_question_buttons();
+
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                tidy_tab_fields()
+            });
+
+        });
+
+        function tidy_tab_fields() {
+            $(".tab_data_input").each( function() {
+                $(this).height(this.scrollHeight);
+            });
+        }
+
+        function get_data_row_html(field, display_name, value, type) {
+            if (type == undefined) {
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
+                '<div class="controls">' +
+                '<textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input" name="text_input_{0}" ' +
+                'id="text_input_{0}" size="20" value="{2}">{2}</textarea>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            } else if (type == 'link') {
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
+                '<div class="controls">' +
+                '<div class="col-sm-8" name="text_input_{0}" ' +
+                'style="padding-top: 4px; padding-bottom: 4px; border: 1px solid rgb(169, 169, 169); ' +
+                'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; ' +
+                'white-space: -o-pre-wrap; word-wrap: break-word;" ' +
+                'id="text_input_{0}" size="20" value="{2}"><a src="{2}" href>{2}</a></div>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            } else {
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-6">{1}</label>' +
+                '<div class="controls">' +
+                '<textarea readonly="true" type="text" class="input-block-level col-sm-6 tab_data_input" name="text_input_{0}" ' +
+                'id="text_input_{0}" size="20" value="{2}">{2}</textarea>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            }
+
+        }
+
+
+    </script>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Survey Details for {{ survey_id }}</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Pill Tabs
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-pills">
+                        <li class="active"><a href="#question_tab" data-toggle="tab">Question</a>
+                        </li>
+                        <li><a href="#results_tab" data-toggle="tab">Results</a>
+                        </li>
+                        <li><a href="#survey_questions" data-toggle="tab">Results Table</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="question_tab">
+                            <h4>Question</h4>
+                            <div id="question_info"></div>
+                        </div>
+                        <div class="tab-pane fade" id="results_tab">
+                            <h4>Results</h4>
+                            <div id="results_info"></div>
+                        </div>
+                        <div class="tab-pane fade" id="survey_questions">
+                            <h4>Results Table</h4>
+
+                            <div class="panel-body">
+                                <div class="dataTable_wrapper">
+                                    <table class="table table-striped table-bordered table-hover" id="survey_questions_table">
+                                        <thead>
+                                        <tr>
+                                            <th>QuestionID</th>
+                                            <th>QuestionText</th>
+                                            <th>Type</th>
+                                            <th>Notes</th>
+                                            <th>From</th>
+                                            <th>SubOf</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                                <div class="well">
+                                    <h4>DataTables Usage Information</h4>
+                                    <p></p>
+                                    <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+    </div>
+
+{% endblock %}

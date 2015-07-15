@@ -126,7 +126,7 @@ def spatial_search(request):
 @csrf_exempt
 def survey_dc_data(request, wiserd_id):
     wiserd_id = wiserd_id.strip()
-    survey_dc_models = old_models.DcInfo.objects.using('survey').all().filter(identifier__icontains=wiserd_id).values("identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "source", "language", "relation", "coverage", "rights", "user_id", "created", "updated")
+    survey_dc_models = old_models.DcInfo.objects.using('survey').all().filter(identifier=wiserd_id).values("identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "source", "language", "relation", "coverage", "rights", "user_id", "created", "updated")
     surveys = []
     for dc_model in survey_dc_models:
         surveys.append({
@@ -145,7 +145,7 @@ def survey_dc_data(request, wiserd_id):
 @csrf_exempt
 def survey_questions(request, wiserd_id):
     wiserd_id = wiserd_id.strip()
-    survey_model_ids = old_models.Survey.objects.using('survey').all().filter(identifier__icontains=wiserd_id).values_list("surveyid", flat=True)
+    survey_model_ids = old_models.Survey.objects.using('survey').all().filter(identifier=wiserd_id).values_list("surveyid", flat=True)
     survey_question_link_models = old_models.SurveyQuestionsLink.objects.using('survey').all().filter(surveyid__in=survey_model_ids).values_list('qid', flat=True)
     questions_models = old_models.Questions.objects.using('survey').filter(qid__in=survey_question_link_models).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
     data = []
@@ -166,7 +166,7 @@ def survey_questions(request, wiserd_id):
 @csrf_exempt
 def survey_metadata(request, wiserd_id):
     wiserd_id = wiserd_id.strip()
-    survey_models = old_models.Survey.objects.using('survey').all().filter(identifier__icontains=wiserd_id).values("surveyid", "identifier", "survey_title", "datacollector", "collectionstartdate", "collectionenddate", "moc_description", "samp_procedure", "collectionsituation", "surveyfrequency", "surveystartdate", "surveyenddate", "des_weighting", "samplesize", "responserate", "descriptionofsamplingerror", "dataproduct", "dataproductid", "location", "link", "notes", "user_id", "created", "updated", "long", "short_title", "spatialdata")
+    survey_models = old_models.Survey.objects.using('survey').all().filter(identifier=wiserd_id).values("surveyid", "identifier", "survey_title", "datacollector", "collectionstartdate", "collectionenddate", "moc_description", "samp_procedure", "collectionsituation", "surveyfrequency", "surveystartdate", "surveyenddate", "des_weighting", "samplesize", "responserate", "descriptionofsamplingerror", "dataproduct", "dataproductid", "location", "link", "notes", "user_id", "created", "updated", "long", "short_title", "spatialdata")
     surveys = []
     for survey_model in survey_models:
         surveys.append({
@@ -185,7 +185,7 @@ def survey_metadata(request, wiserd_id):
 @csrf_exempt
 def survey_questions_results(request, question_id):
     question_id = question_id.strip()
-    question_response_link_models = old_models.QuestionsResponsesLink.objects.using('survey').all().filter(qid__icontains=question_id).values('responseid')
+    question_response_link_models = old_models.QuestionsResponsesLink.objects.using('survey').all().filter(qid=question_id).values('responseid')
     question_responses = []
     if len(question_response_link_models):
         question_response_models = old_models.Responses.objects.using('survey').all().filter(responseid__in=question_response_link_models).values()
@@ -260,7 +260,7 @@ def date_handler(obj):
 
 @csrf_exempt
 def survey_question(request, question_id):
-    questions_models = old_models.Questions.objects.using('survey').filter(qid__icontains=question_id).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    questions_models = old_models.Questions.objects.using('survey').filter(qid=question_id).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
     data = []
     for question_model in questions_models:
         # question_model_tidy = [a.strip() for a in question_model if type(a) == 'unicode']
@@ -272,4 +272,52 @@ def survey_question(request, question_id):
         'results_count': len(data),
         'question_id': question_id,
     }
+    return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
+
+
+@csrf_exempt
+def survey_questions_results_table(request, question_id):
+    question_id = question_id.strip()
+
+    question_response_link_models = old_models.QuestionsResponsesLink.objects.using('survey').all().filter(qid=question_id).values('responseid')
+
+    question_responses = []
+    columns = []
+    results_with_keys = []
+
+    if len(question_response_link_models):
+        question_response_models = old_models.Responses.objects.using('survey').all().filter(responseid__in=question_response_link_models).values()
+
+        cursor = connections['survey'].cursor()
+        cursor.execute("select * from " + question_response_models[0]['table_ids'])
+        ztab_tables = cursor.fetchall()
+
+        # print ztab_tables
+
+        for question_response_model in ztab_tables:
+            question_responses.append(question_response_model)
+
+        cursor.execute("select column_name from information_schema.columns where table_name = '" + question_response_models[0]['table_ids'] + "'")
+        column_names = cursor.fetchall()
+
+        # print column_names
+
+        for column_data in column_names:
+            columns.append(column_data[0])
+
+        for res in question_responses:
+            entry = {}
+            for a in range(0, len(columns)):
+                entry[columns[a]] = res[a]
+            results_with_keys.append(entry)
+
+    api_data = {
+        'url': request.get_full_path(),
+        'method': 'survey_questions_results_table',
+        # 'search_result_data': question_responses,
+        'search_result_data': results_with_keys,
+        'columns': columns,
+        'results_count': len(results_with_keys),
+    }
+
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")

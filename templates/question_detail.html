@@ -52,7 +52,7 @@
         $(document).ready(function () {
             $.extend( $.fn.dataTable.defaults, {
                 fnInitComplete: function(oSettings, json) {
-                    var btnClear = $('<button class="btnClearDataTableFilter btn btn-warning btn-circle"><i class="fa fa-times"></button>');
+                    var btnClear = $('<button class="btnClearDataTableFilter btn btn-info"><i class="fa fa-times"></button>');
                     btnClear.appendTo($('#' + oSettings.sTableId).parents('.dataTables_wrapper').find('.dataTables_filter'));
                     $('#' + oSettings.sTableId + '_wrapper .btnClearDataTableFilter').click(function () {
                         $('#' + oSettings.sTableId).dataTable().fnFilter('');
@@ -100,64 +100,81 @@
                 }
             });
 
-            var survey_questions_table = $('#survey_questions_table').DataTable({
-                serverSide: false,
-                processing: true,
-                ajax: {
-                    url: "{% url 'survey_single_question' question_id%}",
-                    type: 'POST',
-                    data: function (d) {},
-                    dataSrc: function ( json ) {
-                        return json['search_result_data'];
+            $.ajax({
+                url: "{% url 'survey_question_result_table' question_id %}",
+                type: 'POST',
+                success: function(data) {
+                    var table_columns = data['columns'];
+
+                    var table_columns_complete = [];
+                    for (var k = 0; k < table_columns.length; k++) {
+                        table_columns_complete.push({
+                            'title': table_columns[k],
+                            'data': table_columns[k]
+                        });
                     }
-                },
-                columns: [
-                    {'data': 'qid'},
-                    {'data': 'literal_question_text'},
-                    {#                    {'data': 'questionnumber'},#}
-                    {#                            {'data': 'thematic_groups'},#}
-                    {#                            {'data': 'thematic_tags'},#}
-                    {'data': 'type'},
-                    {'data': 'notes'},
-                    {
-                        "targets": -2,
-                        "data": null,
-                        "render": function ( data, type, full, meta ) {
-                            if (data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {
-                                return "<div class='btn btn-info search_from'>Previous</div>";
-                            } else {
-                                return ""
-                            }
-                        }
-                    },
-                    {
-                        "targets": -1,
-                        "data": null,
-                        "render": function ( data, type, full, meta ) {
-                            if (data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {
-                                return "<div class='btn btn-info search_parent'>Parent</div>";
-                            } else {
-                                return ""
-                            }
-                        }
-                    }
-                ]
-            }).on( 'stateLoaded.dt', function (e, settings, data) {
-                attach_question_buttons();
+                    console.log(table_columns_complete);
+
+                    {#                    var a_btn = {#}
+                    {#                        "targets": -2,#}
+                    {#                        "data": null,#}
+                    {#                        "render": function ( data, type, full, meta ) {#}
+                    {#                            if (data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {#}
+                    {#                                return "<div class='btn btn-info search_from'>Previous</div>";#}
+                    {#                            } else {#}
+                    {#                                return ""#}
+                    {#                            }#}
+                    {#                        }#}
+                    {#                    };#}
+                    {#                    table_columns.push(a_btn);#}
+                    {##}
+                    {#                    var another_btn = {#}
+                    {#                        "targets": -1,#}
+                    {#                        "data": null,#}
+                    {#                        "render": function ( data, type, full, meta ) {#}
+                    {#                            if (data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {#}
+                    {#                                return "<div class='btn btn-info search_parent'>Parent</div>";#}
+                    {#                            } else {#}
+                    {#                                return ""#}
+                    {#                            }#}
+                    {#                        }#}
+                    {#                    };#}
+                    {#                    table_columns.push(another_btn);#}
+
+                    var survey_questions_table = $('#survey_questions_table').DataTable({
+                        serverSide: false,
+                        processing: true,
+                        data: data['search_result_data'],
+                        {#                        ajax: {#}
+                        {#                            url: "{% url 'survey_question_result_table' question_id%}",#}
+                        {#                            type: 'POST',#}
+                        {#                            data: function (d) {},#}
+                        {#                            dataSrc: function ( json ) {#}
+                        {#                                return json['search_result_data'];#}
+                        {#                            }#}
+                        {#                        },#}
+                        columns: table_columns_complete
+                    }).on( 'stateLoaded.dt', function (e, settings, data) {
+{#                        attach_question_buttons();#}
+                    });
+                }
             });
 
-            function attach_question_buttons() {
-                var table_body = $('#survey_questions_table').find('tbody');
-                table_body.on('click', '.search_from', function () {
-                    var data = survey_questions_table.row($(this).parents('tr')).data();
-                    survey_questions_table.search( data['link_from'].trim() ).draw();
-                });
-                table_body.on('click', '.search_parent', function () {
-                    var data = survey_questions_table.row($(this).parents('tr')).data();
-                    survey_questions_table.search( data['subof'].trim() ).draw();
-                });
-            }
-            attach_question_buttons();
+
+{#            function attach_question_buttons() {#}
+{#                var survey_questions_table = $('#survey_questions_table');#}
+{#                var survey_questions_table_datatable = survey_questions_table.DataTable();#}
+{#                var table_body = survey_questions_table.find('tbody');#}
+{#                table_body.on('click', '.search_from', function () {#}
+{#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
+{#                    survey_questions_table.search( data['link_from'].trim() ).draw();#}
+{#                });#}
+{#                table_body.on('click', '.search_parent', function () {#}
+{#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
+{#                    survey_questions_table.search( data['subof'].trim() ).draw();#}
+{#                });#}
+{#            }#}
+{#            attach_question_buttons();#}
 
             $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                 tidy_tab_fields()
@@ -273,7 +290,8 @@
                                 <div class="well">
                                     <h4>DataTables Usage Information</h4>
                                     <p></p>
-                                    <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
+                                    <a class="btn btn-default btn-lg btn-block" target="_blank"
+                                       href="https://datatables.net/">View DataTables Documentation</a>
                                 </div>
                             </div>
 

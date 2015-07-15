@@ -259,14 +259,14 @@
                         {#                            </ul>#}
                         {#                            <!-- /.nav-second-level -->#}
                         {#                        </li>#}
-                        <li>
-                            <a href="{% url 'tables' %}"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
+{#                        <li>#}
+{#                            <a href="{% url 'tables' %}"><i class="fa fa-table fa-fw"></i> Tables</a>#}
+{#                        </li>#}
                         {#                        <li>#}
                         {#                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>#}
                         {#                        </li>#}
                         <li>
-                            <a href="map.html"><i class="fa fa-map-marker fa-fw"></i> Map</a>
+                            <a href="{% url 'map' %}"><i class="fa fa-map-marker fa-fw"></i> Map</a>
                         </li>
                         {#                        <li>#}
                         {#                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>#}
@@ -293,7 +293,7 @@
                         {#                            <!-- /.nav-second-level -->#}
                         {#                        </li>#}
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Search Results<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Recent Search Results<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#"> Spatial Results<span class="fa arrow"></span></a>

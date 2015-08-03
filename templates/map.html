@@ -2,21 +2,32 @@
 {% load staticfiles %}
 
 {% block extra_head %}
+    <script>L_PREFER_CANVAS = true;</script>
 
-
-
-
+    {#  local jdialog, to be removed #}
     <script type="text/javascript" src="{% static "jquery/ui/dialogextend/jquery.dialogextend.min.js" %}"></script>
 
-    {#        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>#}
-    <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
+    {#  Remote leaflet  #}
+    {#    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>#}
+    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>#}
 
+    {#  local leaflet  #}
+    <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
 
-    {#    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css' rel='stylesheet' />#}
-    <link rel="stylesheet" type="text/css" href="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.css' %}"/>
 
-    {#            <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>#}
+    {#  remote mapbox - use this is leaflet, probably not both  #}
+    {#    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>#}
+    {#    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />#}
+
+
+    {#  remote mapbox draw buttons  #}
+    {#    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>#}
+    {#    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css' rel='stylesheet' />#}
+
+
+    {#  local mapbox draw buttons  #}
+    <link rel="stylesheet" type="text/css" href="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.css' %}"/>
     <script type="text/javascript" src="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.js' %}"></script>
 
     {#    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js'></script>#}
@@ -27,6 +38,8 @@
 
     <script type="text/javascript" src="{% static 'jscoord-1.1.1.js' %}"></script>
 
+    {#    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>#}
+    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js' %}"></script>
 
 {% endblock %}
 
@@ -244,9 +257,9 @@
             var map_height = window.innerHeight;
             var header_height = $('.navbar').height();
 
-            $('#map').css({height: map_height - header_height - 5});
+            $('#map_div').css({height: map_height - header_height - 5});
 
-            var map = L.map('map').setView([51.53181, -3.24687], 10);
+            var map = L.map('map_div').setView([51.53181, -3.24687], 10);
 
             L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {
                 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
@@ -255,14 +268,15 @@
                 accessToken: 'your.mapbox.public.access.token'
             }).addTo(map);
 
-            function onMapClick(e) {
-                var popup = L.marker()
-                        .setLatLng(e.latlng)
-                        .setContent(e.latlng)
-                        .openOn(map);
-            }
+{#            function onMapClick(e) {#}
+                {#                var popup = L.marker()#}
+                {#                        .setLatLng(e.latlng)#}
+                {#                        .setContent(e.latlng)#}
+                {#                        .openOn(map);#}
+{#                leafletImage(map, doImage)#}
+{#            }#}
 
-            map.on('click', onMapClick);
+{#            map.on('click', onMapClick);#}
 
             var featureGroup = L.featureGroup().addTo(map);
 
@@ -315,9 +329,6 @@
 
             function showPolygonArea(e) {
 
-{#                var bounds = new L.LatLngBounds(southWest, northEast);#}
-{#                map.fitBounds(bounds);#}
-
                 featureGroup.clearLayers();
                 featureGroup.addLayer(e.layer);
                 e.layer.bindPopup((LGeo.area(e.layer) / 1000000).toFixed(2) + ' km<sup>2</sup>');
@@ -327,8 +338,30 @@
                 var new_geojson = convertPolygonToOS(shape_geojson);
                 wkt = $.geo.WKT.stringify(new_geojson);
 
-                show_res_dialog();
+                map.fitBounds(featureGroup.getBounds());
+                map.addOneTimeEventListener('viewreset', function() {
+                    setTimeout(function(){
+                        leafletImage(map, doImage);
+                    }, 2000);
+                });
+            }
 
+            var most_recent_search_png = '';
+            function doImage(err, canvas) {
+                var snapshot = document.getElementById('snapshot');
+
+                var img = document.createElement('img');
+                var dimensions = map.getSize();
+                img.width = dimensions.x;
+                img.height = dimensions.y;
+                most_recent_search_png = canvas.toDataURL();
+                img.src = most_recent_search_png;
+                console.log(most_recent_search_png);
+                img.style.width = '100%';
+                snapshot.innerHTML = '';
+                snapshot.appendChild(img);
+
+                show_res_dialog();
             }
 
             var res_table = $('#res_table').DataTable({
@@ -346,6 +379,7 @@
                         d.limit = 15;
                         d.type = "Qual";
                         d.test = "yes";
+                        d.image_png = most_recent_search_png;
                     }
 
                 },
@@ -450,7 +484,12 @@
 
 
 
-    <div id="map" style="height: 180px;"></div>
+    <div id="map_div" style="height: 180px;"></div>
+
+    <div class="well">
+        <h4>DataTables Usage Information</h4>
+        <div id="snapshot"></div>
+    </div>
 
 
     <div id="spatial_results_dialog_form" title="Surveys available for this area">

@@ -44,6 +44,7 @@ def spatial_search(request):
         search.user = user_profile
         search.query = request.POST.get('geography', None)
         search.type = 'spatial'
+        search.image_png = request.POST.get('image_png', None)
         search.save()
     response_data['success'] = True
 

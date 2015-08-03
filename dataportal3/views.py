@@ -44,16 +44,19 @@ def survey_detail(request, survey_id):
 def tables(request):
     search_id = request.GET.get('search_id', '')
     geom = ''
+    image_png = ''
     if len(search_id):
         search = models.Search.objects.get(uid=search_id)
         if search.type == 'spatial':
             geom = search.query
+            image_png = search.image_png
 
     return render(request, 'tables.html',
                   {
                       'searches': get_user_searches(request),
                       'search_id': search_id,
-                      'geom': geom
+                      'geom': geom,
+                      'image_png': image_png
                   },
                   context_instance=RequestContext(request))
 

@@ -27,6 +27,7 @@ class Search(models.Model):
     query = models.TextField(blank=True, null=True)
     datetime = models.DateTimeField(auto_now=True)
     type = models.TextField(blank=True, null=True)
+    image_png = models.TextField(blank=True, null=True)
     uid = models.UUIDField(default=uuid.uuid4)
 
     class Meta:

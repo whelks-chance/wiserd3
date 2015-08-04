@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
-from django.contrib import admin
+from django.contrib import admin, auth
 from dataportal3 import views
 from old import views as old_views
 
@@ -52,5 +52,6 @@ urlpatterns = [
     # url(r'^metadata/search/survey/questions/(?P<search_terms>\S+)',
     #     views.search_survey_question, name='search_survey_question'),
 
-
+    url(r'^accounts/', include('allauth.urls'))
+    # url('^', include('django.contrib.auth.urls'))
 ]

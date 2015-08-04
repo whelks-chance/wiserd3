@@ -219,8 +219,12 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'account_logout' %}"><i class="fa fa-sign-in fa-fw"></i> Login</a></li>
+                        {% endif %}
+
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
@@ -259,9 +263,9 @@
                         {#                            </ul>#}
                         {#                            <!-- /.nav-second-level -->#}
                         {#                        </li>#}
-{#                        <li>#}
-{#                            <a href="{% url 'tables' %}"><i class="fa fa-table fa-fw"></i> Tables</a>#}
-{#                        </li>#}
+                        {#                        <li>#}
+                        {#                            <a href="{% url 'tables' %}"><i class="fa fa-table fa-fw"></i> Tables</a>#}
+                        {#                        </li>#}
                         {#                        <li>#}
                         {#                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>#}
                         {#                        </li>#}
@@ -298,10 +302,10 @@
                                 <li>
                                     <a href="#"> Spatial Results<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
-                                        {% for s in searches %}
+                                        {% for s in searches.spatial|slice:":10" %}
                                             {% if s.type == 'spatial' %}
                                                 <li>
-                                                    <a href="{% url 'tables' %}?search_id={{ s.uid }}">{{ s.type }} - {{ forloop.counter }}</a>
+                                                    <a href="{% url 'tables' %}?search_id={{ s.uid }}">{{ s.type }} - {{ s.id }}</a>
                                                 </li>
                                             {% endif %}
                                         {% endfor %}
@@ -310,7 +314,7 @@
                                 <li>
                                     <a href="#"> Surveys<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
-                                        {% for s in searches %}
+                                        {% for s in searches.survey %}
                                             {% if s.type == 'survey' %}
                                                 <li>
                                                     <a href="{% url 'survey_detail' survey_id=s.query %}">{{s.query}}</a>
@@ -320,10 +324,10 @@
                                     </ul>
                                     <!-- /.nav-third-level -->
                                 </li>
-                            <li>
+                                <li>
                                     <a href="#"> Questions<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
-                                        {% for s in searches %}
+                                        {% for s in searches.question %}
                                             {% if s.type == 'question' %}
                                                 <li>
                                                     <a href="{% url 'question_detail' question_id=s.query %}">{{s.query}}</a>

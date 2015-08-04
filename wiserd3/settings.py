@@ -35,10 +35,16 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dataportal3',
-    'old'
+    'old',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -65,13 +71,33 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.i18n',
+                'django.core.context_processors.media',
+                'django.core.context_processors.static',
+
+                # "allauth.account.context_processors.account",
+                # "allauth.socialaccount.context_processors.socialaccount",
             ],
+            },
         },
-    },
-]
+    ]
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # 'django.contrib.auth.context_processors.auth',
+    # 'django.core.context_processors.debug',
+    # 'django.core.context_processors.i18n',
+    # 'django.core.context_processors.media',
+    # 'django.core.context_processors.static',
+    # 'django.core.context_processors.request',
+    # 'django.contrib.messages.context_processors.messages',
+
+    "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
+)
 
 WSGI_APPLICATION = 'wiserd3.wsgi.application'
 
+SITE_ID=1
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -80,7 +106,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        }
 }
 
 DATABASE_ROUTERS = ['dataportal3.dbrouter.DBRouter', 'old.old_dbrouter.OldDBRouter']

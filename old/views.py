@@ -18,6 +18,7 @@ __author__ = 'ubuntu'
 def spatial_search(request):
 
     test_available = False
+    search_uid = ''
 
     response_data = {
         'data': []
@@ -46,80 +47,89 @@ def spatial_search(request):
         search.type = 'spatial'
         search.image_png = request.POST.get('image_png', None)
         search.save()
+        search_uid = str(search.uid)
+
     response_data['success'] = True
+    response_data['uid'] = search_uid
 
-    cursor = connections['survey'].cursor()
+    uid_only = request.POST.get('uid_only', False)
+    if uid_only:
+        # we only record what was searched for, do not complete the search yet
+        pass
+    else:
 
-    table_cols = "SELECT DISTINCT f_table_name, f_geometry_column FROM geometry_columns where f_table_schema = 'public'"
-    cursor.execute(table_cols)
-    tables = cursor.fetchall()
-    # print tables
+        cursor = connections['survey'].cursor()
 
-    areas = []
-    survey_ids = []
-    survey_info = {}
+        table_cols = "SELECT DISTINCT f_table_name, f_geometry_column FROM geometry_columns where f_table_schema = 'public'"
+        cursor.execute(table_cols)
+        tables = cursor.fetchall()
+        # print tables
 
-    for geoms in tables:
-        f_table_name = geoms[0]
-        print f_table_name
-        f_geometry_column = geoms[1]
+        areas = []
+        survey_ids = []
+        survey_info = {}
 
-        survey_data = {}
-        survey_data['areas'] = []
+        for geoms in tables:
+            f_table_name = geoms[0]
+            print f_table_name
+            f_geometry_column = geoms[1]
 
-        intersects = "SELECT area_name from " + f_table_name + \
-                     " WHERE ST_Intersects(ST_Transform(ST_GeometryFromText('" + geography_wkt + "', 27700), 4326)," + f_geometry_column + ")"
+            survey_data = {}
+            survey_data['areas'] = []
 
-        cursor.execute(intersects)
-        area_names = cursor.fetchall()
+            intersects = "SELECT area_name from " + f_table_name + \
+                         " WHERE ST_Intersects(ST_Transform(ST_GeometryFromText('" + geography_wkt + "', 27700), 4326)," + f_geometry_column + ")"
 
-        area_name = ''
-        if len(area_names) > 0:
-            # print area_names[0][0].strip()
-            areas.append(area_names[0][0])
-            area_name = area_names[0][0]
-        survey_data['area'] = area_name
+            cursor.execute(intersects)
+            area_names = cursor.fetchall()
 
-        spatials = old_models.SurveySpatialLink.objects.using('survey').filter(spatial_id=geoms[0]).values_list('surveyid', flat=True)
+            area_name = ''
+            if len(area_names) > 0:
+                # print area_names[0][0].strip()
+                areas.append(area_names[0][0])
+                area_name = area_names[0][0]
+            survey_data['area'] = area_name
 
-        spatials = list(spatials)
+            spatials = old_models.SurveySpatialLink.objects.using('survey').filter(spatial_id=geoms[0]).values_list('surveyid', flat=True)
 
-        date = ''
-        sid = ''
-        survey_short_title = ''
-        if len(spatials) > 0:
-            # print spatials[0].strip()
-            survey_ids.append(spatials[0].strip())
-            sid = spatials[0]
-            survey_model = old_models.Survey.objects.using('survey').filter(surveyid__in=spatials).values_list('short_title', 'collectionenddate', 'surveyid').distinct()
+            spatials = list(spatials)
 
-            for s in survey_model:
-                if len(s) > 0:
-                    survey_short_title = s[0]
-                try:
-                    date = s[1].strftime('%Y / %m / %d')
-                except:
-                    date = ''
+            date = ''
+            sid = ''
+            survey_short_title = ''
+            if len(spatials) > 0:
+                # print spatials[0].strip()
+                survey_ids.append(spatials[0].strip())
+                sid = spatials[0]
+                survey_model = old_models.Survey.objects.using('survey').filter(surveyid__in=spatials).values_list('short_title', 'collectionenddate', 'surveyid').distinct()
 
-        survey_data['survey_short_title'] = survey_short_title
-        survey_data['survey_id'] = sid.strip()
-        survey_data['survey_id_full'] = sid
-        survey_data['date'] = date
+                for s in survey_model:
+                    if len(s) > 0:
+                        survey_short_title = s[0]
+                    try:
+                        date = s[1].strftime('%Y / %m / %d')
+                    except:
+                        date = ''
 
-        if len(survey_data['survey_id']):
-            if survey_info.has_key(survey_data['survey_id']):
-                survey_info[survey_data['survey_id']]['areas'].append(survey_data['area'])
-                survey_info[survey_data['survey_id']]['area'] = ', '.join(list(set(survey_info[survey_data['survey_id']]['areas'])))
-            else:
-                survey_info[survey_data['survey_id']] = survey_data
+            survey_data['survey_short_title'] = survey_short_title
+            survey_data['survey_id'] = sid.strip()
+            survey_data['survey_id_full'] = sid
+            survey_data['date'] = date
 
-    # response_data['areas'] = areas
-    response_data['data'] = survey_info.values()
+            if len(survey_data['survey_id']):
+                if survey_info.has_key(survey_data['survey_id']):
+                    survey_info[survey_data['survey_id']]['areas'].append(survey_data['area'])
+                    survey_info[survey_data['survey_id']]['area'] = ', '.join(list(set(survey_info[survey_data['survey_id']]['areas'])))
+                else:
+                    survey_info[survey_data['survey_id']] = survey_data
 
-    # cursor.execute("select table_name from information_schema.tables where table_name like %s limit 30", ['ztab%'])
-    # max_value = cursor.fetchone()[0]
+        # response_data['areas'] = areas
+        response_data['data'] = survey_info.values()
 
-    # print response_data
+        # cursor.execute("select table_name from information_schema.tables where table_name like %s limit 30", ['ztab%'])
+        # max_value = cursor.fetchone()[0]
+
+        # print response_data
 
     return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
 

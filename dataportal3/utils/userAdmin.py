@@ -13,10 +13,29 @@ def get_anon_user():
         user = User.objects.create_user(username='Anon Y Mouse')
     return user
 
+
 def get_user_searches(request):
     user = auth.get_user(request)
     if type(user) is AnonymousUser:
         user = get_anon_user()
     user_profile = UserProfile.objects.get(user=user)
-    searches = models.Search.objects.filter(user=user_profile)
-    return searches
+    searches = models.Search.objects.filter(user=user_profile).order_by('-datetime')
+
+    # I bet there's a single line way to do this...
+    search_by_type = {}
+    spatial_searches = []
+    survey_searches = []
+    question_searches = []
+    for search in searches:
+        if search.type == 'spatial':
+            spatial_searches.append(search)
+        if search.type == 'survey':
+            survey_searches.append(search)
+        if search.type == 'question':
+            question_searches.append(search)
+    search_by_type = {
+        'spatial': spatial_searches,
+        'survey': survey_searches,
+        'question': question_searches
+    }
+    return search_by_type

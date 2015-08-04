@@ -268,15 +268,15 @@
                 accessToken: 'your.mapbox.public.access.token'
             }).addTo(map);
 
-{#            function onMapClick(e) {#}
-                {#                var popup = L.marker()#}
-                {#                        .setLatLng(e.latlng)#}
-                {#                        .setContent(e.latlng)#}
-                {#                        .openOn(map);#}
-{#                leafletImage(map, doImage)#}
-{#            }#}
+            {#            function onMapClick(e) {#}
+            {#                var popup = L.marker()#}
+            {#                        .setLatLng(e.latlng)#}
+            {#                        .setContent(e.latlng)#}
+            {#                        .openOn(map);#}
+            {#                leafletImage(map, doImage)#}
+            {#            }#}
 
-{#            map.on('click', onMapClick);#}
+            {#            map.on('click', onMapClick);#}
 
             var featureGroup = L.featureGroup().addTo(map);
 
@@ -342,13 +342,13 @@
                 map.addOneTimeEventListener('viewreset', function() {
                     setTimeout(function(){
                         leafletImage(map, doImage);
-                    }, 2000);
+                    }, 1000);
                 });
             }
 
             var most_recent_search_png = '';
             function doImage(err, canvas) {
-                var snapshot = document.getElementById('snapshot');
+                {#                var snapshot = document.getElementById('snapshot');#}
 
                 var img = document.createElement('img');
                 var dimensions = map.getSize();
@@ -356,12 +356,36 @@
                 img.height = dimensions.y;
                 most_recent_search_png = canvas.toDataURL();
                 img.src = most_recent_search_png;
-                console.log(most_recent_search_png);
-                img.style.width = '100%';
-                snapshot.innerHTML = '';
-                snapshot.appendChild(img);
+                {#                console.log(most_recent_search_png);#}
+                {#                img.style.width = '100%';#}
+                {#                snapshot.innerHTML = '';#}
+                {#                snapshot.appendChild(img);#}
 
-                show_res_dialog();
+                $.ajax({
+                    url: '/spatial_search',
+                    type: 'POST',
+                    data: {
+                        geography: wkt,
+                        start: 0,
+                        limit: 15,
+                        type: "Qual",
+                        uid_only: true,
+                        image_png: most_recent_search_png
+                    },
+                    success: function(data) {
+                        if (data['uid']) {
+{#                            console.log("{% url 'tables' %}?search_id=" + data['uid']);#}
+{#                            var snapshot = document.getElementById('output');#}
+{#                            snapshot.innerHTML = "{% url 'tables' %}?search_id=" + data['uid'];#}
+
+                            setTimeout(function(){
+                                window.location = "{% url 'tables' %}?search_id=" + data['uid'];
+                            }, 1000);
+                        }
+                    }
+                });
+
+                {#                show_res_dialog();#}
             }
 
             var res_table = $('#res_table').DataTable({
@@ -482,8 +506,7 @@
     </script>
 
 
-
-
+    <div id="output"></div>
     <div id="map_div" style="height: 180px;"></div>
 
     <div class="well">

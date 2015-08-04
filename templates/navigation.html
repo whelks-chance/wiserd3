@@ -305,7 +305,13 @@
                                         {% for s in searches.spatial|slice:":10" %}
                                             {% if s.type == 'spatial' %}
                                                 <li>
-                                                    <a href="{% url 'tables' %}?search_id={{ s.uid }}">{{ s.type }} - {{ s.id }}</a>
+                                                    <a href="{% url 'tables' %}?search_id={{ s.uid }}">
+                                                        {% if s.readable_name|length > 0 %}
+                                                            {{ s.type }} - {{ s.readable_name }}
+                                                        {% else %}
+                                                            {{ s.type }} - {{ s.id }}
+                                                        {% endif %}
+                                                    </a>
                                                 </li>
                                             {% endif %}
                                         {% endfor %}

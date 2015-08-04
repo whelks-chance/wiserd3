@@ -44,9 +44,15 @@ def survey_detail(request, survey_id):
 def tables(request):
     search_id = request.GET.get('search_id', '')
     geom = ''
+    search_name = ''
     image_png = ''
     if len(search_id):
         search = models.Search.objects.get(uid=search_id)
+        if search.readable_name is not None and len(search.readable_name):
+            search_name = search.readable_name
+        else:
+            search_name = 'Search - ' + str(search.id)
+
         if search.type == 'spatial':
             geom = search.query
             image_png = search.image_png
@@ -56,7 +62,8 @@ def tables(request):
                       'searches': get_user_searches(request),
                       'search_id': search_id,
                       'geom': geom,
-                      'image_png': image_png
+                      'image_png': image_png,
+                      'search_name': search_name
                   },
                   context_instance=RequestContext(request))
 

@@ -253,6 +253,8 @@
 
         $(document).ready(function () {
             var wkt = '';
+            var center_lat_lng = '';
+            var geojson = '';
 
             var map_height = window.innerHeight;
             var header_height = $('.navbar').height();
@@ -334,11 +336,12 @@
                 e.layer.bindPopup((LGeo.area(e.layer) / 1000000).toFixed(2) + ' km<sup>2</sup>');
                 e.layer.openPopup();
 
-                var shape_geojson = e.layer.toGeoJSON();
-                var new_geojson = convertPolygonToOS(shape_geojson);
+                geojson = e.layer.toGeoJSON();
+                var new_geojson = convertPolygonToOS(geojson);
                 wkt = $.geo.WKT.stringify(new_geojson);
 
                 map.fitBounds(featureGroup.getBounds());
+                center_lat_lng = featureGroup.getBounds().getCenter();
                 map.addOneTimeEventListener('viewreset', function() {
                     setTimeout(function(){
                         leafletImage(map, doImage);
@@ -366,6 +369,8 @@
                     type: 'POST',
                     data: {
                         geography: wkt,
+                        geojson: geojson,
+                        centre_lat_lng: [center_lat_lng.lat, center_lat_lng.lng],
                         start: 0,
                         limit: 15,
                         type: "Qual",

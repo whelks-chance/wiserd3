@@ -8,6 +8,7 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_exempt
+import requests
 from dataportal3 import models
 from dataportal3.utils.userAdmin import get_anon_user
 from old import models as old_models
@@ -16,6 +17,7 @@ __author__ = 'ubuntu'
 
 @csrf_exempt
 def spatial_search(request):
+    # print request.POST
 
     test_available = False
     search_uid = ''
@@ -25,17 +27,28 @@ def spatial_search(request):
     }
 
     geography_wkt = request.POST.get('geography', '')
+
+    # A test set of data for if we don't want to wait for the DB
     if test_available and (len(request.POST.get('test', '')) or len(geography_wkt) == 0):
         response_data = {'data': [{'area': u'Wales', 'survey_short_title': u'WERS', 'date': '2005 / 04 / 30', 'survey_id': u'sid_wersmq2004', 'survey_id_full': u'sid_wersmq2004                                                                                                                                                                                                                                                 ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31', 'survey_id': u'sid_whs2008_412', 'survey_id_full': u'sid_whs2008_412                                                                                                                                                                                                                                                ', 'areas': []}, {'area': '', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31', 'survey_id': u'sid_whs2007_03', 'survey_id_full': u'sid_whs2007_03                                                                                                                                                                                                                                                 ', 'areas': []}, {'area': u'Gwent, Monmouthshire, South East Wales, NP152, South Wales, W01001581', 'survey_short_title': u'LiW Property', 'date': '2004 / 10 / 04', 'survey_id': u'sid_liwps2004', 'survey_id_full': u'sid_liwps2004                                                                                                                                                                                                                                                  ', 'areas': [u'NP152', u'Gwent', u'South East Wales', u'Monmouthshire', u'South Wales', u'W01001581']}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31', 'survey_id': u'sid_whs2009_03', 'survey_id_full': u'sid_whs2009_03                                                                                                                                                                                                                                                 ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31', 'survey_id': u'sid_whs2007aq', 'survey_id_full': u'sid_whs2007aq                                                                                                                                                                                                                                                  ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2005 / 09 / 30', 'survey_id': u'sid_whs0306aq', 'survey_id_full': u'sid_whs0306aq                                                                                                                                                                                                                                                  ', 'areas': [u'Monmouthshire', u'Monmouthshire']}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31', 'survey_id': u'sid_whs2008_03', 'survey_id_full': u'sid_whs2008_03                                                                                                                                                                                                                                                 ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31', 'survey_id': u'sid_whs2008aq', 'survey_id_full': u'sid_whs2008aq                                                                                                                                                                                                                                                  ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31', 'survey_id': u'sid_whs2007_1315', 'survey_id_full': u'sid_whs2007_1315                                                                                                                                                                                                                                               ', 'areas': []}, {'area': u'Monmouthshire 005E, Gwent, Monmouthshire, Monmouth, NP151, South Wales', 'survey_short_title': u'LiW Household', 'date': '2007 / 07 / 31', 'survey_id': u'sid_liw2007', 'survey_id_full': u'sid_liw2007                                                                                                                                                                                                                                                    ', 'areas': [u'South Wales', u'NP151', u'Monmouthshire 005E', u'Monmouth', u'Gwent', u'Monmouthshire']}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31', 'survey_id': u'sid_whs2008_1315', 'survey_id_full': u'sid_whs2008_1315                                                                                                                                                                                                                                               ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31', 'survey_id': u'sid_whs2009_412', 'survey_id_full': u'sid_whs2009_412                                                                                                                                                                                                                                                ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31', 'survey_id': u'sid_whs2009aq', 'survey_id_full': u'sid_whs2009aq                                                                                                                                                                                                                                                  ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31', 'survey_id': u'sid_whs2007_412', 'survey_id_full': u'sid_whs2007_412                                                                                                                                                                                                                                                ', 'areas': []}, {'area': u'Monmouthshire 005E, Gwent, Monmouthshire, NP151, South East Wales, South Wales', 'survey_short_title': u'LiW Household', 'date': '2006 / 10 / 13', 'survey_id': u'sid_liwhh2006', 'survey_id_full': u'sid_liwhh2006                                                                                                                                                                                                                                                  ', 'areas': [u'Monmouthshire', u'Gwent', u'South Wales', u'Monmouthshire 005E', u'South East Wales', u'NP151']}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31', 'survey_id': u'sid_whs2009_1315', 'survey_id_full': u'sid_whs2009_1315                                                                                                                                                                                                                                               ', 'areas': []}, {'area': u'Monmouthshire 005E, Monmouthshire, Monmouth, NP151, South East Wales, South Wales', 'survey_short_title': u'LiW Household', 'date': '2004 / 10 / 04', 'survey_id': u'sid_liwhh2004', 'survey_id_full': u'sid_liwhh2004                                                                                                                                                                                                                                                  ', 'areas': [u'South Wales', u'NP151', u'Monmouthshire', u'South East Wales', u'Monmouthshire 005E', u'Monmouth']}, {'area': u'Monmouthshire 005E, Gwent, Monmouthshire, Monmouth, NP151, South Wales', 'survey_short_title': u'LiW Household', 'date': '2005 / 08 / 14', 'survey_id': u'sid_liwhh2005', 'survey_id_full': u'sid_liwhh2005                                                                                                                                                                                                                                                  ', 'areas': [u'Monmouthshire', u'Gwent', u'Monmouth', u'NP151', u'South Wales', u'Monmouthshire 005E']}], 'success': True}
         return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
+
+    # We need a geography to do a spatial search!
+    # This may come from the search database, via the front end, in a request (a bit roundabout!)
     elif len(geography_wkt) == 0:
         response_data['success'] = False
         return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
 
+    geojson = request.POST.get('geojson', '')
+
+
+    # If we have a search ID, return the data for that ID
     search_id = request.POST.get('search_id', '')
     if len(search_id):
         pass
     else:
+        # If we're missing a search ID, create a new search record for this request
+
         print request.user
         user = auth.get_user(request)
         if type(user) is AnonymousUser:
@@ -46,6 +59,33 @@ def spatial_search(request):
         search.query = request.POST.get('geography', None)
         search.type = 'spatial'
         search.image_png = request.POST.get('image_png', None)
+
+        # If we have a center point for this geography, try and find a city/town/etc name for it
+        center_lat_lng = request.POST.getlist('centre_lat_lng[]', None)
+        if center_lat_lng:
+            print center_lat_lng
+            lat = center_lat_lng[0]
+            lng = center_lat_lng[1]
+            nominatim_url = 'http://nominatim.openstreetmap.org/reverse?format=json&lat={0}&lon={1}&zoom=18&addressdetails=1'.format(lat, lng)
+            print nominatim_url
+            nominatim_request = requests.request('get', nominatim_url)
+
+            nominatim_json = json.loads(nominatim_request.text)
+            print pprint.pformat(nominatim_json)
+
+            if 'state' in nominatim_json['address']:
+                search.readable_name = nominatim_json['address']['state']
+            if 'county' in nominatim_json['address']:
+                search.readable_name = nominatim_json['address']['county']
+            if 'city' in nominatim_json['address']:
+                search.readable_name = nominatim_json['address']['city']
+            if 'town' in nominatim_json['address']:
+                search.readable_name = nominatim_json['address']['town']
+            if 'village' in nominatim_json['address']:
+                search.readable_name = nominatim_json['address']['village']
+            if 'suburb' in nominatim_json['address']:
+                search.readable_name = nominatim_json['address']['suburb']
+
         search.save()
         search_uid = str(search.uid)
 
@@ -71,7 +111,7 @@ def spatial_search(request):
 
         for geoms in tables:
             f_table_name = geoms[0]
-            print f_table_name
+            # print f_table_name
             f_geometry_column = geoms[1]
 
             survey_data = {}

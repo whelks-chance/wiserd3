@@ -115,32 +115,6 @@
                     }
                     console.log(table_columns_complete);
 
-                    {#                    var a_btn = {#}
-                    {#                        "targets": -2,#}
-                    {#                        "data": null,#}
-                    {#                        "render": function ( data, type, full, meta ) {#}
-                    {#                            if (data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {#}
-                    {#                                return "<div class='btn btn-info search_from'>Previous</div>";#}
-                    {#                            } else {#}
-                    {#                                return ""#}
-                    {#                            }#}
-                    {#                        }#}
-                    {#                    };#}
-                    {#                    table_columns.push(a_btn);#}
-                    {##}
-                    {#                    var another_btn = {#}
-                    {#                        "targets": -1,#}
-                    {#                        "data": null,#}
-                    {#                        "render": function ( data, type, full, meta ) {#}
-                    {#                            if (data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {#}
-                    {#                                return "<div class='btn btn-info search_parent'>Parent</div>";#}
-                    {#                            } else {#}
-                    {#                                return ""#}
-                    {#                            }#}
-                    {#                        }#}
-                    {#                    };#}
-                    {#                    table_columns.push(another_btn);#}
-
                     var survey_questions_table = $('#survey_questions_table').DataTable({
                         serverSide: false,
                         processing: true,

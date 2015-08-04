@@ -29,6 +29,7 @@ class Search(models.Model):
     type = models.TextField(blank=True, null=True)
     image_png = models.TextField(blank=True, null=True)
     uid = models.UUIDField(default=uuid.uuid4)
+    readable_name = models.TextField(blank=True, null=True)
 
     class Meta:
         db_table = 'user_search'

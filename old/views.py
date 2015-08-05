@@ -79,12 +79,21 @@ def spatial_search(request):
                 search.readable_name = nominatim_json['address']['county']
             if 'city' in nominatim_json['address']:
                 search.readable_name = nominatim_json['address']['city']
-            if 'town' in nominatim_json['address']:
-                search.readable_name = nominatim_json['address']['town']
-            if 'village' in nominatim_json['address']:
-                search.readable_name = nominatim_json['address']['village']
-            if 'suburb' in nominatim_json['address']:
-                search.readable_name = nominatim_json['address']['suburb']
+
+            geo_area = request.POST.get('geo_area_km2', None)
+            if geo_area:
+                geo_area = float(geo_area)
+                print geo_area
+
+                if geo_area < 20:
+                    if 'town' in nominatim_json['address']:
+                        search.readable_name = nominatim_json['address']['town']
+                    if 'village' in nominatim_json['address']:
+                        search.readable_name = nominatim_json['address']['village']
+
+                if geo_area < 10:
+                    if 'suburb' in nominatim_json['address']:
+                        search.readable_name = nominatim_json['address']['suburb']
 
         search.save()
         search_uid = str(search.uid)

@@ -11,19 +11,19 @@
                     'style': 'form',
                     'url': "{% url 'survey_single_question' question_id %}",
                     'fields': [
-                        {'display': true, 'displayName': 'qid', 'id': 'qid'},
-                        {'display': true, 'displayName': 'literal_question_text', 'id': 'literal_question_text'},
-                        {'display': true, 'displayName': 'questionnumber', 'id': 'questionnumber'},
-                        {'display': true, 'displayName': 'thematic_groups', 'id': 'thematic_groups'},
-                        {'display': true, 'displayName': 'thematic_tags', 'id': 'thematic_tags'},
-                        {'display': true, 'displayName': 'link_from', 'id': 'link_from'},
-                        {'display': true, 'displayName': 'subof', 'id': 'subof'},
-                        {'display': true, 'displayName': 'type', 'id': 'type'},
-                        {'display': true, 'displayName': 'variableid', 'id': 'variableid'},
-                        {'display': true, 'displayName': 'notes', 'id': 'notes'},
-                        {'display': true, 'displayName': 'user_id', 'id': 'user_id'},
-                        {'display': true, 'displayName': 'created', 'id': 'created'},
-                        {'display': true, 'displayName': 'updated', 'id': 'updated'}
+                        {'display': true, 'displayName': 'Question ID', 'id': 'qid'},
+                        {'display': true, 'displayName': 'Question Text', 'id': 'literal_question_text'},
+                        {'display': true, 'displayName': 'Question Number', 'id': 'questionnumber'},
+                        {'display': true, 'displayName': 'Thematic Groups', 'id': 'thematic_groups'},
+                        {'display': true, 'displayName': 'Thematic Tags', 'id': 'thematic_tags'},
+                        {'display': true, 'displayName': 'Link From', 'id': 'link_from'},
+                        {'display': true, 'displayName': 'Sub Of', 'id': 'subof'},
+                        {'display': true, 'displayName': 'Question Type', 'id': 'type'},
+                        {'display': true, 'displayName': 'Variable ID', 'id': 'variableid'},
+                        {'display': true, 'displayName': 'Notes', 'id': 'notes'},
+                        {'display': false, 'displayName': 'user_id', 'id': 'user_id'},
+                        {'display': false, 'displayName': 'created', 'id': 'created'},
+                        {'display': true, 'displayName': 'Last Edit', 'id': 'updated'}
                     ]
                 },
 
@@ -32,17 +32,18 @@
                     'style': 'form',
                     'url': "{% url 'survey_question_results' question_id %}",
                     'fields': [
-                        {'display': true, 'displayName': 'updated', 'id': 'updated'},
-                        {'display': true, 'displayName': 'responsetext', 'id': 'responsetext'},
-                        {'display': true, 'displayName': 'created', 'id': 'created'},
-                        {'display': true, 'displayName': 'route_notes', 'id': 'route_notes'},
-                        {'display': true, 'displayName': 'responseid', 'id': 'responseid'},
-                        {'display': true, 'displayName': 'table_ids', 'id': 'table_ids'},
-                        {'display': true, 'displayName': 'computed_var', 'id': 'computed_var'},
-                        {'display': true, 'displayName': 'response_type', 'id': 'response_type'},
-                        {'display': true, 'displayName': 'user_id', 'id': 'user_id'},
-                        {'display': true, 'displayName': 'checks', 'id': 'checks'},
-                        {'display': true, 'displayName': 'routetype', 'id': 'routetype'}
+                        {'display': true, 'displayName': 'Response ID', 'id': 'responseid'},
+                        {'display': true, 'displayName': 'Response Text', 'id': 'responsetext'},
+                        {'display': false, 'displayName': 'created', 'id': 'created'},
+                        {'display': true, 'displayName': 'Route Notes', 'id': 'route_notes'},
+                        {'display': false, 'displayName': 'Table IDs', 'id': 'table_ids'},
+                        {'display': true, 'displayName': 'Computed Variable', 'id': 'computed_var'},
+                        {'display': true, 'displayName': 'Response Type', 'id': 'response_type'},
+                        {'display': false, 'displayName': 'user_id', 'id': 'user_id'},
+                        {'display': true, 'displayName': 'Checks', 'id': 'checks'},
+                        {'display': true, 'displayName': 'Route Type', 'id': 'routetype'},
+                        {'display': true, 'displayName': 'Last Edit', 'id': 'updated'},
+
                     ]
                 }
 
@@ -108,10 +109,16 @@
 
                     var table_columns_complete = [];
                     for (var k = 0; k < table_columns.length; k++) {
-                        table_columns_complete.push({
-                            'title': table_columns[k],
-                            'data': table_columns[k]
-                        });
+                        if (table_columns[k] != 'res_table_id'
+                                && table_columns[k] != 'user_id'
+                                && table_columns[k] != 'date_time') {
+                            var column_title = table_columns[k].replace('_', ' ').split(" ").map(function(i){return i[0].toUpperCase() + i.substring(1)}).join(" ");
+
+                            table_columns_complete.push({
+                                'title': column_title,
+                                'data': table_columns[k]
+                            });
+                        }
                     }
                     console.log(table_columns_complete);
 
@@ -129,26 +136,26 @@
                         {#                        },#}
                         columns: table_columns_complete
                     }).on( 'stateLoaded.dt', function (e, settings, data) {
-{#                        attach_question_buttons();#}
+                        {#                        attach_question_buttons();#}
                     });
                 }
             });
 
 
-{#            function attach_question_buttons() {#}
-{#                var survey_questions_table = $('#survey_questions_table');#}
-{#                var survey_questions_table_datatable = survey_questions_table.DataTable();#}
-{#                var table_body = survey_questions_table.find('tbody');#}
-{#                table_body.on('click', '.search_from', function () {#}
-{#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
-{#                    survey_questions_table.search( data['link_from'].trim() ).draw();#}
-{#                });#}
-{#                table_body.on('click', '.search_parent', function () {#}
-{#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
-{#                    survey_questions_table.search( data['subof'].trim() ).draw();#}
-{#                });#}
-{#            }#}
-{#            attach_question_buttons();#}
+            {#            function attach_question_buttons() {#}
+            {#                var survey_questions_table = $('#survey_questions_table');#}
+            {#                var survey_questions_table_datatable = survey_questions_table.DataTable();#}
+            {#                var table_body = survey_questions_table.find('tbody');#}
+            {#                table_body.on('click', '.search_from', function () {#}
+            {#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
+            {#                    survey_questions_table.search( data['link_from'].trim() ).draw();#}
+            {#                });#}
+            {#                table_body.on('click', '.search_parent', function () {#}
+            {#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
+            {#                    survey_questions_table.search( data['subof'].trim() ).draw();#}
+            {#                });#}
+            {#            }#}
+            {#            attach_question_buttons();#}
 
             $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                 tidy_tab_fields()
@@ -246,17 +253,15 @@
                                             <th>QuestionID</th>
                                             <th>QuestionText</th>
                                             <th>Type</th>
-                                            <th>Notes</th>
-                                            <th>From</th>
-                                            <th>SubOf</th>
+                                            {#                                            <th>Notes</th>#}
+                                            {#                                            <th>From</th>#}
+                                            {#                                            <th>SubOf</th>#}
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td></tr>
                                         </tbody>
                                     </table>
                                 </div>

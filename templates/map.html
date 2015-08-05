@@ -255,6 +255,7 @@
             var wkt = '';
             var center_lat_lng = '';
             var geojson = '';
+            var geoJson_area_km2 = '';
 
             var map_height = window.innerHeight;
             var header_height = $('.navbar').height();
@@ -333,7 +334,9 @@
 
                 featureGroup.clearLayers();
                 featureGroup.addLayer(e.layer);
-                e.layer.bindPopup((LGeo.area(e.layer) / 1000000).toFixed(2) + ' km<sup>2</sup>');
+
+                geoJson_area_km2 = (LGeo.area(e.layer) / 1000000).toFixed(2);
+                e.layer.bindPopup(geoJson_area_km2 + ' km<sup>2</sup>');
                 e.layer.openPopup();
 
                 geojson = e.layer.toGeoJSON();
@@ -371,6 +374,7 @@
                         geography: wkt,
                         geojson: geojson,
                         centre_lat_lng: [center_lat_lng.lat, center_lat_lng.lng],
+                        geo_area_km2: geoJson_area_km2,
                         start: 0,
                         limit: 15,
                         type: "Qual",

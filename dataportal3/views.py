@@ -90,3 +90,38 @@ def question(request, question_id):
                       'question_id': question_id
                   },
                   context_instance=RequestContext(request))
+
+@csrf_exempt
+def edit_metadata(request):
+    # assume failure
+    edit_metadata_response = {
+        'success': False
+    }
+
+    try:
+        # probably only want to allow actions on things the user owns
+        user = auth.get_user(request)
+        if type(user) is AnonymousUser:
+            user = get_anon_user()
+        user_profile = models.UserProfile.objects.using('new').get(user=user)
+
+        function = request.GET.get('function', None)
+
+        # User will need the searches UID and a new name for it
+        if function == 'edit_search_name':
+            search_uid = request.GET.get('search_uid', None)
+            if search_uid:
+                search = models.Search.objects.using('new').get(user=user_profile, uid=search_uid)
+                new_name = request.GET.get('new_name', None)
+                if new_name:
+                    search.readable_name = new_name
+                    search.save()
+                    edit_metadata_response['success'] = True
+
+    # Any failure in here results in sending the success as being False, as set above
+    # Add whatever the error message is here. Used in debugging, ideally should not be shown to user
+    except Exception as e:
+        print e
+        edit_metadata_response['error'] = str(e)
+
+    return HttpResponse(json.dumps(edit_metadata_response, indent=4), content_type="application/json")

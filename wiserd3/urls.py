@@ -51,6 +51,8 @@ urlpatterns = [
 
     url(r'^edit_metadata', views.edit_metadata, name='edit_metadata'),
 
+    url(r'^get_geojson', views.get_geojson, name='get_geojson'),
+
     # url(r'^metadata/search/survey/questions/(?P<search_terms>\S+)',
     #     views.search_survey_question, name='search_survey_question'),
 

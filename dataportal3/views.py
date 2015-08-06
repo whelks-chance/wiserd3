@@ -1,6 +1,10 @@
+import ast
 import json
+import yaml
+import pprint
 from django.contrib import auth
 from django.contrib.auth.models import AnonymousUser
+from django.core.serializers import serialize
 
 from django.db import connections
 from django.http.response import HttpResponse
@@ -8,7 +12,6 @@ from django.shortcuts import render
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 from dataportal3 import models
-from dataportal3.models import UserProfile
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches
 
 
@@ -70,7 +73,9 @@ def tables(request):
 
 def map_search(request):
     return render(request, 'map.html',
-                  {'searches': get_user_searches(request)},
+                  {
+                      'searches': get_user_searches(request)
+                  },
                   context_instance=RequestContext(request))
 
 
@@ -125,3 +130,29 @@ def edit_metadata(request):
         edit_metadata_response['error'] = str(e)
 
     return HttpResponse(json.dumps(edit_metadata_response, indent=4), content_type="application/json")
+
+
+def get_geojson(request):
+    shape_table_object = models.XSidLiwhh2005Police.objects.using('survey_gis').all()
+    geojson_layers = shape_table_object.extra(
+        select={
+            'geometry': 'ST_AsGeoJSON("the_geom")'
+        }
+    ).values('area_name', 'response_rate', 'geometry')
+
+    # print pprint.pformat(geojson_layers)
+    print type(geojson_layers)
+
+    shape_list = list(geojson_layers)
+    new_list = []
+    for shape in shape_list:
+        shape_list_group = {}
+        for key in shape:
+            print key
+            if key is not 'geometry':
+                shape_list_group[key] = shape[key]
+            else:
+                shape_list_group[key] = ast.literal_eval(shape[key])
+        new_list.append(shape_list_group)
+        
+    return HttpResponse(json.dumps(new_list), content_type="application/json")

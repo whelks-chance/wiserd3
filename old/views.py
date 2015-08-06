@@ -168,7 +168,11 @@ def spatial_search(request):
             if len(survey_data['survey_id']):
                 if survey_info.has_key(survey_data['survey_id']):
                     survey_info[survey_data['survey_id']]['areas'].append(survey_data['area'])
-                    survey_info[survey_data['survey_id']]['area'] = ', '.join(list(set(survey_info[survey_data['survey_id']]['areas'])))
+
+                    area_list = list(set(survey_info[survey_data['survey_id']]['areas']))
+                    cleaned_list = [area for area in area_list if not has_numbers(area)]
+
+                    survey_info[survey_data['survey_id']]['area'] = ', '.join(cleaned_list)
                 else:
                     survey_info[survey_data['survey_id']] = survey_data
 
@@ -181,6 +185,10 @@ def spatial_search(request):
         # print response_data
 
     return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
+
+
+def has_numbers(input_string):
+    return any(char.isdigit() for char in input_string)
 
 
 @csrf_exempt

@@ -271,6 +271,17 @@
                 accessToken: 'your.mapbox.public.access.token'
             }).addTo(map);
 
+            $.ajax({
+                url: "{% url 'get_geojson' %}",
+                type: 'GET',
+                success: function(data) {
+                    var myLayer = L.geoJson().addTo(map);
+                    myLayer.addData(data);
+
+                }
+            });
+
+
             {#            function onMapClick(e) {#}
             {#                var popup = L.marker()#}
             {#                        .setLatLng(e.latlng)#}
@@ -383,9 +394,9 @@
                     },
                     success: function(data) {
                         if (data['uid']) {
-{#                            console.log("{% url 'tables' %}?search_id=" + data['uid']);#}
-{#                            var snapshot = document.getElementById('output');#}
-{#                            snapshot.innerHTML = "{% url 'tables' %}?search_id=" + data['uid'];#}
+                            {#                            console.log("{% url 'tables' %}?search_id=" + data['uid']);#}
+                            {#                            var snapshot = document.getElementById('output');#}
+                            {#                            snapshot.innerHTML = "{% url 'tables' %}?search_id=" + data['uid'];#}
 
                             setTimeout(function(){
                                 window.location = "{% url 'tables' %}?search_id=" + data['uid'];

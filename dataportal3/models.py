@@ -34,15 +34,18 @@ class Search(models.Model):
         db_table = 'user_search'
 
 
-# class GeometryColumns(models.Model):
-#     f_table_catalog = models.CharField(max_length=256, blank=True, null=True)
-#     f_table_schema = models.CharField(max_length=256, blank=True, null=True)
-#     f_table_name = models.CharField(max_length=256, blank=True, null=True)
-#     f_geometry_column = models.CharField(max_length=256, blank=True, null=True)
-#     coord_dimension = models.IntegerField()
-#     srid = models.IntegerField()
-#     type = models.CharField(max_length=30, blank=True, null=True)
+class GeometryColumns(models.Model):
+    f_table_catalog = models.CharField(max_length=256, blank=True, null=True)
+    f_table_schema = models.CharField(max_length=256, blank=True, null=True)
+    # f_table_name = models.CharField(max_length=256, blank=True, null=True)
+    f_table_name = models.CharField(primary_key=True, max_length=256)
+    f_geometry_column = models.CharField(max_length=256, blank=True, null=True)
+    coord_dimension = models.IntegerField()
+    srid = models.IntegerField()
+    type = models.CharField(max_length=30, blank=True, null=True)
 
+    class Meta:
+        db_table = 'geometry_columns'
 
 class DcInfo(models.Model):
     identifier = models.CharField(primary_key=True, max_length=50)

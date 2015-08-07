@@ -12,6 +12,7 @@ import requests
 from dataportal3 import models
 from dataportal3.utils.userAdmin import get_anon_user
 from old import models as old_models
+from django.apps import apps
 
 __author__ = 'ubuntu'
 
@@ -107,39 +108,51 @@ def spatial_search(request):
         pass
     else:
 
-        cursor = connections['survey'].cursor()
+        # cursor = connections['survey'].cursor()
 
-        table_cols = "SELECT DISTINCT f_table_name, f_geometry_column FROM geometry_columns where f_table_schema = 'public'"
-        cursor.execute(table_cols)
-        tables = cursor.fetchall()
-        # print tables
+        # table_cols = "SELECT DISTINCT f_table_name, f_geometry_column FROM geometry_columns where f_table_schema = 'public'"
+        # cursor.execute(table_cols)
+        # tables = cursor.fetchall()
+        # # print tables
+
+        geometry_columns = models.GeometryColumns.objects.using('survey').filter(f_table_schema='public')
 
         areas = []
         survey_ids = []
         survey_info = {}
 
-        for geoms in tables:
-            f_table_name = geoms[0]
+        for geoms in geometry_columns:
+            f_table_name = str(geoms.f_table_name).replace('_', '')
             # print f_table_name
-            f_geometry_column = geoms[1]
+            f_geometry_column = geoms.f_geometry_column
 
             survey_data = {}
             survey_data['areas'] = []
 
-            intersects = "SELECT area_name from " + f_table_name + \
-                         " WHERE ST_Intersects(ST_Transform(ST_GeometryFromText('" + geography_wkt + "', 27700), 4326)," + f_geometry_column + ")"
+            # try:
+            spatial_layer_table = apps.get_model(app_label='dataportal3', model_name=f_table_name)
 
-            cursor.execute(intersects)
-            area_names = cursor.fetchall()
+            # intersects = "SELECT area_name from " + f_table_name + \
+            #              " WHERE ST_Intersects(ST_Transform(ST_GeometryFromText('" + geography_wkt + "', 27700), 4326)," + f_geometry_column + ")"
+
+            area_names = spatial_layer_table.objects.using('survey').extra(
+                select={
+                    'geometry': 'ST_Intersects(ST_Transform(ST_GeometryFromText("' + geography_wkt + '", 27700), 4326), the_geom)'
+                }
+            ).values('area_name')
+
+            # print area_names
+            # cursor.execute(intersects)
+            # area_names = cursor.fetchall()
 
             area_name = ''
             if len(area_names) > 0:
                 # print area_names[0][0].strip()
-                areas.append(area_names[0][0])
-                area_name = area_names[0][0]
+                areas.append(area_names[0]['area_name'])
+                area_name = area_names[0]['area_name']
             survey_data['area'] = area_name
 
-            spatials = old_models.SurveySpatialLink.objects.using('survey').filter(spatial_id=geoms[0]).values_list('surveyid', flat=True)
+            spatials = old_models.SurveySpatialLink.objects.using('survey').filter(spatial_id=geoms.f_table_name).values_list('surveyid', flat=True)
 
             spatials = list(spatials)
 
@@ -176,6 +189,9 @@ def spatial_search(request):
                 else:
                     survey_info[survey_data['survey_id']] = survey_data
 
+            # except Exception as e:
+            #     print e
+
         # response_data['areas'] = areas
         response_data['data'] = survey_info.values()
 
@@ -206,7 +222,7 @@ def survey_dc_data(request, wiserd_id):
         'method': 'survey_dc_data',
         'search_result_data': surveys,
         'results_count': len(surveys),
-    }
+        }
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 
@@ -246,7 +262,7 @@ def survey_metadata(request, wiserd_id):
         'method': 'survey_metadata',
         'search_result_data': surveys,
         'results_count': len(surveys),
-    }
+        }
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 
@@ -267,7 +283,7 @@ def survey_questions_results(request, question_id):
         'method': 'survey_questions_results',
         'search_result_data': question_responses,
         'results_count': len(question_responses),
-    }
+        }
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 
@@ -339,7 +355,7 @@ def survey_question(request, question_id):
         'search_result_data': data,
         'results_count': len(data),
         'question_id': question_id,
-    }
+        }
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 
@@ -386,6 +402,6 @@ def survey_questions_results_table(request, question_id):
         'search_result_data': results_with_keys,
         'columns': columns,
         'results_count': len(results_with_keys),
-    }
+        }
 
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")

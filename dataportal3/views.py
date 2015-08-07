@@ -133,7 +133,7 @@ def edit_metadata(request):
 
 
 def get_geojson(request):
-    shape_table_object = models.XSidLiwhh2005Police.objects.using('survey_gis').all()
+    shape_table_object = models.XSidLiwhh2005Ua.objects.using('survey_gis').all()
     geojson_layers = shape_table_object.extra(
         select={
             'geometry': 'ST_AsGeoJSON("the_geom")'
@@ -144,16 +144,17 @@ def get_geojson(request):
 
     shape_list = list(geojson_layers)
     shape_feature_list = [
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [0, 0]
-            },
-            "properties": {
-                "name": "null island"
-            }
-        }
+        # {
+        #     "type": "Feature",
+        #     "geometry": {
+        #         "type": "Point",
+        #         "coordinates": [-3.5, 51.5]
+        #     },
+        #     "properties": {
+        #         "name": "null island",
+        #         "marker-symbol": "bus"
+        #     }
+        # }
     ]
 
     for shape in shape_list:
@@ -165,6 +166,12 @@ def get_geojson(request):
             if key is not 'geometry':
                 shape_properties[key] = shape[key]
                 print shape[key], shape_properties[key]
+
+        rgb_int = float(shape_properties['response_rate']) * 2.54
+        rgb_tuple = (rgb_int, rgb_int, rgb_int)
+        hex_code = '#%02x%02x%02x' % rgb_tuple
+        shape_properties['color'] = hex_code
+        shape_properties['opacity'] = 0.1
 
         shape_list_group = {
             'type': 'Feature',
@@ -179,7 +186,11 @@ def get_geojson(request):
 
     geojsonFeature = {
         "type": "FeatureCollection",
-        "features": shape_feature_list
+        "features": shape_feature_list,
+        "properties": {
+            'name': 'XSidLiwhh2005Ua',
+            'b': 2
+        }
     }
 
     # geojsonFeature = {

@@ -140,19 +140,62 @@ def get_geojson(request):
         }
     ).values('area_name', 'response_rate', 'geometry')
 
-    # print pprint.pformat(geojson_layers)
     print type(geojson_layers)
 
     shape_list = list(geojson_layers)
-    new_list = []
+    shape_feature_list = [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [0, 0]
+            },
+            "properties": {
+                "name": "null island"
+            }
+        }
+    ]
+
     for shape in shape_list:
-        shape_list_group = {}
+
+        shape_properties = {}
+
         for key in shape:
             print key
             if key is not 'geometry':
-                shape_list_group[key] = shape[key]
-            else:
-                shape_list_group[key] = ast.literal_eval(shape[key])
-        new_list.append(shape_list_group)
-        
-    return HttpResponse(json.dumps(new_list), content_type="application/json")
+                shape_properties[key] = shape[key]
+                print shape[key], shape_properties[key]
+
+        shape_list_group = {
+            'type': 'Feature',
+            'geometry': {
+                'type': 'MultiPolygon',
+                'coordinates': ast.literal_eval(shape['geometry'])['coordinates']
+            },
+            'properties': shape_properties
+        }
+
+        shape_feature_list.append(shape_list_group)
+
+    geojsonFeature = {
+        "type": "FeatureCollection",
+        "features": shape_feature_list
+    }
+
+    # geojsonFeature = {
+    #     "type": "FeatureCollection",
+    #     "features": [
+    #         {
+    #             "type": "Feature",
+    #             "geometry": {
+    #                 "type": "Point",
+    #                 "coordinates": [0, 0]
+    #             },
+    #             "properties": {
+    #                 "name": "null island"
+    #             }
+    #         }
+    #     ]
+    # }
+
+    return HttpResponse(json.dumps(geojsonFeature), content_type="application/json")

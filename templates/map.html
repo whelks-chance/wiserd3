@@ -43,6 +43,25 @@
 
 {% endblock %}
 
+{% block nav_extras %}
+    <li>
+        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Map layers<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a href="#"> Add<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="#" id="new_annotation"><i class="fa fa-map-marker fa-fw"></i> New Annotation</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-map-marker fa-fw"></i> New Layer</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+{% endblock %}
+
 {% block content %}
     <script>
 
@@ -252,6 +271,9 @@
 
 
         $(document).ready(function () {
+
+            {#            below is map stuff #}
+
             var wkt = '';
             var center_lat_lng = '';
             var geojson = '';
@@ -271,16 +293,34 @@
                 accessToken: 'your.mapbox.public.access.token'
             }).addTo(map);
 
-            $.ajax({
-                url: "{% url 'get_geojson' %}",
-                type: 'GET',
-                success: function(data) {
-                    var myLayer = L.geoJson().addTo(map);
-                    myLayer.addData(data);
+            {#            $.ajax({#}
+            {#                url: "{% url 'get_geojson' %}",#}
+            {#                type: 'GET',#}
+            {#                success: function(data) {#}
+            {#                    var myLayer = L.geoJson().addTo(map);#}
+            {#                    console.log(data);#}
+            {#                    myLayer.addData(data);#}
+            {##}
+            {#                }#}
+            {#            });#}
 
-                }
+            var cupcakeTiles = L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png', {
+                maxZoom: 15
             });
 
+            $.getJSON("{% url 'get_geojson' %}", function(data) {
+{#                var myLayer = L.geoJson().addTo(map);#}
+{#                myLayer.addData(data);#}
+
+                var geojson = L.geoJson(data, {
+                    onEachFeature: function (feature, layer) {
+                        layer.bindPopup(feature.properties.area_name);
+                    }
+                });
+{#                                var map = L.map('cupcake-map').fitBounds(geojson.getBounds());#}
+                cupcakeTiles.addTo(map);
+                geojson.addTo(map);
+            });
 
             {#            function onMapClick(e) {#}
             {#                var popup = L.marker()#}

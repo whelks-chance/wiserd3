@@ -72,10 +72,10 @@
 {% block nav_extras %}
     <li>
         <a href="#"><i class="fa fa-sitemap fa-fw"></i> Map layers<span class="fa arrow"></span></a>
-        <ul class="nav nav-second-level">
+        <ul class="nav nav-second-level" id="layer_list">
             <li>
                 <a href="#"> Add<span class="fa arrow"></span></a>
-                <ul id="layer_list" class="nav nav-third-level">
+                <ul class="nav nav-third-level">
                     <li>
                         <a href="#" id="new_annotation"><i class="fa fa-map-marker fa-fw"></i> New Annotation</a>
                     </li>
@@ -96,7 +96,7 @@
             {#            below is map stuff #}
             var wkt = '';
             var center_lat_lng = '';
-            var geojson = '';
+            var search_area_geojson = '';
             var geoJson_area_km2 = '';
 
             var map_height = window.innerHeight;
@@ -116,7 +116,7 @@
             var info = L.control();
 
             info.onAdd = function (map) {
-                this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+                this._div = L.DomUtil.create('div', 'info');
                 this.update();
                 return this._div;
             };
@@ -124,7 +124,7 @@
 // method that we will use to update the control based on feature properties passed
             info.update = function (props) {
                 this._div.innerHTML = '<div style="min-height: 10%"><h4>Region Response Rate</h4>' +  (props ?
-                '<b>' + props.area_name + '</b><br />' + props.response_rate + ' people / mi<sup>2</sup>'
+                '<b>' + props.area_name + '</b><br />' + props.response_rate + '%'
                         : 'Hover over a region') + '<h4></h4></div>';
             };
 
@@ -144,9 +144,9 @@
                     dashArray: '',
                     fillOpacity: 0.7
                 });
-                if (!L.Browser.ie && !L.Browser.opera) {
-                    layer.bringToFront();
-                }
+                {#                if (!L.Browser.ie && !L.Browser.opera) {#}
+                layer.bringToFront();
+                {#                }#}
                 info.update(layer.feature.properties);
             }
 
@@ -158,18 +158,53 @@
                 return d > 80 ? '#800026' :
                         d > 75  ? '#BD0026' :
                                 d > 70  ? '#E31A1C' :
-                                        d > 65  ? '#FC4E2A' :
-                                                d > 60   ? '#FD8D3C' :
-                                                        d > 50   ? '#FEB24C' :
-                                                                d > 40   ? '#FED976' :
+                                        d > 60  ? '#FC4E2A' :
+                                                d > 50   ? '#FD8D3C' :
+                                                        d > 40   ? '#FEB24C' :
+                                                                d > 30   ? '#FED976' :
                                                                         '#FFEDA0';
+            }
+
+            function remove_layer(remove_button){
+                {#                alert($(remove_button).data('layername'));#}
+                map.removeLayer(map_layers[$(remove_button).data('layername')]);
+            }
+
+            function replace_layer(replace_button){
+                {#                alert($(replace_button).data('layername'));#}
+                map_layers[$(replace_button).data('layername')].addTo(map);
             }
 
             $.getJSON("{% url 'get_geojson' %}", function(data) {
                 console.log(data['properties']['name']);
-                var new_button = '<li><a href="#"><i class="fa fa-dashboard fa-fw"></i> '
-                        + data['properties']['name'] + '</a></li>';
-                $('#layer_list').append(new_button);
+                var new_layer_menu = $(
+                '<li>' +
+                '<a href="#"><i class="fa fa-dashboard fa-fw"></i> ' +
+                data['properties']['name'] + '<span class="fa arrow"></span></a>' +
+
+                '<ul class="nav nav-third-level">' +
+                    '<li>' +
+                    '<a href="#" class="remove_layer" data-layername="' + data['properties']['name'] +
+                    '"><i class="fa fa-remove fa-fw"></i> Remove Layer</a>' +
+                    '</li>' +
+
+                    '<li>' +
+                    '<a href="#" class="replace_layer" data-layername="' + data['properties']['name'] +
+                    '"><i class="fa fa-add fa-fw"></i> Replace Layer</a>' +
+                    '</li>' +
+
+                '</ul>' +
+                '</li>');
+
+                $('#layer_list').append(new_layer_menu);
+                $('#side-menu').metisMenu();
+
+                $('.replace_layer').click(function(){
+                    replace_layer(this)
+                });
+                $('.remove_layer').click(function(){
+                    remove_layer(this)
+                });
 
                 geojson = L.geoJson(data, {
                     onEachFeature: function (feature, layer) {
@@ -177,7 +212,7 @@
                         layer.on({
                             mouseover: highlightFeature,
                             mouseout: resetHighlight,
-{#                            click: zoomToFeature#}
+                            {#                            click: zoomToFeature#}
                         });
                     },
                     style: function(feature) {
@@ -193,9 +228,37 @@
 
                 });
                 {#                                var map = L.map('cupcake-map').fitBounds(geojson.getBounds());#}
-                cupcakeTiles.addTo(map);
+                {#                cupcakeTiles.addTo(map);#}
                 geojson.addTo(map);
+                map_layers[data['properties']['name']] = geojson;
             });
+
+            var map_layers = {};
+
+            var legend = L.control({position: 'bottomright'});
+
+            legend.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                        grades = [0, 20, 30, 40, 50, 60, 70, 80],
+                        labels = [],
+                        from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    to = grades[i + 1];
+
+                    labels.push(
+                            '<i style="background:' + getColor(from + 1) + '"></i> ' +
+                            from + (to ? '&ndash;' + to + '%': '%+'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            legend.addTo(map);
+
 
             {#            function onMapClick(e) {#}
             {#                var popup = L.marker()#}
@@ -264,8 +327,8 @@
                 e.layer.bindPopup(geoJson_area_km2 + ' km<sup>2</sup>');
                 e.layer.openPopup();
 
-                geojson = e.layer.toGeoJSON();
-                var new_geojson = convertPolygonToOS(geojson);
+                search_area_geojson = e.layer.toGeoJSON();
+                var new_geojson = convertPolygonToOS(search_area_geojson);
                 wkt = $.geo.WKT.stringify(new_geojson);
 
                 map.fitBounds(featureGroup.getBounds());

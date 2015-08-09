@@ -1,12 +1,10 @@
 import ast
+from datetime import datetime
 import json
-import yaml
-import pprint
 from django.contrib import auth
 from django.contrib.auth.models import AnonymousUser
+from django.contrib.gis.serializers import geojson
 from django.core.serializers import serialize
-
-from django.db import connections
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.template import RequestContext
@@ -133,16 +131,25 @@ def edit_metadata(request):
 
 
 def get_geojson(request):
+    time1 = datetime.now()
     shape_table_object = models.XSidLiwhh2005Ua.objects.using('survey_gis').all()
+
     geojson_layers = shape_table_object.extra(
         select={
             'geometry': 'ST_AsGeoJSON("the_geom")'
         }
     ).values('area_name', 'response_rate', 'geometry')
 
-    print type(geojson_layers)
+    # print type(geojson_layers)
+    # shape_list = list(geojson_layers)
+    shape_list = geojson_layers
 
-    shape_list = list(geojson_layers)
+    # print shape_list
+    # print type(shape_list[0])
+
+    time2 = datetime.now()
+    print time2 - time1
+
     shape_feature_list = [
         # {
         #     "type": "Feature",
@@ -158,14 +165,11 @@ def get_geojson(request):
     ]
 
     for shape in shape_list:
-
         shape_properties = {}
-
         for key in shape:
-            print key
             if key is not 'geometry':
                 shape_properties[key] = shape[key]
-                print shape[key], shape_properties[key]
+                # print shape[key], shape_properties[key]
 
         rgb_int = float(shape_properties['response_rate']) * 2.54
         rgb_tuple = (rgb_int, rgb_int, rgb_int)
@@ -173,18 +177,24 @@ def get_geojson(request):
         shape_properties['color'] = hex_code
         shape_properties['opacity'] = 0.1
 
+        print datetime.now() - time2
+
+        # print shape
         shape_list_group = {
             'type': 'Feature',
             'geometry': {
                 'type': 'MultiPolygon',
-                'coordinates': ast.literal_eval(shape['geometry'])['coordinates']
+                # 'coordinates': ast.literal_eval(shape['geometry'])['coordinates']
+                'coordinates': json.loads(shape['geometry'])['coordinates']
+
             },
             'properties': shape_properties
         }
 
         shape_feature_list.append(shape_list_group)
 
-    geojsonFeature = {
+    print datetime.now() - time2
+    geojson_feature = {
         "type": "FeatureCollection",
         "features": shape_feature_list,
         "properties": {
@@ -192,21 +202,6 @@ def get_geojson(request):
             'b': 2
         }
     }
-
-    # geojsonFeature = {
-    #     "type": "FeatureCollection",
-    #     "features": [
-    #         {
-    #             "type": "Feature",
-    #             "geometry": {
-    #                 "type": "Point",
-    #                 "coordinates": [0, 0]
-    #             },
-    #             "properties": {
-    #                 "name": "null island"
-    #             }
-    #         }
-    #     ]
-    # }
-
-    return HttpResponse(json.dumps(geojsonFeature), content_type="application/json")
+    end_result = json.dumps(geojson_feature)
+    print datetime.now() - time1
+    return HttpResponse(end_result, content_type="application/json")

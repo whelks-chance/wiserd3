@@ -1,14 +1,18 @@
 import ast
 from datetime import datetime
 import json
+import pprint
+from django.apps import apps
 from django.contrib import auth
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.gis.serializers import geojson
 from django.core.serializers import serialize
+from django.db.models import Q
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
+import operator
 from dataportal3 import models
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches
 
@@ -70,9 +74,12 @@ def tables(request):
 
 
 def map_search(request):
+    print request.GET
+    surveys = request.GET.getlist('surveys', [])
     return render(request, 'map.html',
                   {
-                      'searches': get_user_searches(request)
+                      'searches': get_user_searches(request),
+                      'surveys': json.dumps(surveys)
                   },
                   context_instance=RequestContext(request))
 
@@ -130,9 +137,23 @@ def edit_metadata(request):
     return HttpResponse(json.dumps(edit_metadata_response, indent=4), content_type="application/json")
 
 
+@csrf_exempt
 def get_geojson(request):
+    surveys = request.POST.getlist('surveys[]')
+
+    q_obj_sids = [Q(surveyid__istartswith=sid) for sid in surveys]
+    qs = reduce(operator.or_, q_obj_sids)
+    spatial_link = models.SurveySpatialLink.objects.using('survey').filter(qs).values('spatial_id', 'admin_areas', 'surveyid')[0]
+
     time1 = datetime.now()
-    shape_table_object = models.XSidLiwhh2005Ua.objects.using('survey_gis').all()
+    # shape_table_object = models.XSidLiwhh2005Ua.objects.using('survey_gis').all()
+
+    spatial_table_name = str(spatial_link['spatial_id']).replace('_', '').strip()
+    spatial_table = apps.get_model(
+        app_label='dataportal3',
+        model_name=spatial_table_name
+    )
+    shape_table_object = spatial_table.objects.using('survey_gis').all()
 
     geojson_layers = shape_table_object.extra(
         select={
@@ -198,8 +219,7 @@ def get_geojson(request):
         "type": "FeatureCollection",
         "features": shape_feature_list,
         "properties": {
-            'name': 'XSidLiwhh2005Ua',
-            'b': 2
+            'name': spatial_table_name
         }
     }
     end_result = json.dumps(geojson_feature)

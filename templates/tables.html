@@ -36,9 +36,14 @@
                     {#                    {data: "survey_id"},#}
                     {data: "area"},
                     {
-                        "targets": -1,
+                        "targets": -2,
                         "data": null,
                         "defaultContent": "<div class='btn btn-info show_questions'>View Details</div>"
+                    },
+                        {
+                        "targets": -1,
+                        "data": null,
+                        "defaultContent": "<div class='btn btn-success map_survey'>Map survey</div>"
                     }
                 ]
             });
@@ -50,6 +55,14 @@
                 });
             }
             attach_question_buttons();
+
+            function attach_map_survey_buttons() {
+                $('#spatial_results').find('tbody').on('click', '.map_survey', function () {
+                    var data = res_table.row($(this).parents('tr')).data();
+                    window.location.href = "map?surveys=" + data['survey_id'];
+                });
+            }
+            attach_map_survey_buttons();
 
             $('#submit_search_name_edit').click(function(){
                 edit_search_name("{{ search_id }}", $('#search_name_edit').val());
@@ -100,14 +113,15 @@
                                 <th>Date</th>
                                 <th>Area</th>
                                 <th>Details</th>
+                                <th>Map</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
                             </tbody>
                         </table>
                     </div>

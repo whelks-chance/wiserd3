@@ -137,7 +137,7 @@ def spatial_search(request):
 
             area_names = spatial_layer_table.objects.using('survey').extra(
                 select={
-                    'geometry': 'ST_Intersects(ST_Transform(ST_GeometryFromText("' + geography_wkt + '", 27700), 4326), the_geom)'
+                    'geometry': 'ST_Intersects(ST_Transform(ST_GeometryFromText("' + geography_wkt + '", 27700), 4326), ' + geoms.f_geometry_column +')'
                 }
             ).values('area_name')
 

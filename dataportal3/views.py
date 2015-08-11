@@ -2,6 +2,7 @@ import ast
 from datetime import datetime
 import json
 import pprint
+from BeautifulSoup import BeautifulSoup
 from django.apps import apps
 from django.contrib import auth
 from django.contrib.auth.models import AnonymousUser
@@ -15,6 +16,7 @@ from django.views.decorators.csrf import csrf_exempt
 import operator
 from dataportal3 import models
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches
+import requests
 
 
 def index(request):
@@ -75,11 +77,24 @@ def tables(request):
 
 def map_search(request):
     print request.GET
+
+    capabilities = requests.get('http://inspire.wales.gov.uk/maps/wms?request=getCapabilities&version=1.3.0')
+    # print capabilities.text
+    soup = BeautifulSoup(capabilities.text)
+
+    x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
+    b = []
+    for y in x:
+        b.append({
+            'tile_name': [z.string for z in y.findAll('name')][0],
+            'name': [z.string for z in y.findAll('title')][0]
+        })
     surveys = request.GET.getlist('surveys', [])
     return render(request, 'map.html',
                   {
                       'searches': get_user_searches(request),
-                      'surveys': json.dumps(surveys)
+                      'surveys': json.dumps(surveys),
+                      'wms_layers': b
                   },
                   context_instance=RequestContext(request))
 

@@ -13,6 +13,8 @@
     <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
 
+    <script type="text/javascript" src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script>
 
     {#  remote mapbox - use this is leaflet, probably not both  #}
     {#    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>#}
@@ -65,6 +67,9 @@
             margin-right: 8px;
             opacity: 0.7;
         }
+        .wms_layer_active {
+            color: orangered;
+        }
     </style>
 
 {% endblock %}
@@ -84,6 +89,17 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <a href="#"> WMS Layer<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    {% for wms_layer in wms_layers %}
+                        <li>
+                            <a href="#" id="new_annotation" data-wms_toggle="{{ wms_layer.tile_name }}" class="wms_toggle">
+                                <i class="fa fa-map-marker fa-fw"></i> {{ wms_layer.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
         </ul>
     </li>
 {% endblock %}
@@ -92,6 +108,29 @@
     <script>
 
         $(document).ready(function () {
+            var wms_layers = {};
+
+            function toggle_layer(toggle_button) {
+                var btn_layer_name = $(toggle_button).data('wms_toggle');
+
+                if (wms_layers.hasOwnProperty(btn_layer_name)) {
+                    map.removeLayer(wms_layers[btn_layer_name]);
+                    delete wms_layers[btn_layer_name];
+                    $(toggle_button).removeClass('wms_layer_active');
+
+                } else {
+                    var layer_image_url = 'http://inspire.wales.gov.uk/maps/wms?LAYERS={0}&TRANSPARENT=TRUE&ENV=fill%3AE01B4C&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&FORMAT=image%2Fpng&SRS=EPSG%3A27700&BBOX=50081.39338979,157381.07037517,509398.34938979,385981.21437517&WIDTH=1302&HEIGHT=648'.format(btn_layer_name);
+                    var imageBounds = [[53.5, -7], [51, -0.5]];
+                    var wms_layer = L.imageOverlay(layer_image_url, imageBounds);
+                    wms_layers[btn_layer_name] = wms_layer;
+                    wms_layer.addTo(map);
+                    $(toggle_button).addClass('wms_layer_active');
+                }
+            }
+
+            $('.wms_toggle').click(function () {
+                toggle_layer(this)
+            });
 
             {#            below is map stuff #}
             var wkt = '';
@@ -104,6 +143,81 @@
 
             $('#map_div').css({height: map_height - header_height - 5});
 
+
+
+
+
+
+
+
+
+            {#            var precipitation = L.tileLayer.wms('http://inspire.wales.gov.uk/maps/wms?LAYERS', {#}
+            {#                format: 'image/png',#}
+            {#                transparent: true,#}
+            {#                layers: 'Administrative_units:westminster_consituency_boundaries',#}
+            {#                env: 'fill:E01B4C',#}
+            {#                request: 'getmap',#}
+            {#                SRS: 'EPSG:27700',#}
+            {#                WIDTH: 1302,#}
+            {#                HEIGHT:648,#}
+            {#                BBOX: '50081.39338979,157381.07037517,509398.34938979,385981.21437517'#}
+            {#            }).addTo(map);#}
+
+            {#                        var wcb = L.tileLayer.wms('http://inspire.wales.gov.uk/maps/wms?LAYERS=Administrative_units%3Awestminster_consituency_boundaries&TRANSPARENT=TRUE&ENV=fill%3AE01B4C&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&FORMAT=image%2Fpng&SRS=EPSG%3A27700&BBOX=50081.39338979,157381.07037517,509398.34938979,385981.21437517&WIDTH=1302&HEIGHT=648', {}).addTo(map);#}
+
+            {#            // Bounding box of our TMS that define our area of interest#}
+            {#            var bbox = [-600000, -300000, 1300000, 1600000];#}
+            {##}
+            {#// Resolutions of our TMS that the tiles will be displayed at calculated so#}
+            {#// that at resolution 0 the bounds fit one 256x256 tile: (maxx - minx)/256#}
+            {#            var res = [7421.875, 3710.9375, 1855.46875, 927.734375];#}
+            {##}
+            {#// Define the Proj4Leaflet coordinate reference system base on British National Grid#}
+            {#            var crs = L.CRS.proj4js(#}
+            {#                    'EPSG:27700',#}
+            {#                    '+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +datum=OSGB36 +units=m +no_defs',#}
+            {#                    new L.Transformation(1, -bbox[0], -1, bbox[3])#}
+            {#            );#}
+            {##}
+            {#// Define a scale custom function to calculate#}
+            {#// the scale based on the current zoom. Prior to#}
+            {#// v0.4 the scale function was a member of the map#}
+            {#            crs.scale = function(zoom) {#}
+            {#                return 1 / res[zoom];#}
+            {#            };#}
+            {##}
+            {#            var map = new L.Map('map_div', {#}
+            {#                crs: crs,#}
+            {#                continuousWorld: true,#}
+            {#                worldCopyJump: false#}
+            {#            });#}
+            {##}
+            {#            var mapUrl = 'http://inspire.wales.gov.uk/maps/wms?LAYERS=Administrative_units%3Awestminster_consituency_boundaries&TRANSPARENT=TRUE&ENV=fill%3AE01B4C&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&FORMAT=image%2Fpng&SRS=EPSG%3A27700&BBOX=-600000,-300000,1300000,1600000&WIDTH=1302&HEIGHT=648';#}
+            {##}
+            {#            var tilelayer = new L.TileLayer(mapUrl, {#}
+            {#                tms: true,#}
+            {#                maxZoom: res.length - 1,#}
+            {#                maxZoom: 15,#}
+            {#                minZoom: 0,#}
+            {#                continuousWorld: false,#}
+            {#                attribution: 'Copyright 2012'#}
+            {#            });#}
+            {#            map.addLayer(tilelayer);#}
+            {##}
+            {#// Centre on London zoom to the maximum extent#}
+            {#            map.setView([51.53181, -3.24687], 0);#}
+
+
+
+
+
+
+
+
+
+
+
+
             var map = L.map('map_div').setView([51.53181, -3.24687], 10);
 
             L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -112,6 +226,10 @@
                 id: 'your.mapbox.project.id',
                 accessToken: 'your.mapbox.public.access.token'
             }).addTo(map);
+
+{#            var layer_image_url = 'http://inspire.wales.gov.uk/maps/wms?LAYERS=Administrative_units%3Awestminster_consituency_boundaries&TRANSPARENT=TRUE&ENV=fill%3AE01B4C&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&FORMAT=image%2Fpng&SRS=EPSG%3A27700&BBOX=50081.39338979,157381.07037517,509398.34938979,385981.21437517&WIDTH=1302&HEIGHT=648';#}
+{#            var imageBounds = [[52, -3], [51, -2]];#}
+{#            L.imageOverlay(layer_image_url, imageBounds).addTo(map);#}
 
             var info = L.control();
 
@@ -173,7 +291,7 @@
                 url: "{% url 'get_geojson' %}",
                 type: 'POST',
                 data: {
-{#                    'surveys': {{ surveys|safe }}#}
+                    {#                    'surveys': {{ surveys|safe }}#}
                     'surveys': {{ surveys|safe }}
                 },
                 success: function(data){
@@ -187,7 +305,7 @@
                             '<ul class="nav nav-third-level active">' +
                             '<li>' +
                             '<a href="#" class="remove_layer" data-layername="' + data['properties']['name'] +
-                            '"><i class="fa fa-remove-o fa-fw"></i> Remove Layer</a>' +
+                            '"><i class="fa fa-remove fa-fw"></i> Remove Layer</a>' +
                             '</li>' +
 
                             '<li>' +
@@ -208,7 +326,9 @@
                         remove_layer(this)
                     });
 
+
                     geojson = L.geoJson(data, {
+                        projection: 'EPSG:27700',
                         onEachFeature: function (feature, layer) {
                             layer.bindPopup(feature.properties.area_name + '<br>' + feature.properties.response_rate + '%');
                             layer.on({
@@ -259,6 +379,13 @@
             };
 
             legend.addTo(map);
+
+
+
+
+
+
+
 
             var featureGroup = L.featureGroup().addTo(map);
             var drawControl = new L.Control.Draw({

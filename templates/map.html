@@ -41,6 +41,9 @@
     {#    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>#}
     <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js' %}"></script>
 
+    <script type="text/javascript" src="{% static 'leaflet-search/leaflet-search.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaflet-search/leaflet-search.css' %}"/>
+
     <style>
         .info {
             padding: 6px 8px;
@@ -94,8 +97,19 @@
                 <ul class="nav nav-third-level">
                     {% for wms_layer in wms_layers %}
                         <li>
-                            <a href="#" id="new_annotation" data-wms_toggle="{{ wms_layer.tile_name }}" class="wms_toggle">
+                            <a href="#" data-layer_name="{{ wms_layer.tile_name }}" class="wms_toggle">
                                 <i class="fa fa-map-marker fa-fw"></i> {{ wms_layer.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li>
+                <a href="#"> WISERD Research<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    {% for wiserd_layer in wiserd_layers %}
+                        <li>
+                            <a href="#" data-layer_name="{{ wiserd_layer.f_table_name }}" class="wiserd_layer_toggle">
+                                <i class="fa fa-map-marker fa-fw"></i> {{ wiserd_layer.f_table_name }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -108,28 +122,48 @@
     <script>
 
         $(document).ready(function () {
+
             var wms_layers = {};
 
             function toggle_layer(toggle_button) {
-                var btn_layer_name = $(toggle_button).data('wms_toggle');
+                var btn_layer_name = $(toggle_button).data('layer_name');
 
+                {#                Remove the class regardless what's about to happen, can be added back again #}
+                $(toggle_button).removeClass('wms_layer_active');
                 if (wms_layers.hasOwnProperty(btn_layer_name)) {
                     map.removeLayer(wms_layers[btn_layer_name]);
                     delete wms_layers[btn_layer_name];
-                    $(toggle_button).removeClass('wms_layer_active');
-
                 } else {
+                    $(toggle_button).addClass('wms_layer_active');
                     var layer_image_url = 'http://inspire.wales.gov.uk/maps/wms?LAYERS={0}&TRANSPARENT=TRUE&ENV=fill%3AE01B4C&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&FORMAT=image%2Fpng&SRS=EPSG%3A27700&BBOX=50081.39338979,157381.07037517,509398.34938979,385981.21437517&WIDTH=1302&HEIGHT=648'.format(btn_layer_name);
                     var imageBounds = [[53.5, -7], [51, -0.5]];
                     var wms_layer = L.imageOverlay(layer_image_url, imageBounds);
                     wms_layers[btn_layer_name] = wms_layer;
                     wms_layer.addTo(map);
+                }
+            }
+
+            function toggle_wiserd_layer(toggle_button) {
+                var btn_layer_name = $(toggle_button).data('layer_name');
+
+                {#                Remove the class regardless what's about to happen, can be added back again #}
+                $(toggle_button).removeClass('wms_layer_active');
+                if (map_layers.hasOwnProperty(btn_layer_name)) {
+                    map.removeLayer(map_layers[btn_layer_name]);
+                    delete map_layers[btn_layer_name];
+                } else {
                     $(toggle_button).addClass('wms_layer_active');
+
+                    get_geojson_layer('wiserd_layer', [btn_layer_name]);
                 }
             }
 
             $('.wms_toggle').click(function () {
                 toggle_layer(this)
+            });
+
+            $('.wiserd_layer_toggle').click(function () {
+                toggle_wiserd_layer(this)
             });
 
             {#            below is map stuff #}
@@ -227,9 +261,9 @@
                 accessToken: 'your.mapbox.public.access.token'
             }).addTo(map);
 
-{#            var layer_image_url = 'http://inspire.wales.gov.uk/maps/wms?LAYERS=Administrative_units%3Awestminster_consituency_boundaries&TRANSPARENT=TRUE&ENV=fill%3AE01B4C&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&FORMAT=image%2Fpng&SRS=EPSG%3A27700&BBOX=50081.39338979,157381.07037517,509398.34938979,385981.21437517&WIDTH=1302&HEIGHT=648';#}
-{#            var imageBounds = [[52, -3], [51, -2]];#}
-{#            L.imageOverlay(layer_image_url, imageBounds).addTo(map);#}
+            {#            var layer_image_url = 'http://inspire.wales.gov.uk/maps/wms?LAYERS=Administrative_units%3Awestminster_consituency_boundaries&TRANSPARENT=TRUE&ENV=fill%3AE01B4C&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&FORMAT=image%2Fpng&SRS=EPSG%3A27700&BBOX=50081.39338979,157381.07037517,509398.34938979,385981.21437517&WIDTH=1302&HEIGHT=648';#}
+            {#            var imageBounds = [[52, -3], [51, -2]];#}
+            {#            L.imageOverlay(layer_image_url, imageBounds).addTo(map);#}
 
             var info = L.control();
 
@@ -287,73 +321,92 @@
                 map_layers[$(replace_button).data('layername')].addTo(map);
             }
 
-            $.ajax({
-                url: "{% url 'get_geojson' %}",
-                type: 'POST',
-                data: {
-                    {#                    'surveys': {{ surveys|safe }}#}
-                    'surveys': {{ surveys|safe }}
-                },
-                success: function(data){
-                    {#            $.getJSON("{% url 'get_geojson' %}", function(data) {#}
-                    console.log(data['properties']['name']);
-                    var new_layer_menu = $(
-                            '<li>' +
-                            '<a href="#"><i class="fa fa-file-picture-o fa-fw"></i> ' +
-                            data['properties']['name'] + '<span class="fa arrow"></span></a>' +
+            get_geojson_layer('survey', '{{ surveys|safe }}');
 
-                            '<ul class="nav nav-third-level active">' +
-                            '<li>' +
-                            '<a href="#" class="remove_layer" data-layername="' + data['properties']['name'] +
-                            '"><i class="fa fa-remove fa-fw"></i> Remove Layer</a>' +
-                            '</li>' +
+            function get_geojson_layer(layer_type, layer_names){
+                $.ajax({
+                    url: "{% url 'get_geojson' %}",
+                    type: 'POST',
+                    data: {
+                        'layer_type': layer_type,
+                        'layer_names': layer_names
+                    },
+                    success: function(data){
+                        {#            $.getJSON("{% url 'get_geojson' %}", function(data) {#}
+                        console.log(data['properties']['name']);
+                        var new_layer_menu = $(
+                                '<li>' +
+                                '<a href="#"><i class="fa fa-file-picture-o fa-fw"></i> ' +
+                                data['properties']['name'] + '<span class="fa arrow"></span></a>' +
 
-                            '<li>' +
-                            '<a href="#" class="replace_layer" data-layername="' + data['properties']['name'] +
-                            '"><i class="fa fa-plus fa-fw"></i> Replace Layer</a>' +
-                            '</li>' +
+                                '<ul class="nav nav-third-level active">' +
+                                '<li>' +
+                                '<a href="#" class="remove_layer" data-layername="' + data['properties']['name'] +
+                                '"><i class="fa fa-remove fa-fw"></i> Remove Layer</a>' +
+                                '</li>' +
 
-                            '</ul>' +
-                            '</li>');
+                                '<li>' +
+                                '<a href="#" class="replace_layer" data-layername="' + data['properties']['name'] +
+                                '"><i class="fa fa-plus fa-fw"></i> Replace Layer</a>' +
+                                '</li>' +
 
-                    $('#layer_list').append(new_layer_menu);
-                    $('#side-menu').metisMenu();
+                                '</ul>' +
+                                '</li>');
 
-                    $('.replace_layer').click(function () {
-                        replace_layer(this)
-                    });
-                    $('.remove_layer').click(function () {
-                        remove_layer(this)
-                    });
+                        $('#layer_list').append(new_layer_menu);
+                        $('#side-menu').metisMenu();
 
+                        $('.replace_layer').click(function () {
+                            replace_layer(this)
+                        });
+                        $('.remove_layer').click(function () {
+                            remove_layer(this)
+                        });
 
-                    geojson = L.geoJson(data, {
-                        projection: 'EPSG:27700',
-                        onEachFeature: function (feature, layer) {
-                            layer.bindPopup(feature.properties.area_name + '<br>' + feature.properties.response_rate + '%');
-                            layer.on({
-                                mouseover: highlightFeature,
-                                mouseout: resetHighlight,
-                                {#                            click: zoomToFeature#}
+                        if (layer_type == 'survey') {
+                            geojson = L.geoJson(data, {
+                                onEachFeature: function (feature, layer) {
+                                    layer.bindPopup(feature.properties.area_name + '<br>' + feature.properties.response_rate + '%');
+                                    layer.on({
+                                        mouseover: highlightFeature,
+                                        mouseout: resetHighlight
+                                    });
+                                },
+                                style: function (feature) {
+                                    return {
+                                        fillColor: getColor(feature.properties.response_rate),
+                                        weight: 2,
+                                        opacity: 1,
+                                        color: 'white',
+                                        dashArray: '3',
+                                        fillOpacity: 0.7
+                                    };
+                                }
+
                             });
-                        },
-                        style: function (feature) {
-                            return {
-                                fillColor: getColor(feature.properties.response_rate),
-                                weight: 2,
-                                opacity: 1,
-                                color: 'white',
-                                dashArray: '3',
-                                fillOpacity: 0.7
-                            };
+                            geojson.addTo(map);
+                            map_layers[data['properties']['name']] = geojson;
                         }
 
-                    });
-                    geojson.addTo(map);
-                    map_layers[data['properties']['name']] = geojson;
-                }
-            });
-
+                        if (layer_type == 'wiserd_layer') {
+                            geojson = L.geoJson(data, {
+{#                                style: function (feature) {#}
+{#                                    return {#}
+{#                                        fillColor: '#AA2200',#}
+{#                                        weight: 2,#}
+{#                                        opacity: 1,#}
+{#                                        color: 'AA2200',#}
+{#                                        dashArray: '3',#}
+{#                                        fillOpacity: 0.7#}
+{#                                    };#}
+{#                                }#}
+                            });
+                            geojson.addTo(map);
+                            map_layers[data['properties']['name']] = geojson;
+                        }
+                    }
+                });
+            }
             var map_layers = {};
 
             var legend = L.control({position: 'bottomright'});
@@ -371,7 +424,7 @@
 
                     labels.push(
                             '<i style="background:' + getColor(from + 1) + '"></i> ' +
-                            from + (to ? '&ndash;' + to + '%': '%+'));
+                            from + ((to-1) ? '&ndash;' + (to-1) + '%': '%+'));
                 }
 
                 div.innerHTML = labels.join('<br>');
@@ -388,6 +441,20 @@
 
 
             var featureGroup = L.featureGroup().addTo(map);
+
+            map.addControl( new L.Control.Search({
+                url: 'http://nominatim.openstreetmap.org/search?format=json&q={s}',
+                jsonpParam: 'json_callback',
+                propertyName: 'display_name',
+                propertyLoc: ['lat','lon'],
+                circleLocation: false,
+                markerLocation: true,
+                autoType: false,
+                autoCollapse: true,
+                minLength: 2,
+                zoom:10
+            }) );
+
             var drawControl = new L.Control.Draw({
                 edit: {
                     featureGroup: featureGroup
@@ -400,7 +467,7 @@
                             color : '#888888'
                         }
                     },
-                    circle: false,
+                    circle: true,
                     marker: false
                 }
             }).addTo(map);

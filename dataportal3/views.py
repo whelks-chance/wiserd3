@@ -79,9 +79,7 @@ def map_search(request):
     print request.GET
 
     capabilities = requests.get('http://inspire.wales.gov.uk/maps/wms?request=getCapabilities&version=1.3.0')
-    # print capabilities.text
     soup = BeautifulSoup(capabilities.text)
-
     x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
     b = []
     for y in x:
@@ -90,11 +88,15 @@ def map_search(request):
             'name': [z.string for z in y.findAll('title')][0]
         })
     surveys = request.GET.getlist('surveys', [])
+
+    wiserd_layers = models.GeometryColumns.objects.using('survey').filter(f_table_schema='spatialdata')
+
     return render(request, 'map.html',
                   {
                       'searches': get_user_searches(request),
                       'surveys': json.dumps(surveys),
-                      'wms_layers': b
+                      'wms_layers': b,
+                      'wiserd_layers': wiserd_layers
                   },
                   context_instance=RequestContext(request))
 
@@ -154,31 +156,55 @@ def edit_metadata(request):
 
 @csrf_exempt
 def get_geojson(request):
-    surveys = request.POST.getlist('surveys[]')
 
-    q_obj_sids = [Q(surveyid__istartswith=sid) for sid in surveys]
-    qs = reduce(operator.or_, q_obj_sids)
-    spatial_link = models.SurveySpatialLink.objects.using('survey').filter(qs).values('spatial_id', 'admin_areas', 'surveyid')[0]
+    print request.POST
 
     time1 = datetime.now()
-    # shape_table_object = models.XSidLiwhh2005Ua.objects.using('survey_gis').all()
+    layer_type = request.POST.get('layer_type')
 
-    spatial_table_name = str(spatial_link['spatial_id']).replace('_', '').strip()
-    spatial_table = apps.get_model(
-        app_label='dataportal3',
-        model_name=spatial_table_name
-    )
-    shape_table_object = spatial_table.objects.using('survey_gis').all()
+    if layer_type == 'wiserd_layer':
+        wiserd_layer = request.POST.getlist('layer_names[]')[0]
+        spatial_table_name = str(wiserd_layer).replace('_', '').strip()
+        wiserd_layer_model = apps.get_model(
+            app_label='dataportal3',
+            model_name=wiserd_layer
+        )
+        shape_table_object = wiserd_layer_model.objects.using('survey_spatialdata').all()
 
-    geojson_layers = shape_table_object.extra(
-        select={
-            'geometry': 'ST_AsGeoJSON("the_geom")'
-        }
-    ).values('area_name', 'response_rate', 'geometry')
+        geojson_layers = shape_table_object.extra(
+            select={
+                'geometry': 'ST_AsGeoJSON("the_geom")'
+            }
+        ).values('gid', 'id', 'geometry')
+
+    if layer_type == 'survey':
+        surveys = request.POST.getlist('layer_names')[0]
+
+        print surveys
+
+        q_obj_sids = [Q(surveyid__istartswith=sid) for sid in surveys]
+        qs = reduce(operator.or_, q_obj_sids)
+        spatial_link = models.SurveySpatialLink.objects.using('survey').filter(qs).values('spatial_id', 'admin_areas', 'surveyid')[0]
+
+        # shape_table_object = models.XSidLiwhh2005Ua.objects.using('survey_gis').all()
+
+        spatial_table_name = str(spatial_link['spatial_id']).replace('_', '').strip()
+        spatial_table = apps.get_model(
+            app_label='dataportal3',
+            model_name=spatial_table_name
+        )
+        shape_table_object = spatial_table.objects.using('survey_gis').all()
+
+        geojson_layers = shape_table_object.extra(
+            select={
+                'geometry': 'ST_AsGeoJSON("the_geom")'
+            }
+        ).values('area_name', 'response_rate', 'geometry')
 
     # print type(geojson_layers)
     # shape_list = list(geojson_layers)
     shape_list = geojson_layers
+    print geojson_layers.query
 
     # print shape_list
     # print type(shape_list[0])
@@ -187,17 +213,17 @@ def get_geojson(request):
     print time2 - time1
 
     shape_feature_list = [
-        # {
-        #     "type": "Feature",
-        #     "geometry": {
-        #         "type": "Point",
-        #         "coordinates": [-3.5, 51.5]
-        #     },
-        #     "properties": {
-        #         "name": "null island",
-        #         "marker-symbol": "bus"
-        #     }
-        # }
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-3.5, 51.5]
+            },
+            "properties": {
+                "name": "null island",
+                "marker-symbol": "bus"
+            }
+        }
     ]
 
     for shape in shape_list:
@@ -207,11 +233,12 @@ def get_geojson(request):
                 shape_properties[key] = shape[key]
                 # print shape[key], shape_properties[key]
 
-        rgb_int = float(shape_properties['response_rate']) * 2.54
-        rgb_tuple = (rgb_int, rgb_int, rgb_int)
-        hex_code = '#%02x%02x%02x' % rgb_tuple
-        shape_properties['color'] = hex_code
-        shape_properties['opacity'] = 0.1
+        if 'response_rate' in shape_properties:
+            rgb_int = float(shape_properties['response_rate']) * 2.54
+            rgb_tuple = (rgb_int, rgb_int, rgb_int)
+            hex_code = '#%02x%02x%02x' % rgb_tuple
+            shape_properties['color'] = hex_code
+            shape_properties['opacity'] = 0.1
 
         print datetime.now() - time2
 

@@ -135,11 +135,19 @@
                     delete wms_layers[btn_layer_name];
                 } else {
                     $(toggle_button).addClass('wms_layer_active');
-                    var layer_image_url = 'http://inspire.wales.gov.uk/maps/wms?LAYERS={0}&TRANSPARENT=TRUE&ENV=fill%3AE01B4C&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&FORMAT=image%2Fpng&SRS=EPSG%3A27700&BBOX=50081.39338979,157381.07037517,509398.34938979,385981.21437517&WIDTH=1302&HEIGHT=648'.format(btn_layer_name);
-                    var imageBounds = [[53.5, -7], [51, -0.5]];
-                    var wms_layer = L.imageOverlay(layer_image_url, imageBounds);
-                    wms_layers[btn_layer_name] = wms_layer;
-                    wms_layer.addTo(map);
+{#                    var layer_image_url = 'http://inspire.wales.gov.uk/maps/wms?LAYERS={0}&TRANSPARENT=TRUE&ENV=fill%3AE01B4C&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&FORMAT=image%2Fpng&SRS=EPSG%3A27700&BBOX=50081.39338979,157381.07037517,509398.34938979,385981.21437517&WIDTH=1302&HEIGHT=648'.format(btn_layer_name);#}
+{#                    var imageBounds = [[53.5, -7], [51, -0.5]];#}
+{#                    var wms_layer = L.imageOverlay(layer_image_url, imageBounds);#}
+
+
+                    var inspire = L.tileLayer.wms("http://inspire.wales.gov.uk/maps/wms", {
+                        layers: btn_layer_name,
+                        format: 'image/png',
+                        transparent: true,
+                        attribution: "inspire"
+                    });
+                    wms_layers[btn_layer_name] = inspire;
+                    inspire.addTo(map);
                 }
             }
 
@@ -252,7 +260,8 @@
 
 
 
-            var map = L.map('map_div').setView([51.53181, -3.24687], 10);
+            var map = L.map('map_div').setView([51.53181, -3.24687], 8);
+{#            var map = L.map('map_div').setView([193734, 198286], 8);#}
 
             L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {
                 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
@@ -277,7 +286,7 @@
             info.update = function (props) {
                 this._div.innerHTML = '<div style="min-height: 10%"><h4>Region Response Rate</h4>' +  (props ?
                 '<b>' + props.area_name + '</b><br />' + props.response_rate + '%'
-                        : 'Hover over a region') + '<h4></h4></div>';
+                        : 'Hover over a region');
             };
 
             info.addTo(map);
@@ -390,16 +399,23 @@
 
                         if (layer_type == 'wiserd_layer') {
                             geojson = L.geoJson(data, {
-{#                                style: function (feature) {#}
-{#                                    return {#}
-{#                                        fillColor: '#AA2200',#}
-{#                                        weight: 2,#}
-{#                                        opacity: 1,#}
-{#                                        color: 'AA2200',#}
-{#                                        dashArray: '3',#}
-{#                                        fillOpacity: 0.7#}
-{#                                    };#}
-{#                                }#}
+                                onEachFeature: function (feature, layer) {
+                                    layer.bindPopup('Clicked a thing');
+{#                                    layer.on({#}
+{#                                        mouseover: highlightFeature,#}
+{#                                        mouseout: resetHighlight#}
+{#                                    });#}
+                                },
+                                style: function (feature) {
+                                    return {
+                                        fillColor: '#AA2200',
+                                        weight: 2,
+                                        opacity: 1,
+                                        color: 'orangered',
+                                        dashArray: '3',
+                                        fillOpacity: 0.7
+                                    };
+                                }
                             });
                             geojson.addTo(map);
                             map_layers[data['properties']['name']] = geojson;
@@ -427,7 +443,7 @@
                             from + ((to-1) ? '&ndash;' + (to-1) + '%': '%+'));
                 }
 
-                div.innerHTML = labels.join('<br>');
+                div.innerHTML = labels.join('<br>') + '<h4><a href="#">Edit</a></h4></div>';
                 return div;
             };
 

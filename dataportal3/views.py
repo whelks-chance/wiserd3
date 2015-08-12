@@ -173,7 +173,7 @@ def get_geojson(request):
 
         geojson_layers = shape_table_object.extra(
             select={
-                'geometry': 'ST_AsGeoJSON("the_geom")'
+                'geometry': 'ST_AsGeoJSON(ST_Transform(ST_SetSRID("the_geom", 27700),4326))'
             }
         ).values('gid', 'id', 'geometry')
 

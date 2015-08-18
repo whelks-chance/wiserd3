@@ -287,18 +287,6 @@ def survey_questions_results(request, question_id):
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 
-def search_survey_question(request):
-    search_terms = request.GET.get('search_terms', '')
-
-    print pprint.pformat(request.GET)
-
-    ors = search_terms.split(',')
-    api_data = text_search(search_terms)
-    api_data['url'] = request.get_full_path()
-    return render(request, 'index.html',
-                  {'data': api_data},
-                  context_instance=RequestContext(request))
-
 
 def text_search(search_terms):
     fields = ("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "type", "notes", "updated")
@@ -311,6 +299,7 @@ def text_search(search_terms):
     search_terms = search_terms.replace('+', ' & ')
 
     questions_models = old_models.Questions.objects.search(search_terms, raw=True).using('survey').values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    print questions_models.query
 
     data = []
     for question_model in questions_models:

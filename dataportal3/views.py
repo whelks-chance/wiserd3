@@ -1,13 +1,9 @@
-import ast
 from datetime import datetime
 import json
-import pprint
 from BeautifulSoup import BeautifulSoup
 from django.apps import apps
 from django.contrib import auth
 from django.contrib.auth.models import AnonymousUser
-from django.contrib.gis.serializers import geojson
-from django.core.serializers import serialize
 from django.db.models import Q
 from django.http.response import HttpResponse
 from django.shortcuts import render
@@ -17,12 +13,30 @@ import operator
 from dataportal3 import models
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches
 import requests
+from old.views import text_search, date_handler
 
 
 def index(request):
     return render(request, 'index.html',
                   {'searches': get_user_searches(request)},
                   context_instance=RequestContext(request))
+
+
+def search_survey_question_gui(request):
+    search_terms = request.GET.get('search_terms', '')
+    ors = search_terms.split(',')
+    return render(request, 'search.html', {
+        'searches': get_user_searches(request),
+        'search_terms': search_terms,
+        'url': request.get_full_path()
+    }, context_instance=RequestContext(request))
+
+
+def search_survey_question_api(request):
+    search_terms = request.GET.get('search_terms', '')
+    api_data = text_search(search_terms)
+    api_data['url'] = request.get_full_path()
+    return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 
 def blank(request):
@@ -90,13 +104,19 @@ def map_search(request):
     surveys = request.GET.getlist('surveys', [])
 
     wiserd_layers = models.GeometryColumns.objects.using('survey').filter(f_table_schema='spatialdata')
+    wiserd_layers_clean = []
+    for w_layer in wiserd_layers:
+        wiserd_layers_clean.append({
+            'display_name': w_layer.f_table_name.replace('_', ' ').title(),
+            'table_name': w_layer.f_table_name
+        })
 
     return render(request, 'map.html',
                   {
                       'searches': get_user_searches(request),
                       'surveys': json.dumps(surveys),
                       'wms_layers': b,
-                      'wiserd_layers': wiserd_layers
+                      'wiserd_layers': wiserd_layers_clean
                   },
                   context_instance=RequestContext(request))
 
@@ -175,7 +195,7 @@ def get_geojson(request):
             select={
                 'geometry': 'ST_AsGeoJSON(ST_Transform(ST_SetSRID("the_geom", 27700),4326))'
             }
-        ).values('gid', 'id', 'geometry')
+        ).values('geometry')
 
     if layer_type == 'survey':
         surveys = request.POST.getlist('layer_names')[0]
@@ -213,17 +233,17 @@ def get_geojson(request):
     print time2 - time1
 
     shape_feature_list = [
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-3.5, 51.5]
-            },
-            "properties": {
-                "name": "null island",
-                "marker-symbol": "bus"
-            }
-        }
+        # {
+        #     "type": "Feature",
+        #     "geometry": {
+        #         "type": "Point",
+        #         "coordinates": [-3.5, 51.5]
+        #     },
+        #     "properties": {
+        #         "name": "null island",
+        #         "marker-symbol": "bus"
+        #     }
+        # }
     ]
 
     for shape in shape_list:

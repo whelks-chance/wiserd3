@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
-# from djorm_pgfulltext.models import SearchManager
-# from djorm_pgfulltext.fields import VectorField
+from djorm_pgfulltext.models import SearchManager
+from djorm_pgfulltext.fields import VectorField
 import uuid
 from django.contrib.gis.db import models
 from django.contrib.auth.models import User
@@ -153,16 +153,16 @@ class Question(models.Model):
     user_id = models.ForeignKey('UserDetail', blank=True, null=True)
     created = models.DateTimeField(blank=True, null=True)
     updated = models.DateTimeField(blank=True, null=True)
-    qtext_index = models.TextField(blank=True, null=True)  # This field type is a guess.
+    # qtext_index = models.TextField(blank=True, null=True)  # This field type is a guess.
 
-    # qtext_index = VectorField()
-    #
-    # objects = SearchManager(
-    #     fields = ('literal_question_text', 'notes'),
-    #     config = 'pg_catalog.english', # this is default
-    #     search_field = 'qtext_index', # this is default
-    #     auto_update_search_field = True
-    # )
+    qtext_index = VectorField()
+
+    objects = SearchManager(
+        fields = ('literal_question_text', 'notes'),
+        config = 'pg_catalog.english', # this is default
+        search_field = 'qtext_index', # this is default
+        auto_update_search_field = True
+    )
 
     class Meta:
         db_table = 'question'
@@ -1403,20 +1403,20 @@ class Aberystwyth_Locality_Dissolved(models.Model):
 
 class Bangor_Locality_Dissolved(models.Model):
     gid = models.IntegerField(primary_key=True)
-    id = models.CharField(max_length=254, blank=True, null=True)
+    area_name = models.CharField(max_length=254, blank=True, null=True)
     the_geom = models.GeometryField(blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'spatialdata.\"Bangor_Locality_Dissolved\"'
+        db_table = 'Bangor_Locality_Dissolved'
 
 
 class Heads_of_the_Valleys(models.Model):
     gid = models.IntegerField(primary_key=True)
-    id = models.CharField(max_length=254, blank=True, null=True)
+    area_name = models.CharField(max_length=254, blank=True, null=True)
     the_geom = models.GeometryField(blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'spatialdata.\"Heads_of_the_Valleys\"'
+        db_table = 'Heads_of_the_Valleys'
 

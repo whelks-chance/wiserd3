@@ -264,6 +264,24 @@
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Recent Search Results<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
+                                    <a href="#"> Text Results<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        {% for s in searches.text|slice:":10" %}
+                                            {% if s.type == 'text' %}
+                                                <li>
+                                                    <a href="{% url 'search_survey_question_gui' %}?search_terms={{ s.query }}">
+                                                        {% if s.readable_name|length > 0 %}
+                                                            {{ s.type }} - {{ s.readable_name }}
+                                                        {% else %}
+                                                            {{ s.type }} - {{ s.id }}
+                                                        {% endif %}
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li>
                                     <a href="#"> Spatial Results<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         {% for s in searches.spatial|slice:":10" %}

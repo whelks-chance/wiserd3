@@ -14,6 +14,7 @@ from dataportal3 import models
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches
 import requests
 from old.views import text_search, date_handler
+from django.core.cache import cache
 
 
 def index(request):
@@ -34,6 +35,19 @@ def search_survey_question_gui(request):
 
 def search_survey_question_api(request):
     search_terms = request.GET.get('search_terms', '')
+
+    print request.user
+    user = auth.get_user(request)
+    if type(user) is AnonymousUser:
+        user = get_anon_user()
+    user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
+
+    search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
+                                                                       query=search_terms,
+                                                                       readable_name=search_terms,
+                                                                       type='text')
+    search.save()
+
     api_data = text_search(search_terms)
     api_data['url'] = request.get_full_path()
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
@@ -287,3 +301,39 @@ def get_geojson(request):
     end_result = json.dumps(geojson_feature)
     print datetime.now() - time1
     return HttpResponse(end_result, content_type="application/json")
+
+
+def file_management(request):
+    return render(request, 'file_management.html',
+                  {'searches': get_user_searches(request)},
+                  context_instance=RequestContext(request))
+
+# TODO dont be csrf exempt, check logged in
+@csrf_exempt
+def upload_shapefile(request):
+    print request.POST
+    print request.GET
+    print request.FILES
+
+    id = request.POST['id']
+
+    path = '/tmp/portal/shapefiles/%s' % id
+
+    f = request.FILES['shapefile_upload']
+
+    destination = open(path, 'wb+')
+
+    for chunk in f.chunks():
+
+        destination.write(chunk)
+
+    destination.close()
+
+    # return status to client
+
+
+@csrf_exempt
+def get_upload_progress(request):
+    cache_key = "%s_%s" % (request.META['REMOTE_ADDR'], request.GET['X-Progress-ID'])
+    data = cache.get(cache_key)
+    return HttpResponse(json.dumps(data))

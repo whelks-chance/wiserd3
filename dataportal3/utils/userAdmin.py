@@ -11,6 +11,9 @@ def get_anon_user():
         user = User.objects.get(username='Anon Y Mouse')
     except:
         user = User.objects.create_user(username='Anon Y Mouse')
+
+    #     check for UserProfile
+    user_profile, created = UserProfile.objects.get_or_create(user=user)
     return user
 
 
@@ -26,6 +29,7 @@ def get_user_searches(request):
     spatial_searches = []
     survey_searches = []
     question_searches = []
+    text_searches = []
     for search in searches:
         if search.type == 'spatial':
             spatial_searches.append(search)
@@ -33,9 +37,12 @@ def get_user_searches(request):
             survey_searches.append(search)
         if search.type == 'question':
             question_searches.append(search)
+        if search.type == 'text':
+            text_searches.append(search)
     search_by_type = {
         'spatial': spatial_searches,
         'survey': survey_searches,
-        'question': question_searches
+        'question': question_searches,
+        'text': text_searches
     }
     return search_by_type

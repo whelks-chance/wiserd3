@@ -117,13 +117,16 @@ def map_search(request):
         })
     surveys = request.GET.getlist('surveys', [])
 
-    wiserd_layers = models.GeometryColumns.objects.using('survey').filter(f_table_schema='spatialdata')
     wiserd_layers_clean = []
-    for w_layer in wiserd_layers:
-        wiserd_layers_clean.append({
-            'display_name': w_layer.f_table_name.replace('_', ' ').title(),
-            'table_name': w_layer.f_table_name
-        })
+    try:
+        wiserd_layers = models.GeometryColumns.objects.using('survey').filter(f_table_schema='spatialdata')
+        for w_layer in wiserd_layers:
+            wiserd_layers_clean.append({
+                'display_name': w_layer.f_table_name.replace('_', ' ').title(),
+                'table_name': w_layer.f_table_name
+            })
+    except:
+        pass
 
     return render(request, 'map.html',
                   {

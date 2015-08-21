@@ -64,7 +64,7 @@ ROOT_URLCONF = 'wiserd3.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates', 'templates/bootstrap_base'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,11 +132,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = './dataportal3/static/'
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'templates'),
-    os.path.join(BASE_DIR,  'templates/bootstrap_base'),
-
-)
+# TEMPLATE_DIRS = (
+#     os.path.join(BASE_DIR,  'templates'),
+#     os.path.join(BASE_DIR,  'templates/bootstrap_base'),
+#
+# )
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

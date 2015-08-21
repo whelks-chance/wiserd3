@@ -1,5 +1,5 @@
+from django.apps import apps
 from django.contrib import admin
-from django.db.models.loading import get_models, get_app
 
 # from dataportal3 import models
 # from old import models
@@ -12,14 +12,15 @@ from django.db.models.loading import get_models, get_app
 
 # admin.site.register(Tag, ImageSanityAdmin)
 
-for model in get_models(get_app('dataportal3')):
+
+for model in apps.get_app_config('dataportal3').get_models():
     try:
         admin.site.register(model)
     except:
         pass
 
 
-for model in get_models(get_app('old')):
+for model in apps.get_app_config('old').get_models():
     try:
         admin.site.register(model)
     except:

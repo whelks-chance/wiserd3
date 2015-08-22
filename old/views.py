@@ -210,7 +210,9 @@ def has_numbers(input_string):
 @csrf_exempt
 def survey_dc_data(request, wiserd_id):
     wiserd_id = wiserd_id.strip()
-    survey_dc_models = old_models.DcInfo.objects.using('survey').all().filter(identifier=wiserd_id).values("identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "source", "language", "relation", "coverage", "rights", "user_id", "created", "updated")
+    # survey_dc_models = old_models.DcInfo.objects.using('survey').all().filter(identifier=wiserd_id).values("identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "source", "language", "relation", "coverage", "rights", "user_id", "created", "updated")
+    survey_dc_models = models.DcInfo.objects.all().filter(identifier=wiserd_id).values("identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "source", "language", "relation", "coverage", "rights", "user_id", "created", "updated")
+
     surveys = []
     for dc_model in survey_dc_models:
         surveys.append({
@@ -250,7 +252,8 @@ def survey_questions(request, wiserd_id):
 @csrf_exempt
 def survey_metadata(request, wiserd_id):
     wiserd_id = wiserd_id.strip()
-    survey_models = old_models.Survey.objects.using('survey').all().filter(identifier=wiserd_id).values("surveyid", "identifier", "survey_title", "datacollector", "collectionstartdate", "collectionenddate", "moc_description", "samp_procedure", "collectionsituation", "surveyfrequency", "surveystartdate", "surveyenddate", "des_weighting", "samplesize", "responserate", "descriptionofsamplingerror", "dataproduct", "dataproductid", "location", "link", "notes", "user_id", "created", "updated", "long", "short_title", "spatialdata")
+    # survey_models = old_models.Survey.objects.using('survey').all().filter(identifier=wiserd_id).values("surveyid", "identifier", "survey_title", "datacollector", "collectionstartdate", "collectionenddate", "moc_description", "samp_procedure", "collectionsituation", "surveyfrequency", "surveystartdate", "surveyenddate", "des_weighting", "samplesize", "responserate", "descriptionofsamplingerror", "dataproduct", "dataproductid", "location", "link", "notes", "user_id", "created", "updated", "long", "short_title", "spatialdata")
+    survey_models = models.Survey.objects.all().filter(identifier=wiserd_id).values("surveyid", "identifier", "survey_title", "datacollector", "collectionstartdate", "collectionenddate", "moc_description", "samp_procedure", "collectionsituation", "surveyfrequency", "surveystartdate", "surveyenddate", "des_weighting", "samplesize", "responserate", "descriptionofsamplingerror", "dataproduct", "dataproductid", "location", "link", "notes", "user_id", "created", "updated", "long", "short_title", "spatialdata")
     surveys = []
     for survey_model in survey_models:
         surveys.append({
@@ -269,15 +272,25 @@ def survey_metadata(request, wiserd_id):
 @csrf_exempt
 def survey_questions_results(request, question_id):
     question_id = question_id.strip()
-    question_response_link_models = old_models.QuestionsResponsesLink.objects.using('survey').all().filter(qid=question_id).values('responseid')
     question_responses = []
-    if len(question_response_link_models):
-        question_response_models = old_models.Responses.objects.using('survey').all().filter(responseid__in=question_response_link_models).values()
-        for question_response_model in question_response_models:
+
+    # question_response_link_models = old_models.QuestionsResponsesLink.objects.using('survey').all().filter(qid=question_id).values('responseid')
+    # if len(question_response_link_models):
+    #     question_response_models = old_models.Responses.objects.using('survey').all().filter(responseid__in=question_response_link_models).values()
+    #     for question_response_model in question_response_models:
+    #         question_responses.append({
+    #             'data': question_response_model,
+    #             'question_id': question_id
+    #         })
+
+    question_response_models = models.Response.objects.all().filter(question__qid=question_id).values()
+
+    for question_response_model in question_response_models:
             question_responses.append({
                 'data': question_response_model,
                 'question_id': question_id
             })
+
     api_data = {
         'url': request.get_full_path(),
         'method': 'survey_questions_results',
@@ -285,7 +298,6 @@ def survey_questions_results(request, question_id):
         'results_count': len(question_responses),
         }
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
-
 
 
 def text_search(search_terms):
@@ -298,7 +310,9 @@ def text_search(search_terms):
     search_terms = search_terms.replace(' ', ' & ')
     search_terms = search_terms.replace('+', ' & ')
 
-    questions_models = old_models.Questions.objects.search(search_terms, raw=True).using('survey').values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    # questions_models = old_models.Questions.objects.search(search_terms, raw=True).using('survey').values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    questions_models = models.Question.objects.search(search_terms, raw=True).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+
     print questions_models.query
 
     data = []
@@ -333,10 +347,13 @@ def date_handler(obj):
 
 @csrf_exempt
 def survey_question(request, question_id):
-    questions_models = old_models.Questions.objects.using('survey').filter(qid=question_id).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    # questions_models = old_models.Questions.objects.using('survey').filter(qid=question_id).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    questions_models = models.Question.objects.filter(qid=question_id).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index", "survey__surveyid")
     data = []
     for question_model in questions_models:
         # question_model_tidy = [a.strip() for a in question_model if type(a) == 'unicode']
+        # question_model['survey'] = question_model['survey__identifier']
+
         data.append(question_model)
     api_data = {
         'url': request.get_full_path(),

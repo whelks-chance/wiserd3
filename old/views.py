@@ -232,10 +232,11 @@ def survey_dc_data(request, wiserd_id):
 def survey_questions(request, wiserd_id):
     wiserd_id = wiserd_id.strip()
 
-    survey_model_ids = old_models.Survey.objects.using('survey').all().filter(identifier=wiserd_id).values_list("surveyid", flat=True)
+    # survey_model_ids = old_models.Survey.objects.using('survey').all().filter(identifier=wiserd_id).values_list("surveyid", flat=True)
     # survey_question_link_models = old_models.SurveyQuestionsLink.objects.using('survey').all().filter(surveyid__in=survey_model_ids).values_list('qid', flat=True)
     # questions_models = old_models.Questions.objects.using('survey').filter(qid__in=survey_question_link_models).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
 
+    survey_model_ids = models.Survey.objects.all().filter(identifier=wiserd_id).values_list("surveyid", flat=True)
     questions_models = models.Survey.objects.get(identifier=wiserd_id).question_set.all().values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
 
     data = []

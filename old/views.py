@@ -231,12 +231,17 @@ def survey_dc_data(request, wiserd_id):
 @csrf_exempt
 def survey_questions(request, wiserd_id):
     wiserd_id = wiserd_id.strip()
+
     survey_model_ids = old_models.Survey.objects.using('survey').all().filter(identifier=wiserd_id).values_list("surveyid", flat=True)
-    survey_question_link_models = old_models.SurveyQuestionsLink.objects.using('survey').all().filter(surveyid__in=survey_model_ids).values_list('qid', flat=True)
-    questions_models = old_models.Questions.objects.using('survey').filter(qid__in=survey_question_link_models).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    # survey_question_link_models = old_models.SurveyQuestionsLink.objects.using('survey').all().filter(surveyid__in=survey_model_ids).values_list('qid', flat=True)
+    # questions_models = old_models.Questions.objects.using('survey').filter(qid__in=survey_question_link_models).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+
+    questions_models = models.Survey.objects.get(identifier=wiserd_id).question_set.all().values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+
     data = []
     for question_model in questions_models:
         # question_model_tidy = [a.strip() for a in question_model if type(a) == 'unicode']
+        question_model['type'] = question_model['type__q_type_text']
         data.append(question_model)
     api_data = {
         'url': request.get_full_path(),
@@ -283,13 +288,16 @@ def survey_questions_results(request, question_id):
     #             'question_id': question_id
     #         })
 
-    question_response_models = models.Response.objects.all().filter(question__qid=question_id).values()
+    question_response_models = models.Response.objects.all().filter(question__qid=question_id).values(
+        "responseid", "responsetext", "response_type__response_name", "routetype", "table_ids",
+        "computed_var", "checks", "route_notes", "user_id", "created", "updated")
 
     for question_response_model in question_response_models:
-            question_responses.append({
-                'data': question_response_model,
-                'question_id': question_id
-            })
+        question_response_model['response_type'] = question_response_model['response_type__response_name']
+        question_responses.append({
+            'data': question_response_model,
+            'question_id': question_id
+        })
 
     api_data = {
         'url': request.get_full_path(),
@@ -348,12 +356,11 @@ def date_handler(obj):
 @csrf_exempt
 def survey_question(request, question_id):
     # questions_models = old_models.Questions.objects.using('survey').filter(qid=question_id).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
-    questions_models = models.Question.objects.filter(qid=question_id).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index", "survey__surveyid")
+    questions_models = models.Question.objects.filter(qid=question_id).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index", "survey__surveyid")
     data = []
     for question_model in questions_models:
         # question_model_tidy = [a.strip() for a in question_model if type(a) == 'unicode']
-        # question_model['survey'] = question_model['survey__identifier']
-
+        question_model['type'] = question_model['type__q_type_text']
         data.append(question_model)
     api_data = {
         'url': request.get_full_path(),

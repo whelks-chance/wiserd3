@@ -6,6 +6,7 @@ import uuid
 from django.contrib.gis.db import models
 from django.contrib.auth.models import User
 
+
 class UserRole(models.Model):
     name = models.CharField(max_length=30)
 
@@ -46,6 +47,7 @@ class GeometryColumns(models.Model):
 
     class Meta:
         db_table = 'geometry_columns'
+
 
 class DcInfo(models.Model):
     identifier = models.CharField(primary_key=True, max_length=50)

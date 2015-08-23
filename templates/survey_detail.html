@@ -45,7 +45,25 @@
                     'style': 'form',
                     'url': "{% url 'survey_dc_data' survey_id %}",
                     'columns': [],
-                    'fields': [{'display': true, 'displayName': 'Identifier', 'id': 'identifier'}, {'display': true, 'displayName': 'Title', 'id': 'title'}, {'display': true, 'displayName': 'Creator', 'id': 'creator'}, {'display': true, 'displayName': 'Subject', 'id': 'subject'}, {'display': true, 'displayName': 'Description', 'id': 'description'}, {'display': true, 'displayName': 'Publisher', 'id': 'publisher'}, {'display': true, 'displayName': 'Contributor', 'id': 'contributor'}, {'display': true, 'displayName': 'Date', 'id': 'date'}, {'display': true, 'displayName': 'Type', 'id': 'type'}, {'display': true, 'displayName': 'Format', 'id': 'format'}, {'display': true, 'displayName': 'Source', 'id': 'source'}, {'display': true, 'displayName': 'Language', 'id': 'language'}, {'display': true, 'displayName': 'Relation', 'id': 'relation'}, {'display': true, 'displayName': 'Coverage', 'id': 'coverage'}, {'display': true, 'displayName': 'Rights', 'id': 'rights'}, {'display': false, 'displayName': 'User ID', 'id': 'user_id'}, {'display': true, 'displayName': 'Created', 'id': 'created'}, {'display': true, 'displayName': 'Updated', 'id': 'updated'}]
+                    'fields': [
+                        {'display': true, 'displayName': 'Identifier', 'id': 'identifier'},
+                        {'display': true, 'displayName': 'Title', 'id': 'title'},
+                        {'display': true, 'displayName': 'Creator', 'id': 'creator'},
+                        {'display': true, 'displayName': 'Subject', 'id': 'subject'},
+                        {'display': true, 'displayName': 'Description', 'id': 'description'},
+                        {'display': true, 'displayName': 'Publisher', 'id': 'publisher'},
+                        {'display': true, 'displayName': 'Contributor', 'id': 'contributor'},
+                        {'display': true, 'displayName': 'Date', 'id': 'date'},
+                        {'display': true, 'displayName': 'Type', 'id': 'type'},
+                        {'display': true, 'displayName': 'Format', 'id': 'format'},
+                        {'display': true, 'displayName': 'Source', 'id': 'source'},
+                        {'display': true, 'displayName': 'Language', 'id': 'language'},
+                        {'display': true, 'displayName': 'Relation', 'id': 'relation'},
+                        {'display': true, 'displayName': 'Coverage', 'id': 'coverage'},
+                        {'display': true, 'displayName': 'Rights', 'id': 'rights'},
+                        {'display': false, 'displayName': 'User ID', 'id': 'user_id'},
+                        {'display': true, 'displayName': 'Created', 'id': 'created'},
+                        {'display': true, 'displayName': 'Updated', 'id': 'updated'}]
                 },
                 'question':{
                     'title': 'Question',
@@ -86,6 +104,8 @@
                 url: "{% url 'survey_metadata' survey_id %}",
                 type: 'POST',
                 success: function(data) {
+                    $('#survey_title_header').html(data['search_result_data'][0]['data']['survey_title']);
+
                     var dataContent = '';
                     for (var j = 0; j < survey_description['tabs']['survey']['fields'].length; j++) {
                         if (survey_description['tabs']['survey']['fields'][j]['display']) {
@@ -145,7 +165,7 @@
                         "targets": -3,
                         "data": null,
                         "render": function ( data, type, full, meta ) {
-                            if (data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {
+                            if (data['link_from'] != null && data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {
                                 return "<div class='btn btn-info search_from'>Previous</div>";
                             } else {
                                 return ""
@@ -156,7 +176,7 @@
                         "targets": -2,
                         "data": null,
                         "render": function ( data, type, full, meta ) {
-                            if (data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {
+                            if (data['subof'] != null && data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {
                                 return "<div class='btn btn-info search_parent'>Parent</div>";
                             } else {
                                 return ""
@@ -215,17 +235,29 @@
                         field, display_name, value
                 );
             } else if (type == 'link') {
-                return ('<div class="control-group">' +
-                '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
-                '<div class="controls">' +
-                '<div class="col-sm-8" name="text_input_{0}" ' +
-                'style="padding-top: 4px; padding-bottom: 4px; border: 1px solid rgb(169, 169, 169); ' +
-                'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; ' +
-                'white-space: -o-pre-wrap; word-wrap: break-word;" ' +
-                'id="text_input_{0}" size="20" value="{2}"><a href="{2}" target="_blank">{2}</a></div>' +
-                '</div></div>').format(
+
+                var link_formatted = '<div class="control-group">' +
+                        '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
+                        '<div class="controls">';
+
+                if (value != 'N/A') {
+
+                    link_formatted += '<div class="col-sm-8" name="text_input_{0}" ' +
+                    'style="padding-top: 4px; padding-bottom: 4px; border: 1px solid rgb(169, 169, 169); ' +
+                    'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; ' +
+                    'white-space: -o-pre-wrap; word-wrap: break-word;" ' +
+                    'id="text_input_{0}" size="20" value="{2}">' +
+                    '<a href="{2}" target="_blank">{2}</a>';
+                } else {
+                    link_formatted += '<textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input" name="text_input_{0}" ' +
+                    'id="text_input_{0}" size="20" value="{2}">{2}</textarea>';
+                }
+                link_formatted += '</div></div></div>';
+
+                return (link_formatted).format(
                         field, display_name, value
                 );
+
             } else {
                 return ('<div class="control-group">' +
                 '<label for="text_input_{0}" class="control-label col-sm-6">{1}</label>' +
@@ -244,7 +276,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Survey Details for {{ survey_id }}</h1>
+            <h1 class="page-header" id="survey_title_header">Survey Details for {{ survey_id }}</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>

@@ -65,6 +65,8 @@
                 url: "{% url 'survey_single_question' question_id %}",
                 type: 'POST',
                 success: function(data) {
+                    $('#question_number_header').html(data['search_result_data'][0]['questionnumber']);
+
                     var dataContent = '';
                     for (var j = 0; j < question_description['tabs']['question']['fields'].length; j++) {
                         if (question_description['tabs']['question']['fields'][j]['display']) {
@@ -209,7 +211,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Question Details for {{ question_id }}</h1>
+            <h1 class="page-header" id="question_number_header">Question Details for {{ question_id }}</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>

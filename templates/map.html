@@ -27,8 +27,12 @@
 
 
     {#  local mapbox draw buttons  #}
-    <link rel="stylesheet" type="text/css" href="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.css' %}"/>
-    <script type="text/javascript" src="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.js' %}"></script>
+{#    <link rel="stylesheet" type="text/css" href="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.css' %}"/>#}
+{#    <script type="text/javascript" src="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.js' %}"></script>#}
+
+    {#  local leaflet draw - with touch!  #}
+    <link rel="stylesheet" type="text/css" href="{% static 'Leaflet.draw-master/dist/leaflet.draw.css' %}"/>
+    <script type="text/javascript" src="{% static 'Leaflet.draw-master/dist/leaflet.draw.js' %}"></script>
 
     {#    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js'></script>#}
     <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js' %}"></script>

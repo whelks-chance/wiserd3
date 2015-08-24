@@ -59,7 +59,12 @@
             function attach_map_survey_buttons() {
                 $('#spatial_results').find('tbody').on('click', '.map_survey', function () {
                     var data = res_table.row($(this).parents('tr')).data();
-                    window.location.href = "map?surveys=" + data['survey_id'];
+                    var url_params = $.param({'surveys': data['survey_id'], 'area_names': data['area']});
+{#                    window.location.href = "map?surveys=" + data['survey_id'] ;#}
+                    var url_complete = "{% url 'map' %}" + '?' + url_params;
+{#                    alert(url_complete);#}
+                    window.location.href = url_complete;
+
                 });
             }
             attach_map_survey_buttons();

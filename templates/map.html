@@ -77,6 +77,16 @@
         .wms_layer_active {
             color: orangered;
         }
+
+        #page-wrapper {
+            padding: 0;
+        }
+
+        .scrollable_ul {
+            max-height: 15em;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
     </style>
 
 {% endblock %}
@@ -104,7 +114,7 @@
             </li>
             <li>
                 <a href="#"> WMS Layer<span class="fa arrow"></span></a>
-                <ul class="nav nav-third-level">
+                <ul class="nav nav-third-level scrollable_ul">
                     {% for wms_layer in wms_layers %}
                         <li>
                             <a href="#" data-layer_name="{{ wms_layer.tile_name }}" class="wms_toggle">
@@ -115,7 +125,7 @@
             </li>
             <li>
                 <a href="#"> WISERD Research<span class="fa arrow"></span></a>
-                <ul class="nav nav-third-level">
+                <ul class="nav nav-third-level scrollable_ul">
                     {% for wiserd_layer in wiserd_layers %}
                         <li>
                             <a href="#" data-layer_name="{{ wiserd_layer.table_name }}" class="wiserd_layer_toggle">
@@ -270,7 +280,8 @@
                     type: 'POST',
                     data: {
                         'layer_type': layer_type,
-                        'layer_names': layer_names
+                        'layer_names': layer_names,
+                        'area_names': {{ area_names|safe }}
                     },
                     success: function(data){
                         {#            $.getJSON("{% url 'get_geojson' %}", function(data) {#}
@@ -397,7 +408,10 @@
                             from + ((to-1) ? '&ndash;' + (to-1) + '%': '%+'));
                 }
 
-                div.innerHTML = labels.join('<br>') + '<h4><a href="#">Edit</a></h4></div>';
+                var div_inner = labels.join('<br>');
+{#                div_inner += '<h4><a href="#">Edit</a></h4>';#}
+                div_inner += '</div>'
+                div.innerHTML = div_inner;
                 return div;
             };
 

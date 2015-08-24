@@ -68,8 +68,13 @@ def spatial_search(request):
             lat = center_lat_lng[0]
             lng = center_lat_lng[1]
             nominatim_url = 'http://nominatim.openstreetmap.org/reverse?format=json&lat={0}&lon={1}&zoom=18&addressdetails=1'.format(lat, lng)
-            print nominatim_url
-            nominatim_request = requests.request('get', nominatim_url)
+
+            s = requests.Session()
+            s.headers.update({'referer': 'data.wiserd.ac.uk'})
+            nominatim_request = s.get(nominatim_url)
+
+            # print nominatim_url
+            # nominatim_request = requests.request('get', nominatim_url)
 
             nominatim_json = json.loads(nominatim_request.text)
             print pprint.pformat(nominatim_json)
@@ -183,7 +188,8 @@ def spatial_search(request):
                     survey_info[survey_data['survey_id']]['areas'].append(survey_data['area'])
 
                     area_list = list(set(survey_info[survey_data['survey_id']]['areas']))
-                    cleaned_list = [area for area in area_list if not has_numbers(area)]
+                    # cleaned_list = [area for area in area_list if not has_numbers(area)]
+                    cleaned_list = area_list
 
                     survey_info[survey_data['survey_id']]['area'] = ', '.join(cleaned_list)
                 else:

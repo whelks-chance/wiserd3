@@ -106,15 +106,18 @@ def tables(request):
 def map_search(request):
     print request.GET
 
-    capabilities = requests.get('http://inspire.wales.gov.uk/maps/wms?request=getCapabilities&version=1.3.0')
-    soup = BeautifulSoup(capabilities.text)
-    x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
     b = []
-    for y in x:
-        b.append({
-            'tile_name': [z.string for z in y.findAll('name')][0],
-            'name': [z.string for z in y.findAll('title')][0]
-        })
+    try:
+        capabilities = requests.get('http://inspire.wales.gov.uk/maps/wms?request=getCapabilities&version=1.3.0')
+        soup = BeautifulSoup(capabilities.text)
+        x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
+        for y in x:
+            b.append({
+                'tile_name': [z.string for z in y.findAll('name')][0],
+                'name': [z.string for z in y.findAll('title')][0]
+            })
+    except:
+        pass
     surveys = request.GET.getlist('surveys', [])
 
     wiserd_layers_clean = []
@@ -128,12 +131,15 @@ def map_search(request):
     except:
         pass
 
+    area_names = request.GET.getlist('area_names', [])
+
     return render(request, 'map.html',
                   {
                       'searches': get_user_searches(request),
                       'surveys': json.dumps(surveys),
                       'wms_layers': b,
-                      'wiserd_layers': wiserd_layers_clean
+                      'wiserd_layers': wiserd_layers_clean,
+                      'area_names': json.dumps(area_names)
                   },
                   context_instance=RequestContext(request))
 
@@ -217,6 +223,8 @@ def get_geojson(request):
     if layer_type == 'survey':
         surveys = request.POST.getlist('layer_names')[0]
 
+        area_names = request.POST.getlist('area_names[]')
+
         print surveys
 
         q_obj_sids = [Q(surveyid__istartswith=sid) for sid in surveys]
@@ -237,6 +245,12 @@ def get_geojson(request):
                 'geometry': 'ST_AsGeoJSON("the_geom")'
             }
         ).values('area_name', 'response_rate', 'geometry')
+
+        if len(area_names):
+            print 'area_names', area_names
+            geojson_layers = geojson_layers.filter(area_name__in=area_names)
+
+        print area_names
 
     # print type(geojson_layers)
     # shape_list = list(geojson_layers)

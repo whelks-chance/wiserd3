@@ -146,7 +146,7 @@ def spatial_search(request):
                 }
             ).values('area_name')
 
-            # print area_names
+            print area_names
             # cursor.execute(intersects)
             # area_names = cursor.fetchall()
 

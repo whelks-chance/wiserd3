@@ -280,8 +280,8 @@
                     type: 'POST',
                     data: {
                         'layer_type': layer_type,
-                        'layer_names': layer_names,
-                        'area_names': {{ area_names|safe }}
+                        'layer_names': layer_names
+{#                        'area_names': {{ area_names|safe }}#}
                     },
                     success: function(data){
                         {#            $.getJSON("{% url 'get_geojson' %}", function(data) {#}

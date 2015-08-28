@@ -25,8 +25,10 @@ urlpatterns = [
     url(r'^index', views.index, name='index'),
 
     url(r'^file_management', views.file_management, name='file_management'),
-    url(r'^upload_shapefile_progress', views.get_upload_progress, name='upload_shapefile_progress'),
+    # url(r'^upload_shapefile_progress', views.get_upload_progress, name='upload_shapefile_progress'),
     url(r'^upload_shapefile', views.upload_shapefile, name='upload_shapefile'),
+    url(r'^shapefile_list', views.shapefile_list, name='shapefile_list'),
+
 
     url(r'^tables', views.tables, name='tables'),
     url(r'^survey/(?P<survey_id>\S+)', views.survey_detail, name='survey_detail'),

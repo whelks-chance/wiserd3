@@ -120,7 +120,7 @@ def spatial_search(request):
         # tables = cursor.fetchall()
         # # print tables
 
-        geometry_columns = models.GeometryColumns.objects.using('survey').filter(f_table_schema='public')
+        geometry_columns = old_models.GeometryColumns.objects.using('survey').filter(f_table_schema='public')
 
         areas = []
         survey_ids = []
@@ -135,7 +135,7 @@ def spatial_search(request):
             survey_data['areas'] = []
 
             # try:
-            spatial_layer_table = apps.get_model(app_label='dataportal3', model_name=f_table_name)
+            spatial_layer_table = apps.get_model(app_label='old', model_name=f_table_name)
 
             # intersects = "SELECT area_name from " + f_table_name + \
             #              " WHERE ST_Intersects(ST_Transform(ST_GeometryFromText('" + geography_wkt + "', 27700), 4326)," + f_geometry_column + ")"
@@ -146,7 +146,7 @@ def spatial_search(request):
                 }
             ).values('area_name')
 
-            print area_names
+            # print area_names
             # cursor.execute(intersects)
             # area_names = cursor.fetchall()
 

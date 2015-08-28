@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+import uuid
 from BeautifulSoup import BeautifulSoup
 from django.apps import apps
 from django.contrib import auth
@@ -11,7 +12,9 @@ from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 import operator
 from dataportal3 import models
-from dataportal3.utils.userAdmin import get_anon_user, get_user_searches
+from dataportal3.forms import ShapefileForm
+from dataportal3.utils.ShapeFileImport import ShapeFileImport
+from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user
 import requests
 from old.views import text_search, date_handler
 from django.core.cache import cache
@@ -322,35 +325,61 @@ def get_geojson(request):
 
 def file_management(request):
     return render(request, 'file_management.html',
-                  {'searches': get_user_searches(request)},
+                  {
+                      'searches': get_user_searches(request),
+                      'shapefile_form': ShapefileForm()
+                  },
                   context_instance=RequestContext(request))
 
+
 # TODO dont be csrf exempt, check logged in
-@csrf_exempt
+# @csrf_exempt
 def upload_shapefile(request):
+    print 'got here'
     print request.POST
     print request.GET
     print request.FILES
+    print len(request.FILES)
 
-    id = request.POST['id']
+    # form = ShapefileForm(request.POST, request.FILES )
+    # print form
+    # print ShapefileForm()
+    #
+    # print form.is_valid()
 
-    path = '/tmp/portal/shapefiles/%s' % id
+    messages = []
 
-    f = request.FILES['shapefile_upload']
+    # try:
+    shapefile_upload = models.ShapeFileUpload()
+    shapefile_upload.user = get_request_user(request)
+    shapefile_upload.uuid = str(uuid.uuid4())
+    shapefile_upload.shapefile = request.FILES['file']
+    shapefile_upload.name = request.POST.get('shapefile_name', '')
+    shapefile_upload.save()
+    # except Exception as ex:
+    #     messages.append(ex)
 
-    destination = open(path, 'wb+')
+    filepath_url = shapefile_upload.shapefile.url
 
-    for chunk in f.chunks():
+    shp_import = ShapeFileImport()
+    shp_import.import_zip(filepath_url)
 
-        destination.write(chunk)
+    return render(request, 'file_management.html',
+                  {
+                      'messages': messages,
+                      'shapefile_form': ShapefileForm(),
+                      'searches': get_user_searches(request)
+                  },
+                  context_instance=RequestContext(request))
 
-    destination.close()
+# @csrf_exempt
+# def get_upload_progress(request):
+#     cache_key = "%s_%s" % (request.META['REMOTE_ADDR'], request.GET['X-Progress-ID'])
+#     data = cache.get(cache_key)
+#     return HttpResponse(json.dumps(data))
 
-    # return status to client
 
-
-@csrf_exempt
-def get_upload_progress(request):
-    cache_key = "%s_%s" % (request.META['REMOTE_ADDR'], request.GET['X-Progress-ID'])
-    data = cache.get(cache_key)
-    return HttpResponse(json.dumps(data))
+def shapefile_list(request):
+    return render(request, 'file_management.html',
+                  {'searches': get_user_searches(request)},
+                  context_instance=RequestContext(request))

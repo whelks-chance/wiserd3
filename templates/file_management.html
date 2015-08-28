@@ -3,7 +3,17 @@
 
 {% block content %}
 
+    <script src="{% static 'dropzone.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'dropzone.css' %}" />
+
     <style>
+        #dropzone { margin-bottom: 3rem; }
+
+        .dropzone { border: 2px dashed #0087F7; border-radius: 5px; background: white; }
+        .dropzone .dz-message { font-weight: 400; }
+        .dropzone .dz-message .note { font-size: 0.8em; font-weight: 200; display: block; margin-top: 1.4rem; }
+
+
         .fileUpload {
             position: relative;
             overflow: hidden;
@@ -20,61 +30,22 @@
             opacity: 0;
             filter: alpha(opacity=0);
         }
-        #hidden_iframe {
-            display: none;
-        }
+
     </style>
 
-    <script>
-        $(document).ready(function(){
-            document.getElementById("uploadBtn").onchange = function () {
-                document.getElementById("upload_file_textbox").value = this.value.replace(/^C:\\fakepath\\/, "");
-            };
+    <div class="row">
+        {% for m in messages %}
+            {{ m }}<br>
+        {% endfor %}
+    </div>
 
-            $('#X-Progress-ID').val('random string');
 
-            var options = {
-                dataType: 'xml',
-                url: '{% url 'upload_shapefile' %}?X-Progress-ID=' + $('#X-Progress-ID').val(),
-                beforeSubmit: showRequest,
-                success: showResponse
-            };
-            $('#form_upload').ajaxSubmit(options);
+    {#    <form role="form" enctype="multipart/form-data" method="POST" id="form_upload_two" >#}
+    {#        {% csrf_token %}#}
+    {#        {{ shapefile_form }}#}
+    {#        <button type="submit">Submit</button>#}
+    {#    </form>#}
 
-            function showRequest(formData, jqForm, options) {
-                // do something with formData
-                return true;
-            }
-
-            function showResponse(response) {
-                // do something with response
-            }
-
-            $('#form_upload').find('#form_submit_input').append('&lt;span id="uploadprogressbar"&gt;&lt;/span&lt;');
-            $('#form_upload').find('#uploadprogressbar').progressbar();
-
-            function startProgressBarUpdate(upload_id) {
-                $("#uploadprogressbar").fadeIn();
-
-                if(g_progress_intv != 0) {
-                    clearInterval(g_progress_intv);
-                }
-
-                g_progress_intv = setInterval(function() {
-                    $.getJSON("/get_upload_progress?X-Progress-ID=" + upload_id, function(data) {
-                        if (data == null) {
-                            $("#uploadprogressbar").progressbar(100);
-                            clearInterval(g_progress_intv);
-                            g_progress_intv = 0;
-                            return;
-                        }
-                        var percentage = Math.floor(100 * parseInt(data.uploaded) / parseInt(data.length));
-                        $("#uploadprogressbar").progressbar(percentage);
-                    });
-                }, 5000);
-            }
-        });
-    </script>
 
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
@@ -83,45 +54,30 @@
                     <h3 class="panel-title">Upload ShapeFile</h3>
                 </div>
                 <div class="panel-body">
-                    <iframe id="hidden_iframe" name="hidden_iframe" src="about:blank"></iframe>
 
-                    <form role="form" _lpchecked="1" id="form_upload"
-                          enctype="multipart/form-data" target="hidden_iframe"
-                          action="{% url 'upload_shapefile' %}" method="POST">
+
+                    {#                    <br><br><br>#}
+
+
+                    <form class="dropzone" action="{% url 'upload_shapefile' %}" role="form" id="form_upload" enctype="multipart/form-data" method="POST">
+                        {% csrf_token %}
                         <fieldset>
                             <div class="form-group input-group">
-                                <input id="upload_file_textbox" type="text" class="form-control" />
+                                <input id="entry_name" name="shapefile_name" placeholder="Name your Upload" type="text" class="text-entry form-control" />
+                            </div>
+
+                            <div class="form-group input-group">
+                                <input id="upload_file_textbox" name="upload_file_textbox" type="text" class="form-control" />
                                 <div class="input-group-btn">
                                     <div class="fileUpload btn btn-outline btn-default">
                                         <i class="fa fa-search"></i>
-                                        <input class="upload" id="uploadBtn" type="file" name="shapefile_upload" />
+                                        <input class="upload" id="uploadBtn" type="file" name="shapefile" />
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <p>
-                                    <strong>Upload progress</strong>
-                                    <span class="pull-right text-muted">0% Complete</span>
-                                </p>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info"
-                                         role="progressbar" aria-valuenow="0"
-                                         aria-valuemin="60" aria-valuemax="100" style="width: 20%">
-                                        <span class="sr-only">0% Complete</span>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="form-group">
-                                <input class="form-control" type="hidden"
-                                       id="X-Progress-ID" name="X-Progress-ID" value="">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" type="hidden" id="id" name="id" value="">
-                            </div>
-                            <div class="form-group">
-                                <input class="btn btn-lg btn-success btn-block"
-                                       id="form_submit_button" class="tp-button" type="submit" value="Submit" >
+                                <button class="btn btn-lg btn-success btn-block tp-button"
+                                        id="form_submit_button" name="submit_button" type="submit" value="Submit" >Submit</button>
                             </div>
                         </fieldset>
                     </form>
@@ -129,5 +85,74 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function(){
+
+            {#            $("#form_upload").dropzone({url: "{% url 'upload_shapefile' %}"});#}
+            {#        $(":file").filestyle({buttonBefore: true});#}
+
+            {#            $("#form_upload_two").uploadprogress({#}
+            {#                redirect_url: "{% url 'upload_shapefile' %}"#}
+            {#            });#}
+
+            document.getElementById("uploadBtn").onchange = function () {
+                document.getElementById("upload_file_textbox").value = this.value.replace(/^C:\\fakepath\\/, "");
+            };
+
+            Dropzone.options.formUpload = { // The camelized version of the ID of the form element
+
+                // The configuration we've talked about above
+                autoProcessQueue: false,
+                uploadMultiple: false,
+                parallelUploads: 1,
+                maxFiles: 1,
+
+                // The setting up of the dropzone
+                init: function() {
+                    var myDropzone = this;
+
+                    // First change the button to actually tell Dropzone to process the queue.
+                    this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
+                        // Make sure that the form isn't actually being sent.
+                        e.preventDefault();
+                        e.stopPropagation();
+                        myDropzone.processQueue();
+                    });
+
+                    // Listen to the sendingmultiple event. In this case, it's the sendingmultiple event instead
+                    // of the sending event because uploadMultiple is set to true.
+                    this.on("sendingmultiple", function() {
+                        // Gets triggered when the form is actually being sent.
+                        // Hide the success button or the complete form.
+
+                        alert('successmultiple');
+                    });
+                    this.on("successmultiple", function(files, response) {
+                        // Gets triggered when the files have successfully been sent.
+                        // Redirect user or notify of success.
+
+                        alert('successmultiple' + response);
+                    });
+                    this.on("success", function(files, response) {
+                        // Gets triggered when the files have successfully been sent.
+                        // Redirect user or notify of success.
+
+                        alert('success' + response);
+                    });
+                    this.on("errormultiple", function(files, response) {
+                        // Gets triggered when there was an error sending the files.
+                        // Maybe show form again, and notify user of error
+
+                        alert('errormultiple' + response);
+
+                    });
+                }
+
+            }
+
+        });
+    </script>
+
 
 {% endblock %}

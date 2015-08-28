@@ -143,13 +143,13 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-from django.conf import global_settings
-import django.core.files.uploadhandler
-FILE_UPLOAD_HANDLERS = ('uploadprogresscachedhandler.UploadProgressCachedHandler', ) \
-    + global_settings.FILE_UPLOAD_HANDLERS
+# from django.conf import global_settings
+# import django.core.files.uploadhandler
+# FILE_UPLOAD_HANDLERS = ('uploadprogresscachedhandler.UploadProgressCachedHandler', ) \
+#     + global_settings.FILE_UPLOAD_HANDLERS
 
-CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
-
+# CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
+MEDIA_ROOT = '/tmp/shapefiles/'
 try:
     from wiserd3.settings_local import *
 except ImportError:

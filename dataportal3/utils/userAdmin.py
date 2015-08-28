@@ -17,6 +17,16 @@ def get_anon_user():
     return user
 
 
+def get_request_user(request):
+    try:
+        user = models.User.objects.get(username=request.user)
+        dataportal_user = UserProfile.objects.get(username=user)
+        return dataportal_user
+    except Exception as e1:
+        # hack using the exception to use anonymous user if not logged in
+        return UserProfile.objects.get(user=get_anon_user())
+
+
 def get_user_searches(request):
     user = auth.get_user(request)
     if type(user) is AnonymousUser:

@@ -46,7 +46,6 @@
     {#        <button type="submit">Submit</button>#}
     {#    </form>#}
 
-
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
@@ -54,11 +53,6 @@
                     <h3 class="panel-title">Upload ShapeFile</h3>
                 </div>
                 <div class="panel-body">
-
-
-                    {#                    <br><br><br>#}
-
-
                     <form class="dropzone" action="{% url 'upload_shapefile' %}" role="form" id="form_upload" enctype="multipart/form-data" method="POST">
                         {% csrf_token %}
                         <fieldset>
@@ -66,21 +60,38 @@
                                 <input id="entry_name" name="shapefile_name" placeholder="Name your Upload" type="text" class="text-entry form-control" />
                             </div>
 
-                            <div class="form-group input-group">
-                                <input id="upload_file_textbox" name="upload_file_textbox" type="text" class="form-control" />
-                                <div class="input-group-btn">
-                                    <div class="fileUpload btn btn-outline btn-default">
-                                        <i class="fa fa-search"></i>
-                                        <input class="upload" id="uploadBtn" type="file" name="shapefile" />
-                                    </div>
-                                </div>
-                            </div>
+                                                        <div class="form-group input-group">
+                                                            <input id="upload_file_textbox" name="upload_file_textbox" type="text" class="form-control" />
+                                                            <div class="input-group-btn">
+                                                                <div class="fileUpload btn btn-outline btn-default">
+                                                                    <i class="fa fa-search"></i>
+                                                                    <input class="upload" id="uploadBtn" type="file" name="shapefile" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
                             <div class="form-group">
                                 <button class="btn btn-lg btn-success btn-block tp-button"
                                         id="form_submit_button" name="submit_button" type="submit" value="Submit" >Submit</button>
                             </div>
                         </fieldset>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3>Uploaded Files</h3>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    {% for shp in user_shapefiles %}
+                        <a class="list-group-item"><i class="fa fa-map-o fa-fw"></i>
+                            {{ shp.name }} - {{ shp.description }}
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -96,9 +107,9 @@
             {#                redirect_url: "{% url 'upload_shapefile' %}"#}
             {#            });#}
 
-            document.getElementById("uploadBtn").onchange = function () {
-                document.getElementById("upload_file_textbox").value = this.value.replace(/^C:\\fakepath\\/, "");
-            };
+{#            document.getElementById("uploadBtn").onchange = function () {#}
+{#                document.getElementById("upload_file_textbox").value = this.value.replace(/^C:\\fakepath\\/, "");#}
+{#            };#}
 
             Dropzone.options.formUpload = { // The camelized version of the ID of the form element
 

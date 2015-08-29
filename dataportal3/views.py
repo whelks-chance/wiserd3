@@ -324,9 +324,13 @@ def get_geojson(request):
 
 
 def file_management(request):
+
+    user_shapefiles = models.ShapeFileUpload.objects.filter(user=get_request_user(request))
+
     return render(request, 'file_management.html',
                   {
                       'searches': get_user_searches(request),
+                      'user_shapefiles': user_shapefiles,
                       'shapefile_form': ShapefileForm()
                   },
                   context_instance=RequestContext(request))
@@ -361,8 +365,15 @@ def upload_shapefile(request):
 
     filepath_url = shapefile_upload.shapefile.url
 
-    shp_import = ShapeFileImport()
-    shp_import.import_zip(filepath_url)
+    try:
+        shp_import = ShapeFileImport()
+        shp_import.extract_zip(filepath_url)
+        shapefile_info = shp_import.get_shp_info()
+
+        shapefile_upload.description = shapefile_info
+        shapefile_upload.save()
+    except Exception as ex:
+        print ex
 
     return render(request, 'file_management.html',
                   {

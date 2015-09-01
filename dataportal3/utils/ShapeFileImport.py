@@ -1,7 +1,10 @@
 import json
 import os
 import zipfile
+import django
 from django.contrib.gis.gdal import DataSource
+# from django.contrib.gis.db import models
+from django.contrib.gis.utils import ogrinspect
 
 __author__ = 'ubuntu'
 
@@ -25,30 +28,57 @@ class ShapeFileImport:
             # print extracted_shp
 
             ds = DataSource(extracted_shp)
-            # print ds.name
+            print ds.name
 
             # number of layers
-            # print 'number of layers', len(ds)
+            print 'number of layers', len(ds)
             lyr = ds[0]
 
             # layer name
-            # print 'layer name', lyr
+            print 'layer name', lyr
 
             # layers type
-            # print 'layer type', lyr.geom_type
+            print 'layer type', lyr.geom_type
+
+            print 'field_precisions', lyr.field_precisions
+            print 'extent', lyr.extent
+            print 'field_types', lyr.fields
+            print 'field_widths', lyr.field_widths
+            print 'fields', lyr.field_types[0].__dict__
+            print ''
+            print 'fields_types', lyr.field_types
+            print 'geom_type', lyr.geom_type
+
+            # attrs = {
+            #     'name': models.CharField(max_length=32),
+            #     '__module__': 'dataportal3.models'
+            # }
+            #
+            # for field_arr_key in range(0, len(lyr.field_types)):
+            #     print lyr.fields[field_arr_key], lyr.field_types[field_arr_key], lyr.field_precisions[field_arr_key], lyr.field_widths[field_arr_key]
+            #
+            #
+            # new_model = type(str(lyr), (models.Model,), attrs)
 
             # number of features
-            # print 'number of features', len(lyr)
+            print 'number of features', len(lyr)
 
             # spatial reference
             srs = lyr.srs
-            # print 'spatial reference', srs
+            print 'spatial reference', srs
+
+
+            new_model = ogrinspect(ds, str(lyr))
+
+            print new_model
+
+
 
             return str(srs)
         else:
-            return 'Invalid or uninitialised shapefile'
+            raise Exception('Invalid or uninitialised shapefile')
 
-    def is_valid_zip(self, archive):
+    def __is_valid_zip(self, archive):
         # Try and find details of the zip file
 
         for zipped_file in archive.infolist():
@@ -88,7 +118,7 @@ class ShapeFileImport:
             valid = False
             raise
 
-        valid, filenames, missing =  self.is_valid_zip(archive)
+        valid, filenames, missing =  self.__is_valid_zip(archive)
 
         self.is_valid = valid
         if self.is_valid:
@@ -97,14 +127,15 @@ class ShapeFileImport:
                 zip_stream = archive.extract(filenames[ext], path=self.archive_dir)
                 print zip_stream
 
-
+    def import_to_gis(self):
+        pass
 
 
 z = '/tmp/shp/x_sid_liw2007_police_/x_sid_liw2007_police_.zip'
 # z = '/home/ubuntu/PycharmProjects/wiserd3/dataportal3/utils/x_sid_liw2007_police_.shp'
 # z = '/tmp/shp/x_sid_liw2007_police_/x_sid_liw2007_police_.shp'
 # z = '/tmp/shp/x_sid_liw2007_police_/x_sid_liw2007_police_.zip/x_sid_liw2007_police_.shp'
-# z = '/tmp/shapefiles/eac88890-0784-4f68-8d92-363a8aa95f66/x_sid_liw2007_police_.zip'
+# z = '/tmp/shapefiles/235fffc9-fb41-49a0-a56d-da0ff70663b3/x_sid_liw2007_police_.shp'
 
 sf = ShapeFileImport()
 sf.extract_zip(z)

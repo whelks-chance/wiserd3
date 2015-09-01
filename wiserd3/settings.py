@@ -38,15 +38,17 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
-    'dataportal3',
-    'old',
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'django_hstore',
+    'django.contrib.gis',
+    'dataportal3',
+    'old',
 )
+
+DJANGO_HSTORE_GLOBAL_REGISTER = False
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

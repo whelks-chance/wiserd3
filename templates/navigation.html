@@ -220,7 +220,7 @@
                         </li>
                         <li class="divider"></li>
                         {% if user.is_authenticated %}
-                            <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                            <li><a href="{% url 'account_logout' %}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                         {% else %}
                             <li><a href="{% url 'account_logout' %}"><i class="fa fa-sign-in fa-fw"></i> Login</a></li>
                         {% endif %}

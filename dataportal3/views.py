@@ -368,7 +368,7 @@ def upload_shapefile(request):
     try:
         shp_import = ShapeFileImport()
         shp_import.extract_zip(filepath_url)
-        shapefile_info = shp_import.get_shp_info()
+        shapefile_info = shp_import.import_to_gis(shapefile_upload)
 
         shapefile_upload.description = shapefile_info
         shapefile_upload.save()

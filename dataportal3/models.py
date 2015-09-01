@@ -6,6 +6,7 @@ import uuid
 from django.contrib.gis.db import models
 from django.contrib.auth.models import User
 from wiserd3.settings import MEDIA_ROOT
+from django_hstore import hstore
 
 
 class UserRole(models.Model):
@@ -37,6 +38,27 @@ class ShapeFileUpload(models.Model):
     uuid = models.TextField(blank=True, null=True)
     submit_time = models.DateTimeField(auto_now=True)
 
+    def __unicode__(self):
+        return str(self.user.user.username) + ':' + str(self.name) + ':' + str(self.uuid)
+
+class FeatureCollectionStore(models.Model):
+    name = models.TextField(blank=True, null=True)
+    shapefile_upload = models.ForeignKey(ShapeFileUpload, blank=True, null=True)
+
+    def __unicode__(self):
+        return str(self.name)
+
+
+class FeatureStore(models.Model):
+    name = models.TextField(blank=True, null=True)
+    feature_collection = models.ForeignKey(FeatureCollectionStore)
+    feature_attributes = hstore.DictionaryField(blank=True, null=True)
+    geometry = models.GeometryField(blank=True, null=True)
+
+    objects = hstore.HStoreGeoManager()
+
+    def __unicode__(self):
+        return str(self.feature_collection.name) + ':' + str(self.name)
 
 class Search(models.Model):
     user = models.ForeignKey(UserProfile)

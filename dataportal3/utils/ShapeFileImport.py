@@ -1,10 +1,10 @@
-import json
 import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
 import zipfile
-import django
 from django.contrib.gis.gdal import DataSource
-# from django.contrib.gis.db import models
 from django.contrib.gis.utils import ogrinspect
+import django_hstore.models
+from dataportal3.models import FeatureCollectionStore, FeatureStore
 
 __author__ = 'ubuntu'
 
@@ -21,7 +21,7 @@ class ShapeFileImport:
         }
         self.missing = []
 
-    def get_shp_info(self):
+    def import_to_gis(self, shapefile_upload):
         if self.is_valid:
             extracted_shp = os.path.join(self.archive_dir, self.filenames['shp'])
 
@@ -42,9 +42,9 @@ class ShapeFileImport:
 
             print 'field_precisions', lyr.field_precisions
             print 'extent', lyr.extent
-            print 'field_types', lyr.fields
+            print 'fields', lyr.fields
             print 'field_widths', lyr.field_widths
-            print 'fields', lyr.field_types[0].__dict__
+            print 'field_types', lyr.field_types[0].__dict__
             print ''
             print 'fields_types', lyr.field_types
             print 'geom_type', lyr.geom_type
@@ -67,10 +67,42 @@ class ShapeFileImport:
             srs = lyr.srs
             print 'spatial reference', srs
 
+            # new_model = ogrinspect(ds, str(lyr))
+            # print new_model
 
-            new_model = ogrinspect(ds, str(lyr))
 
-            print new_model
+            feature_collection = FeatureCollectionStore()
+            feature_collection.shapefile_upload = shapefile_upload
+            feature_collection.name = str(lyr)
+            feature_collection.save()
+
+            for layer in ds:
+                print 'features in layer', len(lyr.get_geoms(geos=True))
+
+                geoms = layer.get_geoms(geos=True)
+
+                for count in range(0, len(geoms)):
+                    data = {}
+                    for field_count in range(0, len(layer.fields)):
+                        key = layer.fields[field_count]
+                        value = layer.get_fields(layer.fields[field_count])[count]
+                        # print key, value, type(value)
+                        data[key] = value
+
+                    feature = FeatureStore()
+                    feature.feature_collection = feature_collection
+                    if 'AREA_NAME' in layer.fields:
+                        feature.name = layer.get_fields('AREA_NAME')[count]
+                    else:
+                        feature.name = str(layer) + str(count)
+                    feature.feature_attributes = data
+                    feature.geometry = geoms[count]
+
+                    print feature.__dict__
+                    feature.save(using='new')
+
+                    print 'Has_Geom', len(geoms[count]) > 0
+                    print data
 
 
 
@@ -127,17 +159,14 @@ class ShapeFileImport:
                 zip_stream = archive.extract(filenames[ext], path=self.archive_dir)
                 print zip_stream
 
-    def import_to_gis(self):
-        pass
 
-
-z = '/tmp/shp/x_sid_liw2007_police_/x_sid_liw2007_police_.zip'
 # z = '/home/ubuntu/PycharmProjects/wiserd3/dataportal3/utils/x_sid_liw2007_police_.shp'
 # z = '/tmp/shp/x_sid_liw2007_police_/x_sid_liw2007_police_.shp'
 # z = '/tmp/shp/x_sid_liw2007_police_/x_sid_liw2007_police_.zip/x_sid_liw2007_police_.shp'
 # z = '/tmp/shapefiles/235fffc9-fb41-49a0-a56d-da0ff70663b3/x_sid_liw2007_police_.shp'
 
-sf = ShapeFileImport()
-sf.extract_zip(z)
-a = sf.get_shp_info()
-print a
+# z = '/tmp/shp/x_sid_liw2007_police_/x_sid_liw2007_police_.zip'
+# sf = ShapeFileImport()
+# sf.extract_zip(z)
+# a = sf.get_shp_info()
+# print a

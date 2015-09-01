@@ -31,7 +31,15 @@ def get_user_searches(request):
     user = auth.get_user(request)
     if type(user) is AnonymousUser:
         user = get_anon_user()
-    user_profile = UserProfile.objects.get(user=user)
+    try:
+        user_profile = UserProfile.objects.get(user=user)
+    except:
+        # TODO remove this hack.
+        # TODO It defaults to Anon user if an unrecognised user is logged in.
+        # TODO Should figure out how this impossible thing happened
+        user = get_anon_user()
+        user_profile = UserProfile.objects.get(user=user)
+
     searches = models.Search.objects.filter(user=user_profile).order_by('-datetime')
 
     # I bet there's a single line way to do this...

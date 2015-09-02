@@ -53,6 +53,8 @@ urlpatterns = [
     url(r'^metadata/survey/(?P<wiserd_id>\S+)', old_views.survey_metadata, name='survey_metadata'),
     #
     url(r'^spatial_search', old_views.spatial_search, name='spatial_search'),
+    url(r'^new_spatial_search', views.new_spatial_search, name='new_spatial_search'),
+
     url(r'^metadata/search_questions', views.search_survey_question_api, name='search_survey_question_api'),
     url(r'^search', views.search_survey_question_gui, name='search_survey_question_gui'),
 

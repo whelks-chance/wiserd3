@@ -5,6 +5,9 @@ from BeautifulSoup import BeautifulSoup
 from django.apps import apps
 from django.contrib import auth
 from django.contrib.auth.models import AnonymousUser
+from django.contrib.gis.gdal import CoordTransform
+from django.contrib.gis.gdal import SpatialReference
+from django.contrib.gis.geos import GEOSGeometry
 from django.db.models import Q
 from django.http.response import HttpResponse
 from django.shortcuts import render
@@ -394,3 +397,49 @@ def shapefile_list(request):
     return render(request, 'file_management.html',
                   {'searches': get_user_searches(request)},
                   context_instance=RequestContext(request))
+
+
+@csrf_exempt
+def new_spatial_search(request):
+
+    geojson = request.POST.getlist('geography', '')
+
+#  OSGB WGS84
+#     ct = CoordTransform(SpatialReference('27700'), SpatialReference('4326'))
+#     ct = CoordTransform(SpatialReference('EPSG:27700'), SpatialReference('EPSG:4326'))
+    # geom = GEOSGeometry(geojson[0], srid=27700).transform(ct)
+
+    geom = GEOSGeometry(geojson[0], srid=27700)
+
+    response_data = {
+        'data': []
+    }
+    search_uid = ''
+    survey_info = {}
+
+    response_data['success'] = True
+    response_data['uid'] = search_uid
+
+    response_data['data'] = survey_info.values()
+
+    search = models.Search()
+    search.user = get_request_user(request)
+    search.query = geojson
+    search.type = 'spatial'
+    search.image_png = request.POST.get('image_png', None)
+    search.save()
+
+    search_uid = str(search.uid)
+    response_data['uid'] = search_uid
+
+    uid_only = request.POST.get('uid_only', False)
+    # if uid_only:
+    #     # we only record what was searched for, do not complete the search yet
+    #     pass
+    # else:
+
+    spatial_intersects = models.FeatureStore.objects.filter(geometry__intersects=geom)
+    response_data['data'] = list(spatial_intersects.values('name', 'feature_collection__name'))
+    print response_data['data']
+
+    return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")

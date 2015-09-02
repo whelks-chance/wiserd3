@@ -495,6 +495,7 @@
                 e.layer.openPopup();
 
                 search_area_geojson = e.layer.toGeoJSON();
+                $('#output').val(search_area_geojson);
                 var new_geojson = convertPolygonToOS(search_area_geojson);
                 wkt = $.geo.WKT.stringify(new_geojson);
 
@@ -522,11 +523,11 @@
                 {#                snapshot.appendChild(img);#}
 
                 $.ajax({
-                    url: '/spatial_search',
+                    url: "{% url 'new_spatial_search' %}",
                     type: 'POST',
                     data: {
                         geography: wkt,
-                        geojson: geojson,
+{#                        geojson: search_area_geojson,#}
                         centre_lat_lng: [center_lat_lng.lat, center_lat_lng.lng],
                         geo_area_km2: geoJson_area_km2,
                         start: 0,
@@ -536,13 +537,16 @@
                         image_png: most_recent_search_png
                     },
                     success: function(data) {
+                        alert(JSON.stringify(data['data']));
+
                         if (data['uid']) {
                             {#                            console.log("{% url 'tables' %}?search_id=" + data['uid']);#}
                             {#                            var snapshot = document.getElementById('output');#}
                             {#                            snapshot.innerHTML = "{% url 'tables' %}?search_id=" + data['uid'];#}
 
                             setTimeout(function(){
-                                window.location = "{% url 'tables' %}?search_id=" + data['uid'];
+{#                                TODO FINDME re-enable this #}
+{#                                window.location = "{% url 'tables' %}?search_id=" + data['uid'];#}
                             }, 1000);
                         }
                     }

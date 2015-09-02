@@ -60,6 +60,7 @@ class FeatureStore(models.Model):
     def __unicode__(self):
         return str(self.feature_collection.name) + ':' + str(self.name)
 
+
 class Search(models.Model):
     user = models.ForeignKey(UserProfile)
     query = models.TextField(blank=True, null=True)

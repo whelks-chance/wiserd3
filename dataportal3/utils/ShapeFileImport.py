@@ -1,7 +1,9 @@
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
+from django.contrib.gis.geos import GEOSGeometry
+from dataportal3 import models
 import zipfile
-from django.contrib.gis.gdal import DataSource
+from django.contrib.gis.gdal import DataSource, CoordTransform, SpatialReference
 from django.contrib.gis.utils import ogrinspect
 import django_hstore.models
 from dataportal3.models import FeatureCollectionStore, FeatureStore
@@ -159,6 +161,30 @@ class ShapeFileImport:
                 zip_stream = archive.extract(filenames[ext], path=self.archive_dir)
                 print zip_stream
 
+
+def spatial_search():
+    geojson = [u'POLYGON ((272268.6283144115 200270.16611863102,272618.35541865695 214073.16809610612,353647.5501633153 212672.1529419519,353520.31875525665 198867.7012925945,272268.6283144115 200270.16611863102))']
+
+    ct = CoordTransform(SpatialReference('EPSG:27700'), SpatialReference('EPSG:4326'))
+
+    # geom = GEOSGeometry(geojson[0], srid=27700).transform(ct)
+    geom = GEOSGeometry(geojson[0], srid=27700)
+
+
+    spatial_intersects = models.FeatureStore.objects.filter(geometry__intersects=geom)
+    print spatial_intersects.count()
+
+    response_data = {}
+    response_data['data'] = list(spatial_intersects.values_list('name', flat=True))
+    print response_data['data']
+    print type(response_data['data'])
+
+    f = models.FeatureStore.objects.filter(id=2)[0]
+    print f.name
+
+    print f.geometry.distance(geom)
+
+spatial_search()
 
 # z = '/home/ubuntu/PycharmProjects/wiserd3/dataportal3/utils/x_sid_liw2007_police_.shp'
 # z = '/tmp/shp/x_sid_liw2007_police_/x_sid_liw2007_police_.shp'

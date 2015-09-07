@@ -5,8 +5,8 @@ from BeautifulSoup import BeautifulSoup
 from django.apps import apps
 from django.contrib import auth
 from django.contrib.auth.models import AnonymousUser
-from django.contrib.gis.gdal import CoordTransform
-from django.contrib.gis.gdal import SpatialReference
+# from django.contrib.gis.gdal import CoordTransform
+# from django.contrib.gis.gdal import SpatialReference
 from django.contrib.gis.geos import GEOSGeometry
 from django.db.models import Q
 from django.http.response import HttpResponse
@@ -16,11 +16,10 @@ from django.views.decorators.csrf import csrf_exempt
 import operator
 from dataportal3 import models
 from dataportal3.forms import ShapefileForm
-from dataportal3.utils.ShapeFileImport import ShapeFileImport
+from dataportal3.utils.ShapeFileImport import celery_import, ShapeFileImport
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user
 import requests
 from old.views import text_search, date_handler
-from django.core.cache import cache
 
 
 def index(request):
@@ -134,7 +133,16 @@ def map_search(request):
                 'display_name': w_layer.f_table_name.replace('_', ' ').title(),
                 'table_name': w_layer.f_table_name
             })
-    except:
+
+        uploaded_layers = models.FeatureCollectionStore.objects.filter()
+        for uploaded_layer in uploaded_layers:
+            wiserd_layers_clean.append({
+                'display_name': uploaded_layer.name,
+                'table_name': uploaded_layer.id
+            })
+
+    except Exception as ex:
+        print ex
         pass
 
     area_names = request.GET.getlist('area_names', [])
@@ -344,7 +352,7 @@ def file_management(request):
 def upload_shapefile(request):
     print 'got here'
     print request.POST
-    print request.GET
+    # print request.GET
     print request.FILES
     print len(request.FILES)
 
@@ -356,27 +364,51 @@ def upload_shapefile(request):
 
     messages = []
 
+
+    # shapefile_upload = models.ShapeFileUpload()
+    # shapefile_upload.user = get_request_user(request)
+    # shapefile_upload.uuid = str(uuid.uuid4())
+    # shapefile_upload.shapefile = request.FILES['file']
+    # shapefile_upload.name = request.POST.get('shapefile_name', '')
+    # shapefile_upload.save()
+    #
+    # filepath_url = shapefile_upload.shapefile.url
+
     # try:
+        # shp_import = ShapeFileImport(
+        #     get_request_user(request),
+        #     zip_file=request.FILES['file'],
+        #     filename=request.POST.get('shapefile_name', '')
+        # )
+        # shp_import.extract_zip()
+        # celery_key = shp_import.import_to_gis()
+
+    user = get_request_user()
+    print user
+    zip_file = request.FILES['file']
+    print zip_file
+    filename = request.POST.get('shapefile_name', '')
+    print filename
+
     shapefile_upload = models.ShapeFileUpload()
-    shapefile_upload.user = get_request_user(request)
+    shapefile_upload.user = user
     shapefile_upload.uuid = str(uuid.uuid4())
-    shapefile_upload.shapefile = request.FILES['file']
-    shapefile_upload.name = request.POST.get('shapefile_name', '')
+    shapefile_upload.shapefile = zip_file
+    shapefile_upload.name = filename
+    shapefile_upload.progress = ShapeFileImport.progress_stage['init']
     shapefile_upload.save()
+
+    celery_key = celery_import.delay(
+        user_id=user.id,
+        zip_file=None,
+        filename=filename,
+        shapefile_upload_id=shapefile_upload.id
+    )
+
+        # shapefile_upload.description = shapefile_info
+        # shapefile_upload.save()
     # except Exception as ex:
-    #     messages.append(ex)
-
-    filepath_url = shapefile_upload.shapefile.url
-
-    try:
-        shp_import = ShapeFileImport()
-        shp_import.extract_zip(filepath_url)
-        shapefile_info = shp_import.import_to_gis(shapefile_upload)
-
-        shapefile_upload.description = shapefile_info
-        shapefile_upload.save()
-    except Exception as ex:
-        print ex
+    #     print ex
 
     return render(request, 'file_management.html',
                   {
@@ -402,14 +434,14 @@ def shapefile_list(request):
 @csrf_exempt
 def new_spatial_search(request):
 
-    geojson = request.POST.getlist('geography', '')
+    geo_wkt = request.POST.getlist('geography', '')
 
-#  OSGB WGS84
-#     ct = CoordTransform(SpatialReference('27700'), SpatialReference('4326'))
-#     ct = CoordTransform(SpatialReference('EPSG:27700'), SpatialReference('EPSG:4326'))
+    #  OSGB WGS84
+    #     ct = CoordTransform(SpatialReference('27700'), SpatialReference('4326'))
+    #     ct = CoordTransform(SpatialReference('EPSG:27700'), SpatialReference('EPSG:4326'))
     # geom = GEOSGeometry(geojson[0], srid=27700).transform(ct)
 
-    geom = GEOSGeometry(geojson[0], srid=27700)
+    geom = GEOSGeometry(geo_wkt[0], srid=27700)
 
     response_data = {
         'data': []
@@ -424,7 +456,7 @@ def new_spatial_search(request):
 
     search = models.Search()
     search.user = get_request_user(request)
-    search.query = geojson
+    search.query = geo_wkt
     search.type = 'spatial'
     search.image_png = request.POST.get('image_png', None)
     search.save()

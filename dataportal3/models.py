@@ -24,43 +24,6 @@ class UserProfile(models.Model):
         db_table = 'user_profile'
 
 
-def get_upload_directory(self, filename):
-        # uid = uuid.uuid4()
-        return MEDIA_ROOT + str(self.uuid) + '/' + filename
-
-
-class ShapeFileUpload(models.Model):
-    user = models.ForeignKey(UserProfile)
-    name = models.TextField(blank=True, null=True)
-    shapefile = models.FileField(upload_to=get_upload_directory, max_length=1024)
-    description = models.TextField(blank=True, null=True)
-    country = models.TextField(blank=True, null=True)
-    uuid = models.TextField(blank=True, null=True)
-    submit_time = models.DateTimeField(auto_now=True)
-
-    def __unicode__(self):
-        return str(self.user.user.username) + ':' + str(self.name) + ':' + str(self.uuid)
-
-class FeatureCollectionStore(models.Model):
-    name = models.TextField(blank=True, null=True)
-    shapefile_upload = models.ForeignKey(ShapeFileUpload, blank=True, null=True)
-
-    def __unicode__(self):
-        return str(self.name)
-
-
-class FeatureStore(models.Model):
-    name = models.TextField(blank=True, null=True)
-    feature_collection = models.ForeignKey(FeatureCollectionStore)
-    feature_attributes = hstore.DictionaryField(blank=True, null=True)
-    geometry = models.GeometryField(blank=True, null=True)
-
-    objects = hstore.HStoreGeoManager()
-
-    def __unicode__(self):
-        return str(self.feature_collection.name) + ':' + str(self.name)
-
-
 class Search(models.Model):
     user = models.ForeignKey(UserProfile)
     query = models.TextField(blank=True, null=True)
@@ -325,6 +288,20 @@ class SurveySpatialLink(models.Model):
         db_table = 'survey_spatial_link'
 
 
+class GeometryColumns(models.Model):
+    f_table_catalog = models.CharField(max_length=256, blank=True, null=True)
+    f_table_schema = models.CharField(max_length=256, blank=True, null=True)
+    # f_table_name = models.CharField(max_length=256, blank=True, null=True)
+    f_table_name = models.CharField(primary_key=True, max_length=256)
+    f_geometry_column = models.CharField(max_length=256, blank=True, null=True)
+    coord_dimension = models.IntegerField()
+    srid = models.IntegerField()
+    type = models.CharField(max_length=30, blank=True, null=True)
+
+    class Meta:
+        db_table = 'geometry_columns'
+
+
 class UserDetail(models.Model):
     user_id = models.CharField(max_length=25)
     user_name = models.CharField(max_length=50, blank=True, null=True)
@@ -333,5 +310,43 @@ class UserDetail(models.Model):
     class Meta:
         db_table = 'user_detail'
 
+
+def get_upload_directory(self, filename):
+        return MEDIA_ROOT + str(self.uuid) + '/' + filename
+
+
+class ShapeFileUpload(models.Model):
+    user = models.ForeignKey(UserProfile)
+    name = models.TextField(blank=True, null=True)
+    shapefile = models.FileField(upload_to=get_upload_directory, max_length=1024)
+    description = models.TextField(blank=True, null=True)
+    country = models.TextField(blank=True, null=True)
+    uuid = models.TextField(blank=True, null=True)
+    submit_time = models.DateTimeField(auto_now=True)
+    progress = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return str(self.user.user.username) + ':' + str(self.name) + ':' + str(self.uuid)
+
+
+class FeatureCollectionStore(models.Model):
+    name = models.TextField(blank=True, null=True)
+    shapefile_upload = models.ForeignKey(ShapeFileUpload, blank=True, null=True)
+    survey = models.ForeignKey(Survey, blank=True, null=True)
+
+    def __unicode__(self):
+        return str(self.name)
+
+
+class FeatureStore(models.Model):
+    name = models.TextField(blank=True, null=True)
+    feature_collection = models.ForeignKey(FeatureCollectionStore)
+    feature_attributes = hstore.DictionaryField(blank=True, null=True)
+    geometry = models.GeometryField(blank=True, null=True)
+
+    objects = hstore.HStoreGeoManager()
+
+    def __unicode__(self):
+        return str(self.feature_collection.name) + ':' + str(self.name)
 
 

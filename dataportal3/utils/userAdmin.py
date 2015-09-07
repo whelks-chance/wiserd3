@@ -17,7 +17,7 @@ def get_anon_user():
     return user
 
 
-def get_request_user(request):
+def get_request_user(request=None):
     try:
         user = models.User.objects.get(username=request.user)
         dataportal_user = UserProfile.objects.get(username=user)

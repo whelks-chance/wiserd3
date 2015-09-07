@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from celery import Celery
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'django_hstore',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +44,6 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'django_hstore',
     'django.contrib.gis',
     'dataportal3',
     'old',
@@ -149,6 +150,13 @@ STATICFILES_FINDERS = (
 # import django.core.files.uploadhandler
 # FILE_UPLOAD_HANDLERS = ('uploadprogresscachedhandler.UploadProgressCachedHandler', ) \
 #     + global_settings.FILE_UPLOAD_HANDLERS
+
+
+BROKER_URL = 'redis://localhost:6379/0'
+BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}  # 1 hour.
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+app = Celery('dataportal3.utils.ShapeFileImport', backend=BROKER_URL, broker=BROKER_URL)
+
 
 # CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 MEDIA_ROOT = '/tmp/shapefiles/'

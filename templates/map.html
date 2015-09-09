@@ -27,8 +27,8 @@
 
 
     {#  local mapbox draw buttons  #}
-{#    <link rel="stylesheet" type="text/css" href="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.css' %}"/>#}
-{#    <script type="text/javascript" src="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.js' %}"></script>#}
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.css' %}"/>#}
+    {#    <script type="text/javascript" src="{% static 'mapbox.js/plugins/Leaflet.draw-master/dist/leaflet.draw.js' %}"></script>#}
 
     {#  local leaflet draw - with touch!  #}
     <link rel="stylesheet" type="text/css" href="{% static 'Leaflet.draw-master/dist/leaflet.draw.css' %}"/>
@@ -132,6 +132,13 @@
                                 <i class="fa fa-map-marker fa-fw"></i> {{ wiserd_layer.display_name }}</a>
                         </li>
                     {% endfor %}
+
+                    {% for upload_layer in upload_layers %}
+                        <li>
+                            <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">
+                                <i class="fa fa-map-marker fa-fw"></i> {{ upload_layer.display_name }}</a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </li>
         </ul>
@@ -188,6 +195,25 @@
             $('.wiserd_layer_toggle').click(function () {
                 toggle_wiserd_layer(this)
             });
+
+            $('.upload_layer_toggle').click(function () {
+                toggle_upload_layer(this)
+            });
+
+            function toggle_upload_layer(toggle_button) {
+                var btn_layer_name = $(toggle_button).data('layer_name');
+
+                {#                Remove the class regardless what's about to happen, can be added back again #}
+                $(toggle_button).removeClass('wms_layer_active');
+                if (map_layers.hasOwnProperty(btn_layer_name)) {
+                    map.removeLayer(map_layers[btn_layer_name]);
+                    delete map_layers[btn_layer_name];
+                } else {
+                    $(toggle_button).addClass('wms_layer_active');
+
+                    get_geojson_layer('upload_layer', [btn_layer_name]);
+                }
+            }
 
             {#            below is map stuff #}
             var wkt = '';
@@ -272,24 +298,37 @@
                 map_layers[$(replace_button).data('layername')].addTo(map);
             }
 
-            get_geojson_layer('survey', '{{ surveys|safe }}');
+            get_geojson_layer('survey', JSON.parse('{{ surveys|safe }}'));
 
             function get_geojson_layer(layer_type, layer_names){
+                var ajax_url = "{% url 'get_geojson' %}";
+
+                if( layer_type == 'upload_layer'){
+                    ajax_url = "{% url 'get_imported_feature' %}";
+                } else {
+                    ajax_url = "{% url 'get_geojson' %}";
+                }
+                
                 $.ajax({
-                    url: "{% url 'get_geojson' %}",
+                    {#                    url: "{% url 'get_geojson' %}",#}
+                    url: ajax_url,
                     type: 'POST',
                     data: {
                         'layer_type': layer_type,
                         'layer_names': layer_names
-{#                        'area_names': {{ area_names|safe }}#}
+                        {#                        'area_names': {{ area_names|safe }}#}
                     },
                     success: function(data){
                         {#            $.getJSON("{% url 'get_geojson' %}", function(data) {#}
-                        console.log(data['properties']['name']);
+                        {#data['properties']['name']#}
+                        var name = layer_names;
+                        {#                        var name = data['properties']['feature_attributes']['AREA_NAME'];#}
+                        console.log();
+
                         var new_layer_menu = $(
                                 '<li>' +
                                 '<a href="#"><i class="fa fa-fw"></i> ' +
-                                data['properties']['name'] +
+                                name +
                                 '<span class="fa btn btn-primary btn-sm fa-arrow-down"></span>' +
                                 '<span class="fa btn btn-primary btn-sm fa-arrow-up"></span>' +
                                 '<span class="fa btn btn-primary btn-sm fa-eye show_layer"></span>' +
@@ -298,12 +337,12 @@
 
                                 '<ul class="nav nav-third-level active">' +
                                 '<li>' +
-                                '<a href="#" class="remove_layer" data-layername="' + data['properties']['name'] +
+                                '<a href="#" class="remove_layer" data-layername="' + name +
                                 '"><i class="fa fa-remove fa-fw"></i> Remove Layer</a>' +
                                 '</li>' +
 
                                 '<li>' +
-                                '<a href="#" class="replace_layer" data-layername="' + data['properties']['name'] +
+                                '<a href="#" class="replace_layer" data-layername="' + name +
                                 '"><i class="fa fa-plus fa-fw"></i> Replace Layer</a>' +
                                 '</li>' +
 
@@ -313,7 +352,7 @@
                         var layer_list = $('#layer_list');
                         layer_list.append(new_layer_menu);
                         $('#side-menu').removeData("plugin_metisMenu").metisMenu();
-{#                        layer_list.click();#}
+                        {#                        layer_list.click();#}
 
                         $('.replace_layer').click(function () {
                             replace_layer(this)
@@ -385,6 +424,34 @@
                             geojson.addTo(map);
                             map_layers[data['properties']['name']] = geojson;
                         }
+
+                        if (layer_type == 'upload_layer') {
+                            geojson = L.geoJson(data, {
+                                onEachFeature: function (feature, layer) {
+
+                                    layer.bindPopup(feature.properties.feature_attributes.area_name + '<br>'
+                                    + feature.properties.feature_attributes.response_rate + '%');
+                                    layer.on({
+                                        mouseover: highlightFeature,
+                                        mouseout: resetHighlight
+                                    });
+                                },
+                                style: function (feature) {
+                                    return {
+                                        fillColor: getColor(feature.properties.response_rate),
+                                        weight: 2,
+                                        opacity: 1,
+                                        color: 'white',
+                                        dashArray: '3',
+                                        fillOpacity: 0.7
+                                    };
+                                }
+
+                            });
+                            geojson.addTo(map);
+                            geojson.bringToFront();
+                            map_layers[data['properties']['name']] = geojson;
+                        }
                     }
                 });
             }
@@ -409,7 +476,7 @@
                 }
 
                 var div_inner = labels.join('<br>');
-{#                div_inner += '<h4><a href="#">Edit</a></h4>';#}
+                {#                div_inner += '<h4><a href="#">Edit</a></h4>';#}
                 div_inner += '</div>'
                 div.innerHTML = div_inner;
                 return div;
@@ -527,7 +594,7 @@
                     type: 'POST',
                     data: {
                         geography: wkt,
-{#                        geojson: search_area_geojson,#}
+                        {#                        geojson: search_area_geojson,#}
                         centre_lat_lng: [center_lat_lng.lat, center_lat_lng.lng],
                         geo_area_km2: geoJson_area_km2,
                         start: 0,
@@ -545,8 +612,8 @@
                             {#                            snapshot.innerHTML = "{% url 'tables' %}?search_id=" + data['uid'];#}
 
                             setTimeout(function(){
-{#                                TODO FINDME re-enable this #}
-{#                                window.location = "{% url 'tables' %}?search_id=" + data['uid'];#}
+                                {#                                TODO FINDME re-enable this #}
+                                {#                                window.location = "{% url 'tables' %}?search_id=" + data['uid'];#}
                             }, 1000);
                         }
                     }

@@ -89,9 +89,13 @@
                 <div class="list-group">
                     {% for shp in user_shapefiles %}
                         <a class="list-group-item"><i class="fa fa-map-o fa-fw"></i>
-                            {{ shp.name }} - {{ shp.description }}
-                            {% if shp.progress %}
-                                <span style="color:#ff0000; background-color: #ffff00"> - {{ shp.progress }}</span>
+                            {{ shp.name }}
+                            {% if shp.description %}
+                                <span> - {{ shp.description }}</span>
+                            {% endif %}
+
+                            {% if shp.progress %} - <span style="color:#ff0000; background-color: #ffff00">
+                                {{ shp.progress }}</span>
                             {% endif %}
                         </a>
                     {% endfor %}

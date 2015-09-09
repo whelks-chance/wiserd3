@@ -350,3 +350,31 @@ class FeatureStore(models.Model):
         return str(self.feature_collection.name) + ':' + str(self.name)
 
 
+class Aberystwyth_Locality_Dissolved(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    id = models.CharField(max_length=254, blank=True, null=True)
+    the_geom = models.GeometryField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'Aberystwyth_Locality_Dissolved'
+
+
+class Bangor_Locality_Dissolved(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    area_name = models.CharField(max_length=254, blank=True, null=True)
+    the_geom = models.GeometryField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'Bangor_Locality_Dissolved'
+
+
+class Heads_of_the_Valleys(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    area_name = models.CharField(max_length=254, blank=True, null=True)
+    the_geom = models.GeometryField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'Heads_of_the_Valleys'

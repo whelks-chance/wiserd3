@@ -18,6 +18,7 @@ import operator
 from dataportal3 import models
 from dataportal3.forms import ShapefileForm
 from dataportal3.utils.ShapeFileImport import celery_import, ShapeFileImport
+from dataportal3.utils.rubbish import get_imported_feature_default
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user
 import requests
 from old.views import text_search, date_handler
@@ -217,64 +218,74 @@ def edit_metadata(request):
 
 @csrf_exempt
 def get_imported_feature(request):
+
+    a = 'fsfsd'
+    # with open('/home/ubuntu/shp/x_sid_liw2007_fire_/output-fixed.json', 'r') as output:
+
+    with open('/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-ms.json', 'r') as output:
+        a = output.read()
+
+        # final = json.dumps(topojson, indent=4)
+    return HttpResponse(a, content_type="application/json")
+
     wiserd_layer = request.POST.getlist('layer_names[]')[0]
 
     spatial_table_name = str(wiserd_layer).replace('_', '').strip()
 
-    feature_collection_features = models.FeatureCollectionStore.objects.get(
+    feature_collection = models.FeatureCollectionStore.objects.get(
         id=spatial_table_name
-    ).featurestore_set.all()
+    )
 
-    shape_list = feature_collection_features.extra(select={
-        'response_rate': "feature_attributes->'RESPONSE_R'"
-    }).values('name', 'geometry', 'feature_attributes')
+    feature_collection_features = feature_collection.featurestore_set.all()
 
-    # shape_feature_list = []
-    # for shape in shape_list:
-    #     shape_properties = {}
-    #     for key in shape:
-    #         if key is not 'geometry':
-    #             shape_properties[key] = shape[key]
-    #             # print shape[key], shape_properties[key]
-    #
-    #     if 'response_rate' in shape_properties:
-    #         print shape_properties['response_rate'], type(shape_properties['response_rate'])
-    #         rgb_int = float(shape_properties['response_rate']) * 2.54
-    #         rgb_tuple = (rgb_int, rgb_int, rgb_int)
-    #         hex_code = '#%02x%02x%02x' % rgb_tuple
-    #         shape_properties['color'] = hex_code
-    #         shape_properties['opacity'] = 0.1
-    #
-    #     print json.loads(shape['geometry'].geojson)['coordinates']
-    #
-    #     # print shape
-    #     shape_list_group = {
-    #         'type': 'Feature',
-    #         'geometry': {
-    #             'type': 'MultiPolygon',
-    #             # 'coordinates': ast.literal_eval(shape['geometry'])['coordinates']
-    #             'coordinates': json.loads(shape['geometry'])['coordinates']
-    #             # 'coordinates': shape['geometry']
-    #
-    #         },
-    #         'properties': shape_properties
-    #     }
-    #
-    #     shape_feature_list.append(shape_list_group)
+    if True:
+        print 'easy one'
+        end_result = serialize('geojson',
+                               feature_collection_features,
+                               geometry_field='geometry')
+        end_result = json.loads(end_result)
+        end_result['properties'] = {'name': feature_collection.name}
 
-    # geojson_feature = {
-    #     "type": "FeatureCollection",
-    #     "features": shape_feature_list,
-    #     "properties": {
-    #         'name': spatial_table_name
-    #     }
-    # }
+    else:
+        print 'going the hard way'
+        fs = []
+        for feature in feature_collection_features:
+            # g = GEOSGeometry(feature.geometry.geojson)
+            shape_list_group = {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'MultiPolygon',
+                    'coordinates': json.loads(
+                        # g.simplify(0.2 ).geojson
+                        feature.geometry.geojson
+                    )
+                },
+                'properties': {
+                    'feature_attributes': feature.feature_attributes,
+                    "name": feature.name
+                }
+            }
+            fs.append(shape_list_group)
 
-    end_result = serialize('geojson',
-                           feature_collection_features,
-                           geometry_field='geometry')
-    # end_result = serialize('geojson', geojson_feature)
-    return HttpResponse(end_result, content_type="application/json")
+        geojson_feature = {
+            "type": "FeatureCollection",
+            "crs": {
+                "type": "name",
+                "properties": {
+                    "name": "EPSG:4326"
+                }
+            },
+            "features": fs,
+            "properties": {
+                'name': spatial_table_name
+            }
+        }
+        end_result = geojson_feature
+
+
+
+    final = json.dumps(end_result, indent=4)
+    return HttpResponse(final, content_type="application/json")
 
 @csrf_exempt
 def get_geojson(request):
@@ -548,3 +559,22 @@ def new_spatial_search(request):
     print response_data['data']
 
     return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
+
+
+def logout(request):
+    logout_success = False
+    msg = 'Auth Error, please refresh the page'
+    if request.user.is_authenticated():
+        auth.logout(request)
+        msg = 'You have successfully logged out'
+        logout_success = True
+    #do logout
+    return render(request, 'index.html',
+                  {'logout_success': logout_success, 'msg': msg},
+                  context_instance=RequestContext(request))
+
+
+def profile(request):
+    return render(request, 'profile.html',
+                  {},
+                  context_instance=RequestContext(request))

@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'dataportal3',
+    'old',
     'django_hstore',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,8 +47,6 @@ INSTALLED_APPS = (
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'django.contrib.gis',
-    'dataportal3',
-    'old',
 )
 
 DJANGO_HSTORE_GLOBAL_REGISTER = False
@@ -82,9 +82,9 @@ TEMPLATES = [
                 # "allauth.account.context_processors.account",
                 # "allauth.socialaccount.context_processors.socialaccount",
             ],
-            },
         },
-    ]
+    },
+]
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     # 'django.contrib.auth.context_processors.auth',
@@ -98,6 +98,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "allauth.account.context_processors.account",
     "allauth.socialaccount.context_processors.socialaccount",
 )
+
+LOGIN_REDIRECT_URL = "/"
 
 WSGI_APPLICATION = 'wiserd3.wsgi.application'
 

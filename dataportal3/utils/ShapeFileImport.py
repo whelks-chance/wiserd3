@@ -1,4 +1,6 @@
 import os
+from subprocess import call
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
 import uuid
 from wiserd3.settings import app
@@ -94,6 +96,7 @@ class ShapeFileImport:
                 feature_collection = FeatureCollectionStore()
                 feature_collection.shapefile_upload = self.shapefile_upload
                 feature_collection.name = str(lyr)
+                feature_collection.topojson_file = self.create_topojson_file()
                 feature_collection.save()
 
                 all_features = []
@@ -127,7 +130,8 @@ class ShapeFileImport:
                         feature.feature_attributes = data
                         feature.geometry = geoms[count]
 
-                        print feature.__dict__
+
+                        # print feature.__dict__
                         # feature.save(using='new')
                         all_features.append(feature)
 
@@ -147,6 +151,17 @@ class ShapeFileImport:
             self.shapefile_upload.progress = ShapeFileImport.progress_stage['import_failure']
             self.shapefile_upload.save()
             raise Exception('Invalid or uninitialised shapefile')
+
+    def create_topojson_file(self):
+        extracted_shp = os.path.join(self.extract_dir, self.filenames['shp'])
+
+        cmd = 'mapshaper -i {0} -o {0}.topojson format=topojson'.format(
+            extracted_shp
+        )
+        code = call(cmd, shell=True)
+        print 'mapshaper topojson convert success', code
+
+        return str(extracted_shp) + '.topojson'
 
     def __is_valid_zip(self, archive):
         # Try and find details of the zip file

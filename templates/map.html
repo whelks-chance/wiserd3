@@ -48,6 +48,29 @@
     <script type="text/javascript" src="{% static 'leaflet-search/leaflet-search.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'leaflet-search/leaflet-search.css' %}"/>
 
+    {#    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>#}
+
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+    <script type="text/javascript" src="{% static 'chroma.min.js' %}"></script>
+
+    <script>
+        L.TopoJSON = L.GeoJSON.extend({
+            addData: function(jsonData) {
+                if (jsonData.type === "Topology") {
+                    for (key in jsonData.objects) {
+                        geojson = topojson.feature(jsonData, jsonData.objects[key]);
+                        L.GeoJSON.prototype.addData.call(this, geojson);
+                    }
+                }
+                else {
+                    L.GeoJSON.prototype.addData.call(this, jsonData);
+                }
+            }
+        });
+        // Copyright (c) 2013 Ryan Clark
+    </script>
+
     <style>
         .info {
             padding: 6px 8px;
@@ -126,17 +149,17 @@
             <li>
                 <a href="#"> WISERD Research<span class="fa arrow"></span></a>
                 <ul class="nav nav-third-level scrollable_ul">
-                    {% for wiserd_layer in wiserd_layers %}
-                        <li>
-                            <a href="#" data-layer_name="{{ wiserd_layer.table_name }}" class="wiserd_layer_toggle">
-                                <i class="fa fa-map-marker fa-fw"></i> {{ wiserd_layer.display_name }}</a>
-                        </li>
-                    {% endfor %}
-
                     {% for upload_layer in upload_layers %}
                         <li>
                             <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">
                                 <i class="fa fa-map-marker fa-fw"></i> {{ upload_layer.display_name }}</a>
+                        </li>
+                    {% endfor %}
+
+                    {% for wiserd_layer in wiserd_layers %}
+                        <li>
+                            <a href="#" data-layer_name="{{ wiserd_layer.table_name }}" class="wiserd_layer_toggle">
+                                <i class="fa fa-map-marker fa-fw"></i> {{ wiserd_layer.display_name }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -228,11 +251,11 @@
             var map = L.map('map_div').setView([51.53181, -3.24687], 8);
 
 
-            var layers = new L.LayerGroup();
+            var layer_group = new L.LayerGroup();
             var overlays = {
-                "Layers": layers
+                "Empty group": layer_group
             };
-            L.control.layers([], overlays).addTo(map);
+            var layerControl = L.control.layers([], {}).addTo(map);
 
             L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
@@ -261,7 +284,8 @@
 
             var geojson;
             function resetHighlight(e) {
-                geojson.resetStyle(e.target);
+                console.log(e.target);
+                e.target.resetStyle(e.target);
                 info.update();
             }
 
@@ -279,7 +303,20 @@
                 info.update(layer.feature.properties);
             }
 
-            function getColor(d) {
+            function getColor(d, feature_data, chroma_scale) {
+
+                if (chroma_scale) {
+                    return chroma_scale(parseFloat(d));
+                }
+
+                if (feature_data) {
+                    var scale = chroma.scale('OrRd').classes(feature_data);
+                    return scale(parseFloat(d));
+                }
+
+                d = parseFloat(d);
+                return chroma.random();
+
                 return d > 80 ? '#800026' :
                         d > 75  ? '#BD0026' :
                                 d > 70  ? '#E31A1C' :
@@ -308,7 +345,7 @@
                 } else {
                     ajax_url = "{% url 'get_geojson' %}";
                 }
-                
+
                 $.ajax({
                     {#                    url: "{% url 'get_geojson' %}",#}
                     url: ajax_url,
@@ -329,10 +366,10 @@
                                 '<li>' +
                                 '<a href="#"><i class="fa fa-fw"></i> ' +
                                 name +
-                                '<span class="fa btn btn-primary btn-sm fa-arrow-down"></span>' +
-                                '<span class="fa btn btn-primary btn-sm fa-arrow-up"></span>' +
-                                '<span class="fa btn btn-primary btn-sm fa-eye show_layer"></span>' +
-                                '<span class="fa btn btn-primary btn-sm arrow" data-visible=true></span>' +
+                                {#                                '<span class="fa btn btn-primary btn-sm fa-arrow-down"></span>' +#}
+                                {#                                '<span class="fa btn btn-primary btn-sm fa-arrow-up"></span>' +#}
+                                {#                                '<span class="fa btn btn-primary btn-sm fa-eye show_layer"></span>' +#}
+                                {#                                '<span class="fa btn btn-primary btn-sm arrow" data-visible=true></span>' +#}
                                 '</a>' +
 
                                 '<ul class="nav nav-third-level active">' +
@@ -401,12 +438,28 @@
                         if (layer_type == 'wiserd_layer') {
                             {#                            wiserd_layer.addData(data);#}
 
-                            geojson = L.geoJson(data, {
+                            var myLayer = L.geoJson(data, {
                                 onEachFeature: function (feature, layer) {
                                     layer.bindPopup('Clicked a thing');
                                     layer.on({
-                                        mouseover: highlightFeature,
-                                        mouseout: resetHighlight
+                                        mouseover: function(e){
+                                            var layer = e.target;
+                                            layer.setStyle({
+                                                weight: 5,
+                                                color: '#666',
+                                                dashArray: '',
+                                                fillOpacity: 0.7
+                                            });
+                                            {#                if (!L.Browser.ie && !L.Browser.opera) {#}
+                                            layer.bringToFront();
+                                            {#                }#}
+                                            info.update(layer.feature.properties);
+                                        },
+                                        mouseout: function(e){
+                                            console.log(e.target);
+                                            myLayer.resetStyle(e.target);
+                                            info.update();
+                                        }
                                     });
                                 },
                                 style: function (feature) {
@@ -420,75 +473,129 @@
                                     };
                                 }
                             });
-                            geojson.addTo(layers);
-                            geojson.addTo(map);
-                            map_layers[data['properties']['name']] = geojson;
+                            layerControl.addOverlay(myLayer, data['properties']['name']);
+                            myLayer.addTo(map);
+                            map_layers[data['properties']['name']] = myLayer;
                         }
 
                         if (layer_type == 'upload_layer') {
-                            geojson = L.geoJson(data, {
-                                onEachFeature: function (feature, layer) {
 
-                                    layer.bindPopup(feature.properties.feature_attributes.area_name + '<br>'
-                                    + feature.properties.feature_attributes.response_rate + '%');
-                                    layer.on({
-                                        mouseover: highlightFeature,
-                                        mouseout: resetHighlight
-                                    });
-                                },
-                                style: function (feature) {
-                                    return {
-                                        fillColor: getColor(feature.properties.response_rate),
-                                        weight: 2,
-                                        opacity: 1,
-                                        color: 'white',
-                                        dashArray: '3',
-                                        fillOpacity: 0.7
-                                    };
+                            var data_objects = data['objects'];
+                            var feature_data = [];
+
+{#                            This is listing all the response rate variables we know can find in the topojson #}
+                            for (var b in data_objects) {
+                                var geometries_properties = data_objects[b]['geometries'];
+                                for (var a in geometries_properties) {
+                                    feature_data.push(parseFloat(geometries_properties[a]['properties']['RESPONSE_R']));
                                 }
+                            }
+{#                            console.log(feature_data);#}
 
+{#                            Calculating the bins for quantiles with 'q' option, 'e'  and 'k' available #}
+                            grades = chroma.limits(feature_data, 'q', 5);
+
+{#                            Calculating the function we can pass values to, in order to get nice rgb color codes #}
+                            chroma_scale = chroma.scale('OrRd').classes(grades);
+
+                            var legend = L.control({position: 'bottomright'});
+                            legend.onAdd = function (map) {
+                                var div = L.DomUtil.create('div', 'info legend'),
+                                        labels = [],
+                                        from, to;
+                                console.log(grades);
+
+{#                                For each bin in the quantiles, we need a representative color for the Legend #}
+                                for (var i = 0; i < grades.length; i++) {
+                                    from = grades[i];
+                                    to = grades[i + 1];
+                                    labels.push(
+                                            '<i style="background:' + getColor(from + 1, grades, chroma_scale) + '"></i> ' +
+                                            from + ((to-1) ? '&ndash;' + (to-1) + '%': '%+'));
+                                }
+                                var div_inner = labels.join('<br>');
+                                div_inner += '</div>';
+                                div.innerHTML = div_inner;
+                                return div;
+                            };
+                            legend.addTo(map);
+
+                            {#                            topolayer#}
+                            var myLayer = new L.TopoJSON();
+                            myLayer.addData(data);
+
+                            myLayer.eachLayer(function (layer) {
+                                layer.setStyle(styleFeature(layer.feature, grades, chroma_scale));
                             });
-                            geojson.addTo(map);
-                            geojson.bringToFront();
-                            map_layers[data['properties']['name']] = geojson;
+                            myLayer.eachLayer(handleLayer);
+
+                            layerControl.addOverlay(myLayer, data['objects'][0]);
+
+                            myLayer.addTo(map);
+                            myLayer.bringToFront();
+                            {#                            map_layers[data['properties']['name']] = myLayer;#}
+                            map_layers[data['objects'][0]] = myLayer;
+
                         }
                     }
                 });
             }
-            var map_layers = {};
 
-            var legend = L.control({position: 'bottomright'});
+            function handleUploadedLayer(){
 
-            legend.onAdd = function (map) {
+            }
 
-                var div = L.DomUtil.create('div', 'info legend'),
-                        grades = [0, 20, 30, 40, 50, 60, 70, 80],
-                        labels = [],
-                        from, to;
+            function handleLayer(layer) {
 
-                for (var i = 0; i < grades.length; i++) {
-                    from = grades[i];
-                    to = grades[i + 1];
+                layer.bindPopup(layer.feature.properties.AREA_NAME + '<br>'
+                + layer.feature.properties.RESPONSE_R + '%');
 
-                    labels.push(
-                            '<i style="background:' + getColor(from + 1) + '"></i> ' +
-                            from + ((to-1) ? '&ndash;' + (to-1) + '%': '%+'));
+                layer.on({
+                    mouseover: function (e) {
+                        console.log(e.target.feature.properties.RESPONSE_R);
+                        var layer = e.target;
+                        layer.setStyle({
+                            weight: 5,
+                            color: '#666',
+                            dashArray: '',
+                            fillOpacity: 0.7
+                        });
+
+                        layer.bringToFront();
+
+                        info.update(layer.feature.properties.AREA_NAME + '<br>'
+                        + layer.feature.properties.RESPONSE_R + '%');
+                    },
+                    mouseout: function (e) {
+{#                        e.target.resetStyle(e.target);#}
+                        e.target.setStyle({
+{#                            fillColor: '#0044AA',#}
+                            fillOpacity: 0.7,
+                            weight: 2,
+                            opacity: 1,
+                            color: 'white',
+                            dashArray: '3'
+                        });
+                        info.update();
+                    }
+                });
+
+            }
+
+            function styleFeature(feature, feature_data, chroma_scale) {
+                {#                console.log(feature);#}
+
+                return {
+                    fillColor: getColor(feature.properties.RESPONSE_R, feature_data, chroma_scale),
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7
                 }
+            }
 
-                var div_inner = labels.join('<br>');
-                {#                div_inner += '<h4><a href="#">Edit</a></h4>';#}
-                div_inner += '</div>'
-                div.innerHTML = div_inner;
-                return div;
-            };
-
-            legend.addTo(map);
-
-
-
-
-
-
+            var map_layers = {};
 
 
             var featureGroup = L.featureGroup().addTo(map);
@@ -633,6 +740,62 @@
                 e.preventDefault();
                 $("#wrapper").toggleClass("toggled");
             });
+
+            $('#side-menu').removeData("plugin_metisMenu").metisMenu();
+
+            var availableTags = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"
+    ];
+    $( "#tags" ).autocomplete({
+        source: availableTags
+    });
+
+    $( "#dialog-form" ).dialog({
+        autoOpen: false,
+        height: 300,
+        width: 350,
+        modal: true,
+        buttons: {
+            "Save value": function() {
+                if ($("#tags").val() != '') {
+                    $( this ).dialog( "close" );
+                }
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        },
+        close: function() {
+            $("#result").html($("#tags").val());
+        }
+    });
+
+    $( "#open-search" )
+        .button()
+        .click(function() {
+            $( "#dialog-form" ).dialog( "open" );
+        });
         });
 
     </script>
@@ -646,6 +809,13 @@
         <div id="snapshot"></div>
     </div>
 
-
+<div id="dialog-form" title="Search">
+    <div class="ui-widget">
+        <label for="tags">Tags: </label>
+        <input id="tags" />
+    </div>
+</div>
+<button id="open-search">Open search</button>
+<div id="result"></div>
 {% endblock %}
 

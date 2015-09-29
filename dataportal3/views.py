@@ -584,3 +584,17 @@ def profile(request):
     return render(request, 'profile.html',
                   {},
                   context_instance=RequestContext(request))
+
+
+def remote_data(request):
+    rd = RemoteData()
+    to_return = {}
+
+    search_term = request.GET.get("search_term", None)
+    print search_term, type(search_term)
+    if search_term:
+
+        datasets = rd.search_datasets(search_term)
+        to_return['datasets'] = datasets
+
+    return HttpResponse(json.dumps(to_return, indent=4), content_type="application/json")

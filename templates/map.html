@@ -780,6 +780,35 @@
                 $( "#search-remote-form").dialog( "open" );
             });
 
+            $("#remote_search_btn").click(function(e){
+                var search_term = $('#remote_search_term').val();
+
+                $.ajax({
+                    url: "{% url 'remote_data' %}",
+                    type: 'GET',
+                    data: {
+                        'method': 'search',
+                        'remote_api': 'nomis',
+                        'search_term': search_term,
+                        'method_data': {
+                            'search_term': search_term
+                        }
+                    },
+                    success: function (data) {
+                        var dataset_select = $('#dataset_select');
+
+                        for(var rd in data['datasets']) {
+                            var remote_dataset = data['datasets'][rd];
+                            console.log(remote_dataset);
+                            dataset_select.append($('<option>', {
+                                value: remote_dataset.id,
+                                text: remote_dataset.name
+                            }));
+                        }
+                    }
+                });
+            });
+
             $( "#search-remote-form" ).dialog({
                 autoOpen: false,
                 height: 300,
@@ -787,7 +816,7 @@
                 modal: true,
                 buttons: {
                     "Save value": function() {
-
+                        $( this ).dialog( "close" );
                     },
                     Cancel: function() {
                         $( this ).dialog( "close" );
@@ -906,7 +935,7 @@
                     <input type="text" id="remote_search_term" name="remote_search_term" class="controls input-block-level tab_data_input">
                 </td>
                 <td>
-                    <div class="btn btn-info">Search</div>
+                    <div id="remote_search_btn" class="btn btn-info">Search</div>
                 </td>
             </tr>
 
@@ -942,7 +971,7 @@
                     <label for="dataset" class="control-label">Dataset</label>
                 </td>
                 <td>
-                    <select name="dataset" id="dataset" class="controls input-block-level tab_data_input">
+                    <select name="dataset" id="dataset_select" class="controls input-block-level tab_data_input">
                         <option value="-" selected="selected">- - -</option>
                     </select>
                 </td>

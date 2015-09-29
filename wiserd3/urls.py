@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^logout', views.logout, name='logout'),
     url(r'^profile', views.profile, name='profile'),
 
+    url(r'^remote_data', views.remote_data, name='remote_data'),
 
     url(r'^file_management', views.file_management, name='file_management'),
     # url(r'^upload_shapefile_progress', views.get_upload_progress, name='upload_shapefile_progress'),

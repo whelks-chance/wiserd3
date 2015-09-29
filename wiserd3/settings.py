@@ -159,6 +159,7 @@ BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}  # 1 hour.
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 app = Celery('dataportal3.utils.ShapeFileImport', backend=BROKER_URL, broker=BROKER_URL)
 
+nomis_uid = ''
 
 # CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 MEDIA_ROOT = '/tmp/shapefiles/'

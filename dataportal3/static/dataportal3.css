@@ -1,3 +1,13 @@
 .leaflet-top {
     z-index: 500;
 }
+
+.leaflet-bottom .leaflet-right {
+    max-height: 50%;
+    overflow: scroll;
+}
+
+/*.control-group {*/
+    /*display: inline-block;*/
+    /*vertical-align: top;*/
+/*}*/

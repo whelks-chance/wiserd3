@@ -18,7 +18,7 @@ import operator
 from dataportal3 import models
 from dataportal3.forms import ShapefileForm
 from dataportal3.utils.ShapeFileImport import celery_import, ShapeFileImport
-from dataportal3.utils.rubbish import get_imported_feature_default
+from dataportal3.utils.remote_data import RemoteData
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user
 import requests
 from old.views import text_search, date_handler
@@ -221,11 +221,17 @@ def get_imported_feature(request):
 
     a = 'fsfsd'
     # with open('/home/ubuntu/shp/x_sid_liw2007_fire_/output-fixed.json', 'r') as output:
+    with open('/home/ubuntu/shp/x_sid_liw2007_lsoa_/output-fixed-0.1.json', 'r') as output:
 
-    with open('/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-ms.json', 'r') as output:
+    # with open('/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-ms.json', 'r') as output:
         a = output.read()
 
         # final = json.dumps(topojson, indent=4)
+
+    rd = RemoteData()
+    a = rd.get_stored_data()
+    a = json.dumps(a, indent=4)
+
     return HttpResponse(a, content_type="application/json")
 
     wiserd_layer = request.POST.getlist('layer_names[]')[0]

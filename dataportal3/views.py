@@ -229,7 +229,7 @@ def get_imported_feature(request):
         # final = json.dumps(topojson, indent=4)
 
     rd = RemoteData()
-    a = rd.get_stored_data()
+    a = rd.get_test_data('van', 'ua')
     a = json.dumps(a, indent=4)
 
     return HttpResponse(a, content_type="application/json")

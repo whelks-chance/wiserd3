@@ -95,6 +95,7 @@ class RemoteData():
             k4 = {}
             k4['id'] = f4['value']
             k4['name'] = f4['description']['value']
+            k4['geogcode'] = f4['annotations']['annotation'][2]['annotationtext']
             regions.append(k4)
             print pprint.pformat(k4)
         return regions
@@ -109,18 +110,19 @@ class RemoteData():
                 'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?'
                 'geography={1}&&measures={2}&&RecordLimit={3}&&RecordOffset={4}&&uid={5}'.format(
                     dataset_id, region_id, measure, limit, offset, settings.nomis_uid
-                ), stream=True
+                ), stream=False
             )
             print r5.url
 
-            with open('/home/ubuntu/nomis_raw.json', 'wb') as f:
-                for chunk in r5.iter_content(chunk_size=1024):
-                    if chunk: # filter out keep-alive new chunks
-                        f.write(chunk)
-                        f.flush()
-
-        with open('/home/ubuntu/nomis_raw.json', 'r') as f:
-            j5 = json.load(f)
+        #     with open('/home/ubuntu/nomis_raw.json', 'wb') as f:
+        #         for chunk in r5.iter_content(chunk_size=1024):
+        #             if chunk: # filter out keep-alive new chunks
+        #                 f.write(chunk)
+        #                 f.flush()
+        #
+        # with open('/home/ubuntu/nomis_raw.json', 'r') as f:
+        #     j5 = json.load(f)
+            j5 = json.loads(r5.text)
 
         s5 = j5['obs']
         data_points = {}
@@ -189,20 +191,38 @@ class RemoteData():
             # print whole_json['objects'][recent_layer_name]['geometries']
             return whole_topojson
 
-    def get_test_data(self, search_term):
+    def get_test_data(self, search_term, geog='pcode'):
+
+        # default to pcode
+        region_id = '2092957700TYPE276'
+        topojson_file = '/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-1.json'
+
+        if geog == 'pcode':
+            region_id = '2092957700TYPE276'
+            topojson_file = '/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-1.json'
+
+        if geog == 'lsoa':
+            region_id = '2092957700TYPE298'
+            topojson_file = '/home/ubuntu/shp/x_sid_liw2007_lsoa_/output-fixed-1.json'
+
+        if geog == 'ua':
+            region_id = '2092957700TYPE464'
+            topojson_file = '/home/ubuntu/shp/x_sid_liw2007_ua_/output-fixed-1.json'
+
         search_results = self.search_datasets(search_term)
         dataset_id = search_results[0]['id']
-        print search_results[0]
+
+        nomis_variables = self.get_dataset_variables(dataset_id)
+        nomis_variable = nomis_variables[0]['id']
 
         geogs = self.get_geography(dataset_id)
-        # regions = self.get_sub_regions(dataset_id, '2092957700TYPE274')
-        vars = self.get_dataset_variables(dataset_id)
+        print search_results[0]
 
-        # all_data = {}
-        # for d in [0, 5, 10]:
-        all_data = self.get_data(dataset_id, '2092957700TYPE276', vars[0]['id'], limit=100, offset=0)
-        # all_data.update(data)
-        # print len(all_data.keys())
+        nomis_cache_file = '/home/ubuntu/nomis_{0}_{1}_{2}.json'.format(dataset_id, geog, nomis_variable)
+
+        # regions = self.get_sub_regions(dataset_id, '2092957700TYPE274')
+
+        all_data = self.get_data(dataset_id, region_id, nomis_variable, limit=100, offset=0)
 
         # regions = [
         #     {'id': 1149239309, 'name': u'CF - Cardiff'},
@@ -218,13 +238,12 @@ class RemoteData():
         #     data = self.get_data(dataset_id, region_id, vars[0]['id'])
         #     all_data.update(data)
 
-        with open('/home/ubuntu/nomis_data_pc4.json', 'w') as nomis_file:
+        with open(nomis_cache_file, 'w') as nomis_file:
             nomis_file.write(json.dumps(all_data, indent=4))
 
-        with open('/home/ubuntu/nomis_data_pc4.json', 'r') as nomis_file:
+        with open(nomis_cache_file, 'r') as nomis_file:
             all_data = json.load(nomis_file)
 
-        topojson_file = '/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-1.json'
         return self.update_topojson(topojson_file, all_data)
 
     def get_stored_data(self):
@@ -235,18 +254,28 @@ class RemoteData():
         topojson_file = '/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-1.json'
         return self.update_topojson(topojson_file, all_data)
 
+    def inspect_topojson(self):
+        with open('/home/ubuntu/shp/x_sid_liw2007_ua_/output-fixed-1.json', 'r') as nomis_file:
+            all_data = json.load(nomis_file)
+            print all_data.keys()
+
+            for geo_name in all_data['objects'].itervalues().next()['geometries']:
+                print geo_name['properties']['AREA_NAME']
+
 
 # 2092957700TYPE276 post code sector
 # 2092957700TYPE298 lsoa
 
 # rd = RemoteData()
+# rd.inspect_topojson()
+# rd.get_sub_regions('NM_548_1', '2092957700TYPE464')
 # geogs = rd.get_geography('NM_548_1')
 # rd.get_sub_regions('NM_548_1', '2092957700')
-# rd.get_sub_regions('NM_548_1', '2092957700TYPE274')
 # rd.get_sub_regions('NM_548_1', '2092957700TYPE275')
 # rd.get_sub_regions('NM_548_1', '2092957700TYPE276')
+# rd.get_sub_regions('NM_548_1', '2092957700TYPE298')
 
-# rd.get_test_data('van')
+# rd.get_test_data('van', 'ua')
 
 # rd.update_topojson('/home/ubuntu/shp/x_sid_liw2007_lsoa_/output-fixed-0.1.json', '')
 

@@ -14,3 +14,7 @@
 #search-remote-form > table > tbody > tr > td > select {
     width: 100%;
 }
+
+.custom-search-form {
+    padding: 2px
+}

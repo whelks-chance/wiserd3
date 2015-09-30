@@ -486,6 +486,9 @@
 
             function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins){
 
+                if (color_scheme == 'b_w') {
+                    color_scheme = ['white', 'black'];
+                }
                 var data_objects = data['objects'];
                 var feature_data = [];
 
@@ -498,7 +501,7 @@
                 }
 
                 {#  Calculating the bins for quantiles with 'q' option, 'e'  and 'k' available #}
-                var grades = chroma.limits(feature_data, bin_breakdown, parseInt(num_bins));
+                var grades = chroma.limits(feature_data, bin_breakdown, parseInt(num_bins) -1);
 
                 {#  Calculating the function we can pass values to, in order to get nice rgb color codes #}
 
@@ -886,6 +889,7 @@
                         <option value="RdYlBu">Red - Yellow - Blue</option>
                         <option value="YlGnBu" selected="selected">Yellow - Green - Blue</option>
                         <option value="Spectral">Spectral</option>
+                        <option value="b_w">Greyscale</option>
                     </select>
                 </td>
             </tr>
@@ -931,15 +935,27 @@
                 <td>
                     <label for="remote_search_term" class="control-label">Search remote</label>
                 </td>
+                {#                <td>#}
+                {#                    <input type="text" id="remote_search_term" name="remote_search_term" class="controls input-block-level tab_data_input">#}
+                {#                </td>#}
+                {#                <td>#}
+                {#                    <div id="remote_search_btn" class="btn btn-info">Search</div>#}
+                {#                </td>#}
+
                 <td>
-                    <input type="text" id="remote_search_term" name="remote_search_term" class="controls input-block-level tab_data_input">
-                </td>
-                <td>
-                    <div id="remote_search_btn" class="btn btn-info">Search</div>
+                    <div class="input-group custom-search-form">
+                        <input type="text" id="remote_search_term" name="remote_search_term"
+                               class="form-control" placeholder="Search..." name="search_terms">
+                            <span class="input-group-btn">
+                                <button id="remote_search_btn" class="btn btn-default" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                    </div>
                 </td>
             </tr>
 
-            </table>
+        </table>
         <table>
             <tr>
                 <td>
@@ -977,7 +993,6 @@
                 </td>
             </tr>
         </table>
-
     </div>
 
 {% endblock %}

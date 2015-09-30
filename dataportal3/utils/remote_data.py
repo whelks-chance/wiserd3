@@ -29,7 +29,7 @@ class RemoteData():
             k['id'] = f['id']
             k['name'] = f['name']['value']
             datasets.append(k)
-            print pprint.pformat(k)
+            # print pprint.pformat(k)
         # print json.dumps(s, indent=4)
         return datasets
 

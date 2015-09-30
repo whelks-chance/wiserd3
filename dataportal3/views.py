@@ -590,6 +590,7 @@ def remote_data(request):
     rd = RemoteData()
     to_return = {}
 
+    print request.GET
     search_term = request.GET.get("search_term", None)
     print search_term, type(search_term)
     if search_term:

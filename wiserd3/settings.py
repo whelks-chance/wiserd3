@@ -32,21 +32,23 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'dataportal3',
-    'old',
-    'django_hstore',
+    'django.contrib.contenttypes',
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'django.contrib.gis',
+    'dataportal3',
+    'old',
+    'old_qual',
+    'django_hstore',
+
 )
 
 DJANGO_HSTORE_GLOBAL_REGISTER = False
@@ -115,7 +117,11 @@ DATABASES = {
         }
 }
 
-DATABASE_ROUTERS = ['dataportal3.dbrouter.DBRouter', 'old.old_dbrouter.OldDBRouter']
+DATABASE_ROUTERS = [
+    'dataportal3.dbrouter.DBRouter',
+    'old.old_dbrouter.OldDBRouter',
+    'old_qual.qual_router.QualRouter'
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

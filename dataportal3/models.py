@@ -380,3 +380,62 @@ class Heads_of_the_Valleys(models.Model):
     class Meta:
         managed = False
         db_table = 'Heads_of_the_Valleys'
+
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#   * Rearrange models' order
+#   * Make sure each model has one field with primary_key=True
+#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or field names.
+#
+# Also note: You'll have to insert the output of 'django-admin sqlcustom [app_label]'
+# into your database.
+
+# from __future__ import unicode_literals
+#
+# from django.contrib.gis.db import models
+
+
+class QualDcInfo(models.Model):
+    identifier = models.TextField(primary_key=True)
+    title = models.TextField(blank=True, null=True)
+    creator = models.TextField(blank=True, null=True)
+    subject = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    publisher = models.TextField(blank=True, null=True)
+    contributor = models.TextField(blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    format = models.TextField(blank=True, null=True)
+    source = models.TextField(blank=True, null=True)
+    language = models.CharField(max_length=50, blank=True, null=True)
+    relation = models.TextField(blank=True, null=True)
+    coverage = models.TextField(blank=True, null=True)
+    rights = models.TextField(blank=True, null=True)
+    user_id = models.CharField(max_length=25, blank=True, null=True)
+    created = models.DateTimeField(blank=True, null=True)
+    words = models.TextField(blank=True, null=True)
+    calais = models.TextField(blank=True, null=True)
+    vern_geog = models.TextField(db_column='vern_Geog', blank=True, null=True)  # Field name made lowercase.
+    the_geom = models.TextField()  # This field type is a guess.
+    thematic_group = models.TextField(blank=True, null=True)
+    tier = models.TextField(blank=True, null=True)
+    identifier2 = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'dc_info'
+
+
+class QualTranscriptData(models.Model):
+    id = models.TextField(primary_key=True)
+    rawtext = models.TextField()
+    stats = models.TextField()
+    pages = models.IntegerField()
+    errors = models.TextField(blank=True, null=True)
+    # pk = models.AutoField(primary_key=True)
+    text_index = models.TextField(blank=True, null=True)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        db_table = 'transcript_data'

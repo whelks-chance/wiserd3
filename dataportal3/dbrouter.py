@@ -7,14 +7,29 @@ class DBRouter(object):
     """
     A router to control all database operations on models in the
     auth application.
+
+
+    READ ME!!!!!!
+
+    This is basically the "default" router, so anything routes to the "new" database unless
+    specifically directed not to.
+
+    This differs from the other routers, which return False unless they specifically
+    answer to that models app label
+
     """
+
+    # TODO convert this to a list of ignored app labels to check in
+
     def db_for_read(self, model, **hints):
 
         """
         Attempts to read auth models go to auth_db.
         """
-
         if model._meta.app_label == 'old':
+            return False
+
+        if model._meta.app_label == 'old_qual':
             return False
 
         if model._meta.app_label == 'dataportal3':
@@ -28,6 +43,9 @@ class DBRouter(object):
         """
 
         if model._meta.app_label == 'old':
+            return False
+
+        if model._meta.app_label == 'old_qual':
             return False
 
         if model._meta.app_label == 'dataportal3':
@@ -53,7 +71,11 @@ class DBRouter(object):
         # if app_label == 'dataportal3' or app_label == 'sites' or app_label == 'contenttypes':
         #     print 'using this db'
         #     return db == 'new'
+
         if app_label == 'old':
+            return None
+
+        if app_label == 'old_qual':
             return None
         else:
             # if db == 'new':

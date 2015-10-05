@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^logout', views.logout, name='logout'),
     url(r'^profile', views.profile, name='profile'),
 
+    url(r'^remote_data_topojson', views.remote_data_topojson, name='remote_data_topojson'),
     url(r'^remote_data', views.remote_data, name='remote_data'),
 
     url(r'^file_management', views.file_management, name='file_management'),

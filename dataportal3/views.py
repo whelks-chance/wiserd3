@@ -219,20 +219,18 @@ def edit_metadata(request):
 @csrf_exempt
 def get_imported_feature(request):
 
-    a = 'fsfsd'
+    rd = RemoteData()
+    a = rd.get_test_data('van', 'parl2011')
+    a = json.dumps(a, indent=4)
+    return HttpResponse(a, content_type="application/json")
+
     # with open('/home/ubuntu/shp/x_sid_liw2007_fire_/output-fixed.json', 'r') as output:
-    with open('/home/ubuntu/shp/x_sid_liw2007_lsoa_/output-fixed-0.1.json', 'r') as output:
+    # with open('/home/ubuntu/shp/x_sid_liw2007_lsoa_/output-fixed-0.1.json', 'r') as output:
 
     # with open('/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-ms.json', 'r') as output:
-        a = output.read()
+    #     a = output.read()
 
         # final = json.dumps(topojson, indent=4)
-
-    rd = RemoteData()
-    a = rd.get_test_data('van', 'ua')
-    a = json.dumps(a, indent=4)
-
-    return HttpResponse(a, content_type="application/json")
 
     wiserd_layer = request.POST.getlist('layer_names[]')[0]
 
@@ -587,6 +585,8 @@ def profile(request):
 
 
 def remote_data(request):
+    print 'remote data'
+
     rd = RemoteData()
     to_return = {}
 
@@ -599,3 +599,20 @@ def remote_data(request):
         to_return['datasets'] = datasets
 
     return HttpResponse(json.dumps(to_return, indent=4), content_type="application/json")
+
+
+def remote_data_topojson(request):
+    print 'remote topojson'
+    print request.GET
+
+    dataset_id = request.GET.get('dataset_id', '')
+    nomis_variable = request.GET.get('nomis_variable', '')
+    geog = request.GET.get('geography', '')
+
+    print dataset_id, nomis_variable, geog
+
+    rd = RemoteData()
+    a = rd.get_topojson_with_data(dataset_id, geog, nomis_variable)
+    a = json.dumps(a, indent=4)
+
+    return HttpResponse(a, content_type="application/json")

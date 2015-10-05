@@ -336,7 +336,7 @@
                 map_layers[$(replace_button).data('layername')].addTo(map);
             }
 
-            get_geojson_layer('survey', JSON.parse('{{ surveys|safe }}'));
+            {#            get_geojson_layer('survey', JSON.parse('{{ surveys|safe }}'));#}
 
             function get_geojson_layer(layer_type, layer_names){
                 var ajax_url = "{% url 'get_geojson' %}";
@@ -479,7 +479,7 @@
                             topojson_layers[layer_names] = data;
                             $( "#dialog-form").data(
                                     {layer_names: layer_names}
-                            ).dialog().dialog( "open" );
+                            ).dialog( "open" );
 
                         }
                     }
@@ -507,10 +507,6 @@
 
                 {#  Calculating the function we can pass values to, in order to get nice rgb color codes #}
 
-
-                {#                var color_array = ['OrRd', 'RdYlBu', 'YlGnBu', 'Spectral'];#}
-                {#                TODO stupid#}
-                {#                var rand = color_array[Math.floor(Math.random() * color_array.length)];#}
                 var chroma_scale = chroma.scale(color_scheme).classes(grades);
 
                 var legend = L.control({position: 'bottomright'});
@@ -550,6 +546,8 @@
                 layerControl.addOverlay(myLayer, data['objects'][0]);
 
                 myLayer.addTo(map);
+                map.fitBounds(myLayer.getBounds());
+
                 myLayer.bringToFront();
                 {#                            map_layers[data['properties']['name']] = myLayer;#}
                 map_layers[data['objects'][0]] = myLayer;
@@ -769,12 +767,15 @@
                                 {#                                alert($("#bintype").val() + ' ' + $("#binno").val() + ' ' + $("#colorpicker").val());#}
                                 var topojson_data = topojson_layers[$(this).data('layer_names')];
                                 handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val());
-                                $(this).dialog("destroy");
+                                $(this).dialog("close");
+
+
+
                             }
                         }
                     },
                     Cancel: function() {
-                        $( this ).dialog( "destroy" );
+                        $( this ).dialog( "close" );
                     }
                 },
                 close: function() {
@@ -782,7 +783,7 @@
             });
 
             $("#new_layer_btn").click(function(e){
-                $( "#search-remote-form").dialog().dialog( "open" );
+                $( "#search-remote-form").dialog( "open" );
             });
 
             $("#remote_search_btn").click(function(e){
@@ -821,10 +822,39 @@
                 modal: true,
                 buttons: {
                     "Save value": function() {
-                        $( this ).dialog( "destroy" );
+                        $( this ).dialog( "close" );
+
+                        var nomis_variable = $("#nomis_variable").val();
+                        var topojson_geography = $("#topojson_geographies").val();
+                        var dataset_id = $("#dataset_select").val();
+
+                        var topojson_id = dataset_id + '_' + topojson_geography + '_' + nomis_variable;
+
+                        alert(topojson_id);
+
+                        var layer_name = topojson_id;
+                        $.ajax({
+                            url: "{% url 'remote_data_topojson' %}",
+                            type: 'GET',
+                            data: {
+                                'nomis_variable': nomis_variable,
+                                'geography': topojson_geography,
+                                'dataset_id': dataset_id
+                                {#                        'area_names': {{ area_names|safe }}#}
+                            },
+                            success: function(data){
+                                topojson_layers[layer_name] = data;
+                                $( "#dialog-form").data(
+                                        {layer_names: layer_name}
+                                ).dialog( "open" );
+
+                            }
+                        });
+
+
                     },
                     Cancel: function() {
-                        $( this ).dialog( "destroy" );
+                        $( this ).dialog( "close" );
                     }
                 },
                 close: function() {
@@ -980,15 +1010,15 @@
                 <td>
                     <div class="input-group custom-search-form">
 
-                        <label for="variable" class="control-label">Variable</label>
+                        <label for="nomis_variable" class="control-label">Variable</label>
                     </div>
                 </td>
                 <td>
                     <div class="input-group custom-search-form">
 
-                        <select name="variable" id="bintype" class="controls input-block-level tab_data_input">
-                            <option value="v" selected="selected">Value</option>
-                            <option value="p">Percentage</option>
+                        <select name="nomis_variable" id="nomis_variable" class="controls input-block-level tab_data_input">
+                            <option value="20100" selected="selected">Value</option>
+                            <option value="20301">Percentage</option>
                         </select>
                     </div>
                 </td>
@@ -1002,10 +1032,11 @@
                 </td>
                 <td>
                     <div class="input-group custom-search-form">
-                        <select name="geographies" id="geographies" class="controls input-block-level tab_data_input">
+                        <select name="geographies" id="topojson_geographies" class="controls input-block-level tab_data_input">
                             <option value="ua">UA</option>
                             <option value="pcode">Post Code Sector</option>
                             <option value="lsoa" selected="selected">LSOA</option>
+                            <option value="parl2011" selected="selected">Parliamentary Constituencies 2011</option>
                         </select>
                     </div>
                 </td>

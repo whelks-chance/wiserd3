@@ -109,18 +109,19 @@ class RemoteData():
         return regions
 
     def get_data(self, dataset_id, region_id, measure, limit=10, offset=0):
+        print 'get_data', dataset_id, region_id, measure
         # Get data for variable for dataset in region with offsets
         limit = str(limit)
         offset = str(offset)
 
-        if True:
-            r5 = requests.get(
-                'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?'
-                'geography={1}&&measures={2}&&RecordLimit={3}&&RecordOffset={4}&&uid={5}'.format(
-                    dataset_id, region_id, measure, limit, offset, settings.nomis_uid
-                ), stream=False
-            )
-            print r5.url, r5.status_code
+        # if True:
+        r5 = requests.get(
+            'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?'
+            'geography={1}&&measures={2}&&RecordLimit={3}&&RecordOffset={4}&&uid={5}'.format(
+                dataset_id, region_id, measure, limit, offset, settings.nomis_uid
+            ), stream=False
+        )
+        print r5.url, r5.status_code
 
         #     with open('/home/ubuntu/nomis_raw.json', 'wb') as f:
         #         for chunk in r5.iter_content(chunk_size=1024):
@@ -130,15 +131,20 @@ class RemoteData():
         #
         # with open('/home/ubuntu/nomis_raw.json', 'r') as f:
         #     j5 = json.load(f)
-            j5 = json.loads(r5.text)
+
+        j5 = json.loads(r5.text)
 
         s5 = j5['obs']
+        print len(s5)
+        print 'measures', s5[0].keys()
+        print type(measure)
+
         data_points = {}
 
         # print s5[0]
 
         for f5 in s5:
-            if f5['measures']['value'] == measure:
+            if int(f5['measures']['value']) == int(measure):
                 k5 = {
                     'value': f5['obs_value']['value'],
                     'name': f5['obs_value']['description'],
@@ -153,6 +159,7 @@ class RemoteData():
                         str(f5['geography']['description']).replace(' ', '')
                     ).append(k5)
                 except:
+                    print 'adding to datapoints - 1'
                     data_points[
                         str(f5['geography']['description']).replace(' ', '')
                     ] = [k5]
@@ -163,6 +170,7 @@ class RemoteData():
                         str(f5['geography']['geogcode'])
                     ).append(k5)
                 except:
+                    print 'adding to datapoints - 2'
                     data_points[
                         str(f5['geography']['geogcode'])
                     ] = [k5]
@@ -248,11 +256,15 @@ class RemoteData():
             topojson_file = '/home/ubuntu/DataPortalGeographies/13Wales_parlconstit_2011/output-fixed-1-4326.json'
 
         if region_id == '' or topojson_file == '':
+            print '***this shouldnt error'
             raise Exception
         else:
+            print 'geo lookup', region_id, topojson_file
             return region_id, topojson_file
 
     def get_topojson_with_data(self, dataset_id, geog, nomis_variable):
+        print 'get_topojson_with_data', dataset_id, geog, nomis_variable
+
         region_id, topojson_file = self.get_dataset_geodata(geog)
         all_data = self.get_data(dataset_id, region_id, nomis_variable, limit=100, offset=0)
 
@@ -321,7 +333,7 @@ class RemoteData():
 # 2092957700TYPE298 lsoa
 # 2092957700TYPE464 ua ????
 
-rd = RemoteData()
+# rd = RemoteData()
 # topojson_file = '/home/ubuntu/DataPortalGeographies/13Wales_parlconstit_2011/output-fixed-1.json'
 
 # rd.inspect_topojson(topojson_file)
@@ -333,7 +345,7 @@ rd = RemoteData()
 # rd.get_sub_regions('NM_548_1', '2092957700TYPE276')
 # rd.get_sub_regions('NM_548_1', '2092957700TYPE464')
 
-rd.get_test_data('van', 'parl2011')
+# rd.get_test_data('van', 'parl2011')
 
 # a = rd.get_topojson_with_data('NM_548_1', 'parl2011', '20100')
 

@@ -18,28 +18,79 @@ class RemoteData():
         pass
 
     def search_datasets(self, search_term):
-        # Do keyword search
-        r = requests.get('http://www.nomisweb.co.uk/api/v01/dataset/def.sdmx.json?search=*{0}*'.format(search_term))
-        print r.url
-        j = json.loads(r.text)
-        s = j['structure']['keyfamilies']['keyfamily']
-        datasets = []
-        for f in s:
-            k = {}
-            k['id'] = f['id']
-            k['name'] = f['name']['value']
-            datasets.append(k)
-            # print pprint.pformat(k)
-        # print json.dumps(s, indent=4)
-        return datasets
 
-    def get_dataset_items(self, dataset_id, geog_id):
-        r6 = requests.get(
-            'https://www.nomisweb.co.uk/api/v01/dataset/{0}/item.def.sdmx.json?geography={1}'.format(dataset_id, geog_id)
-        )
+        try:
+            # Do keyword search
+            r = requests.get('http://www.nomisweb.co.uk/api/v01/dataset/def.sdmx.json?search=*{0}*'.format(search_term))
+            print r.url
+            j = json.loads(r.text)
+            s = j['structure']['keyfamilies']['keyfamily']
+            datasets = []
+            for f in s:
+                k = {}
+                k['id'] = f['id']
+                k['name'] = f['name']['value']
+                datasets.append(k)
+                # print pprint.pformat(k)
+            # print json.dumps(s, indent=4)
+            return datasets
+        except Exception as e:
+            raise e
+
+    def get_codelist_for_concept(self, concept_id, codelist_ref):
+        item_url = 'https://www.nomisweb.co.uk/api/v01/codelist/{0}.def.sdmx.json'.format(concept_id)
+
+        r6 = requests.get(item_url)
+        print r6.url
+        j6 = json.loads(r6.text)
+
+        s2 = j6['structure']['codelists']['codelist'][0]['code']
+        measures = []
+        for f2 in s2:
+            k2 = {}
+            k2['id'] = f2['value']
+            k2['name'] = f2['description']['value']
+            measures.append(k2)
+            # print pprint.pformat(k2)
+
+        measures_def = {
+            'name': j6['structure']['codelists']['codelist'][0]['name']['value'],
+            'concept': codelist_ref,
+            'measures': measures
+        }
+
+        print pprint.pformat(measures_def)
+        return measures_def
+
+
+    def get_dataset_overview(self, dataset_id):
+
+        item_url = 'https://www.nomisweb.co.uk/api/v01/dataset/{0}.overview.json'.format(dataset_id)
+        r6 = requests.get(item_url)
         print r6.url
         j6 = json.loads(r6.text)
         print 'items', json.dumps(j6, indent=4)
+
+        print '\n\n\n'
+
+        item_url = 'https://www.nomisweb.co.uk/api/v01/dataset/{0}/def.sdmx.json'.format(dataset_id)
+        r6 = requests.get(item_url)
+        print r6.url
+        j6 = json.loads(r6.text)
+        print 'items', json.dumps(j6, indent=4)
+
+        concepts = j6['structure']['keyfamilies']['keyfamily'][0]['components']['dimension']
+        for concept in concepts:
+            codelist = concept['codelist']
+            codelist_ref = concept['conceptref']
+
+            if "GEOGRAPHY" not in codelist:
+                try:
+                    self.get_codelist_for_concept(codelist, codelist_ref)
+                except:
+                    print '*** FAIL', codelist
+
+        print '\n\n\n'
 
     def get_dataset_variables(self, dataset_id):
         # Get available variables for dataset
@@ -109,39 +160,34 @@ class RemoteData():
         return regions
 
     def get_data(self, dataset_id, region_id, measure, limit=10, offset=0):
-        print 'get_data', dataset_id, region_id, measure
         # Get data for variable for dataset in region with offsets
         limit = str(limit)
         offset = str(offset)
 
         # if True:
         r5 = requests.get(
-            'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?'
+            'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?cell=6&&'
             'geography={1}&&measures={2}&&RecordLimit={3}&&RecordOffset={4}&&uid={5}'.format(
                 dataset_id, region_id, measure, limit, offset, settings.nomis_uid
             ), stream=False
         )
         print r5.url, r5.status_code
 
-        #     with open('/home/ubuntu/nomis_raw.json', 'wb') as f:
-        #         for chunk in r5.iter_content(chunk_size=1024):
-        #             if chunk: # filter out keep-alive new chunks
-        #                 f.write(chunk)
-        #                 f.flush()
-        #
-        # with open('/home/ubuntu/nomis_raw.json', 'r') as f:
-        #     j5 = json.load(f)
+        nomis_raw_filename = '/home/ubuntu/nomis_raw_{0}_{1}_{2}_cell6.json'.format(dataset_id, region_id, measure)
 
-        j5 = json.loads(r5.text)
+        with open(nomis_raw_filename, 'wb') as raw_nomis:
+            # f32.write(r5.text)
+            for chunk in r5.iter_content(chunk_size=1024):
+                if chunk: # filter out keep-alive new chunks
+                    raw_nomis.write(chunk)
+                    raw_nomis.flush()
 
+        with open(nomis_raw_filename, 'r') as f:
+            j5 = json.load(f)
+
+        # j5 = json.load(nomis_raw_filename)
         s5 = j5['obs']
-        print len(s5)
-        print 'measures', s5[0].keys()
-        print type(measure)
-
         data_points = {}
-
-        # print s5[0]
 
         for f5 in s5:
             if int(f5['measures']['value']) == int(measure):
@@ -159,7 +205,6 @@ class RemoteData():
                         str(f5['geography']['description']).replace(' ', '')
                     ).append(k5)
                 except:
-                    print 'adding to datapoints - 1'
                     data_points[
                         str(f5['geography']['description']).replace(' ', '')
                     ] = [k5]
@@ -170,7 +215,6 @@ class RemoteData():
                         str(f5['geography']['geogcode'])
                     ).append(k5)
                 except:
-                    print 'adding to datapoints - 2'
                     data_points[
                         str(f5['geography']['geogcode'])
                     ] = [k5]
@@ -180,7 +224,6 @@ class RemoteData():
         return data_points
 
     def update_topojson(self, topojson_file, remote_data):
-        print topojson_file
 
         remote_areas = remote_data.keys()
 
@@ -194,10 +237,7 @@ class RemoteData():
             for layer_name in whole_topojson['objects']:
                 recent_layer_name = layer_name
 
-                # print 'remote data keys', len(remote_data.keys()), remote_data.keys()
-
                 for geom in whole_topojson['objects'][layer_name]['geometries']:
-
                     try:
                         # Try by geocode
                         topojon_area_name = str(geom['properties']['CODE'])
@@ -222,7 +262,6 @@ class RemoteData():
                     # print '\n'
 
             print 'remote data keys', len(remote_data.keys()), remote_data.keys()
-            print 'topojson areas not populated', remote_areas
             print 'success y/n', found, not_found
 
             # print '\n***\n'
@@ -256,15 +295,12 @@ class RemoteData():
             topojson_file = '/home/ubuntu/DataPortalGeographies/13Wales_parlconstit_2011/output-fixed-1-4326.json'
 
         if region_id == '' or topojson_file == '':
-            print '***this shouldnt error'
+            print 'error figuring out geog'
             raise Exception
         else:
-            print 'geo lookup', region_id, topojson_file
             return region_id, topojson_file
 
     def get_topojson_with_data(self, dataset_id, geog, nomis_variable):
-        print 'get_topojson_with_data', dataset_id, geog, nomis_variable
-
         region_id, topojson_file = self.get_dataset_geodata(geog)
         all_data = self.get_data(dataset_id, region_id, nomis_variable, limit=100, offset=0)
 
@@ -289,9 +325,7 @@ class RemoteData():
         geogs = self.get_geography(dataset_id)
         print search_results[0]
 
-
         # regions = self.get_sub_regions(dataset_id, '2092957700TYPE274')
-
 
         # regions = [
         #     {'id': 1149239309, 'name': u'CF - Cardiff'},
@@ -306,7 +340,6 @@ class RemoteData():
         #     region_id = str(region['id'])
         #     data = self.get_data(dataset_id, region_id, vars[0]['id'])
         #     all_data.update(data)
-
 
         print dataset_id, geog, nomis_variable
         return self.get_topojson_with_data(dataset_id, geog, nomis_variable)
@@ -339,6 +372,8 @@ class RemoteData():
 # rd.inspect_topojson(topojson_file)
 # rd.get_sub_regions('NM_548_1', '2092957700TYPE460')
 # geogs = rd.get_geography('NM_548_1')
+#
+# rd.get_dataset_overview('NM_548_1')
 # items = rd.get_dataset_items('NM_548_1', '2092957700TYPE460')
 # rd.get_sub_regions('NM_548_1', '2092957700')
 # rd.get_sub_regions('NM_548_1', '2092957700TYPE275')

@@ -18,3 +18,14 @@
 .custom-search-form {
     padding: 2px
 }
+
+#dataset_radio > div > label {
+    width: 100%;
+}
+
+.dataset_ul > li { background: #fff; }
+.dataset_ul > li:nth-child(odd) { background: #f5f5f5; }
+
+.ui-dialog {
+    z-index: 1001;
+}

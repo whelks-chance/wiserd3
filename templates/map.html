@@ -250,8 +250,12 @@
 
             console.log(map_height + ' ' + header_height);
 
+            var map_div = $('#map_div');
 
-            $('#map_div').css({height: map_height - header_height - 5});
+            map_div.css({
+                height: map_height - header_height - 5,
+                width: $('#page-wrapper').width()
+            });
             var map = L.map('map_div').setView([51.53181, -3.24687], 8);
 
 
@@ -288,7 +292,7 @@
 
             var geojson;
             function resetHighlight(e) {
-{#                console.log(e.target);#}
+                {#                console.log(e.target);#}
                 e.target.resetStyle(e.target);
                 info.update();
             }
@@ -455,7 +459,7 @@
                                             info.update(layer.feature.properties);
                                         },
                                         mouseout: function(e){
-{#                                            console.log(e.target);#}
+                                            {#                                            console.log(e.target);#}
                                             myLayer.resetStyle(e.target);
                                             info.update();
                                         }
@@ -520,7 +524,7 @@
                     var div = L.DomUtil.create('div', 'info legend'),
                             labels = [],
                             from, to;
-{#                    console.log(grades);#}
+                    {#                    console.log(grades);#}
 
                     {#                                For each bin in the quantiles, we need a representative color for the Legend #}
                     for (var i = 0; i < grades.length; i++) {
@@ -735,7 +739,7 @@
 
                             setTimeout(function(){
                                 {#                                TODO FINDME re-enable this #}
-                                {#                                window.location = "{% url 'tables' %}?search_id=" + data['uid'];#}
+                                window.location = "{% url 'tables' %}?search_id=" + data['uid'];
                             }, 1000);
                         }
                     }
@@ -763,19 +767,18 @@
 
             $( "#dialog-form" ).dialog({
                 autoOpen: false,
-                height: 300,
-                width: 350,
+                height: map_div.height(),
+                width: $('#page-wrapper').width()/2,
                 position: {
                     my: "center",
                     at: "center",
-                    of: $('#map_div')
+                    of: map_div
                 },
                 modal: true,
                 buttons: {
                     "Save value": function() {
                         if ($("#bintype").val() != '') {
                             if ($("#binno").val() != '') {
-                                {#                                alert($("#bintype").val() + ' ' + $("#binno").val() + ' ' + $("#colorpicker").val());#}
                                 var topojson_data = topojson_layers[$(this).data('layer_names')];
                                 handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val());
                                 $(this).dialog("close");
@@ -795,6 +798,10 @@
                 $( "#search-remote-form").dialog( "open" );
             });
 
+            $('#dataset_select').change(function(e){
+                alert(e);
+            });
+
             $("#remote_search_btn").click(function(e){
                 var search_term = $('#remote_search_term').val();
 
@@ -810,17 +817,31 @@
                         }
                     },
                     success: function (data) {
-                        var dataset_select = $('#dataset_select');
-                        dataset_select.find('option').remove().end();
 
-                        for(var rd in data['datasets']) {
-                            var remote_dataset = data['datasets'][rd];
-{#                            console.log(remote_dataset);#}
-                            dataset_select.append($('<option>', {
-                                value: remote_dataset.id,
-                                text: remote_dataset.name
+                        var dataset_radio = $('#dataset_radio');
+                        dataset_radio.find('input').remove().end();
+                        dataset_radio.find('label').remove().end();
+
+                        for(var rd_radio in data['datasets']) {
+                            var remote_dataset_radio = data['datasets'][rd_radio];
+                            var radio_div = $('<div>');
+
+                            radio_div.append($('<input>', {
+                                value: remote_dataset_radio.id,
+                                id: remote_dataset_radio.id,
+                                type: 'radio',
+                                name: 'nomis_search_radio',
+                                text: remote_dataset_radio.name
                             }));
+                            radio_div.append($('<label>', {
+                                value: remote_dataset_radio.id,
+                                for: remote_dataset_radio.id,
+                                text: remote_dataset_radio.name
+                            }));
+                            dataset_radio.append(radio_div);
                         }
+                        dataset_radio.buttonset();
+
                     },
                     error: function() {
                         alert('Sorry, an error occured. Please try again, or report it.')
@@ -830,23 +851,50 @@
 
             $( "#search-remote-form" ).dialog({
                 autoOpen: false,
-                height: 300,
+                height: map_div.height(),
                 position: {
                     my: "center",
                     at: "center",
-                    of: $('#map_div')
+                    of: map_div
                 },
-                width: ($('#map_div').width() /2),
+                width: map_div.width() / 2,
                 modal: true,
                 buttons: {
-                    "Save value": function() {
+                    "Render to Map": function() {
                         $( this ).dialog( "close" );
+                        $('#dataset_define_vars_form').data(
+                                {
+                                    'dataset_id': $("#dataset_radio").find(":radio:checked").attr('id')
+                                }).dialog('open');
+                    },
+                    Cancel: function() {
+                        $( this ).dialog( "close" );
+                    }
+                },
+                close: function() {
+                }
+            });
+
+
+            $( "#dataset_define_vars_form" ).dialog({
+                autoOpen: false,
+                height: map_div.height(),
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: map_div
+                },
+                width: map_div.width()/2,
+                modal: true,
+                buttons: {
+                    "Render to Map": function() {
+                        $( this ).dialog( "close" );
+
+                        var dataset_id = $(this).data('dataset_id');
 
                         var nomis_variable = $("#nomis_variable").val();
                         var topojson_geography = $("#topojson_geographies").val();
-                        var dataset_id = $("#dataset_select").val();
                         var topojson_id = dataset_id + '_' + topojson_geography + '_' + nomis_variable;
-
                         var layer_name = topojson_id;
                         $.ajax({
                             url: "{% url 'remote_data_topojson' %}",
@@ -878,6 +926,7 @@
                 close: function() {
                 }
             });
+
 
             var div = L.DomUtil.get('div_id');
             if (!L.Browser.touch) {
@@ -921,6 +970,9 @@
                 </td>
                 <td>
                     <select name="binno" id="binno" class="input-block-leveltab_data_input">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
                         <option value="6" selected="selected">6</option>
@@ -948,41 +1000,20 @@
     </div>
 
 
-
-
-    <div id="search-remote-form" title="Search Remote">
+    <div id="dataset_define_vars_form" title="Dataset Variables">
         <table>
             <tr>
                 <td>
                     <div class="input-group custom-search-form">
-                        <label for="remote_search_term" class="control-label">Search remote</label>
-                    </div>
-                </td>
-                <td>
-                    <div class="input-group custom-search-form">
-                        <input type="text" id="remote_search_term" name="remote_search_term"
-                               class="form-control" placeholder="Search..." name="search_terms">
-                            <span class="input-group-btn">
-                                <button id="remote_search_btn" class="btn btn-default" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                    </div>
-                </td>
-            </tr>
 
-        </table>
-        <table>
-            <tr>
-                <td>
-                    <div class="input-group custom-search-form">
-                        <label for="dataset" class="control-label">Dataset</label>
+                        <label for="nomis_cell" class="control-label">Data Element</label>
                     </div>
                 </td>
                 <td>
                     <div class="input-group custom-search-form">
-                        <select name="dataset" id="dataset_select" class="controls input-block-level tab_data_input">
-                            <option value="-" selected="selected">- - -</option>
+                        <select name="nomis_cell" id="nomis_cell" class="controls input-block-level tab_data_input">
+                            <option value="20100" selected="selected">Value</option>
+                            <option value="20301">Percentage</option>
                         </select>
                     </div>
                 </td>
@@ -1024,6 +1055,30 @@
                 </td>
             </tr>
         </table>
+
+    </div>
+
+
+    <div id="search-remote-form" title="Search Remote">
+
+                    <div class="input-group custom-search-form">
+                        <label for="remote_search_term" class="control-label">Search remote</label>
+                    </div>
+
+                    <div class="input-group custom-search-form">
+                        <input type="text" id="remote_search_term" name="remote_search_term"
+                               class="form-control" placeholder="Search..." name="search_terms">
+                            <span class="input-group-btn">
+                                <button id="remote_search_btn" class="btn btn-default" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                    </div>
+
+        <fieldset>
+    <div id="dataset_radio"></div>
+            </fieldset>
+
     </div>
 
 {% endblock %}

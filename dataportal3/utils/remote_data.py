@@ -69,28 +69,39 @@ class RemoteData():
         r6 = requests.get(item_url)
         print r6.url
         j6 = json.loads(r6.text)
-        print 'items', json.dumps(j6, indent=4)
+        # print 'items', json.dumps(j6, indent=4)
 
-        print '\n\n\n'
+        # print '\n\n\n'
 
         item_url = 'https://www.nomisweb.co.uk/api/v01/dataset/{0}/def.sdmx.json'.format(dataset_id)
         r6 = requests.get(item_url)
         print r6.url
         j6 = json.loads(r6.text)
-        print 'items', json.dumps(j6, indent=4)
+        # print 'items', json.dumps(j6, indent=4)
+
+        return_data = {
+            'concepts': [],
+            'codelists': {}
+        }
 
         concepts = j6['structure']['keyfamilies']['keyfamily'][0]['components']['dimension']
         for concept in concepts:
             codelist = concept['codelist']
             codelist_ref = concept['conceptref']
 
+            return_data['concepts'].append({
+                'codelist': codelist,
+                'codelist_ref': codelist_ref
+            })
+
             if "GEOGRAPHY" not in codelist:
                 try:
-                    self.get_codelist_for_concept(codelist, codelist_ref)
+                    codelist_data = self.get_codelist_for_concept(codelist, codelist_ref)
+                    return_data['codelists'][codelist_ref] = codelist_data
                 except:
                     print '*** FAIL', codelist
 
-        print '\n\n\n'
+        return return_data
 
     def get_dataset_variables(self, dataset_id):
         # Get available variables for dataset
@@ -279,7 +290,8 @@ class RemoteData():
 
         if geog_short_code == 'lsoa':
             region_id = '2092957700TYPE298'
-            topojson_file = '/home/ubuntu/shp/x_sid_liw2007_lsoa_/output-fixed-1.json'
+            # topojson_file = '/home/ubuntu/shp/x_sid_liw2007_lsoa_/output-fixed-1.json'
+            topojson_file = '/home/ubuntu/DataPortalGeographies/11Wales_lsoa_2011/output-fixed-1-k.json'
 
         if geog_short_code == 'ua':
             region_id = '2092957700TYPE464'

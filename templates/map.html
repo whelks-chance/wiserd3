@@ -13,8 +13,8 @@
     <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
 
-    <script type="text/javascript" src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script>
+{#    <script type="text/javascript" src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script>#}
+{#    <script type="text/javascript" src="https://rawgit.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script>#}
 
     {#  remote mapbox - use this is leaflet, probably not both  #}
     {#    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>#}
@@ -50,7 +50,8 @@
 
     {#    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>#}
 
-    <script src="http://d3js.org/topojson.v1.min.js"></script>
+{#    <script src="http://d3js.org/topojson.v1.min.js"></script>#}
+    <script type="text/javascript" src="{% static 'd3js/topojson.v1.min.js' %}"></script>
 
     <script type="text/javascript" src="{% static 'chroma.min.js' %}"></script>
 
@@ -862,10 +863,73 @@
                 buttons: {
                     "Render to Map": function() {
                         $( this ).dialog( "close" );
-                        $('#dataset_define_vars_form').data(
+                        var dataset_id = $("#dataset_radio").find(":radio:checked").attr('id');
+
+                        $.ajax({
+                            url: "{% url 'remote_data' %}",
+                            type: 'GET',
+                            data: {
+                                'method': 'metadata',
+                                'dataset_id': dataset_id
+                            },
+                            success: function(data){
+
+                                var dataset_radio = $('#data_cell_radio');
+                                dataset_radio.find('input').remove().end();
+                                dataset_radio.find('label').remove().end();
+
+                                console.log(data);
+
+                                for(var remote_codelist in data['metadata']['codelists']) {
+
+{#                                    console.log(data['metadata']['codelists'][remote_codelist]);#}
+
+                                    var remote_codelist_data = data['metadata']['codelists'][remote_codelist];
+
+                                    var codelist_label = $('<div>', {text: remote_codelist_data['name']});
+                                    dataset_radio.append(codelist_label);
+
+                                    var codelist_radio_div = $('<div>');
+
+                                    for(var remote_codelist_option in remote_codelist_data['measures']) {
+
+                                        var remote_codelist_option_data = remote_codelist_data['measures'][remote_codelist_option];
+
+{#                                        console.log(remote_codelist_option_data);#}
+
+                                        var radio_div = $('<div>');
+
+                                        radio_div.append($('<input>', {
+                                            value: remote_codelist_option_data.id,
+                                            id: remote_codelist + '_' + remote_codelist_option_data.id,
+                                            type: 'radio',
+                                            name: (remote_codelist + '_option'),
+                                            text: remote_codelist_option_data.name
+                                        }));
+                                        radio_div.append($('<label>', {
+                                            value: remote_codelist_option_data.id,
+                                            for: remote_codelist + '_' + remote_codelist_option_data.id,
+                                            text: remote_codelist_option_data.name
+                                        }));
+                                        codelist_radio_div.append(radio_div);
+                                    }
+                                    codelist_radio_div.buttonset();
+                                    dataset_radio.append(codelist_radio_div);
+                                }
+{#                                dataset_radio.buttonset();#}
+
+                                $('#dataset_define_vars_form').data(
                                 {
-                                    'dataset_id': $("#dataset_radio").find(":radio:checked").attr('id')
+                                    'dataset_id': dataset_id
                                 }).dialog('open');
+
+                            },
+                            error: function() {
+                                alert('Sorry, an error occured. Please try again, or report it.')
+                            }
+                        });
+
+
                     },
                     Cancel: function() {
                         $( this ).dialog( "close" );
@@ -1001,6 +1065,10 @@
 
 
     <div id="dataset_define_vars_form" title="Dataset Variables">
+        <div id="data_cell_radio"></div>
+
+        <div id="data_variable_radio"></div>
+
         <table>
             <tr>
                 <td>

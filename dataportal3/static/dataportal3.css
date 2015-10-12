@@ -19,6 +19,10 @@
     padding: 2px
 }
 
+#data_cell_radio > div > div > label {
+    width: 100%;
+}
+
 #dataset_radio > div > label {
     width: 100%;
 }

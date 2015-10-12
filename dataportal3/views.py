@@ -584,11 +584,20 @@ def remote_data(request):
     rd = RemoteData()
     to_return = {}
     print request.GET
-    search_term = request.GET.get("search_term", None)
-    print search_term, type(search_term)
-    if search_term:
-        datasets = rd.search_datasets(search_term)
-        to_return['datasets'] = datasets
+
+    method = request.GET.get("method", None)
+
+    if method == 'search':
+        search_term = request.GET.get("search_term", None)
+        print search_term, type(search_term)
+        if search_term:
+            datasets = rd.search_datasets(search_term)
+            to_return['datasets'] = datasets
+
+    if method == 'metadata':
+        dataset_id = request.GET.get("dataset_id", None)
+
+        to_return['metadata'] = rd.get_dataset_overview(dataset_id)
 
     return HttpResponse(json.dumps(to_return, indent=4), content_type="application/json")
 

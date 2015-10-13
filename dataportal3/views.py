@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+import pprint
 import uuid
 from BeautifulSoup import BeautifulSoup
 from django.apps import apps
@@ -605,13 +606,19 @@ def remote_data(request):
 def remote_data_topojson(request):
     print request.GET
 
+    codelist = None
+    codelist_json = request.GET.get('codelist_selected', None)
+    if codelist_json:
+        codelist = json.loads(codelist_json)
+        print pprint.pformat(codelist)
+
     dataset_id = request.GET.get('dataset_id', '')
     nomis_variable = request.GET.get('nomis_variable', '')
     geog = request.GET.get('geography', '')
     print dataset_id, nomis_variable, geog
 
     rd = RemoteData()
-    a = rd.get_topojson_with_data(dataset_id, geog, nomis_variable)
+    a = rd.get_topojson_with_data(dataset_id, geog, nomis_variable, codelist)
     a = json.dumps(a, indent=4)
 
     return HttpResponse(a, content_type="application/json")

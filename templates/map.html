@@ -13,8 +13,8 @@
     <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
 
-{#    <script type="text/javascript" src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script>#}
-{#    <script type="text/javascript" src="https://rawgit.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script>#}
+    {#    <script type="text/javascript" src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script>#}
+    {#    <script type="text/javascript" src="https://rawgit.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script>#}
 
     {#  remote mapbox - use this is leaflet, probably not both  #}
     {#    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>#}
@@ -50,10 +50,13 @@
 
     {#    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>#}
 
-{#    <script src="http://d3js.org/topojson.v1.min.js"></script>#}
+    {#    <script src="http://d3js.org/topojson.v1.min.js"></script>#}
     <script type="text/javascript" src="{% static 'd3js/topojson.v1.min.js' %}"></script>
 
     <script type="text/javascript" src="{% static 'chroma.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'ehpc/bootstrap-waitingfor.min.js' %}"></script>
+
 
     <script>
         L.TopoJSON = L.GeoJSON.extend({
@@ -117,8 +120,8 @@
 
 {% block nav_extras %}
     <li>
-        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Map layers<span class="fa arrow"></span></a>
-        <ul class="nav nav-second-level">
+        <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> Map layers<span class="fa arrow"></span></a>
+        <ul aria-expanded="false" class="nav nav-second-level collapse">
             {#            <li>#}
             {#                <a href="#"> Current Layers<span class="fa arrow"></span></a>#}
             {#                <ul  id="layer_list" class="nav nav-third-level">#}
@@ -126,19 +129,19 @@
             {#                </ul>#}
             {#            </li>#}
             <li>
-                <a href="#"> Add Feature<span class="fa arrow"></span></a>
-                <ul class="nav nav-third-level">
+                <a aria-expanded="false" href="#"> Add Feature<span class="fa arrow"></span></a>
+                <ul aria-expanded="false" class="nav nav-third-level collapse">
                     <li>
                         <a href="#" id="new_annotation"><i class="fa fa-map-marker fa-fw"></i> New Annotation</a>
                     </li>
                     <li>
-                        <a id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> New Layer</a>
+                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> New Layer</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#"> WMS Layer<span class="fa arrow"></span></a>
-                <ul class="nav nav-third-level scrollable_ul">
+                <a aria-expanded="false" href="#"> WMS Layer<span class="fa arrow"></span></a>
+                <ul aria-expanded="false" class="nav nav-third-level scrollable_ul collapse">
                     {% for wms_layer in wms_layers %}
                         <li>
                             <a href="#" data-layer_name="{{ wms_layer.tile_name }}" class="wms_toggle">
@@ -148,8 +151,8 @@
                 </ul>
             </li>
             <li>
-                <a href="#"> WISERD Research<span class="fa arrow"></span></a>
-                <ul class="nav nav-third-level scrollable_ul">
+                <a aria-expanded="false" href="#"> WISERD Research<span class="fa arrow"></span></a>
+                <ul aria-expanded="false" class="nav nav-third-level scrollable_ul collapse">
                     {% for upload_layer in upload_layers %}
                         <li>
                             <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">
@@ -284,16 +287,24 @@
 
 // method that we will use to update the control based on feature properties passed
             info.update = function (props) {
-                this._div.innerHTML = '<div style="min-height: 10%"><h4>Region Response Rate</h4>' +  (props ?
-                '<b>' + props.area_name + '</b><br />' + props.response_rate + '%'
-                        : 'Hover over a region');
+                console.log(props);
+                var value = '';
+                if (props) {
+                    if (props.hasOwnProperty('response_rate')) {
+                        value = props.response_rate;
+                    }
+                    if (props.hasOwnProperty('REMOTE_VALUE')) {
+                        value = props.REMOTE_VALUE;
+                    }
+                    this._div.innerHTML = '<div style="min-height: 10%"><h4>Region Response Rate</h4>' + (props ?
+                    '<b>' + props.AREA_NAME + '</b><br />' + value + '%'
+                            : 'Hover over a region');
+                }
             };
-
             info.addTo(map);
 
             var geojson;
             function resetHighlight(e) {
-                {#                console.log(e.target);#}
                 e.target.resetStyle(e.target);
                 info.update();
             }
@@ -347,6 +358,8 @@
             {#            get_geojson_layer('survey', JSON.parse('{{ surveys|safe }}'));#}
 
             function get_geojson_layer(layer_type, layer_names){
+                waitingDialog.show('Fetching map layer ...');
+
                 var ajax_url = "{% url 'get_geojson' %}";
 
                 if( layer_type == 'upload_layer'){
@@ -367,33 +380,8 @@
                     success: function(data) {
 
                         var name = layer_names;
-                        {#                        var new_layer_menu = $(#}
-                        {#                                '<li>' +#}
-                        {#                                '<a href="#"><i class="fa fa-fw"></i> ' +#}
-                        {#                                name +#}
-                        {#                                '<span class="fa btn btn-primary btn-sm fa-arrow-down"></span>' +#}
-                        {#                                '<span class="fa btn btn-primary btn-sm fa-arrow-up"></span>' +#}
-                        {#                                '<span class="fa btn btn-primary btn-sm fa-eye show_layer"></span>' +#}
-                        {#                                '<span class="fa btn btn-primary btn-sm arrow" data-visible=true></span>' +#}
-                        {#                                '</a>' +#}
-                        {##}
-                        {#                                '<ul class="nav nav-third-level active">' +#}
-                        {#                                '<li>' +#}
-                        {#                                '<a href="#" class="remove_layer" data-layername="' + name +#}
-                        {#                                '"><i class="fa fa-remove fa-fw"></i> Remove Layer</a>' +#}
-                        {#                                '</li>' +#}
-                        {##}
-                        {#                                '<li>' +#}
-                        {#                                '<a href="#" class="replace_layer" data-layername="' + name +#}
-                        {#                                '"><i class="fa fa-plus fa-fw"></i> Replace Layer</a>' +#}
-                        {#                                '</li>' +#}
-                        {##}
-                        {#                                '</ul>' +#}
-                        {#                                '</li>');#}
 
-                        {#                        var layer_list = $('#layer_list');#}
-                        {#                        layer_list.append(new_layer_menu);#}
-                        $('#side-menu').removeData("plugin_metisMenu").metisMenu();
+                        $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
 
                         $('.replace_layer').click(function () {
                             replace_layer(this)
@@ -444,7 +432,9 @@
 
                             var myLayer = L.geoJson(data, {
                                 onEachFeature: function (feature, layer) {
-                                    layer.bindPopup('Clicked a thing');
+                                    console.log(feature);
+                                    console.log(layer);
+                                    layer.bindPopup(layer.feature.properties.AREA_NAME);
                                     layer.on({
                                         mouseover: function(e){
                                             var layer = e.target;
@@ -492,7 +482,10 @@
                         }
                     },
                     error: function() {
-                        alert('Sorry, an error occured. Please try again, or report it.')
+                        alert('Sorry, an error occurred. Please try again, or report it.')
+                    },
+                    complete: function() {
+                          waitingDialog.hide();
                     }
                 });
             }
@@ -583,8 +576,7 @@
 
                         layer.bringToFront();
 
-                        info.update(layer.feature.properties.REMOTE_VALUE + '<br>'
-                        + layer.feature.properties.REMOTE_VALUE + '%');
+                        info.update(layer.feature.properties);
                     },
                     mouseout: function (e) {
                         {#                        e.target.resetStyle(e.target);#}
@@ -743,6 +735,9 @@
                                 window.location = "{% url 'tables' %}?search_id=" + data['uid'];
                             }, 1000);
                         }
+                    },
+                    complete: function() {
+                          waitingDialog.hide();
                     }
                 });
             }
@@ -763,8 +758,8 @@
 
 
             setTimeout(function() {
-                $('#side-menu').removeData("plugin_metisMenu").metisMenu();
-            }, 2000);
+                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
+            }, 5000);
 
             $( "#dialog-form" ).dialog({
                 autoOpen: false,
@@ -803,8 +798,15 @@
                 alert(e);
             });
 
+            $('#remote_search_term').keyup(function(event){
+                if(event.keyCode == 13){
+                    $("#remote_search_btn").click();
+                }
+            });
+
             $("#remote_search_btn").click(function(e){
                 var search_term = $('#remote_search_term').val();
+                waitingDialog.show('Searching ...');
 
                 $.ajax({
                     url: "{% url 'remote_data' %}",
@@ -845,7 +847,10 @@
 
                     },
                     error: function() {
-                        alert('Sorry, an error occured. Please try again, or report it.')
+                        alert('Sorry, an error occurred. Please try again, or report it.')
+                    },
+                    complete: function() {
+                          waitingDialog.hide();
                     }
                 });
             });
@@ -862,6 +867,8 @@
                 modal: true,
                 buttons: {
                     "Render to Map": function() {
+                        waitingDialog.show('Inspecting dataset ...');
+
                         $( this ).dialog( "close" );
                         var dataset_id = $("#dataset_radio").find(":radio:checked").attr('id');
 
@@ -875,27 +882,18 @@
                             success: function(data){
 
                                 var dataset_radio = $('#data_cell_radio');
-                                dataset_radio.find('input').remove().end();
-                                dataset_radio.find('label').remove().end();
-
-                                console.log(data);
+                                dataset_radio.find('div').remove().end();
 
                                 for(var remote_codelist in data['metadata']['codelists']) {
-
-{#                                    console.log(data['metadata']['codelists'][remote_codelist]);#}
-
                                     var remote_codelist_data = data['metadata']['codelists'][remote_codelist];
 
                                     var codelist_label = $('<div>', {text: remote_codelist_data['name']});
                                     dataset_radio.append(codelist_label);
 
-                                    var codelist_radio_div = $('<div>');
+                                    var codelist_radio_div = $('<div>', {id: remote_codelist + '_radio'});
 
                                     for(var remote_codelist_option in remote_codelist_data['measures']) {
-
                                         var remote_codelist_option_data = remote_codelist_data['measures'][remote_codelist_option];
-
-{#                                        console.log(remote_codelist_option_data);#}
 
                                         var radio_div = $('<div>');
 
@@ -916,19 +914,21 @@
                                     codelist_radio_div.buttonset();
                                     dataset_radio.append(codelist_radio_div);
                                 }
-{#                                dataset_radio.buttonset();#}
 
-                                $('#dataset_define_vars_form').data(
-                                {
-                                    'dataset_id': dataset_id
+                                $('#topojson_geography_radio').buttonset();
+                                $('#dataset_define_vars_form').data({
+                                    'dataset_id': dataset_id,
+                                    'codelists': data['metadata']['codelists']
                                 }).dialog('open');
 
                             },
                             error: function() {
-                                alert('Sorry, an error occured. Please try again, or report it.')
-                            }
+                                alert('Sorry, an error occurred. Please try again, or report it.')
+                            },
+                    complete: function() {
+                          waitingDialog.hide();
+                    }
                         });
-
 
                     },
                     Cancel: function() {
@@ -952,12 +952,29 @@
                 modal: true,
                 buttons: {
                     "Render to Map": function() {
+                        waitingDialog.show('Fetching map layers ...');
+
                         $( this ).dialog( "close" );
+
+                        var codelists = $(this).data('codelists');
+                        var codelist_selected = [];
+
+                        for(var remote_codelist in codelists) {
+                            var remote_codelist_selection = $('#' + remote_codelist +'_radio').find(":radio:checked").attr('value');
+
+                            {#                            alert(remote_codelist + ' ' + remote_codelist_selection);#}
+                            codelist_selected.push({
+                                option: remote_codelist,
+                                variable: remote_codelist_selection
+                            })
+                        }
 
                         var dataset_id = $(this).data('dataset_id');
 
                         var nomis_variable = $("#nomis_variable").val();
-                        var topojson_geography = $("#topojson_geographies").val();
+                        {#                        var topojson_geography = $("#topojson_geographies").val();#}
+
+                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');
                         var topojson_id = dataset_id + '_' + topojson_geography + '_' + nomis_variable;
                         var layer_name = topojson_id;
                         $.ajax({
@@ -966,8 +983,8 @@
                             data: {
                                 'nomis_variable': nomis_variable,
                                 'geography': topojson_geography,
-                                'dataset_id': dataset_id
-                                {#                        'area_names': {{ area_names|safe }}#}
+                                'dataset_id': dataset_id,
+                                'codelist_selected': JSON.stringify(codelist_selected)
                             },
                             success: function(data){
                                 topojson_layers[layer_name] = data;
@@ -977,11 +994,12 @@
 
                             },
                             error: function() {
-                                alert('Sorry, an error occured. Please try again, or report it.')
-                            }
+                                alert('Sorry, an error occurred. Please try again, or report it.')
+                            },
+                    complete: function() {
+                          waitingDialog.hide();
+                    }
                         });
-
-
                     },
                     Cancel: function() {
                         $( this ).dialog( "close" );
@@ -1067,85 +1085,87 @@
     <div id="dataset_define_vars_form" title="Dataset Variables">
         <div id="data_cell_radio"></div>
 
-        <div id="data_variable_radio"></div>
+        <div>Geography</div>
+        <div id="topojson_geography_radio" class="controls input-block-level tab_data_input">
+            <div>
+                <input type="radio" name="geographies" id="ua" value="ua"/>
+                <label for="ua">UA</label>
+            </div>
+            <div>
+                <input type="radio" name="geographies" id="pcode" value="pcode"/>
+                <label for="pcode">Post Code Sector</label>
+            </div>
+            <div>
+                <input type="radio" name="geographies" id="lsoa" value="lsoa"/>
+                <label for="lsoa">LSOA</label>
+            </div>
+            <div>
+                <input type="radio" name="geographies" id="parl2011" value="parl2011"/>
+                <label for="parl2011">Parliamentary Constituencies 2011</label>
+            </div>
+        </div>
 
-        <table>
-            <tr>
-                <td>
-                    <div class="input-group custom-search-form">
-
-                        <label for="nomis_cell" class="control-label">Data Element</label>
-                    </div>
-                </td>
-                <td>
-                    <div class="input-group custom-search-form">
-                        <select name="nomis_cell" id="nomis_cell" class="controls input-block-level tab_data_input">
-                            <option value="20100" selected="selected">Value</option>
-                            <option value="20301">Percentage</option>
-                        </select>
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="input-group custom-search-form">
-
-                        <label for="nomis_variable" class="control-label">Variable</label>
-                    </div>
-                </td>
-                <td>
-                    <div class="input-group custom-search-form">
-
-                        <select name="nomis_variable" id="nomis_variable" class="controls input-block-level tab_data_input">
-                            <option value="20100" selected="selected">Value</option>
-                            <option value="20301">Percentage</option>
-                        </select>
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="input-group custom-search-form">
-                        <label for="geographies" class="control-label">Geographies</label>
-                    </div>
-                </td>
-                <td>
-                    <div class="input-group custom-search-form">
-                        <select name="geographies" id="topojson_geographies" class="controls input-block-level tab_data_input">
-                            <option value="ua">UA</option>
-                            <option value="pcode">Post Code Sector</option>
-                            <option value="lsoa" selected="selected">LSOA</option>
-                            <option value="parl2011" selected="selected">Parliamentary Constituencies 2011</option>
-                        </select>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        {#        <table>#}
+        {##}
+        {#            <tr>#}
+        {#                <td>#}
+        {#                    <div class="input-group custom-search-form">#}
+        {##}
+        {#                        <label for="nomis_variable" class="control-label">Variable</label>#}
+        {#                    </div>#}
+        {#                </td>#}
+        {#                <td>#}
+        {#                    <div class="input-group custom-search-form">#}
+        {##}
+        {#                        <select name="nomis_variable" id="nomis_variable" class="controls input-block-level tab_data_input">#}
+        {#                            <option value="20100" selected="selected">Value</option>#}
+        {#                            <option value="20301">Percentage</option>#}
+        {#                        </select>#}
+        {#                    </div>#}
+        {#                </td>#}
+        {#            </tr>#}
+        {##}
+        {#            <tr>#}
+        {#                <td>#}
+        {#                    <div class="input-group custom-search-form">#}
+        {#                        <label for="geographies" class="control-label">Geographies</label>#}
+        {#                    </div>#}
+        {#                </td>#}
+        {#                <td>#}
+        {#                    <div class="input-group custom-search-form">#}
+        {#                        <select name="geographies" id="topojson_geographies" class="controls input-block-level tab_data_input">#}
+        {#                            <option value="ua">UA</option>#}
+        {#                            <option value="pcode">Post Code Sector</option>#}
+        {#                            <option value="lsoa" selected="selected">LSOA</option>#}
+        {#                            <option value="parl2011" selected="selected">Parliamentary Constituencies 2011</option>#}
+        {#                        </select>#}
+        {#                    </div>#}
+        {#                </td>#}
+        {#            </tr>#}
+        {#        </table>#}
 
     </div>
 
 
     <div id="search-remote-form" title="Search Remote">
 
-                    <div class="input-group custom-search-form">
-                        <label for="remote_search_term" class="control-label">Search remote</label>
-                    </div>
+        <div class="input-group custom-search-form">
+            <label for="remote_search_term" class="control-label">Search remote</label>
+        </div>
 
-                    <div class="input-group custom-search-form">
-                        <input type="text" id="remote_search_term" name="remote_search_term"
-                               class="form-control" placeholder="Search..." name="search_terms">
+        <div class="input-group custom-search-form">
+            <input type="text" id="remote_search_term" name="remote_search_term"
+                   class="form-control" placeholder="Search..." name="search_terms">
                             <span class="input-group-btn">
                                 <button id="remote_search_btn" class="btn btn-default" type="submit">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
-                    </div>
+        </div>
 
         <fieldset>
-    <div id="dataset_radio"></div>
-            </fieldset>
+            <div id="dataset_radio"></div>
+        </fieldset>
 
     </div>
 

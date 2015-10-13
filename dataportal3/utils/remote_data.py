@@ -59,16 +59,16 @@ class RemoteData():
             'measures': measures
         }
 
-        print pprint.pformat(measures_def)
+        # print pprint.pformat(measures_def)
         return measures_def
 
 
     def get_dataset_overview(self, dataset_id):
 
-        item_url = 'https://www.nomisweb.co.uk/api/v01/dataset/{0}.overview.json'.format(dataset_id)
-        r6 = requests.get(item_url)
-        print r6.url
-        j6 = json.loads(r6.text)
+        # item_url = 'https://www.nomisweb.co.uk/api/v01/dataset/{0}.overview.json'.format(dataset_id)
+        # r6 = requests.get(item_url)
+        # print r6.url
+        # j6 = json.loads(r6.text)
         # print 'items', json.dumps(j6, indent=4)
 
         # print '\n\n\n'
@@ -170,21 +170,45 @@ class RemoteData():
             print pprint.pformat(k4)
         return regions
 
-    def get_data(self, dataset_id, region_id, measure, limit=10, offset=0):
+    def get_data(self, dataset_id, region_id, measure, codelist=None, limit=10, offset=0):
         # Get data for variable for dataset in region with offsets
         limit = str(limit)
         offset = str(offset)
 
-        # if True:
-        r5 = requests.get(
-            'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?cell=6&&'
-            'geography={1}&&measures={2}&&RecordLimit={3}&&RecordOffset={4}&&uid={5}'.format(
-                dataset_id, region_id, measure, limit, offset, settings.nomis_uid
-            ), stream=False
-        )
-        print r5.url, r5.status_code
+        dataset_url = 'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?' \
+                      'geography={1}&&RecordLimit={2}&&RecordOffset={3}&&uid={4}'
+        dataset_url = dataset_url.format(dataset_id, region_id, limit, offset, settings.nomis_uid)
 
-        nomis_raw_filename = '/home/ubuntu/nomis_raw_{0}_{1}_{2}_cell6.json'.format(dataset_id, region_id, measure)
+        codelist_filename = ''
+        if codelist:
+            print type(codelist), codelist
+            if 'MEASURES' not in codelist:
+                codelist.append({
+                    'option': 'MEASURES',
+                    'variable': '20100'
+                })
+            for code in codelist:
+                if 'option' in code and 'variable' in code:
+                    dataset_url += '&&' + str(code['option']) + '=' + str(code['variable'])
+                    codelist_filename += str(code['option']) + '=' + str(code['variable']) + '_'
+
+                    # TODO, remove refs to measure not from codelist
+                    if code['option'] == 'MEASURES':
+                        measure = int(code['variable'])
+        else:
+            dataset_url += '&&CELL=6'
+
+        # r5 = requests.get(
+        #     'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?cell=6&&'
+        #     'geography={1}&&measures={2}&&RecordLimit={3}&&RecordOffset={4}&&uid={5}'.format(
+        #         dataset_id, region_id, measure, limit, offset, settings.nomis_uid
+        #     ), stream=False
+        # )
+
+        nomis_raw_filename = '/home/ubuntu/nomis_raw_{0}_{1}_{2}.json'.format(dataset_id, region_id, codelist_filename)
+
+        r5 = requests.get(dataset_url, stream=False)
+        print r5.url, r5.status_code
 
         with open(nomis_raw_filename, 'wb') as raw_nomis:
             # f32.write(r5.text)
@@ -201,6 +225,8 @@ class RemoteData():
         data_points = {}
 
         for f5 in s5:
+            # print f5['measures']['value'], int(measure)
+            # TODO is this == check needed?
             if int(f5['measures']['value']) == int(measure):
                 k5 = {
                     'value': f5['obs_value']['value'],
@@ -267,10 +293,11 @@ class RemoteData():
                         found += 1
                         remote_areas.remove(topojon_area_name)
                         geom['properties']['REMOTE_VALUE'] = first_remote_data['value']
+                        geom['properties']['AREA_NAME'] = geom['properties']['NAME']
                     except Exception as e:
                         print 'error', e
                         not_found += 1
-                    # print '\n'
+                        # print '\n'
 
             print 'remote data keys', len(remote_data.keys()), remote_data.keys()
             print 'success y/n', found, not_found
@@ -295,7 +322,8 @@ class RemoteData():
 
         if geog_short_code == 'ua':
             region_id = '2092957700TYPE464'
-            topojson_file = '/home/ubuntu/shp/x_sid_liw2007_ua_/output-fixed-1.json'
+            # topojson_file = '/home/ubuntu/shp/x_sid_liw2007_ua_/output-fixed-1.json'
+            topojson_file = '/home/ubuntu/DataPortalGeographies/14Wales_lad_unitaryauthority_2011/output-fixed-1.json'
 
         if geog_short_code == 'parl':
             # boundaries prior to 2010
@@ -312,11 +340,18 @@ class RemoteData():
         else:
             return region_id, topojson_file
 
-    def get_topojson_with_data(self, dataset_id, geog, nomis_variable):
+    def get_topojson_with_data(self, dataset_id, geog, nomis_variable, codelist=None):
         region_id, topojson_file = self.get_dataset_geodata(geog)
-        all_data = self.get_data(dataset_id, region_id, nomis_variable, limit=100, offset=0)
+        all_data = self.get_data(dataset_id, region_id, nomis_variable, codelist=codelist, limit=100, offset=0)
 
         nomis_cache_file = '/home/ubuntu/nomis_{0}_{1}_{2}.json'.format(dataset_id, geog, nomis_variable)
+
+        # if codelist:
+        #     print type(codelist), codelist
+        #     for code in codelist:
+        #         if 'option' in code and 'variable' in code:
+        #             dataset_url += '&&' + code['option'] + '=' + code['variable']
+
         print nomis_cache_file
         with open(nomis_cache_file, 'w') as nomis_file:
             nomis_file.write(json.dumps(all_data, indent=4))

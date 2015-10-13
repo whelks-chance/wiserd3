@@ -234,7 +234,7 @@
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
+                    <ul aria-expanded="false" class="nav collapse" id="side-menu">
                         <li class="sidebar-search">
                             <form action="{% url 'search_survey_question_gui' %}" method="get" role="search">
                                 <div class="input-group custom-search-form">
@@ -261,11 +261,11 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Recent Search Results<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> Recent Search Results<span class="fa arrow"></span></a>
+                            <ul aria-expanded="false" class="nav nav-second-level">
                                 <li>
-                                    <a href="#"> Text Results<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
+                                    <a aria-expanded="false" href="#"> Text Results<span class="fa arrow"></span></a>
+                                    <ul aria-expanded="false" class="nav nav-third-level">
                                         {% for s in searches.text|slice:":10" %}
                                             {% if s.type == 'text' %}
                                                 <li>
@@ -282,8 +282,8 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#"> Spatial Results<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
+                                    <a aria-expanded="false" href="#"> Spatial Results<span class="fa arrow"></span></a>
+                                    <ul aria-expanded="false" class="nav nav-third-level">
                                         {% for s in searches.spatial|slice:":10" %}
                                             {% if s.type == 'spatial' %}
                                                 <li>
@@ -300,8 +300,8 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#"> Surveys<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
+                                    <a aria-expanded="false" href="#"> Surveys<span class="fa arrow"></span></a>
+                                    <ul aria-expanded="false" class="nav nav-third-level">
                                         {% for s in searches.survey %}
                                             {% if s.type == 'survey' %}
                                                 <li>
@@ -313,8 +313,8 @@
                                     <!-- /.nav-third-level -->
                                 </li>
                                 <li>
-                                    <a href="#"> Questions<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
+                                    <a aria-expanded="false" href="#"> Questions<span class="fa arrow"></span></a>
+                                    <ul aria-expanded="false" class="nav nav-third-level">
                                         {% for s in searches.question %}
                                             {% if s.type == 'question' %}
                                                 <li>

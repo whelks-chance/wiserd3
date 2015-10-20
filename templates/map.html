@@ -267,7 +267,7 @@
             var overlays = {
                 "Empty group": layer_group
             };
-            var layerControl = L.control.layers([], {}).addTo(map);
+            var layerControl = L.control.layers([], {position: 'bottomleft'}).addTo(map);
 
             L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
@@ -287,7 +287,6 @@
 
 // method that we will use to update the control based on feature properties passed
             info.update = function (props) {
-                console.log(props);
                 var value = '';
                 if (props) {
                     if (props.hasOwnProperty('response_rate')) {
@@ -296,10 +295,10 @@
                     if (props.hasOwnProperty('REMOTE_VALUE')) {
                         value = props.REMOTE_VALUE;
                     }
-                    this._div.innerHTML = '<div style="min-height: 10%"><h4>Region Response Rate</h4>' + (props ?
+                }
+                this._div.innerHTML = '<div style="min-height: 10%"><h4>Region Response Rate</h4>' + (props ?
                     '<b>' + props.AREA_NAME + '</b><br />' + value + '%'
                             : 'Hover over a region');
-                }
             };
             info.addTo(map);
 
@@ -759,8 +758,10 @@
 
             setTimeout(function() {
                 $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
+            }, 2000);
+            setTimeout(function() {
+                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
             }, 5000);
-
             $( "#dialog-form" ).dialog({
                 autoOpen: false,
                 height: map_div.height(),
@@ -776,7 +777,12 @@
                         if ($("#bintype").val() != '') {
                             if ($("#binno").val() != '') {
                                 var topojson_data = topojson_layers[$(this).data('layer_names')];
-                                handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val());
+
+                                try {
+                                    handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val());
+                                }catch (e){
+                                    alert('Sorry, an error occurred. Try being more specific with the dataset variable')
+                                }
                                 $(this).dialog("close");
 
                             }
@@ -806,7 +812,7 @@
 
             $("#remote_search_btn").click(function(e){
                 var search_term = $('#remote_search_term').val();
-                waitingDialog.show('Searching ...');
+                waitingDialog.show('Searching NomisWeb ...');
 
                 $.ajax({
                     url: "{% url 'remote_data' %}",
@@ -866,11 +872,12 @@
                 width: map_div.width() / 2,
                 modal: true,
                 buttons: {
-                    "Render to Map": function() {
+                    "Add to Map": function() {
                         waitingDialog.show('Inspecting dataset ...');
 
                         $( this ).dialog( "close" );
                         var dataset_id = $("#dataset_radio").find(":radio:checked").attr('id');
+                        var dataset_name = $("#dataset_radio").find(":radio:checked").text();
 
                         $.ajax({
                             url: "{% url 'remote_data' %}",
@@ -880,6 +887,7 @@
                                 'dataset_id': dataset_id
                             },
                             success: function(data){
+                                $('#dataset_title').remove().end().append('<h3>' + dataset_name + '</h2>');
 
                                 var dataset_radio = $('#data_cell_radio');
                                 dataset_radio.find('div').remove().end();
@@ -918,6 +926,7 @@
                                 $('#topojson_geography_radio').buttonset();
                                 $('#dataset_define_vars_form').data({
                                     'dataset_id': dataset_id,
+                                    'dataset_name': dataset_name,
                                     'codelists': data['metadata']['codelists']
                                 }).dialog('open');
 
@@ -1038,7 +1047,7 @@
                 </td>
                 <td>
                     <div class="controls">
-                        <select name="bintype" id="bintype" class="input-block-level tab_data_input">
+                        <select name="bintype" id="bintype" class="form-control input-block-level tab_data_input">
                             <option value="e">Equal bins</option>
                             <option value="q">Quantiles</option>
                             <option value="k" selected="selected">K-Means</option>
@@ -1051,7 +1060,7 @@
                     <label for="binno" class="control-label">Number of Bins</label>
                 </td>
                 <td>
-                    <select name="binno" id="binno" class="input-block-leveltab_data_input">
+                    <select name="binno" id="binno" class="form-control input-block-leveltab_data_input">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -1068,7 +1077,7 @@
                     <label for="colorpicker" class="control-label">Choropleth colour scheme</label>
                 </td>
                 <td>
-                    <select name="colorpicker" id="colorpicker" class="input-block-level tab_data_input">
+                    <select name="colorpicker" id="colorpicker" class="form-control input-block-level tab_data_input">
                         <option value="OrRd">Orange - Red</option>
                         <option value="RdYlBu">Red - Yellow - Blue</option>
                         <option value="YlGnBu" selected="selected">Yellow - Green - Blue</option>
@@ -1083,6 +1092,7 @@
 
 
     <div id="dataset_define_vars_form" title="Dataset Variables">
+        <div id="dataset_title"></div>
         <div id="data_cell_radio"></div>
 
         <div>Geography</div>
@@ -1104,46 +1114,6 @@
                 <label for="parl2011">Parliamentary Constituencies 2011</label>
             </div>
         </div>
-
-        {#        <table>#}
-        {##}
-        {#            <tr>#}
-        {#                <td>#}
-        {#                    <div class="input-group custom-search-form">#}
-        {##}
-        {#                        <label for="nomis_variable" class="control-label">Variable</label>#}
-        {#                    </div>#}
-        {#                </td>#}
-        {#                <td>#}
-        {#                    <div class="input-group custom-search-form">#}
-        {##}
-        {#                        <select name="nomis_variable" id="nomis_variable" class="controls input-block-level tab_data_input">#}
-        {#                            <option value="20100" selected="selected">Value</option>#}
-        {#                            <option value="20301">Percentage</option>#}
-        {#                        </select>#}
-        {#                    </div>#}
-        {#                </td>#}
-        {#            </tr>#}
-        {##}
-        {#            <tr>#}
-        {#                <td>#}
-        {#                    <div class="input-group custom-search-form">#}
-        {#                        <label for="geographies" class="control-label">Geographies</label>#}
-        {#                    </div>#}
-        {#                </td>#}
-        {#                <td>#}
-        {#                    <div class="input-group custom-search-form">#}
-        {#                        <select name="geographies" id="topojson_geographies" class="controls input-block-level tab_data_input">#}
-        {#                            <option value="ua">UA</option>#}
-        {#                            <option value="pcode">Post Code Sector</option>#}
-        {#                            <option value="lsoa" selected="selected">LSOA</option>#}
-        {#                            <option value="parl2011" selected="selected">Parliamentary Constituencies 2011</option>#}
-        {#                        </select>#}
-        {#                    </div>#}
-        {#                </td>#}
-        {#            </tr>#}
-        {#        </table>#}
-
     </div>
 
 
@@ -1156,11 +1126,11 @@
         <div class="input-group custom-search-form">
             <input type="text" id="remote_search_term" name="remote_search_term"
                    class="form-control" placeholder="Search..." name="search_terms">
-                            <span class="input-group-btn">
-                                <button id="remote_search_btn" class="btn btn-default" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
+                        <span class="input-group-btn">
+                            <button id="remote_search_btn" class="btn btn-default" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
         </div>
 
         <fieldset>

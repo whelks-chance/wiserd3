@@ -4,14 +4,15 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db import connections, ConnectionRouter, DEFAULT_DB_ALIAS
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
+import django
+django.setup()
 
 from old import survey_models as old_models
 from dataportal3 import models as new_models
 
+
 __author__ = 'ubuntu'
 
-import django
-django.setup()
 
 
 def build_ztab_table():
@@ -538,19 +539,19 @@ def find_surveys():
 
 overwrite = True
 
-# make_freqs()
-# make_q_types()
-# make_users()
-# make_thematic_groups()
-# make_thematic_tags()
-# make_response_types()
+make_freqs()
+make_q_types()
+make_users()
+make_thematic_groups()
+make_thematic_tags()
+make_response_types()
 
 # res_id = 'resid_qid_eibselfea1992introi'
 # old_response_list = old_models.Responses.objects.using('survey').filter(responseid__icontains=res_id).values()
 # print old_response_list[0]['responseid']
 
-# find_surveys()
-# find_response()
+find_surveys()
+find_response()
 
 # find_orphans()
 
@@ -558,14 +559,14 @@ overwrite = True
 
 # build_ztab_table()
 
-
-def test_write():
-    sdc = new_models.Survey()
-    sdc.save()
-
-    q = new_models.Question()
-    q.literal_question_text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis iaculis mauris. Duis tincidunt, ligula vitae vulputate ultrices, turpis leo luctus lorem, non tempor mi ex at nisl. Quisque varius efficitur augue, non aliquam arcu volutpat sed. Cras dictum nec ante eget bibendum. Vivamus orci sapien, blandit consectetur ultrices nec, cursus ac risus. Curabitur placerat molestie massa. Nunc dui orci, cursus non rhoncus sit amet, dictum quis erat.'
-    q.survey = sdc
-    q.save()
-
-test_write()
+#
+# def test_write():
+#     sdc = new_models.Survey()
+#     sdc.save()
+#
+#     q = new_models.Question()
+#     q.literal_question_text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis iaculis mauris. Duis tincidunt, ligula vitae vulputate ultrices, turpis leo luctus lorem, non tempor mi ex at nisl. Quisque varius efficitur augue, non aliquam arcu volutpat sed. Cras dictum nec ante eget bibendum. Vivamus orci sapien, blandit consectetur ultrices nec, cursus ac risus. Curabitur placerat molestie massa. Nunc dui orci, cursus non rhoncus sit amet, dictum quis erat.'
+#     q.survey = sdc
+#     q.save()
+#
+# test_write()

@@ -64,6 +64,11 @@ class DBRouter(object):
 
     def allow_migrate(self, db, app_label, model=None, **hints):
 
+        # try:
+        #     print app_label, db, str(model._meta.__dict__['concrete_model'])
+        # except Exception as e:
+        #     print 'ex', e
+
         # """
         # Make sure the auth app only appears in the 'auth_db'
         # database.

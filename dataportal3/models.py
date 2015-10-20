@@ -207,15 +207,15 @@ class SpatialLevel(models.Model):
         db_table = 'spatial_level'
 
 
-class SpatialRefSys(models.Model):
-    srid = models.IntegerField(primary_key=True)
-    auth_name = models.CharField(max_length=256, blank=True, null=True)
-    auth_srid = models.IntegerField(blank=True, null=True)
-    srtext = models.CharField(max_length=2048, blank=True, null=True)
-    proj4text = models.CharField(max_length=2048, blank=True, null=True)
-
-    class Meta:
-        db_table = 'spatial_ref_sys'
+# class SpatialRefSys(models.Model):
+#     srid = models.IntegerField(primary_key=True)
+#     auth_name = models.CharField(max_length=256, blank=True, null=True)
+#     auth_srid = models.IntegerField(blank=True, null=True)
+#     srtext = models.CharField(max_length=2048, blank=True, null=True)
+#     proj4text = models.CharField(max_length=2048, blank=True, null=True)
+#
+#     class Meta:
+#         db_table = 'spatial_ref_sys'
 
 
 class Survey(models.Model):
@@ -289,18 +289,18 @@ class SurveySpatialLink(models.Model):
         db_table = 'survey_spatial_link'
 
 
-class GeometryColumns(models.Model):
-    f_table_catalog = models.CharField(max_length=256, blank=True, null=True)
-    f_table_schema = models.CharField(max_length=256, blank=True, null=True)
-    # f_table_name = models.CharField(max_length=256, blank=True, null=True)
-    f_table_name = models.CharField(primary_key=True, max_length=256)
-    f_geometry_column = models.CharField(max_length=256, blank=True, null=True)
-    coord_dimension = models.IntegerField()
-    srid = models.IntegerField()
-    type = models.CharField(max_length=30, blank=True, null=True)
-
-    class Meta:
-        db_table = 'geometry_columns'
+# class GeometryColumns(models.Model):
+#     f_table_catalog = models.CharField(max_length=256, blank=True, null=True)
+#     f_table_schema = models.CharField(max_length=256, blank=True, null=True)
+#     # f_table_name = models.CharField(max_length=256, blank=True, null=True)
+#     f_table_name = models.CharField(primary_key=True, max_length=256)
+#     f_geometry_column = models.CharField(max_length=256, blank=True, null=True)
+#     coord_dimension = models.IntegerField()
+#     srid = models.IntegerField()
+#     type = models.CharField(max_length=30, blank=True, null=True)
+#
+#     class Meta:
+#         db_table = 'geometry_columns'
 
 
 class UserDetail(models.Model):
@@ -410,25 +410,50 @@ class QualDcInfo(models.Model):
     source = models.TextField(blank=True, null=True)
     language = models.CharField(max_length=50, blank=True, null=True)
     relation = models.TextField(blank=True, null=True)
-    coverage = models.TextField(blank=True, null=True)
+
+    ## coverage = models.TextField(blank=True, null=True)
+    coverage = hstore.DictionaryField(blank=True, null=True)
+
     rights = models.TextField(blank=True, null=True)
     user_id = models.CharField(max_length=25, blank=True, null=True)
     created = models.DateTimeField(blank=True, null=True)
-    words = models.TextField(blank=True, null=True)
+
+    ## words = models.TextField(blank=True, null=True)
+    words = hstore.DictionaryField(blank=True, null=True)
+
     calais = models.TextField(blank=True, null=True)
+
     vern_geog = models.TextField(db_column='vern_Geog', blank=True, null=True)  # Field name made lowercase.
-    the_geom = models.TextField()  # This field type is a guess.
-    thematic_group = models.TextField(blank=True, null=True)
+
+    ## the_geom = models.TextField()  # This field type is a guess.
+    the_geom = models.GeometryField(blank=True, null=True)
+
+    # thematic_group = models.TextField(blank=True, null=True)
+    thematic_groups_set_wtf = models.ManyToManyField('ThematicGroup')
+
     tier = models.TextField(blank=True, null=True)
-    identifier2 = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
-        db_table = 'dc_info'
+        db_table = 'qual_dc_info'
+
+
+class QualCalais(models.Model):
+    name = models.TextField(blank=True, null=True)
+    lat = models.FloatField(blank=True, null=True)
+    lon = models.FloatField(blank=True, null=True)
+    geo_point = models.GeometryField(blank=True, null=True)
+    rank = models.IntegerField(blank=True, null=True)
+    score = models.IntegerField(blank=True, null=True)
+    country = models.TextField(blank=True, null=True)
+    gazetteer = models.TextField(blank=True, null=True)
+    occurences = models.IntegerField(blank=True, null=True)
+    wordstats = hstore.DictionaryField(blank=True, null=True)
 
 
 class QualTranscriptData(models.Model):
-    id = models.TextField(primary_key=True)
+    identifier = models.TextField(blank=True, null=True)
+    calais = models.ForeignKey('QualCalais', null=True)
+    dc_info = models.ForeignKey("QualDcInfo", null=True)
     rawtext = models.TextField()
     stats = models.TextField()
     pages = models.IntegerField()
@@ -437,5 +462,4 @@ class QualTranscriptData(models.Model):
     text_index = models.TextField(blank=True, null=True)  # This field type is a guess.
 
     class Meta:
-        managed = False
-        db_table = 'transcript_data'
+        db_table = 'qual_transcript_data'

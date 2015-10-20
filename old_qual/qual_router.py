@@ -57,6 +57,6 @@ class QualRouter(object):
 
 
         if app_label == 'old_qual':
-            return 'qual_gis'
+            return db == 'qual_gis'
         else:
             return None

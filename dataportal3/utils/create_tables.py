@@ -550,13 +550,11 @@ make_response_types()
 # old_response_list = old_models.Responses.objects.using('survey').filter(responseid__icontains=res_id).values()
 # print old_response_list[0]['responseid']
 
-find_surveys()
-find_response()
+# find_surveys()
+# find_response()
 
 # find_orphans()
-
 # find_parents()
-
 # build_ztab_table()
 
 #

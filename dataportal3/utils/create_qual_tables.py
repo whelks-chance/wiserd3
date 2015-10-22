@@ -1,6 +1,6 @@
 import os
 from django.contrib.gis.geos import GEOSGeometry
-from django.db import OperationalError
+from django.db import OperationalError, IntegrityError
 from django.db import connection
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
@@ -83,28 +83,48 @@ class CreateQualTables():
 
     def full_copy(self):
 
+        for old_qual_trans in old_qual_models.TranscriptData.objects.all():
+            q_trans = new_qual_models.QualTranscriptData()
+            q_trans.identifier = old_qual_trans.id.strip()
+            q_trans.rawtext = old_qual_trans.rawtext.strip()
+            q_trans.pages = old_qual_trans.pages
+            q_trans.errors = old_qual_trans.errors.strip()
+            try:
+                q_trans.save()
+
+                stats_objects = self.rq.read_trans_stats(old_qual_trans.stats)
+                for stats in stats_objects:
+                    stats_model = new_qual_models.QualStats()
+                    stats_model.name = stats['name']
+                    stats_model.page_counts = stats['page_counts']
+                    stats_model.transcript_data = q_trans
+
+                    stats_model.save()
+            except IntegrityError as ie:
+                print ie
+
         to_save = []
-        for old_qual_dc in old_qual_models.DcInfo.objects.all()[:1]:
+        for old_qual_dc in old_qual_models.DcInfo.objects.all():
             q_dc_info = new_qual_models.QualDcInfo()
 
-            q_dc_info.identifier = old_qual_dc.identifier
-            q_dc_info.title = old_qual_dc.title
-            q_dc_info.creator = old_qual_dc.creator
-            q_dc_info.subject = old_qual_dc.subject
-            q_dc_info.description = old_qual_dc.description
-            q_dc_info.publisher = old_qual_dc.publisher
-            q_dc_info.contributor = old_qual_dc.contributor
+            q_dc_info.identifier = old_qual_dc.identifier.strip()
+            q_dc_info.title = old_qual_dc.title.strip()
+            q_dc_info.creator = old_qual_dc.creator.strip()
+            q_dc_info.subject = old_qual_dc.subject.strip()
+            q_dc_info.description = old_qual_dc.description.strip()
+            q_dc_info.publisher = old_qual_dc.publisher.strip()
+            q_dc_info.contributor = old_qual_dc.contributor.strip()
             q_dc_info.date = old_qual_dc.date
-            q_dc_info.type = old_qual_dc.type
-            q_dc_info.format = old_qual_dc.format
-            q_dc_info.source = old_qual_dc.source
-            q_dc_info.language = old_qual_dc.language
-            q_dc_info.relation = old_qual_dc.relation
+            q_dc_info.type = old_qual_dc.type.strip()
+            q_dc_info.format = old_qual_dc.format.strip()
+            q_dc_info.source = old_qual_dc.source.strip()
+            q_dc_info.language = old_qual_dc.language.strip()
+            q_dc_info.relation = old_qual_dc.relation.strip()
 
-            coverage_object = self.rq.get_coverage_items(old_qual_dc.coverage)
+            # coverage_object = self.rq.get_coverage_items(old_qual_dc.coverage)
             # q_dc_info.coverage = coverage_object
 
-            q_dc_info.rights = old_qual_dc.rights
+            q_dc_info.rights = old_qual_dc.rights.strip()
             q_dc_info.user_id = old_qual_dc.user_id
             q_dc_info.created = old_qual_dc.created
 
@@ -112,17 +132,20 @@ class CreateQualTables():
             # print pprint.pformat(words_arr, indent=4)
             q_dc_info.words = words_arr
 
-            q_dc_info.calais = self.rq.get_calais_object(old_qual_dc.calais)
+            q_dc_info.calais = str(old_qual_dc.calais).strip()
 
-            q_dc_info.vern_geog = old_qual_dc.vern_geog
+            q_dc_info.vern_geog = old_qual_dc.vern_geog.strip()
 
-            if thematics:
-                q_dc_info.thematic_group = old_qual_dc.thematic_group
-                if len(old_qual_dc.thematic_group.strip()):
-                    for tg in old_qual_dc.thematic_group.strip().split(','):
-                        tg_model = new_qual_models.ThematicGroup.objects.get(grouptitle=tg.strip())
-                        print tg_model
-                        q_dc_info.thematic_groups_set.add(tg_model)
+            # if thematics:
+            q_dc_info.thematic_group = old_qual_dc.thematic_group
+            if len(old_qual_dc.thematic_group.strip()):
+                for tg in old_qual_dc.thematic_group.strip().split(','):
+                    # try:
+                    tg_model = new_qual_models.ThematicGroup.objects.get(grouptitle=tg.strip())
+                    print tg_model.__dict__
+                    q_dc_info.thematic_groups_set.add(tg_model)
+                    # except Exception as e:
+                    #     print e, tg.strip()
 
             q_dc_info.tier = old_qual_dc.tier
 
@@ -131,16 +154,33 @@ class CreateQualTables():
             # geom = self.get_geom(geom_string)
             q_dc_info.the_geom = old_qual_dc.the_geom
 
-            try:
-                q_dc_info.save()
-            except OperationalError:
-                print connection.queries[-1]
+            q_dc_info.save()
 
             to_save.append(q_dc_info)
 
+            calais_objects = self.rq.get_calais_object(old_qual_dc.calais)
+            for calais_object in calais_objects['data']:
+                calais_model = new_qual_models.QualCalais()
+                calais_model.value = calais_object['Value'].strip()
+                calais_model.opencalais = calais_object['ID'].strip()
+                try:
+                    lat = float(calais_object['lat'])
+                    lon = float(calais_object['lon'])
+                    calais_model.geo_point = GEOSGeometry('POINT(%s %s)' % (calais_object['lat'], calais_object['lon']))
+                    calais_model.lat = calais_object['lat']
+                    calais_model.lon = calais_object['lon']
+                except Exception as e789432:
+                    # print e789432
+                    pass
+                calais_model.tagName = calais_object['tagName'].strip()
+                calais_model.count = calais_object['Count']
+
+                calais_model.qual_dc = q_dc_info
+                calais_model.save()
+
         # new_qual_models.QualDcInfo.objects.bulk_create(to_save)
 
-thematics = False
+# thematics = False
 quals = CreateQualTables()
 # quals.check_old()
 quals.full_copy()

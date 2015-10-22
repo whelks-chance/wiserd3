@@ -422,14 +422,13 @@ class QualDcInfo(models.Model):
     words = hstore.DictionaryField(blank=True, null=True)
 
     calais = models.TextField(blank=True, null=True)
-
     vern_geog = models.TextField(db_column='vern_Geog', blank=True, null=True)  # Field name made lowercase.
 
     ## the_geom = models.TextField()  # This field type is a guess.
     the_geom = models.GeometryField(blank=True, null=True)
 
     # thematic_group = models.TextField(blank=True, null=True)
-    thematic_groups_set_wtf = models.ManyToManyField('ThematicGroup')
+    thematic_groups_set = models.ManyToManyField('ThematicGroup')
 
     tier = models.TextField(blank=True, null=True)
 
@@ -438,28 +437,41 @@ class QualDcInfo(models.Model):
 
 
 class QualCalais(models.Model):
-    name = models.TextField(blank=True, null=True)
+    value = models.TextField(blank=True, null=True)
     lat = models.FloatField(blank=True, null=True)
     lon = models.FloatField(blank=True, null=True)
     geo_point = models.GeometryField(blank=True, null=True)
-    rank = models.IntegerField(blank=True, null=True)
-    score = models.IntegerField(blank=True, null=True)
-    country = models.TextField(blank=True, null=True)
+    tagName = models.TextField(blank=True, null=True)
     gazetteer = models.TextField(blank=True, null=True)
-    occurences = models.IntegerField(blank=True, null=True)
-    wordstats = hstore.DictionaryField(blank=True, null=True)
+    count = models.IntegerField(blank=True, null=True)
+    qual_dc = models.ForeignKey('QualDcInfo', null=True)
 
 
 class QualTranscriptData(models.Model):
-    identifier = models.TextField(blank=True, null=True)
+    identifier = models.TextField(unique=True, blank=True, null=True)
     calais = models.ForeignKey('QualCalais', null=True)
     dc_info = models.ForeignKey("QualDcInfo", null=True)
     rawtext = models.TextField()
     stats = models.TextField()
     pages = models.IntegerField()
     errors = models.TextField(blank=True, null=True)
-    # pk = models.AutoField(primary_key=True)
-    text_index = models.TextField(blank=True, null=True)  # This field type is a guess.
+    # text_index = VectorField(db_index=False)
+    #
+    # objects = SearchManager(
+    #     fields = ('rawtext'),
+    #     config = 'pg_catalog.english',  # this is default
+    #     search_field = 'text_index',  # this is default
+    #     auto_update_search_field = True
+    # )
 
     class Meta:
         db_table = 'qual_transcript_data'
+
+
+class QualStats(models.Model):
+    name = models.TextField(blank=True, null=True)
+    page_counts = hstore.DictionaryField(blank=True, null=True)
+    transcript_data = models.ForeignKey('QualTranscriptData')
+
+    class Meta:
+        db_table = 'qual_transcript_stats'

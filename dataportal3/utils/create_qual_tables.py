@@ -84,7 +84,12 @@ class CreateQualTables():
     def full_copy(self):
 
         for old_qual_trans in old_qual_models.TranscriptData.objects.all():
-            q_trans = new_qual_models.QualTranscriptData()
+            # q_trans = new_qual_models.QualTranscriptData()
+
+            q_trans, created = new_qual_models.QualTranscriptData.objects.get_or_create(
+                identifier=old_qual_trans.id.strip()
+            )
+
             q_trans.identifier = old_qual_trans.id.strip()
             q_trans.rawtext = old_qual_trans.rawtext.strip()
             q_trans.pages = old_qual_trans.pages
@@ -105,7 +110,11 @@ class CreateQualTables():
 
         to_save = []
         for old_qual_dc in old_qual_models.DcInfo.objects.all():
-            q_dc_info = new_qual_models.QualDcInfo()
+            # q_dc_info = new_qual_models.QualDcInfo()
+
+            q_dc_info, created = new_qual_models.QualDcInfo.objects.get_or_create(
+                identifier=old_qual_dc.identifier.strip()
+            )
 
             q_dc_info.identifier = old_qual_dc.identifier.strip()
             q_dc_info.title = old_qual_dc.title.strip()
@@ -136,17 +145,6 @@ class CreateQualTables():
 
             q_dc_info.vern_geog = old_qual_dc.vern_geog.strip()
 
-            # if thematics:
-            q_dc_info.thematic_group = old_qual_dc.thematic_group
-            if len(old_qual_dc.thematic_group.strip()):
-                for tg in old_qual_dc.thematic_group.strip().split(','):
-                    # try:
-                    tg_model = new_qual_models.ThematicGroup.objects.get(grouptitle=tg.strip())
-                    print tg_model.__dict__
-                    q_dc_info.thematic_groups_set.add(tg_model)
-                    # except Exception as e:
-                    #     print e, tg.strip()
-
             q_dc_info.tier = old_qual_dc.tier
 
             # geom_string = old_qual_dc.the_geom
@@ -156,7 +154,18 @@ class CreateQualTables():
 
             q_dc_info.save()
 
-            to_save.append(q_dc_info)
+            # if thematics:
+            q_dc_info.thematic_group = old_qual_dc.thematic_group
+            if len(old_qual_dc.thematic_group.strip()):
+                for tg in old_qual_dc.thematic_group.strip().split(','):
+                    try:
+                        tg_model = new_qual_models.ThematicGroup.objects.get(grouptitle=tg.strip())
+                        # print tg_model.__dict__
+                        q_dc_info.thematic_groups_set.add(tg_model)
+                    except Exception as e:
+                        print e, tg.strip()
+
+            q_dc_info.save()
 
             calais_objects = self.rq.get_calais_object(old_qual_dc.calais)
             for calais_object in calais_objects['data']:

@@ -1,0 +1,355 @@
+{% extends "navigation.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <script>
+
+        var survey_description = {
+            'tabs' : {
+                'survey': {
+                    'title': 'Survey',
+                    'style': 'form',
+                    'url': "{% url 'survey_metadata' survey_id %}",
+                    'columns': [],
+                    'fields': [
+                        {'display': true, 'displayName': 'Survey ID', 'id': 'surveyid'},
+                        {'display': true, 'displayName': 'Identifier', 'id': 'identifier'},
+                        {'display': true, 'displayName': 'Survey Title', 'id': 'survey_title'},
+                        {'display': true, 'displayName': 'Data Collector', 'id': 'datacollector'},
+                        {'display': true, 'displayName': 'Collection Start Date',   'id': 'collectionstartdate'},
+                        {'display': true, 'displayName': 'Collection End Date',   'id': 'collectionenddate'},
+                        {'display': true, 'displayName': 'Method of Collection Description', 'id': 'moc_description'},
+                        {'display': true, 'displayName': 'Sampling Procedure', 'id': 'samp_procedure'},
+                        {'display': true, 'displayName': 'Collection Situation', 'id': 'collectionsituation'},
+                        {'display': true, 'displayName': 'Survey Frequency', 'id': 'surveyfrequency'},
+                        {'display': true, 'displayName': 'Survey Start Date', 'id': 'surveystartdate'},
+                        {'display': true, 'displayName': 'Survey End Date', 'id': 'surveyenddate'},
+                        {'display': true, 'displayName': 'DES Weighting', 'id': 'des_weighting'},
+                        {'display': true, 'displayName': 'Sample Size', 'id': 'samplesize'},
+                        {'display': true, 'displayName': 'Response Rate', 'id': 'responserate'},
+                        {'display': true, 'displayName': 'Description Of Sampling Error', 'id': 'descriptionofsamplingerror'},
+                        {'display': true, 'displayName': 'Data Product', 'id': 'dataproduct'},
+                        {'display': true, 'displayName': 'Data Product ID', 'id': 'dataproductid'},
+                        {'display': true, 'displayName': 'Location', 'id': 'location'},
+                        {'display': true, 'displayName': 'Link', 'id': 'link', 'type': 'link'},
+                        {'display': true, 'displayName': 'Notes', 'id': 'notes'},
+                        {'display': false, 'displayName': 'User ID', 'id': 'user_id'},
+                        {'display': true, 'displayName': 'Created', 'id': 'created'},
+                        {'display': true, 'displayName': 'Updated', 'id': 'updated'},
+                        {'display': false, 'displayName': 'Long', 'id': 'long'},
+                        {'display': true, 'displayName': 'Short Title', 'id': 'short_title'},
+                        {'display': true, 'displayName': 'Spatial Data', 'id': 'spatialdata'}]
+                },
+                'dc' : {
+                    'title': 'Dublin Core',
+                    'style': 'form',
+                    'url': "{% url 'survey_dc_data' survey_id %}",
+                    'columns': [],
+                    'fields': [
+                        {'display': true, 'displayName': 'Identifier', 'id': 'identifier'},
+                        {'display': true, 'displayName': 'Title', 'id': 'title'},
+                        {'display': true, 'displayName': 'Creator', 'id': 'creator'},
+                        {'display': true, 'displayName': 'Subject', 'id': 'subject'},
+                        {'display': true, 'displayName': 'Description', 'id': 'description'},
+                        {'display': true, 'displayName': 'Publisher', 'id': 'publisher'},
+                        {'display': true, 'displayName': 'Contributor', 'id': 'contributor'},
+                        {'display': true, 'displayName': 'Date', 'id': 'date'},
+                        {'display': true, 'displayName': 'Type', 'id': 'type'},
+                        {'display': true, 'displayName': 'Format', 'id': 'format'},
+                        {'display': true, 'displayName': 'Source', 'id': 'source'},
+                        {'display': true, 'displayName': 'Language', 'id': 'language'},
+                        {'display': true, 'displayName': 'Relation', 'id': 'relation'},
+                        {'display': true, 'displayName': 'Coverage', 'id': 'coverage'},
+                        {'display': true, 'displayName': 'Rights', 'id': 'rights'},
+                        {'display': false, 'displayName': 'User ID', 'id': 'user_id'},
+                        {'display': true, 'displayName': 'Created', 'id': 'created'},
+                        {'display': true, 'displayName': 'Updated', 'id': 'updated'}]
+                },
+                'question':{
+                    'title': 'Question',
+                    'style': 'table',
+                    'url': "{% url 'survey_questions' survey_id %}",
+                    'columns': [
+                        {'data': 'qid'},
+                        {'data': 'literal_question_text'},
+                        {'data': 'questionnumber'},
+                        {#                            {'data': 'thematic_groups'},#}
+                        {#                            {'data': 'thematic_tags'},#}
+                        {'data': 'link_from'},
+                        {'data': 'subof'},
+                        {'data': 'type'},
+                        {#                            {'data': 'variableid'},#}
+                        {'data': 'notes'},
+                        {#                            {'data': 'user_id'},#}
+                        {#                            {'data': 'created'},#}
+                        {#                            {'data': 'updated'}#}
+                    ]
+                }
+
+            }
+        };
+
+        $(document).ready(function () {
+            $.extend( $.fn.dataTable.defaults, {
+                fnInitComplete: function(oSettings, json) {
+                    var btnClear = $('<button class="btnClearDataTableFilter btn btn-info"><i class="fa fa-times"></button>');
+                    btnClear.appendTo($('#' + oSettings.sTableId).parents('.dataTables_wrapper').find('.dataTables_filter'));
+                    $('#' + oSettings.sTableId + '_wrapper .btnClearDataTableFilter').click(function () {
+                        $('#' + oSettings.sTableId).dataTable().fnFilter('');
+                    });
+                }
+            });
+
+            $.ajax({
+                url: "{% url 'survey_metadata' survey_id %}",
+                type: 'POST',
+                success: function(data) {
+                    $('#survey_title_header').html(data['search_result_data'][0]['data']['survey_title']);
+
+                    var dataContent = '';
+                    for (var j = 0; j < survey_description['tabs']['survey']['fields'].length; j++) {
+                        if (survey_description['tabs']['survey']['fields'][j]['display']) {
+                            var field = survey_description['tabs']['survey']['fields'][j]['id'];
+                            var value = data['search_result_data'][0]['data'][field];
+                            var display_name = survey_description['tabs']['survey']['fields'][j]['displayName'];
+                            var type = survey_description['tabs']['survey']['fields'][j]['type'];
+
+                            dataContent += get_data_row_html(field, display_name, value, type);
+                        }
+                    }
+                    $('#survey_info').append(dataContent);
+                    tidy_tab_fields()
+                }
+            });
+
+            $.ajax({
+                url: "{% url 'survey_dc_data' survey_id %}",
+                type: 'POST',
+                success: function(data) {
+                    var dataContent = '';
+                    for (var j = 0; j < survey_description['tabs']['dc']['fields'].length; j++) {
+                        if (survey_description['tabs']['dc']['fields'][j]['display']) {
+                            var field = survey_description['tabs']['dc']['fields'][j]['id'];
+                            var value = data['search_result_data'][0]['data'][field];
+                            var display_name = survey_description['tabs']['dc']['fields'][j]['displayName'];
+                            var type = survey_description['tabs']['survey']['fields'][j]['type'];
+
+                            dataContent += get_data_row_html(field, display_name, value, type);
+                        }
+                    }
+                    $('#dc_info').append(dataContent);
+                    tidy_tab_fields()
+                }
+            });
+
+            var survey_questions_table = $('#survey_questions_table').DataTable({
+                serverSide: false,
+                processing: true,
+                ajax: {
+                    url: "{% url 'survey_questions' survey_id%}",
+                    type: 'POST',
+                    data: function (d) {},
+                    dataSrc: function ( json ) {
+                        return json['search_result_data'];
+                    }
+                },
+                columns: [
+                    {'data': 'qid'},
+                    {'data': 'literal_question_text'},
+                    {#                    {'data': 'questionnumber'},#}
+                    {#                            {'data': 'thematic_groups'},#}
+                    {#                            {'data': 'thematic_tags'},#}
+                    {'data': 'type'},
+                    {'data': 'notes'},
+                    {
+                        "targets": -3,
+                        "data": null,
+                        "render": function ( data, type, full, meta ) {
+                            if (data['link_from'] != null && data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {
+                                return "<div class='btn btn-info search_from'>Previous</div>";
+                            } else {
+                                return ""
+                            }
+                        }
+                    },
+                    {
+                        "targets": -2,
+                        "data": null,
+                        "render": function ( data, type, full, meta ) {
+                            if (data['subof'] != null && data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {
+                                return "<div class='btn btn-info search_parent'>Parent</div>";
+                            } else {
+                                return ""
+                            }
+                        }
+                    },
+                    {
+                        "targets": -1,
+                        "data": null,
+                        "render": function ( data, type, full, meta ) {
+                            return "<div class='btn btn-success view_question'>View</div>";
+                        }
+                    }
+                ]
+            }).on( 'stateLoaded.dt', function (e, settings, data) {
+                attach_question_buttons();
+            });
+
+            function attach_question_buttons() {
+                var table_body = $('#survey_questions_table').find('tbody');
+                table_body.on('click', '.search_from', function () {
+                    var data = survey_questions_table.row($(this).parents('tr')).data();
+                    survey_questions_table.search( data['link_from'].trim() ).draw();
+                });
+                table_body.on('click', '.search_parent', function () {
+                    var data = survey_questions_table.row($(this).parents('tr')).data();
+                    survey_questions_table.search( data['subof'].trim() ).draw();
+                });
+                table_body.on('click', '.view_question', function () {
+                    var data = survey_questions_table.row($(this).parents('tr')).data();
+                    window.location.href = '/question/' + data['qid'];
+                });
+            }
+            attach_question_buttons();
+
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                tidy_tab_fields()
+            });
+
+        });
+
+        function tidy_tab_fields() {
+            $(".tab_data_input").each( function() {
+                $(this).height(this.scrollHeight);
+            });
+        }
+
+        function get_data_row_html(field, display_name, value, type) {
+            if (type == undefined) {
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
+                '<div class="controls">' +
+                '<textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input" name="text_input_{0}" ' +
+                'id="text_input_{0}" size="20" value="{2}">{2}</textarea>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            } else if (type == 'link') {
+
+                var link_formatted = '<div class="control-group">' +
+                        '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
+                        '<div class="controls">';
+
+                if (value != 'N/A') {
+
+                    link_formatted += '<div class="col-sm-8" name="text_input_{0}" ' +
+                    'style="padding-top: 4px; padding-bottom: 4px; border: 1px solid rgb(169, 169, 169); ' +
+                    'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; ' +
+                    'white-space: -o-pre-wrap; word-wrap: break-word;" ' +
+                    'id="text_input_{0}" size="20" value="{2}">' +
+                    '<a href="{2}" target="_blank">{2}</a>';
+                } else {
+                    link_formatted += '<textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input" name="text_input_{0}" ' +
+                    'id="text_input_{0}" size="20" value="{2}">{2}</textarea>';
+                }
+                link_formatted += '</div></div></div>';
+
+                return (link_formatted).format(
+                        field, display_name, value
+                );
+
+            } else {
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-6">{1}</label>' +
+                '<div class="controls">' +
+                '<textarea readonly="true" type="text" class="input-block-level col-sm-6 tab_data_input" name="text_input_{0}" ' +
+                'id="text_input_{0}" size="20" value="{2}">{2}</textarea>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            }
+
+        }
+
+
+    </script>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header" id="survey_title_header">Survey Details for {{ survey_id }}</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Pill Tabs
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-pills">
+                        <li><a href="#survey_dc_tab" data-toggle="tab">Dublin Core</a>
+                        </li>
+                        <li class="active"><a href="#survey_tab" data-toggle="tab">Survey</a>
+                        </li>
+                        <li><a href="#survey_questions" data-toggle="tab">Questions</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="survey_dc_tab">
+                            <h4>Dublin Core</h4>
+                            <div id="dc_info"></div>
+                        </div>
+                        <div class="tab-pane fade in active" id="survey_tab">
+                            <h4>Survey</h4>
+                            <div id="survey_info"></div>
+                        </div>
+                        <div class="tab-pane fade" id="survey_questions">
+                            <h4>Questions</h4>
+
+                            <div class="panel-body">
+                                <div class="dataTable_wrapper">
+                                    <table class="table table-striped table-bordered table-hover" id="survey_questions_table">
+                                        <thead>
+                                        <tr>
+                                            <th>QuestionID</th>
+                                            <th>QuestionText</th>
+                                            <th>Type</th>
+                                            <th>Notes</th>
+                                            <th>From</th>
+                                            <th>SubOf</th>
+                                            <th>View</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                                <div class="well">
+                                    <h4>DataTables Usage Information</h4>
+                                    <p></p>
+                                    <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+    </div>
+
+{% endblock %}

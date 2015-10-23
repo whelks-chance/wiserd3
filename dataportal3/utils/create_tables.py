@@ -259,6 +259,16 @@ def make_thematic_groups():
         else:
             print 'already has group' + group_id
 
+    tgs = ['Crime', 'Public Space & Policing', 'Economic Dev & Regeneration']
+
+    for tg in tgs:
+        tg_id = 'tg000' + str(tgs.index(tg) + 7)
+        new_thematic_group, created = new_models.ThematicGroup.objects.get_or_create(tgroupid=tg_id)
+        if created:
+            new_thematic_group.groupdescription = tg
+            new_thematic_group.grouptitle = tg
+            # new_thematic_group.tgroupid = 'tg000' + str(tgs.index(tg) + 7)
+            new_thematic_group.save()
 
 def make_thematic_tags():
     group_tags = old_models.GroupTags.objects.using('survey').all().values()
@@ -550,8 +560,8 @@ make_response_types()
 # old_response_list = old_models.Responses.objects.using('survey').filter(responseid__icontains=res_id).values()
 # print old_response_list[0]['responseid']
 
-# find_surveys()
-# find_response()
+find_surveys()
+find_response()
 
 # find_orphans()
 # find_parents()

@@ -1,7 +1,7 @@
 {% extends "navigation.html" %}
 {% load staticfiles %}
 
-{% block content %}
+{% block extra_head %}
 
     <script>
 
@@ -81,6 +81,12 @@
         });
     </script>
 
+    {% endblock %}
+
+{% block nav_extras %}{% endblock %}
+
+{% block content %}
+<div class="row">
     <h4>Questions</h4>
 
     <div class="panel-body">
@@ -117,4 +123,5 @@
     {% for d in data.search_result_data %}
         {{ d }}<br><br>
     {% endfor %}
+</div>
 {% endblock %}

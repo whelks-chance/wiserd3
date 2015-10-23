@@ -20,10 +20,10 @@ ipaddress==1.0.14
 kombu==3.0.26
 lxml==3.4.4
 ndg-httpsclient==0.4.0
-numpy==1.9.2
+#numpy==1.9.2
 oauthlib==1.0.1
-pandaSDMX==0.2.2
-pandas==0.16.2
+#pandaSDMX==0.2.2
+#pandas==0.16.2
 psycopg2==2.6.1
 pyOpenSSL==0.15.1
 pyasn1==0.1.8

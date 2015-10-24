@@ -1,4 +1,5 @@
 # from cStringIO import StringIO
+import os
 import pprint
 import urllib3.contrib.pyopenssl
 from wiserd3 import settings
@@ -318,12 +319,12 @@ class RemoteData():
         if geog_short_code == 'lsoa':
             region_id = '2092957700TYPE298'
             # topojson_file = '/home/ubuntu/shp/x_sid_liw2007_lsoa_/output-fixed-1.json'
-            topojson_file = '/home/ubuntu/DataPortalGeographies/11Wales_lsoa_2011/output-fixed-1-k.json'
+            topojson_file = settings.TOPOJSON_FILE_LSOA
 
         if geog_short_code == 'ua':
             region_id = '2092957700TYPE464'
             # topojson_file = '/home/ubuntu/shp/x_sid_liw2007_ua_/output-fixed-1.json'
-            topojson_file = '/home/ubuntu/DataPortalGeographies/14Wales_lad_unitaryauthority_2011/output-fixed-1.json'
+            topojson_file = settings.TOPOJSON_FILE_UA
 
         if geog_short_code == 'parl':
             # boundaries prior to 2010
@@ -332,7 +333,7 @@ class RemoteData():
 
         if geog_short_code == 'parl2011':
             region_id = '2092957700TYPE460'
-            topojson_file = '/home/ubuntu/DataPortalGeographies/13Wales_parlconstit_2011/output-fixed-1-4326.json'
+            topojson_file = settings.TOPOJSON_FILE_PARL_2011
 
         if region_id == '' or topojson_file == '':
             print 'error figuring out geog'

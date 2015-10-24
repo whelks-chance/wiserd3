@@ -3,6 +3,11 @@ apt-get install npm nodejs-legacy
 
 npm install -g mapshaper
 
+ls *.zip|awk -F'.zip' '{print "unzip "$0" -d "$1}'|sh
+
+11, 13, 14
+
+
 # Convert shapefile from whatever projection it currently is, to 4326 for WGS 84 (web mercator, but ovoid, not sphere)
 ogr2ogr -f 'ESRI Shapefile' -t_srs EPSG:4326 input-fixed.shp Wales_lsoa_2011.shp
 

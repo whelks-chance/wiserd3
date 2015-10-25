@@ -167,6 +167,8 @@ app = Celery('dataportal3.utils.ShapeFileImport', backend=BROKER_URL, broker=BRO
 
 nomis_uid = ''
 
+TMP_DIR = '/home/ubuntu/'
+
 TOPOJSON_DIR = '/home/ubuntu/DataPortalGeographies/'
 
 TOPOJSON_FILE_UA = os.path.join(TOPOJSON_DIR, '14Wales_lad_unitaryauthority_2011/output-fixed-1.json')

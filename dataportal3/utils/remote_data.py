@@ -206,7 +206,11 @@ class RemoteData():
         #     ), stream=False
         # )
 
-        nomis_raw_filename = '/home/ubuntu/nomis_raw_{0}_{1}_{2}.json'.format(dataset_id, region_id, codelist_filename)
+        nomis_raw_filename = os.path.join(
+            settings.TMP_DIR,
+            '/home/ubuntu/nomis_raw_{0}_{1}_{2}.json'.format(
+            dataset_id, region_id, codelist_filename)
+        )
 
         r5 = requests.get(dataset_url, stream=False)
         print r5.url, r5.status_code

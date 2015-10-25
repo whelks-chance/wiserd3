@@ -208,7 +208,7 @@ class RemoteData():
 
         nomis_raw_filename = os.path.join(
             settings.TMP_DIR,
-            '/home/ubuntu/nomis_raw_{0}_{1}_{2}.json'.format(
+            'nomis_raw_{0}_{1}_{2}.json'.format(
             dataset_id, region_id, codelist_filename)
         )
 
@@ -349,7 +349,12 @@ class RemoteData():
         region_id, topojson_file = self.get_dataset_geodata(geog)
         all_data = self.get_data(dataset_id, region_id, nomis_variable, codelist=codelist, limit=100, offset=0)
 
-        nomis_cache_file = '/home/ubuntu/nomis_{0}_{1}_{2}.json'.format(dataset_id, geog, nomis_variable)
+        nomis_cache_file = os.path.join(
+            settings.TMP_DIR,
+            'nomis_{0}_{1}_{2}.json'.format(
+                dataset_id, geog, nomis_variable
+            )
+        )
 
         # if codelist:
         #     print type(codelist), codelist

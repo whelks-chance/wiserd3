@@ -21,13 +21,12 @@ from old import views as old_views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
-    # url(r'^$', views.index, name='root'),
+    url(r'^$', views.index, name='root'),
+    url(r'^index', views.index, name='index'),
 
     url(r'^logout', views.logout, name='logout'),
     url(r'^profile', views.profile, name='profile'),
     url(r'^settings', views.settings, name='settings'),
-
-    url(r'^index', views.index, name='index'),
 
     url(r'^remote_data_topojson', views.remote_data_topojson, name='remote_data_topojson'),
     url(r'^remote_data', views.remote_data, name='remote_data'),

@@ -31,6 +31,15 @@ def index(request):
                   context_instance=RequestContext(request))
 
 
+def settings(request):
+    return render(request, 'settings.html',
+                  {
+                      'searches': get_user_searches(request),
+                      'data': 'HERE IS DATA'
+                  },
+                  context_instance=RequestContext(request))
+
+
 def search_survey_question_gui(request):
     search_terms = request.GET.get('search_terms', '')
     ors = search_terms.split(',')
@@ -231,7 +240,7 @@ def get_imported_feature(request):
     # with open('/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-ms.json', 'r') as output:
     #     a = output.read()
 
-        # final = json.dumps(topojson, indent=4)
+    # final = json.dumps(topojson, indent=4)
 
     wiserd_layer = request.POST.getlist('layer_names[]')[0]
 

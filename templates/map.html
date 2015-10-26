@@ -2,7 +2,6 @@
 {% load staticfiles %}
 
 {% block extra_head %}
-    <script>L_PREFER_CANVAS = true;</script>
 
 
     {#  Remote leaflet  #}
@@ -175,6 +174,11 @@
 {% block content %}
     <script>
 
+        window.onload = function(){
+            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
+            alert('hi');
+        };
+
         $(document).ready(function () {
 
             var wms_layers = {};
@@ -297,8 +301,8 @@
                     }
                 }
                 this._div.innerHTML = '<div style="min-height: 10%"><h4>Region Response Rate</h4>' + (props ?
-                    '<b>' + props.AREA_NAME + '</b><br />' + value + '%'
-                            : 'Hover over a region');
+                        '<b>' + props.AREA_NAME + '</b><br />' + value + '%'
+                                : 'Hover over a region');
             };
             info.addTo(map);
 
@@ -484,7 +488,7 @@
                         alert('Sorry, an error occurred. Please try again, or report it.')
                     },
                     complete: function() {
-                          waitingDialog.hide();
+                        waitingDialog.hide();
                     }
                 });
             }
@@ -560,7 +564,7 @@
             function handleLayer(layer) {
 
                 layer.bindPopup(layer.feature.properties.AREA_NAME + '<br>'
-                + layer.feature.properties.REMOTE_VALUE + '%');
+                        + layer.feature.properties.REMOTE_VALUE + '%');
 
                 layer.on({
                     mouseover: function (e) {
@@ -736,7 +740,7 @@
                         }
                     },
                     complete: function() {
-                          waitingDialog.hide();
+                        waitingDialog.hide();
                     }
                 });
             }
@@ -755,13 +759,13 @@
                 $("#wrapper").toggleClass("toggled");
             });
 
+{#            setTimeout(function() {#}
+{#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
+{#            }, 2000);#}
+{#            setTimeout(function() {#}
+{#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
+{#            }, 5000);#}
 
-            setTimeout(function() {
-                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
-            }, 2000);
-            setTimeout(function() {
-                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
-            }, 5000);
             $( "#dialog-form" ).dialog({
                 autoOpen: false,
                 height: map_div.height(),
@@ -850,13 +854,16 @@
                             dataset_radio.append(radio_div);
                         }
                         dataset_radio.buttonset();
+                        dataset_radio.find('input[type=radio]').change(function() {
+                            $('#add_to_map_dialog_btn').button('enable');
+                        });
 
                     },
                     error: function() {
                         alert('Sorry, an error occurred. Please try again, or report it.')
                     },
                     complete: function() {
-                          waitingDialog.hide();
+                        waitingDialog.hide();
                     }
                 });
             });
@@ -871,82 +878,93 @@
                 },
                 width: map_div.width() / 2,
                 modal: true,
-                buttons: {
-                    "Add to Map": function() {
-                        waitingDialog.show('Inspecting dataset ...');
+                buttons: [
+                    {
+                        id: 'add_to_map_dialog_btn',
+                        text: 'Add to Map',
+                        disabled: true,
+                        click: function() {
+                            waitingDialog.show('Inspecting dataset ...');
 
-                        $( this ).dialog( "close" );
-                        var dataset_id = $("#dataset_radio").find(":radio:checked").attr('id');
-                        var dataset_name = $("#dataset_radio").find(":radio:checked").text();
+                            $( this ).dialog( "close" );
+                            var dataset_id = $("#dataset_radio").find(":radio:checked").attr('id');
+                            var dataset_name = $("#dataset_radio").find(":radio:checked").text();
 
-                        $.ajax({
-                            url: "{% url 'remote_data' %}",
-                            type: 'GET',
-                            data: {
-                                'method': 'metadata',
-                                'dataset_id': dataset_id
-                            },
-                            success: function(data){
-                                $('#dataset_title').remove().end().append('<h3>' + dataset_name + '</h2>');
+                            $.ajax({
+                                url: "{% url 'remote_data' %}",
+                                type: 'GET',
+                                data: {
+                                    'method': 'metadata',
+                                    'dataset_id': dataset_id
+                                },
+                                success: function(data){
+                                    $('#dataset_title').remove().end().append('<h3>' + dataset_name + '</h2>');
 
-                                var dataset_radio = $('#data_cell_radio');
-                                dataset_radio.find('div').remove().end();
+                                    var dataset_radio = $('#data_cell_radio');
+                                    dataset_radio.find('div').remove().end();
 
-                                for(var remote_codelist in data['metadata']['codelists']) {
-                                    var remote_codelist_data = data['metadata']['codelists'][remote_codelist];
+                                    for(var remote_codelist in data['metadata']['codelists']) {
+                                        var remote_codelist_data = data['metadata']['codelists'][remote_codelist];
 
-                                    var codelist_label = $('<div>', {text: remote_codelist_data['name']});
-                                    dataset_radio.append(codelist_label);
+                                        var codelist_label = $('<div>', {text: remote_codelist_data['name']});
+                                        dataset_radio.append(codelist_label);
 
-                                    var codelist_radio_div = $('<div>', {id: remote_codelist + '_radio'});
+                                        var codelist_radio_div = $('<div>', {id: remote_codelist + '_radio'});
 
-                                    for(var remote_codelist_option in remote_codelist_data['measures']) {
-                                        var remote_codelist_option_data = remote_codelist_data['measures'][remote_codelist_option];
+                                        for(var remote_codelist_option in remote_codelist_data['measures']) {
+                                            var remote_codelist_option_data = remote_codelist_data['measures'][remote_codelist_option];
 
-                                        var radio_div = $('<div>');
+                                            var radio_div = $('<div>');
 
-                                        radio_div.append($('<input>', {
-                                            value: remote_codelist_option_data.id,
-                                            id: remote_codelist + '_' + remote_codelist_option_data.id,
-                                            type: 'radio',
-                                            name: (remote_codelist + '_option'),
-                                            text: remote_codelist_option_data.name
-                                        }));
-                                        radio_div.append($('<label>', {
-                                            value: remote_codelist_option_data.id,
-                                            for: remote_codelist + '_' + remote_codelist_option_data.id,
-                                            text: remote_codelist_option_data.name
-                                        }));
-                                        codelist_radio_div.append(radio_div);
+                                            radio_div.append($('<input>', {
+                                                value: remote_codelist_option_data.id,
+                                                id: remote_codelist + '_' + remote_codelist_option_data.id,
+                                                type: 'radio',
+                                                name: (remote_codelist + '_option'),
+                                                text: remote_codelist_option_data.name
+                                            }));
+                                            radio_div.append($('<label>', {
+                                                value: remote_codelist_option_data.id,
+                                                for: remote_codelist + '_' + remote_codelist_option_data.id,
+                                                text: remote_codelist_option_data.name
+                                            }));
+                                            codelist_radio_div.append(radio_div);
+                                        }
+                                        codelist_radio_div.buttonset().find('input')[0].click();
+
+{#                                        codelist_radio_div.buttonset('refresh');#}
+{#                                        alert(codelist_radio_div.find('input').length);#}
+
+                                        dataset_radio.append(codelist_radio_div);
                                     }
-                                    codelist_radio_div.buttonset();
-                                    dataset_radio.append(codelist_radio_div);
+
+                                    $('#topojson_geography_radio').buttonset();
+                                    $('#dataset_define_vars_form').data({
+                                        'dataset_id': dataset_id,
+                                        'dataset_name': dataset_name,
+                                        'codelists': data['metadata']['codelists']
+                                    }).dialog('open');
+
+                                },
+                                error: function() {
+                                    alert('Sorry, an error occurred. Please try again, or report it.')
+                                },
+                                complete: function() {
+                                    waitingDialog.hide();
                                 }
+                            });
 
-                                $('#topojson_geography_radio').buttonset();
-                                $('#dataset_define_vars_form').data({
-                                    'dataset_id': dataset_id,
-                                    'dataset_name': dataset_name,
-                                    'codelists': data['metadata']['codelists']
-                                }).dialog('open');
-
-                            },
-                            error: function() {
-                                alert('Sorry, an error occurred. Please try again, or report it.')
-                            },
-                    complete: function() {
-                          waitingDialog.hide();
+                        }},{
+                        text: 'Cancel',
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
                     }
-                        });
-
-                    },
-                    Cancel: function() {
-                        $( this ).dialog( "close" );
-                    }
-                },
+                ],
                 close: function() {
                 }
             });
+{#            $('#add_to_map_dialog_btn').button("disable");#}
 
 
             $( "#dataset_define_vars_form" ).dialog({
@@ -1005,9 +1023,9 @@
                             error: function() {
                                 alert('Sorry, an error occurred. Please try again, or report it.')
                             },
-                    complete: function() {
-                          waitingDialog.hide();
-                    }
+                            complete: function() {
+                                waitingDialog.hide();
+                            }
                         });
                     },
                     Cancel: function() {
@@ -1018,14 +1036,14 @@
                 }
             });
 
+{#            var div = L.DomUtil.get('div_id');#}
+{#            if (!L.Browser.touch) {#}
+{#                L.DomEvent.disableClickPropagation(div);#}
+{#                L.DomEvent.on(div, 'mousewheel', L.DomEvent.stopPropagation);#}
+{#            } else {#}
+{#                L.DomEvent.on(div, 'click', L.DomEvent.stopPropagation);#}
+{#            }#}
 
-            var div = L.DomUtil.get('div_id');
-            if (!L.Browser.touch) {
-                L.DomEvent.disableClickPropagation(div);
-                L.DomEvent.on(div, 'mousewheel', L.DomEvent.stopPropagation);
-            } else {
-                L.DomEvent.on(div, 'click', L.DomEvent.stopPropagation);
-            }
         });
 
     </script>

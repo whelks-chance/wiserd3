@@ -1,6 +1,7 @@
 import json
 import datetime
 import pprint
+import django
 from django.contrib import auth
 from django.contrib.auth.models import AnonymousUser
 from django.db import connections
@@ -351,10 +352,13 @@ def date_handler(obj):
         return obj.strftime('%Y-%m-%d T %H:%M:%S %Z')
     elif isinstance(obj, datetime.date):
         return obj.strftime('%Y-%m-%d')
+    # elif isinstance(obj, django.db.models.query.ValuesQuerySet):
+    #     return '##DB object##'
     # Let the base class default method raise the TypeError
     else:
-        print (type(object), object)
-        print pprint.pformat(object.__dict__)
+        print 'err type', type(obj)
+        print 'err obj', obj
+        print pprint.pformat(obj.__dict__)
         enc = json.JSONEncoder()
         return enc.default(enc, obj)
         # return obj

@@ -50,6 +50,9 @@ urlpatterns = [
     #
     # url(r'^data_autocomplete', views.data_autocomplete, name='data.autocomplete'),
 
+    url(r'^metadata/qual/dublin_core/(?P<qual_id>\S+)', views.qual_dc_data, name='qual_dc_data'),
+    url(r'^metadata/qual/(?P<qual_id>\S+)', views.qual_metadata, name='qual_metadata'),
+
     url(r'^metadata/survey/dublin_core/(?P<wiserd_id>\S+)', old_views.survey_dc_data, name='survey_dc_data'),
     url(r'^metadata/survey/questions/(?P<wiserd_id>\S+)', old_views.survey_questions, name='survey_questions'),
 

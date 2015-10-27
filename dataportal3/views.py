@@ -11,6 +11,7 @@ from django.contrib.auth.models import AnonymousUser
 from django.contrib.gis.geos import GEOSGeometry
 from django.core.serializers import serialize
 from django.db.models import Q
+from django.forms.models import model_to_dict
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.template import RequestContext
@@ -685,9 +686,59 @@ def qual_transcript(request, qual_id):
     search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=qual_id, type='qual')
     search.save()
 
+    transcript_title = models.QualTranscriptData.objects.get(identifier=qual_id)
+
     return render(request, 'qual_detail.html',
                   {
                       'searches': get_user_searches(request),
-                      'survey_id': qual_id}
+                      'qual_title': transcript_title.dc_info.title,
+                      'qual_id': qual_id}
                   ,
                   context_instance=RequestContext(request))
+
+
+@csrf_exempt
+def qual_dc_data(request, qual_id):
+    qual_dc_models = models.QualDcInfo.objects.all().filter(identifier=qual_id).values("identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "source", "language", "relation", "coverage", "rights", "user_id", "created")
+
+    quals = []
+    for dc_model in qual_dc_models:
+        quals.append({
+            'data': dc_model,
+            'qual_id': qual_id
+        })
+    api_data = {
+        'url': request.get_full_path(),
+        'method': 'survey_dc_data',
+        'search_result_data': quals,
+        'results_count': len(quals),
+        }
+    return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
+
+
+@csrf_exempt
+def qual_metadata(request, qual_id):
+    qual_trans_models = models.QualTranscriptData.objects.all().filter(identifier=qual_id)
+    quals = []
+    for qual_model in qual_trans_models:
+
+        # print model_to_dict(qual_model)
+
+        qual_details = {
+            'data': model_to_dict(qual_model),
+            'qual_id': qual_id
+        }
+
+        qual_calais = qual_model.dc_info.qualcalais_set.values('value', 'lat', 'lon', 'tagName', 'gazetteer','count')
+        # print qual_calais
+        # qual_details['calais'] = qual_calais
+
+        quals.append(qual_details)
+
+    api_data = {
+        'url': request.get_full_path(),
+        'method': 'survey_dc_data',
+        'search_result_data': quals,
+        'results_count': len(quals),
+        }
+    return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")

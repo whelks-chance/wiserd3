@@ -83,31 +83,6 @@ class CreateQualTables():
 
     def full_copy(self):
 
-        for old_qual_trans in old_qual_models.TranscriptData.objects.all():
-            # q_trans = new_qual_models.QualTranscriptData()
-
-            q_trans, created = new_qual_models.QualTranscriptData.objects.get_or_create(
-                identifier=old_qual_trans.id.strip()
-            )
-
-            q_trans.identifier = old_qual_trans.id.strip()
-            q_trans.rawtext = old_qual_trans.rawtext.strip()
-            q_trans.pages = old_qual_trans.pages
-            q_trans.errors = old_qual_trans.errors.strip()
-            try:
-                q_trans.save()
-
-                stats_objects = self.rq.read_trans_stats(old_qual_trans.stats)
-                for stats in stats_objects:
-                    stats_model = new_qual_models.QualStats()
-                    stats_model.name = stats['name']
-                    stats_model.page_counts = stats['page_counts']
-                    stats_model.transcript_data = q_trans
-
-                    stats_model.save()
-            except IntegrityError as ie:
-                print ie
-
         to_save = []
         for old_qual_dc in old_qual_models.DcInfo.objects.all():
             # q_dc_info = new_qual_models.QualDcInfo()
@@ -188,6 +163,34 @@ class CreateQualTables():
                 calais_model.save()
 
         # new_qual_models.QualDcInfo.objects.bulk_create(to_save)
+
+        for old_qual_trans in old_qual_models.TranscriptData.objects.all():
+            q_trans, created = new_qual_models.QualTranscriptData.objects.get_or_create(
+                identifier=old_qual_trans.id.strip()
+            )
+
+            q_trans.identifier = old_qual_trans.id.strip()
+            q_trans.rawtext = old_qual_trans.rawtext.strip()
+            q_trans.pages = old_qual_trans.pages
+            q_trans.errors = old_qual_trans.errors.strip()
+
+            qual_trans_dc = new_qual_models.QualDcInfo.objects.get(identifier=old_qual_trans.id.strip())
+            q_trans.dc_info = qual_trans_dc
+
+            try:
+                q_trans.save()
+
+                stats_objects = self.rq.read_trans_stats(old_qual_trans.stats)
+                for stats in stats_objects:
+                    stats_model = new_qual_models.QualStats()
+                    stats_model.name = stats['name']
+                    stats_model.page_counts = stats['page_counts']
+                    stats_model.transcript_data = q_trans
+
+                    stats_model.save()
+            except IntegrityError as ie:
+                print ie
+
 
 # thematics = False
 quals = CreateQualTables()

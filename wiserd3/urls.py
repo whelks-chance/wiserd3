@@ -40,6 +40,7 @@ urlpatterns = [
     url(r'^tables', views.tables, name='tables'),
     url(r'^survey/(?P<survey_id>\S+)', views.survey_detail, name='survey_detail'),
     url(r'^question/(?P<question_id>\S+)', views.question, name='question_detail'),
+    url(r'^qual_transcript/(?P<qual_id>\S+)', views.qual_transcript, name='qual_transcript'),
 
     url(r'^map', views.map_search, name='map'),
 
@@ -64,6 +65,9 @@ urlpatterns = [
 
     url(r'^metadata/search_questions', views.search_survey_question_api, name='search_survey_question_api'),
     url(r'^search', views.search_survey_question_gui, name='search_survey_question_gui'),
+
+    url(r'^metadata/search_qual', views.search_qual_api, name='search_qual_api'),
+
 
     url(r'^edit_metadata', views.edit_metadata, name='edit_metadata'),
 

@@ -449,7 +449,7 @@ class QualCalais(models.Model):
 
 class QualTranscriptData(models.Model):
     identifier = models.TextField(unique=True, blank=True, null=True)
-    calais = models.ForeignKey('QualCalais', null=True)
+    # calais = models.ForeignKey('QualCalais', null=True)
     dc_info = models.ForeignKey("QualDcInfo", null=True)
     rawtext = models.TextField()
     stats = models.TextField()

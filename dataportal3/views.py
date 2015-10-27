@@ -631,3 +631,63 @@ def remote_data_topojson(request):
     a = json.dumps(a, indent=4)
 
     return HttpResponse(a, content_type="application/json")
+
+
+def search_qual_api(request):
+    search_terms = request.GET.get('search_terms', '')
+
+    print request.user
+    user = auth.get_user(request)
+    if type(user) is AnonymousUser:
+        user = get_anon_user()
+    user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
+
+    search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
+                                                                       query=search_terms,
+                                                                       readable_name=search_terms,
+                                                                       type='text')
+    search.save()
+
+    api_data = qual_search(search_terms)
+    api_data['url'] = request.get_full_path()
+    return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
+
+
+def qual_search(search_terms):
+
+    fields = ['identifier']
+    qual_models = models.QualTranscriptData.objects.filter(
+        dc_info__qualcalais__value__icontains=search_terms
+    ).distinct().values('identifier', 'pages', 'dc_info__title', 'dc_info__tier')
+
+    data = []
+    for qual_model in qual_models:
+        data.append(qual_model)
+
+
+    api_data = {
+        'fields': fields,
+        'method': 'search_survey_question',
+        'search_result_data': data,
+        'results_count': len(data),
+        'search_term': search_terms
+    }
+    return api_data
+
+
+def qual_transcript(request, qual_id):
+    print request.user
+    user = auth.get_user(request)
+    if type(user) is AnonymousUser:
+        user = get_anon_user()
+    user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
+
+    search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=qual_id, type='qual')
+    search.save()
+
+    return render(request, 'qual_detail.html',
+                  {
+                      'searches': get_user_searches(request),
+                      'survey_id': qual_id}
+                  ,
+                  context_instance=RequestContext(request))

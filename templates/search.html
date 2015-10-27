@@ -20,108 +20,146 @@
                 columns: [
                     {'data': 'qid'},
                     {'data': 'literal_question_text'},
-                    {#                    {'data': 'questionnumber'},#}
-                    {#                            {'data': 'thematic_groups'},#}
-                    {#                            {'data': 'thematic_tags'},#}
                     {'data': 'type'},
                     {'data': 'notes'},
-{#                    {#}
-{#                        "targets": -3,#}
-{#                        "data": null,#}
-{#                        "render": function ( data, type, full, meta ) {#}
-{#                            if (data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {#}
-{#                                return "<div class='btn btn-info search_from'>Previous</div>";#}
-{#                            } else {#}
-{#                                return ""#}
-{#                            }#}
-{#                        }#}
-{#                    },#}
-{#                    {#}
-{#                        "targets": -2,#}
-{#                        "data": null,#}
-{#                        "render": function ( data, type, full, meta ) {#}
-{#                            if (data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {#}
-{#                                return "<div class='btn btn-info search_parent'>Parent</div>";#}
-{#                            } else {#}
-{#                                return ""#}
-{#                            }#}
-{#                        }#}
-{#                    },#}
+                    {#                    {#}
+                    {#                        "targets": -3,#}
+                    {#                        "data": null,#}
+                    {#                        "render": function ( data, type, full, meta ) {#}
+                    {#                            if (data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {#}
+                    {#                                return "<div class='btn btn-info search_from'>Previous</div>";#}
+                    {#                            } else {#}
+                    {#                                return ""#}
+                    {#                            }#}
+                    {#                        }#}
+                    {#                    },#}
+                    {#                    {#}
+                    {#                        "targets": -2,#}
+                    {#                        "data": null,#}
+                    {#                        "render": function ( data, type, full, meta ) {#}
+                    {#                            if (data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {#}
+                    {#                                return "<div class='btn btn-info search_parent'>Parent</div>";#}
+                    {#                            } else {#}
+                    {#                                return ""#}
+                    {#                            }#}
+                    {#                        }#}
+                    {#                    },#}
                     {
                         "targets": -1,
                         "data": 'qid',
                         "render": function ( data, type, full, meta ) {
-{#                            console.log(data);#}
+                            {#                            console.log(data);#}
                             return "<a href='/question/" + data.trim() + "' class='btn btn-success view_question'>View</a>";
-{#                            return "<div class='btn btn-success view_question'>View</div>";#}
+                            {#                            return "<div class='btn btn-success view_question'>View</div>";#}
                         }
                     }
                 ]
             }).on( 'stateLoaded.dt', function (e, settings, data) {
-                attach_question_buttons();
             });
 
-            function attach_question_buttons() {
-{#                $('.view_question').attr("href", "");#}
-
-{#                var table_body = $('#survey_questions_table').find('tbody');#}
-{#                table_body.on('click', '.search_from', function () {#}
-{#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
-{#                    survey_questions_table.search( data['link_from'].trim() ).draw();#}
-{#                });#}
-{#                table_body.on('click', '.search_parent', function () {#}
-{#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
-{#                    survey_questions_table.search( data['subof'].trim() ).draw();#}
-{#                });#}
-{#                table_body.on('click', '.view_question', function () {#}
-{#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
-{#                    window.location.href = '/question/' + data['qid'];#}
-{#                });#}
-            }
+            var qual_table = $('#qual_table').DataTable({
+                serverSide: false,
+                processing: true,
+                ajax: {
+                    url: "{% url 'search_qual_api'%}?search_terms={{ search_terms }}",
+                    type: 'GET',
+                    data: function (d) {},
+                    dataSrc: function ( json ) {
+                        return json['search_result_data'];
+                    }
+                },
+                columns: [
+                    {'data': 'identifier'},
+                    {'data': 'pages'},
+                    {'data': 'dc_info__title'},
+                    {'data': 'dc_info__tier'},
+                    {
+                        "targets": -1,
+                        "data": 'identifier',
+                        "render": function ( data, type, full, meta ) {
+                            {#                            console.log(data);#}
+                            return "<a href='/qual_transcript/" + data.trim() + "' class='btn btn-success view_question'>View</a>";
+                            {#                            return "<div class='btn btn-success view_question'>View</div>";#}
+                        }
+                    }
+                ]
+            });
         });
     </script>
 
-    {% endblock %}
+{% endblock %}
 
 {% block nav_extras %}{% endblock %}
 
 {% block content %}
-<div class="row">
-    <h4>Questions</h4>
+    <div class="row">
+        <h4>Questions</h4>
 
-    <div class="panel-body">
-        <div class="dataTable_wrapper">
-            <table class="table table-striped table-bordered table-hover" id="survey_questions_table">
-                <thead>
-                <tr>
-                    <th>QuestionID</th>
-                    <th>QuestionText</th>
-                    <th>Type</th>
-                    <th>Notes</th>
-{#                    <th>From</th>#}
-{#                    <th>SubOf</th>#}
-                    <th>View</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                </tbody>
-            </table>
+        <div class="panel-body">
+            <div class="dataTable_wrapper">
+                <table class="table table-striped table-bordered table-hover" id="survey_questions_table">
+                    <thead>
+                    <tr>
+                        <th>QuestionID</th>
+                        <th>QuestionText</th>
+                        <th>Type</th>
+                        <th>Notes</th>
+                        {#                    <th>From</th>#}
+                        {#                    <th>SubOf</th>#}
+                        <th>View</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+    </div>
+
+    <div class="row">
+        <h4>Qualitative Results</h4>
+
+        <div class="panel-body">
+            <div class="dataTable_wrapper">
+                <table class="table table-striped table-bordered table-hover" id="qual_table">
+                    <thead>
+                    <tr>
+                        <th>Identifier</th>
+                        <th>Pages</th>
+                        <th>Title</th>
+                        <th>Tier</th>
+                        {#                    <th>From</th>#}
+                        {#                    <th>SubOf</th>#}
+                        <th>View</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div>
         <!-- /.table-responsive -->
         <div class="well">
             <h4>DataTables Usage Information</h4>
             <p></p>
             <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
         </div>
-    </div>
 
-    {% for d in data.search_result_data %}
-        {{ d }}<br><br>
-    {% endfor %}
-</div>
+        {% for d in data.search_result_data %}
+            {{ d }}<br><br>
+        {% endfor %}
+    </div>
 {% endblock %}

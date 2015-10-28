@@ -15,6 +15,9 @@ class UserRole(models.Model):
     class Meta:
         db_table = 'user_role'
 
+    def __unicode__(self):
+        return str(self.id) + ':' + self.name
+
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True)
@@ -23,6 +26,9 @@ class UserProfile(models.Model):
 
     class Meta:
         db_table = 'user_profile'
+
+    def __unicode__(self):
+        return str(self.id) + ':' + self.user.username
 
 
 class Search(models.Model):
@@ -36,6 +42,9 @@ class Search(models.Model):
 
     class Meta:
         db_table = 'user_search'
+
+    def __unicode__(self):
+        return str(self.id) + ':' + self.user.user.username + ':' + self.query + ':' + str(self.datetime)
 
 
 class DcInfo(models.Model):
@@ -61,6 +70,9 @@ class DcInfo(models.Model):
     class Meta:
         db_table = 'dc_info'
 
+    def __unicode__(self):
+        return str(self.identifier) + ':' + self.title
+
 
 class DublincoreFormat(models.Model):
     dcformatid = models.CharField(max_length=255)
@@ -69,6 +81,9 @@ class DublincoreFormat(models.Model):
 
     class Meta:
         db_table = 'dublincore_format'
+
+    def __unicode__(self):
+        return str(self.dcformatid) + ':' + self.dc_format_title
 
 
 class DublincoreLanguage(models.Model):
@@ -79,6 +94,9 @@ class DublincoreLanguage(models.Model):
     class Meta:
         db_table = 'dublincore_language'
 
+    def __unicode__(self):
+        return str(self.dclangid) + ':' + self.dc_language_title
+
 
 class DublincoreType(models.Model):
     dctypeid = models.CharField(max_length=50)
@@ -88,6 +106,9 @@ class DublincoreType(models.Model):
     class Meta:
         db_table = 'dublincore_type'
 
+    def __unicode__(self):
+        return str(self.dctypeid) + ':' + self.dc_type_title
+
 
 class ThematicGroup(models.Model):
     tgroupid = models.CharField(max_length=20)
@@ -96,6 +117,9 @@ class ThematicGroup(models.Model):
 
     class Meta:
         db_table = 'thematic_group'
+
+    def __unicode__(self):
+        return str(self.tgroupid) + ':' + self.grouptitle
 
 
 class ThematicTag(models.Model):
@@ -107,6 +131,9 @@ class ThematicTag(models.Model):
     class Meta:
         db_table = 'thematic_tag'
 
+    def __unicode__(self):
+        return str(self.tagid) + ':' + self.tag_text
+
 
 class QType(models.Model):
     q_typeid = models.CharField(unique=True, max_length=20)
@@ -115,6 +142,9 @@ class QType(models.Model):
 
     class Meta:
         db_table = 'q_type'
+
+    def __unicode__(self):
+        return str(self.q_typeid) + ':' + self.q_type_text
 
 
 class Question(models.Model):
@@ -158,6 +188,9 @@ class Question(models.Model):
     class Meta:
         db_table = 'question'
 
+    def __unicode__(self):
+        return str(self.qid) + ':' + self.literal_question_text
+
 
 class ResponseType(models.Model):
     # "responseid", "response_name", "response_description"
@@ -167,6 +200,9 @@ class ResponseType(models.Model):
 
     class Meta:
         db_table = 'response_type'
+
+    def __unicode__(self):
+        return str(self.responseid) + ':' + self.response_name
 
 
 class Response(models.Model):
@@ -189,6 +225,9 @@ class Response(models.Model):
     class Meta:
         db_table = 'response'
 
+    def __unicode__(self):
+        return self.responseid + ':' + self.responsetext
+
 
 class RouteType(models.Model):
     routetypeid = models.CharField(max_length=50)
@@ -198,6 +237,9 @@ class RouteType(models.Model):
     class Meta:
         db_table = 'route_type'
 
+    def __unicode__(self):
+        return str(self.routetypeid) + ':' + self.routetype
+
 
 class SpatialLevel(models.Model):
     code = models.CharField(max_length=300)
@@ -205,6 +247,9 @@ class SpatialLevel(models.Model):
 
     class Meta:
         db_table = 'spatial_level'
+
+    def __unicode__(self):
+        return str(self.code) + ':' + self.level
 
 
 # class SpatialRefSys(models.Model):
@@ -254,6 +299,9 @@ class Survey(models.Model):
     class Meta:
         db_table = 'survey'
 
+    def __unicode__(self):
+        return str(self.surveyid) + ':' + self.survey_title
+
 
 class SurveyFrequency(models.Model):
     svyfreqid = models.CharField(unique=True, max_length=255)
@@ -262,6 +310,9 @@ class SurveyFrequency(models.Model):
 
     class Meta:
         db_table = 'survey_frequency'
+
+    def __unicode__(self):
+        return str(self.svyfreqid) + ':' + self.svy_frequency_title
 
 
 class SurveyQuestionsLink(models.Model):
@@ -272,6 +323,8 @@ class SurveyQuestionsLink(models.Model):
     class Meta:
         db_table = 'survey_questions_link'
 
+    def __unicode__(self):
+        return str(self.surveyid) + ':' + self.qid + ':' + self.pkid
 
 class SurveySpatialLink(models.Model):
     surveyid = models.CharField(max_length=255)
@@ -288,6 +341,8 @@ class SurveySpatialLink(models.Model):
     class Meta:
         db_table = 'survey_spatial_link'
 
+    def __unicode__(self):
+        return str(self.surveyid) + ':' + self.spatial_id
 
 # class GeometryColumns(models.Model):
 #     f_table_catalog = models.CharField(max_length=256, blank=True, null=True)
@@ -310,6 +365,9 @@ class UserDetail(models.Model):
 
     class Meta:
         db_table = 'user_detail'
+
+    def __unicode__(self):
+        return str(self.user_id) + ':' + self.user_name
 
 
 def get_upload_directory(self, filename):
@@ -361,6 +419,8 @@ class Aberystwyth_Locality_Dissolved(models.Model):
         managed = False
         db_table = 'Aberystwyth_Locality_Dissolved'
 
+    def __unicode__(self):
+        return str(self.gid) + ':Aberystwyth_Locality_Dissolved'
 
 class Bangor_Locality_Dissolved(models.Model):
     gid = models.IntegerField(primary_key=True)
@@ -370,6 +430,9 @@ class Bangor_Locality_Dissolved(models.Model):
     class Meta:
         managed = False
         db_table = 'Bangor_Locality_Dissolved'
+
+    def __unicode__(self):
+        return str(self.gid) + ':Bangor_Locality_Dissolved'
 
 
 class Heads_of_the_Valleys(models.Model):
@@ -381,19 +444,8 @@ class Heads_of_the_Valleys(models.Model):
         managed = False
         db_table = 'Heads_of_the_Valleys'
 
-# This is an auto-generated Django model module.
-# You'll have to do the following manually to clean this up:
-#   * Rearrange models' order
-#   * Make sure each model has one field with primary_key=True
-#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
-# Feel free to rename the models, but don't rename db_table values or field names.
-#
-# Also note: You'll have to insert the output of 'django-admin sqlcustom [app_label]'
-# into your database.
-
-# from __future__ import unicode_literals
-#
-# from django.contrib.gis.db import models
+    def __unicode__(self):
+        return str(self.gid) + ':Heads_of_the_Valleys'
 
 
 class QualDcInfo(models.Model):
@@ -435,6 +487,8 @@ class QualDcInfo(models.Model):
     class Meta:
         db_table = 'qual_dc_info'
 
+    def __unicode__(self):
+        return str(self.identifier) + ':' + self.title
 
 class QualCalais(models.Model):
     value = models.TextField(blank=True, null=True)
@@ -446,6 +500,8 @@ class QualCalais(models.Model):
     count = models.IntegerField(blank=True, null=True)
     qual_dc = models.ForeignKey('QualDcInfo', null=True)
 
+    def __unicode__(self):
+        return str(self.tagName) + ':' + self.value
 
 class QualTranscriptData(models.Model):
     identifier = models.TextField(unique=True, blank=True, null=True)
@@ -467,6 +523,8 @@ class QualTranscriptData(models.Model):
     class Meta:
         db_table = 'qual_transcript_data'
 
+    def __unicode__(self):
+        return str(self.identifier) + ':' + str(self.pages) + ' pages'
 
 class QualStats(models.Model):
     name = models.TextField(blank=True, null=True)
@@ -475,3 +533,6 @@ class QualStats(models.Model):
 
     class Meta:
         db_table = 'qual_transcript_stats'
+
+    def __unicode__(self):
+        return str(self.id) + ':' + self.name

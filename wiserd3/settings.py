@@ -175,6 +175,12 @@ TOPOJSON_FILE_UA = os.path.join(TOPOJSON_DIR, '14Wales_lad_unitaryauthority_2011
 TOPOJSON_FILE_PARL_2011 = os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json')
 TOPOJSON_FILE_LSOA = os.path.join(TOPOJSON_DIR, '11Wales_lsoa_2011/output-fixed-1-k.json')
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = ''
+EMAIL_PORT = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 # CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 MEDIA_ROOT = '/tmp/shapefiles/'

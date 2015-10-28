@@ -7,12 +7,13 @@ from django.contrib.gis import admin as gis_admin
 # from old import models
 
 # Register your models here.
+from dataportal3.models import Question
 
 
-# class ImageSanityAdmin(admin.ModelAdmin):
-#     raw_id_fields = ("image",)
+class SanityAdmin(admin.ModelAdmin):
+    raw_id_fields = ("survey", "link_from_question", "subof_question", "response")
 
-# admin.site.register(Tag, ImageSanityAdmin)
+admin.site.register(Question, SanityAdmin)
 
 admin.site.register(models.FeatureStore, gis_admin.GeoModelAdmin)
 

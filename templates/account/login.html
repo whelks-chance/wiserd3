@@ -1,5 +1,6 @@
 {% extends "account/base.html" %}
 
+{% load widget_tweaks %}
 {% load i18n %}
 {% load account socialaccount %}
 
@@ -14,9 +15,9 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-body">
+                <div id="login_panel" class="panel-body">
 
                     {% get_providers as socialaccount_providers %}
 
@@ -79,8 +80,14 @@
                                     </div>
                                 {% else %}
                                     <div class="control-group">
-                                        <label class="control-label col-sm-6">{{ field.label }}</label>
-                                        <div class="controls col-sm-6">{{ field }}
+                                        <div class="controls col-sm-12">
+                                            {% if field.field.widget.input_type %}
+                                                {{ field|attr:"class:form-control" }}
+                                            {% else %}
+                                                <label class="control-label col-sm-6">{{ field.label }}</label>
+                                                {{ field}}
+                                            {% endif %}
+
                                             {% if field.help_text %}
                                                 <p class="help-inline"><small>{{ field.help_text }}</small></p>
                                             {% endif %}
@@ -93,11 +100,16 @@
                         {% if redirect_field_value %}
                             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                         {% endif %}
-                        {#                        <div>#}
-                        <button class="pull-right btn btn-info primaryAction" type="submit">{% trans "Sign In" %}</button>
-                        {#                        </div>#}
-                        <div class="row">
-                            <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+
+                        <div class="control-group">
+                            <div class="controls col-sm-12">
+                                <div>
+                                    <button class=" btn-lg btn-success btn-block primaryAction" type="submit">{% trans "Sign In" %}</button>
+                                </div>
+                                <div class="row">
+                                    <a class="" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>

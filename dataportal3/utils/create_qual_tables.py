@@ -83,6 +83,8 @@ class CreateQualTables():
 
     def full_copy(self):
 
+        errors = []
+
         to_save = []
         for old_qual_dc in old_qual_models.DcInfo.objects.all():
             # q_dc_info = new_qual_models.QualDcInfo()
@@ -174,8 +176,13 @@ class CreateQualTables():
             q_trans.pages = old_qual_trans.pages
             q_trans.errors = old_qual_trans.errors.strip()
 
-            qual_trans_dc = new_qual_models.QualDcInfo.objects.get(identifier=old_qual_trans.id.strip())
-            q_trans.dc_info = qual_trans_dc
+            try:
+                qual_trans_dc = new_qual_models.QualDcInfo.objects.get(identifier=old_qual_trans.id.strip())
+                q_trans.dc_info = qual_trans_dc
+            except:
+                errors.append('dc ' + str(old_qual_trans.id.strip()) + ' not found')
+                print 'dc ' + str(old_qual_trans.id.strip()) + ' not found'
+                pass
 
             try:
                 q_trans.save()
@@ -190,6 +197,8 @@ class CreateQualTables():
                     stats_model.save()
             except IntegrityError as ie:
                 print ie
+
+        print errors
 
 
 # thematics = False

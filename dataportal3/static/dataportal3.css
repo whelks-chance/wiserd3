@@ -38,7 +38,15 @@
     z-index: 1001;
 }
 
+#login_panel > div > ul {
+    list-style: none;
+    padding-left:0;
+}
 
-.google {
+.dataTable_wrapper {
+    width: 100%;
+}
 
+.dataTable_wrapper > table {
+    width: 100%;
 }

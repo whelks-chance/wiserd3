@@ -25,7 +25,7 @@
                     'url': "{% url 'qual_dc_data' qual_id %}",
                     'columns': [],
                     'fields': [
-                        {'display': true, 'displayName': 'Identifier', 'id': 'identifier'},
+                        {'display': false, 'displayName': 'Identifier', 'id': 'identifier'},
                         {'display': true, 'displayName': 'Title', 'id': 'title'},
                         {'display': true, 'displayName': 'Creator', 'id': 'creator'},
                         {'display': true, 'displayName': 'Subject', 'id': 'subject'},
@@ -38,7 +38,7 @@
                         {'display': true, 'displayName': 'Source', 'id': 'source'},
                         {'display': true, 'displayName': 'Language', 'id': 'language'},
                         {'display': true, 'displayName': 'Relation', 'id': 'relation'},
-                        {'display': true, 'displayName': 'Coverage', 'id': 'coverage'},
+                        {'display': false, 'displayName': 'Coverage', 'id': 'coverage'},
                         {'display': true, 'displayName': 'Rights', 'id': 'rights'},
                         {'display': false, 'displayName': 'User ID', 'id': 'user_id'},
                         {'display': true, 'displayName': 'Created', 'id': 'created'}
@@ -77,6 +77,18 @@
                         }
                     }
                     $('#survey_info').append(dataContent);
+
+                    var dataContent = '';
+                    for (var j = 0; j < data['search_result_data'][0]['calais'].length; j++) {
+                        var field = data['search_result_data'][0]['calais'][j]['value'];
+                        var value = data['search_result_data'][0]['calais'][j]['count'];
+                        var display_name = data['search_result_data'][0]['calais'][j]['value'];
+                        var type = '';
+
+                        dataContent += get_data_row_html(field, display_name, value, type);
+                    }
+                    $('#transcript_coverage').append(dataContent);
+
                     tidy_tab_fields()
                 }
             });
@@ -101,22 +113,6 @@
                 }
             });
 
-            function attach_question_buttons() {
-                var table_body = $('#survey_questions_table').find('tbody');
-                table_body.on('click', '.search_from', function () {
-                    var data = survey_questions_table.row($(this).parents('tr')).data();
-                    survey_questions_table.search( data['link_from'].trim() ).draw();
-                });
-                table_body.on('click', '.search_parent', function () {
-                    var data = survey_questions_table.row($(this).parents('tr')).data();
-                    survey_questions_table.search( data['subof'].trim() ).draw();
-                });
-                table_body.on('click', '.view_question', function () {
-                    var data = survey_questions_table.row($(this).parents('tr')).data();
-{#                    window.location.href = '/question/' + data['qid'];#}
-                });
-            }
-            attach_question_buttons();
 
             $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                 tidy_tab_fields()
@@ -201,6 +197,8 @@
                         </li>
                         <li class="active"><a href="#survey_tab" data-toggle="tab">Qualitative Transcript</a>
                         </li>
+                        <li><a href="#transcript_coverage_tab" data-toggle="tab">Transcript Coverage</a>
+                        </li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -212,6 +210,10 @@
                         <div class="tab-pane fade in active" id="survey_tab">
                             <h4>Qualitative Record</h4>
                             <div id="survey_info"></div>
+                        </div>
+                        <div class="tab-pane" id="transcript_coverage_tab">
+                            <h4>Transcript Coverage</h4>
+                            <div id="transcript_coverage"></div>
                         </div>
                     </div>
                 </div>

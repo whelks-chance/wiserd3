@@ -659,7 +659,7 @@ def qual_search(search_terms):
     fields = ['identifier']
     qual_models = models.QualTranscriptData.objects.filter(
         dc_info__qualcalais__value__icontains=search_terms
-    ).distinct().values('identifier', 'pages', 'dc_info__title', 'dc_info__tier')
+    ).distinct().values('identifier', 'pages', 'dc_info__title', 'dc_info__tier', 'dc_info__description')
 
     data = []
     for qual_model in qual_models:
@@ -709,7 +709,7 @@ def qual_dc_data(request, qual_id):
         })
     api_data = {
         'url': request.get_full_path(),
-        'method': 'survey_dc_data',
+        'method': 'qual_dc_data',
         'search_result_data': quals,
         'results_count': len(quals),
         }
@@ -730,14 +730,14 @@ def qual_metadata(request, qual_id):
         }
 
         qual_calais = qual_model.dc_info.qualcalais_set.values('value', 'lat', 'lon', 'tagName', 'gazetteer','count')
-        # print qual_calais
-        # qual_details['calais'] = qual_calais
+        # print type(qual_calais), qual_calais
+        qual_details['calais'] = list(qual_calais)
 
         quals.append(qual_details)
 
     api_data = {
         'url': request.get_full_path(),
-        'method': 'survey_dc_data',
+        'method': 'qual_metadata',
         'search_result_data': quals,
         'results_count': len(quals),
         }

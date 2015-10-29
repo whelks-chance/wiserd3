@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 import requests
 from dataportal3 import models
 from dataportal3.utils.userAdmin import get_anon_user
-from old import models as old_models
+from old import survey_models as old_models
 from django.apps import apps
 
 __author__ = 'ubuntu'

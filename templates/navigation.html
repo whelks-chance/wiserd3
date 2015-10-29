@@ -2,11 +2,11 @@
 {% load staticfiles %}
 
 {% block extra_head %}
-<script>
+    <script>
         $(document).ready(function () {
             $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
         });
-</script>
+    </script>
 
 {% endblock %}
 
@@ -163,6 +163,18 @@
                         <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
+                        {% for m in messages %}
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-comment fa-fw"></i> {{ m }}
+                                        <span class="pull-right text-muted small">{{ n }} minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                        {% endfor %}
+
                         <li>
                             <a href="#">
                                 <div>
@@ -223,12 +235,13 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="{% url 'profile' %}"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="{% url 'settings' %}"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        {% if user.is_authenticated %}
+
+                        {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'profile' %}"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            </li>
+                            <li><a href="{% url 'settings' %}"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            </li>
+                            <li class="divider"></li>
                             <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                         {% else %}
                             <li><a href="{% url 'account_login' %}"><i class="fa fa-sign-in fa-fw"></i> Login</a></li>

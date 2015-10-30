@@ -345,6 +345,124 @@ def find_response():
             print 'already has response ' + responseid
 
 
+def make_dc_types():
+    dc_types = old_models.DublincoreType.objects.using('survey').all()
+    print 'dctypes', dc_types.count()
+    for old_dc_type in dc_types:
+        type_id = clean_str(old_dc_type.dctypeid)
+        new_type, created = new_models.DublincoreType.objects.using('new').get_or_create(dctypeid=type_id)
+        if created or overwrite:
+            new_type.dc_type_title = clean_str(old_dc_type.dc_type_title)
+            new_type.dc_type_description = clean_str(old_dc_type.dc_type_description)
+            new_type.save(using='new')
+            print new_type
+        else:
+            print 'already has type ' + type_id
+
+
+def make_dc_format():
+    dc_formats = old_models.DublincoreFormat.objects.using('survey').all()
+    print 'dcformats', dc_formats.count()
+    for old_dc_format in dc_formats:
+        format_id = clean_str(old_dc_format.dcformatid)
+        new_format, created = new_models.DublincoreFormat.objects.using('new').get_or_create(dcformatid=format_id)
+        if created or overwrite:
+            new_format.dc_format_title = clean_str(old_dc_format.dc_format_title)
+            new_format.dc_format_description = clean_str(old_dc_format.dc_format_description)
+            new_format.save(using='new')
+        else:
+            print 'already has format ' + format_id
+
+
+def make_dc_language():
+    dc_languages = old_models.DublincoreLanguage.objects.using('survey').all()
+    print 'dclanguages', dc_languages.count()
+    for old_dc_language in dc_languages:
+        language_id = clean_str(old_dc_language.dclangid)
+        new_dc_language, created = new_models.DublincoreLanguage.objects.using('new').get_or_create(dclangid=language_id)
+        if created or overwrite:
+            new_dc_language.dc_language_title = clean_str(old_dc_language.dc_language_title)
+            new_dc_language.dc_language_description = clean_str(old_dc_language.dc_language_description)
+            new_dc_language.save(using='new')
+        else:
+            print 'already has language ' + language_id
+
+
+def make_dcinfos():
+    dc_infos = old_models.DcInfo.objects.using('survey').all()
+
+    for old_dc in dc_infos:
+        new_dcinfo, created = new_models.DcInfo.objects.get_or_create(identifier=clean_str(old_dc.identifier))
+        if created or overwrite:
+
+            # new_dcinfo.identifier = clean_str(old_dc.identifier)
+            new_dcinfo.title = clean_str(old_dc.title)
+            new_dcinfo.creator = clean_str(old_dc.creator)
+            new_dcinfo.subject = clean_str(old_dc.subject)
+            new_dcinfo.description = clean_str(old_dc.description)
+            new_dcinfo.publisher = clean_str(old_dc.publisher)
+            new_dcinfo.contributor = clean_str(old_dc.contributor)
+            new_dcinfo.date = old_dc.date
+            new_dcinfo.source = clean_str(old_dc.source)
+            new_dcinfo.relation = clean_str(old_dc.relation)
+            new_dcinfo.coverage = clean_str(old_dc.coverage)
+            new_dcinfo.rights = clean_str(old_dc.rights)
+            new_dcinfo.created = old_dc.created
+            new_dcinfo.updated = old_dc.updated
+
+            try:
+                dc_type = new_models.DublincoreType.objects.using('new').get(dc_type_title= clean_str(old_dc.type))
+                new_dcinfo.type = dc_type
+            except Exception as ex1:
+                print ex1
+
+            try:
+                dc_format = new_models.DublincoreFormat.objects.using('new').get(dc_format_title= clean_str(old_dc.format))
+                new_dcinfo.format = dc_format
+            except Exception as ex2:
+                print ex2
+
+            try:
+                language = new_models.DublincoreLanguage.objects.using('new').get(dc_language_title= clean_str(old_dc.language))
+                new_dcinfo.language = language
+            except Exception as ex3:
+                print ex3
+
+            try:
+                user = new_models.UserDetail.objects.using('new').get(user_id= clean_str(old_dc.user_id))
+                new_dcinfo.user_id = user
+            except:
+                print 'cant find user', old_dc.user_id
+
+            new_dcinfo.save()
+
+
+def link_survey_dcs():
+
+    old_survey_models = old_models.Survey.objects.using('survey').all()
+    print 'old surveys ', old_survey_models.count()
+
+    old_dc_models = old_models.DcInfo.objects.using('survey').all()
+    print 'old dcs ', old_dc_models.count()
+
+    new_survey_models = new_models.Survey.objects.all()
+    print 'new surveys ', new_survey_models.count()
+
+    new_dc_models = new_models.DcInfo.objects.all()
+    print 'new dcs ', new_dc_models.count()
+
+    for old_survey in old_survey_models:
+        survey_id = old_survey.surveyid
+        dc_id = old_survey.identifier
+
+        new_survey = new_models.Survey.objects.get(surveyid=clean_str(survey_id))
+        new_dc = new_models.DcInfo.objects.get(identifier=clean_str(dc_id))
+        new_survey.dublin_core = new_dc
+
+        # print survey_id, dc_id, clean_str(survey_id) == clean_str(dc_id)
+        new_survey.save()
+
+
 def find_surveys():
 
     fails = {}
@@ -573,19 +691,26 @@ def find_surveys():
 question_links = False
 overwrite = False
 
-make_freqs()
-make_q_types()
-make_users()
-make_thematic_groups()
-make_thematic_tags()
-make_response_types()
+# make_freqs()
+# make_q_types()
+# make_users()
+# make_thematic_groups()
+# make_thematic_tags()
+# make_response_types()
+# find_surveys()
+# find_response()
+
+
+# make_dc_types()
+# make_dc_format()
+# make_dc_language()
+# make_dcinfos()
+link_survey_dcs()
+
 
 # res_id = 'resid_qid_eibselfea1992introi'
 # old_response_list = old_models.Responses.objects.using('survey').filter(responseid__icontains=res_id).values()
 # print old_response_list[0]['responseid']
-
-find_surveys()
-find_response()
 
 # find_orphans()
 # find_parents()

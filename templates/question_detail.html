@@ -79,6 +79,9 @@
                         }
                     }
                     $('#question_info').append(dataContent);
+
+                    var survey_button = "<a class='btn btn-info pull-right' href='/survey/" + data['survey'] + "'>View Survey</a>";
+                    $('#question_panel_nav').append(survey_button);
                     tidy_tab_fields()
                 }
             });
@@ -219,13 +222,13 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-info">
-                <div class="panel-heading">
+                <div id="question_panel_header" class="panel-heading">
                     Question Metadata
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <!-- Nav tabs -->
-                    <ul class="nav nav-pills">
+                    <ul id="question_panel_nav" class="nav nav-pills">
                         <li class="active"><a href="#question_tab" data-toggle="tab">Question</a>
                         </li>
                         <li><a href="#results_tab" data-toggle="tab">Results</a>

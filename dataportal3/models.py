@@ -75,7 +75,7 @@ class DcInfo(models.Model):
 
 
 class DublincoreFormat(models.Model):
-    dcformatid = models.CharField(max_length=255)
+    dcformatid = models.CharField(unique=True, max_length=255)
     dc_format_title = models.CharField(max_length=255, blank=True, null=True)
     dc_format_description = models.TextField(blank=True, null=True)
 
@@ -87,7 +87,7 @@ class DublincoreFormat(models.Model):
 
 
 class DublincoreLanguage(models.Model):
-    dclangid = models.CharField(max_length=255)
+    dclangid = models.CharField(unique=True, max_length=255)
     dc_language_title = models.CharField(max_length=255, blank=True, null=True)
     dc_language_description = models.TextField(blank=True, null=True)
 
@@ -99,7 +99,7 @@ class DublincoreLanguage(models.Model):
 
 
 class DublincoreType(models.Model):
-    dctypeid = models.CharField(max_length=50)
+    dctypeid = models.CharField(unique=True, max_length=50)
     dc_type_title = models.CharField(max_length=255, blank=True, null=True)
     dc_type_description = models.TextField(blank=True, null=True)
 

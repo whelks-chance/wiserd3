@@ -327,12 +327,15 @@ def text_search(search_terms):
     search_terms = search_terms.replace('+', ' & ')
 
     # questions_models = old_models.Questions.objects.search(search_terms, raw=True).using('survey').values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
-    questions_models = models.Question.objects.search(search_terms, raw=True).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    questions_models = models.Question.objects.search(search_terms, raw=True).distinct("qid").values("survey__identifier", "qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
 
     print questions_models.query
 
     data = []
     for question_model in questions_models:
+        # question_model_tidy = [a.strip() for a in question_model if type(a) == 'unicode']
+        question_model['type'] = question_model['type__q_type_text']
+        data.append(question_model)
         if question_model['thematic_tags'] == 'System.Windows.Forms.ListBox+SelectedObjectCollection':
             question_model['thematic_tags'] = ''
         data.append(question_model)
@@ -367,7 +370,7 @@ def date_handler(obj):
 @csrf_exempt
 def survey_question(request, question_id):
     # questions_models = old_models.Questions.objects.using('survey').filter(qid=question_id).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
-    questions_models = models.Question.objects.filter(qid=question_id).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index", "survey__surveyid")
+    questions_models = models.Question.objects.filter(qid=question_id).values("survey__identifier", "qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index", "survey__surveyid")
     data = []
     for question_model in questions_models:
         # question_model_tidy = [a.strip() for a in question_model if type(a) == 'unicode']
@@ -376,6 +379,7 @@ def survey_question(request, question_id):
     api_data = {
         'url': request.get_full_path(),
         'method': 'question_data',
+        'survey': questions_models[0]['survey__identifier'],
         'search_result_data': data,
         'results_count': len(data),
         'question_id': question_id,

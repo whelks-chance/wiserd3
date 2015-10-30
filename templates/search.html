@@ -47,12 +47,21 @@
                     {#                        }#}
                     {#                    },#}
                     {
-                        "targets": -1,
+                        "targets": -2,
                         "data": 'qid',
                         "render": function ( data, type, full, meta ) {
                             {#                            console.log(data);#}
-                            return "<a href='/question/" + data.trim() + "' class='btn btn-success view_question'>View</a>";
+                            return "<a href='/question/" + data.trim() + "' class='btn btn-success view_question'>Question</a>";
                             {#                            return "<div class='btn btn-success view_question'>View</div>";#}
+                        }
+                    },
+                    {
+                        "targets": -1,
+                        "data": 'survey__identifier',
+                        "render": function ( data, type, full, meta ) {
+                            {#                            console.log(data);#}
+                            return "<a href='/survey/" + data + "' class='btn btn-success view_survey'>Survey</a>";
+{#                            return "<div class='btn btn-success view_question'>View</div>";#}
                         }
                     }
                 ]
@@ -110,7 +119,8 @@
                         <th>Notes</th>
                         {#                    <th>From</th>#}
                         {#                    <th>SubOf</th>#}
-                        <th>View</th>
+                        <th>View Question</th>
+                        <th>View Survey</th>
                     </tr>
                     </thead>
                     <tbody>

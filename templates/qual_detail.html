@@ -1,6 +1,13 @@
 {% extends "navigation.html" %}
 {% load staticfiles %}
 
+{% block extra_head %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="{% static 'bubbles2.js' %}"></script>
+    <script src="{% static 'd3plus.full.min.js' %}"></script>
+
+{% endblock %}
+
 {% block content %}
     <script>
 
@@ -42,7 +49,7 @@
                         {'display': true, 'displayName': 'Rights', 'id': 'rights'},
                         {'display': false, 'displayName': 'User ID', 'id': 'user_id'},
                         {'display': true, 'displayName': 'Created', 'id': 'created'}
-{#                        {'display': true, 'displayName': 'Updated', 'id': 'updated'}#}
+                        {#                        {'display': true, 'displayName': 'Updated', 'id': 'updated'}#}
                     ]
                 }
             }
@@ -79,15 +86,45 @@
                     $('#survey_info').append(dataContent);
 
                     var dataContent = '';
+                    var bubble_data_map = {};
+                    var bubble_data_arr = [];
+
                     for (var j = 0; j < data['search_result_data'][0]['calais'].length; j++) {
                         var field = data['search_result_data'][0]['calais'][j]['value'];
                         var value = data['search_result_data'][0]['calais'][j]['count'];
                         var display_name = data['search_result_data'][0]['calais'][j]['value'];
                         var type = '';
 
+                        if (data['search_result_data'][0]['calais'][j]['value'] in bubble_data_map) {
+                            bubble_data_map[data['search_result_data'][0]['calais'][j]['value']] += data['search_result_data'][0]['calais'][j]['count']
+                        } else {
+                            bubble_data_map[data['search_result_data'][0]['calais'][j]['value']] = data['search_result_data'][0]['calais'][j]['count']
+                        }
                         dataContent += get_data_row_html(field, display_name, value, type);
                     }
-                    $('#transcript_coverage').append(dataContent);
+                    {#                    $('#transcript_coverage').append(dataContent);#}
+
+                    for (var key in bubble_data_map) {
+                        bubble_data_arr.push({name: key, value: bubble_data_map[key]});
+                    }
+
+                    console.log(bubble_data_arr);
+
+                    makeBubbles('#coverage_bubbles', bubble_data_arr, $('#panel-body').width());
+
+{#                    var colors = d3plus.color.scale.range();#}
+{#                    colors = colors.concat(["#525252", "#737373", "#969696", "#bdbdbd", "#d9d9d9", "#f7f7f7"]);#}
+{#                    var squares = d3.select("#coverage_bubbles").selectAll("div.color")#}
+{#                            .data( colors )#}
+{#                            .enter().append("div")#}
+{#                            .attr("class","color")#}
+{#                            .attr("id", String)#}
+{#                            .style("background-color", String)#}
+{#                            .style("color", function(d){#}
+{#                                return d3plus.color.text(d)#}
+{#                            })#}
+{#                            .text(String);#}
+
 
                     tidy_tab_fields()
                 }
@@ -145,14 +182,14 @@
                 if (value != 'N/A') {
 
                     link_formatted += '<div class="col-sm-8" name="text_input_{0}" ' +
-                    'style="padding-top: 4px; padding-bottom: 4px; border: 1px solid rgb(169, 169, 169); ' +
-                    'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; ' +
-                    'white-space: -o-pre-wrap; word-wrap: break-word;" ' +
-                    'id="text_input_{0}" size="20" value="{2}">' +
-                    '<a href="{2}" target="_blank">{2}</a>';
+                            'style="padding-top: 4px; padding-bottom: 4px; border: 1px solid rgb(169, 169, 169); ' +
+                            'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; ' +
+                            'white-space: -o-pre-wrap; word-wrap: break-word;" ' +
+                            'id="text_input_{0}" size="20" value="{2}">' +
+                            '<a href="{2}" target="_blank">{2}</a>';
                 } else {
                     link_formatted += '<textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input" name="text_input_{0}" ' +
-                    'id="text_input_{0}" size="20" value="{2}">{2}</textarea>';
+                            'id="text_input_{0}" size="20" value="{2}">{2}</textarea>';
                 }
                 link_formatted += '</div></div></div>';
 
@@ -190,7 +227,7 @@
                     Qualitative Transcript Details
                 </div>
                 <!-- /.panel-heading -->
-                <div class="panel-body">
+                <div id="panel-body" class="panel-body">
                     <!-- Nav tabs -->
                     <ul class="nav nav-pills">
                         <li><a href="#survey_dc_tab" data-toggle="tab">Dublin Core</a>
@@ -213,7 +250,8 @@
                         </div>
                         <div class="tab-pane" id="transcript_coverage_tab">
                             <h4>Transcript Coverage</h4>
-                            <div id="transcript_coverage"></div>
+                            <div id="coverage_bubbles"></div>
+                            {#                            <div id="transcript_coverage"></div>#}
                         </div>
                     </div>
                 </div>

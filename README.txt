@@ -41,3 +41,5 @@ http://sgillies.net/blog/1159/topojson-with-python
 https://github.com/mbloch/mapshaper/wiki/Command-Reference
 
 http://bootsnipp.com/snippets/featured/quotwaiting-forquot-modal-dialog
+
+http://jrue.github.io/coding/2014/exercises/basicbubblepackchart/

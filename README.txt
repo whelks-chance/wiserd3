@@ -19,6 +19,16 @@ mapshaper -i input-fixed.shp snap -simplify dp 100% keep-shapes -o output-fixed.
 mapshaper -i input-fixed.shp snap -simplify dp 1% keep-shapes -o output-fixed-1.json format=topojson
 
 
+Build the Database
+
+DB VM
+sudo -u postgres psql < build_sql.sql
+
+Django VM
+source ~/venv/bin/activate
+python manage.py makemigrations dataportal3
+
+
 Credits:
 http://blog.webkid.io/maps-with-leaflet-and-topojson/
 

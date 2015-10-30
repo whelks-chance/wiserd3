@@ -1,3 +1,4 @@
+import json
 import os
 import pprint
 from django.core.exceptions import ObjectDoesNotExist
@@ -347,10 +348,11 @@ def find_response():
 def find_surveys():
 
     fails = {}
+    errors = []
     sub_errors = []
     link_from_errors = []
 
-    survey_model_ids = old_models.Survey.objects.using('survey').all().values()[:4]
+    survey_model_ids = old_models.Survey.objects.using('survey').all().values()
 
     # print survey_model_ids
 
@@ -445,29 +447,46 @@ def find_surveys():
 
                     if len(q['thematic_groups'].strip()):
                         for tg in q['thematic_groups'].strip().split(','):
-                            tg_model = new_models.ThematicGroup.objects.using('new').get(grouptitle=tg.strip())
-                            new_question.thematic_groups_set.add(tg_model)
+                            try:
+                                tg_model = new_models.ThematicGroup.objects.using('new').get(grouptitle=tg.strip())
+                                new_question.thematic_groups_set.add(tg_model)
+                            except:
+                                errors.append('missing thematic group: ' + str(tg.strip()))
+                                pass
 
                     if len(q['thematic_tags'].strip()):
                         for tag in q['thematic_tags'].strip().split(','):
                             if 'System.Windows' not in tag:
-                                tag_model = new_models.ThematicTag.objects.using('new').get(tag_text=tag.strip())
-                                new_question.thematic_tags_set.add(tag_model)
+                                try:
+                                    tag_model = new_models.ThematicTag.objects.using('new').get(tag_text=tag.strip())
+                                    new_question.thematic_tags_set.add(tag_model)
+                                except:
+                                    errors.append('missing thematic tag: ' + str(tag.strip()))
+                                    pass
 
                     new_question.save(using='new')
 
                     res_id = ''
                     try:
-                        question_link = old_models.QuestionsResponsesLink.objects.using('survey').get(qid=q['qid'])
-                        res_id = question_link.responseid
-                        print question_link.qid, question_link.responseid
-                    except ObjectDoesNotExist as odne:
+                        question_link = old_models.QuestionsResponsesLink.objects.using('survey').filter(qid=q['qid'])
+
+                        if question_link.count() > 1:
+                            errors.append('qrl multiple links: ' + str(q['qid']))
+                        res_id = question_link[0].responseid
+                        print question_link[0].qid, question_link[0].responseid
+
+                    # broadened exception
+                    except Exception as odne:
                         print 'cant find res *' + q['qid'] + '*'
                         try:
-                            question_link = old_models.QuestionsResponsesLink.objects.using('survey').get(qid__icontains=clean_str(q['qid']).lower())
-                            res_id = question_link.responseid
-                            print question_link.qid, question_link.responseid
-                        except ObjectDoesNotExist as odne1:
+                            question_link = old_models.QuestionsResponsesLink.objects.using('survey').filter(qid__icontains=clean_str(q['qid']).lower())
+                            if question_link.count() > 1:
+                                errors.append('qrl multiple links (stripped) : ' + str(clean_str(q['qid']).lower()))
+
+                            res_id = question_link[0].responseid
+                            print question_link[0].qid, question_link[0].responseid
+                        except Exception as odne1:
+                            errors.append('cant find res icontains *' + clean_str(q['qid']) + '*')
                             print 'cant find res icontains *' + clean_str(q['qid']) + '*'
 
                     if len(res_id) < 1:
@@ -521,33 +540,38 @@ def find_surveys():
                 else:
                     print 'already has q_ ' + clean_q
 
-        questions_models_again = new_models.Question.objects.using('new')
-        for qma in questions_models_again:
-            # print qma.link_from_id
-            if qma.link_from_id is not None:
-                from_question_models = new_models.Question.objects.using('new').filter(qid=clean_str(qma.link_from_id))
-                if from_question_models.count() > 0:
-                    qma.link_from_question = from_question_models[0]
-                    qma.save(using="new")
-                else:
-                    print 'cant find link from ' + str(qma.link_from_id)
-                    link_from_errors.append(qma.link_from_id)
+        if question_links:
+            questions_models_again = new_models.Question.objects.using('new')
+            for qma in questions_models_again:
+                # print qma.link_from_id
+                if qma.link_from_id is not None:
+                    from_question_models = new_models.Question.objects.using('new').filter(qid=clean_str(qma.link_from_id))
+                    if from_question_models.count() > 0:
+                        qma.link_from_question = from_question_models[0]
+                        qma.save(using="new")
+                    else:
+                        print 'cant find link from ' + str(qma.link_from_id)
+                        link_from_errors.append(qma.link_from_id)
 
-            # print qma.subof_id
-            if qma.subof_id != 'n/a' and qma.subof_id is not None:
-                subof_question_models = new_models.Question.objects.using('new').filter(qid=clean_str(qma.subof_id))
-                if subof_question_models.count() > 0:
-                    qma.subof_question = subof_question_models[0]
-                    qma.save(using="new")
-                else:
-                    print str(qma.qid) + ' cant find parent, it is sub_of ' + str(qma.subof_id)
-                    sub_errors.append(qma.subof_id)
+                # print qma.subof_id
+                if qma.subof_id != 'n/a' and qma.subof_id is not None:
+                    subof_question_models = new_models.Question.objects.using('new').filter(qid=clean_str(qma.subof_id))
+                    if subof_question_models.count() > 0:
+                        qma.subof_question = subof_question_models[0]
+                        qma.save(using="new")
+                    else:
+                        print str(qma.qid) + ' cant find parent, it is sub_of ' + str(qma.subof_id)
+                        sub_errors.append(qma.subof_id)
 
     fails['link_from_errors'] = link_from_errors
     fails['sub_errors'] = sub_errors
+    fails['errors'] = errors
     print fails
+    with open('error_file.txt', 'r') as err_file:
+        err_file.write(json.dumps(fails))
 
-overwrite = True
+question_links = False
+overwrite = False
 
 make_freqs()
 make_q_types()

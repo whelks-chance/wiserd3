@@ -29,6 +29,11 @@ source ~/venv/bin/activate
 python manage.py makemigrations dataportal3
 
 
+Dump shp file to DB for spatial search :
+shp2pgsql -I ~/shp/x_sid_liw2007_pcode_/x_sid_liw2007_pcode_.shp pcode | sudo -u postgres psql -d "NewSurvey"
+do this for one of each type of boundary
+
+
 Credits:
 http://blog.webkid.io/maps-with-leaflet-and-topojson/
 

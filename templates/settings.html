@@ -7,6 +7,7 @@
 
         $(document).ready(function () {
             $('#submit_preferences').click(function(){
+                waitingDialog.show('Saving ...');
                 $.ajax({
                     url: "{% url 'edit_metadata' %}",
                     type: 'GET',
@@ -17,6 +18,11 @@
                         } else {
                             console.log(data);
                         }
+                    },
+                    complete: function() {
+                        setTimeout(function () {
+                            waitingDialog.hide();
+                        }, 1000);
                     }
                 });
             });
@@ -26,7 +32,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Settings</h1>
-{#            <h4> {% if preferences.links_new_tab %}new tabs{% else %}same tabs{% endif %}</h4>#}
+            {#            <h4> {% if preferences.links_new_tab %}new tabs{% else %}same tabs{% endif %}</h4>#}
         </div>
     </div>
 

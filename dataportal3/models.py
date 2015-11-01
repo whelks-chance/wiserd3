@@ -335,8 +335,25 @@ class SurveyQuestionsLink(models.Model):
         db_table = 'survey_questions_link'
 
     def __unicode__(self):
-        return str(self.surveyid) + ':' + self.qid + ':' + self.pkid
+        return str(self.surveyid) + ':' + self.qid + ':' + str(self.pkid)
 
+
+# TODO tidy these two up
+class SpatialSurveyLink(models.Model):
+    survey = models.ForeignKey('Survey', null=True, blank=True)
+    geom_table_name = models.TextField(null=True, blank=True)
+    regional_data = hstore.DictionaryField(null=True, blank=True)
+    data_name = models.TextField(null=True, blank=True)
+    data_description = models.TextField(null=True, blank=True)
+
+    class Meta:
+        db_table = 'spatial_survey_link'
+
+    def __unicode__(self):
+        return str(self.survey.identifier) + ':' + self.geom_table_name + ':' + self.data_name
+
+
+# TODO tidy these two up
 class SurveySpatialLink(models.Model):
     surveyid = models.CharField(max_length=255)
     spatial_id = models.CharField(max_length=300)
@@ -547,3 +564,13 @@ class QualStats(models.Model):
 
     def __unicode__(self):
         return str(self.id) + ':' + self.name
+
+class Pcode(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    label = models.CharField(max_length=254, blank=True, null=True)
+    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        db_table = 'pcode'

@@ -207,7 +207,11 @@
                 });
                 table_body.on('click', '.view_question', function () {
                     var data = survey_questions_table.row($(this).parents('tr')).data();
-                    window.location.href = '/question/' + data['qid'];
+                    {% if preferences.links_new_tab %}
+                        window.open('/question/' + data['qid'], '_blank');
+                    {% else %}
+                        window.location.href = '/question/' + data['qid'];
+                    {% endif %}
                 });
             }
             attach_question_buttons();
@@ -285,7 +289,7 @@
         <div class="col-lg-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    Pill Tabs
+                    Survey Metadata
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -336,11 +340,11 @@
                                     </table>
                                 </div>
                                 <!-- /.table-responsive -->
-                                <div class="well">
-                                    <h4>DataTables Usage Information</h4>
-                                    <p></p>
-                                    <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
-                                </div>
+{#                                <div class="well">#}
+{#                                    <h4>DataTables Usage Information</h4>#}
+{#                                    <p></p>#}
+{#                                    <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>#}
+{#                                </div>#}
                             </div>
 
                         </div>

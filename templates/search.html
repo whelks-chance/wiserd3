@@ -51,7 +51,8 @@
                         "data": 'qid',
                         "render": function ( data, type, full, meta ) {
                             {#                            console.log(data);#}
-                            return "<a href='/question/" + data.trim() + "' class='btn btn-success view_question'>Question</a>";
+                            return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                                    "href='/question/" + data.trim() + "' class='btn btn-success view_question'>Question</a>";
                             {#                            return "<div class='btn btn-success view_question'>View</div>";#}
                         }
                     },
@@ -60,7 +61,8 @@
                         "data": 'survey__identifier',
                         "render": function ( data, type, full, meta ) {
                             {#                            console.log(data);#}
-                            return "<a href='/survey/" + data + "' class='btn btn-success view_survey'>Survey</a>";
+                            return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                                    "href='/survey/" + data + "' class='btn btn-success view_survey'>Survey</a>";
 {#                            return "<div class='btn btn-success view_question'>View</div>";#}
                         }
                     }
@@ -91,7 +93,8 @@
                         "data": 'identifier',
                         "render": function ( data, type, full, meta ) {
                             {#                            console.log(data);#}
-                            return "<a href='/qual_transcript/" + data.trim() + "' class='btn btn-success view_question'>View</a>";
+                            return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                                    "href='/qual_transcript/" + data.trim() + "' class='btn btn-success view_question'>View</a>";
                             {#                            return "<div class='btn btn-success view_question'>View</div>";#}
                         }
                     }

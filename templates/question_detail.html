@@ -80,7 +80,8 @@
                     }
                     $('#question_info').append(dataContent);
 
-                    var survey_button = "<a class='btn btn-info pull-right' href='/survey/" + data['survey'] + "'>View Survey</a>";
+                    var survey_button = "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                            "class='btn btn-info pull-right' href='/survey/" + data['survey'] + "'>View Survey</a>";
                     $('#question_panel_nav').append(survey_button);
                     tidy_tab_fields()
                 }
@@ -271,12 +272,12 @@
                                     </table>
                                 </div>
                                 <!-- /.table-responsive -->
-                                <div class="well">
-                                    <h4>DataTables Usage Information</h4>
-                                    <p></p>
-                                    <a class="btn btn-default btn-lg btn-block" target="_blank"
-                                       href="https://datatables.net/">View DataTables Documentation</a>
-                                </div>
+{#                                <div class="well">#}
+{#                                    <h4>DataTables Usage Information</h4>#}
+{#                                    <p></p>#}
+{#                                    <a class="btn btn-default btn-lg btn-block" target="_blank"#}
+{#                                       href="https://datatables.net/">View DataTables Documentation</a>#}
+{#                                </div>#}
                             </div>
 
                         </div>

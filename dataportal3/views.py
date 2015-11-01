@@ -21,22 +21,25 @@ from dataportal3 import models
 from dataportal3.forms import ShapefileForm
 from dataportal3.utils.ShapeFileImport import celery_import, ShapeFileImport
 from dataportal3.utils.remote_data import RemoteData
-from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user
+from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user, get_user_preferences
 import requests
 from old.views import text_search, date_handler
 
 
 def index(request):
     return render(request, 'index.html',
-                  {'searches': get_user_searches(request)},
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request)
+                  },
                   context_instance=RequestContext(request))
 
 
 def settings(request):
     return render(request, 'settings.html',
                   {
+                      'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
-                      'data': 'HERE IS DATA'
                   },
                   context_instance=RequestContext(request))
 
@@ -44,11 +47,13 @@ def settings(request):
 def search_survey_question_gui(request):
     search_terms = request.GET.get('search_terms', '')
     ors = search_terms.split(',')
-    return render(request, 'search.html', {
-        'searches': get_user_searches(request),
-        'search_terms': search_terms,
-        'url': request.get_full_path()
-    }, context_instance=RequestContext(request))
+    return render(request, 'search.html',
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request),
+                      'search_terms': search_terms,
+                      'url': request.get_full_path()
+                  }, context_instance=RequestContext(request))
 
 
 def search_survey_question_api(request):
@@ -88,10 +93,10 @@ def survey_detail(request, survey_id):
 
     return render(request, 'survey_detail.html',
                   {
+                      'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
-                      'survey_id': survey_id}
-                  ,
-                  context_instance=RequestContext(request))
+                      'survey_id': survey_id
+                  }, context_instance=RequestContext(request))
 
 
 def tables(request):
@@ -112,6 +117,7 @@ def tables(request):
 
     return render(request, 'tables.html',
                   {
+                      'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
                       'search_id': search_id,
                       'geom': geom,
@@ -165,6 +171,7 @@ def map_search(request):
 
     return render(request, 'map.html',
                   {
+                      'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
                       'surveys': json.dumps(surveys),
                       'wms_layers': b,
@@ -187,13 +194,17 @@ def question(request, question_id):
 
     return render(request, 'question_detail.html',
                   {
+                      'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
                       'question_id': question_id
                   },
                   context_instance=RequestContext(request))
 
+
 @csrf_exempt
 def edit_metadata(request):
+    print 'get', request.GET
+
     # assume failure
     edit_metadata_response = {
         'success': False
@@ -219,6 +230,15 @@ def edit_metadata(request):
                     search.save()
                     edit_metadata_response['success'] = True
 
+        if function == 'set_user_preferences':
+            user_prefs = get_user_preferences(request)
+            if 'links_new_tab' in request.GET:
+                user_prefs.links_new_tab = True
+            else:
+                user_prefs.links_new_tab = False
+            user_prefs.save()
+            edit_metadata_response['success'] = True
+
     # Any failure in here results in sending the success as being False, as set above
     # Add whatever the error message is here. Used in debugging, ideally should not be shown to user
     except Exception as e:
@@ -226,6 +246,7 @@ def edit_metadata(request):
         edit_metadata_response['error'] = str(e)
 
     return HttpResponse(json.dumps(edit_metadata_response, indent=4), content_type="application/json")
+
 
 @csrf_exempt
 def get_imported_feature(request):
@@ -297,10 +318,9 @@ def get_imported_feature(request):
         }
         end_result = geojson_feature
 
-
-
     final = json.dumps(end_result, indent=4)
     return HttpResponse(final, content_type="application/json")
+
 
 @csrf_exempt
 def get_geojson(request):
@@ -439,6 +459,7 @@ def file_management(request):
 
     return render(request, 'file_management.html',
                   {
+                      'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
                       'user_shapefiles': user_shapefiles,
                       'shapefile_form': ShapefileForm()
@@ -507,6 +528,7 @@ def upload_shapefile(request):
 
     return render(request, 'file_management.html',
                   {
+                      'preferences': get_user_preferences(request),
                       'messages': messages,
                       'shapefile_form': ShapefileForm(),
                       'searches': get_user_searches(request)
@@ -522,7 +544,10 @@ def upload_shapefile(request):
 
 def shapefile_list(request):
     return render(request, 'file_management.html',
-                  {'searches': get_user_searches(request)},
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request)
+                  },
                   context_instance=RequestContext(request))
 
 
@@ -690,10 +715,11 @@ def qual_transcript(request, qual_id):
 
     return render(request, 'qual_detail.html',
                   {
+                      'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
                       'qual_title': transcript_title.dc_info.title,
-                      'qual_id': qual_id}
-                  ,
+                      'qual_id': qual_id
+                  },
                   context_instance=RequestContext(request))
 
 
@@ -712,7 +738,7 @@ def qual_dc_data(request, qual_id):
         'method': 'qual_dc_data',
         'search_result_data': quals,
         'results_count': len(quals),
-        }
+    }
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 
@@ -740,5 +766,5 @@ def qual_metadata(request, qual_id):
         'method': 'qual_metadata',
         'search_result_data': quals,
         'results_count': len(quals),
-        }
+    }
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")

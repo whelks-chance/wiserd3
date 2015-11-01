@@ -1,9 +1,9 @@
 from django.contrib import auth
 from dataportal3 import models
-from dataportal3.models import UserProfile
+from dataportal3.models import UserProfile, UserPreferences
+from django.contrib.auth.models import User, AnonymousUser
 
 __author__ = 'ubuntu'
-from django.contrib.auth.models import User, AnonymousUser
 
 
 def get_anon_user():
@@ -25,6 +25,23 @@ def get_request_user(request=None):
     except Exception as e1:
         # hack using the exception to use anonymous user if not logged in
         return UserProfile.objects.get(user=get_anon_user())
+
+
+def get_user_preferences(request):
+    user = auth.get_user(request)
+    if type(user) is AnonymousUser:
+        user = get_anon_user()
+    try:
+        user_profile = UserProfile.objects.get(user=user)
+    except:
+        # TODO remove this hack.
+        # TODO It defaults to Anon user if an unrecognised user is logged in.
+        # TODO Should figure out how this impossible thing happened
+        user = get_anon_user()
+        user_profile = UserProfile.objects.get(user=user)
+
+    user_prefs, created = UserPreferences.objects.get_or_create(user=user_profile)
+    return user_prefs
 
 
 def get_user_searches(request):

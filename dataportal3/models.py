@@ -31,6 +31,17 @@ class UserProfile(models.Model):
         return str(self.id) + ':' + self.user.username
 
 
+class UserPreferences(models.Model):
+    user = models.ForeignKey(UserProfile)
+    links_new_tab = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = 'user_preferences'
+
+    def __unicode__(self):
+        return str(self.id) + ':' + self.user.user.username
+
+
 class Search(models.Model):
     user = models.ForeignKey(UserProfile)
     query = models.TextField(blank=True, null=True)

@@ -6,17 +6,21 @@ django.setup()
 import pprint
 from dataportal3.utils.spatial_search.spatial_search import find_intersects, get_data_for_regions
 
-bbox = '''[u&#39;POLYGON ((298297.78502920375 181841.18597899398,298678.28101712064 200807.17836275577,317658.0002661088 200461.67790279497,317348.79709203186 181495.20467829853,298297.78502920375 181841.18597899398))&#39;]'''
+wkt_region = '''[u&#39;POLYGON ((298297.78502920375 181841.18597899398,298678.28101712064 200807.17836275577,317658.0002661088 200461.67790279497,317348.79709203186 181495.20467829853,298297.78502920375 181841.18597899398))&#39;]'''
 
-b = find_intersects(bbox)
+b = find_intersects(wkt_region)
 
 print pprint.pformat(b)
 
-boundary_type = b.keys()[0]
-survey = b[boundary_type]['table_options'].keys()[3]
-data_name = b[boundary_type]['table_options'][survey][3]
-regions = b[boundary_type]['intersects']
+for boundary_type in b['boundary_surveys'].keys():
 
-data = get_data_for_regions(survey, data_name, regions)
+    print 'boundary type', boundary_type
+    for survey in b['boundary_surveys'][boundary_type]['table_options'].keys():
+        print 'survey', survey
+        data_name = b['boundary_surveys'][boundary_type]['table_options'][survey][0]
+        regions = b['boundary_surveys'][boundary_type]['intersects']
 
-print pprint.pformat(data)
+        data = get_data_for_regions(survey, data_name, regions)
+
+        # print pprint.pformat(data, indent=4)
+        print data

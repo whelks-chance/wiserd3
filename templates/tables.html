@@ -53,7 +53,12 @@
             function attach_question_buttons() {
                 $('#spatial_results').find('tbody').on('click', '.show_questions', function () {
                     var data = res_table.row($(this).parents('tr')).data();
-                    window.location.href = "survey/" + data['survey_id'];
+
+                    {% if preferences.links_new_tab %}
+                        window.open("survey/" + data['identifier'], '_blank');
+                    {% else %}
+                        window.location.href = "survey/" + data['identifier'];
+                    {% endif %}
                 });
             }
             attach_question_buttons();
@@ -61,12 +66,15 @@
             function attach_map_survey_buttons() {
                 $('#spatial_results').find('tbody').on('click', '.map_survey', function () {
                     var data = res_table.row($(this).parents('tr')).data();
-                    var url_params = $.param({'surveys': data['survey_id'], 'area_names': data['area']});
+                    var url_params = $.param({'surveys': data['identifier'], 'area_names': data['area']});
 {#                    window.location.href = "map?surveys=" + data['survey_id'] ;#}
                     var url_complete = "{% url 'map' %}" + '?' + url_params;
-{#                    alert(url_complete);#}
-                    window.location.href = url_complete;
 
+                    {% if preferences.links_new_tab %}
+                        window.open(url_complete, '_blank');
+                    {% else %}
+                        window.location.href = url_complete;
+                    {% endif %}
                 });
             }
             attach_map_survey_buttons();

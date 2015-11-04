@@ -342,6 +342,7 @@ class SurveyQuestionsLink(models.Model):
 class SpatialSurveyLink(models.Model):
     survey = models.ForeignKey('Survey', null=True, blank=True)
     geom_table_name = models.TextField(null=True, blank=True)
+    boundary_name = models.TextField(null=True, blank=True)
     regional_data = hstore.DictionaryField(null=True, blank=True)
     data_name = models.TextField(null=True, blank=True)
     data_description = models.TextField(null=True, blank=True)
@@ -565,7 +566,8 @@ class QualStats(models.Model):
     def __unicode__(self):
         return str(self.id) + ':' + self.name
 
-class Pcode(models.Model):
+
+class SpatialdataAEFA(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
@@ -573,4 +575,81 @@ class Pcode(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'pcode'
+        db_table = 'spatialdata_aefa'
+
+
+class SpatialdataPolice(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    label = models.CharField(max_length=254, blank=True, null=True)
+    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        db_table = 'spatialdata_police'
+
+
+class SpatialdataPostCode(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    label = models.CharField(max_length=254, blank=True, null=True)
+    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        db_table = 'spatialdata_pcode'
+
+
+class SpatialdataParl(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    label = models.CharField(max_length=254, blank=True, null=True)
+    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        db_table = 'spatialdata_parl'
+
+
+class SpatialdataMSOA(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    label = models.CharField(max_length=254, blank=True, null=True)
+    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        db_table = 'spatialdata_msoa'
+
+
+class SpatialdataLSOA(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    label = models.CharField(max_length=254, blank=True, null=True)
+    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        db_table = 'spatialdata_lsoa'
+
+
+class SpatialdataFire(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    label = models.CharField(max_length=254, blank=True, null=True)
+    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        db_table = 'spatialdata_fire'
+
+
+class SpatialdataUA(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    label = models.CharField(max_length=254, blank=True, null=True)
+    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        db_table = 'spatialdata_ua'

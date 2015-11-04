@@ -11,11 +11,11 @@ import django
 django.setup()
 
 # from old import survey_models as old_models
-from dataportal3 import models as new_models
+from dataportal3 import models as models
 
 tablenames = [
     "x_sid_liw2007_lsoa_", "x_sid_liw2007_police_", "x_sid_liwhh2004_fire_", "x_sid_liw2007_pcode_",
-    "x_wisid_ad_plasc_ethnic_2004_ua_", "x_sid_liwhh2004_aefa_", "x_sid_liwhh2004_lsoa_",
+    "x_sid_liwhh2004_aefa_", "x_sid_liwhh2004_lsoa_",
     "x_sid_liwhh2005_parl_", "x_sid_liwhh2005_lsoa_", "x_sid_liwhh2005_police_", "x_sid_liwhh2005_pcode_",
     "x_sid_liwhh2005_ua_", "x_sid_liwhh2006_aefa_", "x_sid_liwhh2006_pcode_", "x_sid_liwps2004_lsoa_",
     "x_sid_liwps2004_pcode_", "x_sid_liw2007_ua_", "x_sid_liw2007_parl_", "x_sid_liwhh2004_pcode_",
@@ -32,7 +32,7 @@ tablenames = [
 
 # grey / admin data?
 
-#     "x_wisid_ad_plasc_ss1115welsh_2004_ua_", "x_wisid_ad_plasc_ethnic_2003_ua_",
+#     "x_wisid_ad_plasc_ethnic_2004_ua_", "x_wisid_ad_plasc_ss1115welsh_2004_ua_", "x_wisid_ad_plasc_ethnic_2003_ua_",
 #     "x_wisid_ad_plasc_identity_2005_ua_", "x_wisid_ad_plasc_ethnic_2005_ua_", "x_sid_liw2007_fire_",
 #     "x_wisid_ad_plasc_ethnic_2006_ua_", "x_wisid_ad_plasc_identity_2006_ua_",
 #     "x_wisid_ad_plasc_ethnic_2007_ua_", "x_wisid_ad_plasc_ss1115welsh_2009_ua_",
@@ -45,54 +45,120 @@ tablenames = [
 # ]
 
 
+# boundaries = ['aefa', 'police', 'pcode', 'parl', 'msoa', 'lsoa', 'fire', 'ua']
+
+geometry_columns = [
+    {
+        'table_name': 'spatialdata_aefa',
+        'geometry_column': 'geom',
+        'table_model': models.SpatialdataAEFA,
+        'name': 'aefa',
+        'label': 'AEFA'
+    },
+    {
+        'table_name': 'spatialdata_police',
+        'geometry_column': 'geom',
+        'table_model': models.SpatialdataPolice,
+        'name': 'police',
+        'label': 'Police'
+    },
+    {
+        'table_name': 'spatialdata_pcode',
+        'geometry_column': 'geom',
+        'table_model': models.SpatialdataPostCode,
+        'name': 'pcode',
+        'label': 'Post Code'
+    },
+    {
+        'table_name': 'spatialdata_parl',
+        'geometry_column': 'geom',
+        'table_model': models.SpatialdataParl,
+        'name': 'parl',
+        'label': 'Parliamentary'
+    },
+    {
+        'table_name': 'spatialdata_msoa',
+        'geometry_column': 'geom',
+        'table_model': models.SpatialdataMSOA,
+        'name': 'msoa',
+        'label': 'MSOA'
+    },
+    {
+        'table_name': 'spatialdata_lsoa',
+        'geometry_column': 'geom',
+        'table_model': models.SpatialdataLSOA,
+        'name': '_lsoa',
+        'label': 'LSOA'
+    },
+    {
+        'table_name': 'spatialdata_fire',
+        'geometry_column': 'geom',
+        'table_model': models.SpatialdataFire,
+        'name': '_fire',
+        'label': 'Fire'
+
+    },
+    {
+        'table_name': 'spatialdata_ua',
+        'geometry_column': 'geom',
+        'table_model': models.SpatialdataUA,
+        'name': '_ua',
+        'label': 'Unitary Authority'
+    },
+]
+
 for table_name in tablenames:
-    if 'pcode' in table_name:
-        print ''
-        print table_name
+    for geo in geometry_columns:
+        if geo['name'] in table_name:
+            print ''
+            print table_name
 
-        survey_id_segment = table_name.split('_')[2]
-        print survey_id_segment
+            survey_id_segment = table_name.split('_')[2]
+            print survey_id_segment
 
-        survey = new_models.Survey.objects.filter(surveyid__icontains=survey_id_segment)[0]
+            surveys = models.Survey.objects.filter(surveyid__icontains=survey_id_segment)
 
-        print survey
+            if surveys.count() > 0:
+                survey = surveys[0]
+                print survey
 
-        # spatial_table_model = apps.get_model(app_label='old', model_name=table_name.replace('_', ''))
-        # fields = spatial_table_model._meta.get_fields()
-        #
-        # print fields
+                # spatial_table_model = apps.get_model(app_label='old', model_name=table_name.replace('_', ''))
+                # fields = spatial_table_model._meta.get_fields()
+                #
+                # print fields
 
-        cursor = connections['survey'].cursor()
-        cursor.execute("select column_name from information_schema.columns where table_name = %s", [table_name])
-        column_names = cursor.fetchall()
-        # print column_names
+                cursor = connections['survey'].cursor()
+                cursor.execute("select column_name from information_schema.columns where table_name = %s", [table_name])
+                column_names = cursor.fetchall()
+                # print column_names
 
-        cursor3 = connections['survey'].cursor()
-        cursor3.execute("select area_name from " + table_name, [])
-        regions = cursor3.fetchall()
-        print regions[:20]
+                cursor3 = connections['survey'].cursor()
+                cursor3.execute("select area_name from " + table_name, [])
+                regions = cursor3.fetchall()
+                print regions[:20]
 
-        for column in column_names:
-            column_header = str(column[0])
-            if column_header != 'table_pk' and column_header != 'the_geom' and column_header != 'area_name':
+                for column in column_names:
+                    column_header = str(column[0])
+                    if column_header != 'table_pk' and column_header != 'the_geom' and column_header != 'area_name':
 
-                print column_header
+                        print column_header
 
-                cursor2 = connections['survey'].cursor()
-                cursor2.execute("select " + column_header + " from " + table_name, [])
+                        cursor2 = connections['survey'].cursor()
+                        cursor2.execute("select " + column_header + " from " + table_name, [])
 
-                data = cursor2.fetchall()
-                print len(data)
-                print len(regions)
+                        data = cursor2.fetchall()
+                        print len(data)
+                        print len(regions)
 
-                regions_with_data = {}
-                for place_itr in range(len(regions)):
-                    regions_with_data[regions[place_itr][0]] = data[place_itr][0]
+                        regions_with_data = {}
+                        for place_itr in range(len(regions)):
+                            regions_with_data[regions[place_itr][0]] = data[place_itr][0]
 
-                new_survey_link = new_models.SpatialSurveyLink()
-                new_survey_link.survey = survey
-                new_survey_link.data_name = column_header
-                new_survey_link.geom_table_name = 'pcode'
-                new_survey_link.regional_data = regions_with_data
-                new_survey_link.save()
+                        new_survey_link = models.SpatialSurveyLink()
+                        new_survey_link.survey = survey
+                        new_survey_link.data_name = column_header
+                        new_survey_link.geom_table_name = geo['table_name']
+                        new_survey_link.regional_data = regions_with_data
+                        new_survey_link.boundary_name = geo['label']
+                        new_survey_link.save()
 

@@ -21,6 +21,7 @@ from dataportal3 import models
 from dataportal3.forms import ShapefileForm
 from dataportal3.utils.ShapeFileImport import celery_import, ShapeFileImport
 from dataportal3.utils.remote_data import RemoteData
+from dataportal3.utils.spatial_search.spatial_search import find_intersects
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user, get_user_preferences
 import requests
 from old.views import text_search, date_handler
@@ -866,107 +867,53 @@ def spatial_search(request):
         # we only record what was searched for, do not complete the search yet
         pass
     else:
-
-        # cursor = connections['survey'].cursor()
-
-        # table_cols = "SELECT DISTINCT f_table_name, f_geometry_column FROM geometry_columns where f_table_schema = 'public'"
-        # cursor.execute(table_cols)
-        # tables = cursor.fetchall()
-        # # print tables
-
-        # geometry_columns = old_models.GeometryColumns.objects.using('survey').filter(f_table_schema='public')
-
-        geometry_columns = [
-            {
-                'table_name': 'pcode',
-                'geometry_column': 'geom',
-                'table_model': models.Pcode
-            }
-        ]
-
-        areas = []
         survey_ids = []
         survey_info = {}
 
-        for geoms in geometry_columns:
-            f_table_name = str(geoms['table_name'])
-            # print f_table_name
-            f_geometry_column = geoms['geometry_column']
+        spatials = find_intersects(geography_wkt)
 
-            survey_data = {}
-            survey_data['areas'] = []
+        # print pprint.pformat(spatials)
 
-            # try:
-            # spatial_layer_table = apps.get_model(app_label='dataportal3', model_name=f_table_name)
-            spatial_layer_table = geoms['table_model']
+        for boundary_type in spatials['boundary_surveys'].keys():
+            survey_ids.extend(
+                spatials['boundary_surveys'][boundary_type]['table_options'].keys()
+            )
 
-            # intersects = "SELECT area_name from " + f_table_name + \
-            #              " WHERE ST_Intersects(ST_Transform(ST_GeometryFromText('" + geography_wkt + "', 27700), 4326)," + f_geometry_column + ")"
+        print survey_ids
 
-            area_names = spatial_layer_table.objects.using('new').extra(
-                select={
-                    'geometry': 'ST_Intersects(ST_Transform(ST_GeometryFromText("' + geography_wkt + '", 27700), 4326), ' + f_geometry_column +')'
-                }
-            ).values('label')
+        if len(survey_ids) > 0:
+            survey_model = models.Survey.objects.filter(identifier__in=survey_ids).values('short_title', 'collectionenddate', 'identifier')
+            print len(survey_model)
 
-            # print area_names
-            # cursor.execute(intersects)
-            # area_names = cursor.fetchall()
+            for s in survey_model:
 
-            area_name = ''
-            if len(area_names) > 0:
-                print area_names
-                areas.append(area_names[0]['label'])
-                area_name = area_names[0]['label']
-            survey_data['area'] = area_name
+                try:
+                    # print s['collectionenddate']
+                    date = s['collectionenddate'].strftime('%Y / %m / %d')
+                    # print date
+                except:
+                    date = ''
 
-            spatials = models.SurveySpatialLink.objects.using('survey').filter(spatial_id=geoms['table_name']).values_list('surveyid', flat=True)
+                survey_data = {}
+                survey_data['survey_short_title'] = s['short_title']
+                survey_data['identifier'] = s['identifier']
+                survey_data['date'] = date
+                # survey_data['area'] = ''
+                survey_data['area'] = spatials['survey_boundaries'][s['identifier']]
 
-            spatials = list(spatials)
+                if len(survey_data['identifier']):
+                    if survey_info.has_key(survey_data['identifier']):
+                        survey_info[survey_data['identifier']]['areas'].append(survey_data['area'])
 
-            date = ''
-            sid = ''
-            survey_short_title = ''
-            if len(spatials) > 0:
-                # print spatials[0].strip()
-                survey_ids.append(spatials[0].strip())
-                sid = spatials[0]
-                survey_model = models.Survey.objects.using('survey').filter(surveyid__in=spatials).values_list('short_title', 'collectionenddate', 'surveyid').distinct()
+                        area_list = list(set(survey_info[survey_data['identifier']]['areas']))
+                        # cleaned_list = [area for area in area_list if not has_numbers(area)]
+                        cleaned_list = area_list
 
-                for s in survey_model:
-                    if len(s) > 0:
-                        survey_short_title = s[0]
-                    try:
-                        date = s[1].strftime('%Y / %m / %d')
-                    except:
-                        date = ''
+                        survey_info[survey_data['identifier']]['area'] = ', '.join(cleaned_list)
+                    else:
+                        survey_info[survey_data['identifier']] = survey_data
 
-            survey_data['survey_short_title'] = survey_short_title
-            survey_data['survey_id'] = sid.strip()
-            survey_data['survey_id_full'] = sid
-            survey_data['date'] = date
-
-            if len(survey_data['survey_id']):
-                if survey_info.has_key(survey_data['survey_id']):
-                    survey_info[survey_data['survey_id']]['areas'].append(survey_data['area'])
-
-                    area_list = list(set(survey_info[survey_data['survey_id']]['areas']))
-                    # cleaned_list = [area for area in area_list if not has_numbers(area)]
-                    cleaned_list = area_list
-
-                    survey_info[survey_data['survey_id']]['area'] = ', '.join(cleaned_list)
-                else:
-                    survey_info[survey_data['survey_id']] = survey_data
-
-            # except Exception as e:
-            #     print e
-
-        # response_data['areas'] = areas
+        response_data['survey_ids'] = survey_ids
         response_data['data'] = survey_info.values()
-
-        # cursor.execute("select table_name from information_schema.tables where table_name like %s limit 30", ['ztab%'])
-        # max_value = cursor.fetchone()[0]
-
-        # print response_data
 
     return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")

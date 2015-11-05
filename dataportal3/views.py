@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+import os
 import pprint
 import uuid
 from BeautifulSoup import BeautifulSoup
@@ -25,7 +26,7 @@ from dataportal3.utils.spatial_search.spatial_search import find_intersects
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user, get_user_preferences
 import requests
 from old.views import text_search, date_handler
-
+from wiserd3 import settings
 
 def index(request):
     return render(request, 'index.html',
@@ -36,7 +37,7 @@ def index(request):
                   context_instance=RequestContext(request))
 
 
-def settings(request):
+def user_settings(request):
     return render(request, 'settings.html',
                   {
                       'preferences': get_user_preferences(request),
@@ -917,3 +918,24 @@ def spatial_search(request):
         response_data['data'] = survey_info.values()
 
     return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
+
+
+def site_setup(request):
+    data = {
+        'found_files': [],
+        'missing_files': []
+    }
+
+    for topojson_file in settings.TOPOJSON_OPTIONS:
+        if os.path.isfile(topojson_file['topojson_file']):
+            data['found_files'].append(topojson_file['geog_short_code'])
+        else:
+            data['missing_files'].append(topojson_file['geog_short_code'])
+
+    return render(request, 'site_setup.html',
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request),
+                      'url': request.get_full_path(),
+                      'data': data
+                  }, context_instance=RequestContext(request))

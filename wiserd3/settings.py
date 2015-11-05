@@ -122,7 +122,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+    }
 }
 
 DATABASE_ROUTERS = [
@@ -178,10 +178,33 @@ nomis_uid = ''
 TMP_DIR = '/home/ubuntu/'
 
 TOPOJSON_DIR = '/home/ubuntu/DataPortalGeographies/'
-
-TOPOJSON_FILE_UA = os.path.join(TOPOJSON_DIR, '14Wales_lad_unitaryauthority_2011/output-fixed-1.json')
-TOPOJSON_FILE_PARL_2011 = os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json')
-TOPOJSON_FILE_LSOA = os.path.join(TOPOJSON_DIR, '11Wales_lsoa_2011/output-fixed-1-k.json')
+TOPOJSON_OPTIONS = [
+    {
+        'geog_short_code': 'pcode',
+        'region_id': '2092957700TYPE276',
+        'topojson_file': '/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-1.json'
+    },
+    {
+        'geog_short_code': 'lsoa',
+        'region_id': '2092957700TYPE298',
+        'topojson_file': os.path.join(TOPOJSON_DIR, '11Wales_lsoa_2011/output-fixed-1-k.json')
+    },
+    {
+        'geog_short_code': 'ua',
+        'region_id': '2092957700TYPE464',
+        'topojson_file': os.path.join(TOPOJSON_DIR, '14Wales_lad_unitaryauthority_2011/output-fixed-1.json')
+    },
+    {
+        'geog_short_code': 'parl',
+        'region_id': '2092957700TYPE460',
+        'topojson_file': os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json')
+    },
+    {
+        'geog_short_code': 'parl2011',
+        'region_id': '2092957700TYPE460',
+        'topojson_file': os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json')
+    }
+]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True

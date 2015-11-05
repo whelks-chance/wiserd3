@@ -36,7 +36,17 @@
                     {data: "survey_short_title"},
                     {data: "date"},
                     {#                    {data: "survey_id"},#}
-                    {data: "area"},
+                    {
+                        data: "area",
+                        'render': function ( data, type, full, meta ) {
+                            var select_box = "<select class='select'>";
+                            for( var o in data) {
+                                select_box += '<option value="' + data[o] + '">' + data[o] + '</option>';
+                            }
+                            select_box += "</select>";
+                            return select_box;
+                        }
+                    },
                     {
                         "targets": -2,
                         "data": null,
@@ -65,11 +75,21 @@
 
             function attach_map_survey_buttons() {
                 $('#spatial_results').find('tbody').on('click', '.map_survey', function () {
-                    var data = res_table.row($(this).parents('tr')).data();
-                    var url_params = $.param({'surveys': data['identifier'], 'area_names': data['area']});
-{#                    window.location.href = "map?surveys=" + data['survey_id'] ;#}
-                    var url_complete = "{% url 'map' %}" + '?' + url_params;
 
+                    var select_box_row = $(this).parents('tr');
+                    console.log(select_box_row);
+
+                    var select_box = select_box_row.find('select');
+                    console.log(select_box);
+                    console.log(select_box.val());
+
+                    var data = res_table.row($(this).parents('tr')).data();
+                    var url_params = $.param({
+                        'surveys': data['identifier'],
+                        'boundary':select_box.val(),
+                        'area_names': data['area']});
+
+                    var url_complete = "{% url 'map' %}" + '?' + url_params;
                     {% if preferences.links_new_tab %}
                         window.open(url_complete, '_blank');
                     {% else %}

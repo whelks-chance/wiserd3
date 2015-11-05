@@ -1,0 +1,25 @@
+{% extends "navigation.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <h3>Preferences</h3>
+    <p>{{ preferences }}</p>
+    <hr>
+
+    <h3>Searches</h3>
+    <p>{{ searches }}</p>
+    <hr>
+
+    <h3>Search Terms</h3>
+    <p>{{ search_terms }}</p>
+    <hr>
+
+    <h3>URL</h3>
+    <p>{{ url }}</p>
+    <hr>
+
+    <h3>Data</h3>
+    <p>{{ data }}</p>
+
+{% endblock %}

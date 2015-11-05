@@ -26,7 +26,8 @@ urlpatterns = [
 
     url(r'^logout', views.logout, name='logout'),
     url(r'^profile', views.profile, name='profile'),
-    url(r'^settings', views.settings, name='settings'),
+    url(r'^settings', views.user_settings, name='settings'),
+    url(r'^site_setup', views.site_setup, name='site_setup'),
 
     url(r'^remote_data_topojson', views.remote_data_topojson, name='remote_data_topojson'),
     url(r'^remote_data', views.remote_data, name='remote_data'),

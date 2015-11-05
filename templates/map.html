@@ -489,7 +489,13 @@
                 });
             }
 
-            function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins){
+            function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins, nomis_variable){
+                var is_percentage = false;
+                if (nomis_variable) {
+                    if (nomis_variable == 20301) {
+                        is_percentage = true;
+                    }
+                }
 
                 if (color_scheme == 'b_w') {
                     color_scheme = ['white', 'black'];
@@ -526,7 +532,7 @@
 
                         var legend_row = '<i style="background:' + getColor(from + 1, grades, chroma_scale) + '"></i> ';
                         legend_row += from.toFixed(2);
-                        legend_row += (to-1).toFixed(2) ? '&ndash;' + (to-1).toFixed(2) + '%': '%+';
+                        legend_row += (to-1).toFixed(2) ? '&ndash;' + (to-1).toFixed(2) + (is_percentage ? '%' : ''): (is_percentage ? '%+' : '+');
 
                         labels.push(legend_row);
                     }
@@ -708,7 +714,7 @@
                 {#                snapshot.appendChild(img);#}
 
                 $.ajax({
-                    url: "{% url 'new_spatial_search' %}",
+                    url: "{% url 'spatial_search' %}",
                     type: 'POST',
                     data: {
                         geography: wkt,
@@ -777,9 +783,10 @@
                         if ($("#bintype").val() != '') {
                             if ($("#binno").val() != '') {
                                 var topojson_data = topojson_layers[$(this).data('layer_names')];
+                                var nomis_variable = $(this).data('nomis_variable');
 
                                 try {
-                                    handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val());
+                                    handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val(), nomis_variable);
                                 }catch (e){
                                     alert('Sorry, an error occurred. Try being more specific with the dataset variable')
                                 }
@@ -982,6 +989,8 @@
                         var codelists = $(this).data('codelists');
                         var codelist_selected = [];
 
+                        var nomis_variable = $("#nomis_variable").val();
+
                         for(var remote_codelist in codelists) {
                             var remote_codelist_selection = $('#' + remote_codelist +'_radio').find(":radio:checked").attr('value');
 
@@ -989,12 +998,16 @@
                             codelist_selected.push({
                                 option: remote_codelist,
                                 variable: remote_codelist_selection
-                            })
+                            });
+                            if (remote_codelist == 'MEASURES') {
+                                nomis_variable = remote_codelist_selection;
+                            }
                         }
+
+                        console.log(codelist_selected);
 
                         var dataset_id = $(this).data('dataset_id');
 
-                        var nomis_variable = $("#nomis_variable").val();
                         {#                        var topojson_geography = $("#topojson_geographies").val();#}
 
                         var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');
@@ -1012,7 +1025,7 @@
                             success: function(data){
                                 topojson_layers[layer_name] = data;
                                 $( "#dialog-form").data(
-                                        {layer_names: layer_name}
+                                        {layer_names: layer_name, 'nomis_variable': nomis_variable}
                                 ).dialog( "open" );
 
                             },

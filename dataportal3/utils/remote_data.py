@@ -304,7 +304,7 @@ class RemoteData():
                         not_found += 1
                         # print '\n'
 
-            print 'remote data keys', len(remote_data.keys()), remote_data.keys()
+            # print 'remote data keys', len(remote_data.keys()), remote_data.keys()
             print 'success y/n', found, not_found
 
             # print '\n***\n'
@@ -316,28 +316,41 @@ class RemoteData():
         region_id = ''
         topojson_file = ''
 
-        if geog_short_code == 'pcode':
-            region_id = '2092957700TYPE276'
-            topojson_file = '/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-1.json'
+        for topojson_entry in settings.TOPOJSON_OPTIONS:
+            if topojson_entry['geog_short_code'] == geog_short_code:
+                print 'topojson_entry', topojson_entry
+                print topojson_entry.keys()
 
-        if geog_short_code == 'lsoa':
-            region_id = '2092957700TYPE298'
-            # topojson_file = '/home/ubuntu/shp/x_sid_liw2007_lsoa_/output-fixed-1.json'
-            topojson_file = settings.TOPOJSON_FILE_LSOA
+                for k in topojson_entry.keys():
+                    print k, 'region_id' == k
 
-        if geog_short_code == 'ua':
-            region_id = '2092957700TYPE464'
-            # topojson_file = '/home/ubuntu/shp/x_sid_liw2007_ua_/output-fixed-1.json'
-            topojson_file = settings.TOPOJSON_FILE_UA
+                region_id = topojson_entry['region_id']
+                topojson_file = topojson_entry['topojson_file']
 
-        if geog_short_code == 'parl':
-            # boundaries prior to 2010
-            region_id = '2092957700TYPE460'
-            topojson_file = '/home/ubuntu/shp/x_sid_liw2007_parl_/output-fixed-1.json'
+        print region_id, topojson_file
 
-        if geog_short_code == 'parl2011':
-            region_id = '2092957700TYPE460'
-            topojson_file = settings.TOPOJSON_FILE_PARL_2011
+        # if geog_short_code == 'pcode':
+        #     region_id = '2092957700TYPE276'
+        #     topojson_file = '/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-1.json'
+        #
+        # if geog_short_code == 'lsoa':
+        #     region_id = '2092957700TYPE298'
+        #     # topojson_file = '/home/ubuntu/shp/x_sid_liw2007_lsoa_/output-fixed-1.json'
+        #     topojson_file = settings.TOPOJSON_FILE_LSOA
+        #
+        # if geog_short_code == 'ua':
+        #     region_id = '2092957700TYPE464'
+        #     # topojson_file = '/home/ubuntu/shp/x_sid_liw2007_ua_/output-fixed-1.json'
+        #     topojson_file = settings.TOPOJSON_FILE_UA
+        #
+        # if geog_short_code == 'parl':
+        #     # boundaries prior to 2010
+        #     region_id = '2092957700TYPE460'
+        #     topojson_file = '/home/ubuntu/shp/x_sid_liw2007_parl_/output-fixed-1.json'
+        #
+        # if geog_short_code == 'parl2011':
+        #     region_id = '2092957700TYPE460'
+        #     topojson_file = settings.TOPOJSON_FILE_PARL_2011
 
         if region_id == '' or topojson_file == '':
             print 'error figuring out geog'

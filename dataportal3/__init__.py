@@ -1,16 +1,14 @@
-# from django.utils import timezone
-
-__author__ = 'lostvisions'
-
 # Connecting to AllAuth Signals
 from allauth.account import signals
 from django.dispatch import receiver
 
-from models import UserProfile
+__author__ = 'lostvisions'
 
 
 @receiver(signals.user_signed_up)
 def new_user_signup(sender, **kwargs):
+    from models import UserProfile
+
     print "signed up a user!!!!"
     # time_now = datetime.datetime.now()
     # time_now = timezone.now()

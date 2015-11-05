@@ -235,6 +235,17 @@
                         <i class="fa fa-user fa-fw"></i>  {{ user }} <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
+                        {% if request.user.is_superuser  %}
+                            <li><a href="{% url 'site_setup' %}" target="_blank"><i class="fa fa-cogs fa-fw"></i> Site Setup</a>
+                            </li>
+                            <li class="divider"></li>
+                        {% endif %}
+
+                        {% if request.user.is_staff %}
+                            <li><a href="{% url 'admin:index' %}" target="_blank"><i class="fa fa-briefcase fa-fw"></i> Admin Panel</a>
+                            </li>
+                            <li class="divider"></li>
+                        {% endif %}
 
                         {% if request.user.is_authenticated %}
                             <li><a href="{% url 'profile' %}"><i class="fa fa-user fa-fw"></i> User Profile</a>

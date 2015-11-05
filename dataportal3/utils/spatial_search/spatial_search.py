@@ -102,8 +102,12 @@ def get_data_for_regions(survey, data_name, regions):
     print 'data_name', data_name
     print 'regions', len(regions)
 
-    found_model = models.SpatialSurveyLink.objects.get(survey__identifier=survey, data_name=data_name)
+    found_model = models.SpatialSurveyLink.objects.filter(survey__identifier=survey,
+                                                       data_name=data_name)
+    # for m in found_model:
+    #     print m.boundary_name
 
+    found_model = found_model[0]
     print found_model
 
     all_spatial_data = found_model.regional_data

@@ -149,12 +149,12 @@ def map_search(request):
     wiserd_layers_clean = []
     uploaded_layers_clean = []
     try:
-        wiserd_layers = models.GeometryColumns.objects.using('survey').filter(f_table_schema='spatialdata')
-        for w_layer in wiserd_layers:
-            wiserd_layers_clean.append({
-                'display_name': w_layer.f_table_name.replace('_', ' ').title(),
-                'table_name': w_layer.f_table_name
-            })
+        # wiserd_layers = models.GeometryColumns.objects.using('survey').filter(f_table_schema='spatialdata')
+        # for w_layer in wiserd_layers:
+        #     wiserd_layers_clean.append({
+        #         'display_name': w_layer.f_table_name.replace('_', ' ').title(),
+        #         'table_name': w_layer.f_table_name
+        #     })
 
         uploaded_layers = models.FeatureCollectionStore.objects.filter(
             shapefile_upload__progress=ShapeFileImport.progress_stage['import_success']
@@ -171,8 +171,16 @@ def map_search(request):
 
     area_names = request.GET.getlist('area_names', [])
 
+    topojson_geographies = []
+    for topojson in settings.TOPOJSON_OPTIONS:
+        topojson_geographies.append({
+            'name': topojson['name'],
+            'geog_short_code': topojson['geog_short_code'],
+        })
+
     return render(request, 'map.html',
                   {
+                      'topojson_geographies': topojson_geographies,
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
                       'surveys': json.dumps(surveys),
@@ -238,6 +246,12 @@ def edit_metadata(request):
                 user_prefs.links_new_tab = True
             else:
                 user_prefs.links_new_tab = False
+
+            if 'topojson_high' in request.GET:
+                user_prefs.topojson_high = True
+            else:
+                user_prefs.topojson_high = False
+
             user_prefs.save()
             edit_metadata_response['success'] = True
 
@@ -641,7 +655,7 @@ def remote_data(request):
 
 
 def remote_data_topojson(request):
-    print request.GET
+    # print request.GET
 
     codelist = None
     codelist_json = request.GET.get('codelist_selected', None)
@@ -654,8 +668,10 @@ def remote_data_topojson(request):
     geog = request.GET.get('geography', '')
     print dataset_id, nomis_variable, geog
 
+    user_prefs = get_user_preferences(request)
+
     rd = RemoteData()
-    a = rd.get_topojson_with_data(dataset_id, geog, nomis_variable, codelist)
+    a = rd.get_topojson_with_data(dataset_id, geog, nomis_variable, codelist, high=user_prefs.topojson_high)
     a = json.dumps(a, indent=4)
 
     return HttpResponse(a, content_type="application/json")

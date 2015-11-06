@@ -32,7 +32,6 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Settings</h1>
-            {#            <h4> {% if preferences.links_new_tab %}new tabs{% else %}same tabs{% endif %}</h4>#}
         </div>
     </div>
 
@@ -44,12 +43,35 @@
                     Links and Tabs
                 </div>
                 <div class="panel-body">
+                <p>This is not advised on mobile, as tab management is not as easy than a desktop browser.</p>
+                <p>However it is can be desirable to have multiple tabs open to view multiple surveys, for example.</p>
                     <div class="form-group">
                         <div class="checkbox col-sm-4">
                             <label>
                                 <input id="links_new_tab" name="links_new_tab"
                                        {% if preferences.links_new_tab %}checked="checked"{% endif %}
-                                       type="checkbox" value="">Open links in new tab
+                                       type="checkbox" value="">Open links in new tabs
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Chloropleth Speed/ Quality
+                </div>
+                <div class="panel-body">
+                    <p>Using high resolution regions when generating a chloropleth can be very strenuous for your browser and also requires larger downloads.</p>
+                    <p>For this reason, the TopoJSON layer used is "simplified" down to 1% complexity for speed and ease of use.</p>
+                    <p>As an example a postcode sector topojson layer at 1% is approx 900kb, full quality becomes 30Mb! Downloading and rendering, especially on mobile, is not advised unless absolutely necessary.</p>
+                    <p>View <a href="https://github.com/mbloch/mapshaper/wiki/Command-Reference#-simplify" target="_blank">Mapshaper "simplify"</a> for more information on the process of simplification used and <a href="https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm" target="_blank">Wikipedia Ramer-Douglas-Peucker</a> for information on the algorithm the process uses.</p>
+                    <div class="form-group">
+                        <div class="checkbox col-sm-4">
+                            <label>
+                                <input id="topojson_high" name="topojson_high"
+                                       {% if preferences.topojson_high %}checked="checked"{% endif %}
+                                       type="checkbox" value="">Use High Resolution Regions
                             </label>
                         </div>
                     </div>
@@ -64,6 +86,4 @@
         </div>
     </form>
 
-    <!-- /.row -->
-    <!-- /.row -->
 {% endblock %}

@@ -1124,22 +1124,30 @@
 
         <div>Geography</div>
         <div id="topojson_geography_radio" class="controls input-block-level tab_data_input">
+            {% for geography in topojson_geographies %}
             <div>
-                <input type="radio" name="geographies" id="ua" value="ua"/>
-                <label for="ua">UA</label>
+                <input type="radio" name="geographies" id="{{ geography.geog_short_code }}"
+                       value="{{ geography.geog_short_code }}"/>
+                <label for="{{ geography.geog_short_code }}">{{ geography.name }}</label>
             </div>
-            <div>
-                <input type="radio" name="geographies" id="pcode" value="pcode"/>
-                <label for="pcode">Post Code Sector</label>
-            </div>
-            <div>
-                <input type="radio" name="geographies" id="lsoa" value="lsoa"/>
-                <label for="lsoa">LSOA</label>
-            </div>
-            <div>
-                <input type="radio" name="geographies" id="parl2011" value="parl2011"/>
-                <label for="parl2011">Parliamentary Constituencies 2011</label>
-            </div>
+            {% endfor %}
+
+{#            <div>#}
+{#                <input type="radio" name="geographies" id="ua" value="ua"/>#}
+{#                <label for="ua">UA</label>#}
+{#            </div>#}
+{#            <div>#}
+{#                <input type="radio" name="geographies" id="pcode" value="pcode"/>#}
+{#                <label for="pcode">Post Code Sector</label>#}
+{#            </div>#}
+{#            <div>#}
+{#                <input type="radio" name="geographies" id="lsoa" value="lsoa"/>#}
+{#                <label for="lsoa">LSOA</label>#}
+{#            </div>#}
+{#            <div>#}
+{#                <input type="radio" name="geographies" id="parl2011" value="parl2011"/>#}
+{#                <label for="parl2011">Parliamentary Constituencies 2011</label>#}
+{#            </div>#}
         </div>
     </div>
 

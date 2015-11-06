@@ -284,8 +284,12 @@ class RemoteData():
                         # Try by geocode
                         topojon_area_name = str(geom['properties']['CODE'])
                     except:
+                        try:
                         # try by name
-                        topojon_area_name = str(geom['properties']['AREA_NAME']).replace(' ', '')
+                            topojon_area_name = str(geom['properties']['AREA_NAME']).replace(' ', '')
+                        except:
+                        # try by label?
+                            topojon_area_name = str(geom['properties']['LABEL']).replace(' ', '')
 
                     try:
                         # print topojon_area_name in remote_data
@@ -311,21 +315,19 @@ class RemoteData():
             # print whole_json['objects'][recent_layer_name]['geometries']
             return whole_topojson
 
-    def get_dataset_geodata(self, geog_short_code):
+    def get_dataset_geodata(self, geog_short_code, high=False):
 
         region_id = ''
         topojson_file = ''
 
         for topojson_entry in settings.TOPOJSON_OPTIONS:
             if topojson_entry['geog_short_code'] == geog_short_code:
-                print 'topojson_entry', topojson_entry
-                print topojson_entry.keys()
-
-                for k in topojson_entry.keys():
-                    print k, 'region_id' == k
-
                 region_id = topojson_entry['region_id']
-                topojson_file = topojson_entry['topojson_file']
+                if high:
+                    # high detail topojson file
+                    topojson_file = topojson_entry['topojson_file_high']
+                else:
+                    topojson_file = topojson_entry['topojson_file']
 
         print region_id, topojson_file
 
@@ -358,8 +360,8 @@ class RemoteData():
         else:
             return region_id, topojson_file
 
-    def get_topojson_with_data(self, dataset_id, geog, nomis_variable, codelist=None):
-        region_id, topojson_file = self.get_dataset_geodata(geog)
+    def get_topojson_with_data(self, dataset_id, geog, nomis_variable, codelist=None, high=False):
+        region_id, topojson_file = self.get_dataset_geodata(geog, high)
         all_data = self.get_data(dataset_id, region_id, nomis_variable, codelist=codelist, limit=100, offset=0)
 
         nomis_cache_file = os.path.join(
@@ -437,7 +439,8 @@ class RemoteData():
 # 2092957700TYPE464 ua ????
 
 # rd = RemoteData()
-# topojson_file = '/home/ubuntu/DataPortalGeographies/13Wales_parlconstit_2011/output-fixed-1.json'
+# topojson_file = '/home/ubuntu/DataPortalGeographies/11Wales_lsoa_2011/output-fixed-1-k.json'
+# topojson_file = '/home/ubuntu/DataPortalGeographies/05Wales_pcd_2012/output-fixed-1.json'
 
 # rd.inspect_topojson(topojson_file)
 # rd.get_sub_regions('NM_548_1', '2092957700TYPE460')

@@ -34,6 +34,7 @@ class UserProfile(models.Model):
 class UserPreferences(models.Model):
     user = models.ForeignKey(UserProfile)
     links_new_tab = models.BooleanField(default=False)
+    topojson_high = models.BooleanField(default=False)
 
     class Meta:
         db_table = 'user_preferences'

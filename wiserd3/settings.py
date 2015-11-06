@@ -180,29 +180,46 @@ TMP_DIR = '/home/ubuntu/'
 TOPOJSON_DIR = '/home/ubuntu/DataPortalGeographies/'
 TOPOJSON_OPTIONS = [
     {
+        'name': 'Postcode District',
+        'geog_short_code': 'pcode_d',
+        'region_id': '2092957700TYPE274',
+        'topojson_file': os.path.join(TOPOJSON_DIR, '05Wales_pcd_2012/output-fixed-1.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, '05Wales_pcd_2012/output-fixed-1.json')
+    },
+    {
+        'name': 'Postcode Area',
+        'geog_short_code': 'pcode_a',
+        'region_id': '2092957700TYPE275',
+        'topojson_file': os.path.join(TOPOJSON_DIR, '04Wales_pca_2012/output-fixed-1.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, '04Wales_pca_2012/output-fixed-1.json')
+    },
+    {
+        'name': 'Postcode Sector',
         'geog_short_code': 'pcode',
         'region_id': '2092957700TYPE276',
-        'topojson_file': '/home/ubuntu/shp/x_sid_liw2007_pcode_/output-fixed-1.json'
+        'topojson_file': os.path.join(TOPOJSON_DIR, '06Wales_pcs_2012/output-fixed-1.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, '06Wales_pcs_2012/output-fixed.json')
     },
     {
+        'name': 'LSOA',
         'geog_short_code': 'lsoa',
         'region_id': '2092957700TYPE298',
-        'topojson_file': os.path.join(TOPOJSON_DIR, '11Wales_lsoa_2011/output-fixed-1-k.json')
+        'topojson_file': os.path.join(TOPOJSON_DIR, '11Wales_lsoa_2011/output-fixed-1-k.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, '11Wales_lsoa_2011/output-fixed-1-k.json')
     },
     {
+        'name': 'Unitary Authority',
         'geog_short_code': 'ua',
         'region_id': '2092957700TYPE464',
-        'topojson_file': os.path.join(TOPOJSON_DIR, '14Wales_lad_unitaryauthority_2011/output-fixed-1.json')
+        'topojson_file': os.path.join(TOPOJSON_DIR, '14Wales_lad_unitaryauthority_2011/output-fixed-1.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, '14Wales_lad_unitaryauthority_2011/output-fixed-1.json')
     },
     {
-        'geog_short_code': 'parl',
-        'region_id': '2092957700TYPE460',
-        'topojson_file': os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json')
-    },
-    {
+        'name': 'Parliamentary Constituencies 2011',
         'geog_short_code': 'parl2011',
         'region_id': '2092957700TYPE460',
-        'topojson_file': os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json')
+        'topojson_file': os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json')
     }
 ]
 

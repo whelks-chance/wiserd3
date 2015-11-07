@@ -26,6 +26,9 @@ urlpatterns = [
 
     url(r'^logout', views.logout, name='logout'),
     url(r'^profile', views.profile, name='profile'),
+    url(r'^welcome', views.welcome, name='welcome'),
+    url(r'^save_profile_extras', views.save_profile_extras, name='save_profile_extras'),
+
     url(r'^settings', views.user_settings, name='settings'),
     url(r'^site_setup', views.site_setup, name='site_setup'),
 

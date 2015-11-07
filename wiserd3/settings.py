@@ -230,6 +230,8 @@ EMAIL_PORT = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 
+ACCOUNT_ADAPTER = 'dataportal3.account_logic.AccountAdapter'
+
 # CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 MEDIA_ROOT = '/tmp/shapefiles/'
 try:

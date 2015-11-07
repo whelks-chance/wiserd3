@@ -14,7 +14,7 @@ from django.core.serializers import serialize
 from django.db.models import Q
 from django.forms.models import model_to_dict
 from django.http.response import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 import operator
@@ -27,6 +27,7 @@ from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_re
 import requests
 from old.views import text_search, date_handler
 from wiserd3 import settings
+
 
 def index(request):
     return render(request, 'index.html',
@@ -627,9 +628,12 @@ def logout(request):
 
 
 def profile(request):
+    userr = get_request_user()
     return render(request, 'profile.html',
-                  {},
-                  context_instance=RequestContext(request))
+                  {
+                      'userr': userr,
+                      'userr_dict': userr.__dict__,
+                  },context_instance=RequestContext(request))
 
 
 def remote_data(request):
@@ -955,3 +959,20 @@ def site_setup(request):
                       'url': request.get_full_path(),
                       'data': data
                   }, context_instance=RequestContext(request))
+
+
+def welcome(request):
+    return render(request, 'welcome.html',
+                  {
+                      'welcome': 'hi',
+                  },context_instance=RequestContext(request))
+
+
+def save_profile_extras(request):
+    print 'post', request.POST
+    request_user = get_request_user(request)
+    request_user.institution = request.POST.get('institution')
+    request_user.specialty = request.POST.get('specialty')
+    request_user.init_user = True
+    request_user.save()
+    return redirect('index')

@@ -34,6 +34,13 @@
     </style>
 
     <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Profile</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
         {% for m in messages %}
             {{ m }}<br>
         {% endfor %}
@@ -49,9 +56,29 @@
     <div class="row">
         <div class="panel">
             <div class="panel-heading">
-                <h3>*Username* </h3>
+                <h3>{{ user }}'s Profile</h3>
             </div>
             <div class="panel-body">
+
+                <div class="control-group">
+                    <label for="text_input_institution" class="control-label col-sm-4">Institution</label>
+                    <div class="controls">
+                <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="institution" placeholder="Tell us where you're from"
+                          id="text_input_institution" size="20">{{ userr.institution }}</textarea>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="text_input_specialty" class="control-label col-sm-4">Specialty</label>
+                    <div class="controls">
+                <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="specialty"
+                          placeholder="What are your research or professional interests in this service?"
+                          id="text_input_specialty" size="20">{{ userr.specialty }}</textarea>
+                    </div>
+                </div>
+
                 <div class="list-group">
                     {% for shp in user_shapefiles %}
                         <a class="list-group-item"><i class="fa fa-map-o fa-fw"></i>

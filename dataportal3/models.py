@@ -24,6 +24,10 @@ class UserProfile(models.Model):
     role = models.CharField(max_length=30, default='regular')
     # sign_up_timestamp = models.DateTimeField(auto_now=True)
 
+    institution = models.TextField(blank=True, null=True)
+    specialty = models.TextField(blank=True, null=True)
+    init_user = models.BooleanField(default=False)
+
     class Meta:
         db_table = 'user_profile'
 

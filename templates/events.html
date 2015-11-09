@@ -1,0 +1,23 @@
+{% extends "navigation.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Events and Presentations</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <h3>ESRC Festival of Social Science 2015 – WISERD DataPortal demonstration</h3>
+            <h4>11th November 2015</h4>
+            <p>Download the presentation <a href="{% static 'docs/WISERD_DP_Event_11-11-15.pptx' %}">here</a></p>
+            <iframe src="http://docs.google.com/gview?url={% static 'docs/WISERD_DP_Event_11-11-15.pptx' %}&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+
+{% endblock %}
+

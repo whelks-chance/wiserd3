@@ -628,9 +628,11 @@ def logout(request):
 
 
 def profile(request):
-    userr = get_request_user()
+    userr = get_request_user(request)
     return render(request, 'profile.html',
                   {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request),
                       'userr': userr,
                       'userr_dict': userr.__dict__,
                   },context_instance=RequestContext(request))

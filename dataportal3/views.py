@@ -964,8 +964,11 @@ def site_setup(request):
 
 
 def welcome(request):
+    userr = get_request_user(request)
+
     return render(request, 'welcome.html',
                   {
+                      'userr': userr,
                       'welcome': 'hi',
                   },context_instance=RequestContext(request))
 
@@ -976,6 +979,7 @@ def save_profile_extras(request):
     request_user.institution = request.POST.get('institution', '')
     request_user.specialty = request.POST.get('specialty', '')
     request_user.sector = request.POST.get('sector', '')
+    request_user.comments = request.POST.get('comments', '')
 
     request_user.init_user = True
     request_user.save()

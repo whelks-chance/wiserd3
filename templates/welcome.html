@@ -25,7 +25,7 @@
                         <div class="controls">
                 <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="institution" placeholder="Tell us where you're from"
-                          id="text_input_institution" size="20"></textarea>
+                          id="text_input_institution" size="20">{% if userr.institution %}{{ userr.institution }}{% endif %}</textarea>
                         </div>
                     </div>
 
@@ -35,7 +35,7 @@
                 <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="specialty"
                           placeholder="What are your research or professional interests in this service?"
-                          id="text_input_specialty" size="20"></textarea>
+                          id="text_input_specialty" size="20">{% if userr.specialty %}{{ userr.specialty }}{% endif %}</textarea>
                         </div>
                     </div>
 
@@ -45,7 +45,7 @@
                 <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="sector"
                           placeholder="eg academia, local government, voluntary?"
-                          id="text_input_sector" size="20"></textarea>
+                          id="text_input_sector" size="20">{% if userr.sector %}{{ userr.sector }}{% endif %}</textarea>
                         </div>
                     </div>
 
@@ -55,7 +55,7 @@
                 <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="comments"
                           placeholder="Any other comments about your position?"
-                          id="text_input_comments" size="20"></textarea>
+                          id="text_input_comments" size="20">{% if userr.comments %}{{ userr.comments }}{% endif %}</textarea>
                         </div>
                     </div>
 

@@ -11,7 +11,7 @@
                     'style': 'form',
                     'url': "{% url 'survey_single_question' question_id %}",
                     'fields': [
-                        {'display': true, 'displayName': 'Question ID', 'id': 'qid'},
+                        {'display': false, 'displayName': 'Question ID', 'id': 'qid'},
                         {'display': true, 'displayName': 'Question Text', 'id': 'literal_question_text'},
                         {'display': true, 'displayName': 'Question Number', 'id': 'questionnumber'},
                         {'display': true, 'displayName': 'Thematic Groups', 'id': 'thematic_groups'},
@@ -23,7 +23,7 @@
                         {'display': true, 'displayName': 'Notes', 'id': 'notes'},
                         {'display': false, 'displayName': 'user_id', 'id': 'user_id'},
                         {'display': false, 'displayName': 'created', 'id': 'created'},
-                        {'display': true, 'displayName': 'Last Edit', 'id': 'updated'}
+                        {'display': false, 'displayName': 'Last Edit', 'id': 'updated'}
                     ]
                 },
 

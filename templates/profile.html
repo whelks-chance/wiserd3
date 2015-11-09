@@ -61,7 +61,7 @@
             <div class="panel-body">
 
                 <div class="control-group">
-                    <label for="text_input_institution" class="control-label col-sm-4">Institution</label>
+                    <label for="text_input_institution" class="control-label col-sm-4">Institution/ Organisation</label>
                     <div class="controls">
                 <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="institution" placeholder="Tell us where you're from"
@@ -70,12 +70,32 @@
                 </div>
 
                 <div class="control-group">
-                    <label for="text_input_specialty" class="control-label col-sm-4">Specialty</label>
+                    <label for="text_input_specialty" class="control-label col-sm-4">Area of Work</label>
                     <div class="controls">
                 <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="specialty"
                           placeholder="What are your research or professional interests in this service?"
                           id="text_input_specialty" size="20">{{ userr.specialty }}</textarea>
+                    </div>
+                </div>
+
+            <div class="control-group">
+                    <label for="text_input_sector" class="control-label col-sm-4">Sector</label>
+                    <div class="controls">
+                <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="sector"
+                          placeholder="Sector?"
+                          id="text_input_sector" size="20">{{ userr.sector }}</textarea>
+                    </div>
+                </div>
+
+            <div class="control-group">
+                    <label for="text_input_comments" class="control-label col-sm-4">Comments</label>
+                    <div class="controls">
+                <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="comments"
+                          placeholder="Comments"
+                          id="text_input_comments" size="20">{{ userr.comments }}</textarea>
                     </div>
                 </div>
 

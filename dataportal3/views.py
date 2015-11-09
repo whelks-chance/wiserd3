@@ -973,8 +973,10 @@ def welcome(request):
 def save_profile_extras(request):
     print 'post', request.POST
     request_user = get_request_user(request)
-    request_user.institution = request.POST.get('institution')
-    request_user.specialty = request.POST.get('specialty')
+    request_user.institution = request.POST.get('institution', '')
+    request_user.specialty = request.POST.get('specialty', '')
+    request_user.sector = request.POST.get('sector', '')
+
     request_user.init_user = True
     request_user.save()
     return redirect('index')

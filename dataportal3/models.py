@@ -26,6 +26,9 @@ class UserProfile(models.Model):
 
     institution = models.TextField(blank=True, null=True)
     specialty = models.TextField(blank=True, null=True)
+    sector = models.TextField(blank=True, null=True)
+    comments = models.TextField(blank=True, null=True)
+
     init_user = models.BooleanField(default=False)
 
     class Meta:

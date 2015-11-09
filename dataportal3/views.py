@@ -984,3 +984,10 @@ def save_profile_extras(request):
     request_user.init_user = True
     request_user.save()
     return redirect('index')
+
+
+def events(request):
+    return render(request, 'events.html',
+                  {
+                      'welcome': 'hi',
+                  },context_instance=RequestContext(request))

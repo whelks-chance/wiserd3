@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^remote_data', views.remote_data, name='remote_data'),
 
     url(r'^file_management', views.file_management, name='file_management'),
+    url(r'^events', views.events, name='events'),
     # url(r'^upload_shapefile_progress', views.get_upload_progress, name='upload_shapefile_progress'),
     url(r'^upload_shapefile', views.upload_shapefile, name='upload_shapefile'),
     url(r'^shapefile_list', views.shapefile_list, name='shapefile_list'),

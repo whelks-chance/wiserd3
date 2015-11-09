@@ -21,11 +21,11 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-comments fa-5x"></i>
+                            <i class="fa fa-profile fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
-                            <div>New Comments!</div>
+                            <div class="huge">_</div>
+                            <div>Profile</div>
                         </div>
                     </div>
                 </div>
@@ -40,20 +40,24 @@
         </div>
         <div class="col-lg-4 col-md-6">
             <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-institution fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">12</div>
-                            <div>WISERD</div>
+                <a href="http://www.wiserd.ac.uk" target="_blank">
+
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-institution fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">_</div>
+                                <div>WISERD</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="#">
+                </a>
+
+                <a href="http://www.wiserd.ac.uk" target="_blank">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">WISERD Homepage</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -68,7 +72,7 @@
                             <i class="fa fa-calendar fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">124</div>
+                            <div class="huge">_</div>
                             <div>Events</div>
                         </div>
                     </div>
@@ -86,64 +90,47 @@
 
         <div class="col-lg-4 col-md-6">
             <div class="panel panel-yellow">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-file-zip-o fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>File Management</div>
+                <a href="{% url 'file_management' %}">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-file-zip-o fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">_</div>
+                                <div>File Management</div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <a href="{% url 'file_management' %}">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">Shapefile Upload</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
                 </a>
             </div>
         </div>
+
         <div class="col-lg-4 col-md-6">
             <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-cogs fa-5x"></i>
+                <a href="{% url 'settings' %}">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-cogs fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">_</div>
+                                <div>Settings</div>
+                            </div>
                         </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>Settings</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
                     </div>
                 </a>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-globe fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>The World</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
+                <a href="{% url 'settings' %}">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">Settings</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -151,73 +138,98 @@
             </div>
         </div>
 
-
-            <div class="col-lg-4 col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-bar-chart fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>Directions</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
         <div class="col-lg-4 col-md-6">
             <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-map-o fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>Maps</div>
+                <a href="{% url 'map' %}">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-globe fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">_</div>
+                                <div>Mapping tools</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="#">
+                </a>
+                <a href="{% url 'map' %}">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">View Map</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
                 </a>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="panel panel-yellow">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-map-signs fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>The World</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
+
+        {##}
+        {#            <div class="col-lg-4 col-md-6">#}
+        {#            <div class="panel panel-primary">#}
+        {#                <div class="panel-heading">#}
+        {#                    <div class="row">#}
+        {#                        <div class="col-xs-3">#}
+        {#                            <i class="fa fa-bar-chart fa-5x"></i>#}
+        {#                        </div>#}
+        {#                        <div class="col-xs-9 text-right">#}
+        {#                            <div class="huge">13</div>#}
+        {#                            <div>Directions</div>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {#                <a href="#">#}
+        {#                    <div class="panel-footer">#}
+        {#                        <span class="pull-left">View Details</span>#}
+        {#                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
+        {#                        <div class="clearfix"></div>#}
+        {#                    </div>#}
+        {#                </a>#}
+        {#            </div>#}
+        {#        </div>#}
+        {#        <div class="col-lg-4 col-md-6">#}
+        {#            <div class="panel panel-green">#}
+        {#                <div class="panel-heading">#}
+        {#                    <div class="row">#}
+        {#                        <div class="col-xs-3">#}
+        {#                            <i class="fa fa-map-o fa-5x"></i>#}
+        {#                        </div>#}
+        {#                        <div class="col-xs-9 text-right">#}
+        {#                            <div class="huge">13</div>#}
+        {#                            <div>Maps</div>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {#                <a href="#">#}
+        {#                    <div class="panel-footer">#}
+        {#                        <span class="pull-left">View Details</span>#}
+        {#                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
+        {#                        <div class="clearfix"></div>#}
+        {#                    </div>#}
+        {#                </a>#}
+        {#            </div>#}
+        {#        </div>#}
+        {#        <div class="col-lg-4 col-md-6">#}
+        {#            <div class="panel panel-yellow">#}
+        {#                <div class="panel-heading">#}
+        {#                    <div class="row">#}
+        {#                        <div class="col-xs-3">#}
+        {#                            <i class="fa fa-map-signs fa-5x"></i>#}
+        {#                        </div>#}
+        {#                        <div class="col-xs-9 text-right">#}
+        {#                            <div class="huge">13</div>#}
+        {#                            <div>The World</div>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {#                <a href="#">#}
+        {#                    <div class="panel-footer">#}
+        {#                        <span class="pull-left">View Details</span>#}
+        {#                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
+        {#                        <div class="clearfix"></div>#}
+        {#                    </div>#}
+        {#                </a>#}
+        {#            </div>#}
+        {#        </div>#}
     </div>
     <!-- /.row -->
     <!-- /.row -->

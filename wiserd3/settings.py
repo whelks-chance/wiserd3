@@ -26,8 +26,7 @@ SECRET_KEY = 'ltn)r4*te4&f--z694+7m#fy9$-n)pe=&804xgk4g10wgn7uqa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['127.0.0.1', 'dataportal1-wiserd.cf.ac.uk']
 
 # Application definition
 

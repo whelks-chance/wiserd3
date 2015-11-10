@@ -450,14 +450,15 @@ class FeatureStore(models.Model):
 class Aberystwyth_Locality_Dissolved(models.Model):
     gid = models.IntegerField(primary_key=True)
     id = models.CharField(max_length=254, blank=True, null=True)
-    the_geom = models.GeometryField(blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'Aberystwyth_Locality_Dissolved'
+        # db_table = 'Aberystwyth_Locality_Dissolved'
+        db_table = 'aberystwyth_locality_dissolved'
 
     def __unicode__(self):
-        return str(self.gid) + ':Aberystwyth_Locality_Dissolved'
+        return str(self.gid) + ':aberystwyth_locality_dissolved'
 
 class Bangor_Locality_Dissolved(models.Model):
     gid = models.IntegerField(primary_key=True)
@@ -466,10 +467,10 @@ class Bangor_Locality_Dissolved(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'Bangor_Locality_Dissolved'
+        db_table = 'bangor_locality_dissolved'
 
     def __unicode__(self):
-        return str(self.gid) + ':Bangor_Locality_Dissolved'
+        return str(self.gid) + ':bangor_locality_dissolved'
 
 
 class Heads_of_the_Valleys(models.Model):
@@ -479,10 +480,10 @@ class Heads_of_the_Valleys(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'Heads_of_the_Valleys'
+        db_table = 'heads_of_the_valleys'
 
     def __unicode__(self):
-        return str(self.gid) + ':Heads_of_the_Valleys'
+        return str(self.gid) + ':heads_of_the_valleys'
 
 
 class QualDcInfo(models.Model):

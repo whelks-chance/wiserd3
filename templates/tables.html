@@ -47,16 +47,27 @@
                             return select_box;
                         }
                     },
+{#                    {#}
+{#                        data: "data_types",#}
+{#                        'render': function ( data, type, full, meta ) {#}
+{#                            var select_box = "<select class='select'>";#}
+{#                            for( var o in data) {#}
+{#                                select_box += '<option value="' + data[o] + '">' + data[o] + '</option>';#}
+{#                            }#}
+{#                            select_box += "</select>";#}
+{#                            return select_box;#}
+{#                        }#}
+{#                    },#}
                     {
-                        "targets": -2,
+                        "targets": -1,
                         "data": null,
                         "defaultContent": "<div class='btn btn-info show_questions'>View Details</div>"
                     },
-                        {
-                        "targets": -1,
-                        "data": null,
-                        "defaultContent": "<div class='btn btn-success map_survey'>Map survey</div>"
-                    }
+{#                    {#}
+{#                        "targets": -1,#}
+{#                        "data": null,#}
+{#                        "defaultContent": "<div class='btn btn-success map_survey'>Map survey</div>"#}
+{#                    }#}
                 ]
             });
 
@@ -147,16 +158,17 @@
                                 <th>Survey Title</th>
                                 <th>Date</th>
                                 <th>Area</th>
+{#                                <th>Data Types</th>#}
                                 <th>Details</th>
-                                <th>Map</th>
+{#                                <th>Map</th>#}
                             </tr>
                             </thead>
                             <tbody>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
                             </tbody>
                         </table>
                     </div>

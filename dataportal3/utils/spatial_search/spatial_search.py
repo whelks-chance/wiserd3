@@ -67,7 +67,7 @@ def find_intersects(geography_wkt):
             }
         ).values_list('label', flat=True)
 
-        link_table = models.SpatialSurveyLink.objects.filter(geom_table_name=f_table_name)
+        link_table = models.SpatialSurveyLink.objects.filter(geom_table_name=f_table_name).prefetch_related('survey')
 
         # link_table_surveys = link_table.distinct('survey')
         # print link_table_surveys

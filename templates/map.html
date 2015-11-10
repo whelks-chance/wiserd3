@@ -267,7 +267,8 @@
             var overlays = {
                 "Empty group": layer_group
             };
-            var layerControl = L.control.layers([], {position: 'bottomleft'}).addTo(map);
+{#            var layerControl = L.control.layers([], {position: 'bottomleft'}).addTo(map);#}
+            var layerControl = L.control.layers([], []).addTo(map);
 
             L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
@@ -489,7 +490,7 @@
                 });
             }
 
-            function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins, nomis_variable){
+            function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text){
                 var is_percentage = false;
                 if (nomis_variable) {
                     if (nomis_variable == 20301) {
@@ -538,7 +539,7 @@
                     }
                     var div_inner = labels.join('<br>');
                     div_inner += '</div>';
-                    div.innerHTML = div_inner;
+                    div.innerHTML = layer_name_text + '<br>' + div_inner;
                     return div;
                 };
                 legend.addTo(map);
@@ -552,7 +553,8 @@
                 });
                 myLayer.eachLayer(handleLayer);
 
-                layerControl.addOverlay(myLayer, data['objects'][0]);
+{#                layerControl.addOverlay(myLayer, data['objects'][0]);#}
+                layerControl.addOverlay(myLayer, layer_name_text);
 
                 myLayer.addTo(map);
                 map.fitBounds(myLayer.getBounds());
@@ -692,7 +694,8 @@
 
                 map.fitBounds(featureGroup.getBounds());
                 center_lat_lng = featureGroup.getBounds().getCenter();
-                map.addOneTimeEventListener('viewreset', function() {
+{#                viewreset is really slow #}
+                map.addOneTimeEventListener('moveend', function() {
                     setTimeout(function(){
                         leafletImage(map, doImage);
                     }, 1000);
@@ -707,7 +710,7 @@
                 var dimensions = map.getSize();
                 img.width = dimensions.x;
                 img.height = dimensions.y;
-                most_recent_search_png = canvas.toDataURL();
+                most_recent_search_png = canvas.toDataURL("image/jpeg", 0.5);
                 img.src = most_recent_search_png;
                 {#                img.style.width = '100%';#}
                 {#                snapshot.innerHTML = '';#}
@@ -784,9 +787,10 @@
                             if ($("#binno").val() != '') {
                                 var topojson_data = topojson_layers[$(this).data('layer_names')];
                                 var nomis_variable = $(this).data('nomis_variable');
+                                var layer_name_text = $("#layer_name_text_entry").val();
 
                                 try {
-                                    handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val(), nomis_variable);
+                                    handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val(), nomis_variable, layer_name_text);
                                 }catch (e){
                                     alert('Sorry, an error occurred. Try being more specific with the dataset variable')
                                 }
@@ -1111,6 +1115,15 @@
                         <option value="Spectral">Spectral</option>
                         <option value="b_w">Greyscale</option>
                     </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="layer_name_text_entry" class="control-label">Layer Name</label>
+                </td>
+                <td>
+                    <input class="form-control input-block-level tab_data_input"
+                           id="layer_name_text_entry" type="text">
                 </td>
             </tr>
         </table>

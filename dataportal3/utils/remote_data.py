@@ -48,11 +48,13 @@ class RemoteData():
         s2 = j6['structure']['codelists']['codelist'][0]['code']
         measures = []
         for f2 in s2:
-            k2 = {}
-            k2['id'] = f2['value']
-            k2['name'] = f2['description']['value']
-            measures.append(k2)
-            # print pprint.pformat(k2)
+            if 'All categories' not in f2['description']['value']:
+                k2 = {
+                    'id': f2['value'],
+                    'name': f2['description']['value']
+                }
+                measures.append(k2)
+                # print pprint.pformat(k2)
 
         measures_def = {
             'name': j6['structure']['codelists']['codelist'][0]['name']['value'],

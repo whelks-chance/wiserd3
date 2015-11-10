@@ -11,6 +11,7 @@ from django.contrib.auth.models import AnonymousUser
 # from django.contrib.gis.gdal import SpatialReference
 from django.contrib.gis.geos import GEOSGeometry
 from django.core.serializers import serialize
+from django.db import connections
 from django.db.models import Q
 from django.forms.models import model_to_dict
 from django.http.response import HttpResponse
@@ -147,7 +148,16 @@ def map_search(request):
         pass
     surveys = request.GET.getlist('surveys', [])
 
-    wiserd_layers_clean = []
+    wiserd_layers_clean = [{
+        'display_name': 'Aberystwyth Locality Dissolved',
+        'table_name': 'aberystwyth_locality_dissolved'
+    },{
+        'display_name': 'Bangor Locality Dissolved',
+        'table_name': 'bangor_locality_dissolved'
+    },{
+        'display_name': 'Heads of_the Valleys',
+        'table_name': 'heads_of_the_valleys'
+    }]
     uploaded_layers_clean = []
     try:
         # wiserd_layers = models.GeometryColumns.objects.using('survey').filter(f_table_schema='spatialdata')
@@ -344,7 +354,7 @@ def get_geojson(request):
 
     print request.POST
 
-    time1 = datetime.now()
+    # time1 = datetime.now()
     layer_type = request.POST.get('layer_type')
 
     if layer_type == 'wiserd_layer':
@@ -354,11 +364,11 @@ def get_geojson(request):
             app_label='dataportal3',
             model_name=wiserd_layer
         )
-        shape_table_object = wiserd_layer_model.objects.using('survey_spatialdata').all()
+        shape_table_object = wiserd_layer_model.objects.all()
 
         shape_list = shape_table_object.extra(
             select={
-                'geometry': 'ST_AsGeoJSON(ST_Transform(ST_SetSRID("the_geom", 27700),4326))'
+                'geometry': 'ST_AsGeoJSON(ST_Transform(ST_SetSRID("geom", 27700),4326))'
             }
         ).values('geometry')
 
@@ -407,8 +417,8 @@ def get_geojson(request):
     # print shape_list
     # print type(shape_list[0])
 
-    time2 = datetime.now()
-    print time2 - time1
+    # time2 = datetime.now()
+    # print time2 - time1
 
     shape_feature_list = [
         # {
@@ -440,7 +450,7 @@ def get_geojson(request):
             shape_properties['color'] = hex_code
             shape_properties['opacity'] = 0.1
 
-        print datetime.now() - time2
+        # print datetime.now() - time2
 
         # print shape
         shape_list_group = {
@@ -457,7 +467,7 @@ def get_geojson(request):
 
         shape_feature_list.append(shape_list_group)
 
-    print datetime.now() - time2
+    # print datetime.now() - time2
     geojson_feature = {
         "type": "FeatureCollection",
         "features": shape_feature_list,
@@ -466,7 +476,7 @@ def get_geojson(request):
         }
     }
     end_result = json.dumps(geojson_feature)
-    print datetime.now() - time1
+    # print datetime.now() - time1
     return HttpResponse(end_result, content_type="application/json")
 
 
@@ -846,7 +856,7 @@ def spatial_search(request):
             lat = center_lat_lng[0]
             lng = center_lat_lng[1]
             nominatim_url = 'http://nominatim.openstreetmap.org/reverse?format=json&lat={0}&lon={1}&zoom=18&addressdetails=1'.format(lat, lng)
-
+            print nominatim_url
             s = requests.Session()
             s.headers.update({'referer': 'data.wiserd.ac.uk'})
             nominatim_request = s.get(nominatim_url)
@@ -902,13 +912,15 @@ def spatial_search(request):
                 spatials['boundary_surveys'][boundary_type]['table_options'].keys()
             )
 
-        print survey_ids
+        # print survey_ids
 
         if len(survey_ids) > 0:
             survey_model = models.Survey.objects.filter(identifier__in=survey_ids).values('short_title', 'collectionenddate', 'identifier')
-            print len(survey_model)
+            print 'number of surveys', len(survey_model)
 
             for s in survey_model:
+                # c = connections['new'].queries
+                # print len(c)
 
                 try:
                     # print s['collectionenddate']

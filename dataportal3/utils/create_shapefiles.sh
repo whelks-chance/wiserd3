@@ -4,7 +4,7 @@ echo "start"
 
 #tablenames=("spatialdata.wales" "spatialdata.aefa" "spatialdata.police" "spatialdata.pcode" "spatialdata.wales" "spatialdata.parl" "spatialdata.msoa" "spatialdata.lsoa" "spatialdata.fire" "spatialdata.ua" )
 
-tablenames=(spatialdata."Heads_of_the_Valleys" spatialdata."Bangor_Locality_Dissolved" spatialdata."Aberystwyth_Locality_Dissolved")
+tablenames=("Heads_of_the_Valleys" "Bangor_Locality_Dissolved" "Aberystwyth_Locality_Dissolved")
 
 echo "$tablenames"
 
@@ -14,7 +14,7 @@ do
     echo "$i"
     mkdir -p '/tmp/shp/'"$i"
     chmod -R 777 '/tmp/shp/'"$i"
-    cmd='pgsql2shp -f /tmp/shp/'"$i"'/'"$i"'.shp -h localhost -u dataportal -P d4t4p0rtalacce55 "Survey_Data" '"$i"
+    cmd='pgsql2shp -f /tmp/shp/'"$i"'/'"$i"'.shp -h localhost -u dataportal -P d4t4p0rtalacce55 "Survey_Data" 'spatialdata."$i"
     echo $cmd
     sudo su postgres -c "$cmd"
 done

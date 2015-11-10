@@ -148,16 +148,16 @@ def map_search(request):
         pass
     surveys = request.GET.getlist('surveys', [])
 
-    wiserd_layers_clean = [{
-        'display_name': 'Aberystwyth Locality Dissolved',
-        'table_name': 'aberystwyth_locality_dissolved'
-    },{
-        'display_name': 'Bangor Locality Dissolved',
-        'table_name': 'bangor_locality_dissolved'
-    },{
-        'display_name': 'Heads of_the Valleys',
-        'table_name': 'heads_of_the_valleys'
-    }]
+    # wiserd_layers_clean = [{
+    #     'display_name': 'Aberystwyth Locality Dissolved',
+    #     'table_name': 'aberystwyth_locality_dissolved'
+    # },{
+    #     'display_name': 'Bangor Locality Dissolved',
+    #     'table_name': 'bangor_locality_dissolved'
+    # },{
+    #     'display_name': 'Heads of_the Valleys',
+    #     'table_name': 'heads_of_the_valleys'
+    # }]
     uploaded_layers_clean = []
     try:
         # wiserd_layers = models.GeometryColumns.objects.using('survey').filter(f_table_schema='spatialdata')
@@ -196,7 +196,7 @@ def map_search(request):
                       'searches': get_user_searches(request),
                       'surveys': json.dumps(surveys),
                       'wms_layers': b,
-                      'wiserd_layers': wiserd_layers_clean,
+                      'wiserd_layers': settings.KNOWING_LOCALITIES_TABLES,
                       'upload_layers': uploaded_layers_clean,
                       'area_names': json.dumps(area_names)
                   },

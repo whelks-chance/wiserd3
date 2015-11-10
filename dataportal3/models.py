@@ -453,7 +453,7 @@ class Aberystwyth_Locality_Dissolved(models.Model):
     geom = models.GeometryField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        # managed = False
         # db_table = 'Aberystwyth_Locality_Dissolved'
         db_table = 'aberystwyth_locality_dissolved'
 
@@ -463,10 +463,10 @@ class Aberystwyth_Locality_Dissolved(models.Model):
 class Bangor_Locality_Dissolved(models.Model):
     gid = models.IntegerField(primary_key=True)
     area_name = models.CharField(max_length=254, blank=True, null=True)
-    the_geom = models.GeometryField(blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'bangor_locality_dissolved'
 
     def __unicode__(self):
@@ -476,10 +476,10 @@ class Bangor_Locality_Dissolved(models.Model):
 class Heads_of_the_Valleys(models.Model):
     gid = models.IntegerField(primary_key=True)
     area_name = models.CharField(max_length=254, blank=True, null=True)
-    the_geom = models.GeometryField(blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'heads_of_the_valleys'
 
     def __unicode__(self):

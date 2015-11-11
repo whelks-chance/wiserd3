@@ -127,9 +127,9 @@
             <li>
                 <a aria-expanded="false" href="#"> Add Feature<span class="fa arrow"></span></a>
                 <ul aria-expanded="false" class="nav nav-third-level collapse">
-{#                    <li>#}
-{#                        <a href="#" id="new_annotation"><i class="fa fa-map-marker fa-fw"></i> New Annotation</a>#}
-{#                    </li>#}
+                    {#                    <li>#}
+                    {#                        <a href="#" id="new_annotation"><i class="fa fa-map-marker fa-fw"></i> New Annotation</a>#}
+                    {#                    </li>#}
                     <li>
                         <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> New Layer</a>
                     </li>
@@ -267,7 +267,7 @@
             var overlays = {
                 "Empty group": layer_group
             };
-{#            var layerControl = L.control.layers([], {position: 'bottomleft'}).addTo(map);#}
+            {#            var layerControl = L.control.layers([], {position: 'bottomleft'}).addTo(map);#}
             var layerControl = L.control.layers([], []).addTo(map);
 
             L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -492,6 +492,7 @@
 
             function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text){
                 var is_percentage = false;
+                var suppressed_data = false;
                 if (nomis_variable) {
                     if (nomis_variable == 20301) {
                         is_percentage = true;
@@ -508,8 +509,21 @@
                 for (var b in data_objects) {
                     var geometries_properties = data_objects[b]['geometries'];
                     for (var a in geometries_properties) {
-                        feature_data.push(parseFloat(geometries_properties[a]['properties']['REMOTE_VALUE']));
+                        if (geometries_properties[a]['properties']['DATA_STATUS'] == 'Q') {
+                            suppressed_data = true;
+                        }
+
+                        if (geometries_properties[a]['properties']['REMOTE_VALUE']) {
+                            feature_data.push(parseFloat(geometries_properties[a]['properties']['REMOTE_VALUE']));
+                        }
                     }
+                }
+
+                if (suppressed_data) {
+                    throw "suppressed_data";
+                }
+                if (feature_data.length == 0){
+                    throw "feature_data_0";
                 }
 
                 {#  Calculating the bins for quantiles with 'q' option, 'e'  and 'k' available #}
@@ -554,7 +568,7 @@
                 });
                 myLayer.eachLayer(handleLayer);
 
-{#                layerControl.addOverlay(myLayer, data['objects'][0]);#}
+                {#                layerControl.addOverlay(myLayer, data['objects'][0]);#}
                 layerControl.addOverlay(myLayer, layer_name_text);
 
                 myLayer.addTo(map);
@@ -696,7 +710,7 @@
 
                 map.fitBounds(featureGroup.getBounds());
                 center_lat_lng = featureGroup.getBounds().getCenter();
-{#                viewreset is really slow #}
+                {#                viewreset is really slow #}
                 map.addOneTimeEventListener('moveend', function() {
                     setTimeout(function(){
                         leafletImage(map, doImage);
@@ -733,7 +747,7 @@
                         image_png: most_recent_search_png
                     },
                     success: function(data) {
-{#                        alert(JSON.stringify(data['data']));#}
+                        {#                        alert(JSON.stringify(data['data']));#}
 
                         if (data['uid']) {
                             {#                            console.log("{% url 'tables' %}?search_id=" + data['uid']);#}
@@ -766,12 +780,12 @@
                 $("#wrapper").toggleClass("toggled");
             });
 
-{#            setTimeout(function() {#}
-{#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
-{#            }, 2000);#}
-{#            setTimeout(function() {#}
-{#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
-{#            }, 5000);#}
+            {#            setTimeout(function() {#}
+            {#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
+            {#            }, 2000);#}
+            {#            setTimeout(function() {#}
+            {#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
+            {#            }, 5000);#}
 
             $( "#dialog-form" ).dialog({
                 autoOpen: false,
@@ -793,10 +807,27 @@
 
                                 try {
                                     handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val(), nomis_variable, layer_name_text);
-                                }catch (e){
-                                    alert('Sorry, an error occurred. \n\n' +
-                                            'Unfortunately, some types of dataset are incompatible with this service. \n\n' +
-                                            'Try being more specific with the dataset variable you are trying to map')
+                                }catch (e) {
+                                    if (e == 'suppressed_data') {
+                                        alert('Sorry, an error occurred. \n\n' +
+                                                'It looks like your query was too specific, for example, ' +
+                                                'when data are suppressed due to statistical confidentiality considerations. ' +
+                                                'In this case, try a larger area to map data for.')
+                                    }
+                                    else if (e == 'feature_data_0') {
+                                        alert('Sorry, an error occurred. \n\n' +
+                                                'No data could be found for this query. \n\n' +
+                                                'Please try again, or report it.')
+                                    } else {
+
+                                        console.log(e);
+                                        alert('Sorry, an error occurred. \n\n' +
+                                                'Unfortunately, some types of dataset are incompatible with this service. \n\n' +
+                                                'Try being more specific with the dataset variable you are trying to map. \n\n' +
+                                                'Or, it may be the case that your query was too specific, for example, ' +
+                                                'when data are suppressed due to statistical confidentiality considerations. ' +
+                                                'In this case, try a larger area to map data for.')
+                                    }
                                 }
                                 $(this).dialog("close");
 
@@ -943,8 +974,8 @@
                                         }
                                         codelist_radio_div.buttonset().find('input')[0].click();
 
-{#                                        codelist_radio_div.buttonset('refresh');#}
-{#                                        alert(codelist_radio_div.find('input').length);#}
+                                        {#                                        codelist_radio_div.buttonset('refresh');#}
+                                        {#                                        alert(codelist_radio_div.find('input').length);#}
 
                                         dataset_radio.append(codelist_radio_div);
                                     }
@@ -975,7 +1006,7 @@
                 close: function() {
                 }
             });
-{#            $('#add_to_map_dialog_btn').button("disable");#}
+            {#            $('#add_to_map_dialog_btn').button("disable");#}
 
 
             $( "#dataset_define_vars_form" ).dialog({
@@ -1053,13 +1084,13 @@
                 }
             });
 
-{#            var div = L.DomUtil.get('div_id');#}
-{#            if (!L.Browser.touch) {#}
-{#                L.DomEvent.disableClickPropagation(div);#}
-{#                L.DomEvent.on(div, 'mousewheel', L.DomEvent.stopPropagation);#}
-{#            } else {#}
-{#                L.DomEvent.on(div, 'click', L.DomEvent.stopPropagation);#}
-{#            }#}
+            {#            var div = L.DomUtil.get('div_id');#}
+            {#            if (!L.Browser.touch) {#}
+            {#                L.DomEvent.disableClickPropagation(div);#}
+            {#                L.DomEvent.on(div, 'mousewheel', L.DomEvent.stopPropagation);#}
+            {#            } else {#}
+            {#                L.DomEvent.on(div, 'click', L.DomEvent.stopPropagation);#}
+            {#            }#}
 
         });
 
@@ -1069,10 +1100,10 @@
     <div id="output"></div>
     <div id="map_div" style="height: 180px;"></div>
 
-{#    <div class="well">#}
-{#        <h4>Map Selection Data</h4>#}
-{#        <div id="snapshot"></div>#}
-{#    </div>#}
+    {#    <div class="well">#}
+    {#        <h4>Map Selection Data</h4>#}
+    {#        <div id="snapshot"></div>#}
+    {#    </div>#}
 
     <div id="dialog-form" title="Chloropleth options">
         <table>
@@ -1142,29 +1173,29 @@
         <div>Geography</div>
         <div id="topojson_geography_radio" class="controls input-block-level tab_data_input">
             {% for geography in topojson_geographies %}
-            <div>
-                <input type="radio" name="geographies" id="{{ geography.geog_short_code }}"
-                       value="{{ geography.geog_short_code }}"/>
-                <label for="{{ geography.geog_short_code }}">{{ geography.name }}</label>
-            </div>
+                <div>
+                    <input type="radio" name="geographies" id="{{ geography.geog_short_code }}"
+                           value="{{ geography.geog_short_code }}"/>
+                    <label for="{{ geography.geog_short_code }}">{{ geography.name }}</label>
+                </div>
             {% endfor %}
 
-{#            <div>#}
-{#                <input type="radio" name="geographies" id="ua" value="ua"/>#}
-{#                <label for="ua">UA</label>#}
-{#            </div>#}
-{#            <div>#}
-{#                <input type="radio" name="geographies" id="pcode" value="pcode"/>#}
-{#                <label for="pcode">Post Code Sector</label>#}
-{#            </div>#}
-{#            <div>#}
-{#                <input type="radio" name="geographies" id="lsoa" value="lsoa"/>#}
-{#                <label for="lsoa">LSOA</label>#}
-{#            </div>#}
-{#            <div>#}
-{#                <input type="radio" name="geographies" id="parl2011" value="parl2011"/>#}
-{#                <label for="parl2011">Parliamentary Constituencies 2011</label>#}
-{#            </div>#}
+            {#            <div>#}
+            {#                <input type="radio" name="geographies" id="ua" value="ua"/>#}
+            {#                <label for="ua">UA</label>#}
+            {#            </div>#}
+            {#            <div>#}
+            {#                <input type="radio" name="geographies" id="pcode" value="pcode"/>#}
+            {#                <label for="pcode">Post Code Sector</label>#}
+            {#            </div>#}
+            {#            <div>#}
+            {#                <input type="radio" name="geographies" id="lsoa" value="lsoa"/>#}
+            {#                <label for="lsoa">LSOA</label>#}
+            {#            </div>#}
+            {#            <div>#}
+            {#                <input type="radio" name="geographies" id="parl2011" value="parl2011"/>#}
+            {#                <label for="parl2011">Parliamentary Constituencies 2011</label>#}
+            {#            </div>#}
         </div>
     </div>
 

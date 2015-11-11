@@ -247,7 +247,8 @@ class RemoteData():
                     'name': f5['obs_value']['description'],
                     'geography': f5['geography']['description'],
                     'geography_code': f5['geography']['geogcode'],
-                    'geography_id': f5['geography']['value']
+                    'geography_id': f5['geography']['value'],
+                    'data_status': f5['obs_status']['value']
                 }
 
                 # Store by name - possibly open to errors
@@ -318,6 +319,7 @@ class RemoteData():
                         # geom['properties']['AREA_NAME'] = geom['properties']['NAME']
                         geom['properties']['AREA_NAME'] = area_name
                         geom['properties']['PERCENTAGE'] = measure_is_percentage
+                        geom['properties']['DATA_STATUS'] = first_remote_data['data_status']
 
                     except Exception as e:
                         print 'error', e

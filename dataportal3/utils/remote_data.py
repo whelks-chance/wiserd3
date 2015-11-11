@@ -185,7 +185,14 @@ class RemoteData():
         codelist_filename = ''
         if codelist:
             print type(codelist), codelist
-            if 'MEASURES' not in codelist:
+
+            measures_found = False
+            for code in codelist:
+                if code['option'] == 'MEASURES':
+                    measures_found = True
+
+            print type(codelist), codelist
+            if not measures_found:
                 codelist.append({
                     'option': 'MEASURES',
                     'variable': '20100'
@@ -267,7 +274,7 @@ class RemoteData():
         print 'values len', len(data_points)
         return data_points
 
-    def update_topojson(self, topojson_file, remote_data):
+    def update_topojson(self, topojson_file, remote_data, measure_is_percentage=False):
 
         remote_areas = remote_data.keys()
 
@@ -282,16 +289,20 @@ class RemoteData():
                 recent_layer_name = layer_name
 
                 for geom in whole_topojson['objects'][layer_name]['geometries']:
+                    area_name = ''
                     try:
                         # Try by geocode
                         topojon_area_name = str(geom['properties']['CODE'])
+                        area_name = str(geom['properties']['CODE'])
                     except:
                         try:
                         # try by name
                             topojon_area_name = str(geom['properties']['AREA_NAME']).replace(' ', '')
+                            area_name = str(geom['properties']['AREA_NAME'])
                         except:
                         # try by label?
                             topojon_area_name = str(geom['properties']['LABEL']).replace(' ', '')
+                            area_name = str(geom['properties']['LABEL'])
 
                     try:
                         # print topojon_area_name in remote_data
@@ -304,7 +315,10 @@ class RemoteData():
                         found += 1
                         remote_areas.remove(topojon_area_name)
                         geom['properties']['REMOTE_VALUE'] = first_remote_data['value']
-                        geom['properties']['AREA_NAME'] = geom['properties']['NAME']
+                        # geom['properties']['AREA_NAME'] = geom['properties']['NAME']
+                        geom['properties']['AREA_NAME'] = area_name
+                        geom['properties']['PERCENTAGE'] = measure_is_percentage
+
                     except Exception as e:
                         print 'error', e
                         not_found += 1
@@ -366,6 +380,13 @@ class RemoteData():
         region_id, topojson_file = self.get_dataset_geodata(geog, high)
         all_data = self.get_data(dataset_id, region_id, nomis_variable, codelist=codelist, limit=100, offset=0)
 
+        measure_is_percentage = False
+        if codelist:
+            for code in codelist:
+                if code['option'] == 'MEASURES':
+                    if code['variable'] == '20301':
+                        measure_is_percentage = True
+
         nomis_cache_file = os.path.join(
             settings.TMP_DIR,
             'nomis_{0}_{1}_{2}.json'.format(
@@ -385,7 +406,7 @@ class RemoteData():
         with open(nomis_cache_file, 'r') as nomis_file:
             all_data = json.load(nomis_file)
 
-        return self.update_topojson(topojson_file, all_data)
+        return self.update_topojson(topojson_file, all_data, measure_is_percentage)
 
     def get_test_data(self, search_term, geog='pcode'):
         # region_id, topojson_file = self.get_dataset_geodata(geog)

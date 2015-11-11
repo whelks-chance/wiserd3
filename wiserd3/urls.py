@@ -19,7 +19,7 @@ from dataportal3 import views
 from old import views as old_views
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin_tools/', include(admin.site.urls)),
 
     url(r'^$', views.index, name='root'),
     url(r'^index', views.index, name='index'),

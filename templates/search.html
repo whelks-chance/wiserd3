@@ -20,10 +20,12 @@
                     }
                 },
                 columns: [
+                    {'data': 'survey__survey_title'},
                     {'data': 'questionnumber'},
                     {'data': 'literal_question_text'},
-                    {'data': 'type'},
-                    {'data': 'notes'},
+{#                    {'data': 'type'},#}
+{#                    {'data': 'notes'},#}
+
                     {#                    {#}
                     {#                        "targets": -3,#}
                     {#                        "data": null,#}
@@ -116,10 +118,11 @@
                 <table class="table table-striped table-bordered table-hover" id="survey_questions_table">
                     <thead>
                     <tr>
+                        <th>Survey Title</th>
                         <th>Question Number</th>
                         <th>QuestionText</th>
-                        <th>Type</th>
-                        <th>Notes</th>
+{#                        <th>Type</th>#}
+{#                        <th>Notes</th>#}
                         {#                    <th>From</th>#}
                         {#                    <th>SubOf</th>#}
                         <th>View Question</th>
@@ -150,8 +153,7 @@
                         <th>Description</th>
                         <th>Pages</th>
                         <th>Tier</th>
-                        {#                    <th>From</th>#}
-                        {#                    <th>SubOf</th>#}
+
                         <th>View</th>
                     </tr>
                     </thead>

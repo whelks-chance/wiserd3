@@ -76,6 +76,7 @@ urlpatterns = [
     url(r'^new_spatial_search', views.new_spatial_search, name='new_spatial_search'),
 
     url(r'^metadata/search_questions', views.search_survey_question_api, name='search_survey_question_api'),
+    url(r'^metadata/search_surveys', views.search_survey_api, name='search_survey_api'),
     url(r'^search', views.search_survey_question_gui, name='search_survey_question_gui'),
 
     url(r'^metadata/search_qual', views.search_qual_api, name='search_qual_api'),

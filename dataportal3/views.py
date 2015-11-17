@@ -96,6 +96,32 @@ def search_survey_question_api(request):
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 
+def search_survey_api(request):
+    search_terms = request.GET.get('search_terms', '')
+    user_profile = get_request_user(request)
+
+    search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
+                                                                       query=search_terms,
+                                                                       readable_name=search_terms,
+                                                                       type='text')
+    search.save()
+    survey_models = models.Survey.objects.filter(survey_title__icontains=search_terms).distinct("identifier").values()
+
+    data = []
+    for survey_model in survey_models:
+        data.append(survey_model)
+
+    api_data = {
+        'method': 'search_survey',
+        'search_result_data': data,
+        'results_count': len(data),
+        'search_term': search_terms
+    }
+    api_data['url'] = request.get_full_path()
+
+    return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
+
+
 def blank(request):
     return render(request, 'blank.html', {}, context_instance=RequestContext(request))
 
@@ -152,40 +178,19 @@ def map_search(request):
 
     wms_layers = {}
     try:
-        capabilities = requests.get('http://inspire.wales.gov.uk/maps/wms?request=getCapabilities&version=1.3.0')
-        soup = BeautifulSoup(capabilities.text)
-        x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
-        b = []
-        for y in x:
-            b.append({
-                'tile_name': [z.string for z in y.findAll('name')][0],
-                'name': [z.string for z in y.findAll('title')][0]
-            })
-        wms_layers['http://inspire.wales.gov.uk/maps/wms'] = b
-
-
-
-        capabilities = requests.get('http://lle.wales.gov.uk/services/inspire-wg/wms?request=getCapabilities')
-        soup = BeautifulSoup(capabilities.text)
-        x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
-        c = []
-        for y in x:
-            c.append({
-                'tile_name': [z.string for z in y.findAll('name')][0],
-                'name': [z.string for z in y.findAll('title')][0]
-            })
-        wms_layers['http://lle.wales.gov.uk/services/inspire-wg/wms'] = c
-
-        capabilities = requests.get('http://lle.gov.wales/services/inspire-nrw/wms?request=getCapabilities')
-        soup = BeautifulSoup(capabilities.text)
-        x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
-        d = []
-        for y in x:
-            d.append({
-                'tile_name': [z.string for z in y.findAll('name')][0],
-                'name': [z.string for z in y.findAll('title')][0]
-            })
-        wms_layers['http://lle.gov.wales/services/inspire-nrw/wms'] = d
+        for layer in settings.WMS_LAYERS:
+            filename = os.path.join(settings.BASE_DIR, os.path.join('dataportal3', os.path.join('static', layer['filename'])))
+            print filename
+            capabilities = open(filename, 'r').read()
+            soup = BeautifulSoup(capabilities)
+            x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
+            b = []
+            for y in x:
+                b.append({
+                    'tile_name': [z.string for z in y.findAll('name')][0],
+                    'name': [z.string for z in y.findAll('title')][0]
+                })
+            wms_layers[layer['url_wms']] = b
 
     except Exception as e9832478:
         print e9832478
@@ -814,7 +819,7 @@ def qual_search(search_terms):
     fields = ['identifier']
     qual_models = models.QualTranscriptData.objects.filter(
         dc_info__qualcalais__value__icontains=search_terms
-    ).distinct().values('identifier', 'pages', 'dc_info__title', 'dc_info__tier', 'dc_info__description')
+    ).distinct('identifier').prefetch_related('dc_info').values('identifier', 'pages', 'dc_info__title', 'dc_info__date', 'dc_info__tier', 'dc_info__description')
 
     data = []
     for qual_model in qual_models:

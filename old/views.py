@@ -327,7 +327,7 @@ def text_search(search_terms):
     search_terms = search_terms.replace('+', ' & ')
 
     # questions_models = old_models.Questions.objects.search(search_terms, raw=True).using('survey').values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
-    questions_models = models.Question.objects.search(search_terms, raw=True).distinct("qid").values("survey__identifier", "survey__survey_title", "qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    questions_models = models.Question.objects.search(search_terms, raw=True).distinct("qid").values("survey__identifier", "survey__collectionstartdate", "survey__survey_title", "qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
 
     print questions_models.query
 
@@ -335,7 +335,7 @@ def text_search(search_terms):
     for question_model in questions_models:
         # question_model_tidy = [a.strip() for a in question_model if type(a) == 'unicode']
         question_model['type'] = question_model['type__q_type_text']
-        data.append(question_model)
+        # data.append(question_model)
         if question_model['thematic_tags'] == 'System.Windows.Forms.ListBox+SelectedObjectCollection':
             question_model['thematic_tags'] = ''
         data.append(question_model)

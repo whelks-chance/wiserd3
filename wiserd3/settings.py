@@ -223,6 +223,27 @@ TOPOJSON_OPTIONS = [
     }
 ]
 
+WMS_LAYERS = [
+    {
+        'name': 'Inspire Wales',
+        'url': 'http://inspire.wales.gov.uk/maps/wms?request=getCapabilities&version=1.3.0',
+        'url_wms': 'http://inspire.wales.gov.uk/maps/wms',
+        'filename': 'inspire_wales_wms.xml'
+    },
+    {
+        'name': 'LLE Inspire NRW Wales',
+        'url': 'http://lle.gov.wales/services/inspire-nrw/wms?request=getCapabilities',
+        'url_wms': 'http://lle.gov.wales/services/inspire-nrw/wms',
+        'filename': 'lle_inspire_nrw_wales_wms.xml'
+    },
+    {
+        'name': 'LLE Inspire WG Wales',
+        'url': 'http://lle.wales.gov.uk/services/inspire-wg/wms?request=getCapabilities',
+        'url_wms': 'http://lle.wales.gov.uk/services/inspire-wg/wms',
+        'filename': 'lle_inspire_wg_wales_wms.xml'
+    },
+]
+
 KNOWING_LOCALITIES_TABLES = [
     # {
     #     'display_name': 'Aberystwyth Locality Dissolved',

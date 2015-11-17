@@ -50,3 +50,14 @@
 .dataTable_wrapper > table {
     width: 100%;
 }
+
+.north_arrow {
+    font-family: cursive;
+    color: #777;
+    font-size: 26px;
+    line-height: 30px;
+}
+
+.arrow_center {
+    padding-left: 0.13em;
+}

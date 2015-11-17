@@ -291,6 +291,14 @@
                 return this._div;
             };
 
+            var north = L.control({position: "bottomleft"});
+            north.onAdd = function(map) {
+                var div = L.DomUtil.create("div", "north_arrow");
+                div.innerHTML = 'N<br><i class="fa fa-long-arrow-up arrow_center"></i>';
+                return div;
+            };
+            north.addTo(map);
+
 // method that we will use to update the control based on feature properties passed
             info.update = function (props) {
                 var value = '';

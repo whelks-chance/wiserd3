@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^logout', views.logout, name='logout'),
     url(r'^profile', views.profile, name='profile'),
     url(r'^welcome', views.welcome, name='welcome'),
+    url(r'^help_support', views.help_support, name='help_support'),
     url(r'^save_profile_extras', views.save_profile_extras, name='save_profile_extras'),
 
     url(r'^settings', views.user_settings, name='settings'),
@@ -37,6 +38,9 @@ urlpatterns = [
 
     url(r'^file_management', views.file_management, name='file_management'),
     url(r'^events', views.events, name='events'),
+    url(r'^csv_viewer/(?P<provider>\S+)/(?P<search_uuid>\S+)', views.csv_view, name='csv_view'),
+    url(r'^csv_viewer_data/(?P<provider>\S+)/(?P<search_uuid>\S+)', views.csv_view_data, name='csv_view_data'),
+
     # url(r'^upload_shapefile_progress', views.get_upload_progress, name='upload_shapefile_progress'),
     url(r'^upload_shapefile', views.upload_shapefile, name='upload_shapefile'),
     url(r'^shapefile_list', views.shapefile_list, name='shapefile_list'),

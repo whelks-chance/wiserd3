@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from django.utils import timezone
 
 from djorm_pgfulltext.models import SearchManager
 from djorm_pgfulltext.fields import VectorField
@@ -447,13 +448,26 @@ class FeatureStore(models.Model):
         return str(self.feature_collection.name) + ':' + str(self.name)
 
 
+class NomisSearch(models.Model):
+    name = models.TextField(blank=True, null=True)
+    uuid = models.TextField(blank=True, null=True)
+    user = models.ForeignKey(UserProfile)
+    dataset_id = models.TextField(blank=True, null=True)
+    geography_id = models.TextField(blank=True, null=True)
+    search_attributes = hstore.DictionaryField(blank=True, null=True)
+    datetime = models.DateTimeField(default=timezone.now)
+
+    def __unicode__(self):
+        return str(self.name) + ':' + str(self.uuid) + ':' + self.geography_id
+
+
 class Aberystwyth_Locality_Dissolved(models.Model):
     gid = models.IntegerField(primary_key=True)
     id = models.CharField(max_length=254, blank=True, null=True)
     geom = models.GeometryField(blank=True, null=True)
 
     class Meta:
-        # managed = False
+        managed = False
         # db_table = 'Aberystwyth_Locality_Dissolved'
         db_table = 'aberystwyth_locality_dissolved'
 
@@ -466,7 +480,7 @@ class Bangor_Locality_Dissolved(models.Model):
     geom = models.GeometryField(blank=True, null=True)
 
     class Meta:
-        # managed = False
+        managed = False
         db_table = 'bangor_locality_dissolved'
 
     def __unicode__(self):
@@ -479,7 +493,7 @@ class Heads_of_the_Valleys(models.Model):
     geom = models.GeometryField(blank=True, null=True)
 
     class Meta:
-        # managed = False
+        managed = False
         db_table = 'heads_of_the_valleys'
 
     def __unicode__(self):

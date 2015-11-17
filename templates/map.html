@@ -138,11 +138,13 @@
             <li>
                 <a aria-expanded="false" href="#"> Welsh Government Mapping Service<span class="fa arrow"></span></a>
                 <ul aria-expanded="false" class="nav nav-third-level scrollable_ul collapse">
-                    {% for wms_layer in wms_layers %}
-                        <li>
-                            <a href="#" data-layer_name="{{ wms_layer.tile_name }}" class="wms_toggle">
-                                <i class="fa fa-map-marker fa-fw"></i> {{ wms_layer.name }}</a>
-                        </li>
+                    {% for wms_url, wms_layer_set in wms_layers.items %}
+                        {% for wms_layer in wms_layer_set %}
+                            <li>
+                                <a href="#" data-layer_name="{{ wms_layer.tile_name }}" data-layer_url="{{ wms_url }}" class="wms_toggle">
+                                    <i class="fa fa-map-marker fa-fw"></i> {{ wms_layer.name }}</a>
+                            </li>
+                        {% endfor %}
                     {% endfor %}
                 </ul>
             </li>
@@ -190,11 +192,14 @@
                     delete wms_layers[btn_layer_name];
                 } else {
                     $(toggle_button).addClass('wms_layer_active');
-                    var inspire = L.tileLayer.wms("http://inspire.wales.gov.uk/maps/wms", {
+                    var btn_layer_url = $(toggle_button).data('layer_url');
+
+                    {#                    var inspire = L.tileLayer.wms("http://inspire.wales.gov.uk/maps/wms", {#}
+                    var inspire = L.tileLayer.wms(btn_layer_url, {
                         layers: btn_layer_name,
                         format: 'image/png',
                         transparent: true,
-                        attribution: "inspire.wales.gov"
+                        attribution: "wales.gov"
                     });
                     wms_layers[btn_layer_name] = inspire;
                     inspire.addTo(map);
@@ -475,7 +480,7 @@
                         if (layer_type == 'upload_layer') {
 
                             topojson_layers[layer_names] = data;
-                            $( "#dialog-form").data(
+                            $( "#chloropleth_option_form").data(
                                     {layer_names: layer_names}
                             ).dialog( "open" );
 
@@ -490,7 +495,7 @@
                 });
             }
 
-            function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text){
+            function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text, csv_url){
                 var is_percentage = false;
                 var suppressed_data = false;
                 if (nomis_variable) {
@@ -554,7 +559,7 @@
                     }
                     var div_inner = labels.join('<br>');
                     div_inner += '</div>';
-                    div.innerHTML = layer_name_text + '<br>' + div_inner;
+                    div.innerHTML = layer_name_text + '<br><a target="_blank" href="' + csv_url + '">download data</a><br>' + div_inner;
                     return div;
                 };
                 legend.addTo(map);
@@ -787,7 +792,7 @@
             {#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
             {#            }, 5000);#}
 
-            $( "#dialog-form" ).dialog({
+            $( "#chloropleth_option_form" ).dialog({
                 autoOpen: false,
                 height: map_div.height(),
                 width: $('#page-wrapper').width()/2,
@@ -801,12 +806,26 @@
                     "Save value": function() {
                         if ($("#bintype").val() != '') {
                             if ($("#binno").val() != '') {
+                                var layer_id = $(this).data('layer_names');
                                 var topojson_data = topojson_layers[$(this).data('layer_names')];
                                 var nomis_variable = $(this).data('nomis_variable');
                                 var layer_name_text = $("#layer_name_text_entry").val();
+                                var csv_url = $(this).data('csv_url');
+
+                                $.ajax({
+                                    url: "{% url 'remote_data' %}",
+                                    type: 'GET',
+                                    data: {
+                                        method: 'rename_nomis_search',
+                                        layer_id: layer_id,
+                                        layer_name: layer_name_text
+                                    },
+                                    success: function(data) {},
+                                    error: function() {}
+                                });
 
                                 try {
-                                    handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val(), nomis_variable, layer_name_text);
+                                    handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val(), nomis_variable, layer_name_text, csv_url);
                                 }catch (e) {
                                     if (e == 'suppressed_data') {
                                         alert('Sorry, an error occurred. \n\n' +
@@ -1050,8 +1069,8 @@
                         {#                        var topojson_geography = $("#topojson_geographies").val();#}
 
                         var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');
-                        var topojson_id = dataset_id + '_' + topojson_geography + '_' + nomis_variable;
-                        var layer_name = topojson_id;
+                        {#                        var topojson_id = dataset_id + '_' + topojson_geography + '_' + nomis_variable;#}
+                        {#                        var layer_name = topojson_id;#}
                         $.ajax({
                             url: "{% url 'remote_data_topojson' %}",
                             type: 'GET',
@@ -1062,10 +1081,41 @@
                                 'codelist_selected': JSON.stringify(codelist_selected)
                             },
                             success: function(data){
-                                topojson_layers[layer_name] = data;
-                                $( "#dialog-form").data(
-                                        {layer_names: layer_name, 'nomis_variable': nomis_variable}
-                                ).dialog( "open" );
+                                var csv_url = null;
+
+                                $.ajax({
+                                    url: "{% url 'remote_data' %}",
+                                    type: 'GET',
+                                    data: {
+                                        'method': 'data_urls',
+                                        'nomis_variable': nomis_variable,
+                                        'geography': topojson_geography,
+                                        'dataset_id': dataset_id,
+                                        'codelist_selected': JSON.stringify(codelist_selected)
+                                    },
+                                    success: function(data) {
+                                        csv_url = data['data_urls']['dataset_url_csv'];
+                                        {#                                        alert(data['data_urls']['dataset_url']);#}
+                                        {#                                        alert(csv_url);#}
+                                    },
+                                    error: function() {
+                                        {#                                       alert('Sorry, an error occurred. Please try again, or report it.')#}
+                                    },
+                                    complete: function() {
+                                        waitingDialog.hide();
+                                        var layer_name = data['search_uuid'];
+                                        topojson_layers[layer_name] = data['topojson'];
+                                        $( "#chloropleth_option_form").data(
+                                                {
+                                                    layer_names: layer_name,
+                                                    nomis_variable: nomis_variable,
+                                                    csv_url: csv_url
+                                                }
+                                        ).dialog( "open" );
+
+                                    }
+                                });
+
 
                             },
                             error: function() {
@@ -1097,7 +1147,6 @@
     </script>
 
 
-    <div id="output"></div>
     <div id="map_div" style="height: 180px;"></div>
 
     {#    <div class="well">#}
@@ -1105,7 +1154,7 @@
     {#        <div id="snapshot"></div>#}
     {#    </div>#}
 
-    <div id="dialog-form" title="Chloropleth options">
+    <div id="chloropleth_option_form" title="Chloropleth options">
         <table>
             <tr>
                 <td>

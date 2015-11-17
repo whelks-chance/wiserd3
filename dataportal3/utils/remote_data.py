@@ -173,25 +173,26 @@ class RemoteData():
             print pprint.pformat(k4)
         return regions
 
-    def get_data(self, dataset_id, region_id, measure, codelist=None, limit=10, offset=0):
+    def get_dataset_url(self, dataset_id, region_id, measure, codelist=None, limit=10, offset=0):
         # Get data for variable for dataset in region with offsets
         limit = str(limit)
         offset = str(offset)
 
         dataset_url = 'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?' \
-                      'geography={1}&&RecordLimit={2}&&RecordOffset={3}&&uid={4}'
+                      'geography={1}&&uid={4}'
+        # &&RecordLimit={2}&&RecordOffset={3}
         dataset_url = dataset_url.format(dataset_id, region_id, limit, offset, settings.nomis_uid)
 
         codelist_filename = ''
         if codelist:
-            print type(codelist), codelist
+            # print type(codelist), codelist
 
             measures_found = False
             for code in codelist:
                 if code['option'] == 'MEASURES':
                     measures_found = True
 
-            print type(codelist), codelist
+            # print type(codelist), codelist
             if not measures_found:
                 codelist.append({
                     'option': 'MEASURES',
@@ -207,6 +208,45 @@ class RemoteData():
                         measure = int(code['variable'])
         else:
             dataset_url += '&&CELL=6'
+
+        return dataset_url, codelist_filename
+
+    def get_data(self, dataset_id, region_id, measure, codelist=None, limit=10, offset=0):
+        dataset_url, codelist_filename = self.get_dataset_url(dataset_id, region_id, measure, codelist, limit, offset)
+
+        # # Get data for variable for dataset in region with offsets
+        # limit = str(limit)
+        # offset = str(offset)
+        #
+        # dataset_url = 'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?' \
+        #               'geography={1}&&RecordLimit={2}&&RecordOffset={3}&&uid={4}'
+        # dataset_url = dataset_url.format(dataset_id, region_id, limit, offset, settings.nomis_uid)
+        #
+        # codelist_filename = ''
+        # if codelist:
+        #     print type(codelist), codelist
+        #
+        #     measures_found = False
+        #     for code in codelist:
+        #         if code['option'] == 'MEASURES':
+        #             measures_found = True
+        #
+        #     print type(codelist), codelist
+        #     if not measures_found:
+        #         codelist.append({
+        #             'option': 'MEASURES',
+        #             'variable': '20100'
+        #         })
+        #     for code in codelist:
+        #         if 'option' in code and 'variable' in code:
+        #             dataset_url += '&&' + str(code['option']) + '=' + str(code['variable'])
+        #             codelist_filename += str(code['option']) + '=' + str(code['variable']) + '_'
+        #
+        #             # TODO, remove refs to measure not from codelist
+        #             if code['option'] == 'MEASURES':
+        #                 measure = int(code['variable'])
+        # else:
+        #     dataset_url += '&&CELL=6'
 
         # r5 = requests.get(
         #     'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?cell=6&&'
@@ -347,7 +387,7 @@ class RemoteData():
                 else:
                     topojson_file = topojson_entry['topojson_file']
 
-        print region_id, topojson_file
+        # print region_id, topojson_file
 
         # if geog_short_code == 'pcode':
         #     region_id = '2092957700TYPE276'

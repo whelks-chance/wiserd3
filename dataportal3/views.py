@@ -31,12 +31,28 @@ from wiserd3 import settings
 
 
 def index(request):
+    tech_blog_posts = ''
+    wiserd_blog_posts = ''
+    try:
+        tech_blog = requests.get('http://dataportal-development.blogspot.com/feeds/posts/default')
+        soup = BeautifulSoup(tech_blog.text)
+        x = soup.find('opensearch:totalresults')
+        print x.text
+        tech_blog_posts = x.text
+
+        tech_blog = requests.get('http://blogs.cardiff.ac.uk/wiserd/')
+        soup = BeautifulSoup(tech_blog.text)
+        x = soup.find("aside", {"id": "categories-2"}).ul.findAll('li')[0].findAll()[0]
+        wiserd_blog_posts = x.nextSibling.strip().replace('(', '').replace(')', '')
+    except:
+        pass
     return render(request, 'index.html',
                   {
+                      'tech_blog_posts': tech_blog_posts,
+                      'wiserd_blog_posts': wiserd_blog_posts,
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
-                  },
-                  context_instance=RequestContext(request))
+                  },context_instance=RequestContext(request))
 
 
 def user_settings(request):
@@ -134,18 +150,46 @@ def tables(request):
 def map_search(request):
     print request.GET
 
-    b = []
+    wms_layers = {}
     try:
         capabilities = requests.get('http://inspire.wales.gov.uk/maps/wms?request=getCapabilities&version=1.3.0')
         soup = BeautifulSoup(capabilities.text)
         x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
+        b = []
         for y in x:
             b.append({
                 'tile_name': [z.string for z in y.findAll('name')][0],
                 'name': [z.string for z in y.findAll('title')][0]
             })
-    except:
-        pass
+        wms_layers['http://inspire.wales.gov.uk/maps/wms'] = b
+
+
+
+        capabilities = requests.get('http://lle.wales.gov.uk/services/inspire-wg/wms?request=getCapabilities')
+        soup = BeautifulSoup(capabilities.text)
+        x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
+        c = []
+        for y in x:
+            c.append({
+                'tile_name': [z.string for z in y.findAll('name')][0],
+                'name': [z.string for z in y.findAll('title')][0]
+            })
+        wms_layers['http://lle.wales.gov.uk/services/inspire-wg/wms'] = c
+
+        capabilities = requests.get('http://lle.gov.wales/services/inspire-nrw/wms?request=getCapabilities')
+        soup = BeautifulSoup(capabilities.text)
+        x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
+        d = []
+        for y in x:
+            d.append({
+                'tile_name': [z.string for z in y.findAll('name')][0],
+                'name': [z.string for z in y.findAll('title')][0]
+            })
+        wms_layers['http://lle.gov.wales/services/inspire-nrw/wms'] = d
+
+    except Exception as e9832478:
+        print e9832478
+
     surveys = request.GET.getlist('surveys', [])
 
     # wiserd_layers_clean = [{
@@ -195,7 +239,7 @@ def map_search(request):
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
                       'surveys': json.dumps(surveys),
-                      'wms_layers': b,
+                      'wms_layers': wms_layers,
                       'wiserd_layers': settings.KNOWING_LOCALITIES_TABLES,
                       'upload_layers': uploaded_layers_clean,
                       'area_names': json.dumps(area_names)
@@ -637,10 +681,16 @@ def logout(request):
                   context_instance=RequestContext(request))
 
 
+def get_nomis_searches(request):
+    userr = get_request_user(request)
+    return models.NomisSearch.objects.filter(user=userr)
+
+
 def profile(request):
     userr = get_request_user(request)
     return render(request, 'profile.html',
                   {
+                      'nomis_layers': get_nomis_searches(request),
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
                       'userr': userr,
@@ -664,11 +714,44 @@ def remote_data(request):
 
     if method == 'metadata':
         dataset_id = request.GET.get("dataset_id", None)
-
         to_return['metadata'] = rd.get_dataset_overview(dataset_id)
+
+    if method == 'rename_nomis_search':
+        layer_id = request.GET.get("layer_id", None)
+        layer_name = request.GET.get("layer_name", '')
+        if layer_id:
+            search_object = models.NomisSearch.objects.get(uuid=layer_id)
+            search_object.name = layer_name
+            search_object.save()
+
+    if method == 'data_urls':
+        codelist = None
+        codelist_json = request.GET.get('codelist_selected', None)
+        if codelist_json:
+            codelist = json.loads(codelist_json)
+            print pprint.pformat(codelist)
+
+        dataset_id = request.GET.get('dataset_id', '')
+        nomis_variable = request.GET.get('nomis_variable', '')
+        geog = request.GET.get('geography', '')
+        print dataset_id, nomis_variable, geog
+
+        region_id, topojson_file = rd.get_dataset_geodata(geog, high=False)
+        dataset_url, dataset_file = rd.get_dataset_url(dataset_id, region_id, '', codelist)
+
+        to_return['data_urls'] = {
+            'dataset_url': dataset_url,
+            'dataset_url_csv': dataset_url.replace('.json', '.csv')
+        }
 
     return HttpResponse(json.dumps(to_return, indent=4), content_type="application/json")
 
+
+def codelist_to_attributes(codelist):
+    code_dict = {}
+    for code in codelist:
+        code_dict[code['option']] = code['variable']
+    return code_dict
 
 def remote_data_topojson(request):
     # print request.GET
@@ -686,11 +769,24 @@ def remote_data_topojson(request):
 
     user_prefs = get_user_preferences(request)
 
+    nomis_search = models.NomisSearch()
+    nomis_search.uuid = str(uuid.uuid4())
+    nomis_search.user = get_request_user(request)
+    nomis_search.dataset_id = dataset_id
+    nomis_search.geography_id = geog
+    nomis_search.search_attributes = codelist_to_attributes(codelist)
+    nomis_search.save()
+
     rd = RemoteData()
     a = rd.get_topojson_with_data(dataset_id, geog, nomis_variable, codelist, high=user_prefs.topojson_high)
-    a = json.dumps(a, indent=4)
 
-    return HttpResponse(a, content_type="application/json")
+    to_return = {
+        'topojson': a,
+        'search_uuid': nomis_search.uuid
+    }
+    to_return_json = json.dumps(to_return, indent=4)
+
+    return HttpResponse(to_return_json, content_type="application/json")
 
 
 def search_qual_api(request):
@@ -1002,4 +1098,127 @@ def events(request):
     return render(request, 'events.html',
                   {
                       'welcome': 'hi',
-                  },context_instance=RequestContext(request))
+                  }, context_instance=RequestContext(request))
+
+
+def csv_view(request, provider, search_uuid):
+    error = None
+    dataset_url = ''
+
+    try:
+
+        found_search = models.NomisSearch.objects.get(uuid=search_uuid)
+        dataset_id = found_search.dataset_id
+        geog = found_search.geography_id
+
+        codelist = []
+        for code in found_search.search_attributes:
+            codelist.append({
+                'option': code,
+                'variable': found_search.search_attributes[code]
+            })
+
+        rd = RemoteData()
+        region_id, topojson_file = rd.get_dataset_geodata(geog, high=False)
+        dataset_url, dataset_file = rd.get_dataset_url(dataset_id, region_id, '', codelist)
+
+        dataset_url = dataset_url.replace('.json', '.csv')
+
+        dataset_data = requests.get(dataset_url).text
+        dataset_data_list = dataset_data.split('\n')
+
+        dataset_data_header = dataset_data_list[0]
+        dataset_data_header_items = dataset_data_header.split(',')
+
+        dataset_data_header_items_clean = []
+        for header_item in dataset_data_header_items:
+            # dataset_data_header_items_clean.append(header_item.rstrip('"').lstrip('"'))
+            dataset_data_header_items_clean.append({
+                'data': header_item.rstrip('"').lstrip('"')
+            })
+
+        # dataset_data_list_full = []
+        # for data_row_index, data_row in enumerate(dataset_data_list[1:]):
+        #     print data_row
+        #     print data_row_index
+        #     data_row_items = data_row.split(',')
+        #
+        #     if len(data_row_items) == len(dataset_data_header_items_clean):
+        #         dataset_data_dict = {}
+        #         for header_index, header_item in enumerate(dataset_data_header_items_clean):
+        #             print header_index, len(data_row_items), header_item, data_row_items[header_index]
+        #             # print header_index > len(data_row_items)
+        #             dataset_data_dict[header_item] = data_row_items[header_index].rstrip('"').lstrip('"')
+        #         dataset_data_list_full.append(dataset_data_dict)
+
+    except Exception as e8943279:
+        error = str(e8943279)
+
+    return render(request, 'csv_view.html',
+              {
+                  'error': error,
+                  'dataset_url': dataset_url,
+                  'dataset_data_header': dataset_data_header_items_clean,
+                  # 'dataset_data': dataset_data_list[1:],
+                  # 'dataset_data_list_full': dataset_data_list_full,
+                  'provider': provider,
+                  'search_uuid': search_uuid
+              }, context_instance=RequestContext(request))
+
+
+def help_support(request):
+    return render(request, 'help_support.html',
+              {
+                  'welcome': 'hi',
+              }, context_instance=RequestContext(request))
+
+
+def csv_view_data(request, provider, search_uuid):
+    dataset_data_list_full = []
+    try:
+
+        found_search = models.NomisSearch.objects.get(uuid=search_uuid)
+        dataset_id = found_search.dataset_id
+        geog = found_search.geography_id
+
+        codelist = []
+        for code in found_search.search_attributes:
+            codelist.append({
+                'option': code,
+                'variable': found_search.search_attributes[code]
+            })
+
+        rd = RemoteData()
+        region_id, topojson_file = rd.get_dataset_geodata(geog, high=False)
+        dataset_url, dataset_file = rd.get_dataset_url(dataset_id, region_id, '', codelist)
+
+        dataset_url = dataset_url.replace('.json', '.csv')
+
+        dataset_data = requests.get(dataset_url).text
+        dataset_data_list = dataset_data.split('\n')
+
+        dataset_data_header = dataset_data_list[0]
+        dataset_data_header_items = dataset_data_header.split(',')
+        # print dataset_data_header_items
+
+        dataset_data_header_items_clean = []
+        for header_item in dataset_data_header_items:
+            dataset_data_header_items_clean.append(header_item.rstrip('"').lstrip('"'))
+        # print dataset_data_header_items_clean
+
+        for data_row_index, data_row in enumerate(dataset_data_list[1:]):
+            # print data_row
+            # print data_row_index
+            data_row_items = data_row.split(',')
+
+            if len(data_row_items) == len(dataset_data_header_items_clean):
+                dataset_data_dict = {}
+                for header_index, header_item in enumerate(dataset_data_header_items_clean):
+                    # print header_index, len(data_row_items), header_item, data_row_items[header_index]
+                    dataset_data_dict[header_item] = data_row_items[header_index].rstrip('"').lstrip('"')
+                    # dataset_data_dict.append(data_row_items[header_index].rstrip('"').lstrip('"'))
+                dataset_data_list_full.append(dataset_data_dict)
+
+    except Exception as e8943279:
+        error = str(e8943279)
+    return HttpResponse(json.dumps(dataset_data_list_full, indent=4), content_type="application/json")

@@ -18,26 +18,26 @@
     <div class="row">
         <div class="col-lg-4 col-md-6">
             <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="row">
-{#                            <a href="{% url 'profile' %}">#}
-                                <div class="col-xs-3">
-                                    <i class="fa fa-user fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">_</div>
-                                    <div>Profile</div>
-                                </div>
-{#                            </a>#}
+                <div class="panel-heading">
+                    <div class="row">
+                        {#                            <a href="{% url 'profile' %}">#}
+                        <div class="col-xs-3">
+                            <i class="fa fa-user fa-5x"></i>
                         </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">_</div>
+                            <div>Profile</div>
+                        </div>
+                        {#                            </a>#}
                     </div>
-                    <a href="{% url 'profile' %}">
-                        <div class="panel-footer">
-                            <span class="pull-left">View Details</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
+                </div>
+                <a href="{% url 'profile' %}">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Profile</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="col-lg-4 col-md-6">
@@ -81,7 +81,7 @@
                 </div>
                 <a href="{% url 'events' %}">
                     <div class="panel-footer">
-                        <span class="pull-left">Presentation Files</span>
+                        <span class="pull-left">Event Presentation Files</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -132,7 +132,7 @@
                 </a>
                 <a href="{% url 'settings' %}">
                     <div class="panel-footer">
-                        <span class="pull-left">Settings</span>
+                        <span class="pull-left">Personal Settings</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -165,73 +165,75 @@
             </div>
         </div>
 
-        {##}
-        {#            <div class="col-lg-4 col-md-6">#}
-        {#            <div class="panel panel-primary">#}
-        {#                <div class="panel-heading">#}
-        {#                    <div class="row">#}
-        {#                        <div class="col-xs-3">#}
-        {#                            <i class="fa fa-bar-chart fa-5x"></i>#}
-        {#                        </div>#}
-        {#                        <div class="col-xs-9 text-right">#}
-        {#                            <div class="huge">13</div>#}
-        {#                            <div>Directions</div>#}
-        {#                        </div>#}
-        {#                    </div>#}
-        {#                </div>#}
-        {#                <a href="#">#}
-        {#                    <div class="panel-footer">#}
-        {#                        <span class="pull-left">View Details</span>#}
-        {#                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
-        {#                        <div class="clearfix"></div>#}
-        {#                    </div>#}
-        {#                </a>#}
-        {#            </div>#}
-        {#        </div>#}
-        {#        <div class="col-lg-4 col-md-6">#}
-        {#            <div class="panel panel-green">#}
-        {#                <div class="panel-heading">#}
-        {#                    <div class="row">#}
-        {#                        <div class="col-xs-3">#}
-        {#                            <i class="fa fa-map-o fa-5x"></i>#}
-        {#                        </div>#}
-        {#                        <div class="col-xs-9 text-right">#}
-        {#                            <div class="huge">13</div>#}
-        {#                            <div>Maps</div>#}
-        {#                        </div>#}
-        {#                    </div>#}
-        {#                </div>#}
-        {#                <a href="#">#}
-        {#                    <div class="panel-footer">#}
-        {#                        <span class="pull-left">View Details</span>#}
-        {#                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
-        {#                        <div class="clearfix"></div>#}
-        {#                    </div>#}
-        {#                </a>#}
-        {#            </div>#}
-        {#        </div>#}
-        {#        <div class="col-lg-4 col-md-6">#}
-        {#            <div class="panel panel-yellow">#}
-        {#                <div class="panel-heading">#}
-        {#                    <div class="row">#}
-        {#                        <div class="col-xs-3">#}
-        {#                            <i class="fa fa-map-signs fa-5x"></i>#}
-        {#                        </div>#}
-        {#                        <div class="col-xs-9 text-right">#}
-        {#                            <div class="huge">13</div>#}
-        {#                            <div>The World</div>#}
-        {#                        </div>#}
-        {#                    </div>#}
-        {#                </div>#}
-        {#                <a href="#">#}
-        {#                    <div class="panel-footer">#}
-        {#                        <span class="pull-left">View Details</span>#}
-        {#                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
-        {#                        <div class="clearfix"></div>#}
-        {#                    </div>#}
-        {#                </a>#}
-        {#            </div>#}
-        {#        </div>#}
+
+        <div class="col-lg-4 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-rss fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{ tech_blog_posts }}</div>
+                            <div>Tech Blog</div>
+                        </div>
+                    </div>
+                </div>
+                <a target="_blank" href="http://dataportal-development.blogspot.co.uk/">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Blog posts</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-rss-square fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{ wiserd_blog_posts }}</div>
+                            <div>WISERD Blog</div>
+                        </div>
+                    </div>
+                </div>
+                <a target="_blank" href="http://wiserd.ac.uk/news/wiserd-blogs/">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Blog Posts</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="panel panel-yellow">
+                <a href="{% url 'help_support' %}">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-question-circle fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">_</div>
+                                <div>Help</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{% url 'help_support' %}">
+                    <div class="panel-footer">
+                        <span class="pull-left">Help and Support</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
     <!-- /.row -->
     <!-- /.row -->

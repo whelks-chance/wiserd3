@@ -103,8 +103,20 @@
             </div>
         </div>
     </div>
-    <div class="row">
 
+    <div class="row">
+        <div class="list-group">
+            {% for nomis_layer in nomis_layers %}
+                {% if nomis_layer.uuid %}
+                    <a target="_blank" href="{% url 'csv_view' 'nomis' nomis_layer.uuid %}" class="list-group-item"><i class="fa fa-map-o fa-fw"></i>
+                        {% if nomis_layer.name %}{{ nomis_layer.name }}{% else %}Unnamed{% endif %} - {{ nomis_layer.datetime }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="row">
         <div class="list-group">
             {% for shp in user_shapefiles %}
                 <a class="list-group-item"><i class="fa fa-map-o fa-fw"></i>
@@ -112,7 +124,6 @@
                     {% if shp.description %}
                         <span> - {{ shp.description }}</span>
                     {% endif %}
-
                     {% if shp.progress %} - <span style="color:#ff0000; background-color: #ffff00">
                                 {{ shp.progress }}</span>
                     {% endif %}

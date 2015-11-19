@@ -455,6 +455,7 @@ class NomisSearch(models.Model):
     dataset_id = models.TextField(blank=True, null=True)
     geography_id = models.TextField(blank=True, null=True)
     search_attributes = hstore.DictionaryField(blank=True, null=True)
+    display_attributes = hstore.DictionaryField(blank=True, null=True)
     datetime = models.DateTimeField(default=timezone.now)
 
     def __unicode__(self):

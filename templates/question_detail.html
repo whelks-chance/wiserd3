@@ -176,6 +176,9 @@
         }
 
         function get_data_row_html(field, display_name, value, type) {
+            if (value == null) {
+                return '';
+            }
             if (type == undefined) {
                 return ('<div class="control-group">' +
                 '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +

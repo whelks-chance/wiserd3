@@ -79,20 +79,19 @@ def search_survey_question_gui(request):
 def search_survey_question_api(request):
     search_terms = request.GET.get('search_terms', '')
 
-    print request.user
-    user = auth.get_user(request)
-    if type(user) is AnonymousUser:
-        user = get_anon_user()
-    user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
-
+    user_profile = get_request_user(request)
     search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
                                                                        query=search_terms,
                                                                        readable_name=search_terms,
                                                                        type='text')
     search.save()
-
     api_data = text_search(search_terms)
     api_data['url'] = request.get_full_path()
+
+    # conn_queries = connections['new'].queries
+    # print 'question conn num end', len(conn_queries)
+    # print 'question queries', conn_queries
+
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 
@@ -118,6 +117,10 @@ def search_survey_api(request):
         'search_term': search_terms
     }
     api_data['url'] = request.get_full_path()
+
+    # conn_queries = connections['new'].queries
+    # print 'survey conn num end', len(conn_queries)
+    # print 'survey queries', conn_queries
 
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
@@ -197,16 +200,6 @@ def map_search(request):
 
     surveys = request.GET.getlist('surveys', [])
 
-    # wiserd_layers_clean = [{
-    #     'display_name': 'Aberystwyth Locality Dissolved',
-    #     'table_name': 'aberystwyth_locality_dissolved'
-    # },{
-    #     'display_name': 'Bangor Locality Dissolved',
-    #     'table_name': 'bangor_locality_dissolved'
-    # },{
-    #     'display_name': 'Heads of_the Valleys',
-    #     'table_name': 'heads_of_the_valleys'
-    # }]
     uploaded_layers_clean = []
     try:
         # wiserd_layers = models.GeometryColumns.objects.using('survey').filter(f_table_schema='spatialdata')
@@ -238,8 +231,34 @@ def map_search(request):
             'geog_short_code': topojson['geog_short_code'],
         })
 
+    remote_layer_data = []
+    remote_layer_ids = request.GET.getlist('remote_layer_ids', [])
+    remote_searches = models.NomisSearch.objects.filter(uuid__in=remote_layer_ids, user=get_request_user(request))
+
+    for remote_layer_model in remote_searches:
+        codelist = []
+        for code in remote_layer_model.search_attributes:
+            codelist.append({
+                'option': code,
+                'variable': remote_layer_model.search_attributes[code]
+            })
+
+        print type(remote_layer_model.display_attributes)
+        print remote_layer_model.display_attributes
+        remote_layer_data.append({
+            'bin_num': remote_layer_model.display_attributes['bin_num'],
+            'bin_type': remote_layer_model.display_attributes['bin_type'],
+            'colorpicker': remote_layer_model.display_attributes['colorpicker'],
+            'codelist': codelist,
+            'geography_id': remote_layer_model.geography_id,
+            'uuid': remote_layer_model.uuid,
+            'name': remote_layer_model.name,
+            'dataset_id': remote_layer_model.dataset_id
+        })
+
     return render(request, 'map.html',
                   {
+                      'remote_searches': remote_layer_data,
                       'topojson_geographies': topojson_geographies,
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
@@ -253,12 +272,13 @@ def map_search(request):
 
 
 def question(request, question_id):
-    print request.user
-    user = auth.get_user(request)
-    if type(user) is AnonymousUser:
-        user = get_anon_user()
-    user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
+    # print request.user
+    # user = auth.get_user(request)
+    # if type(user) is AnonymousUser:
+    #     user = get_anon_user()
+    # user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
 
+    user_profile = get_request_user(request)
     search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=question_id, type='question')
     search.save()
 
@@ -721,11 +741,18 @@ def remote_data(request):
         dataset_id = request.GET.get("dataset_id", None)
         to_return['metadata'] = rd.get_dataset_overview(dataset_id)
 
-    if method == 'rename_nomis_search':
+    if method == 'record_nomis_search':
         layer_id = request.GET.get("layer_id", None)
         layer_name = request.GET.get("layer_name", '')
         if layer_id:
+            display_dict = {
+                'bin_type': request.GET.get("bin_type", ''),
+                'bin_num': request.GET.get("bin_num", ''),
+                'colorpicker': request.GET.get("colorpicker", ''),
+            }
+
             search_object = models.NomisSearch.objects.get(uuid=layer_id)
+            search_object.display_attributes = display_dict
             search_object.name = layer_name
             search_object.save()
 
@@ -797,11 +824,12 @@ def remote_data_topojson(request):
 def search_qual_api(request):
     search_terms = request.GET.get('search_terms', '')
 
-    print request.user
-    user = auth.get_user(request)
-    if type(user) is AnonymousUser:
-        user = get_anon_user()
-    user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
+    # print request.user
+    # user = auth.get_user(request)
+    # if type(user) is AnonymousUser:
+    #     user = get_anon_user()
+    user_profile = get_request_user(request)
+    # user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=userr)
 
     search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
                                                                        query=search_terms,
@@ -811,6 +839,11 @@ def search_qual_api(request):
 
     api_data = qual_search(search_terms)
     api_data['url'] = request.get_full_path()
+
+    # conn_queries = connections['new'].queries
+    # print 'qual conn num end', len(conn_queries)
+    # print 'survey queries', conn_queries
+
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 
@@ -1157,12 +1190,15 @@ def csv_view(request, provider, search_uuid):
         #         dataset_data_list_full.append(dataset_data_dict)
 
     except Exception as e8943279:
+        print e8943279
         error = str(e8943279)
 
     return render(request, 'csv_view.html',
               {
                   'error': error,
+                  'dataset_id': dataset_id,
                   'dataset_url': dataset_url,
+                  'search_options': found_search.search_attributes,
                   'dataset_data_header': dataset_data_header_items_clean,
                   # 'dataset_data': dataset_data_list[1:],
                   # 'dataset_data_list_full': dataset_data_list_full,

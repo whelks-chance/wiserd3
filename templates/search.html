@@ -24,56 +24,27 @@
                     {'data': 'questionnumber'},
                     {'data': 'literal_question_text'},
                     {'data': 'survey__collectionstartdate'},
-{#                    {'data': 'type'},#}
-{#                    {'data': 'notes'},#}
-
-                    {#                    {#}
-                    {#                        "targets": -3,#}
-                    {#                        "data": null,#}
-                    {#                        "render": function ( data, type, full, meta ) {#}
-                    {#                            if (data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {#}
-                    {#                                return "<div class='btn btn-info search_from'>Previous</div>";#}
-                    {#                            } else {#}
-                    {#                                return ""#}
-                    {#                            }#}
-                    {#                        }#}
-                    {#                    },#}
-                    {#                    {#}
-                    {#                        "targets": -2,#}
-                    {#                        "data": null,#}
-                    {#                        "render": function ( data, type, full, meta ) {#}
-                    {#                            if (data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {#}
-                    {#                                return "<div class='btn btn-info search_parent'>Parent</div>";#}
-                    {#                            } else {#}
-                    {#                                return ""#}
-                    {#                            }#}
-                    {#                        }#}
-                    {#                    },#}
                     {
                         "targets": -2,
                         "data": 'qid',
                         "render": function ( data, type, full, meta ) {
-                            {#                            console.log(data);#}
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
                                     "href='/question/" + data.trim() + "' class='btn btn-success view_question'>Question</a>";
-                            {#                            return "<div class='btn btn-success view_question'>View</div>";#}
                         }
                     },
                     {
                         "targets": -1,
                         "data": 'survey__identifier',
                         "render": function ( data, type, full, meta ) {
-                            {#                            console.log(data);#}
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
                                     "href='/survey/" + data + "' class='btn btn-success view_survey'>Survey</a>";
-{#                            return "<div class='btn btn-success view_question'>View</div>";#}
                         }
                     }
                 ]
             }).on( 'stateLoaded.dt', function (e, settings, data) {
             });
 
-        var survey_table = $('#survey_table').DataTable({
+            var survey_table = $('#survey_table').DataTable({
                 serverSide: false,
                 processing: true,
                 "bAutoWidth": false,
@@ -95,10 +66,8 @@
                         "targets": -1,
                         "data": 'surveyid',
                         "render": function ( data, type, full, meta ) {
-                            {#                            console.log(data);#}
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
                                     "href='/survey/" + data.trim() + "' class='btn btn-success view_survey'>View</a>";
-                            {#                            return "<div class='btn btn-success view_question'>View</div>";#}
                         }
                     }
                 ]
@@ -127,10 +96,8 @@
                         "targets": -1,
                         "data": 'identifier',
                         "render": function ( data, type, full, meta ) {
-                            {#                            console.log(data);#}
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
                                     "href='/qual_transcript/" + data.trim() + "' class='btn btn-success view_question'>View</a>";
-                            {#                            return "<div class='btn btn-success view_question'>View</div>";#}
                         }
                     }
                 ]
@@ -150,6 +117,9 @@
     <div class="row">
         <ul class="nav nav-pills">
             <li>
+                <p style="padding: 10px">Jump to:</p>
+            </li>
+            <li>
                 <a class="btn btn-outline btn-default" href="#question_row">Questions</a>
             </li>
             <li>
@@ -163,7 +133,12 @@
 
     <div id="question_row" class="row">
         <h3>Questions</h3>
-        <a href="#table_nav_row">Top</a>
+
+        <a href="#table_nav_row" class="pull-right">
+            <button class="btn btn-info btn-outline">
+                <i class="fa fa-arrow-circle-up"></i> Top
+            </button>
+        </a>
 
         <div class="panel-body">
             <div class="dataTable_wrapper">
@@ -174,10 +149,7 @@
                         <th>Question Number</th>
                         <th>QuestionText</th>
                         <th>Date</th>
-{#                        <th>Type</th>#}
-{#                        <th>Notes</th>#}
-                        {#                    <th>From</th>#}
-                        {#                    <th>SubOf</th>#}
+
                         <th>View Question</th>
                         <th>View Survey</th>
                     </tr>
@@ -196,7 +168,12 @@
 
     <div id="survey_row" class="row">
         <h3>Survey Results</h3>
-        <a href="#table_nav_row">Top</a>
+
+<a href="#table_nav_row" class="pull-right">
+            <button class="btn btn-info btn-outline">
+                <i class="fa fa-arrow-circle-up"></i> Top
+            </button>
+        </a>
 
         <div class="panel-body">
             <div class="dataTable_wrapper">
@@ -226,51 +203,47 @@
 
     <div id="qual_row" class="row">
         <h3>Qualitative Results</h3>
-        <a href="#table_nav_row">Top</a>
+
+        <a href="#table_nav_row" class="pull-right">
+            <button class="btn btn-info btn-outline">
+                <i class="fa fa-arrow-circle-up"></i> Top
+            </button>
+        </a>
 
         <div class="panel-body">
             <div class="dataTable_wrapper">
                 <table class="table table-striped table-bordered table-hover" id="qual_table">
                     <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Pages</th>
-                            <th>Tier</th>
-                            <th>Date</th>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Pages</th>
+                        <th>Tier</th>
+                        <th>Date</th>
 
-                            <th>View</th>
-                        </tr>
+                        <th>View</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    {#    <div>#}
-    {#        <!-- /.table-responsive -->#}
-    {#        <div class="well">#}
-    {#            <h4>DataTables Usage Information</h4>#}
-    {#            <p></p>#}
-    {#            <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>#}
-    {#        </div>#}
-    {##}
-    {#        {% for d in data.search_result_data %}#}
-    {#            {{ d }}<br><br>#}
-    {#        {% endfor %}#}
-    {#    </div>#}
+    <p>
+        <a href="#table_nav_row" class="pull-right"><i class="fa fa-arrow-circle-up">  </i>Top</a>
+    </p>
 {% endblock %}

@@ -278,8 +278,11 @@ class RemoteData():
         s5 = j5['obs']
         data_points = {}
 
+        for code in codelist:
+            if code['option'] == 'MEASURES':
+                measure = code['variable']
+
         for f5 in s5:
-            # print f5['measures']['value'], int(measure)
             # TODO is this == check needed?
             if int(f5['measures']['value']) == int(measure):
                 k5 = {

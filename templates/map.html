@@ -1,5 +1,6 @@
 {% extends "navigation.html" %}
 {% load staticfiles %}
+{% load jsonify %}
 
 {% block extra_head %}
 
@@ -53,6 +54,10 @@
     <script type="text/javascript" src="{% static 'd3js/topojson.v1.min.js' %}"></script>
 
     <script type="text/javascript" src="{% static 'chroma.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'html2canvas.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'dataportal.js' %}"></script>
 
     <script>
         L.TopoJSON = L.GeoJSON.extend({
@@ -202,6 +207,8 @@
                         attribution: "wales.gov"
                     });
                     wms_layers[btn_layer_name] = inspire;
+                    layerControl.addOverlay(inspire, btn_layer_name);
+
                     inspire.addTo(map);
                 }
             }
@@ -290,6 +297,8 @@
                 this.update();
                 return this._div;
             };
+
+            L.control.scale().addTo(map);
 
             var north = L.control({position: "bottomleft"});
             north.onAdd = function(map) {
@@ -504,6 +513,8 @@
             }
 
             function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text, csv_url){
+
+                console.log(data);
                 var is_percentage = false;
                 var suppressed_data = false;
                 if (nomis_variable) {
@@ -540,6 +551,9 @@
                 }
 
                 {#  Calculating the bins for quantiles with 'q' option, 'e'  and 'k' available #}
+                console.log('bins ');
+                console.log(bin_breakdown);
+                console.log(parseInt(num_bins) -1);
                 var grades = chroma.limits(feature_data, bin_breakdown, parseInt(num_bins) -1);
 
                 {#  Calculating the function we can pass values to, in order to get nice rgb color codes #}
@@ -590,6 +604,7 @@
                 myLayer.bringToFront();
                 {#                            map_layers[data['properties']['name']] = myLayer;#}
                 map_layers[data['objects'][0]] = myLayer;
+                console.log(map_layers);
 
             }
 
@@ -820,20 +835,35 @@
                                 var layer_name_text = $("#layer_name_text_entry").val();
                                 var csv_url = $(this).data('csv_url');
 
+                                var colorpicker = $("#colorpicker").val();
+                                var bin_type = $("#bintype").val();
+                                var bin_num = $("#binno").val();
+
                                 $.ajax({
                                     url: "{% url 'remote_data' %}",
                                     type: 'GET',
                                     data: {
-                                        method: 'rename_nomis_search',
+                                        method: 'record_nomis_search',
                                         layer_id: layer_id,
-                                        layer_name: layer_name_text
+                                        layer_name: layer_name_text,
+                                        colorpicker: colorpicker,
+                                        bin_type: bin_type,
+                                        bin_num: bin_num
                                     },
                                     success: function(data) {},
                                     error: function() {}
                                 });
 
                                 try {
-                                    handleUploadedLayer(topojson_data, $("#colorpicker").val(), $("#bintype").val(), $("#binno").val(), nomis_variable, layer_name_text, csv_url);
+                                    handleUploadedLayer(
+                                            topojson_data,
+                                            colorpicker,
+                                            bin_type,
+                                            bin_num,
+                                            nomis_variable,
+                                            layer_name_text,
+                                            csv_url
+                                    );
                                 }catch (e) {
                                     if (e == 'suppressed_data') {
                                         alert('Sorry, an error occurred. \n\n' +
@@ -1079,60 +1109,33 @@
                         var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');
                         {#                        var topojson_id = dataset_id + '_' + topojson_geography + '_' + nomis_variable;#}
                         {#                        var layer_name = topojson_id;#}
-                        $.ajax({
-                            url: "{% url 'remote_data_topojson' %}",
-                            type: 'GET',
-                            data: {
-                                'nomis_variable': nomis_variable,
-                                'geography': topojson_geography,
-                                'dataset_id': dataset_id,
-                                'codelist_selected': JSON.stringify(codelist_selected)
-                            },
-                            success: function(data){
-                                var csv_url = null;
 
-                                $.ajax({
-                                    url: "{% url 'remote_data' %}",
-                                    type: 'GET',
-                                    data: {
-                                        'method': 'data_urls',
-                                        'nomis_variable': nomis_variable,
-                                        'geography': topojson_geography,
-                                        'dataset_id': dataset_id,
-                                        'codelist_selected': JSON.stringify(codelist_selected)
-                                    },
-                                    success: function(data) {
-                                        csv_url = data['data_urls']['dataset_url_csv'];
-                                        {#                                        alert(data['data_urls']['dataset_url']);#}
-                                        {#                                        alert(csv_url);#}
-                                    },
-                                    error: function() {
-                                        {#                                       alert('Sorry, an error occurred. Please try again, or report it.')#}
-                                    },
-                                    complete: function() {
-                                        waitingDialog.hide();
-                                        var layer_name = data['search_uuid'];
-                                        topojson_layers[layer_name] = data['topojson'];
-                                        $( "#chloropleth_option_form").data(
-                                                {
+
+
+                        get_remote_dataset_topojson(
+                                "{% url 'remote_data_topojson' %}",
+                                topojson_geography,
+                                dataset_id,
+                                codelist_selected,
+                                function(data){
+                                    get_remote_dataset_csv_url(
+                                            "{% url 'remote_data' %}",
+                                            topojson_geography,
+                                            dataset_id,
+                                            codelist_selected,
+                                            function(csv_url) {
+
+                                                waitingDialog.hide();
+                                                var layer_name = data['search_uuid'];
+                                                topojson_layers[layer_name] = data['topojson'];
+                                                $( "#chloropleth_option_form").data({
                                                     layer_names: layer_name,
-                                                    nomis_variable: nomis_variable,
                                                     csv_url: csv_url
-                                                }
-                                        ).dialog( "open" );
-
-                                    }
-                                });
-
-
-                            },
-                            error: function() {
-                                alert('Sorry, an error occurred. Please try again, or report it.')
-                            },
-                            complete: function() {
-                                waitingDialog.hide();
-                            }
-                        });
+                                                }).dialog( "open" );
+                                            }
+                                    );
+                                }
+                        );
                     },
                     Cancel: function() {
                         $( this ).dialog( "close" );
@@ -1142,25 +1145,76 @@
                 }
             });
 
-            {#            var div = L.DomUtil.get('div_id');#}
-            {#            if (!L.Browser.touch) {#}
-            {#                L.DomEvent.disableClickPropagation(div);#}
-            {#                L.DomEvent.on(div, 'mousewheel', L.DomEvent.stopPropagation);#}
-            {#            } else {#}
-            {#                L.DomEvent.on(div, 'click', L.DomEvent.stopPropagation);#}
-            {#            }#}
+            $('#screenshot').click(function() {
+                leafletImage(map, screenshot);
+            });
 
+            function screenshot(err, map_canvas){
+
+                html2canvas(
+                        map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-left'), {}
+                ).then(function(left_overlay_canvas) {
+                            {#                            $('#screenshot_result2').append(overlay_canvas);#}
+
+                            var ctx3 = map_canvas.getContext('2d');
+                            ctx3.drawImage(
+                                    left_overlay_canvas,
+                                    0,
+                                    map_canvas.height - left_overlay_canvas.height
+                            );
+
+                            html2canvas(
+                                    map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-right'), {}
+                            ).then(function(right_overlay_canvas) {
+                                        ctx3.drawImage(
+                                                right_overlay_canvas,
+                                                map_canvas.width - right_overlay_canvas.width,
+                                                map_canvas.height - right_overlay_canvas.height
+                                        );
+
+                                        var canvas_data_url = map_canvas.toDataURL("image/jpeg", 0.5);
+
+                                        window.open(canvas_data_url, '_blank');
+                                        {#                                        $('#screenshot_result').append(map_canvas);#}
+
+                                    });
+                        });
+            }
+
+            var remote_data_layer_data = {{ remote_searches|jsonify }};
+            for (var remote_data_layer_idx in remote_data_layer_data) {
+                remote_data_layer = remote_data_layer_data[remote_data_layer_idx];
+                get_remote_dataset_topojson(
+                        "{% url 'remote_data_topojson' %}",
+                        remote_data_layer['geography_id'],
+                        remote_data_layer['dataset_id'],
+                        remote_data_layer['codelist'],
+                        function(topojson_data) {
+                            handleUploadedLayer(
+                                    topojson_data['topojson'],
+{#                                    remote_data_layer['geography_id'],#}
+                                    remote_data_layer['colorpicker'],
+                                    remote_data_layer['bin_type'],
+                                    remote_data_layer['bin_num'],
+                                    '',
+                                    remote_data_layer['name'],
+                                    ''
+                            );
+                        }
+                );
+
+            }
         });
 
     </script>
 
 
     <div id="map_div" style="height: 180px;"></div>
+    <div>{{ remote_searches }}</div>
+    <div id="screenshot" class="btn">Screenshot</div>
+    <div id="screenshot_result"></div>
+    <div id="screenshot_result2"></div>
 
-    {#    <div class="well">#}
-    {#        <h4>Map Selection Data</h4>#}
-    {#        <div id="snapshot"></div>#}
-    {#    </div>#}
 
     <div id="chloropleth_option_form" title="Chloropleth options">
         <table>
@@ -1236,23 +1290,6 @@
                     <label for="{{ geography.geog_short_code }}">{{ geography.name }}</label>
                 </div>
             {% endfor %}
-
-            {#            <div>#}
-            {#                <input type="radio" name="geographies" id="ua" value="ua"/>#}
-            {#                <label for="ua">UA</label>#}
-            {#            </div>#}
-            {#            <div>#}
-            {#                <input type="radio" name="geographies" id="pcode" value="pcode"/>#}
-            {#                <label for="pcode">Post Code Sector</label>#}
-            {#            </div>#}
-            {#            <div>#}
-            {#                <input type="radio" name="geographies" id="lsoa" value="lsoa"/>#}
-            {#                <label for="lsoa">LSOA</label>#}
-            {#            </div>#}
-            {#            <div>#}
-            {#                <input type="radio" name="geographies" id="parl2011" value="parl2011"/>#}
-            {#                <label for="parl2011">Parliamentary Constituencies 2011</label>#}
-            {#            </div>#}
         </div>
     </div>
 

@@ -28,14 +28,25 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">CSV Viewer</h1>
+                <h1 class="page-header">Remote Data Search</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <div class="row">
             <h3><a href="{{ dataset_url }}" target="_blank">Dataset Download Link</a></h3>
 
+
+            <a class="btn btn-info" target="_blank" href="{% url 'map' %}?remote_layer_ids={{ search_uuid }}">Map It</a>
             <p>Dataset Retrieved from {{ provider }}</p>
+            <p>Dataset ID {{ dataset_id }}</p>
+            <p>Search Query Options</p>
+
+            <div>
+                {% for key, value in search_options.items %}
+                    <p>{{ key }} -- {{ value }}</p>
+                {% endfor %}
+            </div>
+{#            {{ search_options }}#}
             <p>Unique Identifier for this search: {{ search_uuid }}</p>
 {#            <p>{{ dataset_url }}</p>#}
             {% if error %}

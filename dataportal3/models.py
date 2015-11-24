@@ -1,13 +1,29 @@
 from __future__ import unicode_literals
+import string
 from django.utils import timezone
-
+from django.utils.crypto import random
+from django.utils.datetime_safe import time
 from djorm_pgfulltext.models import SearchManager
 from djorm_pgfulltext.fields import VectorField
 import uuid
 from django.contrib.gis.db import models
 from django.contrib.auth.models import User
+import math
 from wiserd3.settings import MEDIA_ROOT
 from django_hstore import hstore
+
+
+def uniqid(prefix='', more_entropy=False):
+    m = time.time()
+    uniqid = '%8x%05x' %(math.floor(m),(m-math.floor(m))*1000000)
+    if more_entropy:
+        valid_chars = list(set(string.hexdigits.lower()))
+        entropy_string = ''
+        for i in range(0,10,1):
+            entropy_string += random.choice(valid_chars)
+        uniqid = uniqid + entropy_string
+    uniqid = prefix + uniqid
+    return uniqid
 
 
 class UserRole(models.Model):
@@ -68,7 +84,7 @@ class Search(models.Model):
 
 
 class DcInfo(models.Model):
-    identifier = models.CharField(primary_key=True, max_length=50)
+    identifier = models.CharField(primary_key=True, max_length=255)
     title = models.TextField(blank=True, null=True)
     creator = models.TextField(blank=True, null=True)
     subject = models.TextField(blank=True, null=True)
@@ -288,8 +304,8 @@ class Survey(models.Model):
     frequency = models.ForeignKey('SurveyFrequency', blank=True, null=True)
     data_entry = models.ForeignKey('UserDetail', blank=True, null=True)
 
-    surveyid = models.CharField(unique=True, max_length=255)
-    identifier = models.CharField(max_length=50, blank=True, null=True)
+    surveyid = models.CharField(unique=True, max_length=255, blank=True, null=True)
+    identifier = models.CharField(unique=True, max_length=255, blank=True, null=True)
     survey_title = models.TextField(blank=True, null=True)
     datacollector = models.CharField(max_length=50, blank=True, null=True)
     collectionstartdate = models.DateField(blank=True, null=True)

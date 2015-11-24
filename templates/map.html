@@ -1211,9 +1211,9 @@
                 (function(){
                     var local_data_layer = local_data_layer_data[local_data_layer_idx];
                     console.log(local_data_layer);
-                    local_data_layer['colorpicker'] = 'b_w';
+                    local_data_layer['colorpicker'] = 'Spectral';
                     local_data_layer['bin_type'] = 'k';
-                    local_data_layer['bin_num'] = '5';
+                    local_data_layer['bin_num'] = '8';
                     local_data_layer['name'] = 'a layer';
                     local_data_layer['data_name'] = 'data_name';
 
@@ -1249,7 +1249,7 @@
                     console.log(remote_data_layer);
 
                     get_remote_dataset_topojson(
-                            "{% url 'local_data_topojson' %}",
+                            "{% url 'remote_data_topojson' %}",
                             remote_data_layer['geography_id'],
                             remote_data_layer['dataset_id'],
                             remote_data_layer['codelist'],

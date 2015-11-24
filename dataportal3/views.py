@@ -845,7 +845,7 @@ def local_data_topojson(request):
     print request.GET
     survey_id = request.GET.get('survey_id', '')
     boundary_name = request.GET.get('boundary_name', '')
-    data_name = request.GET.get('data_name_todo', 'response_rate')
+    data_name = request.GET.get('data_name_todo', 'TotEle2015')
 
     print survey_id, type(survey_id)
     print boundary_name, type(boundary_name)
@@ -882,7 +882,7 @@ def local_data_topojson(request):
 
     rd = RemoteData()
     region_id, topojson_file = rd.get_dataset_geodata(geog, False)
-    a = rd.update_topojson(topojson_file, all_data, True)
+    a = rd.update_topojson(topojson_file, all_data, False)
 
     to_return = {
         'topojson': a,

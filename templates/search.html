@@ -64,7 +64,7 @@
                     {'data': 'collectionstartdate'},
                     {
                         "targets": -1,
-                        "data": 'surveyid',
+                        "data": 'identifier',
                         "render": function ( data, type, full, meta ) {
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
                                     "href='/survey/" + data.trim() + "' class='btn btn-success view_survey'>View</a>";

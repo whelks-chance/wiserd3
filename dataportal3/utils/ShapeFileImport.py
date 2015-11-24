@@ -96,53 +96,8 @@ class ShapeFileImport:
                 # new_model = ogrinspect(ds, str(lyr))
                 # print new_model
 
-                feature_collection = FeatureCollectionStore()
-                feature_collection.shapefile_upload = self.shapefile_upload
-                feature_collection.name = str(lyr)
-                feature_collection.topojson_file = self.create_topojson_file()
-                feature_collection.save()
-
-                all_features = []
-
-                for layer in ds:
-                    print 'features in layer', len(lyr.get_geoms(geos=True))
-
-                    geoms = layer.get_geoms(geos=True)
-
-                    self.shapefile_upload.description = 'ShapeFile ' \
-                                                + ':' + str(lyr) \
-                                                + ', ' + str(len(lyr.get_geoms(geos=True))) \
-                                                + ' features'
-                    self.shapefile_upload.progress = ShapeFileImport.progress_stage['import_begun']
-                    self.shapefile_upload.save()
-
-                    for count in range(0, len(geoms)):
-                        data = {}
-                        for field_count in range(0, len(layer.fields)):
-                            key = layer.fields[field_count]
-                            value = layer.get_fields(layer.fields[field_count])[count]
-                            # print key, value, type(value)
-                            data[key] = value
-
-                        feature = FeatureStore()
-                        feature.feature_collection = feature_collection
-                        if 'AREA_NAME' in layer.fields:
-                            feature.name = layer.get_fields('AREA_NAME')[count]
-                        else:
-                            feature.name = str(layer) + str(count)
-                        feature.feature_attributes = data
-                        feature.geometry = geoms[count]
-
-
-                        # print feature.__dict__
-                        # feature.save(using='new')
-                        all_features.append(feature)
-
-                        print 'Has_Geom', len(geoms[count]) > 0
-                        print data
-                        print ''
-
-                bulk_insert = FeatureStore.objects.using('new').bulk_create(all_features, batch_size=50)
+                self.save_feature_collection(ds)
+                self.save_spatial_survey_link(ds)
 
             except Exception as e:
                 print e
@@ -157,6 +112,87 @@ class ShapeFileImport:
             self.shapefile_upload.progress = ShapeFileImport.progress_stage['import_failure']
             self.shapefile_upload.save()
             raise Exception('Invalid or uninitialised shapefile')
+
+    def init_survey(self, ds):
+        dc = models.DcInfo()
+        dc.title = str(ds)
+        dc.save()
+
+        survey = models.Survey()
+        survey.survey_title = str(ds)
+        survey.dublin_core = dc
+        survey.save()
+
+        return survey
+
+    def save_spatial_survey_link(self, ds):
+        lyr = ds[0]
+        survey = self.init_survey(ds)
+
+        for field in lyr.fields:
+            print field
+
+            regions_with_data = {}
+
+            new_survey_link = models.SpatialSurveyLink()
+            new_survey_link.survey = survey
+            new_survey_link.data_name = field
+            new_survey_link.geom_table_name = 'spatialdata_ua'
+            new_survey_link.regional_data = regions_with_data
+            new_survey_link.boundary_name = "Unitary Authority"
+            new_survey_link.save()
+
+    def save_feature_collection(self, ds):
+        lyr = ds[0]
+
+        feature_collection = FeatureCollectionStore()
+        feature_collection.shapefile_upload = self.shapefile_upload
+        feature_collection.name = str(lyr)
+        feature_collection.topojson_file = self.create_topojson_file()
+        feature_collection.save()
+
+        all_features = []
+
+        for layer in ds:
+            print 'features in layer', len(lyr.get_geoms(geos=True))
+
+            geoms = layer.get_geoms(geos=True)
+
+            self.shapefile_upload.description = 'ShapeFile ' \
+                                        + ':' + str(lyr) \
+                                        + ', ' + str(len(lyr.get_geoms(geos=True))) \
+                                        + ' features'
+            self.shapefile_upload.progress = ShapeFileImport.progress_stage['import_begun']
+            self.shapefile_upload.save()
+
+            for count in range(0, len(geoms)):
+                data = {}
+                for field_count in range(0, len(layer.fields)):
+                    key = layer.fields[field_count]
+                    value = layer.get_fields(key)[count]
+                    # print key, value, type(value)
+                    data[key] = value
+
+                feature = FeatureStore()
+                feature.feature_collection = feature_collection
+                if 'AREA_NAME' in layer.fields:
+                    feature.name = layer.get_fields('AREA_NAME')[count]
+                else:
+                    feature.name = str(layer) + str(count)
+                feature.feature_attributes = data
+                feature.geometry = geoms[count]
+
+
+                # print feature.__dict__
+                # feature.save(using='new')
+                all_features.append(feature)
+
+                print 'Has_Geom', len(geoms[count]) > 0
+                print data
+                print ''
+
+        bulk_insert = FeatureStore.objects.using('new').bulk_create(all_features, batch_size=50)
+
 
     def create_topojson_file(self):
         extracted_shp = os.path.join(self.extract_dir, self.filenames['shp'])

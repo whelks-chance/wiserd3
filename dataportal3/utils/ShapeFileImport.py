@@ -1,7 +1,10 @@
 import os
-from subprocess import call
-
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
+
+import django
+django.setup()
+
+from subprocess import call
 import uuid
 from wiserd3.settings import app
 from django.contrib.gis.geos import GEOSGeometry
@@ -141,8 +144,11 @@ class ShapeFileImport:
 
                 bulk_insert = FeatureStore.objects.using('new').bulk_create(all_features, batch_size=50)
 
-            except:
+            except Exception as e:
+                print e
                 self.shapefile_upload.progress = ShapeFileImport.progress_stage['import_failure']
+                raise Exception('Invalid or uninitialised shapefile ' + str(e))
+
 
             self.shapefile_upload.progress = ShapeFileImport.progress_stage['import_success']
             self.shapefile_upload.save()
@@ -155,7 +161,7 @@ class ShapeFileImport:
     def create_topojson_file(self):
         extracted_shp = os.path.join(self.extract_dir, self.filenames['shp'])
 
-        cmd = 'mapshaper -i {0} -o {0}.topojson format=topojson'.format(
+        cmd = 'mapshaper -i {0} snap -simplify dp 1% keep-shapes -o {0}.topojson format=topojson'.format(
             extracted_shp
         )
         code = call(cmd, shell=True)

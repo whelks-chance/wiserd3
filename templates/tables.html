@@ -59,15 +59,15 @@
 {#                        }#}
 {#                    },#}
                     {
-                        "targets": -1,
+                        "targets": -2,
                         "data": null,
                         "defaultContent": "<div class='btn btn-info show_questions'>View Details</div>"
                     },
-{#                    {#}
-{#                        "targets": -1,#}
-{#                        "data": null,#}
-{#                        "defaultContent": "<div class='btn btn-success map_survey'>Map survey</div>"#}
-{#                    }#}
+                    {
+                        "targets": -1,
+                        "data": null,
+                        "defaultContent": "<div class='btn btn-success map_survey'>Map survey</div>"
+                    }
                 ]
             });
 
@@ -97,8 +97,8 @@
                     var data = res_table.row($(this).parents('tr')).data();
                     var url_params = $.param({
                         'surveys': data['identifier'],
-                        'boundary':select_box.val(),
-                        'area_names': data['area']});
+                        'boundary':select_box.val()
+                        });
 
                     var url_complete = "{% url 'map' %}" + '?' + url_params;
                     {% if preferences.links_new_tab %}
@@ -160,7 +160,7 @@
                                 <th>Area</th>
 {#                                <th>Data Types</th>#}
                                 <th>Details</th>
-{#                                <th>Map</th>#}
+                                <th>Map</th>
                             </tr>
                             </thead>
                             <tbody>

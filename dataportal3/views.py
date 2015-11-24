@@ -199,6 +199,24 @@ def map_search(request):
         print e9832478
 
     surveys = request.GET.getlist('surveys', [])
+    boundaries = request.GET.getlist('boundary', [])
+    print surveys, boundaries
+    local_data_layers = []
+    print surveys, boundaries
+    if len(surveys) == len(boundaries):
+        for idx, survey_id in enumerate(surveys):
+            print idx, survey_id, boundaries[idx]
+
+            link_table_data = models.SpatialSurveyLink.objects.filter(survey__identifier=survey_id, boundary_name=boundaries[idx]).values_list('data_name', flat=True)
+            # datas = []
+            print link_table_data
+            # for links in link_table:
+            #     datas.append()
+            local_data_layers.append({
+                'survey_id': survey_id,
+                'boundary_name': boundaries[idx],
+                'data': list(link_table_data)
+            })
 
     uploaded_layers_clean = []
     try:
@@ -258,6 +276,7 @@ def map_search(request):
 
     return render(request, 'map.html',
                   {
+                      'local_data_layers': local_data_layers,
                       'remote_searches': remote_layer_data,
                       'topojson_geographies': topojson_geographies,
                       'preferences': get_user_preferences(request),
@@ -595,7 +614,7 @@ def upload_shapefile(request):
     # shp_import.extract_zip()
     # celery_key = shp_import.import_to_gis()
 
-    user = get_request_user()
+    user = get_request_user(request)
     print user
     zip_file = request.FILES['file']
     print zip_file
@@ -785,6 +804,7 @@ def codelist_to_attributes(codelist):
         code_dict[code['option']] = code['variable']
     return code_dict
 
+
 def remote_data_topojson(request):
     # print request.GET
 
@@ -815,6 +835,57 @@ def remote_data_topojson(request):
     to_return = {
         'topojson': a,
         'search_uuid': nomis_search.uuid
+    }
+    to_return_json = json.dumps(to_return, indent=4)
+
+    return HttpResponse(to_return_json, content_type="application/json")
+
+
+def local_data_topojson(request):
+    print request.GET
+    survey_id = request.GET.get('survey_id', '')
+    boundary_name = request.GET.get('boundary_name', '')
+    data_name = request.GET.get('data_name_todo', 'response_rate')
+
+    print survey_id, type(survey_id)
+    print boundary_name, type(boundary_name)
+    print data_name, type(data_name)
+
+    geog = ''
+    if boundary_name == 'Unitary Authority':
+        geog = 'ua'
+    if boundary_name == 'Parliamentary':
+        geog = 'parl2011'
+
+    all_data = {}
+
+    survey_spatial_data = models.SpatialSurveyLink.objects.get(
+        survey__identifier=survey_id,
+        boundary_name=boundary_name,
+        data_name=data_name
+    )
+    print survey_spatial_data
+
+    regional_data = survey_spatial_data.regional_data
+    print regional_data
+
+    for region in regional_data:
+        regions = [{
+            'name': '',
+            'value': regional_data[region],
+            "geography_id": '',
+            "geography_code": '',
+            "data_status": "A",
+            "geography": region
+        }]
+        all_data[region] = regions
+
+    rd = RemoteData()
+    region_id, topojson_file = rd.get_dataset_geodata(geog, False)
+    a = rd.update_topojson(topojson_file, all_data, True)
+
+    to_return = {
+        'topojson': a,
     }
     to_return_json = json.dumps(to_return, indent=4)
 
@@ -1040,6 +1111,8 @@ def spatial_search(request):
         spatials = find_intersects(geography_wkt)
 
         # print pprint.pformat(spatials)
+        with open('spatial_intersects.txt', 'wb') as file_output:
+            file_output.write(json.dumps(spatials, indent=4))
 
         for boundary_type in spatials['boundary_surveys'].keys():
             survey_ids.extend(
@@ -1069,6 +1142,7 @@ def spatial_search(request):
                 survey_data['date'] = date
                 # survey_data['area'] = ''
                 survey_data['area'] = spatials['survey_boundaries'][s['identifier']]
+                # survey_data['intersects'] = spatials['boundary_surveys']
 
                 if len(survey_data['identifier']):
                     if survey_info.has_key(survey_data['identifier']):
@@ -1084,6 +1158,7 @@ def spatial_search(request):
 
         response_data['survey_ids'] = survey_ids
         response_data['data'] = survey_info.values()
+        response_data['intersects'] = spatials['intersects']
 
     return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
 

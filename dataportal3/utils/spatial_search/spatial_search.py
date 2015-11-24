@@ -51,8 +51,10 @@ def find_intersects(geography_wkt):
     return_data = {}
     found_intersects = {}
     survey_boundaries = {}
+    intersect_data = []
 
     for geoms in geometry_columns:
+
         f_table_name = str(geoms['table_name'])
         f_geometry_column = geoms['geometry_column']
 
@@ -72,27 +74,40 @@ def find_intersects(geography_wkt):
         # link_table_surveys = link_table.distinct('survey')
         # print link_table_surveys
 
+        intersect_data.append({
+            'table_name': f_table_name,
+            'intersecting_regions': list(area_names),
+        })
+
         available_options = {}
         for found in link_table:
 
+
+            # Create empty list of boundaries if we dont have one for this survey yet
             if found.survey.identifier not in survey_boundaries:
                 survey_boundaries[found.survey.identifier] = []
 
+            # Append to list of boundary names "Police', 'AEFA' if not already there
             if found.boundary_name not in survey_boundaries[found.survey.identifier]:
                 survey_boundaries[found.survey.identifier].append(found.boundary_name)
 
+            # TODO this makes crazy assumptions
             if found.survey.identifier not in available_options:
                 available_options[found.survey.identifier] = []
+
+            # Data available for this geography, for this survey
             available_options[found.survey.identifier].append(found.data_name)
 
         found_intersects[f_table_name] = {
             'table_options': available_options,
-            'intersects': area_names
+            'intersects': list(area_names)
         }
 
     return_data['survey_boundaries'] = survey_boundaries
     return_data['boundary_surveys'] = found_intersects
+    return_data['intersects'] = intersect_data
     return return_data
+
 
 def get_data_for_regions(survey, data_name, regions):
 

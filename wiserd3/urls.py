@@ -35,6 +35,7 @@ urlpatterns = [
 
     url(r'^remote_data_topojson', views.remote_data_topojson, name='remote_data_topojson'),
     url(r'^remote_data', views.remote_data, name='remote_data'),
+    url(r'^local_data_topojson', views.local_data_topojson, name='local_data_topojson'),
 
     url(r'^file_management', views.file_management, name='file_management'),
     url(r'^events', views.events, name='events'),

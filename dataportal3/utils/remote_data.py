@@ -25,12 +25,16 @@ class RemoteData():
             r = requests.get('http://www.nomisweb.co.uk/api/v01/dataset/def.sdmx.json?search=*{0}*'.format(search_term))
             print r.url
             j = json.loads(r.text)
-            s = j['structure']['keyfamilies']['keyfamily']
             datasets = []
+
+            if j['structure']['keyfamilies'] is None:
+                return datasets
+            s = j['structure']['keyfamilies']['keyfamily']
             for f in s:
-                k = {}
-                k['id'] = f['id']
-                k['name'] = f['name']['value']
+                k = {
+                    'id': f['id'],
+                    'name': f['name']['value']
+                }
                 datasets.append(k)
                 # print pprint.pformat(k)
             # print json.dumps(s, indent=4)
@@ -321,6 +325,7 @@ class RemoteData():
     def update_topojson(self, topojson_file, remote_data, measure_is_percentage=False):
 
         remote_areas = remote_data.keys()
+        print remote_data
 
         found = 0
         not_found = 0
@@ -350,14 +355,23 @@ class RemoteData():
 
                     try:
                         # print topojon_area_name in remote_data
-                        first_remote_data = remote_data[topojon_area_name][0]
+                        try:
+                            first_remote_data = remote_data[topojon_area_name][0]
+                            found += 1
+                            remote_areas.remove(topojon_area_name)
+                        except:
+                            first_remote_data = remote_data[
+                                str(geom['properties']['NAME'])
+                            ][0]
+                            found += 1
+                            remote_areas.remove(str(geom['properties']['NAME']))
+
                         # print first_remote_data
 
                         # print geom['properties']['AREA_NAME'], remote_entry['geography']
                         # if remote_entry['geography'] == geom['properties']['AREA_NAME']:
 
-                        found += 1
-                        remote_areas.remove(topojon_area_name)
+
                         geom['properties']['REMOTE_VALUE'] = first_remote_data['value']
                         # geom['properties']['AREA_NAME'] = geom['properties']['NAME']
                         geom['properties']['AREA_NAME'] = area_name
@@ -365,7 +379,7 @@ class RemoteData():
                         geom['properties']['DATA_STATUS'] = first_remote_data['data_status']
 
                     except Exception as e:
-                        print 'error', e
+                        print 'error', e, type(e)
                         not_found += 1
                         # print '\n'
 
@@ -512,7 +526,9 @@ class RemoteData():
 
 # rd.inspect_topojson(topojson_file)
 # rd.get_sub_regions('NM_548_1', '2092957700TYPE460')
-# geogs = rd.get_geography('NM_548_1')
+# geogs = rd.get_geography('NM_144_1')
+# rd.get_sub_regions('NM_144_1', '2092957700')
+
 #
 # rd.get_dataset_overview('NM_548_1')
 # items = rd.get_dataset_items('NM_548_1', '2092957700TYPE460')

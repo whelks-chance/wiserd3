@@ -430,7 +430,7 @@ class FeatureCollectionStore(models.Model):
     name = models.TextField(blank=True, null=True)
     shapefile_upload = models.ForeignKey(ShapeFileUpload, blank=True, null=True)
     survey = models.ForeignKey(Survey, blank=True, null=True)
-    topojson_file = models.FileField(blank=True, null=True)
+    topojson_file = models.FileField(blank=True, null=True, max_length=512)
 
     def __unicode__(self):
         return str(self.name)

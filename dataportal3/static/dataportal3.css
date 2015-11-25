@@ -61,3 +61,10 @@
 .arrow_center {
     padding-left: 0.13em;
 }
+
+.legend {
+    /*max-width: 80%;*/
+    /*width: -moz-min-content;*/
+    /*width: -webkit-min-content;*/
+    /*width: min-content;*/
+}

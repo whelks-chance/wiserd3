@@ -213,6 +213,7 @@ def map_search(request):
             # for links in link_table:
             #     datas.append()
             local_data_layers.append({
+                'name': models.Survey.objects.get(identifier=survey_id).survey_title.replace('_', ' '),
                 'survey_id': survey_id,
                 'boundary_name': boundaries[idx],
                 'data': list(link_table_data)
@@ -845,7 +846,9 @@ def local_data_topojson(request):
     print request.GET
     survey_id = request.GET.get('survey_id', '')
     boundary_name = request.GET.get('boundary_name', '')
-    data_name = request.GET.get('data_name_todo', 'TotEle2015')
+    # data_name = request.GET.get('data_name_todo', 'TotEle2015')
+    data_name = request.GET.get('data_name_todo', 'response_rate')
+    # data_name = request.GET.get('data_name_todo', 'TrnOut2010')
 
     print survey_id, type(survey_id)
     print boundary_name, type(boundary_name)
@@ -864,10 +867,10 @@ def local_data_topojson(request):
         boundary_name=boundary_name,
         data_name=data_name
     )
-    print survey_spatial_data
+    # print survey_spatial_data
 
     regional_data = survey_spatial_data.regional_data
-    print regional_data
+    # print regional_data
 
     for region in regional_data:
         regions = [{

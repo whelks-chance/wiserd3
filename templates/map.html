@@ -1214,7 +1214,7 @@
                     local_data_layer['colorpicker'] = 'Spectral';
                     local_data_layer['bin_type'] = 'k';
                     local_data_layer['bin_num'] = '8';
-                    local_data_layer['name'] = 'a layer';
+{#                    local_data_layer['name'] = 'a layer';#}
                     local_data_layer['data_name'] = 'data_name';
 
                     get_local_dataset_topojson(
@@ -1269,13 +1269,69 @@
                     );
                 }());
             }
+
+            $( "#local_dataset_define_vars_form" ).dialog({
+                autoOpen: false,
+                height: map_div.height(),
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: map_div
+                },
+                width: map_div.width()/2,
+                modal: true,
+                buttons: {
+                    "Render to Map": function() {
+                        waitingDialog.show('Fetching map layers ...');
+
+                        $( this ).dialog( "close" );
+
+                        var available_data = $(this).data('available_data');
+                        var available_data_selected = [];
+
+                        var local_available_data_selection = $('#local_available_data_radio').find(":radio:checked").attr('value');
+
+                        var survey_id = $(this).data('survey_id');
+
+                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');
+
+                        get_local_dataset_topojson(
+                            "{% url 'local_data_topojson' %}",
+                            topojson_geography,
+                            survey_id,
+                            local_available_data_selection,
+                            function(topojson_data) {
+                                console.log(local_data_layer);
+
+                                handleUploadedLayer(
+                                        topojson_data['topojson'],
+                                        local_data_layer['colorpicker'],
+                                        local_data_layer['bin_type'],
+                                        local_data_layer['bin_num'],
+                                        '',
+                                        local_data_layer['name'],
+                                        ''
+                                );
+                            }
+                    );
+
+
+                    },
+                    Cancel: function() {
+                        $( this ).dialog( "close" );
+                    }
+                },
+                close: function() {
+                }
+            });
+
         });
 
     </script>
 
 
     <div id="map_div" style="height: 180px;"></div>
-    <div>{{ remote_searches }}</div>
+{#    <div>{{ remote_searches }}</div>#}
     <div id="screenshot" class="btn">Screenshot</div>
     <div id="screenshot_result"></div>
     <div id="screenshot_result2"></div>
@@ -1355,6 +1411,16 @@
                     <label for="{{ geography.geog_short_code }}">{{ geography.name }}</label>
                 </div>
             {% endfor %}
+        </div>
+    </div>
+
+    <div id="local_dataset_define_vars_form" title="Dataset Variables">
+        <div id="dataset_title"></div>
+        <div id="data_cell_radio"></div>
+
+        <div>Geography</div>
+        <div id="topojson_geography_radio" class="controls input-block-level tab_data_input">
+
         </div>
     </div>
 

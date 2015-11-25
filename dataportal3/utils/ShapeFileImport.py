@@ -1,6 +1,11 @@
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
 
+import string
+from django.utils.crypto import random
+import time
+import math
+
 import django
 django.setup()
 
@@ -11,8 +16,6 @@ from django.contrib.gis.geos import GEOSGeometry
 from dataportal3 import models
 import zipfile
 from django.contrib.gis.gdal import DataSource, CoordTransform, SpatialReference
-# from django.contrib.gis.utils import ogrinspect
-# import django_hstore.models
 from dataportal3.models import FeatureCollectionStore, FeatureStore
 
 __author__ = 'ubuntu'
@@ -62,48 +65,15 @@ class ShapeFileImport:
             try:
                 extracted_shp = os.path.join(self.extract_dir, self.filenames['shp'])
 
-                # print extracted_shp
+                self.shapefile_to_spatial_survey_links(extracted_shp)
 
-                ds = DataSource(extracted_shp)
-                print ds.name
-
-                # number of layers
-                print 'number of layers', len(ds)
-                lyr = ds[0]
-
-                # layer name
-                print 'layer name', lyr
-
-                # layers type
-                print 'layer type', lyr.geom_type
-
-                print 'field_precisions', lyr.field_precisions
-                print 'extent', lyr.extent
-                print 'fields', lyr.fields
-                print 'field_widths', lyr.field_widths
-                print 'field_types', lyr.field_types[0].__dict__
-                print ''
-                print 'fields_types', lyr.field_types
-                print 'geom_type', lyr.geom_type
-
-                # number of features
-                print 'number of features', len(lyr)
-
-                # spatial reference
-                srs = lyr.srs
-                print 'spatial reference', srs
-
-                # new_model = ogrinspect(ds, str(lyr))
-                # print new_model
-
-                self.save_feature_collection(ds)
-                self.save_spatial_survey_link(ds)
+                # Deprecated, but saved in case this makes sense some day
+                # self.save_feature_collection(ds)
 
             except Exception as e:
                 print e
                 self.shapefile_upload.progress = ShapeFileImport.progress_stage['import_failure']
                 raise Exception('Invalid or uninitialised shapefile ' + str(e))
-
 
             self.shapefile_upload.progress = ShapeFileImport.progress_stage['import_success']
             self.shapefile_upload.save()
@@ -112,35 +82,6 @@ class ShapeFileImport:
             self.shapefile_upload.progress = ShapeFileImport.progress_stage['import_failure']
             self.shapefile_upload.save()
             raise Exception('Invalid or uninitialised shapefile')
-
-    def init_survey(self, ds):
-        dc = models.DcInfo()
-        dc.title = str(ds)
-        dc.save()
-
-        survey = models.Survey()
-        survey.survey_title = str(ds)
-        survey.dublin_core = dc
-        survey.save()
-
-        return survey
-
-    def save_spatial_survey_link(self, ds):
-        lyr = ds[0]
-        survey = self.init_survey(ds)
-
-        for field in lyr.fields:
-            print field
-
-            regions_with_data = {}
-
-            new_survey_link = models.SpatialSurveyLink()
-            new_survey_link.survey = survey
-            new_survey_link.data_name = field
-            new_survey_link.geom_table_name = 'spatialdata_ua'
-            new_survey_link.regional_data = regions_with_data
-            new_survey_link.boundary_name = "Unitary Authority"
-            new_survey_link.save()
 
     def save_feature_collection(self, ds):
         lyr = ds[0]
@@ -159,9 +100,9 @@ class ShapeFileImport:
             geoms = layer.get_geoms(geos=True)
 
             self.shapefile_upload.description = 'ShapeFile ' \
-                                        + ':' + str(lyr) \
-                                        + ', ' + str(len(lyr.get_geoms(geos=True))) \
-                                        + ' features'
+                + ':' + str(lyr) \
+                + ', ' + str(len(lyr.get_geoms(geos=True))) \
+                + ' features'
             self.shapefile_upload.progress = ShapeFileImport.progress_stage['import_begun']
             self.shapefile_upload.save()
 
@@ -182,8 +123,6 @@ class ShapeFileImport:
                 feature.feature_attributes = data
                 feature.geometry = geoms[count]
 
-
-                # print feature.__dict__
                 # feature.save(using='new')
                 all_features.append(feature)
 
@@ -192,7 +131,6 @@ class ShapeFileImport:
                 print ''
 
         bulk_insert = FeatureStore.objects.using('new').bulk_create(all_features, batch_size=50)
-
 
     def create_topojson_file(self):
         extracted_shp = os.path.join(self.extract_dir, self.filenames['shp'])
@@ -251,26 +189,118 @@ class ShapeFileImport:
         except:
             self.shapefile_upload.progress = ShapeFileImport.progress_stage['verify_failure']
             self.shapefile_upload.save()
-            valid = False
+            self.is_valid = False
             raise
 
-        valid, filenames, missing =  self.__is_valid_zip(archive)
+        valid, filenames, missing = self.__is_valid_zip(archive)
 
         self.is_valid = valid
         if self.is_valid:
             self.shapefile_upload.progress = ShapeFileImport.progress_stage['extract_begun']
             self.shapefile_upload.save()
-            # only extracting files with extentions we care about
+            # only extracting files with extensions we care about
             try:
                 for ext in filenames:
                     zip_stream = archive.extract(filenames[ext], path=self.extract_dir)
                     print zip_stream
                 self.shapefile_upload.progress = ShapeFileImport.progress_stage['extracted_success']
-            except:
+            except Exception as e98324:
+                print e98324, type(e98324)
                 self.shapefile_upload.progress = ShapeFileImport.progress_stage['extracted_fail']
         else:
             self.shapefile_upload.progress = ShapeFileImport.progress_stage['verify_failure']
         self.shapefile_upload.save()
+
+    def shapefile_to_spatial_survey_links(self, extracted_shp):
+
+        ds = DataSource(extracted_shp)
+        print 'data source', ds.name
+        print 'number of layers', len(ds)
+        lyr = ds[0]
+
+        print 'layer name', lyr
+        print 'layer type', lyr.geom_type
+        print 'field_precisions', lyr.field_precisions
+        print 'extent', lyr.extent
+        print 'fields', lyr.fields
+        print 'field_widths', lyr.field_widths
+        print 'fields_types', lyr.field_types
+        print 'geom_type', lyr.geom_type
+        print 'number of features', len(lyr)
+        print 'spatial reference', lyr.srs
+
+        self.form_spatial_survey_links(lyr)
+
+    def form_spatial_survey_links(self, lyr):
+        survey = self.init_survey(lyr)
+        geoms = lyr.get_geoms(geos=False)
+
+        clean_fields = {}
+        reserved_fields = {}
+        for field_idx, field in enumerate(lyr.fields):
+            if field in ['NAME', 'ALT_NAME', 'ALTNAME', 'CODE']:
+                reserved_fields[field] = field_idx
+            else:
+                clean_fields[field] = field_idx
+
+        print 'clean', clean_fields
+        print 'reserved', reserved_fields
+
+        geo_codes = []
+        for geo_idx, geom in enumerate(geoms):
+            code = lyr.get_fields('CODE')[geo_idx]
+            print code
+            geo_codes.append(code)
+
+        survey_links_to_save = []
+
+        for field_idx, field in enumerate(clean_fields):
+            print field
+
+            regions_with_data = {}
+
+            for geo_idx, geom in enumerate(geoms):
+
+                value = lyr.get_fields(field)[geo_idx]
+                print geo_codes[geo_idx], value
+
+                regions_with_data[geo_codes[geo_idx]] = value
+
+            new_survey_link = models.SpatialSurveyLink()
+            new_survey_link.survey = survey
+            new_survey_link.data_name = field
+            new_survey_link.geom_table_name = 'spatialdata_parl'
+            new_survey_link.regional_data = regions_with_data
+            new_survey_link.boundary_name = "Parliamentary"
+
+            print ''
+            survey_links_to_save.append(new_survey_link)
+
+        bulk_insert = models.SpatialSurveyLink.objects.using('new').bulk_create(survey_links_to_save, batch_size=50)
+
+    def init_survey(self, lyr):
+
+        uid = uniqid()
+        dc_id = 'wisid_' + str(lyr) + '_' + uid
+        survey_id = 'sid_' + str(lyr) + '_' + uid
+
+        dc = models.DcInfo()
+        dc.title = str(lyr)
+        dc.identifier = dc_id
+        dc.save()
+
+        print 'dc', dc
+
+        survey = models.Survey()
+        survey.short_title = self.shapefile_upload.name
+        survey.survey_title = str(lyr)
+        survey.dublin_core = dc
+        survey.identifier = dc_id
+        survey.surveyid = survey_id
+        survey.save()
+
+        print 'survey', survey
+        return survey
 
 
 def spatial_search():
@@ -293,6 +323,21 @@ def spatial_search():
     print f.name
 
     print f.geometry.distance(geom)
+
+
+#   From http://gurukhalsa.me/2011/uniqid-in-python/
+def uniqid(prefix='', more_entropy=False):
+    m = time.time()
+    uniqid = '%8x%05x' %(math.floor(m),(m-math.floor(m))*1000000)
+    if more_entropy:
+        valid_chars = list(set(string.hexdigits.lower()))
+        entropy_string = ''
+        for i in range(0,10,1):
+            entropy_string += random.choice(valid_chars)
+        uniqid = uniqid + entropy_string
+    uniqid = prefix + uniqid
+    return uniqid
+
 
 @app.task
 def celery_import(user_id, zip_file, filename, shapefile_upload_id=None):

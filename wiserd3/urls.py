@@ -34,7 +34,7 @@ urlpatterns = [
     url(r'^site_setup', views.site_setup, name='site_setup'),
 
     url(r'^remote_data_topojson', views.remote_data_topojson, name='remote_data_topojson'),
-    url(r'^remote_data', views.remote_data, name='remote_data'),
+    url(r'^data_api', views.data_api, name='data_api'),
     url(r'^local_data_topojson', views.local_data_topojson, name='local_data_topojson'),
 
     url(r'^file_management', views.file_management, name='file_management'),

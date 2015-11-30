@@ -33,7 +33,8 @@ Dump shp file to DB for spatial search :
 shp2pgsql -I ~/shp/x_sid_liw2007_pcode_/x_sid_liw2007_pcode_.shp pcode | sudo -u postgres psql -d "NewSurvey"
 do this for one of each type of boundary
 
-Celery - Shapefile import process
+Celery - Shapefile import process, celery needs explicit export of settings module location
+export DJANGO_SETTINGS_MODULE='wiserd3.settings'
 celery -A dataportal3.utils.ShapeFileImport worker --loglevel=info
 
 http://nominatim.openstreetmap.org/reverse?format=json&lat=51.5793876&lon=-3.1731345&zoom=18&addressdetails=1

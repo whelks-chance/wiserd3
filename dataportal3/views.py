@@ -200,16 +200,17 @@ def map_search(request):
 
     surveys = request.GET.getlist('surveys', [])
     boundaries = request.GET.getlist('boundary', [])
-    print surveys, boundaries
     local_data_layers = []
-    print surveys, boundaries
+    # print surveys, boundaries
     if len(surveys) == len(boundaries):
         for idx, survey_id in enumerate(surveys):
-            print idx, survey_id, boundaries[idx]
+            print 'idx', idx
+            print 'survey_id', survey_id
+            print 'boundaries[idx]', boundaries[idx]
 
             link_table_data = models.SpatialSurveyLink.objects.filter(survey__identifier=survey_id, boundary_name=boundaries[idx]).values_list('data_name', flat=True)
             # datas = []
-            print link_table_data
+            print 'data available for ', survey_id, list(link_table_data)
             # for links in link_table:
             #     datas.append()
             local_data_layers.append({
@@ -590,31 +591,7 @@ def upload_shapefile(request):
     print request.FILES
     print len(request.FILES)
 
-    # form = ShapefileForm(request.POST, request.FILES )
-    # print form
-    # print ShapefileForm()
-    # print form.is_valid()
-
     messages = []
-
-    # shapefile_upload = models.ShapeFileUpload()
-    # shapefile_upload.user = get_request_user(request)
-    # shapefile_upload.uuid = str(uuid.uuid4())
-    # shapefile_upload.shapefile = request.FILES['file']
-    # shapefile_upload.name = request.POST.get('shapefile_name', '')
-    # shapefile_upload.save()
-    #
-    # filepath_url = shapefile_upload.shapefile.url
-
-    # try:
-    # shp_import = ShapeFileImport(
-    #     get_request_user(request),
-    #     zip_file=request.FILES['file'],
-    #     filename=request.POST.get('shapefile_name', '')
-    # )
-    # shp_import.extract_zip()
-    # celery_key = shp_import.import_to_gis()
-
     user = get_request_user(request)
     print user
     zip_file = request.FILES['file']
@@ -636,11 +613,6 @@ def upload_shapefile(request):
         filename=filename,
         shapefile_upload_id=shapefile_upload.id
     )
-
-    # shapefile_upload.description = shapefile_info
-    # shapefile_upload.save()
-    # except Exception as ex:
-    #     print ex
 
     return render(request, 'file_management.html',
                   {
@@ -743,21 +715,21 @@ def profile(request):
                   },context_instance=RequestContext(request))
 
 
-def remote_data(request):
+def data_api(request):
     rd = RemoteData()
     to_return = {}
     print request.GET
 
     method = request.GET.get("method", None)
 
-    if method == 'search':
+    if method == 'remote_search':
         search_term = request.GET.get("search_term", None)
         print search_term, type(search_term)
         if search_term:
             datasets = rd.search_datasets(search_term)
             to_return['datasets'] = datasets
 
-    if method == 'metadata':
+    if method == 'remote_metadata':
         dataset_id = request.GET.get("dataset_id", None)
         to_return['metadata'] = rd.get_dataset_overview(dataset_id)
 
@@ -775,6 +747,22 @@ def remote_data(request):
             search_object.display_attributes = display_dict
             search_object.name = layer_name
             search_object.save()
+
+    if method == 'local_data_metadata':
+        survey_id = request.GET.get("survey_id", None)
+        boundary = request.GET.get("boundary_name", None)
+        print survey_id, boundary
+
+        link_table_data = models.SpatialSurveyLink.objects.filter(
+            survey__identifier=survey_id,
+            boundary_name=boundary
+        ).values_list('data_name', flat=True)
+        # print link_table_data.query
+        print list(link_table_data)
+
+        to_return['local_data_metadata'] = {
+            'data_names': list(link_table_data)
+        }
 
     if method == 'data_urls':
         codelist = None
@@ -847,12 +835,12 @@ def local_data_topojson(request):
     survey_id = request.GET.get('survey_id', '')
     boundary_name = request.GET.get('boundary_name', '')
     # data_name = request.GET.get('data_name_todo', 'TotEle2015')
-    data_name = request.GET.get('data_name_todo', 'response_rate')
+    data_name = request.GET.get('data_name', 'response_rate')
     # data_name = request.GET.get('data_name_todo', 'TrnOut2010')
 
-    print survey_id, type(survey_id)
-    print boundary_name, type(boundary_name)
-    print data_name, type(data_name)
+    print 'survey_id', survey_id, type(survey_id)
+    print 'boundary_name', boundary_name, type(boundary_name)
+    print 'data_name', data_name, type(data_name)
 
     geog = ''
     if boundary_name == 'Unitary Authority':

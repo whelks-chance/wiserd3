@@ -377,7 +377,7 @@
                 map_layers[$(replace_button).data('layername')].addTo(map);
             }
 
-{#            get_geojson_layer('survey', JSON.parse('{{ surveys|safe }}'));#}
+            {#            get_geojson_layer('survey', JSON.parse('{{ surveys|safe }}'));#}
 
             function get_geojson_layer(layer_type, layer_names){
                 waitingDialog.show('Fetching map layer ...');
@@ -583,7 +583,7 @@
                     div.innerHTML = '<h4>' + layer_name_text + '</h4><p><a target="_blank" href="' + csv_url + '">download data</a></p>' + div_inner;
                     return div;
                 };
-{#                legend.addTo(map);#}
+                {#                legend.addTo(map);#}
 
                 var myLayer = new L.TopoJSON();
                 myLayer.addData(data);
@@ -854,7 +854,7 @@
                                 var bin_num = $("#binno").val();
 
                                 $.ajax({
-                                    url: "{% url 'remote_data' %}",
+                                    url: "{% url 'data_api' %}",
                                     type: 'GET',
                                     data: {
                                         method: 'record_nomis_search',
@@ -932,10 +932,10 @@
                 waitingDialog.show('Searching NomisWeb ...');
 
                 $.ajax({
-                    url: "{% url 'remote_data' %}",
+                    url: "{% url 'data_api' %}",
                     type: 'GET',
                     data: {
-                        'method': 'search',
+                        'method': 'remote_search',
                         'remote_api': 'nomis',
                         'search_term': search_term,
                         'method_data': {
@@ -1013,10 +1013,10 @@
                             var dataset_name = $("#dataset_radio").find(":radio:checked").text();
 
                             $.ajax({
-                                url: "{% url 'remote_data' %}",
+                                url: "{% url 'data_api' %}",
                                 type: 'GET',
                                 data: {
-                                    'method': 'metadata',
+                                    'method': 'remote_metadata',
                                     'dataset_id': dataset_id
                                 },
                                 success: function(data){
@@ -1142,7 +1142,7 @@
                                 codelist_selected,
                                 function(data){
                                     get_remote_dataset_csv_url(
-                                            "{% url 'remote_data' %}",
+                                            "{% url 'data_api' %}",
                                             topojson_geography,
                                             dataset_id,
                                             codelist_selected,
@@ -1205,41 +1205,151 @@
                         });
             }
 
+
+            $( "#local_dataset_define_vars_form" ).dialog({
+                autoOpen: false,
+                height: map_div.height(),
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: map_div
+                },
+                width: map_div.width()/2,
+                modal: true,
+                open: function( event, ui ) {
+                    var available_data = $(this).data('available_data');
+
+                    var dataset_radio = $('#local_data_cell_radio');
+                    dataset_radio.find('div').remove().end();
+
+                    var codelist_label = $('<div>', {text: 'Available Data'});
+                    dataset_radio.append(codelist_label);
+
+                    var codelist_radio_div = $('<div>', {id: 'local_available_data_radio'});
+                    for(var available_data_option_idx in available_data) {
+                        var available_data_option = available_data[available_data_option_idx];
+
+                        var radio_div = $('<div>');
+                        radio_div.append($('<input>', {
+                            value: available_data_option,
+                            id: available_data_option,
+                            type: 'radio',
+                            name: 'available_data_option',
+                            text: available_data_option
+                        }));
+                        radio_div.append($('<label>', {
+                            value: available_data_option,
+                            for: available_data_option,
+                            text: available_data_option
+                        }));
+                        codelist_radio_div.append(radio_div);
+                    }
+                    codelist_radio_div.buttonset();
+                    dataset_radio.append(codelist_radio_div);
+                    codelist_radio_div.find('input')[0].click();
+
+                },
+                buttons: {
+                    "Render to Map": function() {
+                        waitingDialog.show('Fetching map layers ...');
+                        $( this ).dialog( "close" );
+
+                        var local_available_data_selection = $('#local_available_data_radio').find(":radio:checked").attr('value');
+
+                        var survey_id = $(this).data('survey_id');
+
+{#                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');#}
+                        var topojson_geography = $(this).data('boundary_name');
+
+
+                        get_local_dataset_topojson(
+                                "{% url 'local_data_topojson' %}",
+                                topojson_geography,
+                                survey_id,
+                                local_available_data_selection,
+                                function(topojson_data) {
+                                    waitingDialog.hide();
+                                    var layer_name = survey_id + '_' + local_available_data_selection;
+                                    topojson_layers[layer_name] = topojson_data['topojson'];
+
+                                    $( "#chloropleth_option_form").data({
+                                                    layer_names: layer_name,
+                                                    nomis_variable: '20301',
+                                                    csv_url: ''
+                                                }).dialog( "open" );
+
+{#                                    handleUploadedLayer(#}
+{#                                            topojson_data['topojson'],#}
+{#                                            local_data_layer['colorpicker'],#}
+{#                                            local_data_layer['bin_type'],#}
+{#                                            local_data_layer['bin_num'],#}
+{#                                            '',#}
+{#                                            local_data_layer['name'],#}
+{#                                            ''#}
+{#                                    );#}
+                                }
+                        );
+
+                    },
+                    Cancel: function() {
+                        $( this ).dialog( "close" );
+                    }
+                },
+                close: function() {
+                }
+            });
+
+
             var local_data_layer_data = {{ local_data_layers|jsonify }};
             for (var local_data_layer_idx in local_data_layer_data) {
 
                 (function(){
                     var local_data_layer = local_data_layer_data[local_data_layer_idx];
                     console.log(local_data_layer);
+
+                    (function(){
+                        get_local_dataset_metadata(
+                                '{% url 'data_api' %}',
+                                local_data_layer['survey_id'],
+                                local_data_layer['boundary_name'],
+                                function(metadata){
+{#                                    alert(metadata['local_data_metadata']['data_names']);#}
+                                    $("#local_dataset_define_vars_form").data({
+                                        survey_id: local_data_layer['survey_id'],
+                                        boundary_name: local_data_layer['boundary_name'],
+                                        available_data: metadata['local_data_metadata']['data_names']
+                                    }).dialog('open');
+                                }
+                        );
+                    })();
+
                     local_data_layer['colorpicker'] = 'Spectral';
                     local_data_layer['bin_type'] = 'k';
                     local_data_layer['bin_num'] = '8';
-{#                    local_data_layer['name'] = 'a layer';#}
                     local_data_layer['data_name'] = 'data_name';
 
-                    get_local_dataset_topojson(
-                            "{% url 'local_data_topojson' %}",
-                            local_data_layer['boundary_name'],
-                            local_data_layer['survey_id'],
-                            local_data_layer['data_name'],
-                            function(topojson_data) {
-                                console.log(local_data_layer);
-
-                                handleUploadedLayer(
-                                        topojson_data['topojson'],
-                                        local_data_layer['colorpicker'],
-                                        local_data_layer['bin_type'],
-                                        local_data_layer['bin_num'],
-                                        '',
-                                        local_data_layer['name'],
-                                        ''
-                                );
-                            }
-                    );
+                    {#                    TODO re-enable, this works!! #}
+                    {#                    get_local_dataset_topojson(#}
+                    {#                            "{% url 'local_data_topojson' %}",#}
+                    {#                            local_data_layer['boundary_name'],#}
+                    {#                            local_data_layer['survey_id'],#}
+                    {#                            local_data_layer['data_name'],#}
+                    {#                            function(topojson_data) {#}
+                    {#                                console.log(local_data_layer);#}
+                    {##}
+                    {#                                handleUploadedLayer(#}
+                    {#                                        topojson_data['topojson'],#}
+                    {#                                        local_data_layer['colorpicker'],#}
+                    {#                                        local_data_layer['bin_type'],#}
+                    {#                                        local_data_layer['bin_num'],#}
+                    {#                                        '',#}
+                    {#                                        local_data_layer['name'],#}
+                    {#                                        ''#}
+                    {#                                );#}
+                    {#                            }#}
+                    {#                    );#}
                 }());
             }
-
-
 
             var remote_data_layer_data = {{ remote_searches|jsonify }};
             for (var remote_data_layer_idx in remote_data_layer_data) {
@@ -1269,69 +1379,12 @@
                     );
                 }());
             }
-
-            $( "#local_dataset_define_vars_form" ).dialog({
-                autoOpen: false,
-                height: map_div.height(),
-                position: {
-                    my: "center",
-                    at: "center",
-                    of: map_div
-                },
-                width: map_div.width()/2,
-                modal: true,
-                buttons: {
-                    "Render to Map": function() {
-                        waitingDialog.show('Fetching map layers ...');
-
-                        $( this ).dialog( "close" );
-
-                        var available_data = $(this).data('available_data');
-                        var available_data_selected = [];
-
-                        var local_available_data_selection = $('#local_available_data_radio').find(":radio:checked").attr('value');
-
-                        var survey_id = $(this).data('survey_id');
-
-                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');
-
-                        get_local_dataset_topojson(
-                            "{% url 'local_data_topojson' %}",
-                            topojson_geography,
-                            survey_id,
-                            local_available_data_selection,
-                            function(topojson_data) {
-                                console.log(local_data_layer);
-
-                                handleUploadedLayer(
-                                        topojson_data['topojson'],
-                                        local_data_layer['colorpicker'],
-                                        local_data_layer['bin_type'],
-                                        local_data_layer['bin_num'],
-                                        '',
-                                        local_data_layer['name'],
-                                        ''
-                                );
-                            }
-                    );
-
-
-                    },
-                    Cancel: function() {
-                        $( this ).dialog( "close" );
-                    }
-                },
-                close: function() {
-                }
-            });
-
         });
 
     </script>
 
 
     <div id="map_div" style="height: 180px;"></div>
-{#    <div>{{ remote_searches }}</div>#}
     <div id="screenshot" class="btn">Screenshot</div>
     <div id="screenshot_result"></div>
     <div id="screenshot_result2"></div>
@@ -1415,8 +1468,8 @@
     </div>
 
     <div id="local_dataset_define_vars_form" title="Dataset Variables">
-        <div id="dataset_title"></div>
-        <div id="data_cell_radio"></div>
+        <div id="local_dataset_title"></div>
+        <div id="local_data_cell_radio"></div>
 
         <div>Geography</div>
         <div id="topojson_geography_radio" class="controls input-block-level tab_data_input">

@@ -1,4 +1,7 @@
 import os
+from django.db import connections
+from django.db.transaction import atomic
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
 
 import string
@@ -36,6 +39,7 @@ class ShapeFileImport:
     }
 
     def __init__(self, user, zip_file, filename, shapefile_upload_id=None):
+        self.user = user
         self.is_valid = False
         self.archive_dir = ''
         self.extract_dir = ''
@@ -65,7 +69,8 @@ class ShapeFileImport:
             try:
                 extracted_shp = os.path.join(self.extract_dir, self.filenames['shp'])
 
-                self.shapefile_to_spatial_survey_links(extracted_shp)
+                lyr = self.get_shp_lyr(extracted_shp)
+                self.form_spatial_survey_links(lyr)
 
                 # Deprecated, but saved in case this makes sense some day
                 # self.save_feature_collection(ds)
@@ -211,27 +216,33 @@ class ShapeFileImport:
             self.shapefile_upload.progress = ShapeFileImport.progress_stage['verify_failure']
         self.shapefile_upload.save()
 
-    def shapefile_to_spatial_survey_links(self, extracted_shp):
+    def get_shp_lyr(self, extracted_shp, output=True):
 
         ds = DataSource(extracted_shp)
-        print 'data source', ds.name
-        print 'number of layers', len(ds)
         lyr = ds[0]
 
-        print 'layer name', lyr
-        print 'layer type', lyr.geom_type
-        print 'field_precisions', lyr.field_precisions
-        print 'extent', lyr.extent
-        print 'fields', lyr.fields
-        print 'field_widths', lyr.field_widths
-        print 'fields_types', lyr.field_types
-        print 'geom_type', lyr.geom_type
-        print 'number of features', len(lyr)
-        print 'spatial reference', lyr.srs
+        if output:
+            print 'data source', ds.name
+            print 'number of layers', len(ds)
+            print 'layer name', lyr
+            print 'layer type', lyr.geom_type
+            print 'field_precisions', lyr.field_precisions
+            print 'extent', lyr.extent
+            print 'fields', lyr.fields
+            print 'field_widths', lyr.field_widths
+            print 'fields_types', lyr.field_types
+            print 'geom_type', lyr.geom_type
+            print 'number of features', len(lyr)
+            print 'spatial reference', lyr.srs
 
-        self.form_spatial_survey_links(lyr)
+        return lyr
 
     def form_spatial_survey_links(self, lyr):
+
+        conn_queries = connections['new'].queries
+        print 'form_spatial_survey_links start', len(conn_queries)
+        # print 'survey queries', conn_queries
+
         survey = self.init_survey(lyr)
         geoms = lyr.get_geoms(geos=False)
 
@@ -256,6 +267,8 @@ class ShapeFileImport:
 
         for field_idx, field in enumerate(clean_fields):
             print field
+            field_type = lyr.field_types[field_idx]
+            print 'field_type', field_type
 
             regions_with_data = {}
 
@@ -269,6 +282,9 @@ class ShapeFileImport:
             new_survey_link = models.SpatialSurveyLink()
             new_survey_link.survey = survey
             new_survey_link.data_name = field
+            new_survey_link.data_prefix = ''
+            new_survey_link.data_suffix = ''
+            new_survey_link.data_type = str(field_type)
             new_survey_link.geom_table_name = 'spatialdata_parl'
             new_survey_link.regional_data = regions_with_data
             new_survey_link.boundary_name = "Parliamentary"
@@ -276,7 +292,33 @@ class ShapeFileImport:
             print ''
             survey_links_to_save.append(new_survey_link)
 
+        conn_queries = connections['new'].queries
+        print 'form_spatial_survey_links init', len(conn_queries)
+
+        # bulk_create doesn't allow ManyToMany links
         bulk_insert = models.SpatialSurveyLink.objects.using('new').bulk_create(survey_links_to_save, batch_size=50)
+
+        conn_queries = connections['new'].queries
+        print 'form_spatial_survey_links end, update_spatial_link_user start', len(conn_queries)
+
+        self.update_spatial_link_user(bulk_insert)
+
+        conn_queries = connections['new'].queries
+        print 'update_spatial_link_user end', len(conn_queries)
+
+    # bulk_create doesn't allow ManyToMany links
+    # atomic should save all the links at once, faster than multiple save()'s
+    @atomic
+    def update_spatial_link_user(self, bulk_insert_item_list):
+        # So get id's of created survey_links and update the user manually.
+        link_ids = []
+        for survey_link_to_save in bulk_insert_item_list:
+            link_ids.append(survey_link_to_save.id)
+
+        new_survey_links = models.SpatialSurveyLink.objects.using('new').filter(id__in=link_ids)
+        for link in new_survey_links:
+            link.users.add(self.user)
+            link.save()
 
     def init_survey(self, lyr):
 

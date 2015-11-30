@@ -343,22 +343,25 @@ class RemoteData():
                         # Try by geocode
                         topojon_area_name = str(geom['properties']['CODE'])
                         area_name = str(geom['properties']['CODE'])
+                        print 'using geocode'
                     except:
                         try:
                         # try by name
                             topojon_area_name = str(geom['properties']['AREA_NAME']).replace(' ', '')
                             area_name = str(geom['properties']['AREA_NAME'])
+                            print 'using name'
                         except:
                         # try by label?
                             topojon_area_name = str(geom['properties']['LABEL']).replace(' ', '')
                             area_name = str(geom['properties']['LABEL'])
-
+                            print 'using label'
                     try:
                         # print topojon_area_name in remote_data
                         try:
                             first_remote_data = remote_data[topojon_area_name][0]
                             found += 1
                             remote_areas.remove(topojon_area_name)
+                            print ''
                         except:
                             first_remote_data = remote_data[
                                 str(geom['properties']['NAME'])
@@ -379,14 +382,12 @@ class RemoteData():
                         geom['properties']['DATA_STATUS'] = first_remote_data['data_status']
 
                     except Exception as e:
-                        print 'error', e, type(e)
+                        print 'topojson update error', e, type(e), geom['properties']['NAME'], geom['properties']['CODE']
                         not_found += 1
-                        # print '\n'
 
-            # print 'remote data keys', len(remote_data.keys()), remote_data.keys()
+            print 'remote data keys not used', len(remote_data.keys()), remote_data.keys()
             print 'success y/n', found, not_found
 
-            # print '\n***\n'
             # print whole_json['objects'][recent_layer_name]['geometries']
             return whole_topojson
 

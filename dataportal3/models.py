@@ -370,7 +370,11 @@ class SpatialSurveyLink(models.Model):
     boundary_name = models.TextField(null=True, blank=True)
     regional_data = hstore.DictionaryField(null=True, blank=True)
     data_name = models.TextField(null=True, blank=True)
+    data_prefix = models.TextField(null=True, blank=True)
+    data_suffix = models.TextField(null=True, blank=True)
+    data_type = models.TextField(null=True, blank=True)
     data_description = models.TextField(null=True, blank=True)
+    users = models.ManyToManyField('UserProfile')
 
     class Meta:
         db_table = 'spatial_survey_link'

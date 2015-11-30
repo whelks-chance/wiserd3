@@ -46,10 +46,30 @@ function get_remote_dataset_topojson(remote_data_topojson_url, topojson_geograph
     })
 }
 
-
-function get_local_dataset_topojson(remote_data_topojson_url, boundary_name, survey_id, data_name, callback) {
+function get_local_dataset_metadata(local_data_metadata_url, survey_id, boundary_name, callback) {
     $.ajax({
-        url: remote_data_topojson_url,
+        url: local_data_metadata_url,
+        type: 'GET',
+        data: {
+            'method': 'local_data_metadata',
+            'survey_id': survey_id,
+            'boundary_name': boundary_name
+        },
+        success: function(data){
+            callback(data);
+        },
+        error: function() {
+            alert('Sorry, an error occurred. Please try again, or report it.')
+        },
+        complete: function() {
+            waitingDialog.hide();
+        }
+    })
+}
+
+function get_local_dataset_topojson(local_data_topojson_url, boundary_name, survey_id, data_name, callback) {
+    $.ajax({
+        url: local_data_topojson_url,
         type: 'GET',
         data: {
             'boundary_name': boundary_name,
@@ -67,3 +87,6 @@ function get_local_dataset_topojson(remote_data_topojson_url, boundary_name, sur
         }
     })
 }
+
+
+

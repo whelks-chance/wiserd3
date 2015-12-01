@@ -69,7 +69,6 @@ class RemoteData():
         # print pprint.pformat(measures_def)
         return measures_def
 
-
     def get_dataset_overview(self, dataset_id):
 
         # item_url = 'https://www.nomisweb.co.uk/api/v01/dataset/{0}.overview.json'.format(dataset_id)
@@ -325,7 +324,7 @@ class RemoteData():
     def update_topojson(self, topojson_file, remote_data, measure_is_percentage=False):
 
         remote_areas = remote_data.keys()
-        print remote_data
+        # print remote_data
 
         found = 0
         not_found = 0
@@ -343,18 +342,18 @@ class RemoteData():
                         # Try by geocode
                         topojon_area_name = str(geom['properties']['CODE'])
                         area_name = str(geom['properties']['CODE'])
-                        print 'using geocode'
+                        # print 'using geocode'
                     except:
                         try:
                         # try by name
                             topojon_area_name = str(geom['properties']['AREA_NAME']).replace(' ', '')
                             area_name = str(geom['properties']['AREA_NAME'])
-                            print 'using name'
+                            # print 'using name'
                         except:
                         # try by label?
                             topojon_area_name = str(geom['properties']['LABEL']).replace(' ', '')
                             area_name = str(geom['properties']['LABEL'])
-                            print 'using label'
+                            # print 'using label'
                     try:
                         # print topojon_area_name in remote_data
                         try:
@@ -380,6 +379,7 @@ class RemoteData():
                         geom['properties']['AREA_NAME'] = area_name
                         geom['properties']['PERCENTAGE'] = measure_is_percentage
                         geom['properties']['DATA_STATUS'] = first_remote_data['data_status']
+                        geom['properties']['STRING_DATA'] = first_remote_data['string_data']
 
                     except Exception as e:
                         print 'topojson update error', e, type(e), geom['properties']['NAME'], geom['properties']['CODE']

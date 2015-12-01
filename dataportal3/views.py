@@ -756,12 +756,22 @@ def data_api(request):
         link_table_data = models.SpatialSurveyLink.objects.filter(
             survey__identifier=survey_id,
             boundary_name=boundary
-        ).values_list('data_name', flat=True)
+        )
         # print link_table_data.query
+
+        data_names = link_table_data.exclude(
+            data_type='unicode'
+        ).values_list('data_name', flat=True)
+
+        unicode_data_names = link_table_data.filter(
+            data_type='unicode'
+        ).values_list('data_name', flat=True)
+
         print list(link_table_data)
 
         to_return['local_data_metadata'] = {
-            'data_names': list(link_table_data)
+            'data_names': list(data_names),
+            'unicode_data': list(unicode_data_names)
         }
 
     if method == 'data_urls':
@@ -857,8 +867,23 @@ def local_data_topojson(request):
     )
     # print survey_spatial_data
 
+    survey_spatial_data_strings = models.SpatialSurveyLink.objects.filter(
+        survey__identifier=survey_id,
+        boundary_name=boundary_name,
+        data_type='unicode'
+    )
+
     regional_data = survey_spatial_data.regional_data
-    # print regional_data
+
+    region_string_data = {}
+    for region in regional_data:
+        region_string_data[region] = ''
+        for data_strings in survey_spatial_data_strings:
+            # For each region in this survey's SpatialSurveyLink,
+            # build a string of the unicode data elements
+            # name_of_data : value_of_data, "Title Cased"
+            region_string_data[region] += str(data_strings.data_name).title() + ':' \
+                                          + str(data_strings.regional_data[region]).title() + ', '
 
     for region in regional_data:
         regions = [{
@@ -867,7 +892,8 @@ def local_data_topojson(request):
             "geography_id": '',
             "geography_code": '',
             "data_status": "A",
-            "geography": region
+            "geography": region,
+            "string_data": region_string_data[region].rstrip(', ')
         }]
         all_data[region] = regions
 

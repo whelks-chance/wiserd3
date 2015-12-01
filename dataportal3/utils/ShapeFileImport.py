@@ -70,7 +70,7 @@ class ShapeFileImport:
                 extracted_shp = os.path.join(self.extract_dir, self.filenames['shp'])
 
                 lyr = self.get_shp_lyr(extracted_shp)
-                self.form_spatial_survey_links(lyr)
+                self.create_spatial_survey_links(lyr)
 
                 # Deprecated, but saved in case this makes sense some day
                 # self.save_feature_collection(ds)
@@ -237,15 +237,19 @@ class ShapeFileImport:
 
         return lyr
 
-    def form_spatial_survey_links(self, lyr):
+    # We create a spatial_survey_link row for each field in the shapefile
+    def create_spatial_survey_links(self, lyr):
 
         conn_queries = connections['new'].queries
-        print 'form_spatial_survey_links start', len(conn_queries)
+        print 'create_spatial_survey_links start', len(conn_queries)
         # print 'survey queries', conn_queries
 
+        # get name and type data out of shapefile,
+        # create Survey object to associate this data with
         survey = self.init_survey(lyr)
         geoms = lyr.get_geoms(geos=False)
 
+        # We want to remove the "reserved fields" this system uses to name regions
         clean_fields = {}
         reserved_fields = {}
         for field_idx, field in enumerate(lyr.fields):
@@ -257,6 +261,7 @@ class ShapeFileImport:
         print 'clean', clean_fields
         print 'reserved', reserved_fields
 
+        # get all the geocodes, assuming they're called "CODE"
         geo_codes = []
         for geo_idx, geom in enumerate(geoms):
             code = lyr.get_fields('CODE')[geo_idx]
@@ -265,23 +270,26 @@ class ShapeFileImport:
 
         survey_links_to_save = []
 
-        for field_idx, field in enumerate(clean_fields):
-            print field
-            field_type = lyr.field_types[field_idx]
+        # clean_fields is a dict of field_name => index_in_lyr.fields
+        for field_name in clean_fields:
+            # we want the original index
+            field_idx = clean_fields[field_name]
+            print field_name
+            field_type = lyr.get_fields(field_name)[0].__class__.__name__
             print 'field_type', field_type
 
             regions_with_data = {}
 
             for geo_idx, geom in enumerate(geoms):
 
-                value = lyr.get_fields(field)[geo_idx]
+                value = lyr.get_fields(field_name)[geo_idx]
                 print geo_codes[geo_idx], value
 
                 regions_with_data[geo_codes[geo_idx]] = value
 
             new_survey_link = models.SpatialSurveyLink()
             new_survey_link.survey = survey
-            new_survey_link.data_name = field
+            new_survey_link.data_name = field_name
             new_survey_link.data_prefix = ''
             new_survey_link.data_suffix = ''
             new_survey_link.data_type = str(field_type)
@@ -293,13 +301,13 @@ class ShapeFileImport:
             survey_links_to_save.append(new_survey_link)
 
         conn_queries = connections['new'].queries
-        print 'form_spatial_survey_links init', len(conn_queries)
+        print 'create_spatial_survey_links init', len(conn_queries)
 
         # bulk_create doesn't allow ManyToMany links
         bulk_insert = models.SpatialSurveyLink.objects.using('new').bulk_create(survey_links_to_save, batch_size=50)
 
         conn_queries = connections['new'].queries
-        print 'form_spatial_survey_links end, update_spatial_link_user start', len(conn_queries)
+        print 'create_spatial_survey_links end, update_spatial_link_user start', len(conn_queries)
 
         self.update_spatial_link_user(bulk_insert)
 

@@ -319,11 +319,39 @@
                         value = props.REMOTE_VALUE;
                     }
                 }
-                this._div.innerHTML = '<div style="min-height: 10%"><h4>Region Response Rate</h4>' + (props ?
-                        '<b>' + props.AREA_NAME + '</b><br/>' +
-                        '<b>' + props.STRING_DATA + '</b><br/>' +
-                        value + (props.PERCENTAGE == true ? '%': '')
-                                : 'Hover over a region');
+                var info_text = '<div style="min-height: 10%">';
+                if (props) {
+                    if (props.DATA_TITLE) {
+                        info_text += '<h3>' + props.DATA_TITLE + '</h3>';
+                    } else {
+                        info_text += '<h3>Region Response Rate</h3>';
+                    }
+                    if (props.NAME) {
+                        info_text += '<h4>' + props.NAME + '</h4>';
+                    }
+                    {# Only show alt name it it isn't the same as 'name' #}
+                    if (props.ALTNAME) {
+                        if (props.NAME) {
+                            if (props.NAME != props.ALTNAME) {
+                                info_text += '<h4>' + props.ALTNAME + '</h4>';
+                            }
+                        } else {
+                            info_text += '<h4>' + props.ALTNAME + '</h4>';
+                        }
+                    }
+                    info_text += '<h4>' + props.AREA_NAME + '</h4>';
+                    if (props.STRING_DATA) {
+                        var strings = '';
+                        for (var item in props.STRING_DATA) {
+                            strings += '<p>' + props.STRING_DATA[item]['title'] + ':' + props.STRING_DATA[item]['value'] + '</p>';
+                        }
+                        info_text += strings;
+                    }
+                    info_text += '<h4><b>VALUE : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</h4>'
+                } else {
+                    info_text += '<h4>Hover over a region</h4>';
+                }
+                this._div.innerHTML = info_text;
             };
             info.addTo(map);
 
@@ -842,7 +870,7 @@
                 },
                 modal: true,
                 buttons: {
-                    "Save value": function() {
+                    "Show New Layer": function() {
                         if ($("#bintype").val() != '') {
                             if ($("#binno").val() != '') {
                                 var layer_id = $(this).data('layer_names');
@@ -1048,6 +1076,7 @@
                                                 text: remote_codelist_option_data.name
                                             }));
                                             radio_div.append($('<label>', {
+                                                class: 'dialog_radio_option',
                                                 value: remote_codelist_option_data.id,
                                                 for: remote_codelist + '_' + remote_codelist_option_data.id,
                                                 text: remote_codelist_option_data.name
@@ -1240,6 +1269,7 @@
                             text: available_data_option
                         }));
                         radio_div.append($('<label>', {
+                            class: 'dialog_radio_option',
                             value: available_data_option,
                             for: available_data_option,
                             text: available_data_option

@@ -871,19 +871,21 @@ def local_data_topojson(request):
         survey__identifier=survey_id,
         boundary_name=boundary_name,
         data_type='unicode'
-    )
+    ).order_by('data_name')
 
     regional_data = survey_spatial_data.regional_data
 
     region_string_data = {}
     for region in regional_data:
-        region_string_data[region] = ''
+        region_string_data[region] = []
         for data_strings in survey_spatial_data_strings:
             # For each region in this survey's SpatialSurveyLink,
             # build a string of the unicode data elements
             # name_of_data : value_of_data, "Title Cased"
-            region_string_data[region] += str(data_strings.data_name).title() + ':' \
-                                          + str(data_strings.regional_data[region]).title() + ', '
+            region_string_data[region].append({
+                'title': str(data_strings.data_name).title(),
+                'value': str(data_strings.regional_data[region]).title()
+            })
 
     for region in regional_data:
         regions = [{
@@ -893,7 +895,8 @@ def local_data_topojson(request):
             "geography_code": '',
             "data_status": "A",
             "geography": region,
-            "string_data": region_string_data[region].rstrip(', ')
+            "string_data": region_string_data[region],
+            "data_title": data_name
         }]
         all_data[region] = regions
 

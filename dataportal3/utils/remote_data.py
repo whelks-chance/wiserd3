@@ -379,7 +379,10 @@ class RemoteData():
                         geom['properties']['AREA_NAME'] = area_name
                         geom['properties']['PERCENTAGE'] = measure_is_percentage
                         geom['properties']['DATA_STATUS'] = first_remote_data['data_status']
-                        geom['properties']['STRING_DATA'] = first_remote_data['string_data']
+                        if first_remote_data['string_data']:
+                            geom['properties']['STRING_DATA'] = first_remote_data['string_data']
+                        if first_remote_data['data_title']:
+                            geom['properties']['DATA_TITLE'] = first_remote_data['data_title']
 
                     except Exception as e:
                         print 'topojson update error', e, type(e), geom['properties']['NAME'], geom['properties']['CODE']

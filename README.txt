@@ -34,6 +34,8 @@ shp2pgsql -I ~/shp/x_sid_liw2007_pcode_/x_sid_liw2007_pcode_.shp pcode | sudo -u
 do this for one of each type of boundary
 
 Celery - Shapefile import process, celery needs explicit export of settings module location
+sudo yum install redis
+sudo systemctl start redis.service
 export DJANGO_SETTINGS_MODULE='wiserd3.settings'
 celery -A dataportal3.utils.ShapeFileImport worker --loglevel=info
 

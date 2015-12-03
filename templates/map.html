@@ -973,42 +973,45 @@
                         }
                     },
                     success: function (data) {
-
-
                         var dataset_radio = $('#dataset_radio');
                         dataset_radio.find('input').remove().end();
                         dataset_radio.find('label').remove().end();
 
-                        for(var rd_radio in data['datasets']) {
-                            var remote_dataset_radio = data['datasets'][rd_radio];
-                            var radio_div = $('<div>');
-
-                            radio_div.append($('<input>', {
-                                value: remote_dataset_radio.id,
-                                id: remote_dataset_radio.id,
-                                type: 'radio',
-                                name: 'nomis_search_radio',
-                                text: remote_dataset_radio.name
-                            }));
-                            radio_div.append($('<label>', {
-                                value: remote_dataset_radio.id,
-                                for: remote_dataset_radio.id,
-                                text: remote_dataset_radio.name
-                            }));
-                            dataset_radio.append(radio_div);
-                        }
-                        dataset_radio.buttonset();
-                        dataset_radio.find('input[type=radio]').change(function() {
-                            $('#add_to_map_dialog_btn').button('enable');
-                        });
-
-                        if (data['datasets'].length == 0){
-                            alert('Sorry, no results were found for that search.\n' +
-                                    'Please refine the search terms and try again');
+                        if (data['success'] == false) {
+                            alert('Sorry, an error occurred. Please try again, or report it.\n\n' + data['message'])
                         } else {
-                            dataset_radio.find('input[type=radio]').change(function() {
+
+                            for (var rd_radio in data['datasets']) {
+                                var remote_dataset_radio = data['datasets'][rd_radio];
+                                var radio_div = $('<div>');
+
+                                radio_div.append($('<input>', {
+                                    value: remote_dataset_radio.id,
+                                    id: remote_dataset_radio.id,
+                                    type: 'radio',
+                                    name: 'nomis_search_radio',
+                                    text: remote_dataset_radio.name
+                                }));
+                                radio_div.append($('<label>', {
+                                    value: remote_dataset_radio.id,
+                                    for: remote_dataset_radio.id,
+                                    text: remote_dataset_radio.name
+                                }));
+                                dataset_radio.append(radio_div);
+                            }
+                            dataset_radio.buttonset();
+                            dataset_radio.find('input[type=radio]').change(function () {
                                 $('#add_to_map_dialog_btn').button('enable');
                             });
+
+                            if (data['datasets'].length == 0) {
+                                alert('Sorry, no results were found for that search.\n' +
+                                        'Please refine the search terms and try again');
+                            } else {
+                                dataset_radio.find('input[type=radio]').change(function () {
+                                    $('#add_to_map_dialog_btn').button('enable');
+                                });
+                            }
                         }
                     },
                     error: function() {

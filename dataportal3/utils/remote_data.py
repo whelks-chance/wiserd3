@@ -324,7 +324,7 @@ class RemoteData():
     def update_topojson(self, topojson_file, remote_data, measure_is_percentage=False):
 
         remote_areas = remote_data.keys()
-        # print remote_data
+        print remote_areas
 
         found = 0
         not_found = 0
@@ -361,12 +361,21 @@ class RemoteData():
                             found += 1
                             remote_areas.remove(topojon_area_name)
                             print ''
-                        except:
-                            first_remote_data = remote_data[
-                                str(geom['properties']['NAME'])
-                            ][0]
-                            found += 1
-                            remote_areas.remove(str(geom['properties']['NAME']))
+                        except Exception as e789243:
+                            print 'topojson name/code error', e789243, type(e789243), \
+                                geom['properties'], \
+                                remote_data[topojon_area_name][0]
+
+                            try:
+                                first_remote_data = remote_data[
+                                    str(geom['properties']['NAME'])
+                                ][0]
+                                found += 1
+                                remote_areas.remove(str(geom['properties']['NAME']))
+                            except:
+                                # TODO I am so very sorry, future programmer
+                                # At least exception handling in Python is "cheap"
+                                pass
 
                         # print first_remote_data
 
@@ -379,13 +388,13 @@ class RemoteData():
                         geom['properties']['AREA_NAME'] = area_name
                         geom['properties']['PERCENTAGE'] = measure_is_percentage
                         geom['properties']['DATA_STATUS'] = first_remote_data['data_status']
-                        if first_remote_data['string_data']:
+                        if 'string_data' in first_remote_data:
                             geom['properties']['STRING_DATA'] = first_remote_data['string_data']
-                        if first_remote_data['data_title']:
+                        if 'data_title' in first_remote_data:
                             geom['properties']['DATA_TITLE'] = first_remote_data['data_title']
 
                     except Exception as e:
-                        print 'topojson update error', e, type(e), geom['properties']['NAME'], geom['properties']['CODE']
+                        print 'topojson update error', e, type(e), geom['properties']
                         not_found += 1
 
             print 'remote data keys not used', len(remote_data.keys()), remote_data.keys()

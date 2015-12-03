@@ -726,8 +726,14 @@ def data_api(request):
         search_term = request.GET.get("search_term", None)
         print search_term, type(search_term)
         if search_term:
-            datasets = rd.search_datasets(search_term)
+            datasets = []
+            try:
+                datasets = rd.search_datasets(search_term)
+            except:
+                to_return['message'] = 'The WISERD DataPortal failed to connect to the remote data service.'
+                to_return['success'] = False
             to_return['datasets'] = datasets
+
 
     if method == 'remote_metadata':
         dataset_id = request.GET.get("dataset_id", None)

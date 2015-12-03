@@ -324,7 +324,7 @@ class RemoteData():
     def update_topojson(self, topojson_file, remote_data, measure_is_percentage=False):
 
         remote_areas = remote_data.keys()
-        print remote_areas
+        # print remote_areas
 
         found = 0
         not_found = 0
@@ -360,7 +360,7 @@ class RemoteData():
                             first_remote_data = remote_data[topojon_area_name][0]
                             found += 1
                             remote_areas.remove(topojon_area_name)
-                            print ''
+                            # print ''
                         except Exception as e789243:
                             print 'topojson name/code error', e789243, type(e789243), \
                                 geom['properties'], \
@@ -397,7 +397,7 @@ class RemoteData():
                         print 'topojson update error', e, type(e), geom['properties']
                         not_found += 1
 
-            print 'remote data keys not used', len(remote_data.keys()), remote_data.keys()
+            # print 'remote data keys not used', len(remote_data.keys()), remote_data.keys()
             print 'success y/n', found, not_found
 
             # print whole_json['objects'][recent_layer_name]['geometries']

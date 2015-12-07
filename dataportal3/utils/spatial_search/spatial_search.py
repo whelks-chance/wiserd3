@@ -8,42 +8,42 @@ def find_intersects(geography_wkt):
     geometry_columns = [
         {
             'table_name': 'spatialdata_aefa',
-            'geometry_column': 'geom',
+            'geometry_column': 'the_geom',
             'table_model': models.SpatialdataAEFA
         },
         {
             'table_name': 'spatialdata_police',
-            'geometry_column': 'geom',
+            'geometry_column': 'the_geom',
             'table_model': models.SpatialdataPolice
         },
         {
             'table_name': 'spatialdata_pcode',
-            'geometry_column': 'geom',
+            'geometry_column': 'the_geom',
             'table_model': models.SpatialdataPostCode
         },
         {
             'table_name': 'spatialdata_parl',
-            'geometry_column': 'geom',
+            'geometry_column': 'the_geom',
             'table_model': models.SpatialdataParl
         },
         {
             'table_name': 'spatialdata_msoa',
-            'geometry_column': 'geom',
+            'geometry_column': 'the_geom',
             'table_model': models.SpatialdataMSOA
         },
         {
             'table_name': 'spatialdata_lsoa',
-            'geometry_column': 'geom',
+            'geometry_column': 'the_geom',
             'table_model': models.SpatialdataLSOA
         },
         {
             'table_name': 'spatialdata_fire',
-            'geometry_column': 'geom',
+            'geometry_column': 'the_geom',
             'table_model': models.SpatialdataFire
         },
         {
             'table_name': 'spatialdata_ua',
-            'geometry_column': 'geom',
+            'geometry_column': 'the_geom',
             'table_model': models.SpatialdataUA
         },
     ]

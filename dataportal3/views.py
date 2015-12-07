@@ -773,8 +773,6 @@ def data_api(request):
             data_type='unicode'
         ).values_list('data_name', flat=True)
 
-        print list(link_table_data)
-
         to_return['local_data_metadata'] = {
             'data_names': list(data_names),
             'unicode_data': list(unicode_data_names)
@@ -863,6 +861,8 @@ def local_data_topojson(request):
         geog = 'ua'
     if boundary_name == 'Parliamentary':
         geog = 'parl2011'
+    if boundary_name == 'Post Code':
+        geog = 'pcode'
 
     all_data = {}
 
@@ -1300,6 +1300,7 @@ def csv_view(request, provider, search_uuid):
                   'dataset_id': dataset_id,
                   'dataset_url': dataset_url,
                   'search_options': found_search.search_attributes,
+                  'display_options': found_search.display_attributes,
                   'dataset_data_header': dataset_data_header_items_clean,
                   # 'dataset_data': dataset_data_list[1:],
                   # 'dataset_data_list_full': dataset_data_list_full,

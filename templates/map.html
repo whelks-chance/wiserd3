@@ -375,6 +375,22 @@
                 info.update(layer.feature.properties);
             }
 
+            function getColorFromString(string_value) {
+                if (string_value == 'LAB') {
+                    return '#d50000'
+                }
+                if (string_value == 'CON') {
+                    return '#0087dc'
+                }
+                if (string_value == 'LIB') {
+                    return '#FDBB30'
+                }
+                if (string_value == 'NAT') {
+                    return '#3F8428'
+                }
+                return '0xFF55CC'
+            }
+
             function getColor(d, feature_data, chroma_scale) {
 
                 if (chroma_scale) {
@@ -558,6 +574,7 @@
                 }
                 var data_objects = data['objects'];
                 var feature_data = [];
+                var feature_string_data = [];
 
                 {#                            This is listing all the response rate variables we know can find in the topojson #}
                 for (var b in data_objects) {
@@ -568,52 +585,82 @@
                         }
 
                         if (geometries_properties[a]['properties']['REMOTE_VALUE']) {
-                            feature_data.push(parseFloat(geometries_properties[a]['properties']['REMOTE_VALUE']));
+                            var remote_value = geometries_properties[a]['properties']['REMOTE_VALUE'];
+                            if (isNaN(remote_value)) {
+                                feature_string_data.push(remote_value);
+                            } else {
+                                feature_data.push(parseFloat(remote_value));
+                            }
                         }
                     }
                 }
 
-                if (suppressed_data) {
-                    throw "suppressed_data";
+                console.log(feature_string_data);
+                var unique_feature_string_data = [];
+                for (var string_idx in feature_string_data) {
+                    if (unique_feature_string_data.indexOf(feature_string_data[string_idx]) == -1) {
+                        unique_feature_string_data.push(feature_string_data[string_idx]);
+                    }
                 }
-                if (feature_data.length == 0){
-                    throw "feature_data_0";
+                console.log(unique_feature_string_data);
+
+                console.log(feature_data);
+
+                if (feature_string_data.length > 0) {
+
+                } else {
+                    if (suppressed_data) {
+                        throw "suppressed_data";
+                    }
+                    if (feature_data.length == 0) {
+                        throw "feature_data_0";
+                    }
                 }
 
-                {#  Calculating the bins for quantiles with 'q' option, 'e'  and 'k' available #}
-                var grades = chroma.limits(feature_data, bin_breakdown, parseInt(num_bins) -1);
+                var chroma_scale = null;
+                var grades = null;
 
-                {#  Calculating the function we can pass values to, in order to get nice rgb color codes #}
+                if (feature_data.length > 1) {
+                    {#  Calculating the bins for quantiles with 'q' option, 'e'  and 'k' available #}
+                    grades = chroma.limits(feature_data, bin_breakdown, parseInt(num_bins) - 1);
 
-                var chroma_scale = chroma.scale(color_scheme).classes(grades);
+                    {#  Calculating the function we can pass values to, in order to get nice rgb color codes #}
+                    chroma_scale = chroma.scale(color_scheme).classes(grades);
+                }
 
                 var legend = L.control({position: 'bottomright'});
                 legend.onAdd = function (map) {
                     var div = L.DomUtil.create('div', 'info legend'),
                             labels = [],
                             from, to;
-                    {#                    console.log(grades);#}
 
-                    {#                                For each bin in the quantiles, we need a representative color for the Legend #}
-                    for (var i = 0; i < grades.length; i++) {
-                        from = grades[i];
-                        to = grades[i + 1];
+                    if (feature_data.length > 1) {
+                        {#  For each bin in the quantiles, we need a representative color for the Legend #}
+                        for (var i = 0; i < grades.length; i++) {
+                            from = grades[i];
+                            to = grades[i + 1];
 
-                        var legend_row = '<i style="background:' + getColor(from + 1, grades, chroma_scale) + '"></i> ';
-                        legend_row += from.toFixed(2);
-                        if (to) {
-                            legend_row += (to).toFixed(2) ? '&ndash;' + (to).toFixed(2) + (is_percentage ? '%' : '') : (is_percentage ? '%+' : '+');
-                        } else {
-                            legend_row += (is_percentage ? '%' : '');
+                            var legend_row = '<i style="background:' + getColor(from + 1, grades, chroma_scale) + '"></i> ';
+                            legend_row += from.toFixed(2);
+                            if (to) {
+                                legend_row += (to).toFixed(2) ? '&ndash;' + (to).toFixed(2) + (is_percentage ? '%' : '') : (is_percentage ? '%+' : '+');
+                            } else {
+                                legend_row += (is_percentage ? '%' : '');
+                            }
+                            labels.push(legend_row);
                         }
-                        labels.push(legend_row);
+                    }
+                    if (unique_feature_string_data.length > 1) {
+                        for (var string_idx in unique_feature_string_data) {
+                            var legend_string_row = '<i style="background:' + getColorFromString(unique_feature_string_data[string_idx]) + '"></i> ' + unique_feature_string_data[string_idx];
+                            labels.push(legend_string_row);
+                        }
                     }
                     var div_inner = labels.join('<br>');
                     div_inner += '</div>';
                     div.innerHTML = '<h4>' + layer_name_text + '</h4><p><a target="_blank" href="' + csv_url + '">download data</a></p>' + div_inner;
                     return div;
                 };
-                {#                legend.addTo(map);#}
 
                 var myLayer = new L.TopoJSON();
                 myLayer.addData(data);
@@ -644,11 +691,7 @@
 
                 myLayer.addTo(map);
                 map.fitBounds(myLayer.getBounds());
-
                 myLayer.bringToFront();
-                {#                            map_layers[data['properties']['name']] = myLayer;#}
-                {#                map_layers[data['objects'][0]] = myLayer;#}
-                {#                console.log(map_layers);#}
 
             }
 
@@ -690,10 +733,17 @@
             }
 
             function styleFeature(feature, feature_data, chroma_scale) {
-                {#                console.log(feature);#}
+                var colour = '';
+                var remote_value = feature.properties.REMOTE_VALUE;
+
+                if (isNaN(remote_value)) {
+                    colour = getColorFromString(remote_value);
+                } else {
+                    colour = getColor(remote_value, feature_data, chroma_scale);
+                }
 
                 return {
-                    fillColor: getColor(feature.properties.REMOTE_VALUE, feature_data, chroma_scale),
+                    fillColor: colour,
                     weight: 2,
                     opacity: 1,
                     color: 'white',
@@ -703,8 +753,6 @@
             }
 
             var map_layers = {};
-
-
             var featureGroup = L.featureGroup().addTo(map);
 
             map.addControl( new L.Control.Search({
@@ -1252,6 +1300,7 @@
                 modal: true,
                 open: function( event, ui ) {
                     var available_data = $(this).data('available_data');
+                    var unicode_data = $(this).data('unicode_data');
 
                     var dataset_radio = $('#local_data_cell_radio');
                     dataset_radio.find('div').remove().end();
@@ -1279,6 +1328,27 @@
                         }));
                         codelist_radio_div.append(radio_div);
                     }
+
+                    for(var available_data_option_idx in unicode_data) {
+                        var available_data_option = unicode_data[available_data_option_idx];
+
+                        var radio_div = $('<div>');
+                        radio_div.append($('<input>', {
+                            value: available_data_option,
+                            id: available_data_option,
+                            type: 'radio',
+                            name: 'available_data_option',
+                            text: available_data_option
+                        }));
+                        radio_div.append($('<label>', {
+                            class: 'dialog_radio_option',
+                            value: available_data_option,
+                            for: available_data_option,
+                            text: available_data_option + ' category'
+                        }));
+                        codelist_radio_div.append(radio_div);
+                    }
+
                     codelist_radio_div.buttonset();
                     dataset_radio.append(codelist_radio_div);
                     codelist_radio_div.find('input')[0].click();
@@ -1293,7 +1363,7 @@
 
                         var survey_id = $(this).data('survey_id');
 
-{#                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');#}
+                        {#                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');#}
                         var topojson_geography = $(this).data('boundary_name');
 
 
@@ -1308,20 +1378,20 @@
                                     topojson_layers[layer_name] = topojson_data['topojson'];
 
                                     $( "#chloropleth_option_form").data({
-                                                    layer_names: layer_name,
-                                                    nomis_variable: '20301',
-                                                    csv_url: ''
-                                                }).dialog( "open" );
+                                        layer_names: layer_name,
+                                        nomis_variable: '20301',
+                                        csv_url: ''
+                                    }).dialog( "open" );
 
-{#                                    handleUploadedLayer(#}
-{#                                            topojson_data['topojson'],#}
-{#                                            local_data_layer['colorpicker'],#}
-{#                                            local_data_layer['bin_type'],#}
-{#                                            local_data_layer['bin_num'],#}
-{#                                            '',#}
-{#                                            local_data_layer['name'],#}
-{#                                            ''#}
-{#                                    );#}
+                                    {#                                    handleUploadedLayer(#}
+                                    {#                                            topojson_data['topojson'],#}
+                                    {#                                            local_data_layer['colorpicker'],#}
+                                    {#                                            local_data_layer['bin_type'],#}
+                                    {#                                            local_data_layer['bin_num'],#}
+                                    {#                                            '',#}
+                                    {#                                            local_data_layer['name'],#}
+                                    {#                                            ''#}
+                                    {#                                    );#}
                                 }
                         );
 
@@ -1348,11 +1418,12 @@
                                 local_data_layer['survey_id'],
                                 local_data_layer['boundary_name'],
                                 function(metadata){
-{#                                    alert(metadata['local_data_metadata']['data_names']);#}
+                                    {#                                    alert(metadata['local_data_metadata']['data_names']);#}
                                     $("#local_dataset_define_vars_form").data({
                                         survey_id: local_data_layer['survey_id'],
                                         boundary_name: local_data_layer['boundary_name'],
-                                        available_data: metadata['local_data_metadata']['data_names']
+                                        available_data: metadata['local_data_metadata']['data_names'],
+                                        unicode_data: metadata['local_data_metadata']['unicode_data'],
                                     }).dialog('open');
                                 }
                         );

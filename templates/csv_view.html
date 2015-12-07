@@ -46,6 +46,14 @@
                     <p>{{ key }} -- {{ value }}</p>
                 {% endfor %}
             </div>
+
+            <p>Mapping colours</p>
+            <div>
+                {% for key, value in display_options.items %}
+                    <p>{{ key }} -- {{ value }}</p>
+                {% endfor %}
+            </div>
+
 {#            {{ search_options }}#}
             <p>Unique Identifier for this search: {{ search_uuid }}</p>
 {#            <p>{{ dataset_url }}</p>#}

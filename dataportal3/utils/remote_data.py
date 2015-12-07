@@ -321,10 +321,34 @@ class RemoteData():
         print 'values len', len(data_points)
         return data_points
 
+    # Returns a dict of format:
+    # {(u'geography', u'NAME'): 40, (u'geography', u'ALTNAME'): 10, (u'geography_code', u'CODE'): 44}
+    # the key is a set of 2 strings (or unicode) which is:
+    # ( remote_data_key , topojson_region_key )
+    def match_region_ids(self, remote_data, topojson_region_data):
+        # print 'first_remote_data_region_ids', first_remote_data_region_ids
+
+        matches = {}
+        for geom_data in remote_data:
+            # print geom_data, remote_data[geom_data]
+            for c in remote_data[geom_data][0]:
+                for a in topojson_region_data:
+                    for b in a['properties']:
+                        # print c, remote_data[geom_data][0][c], b, a['properties'][b]
+                        if remote_data[geom_data][0][c] == a['properties'][b]:
+                            # print 'found', c, 'matches', b
+
+                            if (c, b) in matches:
+                                matches[(c, b)] += 1
+                            else:
+                                matches[(c, b)] = 1
+        print matches
+        return matches
+
     def update_topojson(self, topojson_file, remote_data, measure_is_percentage=False):
 
         remote_areas = remote_data.keys()
-        # print remote_areas
+        print 'remote_areas', remote_areas
 
         found = 0
         not_found = 0
@@ -333,72 +357,96 @@ class RemoteData():
             whole_topojson = json.loads(fd.read())
             recent_layer_name = ''
 
+            topojson_region_data = whole_topojson['objects'].itervalues().next()['geometries']
+            matching_data_ids = self.match_region_ids(remote_data, topojson_region_data)
+            best_key_match = max(matching_data_ids, key=matching_data_ids.get)
+            (remote_data_key, topojson_region_key) = best_key_match
+            print remote_data_key, topojson_region_key
+
+            total_number_regions = 0
             for layer_name in whole_topojson['objects']:
                 recent_layer_name = layer_name
 
+                total_number_regions += len(whole_topojson['objects'][layer_name]['geometries'])
                 for geom in whole_topojson['objects'][layer_name]['geometries']:
-                    area_name = ''
-                    try:
-                        # Try by geocode
-                        topojon_area_name = str(geom['properties']['CODE'])
-                        area_name = str(geom['properties']['CODE'])
-                        # print 'using geocode'
-                    except:
-                        try:
-                        # try by name
-                            topojon_area_name = str(geom['properties']['AREA_NAME']).replace(' ', '')
-                            area_name = str(geom['properties']['AREA_NAME'])
-                            # print 'using name'
-                        except:
-                        # try by label?
-                            topojon_area_name = str(geom['properties']['LABEL']).replace(' ', '')
-                            area_name = str(geom['properties']['LABEL'])
-                            # print 'using label'
-                    try:
-                        # print topojon_area_name in remote_data
-                        try:
-                            first_remote_data = remote_data[topojon_area_name][0]
-                            found += 1
-                            remote_areas.remove(topojon_area_name)
-                            # print ''
-                        except Exception as e789243:
-                            print 'topojson name/code error', e789243, type(e789243), \
-                                geom['properties'], \
-                                remote_data[topojon_area_name][0]
 
-                            try:
-                                first_remote_data = remote_data[
-                                    str(geom['properties']['NAME'])
-                                ][0]
+                    try:
+                        topojson_match_value = geom['properties'][topojson_region_key]
+                        for remote_data_item_key in remote_data:
+                            remote_data_object = remote_data[remote_data_item_key][0]
+                            if remote_data_object[remote_data_key] == topojson_match_value:
+                                geom['properties']['REMOTE_VALUE'] = remote_data_object['value']
+                                geom['properties']['AREA_NAME'] = remote_data_item_key
+                                geom['properties']['PERCENTAGE'] = measure_is_percentage
+                                geom['properties']['DATA_STATUS'] = remote_data_object['data_status']
+                                if 'string_data' in remote_data_object:
+                                    geom['properties']['STRING_DATA'] = remote_data_object['string_data']
+                                if 'data_title' in remote_data_object:
+                                    geom['properties']['DATA_TITLE'] = remote_data_object['data_title']
                                 found += 1
-                                remote_areas.remove(str(geom['properties']['NAME']))
+
+                    except:
+                        area_name = ''
+                        try:
+                            # Try by geocode
+                            topojon_area_name = str(geom['properties']['CODE'])
+                            area_name = str(geom['properties']['CODE'])
+                            # print 'topjson has CODE', topojon_area_name
+                        except:
+                            try:
+                            # try by name
+                                topojon_area_name = str(geom['properties']['AREA_NAME']).replace(' ', '')
+                                area_name = str(geom['properties']['AREA_NAME'])
+                                # print 'using name'
                             except:
-                                # TODO I am so very sorry, future programmer
-                                # At least exception handling in Python is "cheap"
-                                pass
+                            # try by label?
+                                topojon_area_name = str(geom['properties']['LABEL']).replace(' ', '')
+                                area_name = str(geom['properties']['LABEL'])
+                                # print 'using label'
+                        try:
+                            # print topojon_area_name in remote_data
+                            try:
+                                first_remote_data = remote_data[topojon_area_name][0]
+                                found += 1
+                                remote_areas.remove(topojon_area_name)
+                                # print ''
+                            except Exception as e789243:
+                                print 'topojson name/code error', e789243, type(e789243), \
+                                    geom['properties'], \
+                                    remote_data[topojon_area_name][0]
 
-                        # print first_remote_data
+                                try:
+                                    first_remote_data = remote_data[
+                                        str(geom['properties']['NAME'])
+                                    ][0]
+                                    found += 1
+                                    remote_areas.remove(str(geom['properties']['NAME']))
+                                except:
+                                    # TODO I am so very sorry, future programmer
+                                    # At least exception handling in Python is "cheap"
+                                    pass
 
-                        # print geom['properties']['AREA_NAME'], remote_entry['geography']
-                        # if remote_entry['geography'] == geom['properties']['AREA_NAME']:
+                            # print first_remote_data
 
+                            # print geom['properties']['AREA_NAME'], remote_entry['geography']
+                            # if remote_entry['geography'] == geom['properties']['AREA_NAME']:
 
-                        geom['properties']['REMOTE_VALUE'] = first_remote_data['value']
-                        # geom['properties']['AREA_NAME'] = geom['properties']['NAME']
-                        geom['properties']['AREA_NAME'] = area_name
-                        geom['properties']['PERCENTAGE'] = measure_is_percentage
-                        geom['properties']['DATA_STATUS'] = first_remote_data['data_status']
-                        if 'string_data' in first_remote_data:
-                            geom['properties']['STRING_DATA'] = first_remote_data['string_data']
-                        if 'data_title' in first_remote_data:
-                            geom['properties']['DATA_TITLE'] = first_remote_data['data_title']
+                            geom['properties']['REMOTE_VALUE'] = first_remote_data['value']
+                            # geom['properties']['AREA_NAME'] = geom['properties']['NAME']
+                            geom['properties']['AREA_NAME'] = area_name
+                            geom['properties']['PERCENTAGE'] = measure_is_percentage
+                            geom['properties']['DATA_STATUS'] = first_remote_data['data_status']
+                            if 'string_data' in first_remote_data:
+                                geom['properties']['STRING_DATA'] = first_remote_data['string_data']
+                            if 'data_title' in first_remote_data:
+                                geom['properties']['DATA_TITLE'] = first_remote_data['data_title']
 
-                    except Exception as e:
-                        print 'topojson update error', e, type(e), geom['properties']
-                        not_found += 1
+                        except Exception as e:
+                            print '\n\ntopojson update error', e, type(e), geom['properties']
+                            not_found += 1
 
             # print 'remote data keys not used', len(remote_data.keys()), remote_data.keys()
-            print 'success y/n', found, not_found
+            print 'success y/n', found, (total_number_regions - found)
 
             # print whole_json['objects'][recent_layer_name]['geometries']
             return whole_topojson

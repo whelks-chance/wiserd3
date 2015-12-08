@@ -619,7 +619,7 @@
                 for (var string_idx in feature_string_data) {
                     if (unique_feature_string_data.indexOf(feature_string_data[string_idx]) == -1) {
                         unique_feature_string_data.push(feature_string_data[string_idx]);
-                        alert(feature_string_data[string_idx]);
+{#                        alert(feature_string_data[string_idx]);#}
                     }
                 }
 
@@ -1038,7 +1038,7 @@
             });
 
             $('#dataset_select').change(function(e){
-                alert(e);
+{#                alert(e);#}
             });
 
             $('#remote_search_term').keyup(function(event){

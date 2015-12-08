@@ -48,6 +48,8 @@
     <script type="text/javascript" src="{% static 'leaflet-search/leaflet-search.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'leaflet-search/leaflet-search.css' %}"/>
 
+    {#    <script type="text/javascript" src="{% static 'leaflet-polygon-fillPattern-master/leaflet-polygon.fillPattern.js' %}"></script>#}
+
     {#    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>#}
 
     {#    <script src="http://d3js.org/topojson.v1.min.js"></script>#}
@@ -392,6 +394,8 @@
             }
 
             function getColorFromString(string_value) {
+                {#                alert(string_value);#}
+                {#                alert(string_value.length);#}
                 if (string_value == 'LAB') {
                     return '#d50000'
                 }
@@ -611,19 +615,24 @@
                     }
                 }
 
-                console.log(feature_string_data);
                 var unique_feature_string_data = [];
                 for (var string_idx in feature_string_data) {
                     if (unique_feature_string_data.indexOf(feature_string_data[string_idx]) == -1) {
                         unique_feature_string_data.push(feature_string_data[string_idx]);
+                        alert(feature_string_data[string_idx]);
                     }
                 }
-                console.log(unique_feature_string_data);
 
+                console.log('numbers');
                 console.log(feature_data);
 
-                if (feature_string_data.length > 0) {
+                console.log('strings');
+                console.log(feature_string_data);
 
+                console.log('unique strings');
+                console.log(unique_feature_string_data);
+
+                if (feature_string_data.length > 0) {
                 } else {
                     if (suppressed_data) {
                         throw "suppressed_data";
@@ -666,7 +675,7 @@
                             labels.push(legend_row);
                         }
                     }
-                    if (unique_feature_string_data.length > 1) {
+                    if (unique_feature_string_data.length > 0) {
                         for (var string_idx in unique_feature_string_data) {
                             var legend_string_row = '<i style="background:' + getColorFromString(unique_feature_string_data[string_idx]) + '"></i> ' + unique_feature_string_data[string_idx];
                             labels.push(legend_string_row);
@@ -752,19 +761,36 @@
                 var colour = '';
                 var remote_value = feature.properties.REMOTE_VALUE;
 
-                if (isNaN(remote_value)) {
-                    colour = getColorFromString(remote_value);
+                if (remote_value === undefined){
+                    return {
+                        {#                        fillColor: '#333333',#}
+                        fill: 'url({% static 'leaflet-polygon-fillPattern-master/example/image.gif' %})',
+                        stroke: '#fff',
+                        'stroke-width': 2,
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
+                    }
                 } else {
-                    colour = getColor(remote_value, feature_data, chroma_scale);
-                }
 
-                return {
-                    fillColor: colour,
-                    weight: 2,
-                    opacity: 1,
-                    color: 'white',
-                    dashArray: '3',
-                    fillOpacity: 0.7
+                    if (isNaN(remote_value)) {
+                        alert(feature.properties);
+                        console.log(feature);
+                        colour = getColorFromString(remote_value);
+                    } else {
+                        colour = getColor(remote_value, feature_data, chroma_scale);
+                    }
+
+                    return {
+                        fillColor: colour,
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
+                    };
                 }
             }
 

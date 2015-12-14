@@ -23,7 +23,7 @@
 
     <!-- Custom Fonts -->
     <link href="{% static 'startbootstrap-sb-admin-2-1.0.7/bower_components/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">#}
+    {#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">#}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,14 +36,14 @@
     <script src="{% static 'startbootstrap-sb-admin-2-1.0.7/bower_components/jquery/dist/jquery.min.js' %}"></script>
 
     <!-- jQuery Form -->
-{#ddd#}
-{#    <script src="http://malsup.github.com/min/jquery.form.min.js"></script>#}
+    {#ddd#}
+    {#    <script src="http://malsup.github.com/min/jquery.form.min.js"></script>#}
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static 'startbootstrap-sb-admin-2-1.0.7/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 
 
-{#    <script type="text/javascript" src="{% static 'bootstrap-uploadprogress.js' %}"></script>#}
+    {#    <script type="text/javascript" src="{% static 'bootstrap-uploadprogress.js' %}"></script>#}
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="{% static 'startbootstrap-sb-admin-2-1.0.7/bower_components/metisMenu/dist/metisMenu.min.js' %}"></script>
@@ -64,9 +64,9 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-social.css' %}" />
 
-{#    <script type="text/javascript" src="{% static "moment.js" %}"></script>#}
+    {#    <script type="text/javascript" src="{% static "moment.js" %}"></script>#}
 
-{#  DataTabes Responsive #}
+    {#  DataTabes Responsive #}
     <link rel="stylesheet" type="text/css" href="{% static 'DataTables-1.10.7/extensions/Responsive/css/dataTables.responsive.css' %}" />
     <script type="text/javascript" src="{% static 'DataTables-1.10.7/extensions/Responsive/js/dataTables.responsive.min.js' %}"></script>
 
@@ -105,7 +105,17 @@
 
 {% block extra_tail %}
 {% endblock %}
-        <link rel="stylesheet" type="text/css" href="{% static 'dataportal3.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'dataportal3.css' %}" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-63102294-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
 
 </body>
 </html>

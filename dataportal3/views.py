@@ -30,7 +30,7 @@ from old.views import text_search, date_handler
 from wiserd3 import settings
 
 
-def index(request):
+def dashboard(request):
     tech_blog_posts = ''
     wiserd_blog_posts = ''
     try:
@@ -46,7 +46,7 @@ def index(request):
         wiserd_blog_posts = x.nextSibling.strip().replace('(', '').replace(')', '')
     except:
         pass
-    return render(request, 'index.html',
+    return render(request, 'dashboard.html',
                   {
                       'tech_blog_posts': tech_blog_posts,
                       'wiserd_blog_posts': wiserd_blog_posts,
@@ -178,6 +178,7 @@ def tables(request):
 
 def map_search(request):
     print request.GET
+    naw = request.GET.get('naw', False)
 
     wms_layers = {}
     try:
@@ -278,6 +279,7 @@ def map_search(request):
 
     return render(request, 'map.html',
                   {
+                      'naw': naw,
                       'local_data_layers': local_data_layers,
                       'remote_searches': remote_layer_data,
                       'topojson_geographies': topojson_geographies,
@@ -693,7 +695,7 @@ def logout(request):
         msg = 'You have successfully logged out'
         logout_success = True
     #do logout
-    return render(request, 'index.html',
+    return render(request, 'dashboard.html',
                   {'logout_success': logout_success, 'msg': msg},
                   context_instance=RequestContext(request))
 
@@ -1365,3 +1367,12 @@ def csv_view_data(request, provider, search_uuid):
     except Exception as e8943279:
         error = str(e8943279)
     return HttpResponse(json.dumps(dataset_data_list_full, indent=4), content_type="application/json")
+
+
+def naw_dashboard(request):
+
+    return render(request, 'naw_dashboard.html',
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request)
+                  },context_instance=RequestContext(request))

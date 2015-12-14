@@ -21,8 +21,10 @@ from old import views as old_views
 urlpatterns = [
     url(r'^admin_tools/', include(admin.site.urls)),
 
-    url(r'^$', views.index, name='root'),
-    url(r'^index', views.index, name='index'),
+    url(r'^$', views.dashboard, name='root'),
+    url(r'^index', views.dashboard, name='index'),
+    url(r'^dashboard', views.dashboard, name='dashboard'),
+    url(r'^naw_dashboard', views.naw_dashboard, name='naw_dashboard'),
 
     url(r'^logout', views.logout, name='logout'),
     url(r'^profile', views.profile, name='profile'),

@@ -1,4 +1,4 @@
-{% extends "navigation.html" %}
+{% extends naw|yesno:"naw_navigation.html,navigation.html" %}
 {% load staticfiles %}
 {% load jsonify %}
 
@@ -155,24 +155,27 @@
                     {% endfor %}
                 </ul>
             </li>
-            <li>
-                <a aria-expanded="false" href="#"> WISERD Knowing Localities Research<span class="fa arrow"></span></a>
-                <ul aria-expanded="false" class="nav nav-third-level scrollable_ul collapse">
-                    {% for upload_layer in upload_layers %}
-                        <li>
-                            <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">
-                                <i class="fa fa-map-marker fa-fw"></i> {{ upload_layer.display_name }}</a>
-                        </li>
-                    {% endfor %}
 
-                    {% for wiserd_layer in wiserd_layers %}
-                        <li>
-                            <a href="#" data-layer_name="{{ wiserd_layer.table_name }}" class="wiserd_layer_toggle">
-                                <i class="fa fa-map-marker fa-fw"></i> {{ wiserd_layer.display_name }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </li>
+            {% if not naw %}
+                <li>
+                    <a aria-expanded="false" href="#"> WISERD Knowing Localities Research<span class="fa arrow"></span></a>
+                    <ul aria-expanded="false" class="nav nav-third-level scrollable_ul collapse">
+                        {% for upload_layer in upload_layers %}
+                            <li>
+                                <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">
+                                    <i class="fa fa-map-marker fa-fw"></i> {{ upload_layer.display_name }}</a>
+                            </li>
+                        {% endfor %}
+
+                        {% for wiserd_layer in wiserd_layers %}
+                            <li>
+                                <a href="#" data-layer_name="{{ wiserd_layer.table_name }}" class="wiserd_layer_toggle">
+                                    <i class="fa fa-map-marker fa-fw"></i> {{ wiserd_layer.display_name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endif %}
         </ul>
     </li>
 {% endblock %}
@@ -1533,6 +1536,7 @@
 
 
     <div id="map_div" style="height: 180px;"></div>
+    <div id="naw_output" >NAW = {{ naw }}</div>
     <div id="screenshot" class="btn">Screenshot</div>
     <div id="screenshot_result"></div>
     <div id="screenshot_result2"></div>

@@ -252,34 +252,23 @@ def map_search(request):
             'geog_short_code': topojson['geog_short_code'],
         })
 
-    remote_layer_data = []
     remote_layer_ids = request.GET.getlist('remote_layer_ids', [])
-    remote_searches = models.NomisSearch.objects.filter(uuid__in=remote_layer_ids, user=get_request_user(request))
+    remote_layer_data = get_remote_layer_render_data_for_uid(remote_layer_ids, get_request_user(request))
 
-    for remote_layer_model in remote_searches:
-        codelist = []
-        for code in remote_layer_model.search_attributes:
-            codelist.append({
-                'option': code,
-                'variable': remote_layer_model.search_attributes[code]
-            })
-
-        print type(remote_layer_model.display_attributes)
-        print remote_layer_model.display_attributes
-        remote_layer_data.append({
-            'bin_num': remote_layer_model.display_attributes['bin_num'],
-            'bin_type': remote_layer_model.display_attributes['bin_type'],
-            'colorpicker': remote_layer_model.display_attributes['colorpicker'],
-            'codelist': codelist,
-            'geography_id': remote_layer_model.geography_id,
-            'uuid': remote_layer_model.uuid,
-            'name': remote_layer_model.name,
-            'dataset_id': remote_layer_model.dataset_id
-        })
+    naw_key_searches = [
+        {
+            'uid': '40d5be16-c11f-43b2-9c29-45555dc07945',
+            'description': 'A quick podecode'
+        }, {
+            'uid': '147b3009-5ce0-42ce-940e-38d594bf53be',
+            'description': 'Another layer'
+        }
+    ]
 
     return render(request, 'map.html',
                   {
                       'naw': naw,
+                      'naw_key_searches': naw_key_searches,
                       'local_data_layers': local_data_layers,
                       'remote_searches': remote_layer_data,
                       'topojson_geographies': topojson_geographies,
@@ -292,6 +281,32 @@ def map_search(request):
                       'area_names': json.dumps(area_names)
                   },
                   context_instance=RequestContext(request))
+
+
+def get_remote_layer_render_data_for_uid(nomissearch_uids, request_user):
+    remote_layer_data = []
+    remote_searches = models.NomisSearch.objects.filter(uuid__in=nomissearch_uids, user=request_user)
+
+    for remote_layer_model in remote_searches:
+        codelist = []
+        for code in remote_layer_model.search_attributes:
+            codelist.append({
+                'option': code,
+                'variable': remote_layer_model.search_attributes[code]
+            })
+
+        print remote_layer_model.display_attributes
+        remote_layer_data.append({
+            'bin_num': remote_layer_model.display_attributes['bin_num'],
+            'bin_type': remote_layer_model.display_attributes['bin_type'],
+            'colorpicker': remote_layer_model.display_attributes['colorpicker'],
+            'codelist': codelist,
+            'geography_id': remote_layer_model.geography_id,
+            'uuid': remote_layer_model.uuid,
+            'name': remote_layer_model.name,
+            'dataset_id': remote_layer_model.dataset_id
+        })
+    return remote_layer_data
 
 
 def question(request, question_id):
@@ -736,10 +751,14 @@ def data_api(request):
                 to_return['success'] = False
             to_return['datasets'] = datasets
 
-
     if method == 'remote_metadata':
         dataset_id = request.GET.get("dataset_id", None)
         to_return['metadata'] = rd.get_dataset_overview(dataset_id)
+
+    if method == 'remote_data_render_data':
+        remote_layer_ids = request.GET.getlist('remote_layer_ids[]', [])
+        remote_layer_data = get_remote_layer_render_data_for_uid(remote_layer_ids, get_request_user(request))
+        to_return['nomis_layers'] = remote_layer_data
 
     if method == 'record_nomis_search':
         layer_id = request.GET.get("layer_id", None)

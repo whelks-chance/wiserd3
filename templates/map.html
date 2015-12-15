@@ -122,23 +122,28 @@
 {% endblock %}
 
 {% block nav_extras %}
+    {% if naw %}
+        <li>
+            <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> NAW Searches<span class="fa arrow"></span></a>
+            <ul aria-expanded="false" class="nav nav-second-level scrollable_ul collapse">
+                {% for naw_key_search in naw_key_searches %}
+                    <li>
+                        <a href="#" data-naw_key_search_uid="{{ naw_key_search.uid }}" class="remote_data_uid">
+                            <i class="fa fa-map-marker fa-fw"></i> {{ naw_key_search.description }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endif %}
+
     <li>
         <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> Map layers<span class="fa arrow"></span></a>
         <ul aria-expanded="false" class="nav nav-second-level collapse">
-            {#            <li>#}
-            {#                <a href="#"> Current Layers<span class="fa arrow"></span></a>#}
-            {#                <ul  id="layer_list" class="nav nav-third-level">#}
-            {##}
-            {#                </ul>#}
-            {#            </li>#}
             <li>
-                <a aria-expanded="false" href="#"> Add Feature<span class="fa arrow"></span></a>
+                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>
                 <ul aria-expanded="false" class="nav nav-third-level collapse">
-                    {#                    <li>#}
-                    {#                        <a href="#" id="new_annotation"><i class="fa fa-map-marker fa-fw"></i> New Annotation</a>#}
-                    {#                    </li>#}
                     <li>
-                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> New Layer</a>
+                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>
                     </li>
                 </ul>
             </li>
@@ -243,6 +248,42 @@
 
             $('.upload_layer_toggle').click(function () {
                 toggle_upload_layer(this)
+            });
+
+            $('.remote_data_uid').click(function () {
+                var uid = $(this).data('naw_key_search_uid');
+                var uids = [];
+                uids.push(uid);
+                $.ajax({
+                    url: "{% url 'data_api' %}",
+                    type: 'GET',
+                    data: {
+                        'method': 'remote_data_render_data',
+                        'remote_layer_ids': uids
+                    },
+                    success: function (data) {
+                        var remote_data_layer = data['nomis_layers'][0];
+                        get_remote_dataset_topojson(
+                                "{% url 'remote_data_topojson' %}",
+                                remote_data_layer['geography_id'],
+                                remote_data_layer['dataset_id'],
+                                remote_data_layer['codelist'],
+                                function(topojson_data) {
+                                    console.log(remote_data_layer);
+
+                                    handleUploadedLayer(
+                                            topojson_data['topojson'],
+                                            remote_data_layer['colorpicker'],
+                                            remote_data_layer['bin_type'],
+                                            remote_data_layer['bin_num'],
+                                            '',
+                                            remote_data_layer['name'],
+                                            ''
+                                    );
+                                }
+                        );
+                    }
+                });
             });
 
             function toggle_upload_layer(toggle_button) {
@@ -622,7 +663,7 @@
                 for (var string_idx in feature_string_data) {
                     if (unique_feature_string_data.indexOf(feature_string_data[string_idx]) == -1) {
                         unique_feature_string_data.push(feature_string_data[string_idx]);
-{#                        alert(feature_string_data[string_idx]);#}
+                        {#                        alert(feature_string_data[string_idx]);#}
                     }
                 }
 
@@ -779,8 +820,8 @@
                 } else {
 
                     if (isNaN(remote_value)) {
-{#                        alert(feature.properties);#}
-{#                        console.log(feature);#}
+                        {#                        alert(feature.properties);#}
+                        {#                        console.log(feature);#}
                         colour = getColorFromString(remote_value);
                     } else {
                         colour = getColor(remote_value, feature_data, chroma_scale);
@@ -1041,7 +1082,7 @@
             });
 
             $('#dataset_select').change(function(e){
-{#                alert(e);#}
+                {#                alert(e);#}
             });
 
             $('#remote_search_term').keyup(function(event){

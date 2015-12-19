@@ -616,6 +616,7 @@ class SpatialdataAEFA(models.Model):
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
     the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
 
     class Meta:
         managed = False
@@ -627,6 +628,7 @@ class SpatialdataPolice(models.Model):
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
     the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
 
     class Meta:
         managed = False
@@ -637,18 +639,30 @@ class SpatialdataPostCode(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
-    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
 
     class Meta:
         managed = False
         db_table = 'spatialdata_pcode'
 
+class SpatialdataPostCodeS(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    label = models.CharField(max_length=254, blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
+
+    class Meta:
+        managed = False
+        db_table = 'pcode_s'
 
 class SpatialdataParl(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
-    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
 
     class Meta:
         managed = False
@@ -660,6 +674,7 @@ class SpatialdataMSOA(models.Model):
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
     the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
 
     class Meta:
         managed = False
@@ -671,6 +686,7 @@ class SpatialdataLSOA(models.Model):
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
     the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
 
     class Meta:
         managed = False
@@ -682,6 +698,7 @@ class SpatialdataFire(models.Model):
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
     the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
 
     class Meta:
         managed = False
@@ -692,8 +709,21 @@ class SpatialdataUA(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
-    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
 
     class Meta:
         managed = False
         db_table = 'spatialdata_ua'
+
+class SpatialdataUA_2(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    code = models.CharField(max_length=254, blank=True, null=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    altname = models.CharField(max_length=254, blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
+
+    class Meta:
+        managed = False
+        db_table = 'ua_2'

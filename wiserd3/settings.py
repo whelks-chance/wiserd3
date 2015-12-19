@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from celery import Celery
+# from dataportal3 import models
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -222,6 +223,49 @@ TOPOJSON_OPTIONS = [
         'topojson_file_high': os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json')
     }
 ]
+
+# SPATIAL_SEARCH_TABLES = [
+#     {
+#         'table_name': 'spatialdata_aefa',
+#         'geometry_column': 'the_geom',
+#         'table_model': models.SpatialdataAEFA
+#     },
+#     {
+#         'table_name': 'spatialdata_police',
+#         'geometry_column': 'the_geom',
+#         'table_model': models.SpatialdataPolice
+#     },
+#     {
+#         'table_name': 'spatialdata_pcode',
+#         'geometry_column': 'the_geom',
+#         'table_model': models.SpatialdataPostCode
+#     },
+#     {
+#         'table_name': 'spatialdata_parl',
+#         'geometry_column': 'the_geom',
+#         'table_model': models.SpatialdataParl
+#     },
+#     {
+#         'table_name': 'spatialdata_msoa',
+#         'geometry_column': 'the_geom',
+#         'table_model': models.SpatialdataMSOA
+#     },
+#     {
+#         'table_name': 'spatialdata_lsoa',
+#         'geometry_column': 'the_geom',
+#         'table_model': models.SpatialdataLSOA
+#     },
+#     {
+#         'table_name': 'spatialdata_fire',
+#         'geometry_column': 'the_geom',
+#         'table_model': models.SpatialdataFire
+#     },
+#     {
+#         'table_name': 'spatialdata_ua',
+#         'geometry_column': 'the_geom',
+#         'table_model': models.SpatialdataUA
+#     },
+# ]
 
 WMS_LAYERS = [
     {

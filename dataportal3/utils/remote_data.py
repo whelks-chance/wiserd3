@@ -217,62 +217,25 @@ class RemoteData():
     def get_data(self, dataset_id, region_id, measure, codelist=None, limit=10, offset=0):
         dataset_url, codelist_filename = self.get_dataset_url(dataset_id, region_id, measure, codelist, limit, offset)
 
-        # # Get data for variable for dataset in region with offsets
-        # limit = str(limit)
-        # offset = str(offset)
-        #
-        # dataset_url = 'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?' \
-        #               'geography={1}&&RecordLimit={2}&&RecordOffset={3}&&uid={4}'
-        # dataset_url = dataset_url.format(dataset_id, region_id, limit, offset, settings.nomis_uid)
-        #
-        # codelist_filename = ''
-        # if codelist:
-        #     print type(codelist), codelist
-        #
-        #     measures_found = False
-        #     for code in codelist:
-        #         if code['option'] == 'MEASURES':
-        #             measures_found = True
-        #
-        #     print type(codelist), codelist
-        #     if not measures_found:
-        #         codelist.append({
-        #             'option': 'MEASURES',
-        #             'variable': '20100'
-        #         })
-        #     for code in codelist:
-        #         if 'option' in code and 'variable' in code:
-        #             dataset_url += '&&' + str(code['option']) + '=' + str(code['variable'])
-        #             codelist_filename += str(code['option']) + '=' + str(code['variable']) + '_'
-        #
-        #             # TODO, remove refs to measure not from codelist
-        #             if code['option'] == 'MEASURES':
-        #                 measure = int(code['variable'])
-        # else:
-        #     dataset_url += '&&CELL=6'
-
-        # r5 = requests.get(
-        #     'https://www.nomisweb.co.uk/api/v01/dataset/{0}.data.json?cell=6&&'
-        #     'geography={1}&&measures={2}&&RecordLimit={3}&&RecordOffset={4}&&uid={5}'.format(
-        #         dataset_id, region_id, measure, limit, offset, settings.nomis_uid
-        #     ), stream=False
-        # )
-
         nomis_raw_filename = os.path.join(
             settings.TMP_DIR,
             'nomis_raw_{0}_{1}_{2}.json'.format(
             dataset_id, region_id, codelist_filename)
         )
 
-        r5 = requests.get(dataset_url, stream=False)
-        print r5.url, r5.status_code
+        # if file exists, load that, otherwise pull from nomis
 
-        with open(nomis_raw_filename, 'wb') as raw_nomis:
-            # f32.write(r5.text)
-            for chunk in r5.iter_content(chunk_size=1024):
-                if chunk: # filter out keep-alive new chunks
-                    raw_nomis.write(chunk)
-                    raw_nomis.flush()
+        if not os.path.isfile(nomis_raw_filename):
+
+            r5 = requests.get(dataset_url, stream=False)
+            print r5.url, r5.status_code
+
+            with open(nomis_raw_filename, 'wb') as raw_nomis:
+                # f32.write(r5.text)
+                for chunk in r5.iter_content(chunk_size=1024):
+                    if chunk: # filter out keep-alive new chunks
+                        raw_nomis.write(chunk)
+                        raw_nomis.flush()
 
         with open(nomis_raw_filename, 'r') as f:
             j5 = json.load(f)
@@ -325,15 +288,27 @@ class RemoteData():
     # {(u'geography', u'NAME'): 40, (u'geography', u'ALTNAME'): 10, (u'geography_code', u'CODE'): 44}
     # the key is a set of 2 strings (or unicode) which is:
     # ( remote_data_key , topojson_region_key )
+
     def match_region_ids(self, remote_data, topojson_region_data):
         # print 'first_remote_data_region_ids', first_remote_data_region_ids
 
         matches = {}
-        for geom_data in remote_data:
-            # print geom_data, remote_data[geom_data]
+        loops = 0
+
+        print 'remote_data', type(remote_data)
+        print 'length', len(remote_data)
+
+        for geom_data in remote_data.keys()[:100]:
+            loops += 1
+
             for c in remote_data[geom_data][0]:
+                # print 'geom_data', type(remote_data[geom_data][0]), len(remote_data[geom_data][0])
+
+                loops += 1
                 for a in topojson_region_data:
+                    loops += 1
                     for b in a['properties']:
+                        loops += 1
                         # print c, remote_data[geom_data][0][c], b, a['properties'][b]
                         if remote_data[geom_data][0][c] == a['properties'][b]:
                             # print 'found', c, 'matches', b
@@ -342,7 +317,8 @@ class RemoteData():
                                 matches[(c, b)] += 1
                             else:
                                 matches[(c, b)] = 1
-        print matches
+        print 'matches', matches
+        print 'loops', loops
         return matches
 
     def update_topojson(self, topojson_file, remote_data, measure_is_percentage=False):
@@ -372,9 +348,12 @@ class RemoteData():
 
                     try:
                         topojson_match_value = geom['properties'][topojson_region_key]
+                        discovered = False
+
                         for remote_data_item_key in remote_data:
                             remote_data_object = remote_data[remote_data_item_key][0]
                             if remote_data_object[remote_data_key] == topojson_match_value:
+                                discovered = True
                                 geom['properties']['REMOTE_VALUE'] = remote_data_object['value']
                                 geom['properties']['AREA_NAME'] = remote_data_item_key
                                 geom['properties']['PERCENTAGE'] = measure_is_percentage
@@ -384,6 +363,29 @@ class RemoteData():
                                 if 'data_title' in remote_data_object:
                                     geom['properties']['DATA_TITLE'] = remote_data_object['data_title']
                                 found += 1
+
+                        # Separate, because this needs tidying in future
+                        # TODO check how smart this is
+                        if not discovered:
+                            print 'not found, yet', topojson_match_value
+                            topojson_match_value = topojson_match_value.replace(' ', '')
+
+                            for remote_data_item_key in remote_data:
+                                remote_data_object = remote_data[remote_data_item_key][0]
+                                if remote_data_object[remote_data_key].replace(' ', '') == topojson_match_value:
+                                    discovered = True
+                                    geom['properties']['REMOTE_VALUE'] = remote_data_object['value']
+                                    geom['properties']['AREA_NAME'] = remote_data_item_key
+                                    geom['properties']['PERCENTAGE'] = measure_is_percentage
+                                    geom['properties']['DATA_STATUS'] = remote_data_object['data_status']
+                                    if 'string_data' in remote_data_object:
+                                        geom['properties']['STRING_DATA'] = remote_data_object['string_data']
+                                    if 'data_title' in remote_data_object:
+                                        geom['properties']['DATA_TITLE'] = remote_data_object['data_title']
+                                    found += 1
+
+                            if not discovered:
+                                print '*********', 'not found, error', topojson_match_value
 
                     except:
                         area_name = ''

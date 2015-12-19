@@ -187,12 +187,63 @@
 
 {% block content %}
     <script>
+        // global namespace
+        var DataPortal = DataPortal || {};
+
+        DataPortal.LayerStore = {
+            layers: [],
+
+            add_layer: function(layer) {
+                console.log('adding layer');
+                console.log(layer);
+
+                this.layers.push(layer);
+            },
+
+            number_of_layers: function() {
+                return this.layers.length;
+            },
+
+            get_layer: function(uid) {
+                for (var i = 0; i < layer.length; i++) {
+                    if (this.layers[i].layer_uid == uid) {
+                        return this.layers[i];
+                    }
+                }
+                return null;
+            }
+        };
+        var store = DataPortal.LayerStore;
+
+        function MapLayer() {
+            this.layer_uid = '';
+            this.geography_id = '';
+            this.dataset_id = '';
+            this.codelist = {};
+            this.topojson_data = null;
+            this.topojson_layer = null;
+            this.colorpicker = null;
+            this.color_scheme = '';
+            this.bin_type = '';
+            this.num_bins = 0;
+            this.name = '';
+            this.nomis_variable = '';
+            this.is_percentage = false;
+            this.suppressed_data = null;
+            this.csv_url = '';
+            this.feature_data = [];
+            this.feature_string_data = [];
+            this.legend = null;
+        }
 
         window.onload = function(){
             $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
         };
 
         $(document).ready(function () {
+
+
+
 
             var wms_layers = {};
             var topojson_layers = {};
@@ -1007,6 +1058,7 @@
                     "Show New Layer": function() {
                         if ($("#bintype").val() != '') {
                             if ($("#binno").val() != '') {
+
                                 var layer_id = $(this).data('layer_names');
                                 var topojson_data = topojson_layers[$(this).data('layer_names')];
                                 var nomis_variable = $(this).data('nomis_variable');
@@ -1016,6 +1068,20 @@
                                 var colorpicker = $("#colorpicker").val();
                                 var bin_type = $("#bintype").val();
                                 var bin_num = $("#binno").val();
+
+
+                                var new_layer = new MapLayer();
+                                new_layer.layer_id = $(this).data('layer_names');
+                                new_layer.topojson_data = topojson_layers[$(this).data('layer_names')];
+                                new_layer.nomis_variable = $(this).data('nomis_variable');
+                                new_layer.layer_name_text = $("#layer_name_text_entry").val();
+                                new_layer.csv_url = $(this).data('csv_url');
+                                new_layer.colorpicker = $("#colorpicker").val();
+                                new_layer.bin_type = $("#bintype").val();
+                                new_layer.bin_num = $("#binno").val();
+
+                                store.add_layer(new_layer);
+
 
                                 $.ajax({
                                     url: "{% url 'data_api' %}",

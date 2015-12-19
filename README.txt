@@ -42,9 +42,13 @@ at this point, 2 versions of each are installed....
 -I spatialdata.parl/spatialdata.parl.shp spatialdata_parl | sudo -u postgres psql -d "NewSurvey"
 
 Dump shp file to DB for spatial search :
-shp2pgsql -I ~/shp/x_sid_liw2007_pcode_/x_sid_liw2007_pcode_.shp pcode | sudo -u postgres psql -d "NewSurvey"
+shp2pgsql -W LATIN1 -I ~/shp/x_sid_liw2007_pcode_/x_sid_liw2007_pcode_.shp pcode | sudo -u postgres psql -d "NewSurvey"
 do this for one of each type of boundary
 
+
+Check the SRID is set, if it's '0', you need to set it, probably to 4326:
+select code, ST_SRID("ua_2"."geom") from "ua_2";
+select UpdateGeometrySRID('schema', 'table', 'geom_column', 4326) ;
 
 The new shpfile tables need the right permissions
 grant select, insert, update on all tables in schema public to dataportal;

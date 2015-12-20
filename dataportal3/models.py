@@ -615,7 +615,7 @@ class SpatialdataAEFA(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
-    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
 
     class Meta:
@@ -627,7 +627,7 @@ class SpatialdataPolice(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
-    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
 
     class Meta:
@@ -673,7 +673,7 @@ class SpatialdataMSOA(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
-    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
 
     class Meta:
@@ -685,7 +685,8 @@ class SpatialdataLSOA(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
-    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    zonecode = models.CharField(max_length=254, blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
 
     class Meta:
@@ -697,7 +698,7 @@ class SpatialdataFire(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
-    the_geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
 
     class Meta:

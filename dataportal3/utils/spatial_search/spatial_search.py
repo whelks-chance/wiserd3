@@ -11,17 +11,20 @@ def find_intersects(geography_wkt):
     geometry_columns = [
         {
             'table_name': 'spatialdata_aefa',
-            'geometry_column': 'the_geom',
+            'geometry_column': 'geom',
+            'label': 'label',
             'table_model': models.SpatialdataAEFA
         },
         {
             'table_name': 'spatialdata_police',
-            'geometry_column': 'the_geom',
+            'geometry_column': 'geom',
+            'label': 'label',
             'table_model': models.SpatialdataPolice
         },
         {
             'table_name': 'spatialdata_pcode',
             'geometry_column': 'geom',
+            'label': 'label',
             'table_model': models.SpatialdataPostCode
         },
         {
@@ -31,17 +34,19 @@ def find_intersects(geography_wkt):
         },
         {
             'table_name': 'spatialdata_msoa',
-            'geometry_column': 'the_geom',
+            'geometry_column': 'geom',
             'table_model': models.SpatialdataMSOA
         },
         {
             'table_name': 'spatialdata_lsoa',
-            'geometry_column': 'the_geom',
+            'geometry_column': 'geom',
+            'label': 'zonecode',
             'table_model': models.SpatialdataLSOA
         },
         {
             'table_name': 'spatialdata_fire',
-            'geometry_column': 'the_geom',
+            'geometry_column': 'geom',
+            'label': 'label',
             'table_model': models.SpatialdataFire
         },
         {
@@ -53,11 +58,13 @@ def find_intersects(geography_wkt):
         {
             'table_name': 'pcode_s',
             'geometry_column': 'geom',
+            'label': 'label',
             'table_model': models.SpatialdataPostCodeS
         },
         {
             'table_name': 'ua_2',
             'geometry_column': 'geom',
+            'label': 'code',
             'table_model': models.SpatialdataUA_2
         }
     ]
@@ -71,10 +78,7 @@ def find_intersects(geography_wkt):
     geom_object = GEOSGeometry(geography_wkt, srid=27700)
     print geom_object
 
-    geom_2 = GEOSGeometry(geom_object.ewkt, srid=27700)
-    print geom_2
-
-    geom_object = geom_2.transform(4326, clone=True)
+    geom_object = geom_object.transform(4326, clone=True)
     print geom_object
 
     for geoms in geometry_columns:

@@ -104,7 +104,10 @@ def search_survey_api(request):
                                                                        readable_name=search_terms,
                                                                        type='text')
     search.save()
-    survey_models = models.Survey.objects.filter(survey_title__icontains=search_terms).distinct("identifier").values()
+
+    survey_models = models.Survey.objects.filter(
+        Q(survey_title__icontains=search_terms) | Q(short_title__icontains=search_terms)
+    ).distinct("identifier").values()
 
     data = []
     for survey_model in survey_models:
@@ -114,9 +117,9 @@ def search_survey_api(request):
         'method': 'search_survey',
         'search_result_data': data,
         'results_count': len(data),
-        'search_term': search_terms
+        'search_term': search_terms,
+        'url': request.get_full_path()
     }
-    api_data['url'] = request.get_full_path()
 
     # conn_queries = connections['new'].queries
     # print 'survey conn num end', len(conn_queries)
@@ -130,22 +133,99 @@ def blank(request):
 
 
 def survey_detail(request, survey_id):
-
-    print request.user
-    user = auth.get_user(request)
-    if type(user) is AnonymousUser:
-        user = get_anon_user()
-    user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
+    user_profile = get_request_user(request)
+    # print request.user
+    # user = auth.get_user(request)
+    # if type(user) is AnonymousUser:
+    #     user = get_anon_user()
+    # user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
 
     search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=survey_id, type='survey')
     search.save()
 
-    return render(request, 'survey_detail.html',
-                  {
-                      'preferences': get_user_preferences(request),
-                      'searches': get_user_searches(request),
-                      'survey_id': survey_id
-                  }, context_instance=RequestContext(request))
+    # Assume access is OK unless a visibility is set
+    # Switch access to False if any visibility levels are set
+    # Then keep assuming false until a single True is seen
+    # 9 No's and 1 Yes means Yes
+    allowed = True
+
+    contact = None
+    survey_collection_name = None
+    survey_collection_user_group_name = None
+
+    access_data = []
+
+    # Find any specific visibility metadata for this survey
+    # It is possible that multiple visibilities may be set for a single survey
+    survey_visibilities = models.SurveyVisibilityMetadata.objects.filter(survey__identifier=survey_id)
+    if survey_visibilities.count():
+
+        # We have at least one visibility set, so assume False to begin with
+        # We'll enable access again if we need to
+        allowed = False
+
+        # Search through each visibility metadata entry to check access is allowed
+        for survey_vis in survey_visibilities:
+
+            # Each visibility has a primary contact to designate access to users
+            # This person may or may not be a defined member of the associated user group,
+            # but will require at least a shell user account within the dataportal
+            contact = survey_vis.primary_contact.user
+
+            if survey_vis.survey_visibility.visibility_id == 'SUR_VIS_ALL':
+                # Allow access as visibility is Allow All
+                allowed = True
+
+            elif survey_vis.survey_visibility.visibility_id == 'SUR_VIS_NONE':
+                # Deny access - be careful using this, as race conditions may apply
+                # TODO what happens if the survey is allowed by one group and denied by another?
+                allowed = False
+
+            elif survey_vis.survey_visibility.visibility_id == 'SUR_VIS_GROUP':
+                # Grab all user groups for this surveys
+                user_group_members = survey_vis.user_group_survey_collection.user_group.user_group_members.all()
+
+                survey_collection_name = survey_vis.user_group_survey_collection.name
+                survey_collection_user_group_name = survey_vis.user_group_survey_collection.user_group.name
+                print survey_collection_name, survey_collection_user_group_name, user_group_members
+
+                if user_profile in user_group_members:
+                    allowed = True
+
+                    access_data.append({
+                        'contact': contact,
+                        'survey_collection_name': survey_collection_name,
+                        'survey_collection_user_group_name': survey_collection_user_group_name
+                    })
+
+    if allowed:
+        return render(request, 'survey_detail.html',
+                      {
+                          'preferences': get_user_preferences(request),
+                          'searches': get_user_searches(request),
+                          'survey_id': survey_id,
+                          'access_allow': {
+                              'method': 'survey_detail',
+                              'survey_id': survey_id,
+                              'document_type': 'survey',
+                              'contact': contact,
+                              'collection_name': survey_collection_name,
+                              'collection_user_group': survey_collection_user_group_name,
+                              'access_data': access_data
+                          }
+                      }, context_instance=RequestContext(request))
+    else:
+        return render(request, 'access_fail.html',
+                      {
+                          'preferences': get_user_preferences(request),
+                          'searches': get_user_searches(request),
+                          'access_fail': {
+                              'method': 'survey_detail',
+                              'survey_id': survey_id,
+                              'document_type': 'survey',
+                              'contact': contact
+                          }
+                      }, context_instance=RequestContext(request))
 
 
 def tables(request):
@@ -1297,44 +1377,44 @@ def csv_view(request, provider, search_uuid):
                 'data': header_item.rstrip('"').lstrip('"')
             })
 
-        # dataset_data_list_full = []
-        # for data_row_index, data_row in enumerate(dataset_data_list[1:]):
-        #     print data_row
-        #     print data_row_index
-        #     data_row_items = data_row.split(',')
-        #
-        #     if len(data_row_items) == len(dataset_data_header_items_clean):
-        #         dataset_data_dict = {}
-        #         for header_index, header_item in enumerate(dataset_data_header_items_clean):
-        #             print header_index, len(data_row_items), header_item, data_row_items[header_index]
-        #             # print header_index > len(data_row_items)
-        #             dataset_data_dict[header_item] = data_row_items[header_index].rstrip('"').lstrip('"')
-        #         dataset_data_list_full.append(dataset_data_dict)
+            # dataset_data_list_full = []
+            # for data_row_index, data_row in enumerate(dataset_data_list[1:]):
+            #     print data_row
+            #     print data_row_index
+            #     data_row_items = data_row.split(',')
+            #
+            #     if len(data_row_items) == len(dataset_data_header_items_clean):
+            #         dataset_data_dict = {}
+            #         for header_index, header_item in enumerate(dataset_data_header_items_clean):
+            #             print header_index, len(data_row_items), header_item, data_row_items[header_index]
+            #             # print header_index > len(data_row_items)
+            #             dataset_data_dict[header_item] = data_row_items[header_index].rstrip('"').lstrip('"')
+            #         dataset_data_list_full.append(dataset_data_dict)
 
     except Exception as e8943279:
         print e8943279
         error = str(e8943279)
 
     return render(request, 'csv_view.html',
-              {
-                  'error': error,
-                  'dataset_id': dataset_id,
-                  'dataset_url': dataset_url,
-                  'search_options': found_search.search_attributes,
-                  'display_options': found_search.display_attributes,
-                  'dataset_data_header': dataset_data_header_items_clean,
-                  # 'dataset_data': dataset_data_list[1:],
-                  # 'dataset_data_list_full': dataset_data_list_full,
-                  'provider': provider,
-                  'search_uuid': search_uuid
-              }, context_instance=RequestContext(request))
+                  {
+                      'error': error,
+                      'dataset_id': dataset_id,
+                      'dataset_url': dataset_url,
+                      'search_options': found_search.search_attributes,
+                      'display_options': found_search.display_attributes,
+                      'dataset_data_header': dataset_data_header_items_clean,
+                      # 'dataset_data': dataset_data_list[1:],
+                      # 'dataset_data_list_full': dataset_data_list_full,
+                      'provider': provider,
+                      'search_uuid': search_uuid
+                  }, context_instance=RequestContext(request))
 
 
 def help_support(request):
     return render(request, 'help_support.html',
-              {
-                  'welcome': 'hi',
-              }, context_instance=RequestContext(request))
+                  {
+                      'welcome': 'hi',
+                  }, context_instance=RequestContext(request))
 
 
 def csv_view_data(request, provider, search_uuid):
@@ -1395,3 +1475,31 @@ def naw_dashboard(request):
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
                   },context_instance=RequestContext(request))
+
+
+def admin_api(request):
+    userr = get_request_user(request)
+    method = request.GET.get("method", None)
+
+    if method and 'request_access' in method:
+        document_type = request.GET.get("document_type", None)
+        survey_id = request.GET.get("survey_id", None)
+
+        return render(request, 'access_request_confirm.html',
+                      {
+                          'userr': userr,
+                          'preferences': get_user_preferences(request),
+                          'searches': get_user_searches(request),
+                          'access_request': {
+                              'method': 'request_access',
+                              'survey_id': survey_id,
+                              'document_type': document_type
+                          }
+
+                      },context_instance=RequestContext(request))
+    else:
+        return render(request, 'dashboard.html',
+                      {
+                          'preferences': get_user_preferences(request),
+                          'searches': get_user_searches(request)
+                      },context_instance=RequestContext(request))

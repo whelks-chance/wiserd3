@@ -34,6 +34,7 @@ urlpatterns = [
 
     url(r'^settings', views.user_settings, name='settings'),
     url(r'^site_setup', views.site_setup, name='site_setup'),
+    url(r'^admin_api', views.admin_api, name='admin_api'),
 
     url(r'^remote_data_topojson', views.remote_data_topojson, name='remote_data_topojson'),
     url(r'^data_api', views.data_api, name='data_api'),

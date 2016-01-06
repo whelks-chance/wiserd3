@@ -1,0 +1,28 @@
+{% extends "navigation.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Access denied</h1>
+            </div>
+
+            {% if user.is_authenticated %}
+                <p>Access is currently prohibited for this {{ access_fail.document_type }} by the owner</p>
+                {% if access_fail.contact %}
+                    <p>The WISERD DataPortal Admin team may be able to request access from {{ access_fail.contact }} for you.</p>
+                {% else %}
+                    <p>The WISERD DataPortal Admin team may be able to request access for you.</p>
+                {% endif %}
+
+                <p>Click <a href="{% url 'admin_api' %}?method=request_access&document_type={{ access_fail.document_type }}&survey_id={{ access_fail.survey_id }}">here</a> to request access.</p>
+
+            {% else %}
+                <p>Access is prohibited for this {{ access_fail.document_type }}.</p>
+                <p>Please login to request access to it.</p>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

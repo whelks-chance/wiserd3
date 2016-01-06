@@ -1,0 +1,43 @@
+{% extends "navigation.html" %}
+{% load staticfiles %}
+
+{% block extra_head %}
+    <link href="{% static 'startbootstrap-sb-admin-2-1.0.7/dist/css/timeline.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Request for access received</h1>
+            </div>
+
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-badge">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                             <h4 class="timeline-title">Thanks {{ userr.user }}, we'll get back to you.</h4>
+                        </div>
+                        <div class="timeline-body">
+                        <p>Request: {{ access_request.method }}</p>
+                        <p>Document Type: {{ access_request.document_type }}</p>
+                        <p>Document ID: {{ access_request.survey_id }}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+            <div>
+                You may now close this tab, or return to the dashboard <a href="{% url 'dashboard' %}">here</a>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+
+{% endblock %}

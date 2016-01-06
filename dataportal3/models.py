@@ -576,6 +576,7 @@ class QualCalais(models.Model):
     def __unicode__(self):
         return str(self.tagName) + ':' + self.value
 
+
 class QualTranscriptData(models.Model):
     identifier = models.TextField(unique=True, blank=True, null=True)
     # calais = models.ForeignKey('QualCalais', null=True)
@@ -599,6 +600,7 @@ class QualTranscriptData(models.Model):
     def __unicode__(self):
         return str(self.identifier) + ':' + str(self.pages) + ' pages'
 
+
 class QualStats(models.Model):
     name = models.TextField(blank=True, null=True)
     page_counts = hstore.DictionaryField(blank=True, null=True)
@@ -610,6 +612,52 @@ class QualStats(models.Model):
     def __unicode__(self):
         return str(self.id) + ':' + self.name
 
+
+# Options like :
+# allow full access to everyone
+# allow metadata access (appears in searches) to everyone
+# allow full access to users in groups X, Y and Z
+# allow full access to users in groups X, Y and metadata access to users in group Z (complex)
+# allow no access to anyone
+class SurveyVisibility(models.Model):
+    visibility_id = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return str(self.id) + ':' + self.visibility_id
+
+
+class SurveyVisibilityMetadata(models.Model):
+    survey = models.ForeignKey('Survey')
+    survey_visibility = models.ForeignKey('SurveyVisibility')
+    primary_contact = models.ForeignKey('UserProfile')
+    user_group_survey_collection = models.ForeignKey('UserGroupSurveyCollection', null=True)
+
+    def __unicode__(self):
+        return str(self.id) + ':' + self.survey.identifier + ':' + self.survey_visibility.visibility_id
+
+
+class UserGroup(models.Model):
+    name = models.TextField(blank=True, null=True)
+    user_group_members = models.ManyToManyField('UserProfile')
+
+    def __unicode__(self):
+        return str(self.id) + ':' + self.name
+
+
+class UserGroupSurveyCollection(models.Model):
+    name = models.TextField(blank=True, null=True)
+    user_group = models.ForeignKey('UserGroup')
+    # survey_visibility_metadata = models.ManyToManyField('SurveyVisibilityMetadata')
+
+    def __unicode__(self):
+        return str(self.id) + ':' + self.name + ':' + self.user_group.name
+
+#
+# spatial tables below
+#
+#
+#
 
 class SpatialdataAEFA(models.Model):
     gid = models.IntegerField(primary_key=True)
@@ -646,6 +694,7 @@ class SpatialdataPostCode(models.Model):
         managed = False
         db_table = 'spatialdata_pcode'
 
+
 class SpatialdataPostCodeS(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
@@ -656,6 +705,7 @@ class SpatialdataPostCodeS(models.Model):
     class Meta:
         managed = False
         db_table = 'pcode_s'
+
 
 class SpatialdataParl(models.Model):
     gid = models.IntegerField(primary_key=True)
@@ -716,6 +766,7 @@ class SpatialdataUA(models.Model):
     class Meta:
         managed = False
         db_table = 'spatialdata_ua'
+
 
 class SpatialdataUA_2(models.Model):
     gid = models.IntegerField(primary_key=True)

@@ -24,7 +24,8 @@ from dataportal3.forms import ShapefileForm
 from dataportal3.utils.ShapeFileImport import celery_import, ShapeFileImport
 from dataportal3.utils.remote_data import RemoteData
 from dataportal3.utils.spatial_search.spatial_search import find_intersects
-from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user, get_user_preferences
+from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user, get_user_preferences, \
+    survey_visible_to_user
 import requests
 from old.views import text_search, date_handler
 from wiserd3 import settings
@@ -132,71 +133,68 @@ def blank(request):
     return render(request, 'blank.html', {}, context_instance=RequestContext(request))
 
 
+# def survey_visible_to_user(survey_id, user_profile):
+#     # Assume access is OK unless a visibility is set
+#     # Switch access to False if any visibility levels are set
+#     # Then keep assuming false until a single True is seen
+#     # 9 No's and 1 Yes means Yes
+#     allowed = True
+#     access_data = []
+#
+#     # Find any specific visibility metadata for this survey
+#     # It is possible that multiple visibilities may be set for a single survey
+#     survey_visibilities = models.SurveyVisibilityMetadata.objects.filter(survey__identifier=survey_id)
+#     if survey_visibilities.count():
+#
+#         # We have at least one visibility set, so assume False to begin with
+#         # We'll enable access again if we need to
+#         allowed = False
+#
+#         # Search through each visibility metadata entry to check access is allowed
+#         for survey_vis in survey_visibilities:
+#
+#             # Each visibility has a primary contact to designate access to users
+#             # This person may or may not be a defined member of the associated user group,
+#             # but will require at least a shell user account within the dataportal
+#             contact = survey_vis.primary_contact.user
+#
+#             if survey_vis.survey_visibility.visibility_id == 'SUR_VIS_ALL':
+#                 # Allow access as visibility is Allow All
+#                 allowed = True
+#
+#             elif survey_vis.survey_visibility.visibility_id == 'SUR_VIS_NONE':
+#                 # Deny access - be careful using this, as race conditions may apply
+#                 # TODO what happens if the survey is allowed by one group and denied by another?
+#                 allowed = False
+#
+#             elif survey_vis.survey_visibility.visibility_id == 'SUR_VIS_GROUP':
+#                 # Grab all user groups for this surveys
+#                 user_group_members = survey_vis.user_group_survey_collection.user_group.user_group_members.all()
+#
+#                 survey_collection_name = survey_vis.user_group_survey_collection.name
+#                 survey_collection_user_group_name = survey_vis.user_group_survey_collection.user_group.name
+#                 print survey_collection_name, survey_collection_user_group_name, user_group_members
+#
+#                 if user_profile in user_group_members:
+#                     allowed = True
+#
+#                     access_data.append({
+#                         'contact': contact,
+#                         'survey_collection_name': survey_collection_name,
+#                         'survey_collection_user_group_name': survey_collection_user_group_name
+#                     })
+#
+#     return allowed, access_data
+#
+
 def survey_detail(request, survey_id):
     user_profile = get_request_user(request)
-    # print request.user
-    # user = auth.get_user(request)
-    # if type(user) is AnonymousUser:
-    #     user = get_anon_user()
-    # user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
 
     search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=survey_id, type='survey')
     search.save()
 
-    # Assume access is OK unless a visibility is set
-    # Switch access to False if any visibility levels are set
-    # Then keep assuming false until a single True is seen
-    # 9 No's and 1 Yes means Yes
-    allowed = True
-
-    contact = None
-    survey_collection_name = None
-    survey_collection_user_group_name = None
-
-    access_data = []
-
-    # Find any specific visibility metadata for this survey
-    # It is possible that multiple visibilities may be set for a single survey
-    survey_visibilities = models.SurveyVisibilityMetadata.objects.filter(survey__identifier=survey_id)
-    if survey_visibilities.count():
-
-        # We have at least one visibility set, so assume False to begin with
-        # We'll enable access again if we need to
-        allowed = False
-
-        # Search through each visibility metadata entry to check access is allowed
-        for survey_vis in survey_visibilities:
-
-            # Each visibility has a primary contact to designate access to users
-            # This person may or may not be a defined member of the associated user group,
-            # but will require at least a shell user account within the dataportal
-            contact = survey_vis.primary_contact.user
-
-            if survey_vis.survey_visibility.visibility_id == 'SUR_VIS_ALL':
-                # Allow access as visibility is Allow All
-                allowed = True
-
-            elif survey_vis.survey_visibility.visibility_id == 'SUR_VIS_NONE':
-                # Deny access - be careful using this, as race conditions may apply
-                # TODO what happens if the survey is allowed by one group and denied by another?
-                allowed = False
-
-            elif survey_vis.survey_visibility.visibility_id == 'SUR_VIS_GROUP':
-                # Grab all user groups for this surveys
-                user_group_members = survey_vis.user_group_survey_collection.user_group.user_group_members.all()
-
-                survey_collection_name = survey_vis.user_group_survey_collection.name
-                survey_collection_user_group_name = survey_vis.user_group_survey_collection.user_group.name
-                print survey_collection_name, survey_collection_user_group_name, user_group_members
-
-                if user_profile in user_group_members:
-                    allowed = True
-
-                    access_data.append({
-                        'contact': contact,
-                        'survey_collection_name': survey_collection_name,
-                        'survey_collection_user_group_name': survey_collection_user_group_name
-                    })
+    # Check if we're allowed to show this data
+    allowed, access_data = survey_visible_to_user(survey_id, user_profile)
 
     if allowed:
         return render(request, 'survey_detail.html',
@@ -208,9 +206,6 @@ def survey_detail(request, survey_id):
                               'method': 'survey_detail',
                               'survey_id': survey_id,
                               'document_type': 'survey',
-                              'contact': contact,
-                              'collection_name': survey_collection_name,
-                              'collection_user_group': survey_collection_user_group_name,
                               'access_data': access_data
                           }
                       }, context_instance=RequestContext(request))
@@ -223,7 +218,7 @@ def survey_detail(request, survey_id):
                               'method': 'survey_detail',
                               'survey_id': survey_id,
                               'document_type': 'survey',
-                              'contact': contact
+                              'access_data': access_data
                           }
                       }, context_instance=RequestContext(request))
 

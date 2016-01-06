@@ -11,7 +11,7 @@ from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 import requests
 from dataportal3 import models
-from dataportal3.utils.userAdmin import get_anon_user
+from dataportal3.utils.userAdmin import get_anon_user, survey_visible_to_user, get_request_user
 from old import survey_models as old_models
 from django.apps import apps
 
@@ -265,20 +265,30 @@ def survey_questions(request, wiserd_id):
 @csrf_exempt
 def survey_metadata(request, wiserd_id):
     wiserd_id = wiserd_id.strip()
-    # survey_models = old_models.Survey.objects.using('survey').all().filter(identifier=wiserd_id).values("surveyid", "identifier", "survey_title", "datacollector", "collectionstartdate", "collectionenddate", "moc_description", "samp_procedure", "collectionsituation", "surveyfrequency", "surveystartdate", "surveyenddate", "des_weighting", "samplesize", "responserate", "descriptionofsamplingerror", "dataproduct", "dataproductid", "location", "link", "notes", "user_id", "created", "updated", "long", "short_title", "spatialdata")
-    survey_models = models.Survey.objects.all().filter(identifier=wiserd_id).values("surveyid", "identifier", "survey_title", "datacollector", "collectionstartdate", "collectionenddate", "moc_description", "samp_procedure", "collectionsituation", "surveyfrequency", "surveystartdate", "surveyenddate", "des_weighting", "samplesize", "responserate", "descriptionofsamplingerror", "dataproduct", "dataproductid", "location", "link", "notes", "user_id", "created", "updated", "long", "short_title", "spatialdata")
+
+    user_profile = get_request_user(request)
+    allowed, access_data = survey_visible_to_user(wiserd_id, user_profile)
+
     surveys = []
-    for survey_model in survey_models:
-        surveys.append({
-            'data': survey_model,
-            'wiserd_id': wiserd_id
-        })
+    if allowed:
+        survey_models = models.Survey.objects.all().filter(identifier=wiserd_id).values("surveyid", "identifier", "survey_title", "datacollector", "collectionstartdate", "collectionenddate", "moc_description", "samp_procedure", "collectionsituation", "surveyfrequency", "surveystartdate", "surveyenddate", "des_weighting", "samplesize", "responserate", "descriptionofsamplingerror", "dataproduct", "dataproductid", "location", "link", "notes", "user_id", "created", "updated", "long", "short_title", "spatialdata")
+        for survey_model in survey_models:
+            surveys.append({
+                'data': survey_model,
+                'wiserd_id': wiserd_id
+            })
+    else:
+        # TODO decide if more info is needed here
+        pass
+
     api_data = {
         'url': request.get_full_path(),
         'method': 'survey_metadata',
         'search_result_data': surveys,
         'results_count': len(surveys),
-        }
+        'access_data': access_data,
+        'read_access': allowed
+    }
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
 

@@ -8,6 +8,15 @@
                 <h1 class="page-header">Access denied</h1>
             </div>
 
+        {% for access in access_allow.access_data %}
+    <div class="alert alert-info alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <p>You have access to this {{ access_allow.document_type }} because you are a member of the "{{ access.survey_collection_user_group_name }}" group.</p>
+        <p>Please be aware that the information for "{{ access.survey_collection_name}}" has restricted access.</p>
+        <p>Contact the WISERD DataPortal admin team for more information</p>
+    </div>
+        {% endfor %}
+
             {% if user.is_authenticated %}
                 <p>Access is currently prohibited for this {{ access_fail.document_type }} by the owner</p>
                 {% if access_fail.contact %}

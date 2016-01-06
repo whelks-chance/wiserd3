@@ -61,6 +61,29 @@ celery -A dataportal3.utils.ShapeFileImport worker --loglevel=info
 
 http://nominatim.openstreetmap.org/reverse?format=json&lat=51.5793876&lon=-3.1731345&zoom=18&addressdetails=1
 
+
+
+Rights/ Visibility Management:
+A UserGroup has a name and a collection of users
+The UserGroupSurveyCollection is a collection of surveys which the user group has a read/access claim over
+A SurveyVisibilityMetadata defines the visibility of a single survey as seen as part of a single UserGroupSurveyCollection
+
+This means:
+A survey can have multiple visibilities, as multiple UserGroupSurveyCollection's can "own" it
+e.g.
+Surveys A, B, C, D, E
+UserGroups X, Y, Z
+
+Members of group X can view Surveys A, B, C
+Members of group Y can view C, D, E
+Members of group Z can view A, E
+
+A single user can be in any/ all groups without any contradictions.
+If a user both *Can* and *Cannot* view a survey due to visibilities specifically denying access, access is still granted.
+
+
+
+
 Credits:
 http://blog.webkid.io/maps-with-leaflet-and-topojson/
 

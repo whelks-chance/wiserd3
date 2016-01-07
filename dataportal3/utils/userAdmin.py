@@ -1,4 +1,5 @@
 from django.contrib import auth
+from django.core.mail.message import EmailMultiAlternatives
 from dataportal3 import models
 from dataportal3.models import UserProfile, UserPreferences
 from django.contrib.auth.models import User, AnonymousUser
@@ -136,4 +137,3 @@ def survey_visible_to_user(survey_id, user_profile):
                     })
 
     return allowed, access_data
-

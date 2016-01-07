@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'old',
     'old_qual',
     'django_hstore',
+    'django_extensions',
 
 )
 
@@ -309,6 +310,7 @@ EMAIL_HOST = ''
 EMAIL_PORT = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
+ADMIN_EMAIL_ADDRESSES = ('',)
 
 ACCOUNT_ADAPTER = 'dataportal3.account_logic.AccountAdapter'
 

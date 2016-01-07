@@ -22,6 +22,7 @@ import operator
 from dataportal3 import models
 from dataportal3.forms import ShapefileForm
 from dataportal3.utils.ShapeFileImport import celery_import, ShapeFileImport
+from dataportal3.utils.admin_email import EMAIL_TYPES, send_email
 from dataportal3.utils.remote_data import RemoteData
 from dataportal3.utils.spatial_search.spatial_search import find_intersects
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user, get_user_preferences, \
@@ -1476,9 +1477,14 @@ def admin_api(request):
     userr = get_request_user(request)
     method = request.GET.get("method", None)
 
-    if method and 'request_access' in method:
+    if method and 'request_access' in method and userr.user.is_authenticated():
         document_type = request.GET.get("document_type", None)
         survey_id = request.GET.get("survey_id", None)
+
+        request_access_email_success = send_email(userr, EMAIL_TYPES.REQUEST_ACCESS, {
+            'survey_id': survey_id,
+            'document_type': document_type
+        })
 
         return render(request, 'access_request_confirm.html',
                       {
@@ -1486,6 +1492,7 @@ def admin_api(request):
                           'preferences': get_user_preferences(request),
                           'searches': get_user_searches(request),
                           'access_request': {
+                              'request_access_email_success': request_access_email_success,
                               'method': 'request_access',
                               'survey_id': survey_id,
                               'document_type': document_type

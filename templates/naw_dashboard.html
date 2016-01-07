@@ -1,11 +1,39 @@
 {% extends "naw_navigation.html" %}
 {% load staticfiles %}
 
-{#    <script>#}
-{#            $(document).ready(function () {#}
-{#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
-{#            });#}
-{#    </script>#}
+
+{% block extra_head %}
+    <script>
+        $(document).ready(function () {
+            $.cookie("WDP_view_type", "naw", {expires: 365, path: '/'});
+
+            var page = $('#wrapper');
+
+            var view_switch = $( "#dashboard_view_switch_form" ).dialog({
+                autoOpen: false,
+                height: page.height() / 2,
+                width: page.width() / 2,
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: page
+                },
+                modal: true,
+                buttons: {
+                    "Stay on this page": function () {
+                        $( this ).dialog( "close" );
+                    },
+                    "Navigate to WISERD HOME": function () {
+                        window.location.href = "{% url 'dashboard' %}";
+                    }
+                }
+            });
+
+            view_switch.data({}).dialog( "open" );
+        });
+    </script>
+{% endblock %}
+
 
 {% block content %}
     <div class="row">
@@ -95,6 +123,12 @@
                 </a>
             </div>
         </div>
+    </div>
+
+
+    <div id="dashboard_view_switch_form" title="Navigation">
+    <p>It looks like you've previously used the WISERD DataPortal using the Wales National Assembley Dashboard</p>
+    <p>Would you like to continue with that, or use the full WISERD DataPortal feature set?</p>
     </div>
 
 {% endblock %}

@@ -4,33 +4,32 @@
 {% block extra_head %}
     <script>
         $(document).ready(function () {
+            var page = $('#wrapper');
+
+            var view_switch = $( "#dashboard_view_switch_form" ).dialog({
+                autoOpen: false,
+{#                height: page.height() / 2,#}
+{#                width: page.width() / 2,#}
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: page
+                },
+                modal: true,
+                buttons: {
+                    "Stay on this page": function () {
+                        $.cookie("WDP_view_type", "default", {expires: 365, path: '/'});
+                        $( this ).dialog( "close" );
+                    },
+                    "Navigate to NAW": function () {
+                        window.location.href = "{% url 'naw_dashboard' %}";
+                    }
+                }
+            });
 
             if ($.cookie("WDP_view_type")) {
                 var view = $.cookie("WDP_view_type");
                 if (view == "naw") {
-
-                    var page = $('#wrapper');
-
-                    var view_switch = $( "#dashboard_view_switch_form" ).dialog({
-                        autoOpen: false,
-                        height: page.height() / 2,
-                        width: page.width() / 2,
-                        position: {
-                            my: "center",
-                            at: "center",
-                            of: page
-                        },
-                        modal: true,
-                        buttons: {
-                            "Stay on this page": function () {
-                                $.cookie("WDP_view_type", "default", {expires: 365, path: '/'});
-                                $( this ).dialog( "close" );
-                            },
-                            "Navigate to NAW": function () {
-                                window.location.href = "{% url 'naw_dashboard' %}";
-                            }
-                        }
-                    });
 
                     view_switch.data({}).dialog( "open" );
 
@@ -300,7 +299,7 @@
     {{ data }}
 
     <div id="dashboard_view_switch_form" title="Navigation">
-    <p>It looks like you've previously used the WISERD DataPortal using the Wales National Assembley Dashboard</p>
-    <p>Would you like to continue with that, or use the full WISERD DataPortal feature set?</p>
+        <p>It looks like you've previously used the WISERD DataPortal using the Wales National Assembley Dashboard</p>
+        <p>Would you like to continue with that, or use the full WISERD DataPortal feature set?</p>
     </div>
 {% endblock %}

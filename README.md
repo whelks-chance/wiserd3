@@ -1,4 +1,10 @@
+# WISERD DataPortal v3
 
+## Install and runtime notes
+
+This doesn't entirely explain how to get it all running, but it may help future debugging...
+
+## Mapshaper install
 apt-get install npm nodejs-legacy
 
 npm install -g mapshaper
@@ -7,19 +13,21 @@ ls *.zip|awk -F'.zip' '{print "unzip "$0" -d "$1}'|sh
 
 11, 13, 14
 
+## ShapeFiles
 
-# Convert shapefile from whatever projection it currently is, to 4326 for WGS 84 (web mercator, but ovoid, not sphere)
+Convert shapefile from whatever projection it currently is, to 4326 for WGS 84 (web mercator, but ovoid, not sphere)
 ogr2ogr -f 'ESRI Shapefile' -t_srs EPSG:4326 input-fixed.shp Wales_lsoa_2011.shp
 
-# This will be massive, and probably unusable
+This will be massive, and probably unusable
 mapshaper -i input-fixed.shp snap -simplify dp 100% keep-shapes -o output-fixed.geojson format=geojson
 
-# Topojson, much better. 1% is around 500k
+### Topojson
+Topojson, much better. 1% is around 500k
 mapshaper -i input-fixed.shp snap -simplify dp 100% keep-shapes -o output-fixed.json format=topojson
 mapshaper -i input-fixed.shp snap -simplify dp 1% keep-shapes -o output-fixed-1.json format=topojson
 
 
-Build the Database
+## Build the Database
 
 DB VM
 sudo -u postgres psql < build_sql.sql
@@ -53,7 +61,11 @@ select UpdateGeometrySRID('schema', 'table', 'geom_column', 4326) ;
 The new shpfile tables need the right permissions
 grant select, insert, update on all tables in schema public to dataportal;
 
-Celery - Shapefile import process, celery needs explicit export of settings module location
+
+
+## Celery
+Shapefile import process, celery needs explicit export of settings module location
+
 sudo yum install redis
 sudo systemctl start redis.service
 export DJANGO_SETTINGS_MODULE='wiserd3.settings'
@@ -63,7 +75,7 @@ http://nominatim.openstreetmap.org/reverse?format=json&lat=51.5793876&lon=-3.173
 
 
 
-Rights/ Visibility Management:
+## Rights/ Visibility Management:
 A UserGroup has a name and a collection of users
 The UserGroupSurveyCollection is a collection of surveys which the user group has a read/access claim over
 A SurveyVisibilityMetadata defines the visibility of a single survey as seen as part of a single UserGroupSurveyCollection
@@ -84,7 +96,9 @@ If a user both *Can* and *Cannot* view a survey due to visibilities specifically
 
 
 
-Credits:
+## Credits
+### Code not necessarily lifted entirely, but debugging help or guidance was found here:
+
 http://blog.webkid.io/maps-with-leaflet-and-topojson/
 
 https://github.com/gka/chroma.js

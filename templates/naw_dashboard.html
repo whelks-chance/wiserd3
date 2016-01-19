@@ -30,6 +30,9 @@
             });
 
             view_switch.data({}).dialog( "open" );
+
+            $('naw_message').show();
+
         });
     </script>
 {% endblock %}
@@ -40,8 +43,15 @@
         <div class="col-lg-12">
             <h1 class="page-header">Dashboard</h1>
         </div>
-        <!-- /.col-lg-12 -->
+        <div hidden="hidden" id="naw_message" class="row">
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+
+            </div>
+        </div>
     </div>
+
     <!-- /.row -->
     <div class="row">
 
@@ -127,8 +137,8 @@
 
 
     <div id="dashboard_view_switch_form" title="Navigation">
-    <p>It looks like you've previously used the WISERD DataPortal using the Wales National Assembley Dashboard</p>
-    <p>Would you like to continue with that, or use the full WISERD DataPortal feature set?</p>
+        <p>It looks like you've previously used the WISERD DataPortal using the Wales National Assembley Dashboard</p>
+        <p>Would you like to continue with that, or use the full WISERD DataPortal feature set?</p>
     </div>
 
 {% endblock %}

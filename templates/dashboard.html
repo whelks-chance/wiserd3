@@ -4,37 +4,41 @@
 {% block extra_head %}
     <script>
         $(document).ready(function () {
+
+            var naw_message = $('#naw_message');
+            naw_message.hide();
+
             var page = $('#wrapper');
 
-            var view_switch = $( "#dashboard_view_switch_form" ).dialog({
-                autoOpen: false,
-{#                height: page.height() / 2,#}
-{#                width: page.width() / 2,#}
-                position: {
-                    my: "center",
-                    at: "center",
-                    of: page
-                },
-                modal: true,
-                buttons: {
-                    "Stay on this page": function () {
-                        $.cookie("WDP_view_type", "default", {expires: 365, path: '/'});
-                        $( this ).dialog( "close" );
-                    },
-                    "Navigate to NAW": function () {
-                        window.location.href = "{% url 'naw_dashboard' %}";
-                    }
-                }
-            });
+{#            var view_switch = $( "#dashboard_view_switch_form" ).dialog({#}
+{#                autoOpen: false,#}
+                {#                height: page.height() / 2,#}
+                {#                width: page.width() / 2,#}
+{#                position: {#}
+{#                    my: "center",#}
+{#                    at: "center",#}
+{#                    of: page#}
+{#                },#}
+{#                modal: true,#}
+{#                buttons: {#}
+{#                    "Stay on this page": function () {#}
+{#                        $.cookie("WDP_view_type", "default", {expires: 365, path: '/'});#}
+{#                        $( this ).dialog( "close" );#}
+{#                    },#}
+{#                    "Navigate to NAW": function () {#}
+{#                        window.location.href = "{% url 'naw_dashboard' %}";#}
+{#                    }#}
+{#                }#}
+{#            });#}
 
             if ($.cookie("WDP_view_type")) {
                 var view = $.cookie("WDP_view_type");
                 if (view == "naw") {
-
-                    view_switch.data({}).dialog( "open" );
-
+{#                    view_switch.data({}).dialog( "open" );#}
                 }
+                naw_message.show();
             }
+
         });
     </script>
 
@@ -45,7 +49,14 @@
         <div class="col-lg-12">
             <h1 class="page-header">Dashboard</h1>
         </div>
-        <!-- /.col-lg-12 -->
+        <div id="naw_message" class="row">
+        <div class="col-lg-6 col-md-12">
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <a href="{% url 'naw_dashboard' %}" class="alert-link">Click here</a> to navigate to the NAW dashboard.
+</div>
+            </div>
+        </div>
     </div>
     <!-- /.row -->
     <div class="row">

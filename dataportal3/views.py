@@ -278,7 +278,9 @@ def map_search(request):
     surveys = request.GET.getlist('surveys', [])
     boundaries = request.GET.getlist('boundary', [])
     local_data_layers = []
-    # print surveys, boundaries
+    if naw:
+        surveys.append('')
+
     if len(surveys) == len(boundaries):
         for idx, survey_id in enumerate(surveys):
             print 'idx', idx

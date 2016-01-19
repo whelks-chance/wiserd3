@@ -51,8 +51,22 @@ INSTALLED_APPS = (
     'old_qual',
     'django_hstore',
     'django_extensions',
-
+    'rest_framework',
+    'rest_framework_swagger'
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
 
 DJANGO_HSTORE_GLOBAL_REGISTER = False
 

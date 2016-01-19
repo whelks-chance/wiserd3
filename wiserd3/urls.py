@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url, patterns
 from django.contrib import admin, auth
-from dataportal3 import views
+from dataportal3 import views, urls as api_urls
 from old import views as old_views
 
 urlpatterns = [
     url(r'^admin_tools/', include(admin.site.urls)),
+    url(r'^api/', include(api_urls, namespace='api')),
 
     url(r'^$', views.dashboard, name='root'),
     url(r'^index', views.dashboard, name='index'),

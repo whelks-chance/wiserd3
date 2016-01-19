@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url 'dashboard' %}">WISERD DataPortal v3.3.3a</a>
+                <a class="navbar-brand" href="{% url 'dashboard' %}">WISERD DataPortal {% include 'version_number.html' %}</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -253,6 +253,13 @@
                             <li><a href="{% url 'settings' %}"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>
                             <li class="divider"></li>
+
+                            <li><a target="_blank" href="/api/"><i class="fa fa-cloud-download fa-fw"></i> API</a>
+                            </li>
+                            <li><a target="_blank" href="/api/docs/"><i class="fa fa-file-text-o fa-fw"></i> API Docs</a>
+                            </li>
+                            <li class="divider"></li>
+
                             <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                         {% else %}
                             <li><a href="{% url 'account_login' %}"><i class="fa fa-sign-in fa-fw"></i> Login</a></li>

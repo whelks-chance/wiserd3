@@ -661,7 +661,7 @@ class UserGroupSurveyCollection(models.Model):
 
 class SpatialdataAEFA(models.Model):
     gid = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=254, blank=True, null=True)
+    # name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
     geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
@@ -673,7 +673,7 @@ class SpatialdataAEFA(models.Model):
 
 class SpatialdataPolice(models.Model):
     gid = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=254, blank=True, null=True)
+    # name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
     geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
@@ -746,7 +746,7 @@ class SpatialdataLSOA(models.Model):
 
 class SpatialdataFire(models.Model):
     gid = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=254, blank=True, null=True)
+    # name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
     geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
@@ -758,7 +758,7 @@ class SpatialdataFire(models.Model):
 
 class SpatialdataUA(models.Model):
     gid = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=254, blank=True, null=True)
+    # name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
     geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
@@ -779,3 +779,16 @@ class SpatialdataUA_2(models.Model):
     class Meta:
         managed = False
         db_table = 'ua_2'
+
+
+class SpatialdataNawer(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    code = models.CharField(max_length=254, blank=True, null=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    altname = models.CharField(max_length=254, blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
+
+    class Meta:
+        managed = False
+        db_table = 'nawer'

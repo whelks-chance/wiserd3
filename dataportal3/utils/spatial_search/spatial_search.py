@@ -5,69 +5,76 @@ from wiserd3 import settings
 
 __author__ = 'ubuntu'
 
+geometry_columns = [
+    {
+        'table_name': 'spatialdata_aefa',
+        'geometry_column': 'geom',
+        'label': 'label',
+        'table_model': models.SpatialdataAEFA
+    },
+    {
+        'table_name': 'spatialdata_police',
+        'geometry_column': 'geom',
+        'label': 'label',
+        'table_model': models.SpatialdataPolice
+    },
+    {
+        'table_name': 'spatialdata_pcode',
+        'geometry_column': 'geom',
+        'label': 'label',
+        'table_model': models.SpatialdataPostCode
+    },
+    {
+        'table_name': 'spatialdata_parl',
+        'geometry_column': 'geom',
+        'table_model': models.SpatialdataParl
+    },
+    {
+        'table_name': 'spatialdata_msoa',
+        'geometry_column': 'geom',
+        'table_model': models.SpatialdataMSOA
+    },
+    {
+        'table_name': 'spatialdata_lsoa',
+        'geometry_column': 'geom',
+        'label': 'zonecode',
+        'table_model': models.SpatialdataLSOA
+    },
+    {
+        'table_name': 'spatialdata_fire',
+        'geometry_column': 'geom',
+        'label': 'label',
+        'table_model': models.SpatialdataFire
+    },
+    {
+        'table_name': 'spatialdata_ua',
+        'geometry_column': 'geom',
+        'label': 'label',
+        'table_model': models.SpatialdataUA
+    },
+    {
+        'table_name': 'pcode_s',
+        'geometry_column': 'geom',
+        'label': 'label',
+        'table_model': models.SpatialdataPostCodeS
+    },
+    {
+        'table_name': 'ua_2',
+        'geometry_column': 'geom',
+        'label': 'code',
+        'table_model': models.SpatialdataUA_2
+    },
+    {
+        'table_name': 'nawer',
+        'geometry_column': 'geom',
+        'label': 'code',
+        'table_model': models.SpatialdataNawer
+    }
+]
 
 def find_intersects(geography_wkt):
 
-    geometry_columns = [
-        {
-            'table_name': 'spatialdata_aefa',
-            'geometry_column': 'geom',
-            'label': 'label',
-            'table_model': models.SpatialdataAEFA
-        },
-        {
-            'table_name': 'spatialdata_police',
-            'geometry_column': 'geom',
-            'label': 'label',
-            'table_model': models.SpatialdataPolice
-        },
-        {
-            'table_name': 'spatialdata_pcode',
-            'geometry_column': 'geom',
-            'label': 'label',
-            'table_model': models.SpatialdataPostCode
-        },
-        {
-            'table_name': 'spatialdata_parl',
-            'geometry_column': 'geom',
-            'table_model': models.SpatialdataParl
-        },
-        {
-            'table_name': 'spatialdata_msoa',
-            'geometry_column': 'geom',
-            'table_model': models.SpatialdataMSOA
-        },
-        {
-            'table_name': 'spatialdata_lsoa',
-            'geometry_column': 'geom',
-            'label': 'zonecode',
-            'table_model': models.SpatialdataLSOA
-        },
-        {
-            'table_name': 'spatialdata_fire',
-            'geometry_column': 'geom',
-            'label': 'label',
-            'table_model': models.SpatialdataFire
-        },
-        {
-            'table_name': 'spatialdata_ua',
-            'geometry_column': 'geom',
-            'label': 'label',
-            'table_model': models.SpatialdataUA
-        },
-        {
-            'table_name': 'pcode_s',
-            'geometry_column': 'geom',
-            'label': 'label',
-            'table_model': models.SpatialdataPostCodeS
-        },
-        {
-            'table_name': 'ua_2',
-            'geometry_column': 'geom',
-            'label': 'code',
-            'table_model': models.SpatialdataUA_2
-        }
-    ]
+
 
     return_data = {}
     found_intersects = {}

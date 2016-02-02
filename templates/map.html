@@ -444,7 +444,7 @@
                         }
                         info_text += strings;
                     }
-                    info_text += '<h4><b>VALUE : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</h4>'
+                    info_text += '<p><b>VALUE : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</p>'
                 } else {
                     info_text += '<h4>Hover over a region</h4>';
                 }
@@ -1524,10 +1524,11 @@
                                 topojson_geography,
                                 survey_id,
                                 local_available_data_selection,
-                                function(topojson_data) {
+                                function(data) {
                                     waitingDialog.hide();
-                                    var layer_name = survey_id + '_' + local_available_data_selection;
-                                    topojson_layers[layer_name] = topojson_data['topojson'];
+{#                                    var layer_name = survey_id + '_' + local_available_data_selection;#}
+                                    var layer_name = data['search_uuid'];
+                                    topojson_layers[layer_name] = data['topojson'];
 
                                     $( "#chloropleth_option_form").data({
                                         layer_names: layer_name,
@@ -1575,7 +1576,7 @@
                                         survey_id: local_data_layer['survey_id'],
                                         boundary_name: local_data_layer['boundary_name'],
                                         available_data: metadata['local_data_metadata']['data_names'],
-                                        unicode_data: metadata['local_data_metadata']['unicode_data'],
+                                        unicode_data: metadata['local_data_metadata']['unicode_data']
                                     }).dialog('open');
                                 }
                         );

@@ -1,7 +1,9 @@
+import os
 from django.contrib.gis.geos import GEOSGeometry
 from django.db import connections
 from dataportal3 import models
 from wiserd3 import settings
+from wiserd3.settings import TOPOJSON_DIR
 
 __author__ = 'ubuntu'
 
@@ -10,71 +12,110 @@ geometry_columns = [
         'table_name': 'spatialdata_aefa',
         'geometry_column': 'geom',
         'label': 'label',
-        'table_model': models.SpatialdataAEFA
+        'table_model': models.SpatialdataAEFA,
+        'name': 'AEFA'
     },
     {
         'table_name': 'spatialdata_police',
         'geometry_column': 'geom',
         'label': 'label',
-        'table_model': models.SpatialdataPolice
+        'table_model': models.SpatialdataPolice,
+        'name': 'Police'
     },
     {
         'table_name': 'spatialdata_pcode',
         'geometry_column': 'geom',
         'label': 'label',
-        'table_model': models.SpatialdataPostCode
+        'table_model': models.SpatialdataPostCode,
+        'name': 'Postcode'
     },
     {
         'table_name': 'spatialdata_parl',
         'geometry_column': 'geom',
-        'table_model': models.SpatialdataParl
+        'table_model': models.SpatialdataParl,
+        'name': 'Parliamentary Constituencies 2011',
+        'geog_short_code': 'parl2011',
+        'region_id': '2092957700TYPE460',
+        'topojson_file': os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json')
+    },
+    {
+        # FIXME REMOVE ME horribly broken
+        'table_name': 'spatialdata_nawer',
+        'geometry_column': 'geom',
+        'table_model': models.SpatialdataParl,
+        'name': 'Parliamentary',
+        'geog_short_code': 'region',
+        'region_id': '2092957700TYPE460',
+        'topojson_file': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-1-ms.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-ms.json')
     },
     {
         'table_name': 'spatialdata_msoa',
         'geometry_column': 'geom',
-        'table_model': models.SpatialdataMSOA
+        'table_model': models.SpatialdataMSOA,
+        'name': 'MSOA'
     },
     {
         'table_name': 'spatialdata_lsoa',
         'geometry_column': 'geom',
         'label': 'zonecode',
-        'table_model': models.SpatialdataLSOA
+        'table_model': models.SpatialdataLSOA,
+        'name': 'LSOA',
+        'geog_short_code': 'lsoa',
+        'region_id': '2092957700TYPE298',
+        'topojson_file': os.path.join(TOPOJSON_DIR, '11Wales_lsoa_2011/output-fixed-1-k.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, '11Wales_lsoa_2011/output-fixed-1-k.json')
     },
     {
         'table_name': 'spatialdata_fire',
         'geometry_column': 'geom',
         'label': 'label',
-        'table_model': models.SpatialdataFire
+        'table_model': models.SpatialdataFire,
+        'name': 'Fire'
     },
     {
         'table_name': 'spatialdata_ua',
         'geometry_column': 'geom',
         'label': 'label',
-        'table_model': models.SpatialdataUA
+        'table_model': models.SpatialdataUA,
+        'name': 'Unitary Authority',
+        'geog_short_code': 'ua',
+        'region_id': '2092957700TYPE464',
+        'topojson_file': os.path.join(TOPOJSON_DIR, '14Wales_lad_unitaryauthority_2011/output-fixed-1.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, '14Wales_lad_unitaryauthority_2011/output-fixed-1.json')
     },
     {
         'table_name': 'pcode_s',
         'geometry_column': 'geom',
         'label': 'label',
-        'table_model': models.SpatialdataPostCodeS
+        'table_model': models.SpatialdataPostCodeS,
+        'name': 'Postcode Sector',
+        'geog_short_code': 'pcode',
+        'region_id': '2092957700TYPE276',
+        'topojson_file': os.path.join(TOPOJSON_DIR, '06Wales_pcs_2012/output-fixed-1.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, '06Wales_pcs_2012/output-fixed.json')
     },
     {
         'table_name': 'ua_2',
         'geometry_column': 'geom',
         'label': 'code',
-        'table_model': models.SpatialdataUA_2
+        'table_model': models.SpatialdataUA_2,
+        'name': 'Unitary Authority 2'
     },
     {
         'table_name': 'nawer',
         'geometry_column': 'geom',
         'label': 'code',
-        'table_model': models.SpatialdataNawer
+        'table_model': models.SpatialdataNawer,
+        'name': 'National Assembly Region',
+        'topojson_file': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-1-ms.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-ms.json')
     }
 ]
 
+
 def find_intersects(geography_wkt):
-
-
 
     return_data = {}
     found_intersects = {}

@@ -24,7 +24,7 @@ from dataportal3.forms import ShapefileForm
 from dataportal3.utils.ShapeFileImport import celery_import, ShapeFileImport
 from dataportal3.utils.admin_email import EMAIL_TYPES, send_email
 from dataportal3.utils.remote_data import RemoteData
-from dataportal3.utils.spatial_search.spatial_search import find_intersects
+from dataportal3.utils.spatial_search.spatial_search import find_intersects, geometry_columns
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user, get_user_preferences, \
     survey_visible_to_user
 import requests
@@ -278,8 +278,6 @@ def map_search(request):
     surveys = request.GET.getlist('surveys', [])
     boundaries = request.GET.getlist('boundary', [])
     local_data_layers = []
-    if naw:
-        surveys.append('')
 
     if len(surveys) == len(boundaries):
         for idx, survey_id in enumerate(surveys):
@@ -298,6 +296,15 @@ def map_search(request):
                 'boundary_name': boundaries[idx],
                 'data': list(link_table_data)
             })
+
+    if naw:
+        # surveys.append('wisid_AssemblyRegions_56a653f209d3a')
+        local_data_layers.append({
+            'name': 'regions',
+            'survey_id': 'wisid_AssemblyRegions_56a653f209d3a',
+            'boundary_name': 'Parliamentary',
+            'data': ['ramname1', 'ramname2', 'ramname3', 'ramname4']
+        })
 
     uploaded_layers_clean = []
     try:
@@ -331,12 +338,15 @@ def map_search(request):
         })
 
     remote_layer_ids = request.GET.getlist('remote_layer_ids', [])
-    remote_layer_data = get_remote_layer_render_data_for_uid(remote_layer_ids, get_request_user(request))
+    remote_layer_data, local_layer_data = get_remote_layer_render_data_for_uid(
+        remote_layer_ids,
+        get_request_user(request)
+    )
 
     naw_key_searches = [
         {
             'uid': '40d5be16-c11f-43b2-9c29-45555dc07945',
-            'description': 'A quick podecode'
+            'description': 'A quick postcode'
         }, {
             'uid': '147b3009-5ce0-42ce-940e-38d594bf53be',
             'description': 'Another layer'
@@ -363,6 +373,8 @@ def map_search(request):
 
 def get_remote_layer_render_data_for_uid(nomissearch_uids, request_user):
     remote_layer_data = []
+    local_layer_data = []
+
     remote_searches = models.NomisSearch.objects.filter(uuid__in=nomissearch_uids, user=request_user)
 
     for remote_layer_model in remote_searches:
@@ -374,7 +386,8 @@ def get_remote_layer_render_data_for_uid(nomissearch_uids, request_user):
             })
 
         print remote_layer_model.display_attributes
-        remote_layer_data.append({
+
+        layer_data = {
             'bin_num': remote_layer_model.display_attributes['bin_num'],
             'bin_type': remote_layer_model.display_attributes['bin_type'],
             'colorpicker': remote_layer_model.display_attributes['colorpicker'],
@@ -383,8 +396,23 @@ def get_remote_layer_render_data_for_uid(nomissearch_uids, request_user):
             'uuid': remote_layer_model.uuid,
             'name': remote_layer_model.name,
             'dataset_id': remote_layer_model.dataset_id
-        })
-    return remote_layer_data
+        }
+
+        if remote_layer_model.search_type is None:
+            search_type = 'Nomis'
+        else:
+            search_type = remote_layer_model.search_type.name
+
+        if search_type == 'Nomis':
+            remote_layer_data.append(layer_data)
+
+        if search_type == 'Survey':
+            local_layer_data.append(layer_data)
+
+    print 'local_layer_data', local_layer_data
+    print 'remote_layer_data', remote_layer_data
+
+    return remote_layer_data, local_layer_data
 
 
 def question(request, question_id):
@@ -795,7 +823,7 @@ def logout(request):
 
 def get_nomis_searches(request):
     userr = get_request_user(request)
-    return models.NomisSearch.objects.filter(user=userr)
+    return models.NomisSearch.objects.filter(user=userr).order_by('-datetime')
 
 
 def profile(request):
@@ -929,6 +957,7 @@ def remote_data_topojson(request):
     nomis_search.dataset_id = dataset_id
     nomis_search.geography_id = geog
     nomis_search.search_attributes = codelist_to_attributes(codelist)
+    nomis_search.search_type = models.SearchType.objects.get(name='Nomis')
     nomis_search.save()
 
     rd = RemoteData()
@@ -955,13 +984,21 @@ def local_data_topojson(request):
     print 'boundary_name', boundary_name, type(boundary_name)
     print 'data_name', data_name, type(data_name)
 
+    # From the human readable name, we want to access the shortcode
     geog = ''
-    if boundary_name == 'Unitary Authority':
-        geog = 'ua'
-    if boundary_name == 'Parliamentary':
-        geog = 'parl2011'
-    if boundary_name == 'Post Code':
-        geog = 'pcode'
+    for geom in geometry_columns:
+        if 'name' in geom:
+            if boundary_name in geom['name']:
+                if 'geog_short_code' in geom:
+                    geog = geom['geog_short_code']
+    print 'geog found', geog
+
+    # if boundary_name == 'Unitary Authority':
+    #     geog = 'ua'
+    # if boundary_name == 'Parliamentary':
+    #     geog = 'parl2011'
+    # if boundary_name == 'Post Code':
+    #     geog = 'pcode'
 
     all_data = {}
 
@@ -1005,12 +1042,22 @@ def local_data_topojson(request):
         }]
         all_data[region] = regions
 
+    nomis_search = models.NomisSearch()
+    nomis_search.uuid = str(uuid.uuid4())
+    nomis_search.user = get_request_user(request)
+    nomis_search.dataset_id = survey_id
+    nomis_search.geography_id = geog
+    nomis_search.search_attributes = codelist_to_attributes([])
+    nomis_search.search_type = models.SearchType.objects.get(name='Survey')
+    nomis_search.save()
+
     rd = RemoteData()
     region_id, topojson_file = rd.get_dataset_geodata(geog, False)
     a = rd.update_topojson(topojson_file, all_data, False)
 
     to_return = {
         'topojson': a,
+        'search_uuid': nomis_search.uuid
     }
     to_return_json = json.dumps(to_return, indent=4)
 

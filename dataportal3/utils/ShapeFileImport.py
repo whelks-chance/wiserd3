@@ -1,6 +1,7 @@
 import os
 from django.db import connections
 from django.db.transaction import atomic
+from dataportal3.utils.shapefile.inspect_shapefile import ShapefileModelMatching
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
 
@@ -270,6 +271,11 @@ class ShapeFileImport:
 
         survey_links_to_save = []
 
+        # FIXME doing something twice here
+        extracted_shp = os.path.join(self.extract_dir, self.filenames['shp'])
+        matcher = ShapefileModelMatching()
+        match_data = matcher.get_best_match(extracted_shp)
+
         # clean_fields is a dict of field_name => index_in_lyr.fields
         for field_name in clean_fields:
             # we want the original index
@@ -293,9 +299,10 @@ class ShapeFileImport:
             new_survey_link.data_prefix = ''
             new_survey_link.data_suffix = ''
             new_survey_link.data_type = str(field_type)
-            new_survey_link.geom_table_name = 'spatialdata_parl'
+
+            new_survey_link.geom_table_name = match_data['model']
             new_survey_link.regional_data = regions_with_data
-            new_survey_link.boundary_name = "Parliamentary"
+            new_survey_link.boundary_name = match_data['name']
 
             print ''
             survey_links_to_save.append(new_survey_link)

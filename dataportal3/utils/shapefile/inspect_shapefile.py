@@ -14,7 +14,28 @@ from django.contrib.gis.gdal.datasource import DataSource
 __author__ = 'ubuntu'
 
 
-class import_and_match_shp:
+class ShapeFileWrapper:
+    def __init__(self, shp_filename):
+        self.shp_filename = shp_filename
+        self.ds = DataSource(shp_filename)
+
+    def get_fields(self, layer_number=0):
+        layer = self.ds[layer_number]
+        return layer.fields
+
+    def get_number_of_fields(self, layer_number=0):
+        return len(self.get_fields(layer_number))
+
+    def get_field_value(self, field, layer_number=0):
+        return self.ds[layer_number].get_fields(field)
+
+# filename = '/home/ubuntu/DataPortalGeographies/AssemblyRegions/AssemblyRegions.shp'
+# sfw = ShapeFileWrapper(filename)
+# print sfw.get_fields()
+# print sfw.get_field_value(sfw.get_fields()[0])
+
+
+class ShapefileModelMatching:
 
     def __init__(self):
 
@@ -103,27 +124,36 @@ class import_and_match_shp:
                     shp_model_field_data = {
                         'model': model_instance._meta.model_name,
                         'fields': valid_fields,
-                        'data': list(model_data)
+                        'data': list(model_data),
+                        'name': model_description['name']
                     }
                     shp_model_field_data_arr.append(shp_model_field_data)
 
                 except Exception as e:
                     print e, type(e)
 
-            # print ''
+                    # print ''
         print pprint.pformat(shp_model_field_data_arr)
         return shp_model_field_data_arr
 
-    def begin(self):
+    def get_best_match(self, filename=None):
         # filename = '/tmp/shapefiles/0d6bf8b0-dc83-4c2d-b1dd-874efd0cd1b0/extracted/wales_parl_2011_GeneralElection20102015.shp'
-        filename = '/home/ubuntu/DataPortalGeographies/AssemblyRegions/AssemblyRegions.shp'
+        if not filename:
+            filename = '/home/ubuntu/DataPortalGeographies/AssemblyRegions/AssemblyRegions.shp'
 
         shp_model_field_data_arr = self.list_spatial_model_fields()
 
         lyr = self.get_shp_lyr(filename)
         shp_file_field_data = self.list_fields(lyr)
 
-        self.find_matches(shp_file_field_data, shp_model_field_data_arr)
+        return self.find_matches(shp_file_field_data, shp_model_field_data_arr)
+
+    def get_name_for_model(self, model_object):
+        for geom in geometry_columns:
+            if isinstance(geom['table_model'], model_object) :
+                if 'name' in geom:
+                    return geom['name']
+        return None
 
     def find_matches(self, shp_file_field_data, shp_model_field_data_arr):
         hit = 0
@@ -133,6 +163,7 @@ class import_and_match_shp:
         hit_model = None
         hit_model_field = None
         hit_shapefile_field = None
+        hit_model_name = None
 
         for field in shp_file_field_data:
 
@@ -153,6 +184,7 @@ class import_and_match_shp:
                         if d[model_field_idx] in field['values']:
                             hit += 1
                             hit_model = model_data['model']
+                            hit_model_name = model_data['name']
                             hit_model_field = model_field
                             hit_shapefile_field = field['field']
 
@@ -160,8 +192,19 @@ class import_and_match_shp:
 
             print ''
 
-        print 'hits', hit, hit_model, hit_model_field, hit_shapefile_field
+        print 'hits:', hit, 'model:', hit_model, 'model_field', hit_model_field, 'shp_field', hit_shapefile_field
         print 'action count', self.action_count
 
-matcher = import_and_match_shp()
-matcher.begin()
+        # model_name = self.get_name_for_model(hit_model)
+
+        return {
+            'hits': hit,
+            'model': hit_model,
+            'model_field': hit_model_field,
+            'shp_field': hit_shapefile_field,
+            'name': hit_model_name
+
+        }
+
+# matcher = ShapefileModelMatching()
+# matcher.get_best_match()

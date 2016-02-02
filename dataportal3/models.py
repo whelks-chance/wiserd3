@@ -468,6 +468,14 @@ class FeatureStore(models.Model):
         return str(self.feature_collection.name) + ':' + str(self.name)
 
 
+class SearchType(models.Model):
+    name = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return str(self.name) + ':' + str(self.uuid) + ':' + self.geography_id
+
+
 class NomisSearch(models.Model):
     name = models.TextField(blank=True, null=True)
     uuid = models.TextField(blank=True, null=True)
@@ -477,6 +485,7 @@ class NomisSearch(models.Model):
     search_attributes = hstore.DictionaryField(blank=True, null=True)
     display_attributes = hstore.DictionaryField(blank=True, null=True)
     datetime = models.DateTimeField(default=timezone.now)
+    search_type = models.ForeignKey(SearchType, blank=True, null=True)
 
     def __unicode__(self):
         return str(self.name) + ':' + str(self.uuid) + ':' + self.geography_id

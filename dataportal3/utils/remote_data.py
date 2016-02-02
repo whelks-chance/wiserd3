@@ -2,6 +2,7 @@
 import os
 import pprint
 import urllib3.contrib.pyopenssl
+from dataportal3.utils.spatial_search.spatial_search import geometry_columns
 from wiserd3 import settings
 
 urllib3.contrib.pyopenssl.inject_into_urllib3()
@@ -458,14 +459,15 @@ class RemoteData():
         region_id = ''
         topojson_file = ''
 
-        for topojson_entry in settings.TOPOJSON_OPTIONS:
-            if topojson_entry['geog_short_code'] == geog_short_code:
-                region_id = topojson_entry['region_id']
-                if high:
-                    # high detail topojson file
-                    topojson_file = topojson_entry['topojson_file_high']
-                else:
-                    topojson_file = topojson_entry['topojson_file']
+        for topojson_entry in geometry_columns:  # settings.TOPOJSON_OPTIONS:
+            if 'geog_short_code' in topojson_entry:
+                if topojson_entry['geog_short_code'] == geog_short_code:
+                    region_id = topojson_entry['region_id']
+                    if high:
+                        # high detail topojson file
+                        topojson_file = topojson_entry['topojson_file_high']
+                    else:
+                        topojson_file = topojson_entry['topojson_file']
 
         # print region_id, topojson_file
 

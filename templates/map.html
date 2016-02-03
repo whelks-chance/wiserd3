@@ -59,7 +59,7 @@
 
     <script type="text/javascript" src="{% static 'html2canvas.js' %}"></script>
 
-    <script type="text/javascript" src="{% static 'dataportal.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dataportal/dataportal.js' %}"></script>
 
     <script>
         L.TopoJSON = L.GeoJSON.extend({
@@ -1610,6 +1610,9 @@
                 }());
             }
 
+            var local_search_layer_data = {{ local_searches|jsonify }};
+            do_local_layers(local_search_layer_data, "{% url 'remote_data_topojson' %}");
+
             var remote_data_layer_data = {{ remote_searches|jsonify }};
             for (var remote_data_layer_idx in remote_data_layer_data) {
 
@@ -1645,6 +1648,7 @@
 
     <div id="map_div" style="height: 180px;"></div>
     <div id="naw_output" >NAW = {{ naw }}</div>
+    <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>
     <div id="screenshot" class="btn">Screenshot</div>
     <div id="screenshot_result"></div>
     <div id="screenshot_result2"></div>

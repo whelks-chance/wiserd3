@@ -473,7 +473,7 @@ class SearchType(models.Model):
     description = models.TextField(blank=True, null=True)
 
     def __unicode__(self):
-        return str(self.name) + ':' + str(self.uuid) + ':' + self.geography_id
+        return str(self.name) + ':' + self.description
 
 
 class NomisSearch(models.Model):

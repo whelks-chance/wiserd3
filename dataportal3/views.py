@@ -359,6 +359,7 @@ def map_search(request):
                       'naw_key_searches': naw_key_searches,
                       'local_data_layers': local_data_layers,
                       'remote_searches': remote_layer_data,
+                      'local_searches': local_layer_data,
                       'topojson_geographies': topojson_geographies,
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
@@ -409,8 +410,8 @@ def get_remote_layer_render_data_for_uid(nomissearch_uids, request_user):
         if search_type == 'Survey':
             local_layer_data.append(layer_data)
 
-    print 'local_layer_data', local_layer_data
-    print 'remote_layer_data', remote_layer_data
+    # print 'local_layer_data', local_layer_data
+    # print 'remote_layer_data', remote_layer_data
 
     return remote_layer_data, local_layer_data
 
@@ -845,6 +846,10 @@ def data_api(request):
 
     method = request.GET.get("method", None)
 
+    if method == 'search_layer_topojson':
+        search_uuid = request.GET.get("search_uuid", None)
+        to_return = get_topojson_for_uuid(request, search_uuid)
+
     if method == 'remote_search':
         search_term = request.GET.get("search_term", None)
         print search_term, type(search_term)
@@ -1047,7 +1052,12 @@ def local_data_topojson(request):
     nomis_search.user = get_request_user(request)
     nomis_search.dataset_id = survey_id
     nomis_search.geography_id = geog
-    nomis_search.search_attributes = codelist_to_attributes([])
+    nomis_search.search_attributes = codelist_to_attributes([
+        {
+            'option': 'data_name',
+            'variable': data_name
+        }
+    ])
     nomis_search.search_type = models.SearchType.objects.get(name='Survey')
     nomis_search.save()
 
@@ -1453,6 +1463,122 @@ def csv_view(request, provider, search_uuid):
                       'provider': provider,
                       'search_uuid': search_uuid
                   }, context_instance=RequestContext(request))
+
+
+def get_topojson_for_uuid_view(request, search_uuid):
+    response_data = get_topojson_for_uuid(request, search_uuid)
+    return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
+
+
+def get_topojson_for_uuid(request, search_uuid):
+    request_user = get_request_user(request)
+    user_prefs = get_user_preferences(request)
+
+    response_data = {}
+    found_search_model = models.NomisSearch.objects.get(uuid=search_uuid, user=request_user)
+    dataset_id = found_search_model.dataset_id
+    geog = found_search_model.geography_id
+
+    boundary_name = ''
+    for geom in geometry_columns:
+        if 'geog_short_code' in geom:
+            if geog in geom['geog_short_code']:
+                if 'name' in geom:
+                    boundary_name = geom['name']
+
+    codelist = []
+    for code in found_search_model.search_attributes:
+        codelist.append({
+            'option': code,
+            'variable': found_search_model.search_attributes[code]
+        })
+    # print found_search_model.display_attributes
+
+    layer_data = {
+        'bin_num': found_search_model.display_attributes['bin_num'],
+        'bin_type': found_search_model.display_attributes['bin_type'],
+        'colorpicker': found_search_model.display_attributes['colorpicker'],
+        'codelist': codelist,
+        'geography_id': found_search_model.geography_id,
+        'uuid': found_search_model.uuid,
+        'name': found_search_model.name,
+        'dataset_id': found_search_model.dataset_id
+    }
+
+    # local_search_layers = []
+    # remote_search_layers = []
+
+    if found_search_model.search_type is None:
+        search_type = 'Nomis'
+    else:
+        search_type = found_search_model.search_type.name
+
+    if search_type == 'Nomis':
+        # remote_search_layers.append(layer_data)
+
+        rd = RemoteData()
+        a = rd.get_topojson_with_data(dataset_id, geog, '', codelist, high=user_prefs.topojson_high)
+        response_data['topojson'] = a
+
+    if search_type == 'Survey':
+        # local_search_layers.append(layer_data)
+
+        data_name = ''
+        all_data = {}
+
+        for code in codelist:
+            if code['option'] == 'data_name':
+                data_name = code['variable']
+
+        survey_spatial_data = models.SpatialSurveyLink.objects.get(
+            survey__identifier=dataset_id,
+            boundary_name=boundary_name,
+            data_name=data_name
+        )
+
+        survey_spatial_data_strings = models.SpatialSurveyLink.objects.filter(
+            survey__identifier=dataset_id,
+            boundary_name=boundary_name,
+            data_type='unicode'
+        ).order_by('data_name')
+
+        regional_data = survey_spatial_data.regional_data
+
+        region_string_data = {}
+        for region in regional_data:
+            region_string_data[region] = []
+            for data_strings in survey_spatial_data_strings:
+                # For each region in this survey's SpatialSurveyLink,
+                # build a string of the unicode data elements
+                # name_of_data : value_of_data, "Title Cased"
+                region_string_data[region].append({
+                    'title': str(data_strings.data_name).title(),
+                    'value': str(data_strings.regional_data[region]).title()
+                })
+
+        for region in regional_data:
+            regions = [{
+                'name': '',
+                'value': regional_data[region],
+                "geography_id": '',
+                "geography_code": '',
+                "data_status": "A",
+                "geography": region,
+                "string_data": region_string_data[region],
+                "data_title": data_name
+            }]
+            all_data[region] = regions
+
+        rd = RemoteData()
+        region_id, topojson_file = rd.get_dataset_geodata(geog, False)
+        a = rd.update_topojson(topojson_file, all_data, False)
+        response_data['topojson'] = a
+
+    response_data['search_uuid'] = search_uuid
+    response_data['layer_data'] = layer_data
+    response_data['type'] = search_type
+
+    return response_data
 
 
 def help_support(request):

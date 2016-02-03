@@ -41,6 +41,8 @@ urlpatterns = [
     url(r'^data_api', views.data_api, name='data_api'),
     url(r'^local_data_topojson', views.local_data_topojson, name='local_data_topojson'),
 
+    url(r'^search_layer_topojson/(?P<search_uuid>\S+)', views.get_topojson_for_uuid_view, name='search_layer_topojson'),
+
     url(r'^file_management', views.file_management, name='file_management'),
     url(r'^events', views.events, name='events'),
     url(r'^csv_viewer/(?P<provider>\S+)/(?P<search_uuid>\S+)', views.csv_view, name='csv_view'),

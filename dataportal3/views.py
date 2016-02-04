@@ -256,6 +256,9 @@ def map_search(request):
     print request.GET
     naw = request.GET.get('naw', False)
 
+    layer_uuids = request.GET.getlist('layers', [])
+    print layer_uuids, type(layer_uuids)
+
     wms_layers = {}
     try:
         for layer in settings.WMS_LAYERS:
@@ -360,6 +363,7 @@ def map_search(request):
                       'local_data_layers': local_data_layers,
                       'remote_searches': remote_layer_data,
                       'local_searches': local_layer_data,
+                      'layer_uuids': layer_uuids,
                       'topojson_geographies': topojson_geographies,
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),

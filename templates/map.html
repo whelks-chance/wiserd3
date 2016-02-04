@@ -60,6 +60,7 @@
     <script type="text/javascript" src="{% static 'html2canvas.js' %}"></script>
 
     <script type="text/javascript" src="{% static 'dataportal/dataportal.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dataportal/local_data_layers.js' %}"></script>
 
     <script>
         L.TopoJSON = L.GeoJSON.extend({
@@ -1526,7 +1527,7 @@
                                 local_available_data_selection,
                                 function(data) {
                                     waitingDialog.hide();
-{#                                    var layer_name = survey_id + '_' + local_available_data_selection;#}
+                                    {#                                    var layer_name = survey_id + '_' + local_available_data_selection;#}
                                     var layer_name = data['search_uuid'];
                                     topojson_layers[layer_name] = data['topojson'];
 
@@ -1612,6 +1613,41 @@
 
             var local_search_layer_data = {{ local_searches|jsonify }};
             do_local_layers(local_search_layer_data, "{% url 'remote_data_topojson' %}");
+
+            var layer_uuids = {{ layer_uuids|jsonify }};
+            do_layer_uuids(layer_uuids, "{% url 'data_api' %}");
+
+            function do_layer_uuids(layer_uuids, search_layer_topojson_url) {
+
+                for (var uuid_idx in layer_uuids) {
+
+                    var uuid = layer_uuids[uuid_idx];
+
+                    $.ajax({
+                        url: search_layer_topojson_url + '/' + uuid,
+                        type: 'GET',
+                        data: {
+                            method: 'search_layer_topojson',
+                            search_uuid: uuid
+                        },
+                        success: function (topojson_data) {
+                            console.log(topojson_data);
+
+                            var layer_data = topojson_data['layer_data'];
+
+                            handleUploadedLayer(
+                                    topojson_data['topojson'],
+                                    layer_data['colorpicker'],
+                                    layer_data['bin_type'],
+                                    layer_data['bin_num'],
+                                    '',
+                                    layer_data['name'],
+                                    ''
+                            );
+                        }
+                    });
+                }
+            }
 
             var remote_data_layer_data = {{ remote_searches|jsonify }};
             for (var remote_data_layer_idx in remote_data_layer_data) {

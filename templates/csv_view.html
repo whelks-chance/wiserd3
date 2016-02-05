@@ -36,7 +36,7 @@
             <h3><a href="{{ dataset_url }}" target="_blank">Dataset Download Link</a></h3>
 
 
-            <a class="btn btn-info" target="_blank" href="{% url 'map' %}?remote_layer_ids={{ search_uuid }}">Map It</a>
+            <a class="btn btn-info" target="_blank" href="{% url 'map' %}?layers={{ search_uuid }}">Map It</a>
             <p>Dataset Retrieved from {{ provider }}</p>
             <p>Dataset ID {{ dataset_id }}</p>
             <p>Search Query Options</p>

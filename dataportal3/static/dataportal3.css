@@ -73,6 +73,11 @@
     /*width: min-content;*/
 }
 
+.legend_accordion {
+    resize: both;
+          overflow: auto;
+}
+
 /*.info {*/
     /*max-width: 80%;*/
     /*width: -moz-min-content;*/

@@ -1578,6 +1578,14 @@ def get_topojson_for_uuid(request, search_uuid):
         a = rd.update_topojson(topojson_file, all_data, False)
         response_data['topojson'] = a
 
+        data_names = models.SpatialSurveyLink.objects.filter(
+            survey__identifier=dataset_id,
+            boundary_name=boundary_name,
+        ).values_list('data_name', flat=True)
+
+        print 'data_name', data_names
+        layer_data['data_names'] = list(data_names)
+
     response_data['search_uuid'] = search_uuid
     response_data['layer_data'] = layer_data
     response_data['type'] = search_type

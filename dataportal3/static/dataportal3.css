@@ -78,6 +78,10 @@
           overflow: auto;
 }
 
+.panel-group {
+    margin-bottom: 5px;
+}
+
 /*.info {*/
     /*max-width: 80%;*/
     /*width: -moz-min-content;*/

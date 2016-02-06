@@ -753,30 +753,6 @@
                     chroma_scale = chroma.scale(color_scheme).classes(grades);
                 }
 
-                {#                var legend = L.control({position: 'bottomright'});#}
-                {#                legend.onAdd = function (map) {#}
-                {#                    var div = L.DomUtil.create('div', 'info legend'),#}
-                {#                            labels = [],#}
-                {#                            from, to;#}
-                {##}
-                {#                    var div_inner = build_legend(feature_data, #}
-                {#                            unique_feature_string_data,#}
-                {#                            chroma_scale,#}
-                {#                            grades, is_percentage);#}
-                {#                    #}
-                {#                    addLegend(layer_name_text, div_inner);#}
-                {##}
-                {#                    div.innerHTML = '<h4>' + layer_name_text + '</h4><p><a target="_blank" href="' + csv_url + '">download data</a></p>' + div_inner;#}
-                {#                    return div;#}
-                {#                };#}
-
-                var div_inner = build_legend(feature_data,
-                        unique_feature_string_data,
-                        chroma_scale,
-                        grades, is_percentage);
-
-                addLegend(layer_name_text, div_inner);
-
                 var myLayer = new L.TopoJSON();
                 myLayer.addData(data);
 
@@ -799,7 +775,6 @@
                     {#                    console.log(eventLayer.name);#}
                     {#                    console.log(layer_name_text);#}
                     if (eventLayer.name == layer_name_text) {
-                        {#                        this.removeControl(legend);#}
                         $('#accordion_inner_' + layer_name_text).remove();
                     }
                 });
@@ -808,7 +783,13 @@
                     {#                    console.log(eventLayer.name);#}
                     {#                    console.log(layer_name_text);#}
                     if (eventLayer.name == layer_name_text) {
-                        {#                        legend.addTo(map);#}
+
+                        var div_inner = build_legend(feature_data,
+                                unique_feature_string_data,
+                                chroma_scale,
+                                grades, is_percentage);
+
+                        addLegend(layer_name_text, div_inner);
                     }
                 });
 
@@ -856,13 +837,7 @@
                         // look through each layer in order and see if the clicked point,
                         // e.latlng, overlaps with one of the shapes in it.
 
-                        {#                        var layers = [];#}
-                        {#                        map.eachLayer(function (layer) {#}
-                        {#                            layers.push(layer);#}
-                        {#                        });#}
-
                         for (var i = 0; i < leaflet_layers.length; i++) {
-                            alert('click' + i + ' ' + leaflet_layers.length);
 
                             var match = leafletPip.pointInLayer(
                                     // the clicked point
@@ -874,12 +849,12 @@
                             // if there's overlap, add some content to the popup: the layer name
                             // and a table of attributes
                             if (match.length) {
-                                html += '<strong>' + leaflet_layers[i].name +
-                                        '<button onclick="highlightMatch(this)" data-layer="' + i +
-                                        '" data-latlng="' +
-                                        [e.latlng.lat, e.latlng.lng] +
-                                        '">highlight</button></strong>';
-                                {#                                html += propertyTable(match[0].feature.properties);#}
+{#                                html += '<strong>' + leaflet_layers[i].name +#}
+{#                                        '<button onclick="highlightMatch(this)" data-layer="' + i +#}
+{#                                        '" data-latlng="' +#}
+{#                                        [e.latlng.lat, e.latlng.lng] +#}
+{#                                        '">highlight</button></strong>';#}
+                                   html += propertyTable(match[0].feature.properties);
                             }
                         }
                         if (html) {
@@ -898,23 +873,24 @@
                         from = grades[i];
                         to = grades[i + 1];
 
-                        var legend_row = '<i style="background:' + getColor(from + 1, grades, chroma_scale) + '"></i> ';
+                        var legend_row = '<p><i style="background:' + getColor(from + 1, grades, chroma_scale) + '"></i> ';
                         legend_row += from.toFixed(2);
                         if (to) {
                             legend_row += (to).toFixed(2) ? '&ndash;' + (to).toFixed(2) + (is_percentage ? '%' : '') : (is_percentage ? '%+' : '+');
                         } else {
                             legend_row += (is_percentage ? '%' : '');
                         }
+                        legend_row += '</p>';
                         labels.push(legend_row);
                     }
                 }
                 if (unique_feature_string_data.length > 0) {
                     for (var string_idx in unique_feature_string_data) {
-                        var legend_string_row = '<i style="background:' + getColorFromString(unique_feature_string_data[string_idx]) + '"></i> ' + unique_feature_string_data[string_idx];
+                        var legend_string_row = '<p><i style="background:' + getColorFromString(unique_feature_string_data[string_idx]) + '"></i> ' + unique_feature_string_data[string_idx] + '</p>';
                         labels.push(legend_string_row);
                     }
                 }
-                var div_inner = labels.join('<br>');
+                var div_inner = labels.join('');
                 div_inner += '</div>';
                 return div_inner;
             }
@@ -941,7 +917,7 @@
                         .append(
                         $('<div/>')
                                 .attr('id', 'collapse' + div_id)
-                                .addClass("panel-collapse collapse")
+                                .addClass("panel-collapse collapse in")
                                 .append(
                                 $('<div/>')
                                         .addClass("panel-body")
@@ -954,23 +930,24 @@
 
             }
 
-            var legend_two = L.control({position: 'bottomright'});
-{#            legend_two.resizable({#}
-{#                handles: 'n, e, s, w'#}
-{#            });#}
+            var legend_two = L.control({id: 'legend_control', position: 'bottomright'});
 
             legend_two.onAdd = function (map) {
-            var div = L.DomUtil.create('div', 'info legend');
+                var div = L.DomUtil.create('div', 'info legend');
 
-            var accordionDiv = $('<div/>')
-                    .attr("id", "legend_accordion")
-                    .addClass("panel-group");
+                var legendHeaderDiv = $('<div/>')
+                        .addClass("panel-heading")
+                        .text('Legend');
 
-            {#                div.innerHTML = document.getElementById("longString").text;#}
-            $(div).append(accordionDiv);
-            return div;
-        };
-        legend_two.addTo(map);
+                var accordionDiv = $('<div/>')
+                        .attr("id", "legend_accordion")
+                        .addClass("panel-group");
+
+                $(div).append(legendHeaderDiv).append(accordionDiv);
+                return div;
+            };
+            legend_two.addTo(map);
+{#            $('.legend').resizable({handles: 'n, e, s, w'});#}
 
         function propertyTable(o) {
             var t = '<table>';
@@ -1943,56 +1920,6 @@
         </fieldset>
 
     </div>
-
-    <script type="text/x-my-stuff" id="longString">
-
-    <div class="panel-group" id="accordion">
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
-      </h4>
-    </div>
-    <div id="collapse1" class="panel-collapse collapse in">
-      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.</div>
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-        Collapsible Group 2</a>
-      </h4>
-    </div>
-    <div id="collapse2" class="panel-collapse collapse">
-      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.</div>
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-        Collapsible Group 3</a>
-      </h4>
-    </div>
-    <div id="collapse3" class="panel-collapse collapse">
-      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.</div>
-    </div>
-  </div>
-</div>
-    </script>
 
 {% endblock %}
 

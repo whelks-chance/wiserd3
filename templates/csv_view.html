@@ -6,6 +6,9 @@
 {% block content %}
     <script>
         $(document).ready(function() {
+
+            var all_fields = [];
+
             var survey_questions_table = $('#dataset_table').DataTable({
                 serverSide: false,
                 processing: true,
@@ -33,8 +36,10 @@
                     {#                    $('#uuid_data').html('<pre>' + JSON.stringify(data['layer_data'], null, 2) + '</pre>');#}
                     var uuid_data_div = $('#uuid_data');
 
-                    for (var data_name_idx in data['layer_data']['data_names']) {
-                        var data_name = data['layer_data']['data_names'][data_name_idx];
+                    all_fields = data['layer_data']['data_names'];
+
+                    for (var data_name_idx in all_fields) {
+                        var data_name = all_fields[data_name_idx];
 
                         var check_div = $('<div/>').addClass('checkbox col-sm-3');
                         uuid_data_div.append(check_div);
@@ -44,11 +49,36 @@
 
                         var check_input = $('<input/>').attr('id', 'check_' + data_name_idx + '_' + data_name)
                                 .attr('type', 'checkbox')
+                                .attr('name', 'data_fields')
                                 .attr('checked', 'checked')
                                 .attr('value', data_name)
                                 .prependTo(check_label);
                     }
                 }
+            });
+
+            $('#update_hidden_fields').click(function(){
+
+                var selected_fields = [];
+
+                $("input:checkbox[name|='data_fields']:checked").each(function(){
+                    selected_fields.push($(this).val());
+                });
+
+
+                $.ajax({
+                    url: "{% url 'data_api' %}",
+                    type: 'GET',
+                    data: {
+                        method: 'update_hidden_fields',
+                        search_uuid: '{{ search_uuid }}',
+                        selected_fields: selected_fields,
+                        all_fields: all_fields
+                    },
+                    success: function(data) {
+                        alert('Saved ' + selected_fields);
+                    }
+                });
             });
         });
 
@@ -67,11 +97,19 @@
 
             <a class="btn btn-info" target="_blank" href="{% url 'map' %}?layers={{ search_uuid }}">Map It</a>
 
-
-            <form role="form" lpformnum="1">
-                <div id="uuid_data" class="form-group row"></div>
-
-            </form>
+            <div class="panel panel-default">
+                <form role="form" lpformnum="1">
+                    <div class="panel-heading">
+                        <h4>Secondary Attributes</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div id="uuid_data" class="form-group row"></div>
+                    </div>
+                    <div class="panel-footer">
+                        <div id="update_hidden_fields" class="btn btn-info push-right">Save</div>
+                    </div>
+                </form>
+            </div>
 
             <p>Dataset Retrieved from {{ provider }}</p>
             <p>Dataset ID {{ dataset_id }}</p>

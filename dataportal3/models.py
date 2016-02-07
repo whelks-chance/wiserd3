@@ -484,6 +484,7 @@ class NomisSearch(models.Model):
     geography_id = models.TextField(blank=True, null=True)
     search_attributes = hstore.DictionaryField(blank=True, null=True)
     display_attributes = hstore.DictionaryField(blank=True, null=True)
+    display_fields = hstore.DictionaryField(blank=True, null=True)
     datetime = models.DateTimeField(default=timezone.now)
     search_type = models.ForeignKey(SearchType, blank=True, null=True)
 

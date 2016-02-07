@@ -854,6 +854,27 @@ def data_api(request):
         search_uuid = request.GET.get("search_uuid", None)
         to_return = get_topojson_for_uuid(request, search_uuid)
 
+    # This takes a list of fields from a layer described by an uploaded shapefile
+    # The layer will have been searched for and displayed, and can be edited for content here
+    # The selected fields are to show in the layer when rendered in future
+    if method == 'update_hidden_fields':
+        search_uuid = request.GET.get("search_uuid", None)
+        selected_fields = request.GET.getlist("selected_fields[]", [])
+        all_fields = request.GET.getlist("all_fields[]", [])
+
+        display_dict = {}
+        for field in all_fields:
+            if field in selected_fields:
+                display_dict[field] = True
+            else:
+                display_dict[field] = False
+
+        search_object = models.NomisSearch.objects.get(uuid=search_uuid)
+        search_object.display_fields = display_dict
+        search_object.save()
+
+        to_return = [display_dict]
+
     if method == 'remote_search':
         search_term = request.GET.get("search_term", None)
         print search_term, type(search_term)
@@ -1506,7 +1527,8 @@ def get_topojson_for_uuid(request, search_uuid):
         'geography_id': found_search_model.geography_id,
         'uuid': found_search_model.uuid,
         'name': found_search_model.name,
-        'dataset_id': found_search_model.dataset_id
+        'dataset_id': found_search_model.dataset_id,
+        'display_fields': found_search_model.display_fields
     }
 
     # local_search_layers = []
@@ -1548,6 +1570,8 @@ def get_topojson_for_uuid(request, search_uuid):
 
         regional_data = survey_spatial_data.regional_data
 
+        display_fields = found_search_model.display_fields
+
         region_string_data = {}
         for region in regional_data:
             region_string_data[region] = []
@@ -1555,10 +1579,23 @@ def get_topojson_for_uuid(request, search_uuid):
                 # For each region in this survey's SpatialSurveyLink,
                 # build a string of the unicode data elements
                 # name_of_data : value_of_data, "Title Cased"
-                region_string_data[region].append({
-                    'title': str(data_strings.data_name).title(),
-                    'value': str(data_strings.regional_data[region]).title()
-                })
+
+                # If display fields are given, only add the properties if they're set to "true"
+                if display_fields:
+                    if data_strings.data_name in display_fields:
+                        # print data_strings.data_name, display_fields[data_strings.data_name]
+
+                        if display_fields[data_strings.data_name] == 'true':
+                            region_string_data[region].append({
+                                'title': str(data_strings.data_name).title(),
+                                'value': str(data_strings.regional_data[region]).title()
+                            })
+
+                else:
+                    region_string_data[region].append({
+                        'title': str(data_strings.data_name).title(),
+                        'value': str(data_strings.regional_data[region]).title()
+                    })
 
         for region in regional_data:
             regions = [{

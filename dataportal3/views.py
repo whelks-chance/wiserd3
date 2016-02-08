@@ -301,13 +301,16 @@ def map_search(request):
             })
 
     if naw:
+        layer_uuids.append(
+            'a61fa534-d1ca-4798-bc2a-51cfd1e5e2e3'
+        )
         # surveys.append('wisid_AssemblyRegions_56a653f209d3a')
-        local_data_layers.append({
-            'name': 'regions',
-            'survey_id': 'wisid_AssemblyRegions_56a653f209d3a',
-            'boundary_name': 'Parliamentary',
-            'data': ['ramname1', 'ramname2', 'ramname3', 'ramname4']
-        })
+        # local_data_layers.append({
+        #     'name': 'regions',
+        #     'survey_id': 'wisid_AssemblyRegions_56a653f209d3a',
+        #     'boundary_name': 'Parliamentary',
+        #     'data': ['ramname1', 'ramname2', 'ramname3', 'ramname4']
+        # })
 
     uploaded_layers_clean = []
     try:
@@ -1500,7 +1503,8 @@ def get_topojson_for_uuid(request, search_uuid):
     user_prefs = get_user_preferences(request)
 
     response_data = {}
-    found_search_model = models.NomisSearch.objects.get(uuid=search_uuid, user=request_user)
+    #FIXME add a check for user here
+    found_search_model = models.NomisSearch.objects.get(uuid=search_uuid)
     dataset_id = found_search_model.dataset_id
     geog = found_search_model.geography_id
 

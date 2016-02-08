@@ -47,12 +47,26 @@
                         var check_label = $('<label/>').attr('for', 'check_' + data_name_idx + '_' + data_name)
                                 .text(data_name).appendTo(check_div);
 
-                        var check_input = $('<input/>').attr('id', 'check_' + data_name_idx + '_' + data_name)
-                                .attr('type', 'checkbox')
-                                .attr('name', 'data_fields')
-                                .attr('checked', 'checked')
-                                .attr('value', data_name)
-                                .prependTo(check_label);
+                        if (data['layer_data'].hasOwnProperty('display_fields')){
+
+                            var check_input = $('<input/>').attr('id', 'check_' + data_name_idx + '_' + data_name)
+                                    .attr('type', 'checkbox')
+                                    .attr('name', 'data_fields')
+                                    .attr('value', data_name)
+                                    .prependTo(check_label);
+
+                            if (data['layer_data']['display_fields'][data_name] == 'true') {
+                                check_input.attr('checked', 'checked')
+                            }
+                        } else {
+
+                            var check_input = $('<input/>').attr('id', 'check_' + data_name_idx + '_' + data_name)
+                                    .attr('type', 'checkbox')
+                                    .attr('name', 'data_fields')
+                                    .attr('checked', 'checked')
+                                    .attr('value', data_name)
+                                    .prependTo(check_label);
+                        }
                     }
                 }
             });

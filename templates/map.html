@@ -190,6 +190,13 @@
 
 {% block content %}
     <script>
+
+        var uid = 0;
+        function get_next_uid() {
+            uid += 1;
+            return uid;
+        }
+
         // global namespace
         var DataPortal = DataPortal || {};
 
@@ -677,8 +684,18 @@
             }
 
             var leaflet_layers = [];
+            var layer_name_counter = {};
 
             function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text, csv_url){
+
+                if (layer_name_counter.hasOwnProperty(layer_name_text)) {
+                    var counter = layer_name_counter[layer_name_text];
+                    var tmp_layer_name_text = layer_name_text + '_' + counter;
+                    layer_name_counter[layer_name_text] = (counter += 1);
+                    layer_name_text = tmp_layer_name_text;
+                } else {
+                    layer_name_counter[layer_name_text] = 1
+                }
 
                 console.log(color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text, csv_url);
                 var is_percentage = false;
@@ -692,11 +709,14 @@
                 if (color_scheme == 'b_w') {
                     color_scheme = ['white', 'black'];
                 }
+                if (color_scheme == 'w') {
+                    color_scheme = ['white', 'white'];
+                }
                 var data_objects = data['objects'];
                 var feature_data = [];
                 var feature_string_data = [];
 
-                {#                            This is listing all the response rate variables we know can find in the topojson #}
+                {#  This is listing all the response rate variables we know can find in the topojson #}
                 for (var b in data_objects) {
                     var geometries_properties = data_objects[b]['geometries'];
                     for (var a in geometries_properties) {
@@ -846,15 +866,12 @@
                                     leaflet_layers[i].layer,
                                     // whether to stop at first match
                                     true);
+
                             // if there's overlap, add some content to the popup: the layer name
                             // and a table of attributes
                             if (match.length) {
-{#                                html += '<strong>' + leaflet_layers[i].name +#}
-{#                                        '<button onclick="highlightMatch(this)" data-layer="' + i +#}
-{#                                        '" data-latlng="' +#}
-{#                                        [e.latlng.lat, e.latlng.lng] +#}
-{#                                        '">highlight</button></strong>';#}
-                                   html += propertyTable(match[0].feature.properties);
+                                html += '<strong>' + leaflet_layers[i].name + '</strong>';
+                                html += propertyTable(match[0].feature.properties) + '<br><br>';
                             }
                         }
                         if (html) {
@@ -862,7 +879,6 @@
                         }
                     }
                 });
-
             }
 
             function build_legend(feature_data, unique_feature_string_data, chroma_scale, grades, is_percentage) {
@@ -896,8 +912,11 @@
             }
 
             function addLegend(div_id, contentHTML){
+
+                var a_uid = get_next_uid();
+                var tab_id = ("collapse_" + a_uid + '_' + div_id).replace(/\W/g, '');
                 var accordionInner = $('<div/>')
-                        .attr('id', 'accordion_inner_' + div_id)
+                        .attr('id', 'accordion_inner_' + tab_id)
                         .addClass("panel panel-default")
                         .append(
                         $('<div/>')
@@ -909,14 +928,14 @@
                                         $('<a/>')
                                                 .attr('data-toggle', "collapse")
                                                 .attr('data-parent', "#legend_accordion")
-                                                .attr('href', "#collapse" + div_id)
+                                                .attr('href', "#" + tab_id)
                                                 .text(div_id)
                                 )
                         )
                 )
                         .append(
                         $('<div/>')
-                                .attr('id', 'collapse' + div_id)
+                                .attr('id', tab_id)
                                 .addClass("panel-collapse collapse in")
                                 .append(
                                 $('<div/>')
@@ -1716,8 +1735,8 @@
             }());
         }
 
-        var local_search_layer_data = {{ local_searches|jsonify }};
-        do_local_layers(local_search_layer_data, "{% url 'remote_data_topojson' %}");
+{#        var local_search_layer_data = {{ local_searches|jsonify }};#}
+{#        do_local_layers(local_search_layer_data, "{% url 'remote_data_topojson' %}");#}
 
         var layer_uuids = {{ layer_uuids|jsonify }};
         do_layer_uuids(layer_uuids, "{% url 'data_api' %}");
@@ -1729,7 +1748,7 @@
                 var uuid = layer_uuids[uuid_idx];
 
                 $.ajax({
-                    url: search_layer_topojson_url + '/' + uuid,
+                    url: search_layer_topojson_url,
                     type: 'GET',
                     data: {
                         method: 'search_layer_topojson',

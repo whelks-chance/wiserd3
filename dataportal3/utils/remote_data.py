@@ -458,6 +458,7 @@ class RemoteData():
 
         region_id = ''
         topojson_file = ''
+        print 'geog_short_code', geog_short_code
 
         for topojson_entry in geometry_columns:  # settings.TOPOJSON_OPTIONS:
             if 'geog_short_code' in topojson_entry:

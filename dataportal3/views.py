@@ -30,6 +30,7 @@ from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_re
 import requests
 from old.views import text_search, date_handler
 from wiserd3 import settings
+from wiserd3.settings import NAW_LAYER_UUIDS
 
 
 def dashboard(request):
@@ -301,16 +302,7 @@ def map_search(request):
             })
 
     if naw:
-        layer_uuids.append(
-            'a61fa534-d1ca-4798-bc2a-51cfd1e5e2e3'
-        )
-        # surveys.append('wisid_AssemblyRegions_56a653f209d3a')
-        # local_data_layers.append({
-        #     'name': 'regions',
-        #     'survey_id': 'wisid_AssemblyRegions_56a653f209d3a',
-        #     'boundary_name': 'Parliamentary',
-        #     'data': ['ramname1', 'ramname2', 'ramname3', 'ramname4']
-        # })
+        layer_uuids.extend(NAW_LAYER_UUIDS)
 
     uploaded_layers_clean = []
     try:
@@ -1318,6 +1310,7 @@ def spatial_search(request):
         survey_ids = []
         survey_info = {}
 
+        # find which regions intersect with the geography, in WellKnownText format
         spatials = find_intersects(geography_wkt)
 
         # print pprint.pformat(spatials)
@@ -1553,12 +1546,25 @@ def get_topojson_for_uuid(request, search_uuid):
     if search_type == 'Survey':
         # local_search_layers.append(layer_data)
 
+        # survey_spatial_data_correction = models.SpatialSurveyLink.objects.filter(
+        #     survey__identifier='wisid_AssemblyRegions_56a653f209d3a'
+        # )
+        # print 'survey_spatial_data_correction count', survey_spatial_data_correction.count()
+
+        # for cor in survey_spatial_data_correction:
+        #     # print cor.__dict__
+        #     cor.boundary_name = 'National Assembly Region'
+        #     cor.data_name = 'HECTARE'
+        #     cor.save()
+
         data_name = ''
         all_data = {}
 
         for code in codelist:
             if code['option'] == 'data_name':
                 data_name = code['variable']
+
+        # print '======', dataset_id, boundary_name, data_name
 
         survey_spatial_data = models.SpatialSurveyLink.objects.get(
             survey__identifier=dataset_id,
@@ -1626,6 +1632,8 @@ def get_topojson_for_uuid(request, search_uuid):
 
         print 'data_name', data_names
         layer_data['data_names'] = list(data_names)
+
+        response_data['all_data'] = all_data
 
     response_data['search_uuid'] = search_uuid
     response_data['layer_data'] = layer_data

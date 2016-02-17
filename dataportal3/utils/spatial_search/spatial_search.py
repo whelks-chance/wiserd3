@@ -7,6 +7,7 @@ from wiserd3.settings import TOPOJSON_DIR
 
 __author__ = 'ubuntu'
 
+# TODO replace table_name with the model_instance._meta.db_table
 geometry_columns = [
     {
         'table_name': 'spatialdata_aefa',
@@ -39,17 +40,17 @@ geometry_columns = [
         'topojson_file': os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json'),
         'topojson_file_high': os.path.join(TOPOJSON_DIR, '13Wales_parlconstit_2011/output-fixed-1-4326.json')
     },
-    {
-        # FIXME REMOVE ME horribly broken
-        'table_name': 'spatialdata_nawer',
-        'geometry_column': 'geom',
-        'table_model': models.SpatialdataParl,
-        'name': 'Parliamentary',
-        'geog_short_code': 'region',
-        'region_id': '2092957700TYPE460',
-        'topojson_file': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-1-ms.json'),
-        'topojson_file_high': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-ms.json')
-    },
+    # {
+    #     # FIXME REMOVE ME horribly broken
+    #     'table_name': 'spatialdata_nawer',
+    #     'geometry_column': 'geom',
+    #     'table_model': models.SpatialdataParl,
+    #     'name': 'Parliamentary',
+    #     'geog_short_code': 'region',
+    #     'region_id': '2092957700TYPE460',
+    #     'topojson_file': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-1-ms.json'),
+    #     'topojson_file_high': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-ms.json')
+    # },
     {
         'table_name': 'spatialdata_msoa',
         'geometry_column': 'geom',
@@ -104,14 +105,30 @@ geometry_columns = [
         'name': 'Unitary Authority 2'
     },
     {
-        'table_name': 'nawer',
+        'table_name': 'spatialdatanawer',
         'geometry_column': 'geom',
         'label': 'code',
+        'geog_short_code': 'region',
+        # FIXME wrong region_id
+        'region_id': '2092957700TYPE460',
         'table_model': models.SpatialdataNawer,
         'name': 'National Assembly Region',
         'topojson_file': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-1-ms.json'),
         'topojson_file_high': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-ms.json')
-    }
+    },
+    # {
+    #     'table_name': 'spatialdatanawer',
+    #     'geometry_column': 'geom',
+    #     'label': 'code',
+    #     'geog_short_code': 'region',
+    #     # FIXME wrong region_id
+    #     'region_id': '2092957700TYPE460',
+    #     'table_model': models.SpatialdataNawer,
+    #     # FIXME wrong name, just remove this thing
+    #     'name': 'Parliamentary',
+    #     'topojson_file': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-1-ms.json'),
+    #     'topojson_file_high': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-ms.json')
+    # }
 ]
 
 
@@ -122,13 +139,17 @@ def find_intersects(geography_wkt):
     survey_boundaries = {}
     intersect_data = []
 
+    # We need a geom object from the WKT
     print geography_wkt
     geom_object = GEOSGeometry(geography_wkt, srid=27700)
     print geom_object
 
+    # It's almost always in the wrong SRID, so transform it
     geom_object = geom_object.transform(4326, clone=True)
     print geom_object
 
+    # geometry_columns is a full list of dicts
+    # which define a model, its name and table names
     for geoms in geometry_columns:
         try:
 

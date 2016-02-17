@@ -330,7 +330,7 @@
                                 remote_data_layer['dataset_id'],
                                 remote_data_layer['codelist'],
                                 function(topojson_data) {
-                                    console.log(remote_data_layer);
+{#                                    console.log(remote_data_layer);#}
 
                                     handleUploadedLayer(
                                             topojson_data['topojson'],
@@ -371,7 +371,7 @@
             var map_height = window.innerHeight;
             var header_height = $('.navbar-header').height();
 
-            console.log(map_height + ' ' + header_height);
+{#            console.log(map_height + ' ' + header_height);#}
 
             var map_div = $('#map_div');
 
@@ -625,8 +625,8 @@
 
                             var myLayer = L.geoJson(data, {
                                 onEachFeature: function (feature, layer) {
-                                    console.log(feature);
-                                    console.log(layer);
+{#                                    console.log(feature);#}
+{#                                    console.log(layer);#}
                                     layer.bindPopup(layer.feature.properties.AREA_NAME);
                                     layer.on({
                                         mouseover: function(e){
@@ -696,10 +696,14 @@
                 } else {
                     layer_name_counter[layer_name_text] = 1
                 }
+                var a_uid = get_next_uid();
+                var unique_layer_name_text = layer_name_text + '_' + a_uid;
 
-                console.log(color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text, csv_url);
+
+{#                console.log(color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text, csv_url);#}
                 var is_percentage = false;
                 var suppressed_data = false;
+                var opacity = 0.7;
                 if (nomis_variable) {
                     if (nomis_variable == 20301) {
                         is_percentage = true;
@@ -711,6 +715,7 @@
                 }
                 if (color_scheme == 'w') {
                     color_scheme = ['white', 'white'];
+                    opacity = 0;
                 }
                 var data_objects = data['objects'];
                 var feature_data = [];
@@ -776,7 +781,7 @@
                 var myLayer = new L.TopoJSON();
                 myLayer.addData(data);
 
-                console.log(myLayer);
+{#                console.log(myLayer);#}
 
                 leaflet_layers.push({
                     name: layer_name_text,
@@ -784,24 +789,27 @@
                 });
 
                 myLayer.eachLayer(function (layer) {
-                    layer.setStyle(styleFeature(layer.feature, grades, chroma_scale));
+                    layer.setStyle(styleFeature(layer.feature, grades, chroma_scale, opacity));
                 });
                 myLayer.eachLayer(handleLayer);
 
                 layerControl.addOverlay(myLayer, layer_name_text);
 
                 map.on('overlayremove', function (eventLayer) {
-                    {#                    console.log(eventLayer);#}
-                    {#                    console.log(eventLayer.name);#}
-                    {#                    console.log(layer_name_text);#}
+                    console.log('remove layer radio');
+                                        console.log(eventLayer);
+                                        console.log(eventLayer.name);
+                                        console.log(layer_name_text);
                     if (eventLayer.name == layer_name_text) {
-                        $('#accordion_inner_' + layer_name_text).remove();
+                        console.log('trying to remove : ' + '#accordion_inner_collapse_' + unique_layer_name_text);
+                        $('#accordion_inner_collapse_' + unique_layer_name_text).remove();
                     }
                 });
                 map.on('overlayadd', function (eventLayer) {
-                    {#                    console.log(eventLayer);#}
-                    {#                    console.log(eventLayer.name);#}
-                    {#                    console.log(layer_name_text);#}
+                    console.log('add layer radio');
+                                        console.log(eventLayer);
+                                        console.log(eventLayer.name);
+                                        console.log(layer_name_text);
                     if (eventLayer.name == layer_name_text) {
 
                         var div_inner = build_legend(feature_data,
@@ -809,7 +817,7 @@
                                 chroma_scale,
                                 grades, is_percentage);
 
-                        addLegend(layer_name_text, div_inner);
+                        addLegend(unique_layer_name_text, layer_name_text, div_inner);
                     }
                 });
 
@@ -870,6 +878,7 @@
                             // if there's overlap, add some content to the popup: the layer name
                             // and a table of attributes
                             if (match.length) {
+                                console.log(match[0].feature.properties);
                                 html += '<strong>' + leaflet_layers[i].name + '</strong>';
                                 html += propertyTable(match[0].feature.properties) + '<br><br>';
                             }
@@ -911,10 +920,11 @@
                 return div_inner;
             }
 
-            function addLegend(div_id, contentHTML){
+            function addLegend(unique_layer_name_text, layer_name_text, contentHTML){
 
-                var a_uid = get_next_uid();
-                var tab_id = ("collapse_" + a_uid + '_' + div_id).replace(/\W/g, '');
+{#                var a_uid = get_next_uid();#}
+{#                var tab_id = ("collapse_" + a_uid + '_' + div_id).replace(/\W/g, '');#}
+                var tab_id = ("collapse_" + unique_layer_name_text).replace(/\W/g, '');
                 var accordionInner = $('<div/>')
                         .attr('id', 'accordion_inner_' + tab_id)
                         .addClass("panel panel-default")
@@ -929,7 +939,7 @@
                                                 .attr('data-toggle', "collapse")
                                                 .attr('data-parent', "#legend_accordion")
                                                 .attr('href', "#" + tab_id)
-                                                .text(div_id)
+                                                .text(layer_name_text)
                                 )
                         )
                 )
@@ -977,7 +987,9 @@
             return t;
         }
 
-        function styleFeature(feature, feature_data, chroma_scale) {
+        function styleFeature(feature, feature_data, chroma_scale, opacity) {
+{#            console.log(feature, feature_data, chroma_scale, opacity);#}
+
             var colour = '';
             var remote_value = feature.properties.REMOTE_VALUE;
 
@@ -991,7 +1003,7 @@
                     opacity: 1,
                     color: 'white',
                     dashArray: '3',
-                    fillOpacity: 0.7
+                    fillOpacity: opacity
                 }
             } else {
 
@@ -1009,7 +1021,7 @@
                     opacity: 1,
                     color: 'white',
                     dashArray: '3',
-                    fillOpacity: 0.7
+                    fillOpacity: opacity
                 };
             }
         }
@@ -1482,7 +1494,7 @@
                         }
                     }
 
-                    console.log(codelist_selected);
+{#                    console.log(codelist_selected);#}
 
                     var dataset_id = $(this).data('dataset_id');
 
@@ -1688,7 +1700,7 @@
 
             (function(){
                 var local_data_layer = local_data_layer_data[local_data_layer_idx];
-                console.log(local_data_layer);
+{#                console.log(local_data_layer);#}
 
                 (function(){
                     get_local_dataset_metadata(
@@ -1755,7 +1767,7 @@
                         search_uuid: uuid
                     },
                     success: function (topojson_data) {
-                        console.log(topojson_data);
+{#                        console.log(topojson_data);#}
 
                         var layer_data = topojson_data['layer_data'];
 
@@ -1778,7 +1790,7 @@
 
             (function(){
                 var remote_data_layer = remote_data_layer_data[remote_data_layer_idx];
-                console.log(remote_data_layer);
+{#                console.log(remote_data_layer);#}
 
                 get_remote_dataset_topojson(
                         "{% url 'remote_data_topojson' %}",
@@ -1786,7 +1798,7 @@
                         remote_data_layer['dataset_id'],
                         remote_data_layer['codelist'],
                         function(topojson_data) {
-                            console.log(remote_data_layer);
+{#                            console.log(remote_data_layer);#}
 
                             handleUploadedLayer(
                                     topojson_data['topojson'],

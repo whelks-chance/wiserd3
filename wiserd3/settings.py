@@ -241,6 +241,8 @@ TOPOJSON_OPTIONS = [
 
 NAW_LAYER_UUIDS = []
 
+NAW_SEARCH_LAYER_UUIDS = []
+
 WMS_LAYERS = [
     {
         'name': 'Inspire Wales',

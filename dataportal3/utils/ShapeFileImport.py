@@ -280,16 +280,16 @@ class ShapeFileImport:
         for field_name in clean_fields:
             # we want the original index
             field_idx = clean_fields[field_name]
-            print field_name
+
             field_type = lyr.get_fields(field_name)[0].__class__.__name__
-            print 'field_type', field_type
+            print 'field_name: ' + str(field_name) + ' field_type: ' + str(field_type)
 
             regions_with_data = {}
 
             for geo_idx, geom in enumerate(geoms):
 
                 value = lyr.get_fields(field_name)[geo_idx]
-                print geo_codes[geo_idx], value
+                print str(geo_codes[geo_idx]) + ' ' + str(value)
 
                 regions_with_data[geo_codes[geo_idx]] = value
 
@@ -300,7 +300,7 @@ class ShapeFileImport:
             new_survey_link.data_suffix = ''
             new_survey_link.data_type = str(field_type)
 
-            new_survey_link.geom_table_name = match_data['model']
+            new_survey_link.geom_table_name = match_data['table_name']
             new_survey_link.regional_data = regions_with_data
             new_survey_link.boundary_name = match_data['name']
 

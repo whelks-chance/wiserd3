@@ -350,6 +350,7 @@ def map_search(request):
             'description': 'Another layer'
         }
     ]
+    naw_key_searches.extend(settings.NAW_SEARCH_LAYER_UUIDS)
 
     return render(request, 'map.html',
                   {

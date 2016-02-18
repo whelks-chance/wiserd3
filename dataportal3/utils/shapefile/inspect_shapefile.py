@@ -65,8 +65,10 @@ class ShapefileModelMatching:
         return lyr
 
     def list_fields(self, lyr):
+        print 'list_fields()'
         data = []
 
+        # For each field in the shp layer, get all the values, in order
         for f_idx, f in enumerate(lyr.fields):
 
             field_data = {
@@ -83,11 +85,11 @@ class ShapefileModelMatching:
 
             data.append(field_data)
 
-        print ''
-        print pprint.pformat(data)
+        # print pprint.pformat(data)
         return data
 
     def list_spatial_model_fields(self):
+        print 'list_spatial_model_fields'
         shp_model_field_data_arr = []
 
         for model_description in geometry_columns:
@@ -95,6 +97,8 @@ class ShapefileModelMatching:
             model_object = model_description['table_model']
             model_instance = model_object()
             # print type(model_object), model_object
+
+            # Check we have an actual Django model
             if isinstance(model_instance, models.Model):
                 model_fields = model_instance._meta.get_fields()
                 # print model_instance._meta.model_name
@@ -102,45 +106,47 @@ class ShapefileModelMatching:
                 valid_fields = []
 
                 for field in model_fields:
-
                     self.action_count += 1
-
                     if isinstance(field, fields.GeometryField):
-                        # print 'ignore', field
                         pass
                     elif 'gid' in field.attname:
-                        # print 'ignore', field
                         pass
                     else:
-                        # print field.attname
+                        # We only want the fields which aren't geoms or gid
                         valid_fields.append(field.attname)
 
                 # print model_object
                 # print valid_fields
                 try:
-                    model_data = model_object.objects.all().values_list(*valid_fields) #[:10]
+                    model_data = model_object.objects.all().values_list(*valid_fields)  # [:10]
                     # print list(model_data)
 
+                    # Massive dict of all the model values, minus the geom stuff
                     shp_model_field_data = {
-                        'model': model_instance._meta.model_name,
+                        'table_name': model_instance._meta.db_table,
                         'fields': valid_fields,
                         'data': list(model_data),
                         'name': model_description['name']
                     }
+
+                    # Creating an even bigger list of stuff across all models
                     shp_model_field_data_arr.append(shp_model_field_data)
 
                 except Exception as e:
                     print e, type(e)
 
-                    # print ''
-        print pprint.pformat(shp_model_field_data_arr)
+        # Basically printing half a database here...
+        # print pprint.pformat(shp_model_field_data_arr)
         return shp_model_field_data_arr
 
     def get_best_match(self, filename=None):
+        print 'get_best_match()'
         # filename = '/tmp/shapefiles/0d6bf8b0-dc83-4c2d-b1dd-874efd0cd1b0/extracted/wales_parl_2011_GeneralElection20102015.shp'
         if not filename:
             filename = '/home/ubuntu/DataPortalGeographies/AssemblyRegions/AssemblyRegions.shp'
 
+        # Build a huge array of geom models, but without the geom data
+        # We'll use this to compare stuff with to try and find a match
         shp_model_field_data_arr = self.list_spatial_model_fields()
 
         lyr = self.get_shp_lyr(filename)
@@ -150,16 +156,18 @@ class ShapefileModelMatching:
 
     def get_name_for_model(self, model_object):
         for geom in geometry_columns:
-            if isinstance(geom['table_model'], model_object) :
+            if isinstance(geom['table_model'], model_object):
                 if 'name' in geom:
                     return geom['name']
         return None
 
     def find_matches(self, shp_file_field_data, shp_model_field_data_arr):
+        print 'find_matches()'
         hit = 0
 
         hits_arr = []
 
+        best_hit_percentage = 0
         hit_model = None
         hit_model_field = None
         hit_shapefile_field = None
@@ -171,27 +179,56 @@ class ShapefileModelMatching:
             print 'shapefile field', field['field']
 
             for model_data in shp_model_field_data_arr:
-                print model_data['model']
-                for model_field_idx, model_field in enumerate(model_data['fields']):
+                # How many hits for this model?
+                model_hits = 0
+                model_field_data = []
 
-                    print 'action count', self.action_count
-                    print 'model field :', model_field
+                print model_data['table_name']
+                for model_field_idx, model_field in enumerate(model_data['fields']):
+                    field_hits = 0
+
+                    # print 'action count', self.action_count
+                    # print 'model field :', model_field
 
                     for d in model_data['data']:
-                        print d[model_field_idx]
 
                         self.action_count += 1
-                        if d[model_field_idx] in field['values']:
-                            hit += 1
-                            hit_model = model_data['model']
-                            hit_model_name = model_data['name']
-                            hit_model_field = model_field
-                            hit_shapefile_field = field['field']
+
+                        if d[model_field_idx] is not None:
+                            if d[model_field_idx] in field['values']:
+                                print "Matched : " + str(d[model_field_idx]) + ' in ' + str(model_field)
+
+                                hit += 1
+                                model_hits += 1
+                                field_hits += 1
+
+                    hit_percentage = float(field_hits / len(model_data['data'])) * 100
+                    model_field_data.append(
+                        {
+                            'field': model_field,
+                            'field_hits': field_hits,
+                            'hit_percent': hit_percentage
+                        }
+                    )
+
+                    # If the number of hits for this field are larger percentage-wise than any other
+                    # This is our new hit_model
+                    if hit_percentage > best_hit_percentage:
+                        hit_model = model_data['table_name']
+                        hit_model_name = model_data['name']
+                        hit_model_field = model_field
+                        hit_shapefile_field = field['field']
 
                     print ''
+                if model_hits > 0:
+                    hits_arr.append({
+                        'hits': model_hits,
+                        'table_name': hit_model,
+                        'model_field_data': model_field_data
+                    })
 
             print ''
-
+        print 'hits_arr', pprint.pformat(hits_arr, indent=4)
         print 'hits:', hit, 'model:', hit_model, 'model_field', hit_model_field, 'shp_field', hit_shapefile_field
         print 'action count', self.action_count
 
@@ -199,12 +236,12 @@ class ShapefileModelMatching:
 
         return {
             'hits': hit,
-            'model': hit_model,
+            'table_name': hit_model,
             'model_field': hit_model_field,
             'shp_field': hit_shapefile_field,
             'name': hit_model_name
 
         }
 
-# matcher = ShapefileModelMatching()
-# matcher.get_best_match()
+        # matcher = ShapefileModelMatching()
+        # matcher.get_best_match()

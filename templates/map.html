@@ -313,38 +313,41 @@
 
             $('.remote_data_uid').click(function () {
                 var uid = $(this).data('naw_key_search_uid');
-                var uids = [];
-                uids.push(uid);
-                $.ajax({
-                    url: "{% url 'data_api' %}",
-                    type: 'GET',
-                    data: {
-                        'method': 'remote_data_render_data',
-                        'remote_layer_ids': uids
-                    },
-                    success: function (data) {
-                        var remote_data_layer = data['nomis_layers'][0];
-                        get_remote_dataset_topojson(
-                                "{% url 'remote_data_topojson' %}",
-                                remote_data_layer['geography_id'],
-                                remote_data_layer['dataset_id'],
-                                remote_data_layer['codelist'],
-                                function(topojson_data) {
-{#                                    console.log(remote_data_layer);#}
 
-                                    handleUploadedLayer(
-                                            topojson_data['topojson'],
-                                            remote_data_layer['colorpicker'],
-                                            remote_data_layer['bin_type'],
-                                            remote_data_layer['bin_num'],
-                                            '',
-                                            remote_data_layer['name'],
-                                            ''
-                                    );
-                                }
-                        );
-                    }
-                });
+                do_layer_single_uuid(uid, "{% url 'data_api' %}");
+
+{#                var uids = [];#}
+{#                uids.push(uid);#}
+{#                $.ajax({#}
+{#                    url: "{% url 'data_api' %}",#}
+{#                    type: 'GET',#}
+{#                    data: {#}
+{#                        'method': 'remote_data_render_data',#}
+{#                        'remote_layer_ids': uids#}
+{#                    },#}
+{#                    success: function (data) {#}
+{#                        var remote_data_layer = data['nomis_layers'][0];#}
+{#                        get_remote_dataset_topojson(#}
+{#                                "{% url 'remote_data_topojson' %}",#}
+{#                                remote_data_layer['geography_id'],#}
+{#                                remote_data_layer['dataset_id'],#}
+{#                                remote_data_layer['codelist'],#}
+{#                                function(topojson_data) {#}
+                                    {#                                    console.log(remote_data_layer);#}
+{##}
+{#                                    handleUploadedLayer(#}
+{#                                            topojson_data['topojson'],#}
+{#                                            remote_data_layer['colorpicker'],#}
+{#                                            remote_data_layer['bin_type'],#}
+{#                                            remote_data_layer['bin_num'],#}
+{#                                            '',#}
+{#                                            remote_data_layer['name'],#}
+{#                                            ''#}
+{#                                    );#}
+{#                                }#}
+{#                        );#}
+{#                    }#}
+{#                });#}
             });
 
             function toggle_upload_layer(toggle_button) {
@@ -371,7 +374,7 @@
             var map_height = window.innerHeight;
             var header_height = $('.navbar-header').height();
 
-{#            console.log(map_height + ' ' + header_height);#}
+            {#            console.log(map_height + ' ' + header_height);#}
 
             var map_div = $('#map_div');
 
@@ -625,8 +628,8 @@
 
                             var myLayer = L.geoJson(data, {
                                 onEachFeature: function (feature, layer) {
-{#                                    console.log(feature);#}
-{#                                    console.log(layer);#}
+                                    {#                                    console.log(feature);#}
+                                    {#                                    console.log(layer);#}
                                     layer.bindPopup(layer.feature.properties.AREA_NAME);
                                     layer.on({
                                         mouseover: function(e){
@@ -700,7 +703,7 @@
                 var unique_layer_name_text = layer_name_text + '_' + a_uid;
 
 
-{#                console.log(color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text, csv_url);#}
+                {#                console.log(color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text, csv_url);#}
                 var is_percentage = false;
                 var suppressed_data = false;
                 var opacity = 0.7;
@@ -781,7 +784,7 @@
                 var myLayer = new L.TopoJSON();
                 myLayer.addData(data);
 
-{#                console.log(myLayer);#}
+                {#                console.log(myLayer);#}
 
                 leaflet_layers.push({
                     name: layer_name_text,
@@ -797,9 +800,9 @@
 
                 map.on('overlayremove', function (eventLayer) {
                     console.log('remove layer radio');
-                                        console.log(eventLayer);
-                                        console.log(eventLayer.name);
-                                        console.log(layer_name_text);
+                    console.log(eventLayer);
+                    console.log(eventLayer.name);
+                    console.log(layer_name_text);
                     if (eventLayer.name == layer_name_text) {
                         console.log('trying to remove : ' + '#accordion_inner_collapse_' + unique_layer_name_text);
                         $('#accordion_inner_collapse_' + unique_layer_name_text).remove();
@@ -807,9 +810,9 @@
                 });
                 map.on('overlayadd', function (eventLayer) {
                     console.log('add layer radio');
-                                        console.log(eventLayer);
-                                        console.log(eventLayer.name);
-                                        console.log(layer_name_text);
+                    console.log(eventLayer);
+                    console.log(eventLayer.name);
+                    console.log(layer_name_text);
                     if (eventLayer.name == layer_name_text) {
 
                         var div_inner = build_legend(feature_data,
@@ -922,8 +925,8 @@
 
             function addLegend(unique_layer_name_text, layer_name_text, contentHTML){
 
-{#                var a_uid = get_next_uid();#}
-{#                var tab_id = ("collapse_" + a_uid + '_' + div_id).replace(/\W/g, '');#}
+                {#                var a_uid = get_next_uid();#}
+                {#                var tab_id = ("collapse_" + a_uid + '_' + div_id).replace(/\W/g, '');#}
                 var tab_id = ("collapse_" + unique_layer_name_text).replace(/\W/g, '');
                 var accordionInner = $('<div/>')
                         .attr('id', 'accordion_inner_' + tab_id)
@@ -976,789 +979,791 @@
                 return div;
             };
             legend_two.addTo(map);
-{#            $('.legend').resizable({handles: 'n, e, s, w'});#}
+            {#            $('.legend').resizable({handles: 'n, e, s, w'});#}
 
-        function propertyTable(o) {
-            var t = '<table>';
-            for (var k in o) {
-                t += '<tr><th>' + k + '</th><td>' + o[k] + '</td></tr>';
-            }
-            t += '</table>';
-            return t;
-        }
-
-        function styleFeature(feature, feature_data, chroma_scale, opacity) {
-{#            console.log(feature, feature_data, chroma_scale, opacity);#}
-
-            var colour = '';
-            var remote_value = feature.properties.REMOTE_VALUE;
-
-            if (remote_value === undefined){
-                return {
-                    {#                        fillColor: '#333333',#}
-                    fill: 'url({% static 'leaflet-polygon-fillPattern-master/example/image.gif' %})',
-                    stroke: '#fff',
-                    'stroke-width': 2,
-                    weight: 2,
-                    opacity: 1,
-                    color: 'white',
-                    dashArray: '3',
-                    fillOpacity: opacity
+            function propertyTable(o) {
+                var t = '<table>';
+                for (var k in o) {
+                    t += '<tr><th>' + k + '</th><td>' + o[k] + '</td></tr>';
                 }
-            } else {
-
-                if (isNaN(remote_value)) {
-                    {#                        alert(feature.properties);#}
-                    {#                        console.log(feature);#}
-                    colour = getColorFromString(remote_value);
-                } else {
-                    colour = getColor(remote_value, feature_data, chroma_scale);
-                }
-
-                return {
-                    fillColor: colour,
-                    weight: 2,
-                    opacity: 1,
-                    color: 'white',
-                    dashArray: '3',
-                    fillOpacity: opacity
-                };
+                t += '</table>';
+                return t;
             }
-        }
 
-        var map_layers = {};
-        var featureGroup = L.featureGroup().addTo(map);
+            function styleFeature(feature, feature_data, chroma_scale, opacity) {
+                {#            console.log(feature, feature_data, chroma_scale, opacity);#}
 
-        map.addControl( new L.Control.Search({
-            url: 'http://nominatim.openstreetmap.org/search?format=json&q={s}',
-            jsonpParam: 'json_callback',
-            propertyName: 'display_name',
-            propertyLoc: ['lat','lon'],
-            circleLocation: false,
-            markerLocation: true,
-            autoType: false,
-            autoCollapse: true,
-            minLength: 2,
-            zoom:10
-        }) );
+                var colour = '';
+                var remote_value = feature.properties.REMOTE_VALUE;
 
-        var drawControl = new L.Control.Draw({
-            edit: {
-                featureGroup: featureGroup
-            },
-            draw: {
-                polygon: true,
-                polyline: false,
-                rectangle: {
-                    shapeOptions : {
-                        color : '#888888'
+                if (remote_value === undefined){
+                    return {
+                        {#                        fillColor: '#333333',#}
+                        fill: 'url({% static 'leaflet-polygon-fillPattern-master/example/image.gif' %})',
+                        stroke: '#fff',
+                        'stroke-width': 2,
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: opacity
                     }
-                },
-                circle: true,
-                marker: false
+                } else {
+
+                    if (isNaN(remote_value)) {
+                        {#                        alert(feature.properties);#}
+                        {#                        console.log(feature);#}
+                        colour = getColorFromString(remote_value);
+                    } else {
+                        colour = getColor(remote_value, feature_data, chroma_scale);
+                    }
+
+                    return {
+                        fillColor: colour,
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: opacity
+                    };
+                }
             }
-        }).addTo(map);
 
-        map.on('draw:created', showPolygonArea);
-        map.on('draw:edited', showPolygonAreaEdited);
+            var map_layers = {};
+            var featureGroup = L.featureGroup().addTo(map);
 
-        function convertPolygonToOS(shape_geojson){
+            map.addControl( new L.Control.Search({
+                url: 'http://nominatim.openstreetmap.org/search?format=json&q={s}',
+                jsonpParam: 'json_callback',
+                propertyName: 'display_name',
+                propertyLoc: ['lat','lon'],
+                circleLocation: false,
+                markerLocation: true,
+                autoType: false,
+                autoCollapse: true,
+                minLength: 2,
+                zoom:10
+            }) );
 
-            var new_coordinates = [];
-            var new_geometry = {
-                "type": "Polygon",
-                "coordinates": [[]]
+            var drawControl = new L.Control.Draw({
+                edit: {
+                    featureGroup: featureGroup
+                },
+                draw: {
+                    polygon: true,
+                    polyline: false,
+                    rectangle: {
+                        shapeOptions : {
+                            color : '#888888'
+                        }
+                    },
+                    circle: true,
+                    marker: false
+                }
+            }).addTo(map);
+
+            map.on('draw:created', showPolygonArea);
+            map.on('draw:edited', showPolygonAreaEdited);
+
+            function convertPolygonToOS(shape_geojson){
+
+                var new_coordinates = [];
+                var new_geometry = {
+                    "type": "Polygon",
+                    "coordinates": [[]]
+                };
+
+                for (var a = 0; a < shape_geojson['geometry']['coordinates'][0].length; a++) {
+                    var ll2 = new LatLng(shape_geojson['geometry']['coordinates'][0][a][1],
+                            shape_geojson['geometry']['coordinates'][0][a][0]);
+                    var os2 = ll2.toOSRef();
+                    new_coordinates.push([os2.easting, os2.northing]);
+                }
+
+                new_geometry['coordinates'] = [new_coordinates];
+
+                return new_geometry
+
+            }
+            function showPolygonAreaEdited(e) {
+                e.layers.eachLayer(function(layer) {
+                    showPolygonArea({ layer: layer });
+                });
+            }
+
+            function showPolygonArea(e) {
+
+                featureGroup.clearLayers();
+                featureGroup.addLayer(e.layer);
+
+                geoJson_area_km2 = (LGeo.area(e.layer) / 1000000).toFixed(2);
+                e.layer.bindPopup(geoJson_area_km2 + ' km<sup>2</sup>');
+                e.layer.openPopup();
+
+                search_area_geojson = e.layer.toGeoJSON();
+                $('#output').val(search_area_geojson);
+                var new_geojson = convertPolygonToOS(search_area_geojson);
+                wkt = $.geo.WKT.stringify(new_geojson);
+
+                map.fitBounds(featureGroup.getBounds());
+                center_lat_lng = featureGroup.getBounds().getCenter();
+                {#                viewreset is really slow #}
+                map.addOneTimeEventListener('moveend', function() {
+                    setTimeout(function(){
+                        leafletImage(map, doImage);
+                    }, 1000);
+                });
+            }
+
+            var most_recent_search_png = '';
+            function doImage(err, canvas) {
+                {#                var snapshot = document.getElementById('snapshot');#}
+
+                var img = document.createElement('img');
+                var dimensions = map.getSize();
+                img.width = dimensions.x;
+                img.height = dimensions.y;
+                most_recent_search_png = canvas.toDataURL("image/jpeg", 0.5);
+                img.src = most_recent_search_png;
+                {#                img.style.width = '100%';#}
+                {#                snapshot.innerHTML = '';#}
+                {#                snapshot.appendChild(img);#}
+
+                $.ajax({
+                    url: "{% url 'spatial_search' %}",
+                    type: 'POST',
+                    data: {
+                        geography: wkt,
+                        {#                        geojson: search_area_geojson,#}
+                        centre_lat_lng: [center_lat_lng.lat, center_lat_lng.lng],
+                        geo_area_km2: geoJson_area_km2,
+                        start: 0,
+                        limit: 15,
+                        type: "Qual",
+                        uid_only: true,
+                        image_png: most_recent_search_png
+                    },
+                    success: function(data) {
+                        {#                        alert(JSON.stringify(data['data']));#}
+
+                        if (data['uid']) {
+                            {#                            console.log("{% url 'tables' %}?search_id=" + data['uid']);#}
+                            {#                            var snapshot = document.getElementById('output');#}
+                            {#                            snapshot.innerHTML = "{% url 'tables' %}?search_id=" + data['uid'];#}
+
+                            setTimeout(function(){
+                                {#                                TODO FINDME re-enable this #}
+                                window.location = "{% url 'tables' %}?search_id=" + data['uid'];
+                            }, 1000);
+                        }
+                    },
+                    complete: function() {
+                        waitingDialog.hide();
+                    }
+                });
+            }
+
+            String.prototype.format = function() {
+                var formatted = this;
+                for (var i = 0; i < arguments.length; i++) {
+                    var regexp = new RegExp('\\{'+i+'\\}', 'gi');
+                    formatted = formatted.replace(regexp, arguments[i]);
+                }
+                return formatted;
             };
 
-            for (var a = 0; a < shape_geojson['geometry']['coordinates'][0].length; a++) {
-                var ll2 = new LatLng(shape_geojson['geometry']['coordinates'][0][a][1],
-                        shape_geojson['geometry']['coordinates'][0][a][0]);
-                var os2 = ll2.toOSRef();
-                new_coordinates.push([os2.easting, os2.northing]);
-            }
-
-            new_geometry['coordinates'] = [new_coordinates];
-
-            return new_geometry
-
-        }
-        function showPolygonAreaEdited(e) {
-            e.layers.eachLayer(function(layer) {
-                showPolygonArea({ layer: layer });
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
             });
-        }
 
-        function showPolygonArea(e) {
+            {#            setTimeout(function() {#}
+            {#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
+            {#            }, 2000);#}
+            {#            setTimeout(function() {#}
+            {#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
+            {#            }, 5000);#}
 
-            featureGroup.clearLayers();
-            featureGroup.addLayer(e.layer);
-
-            geoJson_area_km2 = (LGeo.area(e.layer) / 1000000).toFixed(2);
-            e.layer.bindPopup(geoJson_area_km2 + ' km<sup>2</sup>');
-            e.layer.openPopup();
-
-            search_area_geojson = e.layer.toGeoJSON();
-            $('#output').val(search_area_geojson);
-            var new_geojson = convertPolygonToOS(search_area_geojson);
-            wkt = $.geo.WKT.stringify(new_geojson);
-
-            map.fitBounds(featureGroup.getBounds());
-            center_lat_lng = featureGroup.getBounds().getCenter();
-            {#                viewreset is really slow #}
-            map.addOneTimeEventListener('moveend', function() {
-                setTimeout(function(){
-                    leafletImage(map, doImage);
-                }, 1000);
-            });
-        }
-
-        var most_recent_search_png = '';
-        function doImage(err, canvas) {
-            {#                var snapshot = document.getElementById('snapshot');#}
-
-            var img = document.createElement('img');
-            var dimensions = map.getSize();
-            img.width = dimensions.x;
-            img.height = dimensions.y;
-            most_recent_search_png = canvas.toDataURL("image/jpeg", 0.5);
-            img.src = most_recent_search_png;
-            {#                img.style.width = '100%';#}
-            {#                snapshot.innerHTML = '';#}
-            {#                snapshot.appendChild(img);#}
-
-            $.ajax({
-                url: "{% url 'spatial_search' %}",
-                type: 'POST',
-                data: {
-                    geography: wkt,
-                    {#                        geojson: search_area_geojson,#}
-                    centre_lat_lng: [center_lat_lng.lat, center_lat_lng.lng],
-                    geo_area_km2: geoJson_area_km2,
-                    start: 0,
-                    limit: 15,
-                    type: "Qual",
-                    uid_only: true,
-                    image_png: most_recent_search_png
+            $( "#chloropleth_option_form" ).dialog({
+                autoOpen: false,
+                height: map_div.height(),
+                width: $('#page-wrapper').width()/2,
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: map_div
                 },
-                success: function(data) {
-                    {#                        alert(JSON.stringify(data['data']));#}
+                modal: true,
+                buttons: {
+                    "Show New Layer": function() {
+                        if ($("#bintype").val() != '') {
+                            if ($("#binno").val() != '') {
 
-                    if (data['uid']) {
-                        {#                            console.log("{% url 'tables' %}?search_id=" + data['uid']);#}
-                        {#                            var snapshot = document.getElementById('output');#}
-                        {#                            snapshot.innerHTML = "{% url 'tables' %}?search_id=" + data['uid'];#}
+                                var layer_id = $(this).data('layer_names');
+                                var topojson_data = topojson_layers[$(this).data('layer_names')];
+                                var nomis_variable = $(this).data('nomis_variable');
+                                var layer_name_text = $("#layer_name_text_entry").val();
+                                var csv_url = $(this).data('csv_url');
 
-                        setTimeout(function(){
-                            {#                                TODO FINDME re-enable this #}
-                            window.location = "{% url 'tables' %}?search_id=" + data['uid'];
-                        }, 1000);
+                                var colorpicker = $("#colorpicker").val();
+                                var bin_type = $("#bintype").val();
+                                var bin_num = $("#binno").val();
+
+
+                                var new_layer = new MapLayer();
+                                new_layer.layer_id = $(this).data('layer_names');
+                                new_layer.topojson_data = topojson_layers[$(this).data('layer_names')];
+                                new_layer.nomis_variable = $(this).data('nomis_variable');
+                                new_layer.layer_name_text = $("#layer_name_text_entry").val();
+                                new_layer.csv_url = $(this).data('csv_url');
+                                new_layer.colorpicker = $("#colorpicker").val();
+                                new_layer.bin_type = $("#bintype").val();
+                                new_layer.bin_num = $("#binno").val();
+
+                                store.add_layer(new_layer);
+
+
+                                $.ajax({
+                                    url: "{% url 'data_api' %}",
+                                    type: 'GET',
+                                    data: {
+                                        method: 'record_nomis_search',
+                                        layer_id: layer_id,
+                                        layer_name: layer_name_text,
+                                        colorpicker: colorpicker,
+                                        bin_type: bin_type,
+                                        bin_num: bin_num
+                                    },
+                                    success: function(data) {},
+                                    error: function() {}
+                                });
+
+                                try {
+                                    handleUploadedLayer(
+                                            topojson_data,
+                                            colorpicker,
+                                            bin_type,
+                                            bin_num,
+                                            nomis_variable,
+                                            layer_name_text,
+                                            csv_url
+                                    );
+                                }catch (e) {
+                                    if (e == 'suppressed_data') {
+                                        alert('Sorry, an error occurred. \n\n' +
+                                                'It looks like your query was too specific, for example, ' +
+                                                'when data are suppressed due to statistical confidentiality considerations. ' +
+                                                'In this case, try a larger area to map data for.')
+                                    }
+                                    else if (e == 'feature_data_0') {
+                                        alert('Sorry, an error occurred. \n\n' +
+                                                'No data could be found for this query. \n\n' +
+                                                'Please try again, or report it.')
+                                    } else {
+
+                                        console.log(e);
+                                        alert('Sorry, an error occurred. \n\n' +
+                                                'Unfortunately, some types of dataset are incompatible with this service. \n\n' +
+                                                'Try being more specific with the dataset variable you are trying to map. \n\n' +
+                                                'Or, it may be the case that your query was too specific, for example, ' +
+                                                'when data are suppressed due to statistical confidentiality considerations. ' +
+                                                'In this case, try a larger area to map data for.')
+                                    }
+                                }
+                                $(this).dialog("close");
+
+                            }
+                        }
+                    },
+                    Cancel: function() {
+                        $( this ).dialog( "close" );
                     }
                 },
-                complete: function() {
-                    waitingDialog.hide();
+                close: function() {
                 }
             });
-        }
 
-        String.prototype.format = function() {
-            var formatted = this;
-            for (var i = 0; i < arguments.length; i++) {
-                var regexp = new RegExp('\\{'+i+'\\}', 'gi');
-                formatted = formatted.replace(regexp, arguments[i]);
-            }
-            return formatted;
-        };
+            $("#new_layer_btn").click(function(e){
+                $( "#search-remote-form").dialog( "open" );
+            });
 
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
+            $('#dataset_select').change(function(e){
+                {#                alert(e);#}
+            });
 
-        {#            setTimeout(function() {#}
-        {#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
-        {#            }, 2000);#}
-        {#            setTimeout(function() {#}
-        {#                $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
-        {#            }, 5000);#}
+            $('#remote_search_term').keyup(function(event){
+                if(event.keyCode == 13){
+                    $("#remote_search_btn").click();
+                }
+            });
 
-        $( "#chloropleth_option_form" ).dialog({
-            autoOpen: false,
-            height: map_div.height(),
-            width: $('#page-wrapper').width()/2,
-            position: {
-                my: "center",
-                at: "center",
-                of: map_div
-            },
-            modal: true,
-            buttons: {
-                "Show New Layer": function() {
-                    if ($("#bintype").val() != '') {
-                        if ($("#binno").val() != '') {
+            $("#remote_search_btn").click(function(e){
+                var search_term = $('#remote_search_term').val();
+                waitingDialog.show('Searching NomisWeb ...');
 
-                            var layer_id = $(this).data('layer_names');
-                            var topojson_data = topojson_layers[$(this).data('layer_names')];
-                            var nomis_variable = $(this).data('nomis_variable');
-                            var layer_name_text = $("#layer_name_text_entry").val();
-                            var csv_url = $(this).data('csv_url');
+                $.ajax({
+                    url: "{% url 'data_api' %}",
+                    type: 'GET',
+                    data: {
+                        'method': 'remote_search',
+                        'remote_api': 'nomis',
+                        'search_term': search_term,
+                        'method_data': {
+                            'search_term': search_term
+                        }
+                    },
+                    success: function (data) {
+                        var dataset_radio = $('#dataset_radio');
+                        dataset_radio.find('input').remove().end();
+                        dataset_radio.find('label').remove().end();
 
-                            var colorpicker = $("#colorpicker").val();
-                            var bin_type = $("#bintype").val();
-                            var bin_num = $("#binno").val();
+                        if (data['success'] == false) {
+                            alert('Sorry, an error occurred. Please try again, or report it.\n\n' + data['message'])
+                        } else {
 
+                            for (var rd_radio in data['datasets']) {
+                                var remote_dataset_radio = data['datasets'][rd_radio];
+                                var radio_div = $('<div>');
 
-                            var new_layer = new MapLayer();
-                            new_layer.layer_id = $(this).data('layer_names');
-                            new_layer.topojson_data = topojson_layers[$(this).data('layer_names')];
-                            new_layer.nomis_variable = $(this).data('nomis_variable');
-                            new_layer.layer_name_text = $("#layer_name_text_entry").val();
-                            new_layer.csv_url = $(this).data('csv_url');
-                            new_layer.colorpicker = $("#colorpicker").val();
-                            new_layer.bin_type = $("#bintype").val();
-                            new_layer.bin_num = $("#binno").val();
+                                radio_div.append($('<input>', {
+                                    value: remote_dataset_radio.id,
+                                    id: remote_dataset_radio.id,
+                                    type: 'radio',
+                                    name: 'nomis_search_radio',
+                                    text: remote_dataset_radio.name
+                                }));
+                                radio_div.append($('<label>', {
+                                    value: remote_dataset_radio.id,
+                                    for: remote_dataset_radio.id,
+                                    text: remote_dataset_radio.name
+                                }));
+                                dataset_radio.append(radio_div);
+                            }
+                            dataset_radio.buttonset();
+                            dataset_radio.find('input[type=radio]').change(function () {
+                                $('#add_to_map_dialog_btn').button('enable');
+                            });
 
-                            store.add_layer(new_layer);
+                            if (data['datasets'].length == 0) {
+                                alert('Sorry, no results were found for that search.\n' +
+                                        'Please refine the search terms and try again');
+                            } else {
+                                dataset_radio.find('input[type=radio]').change(function () {
+                                    $('#add_to_map_dialog_btn').button('enable');
+                                });
+                            }
+                        }
+                    },
+                    error: function() {
+                        alert('Sorry, an error occurred. Please try again, or report it.')
+                    },
+                    complete: function() {
+                        waitingDialog.hide();
+                    }
+                });
+            });
 
+            $( "#search-remote-form" ).dialog({
+                autoOpen: false,
+                height: map_div.height(),
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: map_div
+                },
+                width: map_div.width() / 2,
+                modal: true,
+                buttons: [
+                    {
+                        id: 'add_to_map_dialog_btn',
+                        text: 'Add to Map',
+                        disabled: true,
+                        click: function() {
+                            waitingDialog.show('Inspecting dataset ...');
+
+                            $( this ).dialog( "close" );
+                            var dataset_id = $("#dataset_radio").find(":radio:checked").attr('id');
+                            var dataset_name = $("#dataset_radio").find(":radio:checked").text();
 
                             $.ajax({
                                 url: "{% url 'data_api' %}",
                                 type: 'GET',
                                 data: {
-                                    method: 'record_nomis_search',
-                                    layer_id: layer_id,
-                                    layer_name: layer_name_text,
-                                    colorpicker: colorpicker,
-                                    bin_type: bin_type,
-                                    bin_num: bin_num
+                                    'method': 'remote_metadata',
+                                    'dataset_id': dataset_id
                                 },
-                                success: function(data) {},
-                                error: function() {}
+                                success: function(data){
+                                    $('#dataset_title').remove().end().append('<h3>' + dataset_name + '</h2>');
+
+                                    var dataset_radio = $('#data_cell_radio');
+                                    dataset_radio.find('div').remove().end();
+
+                                    for(var remote_codelist in data['metadata']['codelists']) {
+                                        var remote_codelist_data = data['metadata']['codelists'][remote_codelist];
+
+                                        var codelist_label = $('<div>', {text: remote_codelist_data['name']});
+                                        dataset_radio.append(codelist_label);
+
+                                        var codelist_radio_div = $('<div>', {id: remote_codelist + '_radio'});
+
+                                        for(var remote_codelist_option in remote_codelist_data['measures']) {
+                                            var remote_codelist_option_data = remote_codelist_data['measures'][remote_codelist_option];
+
+                                            var radio_div = $('<div>');
+
+                                            radio_div.append($('<input>', {
+                                                value: remote_codelist_option_data.id,
+                                                id: remote_codelist + '_' + remote_codelist_option_data.id,
+                                                type: 'radio',
+                                                name: (remote_codelist + '_option'),
+                                                text: remote_codelist_option_data.name
+                                            }));
+                                            radio_div.append($('<label>', {
+                                                class: 'dialog_radio_option',
+                                                value: remote_codelist_option_data.id,
+                                                for: remote_codelist + '_' + remote_codelist_option_data.id,
+                                                text: remote_codelist_option_data.name
+                                            }));
+                                            codelist_radio_div.append(radio_div);
+                                        }
+                                        codelist_radio_div.buttonset().find('input')[0].click();
+
+                                        {#                                        codelist_radio_div.buttonset('refresh');#}
+                                        {#                                        alert(codelist_radio_div.find('input').length);#}
+
+                                        dataset_radio.append(codelist_radio_div);
+                                    }
+
+                                    $('#topojson_geography_radio').buttonset();
+                                    $('#dataset_define_vars_form').data({
+                                        'dataset_id': dataset_id,
+                                        'dataset_name': dataset_name,
+                                        'codelists': data['metadata']['codelists']
+                                    }).dialog('open');
+
+                                },
+                                error: function() {
+                                    alert('Sorry, an error occurred. Please try again, or report it.')
+                                },
+                                complete: function() {
+                                    waitingDialog.hide();
+                                }
                             });
 
-                            try {
-                                handleUploadedLayer(
-                                        topojson_data,
-                                        colorpicker,
-                                        bin_type,
-                                        bin_num,
-                                        nomis_variable,
-                                        layer_name_text,
-                                        csv_url
-                                );
-                            }catch (e) {
-                                if (e == 'suppressed_data') {
-                                    alert('Sorry, an error occurred. \n\n' +
-                                            'It looks like your query was too specific, for example, ' +
-                                            'when data are suppressed due to statistical confidentiality considerations. ' +
-                                            'In this case, try a larger area to map data for.')
-                                }
-                                else if (e == 'feature_data_0') {
-                                    alert('Sorry, an error occurred. \n\n' +
-                                            'No data could be found for this query. \n\n' +
-                                            'Please try again, or report it.')
-                                } else {
-
-                                    console.log(e);
-                                    alert('Sorry, an error occurred. \n\n' +
-                                            'Unfortunately, some types of dataset are incompatible with this service. \n\n' +
-                                            'Try being more specific with the dataset variable you are trying to map. \n\n' +
-                                            'Or, it may be the case that your query was too specific, for example, ' +
-                                            'when data are suppressed due to statistical confidentiality considerations. ' +
-                                            'In this case, try a larger area to map data for.')
-                                }
-                            }
-                            $(this).dialog("close");
-
+                        }},{
+                        text: 'Cancel',
+                        click: function() {
+                            $( this ).dialog( "close" );
                         }
                     }
-                },
-                Cancel: function() {
-                    $( this ).dialog( "close" );
-                }
-            },
-            close: function() {
-            }
-        });
-
-        $("#new_layer_btn").click(function(e){
-            $( "#search-remote-form").dialog( "open" );
-        });
-
-        $('#dataset_select').change(function(e){
-            {#                alert(e);#}
-        });
-
-        $('#remote_search_term').keyup(function(event){
-            if(event.keyCode == 13){
-                $("#remote_search_btn").click();
-            }
-        });
-
-        $("#remote_search_btn").click(function(e){
-            var search_term = $('#remote_search_term').val();
-            waitingDialog.show('Searching NomisWeb ...');
-
-            $.ajax({
-                url: "{% url 'data_api' %}",
-                type: 'GET',
-                data: {
-                    'method': 'remote_search',
-                    'remote_api': 'nomis',
-                    'search_term': search_term,
-                    'method_data': {
-                        'search_term': search_term
-                    }
-                },
-                success: function (data) {
-                    var dataset_radio = $('#dataset_radio');
-                    dataset_radio.find('input').remove().end();
-                    dataset_radio.find('label').remove().end();
-
-                    if (data['success'] == false) {
-                        alert('Sorry, an error occurred. Please try again, or report it.\n\n' + data['message'])
-                    } else {
-
-                        for (var rd_radio in data['datasets']) {
-                            var remote_dataset_radio = data['datasets'][rd_radio];
-                            var radio_div = $('<div>');
-
-                            radio_div.append($('<input>', {
-                                value: remote_dataset_radio.id,
-                                id: remote_dataset_radio.id,
-                                type: 'radio',
-                                name: 'nomis_search_radio',
-                                text: remote_dataset_radio.name
-                            }));
-                            radio_div.append($('<label>', {
-                                value: remote_dataset_radio.id,
-                                for: remote_dataset_radio.id,
-                                text: remote_dataset_radio.name
-                            }));
-                            dataset_radio.append(radio_div);
-                        }
-                        dataset_radio.buttonset();
-                        dataset_radio.find('input[type=radio]').change(function () {
-                            $('#add_to_map_dialog_btn').button('enable');
-                        });
-
-                        if (data['datasets'].length == 0) {
-                            alert('Sorry, no results were found for that search.\n' +
-                                    'Please refine the search terms and try again');
-                        } else {
-                            dataset_radio.find('input[type=radio]').change(function () {
-                                $('#add_to_map_dialog_btn').button('enable');
-                            });
-                        }
-                    }
-                },
-                error: function() {
-                    alert('Sorry, an error occurred. Please try again, or report it.')
-                },
-                complete: function() {
-                    waitingDialog.hide();
+                ],
+                close: function() {
                 }
             });
-        });
-
-        $( "#search-remote-form" ).dialog({
-            autoOpen: false,
-            height: map_div.height(),
-            position: {
-                my: "center",
-                at: "center",
-                of: map_div
-            },
-            width: map_div.width() / 2,
-            modal: true,
-            buttons: [
-                {
-                    id: 'add_to_map_dialog_btn',
-                    text: 'Add to Map',
-                    disabled: true,
-                    click: function() {
-                        waitingDialog.show('Inspecting dataset ...');
-
-                        $( this ).dialog( "close" );
-                        var dataset_id = $("#dataset_radio").find(":radio:checked").attr('id');
-                        var dataset_name = $("#dataset_radio").find(":radio:checked").text();
-
-                        $.ajax({
-                            url: "{% url 'data_api' %}",
-                            type: 'GET',
-                            data: {
-                                'method': 'remote_metadata',
-                                'dataset_id': dataset_id
-                            },
-                            success: function(data){
-                                $('#dataset_title').remove().end().append('<h3>' + dataset_name + '</h2>');
-
-                                var dataset_radio = $('#data_cell_radio');
-                                dataset_radio.find('div').remove().end();
-
-                                for(var remote_codelist in data['metadata']['codelists']) {
-                                    var remote_codelist_data = data['metadata']['codelists'][remote_codelist];
-
-                                    var codelist_label = $('<div>', {text: remote_codelist_data['name']});
-                                    dataset_radio.append(codelist_label);
-
-                                    var codelist_radio_div = $('<div>', {id: remote_codelist + '_radio'});
-
-                                    for(var remote_codelist_option in remote_codelist_data['measures']) {
-                                        var remote_codelist_option_data = remote_codelist_data['measures'][remote_codelist_option];
-
-                                        var radio_div = $('<div>');
-
-                                        radio_div.append($('<input>', {
-                                            value: remote_codelist_option_data.id,
-                                            id: remote_codelist + '_' + remote_codelist_option_data.id,
-                                            type: 'radio',
-                                            name: (remote_codelist + '_option'),
-                                            text: remote_codelist_option_data.name
-                                        }));
-                                        radio_div.append($('<label>', {
-                                            class: 'dialog_radio_option',
-                                            value: remote_codelist_option_data.id,
-                                            for: remote_codelist + '_' + remote_codelist_option_data.id,
-                                            text: remote_codelist_option_data.name
-                                        }));
-                                        codelist_radio_div.append(radio_div);
-                                    }
-                                    codelist_radio_div.buttonset().find('input')[0].click();
-
-                                    {#                                        codelist_radio_div.buttonset('refresh');#}
-                                    {#                                        alert(codelist_radio_div.find('input').length);#}
-
-                                    dataset_radio.append(codelist_radio_div);
-                                }
-
-                                $('#topojson_geography_radio').buttonset();
-                                $('#dataset_define_vars_form').data({
-                                    'dataset_id': dataset_id,
-                                    'dataset_name': dataset_name,
-                                    'codelists': data['metadata']['codelists']
-                                }).dialog('open');
-
-                            },
-                            error: function() {
-                                alert('Sorry, an error occurred. Please try again, or report it.')
-                            },
-                            complete: function() {
-                                waitingDialog.hide();
-                            }
-                        });
-
-                    }},{
-                    text: 'Cancel',
-                    click: function() {
-                        $( this ).dialog( "close" );
-                    }
-                }
-            ],
-            close: function() {
-            }
-        });
-        {#            $('#add_to_map_dialog_btn').button("disable");#}
+            {#            $('#add_to_map_dialog_btn').button("disable");#}
 
 
-        $( "#dataset_define_vars_form" ).dialog({
-            autoOpen: false,
-            height: map_div.height(),
-            position: {
-                my: "center",
-                at: "center",
-                of: map_div
-            },
-            width: map_div.width()/2,
-            modal: true,
-            buttons: {
-                "Render to Map": function() {
-                    waitingDialog.show('Fetching map layers ...');
-
-                    $( this ).dialog( "close" );
-
-                    var codelists = $(this).data('codelists');
-                    var codelist_selected = [];
-
-                    var nomis_variable = $("#nomis_variable").val();
-
-                    for(var remote_codelist in codelists) {
-                        var remote_codelist_selection = $('#' + remote_codelist +'_radio').find(":radio:checked").attr('value');
-
-                        {#                            alert(remote_codelist + ' ' + remote_codelist_selection);#}
-                        codelist_selected.push({
-                            option: remote_codelist,
-                            variable: remote_codelist_selection
-                        });
-                        if (remote_codelist == 'MEASURES') {
-                            nomis_variable = remote_codelist_selection;
-                        }
-                    }
-
-{#                    console.log(codelist_selected);#}
-
-                    var dataset_id = $(this).data('dataset_id');
-
-                    {#                        var topojson_geography = $("#topojson_geographies").val();#}
-
-                    var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');
-                    {#                        var topojson_id = dataset_id + '_' + topojson_geography + '_' + nomis_variable;#}
-                    {#                        var layer_name = topojson_id;#}
-
-
-
-                    get_remote_dataset_topojson(
-                            "{% url 'remote_data_topojson' %}",
-                            topojson_geography,
-                            dataset_id,
-                            codelist_selected,
-                            function(data){
-                                get_remote_dataset_csv_url(
-                                        "{% url 'data_api' %}",
-                                        topojson_geography,
-                                        dataset_id,
-                                        codelist_selected,
-                                        function(csv_url) {
-
-                                            waitingDialog.hide();
-                                            var layer_name = data['search_uuid'];
-                                            topojson_layers[layer_name] = data['topojson'];
-                                            $( "#chloropleth_option_form").data({
-                                                layer_names: layer_name,
-                                                nomis_variable: nomis_variable,
-                                                csv_url: csv_url
-                                            }).dialog( "open" );
-                                        }
-                                );
-                            }
-                    );
+            $( "#dataset_define_vars_form" ).dialog({
+                autoOpen: false,
+                height: map_div.height(),
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: map_div
                 },
-                Cancel: function() {
-                    $( this ).dialog( "close" );
+                width: map_div.width()/2,
+                modal: true,
+                buttons: {
+                    "Render to Map": function() {
+                        waitingDialog.show('Fetching map layers ...');
+
+                        $( this ).dialog( "close" );
+
+                        var codelists = $(this).data('codelists');
+                        var codelist_selected = [];
+
+                        var nomis_variable = $("#nomis_variable").val();
+
+                        for(var remote_codelist in codelists) {
+                            var remote_codelist_selection = $('#' + remote_codelist +'_radio').find(":radio:checked").attr('value');
+
+                            {#                            alert(remote_codelist + ' ' + remote_codelist_selection);#}
+                            codelist_selected.push({
+                                option: remote_codelist,
+                                variable: remote_codelist_selection
+                            });
+                            if (remote_codelist == 'MEASURES') {
+                                nomis_variable = remote_codelist_selection;
+                            }
+                        }
+
+                        {#                    console.log(codelist_selected);#}
+
+                        var dataset_id = $(this).data('dataset_id');
+
+                        {#                        var topojson_geography = $("#topojson_geographies").val();#}
+
+                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');
+                        {#                        var topojson_id = dataset_id + '_' + topojson_geography + '_' + nomis_variable;#}
+                        {#                        var layer_name = topojson_id;#}
+
+
+
+                        get_remote_dataset_topojson(
+                                "{% url 'remote_data_topojson' %}",
+                                topojson_geography,
+                                dataset_id,
+                                codelist_selected,
+                                function(data){
+                                    get_remote_dataset_csv_url(
+                                            "{% url 'data_api' %}",
+                                            topojson_geography,
+                                            dataset_id,
+                                            codelist_selected,
+                                            function(csv_url) {
+
+                                                waitingDialog.hide();
+                                                var layer_name = data['search_uuid'];
+                                                topojson_layers[layer_name] = data['topojson'];
+                                                $( "#chloropleth_option_form").data({
+                                                    layer_names: layer_name,
+                                                    nomis_variable: nomis_variable,
+                                                    csv_url: csv_url
+                                                }).dialog( "open" );
+                                            }
+                                    );
+                                }
+                        );
+                    },
+                    Cancel: function() {
+                        $( this ).dialog( "close" );
+                    }
+                },
+                close: function() {
                 }
-            },
-            close: function() {
+            });
+
+            $('#screenshot').click(function() {
+                leafletImage(map, screenshot);
+            });
+
+            function screenshot(err, map_canvas){
+
+                html2canvas(
+                        map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-left'), {}
+                ).then(function(left_overlay_canvas) {
+                            {#                            $('#screenshot_result2').append(overlay_canvas);#}
+
+                            var ctx3 = map_canvas.getContext('2d');
+                            ctx3.drawImage(
+                                    left_overlay_canvas,
+                                    0,
+                                    map_canvas.height - left_overlay_canvas.height
+                            );
+
+                            html2canvas(
+                                    map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-right'), {}
+                            ).then(function(right_overlay_canvas) {
+                                        ctx3.drawImage(
+                                                right_overlay_canvas,
+                                                map_canvas.width - right_overlay_canvas.width,
+                                                map_canvas.height - right_overlay_canvas.height
+                                        );
+
+                                        var canvas_data_url = map_canvas.toDataURL("image/jpeg", 0.5);
+
+                                        window.open(canvas_data_url, '_blank');
+                                        {#                                        $('#screenshot_result').append(map_canvas);#}
+
+                                    });
+                        });
             }
-        });
 
-        $('#screenshot').click(function() {
-            leafletImage(map, screenshot);
-        });
 
-        function screenshot(err, map_canvas){
+            $( "#local_dataset_define_vars_form" ).dialog({
+                autoOpen: false,
+                height: map_div.height(),
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: map_div
+                },
+                width: map_div.width()/2,
+                modal: true,
+                open: function( event, ui ) {
+                    var available_data = $(this).data('available_data');
+                    var unicode_data = $(this).data('unicode_data');
 
-            html2canvas(
-                    map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-left'), {}
-            ).then(function(left_overlay_canvas) {
-                        {#                            $('#screenshot_result2').append(overlay_canvas);#}
+                    var dataset_radio = $('#local_data_cell_radio');
+                    dataset_radio.find('div').remove().end();
 
-                        var ctx3 = map_canvas.getContext('2d');
-                        ctx3.drawImage(
-                                left_overlay_canvas,
-                                0,
-                                map_canvas.height - left_overlay_canvas.height
+                    var codelist_label = $('<div>', {text: 'Available Data'});
+                    dataset_radio.append(codelist_label);
+
+                    var codelist_radio_div = $('<div>', {id: 'local_available_data_radio'});
+                    for(var available_data_option_idx in available_data) {
+                        var available_data_option = available_data[available_data_option_idx];
+
+                        var radio_div = $('<div>');
+                        radio_div.append($('<input>', {
+                            value: available_data_option,
+                            id: available_data_option,
+                            type: 'radio',
+                            name: 'available_data_option',
+                            text: available_data_option
+                        }));
+                        radio_div.append($('<label>', {
+                            class: 'dialog_radio_option',
+                            value: available_data_option,
+                            for: available_data_option,
+                            text: available_data_option
+                        }));
+                        codelist_radio_div.append(radio_div);
+                    }
+
+                    for(var available_data_option_idx in unicode_data) {
+                        var available_data_option = unicode_data[available_data_option_idx];
+
+                        var radio_div = $('<div>');
+                        radio_div.append($('<input>', {
+                            value: available_data_option,
+                            id: available_data_option,
+                            type: 'radio',
+                            name: 'available_data_option',
+                            text: available_data_option
+                        }));
+                        radio_div.append($('<label>', {
+                            class: 'dialog_radio_option',
+                            value: available_data_option,
+                            for: available_data_option,
+                            text: available_data_option + ' category'
+                        }));
+                        codelist_radio_div.append(radio_div);
+                    }
+
+                    codelist_radio_div.buttonset();
+                    dataset_radio.append(codelist_radio_div);
+                    codelist_radio_div.find('input')[0].click();
+
+                },
+                buttons: {
+                    "Render to Map": function() {
+                        waitingDialog.show('Fetching map layers ...');
+                        $( this ).dialog( "close" );
+
+                        var local_available_data_selection = $('#local_available_data_radio').find(":radio:checked").attr('value');
+
+                        var survey_id = $(this).data('survey_id');
+
+                        {#                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');#}
+                        var topojson_geography = $(this).data('boundary_name');
+
+
+                        get_local_dataset_topojson(
+                                "{% url 'local_data_topojson' %}",
+                                topojson_geography,
+                                survey_id,
+                                local_available_data_selection,
+                                function(data) {
+                                    waitingDialog.hide();
+                                    {#                                    var layer_name = survey_id + '_' + local_available_data_selection;#}
+                                    var layer_name = data['search_uuid'];
+                                    topojson_layers[layer_name] = data['topojson'];
+
+                                    $( "#chloropleth_option_form").data({
+                                        layer_names: layer_name,
+                                        nomis_variable: '20301',
+                                        csv_url: ''
+                                    }).dialog( "open" );
+
+                                    {#                                    handleUploadedLayer(#}
+                                    {#                                            topojson_data['topojson'],#}
+                                    {#                                            local_data_layer['colorpicker'],#}
+                                    {#                                            local_data_layer['bin_type'],#}
+                                    {#                                            local_data_layer['bin_num'],#}
+                                    {#                                            '',#}
+                                    {#                                            local_data_layer['name'],#}
+                                    {#                                            ''#}
+                                    {#                                    );#}
+                                }
                         );
 
-                        html2canvas(
-                                map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-right'), {}
-                        ).then(function(right_overlay_canvas) {
-                                    ctx3.drawImage(
-                                            right_overlay_canvas,
-                                            map_canvas.width - right_overlay_canvas.width,
-                                            map_canvas.height - right_overlay_canvas.height
-                                    );
-
-                                    var canvas_data_url = map_canvas.toDataURL("image/jpeg", 0.5);
-
-                                    window.open(canvas_data_url, '_blank');
-                                    {#                                        $('#screenshot_result').append(map_canvas);#}
-
-                                });
-                    });
-        }
-
-
-        $( "#local_dataset_define_vars_form" ).dialog({
-            autoOpen: false,
-            height: map_div.height(),
-            position: {
-                my: "center",
-                at: "center",
-                of: map_div
-            },
-            width: map_div.width()/2,
-            modal: true,
-            open: function( event, ui ) {
-                var available_data = $(this).data('available_data');
-                var unicode_data = $(this).data('unicode_data');
-
-                var dataset_radio = $('#local_data_cell_radio');
-                dataset_radio.find('div').remove().end();
-
-                var codelist_label = $('<div>', {text: 'Available Data'});
-                dataset_radio.append(codelist_label);
-
-                var codelist_radio_div = $('<div>', {id: 'local_available_data_radio'});
-                for(var available_data_option_idx in available_data) {
-                    var available_data_option = available_data[available_data_option_idx];
-
-                    var radio_div = $('<div>');
-                    radio_div.append($('<input>', {
-                        value: available_data_option,
-                        id: available_data_option,
-                        type: 'radio',
-                        name: 'available_data_option',
-                        text: available_data_option
-                    }));
-                    radio_div.append($('<label>', {
-                        class: 'dialog_radio_option',
-                        value: available_data_option,
-                        for: available_data_option,
-                        text: available_data_option
-                    }));
-                    codelist_radio_div.append(radio_div);
-                }
-
-                for(var available_data_option_idx in unicode_data) {
-                    var available_data_option = unicode_data[available_data_option_idx];
-
-                    var radio_div = $('<div>');
-                    radio_div.append($('<input>', {
-                        value: available_data_option,
-                        id: available_data_option,
-                        type: 'radio',
-                        name: 'available_data_option',
-                        text: available_data_option
-                    }));
-                    radio_div.append($('<label>', {
-                        class: 'dialog_radio_option',
-                        value: available_data_option,
-                        for: available_data_option,
-                        text: available_data_option + ' category'
-                    }));
-                    codelist_radio_div.append(radio_div);
-                }
-
-                codelist_radio_div.buttonset();
-                dataset_radio.append(codelist_radio_div);
-                codelist_radio_div.find('input')[0].click();
-
-            },
-            buttons: {
-                "Render to Map": function() {
-                    waitingDialog.show('Fetching map layers ...');
-                    $( this ).dialog( "close" );
-
-                    var local_available_data_selection = $('#local_available_data_radio').find(":radio:checked").attr('value');
-
-                    var survey_id = $(this).data('survey_id');
-
-                    {#                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');#}
-                    var topojson_geography = $(this).data('boundary_name');
-
-
-                    get_local_dataset_topojson(
-                            "{% url 'local_data_topojson' %}",
-                            topojson_geography,
-                            survey_id,
-                            local_available_data_selection,
-                            function(data) {
-                                waitingDialog.hide();
-                                {#                                    var layer_name = survey_id + '_' + local_available_data_selection;#}
-                                var layer_name = data['search_uuid'];
-                                topojson_layers[layer_name] = data['topojson'];
-
-                                $( "#chloropleth_option_form").data({
-                                    layer_names: layer_name,
-                                    nomis_variable: '20301',
-                                    csv_url: ''
-                                }).dialog( "open" );
-
-                                {#                                    handleUploadedLayer(#}
-                                {#                                            topojson_data['topojson'],#}
-                                {#                                            local_data_layer['colorpicker'],#}
-                                {#                                            local_data_layer['bin_type'],#}
-                                {#                                            local_data_layer['bin_num'],#}
-                                {#                                            '',#}
-                                {#                                            local_data_layer['name'],#}
-                                {#                                            ''#}
-                                {#                                    );#}
-                            }
-                    );
-
+                    },
+                    Cancel: function() {
+                        $( this ).dialog( "close" );
+                    }
                 },
-                Cancel: function() {
-                    $( this ).dialog( "close" );
+                close: function() {
                 }
-            },
-            close: function() {
-            }
-        });
+            });
 
 
-        var local_data_layer_data = {{ local_data_layers|jsonify }};
-        for (var local_data_layer_idx in local_data_layer_data) {
-
-            (function(){
-                var local_data_layer = local_data_layer_data[local_data_layer_idx];
-{#                console.log(local_data_layer);#}
+            var local_data_layer_data = {{ local_data_layers|jsonify }};
+            for (var local_data_layer_idx in local_data_layer_data) {
 
                 (function(){
-                    get_local_dataset_metadata(
-                            '{% url 'data_api' %}',
-                            local_data_layer['survey_id'],
-                            local_data_layer['boundary_name'],
-                            function(metadata){
-                                {#                                    alert(metadata['local_data_metadata']['data_names']);#}
-                                $("#local_dataset_define_vars_form").data({
-                                    survey_id: local_data_layer['survey_id'],
-                                    boundary_name: local_data_layer['boundary_name'],
-                                    available_data: metadata['local_data_metadata']['data_names'],
-                                    unicode_data: metadata['local_data_metadata']['unicode_data']
-                                }).dialog('open');
-                            }
-                    );
-                })();
+                    var local_data_layer = local_data_layer_data[local_data_layer_idx];
+                    {#                console.log(local_data_layer);#}
 
-                local_data_layer['colorpicker'] = 'Spectral';
-                local_data_layer['bin_type'] = 'k';
-                local_data_layer['bin_num'] = '8';
-                local_data_layer['data_name'] = 'data_name';
+                    (function(){
+                        get_local_dataset_metadata(
+                                '{% url 'data_api' %}',
+                                local_data_layer['survey_id'],
+                                local_data_layer['boundary_name'],
+                                function(metadata){
+                                    {#                                    alert(metadata['local_data_metadata']['data_names']);#}
+                                    $("#local_dataset_define_vars_form").data({
+                                        survey_id: local_data_layer['survey_id'],
+                                        boundary_name: local_data_layer['boundary_name'],
+                                        available_data: metadata['local_data_metadata']['data_names'],
+                                        unicode_data: metadata['local_data_metadata']['unicode_data']
+                                    }).dialog('open');
+                                }
+                        );
+                    })();
 
-                {#                    TODO re-enable, this works!! #}
-                {#                    get_local_dataset_topojson(#}
-                {#                            "{% url 'local_data_topojson' %}",#}
-                {#                            local_data_layer['boundary_name'],#}
-                {#                            local_data_layer['survey_id'],#}
-                {#                            local_data_layer['data_name'],#}
-                {#                            function(topojson_data) {#}
-                {#                                console.log(local_data_layer);#}
-                {##}
-                {#                                handleUploadedLayer(#}
-                {#                                        topojson_data['topojson'],#}
-                {#                                        local_data_layer['colorpicker'],#}
-                {#                                        local_data_layer['bin_type'],#}
-                {#                                        local_data_layer['bin_num'],#}
-                {#                                        '',#}
-                {#                                        local_data_layer['name'],#}
-                {#                                        ''#}
-                {#                                );#}
-                {#                            }#}
-                {#                    );#}
-            }());
-        }
+                    local_data_layer['colorpicker'] = 'Spectral';
+                    local_data_layer['bin_type'] = 'k';
+                    local_data_layer['bin_num'] = '8';
+                    local_data_layer['data_name'] = 'data_name';
 
-{#        var local_search_layer_data = {{ local_searches|jsonify }};#}
-{#        do_local_layers(local_search_layer_data, "{% url 'remote_data_topojson' %}");#}
+                    {#                    TODO this works!! --- well, it used to #}
+                    {#                    get_local_dataset_topojson(#}
+                    {#                            "{% url 'local_data_topojson' %}",#}
+                    {#                            local_data_layer['boundary_name'],#}
+                    {#                            local_data_layer['survey_id'],#}
+                    {#                            local_data_layer['data_name'],#}
+                    {#                            function(topojson_data) {#}
+                    {#                                console.log(local_data_layer);#}
+                    {##}
+                    {#                                handleUploadedLayer(#}
+                    {#                                        topojson_data['topojson'],#}
+                    {#                                        local_data_layer['colorpicker'],#}
+                    {#                                        local_data_layer['bin_type'],#}
+                    {#                                        local_data_layer['bin_num'],#}
+                    {#                                        '',#}
+                    {#                                        local_data_layer['name'],#}
+                    {#                                        ''#}
+                    {#                                );#}
+                    {#                            }#}
+                    {#                    );#}
+                }());
+            }
 
-        var layer_uuids = {{ layer_uuids|jsonify }};
-        do_layer_uuids(layer_uuids, "{% url 'data_api' %}");
+            {#        var local_search_layer_data = {{ local_searches|jsonify }};#}
+            {#        do_local_layers(local_search_layer_data, "{% url 'remote_data_topojson' %}");#}
 
-        function do_layer_uuids(layer_uuids, search_layer_topojson_url) {
+            var layer_uuids = {{ layer_uuids|jsonify }};
+            do_layer_uuids(layer_uuids, "{% url 'data_api' %}");
 
-            for (var uuid_idx in layer_uuids) {
+            function do_layer_uuids(layer_uuids, search_layer_topojson_url) {
+                for (var uuid_idx in layer_uuids) {
+                    var uuid = layer_uuids[uuid_idx];
+                    do_layer_single_uuid(uuid, search_layer_topojson_url);
+                }
+            }
 
-                var uuid = layer_uuids[uuid_idx];
-
+            function do_layer_single_uuid(uuid, search_layer_topojson_url) {
                 $.ajax({
                     url: search_layer_topojson_url,
                     type: 'GET',
@@ -1767,7 +1772,7 @@
                         search_uuid: uuid
                     },
                     success: function (topojson_data) {
-{#                        console.log(topojson_data);#}
+                        {#                        console.log(topojson_data);#}
 
                         var layer_data = topojson_data['layer_data'];
 
@@ -1783,45 +1788,35 @@
                     }
                 });
             }
-        }
 
-        var remote_data_layer_data = {{ remote_searches|jsonify }};
-        for (var remote_data_layer_idx in remote_data_layer_data) {
+            var remote_data_layer_data = {{ remote_searches|jsonify }};
+            for (var remote_data_layer_idx in remote_data_layer_data) {
 
-            (function(){
-                var remote_data_layer = remote_data_layer_data[remote_data_layer_idx];
-{#                console.log(remote_data_layer);#}
+                (function(){
+                    var remote_data_layer = remote_data_layer_data[remote_data_layer_idx];
+                    {#                console.log(remote_data_layer);#}
 
-                get_remote_dataset_topojson(
-                        "{% url 'remote_data_topojson' %}",
-                        remote_data_layer['geography_id'],
-                        remote_data_layer['dataset_id'],
-                        remote_data_layer['codelist'],
-                        function(topojson_data) {
-{#                            console.log(remote_data_layer);#}
+                    get_remote_dataset_topojson(
+                            "{% url 'remote_data_topojson' %}",
+                            remote_data_layer['geography_id'],
+                            remote_data_layer['dataset_id'],
+                            remote_data_layer['codelist'],
+                            function(topojson_data) {
+                                {#                            console.log(remote_data_layer);#}
 
-                            handleUploadedLayer(
-                                    topojson_data['topojson'],
-                                    remote_data_layer['colorpicker'],
-                                    remote_data_layer['bin_type'],
-                                    remote_data_layer['bin_num'],
-                                    '',
-                                    remote_data_layer['name'],
-                                    ''
-                            );
-                        }
-                );
-            }());
-        }
-
-
-
-
-
-
-
-
-
+                                handleUploadedLayer(
+                                        topojson_data['topojson'],
+                                        remote_data_layer['colorpicker'],
+                                        remote_data_layer['bin_type'],
+                                        remote_data_layer['bin_num'],
+                                        '',
+                                        remote_data_layer['name'],
+                                        ''
+                                );
+                            }
+                    );
+                }());
+            }
 
 
 

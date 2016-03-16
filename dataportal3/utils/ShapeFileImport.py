@@ -282,14 +282,14 @@ class ShapeFileImport:
             field_idx = clean_fields[field_name]
 
             field_type = lyr.get_fields(field_name)[0].__class__.__name__
-            print 'field_name: ' + str(field_name) + ' field_type: ' + str(field_type)
+            # print 'field_name: ' + str(field_name) + ' field_type: ' + str(field_type)
 
             regions_with_data = {}
 
             for geo_idx, geom in enumerate(geoms):
 
                 value = lyr.get_fields(field_name)[geo_idx]
-                print str(geo_codes[geo_idx]) + ' ' + str(value)
+                # print str(geo_codes[geo_idx]) + ' ' + str(value)
 
                 regions_with_data[geo_codes[geo_idx]] = value
 

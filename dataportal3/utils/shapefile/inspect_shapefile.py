@@ -125,9 +125,11 @@ class ShapefileModelMatching:
                     shp_model_field_data = {
                         'table_name': model_instance._meta.db_table,
                         'fields': valid_fields,
-                        'data': list(model_data),
                         'name': model_description['name']
                     }
+                    print 'shp_model_field_data'
+                    print pprint.pformat(shp_model_field_data)
+                    shp_model_field_data['data'] = list(model_data)
 
                     # Creating an even bigger list of stuff across all models
                     shp_model_field_data_arr.append(shp_model_field_data)
@@ -223,7 +225,7 @@ class ShapefileModelMatching:
                 if model_hits > 0:
                     hits_arr.append({
                         'hits': model_hits,
-                        'table_name': hit_model,
+                        'table_name': model_data['table_name'],
                         'model_field_data': model_field_data
                     })
 

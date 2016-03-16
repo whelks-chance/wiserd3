@@ -316,38 +316,38 @@
 
                 do_layer_single_uuid(uid, "{% url 'data_api' %}");
 
-{#                var uids = [];#}
-{#                uids.push(uid);#}
-{#                $.ajax({#}
-{#                    url: "{% url 'data_api' %}",#}
-{#                    type: 'GET',#}
-{#                    data: {#}
-{#                        'method': 'remote_data_render_data',#}
-{#                        'remote_layer_ids': uids#}
-{#                    },#}
-{#                    success: function (data) {#}
-{#                        var remote_data_layer = data['nomis_layers'][0];#}
-{#                        get_remote_dataset_topojson(#}
-{#                                "{% url 'remote_data_topojson' %}",#}
-{#                                remote_data_layer['geography_id'],#}
-{#                                remote_data_layer['dataset_id'],#}
-{#                                remote_data_layer['codelist'],#}
-{#                                function(topojson_data) {#}
-                                    {#                                    console.log(remote_data_layer);#}
-{##}
-{#                                    handleUploadedLayer(#}
-{#                                            topojson_data['topojson'],#}
-{#                                            remote_data_layer['colorpicker'],#}
-{#                                            remote_data_layer['bin_type'],#}
-{#                                            remote_data_layer['bin_num'],#}
-{#                                            '',#}
-{#                                            remote_data_layer['name'],#}
-{#                                            ''#}
-{#                                    );#}
-{#                                }#}
-{#                        );#}
-{#                    }#}
-{#                });#}
+                {#                var uids = [];#}
+                {#                uids.push(uid);#}
+                {#                $.ajax({#}
+                {#                    url: "{% url 'data_api' %}",#}
+                {#                    type: 'GET',#}
+                {#                    data: {#}
+                {#                        'method': 'remote_data_render_data',#}
+                {#                        'remote_layer_ids': uids#}
+                {#                    },#}
+                {#                    success: function (data) {#}
+                {#                        var remote_data_layer = data['nomis_layers'][0];#}
+                {#                        get_remote_dataset_topojson(#}
+                {#                                "{% url 'remote_data_topojson' %}",#}
+                {#                                remote_data_layer['geography_id'],#}
+                {#                                remote_data_layer['dataset_id'],#}
+                {#                                remote_data_layer['codelist'],#}
+                {#                                function(topojson_data) {#}
+                {#                                    console.log(remote_data_layer);#}
+                {##}
+                {#                                    handleUploadedLayer(#}
+                {#                                            topojson_data['topojson'],#}
+                {#                                            remote_data_layer['colorpicker'],#}
+                {#                                            remote_data_layer['bin_type'],#}
+                {#                                            remote_data_layer['bin_num'],#}
+                {#                                            '',#}
+                {#                                            remote_data_layer['name'],#}
+                {#                                            ''#}
+                {#                                    );#}
+                {#                                }#}
+                {#                        );#}
+                {#                    }#}
+                {#                });#}
             });
 
             function toggle_upload_layer(toggle_button) {
@@ -378,12 +378,13 @@
 
             var map_div = $('#map_div');
 
+            {#            FIXME do we need this width? #}
             map_div.css({
                 height: map_height - header_height - 5,
-                width: $('#page-wrapper').width()
+                {#                width: $('#page-wrapper').width()#}
             });
-            var map = L.map('map_div').setView([51.53181, -3.24687], 8);
 
+            var map = L.map('map_div').setView([51.53181, -3.24687], 8);
 
             var layer_group = new L.LayerGroup();
             var overlays = {
@@ -461,7 +462,9 @@
                 } else {
                     info_text += '<h4>Hover over a region</h4>';
                 }
-                this._div.innerHTML = info_text;
+                {#                FIXME this is nuts #}
+                {#                this._div.innerHTML = info_text;#}
+                $('#right-component1').html(info_text);
             };
             info.addTo(map);
 
@@ -959,26 +962,36 @@
                 );
                 var accordionDiv = $('#legend_accordion');
                 $(accordionDiv).append(accordionInner);
-
             }
 
-            var legend_two = L.control({id: 'legend_control', position: 'bottomright'});
+            {#            var legend_two = L.control({id: 'legend_control', position: 'bottomright'});#}
+            {#            legend_two.onAdd = function (map) {#}
+            {#                var div = L.DomUtil.create('div', 'info legend');#}
+            {##}
+            {#                var legendHeaderDiv = $('<div/>')#}
+            {#                        .addClass("panel-heading")#}
+            {#                        .text('Legend');#}
+            {##}
+            {#                var accordionDiv = $('<div/>')#}
+            {#                        .attr("id", "legend_accordion")#}
+            {#                        .addClass("panel-group");#}
+            {##}
+            {#                $(div).append(legendHeaderDiv).append(accordionDiv);#}
+            {##}
+            {#                return div;#}
+            {#            };#}
+            {#            legend_two.addTo(map);#}
 
-            legend_two.onAdd = function (map) {
-                var div = L.DomUtil.create('div', 'info legend');
+            var div = L.DomUtil.create('div', 'info legend');
+            var legendHeaderDiv = $('<div/>')
+                    .addClass("panel-heading")
+                    .text('Legend');
+            var accordionDiv = $('<div/>')
+                    .attr("id", "legend_accordion")
+                    .addClass("panel-group");
+            $(div).append(legendHeaderDiv).append(accordionDiv);
+            $('#right-component2').append(div);
 
-                var legendHeaderDiv = $('<div/>')
-                        .addClass("panel-heading")
-                        .text('Legend');
-
-                var accordionDiv = $('<div/>')
-                        .attr("id", "legend_accordion")
-                        .addClass("panel-group");
-
-                $(div).append(legendHeaderDiv).append(accordionDiv);
-                return div;
-            };
-            legend_two.addTo(map);
             {#            $('.legend').resizable({handles: 'n, e, s, w'});#}
 
             function propertyTable(o) {
@@ -1604,19 +1617,26 @@
                     for(var available_data_option_idx in available_data) {
                         var available_data_option = available_data[available_data_option_idx];
 
+                        var radio_text = '';
+                        if (available_data_option['full_name']){
+                            radio_text = available_data_option['full_name'];
+                        } else {
+                            radio_text = available_data_option['data_name']
+                        }
+
                         var radio_div = $('<div>');
                         radio_div.append($('<input>', {
-                            value: available_data_option,
-                            id: available_data_option,
+                            value: available_data_option['data_name'],
+                            id: available_data_option['data_name'],
                             type: 'radio',
                             name: 'available_data_option',
-                            text: available_data_option
+                            text: radio_text
                         }));
                         radio_div.append($('<label>', {
                             class: 'dialog_radio_option',
-                            value: available_data_option,
-                            for: available_data_option,
-                            text: available_data_option
+                            value: available_data_option['data_name'],
+                            for: available_data_option['data_name'],
+                            text: radio_text
                         }));
                         codelist_radio_div.append(radio_div);
                     }
@@ -1624,19 +1644,26 @@
                     for(var available_data_option_idx in unicode_data) {
                         var available_data_option = unicode_data[available_data_option_idx];
 
+                        var uradio_text = '';
+                        if (available_data_option['full_name']){
+                            uradio_text = available_data_option['full_name'];
+                        } else {
+                            uradio_text = available_data_option['data_name']
+                        }
+
                         var radio_div = $('<div>');
                         radio_div.append($('<input>', {
-                            value: available_data_option,
-                            id: available_data_option,
+                            value: available_data_option['data_name'],
+                            id: available_data_option['data_name'],
                             type: 'radio',
                             name: 'available_data_option',
-                            text: available_data_option
+                            text: uradio_text
                         }));
                         radio_div.append($('<label>', {
                             class: 'dialog_radio_option',
-                            value: available_data_option,
-                            for: available_data_option,
-                            text: available_data_option + ' category'
+                            value: available_data_option['data_name'],
+                            for: available_data_option['data_name'],
+                            text: uradio_text + ' category'
                         }));
                         codelist_radio_div.append(radio_div);
                     }
@@ -1828,13 +1855,34 @@
 
     </script>
 
+    <div class="row" style="height: 100%">
+        <div class="col-lg-9 col-sm-12">
+            <div id="map_div" style="height: 180px;"></div>
+        </div>
 
-    <div id="map_div" style="height: 180px;"></div>
-    <div id="naw_output" >NAW = {{ naw }}</div>
-    <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>
-    <div id="screenshot" class="btn">Screenshot</div>
-    <div id="screenshot_result"></div>
-    <div id="screenshot_result2"></div>
+        <div class="col-lg-3 col-sm-12" style="background-color: #f8f8f8;
+         height: 100%; position: absolute; right: 0; width:250px">
+
+            <div class="right_sidebar" id="right_sidebar" style="height: 100%">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="split-pane-component" id="right-component1"></div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="split-pane-component" id="right-component2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="naw_output" >NAW = {{ naw }}</div>
+        <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>
+        <div id="screenshot" class="btn">Screenshot</div>
+        <div id="screenshot_result"></div>
+        <div id="screenshot_result2"></div>
+    </div>
 
 
     <div id="chloropleth_option_form" title="Chloropleth options">

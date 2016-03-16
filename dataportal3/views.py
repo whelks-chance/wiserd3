@@ -920,11 +920,13 @@ def data_api(request):
 
         data_names = link_table_data.exclude(
             data_type='unicode'
-        ).values_list('data_name', flat=True)
+            # ).values_list('data_name', flat=True)
+        ).values('data_name', 'full_name')
 
         unicode_data_names = link_table_data.filter(
             data_type='unicode'
-        ).values_list('data_name', flat=True)
+            # ).values_list('data_name', flat=True)
+        ).values('data_name', 'full_name')
 
         to_return['local_data_metadata'] = {
             'data_names': list(data_names),
@@ -1055,6 +1057,45 @@ def local_data_topojson(request):
                 'value': str(data_strings.regional_data[region]).title()
             })
 
+        # Shorthand Name,Category,FullName,Notes,CategoryCY,FullNameCY,NotesCY
+        spatial_survey_fields = [
+            {
+                'field': 'data_name',
+                'name': 'Name'
+            },
+            {
+                'field': 'category',
+                'name': 'Category'
+            },
+            {
+                'field': 'full_name',
+                'name': 'Full Name'
+            },
+            {
+                'field': 'notes',
+                'name': 'Notes'
+            },
+            {
+                'field': 'category_cy',
+                'name': 'Category CY'
+            },
+            {
+                'field': 'full_name_cy',
+                'name': 'Full Name CY'
+            },
+            {
+                'field': 'notes_cy',
+                'name': 'Notes CY'
+            }
+        ]
+
+        for spatial_survey_field in spatial_survey_fields:
+            region_string_data[region].append({
+                'title': spatial_survey_field['name'],
+                'value': getattr(survey_spatial_data, spatial_survey_field['field'])
+            })
+        print 'region_string_data', region_string_data
+
     for region in regional_data:
         regions = [{
             'name': '',
@@ -1066,6 +1107,7 @@ def local_data_topojson(request):
             "string_data": region_string_data[region],
             "data_title": data_name
         }]
+
         all_data[region] = regions
 
     nomis_search = models.NomisSearch()
@@ -1537,6 +1579,8 @@ def get_topojson_for_uuid(request, search_uuid):
     else:
         search_type = found_search_model.search_type.name
 
+    print 'search_type', search_type
+
     if search_type == 'Nomis':
         # remote_search_layers.append(layer_data)
 
@@ -1544,6 +1588,8 @@ def get_topojson_for_uuid(request, search_uuid):
         a = rd.get_topojson_with_data(dataset_id, geog, '', codelist, high=user_prefs.topojson_high)
         response_data['topojson'] = a
 
+    # TODO we want to inject new variables into properties here
+    # Why do we have the nomis/ survey distinction for getting "all_data"?
     if search_type == 'Survey':
         # local_search_layers.append(layer_data)
 
@@ -1608,8 +1654,41 @@ def get_topojson_for_uuid(request, search_uuid):
                         'value': str(data_strings.regional_data[region]).title()
                     })
 
+            # Shorthand Name,Category,FullName,Notes,CategoryCY,FullNameCY,NotesCY
+            spatial_survey_fields = [
+                {
+                    'field': 'data_name', 'name': 'Name'
+                },
+                {
+                    'field': 'category', 'name': 'Category'
+                },
+                {
+                    'field': 'full_name', 'name': 'Full Name'
+                },
+                {
+                    'field': 'notes', 'name': 'Notes'
+                },
+                {
+                    'field': 'category_cy', 'name': 'Category CY'
+                },
+                {
+                    'field': 'full_name_cy', 'name': 'Full Name CY'
+                },
+                {
+                    'field': 'notes_cy', 'name': 'Notes CY'
+                }
+            ]
+
+            for spatial_survey_field in spatial_survey_fields:
+                region_string_data[region].append({
+                    'title': spatial_survey_field['name'],
+                    'value': getattr(survey_spatial_data, spatial_survey_field['field'])
+                })
+            print 'region_string_data', region_string_data
+
         for region in regional_data:
-            regions = [{
+
+            region_dict = {
                 'name': '',
                 'value': regional_data[region],
                 "geography_id": '',
@@ -1617,8 +1696,11 @@ def get_topojson_for_uuid(request, search_uuid):
                 "data_status": "A",
                 "geography": region,
                 "string_data": region_string_data[region],
-                "data_title": data_name
-            }]
+                "data_title": data_name,
+            }
+
+            # FIXME - no idea why dict into array into dict
+            regions = [region_dict]
             all_data[region] = regions
 
         rd = RemoteData()

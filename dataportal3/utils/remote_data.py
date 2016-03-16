@@ -359,7 +359,10 @@ class RemoteData():
                                 geom['properties']['AREA_NAME'] = remote_data_item_key
                                 geom['properties']['PERCENTAGE'] = measure_is_percentage
                                 geom['properties']['DATA_STATUS'] = remote_data_object['data_status']
+
                                 if 'string_data' in remote_data_object:
+                                    print "remote_data_object['string_data']", remote_data_object['string_data']
+
                                     geom['properties']['STRING_DATA'] = remote_data_object['string_data']
                                 if 'data_title' in remote_data_object:
                                     geom['properties']['DATA_TITLE'] = remote_data_object['data_title']

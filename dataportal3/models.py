@@ -376,6 +376,13 @@ class SpatialSurveyLink(models.Model):
     data_description = models.TextField(null=True, blank=True)
     users = models.ManyToManyField('UserProfile')
 
+    category = models.TextField(blank=True, null=True)
+    full_name = models.TextField(blank=True, null=True)
+    notes = models.TextField(blank=True, null=True)
+    category_cy = models.TextField(blank=True, null=True)
+    full_name_cy = models.TextField(blank=True, null=True)
+    notes_cy = models.TextField(blank=True, null=True)
+
     class Meta:
         db_table = 'spatial_survey_link'
 
@@ -489,7 +496,8 @@ class NomisSearch(models.Model):
     search_type = models.ForeignKey(SearchType, blank=True, null=True)
 
     def __unicode__(self):
-        return str(self.name) + ':' + str(self.uuid) + ':' + self.geography_id
+        print self.name, self.geography_id, self.uuid
+        return u'%s:%s:%s' % (self.name, self.uuid, self.geography_id)
 
 
 class Aberystwyth_Locality_Dissolved(models.Model):

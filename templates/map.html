@@ -253,10 +253,14 @@
         $(document).ready(function () {
 
 
-
+            {# FIXME sigh, why are there 4 things here?? #}
 
             var wms_layers = {};
             var topojson_layers = {};
+
+            var leaflet_layers = [];
+            var layer_name_counter = {};
+
 
             function toggle_layer(toggle_button) {
                 var btn_layer_name = $(toggle_button).data('layer_name');
@@ -454,7 +458,9 @@
                     if (props.STRING_DATA) {
                         var strings = '';
                         for (var item in props.STRING_DATA) {
-                            strings += '<p>' + props.STRING_DATA[item]['title'] + ':' + props.STRING_DATA[item]['value'] + '</p>';
+                            if (props.STRING_DATA[item]['value']) {
+                                strings += '<p>' + props.STRING_DATA[item]['title'] + ':' + props.STRING_DATA[item]['value'] + '</p>';
+                            }
                         }
                         info_text += strings;
                     }
@@ -464,6 +470,7 @@
                 }
                 {#                FIXME this is nuts #}
                 {#                this._div.innerHTML = info_text;#}
+
                 $('#right-component1').html(info_text);
             };
             info.addTo(map);
@@ -651,7 +658,7 @@
                                         mouseout: function(e){
                                             {#                                            console.log(e.target);#}
                                             myLayer.resetStyle(e.target);
-                                            info.update();
+{#                                            info.update();#}
                                         }
                                     });
                                 },
@@ -689,8 +696,6 @@
                 });
             }
 
-            var leaflet_layers = [];
-            var layer_name_counter = {};
 
             function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text, csv_url){
 
@@ -851,8 +856,34 @@
                         });
 
                         layer.bringToFront();
-
                         info.update(layer.feature.properties);
+
+                        var html = '';
+                        // look through each layer in order and see if the clicked point,
+                        // e.latlng, overlaps with one of the shapes in it.
+
+                        for (var i = 0; i < leaflet_layers.length; i++) {
+
+                            var match = leafletPip.pointInLayer(
+                                    // the clicked point
+                                    e.latlng,
+                                    // this layer
+                                    leaflet_layers[i].layer,
+                                    // whether to stop at first match
+                                    true);
+
+                            // if there's overlap, add some content to the popup: the layer name
+                            // and a table of attributes
+                            if (match.length) {
+                                console.log(match[0].feature.properties);
+                                html += '<strong>' + leaflet_layers[i].name + '</strong>';
+                                html += propertyTable(match[0].feature.properties) + '<br><br>';
+                            }
+                        }
+                        if (html) {
+                            $('#right-component1').append(html);
+                        }
+
                     },
                     mouseout: function (e) {
                         {#                        e.target.resetStyle(e.target);#}
@@ -864,7 +895,7 @@
                             color: 'white',
                             dashArray: '3'
                         });
-                        info.update();
+{#                        info.update();#}
                     },
                     click: function(e) {
                         var html = '';
@@ -890,7 +921,8 @@
                             }
                         }
                         if (html) {
-                            map.openPopup(html, e.latlng);
+{#                            map.openPopup(html, e.latlng);#}
+                            $('#right-component1').append(html);
                         }
                     }
                 });
@@ -964,40 +996,43 @@
                 $(accordionDiv).append(accordionInner);
             }
 
-            {#            var legend_two = L.control({id: 'legend_control', position: 'bottomright'});#}
-            {#            legend_two.onAdd = function (map) {#}
-            {#                var div = L.DomUtil.create('div', 'info legend');#}
-            {##}
-            {#                var legendHeaderDiv = $('<div/>')#}
-            {#                        .addClass("panel-heading")#}
-            {#                        .text('Legend');#}
-            {##}
-            {#                var accordionDiv = $('<div/>')#}
-            {#                        .attr("id", "legend_accordion")#}
-            {#                        .addClass("panel-group");#}
-            {##}
-            {#                $(div).append(legendHeaderDiv).append(accordionDiv);#}
-            {##}
-            {#                return div;#}
-            {#            };#}
-            {#            legend_two.addTo(map);#}
+                var legend_two = L.control({id: 'legend_control', position: 'bottomright'});
+                legend_two.onAdd = function (map) {
+                    var div = L.DomUtil.create('div', 'info legend');
 
-            var div = L.DomUtil.create('div', 'info legend');
-            var legendHeaderDiv = $('<div/>')
-                    .addClass("panel-heading")
-                    .text('Legend');
-            var accordionDiv = $('<div/>')
-                    .attr("id", "legend_accordion")
-                    .addClass("panel-group");
-            $(div).append(legendHeaderDiv).append(accordionDiv);
-            $('#right-component2').append(div);
+                    var legendHeaderDiv = $('<div/>')
+                            .addClass("panel-heading")
+                            .text('Legend');
+
+                    var accordionDiv = $('<div/>')
+                            .attr("id", "legend_accordion")
+                            .addClass("panel-group");
+
+                    $(div).append(legendHeaderDiv).append(accordionDiv);
+
+                    return div;
+                };
+                legend_two.addTo(map);
+
+{#            FIXME re add and move me#}
+{#            var div = L.DomUtil.create('div', 'info legend');#}
+{#            var legendHeaderDiv = $('<div/>')#}
+{#                    .addClass("panel-heading")#}
+{#                    .text('Legend');#}
+{#            var accordionDiv = $('<div/>')#}
+{#                    .attr("id", "legend_accordion")#}
+{#                    .addClass("panel-group");#}
+{#            $(div).append(legendHeaderDiv).append(accordionDiv);#}
+{#            $('#right-component2').append(div);#}
 
             {#            $('.legend').resizable({handles: 'n, e, s, w'});#}
 
             function propertyTable(o) {
                 var t = '<table>';
                 for (var k in o) {
-                    t += '<tr><th>' + k + '</th><td>' + o[k] + '</td></tr>';
+                    if (typeof(o[k]) != 'object') {
+                        t += '<tr><th>' + k + '</th><td>' + o[k] + '</td></tr>';
+                    }
                 }
                 t += '</table>';
                 return t;
@@ -1863,7 +1898,7 @@
         <div class="col-lg-3 col-sm-12" style="background-color: #f8f8f8;
          height: 100%; position: absolute; right: 0; width:250px">
 
-            <div class="right_sidebar" id="right_sidebar" style="height: 100%">
+            <div class="right_sidebar" id="right_sidebar" style="height: 100%; overflow: scroll;">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="split-pane-component" id="right-component1"></div>

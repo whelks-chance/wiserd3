@@ -1613,6 +1613,10 @@ def get_topojson_for_uuid(request, search_uuid):
 
         # print '======', dataset_id, boundary_name, data_name
 
+        # FIXME this is stupid, either import the right name, or roll back the spatial_search dict
+        if boundary_name == 'Parliamentary Constituencies 2011':
+            boundary_name = 'Parliamentary'
+
         survey_spatial_data = models.SpatialSurveyLink.objects.get(
             survey__identifier=dataset_id,
             boundary_name=boundary_name,

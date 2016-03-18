@@ -10,31 +10,31 @@
 
             var page = $('#wrapper');
 
-{#            var view_switch = $( "#dashboard_view_switch_form" ).dialog({#}
-{#                autoOpen: false,#}
-                {#                height: page.height() / 2,#}
-                {#                width: page.width() / 2,#}
-{#                position: {#}
-{#                    my: "center",#}
-{#                    at: "center",#}
-{#                    of: page#}
-{#                },#}
-{#                modal: true,#}
-{#                buttons: {#}
-{#                    "Stay on this page": function () {#}
-{#                        $.cookie("WDP_view_type", "default", {expires: 365, path: '/'});#}
-{#                        $( this ).dialog( "close" );#}
-{#                    },#}
-{#                    "Navigate to NAW": function () {#}
-{#                        window.location.href = "{% url 'naw_dashboard' %}";#}
-{#                    }#}
-{#                }#}
-{#            });#}
+            {#            var view_switch = $( "#dashboard_view_switch_form" ).dialog({#}
+            {#                autoOpen: false,#}
+            {#                height: page.height() / 2,#}
+            {#                width: page.width() / 2,#}
+            {#                position: {#}
+            {#                    my: "center",#}
+            {#                    at: "center",#}
+            {#                    of: page#}
+            {#                },#}
+            {#                modal: true,#}
+            {#                buttons: {#}
+            {#                    "Stay on this page": function () {#}
+            {#                        $.cookie("WDP_view_type", "default", {expires: 365, path: '/'});#}
+            {#                        $( this ).dialog( "close" );#}
+            {#                    },#}
+            {#                    "Navigate to NAW": function () {#}
+            {#                        window.location.href = "{% url 'naw_dashboard' %}";#}
+            {#                    }#}
+            {#                }#}
+            {#            });#}
 
             if ($.cookie("WDP_view_type")) {
                 var view = $.cookie("WDP_view_type");
                 if (view == "naw") {
-{#                    view_switch.data({}).dialog( "open" );#}
+                    {#                    view_switch.data({}).dialog( "open" );#}
                 }
                 naw_message.show();
             }
@@ -50,41 +50,47 @@
             <h1 class="page-header">Dashboard</h1>
         </div>
         <div id="naw_message" class="row">
-        <div class="col-lg-12 col-md-6">
-            <div class="alert alert-info alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <a href="{% url 'naw_dashboard' %}" class="alert-link">Click here</a> to navigate to the NAW dashboard.
-</div>
+            <div class="col-lg-12 col-md-6">
+                <div class="alert alert-info alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <a href="{% url 'naw_dashboard' %}" class="alert-link">Click here</a> to navigate to the NAW dashboard.
+                </div>
             </div>
         </div>
     </div>
     <!-- /.row -->
     <div class="row">
-        <div class="col-lg-4 col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="row">
-                        {#                            <a href="{% url 'profile' %}">#}
-                        <div class="col-xs-3">
-                            <i class="fa fa-user fa-5x"></i>
+
+        {% if request.user.is_authenticated %}
+
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            {#                            <a href="{% url 'profile' %}">#}
+                            <div class="col-xs-3">
+                                <i class="fa fa-user fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">_</div>
+                                <div>Profile</div>
+                            </div>
+                            {#                            </a>#}
                         </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">_</div>
-                            <div>Profile</div>
-                        </div>
-                        {#                            </a>#}
                     </div>
+                    <a href="{% url 'profile' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Profile</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
                 </div>
-                <a href="{% url 'profile' %}">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Profile</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
             </div>
-        </div>
+        {% endif %}
+
         <div class="col-lg-4 col-md-6">
+
             <div class="panel panel-green">
                 <a href="http://www.wiserd.ac.uk" target="_blank">
 
@@ -110,6 +116,7 @@
                 </a>
             </div>
         </div>
+
         <div class="col-lg-4 col-md-6">
             <div class="panel panel-red">
                 <div class="panel-heading">
@@ -133,56 +140,59 @@
             </div>
         </div>
 
-
-        <div class="col-lg-4 col-md-6">
-            <div class="panel panel-yellow">
-                <a href="{% url 'file_management' %}">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-file-zip-o fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge">_</div>
-                                <div>File Management</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="{% url 'file_management' %}">
-                    <div class="panel-footer">
-                        <span class="pull-left">Shapefile Upload</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="panel panel-red">
-                <a href="{% url 'settings' %}">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-cogs fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge">_</div>
-                                <div>Settings</div>
+        {% if request.user.is_authenticated %}
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-yellow">
+                    <a href="{% url 'file_management' %}">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-file-zip-o fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">_</div>
+                                    <div>File Management</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href="{% url 'settings' %}">
-                    <div class="panel-footer">
-                        <span class="pull-left">Personal Settings</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
+                    </a>
+                    <a href="{% url 'file_management' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">Shapefile Upload</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
+        {% endif %}
+
+        {% if request.user.is_authenticated %}
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-red">
+                    <a href="{% url 'settings' %}">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-cogs fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">_</div>
+                                    <div>Settings</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{% url 'settings' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">Personal Settings</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
 
         <div class="col-lg-4 col-md-6">
             <div class="panel panel-green">
@@ -309,8 +319,8 @@
     <!-- /.row -->
     {{ data }}
 
-{#    <div id="dashboard_view_switch_form" title="Navigation">#}
-{#        <p>It looks like you've previously used the WISERD DataPortal using the Wales National Assembley Dashboard</p>#}
-{#        <p>Would you like to continue with that, or use the full WISERD DataPortal feature set?</p>#}
-{#    </div>#}
+    {#    <div id="dashboard_view_switch_form" title="Navigation">#}
+    {#        <p>It looks like you've previously used the WISERD DataPortal using the Wales National Assembley Dashboard</p>#}
+    {#        <p>Would you like to continue with that, or use the full WISERD DataPortal feature set?</p>#}
+    {#    </div>#}
 {% endblock %}

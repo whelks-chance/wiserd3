@@ -96,6 +96,7 @@ urlpatterns = [
 
     # url(r'^metadata/search/survey/questions/(?P<search_terms>\S+)',
     #     views.search_survey_question, name='search_survey_question'),
+    url(r'^send_email_confirmation', views.send_email_confirmation_view, name='send_email_confirmation'),
 
     url(r'^accounts/', include('allauth.urls'))
     # url('^', include('django.contrib.auth.urls'))

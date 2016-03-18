@@ -4,6 +4,8 @@ import os
 import pprint
 import uuid
 from BeautifulSoup import BeautifulSoup
+from allauth.account.models import EmailAddress
+from allauth.account.utils import send_email_confirmation
 from django.apps import apps
 from django.contrib import auth
 from django.contrib.auth.models import AnonymousUser
@@ -31,6 +33,7 @@ import requests
 from old.views import text_search, date_handler
 from wiserd3 import settings
 from wiserd3.settings import NAW_LAYER_UUIDS
+from verbalexpressions import VerEx
 
 
 def dashboard(request):
@@ -1432,12 +1435,45 @@ def site_setup(request):
 
 def welcome(request):
     userr = get_request_user(request)
+    email = userr.user.email
+
+    verbal_expression = VerEx()
+    tester = (verbal_expression.
+              start_of_line().
+              anything_but(' ').
+              find('@').
+              maybe('gmail').
+              anything_but(' ').
+              end_of_line()
+              )
+
+    email_address = EmailAddress.objects.get_for_user(userr.user, email)
+
+    regex_match_and_valid = False
+    matched = False
+    verified = False
+
+    # Test if the email is valid gmail
+    if tester.match(email):
+        matched = True
+    if email_address.verified:
+        verified = True
+
+    if matched and verified:
+        regex_match_and_valid = True
+
+    # Print the generated regex
+    # print tester.source() # => ^(http)(s)?(\:\/\/)(www\.)?([^\ ]*)$
 
     return render(request, 'welcome.html',
                   {
                       'userr': userr,
                       'welcome': 'hi',
-                  },context_instance=RequestContext(request))
+                      'email': email,
+                      'regex_match_and_valid': regex_match_and_valid,
+                      'verified': verified,
+                      'matched': matched
+                  }, context_instance=RequestContext(request))
 
 
 def save_profile_extras(request):
@@ -1828,3 +1864,8 @@ def admin_api(request):
                           'preferences': get_user_preferences(request),
                           'searches': get_user_searches(request)
                       },context_instance=RequestContext(request))
+
+
+def send_email_confirmation_view(request):
+    send_email_confirmation(request, get_request_user(request).user, signup=False)
+    return welcome(request)

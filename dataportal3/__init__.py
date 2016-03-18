@@ -20,3 +20,10 @@ def new_user_signup(sender, **kwargs):
 @receiver(signals.user_logged_in)
 def user_logged_in(sender, **kwargs):
     print 'logged in', kwargs['user']
+
+
+@receiver(signals.email_confirmed)
+def user_email_confirmed(sender, request, email_address, **kwargs):
+    print 'gyisfdgsduifsd'
+    print kwargs
+    print 'email confirmed', sender, request, email_address

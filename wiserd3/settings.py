@@ -287,7 +287,14 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 ADMIN_EMAIL_ADDRESSES = ('',)
 
+# This class governs login, signup etc
 ACCOUNT_ADAPTER = 'dataportal3.account_logic.AccountAdapter'
+
+ACCOUNT_USER_MODEL_EMAIL_FIELD= 'email'
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 # CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 MEDIA_ROOT = '/tmp/shapefiles/'

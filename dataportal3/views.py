@@ -64,6 +64,7 @@ def dashboard(request):
 def user_settings(request):
     return render(request, 'settings.html',
                   {
+                      'languages': models.UserLanguage.objects.all(),
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
                   },
@@ -479,6 +480,18 @@ def edit_metadata(request):
                 user_prefs.topojson_high = True
             else:
                 user_prefs.topojson_high = False
+
+            if 'user_language' in request.GET:
+                try:
+                    user_prefs.preferred_language = models.UserLanguage.objects.get(
+                        id=request.GET.get('user_language')
+                    )
+                except:
+                    # No appropriate language found, default English
+                    user_prefs.preferred_language = models.UserLanguage.objects.get(user_language_title='English')
+            else:
+                # No language given, default English
+                user_prefs.preferred_language = models.UserLanguage.objects.get(user_language_title='English')
 
             user_prefs.save()
             edit_metadata_response['success'] = True

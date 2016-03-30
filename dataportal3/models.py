@@ -36,6 +36,17 @@ class UserRole(models.Model):
         return str(self.id) + ':' + self.name
 
 
+class UserLanguage(models.Model):
+    user_language_title = models.CharField(max_length=255)
+    user_language_description = models.TextField(blank=True, null=True)
+
+    class Meta:
+        db_table = 'user_language'
+
+    def __unicode__(self):
+        return str(self.id) + ':' + self.user_language_title
+
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True)
     role = models.CharField(max_length=30, default='regular')
@@ -59,6 +70,7 @@ class UserPreferences(models.Model):
     user = models.ForeignKey(UserProfile)
     links_new_tab = models.BooleanField(default=False)
     topojson_high = models.BooleanField(default=False)
+    preferred_language = models.ForeignKey('UserLanguage', blank=True, null=True)
 
     class Meta:
         db_table = 'user_preferences'

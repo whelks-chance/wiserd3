@@ -22,5 +22,22 @@
       "name": "Qual",
       "description": "DataPortal Qualitative data"
     }
+  },
+  {
+    "pk": "1",
+    "model": "dataportal3.UserLanguage",
+    "fields": {
+      "user_language_title": "English",
+      "user_language_description": "English, GB, UK"
+    }
+  },
+  {
+    "pk": "2",
+    "model": "dataportal3.UserLanguage",
+    "fields": {
+      "user_language_title": "Welsh",
+      "user_language_description": "Cymru"
+    }
   }
+
 ]

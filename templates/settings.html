@@ -38,13 +38,35 @@
     <form id="preferences_form" action="{% url 'edit_metadata' %}" method="get" role="search">
         <input type="hidden" name="function" value="set_user_preferences">
         <div class="row">
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Language
+                </div>
+                <div class="panel-body">
+                <label>Select your preferred language.</label>
+                    <div class="form-group">
+                    {% for language in languages %}
+                        <div class="radio">
+                            <label>
+                                <input id="user_language" name="user_language"
+                                       {% if preferences.preferred_language == language %}checked="checked"{% endif %}
+                                       type="radio"
+                                       value="{{ language.id }}">{{ language.user_language_title }}
+                            </label>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+
             <div class="panel panel-info">
                 <div class="panel-heading">
                     Links and Tabs
                 </div>
                 <div class="panel-body">
-                <p>This is not advised on mobile, as tab management is not as easy than a desktop browser.</p>
-                <p>However it is can be desirable to have multiple tabs open to view multiple surveys, for example.</p>
+                <p>This is not advised on mobile, as tab management is not as easy as when using a desktop browser.</p>
+                <p>However it can be desirable to have multiple tabs open to view multiple surveys, for example.</p>
                     <div class="form-group">
                         <div class="checkbox col-sm-4">
                             <label>
@@ -62,7 +84,7 @@
                     Chloropleth Speed/ Quality
                 </div>
                 <div class="panel-body">
-                    <p>Using high resolution regions when generating a chloropleth can be very strenuous for your browser and also requires larger downloads.</p>
+                    <p>Using high resolution regions, generating a chloropleth can be very strenuous for your browser and also requires larger downloads.</p>
                     <p>For this reason, the TopoJSON layer used is "simplified" down to 1% complexity for speed and ease of use.</p>
                     <p>As an example a postcode sector topojson layer at 1% is approx 900kb, full quality becomes 30Mb! Downloading and rendering, especially on mobile, is not advised unless absolutely necessary.</p>
                     <p>View <a href="https://github.com/mbloch/mapshaper/wiki/Command-Reference#-simplify" target="_blank">Mapshaper "simplify"</a> for more information on the process of simplification used and <a href="https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm" target="_blank">Wikipedia Ramer-Douglas-Peucker</a> for information on the algorithm the process uses.</p>

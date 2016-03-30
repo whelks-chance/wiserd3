@@ -74,7 +74,6 @@ Existing WISERD localities boundaries need to be 27700, not 4326:
 
 ### Allow access to the table
 The new shpfile tables need the right permissions
-    
     grant select, insert, update on all tables in schema public to dataportal;
 
 ### Then update the spatial search code:

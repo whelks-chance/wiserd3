@@ -378,14 +378,15 @@
             var map_height = window.innerHeight;
             var header_height = $('.navbar-header').height();
 
-            {#            console.log(map_height + ' ' + header_height);#}
+            console.log(map_height + ' ' + header_height);
 
             var map_div = $('#map_div');
-
-            {#            FIXME do we need this width? #}
             map_div.css({
                 height: map_height - header_height - 5,
                 {#                width: $('#page-wrapper').width()#}
+            });
+            $('#right_sidebar').css({
+                height: map_height - header_height - 5
             });
 
             var map = L.map('map_div').setView([51.53181, -3.24687], 8);
@@ -658,7 +659,7 @@
                                         mouseout: function(e){
                                             {#                                            console.log(e.target);#}
                                             myLayer.resetStyle(e.target);
-{#                                            info.update();#}
+                                            {#                                            info.update();#}
                                         }
                                     });
                                 },
@@ -895,7 +896,7 @@
                             color: 'white',
                             dashArray: '3'
                         });
-{#                        info.update();#}
+                        {#                        info.update();#}
                     },
                     click: function(e) {
                         var html = '';
@@ -921,7 +922,7 @@
                             }
                         }
                         if (html) {
-{#                            map.openPopup(html, e.latlng);#}
+                            {#                            map.openPopup(html, e.latlng);#}
                             $('#right-component1').append(html);
                         }
                     }
@@ -996,46 +997,56 @@
                 $(accordionDiv).append(accordionInner);
             }
 
-                var legend_two = L.control({id: 'legend_control', position: 'bottomright'});
-                legend_two.onAdd = function (map) {
-                    var div = L.DomUtil.create('div', 'info legend');
+            var legend_two = L.control({id: 'legend_control', position: 'bottomright'});
+            legend_two.onAdd = function (map) {
+                var div = L.DomUtil.create('div', 'info legend');
 
-                    var legendHeaderDiv = $('<div/>')
-                            .addClass("panel-heading")
-                            .text('Legend');
+                {#                    var legendHeaderDiv = $('<div/>')#}
+                {#                            .addClass("panel-heading")#}
+                {#                            .text('Legend');#}
 
-                    var accordionDiv = $('<div/>')
-                            .attr("id", "legend_accordion")
-                            .addClass("panel-group");
+                var accordionDiv = $('<div/>')
+                        .attr("id", "legend_accordion")
+                        .addClass("panel-group");
 
-                    $(div).append(legendHeaderDiv).append(accordionDiv);
+                $(div).append(accordionDiv)
+                        .css({'max-height': map_div.height() * 0.8, 'overflow-y': 'auto'});
+{#                        .draggable().resizable();#}
 
-                    return div;
-                };
-                legend_two.addTo(map);
+                return div;
+            };
+            legend_two.addTo(map);
 
-{#            FIXME re add and move me#}
-{#            var div = L.DomUtil.create('div', 'info legend');#}
-{#            var legendHeaderDiv = $('<div/>')#}
-{#                    .addClass("panel-heading")#}
-{#                    .text('Legend');#}
-{#            var accordionDiv = $('<div/>')#}
-{#                    .attr("id", "legend_accordion")#}
-{#                    .addClass("panel-group");#}
-{#            $(div).append(legendHeaderDiv).append(accordionDiv);#}
-{#            $('#right-component2').append(div);#}
+            {#            FIXME re add and move me#}
+            {#            var div = L.DomUtil.create('div', 'info legend');#}
+            {#            var legendHeaderDiv = $('<div/>')#}
+            {#                    .addClass("panel-heading")#}
+            {#                    .text('Legend');#}
+            {#            var accordionDiv = $('<div/>')#}
+            {#                    .attr("id", "legend_accordion")#}
+            {#                    .addClass("panel-group");#}
+            {#            $(div).append(legendHeaderDiv).append(accordionDiv);#}
+            {#            $('#right-component2').append(div);#}
 
             {#            $('.legend').resizable({handles: 'n, e, s, w'});#}
 
             function propertyTable(o) {
-                var t = '<table>';
+                {#                var t = '<table>';#}
+                {#                for (var k in o) {#}
+                {#                    if (typeof(o[k]) != 'object') {#}
+                {#                        t += '<tr><th>' + k + '</th><td>' + o[k] + '</td></tr>';#}
+                {#                    }#}
+                {#                }#}
+                {#                t += '</table>';#}
+
+                var propertyList = '';
                 for (var k in o) {
                     if (typeof(o[k]) != 'object') {
-                        t += '<tr><th>' + k + '</th><td>' + o[k] + '</td></tr>';
+                        propertyList += '<p><b>' + k + '</b></p><p>' + o[k] + '</p>';
+{#                        .replace('""', '"')#}
                     }
                 }
-                t += '</table>';
-                return t;
+                return propertyList;
             }
 
             function styleFeature(feature, feature_data, chroma_scale, opacity) {
@@ -1881,44 +1892,53 @@
             }
 
 
-
-
-
-
-
         });
 
     </script>
 
-    <div class="row" style="height: 100%">
-        <div class="col-lg-9 col-sm-12">
-            <div id="map_div" style="height: 180px;"></div>
+    <div class="row" style="height: 100%; margin-right: 0">
+        <div class="col-lg-9 col-sm-12" style="padding-right: 0">
+            <div id="map_div"></div>
         </div>
 
-        <div class="col-lg-3 col-sm-12" style="background-color: #f8f8f8;
-         height: 100%; position: absolute; right: 0; width:250px">
+        <div class="col-lg-3 col-sm-12" >
 
-            <div class="right_sidebar" id="right_sidebar" style="height: 100%; overflow: scroll;">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="split-pane-component" id="right-component1"></div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="split-pane-component" id="right-component2"></div>
-                    </div>
-                </div>
+            <div class="right_sidebar" id="right_sidebar"
+                 style="background-color: #f8f8f8;
+                                  height: 100%;
+{#                                  position: absolute; right: 0;#}
+{#                         width:250px;#}
+                         width: 100%;
+                         overflow-y: scroll;
+                         overflow-x: hidden">
+
+                {#                <div class="row">#}
+                {#                    <div class="col-lg-12">#}
+                <div class="split-pane-component" id="right-component1"
+                     style="
+{#                     word-break: break-all;#}
+                word-wrap: break-word"
+                        ></div>
+                {#                    </div>#}
+                {#                    <div class="col-lg-12">#}
+                {#                        <div class="split-pane-component" id="right-component2"></div>#}
+                {#                    </div>#}
+                {#                </div>#}
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div id="naw_output" >NAW = {{ naw }}</div>
-        <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>
-        <div id="screenshot" class="btn">Screenshot</div>
-        <div id="screenshot_result"></div>
-        <div id="screenshot_result2"></div>
-    </div>
+    <div class="">
+        <div class="col-lg-12">
 
+            <div id="naw_output" >NAW = {{ naw }}</div>
+            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>
+            <div id="screenshot" class="btn">Screenshot</div>
+            <div id="screenshot_result"></div>
+            <div id="screenshot_result2"></div>
+            <div id="language">Language : {{ preferences.preferred_language }}</div>
+        </div>
+    </div>
 
     <div id="chloropleth_option_form" title="Chloropleth options">
         <table>

@@ -13,7 +13,7 @@ from django.contrib.auth.models import AnonymousUser
 # from django.contrib.gis.gdal import SpatialReference
 from django.contrib.gis.geos import GEOSGeometry
 from django.core.serializers import serialize
-from django.db import connections
+from django.db import connections, connection
 from django.db.models import Q
 from django.forms.models import model_to_dict
 from django.http.response import HttpResponse
@@ -1046,12 +1046,14 @@ def local_data_topojson(request):
 
     all_data = {}
 
-    survey_spatial_data = models.SpatialSurveyLink.objects.get(
+    survey_spatial_data = models.SpatialSurveyLink.objects.filter(
         survey__identifier=survey_id,
         boundary_name=boundary_name,
         data_name=data_name
     )
-    # print survey_spatial_data
+    # print type(survey_spatial_data)
+    # print survey_spatial_data.count()
+    # print survey_spatial_data.query
 
     survey_spatial_data_strings = models.SpatialSurveyLink.objects.filter(
         survey__identifier=survey_id,
@@ -1059,7 +1061,8 @@ def local_data_topojson(request):
         data_type='unicode'
     ).order_by('data_name')
 
-    regional_data = survey_spatial_data.regional_data
+    # TODO use get but check unique, at the moment we're just dropping data
+    regional_data = survey_spatial_data[0].regional_data
 
     region_string_data = {}
     for region in regional_data:
@@ -1108,9 +1111,9 @@ def local_data_topojson(request):
         for spatial_survey_field in spatial_survey_fields:
             region_string_data[region].append({
                 'title': spatial_survey_field['name'],
-                'value': getattr(survey_spatial_data, spatial_survey_field['field'])
+                'value': getattr(survey_spatial_data[0], spatial_survey_field['field'])
             })
-        print 'region_string_data', region_string_data
+        # print 'region_string_data', region_string_data
 
     for region in regional_data:
         regions = [{

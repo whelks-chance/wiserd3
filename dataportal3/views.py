@@ -1428,7 +1428,9 @@ def spatial_search(request):
 def site_setup(request):
     data = {
         'found_files': [],
-        'missing_files': []
+        'missing_files': [],
+        'found_files_2': [],
+        'missing_files_2': []
     }
 
     for topojson_file in settings.TOPOJSON_OPTIONS:
@@ -1436,6 +1438,13 @@ def site_setup(request):
             data['found_files'].append(topojson_file['geog_short_code'])
         else:
             data['missing_files'].append(topojson_file['geog_short_code'])
+
+    for topojson_file in geometry_columns:
+        if 'topojson_file' in topojson_file:
+            if os.path.isfile(topojson_file['topojson_file']):
+                data['found_files_2'].append(topojson_file['table_name'])
+            else:
+                data['missing_files_2'].append(topojson_file['table_name'])
 
     return render(request, 'site_setup.html',
                   {

@@ -4,6 +4,10 @@
 
 This doesn't entirely explain how to get it all running, but it may help future debugging...
 
+## Static files
+
+In nginx.conf make sure /static points to the right django dir
+
 ## Mapshaper install
 
     apt-get install npm nodejs-legacy
@@ -150,3 +154,9 @@ https://github.com/mbloch/mapshaper/wiki/Command-Reference
 http://bootsnipp.com/snippets/featured/quotwaiting-forquot-modal-dialog
 
 http://jrue.github.io/coding/2014/exercises/basicbubblepackchart/
+
+
+## Awkwardness
+
+ALTER TABLE django_content_type ADD COLUMN name character varying(50) NOT NULL DEFAULT 'someName';
+

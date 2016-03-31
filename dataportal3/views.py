@@ -1467,7 +1467,10 @@ def welcome(request):
               start_of_line().
               anything_but(' ').
               find('@').
-              maybe('gmail').
+              maybe('assembly.wales').
+              maybe('cynulliad.cymru').
+              maybe('wales.gov.uk').
+              maybe('cymru.gov.uk').
               anything_but(' ').
               end_of_line()
               )

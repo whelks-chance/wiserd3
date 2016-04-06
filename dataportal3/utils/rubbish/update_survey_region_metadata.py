@@ -1,7 +1,12 @@
+import getopt
 import os
 from requests.packages.chardet.universaldetector import UniversalDetector
+import sys
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
+import django
+django.setup()
+
 from dataportal3 import models
 from dataportal3.utils.userAdmin import get_request_user
 import csv
@@ -16,8 +21,7 @@ def UnicodeDictReader(utf8_data, encoding='utf-8',  **kwargs):
         yield {key: unicode(value, encoding) for key, value in row.iteritems()}
 
 
-def load_shapefile_description():
-    filename = '/home/ubuntu/DataPortalGeographies/ConstituencyProfile/NAWDataNamesLookup.csv'
+def load_shapefile_description(filename, survey_id):
     with open(filename, 'rb') as csvfile:
 
         # No idea what encoding the csv file is, could have welsh chars which break things
@@ -52,7 +56,11 @@ def load_shapefile_description():
             #     print(key, ' : ', row[key])
             # Shorthand Name	Category	FullName	Notes	CategoryCY	FullNameCY	NotesCY
 
-            ssls = models.SpatialSurveyLink.objects.filter(data_name=row['Shorthand Name'])
+            ssls = models.SpatialSurveyLink.objects.filter(
+                data_name=row['Shorthand Name'],
+                survey__identifier=survey_id
+            )
+
             for link in ssls:
 
                 link.category = row['Category']
@@ -64,7 +72,7 @@ def load_shapefile_description():
 
                 print link.__dict__
 
-                # link.save()
+                link.save()
 
 def whatever():
     id = 'wisid_RegionProfileData2016_56c377709c1c5'
@@ -92,5 +100,31 @@ def whatever():
         nomis_search.search_type = models.SearchType.objects.get(name='Nomis')
         nomis_search.save()
 
+if __name__ == "__main__":
+    # filename = '/home/ubuntu/DataPortalGeographies/ConstituencyProfile/NAWDataNamesLookup.csv'
 
-load_shapefile_description()
+    input_file = ''
+    survey_id = ''
+
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "hi:s:", ["ifile=", "survey="])
+        print opts
+        print args
+    except getopt.GetoptError as egiog:
+        print egiog
+        print 'test.py -i <inputfile> -s <survey>'
+        sys.exit(2)
+
+    for opt, arg in opts:
+        if opt in ("-i", "--ifile"):
+            input_file = arg
+
+        elif opt in ("-s", "--survey"):
+            survey_id = arg
+
+    if input_file and survey_id:
+        load_shapefile_description(input_file, survey_id)
+    else:
+        print 'need a file and survey_id'
+        print 'update_survey_region_metadata.py -i <inputfile> -s <survey>'
+        sys.exit(2)

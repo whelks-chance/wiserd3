@@ -105,7 +105,7 @@ geometry_columns = [
         'name': 'Unitary Authority 2'
     },
     {
-        'table_name': 'spatialdatanawer',
+        'table_name': 'nawer',
         'geometry_column': 'geom',
         'label': 'code',
         'geog_short_code': 'region',

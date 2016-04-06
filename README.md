@@ -54,8 +54,7 @@ note alternate shp2pgsql binaries location due to messed up install not updating
 left alone this time as previous postgresql version expects postgis-2.0.7
 at this point, 2 versions of each are installed....
 
-    /usr/pgsql-9.4/bin/shp2pgsql
-    -I spatialdata.parl/spatialdata.parl.shp spatialdata_parl | sudo -u postgres psql -d "NewSurvey"
+    /usr/pgsql-9.4/bin/shp2pgsql -I spatialdata.parl/spatialdata.parl.shp spatialdata_parl | sudo -u postgres psql -d "NewSurvey"
 
 ## SHP to Database
 Dump shp file to DB for spatial search :

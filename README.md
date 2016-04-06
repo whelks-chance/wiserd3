@@ -68,7 +68,10 @@ do this for one of each type of boundary
 Check the SRID is set, if it's '0', you need to set it, probably to 4326:
 
     select code, ST_SRID("table"."geom") from "table";
-    select UpdateGeometrySRID('schema', 'table', 'geom_column', 4326) ;
+
+(public is the schema)
+
+    select UpdateGeometrySRID('public', 'table', 'geom_column', 4326) ;
 
 Existing WISERD localities boundaries need to be 27700, not 4326:
 
@@ -78,6 +81,7 @@ Existing WISERD localities boundaries need to be 27700, not 4326:
 
 ### Allow access to the table
 The new shpfile tables need the right permissions
+
     grant select, insert, update on all tables in schema public to dataportal;
 
 ### Then update the spatial search code:
@@ -155,6 +159,9 @@ http://bootsnipp.com/snippets/featured/quotwaiting-forquot-modal-dialog
 
 http://jrue.github.io/coding/2014/exercises/basicbubblepackchart/
 
+http://stackoverflow.com/questions/1770209/run-child-processes-as-different-user-from-a-long-running-process/6037494#6037494
+
+http://stackoverflow.com/a/13332300/2943238
 
 ## Awkwardness
 

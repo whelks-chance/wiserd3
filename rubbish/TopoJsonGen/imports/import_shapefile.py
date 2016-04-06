@@ -45,7 +45,7 @@ class ShapefileImporter:
         tablename = ''
         db_name = ''
         try:
-            opts, args = getopt.getopt(argv, "hi:t:d:", ["ifile=", "tablename", "db_name="])
+            opts, args = getopt.getopt(argv, "hi:t:d:x:", ["ifile=", "tablename", "db_name=", "x_test="])
         except getopt.GetoptError as egiog:
             print egiog
             print 'test.py -i <inputfile> -d <database name>'
@@ -55,6 +55,9 @@ class ShapefileImporter:
             if opt == '-h':
                 print 'test.py -i <inputfile> -d <database name>'
                 sys.exit()
+
+            elif opt in ("-x", "--x_test"):
+                print arg
 
             elif opt in ("-t", "--tablename"):
                 tablename = arg
@@ -72,31 +75,34 @@ class ShapefileImporter:
         input_file = os.path.abspath(input_filename)
 
         if os.path.isfile(input_file):
-            ds = DataSource(input_file)
-            lyr = ds[0]
-
-            print 'using {}'.format(input_file)
-
-            if tablename is '':
-                tablename = self.uniqid(prefix=str(lyr))
-
-            print 'Tablename ', tablename
-
-            lowered_tablename = tablename.lower()
-            if lowered_tablename != tablename:
-                tablename = lowered_tablename
-                print 'Tablename was converted to lowercase {}'.format(tablename)
-
-            self.do_db_import(input_file, tablename, db_name)
-
-            # for f_idx, f in enumerate(lyr.fields):
-            #     # for feature_idx in range(0, len(lyr)):
-            #     # print f_idx, f, lyr.field_types[f_idx], lyr.get_fields(f)[feature_idx].__class__.__name__,  lyr.get_fields(f)[feature_idx]
-            #     print f_idx, f, lyr.field_types[f_idx], lyr.get_fields(f)[0].__class__.__name__
+            self.clean_and_import(input_file, tablename, db_name)
 
         else:
             print '{} is not a valid input file'.format(input_file)
             sys.exit()
+
+    def clean_and_import(self, input_file, tablename, db_name):
+        ds = DataSource(input_file)
+        lyr = ds[0]
+
+        print 'using {}'.format(input_file)
+
+        if tablename is '':
+            tablename = self.uniqid(prefix=str(lyr))
+
+        print 'Tablename ', tablename
+
+        lowered_tablename = tablename.lower()
+        if lowered_tablename != tablename:
+            tablename = lowered_tablename
+            print 'Tablename was converted to lowercase {}'.format(tablename)
+
+        self.do_db_import(input_file, tablename, db_name)
+
+        # for f_idx, f in enumerate(lyr.fields):
+        #     # for feature_idx in range(0, len(lyr)):
+        #     # print f_idx, f, lyr.field_types[f_idx], lyr.get_fields(f)[feature_idx].__class__.__name__,  lyr.get_fields(f)[feature_idx]
+        #     print f_idx, f, lyr.field_types[f_idx], lyr.get_fields(f)[0].__class__.__name__
 
     def do_db_import(self, input_file, tablename, db_name, schema='public'):
         user_name, cwd = ['postgres', '/home/ubuntu/PycharmProjects/wiserd3/rubbish/TopoJsonGen/imports']
@@ -248,8 +254,11 @@ class {}(models.Model):
 
         all_model_text = model_str_head + ''.join(model_field_lines) + model_str_tail
 
-        print '\n\n'
+        print '\n'
         print all_model_text
+
+        with open('shapefile_model.py', 'wr') as shp_model_file:
+            shp_model_file.write(all_model_text)
 
 # grant select, insert, update on all tables in schema public to dataportal;
 

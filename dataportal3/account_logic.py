@@ -13,6 +13,7 @@ class AccountAdapter(DefaultAccountAdapter):
         if not request_user.init_user:
             return reverse('welcome')
         else:
+            print 'user role', request_user.role
             if request_user.role == 'naw':
                 return reverse('naw_dashboard')
             else:

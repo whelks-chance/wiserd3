@@ -460,7 +460,7 @@
                         var strings = '';
                         for (var item in props.STRING_DATA) {
                             if (props.STRING_DATA[item]['value']) {
-                                strings += '<p>' + props.STRING_DATA[item]['title'] + ':' + props.STRING_DATA[item]['value'] + '</p>';
+                                strings += '<p><b>' + props.STRING_DATA[item]['title'] + '</b>:' + props.STRING_DATA[item]['value'] + '</p>';
                             }
                         }
                         info_text += strings;
@@ -1837,6 +1837,8 @@
             }
 
             function do_layer_single_uuid(uuid, search_layer_topojson_url) {
+                waitingDialog.show('Fetching map layer ...');
+
                 $.ajax({
                     url: search_layer_topojson_url,
                     type: 'GET',
@@ -1858,6 +1860,9 @@
                                 layer_data['name'],
                                 ''
                         );
+                    },
+                    complete: function() {
+                        waitingDialog.hide();
                     }
                 });
             }

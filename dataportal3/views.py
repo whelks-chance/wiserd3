@@ -345,14 +345,15 @@ def map_search(request):
         get_request_user(request)
     )
 
+    # TODO remove hard coded uids especially if they're not unique
     naw_key_searches = [
-        {
-            'uid': '40d5be16-c11f-43b2-9c29-45555dc07945',
-            'description': 'A quick postcode'
-        }, {
-            'uid': '147b3009-5ce0-42ce-940e-38d594bf53be',
-            'description': 'Another layer'
-        }
+        # {
+        #     'uid': '40d5be16-c11f-43b2-9c29-45555dc07945',
+        #     'description': 'A quick postcode'
+        # }, {
+        #     'uid': '147b3009-5ce0-42ce-940e-38d594bf53be',
+        #     'description': 'Another layer'
+        # }
     ]
     naw_key_searches.extend(settings.NAW_SEARCH_LAYER_UUIDS)
 

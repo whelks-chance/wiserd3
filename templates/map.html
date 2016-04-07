@@ -860,33 +860,33 @@
                         });
 
                         layer.bringToFront();
-                        info.update(layer.feature.properties);
+{#                        info.update(layer.feature.properties);#}
 
-                        var html = '';
-                        // look through each layer in order and see if the clicked point,
-                        // e.latlng, overlaps with one of the shapes in it.
-
-                        for (var i = 0; i < leaflet_layers.length; i++) {
-
-                            var match = leafletPip.pointInLayer(
-                                    // the clicked point
-                                    e.latlng,
-                                    // this layer
-                                    leaflet_layers[i].layer,
-                                    // whether to stop at first match
-                                    true);
-
-                            // if there's overlap, add some content to the popup: the layer name
-                            // and a table of attributes
-                            if (match.length) {
-                                console.log(match[0].feature.properties);
-                                html += '<strong>' + leaflet_layers[i].name + '</strong>';
-                                html += propertyTable(match[0].feature.properties) + '<br><br>';
-                            }
-                        }
-                        if (html) {
-                            $('#right-component1').append(html);
-                        }
+{#                        var html = '';#}
+{#                        // look through each layer in order and see if the clicked point,#}
+{#                        // e.latlng, overlaps with one of the shapes in it.#}
+{##}
+{#                        for (var i = 0; i < leaflet_layers.length; i++) {#}
+{##}
+{#                            var match = leafletPip.pointInLayer(#}
+{#                                    // the clicked point#}
+{#                                    e.latlng,#}
+{#                                    // this layer#}
+{#                                    leaflet_layers[i].layer,#}
+{#                                    // whether to stop at first match#}
+{#                                    true);#}
+{##}
+{#                            // if there's overlap, add some content to the popup: the layer name#}
+{#                            // and a table of attributes#}
+{#                            if (match.length) {#}
+{#                                console.log(match[0].feature.properties);#}
+{#                                html += '<strong>' + leaflet_layers[i].name + '</strong>';#}
+{#                                html += propertyTable(match[0].feature.properties) + '<br><br>';#}
+{#                            }#}
+{#                        }#}
+{#                        if (html) {#}
+{#                            $('#right-component1').append(html);#}
+{#                        }#}
 
                     },
                     mouseout: function (e) {
@@ -902,6 +902,8 @@
                         {#                        info.update();#}
                     },
                     click: function(e) {
+                        info.update(layer.feature.properties);
+
                         var html = '';
                         // look through each layer in order and see if the clicked point,
                         // e.latlng, overlaps with one of the shapes in it.

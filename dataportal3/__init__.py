@@ -24,6 +24,4 @@ def user_logged_in(sender, **kwargs):
 
 @receiver(signals.email_confirmed)
 def user_email_confirmed(sender, request, email_address, **kwargs):
-    print 'gyisfdgsduifsd'
-    print kwargs
     print 'email confirmed', sender, request, email_address

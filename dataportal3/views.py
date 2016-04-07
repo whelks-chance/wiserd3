@@ -1476,23 +1476,26 @@ def welcome(request):
               end_of_line()
               )
 
-    email_address = EmailAddress.objects.get_for_user(userr.user, email)
+    # Print the generated regex
+    # print tester.source() # => ^(http)(s)?(\:\/\/)(www\.)?([^\ ]*)$
 
     regex_match_and_valid = False
     matched = False
     verified = False
 
-    # Test if the email is valid gmail
-    if tester.match(email):
-        matched = True
-    if email_address.verified:
-        verified = True
+    try:
+        email_address = EmailAddress.objects.get_for_user(userr.user, email)
 
-    if matched and verified:
-        regex_match_and_valid = True
-
-    # Print the generated regex
-    # print tester.source() # => ^(http)(s)?(\:\/\/)(www\.)?([^\ ]*)$
+        # Test if the email is valid gmail
+        if tester.match(email):
+            matched = True
+        if email_address.verified:
+            verified = True
+        if matched and verified:
+            regex_match_and_valid = True
+    except Exception as ex423:
+        print ex423
+        pass
 
     return render(request, 'welcome.html',
                   {
@@ -1512,6 +1515,10 @@ def save_profile_extras(request):
     request_user.specialty = request.POST.get('specialty', '')
     request_user.sector = request.POST.get('sector', '')
     request_user.comments = request.POST.get('comments', '')
+
+    check_enable_naw = request.POST.get('check_enable_naw', '')
+    if check_enable_naw:
+        request_user.role = 'naw'
 
     request_user.init_user = True
     request_user.save()

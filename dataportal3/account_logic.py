@@ -13,4 +13,7 @@ class AccountAdapter(DefaultAccountAdapter):
         if not request_user.init_user:
             return reverse('welcome')
         else:
-            return reverse('index')
+            if request_user.role == 'naw':
+                return reverse('naw_dashboard')
+            else:
+                return reverse('index')

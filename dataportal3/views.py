@@ -1522,7 +1522,11 @@ def save_profile_extras(request):
 
     request_user.init_user = True
     request_user.save()
-    return redirect('index')
+
+    if request_user.role == 'naw':
+        return redirect('naw_dashboard')
+    else:
+        return redirect('index')
 
 
 def events(request):

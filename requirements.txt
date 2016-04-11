@@ -9,7 +9,7 @@ argparse==1.2.1
 billiard==3.3.0.20
 celery==3.1.18
 cffi==1.2.1
-cryptography==1.0.1
+cryptography==1.2.3
 django-allauth==0.23.0
 django-celery==3.1.16
 django-celery-with-redis==3.0
@@ -26,13 +26,13 @@ enum34==1.0.4
 idna==2.0
 ijson==2.2
 ipaddress==1.0.14
-kombu==3.0.26
+kombu
 lxml==3.4.4
 ndg-httpsclient==0.4.0
 numpy==1.9.2
 oauthlib==1.0.1
-pandaSDMX==0.2.2
-pandas==0.16.2
+pandaSDMX
+pandas
 psycopg2==2.6.1
 pyOpenSSL==0.15.1
 pyasn1==0.1.8

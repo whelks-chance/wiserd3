@@ -1500,11 +1500,12 @@ def welcome(request):
     return render(request, 'welcome.html',
                   {
                       'userr': userr,
-                      'welcome': 'hi',
                       'email': email,
                       'regex_match_and_valid': regex_match_and_valid,
                       'verified': verified,
-                      'matched': matched
+                      'matched': matched,
+                      'preferences': get_user_preferences(request),
+                      'languages': models.UserLanguage.objects.all()
                   }, context_instance=RequestContext(request))
 
 
@@ -1515,13 +1516,18 @@ def save_profile_extras(request):
     request_user.specialty = request.POST.get('specialty', '')
     request_user.sector = request.POST.get('sector', '')
     request_user.comments = request.POST.get('comments', '')
-
     check_enable_naw = request.POST.get('check_enable_naw', '')
     if check_enable_naw:
         request_user.role = 'naw'
 
     request_user.init_user = True
     request_user.save()
+
+    user_language_id = request.POST.get('user_language', '')
+    if user_language_id:
+        user_preferences = get_user_preferences(request)
+        user_preferences.preferred_language = models.UserLanguage.objects.get(id=user_language_id)
+        user_preferences.save()
 
     if request_user.role == 'naw':
         return redirect('naw_dashboard')

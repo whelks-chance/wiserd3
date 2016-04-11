@@ -127,7 +127,7 @@
 {% block nav_extras %}
     {% if naw %}
         <li>
-            <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> NAW Searches<span class="fa arrow"></span></a>
+            <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> National Assembley for Wales Searches<span class="fa arrow"></span></a>
             <ul aria-expanded="false" class="nav nav-second-level scrollable_ul collapse">
                 {% for naw_key_search in naw_key_searches %}
                     <li>
@@ -456,23 +456,36 @@
                         }
                     }
                     info_text += '<h4>' + props.AREA_NAME + '</h4>';
+                    info_text += '<p><b>VALUE : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</p>'
+
                     if (props.STRING_DATA) {
                         var strings = '';
                         for (var item in props.STRING_DATA) {
                             if (props.STRING_DATA[item]['value']) {
-                                strings += '<p><b>' + props.STRING_DATA[item]['title'] + '</b>:' + props.STRING_DATA[item]['value'] + '</p>';
+                                if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('http://') > -1 &&
+                                        (props.STRING_DATA[item]['value'].toLowerCase().indexOf('.jpg') > -1 ||
+                                        props.STRING_DATA[item]['value'].toLowerCase().indexOf('.png') > -1)
+                                ) {
+                                    console.log(props.STRING_DATA[item]['value'].toLowerCase());
+                                    strings += '<p><b>' + props.STRING_DATA[item]['title']
+                                            + '</b></p><img src="' + props.STRING_DATA[item]['value'] + '">';
+
+                                } else {
+                                    strings += '<p><b>' + props.STRING_DATA[item]['title']
+                                            + '</b>:' + props.STRING_DATA[item]['value'] + '</p>';
+
+                                }
                             }
                         }
                         info_text += strings;
+                    } else {
+                        info_text += '<h4>Hover over a region</h4>';
                     }
-                    info_text += '<p><b>VALUE : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</p>'
-                } else {
-                    info_text += '<h4>Hover over a region</h4>';
-                }
-                {#                FIXME this is nuts #}
-                {#                this._div.innerHTML = info_text;#}
+                    {#                FIXME this is nuts #}
+                    {#                this._div.innerHTML = info_text;#}
 
-                $('#right-component1').html(info_text);
+                    $('#right-component1').html(info_text);
+                }
             };
             info.addTo(map);
 
@@ -529,6 +542,9 @@
                 }
                 if (string_value == 'PLC') {
                     return '#3F8428'
+                }
+                if (string_value == 'UKIP') {
+                    return '#70147A'
                 }
                 return hashStringToColor(string_value)
             }
@@ -860,33 +876,33 @@
                         });
 
                         layer.bringToFront();
-{#                        info.update(layer.feature.properties);#}
+                        {#                        info.update(layer.feature.properties);#}
 
-{#                        var html = '';#}
-{#                        // look through each layer in order and see if the clicked point,#}
-{#                        // e.latlng, overlaps with one of the shapes in it.#}
-{##}
-{#                        for (var i = 0; i < leaflet_layers.length; i++) {#}
-{##}
-{#                            var match = leafletPip.pointInLayer(#}
-{#                                    // the clicked point#}
-{#                                    e.latlng,#}
-{#                                    // this layer#}
-{#                                    leaflet_layers[i].layer,#}
-{#                                    // whether to stop at first match#}
-{#                                    true);#}
-{##}
-{#                            // if there's overlap, add some content to the popup: the layer name#}
-{#                            // and a table of attributes#}
-{#                            if (match.length) {#}
-{#                                console.log(match[0].feature.properties);#}
-{#                                html += '<strong>' + leaflet_layers[i].name + '</strong>';#}
-{#                                html += propertyTable(match[0].feature.properties) + '<br><br>';#}
-{#                            }#}
-{#                        }#}
-{#                        if (html) {#}
-{#                            $('#right-component1').append(html);#}
-{#                        }#}
+                        {#                        var html = '';#}
+                        {#                        // look through each layer in order and see if the clicked point,#}
+                        {#                        // e.latlng, overlaps with one of the shapes in it.#}
+                        {##}
+                        {#                        for (var i = 0; i < leaflet_layers.length; i++) {#}
+                        {##}
+                        {#                            var match = leafletPip.pointInLayer(#}
+                        {#                                    // the clicked point#}
+                        {#                                    e.latlng,#}
+                        {#                                    // this layer#}
+                        {#                                    leaflet_layers[i].layer,#}
+                        {#                                    // whether to stop at first match#}
+                        {#                                    true);#}
+                        {##}
+                        {#                            // if there's overlap, add some content to the popup: the layer name#}
+                        {#                            // and a table of attributes#}
+                        {#                            if (match.length) {#}
+                        {#                                console.log(match[0].feature.properties);#}
+                        {#                                html += '<strong>' + leaflet_layers[i].name + '</strong>';#}
+                        {#                                html += propertyTable(match[0].feature.properties) + '<br><br>';#}
+                        {#                            }#}
+                        {#                        }#}
+                        {#                        if (html) {#}
+                        {#                            $('#right-component1').append(html);#}
+                        {#                        }#}
 
                     },
                     mouseout: function (e) {
@@ -973,31 +989,31 @@
                         .attr('id', 'accordion_inner_' + tab_id)
                         .addClass("panel panel-default")
                         .append(
-                        $('<div/>')
-                                .addClass("panel-heading")
-                                .append(
-                                $('<h4/>')
-                                        .addClass("panel-title")
-                                        .append(
-                                        $('<a/>')
-                                                .attr('data-toggle', "collapse")
-                                                .attr('data-parent', "#legend_accordion")
-                                                .attr('href', "#" + tab_id)
-                                                .text(layer_name_text)
-                                )
-                        )
-                )
-                        .append(
-                        $('<div/>')
-                                .attr('id', tab_id)
-                                .addClass("panel-collapse collapse in")
-                                .append(
                                 $('<div/>')
-                                        .addClass("panel-body")
-                                        .wrapInner(contentHTML)
-                                {#                                        .text('Lorem ipsum dolor sit amet, consectetur adipisicing elit, minim veniam, quis nostrud')#}
+                                        .addClass("panel-heading")
+                                        .append(
+                                                $('<h4/>')
+                                                        .addClass("panel-title")
+                                                        .append(
+                                                                $('<a/>')
+                                                                        .attr('data-toggle', "collapse")
+                                                                        .attr('data-parent', "#legend_accordion")
+                                                                        .attr('href', "#" + tab_id)
+                                                                        .text(layer_name_text)
+                                                        )
+                                        )
                         )
-                );
+                        .append(
+                                $('<div/>')
+                                        .attr('id', tab_id)
+                                        .addClass("panel-collapse collapse in")
+                                        .append(
+                                                $('<div/>')
+                                                        .addClass("panel-body")
+                                                        .wrapInner(contentHTML)
+                                                {#                                        .text('Lorem ipsum dolor sit amet, consectetur adipisicing elit, minim veniam, quis nostrud')#}
+                                        )
+                        );
                 var accordionDiv = $('#legend_accordion');
                 $(accordionDiv).append(accordionInner);
             }
@@ -1016,7 +1032,7 @@
 
                 $(div).append(accordionDiv)
                         .css({'max-height': map_div.height() * 0.8, 'overflow-y': 'auto'});
-{#                        .draggable().resizable();#}
+                {#                        .draggable().resizable();#}
 
                 return div;
             };
@@ -1048,7 +1064,7 @@
                 for (var k in o) {
                     if (typeof(o[k]) != 'object') {
                         propertyList += '<p><b>' + k + '</b></p><p>' + o[k] + '</p>';
-{#                        .replace('""', '"')#}
+                        {#                        .replace('""', '"')#}
                     }
                 }
                 return propertyList;
@@ -1616,31 +1632,31 @@
                 html2canvas(
                         map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-left'), {}
                 ).then(function(left_overlay_canvas) {
-                            {#                            $('#screenshot_result2').append(overlay_canvas);#}
+                    {#                            $('#screenshot_result2').append(overlay_canvas);#}
 
-                            var ctx3 = map_canvas.getContext('2d');
-                            ctx3.drawImage(
-                                    left_overlay_canvas,
-                                    0,
-                                    map_canvas.height - left_overlay_canvas.height
-                            );
+                    var ctx3 = map_canvas.getContext('2d');
+                    ctx3.drawImage(
+                            left_overlay_canvas,
+                            0,
+                            map_canvas.height - left_overlay_canvas.height
+                    );
 
-                            html2canvas(
-                                    map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-right'), {}
-                            ).then(function(right_overlay_canvas) {
-                                        ctx3.drawImage(
-                                                right_overlay_canvas,
-                                                map_canvas.width - right_overlay_canvas.width,
-                                                map_canvas.height - right_overlay_canvas.height
-                                        );
+                    html2canvas(
+                            map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-right'), {}
+                    ).then(function(right_overlay_canvas) {
+                        ctx3.drawImage(
+                                right_overlay_canvas,
+                                map_canvas.width - right_overlay_canvas.width,
+                                map_canvas.height - right_overlay_canvas.height
+                        );
 
-                                        var canvas_data_url = map_canvas.toDataURL("image/jpeg", 0.5);
+                        var canvas_data_url = map_canvas.toDataURL("image/jpeg", 0.5);
 
-                                        window.open(canvas_data_url, '_blank');
-                                        {#                                        $('#screenshot_result').append(map_canvas);#}
+                        window.open(canvas_data_url, '_blank');
+                        {#                                        $('#screenshot_result').append(map_canvas);#}
 
-                                    });
-                        });
+                    });
+                });
             }
 
 
@@ -1915,9 +1931,9 @@
 
             <div class="right_sidebar" id="right_sidebar"
                  style="background-color: #f8f8f8;
-                                  height: 100%;
-{#                                  position: absolute; right: 0;#}
-{#                         width:250px;#}
+                         height: 100%;
+                         {#                                  position: absolute; right: 0;#}
+                         {#                         width:250px;#}
                          width: 100%;
                          overflow-y: scroll;
                          overflow-x: hidden">
@@ -1926,9 +1942,9 @@
                 {#                    <div class="col-lg-12">#}
                 <div class="split-pane-component" id="right-component1"
                      style="
-{#                     word-break: break-all;#}
-                word-wrap: break-word"
-                        ></div>
+                             {#                     word-break: break-all;#}
+                             word-wrap: break-word"
+                ></div>
                 {#                    </div>#}
                 {#                    <div class="col-lg-12">#}
                 {#                        <div class="split-pane-component" id="right-component2"></div>#}
@@ -1938,28 +1954,28 @@
         </div>
     </div>
 
-{#    <div class="">#}
-{#        <div class="col-lg-12">#}
+    {#    <div class="">#}
+    {#        <div class="col-lg-12">#}
 
-{#            <div id="naw_output" >NAW = {{ naw }}</div>#}
-{#            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>#}
-{#            <div id="screenshot" class="btn">Screenshot</div>#}
-{#            <div id="screenshot_result"></div>#}
-{#            <div id="screenshot_result2"></div>#}
-{#            <div id="language">Language : {{ preferences.preferred_language }}</div>#}
-{#        </div>#}
-{#    </div>#}
+    {#            <div id="naw_output" >NAW = {{ naw }}</div>#}
+    {#            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>#}
+    {#            <div id="screenshot" class="btn">Screenshot</div>#}
+    {#            <div id="screenshot_result"></div>#}
+    {#            <div id="screenshot_result2"></div>#}
+    {#            <div id="language">Language : {{ preferences.preferred_language }}</div>#}
+    {#        </div>#}
+    {#    </div>#}
 
     <div id="chloropleth_option_form" title="Chloropleth options">
         <table>
             <tr>
                 <td>
-                    <label for="bintype" class="control-label">Type Bins</label>
+                    <label for="bintype" class="control-label">Category Types</label>
                 </td>
                 <td>
                     <div class="controls">
                         <select name="bintype" id="bintype" class="form-control input-block-level tab_data_input">
-                            <option value="e">Equal bins</option>
+                            <option value="e">Equal size categories</option>
                             <option value="q">Quantiles</option>
                             <option value="k" selected="selected">K-Means</option>
                         </select>
@@ -1968,7 +1984,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="binno" class="control-label">Number of Bins</label>
+                    <label for="binno" class="control-label">Number of Categories</label>
                 </td>
                 <td>
                     <select name="binno" id="binno" class="form-control input-block-leveltab_data_input">

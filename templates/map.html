@@ -143,12 +143,14 @@
         <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> Map layers<span class="fa arrow"></span></a>
         <ul aria-expanded="false" class="nav nav-second-level collapse">
             <li>
-                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>
-                <ul aria-expanded="false" class="nav nav-third-level collapse">
-                    <li>
-                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>
-                    </li>
-                </ul>
+                <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>
+
+{#                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>#}
+{#                <ul aria-expanded="false" class="nav nav-third-level collapse">#}
+{#                    <li>#}
+{#                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>#}
+{#                    </li>#}
+{#                </ul>#}
             </li>
             <li>
                 <a aria-expanded="false" href="#"> Welsh Government Mapping Service<span class="fa arrow"></span></a>
@@ -456,24 +458,30 @@
                         }
                     }
                     info_text += '<h4>' + props.AREA_NAME + '</h4>';
-                    info_text += '<p><b>VALUE : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</p>'
+                    info_text += '<p><b>VALUE : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</p>';
 
                     if (props.STRING_DATA) {
                         var strings = '';
                         for (var item in props.STRING_DATA) {
                             if (props.STRING_DATA[item]['value']) {
-                                if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('http://') > -1 &&
-                                        (props.STRING_DATA[item]['value'].toLowerCase().indexOf('.jpg') > -1 ||
-                                        props.STRING_DATA[item]['value'].toLowerCase().indexOf('.png') > -1)
-                                ) {
-                                    console.log(props.STRING_DATA[item]['value'].toLowerCase());
-                                    strings += '<p><b>' + props.STRING_DATA[item]['title']
-                                            + '</b></p><img src="' + props.STRING_DATA[item]['value'] + '">';
-
-                                } else {
+                                {#  is it a link? #}
+                                if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('http://') > -1) {
+                                    if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('.jpg') > -1 ||
+                                            props.STRING_DATA[item]['value'].toLowerCase().indexOf('.png') > -1) {
+                                        {#  it's an image? #}
+                                        strings += '<p><b>' + props.STRING_DATA[item]['title']
+                                                + '</b></p><img src="' + props.STRING_DATA[item]['value'] + '">';
+                                    } else {
+                                        {#                                        It's a hyperlink #}
+                                        strings += '<p><b>' + props.STRING_DATA[item]['title']
+                                                + '</b></p><a target="_blank" href="'
+                                                + props.STRING_DATA[item]['value']
+                                                + '">' + props.STRING_DATA[item]['title'] + '</a>';
+                                    }
+                                }
+                                else {
                                     strings += '<p><b>' + props.STRING_DATA[item]['title']
                                             + '</b>:' + props.STRING_DATA[item]['value'] + '</p>';
-
                                 }
                             }
                         }
@@ -630,7 +638,7 @@
                         if (layer_type == 'survey') {
                             geojson = L.geoJson(data, {
                                 onEachFeature: function (feature, layer) {
-                                    layer.bindPopup(feature.properties.area_name + '<br>' + feature.properties.response_rate + '%');
+                                    {#                                    layer.bindPopup(feature.properties.area_name + '<br>' + feature.properties.response_rate + '%');#}
                                     layer.on({
                                         mouseover: highlightFeature,
                                         mouseout: resetHighlight
@@ -660,7 +668,7 @@
                                 onEachFeature: function (feature, layer) {
                                     {#                                    console.log(feature);#}
                                     {#                                    console.log(layer);#}
-                                    layer.bindPopup(layer.feature.properties.AREA_NAME);
+                                    {#                                    layer.bindPopup(layer.feature.properties.AREA_NAME);#}
                                     layer.on({
                                         mouseover: function(e){
                                             var layer = e.target;
@@ -860,9 +868,9 @@
 
             function handleLayer(layer) {
 
-                layer.bindPopup(layer.feature.properties.AREA_NAME + '<br>'
-                        + layer.feature.properties.REMOTE_VALUE +
-                        (layer.feature.properties.PERCENTAGE == true ? '%': ''));
+                {#                layer.bindPopup(layer.feature.properties.AREA_NAME + '<br>'#}
+                {#                        + layer.feature.properties.REMOTE_VALUE +#}
+                {#                        (layer.feature.properties.PERCENTAGE == true ? '%': ''));#}
 
                 layer.on({
                     mouseover: function (e) {

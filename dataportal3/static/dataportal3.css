@@ -93,3 +93,16 @@
     /*width: -webkit-min-content;*/
     /*width: min-content;*/
 /*}*/
+
+.panel-purple {
+    border-color: rebeccapurple;
+}
+
+.panel-purple .panel-heading {
+    color: white;
+    border-color: rebeccapurple;
+    background-color: rebeccapurple;
+}
+.panel-purple .panel-footer {
+    color: rebeccapurple;
+}

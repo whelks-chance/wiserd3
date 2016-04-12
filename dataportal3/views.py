@@ -1731,13 +1731,17 @@ def get_topojson_for_uuid(request, search_uuid):
                         if display_fields[data_strings.data_name] == 'true':
                             region_string_data[region].append({
                                 'title': str(data_strings.data_name).title(),
-                                'value': str(data_strings.regional_data[region]).title()
+                                'value': str(data_strings.regional_data[region])
                             })
 
                 else:
+                    data_title = data_strings.data_name
+                    if data_strings.full_name:
+                        data_title = data_strings.full_name
+
                     region_string_data[region].append({
-                        'title': str(data_strings.data_name).title(),
-                        'value': str(data_strings.regional_data[region]).title()
+                        'title': str(data_title).title(),
+                        'value': str(data_strings.regional_data[region])
                     })
 
             # Shorthand Name,Category,FullName,Notes,CategoryCY,FullNameCY,NotesCY

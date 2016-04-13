@@ -123,6 +123,25 @@ Shapefile import process, celery needs explicit export of settings module locati
 
 http://nominatim.openstreetmap.org/reverse?format=json&lat=51.5793876&lon=-3.1731345&zoom=18&addressdetails=1
 
+## Process for adding data and rendering a map layer
+
+Assume a search has given us a UUID
+
+Home › Dataportal3 › Nomis searchs › winning_party_11:4bcb579a-e507-404b-9412-c6a89065ca4a:constituency
+
+A "NomisSearch" has this UUID
+The NomisSearch object has a geography (ie ua, constituency)
+The NomisSearch has a search attributes dictionary, with key:value data_name:< an identifier for some data >
+If the NomisSearch type is "Survey" then the Dataset_ID is the an "identifier" of a Survey object
+
+Home › Dataportal3 › Spatial survey links › wisid_AssemblyConstituency_Data_57057b24ed6a1:nawer:aecMaj11
+
+Find "a" SpatialSurveyLink where the Survey_ID, the boundary name and the data_name match the above.
+This SpatialSurveyLink has a RegionalData dictionary, with key:value < region id > : <data value for this region >
+Here <region id> is any identifier which matches the ID in the topojson/geojson (created from a shapefile), defined during the shapefile importing process
+
+Once we have that SpatialSurveyLink
+
 ## Rights/ Visibility Management:
 A UserGroup has a name and a collection of users
 The UserGroupSurveyCollection is a collection of surveys which the user group has a read/access claim over

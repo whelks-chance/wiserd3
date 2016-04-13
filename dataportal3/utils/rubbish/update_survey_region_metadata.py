@@ -21,7 +21,7 @@ def UnicodeDictReader(utf8_data, encoding='utf-8',  **kwargs):
         yield {key: unicode(value, encoding) for key, value in row.iteritems()}
 
 
-def load_shapefile_description(filename, survey_id):
+def load_shapefile_description(filename, survey_identifier):
     with open(filename, 'rb') as csvfile:
 
         # No idea what encoding the csv file is, could have welsh chars which break things
@@ -46,7 +46,9 @@ def load_shapefile_description(filename, survey_id):
         # reader = csv.reader(csvfile, dialect)
         # next(reader, None)  # skip the headers
 
-        reader = UnicodeDictReader(csvfile, encoding=detector.result['encoding'], dialect=dialect)
+        # reader = UnicodeDictReader(csvfile, encoding=detector.result['encoding'], dialect=dialect)
+        reader = UnicodeDictReader(csvfile, encoding='Windows-1252', quotechar="\"")
+
         for row in reader:
             print ''
 
@@ -58,8 +60,14 @@ def load_shapefile_description(filename, survey_id):
 
             ssls = models.SpatialSurveyLink.objects.filter(
                 data_name=row['Shorthand Name'],
-                survey__identifier=survey_id
+                survey__identifier=survey_identifier
             )
+
+            if ssls.count() < 1:
+                print "didnt find the correct spatialsurveylink for {} {}".format(
+                    row['Shorthand Name'],
+                    survey_identifier
+                )
 
             for link in ssls:
 
@@ -104,7 +112,7 @@ if __name__ == "__main__":
     # filename = '/home/ubuntu/DataPortalGeographies/ConstituencyProfile/NAWDataNamesLookup.csv'
 
     input_file = ''
-    survey_id = ''
+    identifier = ''
 
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hi:s:", ["ifile=", "survey="])
@@ -112,7 +120,7 @@ if __name__ == "__main__":
         print args
     except getopt.GetoptError as egiog:
         print egiog
-        print 'test.py -i <inputfile> -s <survey>'
+        print 'test.py -i <inputfile> -s <survey_identifier>'
         sys.exit(2)
 
     for opt, arg in opts:
@@ -120,10 +128,10 @@ if __name__ == "__main__":
             input_file = arg
 
         elif opt in ("-s", "--survey"):
-            survey_id = arg
+            identifier = arg
 
-    if input_file and survey_id:
-        load_shapefile_description(input_file, survey_id)
+    if input_file and identifier:
+        load_shapefile_description(input_file, identifier)
     else:
         print 'need a file and survey_id'
         print 'update_survey_region_metadata.py -i <inputfile> -s <survey>'

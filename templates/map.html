@@ -126,17 +126,35 @@
 
 {% block nav_extras %}
     {% if naw %}
-        <li>
-            <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> National Assembley for Wales Searches<span class="fa arrow"></span></a>
-            <ul aria-expanded="false" class="nav nav-second-level scrollable_ul collapse">
+{#        <li>#}
+{#            <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> National Assembley for Wales Searches<span class="fa arrow"></span></a>#}
+{#            <ul aria-expanded="false" class="nav nav-second-level scrollable_ul collapse">#}
                 {% for naw_key_search in naw_key_searches %}
-                    <li>
-                        <a href="#" data-naw_key_search_uid="{{ naw_key_search.uid }}" class="remote_data_uid">
-                            <i class="fa fa-map-marker fa-fw"></i> {{ naw_key_search.description }}</a>
-                    </li>
+
+                    {% if naw_key_search.item_list %}
+                        <li>
+                            <a aria-expanded="false" href="#"> {{ naw_key_search.description }}<span class="fa arrow"></span></a>
+
+                            <ul aria-expanded="false" class="nav nav-second-level collapse">
+
+                                {% for naw_key_two in naw_key_search.item_list %}
+                                    <li>
+                                        <a href="#" data-naw_key_search_uid="{{ naw_key_two.uid }}" class="remote_data_uid">
+                                            <i class="fa fa-map-marker fa-fw"></i> {{ naw_key_two.description }}</a>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="#" data-naw_key_search_uid="{{ naw_key_search.uid }}" class="remote_data_uid">
+                                <i class="fa fa-map-marker fa-fw"></i> {{ naw_key_search.description }}</a>
+                        </li>
+                    {% endif %}
                 {% endfor %}
-            </ul>
-        </li>
+{#            </ul>#}
+{#        </li>#}
     {% endif %}
 
     <li>
@@ -145,12 +163,12 @@
             <li>
                 <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>
 
-{#                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>#}
-{#                <ul aria-expanded="false" class="nav nav-third-level collapse">#}
-{#                    <li>#}
-{#                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>#}
-{#                    </li>#}
-{#                </ul>#}
+                {#                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>#}
+                {#                <ul aria-expanded="false" class="nav nav-third-level collapse">#}
+                {#                    <li>#}
+                {#                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>#}
+                {#                    </li>#}
+                {#                </ul>#}
             </li>
             <li>
                 <a aria-expanded="false" href="#"> Welsh Government Mapping Service<span class="fa arrow"></span></a>
@@ -465,7 +483,7 @@
                         for (var item in props.STRING_DATA) {
                             if (props.STRING_DATA[item]['value']) {
                                 {#  is it a link? #}
-                                if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('http://') > -1) {
+                                if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('http://') == 0) {
                                     if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('.jpg') > -1 ||
                                             props.STRING_DATA[item]['value'].toLowerCase().indexOf('.png') > -1) {
                                         {#  it's an image? #}
@@ -482,6 +500,7 @@
                                 else {
                                     strings += '<p><b>' + props.STRING_DATA[item]['title']
                                             + '</b>:' + props.STRING_DATA[item]['value'] + '</p>';
+                                    console.log(props.STRING_DATA[item]['value']);
                                 }
                             }
                         }
@@ -1661,7 +1680,7 @@
                         var canvas_data_url = map_canvas.toDataURL("image/jpeg", 0.5);
 
                         window.open(canvas_data_url, '_blank');
-{#                                                                $('#screenshot_result').append(map_canvas);#}
+                        {#                                                                $('#screenshot_result').append(map_canvas);#}
 
                     });
                 });
@@ -1962,17 +1981,17 @@
         </div>
     </div>
 
-        <div class="">
-            <div class="col-lg-12">
+    <div class="">
+        <div class="col-lg-12">
 
-    {#            <div id="naw_output" >NAW = {{ naw }}</div>#}
-    {#            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>#}
-                <div id="screenshot" class="btn">Screenshot</div>
-                <div id="screenshot_result"></div>
-{#                <div id="screenshot_result2"></div>#}
-    {#            <div id="language">Language : {{ preferences.preferred_language }}</div>#}
-            </div>
+            {#            <div id="naw_output" >NAW = {{ naw }}</div>#}
+            {#            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>#}
+            <div id="screenshot" class="btn">Screenshot</div>
+            <div id="screenshot_result"></div>
+            {#                <div id="screenshot_result2"></div>#}
+            {#            <div id="language">Language : {{ preferences.preferred_language }}</div>#}
         </div>
+    </div>
 
     <div id="chloropleth_option_form" title="Chloropleth options">
         <table>

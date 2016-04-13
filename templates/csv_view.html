@@ -125,32 +125,77 @@
                 </form>
             </div>
 
-            <p>Dataset Retrieved from {{ provider }}</p>
-            <p>Dataset ID {{ dataset_id }}</p>
-            <p>Search Query Options</p>
-
-            <div>
-                {% for key, value in search_options.items %}
-                    <p>{{ key }} -- {{ value }}</p>
-                {% endfor %}
+            <div class="control-group">
+                <label for="text_input_{0}" class="control-label col-sm-4">Dataset Retrieved from</label>
+                <div class="controls">
+                <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="text_input_{0}" id="text_input_{0}" size="20" value="{2}">{{ provider }}</textarea>
+                </div>
             </div>
 
-            <p>Mapping colours</p>
-            <div>
-                {% for key, value in display_options.items %}
-                    <p>{{ key }} -- {{ value }}</p>
-                {% endfor %}
+            <div class="control-group">
+                <label for="text_input_{0}" class="control-label col-sm-4">Dataset ID</label>
+                <div class="controls">
+                <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="text_input_{0}" id="text_input_{0}" size="20" value="{2}">{{ dataset_id }}</textarea>
+                </div>
             </div>
 
-            {#            {{ search_options }}#}
-            <p>Unique Identifier for this search: {{ search_uuid }}</p>
-            {#            <p>{{ dataset_url }}</p>#}
+            <div class="control-group">
+                <label for="text_input_{0}" class="control-label col-sm-4">Dataset Retrieved from</label>
+                <div class="controls">
+                <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="text_input_{0}" id="text_input_{0}" size="20" value="{2}">{{ provider }}</textarea>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="text_input_{0}" class="control-label col-sm-4">Search Query Options</label>
+                <div class="row controls col-sm-8">
+                    {% for key, value in search_options.items %}
+                        <textarea readonly="true" type="text" class="input-block-level col-sm-12 tab_data_input"
+                                  name="text_input_{0}" id="text_input_{0}"
+                                  size="20" value="{2}">{{ key }} : {{ value }}
+                        </textarea>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="text_input_{0}" class="control-label col-sm-4">Mapping colours</label>
+                <div class="row controls col-sm-8">
+                    {% for key, value in display_options.items %}
+                <textarea readonly="true" type="text" class="input-block-level col-sm-12 tab_data_input"
+                          name="text_input_{0}" id="text_input_{0}"
+                          size="20" value="{2}">{{ key }} : {{ value }}
+                </textarea>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="text_input_{0}" class="control-label col-sm-4">Unique Identifier for this search</label>
+                <div class="controls">
+                <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="text_input_{0}" id="text_input_{0}"
+                          size="20" value="{2}">{{ search_uuid }}
+                </textarea>
+                </div>
+            </div>
+
             {% if error %}
-                <p>{{ error }}</p>
+                <div class="control-group">
+                    <label for="text_input_{0}" class="control-label col-sm-4">Errors</label>
+                    <div class="controls">
+                <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="text_input_{0}" id="text_input_{0}"
+                          size="20" value="{2}">{{ error }}
+                </textarea>
+                    </div>
+                </div>
+                {#                <p>{{ error }}</p>#}
             {% endif %}
 
-            {#            {{ dataset_data_header }}#}
-            {#            {{ dataset_data_list_full }}#}
         </div>
 
         <div class="row">

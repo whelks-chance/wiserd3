@@ -9,22 +9,6 @@
 
             var all_fields = [];
 
-            var survey_questions_table = $('#dataset_table').DataTable({
-                serverSide: false,
-                processing: true,
-                bAutoWidth: false,
-                responsive: true,
-                ajax: {
-                    url: "{% url 'csv_view_data' 'nomis' search_uuid %}",
-                    type: 'GET',
-                    data: function (d) {},
-                    dataSrc: function ( json ) {
-                        return json;
-                    }
-                },
-                columns: {{ dataset_data_header|jsonify }}
-            });
-
             $.ajax({
                 url: "{% url 'data_api' %}",
                 type: 'GET',
@@ -94,6 +78,34 @@
                     }
                 });
             });
+
+            var sec_attr_all = false;
+            $('#secondary_attr_toggle').click(function () {
+                sec_attr_all = !sec_attr_all;
+
+                {#                if#}
+
+                $("input:checkbox[name|='data_fields']").each(function(){
+                    $(this).prop('checked', sec_attr_all);
+                });
+            });
+
+
+            var survey_questions_table = $('#dataset_table').DataTable({
+                serverSide: false,
+                processing: true,
+                bAutoWidth: false,
+                responsive: true,
+                ajax: {
+                    url: "{% url 'csv_view_data' 'nomis' search_uuid %}",
+                    type: 'GET',
+                    data: function (d) {},
+                    dataSrc: function ( json ) {
+                        return json;
+                    }
+                },
+                columns: {{ dataset_data_header|jsonify }}
+            });
         });
 
     </script>
@@ -121,6 +133,7 @@
                     </div>
                     <div class="panel-footer">
                         <div id="update_hidden_fields" class="btn btn-info push-right">Save</div>
+                        <div id="secondary_attr_toggle" class="btn btn-info">Toggle All/None</div>
                     </div>
                 </form>
             </div>
@@ -165,9 +178,9 @@
                 <label for="text_input_{0}" class="control-label col-sm-4">Mapping colours</label>
                 <div class="row controls col-sm-8">
                     {% for key, value in display_options.items %}
-                <textarea readonly="true" type="text" class="input-block-level col-sm-12 tab_data_input"
-                          name="text_input_{0}" id="text_input_{0}"
-                          size="20" value="{2}">{{ key }} : {{ value }}
+                        <textarea readonly="true" type="text" class="input-block-level col-sm-12 tab_data_input"
+                                  name="text_input_{0}" id="text_input_{0}"
+                                  size="20" value="{2}">{{ key }} : {{ value }}
                 </textarea>
                     {% endfor %}
                 </div>

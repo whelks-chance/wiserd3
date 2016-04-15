@@ -357,6 +357,12 @@ def map_search(request):
     ]
     naw_key_searches.extend(settings.NAW_SEARCH_LAYER_UUIDS)
 
+    use_welsh = False
+    user_prefs = get_user_preferences(request)
+    assert isinstance(user_prefs, models.UserPreferences)
+    if user_prefs.preferred_language.user_language_title == 'Welsh':
+        use_welsh = True
+
     return render(request, 'map.html',
                   {
                       'naw': naw,
@@ -367,7 +373,8 @@ def map_search(request):
                       'layer_uuids': layer_uuids,
                       'topojson_geographies': topojson_geographies,
                       'preferences': get_user_preferences(request),
-                      'searches': get_user_searches(request),
+                      'use_welsh': use_welsh,
+                      'searches': user_prefs,
                       'surveys': json.dumps(surveys),
                       'wms_layers': wms_layers,
                       'wiserd_layers': settings.KNOWING_LOCALITIES_TABLES,
@@ -1545,10 +1552,13 @@ def events(request):
 def csv_view(request, provider, search_uuid):
     error = None
     dataset_url = ''
+    dataset_data_header_items_clean = []
 
     try:
 
         found_search = models.NomisSearch.objects.get(uuid=search_uuid)
+        assert isinstance(found_search, models.NomisSearch)
+
         dataset_id = found_search.dataset_id
         geog = found_search.geography_id
 
@@ -1559,38 +1569,39 @@ def csv_view(request, provider, search_uuid):
                 'variable': found_search.search_attributes[code]
             })
 
-        rd = RemoteData()
-        region_id, topojson_file = rd.get_dataset_geodata(geog, high=False)
-        dataset_url, dataset_file = rd.get_dataset_url(dataset_id, region_id, '', codelist)
+        if found_search.search_type == models.SearchType.objects.get(name='Nomis'):
 
-        dataset_url = dataset_url.replace('.json', '.csv')
+            rd = RemoteData()
+            region_id, topojson_file = rd.get_dataset_geodata(geog, high=False)
+            dataset_url, dataset_file = rd.get_dataset_url(dataset_id, region_id, '', codelist)
 
-        dataset_data = requests.get(dataset_url).text
-        dataset_data_list = dataset_data.split('\n')
+            dataset_url = dataset_url.replace('.json', '.csv')
 
-        dataset_data_header = dataset_data_list[0]
-        dataset_data_header_items = dataset_data_header.split(',')
+            dataset_data = requests.get(dataset_url).text
+            dataset_data_list = dataset_data.split('\n')
 
-        dataset_data_header_items_clean = []
-        for header_item in dataset_data_header_items:
-            # dataset_data_header_items_clean.append(header_item.rstrip('"').lstrip('"'))
-            dataset_data_header_items_clean.append({
-                'data': header_item.rstrip('"').lstrip('"')
-            })
+            dataset_data_header = dataset_data_list[0]
+            dataset_data_header_items = dataset_data_header.split(',')
 
-            # dataset_data_list_full = []
-            # for data_row_index, data_row in enumerate(dataset_data_list[1:]):
-            #     print data_row
-            #     print data_row_index
-            #     data_row_items = data_row.split(',')
-            #
-            #     if len(data_row_items) == len(dataset_data_header_items_clean):
-            #         dataset_data_dict = {}
-            #         for header_index, header_item in enumerate(dataset_data_header_items_clean):
-            #             print header_index, len(data_row_items), header_item, data_row_items[header_index]
-            #             # print header_index > len(data_row_items)
-            #             dataset_data_dict[header_item] = data_row_items[header_index].rstrip('"').lstrip('"')
-            #         dataset_data_list_full.append(dataset_data_dict)
+            for header_item in dataset_data_header_items:
+                # dataset_data_header_items_clean.append(header_item.rstrip('"').lstrip('"'))
+                dataset_data_header_items_clean.append({
+                    'data': header_item.rstrip('"').lstrip('"')
+                })
+
+                # dataset_data_list_full = []
+                # for data_row_index, data_row in enumerate(dataset_data_list[1:]):
+                #     print data_row
+                #     print data_row_index
+                #     data_row_items = data_row.split(',')
+                #
+                #     if len(data_row_items) == len(dataset_data_header_items_clean):
+                #         dataset_data_dict = {}
+                #         for header_index, header_item in enumerate(dataset_data_header_items_clean):
+                #             print header_index, len(data_row_items), header_item, data_row_items[header_index]
+                #             # print header_index > len(data_row_items)
+                #             dataset_data_dict[header_item] = data_row_items[header_index].rstrip('"').lstrip('"')
+                #         dataset_data_list_full.append(dataset_data_dict)
 
     except Exception as e8943279:
         print e8943279
@@ -1704,11 +1715,12 @@ def get_topojson_for_uuid(request, search_uuid):
             boundary_name=boundary_name,
             data_name=data_name
         )
+        assert isinstance(survey_spatial_data, models.SpatialSurveyLink)
 
         survey_spatial_data_strings = models.SpatialSurveyLink.objects.filter(
             survey__identifier=dataset_id,
-            boundary_name=boundary_name,
-            data_type='unicode'
+            boundary_name=boundary_name
+            # data_type='unicode'
         ).order_by('data_name')
 
         regional_data = survey_spatial_data.regional_data
@@ -1719,6 +1731,7 @@ def get_topojson_for_uuid(request, search_uuid):
         for region in regional_data:
             region_string_data[region] = []
             for data_strings in survey_spatial_data_strings:
+                assert isinstance(data_strings, models.SpatialSurveyLink)
                 # For each region in this survey's SpatialSurveyLink,
                 # build a string of the unicode data elements
                 # name_of_data : value_of_data, "Title Cased"
@@ -1729,32 +1742,49 @@ def get_topojson_for_uuid(request, search_uuid):
                         # print data_strings.data_name, display_fields[data_strings.data_name]
 
                         if display_fields[data_strings.data_name] == 'true':
+                            data_title = ''
+
+                            if data_strings.category:
+                                data_title += '{} : '.format(data_strings.category)
+
+                            if data_strings.full_name:
+                                data_title += data_strings.full_name
+                            else:
+                                data_title += data_strings.data_name
+
                             region_string_data[region].append({
-                                'title': str(data_strings.data_name).title(),
-                                'value': str(data_strings.regional_data[region])
+                                'title': data_title,
+                                'value': data_strings.regional_data[region]
                             })
 
                 else:
-                    data_title = data_strings.data_name
-                    if data_strings.full_name:
-                        data_title = data_strings.full_name
-
-                    region_string_data[region].append({
-                        'title': str(data_title).title(),
-                        'value': str(data_strings.regional_data[region])
-                    })
+                    pass
+                    # data_title = ''
+                    #
+                    # if data_strings.category:
+                    #     data_title += '{} : '.format(data_strings.category)
+                    #
+                    # if data_strings.full_name:
+                    #     data_title += data_strings.full_name
+                    # else:
+                    #     data_title += data_strings.data_name
+                    #
+                    # region_string_data[region].append({
+                    #     'title': data_title,
+                    #     'value': data_strings.regional_data[region]
+                    # })
 
             # Shorthand Name,Category,FullName,Notes,CategoryCY,FullNameCY,NotesCY
             spatial_survey_fields = [
-                {
-                    'field': 'data_name', 'name': 'Name'
-                },
+                # {
+                #     'field': 'data_name', 'name': 'Name'
+                # },
                 {
                     'field': 'category', 'name': 'Category'
                 },
-                {
-                    'field': 'full_name', 'name': 'Full Name'
-                },
+                # {
+                #     'field': 'full_name', 'name': 'Full Name'
+                # },
                 {
                     'field': 'notes', 'name': 'Notes'
                 },
@@ -1774,7 +1804,11 @@ def get_topojson_for_uuid(request, search_uuid):
                     'title': spatial_survey_field['name'],
                     'value': getattr(survey_spatial_data, spatial_survey_field['field'])
                 })
-            print 'region_string_data', region_string_data
+
+            if survey_spatial_data.full_name:
+                data_name = survey_spatial_data.full_name
+
+            # print 'region_string_data', region_string_data
 
         for region in regional_data:
 
@@ -1803,7 +1837,7 @@ def get_topojson_for_uuid(request, search_uuid):
             boundary_name=boundary_name,
         ).values_list('data_name', flat=True)
 
-        print 'data_name', data_names
+        # print 'data_name', data_names
         layer_data['data_names'] = list(data_names)
 
         response_data['all_data'] = all_data
@@ -1919,3 +1953,7 @@ def admin_api(request):
 def send_email_confirmation_view(request):
     send_email_confirmation(request, get_request_user(request).user, signup=False)
     return welcome(request)
+
+
+def dataportal(request):
+    return redirect('index')

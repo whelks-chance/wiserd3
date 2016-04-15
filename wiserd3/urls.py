@@ -27,6 +27,9 @@ urlpatterns = [
     url(r'^dashboard', views.dashboard, name='dashboard'),
     url(r'^naw_dashboard', views.naw_dashboard, name='naw_dashboard'),
 
+    # Legacy - Because we shared this address once
+    url(r'^dataportal', views.dataportal, name='dataportal'),
+
     url(r'^logout', views.logout, name='logout'),
     url(r'^profile', views.profile, name='profile'),
     url(r'^welcome', views.welcome, name='welcome'),

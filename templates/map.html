@@ -439,7 +439,7 @@
             var north = L.control({position: "bottomleft"});
             north.onAdd = function(map) {
                 var div = L.DomUtil.create("div", "north_arrow");
-                div.innerHTML = 'N<br><i class="fa fa-long-arrow-up arrow_center"></i>';
+                div.innerHTML = '{% if use_welsh %}G{% else %}N{% endif %}<br><i class="fa fa-long-arrow-up arrow_center"></i>';
                 return div;
             };
             north.addTo(map);
@@ -460,7 +460,7 @@
                     if (props.DATA_TITLE) {
                         info_text += '<h3>' + props.DATA_TITLE + '</h3>';
                     } else {
-                        info_text += '<h3>Region Response Rate</h3>';
+                        info_text += '<h3>Region Data</h3>';
                     }
                     if (props.NAME) {
                         info_text += '<h4>' + props.NAME + '</h4>';
@@ -473,6 +473,14 @@
                             }
                         } else {
                             info_text += '<h4>' + props.ALTNAME + '</h4>';
+                        }
+                    } else if (props.NameWelsh) {
+                        if (props.NAME) {
+                            if (props.NAME != props.NameWelsh) {
+                                info_text += '<h4>' + props.NameWelsh + '</h4>';
+                            }
+                        } else {
+                            info_text += '<h4>' + props.NameWelsh + '</h4>';
                         }
                     }
                     info_text += '<h4>' + props.AREA_NAME + '</h4>';
@@ -508,6 +516,7 @@
                     } else {
                         info_text += '<h4>Hover over a region</h4>';
                     }
+                    info_text += '</div>';
                     {#                FIXME this is nuts #}
                     {#                this._div.innerHTML = info_text;#}
 
@@ -768,6 +777,12 @@
                     }
                 }
 
+                if (color_scheme == 'naw') {
+{#                    color_scheme = ['001E62', '4f2c1d', '651D32', '004E42', '131E29'];#}
+{#                    color_scheme = ['009ca6', 'fe5000', 'cc007b', '3fa628', 'cb102e'];#}
+                    color_scheme = ['white', 'FE5000', 'C8102E', '651D32', '131E29'];
+
+                }
                 if (color_scheme == 'b_w') {
                     color_scheme = ['white', 'black'];
                 }
@@ -963,11 +978,14 @@
 
                             // if there's overlap, add some content to the popup: the layer name
                             // and a table of attributes
-                            if (match.length) {
-                                console.log(match[0].feature.properties);
-                                html += '<strong>' + leaflet_layers[i].name + '</strong>';
-                                html += propertyTable(match[0].feature.properties) + '<br><br>';
-                            }
+
+{#                            TODO - we've just checked all layers for a click, #}
+{#                            TODO and totally ignored them #}
+{#                            if (match.length) {#}
+{#                                console.log(match[0].feature.properties);#}
+{#                                html += '<strong>' + leaflet_layers[i].name + '</strong>';#}
+{#                                html += propertyTable(match[0].feature.properties) + '<br><br>';#}
+{#                            }#}
                         }
                         if (html) {
                             {#                            map.openPopup(html, e.latlng);#}
@@ -1989,7 +2007,7 @@
             <div id="screenshot" class="btn">Screenshot</div>
             <div id="screenshot_result"></div>
             {#                <div id="screenshot_result2"></div>#}
-            {#            <div id="language">Language : {{ preferences.preferred_language }}</div>#}
+{#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
         </div>
     </div>
 

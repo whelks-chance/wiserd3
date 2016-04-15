@@ -72,7 +72,7 @@
     /*display: block;*/
     /*bottom: 20px;*/
 
-    /*max-width: 80%;*/
+    max-width: 80%;
     /*width: -moz-min-content;*/
     /*width: -webkit-min-content;*/
     /*width: min-content;*/
@@ -105,4 +105,10 @@
 }
 .panel-purple .panel-footer {
     color: rebeccapurple;
+}
+
+.leaflet-control-layers-toggle {
+    height: 4em;
+    width: 4em;
+    background-color: #651D32;
 }

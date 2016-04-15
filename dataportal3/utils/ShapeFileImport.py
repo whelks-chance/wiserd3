@@ -1,18 +1,19 @@
 import os
+import pprint
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
+import django
+django.setup()
+
+import getopt
+import sys
 from django.db import connections
 from django.db.transaction import atomic
 from dataportal3.utils.shapefile.inspect_shapefile import ShapefileModelMatching
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wiserd3.settings")
-
 import string
 from django.utils.crypto import random
 import time
 import math
-
-import django
-django.setup()
-
 from subprocess import call
 import uuid
 from wiserd3.settings import app
@@ -65,13 +66,21 @@ class ShapeFileImport:
 
         self.shapefile_upload = shapefile_upload
 
-    def import_to_gis(self):
+    def import_to_gis(self, overwrite=False, survey=None,
+                      geom_table_name=None, boundary_name=None):
+
         if self.is_valid:
             try:
                 extracted_shp = os.path.join(self.extract_dir, self.filenames['shp'])
 
                 lyr = self.get_shp_lyr(extracted_shp)
-                self.create_spatial_survey_links(lyr)
+                self.create_spatial_survey_links(
+                    lyr,
+                    overwrite=overwrite,
+                    survey=survey,
+                    geom_table_name=geom_table_name,
+                    boundary_name=boundary_name,
+                )
 
                 # Deprecated, but saved in case this makes sense some day
                 # self.save_feature_collection(ds)
@@ -239,7 +248,8 @@ class ShapeFileImport:
         return lyr
 
     # We create a spatial_survey_link row for each field in the shapefile
-    def create_spatial_survey_links(self, lyr):
+    def create_spatial_survey_links(self, lyr, overwrite=False,
+                                    survey=None, geom_table_name=None, boundary_name=None):
 
         conn_queries = connections['new'].queries
         print 'create_spatial_survey_links start', len(conn_queries)
@@ -247,7 +257,9 @@ class ShapeFileImport:
 
         # get name and type data out of shapefile,
         # create Survey object to associate this data with
-        survey = self.init_survey(lyr)
+        if not survey:
+            survey = self.init_survey(lyr)
+
         geoms = lyr.get_geoms(geos=False)
 
         # We want to remove the "reserved fields" this system uses to name regions
@@ -271,10 +283,15 @@ class ShapeFileImport:
 
         survey_links_to_save = []
 
-        # FIXME doing something twice here
-        extracted_shp = os.path.join(self.extract_dir, self.filenames['shp'])
-        matcher = ShapefileModelMatching()
-        match_data = matcher.get_best_match(extracted_shp)
+        # If this hasn't been passed in, go find a good match
+        if not geom_table_name and not boundary_name:
+            # FIXME doing something twice here
+            extracted_shp = os.path.join(self.extract_dir, self.filenames['shp'])
+            matcher = ShapefileModelMatching()
+            match_data = matcher.get_best_match(extracted_shp)
+
+            geom_table_name = match_data['table_name']
+            boundary_name = match_data['name']
 
         # clean_fields is a dict of field_name => index_in_lyr.fields
         for field_name in clean_fields:
@@ -293,19 +310,42 @@ class ShapeFileImport:
 
                 regions_with_data[geo_codes[geo_idx]] = value
 
-            new_survey_link = models.SpatialSurveyLink()
-            new_survey_link.survey = survey
-            new_survey_link.data_name = field_name
+            if overwrite:
+                # print "we're overwriting"
+                try:
+                    new_survey_link = models.SpatialSurveyLink.objects.get(
+                        survey=survey,
+                        boundary_name=boundary_name,
+                        data_name=field_name
+                    )
+                except:
+                    print 'Failed to find for overwrite {}:{}:{}'.format(survey.identifier, boundary_name, field_name)
+
+                    # Cant find one, make it
+                    new_survey_link = models.SpatialSurveyLink()
+                    new_survey_link.survey = survey
+                    new_survey_link.geom_table_name = geom_table_name
+                    new_survey_link.boundary_name = boundary_name
+                    new_survey_link.data_name = field_name
+
+            else:
+                # Not overwriting, creating a new one
+                new_survey_link = models.SpatialSurveyLink()
+                new_survey_link.survey = survey
+                new_survey_link.geom_table_name = geom_table_name
+                new_survey_link.boundary_name = boundary_name
+                new_survey_link.data_name = field_name
+
             new_survey_link.data_prefix = ''
             new_survey_link.data_suffix = ''
             new_survey_link.data_type = str(field_type)
-
-            new_survey_link.geom_table_name = match_data['table_name']
             new_survey_link.regional_data = regions_with_data
-            new_survey_link.boundary_name = match_data['name']
 
-            print ''
-            survey_links_to_save.append(new_survey_link)
+            if overwrite:
+                # We can't bulk update, so individual update
+                new_survey_link.save()
+            else:
+                survey_links_to_save.append(new_survey_link)
 
         conn_queries = connections['new'].queries
         print 'create_spatial_survey_links init', len(conn_queries)
@@ -410,3 +450,151 @@ def celery_import(user_id, zip_file, filename, shapefile_upload_id=None):
     print a
     return a
 
+if __name__ == "__main__":
+
+    input_file = ''
+    survey_identifier = ''
+    username = ''
+    name = ''
+    geom_table_name = ''
+    boundary_name = ''
+    create_searches = False
+    region_code = ''
+
+    try:
+        opts, args = getopt.getopt(
+            sys.argv[1:],
+            "hi:s:u:n:g:b:x:r:",
+            ["ifile=", "survey=", "username=", "name=", 'geom=', 'boundary_name=', 'create_searches=', 'region_code=']
+        )
+
+        print opts
+        print args
+
+    except getopt.GetoptError as egiog:
+        print egiog
+        print 'ShapeFileImport.py -i <inputfile> -s <survey_identifier>'
+        sys.exit(2)
+
+    for opt, arg in opts:
+        if opt in ("-i", "--ifile"):
+            input_file = arg
+
+        elif opt in ("-s", "--survey"):
+            survey_identifier = arg
+
+        elif opt in ("-u", "--username"):
+            username = arg
+
+        elif opt in ("-n", "--name"):
+            name = arg
+
+        elif opt in ("-g", "--geom_table_name"):
+            geom_table_name = arg
+
+        elif opt in ("-b", "--boundary_name"):
+            boundary_name = arg
+
+        elif opt in ("-x", "--create_searches"):
+            print 'creating searches'
+            print type(arg), arg
+            create_searches = True
+
+        elif opt in ("-r", "--region_code"):
+            print 'region code is {}'.format(arg)
+            region_code = arg
+
+    if input_file and survey_identifier and username and name and geom_table_name and boundary_name:
+
+        user = models.UserProfile.objects.get(user__username=username)
+        survey = models.Survey.objects.get(identifier=survey_identifier)
+
+        shapefile_upload = models.ShapeFileUpload()
+        shapefile_upload.user = user
+        shapefile_upload.uuid = str(uuid.uuid4())
+        shapefile_upload.shapefile = input_file
+        shapefile_upload.name = input_file
+        shapefile_upload.progress = ShapeFileImport.progress_stage['init']
+        shapefile_upload.save()
+
+        sf = ShapeFileImport(
+            user,
+            zip_file=input_file,
+            filename=name,
+            shapefile_upload_id=shapefile_upload.id
+        )
+        sf.extract_zip()
+        a = sf.import_to_gis(
+            overwrite=True,
+            survey=survey,
+            geom_table_name=geom_table_name,
+            boundary_name=boundary_name,
+        )
+
+        search_uuids = []
+
+        print 'should we create searches with {} {} ?'.format(create_searches, region_code)
+
+        if create_searches and region_code:
+            print 'creating searches with {} {}'.format(create_searches, region_code)
+
+            new_survey_links = models.SpatialSurveyLink.objects.filter(
+                survey=survey,
+                boundary_name=boundary_name
+            )
+
+            display_fields = {}
+            for survey_link in new_survey_links:
+                display_fields[survey_link.data_name] = 'false'
+
+            for survey_link in new_survey_links:
+                assert isinstance(survey_link, models.SpatialSurveyLink)
+
+                if not survey_link.data_name.startswith('ram') and not survey_link.data_name.startswith('con'):
+
+                    nomis_search = models.NomisSearch()
+
+                    if survey_link.full_name:
+                        nomis_search.name = survey_link.full_name
+                    else:
+                        nomis_search.name = survey_link.data_name
+
+                    nomis_search.uuid = str(uuid.uuid4())
+                    nomis_search.user = user
+                    nomis_search.dataset_id = survey_identifier
+                    nomis_search.geography_id = region_code
+                    nomis_search.display_attributes = {
+                        'bin_num': '6',
+                        'bin_type': 'q',
+                        'colorpicker': 'naw'
+                    }
+                    nomis_search.search_type = models.SearchType.objects.get(name='Survey')
+                    nomis_search.search_attributes = {
+                        'data_name': survey_link.data_name
+                    }
+                    nomis_search.display_fields = display_fields
+
+                    nomis_search.save()
+
+                    search_uuids.append(
+                        {
+                            'uid': nomis_search.uuid,
+                            'description': nomis_search.name
+                        }
+                    )
+
+
+                else:
+                    print 'Skipped {}'.format(survey_link.data_name)
+
+            print pprint.pformat(search_uuids)
+            with open('uid_descriptions.py', 'w') as uid_desc_file:
+                uid_desc_file.write(pprint.pformat(search_uuids))
+
+        print a
+
+    else:
+        print 'need input_file and survey_identifier and username and name and geom_table_name and boundary_name'
+        print 'i:s:u:n:g:b:'
+        print 'ShapeFileImport.py -i <inputfile> -s <survey>....'
+        sys.exit(2)

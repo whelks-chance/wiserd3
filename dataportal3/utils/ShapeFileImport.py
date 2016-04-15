@@ -532,6 +532,7 @@ if __name__ == "__main__":
         )
 
         search_uuids = []
+        categories = {}
 
         print 'should we create searches with {} {} ?'.format(create_searches, region_code)
 
@@ -550,7 +551,7 @@ if __name__ == "__main__":
             for survey_link in new_survey_links:
                 assert isinstance(survey_link, models.SpatialSurveyLink)
 
-                if not survey_link.data_name.startswith('ram') and not survey_link.data_name.startswith('con'):
+                if not survey_link.data_name.startswith('ram') and not survey_link.data_name.startswith('cam'):
 
                     nomis_search = models.NomisSearch()
 
@@ -558,6 +559,10 @@ if __name__ == "__main__":
                         nomis_search.name = survey_link.full_name
                     else:
                         nomis_search.name = survey_link.data_name
+
+                    welsh_name = ''
+                    if survey_link.full_name_cy:
+                        welsh_name = survey_link.full_name_cy
 
                     nomis_search.uuid = str(uuid.uuid4())
                     nomis_search.user = user
@@ -576,20 +581,47 @@ if __name__ == "__main__":
 
                     nomis_search.save()
 
-                    search_uuids.append(
-                        {
-                            'uid': nomis_search.uuid,
-                            'description': nomis_search.name
-                        }
-                    )
 
+
+                    search_description = {
+                            'uid': nomis_search.uuid,
+                            'description': nomis_search.name,
+                        }
+
+                    if welsh_name:
+                        search_description['description_cy'] = welsh_name
+
+                    if survey_link.category:
+                        if categories.has_key(survey_link.category):
+                            categories[survey_link.category]['item_list'].append(search_description)
+
+                        else:
+                            categories[survey_link.category] = {
+                                'description': survey_link.category,
+                                'description_cy': survey_link.category_cy,
+                                'item_list': [search_description]
+                            }
+
+                    else:
+                        search_uuids.append(
+                            search_description
+                        )
 
                 else:
                     print 'Skipped {}'.format(survey_link.data_name)
 
+
+            cat_list = []
+            for key, value in categories.items():
+                cat_list.append(value)
+
+            print pprint.pformat(cat_list)
+            with open('uid_descriptions_cats.py', 'w') as uid_desc_file1:
+                uid_desc_file1.write(pprint.pformat(cat_list))
+
             print pprint.pformat(search_uuids)
-            with open('uid_descriptions.py', 'w') as uid_desc_file:
-                uid_desc_file.write(pprint.pformat(search_uuids))
+            with open('uid_descriptions.py', 'w') as uid_desc_file2:
+                uid_desc_file2.write(pprint.pformat(search_uuids))
 
         print a
 

@@ -127,35 +127,55 @@
 
 {% block nav_extras %}
     {% if naw %}
-{#        <li>#}
-{#            <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> National Assembley for Wales Searches<span class="fa arrow"></span></a>#}
-{#            <ul aria-expanded="false" class="nav nav-second-level scrollable_ul collapse">#}
-                {% for naw_key_search in naw_key_searches %}
+        {#        <li>#}
+        {#            <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> National Assembley for Wales Searches<span class="fa arrow"></span></a>#}
+        {#            <ul aria-expanded="false" class="nav nav-second-level scrollable_ul collapse">#}
+        {% for naw_key_search in naw_key_searches %}
 
-                    {% if naw_key_search.item_list %}
-                        <li>
-                            <a aria-expanded="false" href="#"> {{ naw_key_search.description }}<span class="fa arrow"></span></a>
+            {% if naw_key_search.item_list %}
+                <li>
+                    <a aria-expanded="false" href="#"> {{ naw_key_search.description }}<span class="fa arrow"></span></a>
 
-                            <ul aria-expanded="false" class="nav nav-second-level scrollable_ul collapse">
+                    <ul aria-expanded="false" class="nav nav-second-level collapse">
 
-                                {% for naw_key_two in naw_key_search.item_list %}
-                                    <li>
-                                        <a href="#" data-naw_key_search_uid="{{ naw_key_two.uid }}" class="remote_data_uid">
-                                            <i class="fa fa-map-marker fa-fw"></i> {{ naw_key_two.description }}</a>
-                                    </li>
-                                {% endfor %}
+                        {% for naw_key_two in naw_key_search.item_list %}
 
-                            </ul>
-                        </li>
-                    {% else %}
-                        <li>
-                            <a href="#" data-naw_key_search_uid="{{ naw_key_search.uid }}" class="remote_data_uid">
-                                <i class="fa fa-map-marker fa-fw"></i> {{ naw_key_search.description }}</a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-{#            </ul>#}
-{#        </li>#}
+                            {% if naw_key_two.item_list %}
+                                <li>
+                                    <a aria-expanded="false" href="#"> {{ naw_key_two.description }}<span class="fa arrow"></span></a>
+
+                                    <ul aria-expanded="false" class="nav nav-third-level scrollable_ul collapse">
+
+                                        {% for naw_key_three in naw_key_two.item_list %}
+                                            <li>
+                                                <a href="#" data-naw_key_search_uid="{{ naw_key_three.uid }}" class="remote_data_uid">
+                                                    <i class="fa fa-map-marker fa-fw"></i> {{ naw_key_three.description }}</a>
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="#" data-naw_key_search_uid="{{ naw_key_two.uid }}" class="remote_data_uid">
+                                        <i class="fa fa-map-marker fa-fw"></i> {{ naw_key_two.description }}</a>
+                                </li>
+                            {% endif %}
+
+
+                        {% endfor %}
+
+                    </ul>
+                </li>
+            {% else %}
+                <li>
+                    <a href="#" data-naw_key_search_uid="{{ naw_key_search.uid }}" class="remote_data_uid">
+                        <i class="fa fa-map-marker fa-fw"></i> {{ naw_key_search.description }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        {#            </ul>#}
+        {#        </li>#}
     {% endif %}
 
     <li>
@@ -267,8 +287,15 @@
             this.legend = null;
         }
 
-        window.onload = function(){
-            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
+        window.ready = function(){
+{#            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
+            $('#side-menu').metisMenu({toggle: true});
+            $('#side-menu').metisMenu();
+            $('#side-menu').metisMenu();
+            $('#side-menu').metisMenu();
+            $('#side-menu').metisMenu();
+            $('#side-menu').metisMenu();
+
         };
 
         $(document).ready(function () {
@@ -644,7 +671,7 @@
 
                         var name = layer_names;
 
-                        $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
+{#                        $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
 
                         $('.replace_layer').click(function () {
                             replace_layer(this)
@@ -779,8 +806,8 @@
                 }
 
                 if (color_scheme == 'naw') {
-{#                    color_scheme = ['001E62', '4f2c1d', '651D32', '004E42', '131E29'];#}
-{#                    color_scheme = ['009ca6', 'fe5000', 'cc007b', '3fa628', 'cb102e'];#}
+                    {#                    color_scheme = ['001E62', '4f2c1d', '651D32', '004E42', '131E29'];#}
+                    {#                    color_scheme = ['009ca6', 'fe5000', 'cc007b', '3fa628', 'cb102e'];#}
                     color_scheme = ['white', 'FE5000', 'C8102E', '651D32', '131E29'];
 
                 }
@@ -981,13 +1008,13 @@
                             // if there's overlap, add some content to the popup: the layer name
                             // and a table of attributes
 
-{#                            TODO - we've just checked all layers for a click, #}
-{#                            TODO and totally ignored them #}
-{#                            if (match.length) {#}
-{#                                console.log(match[0].feature.properties);#}
-{#                                html += '<strong>' + leaflet_layers[i].name + '</strong>';#}
-{#                                html += propertyTable(match[0].feature.properties) + '<br><br>';#}
-{#                            }#}
+                            {#                            TODO - we've just checked all layers for a click, #}
+                            {#                            TODO and totally ignored them #}
+                            {#                            if (match.length) {#}
+                            {#                                console.log(match[0].feature.properties);#}
+                            {#                                html += '<strong>' + leaflet_layers[i].name + '</strong>';#}
+                            {#                                html += propertyTable(match[0].feature.properties) + '<br><br>';#}
+                            {#                            }#}
                         }
                         if (html) {
                             {#                            map.openPopup(html, e.latlng);#}
@@ -2009,7 +2036,7 @@
             <div id="screenshot" class="btn">{% trans "Screenshot" %}</div>
             <div id="screenshot_result"></div>
             {#                <div id="screenshot_result2"></div>#}
-{#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
+            {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
         </div>
     </div>
 

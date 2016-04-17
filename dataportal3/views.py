@@ -1744,8 +1744,8 @@ def get_topojson_for_uuid(request, search_uuid):
                         if display_fields[data_strings.data_name] == 'true':
                             data_title = ''
 
-                            if data_strings.category:
-                                data_title += '{} : '.format(data_strings.category)
+                            # if data_strings.category:
+                            #     data_title += '{} : '.format(data_strings.category)
 
                             if data_strings.full_name:
                                 data_title += data_strings.full_name
@@ -1754,8 +1754,18 @@ def get_topojson_for_uuid(request, search_uuid):
 
                             region_string_data[region].append({
                                 'title': data_title,
+                                'grouping': list(data_strings.link_groups.all().values_list('group_name', flat=True)),
                                 'value': data_strings.regional_data[region]
                             })
+
+                            # for link_group in data_strings.link_groups.all():
+                            #     assert isinstance(link_group, models.SpatialSurveyLinkGroup)
+                            #     # print data_strings.link_groups.all()
+                            #
+                            # region_string_data[region].append({
+                            #     'title': 'grouping ' + data_strings.data_name,
+                            #     'value': list(data_strings.link_groups.all().values_list('group_name', flat=True))
+                            # })
 
                 else:
                     pass

@@ -142,6 +142,27 @@ Here <region id> is any identifier which matches the ID in the topojson/geojson 
 
 Once we have that SpatialSurveyLink
 
+## Auto import NAW data/ create sidebar searches
+
+###Constituencies
+
+    python dataportal3/utils/ShapeFileImport.py -i /home/ianh/scrap/NAW_3_constituencies.zip -s wisid_AssemblyConstituency_Data_57057b24ed6a1 -u a_user -n constituency_test -g nawer -b "National Assembly Constituency"
+
+    python dataportal3/utils/rubbish/update_survey_region_metadata.py -i /home/ianh/DataPortalGeographies/NAW_3/NAWConstituencyDataNamesLookup.csv -s wisid_AssemblyConstituency_Data_57057b24ed6a1
+
+    python dataportal3/utils/ShapeFileImport.py -i /home/ianh/scrap/NAW_3_constituencies.zip -s wisid_AssemblyConstituency_Data_57057b24ed6a1 -u a_user -n constituency_test -g nawer -b "National Assembly Constituency" -x True -r constituency
+
+
+### Regions
+
+    python dataportal3/utils/ShapeFileImport.py -i /home/ianh/DataPortalGeographies/NAW_3/NAW_3_regions.zip -s wisid_AssemblyRegions_Data_5705394bb0ec5 -u ubuntu -n region_test -g nawer -b "National Assembly Region"
+
+    python dataportal3/utils/rubbish/update_survey_region_metadata.py -i /home/ianh/DataPortalGeographies/NAW_3/NAWRegionDataNamesLookup.csv -s wisid_AssemblyRegions_Data_5705394bb0ec5
+
+    python dataportal3/utils/ShapeFileImport.py -i /home/ianh/DataPortalGeographies/NAW_3/NAW_3_regions.zip -s wisid_AssemblyRegions_Data_5705394bb0ec5 -u ubuntu -n region_test -g nawer -b "National Assembly Region" -x True -r region
+
+
+
 ## Rights/ Visibility Management:
 A UserGroup has a name and a collection of users
 The UserGroupSurveyCollection is a collection of surveys which the user group has a read/access claim over
@@ -183,5 +204,5 @@ http://stackoverflow.com/a/13332300/2943238
 
 ## Awkwardness
 
-ALTER TABLE django_content_type ADD COLUMN name character varying(50) NOT NULL DEFAULT 'someName';
+    ALTER TABLE django_content_type ADD COLUMN name character varying(50) NOT NULL DEFAULT 'someName';
 

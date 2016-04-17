@@ -582,7 +582,6 @@ if __name__ == "__main__":
                     nomis_search.save()
 
 
-
                     search_description = {
                             'uid': nomis_search.uuid,
                             'description': nomis_search.name,

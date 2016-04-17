@@ -2,11 +2,12 @@
 {% load staticfiles %}
 
 {% block extra_head %}
-    <script>
-        $(document).ready(function () {
-            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});
-        });
-    </script>
+
+{#    <script>#}
+{#        $(document).ready(function () {#}
+{#            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
+{#        });#}
+{#    </script>#}
 
 {% endblock %}
 
@@ -267,7 +268,7 @@
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
+                    <ul class="nav nav-ul" id="side-menu">
 
                         <li>
                             <a href="{% url 'naw_dashboard' %}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>

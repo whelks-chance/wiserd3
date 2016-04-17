@@ -50,7 +50,7 @@ def load_shapefile_description(filename, survey_identifier):
         reader = UnicodeDictReader(csvfile, encoding='Windows-1252', quotechar="\"")
 
         for row in reader:
-            print ''
+            # print ''
 
             # print ', '.join(row)
             # print row.keys()
@@ -70,6 +70,7 @@ def load_shapefile_description(filename, survey_identifier):
                 )
 
             for link in ssls:
+                assert isinstance(link, models.SpatialSurveyLink)
 
                 link.category = row['Category']
                 link.full_name = row['FullName']
@@ -78,9 +79,23 @@ def load_shapefile_description(filename, survey_identifier):
                 link.full_name_cy = row['FullNameCY']
                 link.notes_cy = row['NotesCY']
 
-                print link.__dict__
-
+                # print link.__dict__
+                # print row.keys()
                 link.save()
+
+                if row['Grouping']:
+                    print row
+                    grouping, created = models.SpatialSurveyLinkGroup.objects.get_or_create(
+                        group_name=row['Grouping']
+                    )
+                    assert isinstance(grouping, models.SpatialSurveyLinkGroup)
+                    # print grouping.spatialsurveylink_set.all()
+                    for group_member in grouping.spatialsurveylink_set.all():
+                        print group_member
+
+                    link.link_groups.add(grouping)
+                    # grouping.save()
+                    link.save()
 
 def whatever():
     id = 'wisid_RegionProfileData2016_56c377709c1c5'

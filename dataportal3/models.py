@@ -375,6 +375,16 @@ class SurveyQuestionsLink(models.Model):
         return str(self.surveyid) + ':' + self.qid + ':' + str(self.pkid)
 
 
+class SpatialSurveyLinkGroup(models.Model):
+    group_name = models.TextField(null=True, blank=True)
+
+    class Meta:
+        db_table = 'spatial_survey_link_group'
+
+    def __unicode__(self):
+        return self.group_name
+
+
 # TODO tidy these two up
 class SpatialSurveyLink(models.Model):
     survey = models.ForeignKey('Survey', null=True, blank=True)
@@ -394,6 +404,8 @@ class SpatialSurveyLink(models.Model):
     category_cy = models.TextField(blank=True, null=True)
     full_name_cy = models.TextField(blank=True, null=True)
     notes_cy = models.TextField(blank=True, null=True)
+
+    link_groups = models.ManyToManyField('SpatialSurveyLinkGroup', )
 
     class Meta:
         db_table = 'spatial_survey_link'

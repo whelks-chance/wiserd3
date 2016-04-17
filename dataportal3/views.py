@@ -1549,7 +1549,7 @@ def events(request):
                   }, context_instance=RequestContext(request))
 
 
-def csv_view(request, provider, search_uuid):
+def search_data(request, search_uuid):
     error = None
     dataset_url = ''
     dataset_data_header_items_clean = []
@@ -1607,7 +1607,7 @@ def csv_view(request, provider, search_uuid):
         print e8943279
         error = str(e8943279)
 
-    return render(request, 'csv_view.html',
+    return render(request, 'search_data.html',
                   {
                       'error': error,
                       'dataset_id': dataset_id,
@@ -1617,7 +1617,7 @@ def csv_view(request, provider, search_uuid):
                       'dataset_data_header': dataset_data_header_items_clean,
                       # 'dataset_data': dataset_data_list[1:],
                       # 'dataset_data_list_full': dataset_data_list_full,
-                      'provider': provider,
+                      'provider': found_search.search_type.name,
                       'search_uuid': search_uuid
                   }, context_instance=RequestContext(request))
 

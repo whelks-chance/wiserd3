@@ -108,7 +108,7 @@
         <div class="list-group">
             {% for nomis_layer in nomis_layers %}
                 {% if nomis_layer.uuid %}
-                    <a target="_blank" href="{% url 'csv_view' 'nomis' nomis_layer.uuid %}" class="list-group-item"><i class="fa fa-map-o fa-fw"></i>
+                    <a target="_blank" href="{% url 'search_data' nomis_layer.uuid %}" class="list-group-item"><i class="fa fa-map-o fa-fw"></i>
                         {% if nomis_layer.name %}{{ nomis_layer.name }}{% else %}Unnamed{% endif %} - {{ nomis_layer.datetime }}
                     </a>
                 {% endif %}

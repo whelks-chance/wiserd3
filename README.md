@@ -146,20 +146,20 @@ Once we have that SpatialSurveyLink
 
 ###Constituencies
 
-    python dataportal3/utils/ShapeFileImport.py -i /home/ianh/scrap/NAW_3_constituencies.zip -s wisid_AssemblyConstituency_Data_57057b24ed6a1 -u a_user -n constituency_test -g nawer -b "National Assembly Constituency"
+    python dataportal3/utils/ShapeFileImport.py -i path/NAW_3_constituencies.zip -s wisid_AssemblyConstituency_Data_57057b24ed6a1 -u a_user -n constituency_test -g nawer -b "National Assembly Constituency"
 
-    python dataportal3/utils/rubbish/update_survey_region_metadata.py -i /home/ianh/DataPortalGeographies/NAW_3/NAWConstituencyDataNamesLookup.csv -s wisid_AssemblyConstituency_Data_57057b24ed6a1
+    python dataportal3/utils/rubbish/update_survey_region_metadata.py -i path/NAW_3/NAWConstituencyDataNamesLookup.csv -s wisid_AssemblyConstituency_Data_57057b24ed6a1
 
-    python dataportal3/utils/ShapeFileImport.py -i /home/ianh/scrap/NAW_3_constituencies.zip -s wisid_AssemblyConstituency_Data_57057b24ed6a1 -u a_user -n constituency_test -g nawer -b "National Assembly Constituency" -x True -r constituency
+    python dataportal3/utils/ShapeFileImport.py -i path/NAW_3_constituencies.zip -s wisid_AssemblyConstituency_Data_57057b24ed6a1 -u a_user -n constituency_test -g nawer -b "National Assembly Constituency" -x True -r constituency
 
 
 ### Regions
 
-    python dataportal3/utils/ShapeFileImport.py -i /home/ianh/DataPortalGeographies/NAW_3/NAW_3_regions.zip -s wisid_AssemblyRegions_Data_5705394bb0ec5 -u ubuntu -n region_test -g nawer -b "National Assembly Region"
+    python dataportal3/utils/ShapeFileImport.py -i path/NAW_3/NAW_3_regions.zip -s wisid_AssemblyRegions_Data_5705394bb0ec5 -u ubuntu -n region_test -g nawer -b "National Assembly Region"
 
-    python dataportal3/utils/rubbish/update_survey_region_metadata.py -i /home/ianh/DataPortalGeographies/NAW_3/NAWRegionDataNamesLookup.csv -s wisid_AssemblyRegions_Data_5705394bb0ec5
+    python dataportal3/utils/rubbish/update_survey_region_metadata.py -i path/NAW_3/NAWRegionDataNamesLookup.csv -s wisid_AssemblyRegions_Data_5705394bb0ec5
 
-    python dataportal3/utils/ShapeFileImport.py -i /home/ianh/DataPortalGeographies/NAW_3/NAW_3_regions.zip -s wisid_AssemblyRegions_Data_5705394bb0ec5 -u ubuntu -n region_test -g nawer -b "National Assembly Region" -x True -r region
+    python dataportal3/utils/ShapeFileImport.py -i path/NAW_3/NAW_3_regions.zip -s wisid_AssemblyRegions_Data_5705394bb0ec5 -u ubuntu -n region_test -g nawer -b "National Assembly Region" -x True -r region
 
 
 

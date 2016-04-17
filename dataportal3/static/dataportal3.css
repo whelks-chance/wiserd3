@@ -114,7 +114,9 @@
 }
 
 .sidebar_group {
-    border: 2px;
-    border-color: #0c0c0c;
-    border-style: double;
+    border: 1px;
+    border-color: #777;
+    border-style: solid;
+    padding: 0.5em;
+    margin-top: 1em;
 }

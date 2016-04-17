@@ -48,7 +48,7 @@ urlpatterns = [
 
     url(r'^file_management', views.file_management, name='file_management'),
     url(r'^events', views.events, name='events'),
-    url(r'^csv_viewer/(?P<provider>\S+)/(?P<search_uuid>\S+)', views.csv_view, name='csv_view'),
+    url(r'^search_data/(?P<search_uuid>\S+)', views.search_data, name='search_data'),
     url(r'^csv_viewer_data/(?P<provider>\S+)/(?P<search_uuid>\S+)', views.csv_view_data, name='csv_view_data'),
 
     # url(r'^upload_shapefile_progress', views.get_upload_progress, name='upload_shapefile_progress'),

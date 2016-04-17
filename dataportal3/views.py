@@ -360,8 +360,9 @@ def map_search(request):
     use_welsh = False
     user_prefs = get_user_preferences(request)
     assert isinstance(user_prefs, models.UserPreferences)
-    if user_prefs.preferred_language.user_language_title == 'Welsh':
-        use_welsh = True
+    if user_prefs.preferred_language:
+        if user_prefs.preferred_language.user_language_title == 'Welsh':
+            use_welsh = True
 
     return render(request, 'map.html',
                   {

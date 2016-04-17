@@ -112,3 +112,9 @@
     width: 4em;
     background-color: #651D32;
 }
+
+.sidebar_group {
+    border: 2px;
+    border-color: #0c0c0c;
+    border-style: double;
+}

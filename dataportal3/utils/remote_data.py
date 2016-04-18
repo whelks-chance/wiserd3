@@ -325,7 +325,7 @@ class RemoteData():
     def update_topojson(self, topojson_file, remote_data, measure_is_percentage=False):
 
         remote_areas = remote_data.keys()
-        print 'remote_areas', remote_areas
+        # print 'remote_areas', remote_areas
 
         found = 0
         not_found = 0
@@ -338,7 +338,7 @@ class RemoteData():
             matching_data_ids = self.match_region_ids(remote_data, topojson_region_data)
             best_key_match = max(matching_data_ids, key=matching_data_ids.get)
             (remote_data_key, topojson_region_key) = best_key_match
-            print remote_data_key, topojson_region_key
+            # print remote_data_key, topojson_region_key
 
             total_number_regions = 0
             for layer_name in whole_topojson['objects']:
@@ -361,11 +361,15 @@ class RemoteData():
                                 geom['properties']['DATA_STATUS'] = remote_data_object['data_status']
 
                                 if 'string_data' in remote_data_object:
-                                    print "remote_data_object['string_data']", remote_data_object['string_data']
+                                    # print "remote_data_object['string_data']", remote_data_object['string_data']
 
                                     geom['properties']['STRING_DATA'] = remote_data_object['string_data']
                                 if 'data_title' in remote_data_object:
                                     geom['properties']['DATA_TITLE'] = remote_data_object['data_title']
+
+                                if 'search_uuid' in remote_data_object:
+                                    geom['properties']['SEARCH_UUID'] = remote_data_object['search_uuid']
+
                                 found += 1
 
                         # Separate, because this needs tidying in future
@@ -386,6 +390,7 @@ class RemoteData():
                                         geom['properties']['STRING_DATA'] = remote_data_object['string_data']
                                     if 'data_title' in remote_data_object:
                                         geom['properties']['DATA_TITLE'] = remote_data_object['data_title']
+
                                     found += 1
 
                             if not discovered:

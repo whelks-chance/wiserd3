@@ -1133,7 +1133,7 @@ def local_data_topojson(request):
             "data_status": "A",
             "geography": region,
             "string_data": region_string_data[region],
-            "data_title": data_name
+            "data_title": data_name,
         }]
 
         all_data[region] = regions
@@ -1635,6 +1635,7 @@ def get_topojson_for_uuid(request, search_uuid):
     response_data = {}
     #FIXME add a check for user here
     found_search_model = models.NomisSearch.objects.get(uuid=search_uuid)
+    assert isinstance(found_search_model, models.NomisSearch)
     dataset_id = found_search_model.dataset_id
     geog = found_search_model.geography_id
 
@@ -1832,6 +1833,7 @@ def get_topojson_for_uuid(request, search_uuid):
                 "geography": region,
                 "string_data": region_string_data[region],
                 "data_title": data_name,
+                "search_uuid": found_search_model.uuid
             }
 
             # FIXME - no idea why dict into array into dict

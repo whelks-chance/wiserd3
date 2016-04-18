@@ -297,11 +297,11 @@
 
         $(document).ready(function () {
 
-{#            console.log('???');#}
-{#            $('.nav-ul').each(function(i, obj) {#}
-{#                console.log(obj);#}
-{#                $(this).metisMenu().click();#}
-{#            });#}
+            console.log('???');
+            $('.nav-ul').each(function(i, obj) {
+                console.log(obj);
+                $(this).metisMenu();
+            });
 
             {# FIXME sigh, why are there 4 things here?? #}
 
@@ -536,28 +536,28 @@
                                 strings += get_sidebar_text(props, item);
                             }
 
-{#                            if (props.STRING_DATA[item]['value']) {#}
-                                {#  is it a link? #}
-{#                                if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('http://') == 0) {#}
-{#                                    if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('.jpg') > -1 ||#}
-{#                                            props.STRING_DATA[item]['value'].toLowerCase().indexOf('.png') > -1) {#}
-                                        {#  it's an image? #}
-{#                                        strings += '<p><b>' + props.STRING_DATA[item]['title']#}
-{#                                                + '</b></p><img src="' + props.STRING_DATA[item]['value'] + '">';#}
-{#                                    } else {#}
-                                        {#                                        It's a hyperlink #}
-{#                                        strings += '<p><b>' + props.STRING_DATA[item]['title']#}
-{#                                                + '</b></p><a target="_blank" href="'#}
-{#                                                + props.STRING_DATA[item]['value']#}
-{#                                                + '">' + props.STRING_DATA[item]['title'] + '</a>';#}
-{#                                    }#}
-{#                                }#}
-{#                                else {#}
-{#                                    strings += '<p><b>' + props.STRING_DATA[item]['title']#}
-{#                                            + '</b>:' + props.STRING_DATA[item]['value'] + '</p>';#}
-{#                                    console.log(props.STRING_DATA[item]['value']);#}
-{#                                }#}
-{#                            }#}
+                            {#                            if (props.STRING_DATA[item]['value']) {#}
+                            {#  is it a link? #}
+                            {#                                if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('http://') == 0) {#}
+                            {#                                    if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('.jpg') > -1 ||#}
+                            {#                                            props.STRING_DATA[item]['value'].toLowerCase().indexOf('.png') > -1) {#}
+                            {#  it's an image? #}
+                            {#                                        strings += '<p><b>' + props.STRING_DATA[item]['title']#}
+                            {#                                                + '</b></p><img src="' + props.STRING_DATA[item]['value'] + '">';#}
+                            {#                                    } else {#}
+                            {#                                        It's a hyperlink #}
+                            {#                                        strings += '<p><b>' + props.STRING_DATA[item]['title']#}
+                            {#                                                + '</b></p><a target="_blank" href="'#}
+                            {#                                                + props.STRING_DATA[item]['value']#}
+                            {#                                                + '">' + props.STRING_DATA[item]['title'] + '</a>';#}
+                            {#                                    }#}
+                            {#                                }#}
+                            {#                                else {#}
+                            {#                                    strings += '<p><b>' + props.STRING_DATA[item]['title']#}
+                            {#                                            + '</b>:' + props.STRING_DATA[item]['value'] + '</p>';#}
+                            {#                                    console.log(props.STRING_DATA[item]['value']);#}
+                            {#                                }#}
+                            {#                            }#}
                         }
 
                         for (var group in groups) {
@@ -570,8 +570,17 @@
 
                         info_text += strings;
                     } else {
-{#                        info_text += '<h4>Hover over a region</h4>';#}
+                        {#                        info_text += '<h4>Hover over a region</h4>';#}
                     }
+
+                    {% if request.user.is_superuser  %}
+                        if (props.SEARCH_UUID) {
+                            info_text += '<a target="_blank" ' +
+                                    'href="{% url 'search_data' 'replace_me'%}">'.replace('replace_me', props.SEARCH_UUID)
+                                    + 'Search layer data</a>';
+                        }
+                    {% endif %}
+
                     info_text += '</div>';
                     {#                FIXME this is nuts #}
                     {#                this._div.innerHTML = info_text;#}
@@ -590,13 +599,13 @@
                                 props.STRING_DATA[item]['value'].toLowerCase().indexOf('.png') > -1) {
                             {#  it's an image? #}
                             strings += ''
-{#                                    + '<p><b>' + props.STRING_DATA[item]['title'] + '</b></p>'#}
+                                    {#                                    + '<p><b>' + props.STRING_DATA[item]['title'] + '</b></p>'#}
                                     + '<p><img src="' + props.STRING_DATA[item]['value'] + '"></p>';
                         } else {
                             {#                                        It's a hyperlink #}
                             strings += ''
-{#                                    + '<p><b>' + props.STRING_DATA[item]['title']#}
-{#                                    + '</b></p>'#}
+                                    {#                                    + '<p><b>' + props.STRING_DATA[item]['title']#}
+                                    {#                                    + '</b></p>'#}
                                     + '<p><a target="_blank" href="'
                                     + props.STRING_DATA[item]['value']
                                     + '">' + props.STRING_DATA[item]['title'] + '</a></p>';
@@ -961,7 +970,7 @@
                     console.log(layer_name_text);
                     if (eventLayer.name == layer_name_text) {
                         console.log('trying to remove : ' + '#accordion_inner_collapse_' + unique_layer_name_text);
-                        $('#accordion_inner_collapse_' + unique_layer_name_text).remove();
+                        $('#accordion_inner_collapse_' + unique_layer_name_text.replace(/\W/g, '')).remove();
                     }
                 });
                 map.on('overlayadd', function (eventLayer) {

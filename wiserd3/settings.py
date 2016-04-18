@@ -302,3 +302,24 @@ try:
     from wiserd3.settings_local import *
 except ImportError:
     pass
+
+try:
+    uid_path = os.path.join(BASE_DIR, './uids')
+    if os.path.exists(uid_path):
+        for uid_file in os.listdir(uid_path):
+            if uid_file.endswith('.py') and not uid_file.startswith('list_'):
+
+                print os.path.abspath(uid_file)
+                with open(os.path.join(uid_path, uid_file)) as var_file:
+                    var = var_file.read()
+                    var_read = literal_eval(var)
+                    # print var_read
+
+                    values = {
+                        'description': uid_file.replace('.py', ''),
+                        'item_list': var_read
+                    }
+
+                    NAW_SEARCH_LAYER_UUIDS.append(values)
+except Exception as e:
+    print e

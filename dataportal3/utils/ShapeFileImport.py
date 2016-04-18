@@ -615,11 +615,24 @@ if __name__ == "__main__":
                 cat_list.append(value)
 
             print pprint.pformat(cat_list)
-            with open('uid_descriptions_cats.py', 'w') as uid_desc_file1:
+
+            if not os.path.exists('./uids'):
+                os.makedirs('./uids')
+            uid_dir = './uids'
+
+            with open(
+                os.path.join(
+                    uid_dir,
+                    'categories_{}.py'.format(str(uuid.uuid4()).replace('-', '_'))
+                ), 'w') as uid_desc_file1:
                 uid_desc_file1.write(pprint.pformat(cat_list))
 
             print pprint.pformat(search_uuids)
-            with open('uid_descriptions.py', 'w') as uid_desc_file2:
+            with open(
+                    os.path.join(
+                    uid_dir,
+                    'list_{}.py'.format(str(uuid.uuid4()).replace('-', '_'))
+                ), 'w') as uid_desc_file2:
                 uid_desc_file2.write(pprint.pformat(search_uuids))
 
         print a

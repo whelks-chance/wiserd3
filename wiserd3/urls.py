@@ -17,6 +17,7 @@ from django.conf.urls import include, url, patterns
 from django.contrib import admin, auth
 from dataportal3 import views, urls as api_urls
 from old import views as old_views
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     url(r'^admin_tools/', include(admin.site.urls)),
@@ -103,8 +104,18 @@ urlpatterns = [
 
     url(r'^accounts/', include('allauth.urls'))
     # url('^', include('django.contrib.auth.urls'))
+
+    # url(r'^i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += patterns(
     'djcelery.views', url(r'^task/status/(?P<task_id>.+)/$', 'task_status', name='task-status')
+)
+
+urlpatterns += i18n_patterns(
+    url(r'^$', views.dashboard, name='home'),
+    url(r'^index', views.dashboard, name='index'),
+    # url(r'^$', views.naw_dashboard, name='naw_dashboard'),
+    url(r'^naw_dashboard', views.naw_dashboard, name='naw_dashboard'),
+    # url(r'^admin/', include(admin.site.urls)),
 )

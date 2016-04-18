@@ -73,6 +73,7 @@ DJANGO_HSTORE_GLOBAL_REGISTER = False
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -155,11 +156,23 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale/'),
+)
+print LOCALE_PATHS
+
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = False
+
+from django.utils.translation import ugettext_lazy as _
+LANGUAGES = (
+    ('en', _('English')),
+    ('cy', _('Welsh')),
+)
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -310,7 +323,7 @@ try:
         for uid_file in os.listdir(uid_path):
             if uid_file.endswith('.py') and not uid_file.startswith('list_'):
 
-                print os.path.abspath(uid_file)
+                # print os.path.abspath(uid_file)
                 with open(os.path.join(uid_path, uid_file)) as var_file:
                     var = var_file.read()
                     var_read = literal_eval(var)

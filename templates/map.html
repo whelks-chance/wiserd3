@@ -179,10 +179,10 @@
     {% endif %}
 
     <li>
-        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Map layers<span class="fa arrow"></span></a>
+        <a href="#"><i class="fa fa-sitemap fa-fw"></i> {% trans 'Map layers' %}<span class="fa arrow"></span></a>
         <ul class="nav nav-ul nav-second-level">
             <li>
-                <a id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>
+                <a id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> {% trans 'NomisAPI Data' %}</a>
 
                 {#                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>#}
                 {#                <ul aria-expanded="false" class="nav nav-third-level collapse">#}
@@ -192,7 +192,7 @@
                 {#                </ul>#}
             </li>
             <li>
-                <a href="#"> Welsh Government Mapping Service<span class="fa arrow"></span></a>
+                <a href="#"> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>
                 <ul class="nav nav-ul nav-third-level scrollable_ul">
                     {% for wms_url, wms_layer_set in wms_layers.items %}
                         {% for wms_layer in wms_layer_set %}
@@ -207,7 +207,7 @@
 
             {% if not naw %}
                 <li>
-                    <a href="#"> WISERD Knowing Localities Research<span class="fa arrow"></span></a>
+                    <a href="#"> {% trans 'WISERD Knowing Localities Research' %}<span class="fa arrow"></span></a>
                     <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
                         {% for upload_layer in upload_layers %}
                             <li>
@@ -490,7 +490,7 @@
                     if (props.DATA_TITLE) {
                         info_text += '<h3>' + props.DATA_TITLE + '</h3>';
                     } else {
-                        info_text += '<h3>Region Data</h3>';
+                        info_text += '<h3>{% trans 'Region Data' %}</h3>';
                     }
                     if (props.NAME) {
                         info_text += '<h4>' + props.NAME + '</h4>';
@@ -536,28 +536,6 @@
                                 strings += get_sidebar_text(props, item);
                             }
 
-                            {#                            if (props.STRING_DATA[item]['value']) {#}
-                            {#  is it a link? #}
-                            {#                                if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('http://') == 0) {#}
-                            {#                                    if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('.jpg') > -1 ||#}
-                            {#                                            props.STRING_DATA[item]['value'].toLowerCase().indexOf('.png') > -1) {#}
-                            {#  it's an image? #}
-                            {#                                        strings += '<p><b>' + props.STRING_DATA[item]['title']#}
-                            {#                                                + '</b></p><img src="' + props.STRING_DATA[item]['value'] + '">';#}
-                            {#                                    } else {#}
-                            {#                                        It's a hyperlink #}
-                            {#                                        strings += '<p><b>' + props.STRING_DATA[item]['title']#}
-                            {#                                                + '</b></p><a target="_blank" href="'#}
-                            {#                                                + props.STRING_DATA[item]['value']#}
-                            {#                                                + '">' + props.STRING_DATA[item]['title'] + '</a>';#}
-                            {#                                    }#}
-                            {#                                }#}
-                            {#                                else {#}
-                            {#                                    strings += '<p><b>' + props.STRING_DATA[item]['title']#}
-                            {#                                            + '</b>:' + props.STRING_DATA[item]['value'] + '</p>';#}
-                            {#                                    console.log(props.STRING_DATA[item]['value']);#}
-                            {#                                }#}
-                            {#                            }#}
                         }
 
                         for (var group in groups) {
@@ -614,7 +592,7 @@
                     else {
                         strings += '<p><b>' + props.STRING_DATA[item]['title']
                                 + '</b>:' + props.STRING_DATA[item]['value'] + '</p>';
-                        console.log(props.STRING_DATA[item]['value']);
+                        {#                        console.log(props.STRING_DATA[item]['value']);#}
                     }
                 }
                 return strings;
@@ -680,6 +658,7 @@
                 return hashStringToColor(string_value)
             }
 
+            {#        TODO check what this is returning #}
             function getColor(d, feature_data, chroma_scale) {
 
                 if (chroma_scale) {
@@ -715,7 +694,7 @@
             {#            get_geojson_layer('survey', JSON.parse('{{ surveys|safe }}'));#}
 
             function get_geojson_layer(layer_type, layer_names){
-                waitingDialog.show('Fetching map layer ...');
+                waitingDialog.show('{% trans 'Fetching map layer...' %}');
 
                 var ajax_url = "{% url 'get_geojson' %}";
 
@@ -839,7 +818,7 @@
                         }
                     },
                     error: function() {
-                        alert('Sorry, an error occurred. Please try again, or report it.')
+                        alert('{% trans 'Sorry, an error occurred. Please try again, or report it.' %}')
                     },
                     complete: function() {
                         waitingDialog.hide();
@@ -1416,7 +1395,7 @@
                 },
                 modal: true,
                 buttons: {
-                    "Show New Layer": function() {
+                    "{% trans 'Show New Layer' %}": function() {
                         if ($("#bintype").val() != '') {
                             if ($("#binno").val() != '') {
 
@@ -1471,24 +1450,22 @@
                                     );
                                 }catch (e) {
                                     if (e == 'suppressed_data') {
-                                        alert('Sorry, an error occurred. \n\n' +
-                                                'It looks like your query was too specific, for example, ' +
-                                                'when data are suppressed due to statistical confidentiality considerations. ' +
-                                                'In this case, try a larger area to map data for.')
+                                        alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
+                                                "{% trans 'It looks like your query was too specific, for example, when data are suppressed due to statistical confidentiality considerations. \n\n' %}" +
+                                                "{% trans 'In this case, try a larger area to map data for.' %}")
                                     }
                                     else if (e == 'feature_data_0') {
-                                        alert('Sorry, an error occurred. \n\n' +
-                                                'No data could be found for this query. \n\n' +
-                                                'Please try again, or report it.')
+                                        alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
+                                                "{% trans 'No data could be found for this query. \n\n' %}" +
+                                                "{% trans 'Please try again, or report it.' %}")
                                     } else {
 
                                         console.log(e);
-                                        alert('Sorry, an error occurred. \n\n' +
-                                                'Unfortunately, some types of dataset are incompatible with this service. \n\n' +
-                                                'Try being more specific with the dataset variable you are trying to map. \n\n' +
-                                                'Or, it may be the case that your query was too specific, for example, ' +
-                                                'when data are suppressed due to statistical confidentiality considerations. ' +
-                                                'In this case, try a larger area to map data for.')
+                                        alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
+                                                "{% trans 'Unfortunately, some types of dataset are incompatible with this service. \n\n' %}" +
+                                                "{% trans 'Try being more specific with the dataset variable you are trying to map. \n\n' %}" +
+                                                "{% trans 'Or, it may be the case that your query was too specific. For example, when data are suppressed due to statistical confidentiality considerations. ' %}" +
+                                                "{% trans 'In this case, try a larger area to map data for.' %}")
                                     }
                                 }
                                 $(this).dialog("close");
@@ -1520,7 +1497,7 @@
 
             $("#remote_search_btn").click(function(e){
                 var search_term = $('#remote_search_term').val();
-                waitingDialog.show('Searching NomisWeb ...');
+                waitingDialog.show('{% trans 'Searching NomisWeb...' %}');
 
                 $.ajax({
                     url: "{% url 'data_api' %}",
@@ -1539,7 +1516,7 @@
                         dataset_radio.find('label').remove().end();
 
                         if (data['success'] == false) {
-                            alert('Sorry, an error occurred. Please try again, or report it.\n\n' + data['message'])
+                            alert('{% trans 'Sorry, an error occurred. Please try again, or report it.\n\n' %}' + data['message'])
                         } else {
 
                             for (var rd_radio in data['datasets']) {
@@ -1566,8 +1543,8 @@
                             });
 
                             if (data['datasets'].length == 0) {
-                                alert('Sorry, no results were found for that search.\n' +
-                                        'Please refine the search terms and try again');
+                                alert("{% trans 'Sorry, no results were found for that search.\n' %}" +
+                                       "{% trans 'Please refine the search terms and try again' %}");
                             } else {
                                 dataset_radio.find('input[type=radio]').change(function () {
                                     $('#add_to_map_dialog_btn').button('enable');
@@ -1576,7 +1553,7 @@
                         }
                     },
                     error: function() {
-                        alert('Sorry, an error occurred. Please try again, or report it.')
+                        alert('{% trans 'Sorry, an error occurred. Please try again, or report it.\n\n' %}');
                     },
                     complete: function() {
                         waitingDialog.hide();
@@ -1600,7 +1577,7 @@
                         text: 'Add to Map',
                         disabled: true,
                         click: function() {
-                            waitingDialog.show('Inspecting dataset ...');
+                            waitingDialog.show('{% trans 'Inspecting dataset ...' %}');
 
                             $( this ).dialog( "close" );
                             var dataset_id = $("#dataset_radio").find(":radio:checked").attr('id');
@@ -1664,7 +1641,7 @@
 
                                 },
                                 error: function() {
-                                    alert('Sorry, an error occurred. Please try again, or report it.')
+                                    alert('{% trans 'Sorry, an error occurred. Please try again, or report it.\n\n' %}');
                                 },
                                 complete: function() {
                                     waitingDialog.hide();
@@ -1695,8 +1672,8 @@
                 width: map_div.width()/2,
                 modal: true,
                 buttons: {
-                    "Render to Map": function() {
-                        waitingDialog.show('Fetching map layers ...');
+                    "{% trans 'Render to Map' %}": function() {
+                        waitingDialog.show('{% trans 'Fetching map layer...' %}');
 
                         $( this ).dialog( "close" );
 
@@ -1791,7 +1768,7 @@
                                 map_canvas.height - right_overlay_canvas.height
                         );
 
-                        var canvas_data_url = map_canvas.toDataURL("image/jpeg", 0.5);
+                        var canvas_data_url = map_canvas.toDataURL("image/png", 0.5);
 
                         window.open(canvas_data_url, '_blank');
                         {#                                                                $('#screenshot_result').append(map_canvas);#}
@@ -1882,8 +1859,8 @@
 
                 },
                 buttons: {
-                    "Render to Map": function() {
-                        waitingDialog.show('Fetching map layers ...');
+                    "{% trans 'Render to Map' %}": function() {
+                        waitingDialog.show('{% trans 'Fetching map layer...' %}');
                         $( this ).dialog( "close" );
 
                         var local_available_data_selection = $('#local_available_data_radio').find(":radio:checked").attr('value');
@@ -1999,7 +1976,7 @@
             }
 
             function do_layer_single_uuid(uuid, search_layer_topojson_url) {
-                waitingDialog.show('Fetching map layer ...');
+                waitingDialog.show('{% trans 'Fetching map layer...' %}');
 
                 $.ajax({
                     url: search_layer_topojson_url,
@@ -2106,7 +2083,7 @@
         </div>
     </div>
 
-    <div id="chloropleth_option_form" title="Chloropleth options">
+    <div id="chloropleth_option_form" title="{% trans 'Chloropleth options' %}">
         <table>
             <tr>
                 <td>
@@ -2115,16 +2092,16 @@
                 <td>
                     <div class="controls">
                         <select name="bintype" id="bintype" class="form-control input-block-level tab_data_input">
-                            <option value="e">Equal size categories</option>
-                            <option value="q">Quantiles</option>
-                            <option value="k" selected="selected">K-Means</option>
+                            <option value="e">{% trans 'Equal size categories' %}</option>
+                            <option value="q">{% trans 'Quantiles' %}</option>
+                            <option value="k" selected="selected">{% trans 'K-Means' %}</option>
                         </select>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="binno" class="control-label">Number of Categories</label>
+                    <label for="binno" class="control-label">{% trans 'Number of Categories' %}</label>
                 </td>
                 <td>
                     <select name="binno" id="binno" class="form-control input-block-leveltab_data_input">
@@ -2141,21 +2118,21 @@
             </tr>
             <tr>
                 <td>
-                    <label for="colorpicker" class="control-label">Choropleth colour scheme</label>
+                    <label for="colorpicker" class="control-label">{% trans 'Choropleth colour scheme' %}</label>
                 </td>
                 <td>
                     <select name="colorpicker" id="colorpicker" class="form-control input-block-level tab_data_input">
-                        <option value="OrRd">Orange - Red</option>
-                        <option value="RdYlBu">Red - Yellow - Blue</option>
-                        <option value="YlGnBu" selected="selected">Yellow - Green - Blue</option>
-                        <option value="Spectral">Spectral</option>
-                        <option value="b_w">Greyscale</option>
+                        <option value="OrRd">{% trans 'Orange - Red' %}</option>
+                        <option value="RdYlBu">{% trans 'Red - Yellow - Blue' %}</option>
+                        <option value="YlGnBu" selected="selected">{% trans 'Yellow - Green - Blue' %}</option>
+                        <option value="Spectral">{% trans 'Spectral' %}</option>
+                        <option value="b_w">{% trans 'Greyscale' %}</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="layer_name_text_entry" class="control-label">Layer Name</label>
+                    <label for="layer_name_text_entry" class="control-label">{% trans 'Layer Name' %}</label>
                 </td>
                 <td>
                     <input class="form-control input-block-level tab_data_input"
@@ -2167,11 +2144,11 @@
     </div>
 
 
-    <div id="dataset_define_vars_form" title="Dataset Variables">
+    <div id="dataset_define_vars_form" title="{% trans 'Dataset Variables' %}">
         <div id="dataset_title"></div>
         <div id="data_cell_radio"></div>
 
-        <div>Geography</div>
+        <div>{% trans 'Geography' %}</div>
         <div id="topojson_geography_radio" class="controls input-block-level tab_data_input">
             {% for geography in topojson_geographies %}
                 <div>
@@ -2183,26 +2160,26 @@
         </div>
     </div>
 
-    <div id="local_dataset_define_vars_form" title="Dataset Variables">
+    <div id="local_dataset_define_vars_form" title="{% trans 'Dataset Variables' %}">
         <div id="local_dataset_title"></div>
         <div id="local_data_cell_radio"></div>
 
-        <div>Geography</div>
+        <div>{% trans 'Geography' %}</div>
         <div id="topojson_geography_radio" class="controls input-block-level tab_data_input">
 
         </div>
     </div>
 
 
-    <div id="search-remote-form" title="Search Remote">
+    <div id="search-remote-form" title="{% trans 'Search Remote' %}">
 
         <div class="input-group custom-search-form">
-            <label for="remote_search_term" class="control-label">Search remote</label>
+            <label for="remote_search_term" class="control-label">{% trans 'Search Remote' %}</label>
         </div>
 
         <div class="input-group custom-search-form">
             <input type="text" id="remote_search_term" name="remote_search_term"
-                   class="form-control" placeholder="Search..." name="search_terms">
+                   class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
                         <span class="input-group-btn">
                             <button id="remote_search_btn" class="btn btn-default" type="submit">
                                 <i class="fa fa-search"></i>

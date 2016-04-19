@@ -1,12 +1,13 @@
 {% extends "navigation.html" %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block content %}
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Welcome {{ user }}</h1>
-            <h2>Thank you for signing up to the WISERD DataPortal</h2>
+            <h1 class="page-header">{% trans 'Welcome ' %} {{ user }}</h1>
+            <h2>{% trans 'Thank you for signing up to the WISERD DataPortal' %}</h2>
         </div>
         {#        <div>#}
         {#            <p>#}
@@ -32,10 +33,10 @@
             <div class="col-lg-12 col-md-6">
                 <div class="alert alert-info alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <p>It looks like you have a valid National Assembley for Wales email address, but you haven't confirmed it in the email we sent you.</p>
-                    <p>Please follow the link in the email to gain access to the NAW Dashboard features.</p>
+                    <p>{% trans "It looks like you have a valid National Assembley for Wales email address, but you haven't confirmed it in the email we sent you." %}</p>
+                    <p>{% trans 'Please follow the link in the email to gain access to the NAW Dashboard features.' %}</p>
                     <p>
-                        If you haven't received a confirmation email <a href="{% url 'send_email_confirmation' %}" class="alert-link">Click here</a>
+                        {% trans "If you haven't received a confirmation email" %} <a href="{% url 'send_email_confirmation' %}" class="alert-link"> {% trans 'Click here' %}</a>
                     </p>
                 </div>
             </div>
@@ -52,11 +53,11 @@
                 <div class="row">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <h3>Please tell us more about yourself</h3>
+                            <h3>{% trans 'Please tell us more about yourself' %}</h3>
                         </div>
                         <div class="panel-body">
                             <div class="control-group">
-                                <label for="text_input_institution" class="control-label col-sm-4">Institution/ Organisation</label>
+                                <label for="text_input_institution" class="control-label col-sm-4">{% trans 'Institution/ Organisation' %}</label>
                                 <div class="controls">
                 <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="institution" placeholder="Tell us where you're from"

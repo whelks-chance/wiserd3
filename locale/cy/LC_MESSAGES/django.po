@@ -3,11 +3,10 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 19:44+0000\n"
+"POT-Creation-Date: 2016-04-19 22:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -321,8 +320,7 @@ msgid "Signup"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/account/signup.html:8 templates/account/signup.html.py:53
-#: templates/socialaccount/signup.html:8
-#: templates/socialaccount/signup.html:19
+#: templates/socialaccount/signup.html:8 templates/socialaccount/signup.html:19
 msgid "Sign Up"
 msgstr "AAAAAAaaaahhhh"
 
@@ -399,6 +397,7 @@ msgid "Click here to navigate to the NAW dashboard"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/dashboard.html:77 templates/naw_dashboard.html:73
+#: templates/profile.html:39
 msgid "Profile"
 msgstr "AAAAAAaaaahhhh"
 
@@ -453,8 +452,6 @@ msgid "View Blog posts"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/dashboard.html:256
-#, fuzzy
-#| msgid "WISERD Homepage"
 msgid "WISERD Blog"
 msgstr "AAAAAAaaaahhhh"
 
@@ -476,8 +473,6 @@ msgid "National Assembly for Wales"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/events.html:9
-#, fuzzy
-#| msgid "Event Presentation Files"
 msgid "Events and Presentations"
 msgstr "AAAAAAaaaahhhh"
 
@@ -510,8 +505,6 @@ msgid "Uploaded Files"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/help_support.html:9
-#, fuzzy
-#| msgid "About, Help and Support"
 msgid "Help and Support"
 msgstr "AAAAAAaaaahhhh"
 
@@ -545,8 +538,6 @@ msgid "Sam Jones, Research Technician : JonesS97 (at) cardiff.ac.uk"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/help_support.html:30
-#, fuzzy
-#| msgid "Change Password"
 msgid "Change Log"
 msgstr "AAAAAAaaaahhhh"
 
@@ -763,8 +754,6 @@ msgid "No data could be found for this query. \\n\\n"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/map.html:1427
-#, fuzzy
-#| msgid "Sorry, an error occurred. Please try again, or report it."
 msgid "Please try again, or report it."
 msgstr "AAAAAAaaaahhhh"
 
@@ -781,24 +770,16 @@ msgid ""
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/map.html:1434
-#, fuzzy
-#| msgid ""
-#| "It looks like your query was too specific, for example, when data are "
-#| "suppressed due to statistical confidentiality considerations. \\n\\n"
 msgid ""
 "Or, it may be the case that your query was too specific. For example, when "
 "data are suppressed due to statistical confidentiality considerations. "
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/map.html:1467
-#, fuzzy
-#| msgid "Search..."
 msgid "Searching NomisWeb..."
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/map.html:1486 templates/map.html.py:1523 templates/map.html:1611
-#, fuzzy
-#| msgid "Sorry, an error occurred. Please try again, or report it."
 msgid "Sorry, an error occurred. Please try again, or report it.\\n\\n"
 msgstr "AAAAAAaaaahhhh"
 
@@ -811,8 +792,6 @@ msgid "Please refine the search terms and try again"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/map.html:1544
-#, fuzzy
-#| msgid "Render to Map"
 msgid "Add to Map"
 msgstr "AAAAAAaaaahhhh"
 
@@ -948,11 +927,13 @@ msgstr "AAAAAAaaaahhhh"
 msgid "Spatial Results"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/navigation.html:348
+#: templates/navigation.html:348 templates/search.html:127
 msgid "Surveys"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/navigation.html:361
+#: templates/navigation.html:361 templates/search.html:124
+#: templates/search.html.py:136 templates/survey_detail.html:314
+#: templates/survey_detail.html.py:329
 msgid "Questions"
 msgstr "AAAAAAaaaahhhh"
 
@@ -965,8 +946,6 @@ msgid "Navigate to WISERD HOME"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/naw_dashboard.html:109
-#, fuzzy
-#| msgid "Dashboard"
 msgid "WISERD Dashboard"
 msgstr "AAAAAAaaaahhhh"
 
@@ -974,28 +953,177 @@ msgstr "AAAAAAaaaahhhh"
 msgid "OpenID Sign In"
 msgstr "AAAAAAaaaahhhh"
 
+#: templates/profile.html:65 templates/welcome.html:60
+msgid "Institution/ Organisation"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/profile.html:68
+msgid "Tell us where you're from"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/profile.html:74
+msgid "Area of Work"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/profile.html:78
+msgid "What are your research or professional interests in this service?"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/profile.html:84
+msgid "Sector"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/profile.html:88
+msgid "Sector?"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/profile.html:94 templates/profile.html.py:98
+msgid "Comments"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/profile.html:103
+msgid "Edit details"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/profile.html:113
+msgid "Unnamed"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:18
+msgid "Qualitative Record"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:23
+msgid "Raw Text"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:24 templates/search.html:221
+msgid "Pages"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:25
+msgid "Statistics"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:26 templates/search_data.html:176
+msgid "Errors"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:27 templates/qual_detail.html.py:36
+#: templates/survey_detail.html:17 templates/survey_detail.html.py:50
+msgid "Identifier"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:31 templates/qual_detail.html.py:234
+#: templates/qual_detail.html:245 templates/survey_detail.html:45
+#: templates/survey_detail.html.py:310 templates/survey_detail.html:321
+msgid "Dublin Core"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:37 templates/search.html:184
+#: templates/search.html.py:219 templates/survey_detail.html:51
+msgid "Title"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:38 templates/survey_detail.html:52
+msgid "Creator"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:39 templates/survey_detail.html:53
+msgid "Subject"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:40 templates/search.html:220
+#: templates/survey_detail.html:54
+msgid "Description"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:41 templates/survey_detail.html:55
+msgid "Publisher"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:42 templates/survey_detail.html:56
+msgid "Contributor"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:43 templates/search.html:152
+#: templates/search.html.py:187 templates/search.html:223
+#: templates/survey_detail.html:57
+msgid "Date"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:44 templates/question_detail.html:264
+#: templates/survey_detail.html:58 templates/survey_detail.html.py:338
+msgid "Type"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:45 templates/survey_detail.html:59
+msgid "Format"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:46 templates/survey_detail.html:60
+msgid "Source"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:47 templates/settings.html:45
+#: templates/survey_detail.html:61
+msgid "Language"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:48 templates/survey_detail.html:62
+msgid "Relation"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:49 templates/survey_detail.html:63
+msgid "Coverage"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:50 templates/survey_detail.html:64
+msgid "Rights"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:51 templates/survey_detail.html:37
+#: templates/survey_detail.html.py:65
+msgid "User ID"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:52 templates/survey_detail.html:38
+#: templates/survey_detail.html.py:66
+msgid "Created"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:219
+msgid "Qualitative Record Details for : "
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:228
+msgid "Qualitative Transcript Details"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:236 templates/qual_detail.html.py:249
+msgid "Qualitative Transcript"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/qual_detail.html:238 templates/qual_detail.html.py:253
+msgid "Transcript Coverage"
+msgstr "AAAAAAaaaahhhh"
+
 #: templates/question_detail.html:12 templates/question_detail.html.py:236
-#: templates/question_detail.html:247
-#, fuzzy
-#| msgid "Questions"
+#: templates/question_detail.html:247 templates/search.html:33
+#: templates/survey_detail.html:70
 msgid "Question"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/question_detail.html:16
-#, fuzzy
-#| msgid "Questions"
 msgid "Question ID"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/question_detail.html:17
-#, fuzzy
-#| msgid "Questions"
+#: templates/question_detail.html:17 templates/search.html:151
 msgid "Question Text"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/question_detail.html:18
-#, fuzzy
-#| msgid "Questions"
+#: templates/question_detail.html:18 templates/search.html:150
+#: templates/survey_detail.html:336
 msgid "Question Number"
 msgstr "AAAAAAaaaahhhh"
 
@@ -1016,8 +1144,6 @@ msgid "Sub Of"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/question_detail.html:23
-#, fuzzy
-#| msgid "Questions"
 msgid "Question Type"
 msgstr "AAAAAAaaaahhhh"
 
@@ -1025,9 +1151,8 @@ msgstr "AAAAAAaaaahhhh"
 msgid "Variable ID"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/question_detail.html:25
-#, fuzzy
-#| msgid "Note"
+#: templates/question_detail.html:25 templates/survey_detail.html:36
+#: templates/survey_detail.html.py:339
 msgid "Notes"
 msgstr "AAAAAAaaaahhhh"
 
@@ -1039,14 +1164,12 @@ msgstr "AAAAAAaaaahhhh"
 msgid "created"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/question_detail.html:28
+#: templates/question_detail.html:28 templates/question_detail.html.py:47
 msgid "Last Edit"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/question_detail.html:33 templates/question_detail.html.py:238
 #: templates/question_detail.html:251
-#, fuzzy
-#| msgid "Text Results"
 msgid "Results"
 msgstr "AAAAAAaaaahhhh"
 
@@ -1067,8 +1190,6 @@ msgid "Table IDs"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/question_detail.html:42
-#, fuzzy
-#| msgid "Dataset Variables"
 msgid "Computed Variable"
 msgstr "AAAAAAaaaahhhh"
 
@@ -1084,9 +1205,7 @@ msgstr "AAAAAAaaaahhhh"
 msgid "Route Type"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/question_detail.html:84
-#, fuzzy
-#| msgid "Surveys"
+#: templates/question_detail.html:84 templates/search.html:155
 msgid "View Survey"
 msgstr "AAAAAAaaaahhhh"
 
@@ -1095,8 +1214,6 @@ msgid "Question Details for: "
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/question_detail.html:230
-#, fuzzy
-#| msgid "Questions"
 msgid "Question Metadata"
 msgstr "AAAAAAaaaahhhh"
 
@@ -1105,27 +1222,71 @@ msgid "Results Table"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/question_detail.html:262
-#, fuzzy
-#| msgid "Questions"
 msgid "QuestionID"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/question_detail.html:263
-#, fuzzy
-#| msgid "Questions"
+#: templates/question_detail.html:263 templates/survey_detail.html:337
 msgid "QuestionText"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/question_detail.html:264
-msgid "Type"
+#: templates/search.html:41 templates/survey_detail.html:312
+#: templates/survey_detail.html.py:325
+msgid "Survey"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:101 templates/search.html.py:189
+#: templates/search.html:225 templates/survey_detail.html:191
+#: templates/survey_detail.html.py:342
+msgid "View"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:115
+msgid "Search Results"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:121
+msgid "Jump to:"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:130
+msgid "Qualitative Records"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:140 templates/search.html.py:175
+#: templates/search.html:210 templates/search.html.py:248
+msgid "Top"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:149 templates/survey_detail.html:18
+msgid "Survey Title"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:154
+msgid "View Question"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:171
+msgid "Survey Results"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:185
+msgid "Frequency"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:186
+msgid "Collection Method"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:206
+msgid "Qualitative Results"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search.html:222
+msgid "Tier"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/search_data.html:116
 msgid "Remote Data Search"
-msgstr "AAAAAAaaaahhhh"
-
-#: templates/search_data.html:120
-msgid "Dataset Download Link"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/search_data.html:122
@@ -1137,8 +1298,6 @@ msgid "Dataset ID"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/search_data.html:133
-#, fuzzy
-#| msgid "Route Type"
 msgid "Dataset Type"
 msgstr "AAAAAAaaaahhhh"
 
@@ -1147,17 +1306,11 @@ msgid "Search Query Options"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/search_data.html:153
-#, fuzzy
-#| msgid "Mapping tools"
 msgid "Mapping colours"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/search_data.html:165
 msgid "Unique Identifier for this search"
-msgstr "AAAAAAaaaahhhh"
-
-#: templates/search_data.html:176
-msgid "Errors"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/search_data.html:195
@@ -1170,10 +1323,6 @@ msgstr "AAAAAAaaaahhhh"
 
 #: templates/search_data.html:202
 msgid "Toggle All/None"
-msgstr "AAAAAAaaaahhhh"
-
-#: templates/settings.html:45
-msgid "Language"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/settings.html:48
@@ -1305,6 +1454,134 @@ msgstr ""
 msgid "Sign in with Google"
 msgstr "AAAAAAaaaahhhh"
 
+#: templates/survey_detail.html:16
+msgid "Survey ID"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:19
+msgid "Data Collector"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:20
+msgid "Collection Start Date"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:21
+msgid "Collection End Date"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:22
+msgid "Method of Collection Description"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:23
+msgid "Sampling Procedure"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:24
+msgid "Collection Situation"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:25
+msgid "Survey Frequency"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:26
+msgid "Survey Start Date"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:27
+msgid "Survey End Date"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:28
+msgid "DES Weighting"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:29
+msgid "Sample Size"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:30
+msgid "Response Rate"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:31
+msgid "Description Of Sampling Error"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:32
+msgid "Data Product"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:33
+msgid "Data Product ID"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:34
+msgid "Location"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:35
+msgid "URL"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:39 templates/survey_detail.html.py:67
+msgid "Updated"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:40
+msgid "Long"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:41
+msgid "Short Title"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:42
+msgid "Spatial Data"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:170
+msgid "Previous"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:181
+msgid "Parent"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:284
+msgid "Survey Details for : "
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:293
+msgid ""
+"You have access to this {{ access_allow.document_type }} because you are a "
+"member of the \"{{ access.survey_collection_user_group_name }}\" group."
+msgstr ""
+
+#: templates/survey_detail.html:294
+msgid ""
+"Please be aware that the information for \"{{ access."
+"survey_collection_name}}\" has restricted access."
+msgstr ""
+
+#: templates/survey_detail.html:295
+msgid "Contact the WISERD DataPortal admin team for more information"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:304
+msgid "Survey Metadata"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:340
+msgid "From"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/survey_detail.html:341
+msgid "SubOf"
+msgstr "AAAAAAaaaahhhh"
+
 #: templates/welcome.html:9
 msgid "Welcome "
 msgstr "AAAAAAaaaahhhh"
@@ -1337,10 +1614,6 @@ msgstr "AAAAAAaaaahhhh"
 msgid "Please tell us more about yourself"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/welcome.html:60
-msgid "Institution/ Organisation"
-msgstr "AAAAAAaaaahhhh"
-
 #: wiserd3/settings.py:172
 msgid "English"
 msgstr "AAAAAAaaaahhhh"
@@ -1348,3 +1621,6 @@ msgstr "AAAAAAaaaahhhh"
 #: wiserd3/settings.py:173
 msgid "Welsh"
 msgstr "AAAAAAaaaahhhh"
+
+#~ msgid "Dataset Download Link"
+#~ msgstr "AAAAAAaaaahhhh"

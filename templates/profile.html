@@ -1,5 +1,6 @@
 {% extends "navigation.html" %}
-{% load staticfiles %}
+{% load staticfiles
+{% load i18n %}
 
 {% block content %}
 
@@ -35,7 +36,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Profile</h1>
+            <h1 class="page-header">{% trans 'Profile' %}</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -61,45 +62,45 @@
             <div class="panel-body">
 
                 <div class="control-group">
-                    <label for="text_input_institution" class="control-label col-sm-4">Institution/ Organisation</label>
+                    <label for="text_input_institution" class="control-label col-sm-4">{% trans 'Institution/ Organisation' %}</label>
                     <div class="controls">
                 <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
-                          name="institution" placeholder="Tell us where you're from"
+                          name="institution" placeholder="{% trans "Tell us where you're from" %}"
                           id="text_input_institution" size="20">{{ userr.institution }}</textarea>
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label for="text_input_specialty" class="control-label col-sm-4">Area of Work</label>
+                    <label for="text_input_specialty" class="control-label col-sm-4">{% trans 'Area of Work' %}</label>
                     <div class="controls">
                 <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="specialty"
-                          placeholder="What are your research or professional interests in this service?"
+                          placeholder="{% trans 'What are your research or professional interests in this service?' %}"
                           id="text_input_specialty" size="20">{{ userr.specialty }}</textarea>
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label for="text_input_sector" class="control-label col-sm-4">Sector</label>
+                    <label for="text_input_sector" class="control-label col-sm-4">{% trans 'Sector' %}</label>
                     <div class="controls">
                 <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="sector"
-                          placeholder="Sector?"
+                          placeholder="{% trans 'Sector?' %}"
                           id="text_input_sector" size="20">{{ userr.sector }}</textarea>
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label for="text_input_comments" class="control-label col-sm-4">Comments</label>
+                    <label for="text_input_comments" class="control-label col-sm-4">{% trans 'Comments' %}</label>
                     <div class="controls">
                 <textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="comments"
-                          placeholder="Comments"
+                          placeholder="{% trans 'Comments' %}"
                           id="text_input_comments" size="20">{{ userr.comments }}</textarea>
                     </div>
                 </div>
 
-                <a href="{% url 'welcome' %}"><div class="btn btn-info pull-right">Edit details</div></a>
+                <a href="{% url 'welcome' %}"><div class="btn btn-info pull-right">{% trans 'Edit details' %}</div></a>
             </div>
         </div>
     </div>
@@ -109,7 +110,7 @@
             {% for nomis_layer in nomis_layers %}
                 {% if nomis_layer.uuid %}
                     <a target="_blank" href="{% url 'search_data' nomis_layer.uuid %}" class="list-group-item"><i class="fa fa-map-o fa-fw"></i>
-                        {% if nomis_layer.name %}{{ nomis_layer.name }}{% else %}Unnamed{% endif %} - {{ nomis_layer.datetime }}
+                        {% if nomis_layer.name %}{{ nomis_layer.name }}{% else %}{% trans 'Unnamed' %}{% endif %} - {{ nomis_layer.datetime }}
                     </a>
                 {% endif %}
             {% endfor %}

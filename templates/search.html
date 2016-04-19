@@ -1,5 +1,6 @@
 {% extends "navigation.html" %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block extra_head %}
 
@@ -29,7 +30,7 @@
                         "data": 'qid',
                         "render": function ( data, type, full, meta ) {
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
-                                    "href='/question/" + data.trim() + "' class='btn btn-success view_question'>Question</a>";
+                                    "href='/question/" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Question' %}</a>";
                         }
                     },
                     {
@@ -37,7 +38,7 @@
                         "data": 'survey__identifier',
                         "render": function ( data, type, full, meta ) {
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
-                                    "href='/survey/" + data + "' class='btn btn-success view_survey'>Survey</a>";
+                                    "href='/survey/" + data + "' class='btn btn-success view_survey'>{% trans 'Survey' %}</a>";
                         }
                     }
                 ]
@@ -97,7 +98,7 @@
                         "data": 'identifier',
                         "render": function ( data, type, full, meta ) {
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
-                                    "href='/qual_transcript/" + data.trim() + "' class='btn btn-success view_question'>View</a>";
+                                    "href='/qual_transcript/" + data.trim() + "' class='btn btn-success view_question'>{% trans 'View' %}</a>";
                         }
                     }
                 ]
@@ -111,32 +112,32 @@
 
 {% block content %}
     <div id="table_nav_row" class="row">
-        <h1>Search Results</h1>
+        <h1>{% trans 'Search Results' %}</h1>
     </div>
 
     <div class="row">
         <ul class="nav nav-pills">
             <li>
-                <p style="padding: 10px">Jump to:</p>
+                <p style="padding: 10px">{% trans 'Jump to:' %}</p>
             </li>
             <li>
-                <a class="btn btn-outline btn-default" href="#question_row">Questions</a>
+                <a class="btn btn-outline btn-default" href="#question_row">{% trans 'Questions' %}</a>
             </li>
             <li>
-                <a class="btn btn-outline btn-default" href="#survey_row">Surveys</a>
+                <a class="btn btn-outline btn-default" href="#survey_row">{% trans 'Surveys' %}</a>
             </li>
             <li>
-                <a class="btn btn-outline btn-default" href="#qual_row">Qualitative Records</a>
+                <a class="btn btn-outline btn-default" href="#qual_row">{% trans 'Qualitative Records' %}</a>
             </li>
         </ul>
     </div>
 
     <div id="question_row" class="row">
-        <h3>Questions</h3>
+        <h3>{% trans 'Questions' %}</h3>
 
         <a href="#table_nav_row" class="pull-right">
             <button class="btn btn-info btn-outline">
-                <i class="fa fa-arrow-circle-up"></i> Top
+                <i class="fa fa-arrow-circle-up"></i> {% trans 'Top' %}
             </button>
         </a>
 
@@ -145,13 +146,13 @@
                 <table class="table table-striped table-bordered table-hover" id="survey_questions_table">
                     <thead>
                     <tr>
-                        <th>Survey Title</th>
-                        <th>Question Number</th>
-                        <th>QuestionText</th>
-                        <th>Date</th>
+                        <th>{% trans 'Survey Title' %}</th>
+                        <th>{% trans 'Question Number' %}</th>
+                        <th>{% trans 'Question Text' %}</th>
+                        <th>{% trans 'Date' %}</th>
 
-                        <th>View Question</th>
-                        <th>View Survey</th>
+                        <th>{% trans 'View Question' %}</th>
+                        <th>{% trans 'View Survey' %}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -167,11 +168,11 @@
     </div>
 
     <div id="survey_row" class="row">
-        <h3>Survey Results</h3>
+        <h3>{% trans 'Survey Results' %}</h3>
 
 <a href="#table_nav_row" class="pull-right">
             <button class="btn btn-info btn-outline">
-                <i class="fa fa-arrow-circle-up"></i> Top
+                <i class="fa fa-arrow-circle-up"></i> {% trans 'Top' %}
             </button>
         </a>
 
@@ -180,12 +181,12 @@
                 <table class="table table-striped table-bordered table-hover" id="survey_table">
                     <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Frequency</th>
-                        <th>Collection Method</th>
-                        <th>Date</th>
+                        <th>{% trans 'Title' %}</th>
+                        <th>{% trans 'Frequency' %}</th>
+                        <th>{% trans 'Collection Method' %}</th>
+                        <th>{% trans 'Date' %}</th>
 
-                        <th>View</th>
+                        <th>{% trans 'View' %}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -202,11 +203,11 @@
 
 
     <div id="qual_row" class="row">
-        <h3>Qualitative Results</h3>
+        <h3>{% trans 'Qualitative Results' %}</h3>
 
         <a href="#table_nav_row" class="pull-right">
             <button class="btn btn-info btn-outline">
-                <i class="fa fa-arrow-circle-up"></i> Top
+                <i class="fa fa-arrow-circle-up"></i> {% trans 'Top' %}
             </button>
         </a>
 
@@ -215,13 +216,13 @@
                 <table class="table table-striped table-bordered table-hover" id="qual_table">
                     <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Pages</th>
-                        <th>Tier</th>
-                        <th>Date</th>
+                        <th>{% trans 'Title' %}</th>
+                        <th>{% trans 'Description' %}</th>
+                        <th>{% trans 'Pages' %}</th>
+                        <th>{% trans 'Tier' %}</th>
+                        <th>{% trans 'Date' %}</th>
 
-                        <th>View</th>
+                        <th>{% trans 'View' %}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -244,6 +245,6 @@
     </div>
 
     <p>
-        <a href="#table_nav_row" class="pull-right"><i class="fa fa-arrow-circle-up">  </i>Top</a>
+        <a href="#table_nav_row" class="pull-right"><i class="fa fa-arrow-circle-up">  </i>{% trans 'Top' %}</a>
     </p>
 {% endblock %}

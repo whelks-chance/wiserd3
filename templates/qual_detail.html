@@ -1,5 +1,6 @@
 {% extends "navigation.html" %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block extra_head %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
@@ -14,41 +15,41 @@
         var survey_description = {
             'tabs' : {
                 'survey': {
-                    'title': 'Qualitative Record',
+                    'title': '{% trans 'Qualitative Record' %}',
                     'style': 'form',
                     'url': "{% url 'qual_metadata' qual_id %}",
                     'columns': [],
                     'fields': [
-                        {'display': false, 'displayName': 'Raw Text', 'id': 'rawtext'},
-                        {'display': true, 'displayName': 'Pages', 'id': 'pages'},
-                        {'display': false, 'displayName': 'Statistics', 'id': 'stats'},
-                        {'display': false, 'displayName': 'Errors', 'id': 'errors'},
-                        {'display': true, 'displayName': 'Identifier', 'id': 'identifier'}
+                        {'display': false, 'displayName': '{% trans 'Raw Text' %}', 'id': 'rawtext'},
+                        {'display': true, 'displayName': '{% trans 'Pages' %}', 'id': 'pages'},
+                        {'display': false, 'displayName': '{% trans 'Statistics' %}', 'id': 'stats'},
+                        {'display': false, 'displayName': '{% trans 'Errors' %}', 'id': 'errors'},
+                        {'display': true, 'displayName': '{% trans 'Identifier' %}', 'id': 'identifier'}
                     ]
                 },
                 'dc' : {
-                    'title': 'Dublin Core',
+                    'title': '{% trans 'Dublin Core' %}',
                     'style': 'form',
                     'url': "{% url 'qual_dc_data' qual_id %}",
                     'columns': [],
                     'fields': [
-                        {'display': false, 'displayName': 'Identifier', 'id': 'identifier'},
-                        {'display': true, 'displayName': 'Title', 'id': 'title'},
-                        {'display': true, 'displayName': 'Creator', 'id': 'creator'},
-                        {'display': true, 'displayName': 'Subject', 'id': 'subject'},
-                        {'display': true, 'displayName': 'Description', 'id': 'description'},
-                        {'display': true, 'displayName': 'Publisher', 'id': 'publisher'},
-                        {'display': true, 'displayName': 'Contributor', 'id': 'contributor'},
-                        {'display': true, 'displayName': 'Date', 'id': 'date'},
-                        {'display': true, 'displayName': 'Type', 'id': 'type'},
-                        {'display': true, 'displayName': 'Format', 'id': 'format'},
-                        {'display': true, 'displayName': 'Source', 'id': 'source'},
-                        {'display': true, 'displayName': 'Language', 'id': 'language'},
-                        {'display': true, 'displayName': 'Relation', 'id': 'relation'},
-                        {'display': false, 'displayName': 'Coverage', 'id': 'coverage'},
-                        {'display': true, 'displayName': 'Rights', 'id': 'rights'},
-                        {'display': false, 'displayName': 'User ID', 'id': 'user_id'},
-                        {'display': true, 'displayName': 'Created', 'id': 'created'}
+                        {'display': false, 'displayName': '{% trans 'Identifier' %}', 'id': 'identifier'},
+                        {'display': true, 'displayName': '{% trans 'Title' %}', 'id': 'title'},
+                        {'display': true, 'displayName': '{% trans 'Creator' %}', 'id': 'creator'},
+                        {'display': true, 'displayName': '{% trans 'Subject' %}', 'id': 'subject'},
+                        {'display': true, 'displayName': '{% trans 'Description' %}', 'id': 'description'},
+                        {'display': true, 'displayName': '{% trans 'Publisher' %}', 'id': 'publisher'},
+                        {'display': true, 'displayName': '{% trans 'Contributor' %}', 'id': 'contributor'},
+                        {'display': true, 'displayName': '{% trans 'Date' %}', 'id': 'date'},
+                        {'display': true, 'displayName': '{% trans 'Type' %}', 'id': 'type'},
+                        {'display': true, 'displayName': '{% trans 'Format' %}', 'id': 'format'},
+                        {'display': true, 'displayName': '{% trans 'Source' %}', 'id': 'source'},
+                        {'display': true, 'displayName': '{% trans 'Language' %}', 'id': 'language'},
+                        {'display': true, 'displayName': '{% trans 'Relation' %}', 'id': 'relation'},
+                        {'display': false, 'displayName': '{% trans 'Coverage' %}', 'id': 'coverage'},
+                        {'display': true, 'displayName': '{% trans 'Rights' %}', 'id': 'rights'},
+                        {'display': false, 'displayName': '{% trans 'User ID' %}', 'id': 'user_id'},
+                        {'display': true, 'displayName': '{% trans 'Created' %}', 'id': 'created'}
                         {#                        {'display': true, 'displayName': 'Updated', 'id': 'updated'}#}
                     ]
                 }
@@ -215,7 +216,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header" id="survey_title_header">Qualitative Record Details for {{ qual_title }}</h1>
+            <h1 class="page-header" id="survey_title_header">{% trans 'Qualitative Record Details for : ' %} {{ qual_title }}</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -224,32 +225,32 @@
         <div class="col-lg-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    Qualitative Transcript Details
+                    {% trans 'Qualitative Transcript Details' %}
                 </div>
                 <!-- /.panel-heading -->
                 <div id="panel-body" class="panel-body">
                     <!-- Nav tabs -->
                     <ul class="nav nav-pills">
-                        <li><a href="#survey_dc_tab" data-toggle="tab">Dublin Core</a>
+                        <li><a href="#survey_dc_tab" data-toggle="tab">{% trans 'Dublin Core' %}</a>
                         </li>
-                        <li class="active"><a href="#survey_tab" data-toggle="tab">Qualitative Transcript</a>
+                        <li class="active"><a href="#survey_tab" data-toggle="tab">{% trans 'Qualitative Transcript' %}</a>
                         </li>
-                        <li><a href="#transcript_coverage_tab" data-toggle="tab">Transcript Coverage</a>
+                        <li><a href="#transcript_coverage_tab" data-toggle="tab">{% trans 'Transcript Coverage' %}</a>
                         </li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane fade" id="survey_dc_tab">
-                            <h4>Dublin Core</h4>
+                            <h4>{% trans 'Dublin Core' %}</h4>
                             <div id="dc_info"></div>
                         </div>
                         <div class="tab-pane fade in active" id="survey_tab">
-                            <h4>Qualitative Record</h4>
+                            <h4>{% trans 'Qualitative Transcript' %}</h4>
                             <div id="survey_info"></div>
                         </div>
                         <div class="tab-pane" id="transcript_coverage_tab">
-                            <h4>Transcript Coverage</h4>
+                            <h4>{% trans 'Transcript Coverage' %}</h4>
                             <div id="coverage_bubbles"></div>
                             {#                            <div id="transcript_coverage"></div>#}
                         </div>

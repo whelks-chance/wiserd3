@@ -846,3 +846,5 @@ class SpatialdataConstituency(models.Model):
     class Meta:
         managed = False
         db_table = 'spatialdata_constituency'
+
+import dataportal3.signals.handlers

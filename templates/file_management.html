@@ -1,5 +1,6 @@
 {% extends "navigation.html" %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block content %}
 
@@ -45,7 +46,7 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Upload ShapeFile</h3>
+                    <h3 class="panel-title">{% trans 'Upload ShapeFile' %}</h3>
                 </div>
                 <div class="panel-body">
                     <form class="dropzone" action="{% url 'upload_shapefile' %}" role="form" id="form_upload" enctype="multipart/form-data" method="POST">
@@ -67,7 +68,7 @@
 
                             <div class="form-group">
                                 <button class="btn btn-lg btn-success btn-block tp-button"
-                                        id="form_submit_button" name="submit_button" type="submit" value="Submit" >Submit</button>
+                                        id="form_submit_button" name="submit_button" type="submit" value="Submit" >{% trans 'Submit' %}</button>
                             </div>
                         </fieldset>
                     </form>
@@ -79,7 +80,7 @@
     <div class="row">
         <div class="panel">
             <div class="panel-heading">
-                <h3>Uploaded Files</h3>
+                <h3>{% trans 'Uploaded Files' %}</h3>
             </div>
             <div class="panel-body">
                 <div class="list-group">

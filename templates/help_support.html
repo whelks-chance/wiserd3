@@ -1,23 +1,24 @@
 {% extends "navigation.html" %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block content %}
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Help and Support</h1>
+                <h1 class="page-header">{% trans 'Help and Support' %}</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <div class="row">
-            <h2>Help</h2>
-            <p>Download or view Usage Guide here</p>
+            <h2>{% trans 'Help' %}</h2>
+            <p>{% trans 'Download or view Usage Guide here' %}</p>
         </div>
         <div class="row">
-            <h2>Support</h2>
-            <h4>Contact Us</h4>
+            <h2>{% trans 'Support' %}</h2>
+            <h4>{% trans 'Contact Us' %}</h4>
             <p>
-                <a href="http://www.wiserd.ac.uk/how-to-contact-us/" target="_blank">Contact WISERD</a>
+                <a href="http://www.wiserd.ac.uk/how-to-contact-us/" target="_blank">{% trans 'Contact WISERD' %}</a>
             </p>
             <p>Scott Orford, Project PI : OrfordS (at) cardiff.ac.uk</p>
             <p>Ian Harvey, Lead Software Engineer/ Developer: HarveyIC (at) cardiff.ac.uk</p>

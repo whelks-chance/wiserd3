@@ -299,7 +299,6 @@
 
             console.log('???');
             $('.nav-ul').each(function(i, obj) {
-                console.log(obj);
                 $(this).metisMenu();
             });
 
@@ -370,38 +369,6 @@
 
                 do_layer_single_uuid(uid, "{% url 'data_api' %}");
 
-                {#                var uids = [];#}
-                {#                uids.push(uid);#}
-                {#                $.ajax({#}
-                {#                    url: "{% url 'data_api' %}",#}
-                {#                    type: 'GET',#}
-                {#                    data: {#}
-                {#                        'method': 'remote_data_render_data',#}
-                {#                        'remote_layer_ids': uids#}
-                {#                    },#}
-                {#                    success: function (data) {#}
-                {#                        var remote_data_layer = data['nomis_layers'][0];#}
-                {#                        get_remote_dataset_topojson(#}
-                {#                                "{% url 'remote_data_topojson' %}",#}
-                {#                                remote_data_layer['geography_id'],#}
-                {#                                remote_data_layer['dataset_id'],#}
-                {#                                remote_data_layer['codelist'],#}
-                {#                                function(topojson_data) {#}
-                {#                                    console.log(remote_data_layer);#}
-                {##}
-                {#                                    handleUploadedLayer(#}
-                {#                                            topojson_data['topojson'],#}
-                {#                                            remote_data_layer['colorpicker'],#}
-                {#                                            remote_data_layer['bin_type'],#}
-                {#                                            remote_data_layer['bin_num'],#}
-                {#                                            '',#}
-                {#                                            remote_data_layer['name'],#}
-                {#                                            ''#}
-                {#                                    );#}
-                {#                                }#}
-                {#                        );#}
-                {#                    }#}
-                {#                });#}
             });
 
             function toggle_upload_layer(toggle_button) {
@@ -1574,7 +1541,7 @@
                 buttons: [
                     {
                         id: 'add_to_map_dialog_btn',
-                        text: 'Add to Map',
+                        text: '{% trans 'Add to Map' %}',
                         disabled: true,
                         click: function() {
                             waitingDialog.show('{% trans 'Inspecting dataset ...' %}');
@@ -1649,7 +1616,7 @@
                             });
 
                         }},{
-                        text: 'Cancel',
+                        text: '{% trans 'Cancel' %}',
                         click: function() {
                             $( this ).dialog( "close" );
                         }

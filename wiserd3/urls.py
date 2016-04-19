@@ -112,10 +112,11 @@ urlpatterns += patterns(
     'djcelery.views', url(r'^task/status/(?P<task_id>.+)/$', 'task_status', name='task-status')
 )
 
-urlpatterns += i18n_patterns(
-    url(r'^$', views.dashboard, name='home'),
-    url(r'^index', views.dashboard, name='index'),
-    # url(r'^$', views.naw_dashboard, name='naw_dashboard'),
-    url(r'^naw_dashboard', views.naw_dashboard, name='naw_dashboard'),
-    # url(r'^admin/', include(admin.site.urls)),
-)
+# urlpatterns += i18n_patterns(
+#     url(r'^$', views.dashboard, name='home'),
+#     url(r'^index', views.dashboard, name='index'),
+#     url(r'^dashboard', views.dashboard, name='dashboard'),
+#     # url(r'^$', views.naw_dashboard, name='naw_dashboard'),
+#     url(r'^naw_dashboard', views.naw_dashboard, name='naw_dashboard'),
+#     # url(r'^admin/', include(admin.site.urls)),
+# )

@@ -1,0 +1,42 @@
+# Connecting to AllAuth Signals
+from pprint import pformat
+
+from allauth.account import signals
+from django.contrib.auth import user_logged_out
+from django.dispatch import receiver
+
+from dataportal3.models import UserProfile
+from dataportal3.utils.userAdmin import set_session_preferred_language
+
+
+@receiver(signals.user_signed_up)
+def new_user_signup(sender, **kwargs):
+
+    print "signed up a user!!!!"
+    # time_now = datetime.datetime.now()
+    # time_now = timezone.now()
+    lv_user = UserProfile(user=kwargs['user'])
+    # lv_user = UserProfile(user=kwargs['user'], sign_up_timestamp=time_now)
+    lv_user.save()
+
+
+@receiver(signals.user_logged_in)
+def user_logged_in(sender, user, request, **kwargs):
+    print user
+    # print pformat(request.__dict__)
+
+    print set_session_preferred_language(request)
+    print 'logged in', user
+
+
+@receiver(user_logged_out)
+def user_logged_out(sender, user, request, **kwargs):
+    print user
+
+    print set_session_preferred_language(request, reset=True)
+    print 'logged out', user
+
+
+@receiver(signals.email_confirmed)
+def user_email_confirmed(sender, request, email_address, **kwargs):
+    print 'email confirmed', sender, request, email_address

@@ -28,7 +28,7 @@ from dataportal3.utils.admin_email import EMAIL_TYPES, send_email
 from dataportal3.utils.remote_data import RemoteData
 from dataportal3.utils.spatial_search.spatial_search import find_intersects, geometry_columns
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user, get_user_preferences, \
-    survey_visible_to_user
+    survey_visible_to_user, set_session_preferred_language
 import requests
 from old.views import text_search, date_handler
 from wiserd3 import settings
@@ -498,11 +498,13 @@ def edit_metadata(request):
                 except:
                     # No appropriate language found, default English
                     user_prefs.preferred_language = models.UserLanguage.objects.get(user_language_title='English')
+
             else:
                 # No language given, default English
                 user_prefs.preferred_language = models.UserLanguage.objects.get(user_language_title='English')
 
             user_prefs.save()
+            set_session_preferred_language(request)
             edit_metadata_response['success'] = True
 
     # Any failure in here results in sending the success as being False, as set above
@@ -1922,8 +1924,16 @@ def csv_view_data(request, provider, search_uuid):
 
 def naw_dashboard(request):
 
+    use_welsh = False
+    user_prefs = get_user_preferences(request)
+    assert isinstance(user_prefs, models.UserPreferences)
+    if user_prefs.preferred_language:
+        if user_prefs.preferred_language.user_language_title == 'Welsh':
+            use_welsh = True
+            
     return render(request, 'naw_dashboard.html',
                   {
+                      'use_welsh': use_welsh,
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
                   },context_instance=RequestContext(request))

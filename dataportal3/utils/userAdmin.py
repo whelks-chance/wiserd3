@@ -1,10 +1,32 @@
 from django.contrib import auth
 from django.core.mail.message import EmailMultiAlternatives
-from dataportal3 import models
-from dataportal3.models import UserProfile, UserPreferences
+from django.utils.translation import LANGUAGE_SESSION_KEY
+
+from dataportal3.models import UserProfile, UserPreferences, Search, SurveyVisibilityMetadata, UserLanguage
 from django.contrib.auth.models import User, AnonymousUser
 
 __author__ = 'ubuntu'
+
+
+def set_session_preferred_language(request, reset=False):
+    request_user = get_request_user(request)
+    if request_user == get_anon_user() or reset:
+        # Shouldn't be here, set a default and bail out
+        request.session[LANGUAGE_SESSION_KEY] = 'en-US'
+        return request.session[LANGUAGE_SESSION_KEY]
+
+    user_preferences = get_user_preferences(request)
+    assert isinstance(user_preferences, UserPreferences)
+    lang = user_preferences.preferred_language
+    if lang == UserLanguage.objects.get(user_language_title='Welsh'):
+        print 'Using welsh'
+        request.session[LANGUAGE_SESSION_KEY] = 'cy'
+    else:
+        print 'Using English'
+        # sigh
+        request.session[LANGUAGE_SESSION_KEY] = 'en-US'
+
+    return request.session[LANGUAGE_SESSION_KEY]
 
 
 def get_anon_user():
@@ -59,7 +81,7 @@ def get_user_searches(request):
         user = get_anon_user()
         user_profile = UserProfile.objects.get(user=user)
 
-    searches = models.Search.objects.filter(user=user_profile).order_by('-datetime')
+    searches = Search.objects.filter(user=user_profile).order_by('-datetime')
 
     # I bet there's a single line way to do this...
     search_by_type = {}
@@ -77,10 +99,10 @@ def get_user_searches(request):
         if search.type == 'text':
             text_searches.append(search)
     search_by_type = {
-        'spatial': spatial_searches,
-        'survey': survey_searches,
-        'question': question_searches,
-        'text': text_searches
+        'spatial': spatial_searches[:10],
+        'survey': survey_searches[:10],
+        'question': question_searches[:10],
+        'text': text_searches[:10]
     }
     return search_by_type
 
@@ -95,7 +117,7 @@ def survey_visible_to_user(survey_id, user_profile):
 
     # Find any specific visibility metadata for this survey
     # It is possible that multiple visibilities may be set for a single survey
-    survey_visibilities = models.SurveyVisibilityMetadata.objects.filter(survey__identifier=survey_id)
+    survey_visibilities = SurveyVisibilityMetadata.objects.filter(survey__identifier=survey_id)
     if survey_visibilities.count():
 
         # We have at least one visibility set, so assume False to begin with

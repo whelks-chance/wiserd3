@@ -6,6 +6,11 @@
                 {'description': u'% Votes 2007: Conservative',
                  'description_cy': u'% Votes: Conservative',
                  'uid': '357d3a98-e384-4cbc-9833-5b8f3ec60b6e'},
+
+                {'description': u'Broken',
+                 'description_cy': u'welsh broken',
+                 'uid': '357d3a98-e384-4cbc-9833-5b8f3ec60b64'},
+
                 {'description': u'% Votes 2007: Liberal Democrat',
                  'description_cy': u'% Votes: Liberal Democrat',
                  'uid': '7b26fda0-d9df-4611-8f58-96957f833021'},

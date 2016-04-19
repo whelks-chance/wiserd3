@@ -1,3 +1,4 @@
+
 {% extends "navigation.html" %}
 {% load staticfiles %}
 {% load i18n %}
@@ -43,6 +44,9 @@
                         {'display': false, 'displayName': '{% trans 'user_id' %}', 'id': 'user_id'},
                         {'display': true, 'displayName': '{% trans 'Checks' %}', 'id': 'checks'},
                         {'display': true, 'displayName': '{% trans 'Route Type' %}', 'id': 'routetype'},
+                        {'display': true, 'displayName': 'Last Edit', 'id': 'updated'},
+]
+                }
             }
         };
 

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 10:56+0000\n"
+"POT-Creation-Date: 2016-04-19 19:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -321,7 +321,8 @@ msgid "Signup"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/account/signup.html:8 templates/account/signup.html.py:53
-#: templates/socialaccount/signup.html:8 templates/socialaccount/signup.html:19
+#: templates/socialaccount/signup.html:8
+#: templates/socialaccount/signup.html:19
 msgid "Sign Up"
 msgstr "AAAAAAaaaahhhh"
 
@@ -384,6 +385,10 @@ msgid ""
 "mail address</a>."
 msgstr ""
 
+#: templates/blank.html:9
+msgid "Blank"
+msgstr "AAAAAAaaaahhhh"
+
 #: templates/dashboard.html:51 templates/navigation.html:297
 #: templates/naw_dashboard.html:47 templates/naw_navigation.html:275
 msgid "Dashboard"
@@ -423,6 +428,7 @@ msgstr "AAAAAAaaaahhhh"
 
 #: templates/dashboard.html:183 templates/navigation.html:258
 #: templates/naw_dashboard.html:154 templates/naw_navigation.html:255
+#: templates/settings.html:35
 msgid "Settings"
 msgstr "AAAAAAaaaahhhh"
 
@@ -456,7 +462,8 @@ msgstr "AAAAAAaaaahhhh"
 msgid "View Blog Posts"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/dashboard.html:279 templates/naw_dashboard.html:180
+#: templates/dashboard.html:279 templates/help_support.html:14
+#: templates/naw_dashboard.html:180
 msgid "Help"
 msgstr "AAAAAAaaaahhhh"
 
@@ -466,6 +473,242 @@ msgstr "AAAAAAaaaahhhh"
 
 #: templates/dashboard.html:307 templates/dashboard.html.py:314
 msgid "National Assembly for Wales"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/events.html:9
+#, fuzzy
+#| msgid "Event Presentation Files"
+msgid "Events and Presentations"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/events.html:14
+msgid "ESRC Festival of Social Science 2015 – WISERD DataPortal demonstration"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/events.html:15
+msgid "11th November 2015"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/events.html:16
+msgid "Download the presentation here : "
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/events.html:17
+msgid "link"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/file_management.html:49
+msgid "Upload ShapeFile"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/file_management.html:71
+msgid "Submit"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/file_management.html:83
+msgid "Uploaded Files"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:9
+#, fuzzy
+#| msgid "About, Help and Support"
+msgid "Help and Support"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:15
+msgid "Download or view Usage Guide here"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:18
+msgid "Support"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:19
+msgid "Contact Us"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:21
+msgid "Contact WISERD"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:23
+msgid "Scott Orford, Project PI : OrfordS (at) cardiff.ac.uk"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:24
+msgid ""
+"Ian Harvey, Lead Software Engineer/ Developer: HarveyIC (at) cardiff.ac.uk"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:25
+msgid "Sam Jones, Research Technician : JonesS97 (at) cardiff.ac.uk"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:30
+#, fuzzy
+#| msgid "Change Password"
+msgid "Change Log"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:33
+msgid "December 2nd, 2013"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:36
+msgid "Tidying up for development hiatus"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:39
+msgid ""
+"Addition of this information to welcome screen (data taken from github "
+"commit logs)"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:42 templates/help_support.html.py:62
+#: templates/help_support.html:84 templates/help_support.html.py:102
+#: templates/help_support.html:123 templates/help_support.html.py:152
+#: templates/help_support.html:180
+msgid "Bug fixes"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:50
+msgid "November 13th, 2013"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:53
+msgid "Reads and displays response tables from database metadata"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:56
+msgid "Increase metadata access through linking of orphaned metadata IDs"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:59
+msgid "Early stages of ONS API integration"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:70
+msgid "October 7th, 2013"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:72
+msgid "Huge update to database access security and speed"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:75
+msgid "Qualitative data tagging added to Data Entry tools"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:78
+msgid "Review of APIs used to generate Qual metadata"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:81
+msgid "Increase database continuity and metadata mapping connectivity"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:91
+msgid "August 6th, 2013"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:93
+msgid "New Data Entry toolkit developed and embedded within the DataPortal"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:96
+msgid "User and Project Management GUI panel added"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:99
+msgid "Yii RBAC (role based access control) added to the back-end"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:109
+msgid "June 4th, 2013"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:111
+msgid "Database query efficiencies"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:114
+msgid "Remote data from Neighbourhood Statistics"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:117
+msgid "Updates to advanced search speed, relevance and pagination of results"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:120
+msgid "Analysis of Database consistency issues"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:129
+msgid "April 12th, 2013"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:131
+msgid "GeoPortal -&gt; DataPortal rebranding"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:134
+msgid "Increased brower compatibility"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:137
+msgid "Bug report and sign-up emails"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:140
+msgid "Advanced search added"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:143
+msgid "Remote data feed from NomisWeb added"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:146
+msgid "Matching of local WISERD metadata to remote datasets"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:149
+msgid "SLD layer icons and legend creation and rendering"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:160
+msgid "Feb 16th, 2013"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:162
+msgid "A complete rewrite of the back end to use Yii"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:165
+msgid "User registration and login fixed"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:168
+msgid "Search efficiency optimised"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:171
+msgid "Logging added"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:174
+msgid "Updated OpenLayers to v2.12"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:177
+msgid "Account and Password management updated"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:187
+msgid "Early 2012"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/help_support.html:189
+msgid "The initial release of the WISERD GeoPortal at University of Glamorgan"
 msgstr "AAAAAAaaaahhhh"
 
 #: templates/map.html:182
@@ -484,60 +727,60 @@ msgstr "AAAAAAaaaahhhh"
 msgid "WISERD Knowing Localities Research"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:461
+#: templates/map.html:460
 msgid "Region Data"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:665 templates/map.html.py:1644 templates/map.html:1831
-#: templates/map.html.py:1947
+#: templates/map.html:664 templates/map.html.py:1643 templates/map.html:1830
+#: templates/map.html.py:1946
 msgid "Fetching map layer..."
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:789
+#: templates/map.html:788
 msgid "Sorry, an error occurred. Please try again, or report it."
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1366
+#: templates/map.html:1365
 msgid "Show New Layer"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1421 templates/map.html.py:1426 templates/map.html:1432
+#: templates/map.html:1420 templates/map.html.py:1425 templates/map.html:1431
 msgid "Sorry, an error occurred. \\n\\n"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1422
+#: templates/map.html:1421
 msgid ""
 "It looks like your query was too specific, for example, when data are "
 "suppressed due to statistical confidentiality considerations. \\n\\n"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1423 templates/map.html.py:1436
+#: templates/map.html:1422 templates/map.html.py:1435
 msgid "In this case, try a larger area to map data for."
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1427
+#: templates/map.html:1426
 msgid "No data could be found for this query. \\n\\n"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1428
+#: templates/map.html:1427
 #, fuzzy
 #| msgid "Sorry, an error occurred. Please try again, or report it."
 msgid "Please try again, or report it."
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1433
+#: templates/map.html:1432
 msgid ""
 "Unfortunately, some types of dataset are incompatible with this service. \\n"
 "\\n"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1434
+#: templates/map.html:1433
 msgid ""
 "Try being more specific with the dataset variable you are trying to map. \\n"
 "\\n"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1435
+#: templates/map.html:1434
 #, fuzzy
 #| msgid ""
 #| "It looks like your query was too specific, for example, when data are "
@@ -547,103 +790,113 @@ msgid ""
 "data are suppressed due to statistical confidentiality considerations. "
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1468
+#: templates/map.html:1467
 #, fuzzy
 #| msgid "Search..."
 msgid "Searching NomisWeb..."
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1487 templates/map.html.py:1524 templates/map.html:1612
+#: templates/map.html:1486 templates/map.html.py:1523 templates/map.html:1611
 #, fuzzy
 #| msgid "Sorry, an error occurred. Please try again, or report it."
 msgid "Sorry, an error occurred. Please try again, or report it.\\n\\n"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1514
+#: templates/map.html:1513
 msgid "Sorry, no results were found for that search.\\n"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1515
+#: templates/map.html:1514
 msgid "Please refine the search terms and try again"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1548
+#: templates/map.html:1544
+#, fuzzy
+#| msgid "Render to Map"
+msgid "Add to Map"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/map.html:1547
 msgid "Inspecting dataset ..."
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:1643 templates/map.html.py:1830
+#: templates/map.html:1619
+msgid "Cancel"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/map.html:1642 templates/map.html.py:1829
 msgid "Render to Map"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2047
+#: templates/map.html:2046
 msgid "Screenshot"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2054
+#: templates/map.html:2053
 msgid "Chloropleth options"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2058
+#: templates/map.html:2057
 msgid "Category Types"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2063
+#: templates/map.html:2062
 msgid "Equal size categories"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2064
+#: templates/map.html:2063
 msgid "Quantiles"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2065
+#: templates/map.html:2064
 msgid "K-Means"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2072
+#: templates/map.html:2071
 msgid "Number of Categories"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2089
+#: templates/map.html:2088
 msgid "Choropleth colour scheme"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2093
+#: templates/map.html:2092
 msgid "Orange - Red"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2094
+#: templates/map.html:2093
 msgid "Red - Yellow - Blue"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2095
+#: templates/map.html:2094
 msgid "Yellow - Green - Blue"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2096
+#: templates/map.html:2095
 msgid "Spectral"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2097
+#: templates/map.html:2096
 msgid "Greyscale"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2103
+#: templates/map.html:2102
 msgid "Layer Name"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2115 templates/map.html.py:2131
+#: templates/map.html:2114 templates/map.html.py:2130
 msgid "Dataset Variables"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2119 templates/map.html.py:2135
+#: templates/map.html:2118 templates/map.html.py:2134
 msgid "Geography"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2142 templates/map.html.py:2145
+#: templates/map.html:2141 templates/map.html.py:2144
 msgid "Search Remote"
 msgstr "AAAAAAaaaahhhh"
 
-#: templates/map.html:2150 templates/navigation.html:286
+#: templates/map.html:2149 templates/navigation.html:286
 msgid "Search..."
 msgstr "AAAAAAaaaahhhh"
 
@@ -721,6 +974,271 @@ msgstr "AAAAAAaaaahhhh"
 msgid "OpenID Sign In"
 msgstr "AAAAAAaaaahhhh"
 
+#: templates/question_detail.html:12 templates/question_detail.html.py:236
+#: templates/question_detail.html:247
+#, fuzzy
+#| msgid "Questions"
+msgid "Question"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:16
+#, fuzzy
+#| msgid "Questions"
+msgid "Question ID"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:17
+#, fuzzy
+#| msgid "Questions"
+msgid "Question Text"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:18
+#, fuzzy
+#| msgid "Questions"
+msgid "Question Number"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:19
+msgid "Thematic Groups"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:20
+msgid "Thematic Tags"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:21
+msgid "Link From"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:22
+msgid "Sub Of"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:23
+#, fuzzy
+#| msgid "Questions"
+msgid "Question Type"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:24
+msgid "Variable ID"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:25
+#, fuzzy
+#| msgid "Note"
+msgid "Notes"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:26 templates/question_detail.html.py:44
+msgid "user_id"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:27 templates/question_detail.html.py:39
+msgid "created"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:28
+msgid "Last Edit"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:33 templates/question_detail.html.py:238
+#: templates/question_detail.html:251
+#, fuzzy
+#| msgid "Text Results"
+msgid "Results"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:37
+msgid "Response ID"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:38
+msgid "Response Text"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:40
+msgid "Route Notes"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:41
+msgid "Table IDs"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:42
+#, fuzzy
+#| msgid "Dataset Variables"
+msgid "Computed Variable"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:43
+msgid "Response Type"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:45
+msgid "Checks"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:46
+msgid "Route Type"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:84
+#, fuzzy
+#| msgid "Surveys"
+msgid "View Survey"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:221
+msgid "Question Details for: "
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:230
+#, fuzzy
+#| msgid "Questions"
+msgid "Question Metadata"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:240 templates/question_detail.html.py:255
+msgid "Results Table"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:262
+#, fuzzy
+#| msgid "Questions"
+msgid "QuestionID"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:263
+#, fuzzy
+#| msgid "Questions"
+msgid "QuestionText"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/question_detail.html:264
+msgid "Type"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:116
+msgid "Remote Data Search"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:120
+msgid "Dataset Download Link"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:122
+msgid "Map It"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:125
+msgid "Dataset ID"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:133
+#, fuzzy
+#| msgid "Route Type"
+msgid "Dataset Type"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:141
+msgid "Search Query Options"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:153
+#, fuzzy
+#| msgid "Mapping tools"
+msgid "Mapping colours"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:165
+msgid "Unique Identifier for this search"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:176
+msgid "Errors"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:195
+msgid "Secondary Attributes"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:201
+msgid "Save"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/search_data.html:202
+msgid "Toggle All/None"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/settings.html:45
+msgid "Language"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/settings.html:48
+msgid "Select your preferred language."
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/settings.html:66
+msgid "Links and Tabs"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/settings.html:69
+msgid ""
+"This is not advised on mobile, as tab management is not as easy as when "
+"using a desktop browser."
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/settings.html:70
+msgid ""
+"However it can be desirable to have multiple tabs open to view multiple "
+"surveys, for example."
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/settings.html:76
+msgid "Open links in new tabs"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/settings.html:85
+msgid "Choropleth Speed/ Quality"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/settings.html:88
+msgid ""
+"Using high resolution regions, generating a chloropleth can be very "
+"strenuous for your browser and also requires larger downloads."
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/settings.html:89
+#, python-format
+msgid ""
+"For this reason, the TopoJSON layer used is \"simplified\" down to 1%% "
+"complexity for speed and ease of use."
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/settings.html:90
+#, python-format
+msgid ""
+"As an example a postcode sector topojson layer at 1%% is approx 900kb, full "
+"quality becomes 30Mb! Downloading and rendering, especially on mobile, is "
+"not advised unless absolutely necessary."
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/settings.html:91
+#, python-format
+msgid ""
+"Mapshaper \"simplify\"</a> for more information on the process of "
+"simplification used and <a href=\"https://en.wikipedia.org/wiki/Ramer"
+"%%E2%%80%%93Douglas%%E2%%80%%93Peucker_algorithm\" target=\"_blank"
+"\">Wikipedia Ramer-Douglas-Peucker</a> for information on the algorithm the "
+"process uses."
+msgstr ""
+
+#: templates/settings.html:97
+msgid "Use High Resolution Regions"
+msgstr "AAAAAAaaaahhhh"
+
 #: templates/socialaccount/authentication_error.html:5
 #: templates/socialaccount/authentication_error.html:8
 msgid "Social Network Login Failure"
@@ -785,6 +1303,42 @@ msgstr ""
 
 #: templates/socialaccount/snippets/provider_list.html:22
 msgid "Sign in with Google"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/welcome.html:9
+msgid "Welcome "
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/welcome.html:10
+msgid "Thank you for signing up to the WISERD DataPortal"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/welcome.html:36
+msgid ""
+"It looks like you have a valid National Assembley for Wales email address, "
+"but you haven't confirmed it in the email we sent you."
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/welcome.html:37
+msgid ""
+"Please follow the link in the email to gain access to the NAW Dashboard "
+"features."
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/welcome.html:39
+msgid "If you haven't received a confirmation email"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/welcome.html:39
+msgid "Click here"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/welcome.html:56
+msgid "Please tell us more about yourself"
+msgstr "AAAAAAaaaahhhh"
+
+#: templates/welcome.html:60
+msgid "Institution/ Organisation"
 msgstr "AAAAAAaaaahhhh"
 
 #: wiserd3/settings.py:172

@@ -45,7 +45,7 @@
                         {'display': true, 'displayName': '{% trans 'Checks' %}', 'id': 'checks'},
                         {'display': true, 'displayName': '{% trans 'Route Type' %}', 'id': 'routetype'},
                         {'display': true, 'displayName': '{% trans 'Last Edit' %}', 'id': 'updated'},
-]
+                    ]
                 }
             }
         };
@@ -81,7 +81,7 @@
                     $('#question_info').append(dataContent);
 
                     var survey_button = "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
-                            "class='btn btn-info pull-right' href='/survey/" + data['survey'] + "'>{% trans 'View Survey' %}'</a>";
+                            "class='btn btn-info pull-right' href='/survey/" + data['survey'] + "'>{% trans 'View Survey' %}</a>";
                     $('#question_panel_nav').append(survey_button);
                     tidy_tab_fields()
                 }

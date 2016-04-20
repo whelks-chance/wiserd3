@@ -865,13 +865,16 @@ def profile(request):
                       'userr_dict': userr.__dict__,
                   },context_instance=RequestContext(request))
 
-
+# TODO way too casual
+@csrf_exempt
 def data_api(request):
     rd = RemoteData()
     to_return = {}
     print request.GET
 
     method = request.GET.get("method", None)
+    if method is None:
+        method = request.POST.get("method", None)
 
     if method == 'search_layer_topojson':
         search_uuid = request.GET.get("search_uuid", None)
@@ -881,9 +884,9 @@ def data_api(request):
     # The layer will have been searched for and displayed, and can be edited for content here
     # The selected fields are to show in the layer when rendered in future
     if method == 'update_hidden_fields':
-        search_uuid = request.GET.get("search_uuid", None)
-        selected_fields = request.GET.getlist("selected_fields[]", [])
-        all_fields = request.GET.getlist("all_fields[]", [])
+        search_uuid = request.POST.get("search_uuid", None)
+        selected_fields = request.POST.getlist("selected_fields[]", [])
+        all_fields = request.POST.getlist("all_fields[]", [])
 
         display_dict = {}
         for field in all_fields:

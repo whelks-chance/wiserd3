@@ -67,7 +67,7 @@
 
                 $.ajax({
                     url: "{% url 'data_api' %}",
-                    type: 'GET',
+                    type: 'POST',
                     data: {
                         method: 'update_hidden_fields',
                         search_uuid: '{{ search_uuid }}',

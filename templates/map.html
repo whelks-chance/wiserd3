@@ -899,7 +899,8 @@
 
                 leaflet_layers.push({
                     name: layer_name_text,
-                    layer: myLayer
+                    layer: myLayer,
+                    attribution: 'hello world'
                 });
 
                 myLayer.eachLayer(function (layer) {
@@ -937,7 +938,7 @@
 
                 myLayer.addTo(map);
                 map.fitBounds(myLayer.getBounds(), { paddingBottomRight: [200, 0] });
-                console.log(map.getBounds());
+{#                console.log(map.getBounds());#}
                 myLayer.bringToFront();
 
             }

@@ -521,7 +521,7 @@ class NomisSearch(models.Model):
 
     def __unicode__(self):
         print self.name, self.geography_id, self.uuid
-        return u'%s:%s:%s' % (self.name, self.uuid, self.geography_id)
+        return u'{}:{}:{}'.format(self.name, self.uuid, self.geography_id)
 
 
 class Aberystwyth_Locality_Dissolved(models.Model):

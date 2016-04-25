@@ -844,8 +844,10 @@
                 var grades = null;
 
                 if (feature_data.length > 1) {
+                    console.log(feature_data);
                     {#  Calculating the bins for quantiles with 'q' option, 'e'  and 'k' available #}
-                    grades = chroma.limits(feature_data, bin_breakdown, parseInt(num_bins) - 1);
+                    grades = chroma.limits(feature_data, bin_breakdown, parseInt(num_bins));
+                    console.log(grades);
 
                     {#  Calculating the function we can pass values to, in order to get nice rgb color codes #}
                     chroma_scale = chroma.scale(color_scheme).classes(grades);
@@ -1001,7 +1003,7 @@
                 var labels = [], from, to;
                 if (feature_data.length > 1) {
                     {#  For each bin in the quantiles, we need a representative color for the Legend #}
-                    for (var i = 0; i < grades.length; i++) {
+                    for (var i = 0; i < grades.length -1; i++) {
                         from = grades[i];
                         to = grades[i + 1];
 

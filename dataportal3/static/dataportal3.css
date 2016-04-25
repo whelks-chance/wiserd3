@@ -118,6 +118,7 @@
     float: left;
     margin-right: 8px;
     opacity: 0.7;
+    border: 1px ridge black;
 }
 
 .legend_accordion {
@@ -129,9 +130,9 @@
     color: orangered;
 }
 
-#page-wrapper {
-    padding: 0;
-}
+/*#page-wrapper {*/
+    /*padding: 0;*/
+/*}*/
 
 .scrollable_ul {
     max-height: 15em;

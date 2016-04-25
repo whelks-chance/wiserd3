@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import pprint
 from ast import literal_eval
 from celery import Celery
 # from dataportal3 import models
@@ -329,10 +330,22 @@ try:
                     var_read = literal_eval(var)
                     # print var_read
 
+                    ordered_items = {}
+                    unordered = []
+                    for item in var_read:
+                        if 'count' in item:
+                            print item['count']
+                            ordered_items[item['count']] = item
+                        else:
+                            unordered.append(item)
+
+                    sorted_items = [ordered_items[k] for k in sorted(ordered_items)]
+                    sorted_items.extend(unordered)
                     values = {
                         'description': uid_file.replace('.py', ''),
-                        'item_list': var_read
+                        'item_list': sorted_items
                     }
+                    # print pprint.pformat(values)
 
                     NAW_SEARCH_LAYER_UUIDS.append(values)
 except Exception as e:

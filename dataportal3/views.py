@@ -879,6 +879,7 @@ def data_api(request):
     if method == 'search_layer_topojson':
         search_uuid = request.GET.get("search_uuid", None)
         to_return = get_topojson_for_uuid(request, search_uuid)
+        print 'here2'
 
     # This takes a list of fields from a layer described by an uploaded shapefile
     # The layer will have been searched for and displayed, and can be edited for content here
@@ -1734,8 +1735,21 @@ def get_topojson_for_uuid(request, search_uuid):
 
         display_fields = found_search_model.display_fields
 
+        welsh_language_model = models.UserLanguage.objects.get(user_language_title='Welsh')
+        use_welsh = False
+        if user_prefs.preferred_language == welsh_language_model:
+            use_welsh = True
+
+        # This is smarter than doing it in the loop, as grouping for an attr won't change within a layer
+        attr_groupings = {}
+        for attr in survey_spatial_data_strings:
+            assert isinstance(attr, models.SpatialSurveyLink)
+            attr_group = attr.link_groups.all().values_list('group_name', flat=True)
+            attr_groupings[attr.data_name] = attr_group
+
         region_string_data = {}
         for region in regional_data:
+
             region_string_data[region] = []
             for data_strings in survey_spatial_data_strings:
                 assert isinstance(data_strings, models.SpatialSurveyLink)
@@ -1751,29 +1765,25 @@ def get_topojson_for_uuid(request, search_uuid):
                         if display_fields[data_strings.data_name] == 'true':
                             data_title = ''
 
-                            # if data_strings.category:
-                            #     data_title += '{} : '.format(data_strings.category)
-
-                            if data_strings.full_name:
-                                data_title += data_strings.full_name
+                            if use_welsh:
+                                if data_strings.full_name_cy:
+                                    data_title += data_strings.full_name_cy
+                                else:
+                                    if data_strings.full_name:
+                                        data_title += data_strings.full_name
+                                    else:
+                                        data_title += data_strings.data_name
                             else:
-                                data_title += data_strings.data_name
+                                if data_strings.full_name:
+                                    data_title += data_strings.full_name
+                                else:
+                                    data_title += data_strings.data_name
 
                             region_string_data[region].append({
                                 'title': data_title,
-                                'grouping': list(data_strings.link_groups.all().values_list('group_name', flat=True)),
+                                'grouping': list(attr_groupings[data_strings.data_name]),
                                 'value': data_strings.regional_data[region]
                             })
-
-                            # for link_group in data_strings.link_groups.all():
-                            #     assert isinstance(link_group, models.SpatialSurveyLinkGroup)
-                            #     # print data_strings.link_groups.all()
-                            #
-                            # region_string_data[region].append({
-                            #     'title': 'grouping ' + data_strings.data_name,
-                            #     'value': list(data_strings.link_groups.all().values_list('group_name', flat=True))
-                            # })
-
                 else:
                     pass
                     # data_title = ''
@@ -1793,18 +1803,15 @@ def get_topojson_for_uuid(request, search_uuid):
 
             # Shorthand Name,Category,FullName,Notes,CategoryCY,FullNameCY,NotesCY
             spatial_survey_fields = [
-                # {
-                #     'field': 'data_name', 'name': 'Name'
-                # },
                 {
                     'field': 'category', 'name': 'Category'
                 },
-                # {
-                #     'field': 'full_name', 'name': 'Full Name'
-                # },
                 {
                     'field': 'notes', 'name': 'Notes'
-                },
+                }
+            ]
+
+            spatial_survey_fields_cy =[
                 {
                     'field': 'category_cy', 'name': 'Category CY'
                 },
@@ -1816,7 +1823,12 @@ def get_topojson_for_uuid(request, search_uuid):
                 }
             ]
 
-            for spatial_survey_field in spatial_survey_fields:
+            if use_welsh:
+                spatial_survey_fields_lang = spatial_survey_fields_cy
+            else:
+                spatial_survey_fields_lang = spatial_survey_fields
+
+            for spatial_survey_field in spatial_survey_fields_lang:
                 region_string_data[region].append({
                     'title': spatial_survey_field['name'],
                     'value': getattr(survey_spatial_data, spatial_survey_field['field'])
@@ -1983,3 +1995,8 @@ def send_email_confirmation_view(request):
 
 def dataportal(request):
     return redirect('index')
+
+
+def http_404_error(request):
+
+    return render(request, '404_template.html', {}, context_instance=RequestContext(request))

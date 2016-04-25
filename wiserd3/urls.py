@@ -19,6 +19,8 @@ from dataportal3 import views, urls as api_urls
 from old import views as old_views
 from django.conf.urls.i18n import i18n_patterns
 
+from wiserd3 import settings
+
 urlpatterns = [
     url(r'^admin_tools/', include(admin.site.urls)),
     url(r'^api/', include(api_urls, namespace='api')),
@@ -27,6 +29,7 @@ urlpatterns = [
     url(r'^index', views.dashboard, name='index'),
     url(r'^dashboard', views.dashboard, name='dashboard'),
     url(r'^naw_dashboard', views.naw_dashboard, name='naw_dashboard'),
+    url(r'^http_404', views.http_404_error, name='http_404'),
 
     # Legacy - Because we shared this address once
     url(r'^dataportal', views.dataportal, name='dataportal'),
@@ -102,9 +105,10 @@ urlpatterns = [
     #     views.search_survey_question, name='search_survey_question'),
     url(r'^send_email_confirmation', views.send_email_confirmation_view, name='send_email_confirmation'),
 
-    url(r'^accounts/', include('allauth.urls'))
+    url(r'^accounts/', include('allauth.urls')),
     # url('^', include('django.contrib.auth.urls'))
 
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.STATIC_ROOT}),
     # url(r'^i18n/', include('django.conf.urls.i18n')),
 ]
 

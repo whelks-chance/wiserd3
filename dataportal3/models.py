@@ -520,7 +520,7 @@ class NomisSearch(models.Model):
     search_type = models.ForeignKey(SearchType, blank=True, null=True)
 
     def __unicode__(self):
-        print self.name, self.geography_id, self.uuid
+        # print self.name, self.geography_id, self.uuid
         return u'{}:{}:{}'.format(self.name, self.uuid, self.geography_id)
 
 

@@ -2,7 +2,6 @@ import os
 from django.contrib.gis.geos import GEOSGeometry
 from django.db import connections
 from dataportal3 import models
-from wiserd3 import settings
 from wiserd3.settings import TOPOJSON_DIR
 
 __author__ = 'ubuntu'
@@ -191,9 +190,9 @@ def find_intersects(geography_wkt):
 
             # print 'area_names_query', area_names_queryset.query
             area_names = area_names_queryset.values_list(f_label, flat=True)
-            print 'area_names', list(area_names)
 
-            print connections['new'].queries[-1]
+            if connections['new'].queries:
+                print connections['new'].queries[-1]
 
             if len(list(area_names)) > 0:
                 link_table = models.SpatialSurveyLink.objects.filter(geom_table_name=f_table_name).prefetch_related('survey')

@@ -334,7 +334,7 @@ try:
                     unordered = []
                     for item in var_read:
                         if 'count' in item:
-                            print item['count']
+                            # print item['count']
                             ordered_items[item['count']] = item
                         else:
                             unordered.append(item)

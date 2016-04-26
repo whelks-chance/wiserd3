@@ -851,6 +851,7 @@
 
                     {#  Calculating the function we can pass values to, in order to get nice rgb color codes #}
                     chroma_scale = chroma.scale(color_scheme).classes(grades);
+                    console.log(chroma_scale);
                 }
 
                 var myLayer = new L.TopoJSON();
@@ -1007,10 +1008,10 @@
                         from = grades[i];
                         to = grades[i + 1];
 
-                        var legend_row = '<p><i style="background:' + getColor(from + 1, grades, chroma_scale) + '"></i> ';
+                        var legend_row = '<p style="text-align:center;"><i style="background:' + getColor(from, grades, chroma_scale) + '"></i> ';
                         legend_row += from.toFixed(2);
                         if (to) {
-                            legend_row += (to).toFixed(2) ? '&ndash;' + (to).toFixed(2) + (is_percentage ? '%' : '') : (is_percentage ? '%+' : '+');
+                            legend_row += (to).toFixed(2) ? (i == 0 ? ' &ndash; ': ' &le; ') + (to).toFixed(2) + (is_percentage ? '%' : '') : (is_percentage ? '%+' : '+');
                         } else {
                             legend_row += (is_percentage ? '%' : '');
                         }
@@ -1974,10 +1975,11 @@
             <div id="map_div"></div>
         </div>
 
-        <div class="col-lg-3 col-sm-12" >
+        <div class="col-lg-3 col-sm-12" style="padding-right: 0">
 
             <div class="right_sidebar" id="right_sidebar"
                  style="background-color: #f8f8f8;
+                         border-left: 1px solid #e7e7e7;
                          height: 100%;
                          {#                                  position: absolute; right: 0;#}
                          {#                         width:250px;#}
@@ -1990,7 +1992,7 @@
                 <div class="split-pane-component" id="right-component1"
                      style="margin: 0.5em;
                              {#                     word-break: break-all;#}
-                             word-wrap: break-word;"></div>
+                             word-wrap: normal; word-break: normal"></div>
                 {#                    </div>#}
                 {#                    <div class="col-lg-12">#}
                 {#                        <div class="split-pane-component" id="right-component2"></div>#}
@@ -2011,7 +2013,7 @@
             {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
         </div>
     </div>
-
+</div>
     <div id="chloropleth_option_form" title="{% trans 'Chloropleth options' %}">
         <table>
             <tr>

@@ -15,7 +15,7 @@
     /*max-height: 50%;*/
     overflow-y: scroll;
     line-break: strict;
-    word-break: break-all;
+    word-break: normal;
     max-width: 50%;
     max-height: 50%;
 }
@@ -130,9 +130,11 @@
     color: orangered;
 }
 
-/*#page-wrapper {*/
-    /*padding: 0;*/
-/*}*/
+@media (min-width: 768px) {
+    .page-wrapper {
+        padding: 0 15px !important;
+    }
+}
 
 .scrollable_ul {
     max-height: 15em;

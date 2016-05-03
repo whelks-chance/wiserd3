@@ -12,6 +12,7 @@ from django.contrib.auth.models import AnonymousUser
 # from django.contrib.gis.gdal import CoordTransform
 # from django.contrib.gis.gdal import SpatialReference
 from django.contrib.gis.geos import GEOSGeometry
+from django.core.exceptions import MultipleObjectsReturned
 from django.core.serializers import serialize
 from django.db import connections, connection
 from django.db.models import Q
@@ -375,7 +376,7 @@ def map_search(request):
                       'topojson_geographies': topojson_geographies,
                       'preferences': get_user_preferences(request),
                       'use_welsh': use_welsh,
-                      'searches': user_prefs,
+                      'searches': get_user_searches(request),
                       'surveys': json.dumps(surveys),
                       'wms_layers': wms_layers,
                       'wiserd_layers': settings.KNOWING_LOCALITIES_TABLES,
@@ -1128,7 +1129,7 @@ def local_data_topojson(request):
                 'title': spatial_survey_field['name'],
                 'value': getattr(survey_spatial_data[0], spatial_survey_field['field'])
             })
-        # print 'region_string_data', region_string_data
+            # print 'region_string_data', region_string_data
 
     for region in regional_data:
         regions = [{
@@ -1181,10 +1182,19 @@ def search_qual_api(request):
     user_profile = get_request_user(request)
     # user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=userr)
 
-    search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
-                                                                       query=search_terms,
-                                                                       readable_name=search_terms,
-                                                                       type='text')
+    try:
+        search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
+                                                                           query=search_terms,
+                                                                           readable_name=search_terms,
+                                                                           type='text')
+
+    # FIXME Shouldn't happen, but apparently does. Ensure unique at database level? Drop duplicates?
+    except MultipleObjectsReturned as mor:
+        search = models.Search.objects.using('new').filter(user=user_profile,
+                                                           query=search_terms,
+                                                           readable_name=search_terms,
+                                                           type='text')[0]
+
     search.save()
 
     api_data = qual_search(search_terms)
@@ -1837,7 +1847,7 @@ def get_topojson_for_uuid(request, search_uuid):
             if survey_spatial_data.full_name:
                 data_name = survey_spatial_data.full_name
 
-            # print 'region_string_data', region_string_data
+                # print 'region_string_data', region_string_data
 
         for region in regional_data:
 
@@ -1945,7 +1955,7 @@ def naw_dashboard(request):
     if user_prefs.preferred_language:
         if user_prefs.preferred_language.user_language_title == 'Welsh':
             use_welsh = True
-            
+
     return render(request, 'naw_dashboard.html',
                   {
                       'use_welsh': use_welsh,
@@ -2000,3 +2010,7 @@ def dataportal(request):
 def http_404_error(request):
 
     return render(request, '404_template.html', {}, context_instance=RequestContext(request))
+
+
+def licence_attribution(request):
+    return render(request, 'licence_attribution.html', {}, context_instance=RequestContext(request))

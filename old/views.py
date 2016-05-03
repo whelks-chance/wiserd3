@@ -343,6 +343,7 @@ def text_search(search_terms):
 
     data = []
     for question_model in questions_models:
+        # TODO eugh
         # question_model_tidy = [a.strip() for a in question_model if type(a) == 'unicode']
         question_model['type'] = question_model['type__q_type_text']
         # data.append(question_model)

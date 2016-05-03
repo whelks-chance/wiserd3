@@ -142,6 +142,12 @@
     overflow-x: hidden;
 }
 
+#side-menu a {
+/*#side-menu > li > ul > li > ul > li > a {*/
+    word-break: break-all;
+    line-break: strict;
+}
+
 .panel-group {
     margin-bottom: 5px;
 }

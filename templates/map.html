@@ -136,35 +136,34 @@
         {#            </ul>#}
         {#        </li>#}
     {% endif %}
+    {% if not naw %}
+        <li>
+            <a href="#"><i class="fa fa-sitemap fa-fw"></i> {% trans 'Map layers' %}<span class="fa arrow"></span></a>
+            <ul class="nav nav-ul nav-second-level">
+                <li>
+                    <a id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> {% trans 'NomisAPI Data' %}</a>
 
-    <li>
-        <a href="#"><i class="fa fa-sitemap fa-fw"></i> {% trans 'Map layers' %}<span class="fa arrow"></span></a>
-        <ul class="nav nav-ul nav-second-level">
-            <li>
-                <a id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> {% trans 'NomisAPI Data' %}</a>
-
-                {#                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>#}
-                {#                <ul aria-expanded="false" class="nav nav-third-level collapse">#}
-                {#                    <li>#}
-                {#                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>#}
-                {#                    </li>#}
-                {#                </ul>#}
-            </li>
-            <li>
-                <a href="#"> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>
-                <ul class="nav nav-ul nav-third-level scrollable_ul">
-                    {% for wms_url, wms_layer_set in wms_layers.items %}
-                        {% for wms_layer in wms_layer_set %}
-                            <li>
-                                <a href="#" data-layer_name="{{ wms_layer.tile_name }}" data-layer_url="{{ wms_url }}" class="wms_toggle">
-                                    <i class="fa fa-map-marker fa-fw"></i> {{ wms_layer.name }}</a>
-                            </li>
+                    {#                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>#}
+                    {#                <ul aria-expanded="false" class="nav nav-third-level collapse">#}
+                    {#                    <li>#}
+                    {#                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>#}
+                    {#                    </li>#}
+                    {#                </ul>#}
+                </li>
+                <li>
+                    <a href="#"> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>
+                    <ul class="nav nav-ul nav-third-level scrollable_ul">
+                        {% for wms_url, wms_layer_set in wms_layers.items %}
+                            {% for wms_layer in wms_layer_set %}
+                                <li>
+                                    <a href="#" data-layer_name="{{ wms_layer.tile_name }}" data-layer_url="{{ wms_url }}" class="wms_toggle">
+                                        <i class="fa fa-map-marker fa-fw"></i> {{ wms_layer.name }}</a>
+                                </li>
+                            {% endfor %}
                         {% endfor %}
-                    {% endfor %}
-                </ul>
-            </li>
+                    </ul>
+                </li>
 
-            {% if not naw %}
                 <li>
                     <a href="#"> {% trans 'WISERD Knowing Localities Research' %}<span class="fa arrow"></span></a>
                     <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
@@ -183,9 +182,9 @@
                         {% endfor %}
                     </ul>
                 </li>
-            {% endif %}
-        </ul>
-    </li>
+            </ul>
+        </li>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -256,7 +255,6 @@
 
         $(document).ready(function () {
 
-            console.log('???');
             $('.nav-ul').each(function(i, obj) {
                 $(this).metisMenu();
             });
@@ -439,7 +437,7 @@
                             info_text += '<h4>' + props.NameWelsh + '</h4>';
                         }
                     }
-                    info_text += '<h4>' + props.AREA_NAME + '</h4>';
+                    {#                    info_text += '<h4>' + props.AREA_NAME + '</h4>';#}
                     info_text += '<p><b>VALUE : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</p>';
 
                     var groups = {};
@@ -580,6 +578,9 @@
                 }
                 if (string_value == 'UKIP') {
                     return '#70147A'
+                }
+                if (string_value == 'OTH') {
+                    return '#343434'
                 }
                 return hashStringToColor(string_value)
             }
@@ -873,20 +874,20 @@
                 layerControl.addOverlay(myLayer, layer_name_text);
 
                 map.on('overlayremove', function (eventLayer) {
-                    console.log('remove layer radio');
-                    console.log(eventLayer);
-                    console.log(eventLayer.name);
-                    console.log(layer_name_text);
+                    {#                    console.log('remove layer radio');#}
+                    {#                    console.log(eventLayer);#}
+                    {#                    console.log(eventLayer.name);#}
+                    {#                    console.log(layer_name_text);#}
                     if (eventLayer.name == layer_name_text) {
                         console.log('trying to remove : ' + '#accordion_inner_collapse_' + unique_layer_name_text);
                         $('#accordion_inner_collapse_' + unique_layer_name_text.replace(/\W/g, '')).remove();
                     }
                 });
                 map.on('overlayadd', function (eventLayer) {
-                    console.log('add layer radio');
-                    console.log(eventLayer);
-                    console.log(eventLayer.name);
-                    console.log(layer_name_text);
+                    {#                    console.log('add layer radio');#}
+                    {#                    console.log(eventLayer);#}
+                    {#                    console.log(eventLayer.name);#}
+                    {#                    console.log(layer_name_text);#}
                     if (eventLayer.name == layer_name_text) {
 
                         var div_inner = build_legend(feature_data,
@@ -900,7 +901,7 @@
 
                 myLayer.addTo(map);
                 map.fitBounds(myLayer.getBounds(), { paddingBottomRight: [200, 0] });
-{#                console.log(map.getBounds());#}
+                {#                console.log(map.getBounds());#}
                 myLayer.bringToFront();
 
             }
@@ -1474,7 +1475,7 @@
 
                             if (data['datasets'].length == 0) {
                                 alert("{% trans 'Sorry, no results were found for that search.\n' %}" +
-                                       "{% trans 'Please refine the search terms and try again' %}");
+                                        "{% trans 'Please refine the search terms and try again' %}");
                             } else {
                                 dataset_radio.find('input[type=radio]').change(function () {
                                     $('#add_to_map_dialog_btn').button('enable');
@@ -2013,7 +2014,7 @@
             {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
         </div>
     </div>
-</div>
+    </div>
     <div id="chloropleth_option_form" title="{% trans 'Chloropleth options' %}">
         <table>
             <tr>

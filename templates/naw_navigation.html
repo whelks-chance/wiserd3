@@ -4,11 +4,11 @@
 
 {% block extra_head %}
 
-{#    <script>#}
-{#        $(document).ready(function () {#}
-{#            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
-{#        });#}
-{#    </script>#}
+    {#    <script>#}
+    {#        $(document).ready(function () {#}
+    {#            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
+    {#        });#}
+    {#    </script>#}
 
 {% endblock %}
 
@@ -25,11 +25,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url 'dashboard' %}">WISERD DataPortal {% include 'version_number.html' %}</a>
+
+                <a class="navbar-brand" href="{% url 'naw_dashboard' %}">
+                    <img style="margin: 0.5em; max-height: 3em;
+                                    margin-top: -15px; margin-left: -15px"
+                         src="{% static 'dataportal/media/NAFW-Dragon-Slate1.png' %}">
+                    WISERD DataPortal {% include 'version_number.html' %}</a>
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-pencil-square-o fa-fw"></i>  {% trans 'Research' %}  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="https://assemblyinbrief.wordpress.com/" target="_blank"><i class="fa fa-external-link fa-fw"></i> {% trans '"In Brief" Blog' %}</a>
+                        </li>
+                        <li><a href="http://www.assembly.wales/en/bus-home/research/Pages/research.aspx" target="_blank"><i class="fa fa-external-link fa-fw"></i> {% trans 'National Assembly Research Service' %}</a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i>  {{ user }} <i class="fa fa-caret-down"></i>

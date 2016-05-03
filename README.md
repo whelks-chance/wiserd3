@@ -162,6 +162,12 @@ Once we have that SpatialSurveyLink
     python dataportal3/utils/ShapeFileImport.py -i path/NAW_3/NAW_3_regions.zip -s wisid_AssemblyRegions_Data_5705394bb0ec5 -u ubuntu -n region_test -g nawer -b "National Assembly Region" -x True -r region
 
 
+## Languages
+    python manage.py compilemessages --locale=cy
+
+    python manage.py makemessages --locale=cy
+
+    tail --bytes=+4 UTF8WithBom.txt > UTF8WithoutBom.txt
 
 ## Rights/ Visibility Management:
 A UserGroup has a name and a collection of users

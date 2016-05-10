@@ -98,6 +98,7 @@ urlpatterns = [
 
 
     url(r'^edit_metadata', views.edit_metadata, name='edit_metadata'),
+    url(r'^local_data', views.local_data, name='local_data'),
 
     url(r'^get_geojson', views.get_geojson, name='get_geojson'),
     url(r'^get_imported_feature', views.get_imported_feature, name='get_imported_feature'),

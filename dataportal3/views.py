@@ -1851,9 +1851,13 @@ def get_topojson_for_uuid(request, search_uuid):
 
         for region in regional_data:
 
+            region_value = regional_data[region]
+            if survey_spatial_data.data_type == 'float' and survey_spatial_data.data_formatting:
+                region_value = survey_spatial_data.data_formatting.format(float(region_value))
+
             region_dict = {
                 'name': '',
-                'value': regional_data[region],
+                'value': region_value,
                 "geography_id": '',
                 "geography_code": '',
                 "data_status": "A",
@@ -2014,3 +2018,7 @@ def http_404_error(request):
 
 def licence_attribution(request):
     return render(request, 'licence_attribution.html', {}, context_instance=RequestContext(request))
+
+
+def local_data(request):
+    return render(request, 'local_data.html', {}, context_instance=RequestContext(request))

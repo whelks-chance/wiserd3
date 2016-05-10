@@ -24,20 +24,13 @@ Array.prototype.forEach.call(els, function(el) {
             <div class="col-lg-12">
                 <div class="c13">
                     <p class="c5">
-                        <span class="c3">{% trans 'Unless otherwise noted, the data and information available through the WISERD DataPortal is public sector information released under the Open Government Data License. The following accepted' %}</span>
-                        <span class="c2">
-                        <a class="c0" target="_blank" href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">{% trans 'generic attribution' %}</a>
-                        </span>
-                        <span class="c3">{% trans '&nbsp;relating to the use of such data and information from various sources has been applied where appropriate.' %}</span>
+                        <span class="c3">{% trans 'Unless otherwise noted, the data and information available through the WISERD DataPortal is public sector information released under the Open Government Data License. The following accepted <a class="c0" target="_blank" href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">generic attribution</a> relating to the use of such data and information from various sources has been applied where appropriate.' %}</span>
                     </p>
                     <blockquote class="c8 c3 c11">{% trans '&lsquo;Contains public sector information licensed under the Open Government Licence v3.0&rsquo;.' %}</blockquote>
                     <p class="c5">
                         <span class="c3">{% trans 'This attribution can be expanded to include any or all of the following organisations, sources and attributions under the Open Government Licence.' %}</span>
                     </p>
-                    <p class="c4">
-                        <span class="c3">
-                        </span>
-                    </p>
+
                     <hr>
 
                     <h4 class="c5">
@@ -48,20 +41,13 @@ Array.prototype.forEach.call(els, function(el) {
                     <p class="c5">
                         <span class="c3">{% trans 'Sources: ' %}</span>
                         <span class="c2">
-                        <a class="c0" target="_blank" href="https://statswales.wales.gov.uk/Catalogue">{% trans 'StatsWales' %}</a>
-                        </span>
-                        <span class="c3">, </span>
-                        <span class="c2">
-                        <a class="c0" target="_blank" href="http://lle.wales.gov.uk/home">{% trans 'Lle Portal' %}</a>
+                            <a class="c0" target="_blank" href="https://statswales.wales.gov.uk/Catalogue">{% trans 'StatsWales' %}</a>, <a class="c0" target="_blank" href="http://lle.wales.gov.uk/home">{% trans 'Lle Portal' %}</a>
                         </span>
                     </p>
                     <p class="c5">
-                        <span class="c3">{%  trans 'Attribution: &copy; Crown copyright 2016' %}</span>
+                        <span class="c3">{%  trans 'Attribution: &copy; Crown copyright <span class="current_year">2016</span>' %}</span>
                     </p>
-                    <p class="c4">
-                        <span class="c1">
-                        </span>
-                    </p>
+
                     <hr>
 
                     <h4 class="c5">
@@ -72,38 +58,25 @@ Array.prototype.forEach.call(els, function(el) {
                     <p class="c5">
                         <span class="c3">{% trans 'Sources: ' %}</span>
                         <span class="c2">
-                        <a class="c0" target="_blank" href="https://web.ons.gov.uk/ons/apiservice/web/apiservice/home">{% trans 'ONS OpenAPI' %}</a>
-                        </span>
-                        <span class="c3">, </span>
-                        <span class="c2">
-                        <a class="c0" target="_blank" href="http://www.neighbourhood.statistics.gov.uk/dissemination/Info.do?page=nde.htm">{% trans 'Neighbourhood Statistics API' %}</a>
-                        </span>
-                        <span class="c3">, </span>
-                        <span class="c2">
-                        <a class="c0" target="_blank" href="https://www.nomisweb.co.uk/">{% trans 'NOMIS API' %}</a>
+                            <a class="c0" target="_blank" href="https://web.ons.gov.uk/ons/apiservice/web/apiservice/home">{% trans 'ONS OpenAPI' %}</a>, <a class="c0" target="_blank" href="http://www.neighbourhood.statistics.gov.uk/dissemination/Info.do?page=nde.htm">{% trans 'Neighbourhood Statistics API' %}</a>, <a class="c0" target="_blank" href="https://www.nomisweb.co.uk/">{% trans 'NOMIS API' %}</a>
                         </span>
                     </p>
                     <p class="c5" id="h.gjdgxs">
                         <span class="c3">{% trans 'Attribution: '%}</span>
-                        <span class="c6 c3">{% trans 'Contains National Statistics data &copy; Crown copyright and database right 2016' %}</span>
+                        <span class="c6 c3">{% trans 'Contains National Statistics data &copy; Crown copyright and database right <span class="current_year">2016</span>' %}</span>
                     </p>
-                    <p class="c4">
-                        <span class="c3 c6">
-                        </span>
-                    </p>
+
                     <hr>
+
                     <h4 class="c5">
                         <span class="c1 c7 c12">
                         <a class="c0" target="_blank" href="http://www.electoralcommission.org.uk/">{% trans 'Electoral Commission' %}</a>
                         </span>
                     </h4>
                     <p class="c5">
-                        <span class="c3">{% trans 'Attribution: &copy; 2016 The Electoral Commission' %}</span>
+                        <span class="c3">{% trans 'Attribution: &copy; <span class="current_year">2016</span> The Electoral Commission' %}</span>
                     </p>
-                    <p class="c4">
-                        <span class="c3">
-                        </span>
-                    </p>
+
                     <hr>
 
                     <h4 class="c5">
@@ -118,13 +91,9 @@ Array.prototype.forEach.call(els, function(el) {
                         </span>
                     </p>
                     <p class="c5">
-                        <span class="c7 c3">{% trans 'Attribution: Contains Ordnance Survey data &copy; Crown copyright and database right' %} </span>
-                        <span class="c6 c3">2016</span>
+                        <span class="c7 c3">{% trans 'Attribution: Contains Ordnance Survey data &copy; Crown copyright and database right <span class="current_year">2016</span>' %}</span>
                     </p>
-                    <p class="c4">
-                        <span class="c1">
-                        </span>
-                    </p>
+
                     <hr>
 
                     <h4 class="c5">
@@ -135,17 +104,13 @@ Array.prototype.forEach.call(els, function(el) {
                     <p class="c5">
                         <span class="c3">{% trans 'Sources: ' %}</span>
                         <span class="c2">
-                        <a class="c0" target="_blank" href="http://wiki.openstreetmap.org/wiki/OpenLayers">{% trans 'OpenLayers' %}</a>
-                        </span>
-                        <span class="c3">, </span>
-                        <span class="c2">
-                        <a class="c0" target="_blank" href="http://wiki.openstreetmap.org/wiki/Nominatim">{% trans 'Nominatim' %}</a>
+                            <a class="c0" target="_blank" href="http://wiki.openstreetmap.org/wiki/OpenLayers">{% trans 'OpenLayers' %}</a>, <a class="c0" target="_blank" href="http://wiki.openstreetmap.org/wiki/Nominatim">{% trans 'Nominatim' %}</a>
                         </span>
                     </p>
                     <p class="c5">
                         <span class="c3">{% trans 'Attribution: Map data &copy;&nbsp;' %}</span>
                         <span class="c3 c10">
-                        <a class="c0" target="_blank" href="http://openstreetmap.org/">{% trans 'OpenStreetMap' %}</a>
+                            <a class="c0" target="_blank" href="http://openstreetmap.org/">{% trans 'OpenStreetMap' %}</a>
                         </span>
                         <span class="c3 c14">&nbsp;</span>
                         <span class="c3">{% trans 'contributors,&nbsp;' %}</span>
@@ -162,8 +127,7 @@ Array.prototype.forEach.call(els, function(el) {
                     <hr>
 
                     <p class="c5">
-                        <span class="c3">{% trans 'Source code available at
-                        <a class="c0" target="_blank" href="https://github.com/whelks-chance/wiserd3">GitHub</a>.' %}</span>
+                        <span class="c3">{% trans 'Source code available at <a class="c0" target="_blank" href="https://github.com/whelks-chance/wiserd3">GitHub</a>.' %}</span>
                     </p>
                 </div>
             </div>

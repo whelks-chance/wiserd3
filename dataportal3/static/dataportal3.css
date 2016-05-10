@@ -144,7 +144,7 @@
 
 #side-menu a {
 /*#side-menu > li > ul > li > ul > li > a {*/
-    word-break: break-all;
+    word-break: normal;
     line-break: strict;
 }
 
@@ -182,3 +182,13 @@
 .controls {
     min-height: 3em;
 }
+
+        #drop{
+            border:2px dashed #bbb;
+            -moz-border-radius:5px;
+            -webkit-border-radius:5px;
+            border-radius:5px;
+            padding:25px;
+            text-align:center;
+            font:20pt bold,"Vollkorn";color:#bbb
+        }

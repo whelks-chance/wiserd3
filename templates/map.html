@@ -151,6 +151,9 @@
                     {#                </ul>#}
                 </li>
                 <li>
+                    <a id="import_local_data_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> {% trans 'Import Local Data' %}</a>
+                </li>
+                <li>
                     <a href="#"> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>
                     <ul class="nav nav-ul nav-third-level scrollable_ul">
                         {% for wms_url, wms_layer_set in wms_layers.items %}
@@ -189,6 +192,27 @@
 
 {% block content %}
     <script>
+
+        var ajax_count = 0;
+        var wait_dialog_active = false;
+        function add_ajax_waiting(content) {
+            ajax_count += 1;
+            if (ajax_count == 1 && wait_dialog_active == false) {
+                waitingDialog.show(content);
+                wait_dialog_active = true;
+            }
+            console.log('adding ' + ajax_count + wait_dialog_active);
+
+        }
+        function ajax_finished() {
+            ajax_count -= 1;
+            if (ajax_count == 0 && wait_dialog_active == true) {
+                wait_dialog_active = false;
+                waitingDialog.hide();
+            }
+            console.log('removing ' + ajax_count + wait_dialog_active);
+
+        }
 
         var uid = 0;
         function get_next_uid() {
@@ -748,7 +772,7 @@
                         alert('{% trans 'Sorry, an error occurred. Please try again, or report it.' %}')
                     },
                     complete: function() {
-                        waitingDialog.hide();
+                        {#                        waitingDialog.hide();#}
                     }
                 });
             }
@@ -845,7 +869,13 @@
                 var grades = null;
 
                 if (feature_data.length > 1) {
-                    console.log(feature_data);
+
+                    {#                    console.log(feature_data);#}
+                    var data_len = feature_data.length;
+                    if (num_bins > data_len) {
+                        num_bins = data_len;
+                    }
+
                     {#  Calculating the bins for quantiles with 'q' option, 'e'  and 'k' available #}
                     grades = chroma.limits(feature_data, bin_breakdown, parseInt(num_bins));
                     console.log(grades);
@@ -1289,7 +1319,7 @@
                         }
                     },
                     complete: function() {
-                        waitingDialog.hide();
+                        {#                        waitingDialog.hide();#}
                     }
                 });
             }
@@ -1416,6 +1446,10 @@
                 $( "#search-remote-form").dialog( "open" );
             });
 
+            $("#import_local_data_btn").click(function(e){
+                $( "#local-data-form").dialog( "open" );
+            });
+
             $('#dataset_select').change(function(e){
                 {#                alert(e);#}
             });
@@ -1487,7 +1521,7 @@
                         alert('{% trans 'Sorry, an error occurred. Please try again, or report it.\n\n' %}');
                     },
                     complete: function() {
-                        waitingDialog.hide();
+                        {#                        waitingDialog.hide();#}
                     }
                 });
             });
@@ -1575,7 +1609,7 @@
                                     alert('{% trans 'Sorry, an error occurred. Please try again, or report it.\n\n' %}');
                                 },
                                 complete: function() {
-                                    waitingDialog.hide();
+                                    {#                                    waitingDialog.hide();#}
                                 }
                             });
 
@@ -1651,7 +1685,7 @@
                                             codelist_selected,
                                             function(csv_url) {
 
-                                                waitingDialog.hide();
+                                                {#                                                waitingDialog.hide();#}
                                                 var layer_name = data['search_uuid'];
                                                 topojson_layers[layer_name] = data['topojson'];
                                                 $( "#chloropleth_option_form").data({
@@ -1808,7 +1842,7 @@
                                 survey_id,
                                 local_available_data_selection,
                                 function(data) {
-                                    waitingDialog.hide();
+                                    {#                                    waitingDialog.hide();#}
                                     {#                                    var layer_name = survey_id + '_' + local_available_data_selection;#}
                                     var layer_name = data['search_uuid'];
                                     topojson_layers[layer_name] = data['topojson'];
@@ -1870,26 +1904,6 @@
                     local_data_layer['bin_num'] = '8';
                     local_data_layer['data_name'] = 'data_name';
 
-                    {#                    TODO this works!! --- well, it used to #}
-                    {#                    get_local_dataset_topojson(#}
-                    {#                            "{% url 'local_data_topojson' %}",#}
-                    {#                            local_data_layer['boundary_name'],#}
-                    {#                            local_data_layer['survey_id'],#}
-                    {#                            local_data_layer['data_name'],#}
-                    {#                            function(topojson_data) {#}
-                    {#                                console.log(local_data_layer);#}
-                    {##}
-                    {#                                handleUploadedLayer(#}
-                    {#                                        topojson_data['topojson'],#}
-                    {#                                        local_data_layer['colorpicker'],#}
-                    {#                                        local_data_layer['bin_type'],#}
-                    {#                                        local_data_layer['bin_num'],#}
-                    {#                                        '',#}
-                    {#                                        local_data_layer['name'],#}
-                    {#                                        ''#}
-                    {#                                );#}
-                    {#                            }#}
-                    {#                    );#}
                 }());
             }
 
@@ -1907,7 +1921,8 @@
             }
 
             function do_layer_single_uuid(uuid, search_layer_topojson_url) {
-                waitingDialog.show('{% trans 'Fetching map layer...' %}');
+                {#                waitingDialog.show('{% trans 'Fetching map layer...' %}');#}
+                add_ajax_waiting('{% trans 'Fetching map layer...' %}');
 
                 $.ajax({
                     url: search_layer_topojson_url,
@@ -1932,7 +1947,8 @@
                         );
                     },
                     complete: function() {
-                        waitingDialog.hide();
+                        {#                        waitingDialog.hide();#}
+                        ajax_finished();
                     }
                 });
             }
@@ -1967,6 +1983,62 @@
             }
 
 
+            if (localStorage.DataPortalLocalLayers) {
+
+                var localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));
+
+                var local_layer_names = Object.keys(localLayers);
+
+
+{#                alert('You have ' + local_layer_names.length + ' layers stored locally :\n\n ' + local_layer_names);#}
+
+                for (var name in local_layer_names) {
+                    if (local_layer_names.hasOwnProperty(name)) {
+
+                        var topojson_data = localLayers[local_layer_names[name]];
+                        handleUploadedLayer(
+                                topojson_data['topojson'],
+                                topojson_data['layer_data']['colorpicker'],
+                                topojson_data['layer_data']['bin_type'],
+                                topojson_data['layer_data']['bin_num'],
+                                '',
+                                topojson_data['layer_data']['name'],
+                                ''
+                        );
+                    }
+                }
+            }
+
+
+            $( "#local-data-form" ).dialog({
+                autoOpen: false,
+                height: map_div.height(),
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: map_div
+                },
+                width: map_div.width() / 2,
+                modal: true,
+                buttons: [
+                    {
+                        id: 'save_local_data_dialog_btn',
+                        text: '{% trans 'Save' %}',
+                        disabled: true,
+                        click: function() {
+                            {#                            waitingDialog.show('{% trans 'Inspecting dataset ...' %}');#}
+
+
+                        }},{
+                        text: '{% trans 'Cancel' %}',
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                ],
+                close: function() {
+                }
+            });
         });
 
     </script>
@@ -2013,7 +2085,6 @@
             {#                <div id="screenshot_result2"></div>#}
             {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
         </div>
-    </div>
     </div>
     <div id="chloropleth_option_form" title="{% trans 'Chloropleth options' %}">
         <table>
@@ -2124,6 +2195,347 @@
         </fieldset>
 
     </div>
+
+    <div id="local-data-form" title="{% trans 'Local Data' %}">
+        <div class="input-group custom-search-form">
+            <div id="drop">Drop an XLSX / XLSM / XLSB / ODS / XLS / XML file here to see sheet data</div>
+            <p><input type="file" name="xlfile" id="xlf" /> ... or click here to select a file</p>
+        </div>
+        <div>
+            <div id="local_column_headers_radio"></div>
+        </div>
+    </div>
+
+    <input hidden="hidden" type="checkbox" name="useworker" disabled>
+    <input hidden="hidden" type="checkbox" name="xferable" disabled>
+    <input hidden="hidden" type="checkbox" name="userabs" checked>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.core.min.js"></script>
+    <script src="{% static 'shim.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/ods.js"></script>
+    <script>
+        var X = XLSX;
+        var XW = {
+            /* worker message */
+            msg: 'xlsx',
+            /* worker scripts */
+            rABS: './xlsxworker2.js',
+            norABS: './xlsxworker1.js',
+            noxfer: './xlsxworker.js'
+        };
+
+        var rABS = typeof FileReader !== "undefined" && typeof FileReader.prototype !== "undefined" && typeof FileReader.prototype.readAsBinaryString !== "undefined";
+        if(!rABS) {
+            document.getElementsByName("userabs")[0].disabled = true;
+            document.getElementsByName("userabs")[0].checked = false;
+        }
+
+        var use_worker = typeof Worker !== 'undefined';
+        if(!use_worker) {
+            document.getElementsByName("useworker")[0].disabled = true;
+            document.getElementsByName("useworker")[0].checked = false;
+        }
+
+        var transferable = use_worker;
+        if(!transferable) {
+            document.getElementsByName("xferable")[0].disabled = true;
+            document.getElementsByName("xferable")[0].checked = false;
+        }
+
+        var wtf_mode = false;
+
+        function fixdata(data) {
+            var o = "", l = 0, w = 10240;
+            for(; l<data.byteLength/w; ++l) o+=String.fromCharCode.apply(null,new Uint8Array(data.slice(l*w,l*w+w)));
+            o+=String.fromCharCode.apply(null, new Uint8Array(data.slice(l*w)));
+            return o;
+        }
+
+        function ab2str(data) {
+            var o = "", l = 0, w = 10240;
+            for(; l<data.byteLength/w; ++l) o+=String.fromCharCode.apply(null,new Uint16Array(data.slice(l*w,l*w+w)));
+            o+=String.fromCharCode.apply(null, new Uint16Array(data.slice(l*w)));
+            return o;
+        }
+
+        function s2ab(s) {
+            var b = new ArrayBuffer(s.length*2), v = new Uint16Array(b);
+            for (var i=0; i != s.length; ++i) v[i] = s.charCodeAt(i);
+            return [v, b];
+        }
+
+        function xw_noxfer(data, cb) {
+            var worker = new Worker(XW.noxfer);
+            worker.onmessage = function(e) {
+                switch(e.data.t) {
+                    case 'ready': break;
+                    case 'e': console.error(e.data.d); break;
+                    case XW.msg: cb(JSON.parse(e.data.d)); break;
+                }
+            };
+            var arr = rABS ? data : btoa(fixdata(data));
+            worker.postMessage({d:arr,b:rABS});
+        }
+
+        function xw_xfer(data, cb) {
+            var worker = new Worker(rABS ? XW.rABS : XW.norABS);
+            worker.onmessage = function(e) {
+                switch(e.data.t) {
+                    case 'ready': break;
+                    case 'e': console.error(e.data.d); break;
+                    default: xx=ab2str(e.data).replace(/\n/g,"\\n").replace(/\r/g,"\\r"); console.log("done"); cb(JSON.parse(xx)); break;
+                }
+            };
+            if(rABS) {
+                var val = s2ab(data);
+                worker.postMessage(val[1], [val[1]]);
+            } else {
+                worker.postMessage(data, [data]);
+            }
+        }
+
+        function xw(data, cb) {
+            transferable = document.getElementsByName("xferable")[0].checked;
+            if(transferable) xw_xfer(data, cb);
+            else xw_noxfer(data, cb);
+        }
+
+        function to_json(workbook) {
+            var result = {};
+            workbook.SheetNames.forEach(function(sheetName) {
+                var roa = X.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                if(roa.length > 0){
+                    result[sheetName] = roa;
+                }
+            });
+            return result;
+        }
+
+        function to_csv(workbook) {
+            var result = [];
+            workbook.SheetNames.forEach(function(sheetName) {
+                var csv = X.utils.sheet_to_csv(workbook.Sheets[sheetName]);
+                if(csv.length > 0){
+                    result.push("SHEET: " + sheetName);
+                    result.push("");
+                    result.push(csv);
+                }
+            });
+            return result.join("\n");
+        }
+
+
+
+        function process_wb(wb) {
+            var output_json = to_json(wb);
+            var output = JSON.stringify(output_json, 2, 2);
+            do_layer_single_uuid(output_json);
+
+            if(typeof console !== 'undefined') console.log("output", new Date());
+        }
+
+        var drop = document.getElementById('drop');
+        function handleDrop(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            rABS = document.getElementsByName("userabs")[0].checked;
+            use_worker = document.getElementsByName("useworker")[0].checked;
+            var files = e.dataTransfer.files;
+            var f = files[0];
+            {
+                var reader = new FileReader();
+                var name = f.name;
+                reader.onload = function(e) {
+                    if(typeof console !== 'undefined') console.log("onload", new Date(), rABS, use_worker);
+                    var data = e.target.result;
+                    if(use_worker) {
+                        xw(data, process_wb);
+                    } else {
+                        var wb;
+                        if(rABS) {
+                            wb = X.read(data, {type: 'binary'});
+                        } else {
+                            var arr = fixdata(data);
+                            wb = X.read(btoa(arr), {type: 'base64'});
+                        }
+                        process_wb(wb);
+                    }
+                };
+                if(rABS) reader.readAsBinaryString(f);
+                else reader.readAsArrayBuffer(f);
+            }
+        }
+
+        function handleDragover(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'copy';
+        }
+
+        if(drop.addEventListener) {
+            drop.addEventListener('dragenter', handleDragover, false);
+            drop.addEventListener('dragover', handleDragover, false);
+            drop.addEventListener('drop', handleDrop, false);
+        }
+
+
+        var xlf = document.getElementById('xlf');
+        function handleFile(e) {
+            rABS = document.getElementsByName("userabs")[0].checked;
+            use_worker = document.getElementsByName("useworker")[0].checked;
+            var files = e.target.files;
+            var f = files[0];
+            {
+                var reader = new FileReader();
+                var name = f.name;
+                reader.onload = function(e) {
+                    if(typeof console !== 'undefined') console.log("onload", new Date(), rABS, use_worker);
+                    var data = e.target.result;
+                    if(use_worker) {
+                        xw(data, process_wb);
+                    } else {
+                        var wb;
+                        if(rABS) {
+                            wb = X.read(data, {type: 'binary'});
+                        } else {
+                            var arr = fixdata(data);
+                            wb = X.read(btoa(arr), {type: 'base64'});
+                        }
+                        process_wb(wb);
+                    }
+                };
+                if(rABS) reader.readAsBinaryString(f);
+                else reader.readAsArrayBuffer(f);
+            }
+        }
+
+        if(xlf.addEventListener) xlf.addEventListener('change', handleFile, false);
+
+
+        function do_layer_single_uuid(json_object) {
+
+            var ordered_data = {};
+            var worksheet_name = Object.keys(json_object)[0];
+            var area_values = json_object[worksheet_name];
+
+            console.log(area_values[0]);
+            var column_headers = Object.keys(area_values[0]);
+            console.log(column_headers);
+
+            for (var area in area_values) {
+                if (area_values.hasOwnProperty(area)) {
+                    ordered_data[area_values[area]['AREA_CODE']] = area_values[area]['VALUE'];
+                }
+            }
+
+
+            var dataset_radio = $('#local_column_headers_radio');
+            dataset_radio.find('div').remove().end();
+
+            var codelist_label = $('<div>', {text: '{% trans 'Select geography id column' %}'});
+            dataset_radio.append(codelist_label);
+
+            var codelist_radio_div = $('<div>', {id: 'local_data_geography_radio'});
+            for(var column_header_idx in column_headers) {
+                if(column_headers.hasOwnProperty(column_header_idx))
+                var column_header_option = column_headers[column_header_idx];
+
+                var radio_text = column_header_option;
+
+                var radio_div = $('<div>');
+                radio_div.append($('<input>', {
+                    value: column_header_option,
+                    id: column_header_option,
+                    type: 'radio',
+                    name: 'available_data_option',
+                    text: radio_text
+                }));
+                radio_div.append($('<label>', {
+                    class: 'dialog_radio_option',
+                    value: column_header_option,
+                    for: column_header_option,
+                    text: radio_text
+                }));
+                codelist_radio_div.append(radio_div);
+            }
+            codelist_radio_div.buttonset();
+            dataset_radio.append(codelist_radio_div);
+
+
+            var codelist_label = $('<div>', {text: '{% trans 'Select data value column' %}'});
+            dataset_radio.append(codelist_label);
+
+            var local_data_value_radio_div = $('<div>', {id: 'local_data_value_radio'});
+            for(var column_header_idx in column_headers) {
+                if(column_headers.hasOwnProperty(column_header_idx))
+                var column_header_option = column_headers[column_header_idx];
+
+                var radio_text = column_header_option;
+
+                var radio_div = $('<div>');
+                radio_div.append($('<input>', {
+                    value: column_header_option,
+                    id: column_header_option + '_value',
+                    type: 'radio',
+                    name: 'local_data_value_option',
+                    text: radio_text
+                }));
+                radio_div.append($('<label>', {
+                    class: 'dialog_radio_option',
+                    value: column_header_option,
+                    for: column_header_option + '_value',
+                    text: radio_text
+                }));
+                local_data_value_radio_div.append(radio_div);
+            }
+            local_data_value_radio_div.buttonset();
+            dataset_radio.append(local_data_value_radio_div);
+
+            $.ajax({
+                url: "{% url 'data_api' %}",
+                type: 'GET',
+                data: {
+                    method: 'search_layer_topojson',
+                    search_uuid: 'ae7ae056-ac8a-4b70-827d-d12c213411be'
+                },
+                success: function (topojson_data) {
+
+                    var layer_data = topojson_data['topojson'];
+                    var geom_name = Object.keys(layer_data['objects'])[0];
+                    var geometries = layer_data['objects'][geom_name]['geometries'];
+                    var new_data = [];
+
+                    for (var geom in geometries) {
+                        if (geometries.hasOwnProperty(geom)) {
+                            var area_code = geometries[geom]['properties']['CODE'];
+                            geometries[geom]['properties']['REMOTE_VALUE'] = ordered_data[area_code];
+                            new_data.push(geometries[geom])
+                        }
+                    }
+
+                    {#                        delete topojson_data['topojson']['objects'][geom_name];#}
+                    topojson_data['topojson']['objects'][geom_name]['geometries'] = new_data;
+                    alert('Success');
+
+                    if(typeof(Storage) !== "undefined") {
+                        var localLayers = {};
+                        if (localStorage.DataPortalLocalLayers) {
+                            localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));
+                        }
+                        localLayers['test_layer'] = topojson_data;
+                        localStorage.setItem("DataPortalLocalLayers", JSON.stringify(localLayers));
+                    } else {
+                        alert('Sorry! Your browser does not support local data storage.');
+                    }
+                },
+                complete: function() {
+                }
+            });
+        }
+
+    </script>
 
 {% endblock %}
 

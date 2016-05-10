@@ -395,6 +395,7 @@ class SpatialSurveyLink(models.Model):
     data_prefix = models.TextField(null=True, blank=True)
     data_suffix = models.TextField(null=True, blank=True)
     data_type = models.TextField(null=True, blank=True)
+    data_formatting = models.TextField(null=True, blank=True)
     data_description = models.TextField(null=True, blank=True)
     users = models.ManyToManyField('UserProfile')
 
@@ -405,7 +406,7 @@ class SpatialSurveyLink(models.Model):
     full_name_cy = models.TextField(blank=True, null=True)
     notes_cy = models.TextField(blank=True, null=True)
 
-    link_groups = models.ManyToManyField('SpatialSurveyLinkGroup', )
+    link_groups = models.ManyToManyField('SpatialSurveyLinkGroup', null=True, blank=True)
 
     class Meta:
         db_table = 'spatial_survey_link'

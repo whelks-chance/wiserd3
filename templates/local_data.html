@@ -3,11 +3,7 @@
 {% load i18n %}
 
 {% block extra_head %}
-    <script lang="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.core.min.js"></script>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    {#<title>JS-XLSX Live Demo</title>#}
     <style>
         #drop{
             border:2px dashed #bbb;
@@ -17,9 +13,6 @@
             padding:25px;
             text-align:center;
             font:20pt bold,"Vollkorn";color:#bbb
-        }
-        #b64data{
-            width:100%;
         }
     </style>
 
@@ -46,7 +39,7 @@
                 <input hidden="hidden" type="checkbox" name="xferable" disabled>
                 <input hidden="hidden" type="checkbox" name="userabs" checked>
 
-
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.core.min.js"></script>
                 <script src="{% static 'shim.js' %}"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
@@ -138,15 +131,6 @@
                         else xw_noxfer(data, cb);
                     }
 
-                    function get_radio_value( radioName ) {
-                        var radios = document.getElementsByName( radioName );
-                        for( var i = 0; i < radios.length; i++ ) {
-                            if( radios[i].checked || radios.length === 1 ) {
-                                return radios[i].value;
-                            }
-                        }
-                    }
-
                     function to_json(workbook) {
                         var result = {};
                         workbook.SheetNames.forEach(function(sheetName) {
@@ -171,29 +155,11 @@
                         return result.join("\n");
                     }
 
-                    function to_formulae(workbook) {
-                        var result = [];
-                        workbook.SheetNames.forEach(function(sheetName) {
-                            var formulae = X.utils.get_formulae(workbook.Sheets[sheetName]);
-                            if(formulae.length > 0){
-                                result.push("SHEET: " + sheetName);
-                                result.push("");
-                                result.push(formulae.join("\n"));
-                            }
-                        });
-                        return result.join("\n");
-                    }
 
-                    var tarea = document.getElementById('b64data');
-                    function b64it() {
-                        if(typeof console !== 'undefined') console.log("onload", new Date());
-                        var wb = X.read(tarea.value, {type: 'base64',WTF:wtf_mode});
-                        process_wb(wb);
-                    }
 
                     function process_wb(wb) {
                         var output_json = to_json(wb);
-                        output = JSON.stringify(output_json, 2, 2);
+                        var output = JSON.stringify(output_json, 2, 2);
                         do_layer_single_uuid(output_json);
 
                         if(typeof console !== 'undefined') console.log("output", new Date());

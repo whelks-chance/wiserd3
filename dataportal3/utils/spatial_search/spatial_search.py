@@ -127,6 +127,18 @@ geometry_columns = [
         'topojson_file': os.path.join(TOPOJSON_DIR, 'ConstituencyProfile/output-fixed-1-const-prof.json'),
         'topojson_file_high': os.path.join(TOPOJSON_DIR, 'ConstituencyProfile/output-fixed-1-const-prof.json')
     },
+    {
+        'table_name': None,
+        'geometry_column': None,
+        'label': None,
+        'geog_short_code': 'pcode_point',
+        # FIXME wrong region_id
+        'region_id': '1234567890',
+        'table_model': None,
+        'name': 'Postcode Points',
+        'topojson_file': '/home/ianh/Downloads/LOSAPopCentroids/pprint.json',
+        'topojson_file_high': '/home/ianh/Downloads/LOSAPopCentroids/pprint.json',
+    },
     # {
     #     'table_name': 'spatialdatanawer',
     #     'geometry_column': 'geom',

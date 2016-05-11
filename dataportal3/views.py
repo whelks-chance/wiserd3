@@ -877,10 +877,13 @@ def data_api(request):
     if method is None:
         method = request.POST.get("method", None)
 
+    if method == 'topojson_layer_by_name':
+        topojson_name = request.GET.get("name", None)
+        to_return = get_topojson_by_name(request, topojson_name)
+
     if method == 'search_layer_topojson':
         search_uuid = request.GET.get("search_uuid", None)
         to_return = get_topojson_for_uuid(request, search_uuid)
-        print 'here2'
 
     # This takes a list of fields from a layer described by an uploaded shapefile
     # The layer will have been searched for and displayed, and can be edited for content here
@@ -1642,6 +1645,38 @@ def search_data(request, search_uuid):
 def get_topojson_for_uuid_view(request, search_uuid):
     response_data = get_topojson_for_uuid(request, search_uuid)
     return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
+
+
+def get_topojson_by_name(request, topojson_name):
+    response_data = {}
+
+    layer_data = {
+        'bin_num': 6,
+        'bin_type': 'q',
+        'colorpicker': 'Spectral',
+        'codelist': {},
+        'geography_id': 'pcode_point',
+        'uuid': '3',
+        'name': 'pcode_point',
+        'dataset_id': '3',
+        'display_fields': ''
+    }
+
+    rd = RemoteData()
+    region_id, topojson_file = rd.get_dataset_geodata(topojson_name, False)
+    with open(topojson_file, 'r') as fd:
+        response_data['topojson'] = json.loads(fd.read())
+
+    layer_data['data_names'] = list([])
+
+    response_data['all_data'] = {}
+
+
+    response_data['search_uuid'] = '3'
+    response_data['layer_data'] = layer_data
+    response_data['type'] = 'empty'
+
+    return response_data
 
 
 def get_topojson_for_uuid(request, search_uuid):

@@ -885,10 +885,20 @@
                     console.log(chroma_scale);
                 }
 
-                var myLayer = new L.TopoJSON();
-                myLayer.addData(data);
+                var geojsonMarkerOptions = {
+                    radius: 8,
+                    fillColor: "#ff7800",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                };
 
-                {#                console.log(myLayer);#}
+                var myLayer = new L.TopoJSON(data, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.circleMarker(latlng, geojsonMarkerOptions);
+                    }
+                });
 
                 leaflet_layers.push({
                     name: layer_name_text,
@@ -897,7 +907,9 @@
                 });
 
                 myLayer.eachLayer(function (layer) {
-                    layer.setStyle(styleFeature(layer.feature, grades, chroma_scale, opacity));
+                    if (typeof layer.setStyle === 'function') {
+                        layer.setStyle(styleFeature(layer.feature, grades, chroma_scale, opacity));
+                    }
                 });
                 myLayer.eachLayer(handleLayer);
 
@@ -1953,6 +1965,34 @@
                 });
             }
 
+
+            function do_layer_by_name(name) {
+                add_ajax_waiting('{% trans 'Fetching map layer...' %}');
+                $.ajax({
+                    url: "{% url 'data_api' %}",
+                    type: 'GET',
+                    data: {
+                        method: 'topojson_layer_by_name',
+                        name: name
+                    },
+                    success: function (topojson_data) {
+                        handleUploadedLayer(
+                                topojson_data['topojson'],
+                                topojson_data['layer_data']['colorpicker'],
+                                topojson_data['layer_data']['bin_type'],
+                                topojson_data['layer_data']['bin_num'],
+                                '',
+                                topojson_data['layer_data']['name'],
+                                ''
+                        );
+                    },
+                    complete: function() {
+                        ajax_finished();
+                    }
+                });
+            }
+            do_layer_by_name('pcode_point');
+
             var remote_data_layer_data = {{ remote_searches|jsonify }};
             for (var remote_data_layer_idx in remote_data_layer_data) {
 
@@ -2194,8 +2234,8 @@
     <script src="{% static 'xlsx/0.8.0/jszip.js' %}"></script>
     <script src="{% static 'xlsx/0.8.0/xlsx.js' %}"></script>
 
-{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>#}
-{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>#}
+    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>#}
+    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>#}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/ods.js"></script>
     <script>
 
@@ -2552,6 +2592,16 @@
                                     } else {
                                         alert('Sorry! Your browser does not support local data storage.');
                                     }
+
+                                    handleUploadedLayer(
+                                            all_topojson_data['topojson'],
+                                            all_topojson_data['layer_data']['colorpicker'],
+                                            all_topojson_data['layer_data']['bin_type'],
+                                            all_topojson_data['layer_data']['bin_num'],
+                                            '',
+                                            all_topojson_data['layer_data']['name'],
+                                            ''
+                                    );
                                 },
                                 complete: function() {
                                 }

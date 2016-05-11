@@ -22,6 +22,7 @@ from django.conf.urls.i18n import i18n_patterns
 from wiserd3 import settings
 
 urlpatterns = [
+    url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin_tools/', include(admin.site.urls)),
     url(r'^api/', include(api_urls, namespace='api')),
 

@@ -1,5 +1,7 @@
 from django.apps import apps
 from django.contrib import admin
+from grappelli_filters import SearchFilter, FiltersMixin
+
 
 from dataportal3 import models
 from django.contrib.gis import admin as gis_admin
@@ -7,17 +9,44 @@ from django.contrib.gis import admin as gis_admin
 # from old import models
 
 # Register your models here.
-from dataportal3.models import Question, UserGroupSurveyCollection, SurveyVisibilityMetadata
+from dataportal3.models import Question, UserGroupSurveyCollection, SurveyVisibilityMetadata, Response
 
 
-class SanityAdmin(admin.ModelAdmin):
+class QuestionAdmin(FiltersMixin, admin.ModelAdmin):
     raw_id_fields = ("survey", "link_from_question", "subof_question", "response")
+    list_filter = (
+        ('literal_question_text', SearchFilter),
+        ('qid', SearchFilter),
+        ('questionnumber', SearchFilter),
+        ('survey__surveyid', SearchFilter)
+    )
 
-admin.site.register(Question, SanityAdmin)
+admin.site.register(Question, QuestionAdmin)
 admin.site.register(models.FeatureStore, gis_admin.GeoModelAdmin)
 
 
-# TODO this is a mess
+class QuestionInline(admin.StackedInline):
+    model = Question
+    raw_id_fields = ("survey", "link_from_question", "subof_question", "response")
+
+    # fk_name = "response"
+
+
+class ResponseAdmin(FiltersMixin, admin.ModelAdmin):
+    list_filter = (
+        ('responseid', SearchFilter),
+        ('responsetext', SearchFilter),
+        ('route_notes', SearchFilter),
+    )
+    inlines = [
+        QuestionInline,
+    ]
+
+
+admin.site.register(Response, ResponseAdmin)
+
+
+    # TODO this is a mess
 class SurveyVisibilityMetadataInline(admin.StackedInline):
     model = SurveyVisibilityMetadata
 

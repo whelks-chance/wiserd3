@@ -34,6 +34,11 @@ ALLOWED_HOSTS = ['127.0.0.1', 'dataportal1-wiserd.cf.ac.uk']
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli',
+    'grappelli.dashboard',
+    'grappelli_filters',
+    'grappelli_menu',
+    'grappelli_extensions',
     'django.contrib.contenttypes',
     'django.contrib.sites',
     'django.contrib.admin',
@@ -54,7 +59,7 @@ INSTALLED_APPS = (
     'django_hstore',
     'django_extensions',
     'rest_framework',
-    'rest_framework_swagger'
+    'rest_framework_swagger',
 )
 
 REST_FRAMEWORK = {

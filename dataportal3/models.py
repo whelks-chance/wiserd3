@@ -237,7 +237,11 @@ class Question(models.Model):
         db_table = 'question'
 
     def __unicode__(self):
-        return str(self.qid) + ':' + self.literal_question_text
+        return '{} : {}'.format(self.qid, self.literal_question_text)
+
+    @staticmethod
+    def autocomplete_search_fields():
+        return ("qid__iexact", "literal_question_text__icontains", "questionnumber__icontains")
 
 
 class ResponseType(models.Model):

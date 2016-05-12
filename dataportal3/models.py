@@ -720,7 +720,6 @@ class SpatialdataAEFA(models.Model):
 
 class SpatialdataPolice(models.Model):
     gid = models.IntegerField(primary_key=True)
-    # name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
     geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
@@ -734,12 +733,26 @@ class SpatialdataPostCode(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
     label = models.CharField(max_length=254, blank=True, null=True)
-    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    geom = models.GeometryField(blank=True, null=True)
     objects = models.GeoManager()
 
     class Meta:
         managed = False
         db_table = 'spatialdata_pcode'
+
+
+class SpatialdataPostCodePoint(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    postcode = models.CharField(max_length=254, blank=True, null=True)
+    easting = models.IntegerField(blank=True, null=True)
+    northing = models.IntegerField(blank=True, null=True)
+    country = models.CharField(max_length=254, blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    class Meta:
+        managed = False
+        db_table = 'pcode_point'
 
 
 class SpatialdataPostCodeS(models.Model):

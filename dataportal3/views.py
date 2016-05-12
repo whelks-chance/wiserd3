@@ -1647,25 +1647,82 @@ def get_topojson_for_uuid_view(request, search_uuid):
     return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
 
 
+def geojson_points_to_topojson(geojson_object):
+    geometries = []
+    for f in geojson_object['features']:
+        geometries.append(
+            {
+                "type": "Point",
+                "properties": f['properties'],
+                "coordinates": f['geometry']['coordinates']
+            },
+        )
+    topojson_conversion = {
+        "objects": {
+            "name": {
+                "type": "GeometryCollection",
+                "geometries": geometries
+            }
+        },
+        "arcs": [],
+        "type": "Topology"
+    }
+    return topojson_conversion
+
+
 def get_topojson_by_name(request, topojson_name):
+    from topojson import topojson
+
     response_data = {}
+
+    nomis_search = models.NomisSearch()
+    nomis_search.uuid = str(uuid.uuid4())
+    nomis_search.user = get_request_user(request)
+    nomis_search.dataset_id = None
+    nomis_search.geography_id = topojson_name
+    nomis_search.search_attributes = codelist_to_attributes({})
+    nomis_search.search_type = models.SearchType.objects.get(name='User')
+    nomis_search.save()
 
     layer_data = {
         'bin_num': 6,
         'bin_type': 'q',
         'colorpicker': 'Spectral',
         'codelist': {},
-        'geography_id': 'pcode_point',
-        'uuid': '3',
-        'name': 'pcode_point',
-        'dataset_id': '3',
+        'geography_id': topojson_name,
+        'uuid': nomis_search.uuid,
+        'name': topojson_name,
+        'dataset_id': '-1',
         'display_fields': ''
     }
 
-    rd = RemoteData()
-    region_id, topojson_file = rd.get_dataset_geodata(topojson_name, False)
-    with open(topojson_file, 'r') as fd:
-        response_data['topojson'] = json.loads(fd.read())
+    if topojson_name == 'pcode_district':
+        filter_var = 'label__istartswith'
+        code = 'CF1'
+        postcode_subset = models.SpatialdataPostCode.objects.using('new').all().filter(**{filter_var: code})
+        s = serialize('geojson', postcode_subset, fields=('geom', 'label', 'REMOTE_VALUE'))
+        topojson_conv = topojson(json.loads(s), quantization=1e6, simplify=0.0005)
+        response_data['topojson'] = topojson_conv
+
+    elif topojson_name == 'pcode_point':
+        filter_var = 'postcode__istartswith'
+        code = 'CF14'
+        # code2 = 'LL'
+        # code3 = 'SY'
+        postcode_subset = models.SpatialdataPostCodePoint.objects.using('new').all().filter(**{filter_var: code})
+        # postcode_subset = models.SpatialdataPostCodePoint.objects.using('new').all().filter(
+        #     Q(**{filter_var: code}) | Q(**{filter_var: code2}) | Q(**{filter_var: code3})
+        # )
+        print len(list(postcode_subset))
+        s = serialize('geojson', postcode_subset, fields=('geom', 'postcode', 'REMOTE_VALUE'))
+        # format it like it's topojson, which for some reason the other topojson lib can't do for points
+        response_data['topojson'] = geojson_points_to_topojson(json.loads(s))
+
+    else:
+        rd = RemoteData()
+        region_id, topojson_file = rd.get_dataset_geodata(topojson_name, False)
+        with open(topojson_file, 'r') as fd:
+            response_data['topojson'] = json.loads(fd.read())
 
     layer_data['data_names'] = list([])
 

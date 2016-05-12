@@ -31,6 +31,11 @@ Topojson, much better. 1% is around 500k
     mapshaper -i input-fixed.shp snap -simplify dp 100% keep-shapes -o output-fixed.json format=topojson
     mapshaper -i input-fixed.shp snap -simplify dp 1% keep-shapes -o output-fixed-1.json format=topojson
 
+### Prettyprint
+The topojson file is printed all on a single line in the file, which breaks editors
+
+    node -e "console.log(JSON.stringify(JSON.parse(require('fs') \
+      .readFileSync(process.argv[1])), null, 4));" output-fixed-1.json > pretty.json
 
 ## Build the Database
 
@@ -207,6 +212,8 @@ http://jrue.github.io/coding/2014/exercises/basicbubblepackchart/
 http://stackoverflow.com/questions/1770209/run-child-processes-as-different-user-from-a-long-running-process/6037494#6037494
 
 http://stackoverflow.com/a/13332300/2943238
+
+https://github.com/calvinmetcalf/topojson.py
 
 ## Awkwardness
 

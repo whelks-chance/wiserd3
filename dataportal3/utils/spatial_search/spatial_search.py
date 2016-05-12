@@ -136,8 +136,20 @@ geometry_columns = [
         'region_id': '1234567890',
         'table_model': None,
         'name': 'Postcode Points',
-        'topojson_file': '/home/ianh/Downloads/LOSAPopCentroids/pprint.json',
-        'topojson_file_high': '/home/ianh/Downloads/LOSAPopCentroids/pprint.json',
+        'topojson_file': '/home/ianh/Downloads/shp_files/OSCodePointOpenFeb2016Wales/pprint.json',
+        'topojson_file_high': '/home/ianh/Downloads/shp_files/OSCodePointOpenFeb2016Wales/pprint.json',
+    },
+    {
+        'table_name': None,
+        'geometry_column': None,
+        'label': None,
+        'geog_short_code': 'lsoa_pembrokshire_point',
+        # FIXME wrong region_id
+        'region_id': '1234567890',
+        'table_model': None,
+        'name': 'LSOA Pembrokshire Points',
+        'topojson_file': '/home/ianh/Downloads/shp_files/LOSAPopCentroids/pprint.json',
+        'topojson_file_high': '/home/ianh/Downloads/shp_files/LOSAPopCentroids/pprint.json',
     },
     # {
     #     'table_name': 'spatialdatanawer',

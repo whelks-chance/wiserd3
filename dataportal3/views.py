@@ -1671,6 +1671,7 @@ def geojson_points_to_topojson(geojson_object):
 
 
 def get_topojson_by_name(request, topojson_name):
+    print request.GET
     from topojson import topojson
 
     response_data = {}
@@ -1696,7 +1697,32 @@ def get_topojson_by_name(request, topojson_name):
         'display_fields': ''
     }
 
-    if topojson_name == 'pcode_district':
+    if topojson_name == 'assembly_constituency':
+        filter_var = 'code__istartswith'
+        codes = request.GET.getlist('codes[]')
+
+        if len(codes) == 0:
+            constituency_subset = models.SpatialdataConstituency.objects.using('new').all()
+        else:
+            ors = []
+            for code in codes:
+                ors.append(Q(**{filter_var: code}))
+
+            constituency_subset = models.SpatialdataConstituency.objects.using('new').all().filter(
+                reduce(operator.or_, ors)
+            )
+            print constituency_subset.query
+
+        s = serialize('geojson', constituency_subset, fields=('geom', 'code', 'REMOTE_VALUE'))
+
+        # geos = GEOSGeometry(s)
+        # new_geos = geos.simplify(tolerance=0.1, preserve_topology=True)
+
+        # topojson_conv = topojson(json.loads(s), quantization=1e6, simplify=0.0005)
+        topojson_conv = topojson(json.loads(s))
+        response_data['topojson'] = topojson_conv
+
+    elif topojson_name == 'pcode_district':
         filter_var = 'label__istartswith'
         code = 'CF1'
         postcode_subset = models.SpatialdataPostCode.objects.using('new').all().filter(**{filter_var: code})
@@ -1729,9 +1755,9 @@ def get_topojson_by_name(request, topojson_name):
     response_data['all_data'] = {}
 
 
-    response_data['search_uuid'] = '3'
+    response_data['search_uuid'] = nomis_search.uuid
     response_data['layer_data'] = layer_data
-    response_data['type'] = 'empty'
+    # response_data['type'] = 'Topojson'
 
     return response_data
 

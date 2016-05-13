@@ -106,14 +106,32 @@
     </div>
 
     <div class="row">
-        <div class="list-group">
-            {% for nomis_layer in nomis_layers %}
-                {% if nomis_layer.uuid %}
-                    <a target="_blank" href="{% url 'search_data' nomis_layer.uuid %}" class="list-group-item"><i class="fa fa-map-o fa-fw"></i>
-                        {% if nomis_layer.name %}{{ nomis_layer.name }}{% else %}{% trans 'Unnamed' %}{% endif %} - {{ nomis_layer.datetime }}
-                    </a>
-                {% endif %}
-            {% endfor %}
+        <div class="panel">
+            <div class="panel-heading">
+                <h3>Local data layers</h3>
+            </div>
+            <div class="panel-body">
+                <div id="out"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3>Searches</h3>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    {% for nomis_layer in nomis_layers %}
+                        {% if nomis_layer.uuid %}
+                            <a target="_blank" href="{% url 'search_data' nomis_layer.uuid %}" class="list-group-item"><i class="fa fa-map-o fa-fw"></i>
+                                {% if nomis_layer.name %}{{ nomis_layer.name }}{% else %}{% trans 'Unnamed' %}{% endif %} - {{ nomis_layer.datetime }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 
@@ -439,6 +457,45 @@
     <script>
         $(document).ready(function(){
 
+            if(typeof(Storage) !== "undefined") {
+                var localLayers = {};
+                if (localStorage.DataPortalLocalLayers) {
+                    localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));
+{#                    console.log(localLayers);#}
+                }
+
+                for (var key in localLayers) {
+                    if (localLayers.hasOwnProperty(key)) {
+                        var row = $('<a/>').addClass("list-group-item");
+                        var button = $('<button/>')
+                                .attr('id', 'button_' + key)
+                                .attr('data-local_uuid', key)
+                                .addClass("btn btn-danger");
+                        var icon = $('<i/>').addClass('fa fa-close col-sm-2');
+                        button.append(icon);
+                        button.click(function(){
+                            var uuid = $(this).data('local_uuid');
+                            var delete_confirm = window.confirm("Delete layer data " + uuid + " ?");
+
+                            if (delete_confirm) {
+                                if (localStorage.DataPortalLocalLayers) {
+                                    localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));
+                                    delete localLayers[uuid];
+                                    localStorage.setItem("DataPortalLocalLayers", JSON.stringify(localLayers));
+                                }
+                                location.reload();
+                            }
+                        });
+
+                        row.append(button);
+                        var key_div = $('<div/>').addClass('control-label col-sm-10').text(key);
+                        row.append(key_div);
+                        $('#out').append(row);
+                    }
+                }
+            } else {
+                alert('Sorry! Your browser does not support local data storage.');
+            }
 
         });
     </script>

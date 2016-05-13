@@ -15,6 +15,7 @@
             font:20pt bold,"Vollkorn";color:#bbb
         }
     </style>
+        <script type="text/javascript" src="{% static 'dataportal/dataportal.js' %}"></script>
 
 {% endblock %}
 
@@ -38,6 +39,13 @@
                 <input hidden="hidden" type="checkbox" name="useworker" disabled>
                 <input hidden="hidden" type="checkbox" name="xferable" disabled>
                 <input hidden="hidden" type="checkbox" name="userabs" checked>
+
+                <div class="row">
+                    <div id="out" class="list-group"></div>
+                    <pre id="out2"></pre>
+                    <pre id="out3"></pre>
+                    <pre id="out4"></pre>
+                </div>
 
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.core.min.js"></script>
                 <script src="{% static 'shim.js' %}"></script>
@@ -160,8 +168,14 @@
                     function process_wb(wb) {
                         var output_json = to_json(wb);
                         var output = JSON.stringify(output_json, 2, 2);
-                        do_layer_single_uuid(output_json);
 
+
+                        var codes = ['W09000001', 'W09000002'];
+
+                        do_layer_single_uuid(output_json, 'assembly_constituency', codes);
+
+                        if(out2.innerText === undefined) out2.textContent = output;
+                        else out2.innerText = output;
                         if(typeof console !== 'undefined') console.log("output", new Date());
                     }
 
@@ -243,7 +257,7 @@
                     if(xlf.addEventListener) xlf.addEventListener('change', handleFile, false);
 
 
-                    function do_layer_single_uuid(json_object) {
+                    function do_layer_single_uuid(json_object, layer_name, codes) {
 
                         var ordered_data = {};
                         var worksheet_name = Object.keys(json_object)[0];
@@ -254,39 +268,48 @@
                                 ordered_data[area_values[area]['AREA_CODE']] = area_values[area]['VALUE'];
                             }
                         }
+                        console.log(ordered_data);
 
                         $.ajax({
                             url: "{% url 'data_api' %}",
                             type: 'GET',
                             data: {
-                                method: 'search_layer_topojson',
-                                search_uuid: 'ae7ae056-ac8a-4b70-827d-d12c213411be'
+                                method: 'topojson_layer_by_name',
+                                name: layer_name,
+                                codes: codes
                             },
                             success: function (topojson_data) {
 
-                                var layer_data = topojson_data['topojson'];
-                                var geom_name = Object.keys(layer_data['objects'])[0];
-                                var geometries = layer_data['objects'][geom_name]['geometries'];
-                                var new_data = [];
-
-                                for (var geom in geometries) {
-                                    if (geometries.hasOwnProperty(geom)) {
-                                        var area_code = geometries[geom]['properties']['CODE'];
-                                        geometries[geom]['properties']['REMOTE_VALUE'] = ordered_data[area_code];
-                                        new_data.push(geometries[geom])
-                                    }
-                                }
-
+                                console.log(JSON.stringify(topojson_data));
+{##}
+{#                                var layer_data = topojson_data['topojson'];#}
+{#                                var geom_name = Object.keys(layer_data['objects'])[0];#}
+{#                                var geometries = layer_data['objects'][geom_name]['geometries'];#}
+{#                                var new_data = [];#}
+{##}
+{#                                for (var geom in geometries) {#}
+{#                                    if (geometries.hasOwnProperty(geom)) {#}
+{#                                        var area_code = geometries[geom]['properties']['code'];#}
+{#                                        alert(area_code);#}
+{#                                        geometries[geom]['properties']['REMOTE_VALUE'] = ordered_data[area_code];#}
+{#                                        new_data.push(geometries[geom])#}
+{#                                    }#}
+{#                                }#}
+{##}
                                 {#                        delete topojson_data['topojson']['objects'][geom_name];#}
-                                topojson_data['topojson']['objects'][geom_name]['geometries'] = new_data;
-                                alert('Success');
+{#                                topojson_data['topojson']['objects'][geom_name]['geometries'] = new_data;#}
+{#                                alert('Success');#}
+
+                                topojson_data = thing(topojson_data, ordered_data, topojson_data['search_uuid'], area_values, 'AREA_CODE', Object.keys(area_values[0]));
+
+                                console.log(JSON.stringify(topojson_data));
 
                                 if(typeof(Storage) !== "undefined") {
                                     var localLayers = {};
                                     if (localStorage.DataPortalLocalLayers) {
                                         localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));
                                     }
-                                    localLayers['test_layer'] = topojson_data;
+                                    localLayers[topojson_data['search_uuid']] = topojson_data;
                                     localStorage.setItem("DataPortalLocalLayers", JSON.stringify(localLayers));
                                 } else {
                                     alert('Sorry! Your browser does not support local data storage.');
@@ -294,7 +317,47 @@
                             },
                             complete: function() {
                             }
+
+
                         });
+                    }
+
+                    if(typeof(Storage) !== "undefined") {
+                        var localLayers = {};
+                        if (localStorage.DataPortalLocalLayers) {
+                            localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));
+                            console.log(localLayers);
+                        }
+
+                        for (var key in localLayers) {
+                            if (localLayers.hasOwnProperty(key)) {
+                                var row = $('<a/>').addClass("list-group-item");
+                                var button = $('<button/>')
+                                        .attr('id', 'button_' + key)
+                                        .attr('data-local_uuid', key)
+                                        .addClass("btn btn-danger");
+                                var icon = $('<i/>').addClass('fa fa-close col-sm-2');
+                                button.append(icon);
+                                button.click(function(){
+                                    var uuid = $(this).data('local_uuid');
+{#                                    alert(uuid);#}
+
+                                    if (localStorage.DataPortalLocalLayers) {
+                                        localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));
+                                        delete localLayers[uuid];
+                                        localStorage.setItem("DataPortalLocalLayers", JSON.stringify(localLayers));
+                                    }
+                                    location.reload();
+                                });
+
+                                row.append(button);
+                                var key_div = $('<div/>').addClass('control-label col-sm-10').text(key);
+                                row.append(key_div);
+                                $('#out').append(row);
+                            }
+                        }
+                    } else {
+                        alert('Sorry! Your browser does not support local data storage.');
                     }
 
                 </script>

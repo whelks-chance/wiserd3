@@ -391,7 +391,7 @@
             var map_height = window.innerHeight;
             var header_height = $('.navbar-header').height();
 
-            console.log(map_height + ' ' + header_height);
+            {#            console.log(map_height + ' ' + header_height);#}
 
             var map_div = $('#map_div');
             map_div.css({
@@ -840,8 +840,8 @@
                 {#                    data['objects'] = {#}
                 {#                        'name': features#}
                 {#                    };#}
-                {#                    console.log(data);#}
-                {#                }#}
+
+                {#                console.log(data);#}
 
                 var data_objects = data['objects'];
                 var feature_data = [];
@@ -864,7 +864,6 @@
                             }
                         } else {
                             var fake_value = Math.floor((Math.random() * 100) + 1);
-                            {#                            fake_value = 500;#}
                             geometries_properties[a]['properties']['REMOTE_VALUE'] = fake_value;
                             feature_data.push(parseFloat(fake_value));
                             fake_data = true;
@@ -908,11 +907,11 @@
 
                     {#  Calculating the bins for quantiles with 'q' option, 'e'  and 'k' available #}
                     grades = chroma.limits(feature_data, bin_breakdown, parseInt(num_bins));
-                    console.log(grades);
+                    {#                    console.log(grades);#}
 
                     {#  Calculating the function we can pass values to, in order to get nice rgb color codes #}
                     chroma_scale = chroma.scale(color_scheme).classes(grades);
-                    console.log(chroma_scale);
+                    {#                    console.log(chroma_scale);#}
                 }
 
                 var geojsonMarkerOptions = {
@@ -947,7 +946,7 @@
 
                 map.on('overlayremove', function (eventLayer) {
                     if (eventLayer.name == layer_name_text) {
-                        console.log('trying to remove : ' + '#accordion_inner_collapse_' + unique_layer_name_text);
+                        {#                        console.log('trying to remove : ' + '#accordion_inner_collapse_' + unique_layer_name_text);#}
                         $('#accordion_inner_collapse_' + unique_layer_name_text.replace(/\W/g, '')).remove();
                     }
                 });
@@ -965,7 +964,7 @@
                 var is_markers = false;
                 myLayer.eachLayer(function (layer) {
                     if (layer.feature.type === 'Feature') {
-{# enable this line if we want clustered markers #}
+                        {# enable this line if we want clustered markers #}
                         {#                        is_markers = true;#}
                     }
                 });
@@ -1026,7 +1025,7 @@
                         {#                            // if there's overlap, add some content to the popup: the layer name#}
                         {#                            // and a table of attributes#}
                         {#                            if (match.length) {#}
-                        {#                                console.log(match[0].feature.properties);#}
+                        {#                                .log(match[0].feature.properties);#}
                         {#                                html += '<strong>' + leaflet_layers[i].name + '</strong>';#}
                         {#                                html += propertyTable(match[0].feature.properties) + '<br><br>';#}
                         {#                            }#}
@@ -1493,7 +1492,7 @@
                                                 "{% trans 'Please try again, or report it.' %}")
                                     } else {
 
-                                        console.log(e);
+                                        {#                                        console.log(e);#}
                                         alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
                                                 "{% trans 'Unfortunately, some types of dataset are incompatible with this service. \n\n' %}" +
                                                 "{% trans 'Try being more specific with the dataset variable you are trying to map. \n\n' %}" +
@@ -2305,17 +2304,7 @@
                 ordered_data = {};
                 var worksheet_name = Object.keys(json_object)[0];
                 area_values = json_object[worksheet_name];
-
-                console.log(area_values[0]);
                 var column_headers = Object.keys(area_values[0]);
-                console.log(column_headers);
-
-                {#                for (var area in area_values) {#}
-                {#                    if (area_values.hasOwnProperty(area)) {#}
-                {#                        ordered_data[area_values[area]['AREA_CODE']] = area_values[area]['VALUE'];#}
-                {#                    }#}
-                {#                }#}
-
 
                 var dataset_radio = $('#local_column_headers_radio');
                 dataset_radio.find('div').remove().end();
@@ -2379,10 +2368,39 @@
                 local_data_value_radio_div.buttonset();
                 dataset_radio.append(local_data_value_radio_div);
 
+
+
+                var codelist_label = $('<div>', {text: '{% trans 'Select additional secondary data' %}'});
+                dataset_radio.append(codelist_label);
+
+                var local_data_secondary_check_div = $('<div>', {id: 'local_data_secondary_check'});
+                for(var column_header_idx in column_headers) {
+                    if(column_headers.hasOwnProperty(column_header_idx))
+                        var column_header_option = column_headers[column_header_idx];
+
+                    var radio_text = column_header_option;
+
+                    var radio_div = $('<div>');
+                    radio_div.append($('<input>', {
+                        value: column_header_option,
+                        id: column_header_option + '_secondary',
+                        type: 'checkbox',
+                        name: 'local_data_secondary_option',
+                        text: radio_text
+                    }));
+                    radio_div.append($('<label>', {
+                        class: 'dialog_radio_option',
+                        value: column_header_option,
+                        for: column_header_option + '_secondary',
+                        text: radio_text
+                    }));
+                    local_data_secondary_check_div.append(radio_div);
+                }
+                local_data_secondary_check_div.buttonset();
+                dataset_radio.append(local_data_secondary_check_div);
+
             }
 
-
-            var map_div = $('#map_div');
 
             $( "#local-data-form" ).dialog({
                 autoOpen: false,
@@ -2404,57 +2422,86 @@
                             var local_data_value_column = $('#local_data_value_radio').find(":radio:checked").attr('value');
                             var local_data_geography_column = $('#local_data_geography_radio').find(":radio:checked").attr('value');
 
+                            var topojson_layer_name = '';
                             var ordered_data = {};
-
                             for (var area in area_values) {
                                 if (area_values.hasOwnProperty(area)) {
                                     ordered_data[area_values[area][local_data_geography_column]] = area_values[area][local_data_value_column];
+
+                                    var geo_string = area_values[area][local_data_geography_column];
+
+                                    if (geo_string.substring(0, 3) == 'W09') {
+                                        topojson_layer_name = 'assembly_constituency';
+                                    }
                                 }
                             }
 
-                            $( this ).dialog( "close" );
+{#                            FIXME remove codes #}
+                            var codes = ['W09000001', 'W09000002'];
 
                             $.ajax({
                                 url: "{% url 'data_api' %}",
                                 type: 'GET',
                                 data: {
-                                    method: 'search_layer_topojson',
-                                    search_uuid: 'ae7ae056-ac8a-4b70-827d-d12c213411be'
+                                    method: 'topojson_layer_by_name',
+                                    name: topojson_layer_name,
+                                    codes: codes
                                 },
                                 success: function (all_topojson_data) {
 
-                                    console.log(topojson_data);
-                                    var topojson_data = all_topojson_data['topojson'];
-                                    var geom_name = Object.keys(topojson_data['objects'])[0];
-                                    var geometries = topojson_data['objects'][geom_name]['geometries'];
-                                    var new_data = [];
+                                    var secondary_data_keys = [];
+                                    $('#local_data_secondary_check').find(":checkbox:checked").each(function (index) {
+                                        secondary_data_keys.push($(this).attr('value'));
+                                    });
+console.log('outer 2nd keys');
+                                    console.log(secondary_data_keys);
+                                    all_topojson_data = thing(all_topojson_data, ordered_data, local_data_name,
+                                            area_values, local_data_geography_column, secondary_data_keys);
 
-                                    for (var geom in geometries) {
-                                        if (geometries.hasOwnProperty(geom)) {
-                                            var area_code = geometries[geom]['properties']['CODE'];
-                                            geometries[geom]['properties']['REMOTE_VALUE'] = ordered_data[area_code];
-                                            geometries[geom]['properties']['DATA_TITLE'] = local_data_name;
-                                            new_data.push(geometries[geom])
-                                        }
-                                    }
-
-                                    {#                        delete topojson_data['topojson']['objects'][geom_name];#}
-                                    all_topojson_data['topojson']['objects'][geom_name]['geometries'] = new_data;
-                                    all_topojson_data['layer_data']['name'] = local_data_name;
-                                    alert('Success');
-
-{#                                    if(typeof(Storage) !== "undefined") {#}
-{#                                        var localLayers = {};#}
-{#                                        if (localStorage.DataPortalLocalLayers) {#}
-{#                                            localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));#}
+{#                                    var topojson_data = all_topojson_data['topojson'];#}
+{#                                    var geom_name = Object.keys(topojson_data['objects'])[0];#}
+{#                                    var geometries = topojson_data['objects'][geom_name]['geometries'];#}
+{#                                    var new_data = [];#}
+{##}
+{#                                    console.log(area_values);#}
+{#                                    console.log(geometries);#}
+{#                                    for (var geom in geometries) {#}
+{#                                        if (geometries.hasOwnProperty(geom)) {#}
+{#                                            var area_code = geometries[geom]['properties']['code'];#}
+{#                                            geometries[geom]['properties']['REMOTE_VALUE'] = ordered_data[area_code];#}
+{#                                            geometries[geom]['properties']['DATA_TITLE'] = local_data_name;#}
+{##}
+{#                                            var string_data = [];#}
+{#                                            $('#local_data_secondary_check').find(":checkbox:checked").each(function (index) {#}
+{##}
+{#                                                var key = $(this).attr('value');#}
+{##}
+{#                                                for (var area_value_key in area_values) {#}
+{#                                                    if (area_values.hasOwnProperty(area_value_key)) {#}
+{#                                                        var area_item = area_values[area_value_key];#}
+{##}
+{#                                                        if (area_item[local_data_geography_column] == area_code) {#}
+{#                                                            string_data.push(#}
+{#                                                                    {#}
+{#                                                                        "grouping": [],#}
+{#                                                                        "value": area_values[area_value_key][key],#}
+{#                                                                        "title": key#}
+{#                                                                    }#}
+{#                                                            );#}
+{#                                                        }#}
+{#                                                    }#}
+{#                                                }#}
+{##}
+{#                                                geometries[geom]['properties']['STRING_DATA'] = string_data;#}
+{#                                                new_data.push(geometries[geom])#}
+{#                                            });#}
 {#                                        }#}
-{#                                        localLayers[local_data_name] = all_topojson_data;#}
-{#                                        localStorage.setItem("DataPortalLocalLayers", JSON.stringify(localLayers));#}
-{#                                    } else {#}
-{#                                        alert('Sorry! Your browser does not support local data storage.');#}
 {#                                    }#}
-
-{#                                    Record the layer data, and then style it as usual #}
+{##}
+                                    {#                        delete topojson_data['topojson']['objects'][geom_name];#}
+{#                                    all_topojson_data['topojson']['objects'][geom_name]['geometries'] = new_data;#}
+{#                                    all_topojson_data['layer_data']['name'] = local_data_name;#}
+{##}
                                     var layer_name = all_topojson_data['search_uuid'];
                                     topojson_layers[layer_name] = all_topojson_data['topojson'];
 
@@ -2467,6 +2514,7 @@
                                     }).dialog( "open" );
                                 },
                                 complete: function() {
+                                    $("#local-data-form").dialog( "close" );
                                 }
                             });
 
@@ -2638,7 +2686,7 @@
     <div id="local-data-form" title="{% trans 'Local Data' %}">
         <div id="local-data-drop-zone" class="input-group custom-search-form">
             <div id="drop">Drop an XLSX / XLSM / XLSB / ODS / XLS / XML file here to see sheet data</div>
-            <p><input type="file" name="xlfile" id="xlf" /> ... or click here to select a file</p>
+            <p><input type="file" name="xlfile" id="xlf" /></p>
         </div>
 
         <div class="input-group custom-search-form">

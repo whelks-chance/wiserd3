@@ -1685,6 +1685,8 @@ def get_topojson_by_name(request, topojson_name):
     nomis_search.search_type = models.SearchType.objects.get(name='User')
     nomis_search.save()
 
+    codes = request.GET.getlist('codes[]')
+
     layer_data = {
         'bin_num': 6,
         'bin_type': 'q',
@@ -1699,7 +1701,6 @@ def get_topojson_by_name(request, topojson_name):
 
     if topojson_name == 'assembly_constituency':
         filter_var = 'code__istartswith'
-        codes = request.GET.getlist('codes[]')
 
         if len(codes) == 0:
             constituency_subset = models.SpatialdataConstituency.objects.using('new').all()
@@ -1732,13 +1733,25 @@ def get_topojson_by_name(request, topojson_name):
 
     elif topojson_name == 'pcode_point':
         filter_var = 'postcode__istartswith'
-        code = 'CF14'
-        # code2 = 'LL'
-        # code3 = 'SY'
-        postcode_subset = models.SpatialdataPostCodePoint.objects.using('new').all().filter(**{filter_var: code})
-        # postcode_subset = models.SpatialdataPostCodePoint.objects.using('new').all().filter(
-        #     Q(**{filter_var: code}) | Q(**{filter_var: code2}) | Q(**{filter_var: code3})
-        # )
+
+        if len(codes) == 0:
+            code = 'CF101'
+            # code2 = 'LL101'
+            # code3 = 'SY101'
+            postcode_subset = models.SpatialdataPostCodePoint.objects.using('new').all().filter(**{filter_var: code})
+            # postcode_subset = models.SpatialdataPostCodePoint.objects.using('new').all().filter(
+            #     Q(**{filter_var: code}) | Q(**{filter_var: code2}) | Q(**{filter_var: code3})
+            # )
+        else:
+            ors = []
+            for code in codes:
+                ors.append(Q(**{filter_var: code}))
+            postcode_subset = models.SpatialdataPostCodePoint.objects.using('new').all().filter(
+                reduce(operator.or_, ors)
+            )
+        print postcode_subset.query
+
+        print list(postcode_subset)
         print len(list(postcode_subset))
         s = serialize('geojson', postcode_subset, fields=('geom', 'postcode', 'REMOTE_VALUE'))
         # format it like it's topojson, which for some reason the other topojson lib can't do for points

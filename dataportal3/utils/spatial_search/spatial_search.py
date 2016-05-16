@@ -128,13 +128,13 @@ geometry_columns = [
         'topojson_file_high': os.path.join(TOPOJSON_DIR, 'ConstituencyProfile/output-fixed-1-const-prof.json')
     },
     {
-        'table_name': None,
-        'geometry_column': None,
-        'label': None,
+        'table_name': models.SpatialdataPostCodePoint._meta.db_table,
+        'geometry_column': 'geom',
+        'label': 'postcode',
         'geog_short_code': 'pcode_point',
         # FIXME wrong region_id
         'region_id': '1234567890',
-        'table_model': None,
+        'table_model': models.SpatialdataPostCodePoint,
         'name': 'Postcode Points',
         'topojson_file': '/home/ianh/Downloads/shp_files/OSCodePointOpenFeb2016Wales/pprint.json',
         'topojson_file_high': '/home/ianh/Downloads/shp_files/OSCodePointOpenFeb2016Wales/pprint.json',
@@ -214,6 +214,8 @@ def find_intersects(geography_wkt):
 
             # print 'area_names_query', area_names_queryset.query
             area_names = area_names_queryset.values_list(f_label, flat=True)
+            # print list(area_names)
+            # print len(list(area_names))
 
             if connections['new'].queries:
                 print connections['new'].queries[-1]

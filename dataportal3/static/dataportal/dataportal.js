@@ -88,6 +88,21 @@ function get_local_dataset_topojson(local_data_topojson_url, boundary_name, surv
     })
 }
 
+function isPostcodeish(input_string) {
+    var re = /(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))/g; 
+    // var str = 'GIR 0AA\nA9 9ZZ\nA99 9ZZ\nAB9 9ZZ\nAB99 9ZZ\nA9C 9ZZ\nAD9E 9ZZ\ncf141aa';
+    // var m;
+    // 
+    // while ((m = re.exec(input_string)) !== null) {
+    //     if (m.index === re.lastIndex) {
+    //         re.lastIndex++;
+    //     }
+    //     // View your result using the m-variable.
+    //     // eg m[0] etc.
+    // }
+    
+    return re.exec(input_string)
+}
 
 function thing(all_topojson_data, ordered_data, local_data_name, area_values, local_data_geography_column, secondary_data_keys) {
 
@@ -96,50 +111,56 @@ function thing(all_topojson_data, ordered_data, local_data_name, area_values, lo
     var geometries = topojson_data['objects'][geom_name]['geometries'];
     var new_data = [];
 
-    console.log(area_values);
-    console.log(geometries);
+    // console.log(area_values);
+    // console.log(geometries);
+    // console.log(ordered_data);
 
-    console.log('inner 2nd keys');
-    console.log(secondary_data_keys);
+    // console.log(secondary_data_keys);
 
     for (var geom in geometries) {
         if (geometries.hasOwnProperty(geom)) {
-            var area_code = geometries[geom]['properties']['code'];
-            geometries[geom]['properties']['REMOTE_VALUE'] = ordered_data[area_code];
-            geometries[geom]['properties']['DATA_TITLE'] = local_data_name;
 
-            var string_data = [];
-            // $('#local_data_secondary_check').find(":checkbox:checked").each(function (index) {
+            var area_code = null;
+            if (geometries[geom]['properties'].hasOwnProperty('postcode')) {
+                area_code = geometries[geom]['properties']['postcode'];
+            } else {
+                area_code = geometries[geom]['properties']['code'];
+            }
 
+            if (area_code && ordered_data[area_code] != null) {
+                // console.log(ordered_data[area_code]);
 
-            for (var secondary_idx in secondary_data_keys) {
-                if (secondary_data_keys.hasOwnProperty(secondary_idx)) {
-                    // var key = $(this).attr('value');
+                geometries[geom]['properties']['REMOTE_VALUE'] = ordered_data[area_code];
+                geometries[geom]['properties']['RENDER'] = true;
+                geometries[geom]['properties']['DATA_TITLE'] = local_data_name;
 
-                    var key = secondary_data_keys[secondary_idx];
+                var string_data = [];
+                for (var secondary_idx in secondary_data_keys) {
+                    if (secondary_data_keys.hasOwnProperty(secondary_idx)) {
 
-                    for (var area_value_key in area_values) {
-                        if (area_values.hasOwnProperty(area_value_key)) {
-                            var area_item = area_values[area_value_key];
+                        var key = secondary_data_keys[secondary_idx];
+                        for (var area_value_key in area_values) {
+                            if (area_values.hasOwnProperty(area_value_key)) {
+                                var area_item = area_values[area_value_key];
 
-                            if (area_item[local_data_geography_column] == area_code) {
-                                string_data.push(
-                                    {
-                                        "grouping": [],
-                                        "value": area_values[area_value_key][key],
-                                        "title": key
-                                    }
-                                );
+                                if (area_item[local_data_geography_column] == area_code) {
+                                    string_data.push(
+                                        {
+                                            "grouping": [],
+                                            "value": area_values[area_value_key][key],
+                                            "title": key
+                                        }
+                                    );
+                                }
                             }
                         }
                     }
                 }
-            }
-            
-            geometries[geom]['properties']['STRING_DATA'] = string_data;
-            new_data.push(geometries[geom]);
 
-            // });
+                geometries[geom]['properties']['STRING_DATA'] = string_data;
+                new_data.push(geometries[geom]);
+            }
+
         }
     }
 

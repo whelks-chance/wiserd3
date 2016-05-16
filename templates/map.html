@@ -46,6 +46,7 @@
     {#    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>#}
     <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js' %}"></script>
 
+
     <script type="text/javascript" src="{% static 'leaflet-search/leaflet-search.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'leaflet-search/leaflet-search.css' %}"/>
 
@@ -865,6 +866,7 @@
                         } else {
                             var fake_value = Math.floor((Math.random() * 100) + 1);
                             geometries_properties[a]['properties']['REMOTE_VALUE'] = fake_value;
+                            geometries_properties[a]['properties']['RENDER'] = false;
                             feature_data.push(parseFloat(fake_value));
                             fake_data = true;
                         }
@@ -925,7 +927,9 @@
 
                 var myLayer = new L.TopoJSON(data, {
                     pointToLayer: function (feature, latlng) {
-                        return L.circleMarker(latlng, geojsonMarkerOptions);
+{#                        if (feature.properties.RENDER == true) {#}
+                            return L.circleMarker(latlng, geojsonMarkerOptions);
+{#                        }#}
                     }
                 });
 
@@ -965,7 +969,7 @@
                 myLayer.eachLayer(function (layer) {
                     if (layer.feature.type === 'Feature') {
                         {# enable this line if we want clustered markers #}
-                        {#                        is_markers = true;#}
+{#                                                is_markers = true;#}
                     }
                 });
 
@@ -1322,6 +1326,7 @@
                 center_lat_lng = featureGroup.getBounds().getCenter();
                 {#                viewreset is really slow #}
                 map.addOneTimeEventListener('moveend', function() {
+                    alert('moveend');
                     setTimeout(function(){
                         leafletImage(map, doImage);
                     }, 1000);
@@ -1330,6 +1335,7 @@
 
             var most_recent_search_png = '';
             function doImage(err, canvas) {
+                alert('doimage');
                 {#                var snapshot = document.getElementById('snapshot');#}
 
                 var img = document.createElement('img');
@@ -2423,6 +2429,11 @@
                             var local_data_geography_column = $('#local_data_geography_radio').find(":radio:checked").attr('value');
 
                             var topojson_layer_name = '';
+
+                            {#                            FIXME remove codes #}
+{#                            var codes = ['W09000001', 'W09000002'];#}
+                            var codes = [];
+
                             var ordered_data = {};
                             for (var area in area_values) {
                                 if (area_values.hasOwnProperty(area)) {
@@ -2430,14 +2441,20 @@
 
                                     var geo_string = area_values[area][local_data_geography_column];
 
+                                    if (isPostcodeish(geo_string)) {
+                                        topojson_layer_name = 'pcode_point';
+                                        var clean_geostring = geo_string.replace(' ', '');
+{#                                        codes.push(geo_string.slice(0, -2))#}
+                                        codes.push(geo_string.slice(0, -1))
+
+                                    }
+
                                     if (geo_string.substring(0, 3) == 'W09') {
                                         topojson_layer_name = 'assembly_constituency';
+                                        codes.push(geo_string);
                                     }
                                 }
                             }
-
-{#                            FIXME remove codes #}
-                            var codes = ['W09000001', 'W09000002'];
 
                             $.ajax({
                                 url: "{% url 'data_api' %}",
@@ -2458,50 +2475,8 @@ console.log('outer 2nd keys');
                                     all_topojson_data = thing(all_topojson_data, ordered_data, local_data_name,
                                             area_values, local_data_geography_column, secondary_data_keys);
 
-{#                                    var topojson_data = all_topojson_data['topojson'];#}
-{#                                    var geom_name = Object.keys(topojson_data['objects'])[0];#}
-{#                                    var geometries = topojson_data['objects'][geom_name]['geometries'];#}
-{#                                    var new_data = [];#}
-{##}
-{#                                    console.log(area_values);#}
-{#                                    console.log(geometries);#}
-{#                                    for (var geom in geometries) {#}
-{#                                        if (geometries.hasOwnProperty(geom)) {#}
-{#                                            var area_code = geometries[geom]['properties']['code'];#}
-{#                                            geometries[geom]['properties']['REMOTE_VALUE'] = ordered_data[area_code];#}
-{#                                            geometries[geom]['properties']['DATA_TITLE'] = local_data_name;#}
-{##}
-{#                                            var string_data = [];#}
-{#                                            $('#local_data_secondary_check').find(":checkbox:checked").each(function (index) {#}
-{##}
-{#                                                var key = $(this).attr('value');#}
-{##}
-{#                                                for (var area_value_key in area_values) {#}
-{#                                                    if (area_values.hasOwnProperty(area_value_key)) {#}
-{#                                                        var area_item = area_values[area_value_key];#}
-{##}
-{#                                                        if (area_item[local_data_geography_column] == area_code) {#}
-{#                                                            string_data.push(#}
-{#                                                                    {#}
-{#                                                                        "grouping": [],#}
-{#                                                                        "value": area_values[area_value_key][key],#}
-{#                                                                        "title": key#}
-{#                                                                    }#}
-{#                                                            );#}
-{#                                                        }#}
-{#                                                    }#}
-{#                                                }#}
-{##}
-{#                                                geometries[geom]['properties']['STRING_DATA'] = string_data;#}
-{#                                                new_data.push(geometries[geom])#}
-{#                                            });#}
-{#                                        }#}
-{#                                    }#}
-{##}
-                                    {#                        delete topojson_data['topojson']['objects'][geom_name];#}
-{#                                    all_topojson_data['topojson']['objects'][geom_name]['geometries'] = new_data;#}
-{#                                    all_topojson_data['layer_data']['name'] = local_data_name;#}
-{##}
+                                    console.log(jQuery.extend(true, {}, all_topojson_data));
+
                                     var layer_name = all_topojson_data['search_uuid'];
                                     topojson_layers[layer_name] = all_topojson_data['topojson'];
 

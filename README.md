@@ -215,6 +215,8 @@ http://stackoverflow.com/a/13332300/2943238
 
 https://github.com/calvinmetcalf/topojson.py
 
+https://github.com/komoot/staticmap
+
 ## Awkwardness
 
     ALTER TABLE django_content_type ADD COLUMN name character varying(50) NOT NULL DEFAULT 'someName';

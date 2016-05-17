@@ -66,19 +66,19 @@
 
             <div class="col-lg-4 col-md-6">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="row">
-                            {#                            <a href="{% url 'profile' %}">#}
-                            <div class="col-xs-3">
-                                <i class="fa fa-user fa-5x"></i>
+                    <a href="{% url 'profile' %}">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-user fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">_</div>
+                                    <div>{% trans 'Profile' %}</div>
+                                </div>
                             </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge">_</div>
-                                <div>{% trans 'Profile' %}</div>
-                            </div>
-                            {#                            </a>#}
                         </div>
-                    </div>
+                    </a>
                     <a href="{% url 'profile' %}">
                         <div class="panel-footer">
                             <span class="pull-left">{% trans 'View Profile' %}</span>
@@ -90,48 +90,23 @@
             </div>
         {% endif %}
 
-        <div class="col-lg-4 col-md-6">
-            <div class="panel panel-purple">
-                <a href="http://www.wiserd.ac.uk" target="_blank">
 
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-{#                                <i class="fa fa-institution fa-5x"></i>#}
-                                <img style="margin-top: 1em"
-                                     src="{% static 'dataportal/media/wiserd_logo_small.jpg' %}">
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge">_</div>
-                                <div>WISERD</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="http://www.wiserd.ac.uk" target="_blank">
-                    <div class="panel-footer">
-                        <span class="pull-left">{% trans 'WISERD Homepage' %}</span>
-                        <span class="pull-right"><i class="fa fa-external-link"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
 
         <div class="col-lg-4 col-md-6">
             <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-calendar fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">_</div>
-                            <div>{% trans 'Events' %}</div>
+                <a href="{% url 'events' %}">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-calendar fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">_</div>
+                                <div>{% trans 'Events' %}</div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <a href="{% url 'events' %}">
                     <div class="panel-footer">
                         <span class="pull-left">{% trans 'Event Presentation Files' %}</span>
@@ -142,7 +117,7 @@
             </div>
         </div>
 
-        {% if request.user.is_authenticated %}
+        {% if request.user.is_staff %}
             <div class="col-lg-4 col-md-6">
                 <div class="panel panel-yellow">
                     <a href="{% url 'file_management' %}">
@@ -224,17 +199,20 @@
 
         <div class="col-lg-4 col-md-6">
             <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-rss fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">{{ tech_blog_posts }}</div>
-                            <div>{% trans 'Tech Blog' %}</div>
+                <a target="_blank" href="http://dataportal-development.blogspot.co.uk/">
+
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-rss fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{ tech_blog_posts }}</div>
+                                <div>{% trans 'Tech Blog' %}</div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <a target="_blank" href="http://dataportal-development.blogspot.co.uk/">
                     <div class="panel-footer">
                         <span class="pull-left">{% trans 'View Blog posts' %}</span>
@@ -244,19 +222,22 @@
                 </a>
             </div>
         </div>
+
         <div class="col-lg-4 col-md-6">
             <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-rss-square fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">{{ wiserd_blog_posts }}</div>
-                            <div>{% trans 'WISERD Blog' %}</div>
+                <a target="_blank" href="http://wiserd.ac.uk/news/wiserd-blogs/">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-rss-square fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{ wiserd_blog_posts }}</div>
+                                <div>{% trans 'WISERD Blog' %}</div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <a target="_blank" href="http://wiserd.ac.uk/news/wiserd-blogs/">
                     <div class="panel-footer">
                         <span class="pull-left">{% trans 'View Blog Posts' %}</span>
@@ -297,7 +278,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-{#                                <i class="fa fa-question-circle fa-5x"></i>#}
+                                {#                                <i class="fa fa-question-circle fa-5x"></i>#}
                                 <img style="width: 5.5em; background-color: white;
                                 padding: 0.3em; margin-top: 1em"
                                      src="{% static 'dataportal/media/NAFW-Dragon-Slate1.png' %}">
@@ -313,6 +294,35 @@
                     <div class="panel-footer">
                         <span class="pull-left">{% trans 'National Assembly for Wales' %}</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+           <div class="col-lg-4 col-md-6">
+            <div class="panel panel-purple">
+                <a href="http://www.wiserd.ac.uk" target="_blank">
+
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                {#                                <i class="fa fa-institution fa-5x"></i>#}
+                                <img style="margin-top: 1em"
+                                     src="{% static 'dataportal/media/wiserd_logo_small.jpg' %}">
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">_</div>
+                                <div>WISERD</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="http://www.wiserd.ac.uk" target="_blank">
+                    <div class="panel-footer">
+                        <span class="pull-left">{% trans 'WISERD Homepage' %}</span>
+                        <span class="pull-right"><i class="fa fa-external-link"></i></span>
                         <div class="clearfix"></div>
                     </div>
                 </a>

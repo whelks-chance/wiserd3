@@ -167,6 +167,41 @@ geometry_columns = [
 ]
 
 
+def save_map_geom_image(geom_object, name='1'):
+    from staticmap.staticmap import StaticMap, Line
+
+    m = StaticMap(1024, 768, 30, 30)
+
+    print type(geom_object)
+    print geom_object.num_coords
+    print geom_object.boundary
+    print geom_object.area
+
+    for coord in geom_object.coords:
+        print type(coord)
+        print coord
+        for point in coord:
+            print point
+
+        for i in range(len(coord) - 1):
+            print coord[i], coord[i + 1]
+
+            m.add_line(
+                Line(((coord[i][0], coord[i][1]),
+                      (coord[i + 1][0], coord[i + 1][1])),
+                     'blue', 3)
+            )
+
+        print coord[len(coord) - 1], coord[0]
+        m.add_line(
+            Line(((coord[len(coord) - 1][0], coord[len(coord) - 1][1]),
+                  (coord[0][0], coord[0][1])),
+                 'blue', 3)
+        )
+    image = m.render()
+    image.save('map_{}.png'.format(name))
+
+
 def find_intersects(geography_wkt):
 
     return_data = {}
@@ -275,7 +310,7 @@ def get_data_for_regions(survey, data_name, regions):
     print 'regions', len(regions)
 
     found_model = models.SpatialSurveyLink.objects.filter(survey__identifier=survey,
-                                                       data_name=data_name)
+                                                          data_name=data_name)
     # for m in found_model:
     #     print m.boundary_name
 

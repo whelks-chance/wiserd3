@@ -825,9 +825,13 @@
                 if (color_scheme == 'naw') {
                     {#                    color_scheme = ['001E62', '4f2c1d', '651D32', '004E42', '131E29'];#}
                     {#                    color_scheme = ['009ca6', 'fe5000', 'cc007b', '3fa628', 'cb102e'];#}
-                    color_scheme = ['white', 'FE5000', 'C8102E', '651D32', '131E29'];
-                    color_scheme = ['lightpink', 'pink', 'hotpink', 'deeppink', 'd95dd1'];
+{#                    color_scheme = ['white', 'FE5000', 'C8102E', '651D32', '131E29'];#}
+{#                    color_scheme = ['lightpink', 'pink', 'hotpink', 'deeppink'];#}
+                    color_scheme = ['ffd2e8', 'hotpink', '4c1f36'];
 
+                }
+                if (color_scheme == 'WISERD') {
+                    color_scheme = ['cbb4cd', '54075b', '2a032d'];
                 }
                 if (color_scheme == 'b_w') {
                     color_scheme = ['white', 'black'];
@@ -931,9 +935,14 @@
 
                 var myLayer = new L.TopoJSON(data, {
                     pointToLayer: function (feature, latlng) {
+{#                        console.log(feature);#}
                         {#                        if (feature.properties.RENDER == true) {#}
-                        return L.circleMarker(latlng, geojsonMarkerOptions);
-                        {#                        }#}
+                        if (isNaN(feature.properties.REMOTE_VALUE)) {
+{#                            TODO do something interesting with non number markers? #}
+                            return L.circleMarker(latlng, geojsonMarkerOptions);
+                        } else {
+                            return L.circleMarker(latlng, geojsonMarkerOptions);
+                        }
                     }
                 });
 
@@ -975,7 +984,7 @@
                 myLayer.eachLayer(function (layer) {
                     if (layer.feature.type === 'Feature') {
                         {# enable this line if we want clustered markers #}
-                        {#                                                is_clustermarkers = true;#}
+{#                                                                        is_clustermarkers = true;#}
 {#                                                is_heatmap = true;#}
 
                     }
@@ -999,7 +1008,7 @@
                             {#                            console.log(layer);#}
                             heat_data.push([layer.feature.geometry.coordinates[1],
                                 layer.feature.geometry.coordinates[0],
-                                layer.feature.REMOTE_VALUE * layer.feature.REMOTE_VALUE])
+                                layer.feature.REMOTE_VALUE])
                         }
                     });
 
@@ -1120,7 +1129,7 @@
                         from = grades[i];
                         to = grades[i + 1];
 
-                        var legend_row = '<p style="text-align:center;"><i style="background:' + getColor(from, grades, chroma_scale) + '"></i> ';
+                        var legend_row = '<p style="white-space: nowrap; padding: 0 1em;"><i style="background:' + getColor(from, grades, chroma_scale) + '"></i> ';
                         legend_row += from.toFixed(2);
                         if (to) {
                             legend_row += (to).toFixed(2) ? (i == 0 ? ' &ndash; ': ' &le; ') + (to).toFixed(2) + (is_percentage ? '%' : '') : (is_percentage ? '%+' : '+');
@@ -1133,7 +1142,7 @@
                 }
                 if (unique_feature_string_data.length > 0) {
                     for (var string_idx in unique_feature_string_data) {
-                        var legend_string_row = '<p><i style="background:' + getColorFromString(unique_feature_string_data[string_idx]) + '"></i> ' + unique_feature_string_data[string_idx] + '</p>';
+                        var legend_string_row = '<p style="white-space: nowrap; padding: 0 1em;"><i style="background:' + getColorFromString(unique_feature_string_data[string_idx]) + '"></i> ' + unique_feature_string_data[string_idx] + '</p>';
                         labels.push(legend_string_row);
                     }
                 }
@@ -2077,7 +2086,7 @@
             {#        lsoa_pembrokshire_point#}
             {#        'pcode_district'#}
             {#        'pcode_point'#}
-            {#            do_layer_by_name('pcode_point');#}
+                        do_layer_by_name('pcode_point');
 
             var remote_data_layer_data = {{ remote_searches|jsonify }};
             for (var remote_data_layer_idx in remote_data_layer_data) {
@@ -2627,6 +2636,7 @@
                         <option value="YlGnBu" selected="selected">{% trans 'Yellow - Green - Blue' %}</option>
                         <option value="Spectral">{% trans 'Spectral' %}</option>
                         <option value="b_w">{% trans 'Greyscale' %}</option>
+                        <option value="WISERD">{% trans 'WISERD' %}</option>
                     </select>
                 </td>
             </tr>

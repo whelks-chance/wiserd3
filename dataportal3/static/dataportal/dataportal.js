@@ -89,18 +89,7 @@ function get_local_dataset_topojson(local_data_topojson_url, boundary_name, surv
 }
 
 function isPostcodeish(input_string) {
-    var re = /(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))/g; 
-    // var str = 'GIR 0AA\nA9 9ZZ\nA99 9ZZ\nAB9 9ZZ\nAB99 9ZZ\nA9C 9ZZ\nAD9E 9ZZ\ncf141aa';
-    // var m;
-    // 
-    // while ((m = re.exec(input_string)) !== null) {
-    //     if (m.index === re.lastIndex) {
-    //         re.lastIndex++;
-    //     }
-    //     // View your result using the m-variable.
-    //     // eg m[0] etc.
-    // }
-    
+    var re = /(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))/g;
     return re.exec(input_string)
 }
 

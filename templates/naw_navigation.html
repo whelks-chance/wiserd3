@@ -13,6 +13,7 @@
 {% endblock %}
 
 {% block navigation %}
+    <link rel="stylesheet" type="text/css" href="{% static 'dataportal/naw.css' %}" />
 
     <div id="wrapper">
 
@@ -28,9 +29,8 @@
 
                 <a class="navbar-brand" href="{% url 'naw_dashboard' %}">
                     <img style="margin: 0.5em; max-height: 3em;
-                                    margin-top: -15px; margin-left: -15px"
-                         src="{% static 'dataportal/media/NAFW-Dragon-Slate1.png' %}">
-                    WISERD DataPortal {% include 'version_number.html' %}</a>
+                                    margin-top: -15px; margin-left: -15px; padding: 0.5em"
+                         src="{% static 'dataportal/media/Research-logo-2016-English.png' %}"></a>
             </div>
             <!-- /.navbar-header -->
 

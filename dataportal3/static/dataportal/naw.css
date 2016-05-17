@@ -1,0 +1,52 @@
+.navbar-default {
+    background-color: rgba(0, 30, 98, 0.15);
+}
+
+#wrapper, .right_sidebar {
+    background-color: rgba(0, 30, 98, 0.15);
+    color: rgba(36, 36, 36, 0.8);
+}
+
+a, .leaflet-container a {
+    color: rgba(36, 36, 36, 0.8);
+}
+
+a:hover {
+        color: #eeeeee;
+    background-color: rgba(0, 30, 98, 0.5);
+
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover,
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover,
+li.active > a
+{
+     background-color: rgba(0, 30, 98, 0.5);
+    color: #eeeeee;
+}
+
+.navbar-top-links li a{
+    color: rgba(36, 36, 36, 0.8);
+}
+
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+        background-color: rgba(0, 30, 98, 0.15);
+
+}
+
+.navbar-default .navbar-toggle {
+    border-color: rgba(36, 36, 36, 0.8);
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: rgba(0, 30, 98, 0.5);
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
+        background-color: #eeeeee;
+        border-color: #eeeeee;
+}

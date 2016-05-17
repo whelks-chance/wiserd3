@@ -569,7 +569,7 @@ if __name__ == "__main__":
                     nomis_search.dataset_id = survey_identifier
                     nomis_search.geography_id = region_code
                     nomis_search.display_attributes = {
-                        'bin_num': '6',
+                        'bin_num': '4',
                         'bin_type': 'q',
                         'colorpicker': 'naw'
                     }

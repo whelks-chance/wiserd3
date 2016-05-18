@@ -127,17 +127,29 @@ geometry_columns = [
         'topojson_file': os.path.join(TOPOJSON_DIR, 'AssemblyRegions2/output-fixed-1.json'),
         'topojson_file_high': os.path.join(TOPOJSON_DIR, 'AssemblyRegions2/output-fixed-1.json')
     },
+    # {
+    #     'table_name': models.SpatialdataConstituency._meta.db_table,
+    #     'geometry_column': 'geom',
+    #     'label': 'code',
+    #     'geog_short_code': 'constituency',
+    #     # FIXME wrong region_id
+    #     'region_id': '2092957700TYPE460',
+    #     'table_model': models.SpatialdataConstituency,
+    #     'name': 'National Assembly Constituency',
+    #     'topojson_file': os.path.join(TOPOJSON_DIR, 'ConstituencyProfile/output-fixed-1-const-prof.json'),
+    #     'topojson_file_high': os.path.join(TOPOJSON_DIR, 'ConstituencyProfile/output-fixed-1-const-prof.json')
+    # },
     {
-        'table_name': models.SpatialdataConstituency._meta.db_table,
+        'table_name': models.SpatialdataNAWConstituency._meta.db_table,
         'geometry_column': 'geom',
         'label': 'code',
         'geog_short_code': 'constituency',
         # FIXME wrong region_id
         'region_id': '2092957700TYPE460',
-        'table_model': models.SpatialdataConstituency,
+        'table_model': models.SpatialdataNAWConstituency,
         'name': 'National Assembly Constituency',
-        'topojson_file': os.path.join(TOPOJSON_DIR, 'ConstituencyProfile/output-fixed-1-const-prof.json'),
-        'topojson_file_high': os.path.join(TOPOJSON_DIR, 'ConstituencyProfile/output-fixed-1-const-prof.json')
+        'topojson_file': os.path.join(TOPOJSON_DIR, 'AssemblyConstituencys2/output-fixed-1.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, 'AssemblyConstituencys2/output-fixed-1.json')
     },
     {
         'table_name': models.SpatialdataPostCodePoint._meta.db_table,

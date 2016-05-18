@@ -879,4 +879,17 @@ class SpatialdataConstituency(models.Model):
         managed = False
         db_table = 'spatialdata_constituency'
 
+
+class SpatialdataNAWConstituency(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=60, blank=True, null=True)
+    code = models.CharField(max_length=9, blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
+
+    class Meta:
+        managed = False
+        db_table = 'spatialdata_assemblyconstituency2'
+
+
 import dataportal3.signals.handlers

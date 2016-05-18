@@ -75,9 +75,9 @@ def load_shapefile_description(filename, survey_identifier):
                 link.category = row['Category']
                 link.full_name = row['FullName']
                 link.notes = row['Notes']
-                link.category_cy = row['CategoryCY']
-                link.full_name_cy = row['FullNameCY']
-                link.notes_cy = row['NotesCY']
+                link.category_cy = row['Categori']
+                link.full_name_cy = row['Enw Llawn']
+                link.notes_cy = row['Nodiadau']
 
                 # print link.__dict__
                 # print row.keys()

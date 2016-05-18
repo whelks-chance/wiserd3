@@ -854,6 +854,20 @@ class SpatialdataNawer(models.Model):
         db_table = 'nawer'
 
 
+# This is for the reverted NAW regions, as SpatialdataNawer/nawer was incorrect for a while
+class SpatialdataNAWregions(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    code = models.CharField(max_length=254, blank=True, null=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    namewelsh = models.CharField(max_length=254, blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
+    objects = models.GeoManager()
+
+    class Meta:
+        managed = False
+        db_table = 'spatialdata_assemblyregions2'
+
+
 class SpatialdataConstituency(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=60, blank=True, null=True)

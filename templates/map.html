@@ -872,11 +872,11 @@
                                 feature_data.push(parseFloat(remote_value));
                             }
                         } else {
-                            var fake_value = Math.floor((Math.random() * 100) + 1);
-                            geometries_properties[a]['properties']['REMOTE_VALUE'] = fake_value;
-                            geometries_properties[a]['properties']['RENDER'] = false;
-                            feature_data.push(parseFloat(fake_value));
-                            fake_data = true;
+{#                            var fake_value = Math.floor((Math.random() * 100) + 1);#}
+{#                            geometries_properties[a]['properties']['REMOTE_VALUE'] = fake_value;#}
+{#                            geometries_properties[a]['properties']['RENDER'] = false;#}
+{#                            feature_data.push(parseFloat(fake_value));#}
+{#                            fake_data = true;#}
                         }
                     }
                 }
@@ -2086,7 +2086,7 @@
             {#        lsoa_pembrokshire_point#}
             {#        'pcode_district'#}
             {#        'pcode_point'#}
-                        do_layer_by_name('pcode_point');
+{#                        do_layer_by_name('pcode_point');#}
 
             var remote_data_layer_data = {{ remote_searches|jsonify }};
             for (var remote_data_layer_idx in remote_data_layer_data) {

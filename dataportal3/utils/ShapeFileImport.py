@@ -66,7 +66,7 @@ class ShapeFileImport:
 
         self.shapefile_upload = shapefile_upload
 
-    def import_to_gis(self, overwrite=False, survey=None,
+    def import_to_gis(self, overwrite=False, survey_id=None,
                       geom_table_name=None, boundary_name=None):
 
         if self.is_valid:
@@ -77,7 +77,7 @@ class ShapeFileImport:
                 self.create_spatial_survey_links(
                     lyr,
                     overwrite=overwrite,
-                    survey=survey,
+                    survey_identifier=survey_id,
                     geom_table_name=geom_table_name,
                     boundary_name=boundary_name,
                 )
@@ -249,7 +249,7 @@ class ShapeFileImport:
 
     # We create a spatial_survey_link row for each field in the shapefile
     def create_spatial_survey_links(self, lyr, overwrite=False,
-                                    survey=None, geom_table_name=None, boundary_name=None):
+                                    survey_identifier=None, geom_table_name=None, boundary_name=None):
 
         conn_queries = connections['new'].queries
         print 'create_spatial_survey_links start', len(conn_queries)
@@ -257,7 +257,14 @@ class ShapeFileImport:
 
         # get name and type data out of shapefile,
         # create Survey object to associate this data with
-        if not survey:
+
+        if survey_identifier is not None:
+            try:
+                survey = models.Survey.objects.get(identifier=survey_identifier)
+            except:
+            # if not survey:
+                survey = self.init_survey(lyr)
+        else:
             survey = self.init_survey(lyr)
 
         geoms = lyr.get_geoms(geos=False)
@@ -507,7 +514,7 @@ if __name__ == "__main__":
     if input_file and survey_identifier and username and name and geom_table_name and boundary_name:
 
         user = models.UserProfile.objects.get(user__username=username)
-        survey = models.Survey.objects.get(identifier=survey_identifier)
+        # survey = models.Survey.objects.get(identifier=survey_identifier)
 
         shapefile_upload = models.ShapeFileUpload()
         shapefile_upload.user = user
@@ -526,7 +533,7 @@ if __name__ == "__main__":
         sf.extract_zip()
         a = sf.import_to_gis(
             overwrite=True,
-            survey=survey,
+            survey_id=survey_identifier,
             geom_table_name=geom_table_name,
             boundary_name=boundary_name,
         )
@@ -539,6 +546,7 @@ if __name__ == "__main__":
         if create_searches and region_code:
             print 'creating searches with {} {}'.format(create_searches, region_code)
 
+            survey = models.Survey.objects.get(identifier=survey_identifier)
             new_survey_links = models.SpatialSurveyLink.objects.filter(
                 survey=survey,
                 boundary_name=boundary_name

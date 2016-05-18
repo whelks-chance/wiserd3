@@ -103,17 +103,29 @@ geometry_columns = [
         'table_model': models.SpatialdataUA_2,
         'name': 'Unitary Authority 2'
     },
+    # {
+    #     'table_name': 'nawer',
+    #     'geometry_column': 'geom',
+    #     'label': 'code',
+    #     'geog_short_code': 'region',
+    #     # FIXME wrong region_id
+    #     'region_id': '2092957700TYPE460',
+    #     'table_model': models.SpatialdataNawer,
+    #     'name': 'National Assembly Region',
+    #     'topojson_file': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-1-ms.json'),
+    #     'topojson_file_high': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-ms.json')
+    # },
     {
-        'table_name': 'nawer',
+        'table_name': models.SpatialdataNAWregions._meta.db_table,
         'geometry_column': 'geom',
         'label': 'code',
         'geog_short_code': 'region',
         # FIXME wrong region_id
-        'region_id': '2092957700TYPE460',
-        'table_model': models.SpatialdataNawer,
+        'region_id': '2092957700TYPE273',
+        'table_model': models.SpatialdataNAWregions,
         'name': 'National Assembly Region',
-        'topojson_file': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-1-ms.json'),
-        'topojson_file_high': os.path.join(TOPOJSON_DIR, 'AssemblyRegions/output-fixed-ms.json')
+        'topojson_file': os.path.join(TOPOJSON_DIR, 'AssemblyRegions2/output-fixed-1.json'),
+        'topojson_file_high': os.path.join(TOPOJSON_DIR, 'AssemblyRegions2/output-fixed-1.json')
     },
     {
         'table_name': models.SpatialdataConstituency._meta.db_table,
@@ -139,18 +151,20 @@ geometry_columns = [
         'topojson_file': '/home/ianh/Downloads/shp_files/OSCodePointOpenFeb2016Wales/pprint.json',
         'topojson_file_high': '/home/ianh/Downloads/shp_files/OSCodePointOpenFeb2016Wales/pprint.json',
     },
-    {
-        'table_name': None,
-        'geometry_column': None,
-        'label': None,
-        'geog_short_code': 'lsoa_pembrokshire_point',
-        # FIXME wrong region_id
-        'region_id': '1234567890',
-        'table_model': None,
-        'name': 'LSOA Pembrokshire Points',
-        'topojson_file': '/home/ianh/Downloads/shp_files/LOSAPopCentroids/pprint.json',
-        'topojson_file_high': '/home/ianh/Downloads/shp_files/LOSAPopCentroids/pprint.json',
-    },
+
+    # {
+    #     'table_name': None,
+    #     'geometry_column': None,
+    #     'label': None,
+    #     'geog_short_code': 'lsoa_pembrokshire_point',
+    #     # FIXME wrong region_id
+    #     'region_id': '1234567890',
+    #     'table_model': None,
+    #     'name': 'LSOA Pembrokshire Points',
+    #     'topojson_file': '/home/ianh/Downloads/shp_files/LOSAPopCentroids/pprint.json',
+    #     'topojson_file_high': '/home/ianh/Downloads/shp_files/LOSAPopCentroids/pprint.json',
+    # },
+
     # {
     #     'table_name': 'spatialdatanawer',
     #     'geometry_column': 'geom',
@@ -229,7 +243,7 @@ def find_intersects(geography_wkt):
             if 'label' in geoms:
                 f_label = geoms['label']
 
-            print '\n', f_table_name
+            print '\n', f_table_name, f_geometry_column, f_label
 
             survey_data = {}
             survey_data['areas'] = []
@@ -250,7 +264,7 @@ def find_intersects(geography_wkt):
             # print 'area_names_query', area_names_queryset.query
             area_names = area_names_queryset.values_list(f_label, flat=True)
             # print list(area_names)
-            # print len(list(area_names))
+            print len(list(area_names))
 
             if connections['new'].queries:
                 print connections['new'].queries[-1]
@@ -289,8 +303,7 @@ def find_intersects(geography_wkt):
                     'intersects': list(area_names)
                 }
         except Exception as e69342758432:
-            print 'Spatial search error: ', str(e69342758432), type(e69342758432)
-            print ''
+            print '**starterror**\nSpatial search error: ', str(e69342758432), type(e69342758432) , '\n**enderror**\n'
             pass
     # print connections['new'].queries
 

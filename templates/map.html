@@ -2468,11 +2468,7 @@
                             var local_data_geography_column = $('#local_data_geography_radio').find(":radio:checked").attr('value');
 
                             var topojson_layer_name = '';
-
-                            {#                            FIXME remove codes #}
-                            {#                            var codes = ['W09000001', 'W09000002'];#}
                             var codes = [];
-
                             var ordered_data = {};
                             for (var area in area_values) {
                                 if (area_values.hasOwnProperty(area)) {
@@ -2483,13 +2479,16 @@
                                     if (isPostcodeish(geo_string)) {
                                         topojson_layer_name = 'pcode_point';
                                         var clean_geostring = geo_string.replace(' ', '');
-                                        {#                                        codes.push(geo_string.slice(0, -2))#}
                                         codes.push(geo_string.slice(0, -2))
-
                                     }
 
                                     if (geo_string.substring(0, 3) == 'W09') {
                                         topojson_layer_name = 'assembly_constituency';
+                                        codes.push(geo_string);
+                                    }
+
+                                    if (geo_string.substring(0, 3) == 'W10') {
+                                        topojson_layer_name = 'assembly_region';
                                         codes.push(geo_string);
                                     }
                                 }

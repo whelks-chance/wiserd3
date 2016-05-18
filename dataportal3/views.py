@@ -1671,6 +1671,7 @@ def geojson_points_to_topojson(geojson_object):
 
 
 def get_topojson_by_name(request, topojson_name):
+    print topojson_name
     print request.GET
     from topojson import topojson
 
@@ -1699,9 +1700,29 @@ def get_topojson_by_name(request, topojson_name):
         'display_fields': ''
     }
 
-    if topojson_name == 'assembly_constituency':
-        filter_var = 'code__istartswith'
+    if topojson_name == 'assembly_region':
+        filter_var_code = 'code__istartswith'
+        filter_var_name = 'name__istartswith'
+        filter_var_altname = 'altname__istartswith'
 
+        if len(codes) == 0:
+            constituency_subset = models.SpatialdataNawer.objects.using('new').all()
+        else:
+            ors = []
+            for code in codes:
+                ors.append(Q(**{filter_var_code: code}))
+                ors.append(Q(**{filter_var_name: code}))
+                ors.append(Q(**{filter_var_altname: code}))
+
+            constituency_subset = models.SpatialdataNawer.objects.using('new').all().filter(
+                reduce(operator.or_, ors)
+            )
+        s = serialize('geojson', constituency_subset, fields=('geom', 'code', 'REMOTE_VALUE'))
+        topojson_conv = topojson(json.loads(s))
+        response_data['topojson'] = topojson_conv
+
+    elif topojson_name == 'assembly_constituency':
+        filter_var = 'code__istartswith'
         if len(codes) == 0:
             constituency_subset = models.SpatialdataConstituency.objects.using('new').all()
         else:
@@ -1712,13 +1733,9 @@ def get_topojson_by_name(request, topojson_name):
             constituency_subset = models.SpatialdataConstituency.objects.using('new').all().filter(
                 reduce(operator.or_, ors)
             )
-            print constituency_subset.query
-
         s = serialize('geojson', constituency_subset, fields=('geom', 'code', 'REMOTE_VALUE'))
-
         # geos = GEOSGeometry(s)
         # new_geos = geos.simplify(tolerance=0.1, preserve_topology=True)
-
         # topojson_conv = topojson(json.loads(s), quantization=1e6, simplify=0.0005)
         topojson_conv = topojson(json.loads(s))
         response_data['topojson'] = topojson_conv

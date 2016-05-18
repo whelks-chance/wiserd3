@@ -1749,7 +1749,7 @@ def get_topojson_by_name(request, topojson_name):
             postcode_subset = models.SpatialdataPostCodePoint.objects.using('new').all().filter(
                 reduce(operator.or_, ors)
             )
-        print postcode_subset.query
+        # print postcode_subset.query
 
         print list(postcode_subset)
         print len(list(postcode_subset))

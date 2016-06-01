@@ -47,6 +47,8 @@
                         {% if request.user.is_staff %}
                             <li><a href="{% url 'admin:index' %}" target="_blank"><i class="fa fa-briefcase fa-fw"></i> {% trans 'Admin Panel' %}</a>
                             </li>
+                            <li><a href="explorer/" target="_blank"><i class="fa fa-compass fa-fw"></i> {% trans 'SQL Explorer' %}</a>
+                            </li>
                             <li class="divider"></li>
                         {% endif %}
 

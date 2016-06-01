@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'grappelli_filters',
     'grappelli_menu',
     'grappelli_extensions',
+    'explorer',
     'django.contrib.contenttypes',
     'django.contrib.sites',
     'django.contrib.admin',

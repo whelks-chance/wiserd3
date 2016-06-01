@@ -23,6 +23,7 @@ from wiserd3 import settings
 
 urlpatterns = [
     url(r'^grappelli/', include('grappelli.urls')),
+    url(r'^explorer/', include('explorer.urls')),
     url(r'^admin_tools/', include(admin.site.urls)),
     url(r'^api/', include(api_urls, namespace='api')),
 

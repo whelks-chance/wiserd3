@@ -237,6 +237,11 @@
             return uid;
         }
 
+        function resetFormElement(e) {
+          e.wrap('<form>').closest('form').get(0).reset();
+          e.unwrap();
+        }
+
         // global namespace
         var DataPortal = DataPortal || {};
 
@@ -413,7 +418,12 @@
             {#            var layerControl = L.control.layers([], {position: 'bottomleft'}).addTo(map);#}
             var layerControl = L.control.layers([], []).addTo(map);
 
-            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            L.tileLayer(
+
+{#                    'http://d3rykcmoi4kytu.cloudfront.net/apu/1945/{x}/{y}/{z}.png',#}
+
+                    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    {
                 {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
                 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
                 maxZoom: 15,
@@ -1560,6 +1570,12 @@
             });
 
             $("#import_local_data_btn").click(function(e){
+                var dataset_radio = $('#local_column_headers_radio');
+                dataset_radio.find('div').remove().end();
+
+                resetFormElement($('#local-data-drop-zone'));
+
+                $('#local-data-drop-zone').show();
                 $( "#local-data-form").dialog( "open" );
             });
 
@@ -2391,25 +2407,39 @@
                 for(var column_header_idx in column_headers) {
                     if(column_headers.hasOwnProperty(column_header_idx))
                         var column_header_option = column_headers[column_header_idx];
+{#                        var radio_text = column_header_option;#}
 
-                    var radio_text = column_header_option;
-
-                    var radio_div = $('<div>');
-                    radio_div.append($('<input>', {
-                        value: column_header_option,
-                        id: column_header_option + '_value',
-                        type: 'radio',
-                        name: 'local_data_value_option',
-                        text: radio_text
-                    }));
-                    radio_div.append($('<label>', {
-                        class: 'dialog_radio_option',
-                        value: column_header_option,
-                        for: column_header_option + '_value',
-                        text: radio_text
-                    }));
-                    local_data_value_radio_div.append(radio_div);
+                        var radio_div = $('<div>');
+                        radio_div.append($('<input>', {
+                            value: column_header_option,
+                            id: column_header_option + '_value',
+                            type: 'radio',
+                            name: 'local_data_value_option',
+                            text: column_header_option
+                        }));
+                        radio_div.append($('<label>', {
+                            class: 'dialog_radio_option',
+                            value: column_header_option,
+                            for: column_header_option + '_value',
+                            text: column_header_option
+                        }));
+                        local_data_value_radio_div.append(radio_div);
                 }
+                var radio_div = $('<div>');
+                radio_div.append($('<input>', {
+                    value: 'local_data_no_value',
+                    id: 'local_data_no_value_radio',
+                    type: 'radio',
+                    name: 'local_data_value_option',
+                    text: 'Pointer Only'
+                }));
+                radio_div.append($('<label>', {
+                    class: 'dialog_radio_option',
+                    value: column_header_option,
+                    for: 'local_data_no_value_radio',
+                    text: 'Pointer Only'
+                }));
+                local_data_value_radio_div.append(radio_div);
                 local_data_value_radio_div.buttonset();
                 dataset_radio.append(local_data_value_radio_div);
 

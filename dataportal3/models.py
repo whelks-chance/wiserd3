@@ -794,8 +794,8 @@ class SpatialdataMSOA(models.Model):
 class SpatialdataLSOA(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254, blank=True, null=True)
-    label = models.CharField(max_length=254, blank=True, null=True)
-    zonecode = models.CharField(max_length=254, blank=True, null=True)
+    code = models.CharField(max_length=254, blank=True, null=True)
+    # zonecode = models.CharField(max_length=254, blank=True, null=True)
     geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
 

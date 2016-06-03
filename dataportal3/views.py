@@ -1748,6 +1748,26 @@ def get_topojson_by_name(request, topojson_name):
         topojson_conv = topojson(json.loads(s), quantization=1e6, simplify=0.0005)
         response_data['topojson'] = topojson_conv
 
+    elif topojson_name == 'lsoa':
+        filter_var = 'code__istartswith'
+        if len(codes) == 0:
+            lsoa_subset = models.SpatialdataLSOA.objects.using('new').all()
+        else:
+            ors = []
+            for code in codes:
+                ors.append(Q(**{filter_var: code}))
+
+            lsoa_subset = models.SpatialdataLSOA.objects.using('new').all().filter(
+                reduce(operator.or_, ors)
+            )
+
+        print len(list(lsoa_subset))
+        print list(lsoa_subset)
+
+        s = serialize('geojson', lsoa_subset, fields=('geom', 'code', 'name', 'REMOTE_VALUE'))
+        topojson_conv = topojson(json.loads(s), quantization=1e6, simplify=0.0005)
+        response_data['topojson'] = topojson_conv
+
     elif topojson_name == 'pcode_point':
         filter_var = 'postcode__istartswith'
 

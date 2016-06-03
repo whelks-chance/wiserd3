@@ -2512,6 +2512,11 @@
                                         codes.push(geo_string.slice(0, -2))
                                     }
 
+                                    if (geo_string.substring(0, 3) == 'W01') {
+                                        topojson_layer_name = 'lsoa';
+                                        codes.push(geo_string.slice(0, -1));
+                                    }
+
                                     if (geo_string.substring(0, 3) == 'W09') {
                                         topojson_layer_name = 'assembly_constituency';
                                         codes.push(geo_string);

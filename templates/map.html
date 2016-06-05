@@ -238,8 +238,8 @@
         }
 
         function resetFormElement(e) {
-          e.wrap('<form>').closest('form').get(0).reset();
-          e.unwrap();
+            e.wrap('<form>').closest('form').get(0).reset();
+            e.unwrap();
         }
 
         // global namespace
@@ -420,24 +420,17 @@
 
             L.tileLayer(
 
-{#                    'http://d3rykcmoi4kytu.cloudfront.net/apu/1945/{x}/{y}/{z}.png',#}
+                    {#                    'http://d3rykcmoi4kytu.cloudfront.net/apu/1945/{x}/{y}/{z}.png',#}
 
                     'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                     {
-                {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
-                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-                maxZoom: 15,
-                id: 'your.mapbox.project.id',
-                accessToken: 'your.mapbox.public.access.token'
-            }).addTo(map);
+                        {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
+                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+                        maxZoom: 15,
+                        id: 'your.mapbox.project.id',
+                        accessToken: 'your.mapbox.public.access.token'
+                    }).addTo(map);
 
-
-            var info = L.control();
-            info.onAdd = function (map) {
-                this._div = L.DomUtil.create('div', 'info');
-                this.update();
-                return this._div;
-            };
 
             L.control.scale().addTo(map);
 
@@ -448,6 +441,15 @@
                 return div;
             };
             north.addTo(map);
+
+
+            var info = L.control();
+            info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
+
 
 // method that we will use to update the control based on feature properties passed
             info.update = function (props) {
@@ -541,7 +543,7 @@
                     $('#right-component1').html(info_text);
                 }
             };
-            info.addTo(map);
+            {#            info.addTo(map);#}
 
             function get_sidebar_text(props, item) {
                 var strings = '';
@@ -588,7 +590,7 @@
                     fillOpacity: 0.7
                 });
                 {#                if (!L.Browser.ie && !L.Browser.opera) {#}
-{#                layer.bringToFront();#}
+                {#                layer.bringToFront();#}
                 {#                }#}
                 info.update(layer.feature.properties);
             }
@@ -759,7 +761,7 @@
                                                 fillOpacity: 0.7
                                             });
                                             {#                if (!L.Browser.ie && !L.Browser.opera) {#}
-{#                                            layer.bringToFront();#}
+                                            {#                                            layer.bringToFront();#}
                                             {#                }#}
                                             info.update(layer.feature.properties);
                                         },
@@ -800,7 +802,7 @@
                     },
                     complete: function() {
                         {#                        waitingDialog.hide();#}
-                                            ajax_finished();
+                        ajax_finished();
 
                     }
                 });
@@ -835,8 +837,8 @@
                 if (color_scheme == 'naw') {
                     {#                    color_scheme = ['001E62', '4f2c1d', '651D32', '004E42', '131E29'];#}
                     {#                    color_scheme = ['009ca6', 'fe5000', 'cc007b', '3fa628', 'cb102e'];#}
-{#                    color_scheme = ['white', 'FE5000', 'C8102E', '651D32', '131E29'];#}
-{#                    color_scheme = ['lightpink', 'pink', 'hotpink', 'deeppink'];#}
+                    {#                    color_scheme = ['white', 'FE5000', 'C8102E', '651D32', '131E29'];#}
+                    {#                    color_scheme = ['lightpink', 'pink', 'hotpink', 'deeppink'];#}
                     color_scheme = ['ffd2e8', 'hotpink', '4c1f36'];
 
                 }
@@ -882,11 +884,11 @@
                                 feature_data.push(parseFloat(remote_value));
                             }
                         } else {
-{#                            var fake_value = Math.floor((Math.random() * 100) + 1);#}
-{#                            geometries_properties[a]['properties']['REMOTE_VALUE'] = fake_value;#}
-{#                            geometries_properties[a]['properties']['RENDER'] = false;#}
-{#                            feature_data.push(parseFloat(fake_value));#}
-{#                            fake_data = true;#}
+                            {#                            var fake_value = Math.floor((Math.random() * 100) + 1);#}
+                            {#                            geometries_properties[a]['properties']['REMOTE_VALUE'] = fake_value;#}
+                            {#                            geometries_properties[a]['properties']['RENDER'] = false;#}
+                            {#                            feature_data.push(parseFloat(fake_value));#}
+                            {#                            fake_data = true;#}
                         }
                     }
                 }
@@ -945,10 +947,10 @@
 
                 var myLayer = new L.TopoJSON(data, {
                     pointToLayer: function (feature, latlng) {
-{#                        console.log(feature);#}
+                        {#                        console.log(feature);#}
                         {#                        if (feature.properties.RENDER == true) {#}
                         if (isNaN(feature.properties.REMOTE_VALUE)) {
-{#                            TODO do something interesting with non number markers? #}
+                            {#                            TODO do something interesting with non number markers? #}
                             return L.circleMarker(latlng, geojsonMarkerOptions);
                         } else {
                             return L.circleMarker(latlng, geojsonMarkerOptions);
@@ -994,8 +996,8 @@
                 myLayer.eachLayer(function (layer) {
                     if (layer.feature.type === 'Feature') {
                         {# enable this line if we want clustered markers #}
-{#                                                                        is_clustermarkers = true;#}
-{#                                                is_heatmap = true;#}
+                        {#                                                                        is_clustermarkers = true;#}
+                        {#                                                is_heatmap = true;#}
 
                     }
                 });
@@ -1050,7 +1052,7 @@
                             fillOpacity: {% if naw %}1{% else %}0.7{% endif %}
                         });
 
-{#                        layer.bringToFront();#}
+                        {#                        layer.bringToFront();#}
 
                         {#                        info.update(layer.feature.properties);#}
 
@@ -1133,6 +1135,9 @@
 
             function build_legend(feature_data, unique_feature_string_data, chroma_scale, grades, is_percentage) {
                 var labels = [], from, to;
+
+                {#                console.log('feature_data');#}
+                {#                console.log(feature_data);#}
                 if (feature_data.length > 1) {
                     {#  For each bin in the quantiles, we need a representative color for the Legend #}
                     for (var i = 0; i < grades.length -1; i++) {
@@ -1150,8 +1155,11 @@
                         labels.push(legend_row);
                     }
                 }
+
+                {#                console.log('unique_feature_string_data');#}
+                {#                console.log(unique_feature_string_data);#}
                 if (unique_feature_string_data.length > 0) {
-                    for (var string_idx in unique_feature_string_data) {
+                    for (var string_idx in unique_feature_string_data.sort()) {
                         var legend_string_row = '<p style="white-space: nowrap; padding: 0 1em;"><i style="background:' + getColorFromString(unique_feature_string_data[string_idx]) + '"></i> ' + unique_feature_string_data[string_idx] + '</p>';
                         labels.push(legend_string_row);
                     }
@@ -1306,6 +1314,29 @@
                 zoom:10
             }) );
 
+            L.Control.Screenshot = L.Control.extend({
+                options: {
+                    position: 'topleft'
+                },
+                onAdd: function (map2) {
+                    var controlDiv = L.DomUtil.create('div', 'leaflet-control-command');
+                    L.DomEvent
+                            .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
+                            .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
+                            .addListener(controlDiv, 'click', function () { leafletImage(map, screenshot); });
+
+                    var controlUI = L.DomUtil.create('div', 'leaflet-control-command-interior', controlDiv);
+                    controlUI.title = '{% trans "Screenshot" %}';
+                    controlUI.innerHTML = '<a><i class="fa fa-camera"></a>';
+                    return controlDiv;
+                }
+            });
+
+            var screenshot_control = new L.Control.Screenshot();
+            screenshot_control.addTo(map);
+
+
+
             var drawControl = new L.Control.Draw({
                 edit: {
                     featureGroup: featureGroup
@@ -1422,7 +1453,7 @@
                     },
                     complete: function() {
                         {#                        waitingDialog.hide();#}
-                                            ajax_finished();
+                        ajax_finished();
 
                     }
                 });
@@ -1451,7 +1482,7 @@
 
             $( "#chloropleth_option_form" ).dialog({
                 autoOpen: false,
-                height: map_div.height(),
+                height: map_div.height() * 0.8,
                 width: $('#page-wrapper').width()/2,
                 position: {
                     my: "center",
@@ -1658,7 +1689,7 @@
 
             $( "#search-remote-form" ).dialog({
                 autoOpen: false,
-                height: map_div.height(),
+                height: map_div.height() * 0.8,
                 position: {
                     my: "center",
                     at: "center",
@@ -1740,7 +1771,7 @@
                                 },
                                 complete: function() {
                                     {#                                    waitingDialog.hide();#}
-                                ajax_finished();
+                                    ajax_finished();
                                 }
                             });
 
@@ -1759,7 +1790,7 @@
 
             $( "#dataset_define_vars_form" ).dialog({
                 autoOpen: false,
-                height: map_div.height(),
+                height: map_div.height() * 0.8,
                 position: {
                     my: "center",
                     at: "center",
@@ -1877,7 +1908,7 @@
 
             $( "#local_dataset_define_vars_form" ).dialog({
                 autoOpen: false,
-                height: map_div.height(),
+                height: map_div.height() * 0.8,
                 position: {
                     my: "center",
                     at: "center",
@@ -2102,7 +2133,7 @@
             {#        lsoa_pembrokshire_point#}
             {#        'pcode_district'#}
             {#        'pcode_point'#}
-{#                        do_layer_by_name('pcode_point');#}
+            {#                        do_layer_by_name('pcode_point');#}
 
             var remote_data_layer_data = {{ remote_searches|jsonify }};
             for (var remote_data_layer_idx in remote_data_layer_data) {
@@ -2407,23 +2438,23 @@
                 for(var column_header_idx in column_headers) {
                     if(column_headers.hasOwnProperty(column_header_idx))
                         var column_header_option = column_headers[column_header_idx];
-{#                        var radio_text = column_header_option;#}
+                    {#                        var radio_text = column_header_option;#}
 
-                        var radio_div = $('<div>');
-                        radio_div.append($('<input>', {
-                            value: column_header_option,
-                            id: column_header_option + '_value',
-                            type: 'radio',
-                            name: 'local_data_value_option',
-                            text: column_header_option
-                        }));
-                        radio_div.append($('<label>', {
-                            class: 'dialog_radio_option',
-                            value: column_header_option,
-                            for: column_header_option + '_value',
-                            text: column_header_option
-                        }));
-                        local_data_value_radio_div.append(radio_div);
+                    var radio_div = $('<div>');
+                    radio_div.append($('<input>', {
+                        value: column_header_option,
+                        id: column_header_option + '_value',
+                        type: 'radio',
+                        name: 'local_data_value_option',
+                        text: column_header_option
+                    }));
+                    radio_div.append($('<label>', {
+                        class: 'dialog_radio_option',
+                        value: column_header_option,
+                        for: column_header_option + '_value',
+                        text: column_header_option
+                    }));
+                    local_data_value_radio_div.append(radio_div);
                 }
                 var radio_div = $('<div>');
                 radio_div.append($('<input>', {
@@ -2479,7 +2510,7 @@
 
             $( "#local-data-form" ).dialog({
                 autoOpen: false,
-                height: map_div.height(),
+                height: map_div.height() * 0.8,
                 position: {
                     my: "center",
                     at: "center",
@@ -2591,7 +2622,7 @@
 
             <div class="right_sidebar" id="right_sidebar"
                  style="
-{#                         background-color: #f8f8f8;#}
+                         {#                         background-color: #f8f8f8;#}
                          border-left: 1px solid #e7e7e7;
                          height: 100%;
                          {#                                  position: absolute; right: 0;#}
@@ -2620,7 +2651,7 @@
 
             {#            <div id="naw_output" >NAW = {{ naw }}</div>#}
             {#            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>#}
-            <div id="screenshot" class="btn">{% trans "Screenshot" %}</div>
+{#            <div id="screenshot" class="btn">{% trans "Screenshot" %}</div>#}
             <div id="screenshot_result"></div>
             {#                <div id="screenshot_result2"></div>#}
             {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}

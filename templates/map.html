@@ -536,11 +536,62 @@
                         }
                     {% endif %}
 
+
                     info_text += '</div>';
                     {#                FIXME this is nuts #}
                     {#                this._div.innerHTML = info_text;#}
 
-                    $('#right-component1').html(info_text);
+                    var dl_link = '{% url 'download_dataset_zip' %}';
+
+                    $('#right-component1').html(info_text).append(
+                            $('<iframe/>')
+                                    .attr('id', 'download_dataset_iframe')
+                                    .attr('name', 'download_dataset_iframe')
+                                    .attr('hidden', 'hidden')
+                    ).append(
+
+                            $('<form/>')
+                                    .attr('id', 'download_dataset_form')
+                                    .attr('method', 'post')
+                                    .attr('action', dl_link)
+                                    .attr('target', 'download_dataset_iframe')
+                                    .append(
+                                            $('<div/>')
+                                                    .addClass('btn btn-info')
+{#                                                    .attr('type', 'submit')#}
+                                                    .text('Download Dataset').on('click', function(){
+                                alert('Downloading');
+                                leafletImage(map, function(err, map_canvas) {
+                                            do_screenshot(map_canvas, function(canvas_data_url){
+
+{#                                                var dl_link = '{% url 'download_dataset_zip' %}' + '?dataset_id=' + props.SEARCH_UUID;#}
+                                                window.open(canvas_data_url, '_blank');
+
+                                                $('#download_dataset_form')
+                                                        .append(
+                                                                $('<input>')
+                                                                        .attr('type', 'input')
+                                                                        .attr('hidden', 'hidden')
+                                                                        .attr('name', 'png_b64_url')
+                                                                        .attr('value', canvas_data_url)
+                                                        )
+                                                        .append(
+                                                                $('<input>')
+                                                                        .attr('type', 'input')
+                                                                        .attr('hidden', 'hidden')
+                                                                        .attr('name', 'dataset_id')
+                                                                        .attr('value', '12345678')
+                                                        )
+                                                        .submit();
+
+                                            });
+                                        }
+                                );
+
+                            })
+                                    )
+                    );
+
                 }
             };
             {#            info.addTo(map);#}
@@ -1323,7 +1374,7 @@
                     L.DomEvent
                             .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
                             .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
-                            .addListener(controlDiv, 'click', function () { leafletImage(map, screenshot); });
+                            .addListener(controlDiv, 'click', function () { take_screenshot()});
 
                     var controlUI = L.DomUtil.create('div', 'leaflet-control-command-interior', controlDiv);
                     controlUI.title = '{% trans "Screenshot" %}';
@@ -1410,7 +1461,7 @@
 
             var most_recent_search_png = '';
             function doImage(err, canvas) {
-                alert('doimage');
+                {#                alert('doimage');#}
                 {#                var snapshot = document.getElementById('snapshot');#}
 
                 var img = document.createElement('img');
@@ -1869,16 +1920,14 @@
                 }
             });
 
-            $('#screenshot').click(function() {
-                leafletImage(map, screenshot);
-            });
+            {#            $('#screenshot').click(function() {#}
+            {#                leafletImage(map, screenshot_open_tab);#}
+            {#            });#}
 
-            function screenshot(err, map_canvas){
-
+            function do_screenshot(map_canvas, callback) {
                 html2canvas(
                         map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-left'), {}
                 ).then(function(left_overlay_canvas) {
-                    {#                            $('#screenshot_result2').append(overlay_canvas);#}
 
                     var ctx3 = map_canvas.getContext('2d');
                     ctx3.drawImage(
@@ -1898,10 +1947,21 @@
 
                         var canvas_data_url = map_canvas.toDataURL("image/png", 0.5);
 
-                        window.open(canvas_data_url, '_blank');
-                        {#                                                                $('#screenshot_result').append(map_canvas);#}
-
+                        if(callback) {
+                            callback(canvas_data_url);
+                        }
+                        return canvas_data_url;
                     });
+                });
+            }
+
+            function take_screenshot() {
+                leafletImage(map, do_screenshot_open_tab);
+            }
+
+            function do_screenshot_open_tab(err, map_canvas) {
+                do_screenshot(map_canvas, function(canvas_data_url){
+                    window.open(canvas_data_url, '_blank');
                 });
             }
 
@@ -2651,9 +2711,6 @@
 
             {#            <div id="naw_output" >NAW = {{ naw }}</div>#}
             {#            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>#}
-{#            <div id="screenshot" class="btn">{% trans "Screenshot" %}</div>#}
-            <div id="screenshot_result"></div>
-            {#                <div id="screenshot_result2"></div>#}
             {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
         </div>
     </div>

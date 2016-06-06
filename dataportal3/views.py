@@ -1,8 +1,12 @@
+import base64
+import zipfile
 from datetime import datetime
 import json
 import os
 import pprint
 import uuid
+
+import StringIO
 from BeautifulSoup import BeautifulSoup
 from allauth.account.models import EmailAddress
 from allauth.account.utils import send_email_confirmation
@@ -2190,3 +2194,66 @@ def licence_attribution(request):
 
 def local_data(request):
     return render(request, 'local_data.html', {}, context_instance=RequestContext(request))
+
+
+@csrf_exempt
+def download_dataset_zip(request):
+    # print request.GET
+
+    dataset_id = request.POST.get('dataset_id')
+    png_b64_url = request.POST.get('png_b64_url')
+
+    print dataset_id
+    print png_b64_url
+
+    # png_b64_headless = png_b64_url.split(',', 1)[1]
+    png_b64_headless = png_b64_url.replace('data:image/png;base64,', '')
+
+    # print png_b64_headless
+
+
+
+    if dataset_id:
+
+        try:
+            zip_subdir = 'download_dataset'
+            zip_filename = "{}.zip".format(zip_subdir)
+
+            # Open StringIO to grab in-memory ZIP contents
+            s = StringIO.StringIO()
+
+            # The zip compressor
+            zf = zipfile.ZipFile(s, "w", zipfile.ZIP_DEFLATED)
+
+            print os.path.abspath('./')
+
+            filenames = ['./map_1.png', './dataportal3/static/dataportal/docs/licence_attribution_en.html']
+
+            for fpath in filenames:
+
+                # Calculate path for file in zip
+                fdir, fname = os.path.split(fpath)
+                zip_path = os.path.join(zip_subdir, fname)
+
+                # Add file, at correct path
+                zf.write(fpath, zip_path)
+
+            b64_decode = base64.urlsafe_b64decode(png_b64_headless)
+
+            print b64_decode
+
+            zf.writestr('png.png', str.encode(b64_decode))
+
+            # Must close zip for all contents to be written
+            zf.close()
+
+            # Grab ZIP file from in-memory, make response with correct MIME-type
+            resp = HttpResponse(s.getvalue(), content_type="application/x-zip-compressed")
+            # ..and correct content-disposition
+            resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+        except Exception as e1234:
+            print type(e1234), e1234, e1234.args, e1234.message
+
+        return resp
+    else:
+        return render(request, '404.html', {'error': 'dataset_not_found'}, context_instance=RequestContext(request))

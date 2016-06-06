@@ -265,6 +265,7 @@ def tables(request):
 def map_search(request):
     print request.GET
     naw = request.GET.get('naw', False)
+    use_template = request.GET.get('use_template', True)
 
     layer_uuids = request.GET.getlist('layers', [])
     print layer_uuids, type(layer_uuids)
@@ -369,9 +370,18 @@ def map_search(request):
         if user_prefs.preferred_language.user_language_title == 'Welsh':
             use_welsh = True
 
+    template_name = 'navigation.html'
+    if naw:
+        template_name = 'naw_navigation.html'
+    if use_template == 'False':
+        template_name = 'empty.html'
+        use_template = False
+
     return render(request, 'map.html',
                   {
                       'naw': naw,
+                      'template_name': template_name,
+                      'use_template': use_template,
                       'naw_key_searches': naw_key_searches,
                       'local_data_layers': local_data_layers,
                       'remote_searches': remote_layer_data,
@@ -2198,62 +2208,76 @@ def local_data(request):
 
 @csrf_exempt
 def download_dataset_zip(request):
-    # print request.GET
 
-    dataset_id = request.POST.get('dataset_id')
-    png_b64_url = request.POST.get('png_b64_url')
-
-    print dataset_id
-    print png_b64_url
-
-    # png_b64_headless = png_b64_url.split(',', 1)[1]
-    png_b64_headless = png_b64_url.replace('data:image/png;base64,', '')
-
-    # print png_b64_headless
-
-
-
+    dataset_id = request.GET.get('dataset_id')
     if dataset_id:
+        print dataset_id
 
-        try:
-            zip_subdir = 'download_dataset'
-            zip_filename = "{}.zip".format(zip_subdir)
+        zip_subdir = 'download_dataset'
+        zip_filename = "{}.zip".format(zip_subdir)
 
-            # Open StringIO to grab in-memory ZIP contents
-            s = StringIO.StringIO()
+        # Open StringIO to grab in-memory ZIP contents
+        s = StringIO.StringIO()
 
-            # The zip compressor
-            zf = zipfile.ZipFile(s, "w", zipfile.ZIP_DEFLATED)
+        # The zip compressor
+        zf = zipfile.ZipFile(s, "w", zipfile.ZIP_DEFLATED)
 
-            print os.path.abspath('./')
+        print os.path.abspath('./')
 
-            filenames = ['./map_1.png', './dataportal3/static/dataportal/docs/licence_attribution_en.html']
+        filenames = ['./dataportal3/static/dataportal/docs/licence_attribution_en.html']
 
-            for fpath in filenames:
+        for fpath in filenames:
 
-                # Calculate path for file in zip
-                fdir, fname = os.path.split(fpath)
-                zip_path = os.path.join(zip_subdir, fname)
+            # Calculate path for file in zip
+            fdir, fname = os.path.split(fpath)
+            zip_path = os.path.join(zip_subdir, fname)
 
-                # Add file, at correct path
-                zf.write(fpath, zip_path)
+            # Add file, at correct path
+            zf.write(fpath, zip_path)
 
-            b64_decode = base64.urlsafe_b64decode(png_b64_headless)
+        screenshot_file = do_screenshot(dataset_id)
+        zf.write(screenshot_file)
 
-            print b64_decode
+        zf.close()
 
-            zf.writestr('png.png', str.encode(b64_decode))
-
-            # Must close zip for all contents to be written
-            zf.close()
-
-            # Grab ZIP file from in-memory, make response with correct MIME-type
-            resp = HttpResponse(s.getvalue(), content_type="application/x-zip-compressed")
-            # ..and correct content-disposition
-            resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
-        except Exception as e1234:
-            print type(e1234), e1234, e1234.args, e1234.message
+        # Grab ZIP file from in-memory, make response with correct MIME-type
+        resp = HttpResponse(s.getvalue(), content_type="application/x-zip-compressed")
+        # ..and correct content-disposition
+        resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
 
         return resp
     else:
+        return render(request, '404.html', {'error': 'dataset_not_found'}, context_instance=RequestContext(request))
+
+
+def do_screenshot(search_uuid):
+    import time
+    from pyvirtualdisplay import Display
+    from selenium import webdriver
+
+    display = Display(visible=0, size=(1024, 768))
+    display.start()
+
+    delay = 5
+    filename = 'map.png'
+
+    browser = webdriver.Firefox()
+    browser.get('http://localhost:8000/map?layers={}&use_template=False'.format(search_uuid))
+    # Give the map tiles some time to load
+    time.sleep(delay)
+    browser.save_screenshot(filename)
+    browser.quit()
+
+    display.stop()
+    return filename
+
+
+def gen_screenshot(request, search_uuid):
+
+    filename = do_screenshot(search_uuid)
+
+    try:
+        with open(filename, "rb") as f:
+            return HttpResponse(f.read(), content_type="image/jpeg")
+    except IOError:
         return render(request, '404.html', {'error': 'dataset_not_found'}, context_instance=RequestContext(request))

@@ -1,4 +1,8 @@
-{% extends naw|yesno:"naw_navigation.html,navigation.html" %}
+{#{% extends naw|yesno:"naw_navigation.html,navigation.html" %}#}
+
+{% extends template_name %}
+
+
 {% load staticfiles %}
 {% load jsonify %}
 {% load i18n %}
@@ -541,56 +545,16 @@
                     {#                FIXME this is nuts #}
                     {#                this._div.innerHTML = info_text;#}
 
-                    var dl_link = '{% url 'download_dataset_zip' %}';
-
-                    $('#right-component1').html(info_text).append(
-                            $('<iframe/>')
-                                    .attr('id', 'download_dataset_iframe')
-                                    .attr('name', 'download_dataset_iframe')
-                                    .attr('hidden', 'hidden')
-                    ).append(
-
-                            $('<form/>')
-                                    .attr('id', 'download_dataset_form')
-                                    .attr('method', 'post')
-                                    .attr('action', dl_link)
-                                    .attr('target', 'download_dataset_iframe')
-                                    .append(
-                                            $('<div/>')
-                                                    .addClass('btn btn-info')
-{#                                                    .attr('type', 'submit')#}
-                                                    .text('Download Dataset').on('click', function(){
-                                alert('Downloading');
-                                leafletImage(map, function(err, map_canvas) {
-                                            do_screenshot(map_canvas, function(canvas_data_url){
-
-{#                                                var dl_link = '{% url 'download_dataset_zip' %}' + '?dataset_id=' + props.SEARCH_UUID;#}
-                                                window.open(canvas_data_url, '_blank');
-
-                                                $('#download_dataset_form')
-                                                        .append(
-                                                                $('<input>')
-                                                                        .attr('type', 'input')
-                                                                        .attr('hidden', 'hidden')
-                                                                        .attr('name', 'png_b64_url')
-                                                                        .attr('value', canvas_data_url)
-                                                        )
-                                                        .append(
-                                                                $('<input>')
-                                                                        .attr('type', 'input')
-                                                                        .attr('hidden', 'hidden')
-                                                                        .attr('name', 'dataset_id')
-                                                                        .attr('value', '12345678')
-                                                        )
-                                                        .submit();
-
-                                            });
-                                        }
-                                );
-
-                            })
-                                    )
-                    );
+                    $('#right-component1').html(info_text)
+                            .append(
+                                    $('<div/>')
+                                            .addClass('btn btn-info')
+                                            .text('Download Dataset')
+                                            .on('click', function(){
+                                                var dl_link = '{% url 'download_dataset_zip' %}' + '?dataset_id=' + props.SEARCH_UUID;
+                                                window.open(dl_link, '_blank');
+                                            })
+                            );
 
                 }
             };
@@ -2678,42 +2642,45 @@
             <div id="map_div"></div>
         </div>
 
-        <div class="col-lg-3 col-sm-12" style="padding-right: 0">
+        {% if use_template %}
+            <div class="col-lg-3 col-sm-12" style="padding-right: 0">
 
-            <div class="right_sidebar" id="right_sidebar"
-                 style="
-                         {#                         background-color: #f8f8f8;#}
-                         border-left: 1px solid #e7e7e7;
-                         height: 100%;
-                         {#                                  position: absolute; right: 0;#}
-                         {#                         width:250px;#}
-                         width: 100%;
-                         overflow-y: scroll;
-                         overflow-x: hidden">
+                <div class="right_sidebar" id="right_sidebar"
+                     style="
+                             {#                         background-color: #f8f8f8;#}
+                             border-left: 1px solid #e7e7e7;
+                             height: 100%;
+                             {#                                  position: absolute; right: 0;#}
+                             {#                         width:250px;#}
+                             width: 100%;
+                             overflow-y: scroll;
+                             overflow-x: hidden">
 
-                {#                <div class="row">#}
-                {#                    <div class="col-lg-12">#}
-                <div class="split-pane-component" id="right-component1"
-                     style="margin: 0.5em;
-                             {#                     word-break: break-all;#}
-                             word-wrap: normal; word-break: normal"></div>
-                {#                    </div>#}
-                {#                    <div class="col-lg-12">#}
-                {#                        <div class="split-pane-component" id="right-component2"></div>#}
-                {#                    </div>#}
-                {#                </div>#}
+                    {#                <div class="row">#}
+                    {#                    <div class="col-lg-12">#}
+                    <div class="split-pane-component" id="right-component1"
+                         style="margin: 0.5em;
+                                 {#                     word-break: break-all;#}
+                                 word-wrap: normal; word-break: normal"></div>
+                    {#                    </div>#}
+                    {#                    <div class="col-lg-12">#}
+                    {#                        <div class="split-pane-component" id="right-component2"></div>#}
+                    {#                    </div>#}
+                    {#                </div>#}
+                </div>
             </div>
-        </div>
+        {% endif %}
+
     </div>
 
-    <div class="">
-        <div class="col-lg-12">
-
-            {#            <div id="naw_output" >NAW = {{ naw }}</div>#}
-            {#            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>#}
-            {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
-        </div>
-    </div>
+    {#    <div class="">#}
+    {#        <div class="col-lg-12">#}
+    {##}
+    {#            <div id="naw_output" >NAW = {{ naw }}</div>#}
+    {#            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>#}
+    {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
+    {#        </div>#}
+    {#    </div>#}
     <div id="chloropleth_option_form" title="{% trans 'Chloropleth options' %}">
         <table>
             <tr>

@@ -70,6 +70,7 @@ urlpatterns = [
     url(r'^qual_transcript/(?P<qual_id>\S+)', views.qual_transcript, name='qual_transcript'),
 
     url(r'^map', views.map_search, name='map'),
+    url(r'gen_screenshot/(?P<search_uuid>\S+)', views.gen_screenshot, name='gen_screenshot'),
 
     url(r'^blank', views.blank, name='blank'),
 

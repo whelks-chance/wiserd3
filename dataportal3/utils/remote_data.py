@@ -215,7 +215,7 @@ class RemoteData():
 
         return dataset_url, codelist_filename
 
-    def get_data(self, dataset_id, region_id, measure, codelist=None, limit=10, offset=0):
+    def get_data(self, dataset_id, region_id, measure, codelist=None, limit=10, offset=0, search_uuid=None):
         dataset_url, codelist_filename = self.get_dataset_url(dataset_id, region_id, measure, codelist, limit, offset)
 
         nomis_raw_filename = os.path.join(
@@ -260,6 +260,8 @@ class RemoteData():
                     'geography_id': f5['geography']['value'],
                     'data_status': f5['obs_status']['value']
                 }
+                if search_uuid:
+                    k5['search_uuid'] = search_uuid
 
                 # Store by name - possibly open to errors
                 try:
@@ -509,9 +511,9 @@ class RemoteData():
         else:
             return region_id, topojson_file
 
-    def get_topojson_with_data(self, dataset_id, geog, nomis_variable, codelist=None, high=False):
+    def get_topojson_with_data(self, dataset_id, geog, nomis_variable, codelist=None, high=False, search_uuid=None):
         region_id, topojson_file = self.get_dataset_geodata(geog, high)
-        all_data = self.get_data(dataset_id, region_id, nomis_variable, codelist=codelist, limit=100, offset=0)
+        all_data = self.get_data(dataset_id, region_id, nomis_variable, codelist=codelist, limit=100, offset=0, search_uuid=search_uuid)
 
         measure_is_percentage = False
         if codelist:

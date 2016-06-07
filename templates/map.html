@@ -457,6 +457,7 @@
 
 // method that we will use to update the control based on feature properties passed
             info.update = function (props) {
+            console.log(props);
                 var value = '';
                 if (props) {
                     if (props.hasOwnProperty('response_rate')) {
@@ -882,6 +883,7 @@
                 var data_objects = data['objects'];
                 var feature_data = [];
                 var feature_string_data = [];
+                var search_uuid = '0000';
 
                 {#  This is listing all the response rate variables we know can find in the topojson #}
                 for (var b in data_objects) {
@@ -904,6 +906,10 @@
                             {#                            geometries_properties[a]['properties']['RENDER'] = false;#}
                             {#                            feature_data.push(parseFloat(fake_value));#}
                             {#                            fake_data = true;#}
+                        }
+
+                        if (geometries_properties[a]['properties']['SEARCH_UUID']) {
+                            search_uuid = geometries_properties[a]['properties']['SEARCH_UUID'];
                         }
                     }
                 }
@@ -1000,7 +1006,7 @@
                                 unique_feature_string_data,
                                 chroma_scale,
                                 grades, is_percentage);
-                        addLegend(unique_layer_name_text, layer_name_text, div_inner);
+                        addLegend(unique_layer_name_text, layer_name_text, div_inner, search_uuid);
                     }
                 });
 
@@ -1184,13 +1190,14 @@
                 return div_inner;
             }
 
-            function addLegend(unique_layer_name_text, layer_name_text, contentHTML){
+            function addLegend(unique_layer_name_text, layer_name_text, contentHTML, search_uuid){
 
                 {#                var a_uid = get_next_uid();#}
                 {#                var tab_id = ("collapse_" + a_uid + '_' + div_id).replace(/\W/g, '');#}
                 var tab_id = ("collapse_" + unique_layer_name_text).replace(/\W/g, '');
                 var accordionInner = $('<div/>')
                         .attr('id', 'accordion_inner_' + tab_id)
+                        .attr('search_uuid', search_uuid)
                         .addClass("panel panel-default")
                         .append(
                                 $('<div/>')
@@ -1217,7 +1224,7 @@
                                                         .wrapInner(contentHTML)
                                                 {#                                        .text('Lorem ipsum dolor sit amet, consectetur adipisicing elit, minim veniam, quis nostrud')#}
                                         )
-                        );
+                        ).append($('<div/>').attr('id', 'findme_' + search_uuid).attr('find_me', search_uuid));
                 var accordionDiv = $('#legend_accordion');
                 $(accordionDiv).append(accordionInner);
             }

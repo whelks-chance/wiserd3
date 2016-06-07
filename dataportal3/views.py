@@ -1878,7 +1878,7 @@ def get_topojson_for_uuid(request, search_uuid):
         # remote_search_layers.append(layer_data)
 
         rd = RemoteData()
-        a = rd.get_topojson_with_data(dataset_id, geog, '', codelist, high=user_prefs.topojson_high)
+        a = rd.get_topojson_with_data(dataset_id, geog, '', codelist, high=user_prefs.topojson_high, search_uuid=search_uuid)
         response_data['topojson'] = a
 
     # TODO we want to inject new variables into properties here
@@ -2235,8 +2235,13 @@ def download_dataset_zip(request):
             # Add file, at correct path
             zf.write(fpath, zip_path)
 
-        screenshot_file = do_screenshot(dataset_id)
-        zf.write(screenshot_file)
+        zf.writestr('topojson_data.json', json.dumps(get_topojson_for_uuid(request, dataset_id), indent=4))
+
+        try:
+            screenshot_file = do_screenshot(dataset_id)
+            zf.write(screenshot_file)
+        except:
+            pass
 
         zf.close()
 
@@ -2254,20 +2259,31 @@ def do_screenshot(search_uuid):
     import time
     from pyvirtualdisplay import Display
     from selenium import webdriver
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.wait import WebDriverWait
 
     display = Display(visible=0, size=(1024, 768))
     display.start()
 
     delay = 5
-    filename = 'map.png'
+    filename = 'map_{}.png'.format(search_uuid)
 
     browser = webdriver.Firefox()
     browser.get('http://localhost:8000/map?layers={}&use_template=False'.format(search_uuid))
-    # Give the map tiles some time to load
-    time.sleep(delay)
-    browser.save_screenshot(filename)
-    browser.quit()
 
+    try:
+        element = WebDriverWait(browser, 30).until(
+            EC.presence_of_element_located((By.ID, 'findme_{}'.format(search_uuid)))
+        )
+        time.sleep(delay)
+        browser.save_screenshot(filename)
+
+    except Exception as e32564:
+        print type(e32564), e32564
+        raise
+
+    browser.quit()
     display.stop()
     return filename
 

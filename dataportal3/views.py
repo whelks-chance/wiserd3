@@ -2082,7 +2082,7 @@ def help_support(request):
                   }, context_instance=RequestContext(request))
 
 
-def csv_view_data(request, provider, search_uuid):
+def get_data_for_search_uuid(search_uuid):
     dataset_data_list_full = []
     try:
 
@@ -2127,9 +2127,13 @@ def csv_view_data(request, provider, search_uuid):
                     dataset_data_dict[header_item] = data_row_items[header_index].rstrip('"').lstrip('"')
                     # dataset_data_dict.append(data_row_items[header_index].rstrip('"').lstrip('"'))
                 dataset_data_list_full.append(dataset_data_dict)
-
     except Exception as e8943279:
         error = str(e8943279)
+    return dataset_data_list_full
+
+
+def csv_view_data(request, provider, search_uuid):
+    dataset_data_list_full = get_data_for_search_uuid(search_uuid)
     return HttpResponse(json.dumps(dataset_data_list_full, indent=4), content_type="application/json")
 
 
@@ -2213,7 +2217,7 @@ def download_dataset_zip(request):
     if dataset_id:
         print dataset_id
 
-        zip_subdir = 'download_dataset'
+        zip_subdir = 'wiserd_docs'
         zip_filename = "{}.zip".format(zip_subdir)
 
         # Open StringIO to grab in-memory ZIP contents
@@ -2235,6 +2239,7 @@ def download_dataset_zip(request):
             # Add file, at correct path
             zf.write(fpath, zip_path)
 
+        zf.writestr('data.json', json.dumps(get_data_for_search_uuid(dataset_id), indent=4))
         zf.writestr('topojson_data.json', json.dumps(get_topojson_for_uuid(request, dataset_id), indent=4))
 
         try:

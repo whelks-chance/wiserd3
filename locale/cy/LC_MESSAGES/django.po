@@ -572,7 +572,7 @@ msgstr "Nodweddion Eilaidd"
 msgid ""
 "The information on useage of WISERD metadata, data and data from other "
 "external sources is available <a href=%(licence_attribution_url)s>here</a>."
-msgstr ""
+msgstr "Mae gwybodaeth am ddefnyddio metadata a data WISERD a data o ffynonellau allanol ar gael <a href=%(licence_attribution_url)s>yma</a>."
 
 #: templates/help_support.html:27
 msgid "Support"
@@ -625,7 +625,7 @@ msgstr ""
 #: templates/help_support.html:131 templates/help_support.html.py:160
 #: templates/help_support.html:187
 msgid "Bug fixes"
-msgstr "Cywirio bygiau"
+msgstr "Cywiro bygiau"
 
 #: templates/help_support.html:57
 msgid "November 13th, 2013"
@@ -638,7 +638,7 @@ msgstr "Mae’n darllen a dangos tablau ymateb o fetaddata cronfa ddata"
 #: templates/help_support.html:63
 msgid "Increase metadata access through linking of orphaned metadata IDs"
 msgstr ""
-"Cynyddu mynediad at fetadata drwy gysylltu ddulliau adnabod metaddata "
+"Cynyddu mynediad at fetadata drwy gysylltu dulliau adnabod metaddata "
 "amddifad"
 
 #: templates/help_support.html:66
@@ -733,7 +733,7 @@ msgstr "Cydweddu metaddata WISERD lleol i’r setiau data o bell"
 
 #: templates/help_support.html:157
 msgid "SLD layer icons and legend creation and rendering"
-msgstr "eiconau haen SLD a chreu eglurhad a rendro"
+msgstr "Ficonau haen SLD a chreu eglurhad a rendro"
 
 #: templates/help_support.html:166
 msgid "Feb 16th, 2013"
@@ -745,7 +745,7 @@ msgstr "Ailysgrifennu’r cefn i gyd i ddefnyddio Yii"
 
 #: templates/help_support.html:172
 msgid "User registration and login fixed"
-msgstr "AAtgyweirio cofrestru a mewngofnodi defnyddiwr"
+msgstr "Atgyweirio cofrestru a mewngofnodi defnyddiwr"
 
 #: templates/help_support.html:175
 msgid "Search efficiency optimised"
@@ -786,138 +786,135 @@ msgid ""
 "licence/version/3/\">generic attribution</a> relating to the use of such "
 "data and information from various sources has been applied where appropriate."
 msgstr ""
+"Oni nodir yn wahanol, gwybodaeth o'r sector cyhoeddus a ryddhawyd o dan y Drwydded Data Llywodraeth Agored yw'r data a'r wybodaeth sydd ar gael drwy WISERD DataPortal."
+" Isod, mae'r <a class=\"c0\" target=\"_blank\" href=\"http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\">gydnabyddiaeth gyffredinol</a> y cytunwyd arni ar gyfer defnyddio'r fath ddata a gwybodaeth o ffynonellau amrywiol. Defnyddir y gydnabyddiaeth hon lle y bo'n briodol."
 
 #: templates/licence_attribution.html:29
 msgid ""
 "&lsquo;Contains public sector information licensed under the Open Government "
 "Licence v3.0&rsquo;."
 msgstr ""
+"&lsquo;Yn cynnwys gwybodaeth sector cyhoeddus a drwyddedwyd o dan Drwydded Llywodraeth Agored v3.0 Licence v3.0&rsquo;."
 
 #: templates/licence_attribution.html:31
 msgid ""
 "This attribution can be expanded to include any or all of the following "
 "organisations, sources and attributions under the Open Government Licence."
 msgstr ""
+"Gellir ehangu'r gydnabyddiaeth hon i gynnwys unrhyw un, neu bob un, o'r sefydliadau, y ffynonellau a'r cydnabyddiaethau a ganlyn o dan y Drwydded Llywodraeth Agored."
 
 #: templates/licence_attribution.html:38
-#, fuzzy
-#| msgid "Welsh Government Mapping Service"
 msgid "Welsh Government"
-msgstr "Gwasanaeth Mapio Llywodraeth Cymru"
+msgstr "Llywodraeth Cymru"
 
 #: templates/licence_attribution.html:42 templates/licence_attribution.html:59
 #: templates/licence_attribution.html:88 templates/licence_attribution.html:105
-#, fuzzy
-#| msgid "Source"
 msgid "Sources: "
 msgstr "Ffynhonnell"
 
 #: templates/licence_attribution.html:44
-#, fuzzy
-#| msgid "Statistics"
 msgid "StatsWales"
-msgstr "Ystadegau"
+msgstr "StatsCymru"
 
 #: templates/licence_attribution.html:44
 msgid "Lle Portal"
-msgstr ""
+msgstr "Porth Lle"
 
 #: templates/licence_attribution.html:48
 msgid ""
 "Attribution: &copy; Crown copyright <span class=\"current_year\">2016</span>"
 msgstr ""
+"Cydnabyddiaeth: &copy; Hawlfraint y Goron <span class=\"current_year\">2016</span>"
 
 #: templates/licence_attribution.html:55
 msgid "Office for National Statistics (ONS)"
-msgstr ""
+msgstr "Y Swyddfa Ystadegau Gwladol (ONS)"
 
 #: templates/licence_attribution.html:61
 msgid "ONS OpenAPI"
-msgstr ""
+msgstr "API agored y Swyddfa Ystadegau Gwladol"
 
 #: templates/licence_attribution.html:61
-#, fuzzy
-#| msgid "Remote data from Neighbourhood Statistics"
 msgid "Neighbourhood Statistics API"
-msgstr "Data o bell o Ystadegau’r Gymdogaeth"
+msgstr "API Ystadegau Cymdogaethau"
 
 #: templates/licence_attribution.html:61
 msgid "NOMIS API"
-msgstr ""
+msgstr "API NOMIS"
 
 #: templates/licence_attribution.html:65
 msgid "Attribution: "
-msgstr ""
+msgstr "Cydnabyddiaeth: "
 
 #: templates/licence_attribution.html:66
 msgid ""
 "Contains National Statistics data &copy; Crown copyright and database right "
 "<span class=\"current_year\">2016</span>"
 msgstr ""
+"Yn cynnwys data Ystadegau Gwladol &copy; Hawlfraint a hawl cronfa ddata'r Goron  "
+"<span class=\"current_year\">2016</span>"
 
 #: templates/licence_attribution.html:73
 msgid "Electoral Commission"
-msgstr ""
+msgstr "Y Comisiwn Etholiadol"
 
 #: templates/licence_attribution.html:77
 msgid ""
 "Attribution: &copy; <span class=\"current_year\">2016</span> The Electoral "
 "Commission"
 msgstr ""
+"Cydnabyddiaeth: &copy; <span class=\"current_year\">2016</span> Y Comisiwn Etholiadol"
 
 #: templates/licence_attribution.html:84
-#, fuzzy
-#| msgid "View Survey"
 msgid "Ordnance Survey"
-msgstr "Gweld yr Arolwg"
+msgstr "Arolwg Ordnans"
 
 #: templates/licence_attribution.html:90
 msgid "EDINA"
-msgstr ""
+msgstr "EDINA"
 
 #: templates/licence_attribution.html:94
 msgid ""
 "Attribution: Contains Ordnance Survey data &copy; Crown copyright and "
 "database right <span class=\"current_year\">2016</span>"
 msgstr ""
+"Cydnabyddiaeth: Yn cynnwys data Arolwg Ordnans &copy; Hawlfraint a hawl cronfa ddata'r Goron <span class=\"current_year\">2016</span>"
 
 #: templates/licence_attribution.html:101
 msgid "Open Street Map"
-msgstr ""
+msgstr "Open Street Map"
 
 #: templates/licence_attribution.html:107
-#, fuzzy
-#| msgid "Map layers"
 msgid "OpenLayers"
-msgstr "Haenau map"
+msgstr "OpenLayers"
 
 #: templates/licence_attribution.html:107
 msgid "Nominatim"
-msgstr ""
+msgstr "Nominatim"
 
 #: templates/licence_attribution.html:111
 msgid "Attribution: Map data &copy;&nbsp;"
-msgstr ""
+msgstr "Cydnabyddiaeth: Data mapiau &copy;&nbsp;"
 
 #: templates/licence_attribution.html:113
 msgid "OpenStreetMap"
-msgstr ""
+msgstr "OpenStreetMap"
 
 #: templates/licence_attribution.html:116
-#, fuzzy
-#| msgid "Contributor"
 msgid "contributors,&nbsp;"
-msgstr "Cyfrannwr"
+msgstr "cyfranwr,&nbsp;"
 
 #: templates/licence_attribution.html:118
 msgid "CC-BY-SA"
-msgstr ""
+msgstr "CC-BY-SA"
 
 #: templates/licence_attribution.html:130
 msgid ""
 "Source code available at <a class=\"c0\" target=\"_blank\" href=\"https://"
 "github.com/whelks-chance/wiserd3\">GitHub</a>."
 msgstr ""
+"Cod ffynhonnell ar gael yn <a class=\"c0\" target=\"_blank\" href=\"https://"
+"github.com/whelks-chance/wiserd3\">GitHub</a>."
 
 #: templates/local_data.html:26 templates/map.html:2817
 #, fuzzy
@@ -937,7 +934,7 @@ msgstr "Data NomisAPI"
 #, fuzzy
 #| msgid "Spatial Data"
 msgid "Import Local Data"
-msgstr "Data Gofodol"
+msgstr "Llwytho Data Lleol"
 
 #: templates/map.html:178
 msgid "Welsh Government Mapping Service"
@@ -1678,7 +1675,7 @@ msgid ""
 "quality becomes 30Mb! Downloading and rendering, especially on mobile, is "
 "not advised unless absolutely necessary."
 msgstr ""
-"Er enghraifft, mae haen topojson sector cod post ar 1% tua 900kb, daw "
+"Er enghraifft, mae haen topojson sector cod post ar 1%% tua 900kb, daw "
 "ansawdd llawn yn 30MB! Nid ydym yn argymell llwytho a chyfleu, yn arbennig "
 "ar ddyfais symudol oni bai fod hynny’n hollol angenrheidiol."
 
@@ -1699,7 +1696,7 @@ msgid ""
 "target=\"_blank\">Wikipedia Ramer-Douglas-Peucker</a> for information on the "
 "algorithm the process uses."
 msgstr ""
-"Gweld <a href=\"https://github.com/mbloch/mapshaper/wiki/Command-Reference#-"
+"Ewch i<a href=\"https://github.com/mbloch/mapshaper/wiki/Command-Reference#-"
 "simplify\" target=\"_blank\"> Mapshaper \"simplify\"</a> i gael rhagor o "
 "wybodaeth am y broses symleiddio a ddefnyddir a <a href='https://en."
 "wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm' "

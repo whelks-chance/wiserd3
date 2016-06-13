@@ -570,7 +570,7 @@ msgstr "Nodweddion Eilaidd"
 #: templates/help_support.html:23
 #, python-format
 msgid ""
-"The information on useage of WISERD metadata, data and data from other "
+"The information on usage of WISERD metadata, data and data from other "
 "external sources is available <a href=%(licence_attribution_url)s>here</a>."
 msgstr "Mae gwybodaeth am ddefnyddio metadata a data WISERD a data o ffynonellau allanol ar gael <a href=%(licence_attribution_url)s>yma</a>."
 

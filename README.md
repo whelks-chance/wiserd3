@@ -219,6 +219,8 @@ https://github.com/komoot/staticmap
 
 https://dzone.com/articles/taking-browser-screenshots-no
 
+http://selenium-python.readthedocs.io/waits.html
+
 ## Awkwardness
 
     ALTER TABLE django_content_type ADD COLUMN name character varying(50) NOT NULL DEFAULT 'someName';

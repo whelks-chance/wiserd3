@@ -526,7 +526,12 @@ class NomisSearch(models.Model):
 
     def __unicode__(self):
         # print self.name, self.geography_id, self.uuid
-        return u'{}:{}:{}'.format(self.name, self.uuid, self.geography_id)
+        return u'{}:{}:{}:{}'.format(
+            self.name,
+            self.uuid,
+            self.geography_id,
+            (self.search_type.name if self.search_type is not None else '-?-error-?-')
+        )
 
 
 class Aberystwyth_Locality_Dissolved(models.Model):

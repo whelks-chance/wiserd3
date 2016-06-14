@@ -488,7 +488,9 @@
                         });
 
                         row.append(button);
-                        var key_div = $('<div/>').addClass('control-label col-sm-10').text(key);
+                        var key_div = $('<div/>')
+                                .addClass('control-label col-sm-10')
+                                .text(localLayers[key]['layer_data']['name'] + ' : ' + key);
                         row.append(key_div);
                         $('#out').append(row);
                     }

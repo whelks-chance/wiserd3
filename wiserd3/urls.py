@@ -57,6 +57,7 @@ urlpatterns = [
     url(r'^events', views.events, name='events'),
     url(r'^search_data/(?P<search_uuid>\S+)', views.search_data, name='search_data'),
     url(r'^csv_viewer_data/(?P<provider>\S+)/(?P<search_uuid>\S+)', views.csv_view_data, name='csv_view_data'),
+    url(r'^download_dataset_zip', views.download_dataset_zip, name='download_dataset_zip'),
 
     # url(r'^upload_shapefile_progress', views.get_upload_progress, name='upload_shapefile_progress'),
     url(r'^upload_shapefile', views.upload_shapefile, name='upload_shapefile'),
@@ -69,6 +70,7 @@ urlpatterns = [
     url(r'^qual_transcript/(?P<qual_id>\S+)', views.qual_transcript, name='qual_transcript'),
 
     url(r'^map', views.map_search, name='map'),
+    url(r'gen_screenshot/(?P<search_uuid>\S+)', views.gen_screenshot, name='gen_screenshot'),
 
     url(r'^blank', views.blank, name='blank'),
 

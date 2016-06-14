@@ -1,3 +1,5 @@
+selenium
+pyvirtualdisplay
 BeautifulSoup==3.2.1
 Django==1.8.3
 PyJWT==1.4.0

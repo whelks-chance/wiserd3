@@ -1,4 +1,8 @@
-{% extends naw|yesno:"naw_navigation.html,navigation.html" %}
+{#{% extends naw|yesno:"naw_navigation.html,navigation.html" %}#}
+
+{% extends template_name %}
+
+
 {% load staticfiles %}
 {% load jsonify %}
 {% load i18n %}
@@ -238,8 +242,8 @@
         }
 
         function resetFormElement(e) {
-          e.wrap('<form>').closest('form').get(0).reset();
-          e.unwrap();
+            e.wrap('<form>').closest('form').get(0).reset();
+            e.unwrap();
         }
 
         // global namespace
@@ -420,24 +424,17 @@
 
             L.tileLayer(
 
-{#                    'http://d3rykcmoi4kytu.cloudfront.net/apu/1945/{x}/{y}/{z}.png',#}
+                    {#                    'http://d3rykcmoi4kytu.cloudfront.net/apu/1945/{x}/{y}/{z}.png',#}
 
                     'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                     {
-                {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
-                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-                maxZoom: 15,
-                id: 'your.mapbox.project.id',
-                accessToken: 'your.mapbox.public.access.token'
-            }).addTo(map);
+                        {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
+                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+                        maxZoom: 15,
+                        id: 'your.mapbox.project.id',
+                        accessToken: 'your.mapbox.public.access.token'
+                    }).addTo(map);
 
-
-            var info = L.control();
-            info.onAdd = function (map) {
-                this._div = L.DomUtil.create('div', 'info');
-                this.update();
-                return this._div;
-            };
 
             L.control.scale().addTo(map);
 
@@ -449,8 +446,18 @@
             };
             north.addTo(map);
 
+
+            var info = L.control();
+            info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
+
+
 // method that we will use to update the control based on feature properties passed
             info.update = function (props) {
+            console.log(props);
                 var value = '';
                 if (props) {
                     if (props.hasOwnProperty('response_rate')) {
@@ -534,14 +541,25 @@
                         }
                     {% endif %}
 
+
                     info_text += '</div>';
                     {#                FIXME this is nuts #}
                     {#                this._div.innerHTML = info_text;#}
 
-                    $('#right-component1').html(info_text);
+                    $('#right-component1').html(info_text)
+                            .append(
+                                    $('<div/>')
+                                            .addClass('btn btn-info')
+                                            .text('Download Dataset')
+                                            .on('click', function(){
+                                                var dl_link = '{% url 'download_dataset_zip' %}' + '?dataset_id=' + props.SEARCH_UUID;
+                                                window.open(dl_link, '_blank');
+                                            })
+                            );
+
                 }
             };
-            info.addTo(map);
+            {#            info.addTo(map);#}
 
             function get_sidebar_text(props, item) {
                 var strings = '';
@@ -588,7 +606,7 @@
                     fillOpacity: 0.7
                 });
                 {#                if (!L.Browser.ie && !L.Browser.opera) {#}
-{#                layer.bringToFront();#}
+                {#                layer.bringToFront();#}
                 {#                }#}
                 info.update(layer.feature.properties);
             }
@@ -759,7 +777,7 @@
                                                 fillOpacity: 0.7
                                             });
                                             {#                if (!L.Browser.ie && !L.Browser.opera) {#}
-{#                                            layer.bringToFront();#}
+                                            {#                                            layer.bringToFront();#}
                                             {#                }#}
                                             info.update(layer.feature.properties);
                                         },
@@ -800,7 +818,7 @@
                     },
                     complete: function() {
                         {#                        waitingDialog.hide();#}
-                                            ajax_finished();
+                        ajax_finished();
 
                     }
                 });
@@ -835,8 +853,8 @@
                 if (color_scheme == 'naw') {
                     {#                    color_scheme = ['001E62', '4f2c1d', '651D32', '004E42', '131E29'];#}
                     {#                    color_scheme = ['009ca6', 'fe5000', 'cc007b', '3fa628', 'cb102e'];#}
-{#                    color_scheme = ['white', 'FE5000', 'C8102E', '651D32', '131E29'];#}
-{#                    color_scheme = ['lightpink', 'pink', 'hotpink', 'deeppink'];#}
+                    {#                    color_scheme = ['white', 'FE5000', 'C8102E', '651D32', '131E29'];#}
+                    {#                    color_scheme = ['lightpink', 'pink', 'hotpink', 'deeppink'];#}
                     color_scheme = ['ffd2e8', 'hotpink', '4c1f36'];
 
                 }
@@ -865,6 +883,7 @@
                 var data_objects = data['objects'];
                 var feature_data = [];
                 var feature_string_data = [];
+                var search_uuid = '0000';
 
                 {#  This is listing all the response rate variables we know can find in the topojson #}
                 for (var b in data_objects) {
@@ -882,11 +901,15 @@
                                 feature_data.push(parseFloat(remote_value));
                             }
                         } else {
-{#                            var fake_value = Math.floor((Math.random() * 100) + 1);#}
-{#                            geometries_properties[a]['properties']['REMOTE_VALUE'] = fake_value;#}
-{#                            geometries_properties[a]['properties']['RENDER'] = false;#}
-{#                            feature_data.push(parseFloat(fake_value));#}
-{#                            fake_data = true;#}
+                            {#                            var fake_value = Math.floor((Math.random() * 100) + 1);#}
+                            {#                            geometries_properties[a]['properties']['REMOTE_VALUE'] = fake_value;#}
+                            {#                            geometries_properties[a]['properties']['RENDER'] = false;#}
+                            {#                            feature_data.push(parseFloat(fake_value));#}
+                            {#                            fake_data = true;#}
+                        }
+
+                        if (geometries_properties[a]['properties']['SEARCH_UUID']) {
+                            search_uuid = geometries_properties[a]['properties']['SEARCH_UUID'];
                         }
                     }
                 }
@@ -945,10 +968,10 @@
 
                 var myLayer = new L.TopoJSON(data, {
                     pointToLayer: function (feature, latlng) {
-{#                        console.log(feature);#}
+                        {#                        console.log(feature);#}
                         {#                        if (feature.properties.RENDER == true) {#}
                         if (isNaN(feature.properties.REMOTE_VALUE)) {
-{#                            TODO do something interesting with non number markers? #}
+                            {#                            TODO do something interesting with non number markers? #}
                             return L.circleMarker(latlng, geojsonMarkerOptions);
                         } else {
                             return L.circleMarker(latlng, geojsonMarkerOptions);
@@ -983,7 +1006,7 @@
                                 unique_feature_string_data,
                                 chroma_scale,
                                 grades, is_percentage);
-                        addLegend(unique_layer_name_text, layer_name_text, div_inner);
+                        addLegend(unique_layer_name_text, layer_name_text, div_inner, search_uuid);
                     }
                 });
 
@@ -994,8 +1017,8 @@
                 myLayer.eachLayer(function (layer) {
                     if (layer.feature.type === 'Feature') {
                         {# enable this line if we want clustered markers #}
-{#                                                                        is_clustermarkers = true;#}
-{#                                                is_heatmap = true;#}
+                        {#                                                                        is_clustermarkers = true;#}
+                        {#                                                is_heatmap = true;#}
 
                     }
                 });
@@ -1050,7 +1073,7 @@
                             fillOpacity: {% if naw %}1{% else %}0.7{% endif %}
                         });
 
-{#                        layer.bringToFront();#}
+                        {#                        layer.bringToFront();#}
 
                         {#                        info.update(layer.feature.properties);#}
 
@@ -1133,6 +1156,9 @@
 
             function build_legend(feature_data, unique_feature_string_data, chroma_scale, grades, is_percentage) {
                 var labels = [], from, to;
+
+                {#                console.log('feature_data');#}
+                {#                console.log(feature_data);#}
                 if (feature_data.length > 1) {
                     {#  For each bin in the quantiles, we need a representative color for the Legend #}
                     for (var i = 0; i < grades.length -1; i++) {
@@ -1150,8 +1176,11 @@
                         labels.push(legend_row);
                     }
                 }
+
+                {#                console.log('unique_feature_string_data');#}
+                {#                console.log(unique_feature_string_data);#}
                 if (unique_feature_string_data.length > 0) {
-                    for (var string_idx in unique_feature_string_data) {
+                    for (var string_idx in unique_feature_string_data.sort()) {
                         var legend_string_row = '<p style="white-space: nowrap; padding: 0 1em;"><i style="background:' + getColorFromString(unique_feature_string_data[string_idx]) + '"></i> ' + unique_feature_string_data[string_idx] + '</p>';
                         labels.push(legend_string_row);
                     }
@@ -1161,13 +1190,14 @@
                 return div_inner;
             }
 
-            function addLegend(unique_layer_name_text, layer_name_text, contentHTML){
+            function addLegend(unique_layer_name_text, layer_name_text, contentHTML, search_uuid){
 
                 {#                var a_uid = get_next_uid();#}
                 {#                var tab_id = ("collapse_" + a_uid + '_' + div_id).replace(/\W/g, '');#}
                 var tab_id = ("collapse_" + unique_layer_name_text).replace(/\W/g, '');
                 var accordionInner = $('<div/>')
                         .attr('id', 'accordion_inner_' + tab_id)
+                        .attr('search_uuid', search_uuid)
                         .addClass("panel panel-default")
                         .append(
                                 $('<div/>')
@@ -1194,7 +1224,7 @@
                                                         .wrapInner(contentHTML)
                                                 {#                                        .text('Lorem ipsum dolor sit amet, consectetur adipisicing elit, minim veniam, quis nostrud')#}
                                         )
-                        );
+                        ).append($('<div/>').attr('id', 'findme_' + search_uuid).attr('find_me', search_uuid));
                 var accordionDiv = $('#legend_accordion');
                 $(accordionDiv).append(accordionInner);
             }
@@ -1306,6 +1336,29 @@
                 zoom:10
             }) );
 
+            L.Control.Screenshot = L.Control.extend({
+                options: {
+                    position: 'topleft'
+                },
+                onAdd: function (map2) {
+                    var controlDiv = L.DomUtil.create('div', 'leaflet-control-command');
+                    L.DomEvent
+                            .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
+                            .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
+                            .addListener(controlDiv, 'click', function () { take_screenshot()});
+
+                    var controlUI = L.DomUtil.create('div', 'leaflet-control-command-interior', controlDiv);
+                    controlUI.title = '{% trans "Screenshot" %}';
+                    controlUI.innerHTML = '<a><i class="fa fa-camera"></a>';
+                    return controlDiv;
+                }
+            });
+
+            var screenshot_control = new L.Control.Screenshot();
+            screenshot_control.addTo(map);
+
+
+
             var drawControl = new L.Control.Draw({
                 edit: {
                     featureGroup: featureGroup
@@ -1379,7 +1432,7 @@
 
             var most_recent_search_png = '';
             function doImage(err, canvas) {
-                alert('doimage');
+                {#                alert('doimage');#}
                 {#                var snapshot = document.getElementById('snapshot');#}
 
                 var img = document.createElement('img');
@@ -1422,7 +1475,7 @@
                     },
                     complete: function() {
                         {#                        waitingDialog.hide();#}
-                                            ajax_finished();
+                        ajax_finished();
 
                     }
                 });
@@ -1451,7 +1504,7 @@
 
             $( "#chloropleth_option_form" ).dialog({
                 autoOpen: false,
-                height: map_div.height(),
+                height: map_div.height() * 0.8,
                 width: $('#page-wrapper').width()/2,
                 position: {
                     my: "center",
@@ -1658,7 +1711,7 @@
 
             $( "#search-remote-form" ).dialog({
                 autoOpen: false,
-                height: map_div.height(),
+                height: map_div.height() * 0.8,
                 position: {
                     my: "center",
                     at: "center",
@@ -1740,7 +1793,7 @@
                                 },
                                 complete: function() {
                                     {#                                    waitingDialog.hide();#}
-                                ajax_finished();
+                                    ajax_finished();
                                 }
                             });
 
@@ -1759,7 +1812,7 @@
 
             $( "#dataset_define_vars_form" ).dialog({
                 autoOpen: false,
-                height: map_div.height(),
+                height: map_div.height() * 0.8,
                 position: {
                     my: "center",
                     at: "center",
@@ -1838,16 +1891,14 @@
                 }
             });
 
-            $('#screenshot').click(function() {
-                leafletImage(map, screenshot);
-            });
+            {#            $('#screenshot').click(function() {#}
+            {#                leafletImage(map, screenshot_open_tab);#}
+            {#            });#}
 
-            function screenshot(err, map_canvas){
-
+            function do_screenshot(map_canvas, callback) {
                 html2canvas(
                         map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-left'), {}
                 ).then(function(left_overlay_canvas) {
-                    {#                            $('#screenshot_result2').append(overlay_canvas);#}
 
                     var ctx3 = map_canvas.getContext('2d');
                     ctx3.drawImage(
@@ -1867,17 +1918,28 @@
 
                         var canvas_data_url = map_canvas.toDataURL("image/png", 0.5);
 
-                        window.open(canvas_data_url, '_blank');
-                        {#                                                                $('#screenshot_result').append(map_canvas);#}
-
+                        if(callback) {
+                            callback(canvas_data_url);
+                        }
+                        return canvas_data_url;
                     });
+                });
+            }
+
+            function take_screenshot() {
+                leafletImage(map, do_screenshot_open_tab);
+            }
+
+            function do_screenshot_open_tab(err, map_canvas) {
+                do_screenshot(map_canvas, function(canvas_data_url){
+                    window.open(canvas_data_url, '_blank');
                 });
             }
 
 
             $( "#local_dataset_define_vars_form" ).dialog({
                 autoOpen: false,
-                height: map_div.height(),
+                height: map_div.height() * 0.8,
                 position: {
                     my: "center",
                     at: "center",
@@ -2102,7 +2164,7 @@
             {#        lsoa_pembrokshire_point#}
             {#        'pcode_district'#}
             {#        'pcode_point'#}
-{#                        do_layer_by_name('pcode_point');#}
+            {#                        do_layer_by_name('pcode_point');#}
 
             var remote_data_layer_data = {{ remote_searches|jsonify }};
             for (var remote_data_layer_idx in remote_data_layer_data) {
@@ -2407,23 +2469,23 @@
                 for(var column_header_idx in column_headers) {
                     if(column_headers.hasOwnProperty(column_header_idx))
                         var column_header_option = column_headers[column_header_idx];
-{#                        var radio_text = column_header_option;#}
+                    {#                        var radio_text = column_header_option;#}
 
-                        var radio_div = $('<div>');
-                        radio_div.append($('<input>', {
-                            value: column_header_option,
-                            id: column_header_option + '_value',
-                            type: 'radio',
-                            name: 'local_data_value_option',
-                            text: column_header_option
-                        }));
-                        radio_div.append($('<label>', {
-                            class: 'dialog_radio_option',
-                            value: column_header_option,
-                            for: column_header_option + '_value',
-                            text: column_header_option
-                        }));
-                        local_data_value_radio_div.append(radio_div);
+                    var radio_div = $('<div>');
+                    radio_div.append($('<input>', {
+                        value: column_header_option,
+                        id: column_header_option + '_value',
+                        type: 'radio',
+                        name: 'local_data_value_option',
+                        text: column_header_option
+                    }));
+                    radio_div.append($('<label>', {
+                        class: 'dialog_radio_option',
+                        value: column_header_option,
+                        for: column_header_option + '_value',
+                        text: column_header_option
+                    }));
+                    local_data_value_radio_div.append(radio_div);
                 }
                 var radio_div = $('<div>');
                 radio_div.append($('<input>', {
@@ -2479,7 +2541,7 @@
 
             $( "#local-data-form" ).dialog({
                 autoOpen: false,
-                height: map_div.height(),
+                height: map_div.height() * 0.8,
                 position: {
                     my: "center",
                     at: "center",
@@ -2587,45 +2649,45 @@
             <div id="map_div"></div>
         </div>
 
-        <div class="col-lg-3 col-sm-12" style="padding-right: 0">
+        {% if use_template %}
+            <div class="col-lg-3 col-sm-12" style="padding-right: 0">
 
-            <div class="right_sidebar" id="right_sidebar"
-                 style="
-{#                         background-color: #f8f8f8;#}
-                         border-left: 1px solid #e7e7e7;
-                         height: 100%;
-                         {#                                  position: absolute; right: 0;#}
-                         {#                         width:250px;#}
-                         width: 100%;
-                         overflow-y: scroll;
-                         overflow-x: hidden">
+                <div class="right_sidebar" id="right_sidebar"
+                     style="
+                             {#                         background-color: #f8f8f8;#}
+                             border-left: 1px solid #e7e7e7;
+                             height: 100%;
+                             {#                                  position: absolute; right: 0;#}
+                             {#                         width:250px;#}
+                             width: 100%;
+                             overflow-y: scroll;
+                             overflow-x: hidden">
 
-                {#                <div class="row">#}
-                {#                    <div class="col-lg-12">#}
-                <div class="split-pane-component" id="right-component1"
-                     style="margin: 0.5em;
-                             {#                     word-break: break-all;#}
-                             word-wrap: normal; word-break: normal"></div>
-                {#                    </div>#}
-                {#                    <div class="col-lg-12">#}
-                {#                        <div class="split-pane-component" id="right-component2"></div>#}
-                {#                    </div>#}
-                {#                </div>#}
+                    {#                <div class="row">#}
+                    {#                    <div class="col-lg-12">#}
+                    <div class="split-pane-component" id="right-component1"
+                         style="margin: 0.5em;
+                                 {#                     word-break: break-all;#}
+                                 word-wrap: normal; word-break: normal"></div>
+                    {#                    </div>#}
+                    {#                    <div class="col-lg-12">#}
+                    {#                        <div class="split-pane-component" id="right-component2"></div>#}
+                    {#                    </div>#}
+                    {#                </div>#}
+                </div>
             </div>
-        </div>
+        {% endif %}
+
     </div>
 
-    <div class="">
-        <div class="col-lg-12">
-
-            {#            <div id="naw_output" >NAW = {{ naw }}</div>#}
-            {#            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>#}
-            <div id="screenshot" class="btn">{% trans "Screenshot" %}</div>
-            <div id="screenshot_result"></div>
-            {#                <div id="screenshot_result2"></div>#}
-            {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
-        </div>
-    </div>
+    {#    <div class="">#}
+    {#        <div class="col-lg-12">#}
+    {##}
+    {#            <div id="naw_output" >NAW = {{ naw }}</div>#}
+    {#            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>#}
+    {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
+    {#        </div>#}
+    {#    </div>#}
     <div id="chloropleth_option_form" title="{% trans 'Chloropleth options' %}">
         <table>
             <tr>

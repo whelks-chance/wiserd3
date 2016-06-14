@@ -1,8 +1,12 @@
+import base64
+import zipfile
 from datetime import datetime
 import json
 import os
 import pprint
 import uuid
+
+import StringIO
 from BeautifulSoup import BeautifulSoup
 from allauth.account.models import EmailAddress
 from allauth.account.utils import send_email_confirmation
@@ -261,6 +265,7 @@ def tables(request):
 def map_search(request):
     print request.GET
     naw = request.GET.get('naw', False)
+    use_template = request.GET.get('use_template', True)
 
     layer_uuids = request.GET.getlist('layers', [])
     print layer_uuids, type(layer_uuids)
@@ -365,9 +370,18 @@ def map_search(request):
         if user_prefs.preferred_language.user_language_title == 'Welsh':
             use_welsh = True
 
+    template_name = 'navigation.html'
+    if naw:
+        template_name = 'naw_navigation.html'
+    if use_template == 'False':
+        template_name = 'empty.html'
+        use_template = False
+
     return render(request, 'map.html',
                   {
                       'naw': naw,
+                      'template_name': template_name,
+                      'use_template': use_template,
                       'naw_key_searches': naw_key_searches,
                       'local_data_layers': local_data_layers,
                       'remote_searches': remote_layer_data,
@@ -1864,7 +1878,7 @@ def get_topojson_for_uuid(request, search_uuid):
         # remote_search_layers.append(layer_data)
 
         rd = RemoteData()
-        a = rd.get_topojson_with_data(dataset_id, geog, '', codelist, high=user_prefs.topojson_high)
+        a = rd.get_topojson_with_data(dataset_id, geog, '', codelist, high=user_prefs.topojson_high, search_uuid=search_uuid)
         response_data['topojson'] = a
 
     # TODO we want to inject new variables into properties here
@@ -2068,7 +2082,7 @@ def help_support(request):
                   }, context_instance=RequestContext(request))
 
 
-def csv_view_data(request, provider, search_uuid):
+def get_data_for_search_uuid(search_uuid):
     dataset_data_list_full = []
     try:
 
@@ -2113,9 +2127,13 @@ def csv_view_data(request, provider, search_uuid):
                     dataset_data_dict[header_item] = data_row_items[header_index].rstrip('"').lstrip('"')
                     # dataset_data_dict.append(data_row_items[header_index].rstrip('"').lstrip('"'))
                 dataset_data_list_full.append(dataset_data_dict)
-
     except Exception as e8943279:
         error = str(e8943279)
+    return dataset_data_list_full
+
+
+def csv_view_data(request, provider, search_uuid):
+    dataset_data_list_full = get_data_for_search_uuid(search_uuid)
     return HttpResponse(json.dumps(dataset_data_list_full, indent=4), content_type="application/json")
 
 
@@ -2190,3 +2208,97 @@ def licence_attribution(request):
 
 def local_data(request):
     return render(request, 'local_data.html', {}, context_instance=RequestContext(request))
+
+
+@csrf_exempt
+def download_dataset_zip(request):
+
+    dataset_id = request.GET.get('dataset_id')
+    if dataset_id:
+        print dataset_id
+
+        zip_subdir = 'wiserd_docs'
+        zip_filename = "{}.zip".format(zip_subdir)
+
+        # Open StringIO to grab in-memory ZIP contents
+        s = StringIO.StringIO()
+
+        # The zip compressor
+        zf = zipfile.ZipFile(s, "w", zipfile.ZIP_DEFLATED)
+
+        print os.path.abspath('./')
+
+        filenames = ['./dataportal3/static/dataportal/docs/licence_attribution_en.html']
+
+        for fpath in filenames:
+
+            # Calculate path for file in zip
+            fdir, fname = os.path.split(fpath)
+            zip_path = os.path.join(zip_subdir, fname)
+
+            # Add file, at correct path
+            zf.write(fpath, zip_path)
+
+        zf.writestr('data.json', json.dumps(get_data_for_search_uuid(dataset_id), indent=4))
+        zf.writestr('topojson_data.json', json.dumps(get_topojson_for_uuid(request, dataset_id), indent=4))
+
+        try:
+            screenshot_file = do_screenshot(dataset_id)
+            zf.write(screenshot_file)
+        except:
+            pass
+
+        zf.close()
+
+        # Grab ZIP file from in-memory, make response with correct MIME-type
+        resp = HttpResponse(s.getvalue(), content_type="application/x-zip-compressed")
+        # ..and correct content-disposition
+        resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+
+        return resp
+    else:
+        return render(request, '404.html', {'error': 'dataset_not_found'}, context_instance=RequestContext(request))
+
+
+def do_screenshot(search_uuid):
+    import time
+    from pyvirtualdisplay import Display
+    from selenium import webdriver
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.wait import WebDriverWait
+
+    display = Display(visible=0, size=(1024, 768))
+    display.start()
+
+    delay = 5
+    filename = 'map_{}.png'.format(search_uuid)
+
+    browser = webdriver.Firefox()
+    browser.get('http://localhost:8000/map?layers={}&use_template=False'.format(search_uuid))
+
+    try:
+        element = WebDriverWait(browser, 30).until(
+            EC.presence_of_element_located((By.ID, 'findme_{}'.format(search_uuid)))
+        )
+        time.sleep(delay)
+        browser.save_screenshot(filename)
+
+    except Exception as e32564:
+        print type(e32564), e32564
+        raise
+
+    browser.quit()
+    display.stop()
+    return filename
+
+
+def gen_screenshot(request, search_uuid):
+
+    filename = do_screenshot(search_uuid)
+
+    try:
+        with open(filename, "rb") as f:
+            return HttpResponse(f.read(), content_type="image/jpeg")
+    except IOError:
+        return render(request, '404.html', {'error': 'dataset_not_found'}, context_instance=RequestContext(request))

@@ -198,7 +198,7 @@
  {'description': u'Housing',
   'description_cy': u'Tai',
   'item_list': [{'description': u'Average house price (\xa3s): Detatched',
-                 'description_cy': u'Cyfartaledd pris t&#375 (\xa3 miloedd): T&#375 ar ei ben ei hun',
+                 'description_cy': u'Cyfartaledd pris tŷ (\xa3 miloedd): Tŷ ar ei ben ei hun',
                  'uid': 'd929ea24-efa4-491d-89b9-76b21a3c65c5'},
 				{'description': u'Average house price (\xa3s): Semi-detached',
                  'description_cy': u'Cyfartaledd pris t\x177 (\xa3 miloedd): T\x177 p\xe2r',

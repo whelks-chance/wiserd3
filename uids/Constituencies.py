@@ -201,7 +201,7 @@
                  'description_cy': u'Cyfartaledd pris tŷ (\xa3 miloedd): Tŷ ar ei ben ei hun',
                  'uid': 'd929ea24-efa4-491d-89b9-76b21a3c65c5'},
 				{'description': u'Average house price (\xa3s): Semi-detached',
-                 'description_cy': u'Cyfartaledd pris t\x177 (\xa3 miloedd): T\x177 p\xe2r',
+                 'description_cy': u'Cyfartaledd pris t\u0177 (\xa3 miloedd): T\u0177 p\xe2r',
                  'uid': '10d065c6-4b31-48bb-96dc-1318e91eb827'},
                 {'description': u'Average house price (\xa3s): Terraced',
                  'description_cy': u'Cyfartaledd pris t\x177 (\xa3 miloedd): Teras',

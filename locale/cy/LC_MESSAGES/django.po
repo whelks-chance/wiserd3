@@ -772,10 +772,8 @@ msgid "The initial release of the WISERD GeoPortal at University of Glamorgan"
 msgstr "Rhyddhau WISERD DataPortal am y tro cyntaf ym Mhrifysgol Morgannwg"
 
 #: templates/licence_attribution.html:19
-#, fuzzy
-#| msgid "Secondary Attributes"
 msgid "Licences and Attributions"
-msgstr "Nodweddion Eilaidd"
+msgstr "Trwydded a Phriodoliad"
 
 #: templates/licence_attribution.html:27
 msgid ""
@@ -917,10 +915,8 @@ msgstr ""
 "github.com/whelks-chance/wiserd3\">GitHub</a>."
 
 #: templates/local_data.html:26 templates/map.html:2817
-#, fuzzy
-#| msgid "Spatial Data"
 msgid "Local Data"
-msgstr "Data Gofodol"
+msgstr "Data Lleol"
 
 #: templates/map.html:162
 msgid "Map layers"
@@ -931,8 +927,6 @@ msgid "NomisAPI Data"
 msgstr "Data NomisAPI"
 
 #: templates/map.html:175
-#, fuzzy
-#| msgid "Spatial Data"
 msgid "Import Local Data"
 msgstr "Llwytho Data Lleol"
 
@@ -1116,10 +1110,8 @@ msgid "Greyscale"
 msgstr "Graddlwyd"
 
 #: templates/map.html:2754
-#, fuzzy
-#| msgid "WISERD Blog"
 msgid "WISERD"
-msgstr "Blog WISERD"
+msgstr "WISERD"
 
 #: templates/map.html:2760
 msgid "Layer Name"
@@ -1146,10 +1138,9 @@ msgid "Name this Layer"
 msgstr ""
 
 #: templates/map.html:2828
-#, fuzzy
-#| msgid "Show New Layer"
+#Google Translated
 msgid "New Layer..."
-msgstr "Dangos Haen Newydd"
+msgstr "Haen Newydd"
 
 #: templates/navigation.html:23 templates/naw_navigation.html:24
 msgid "Toggle navigation"
@@ -1234,10 +1225,9 @@ msgid "\"In Brief\" Blog"
 msgstr ""
 
 #: templates/naw_navigation.html:46
-#, fuzzy
-#| msgid "National Assembly for Wales"
+#Google Translated
 msgid "National Assembly Research Service"
-msgstr "Cynulliad Cenedlaethol Cymru"
+msgstr "Cynulliad Cenedlaethol Y Gwasanaeth Ymchwil"
 
 #: templates/openid/login.html:9
 msgid "OpenID Sign In"
@@ -1653,23 +1643,14 @@ msgstr ""
 "pwysau ar eich porwr a bydd golygu llwytho dogfennau mwy."
 
 #: templates/settings.html:89
-#, fuzzy, python-format
-#| msgid ""
-#| "For this reason, the TopoJSON layer used is \"simplified\" down to "
-#| "1% complexity for speed and ease of use."
 msgid ""
 "For this reason, the TopoJSON layer used is \"simplified\" down to 1%% "
 "complexity for speed and ease of use."
 msgstr ""
 "Felly, caiff yr haen TopoJSON a ddefnyddir ei \"symleiddio\" i gymhlethdod  "
-"1% er mwyn cyflymder a hwyluso defnydd."
+"1%% er mwyn cyflymder a hwyluso defnydd."
 
 #: templates/settings.html:90
-#, fuzzy, python-format
-#| msgid ""
-#| "As an example a postcode sector topojson layer at 1% is approx 900kb, "
-#| "full quality becomes 30Mb! Downloading and rendering, especially on "
-#| "mobile, is not advised unless absolutely necessary."
 msgid ""
 "As an example a postcode sector topojson layer at 1%% is approx 900kb, full "
 "quality becomes 30Mb! Downloading and rendering, especially on mobile, is "
@@ -1680,14 +1661,6 @@ msgstr ""
 "ar ddyfais symudol oni bai fod hynny’n hollol angenrheidiol."
 
 #: templates/settings.html:91
-#, fuzzy, python-format
-#| msgid ""
-#| "View <a href=\"https://github.com/mbloch/mapshaper/wiki/Command-"
-#| "Reference#-simplify\" target=\"_blank\"> Mapshaper \"simplify\"</a> for "
-#| "more information on the process of simplification used and <a href="
-#| "\"https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas"
-#| "%E2%80%93Peucker_algorithm\" target=\"_blank\">Wikipedia Ramer-Douglas-"
-#| "Peucker</a> for information on the algorithm the process uses."
 msgid ""
 "View <a href=\"https://github.com/mbloch/mapshaper/wiki/Command-Reference#-"
 "simplify\" target=\"_blank\"> Mapshaper \"simplify\"</a> for more "

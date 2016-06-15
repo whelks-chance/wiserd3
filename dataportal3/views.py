@@ -32,6 +32,7 @@ from dataportal3.utils.ShapeFileImport import celery_import, ShapeFileImport
 from dataportal3.utils.admin_email import EMAIL_TYPES, send_email
 from dataportal3.utils.remote_data import RemoteData
 from dataportal3.utils.spatial_search.spatial_search import find_intersects, geometry_columns
+from dataportal3.utils.statswales.statswales_odata import StatsWalesOData
 from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_request_user, get_user_preferences, \
     survey_visible_to_user, set_session_preferred_language
 import requests
@@ -1879,6 +1880,26 @@ def get_topojson_for_uuid(request, search_uuid):
 
         rd = RemoteData()
         a = rd.get_topojson_with_data(dataset_id, geog, '', codelist, high=user_prefs.topojson_high, search_uuid=search_uuid)
+        response_data['topojson'] = a
+
+    if search_type == 'StatsWales':
+        # remote_search_layers.append(layer_data)
+
+        swod = StatsWalesOData()
+        all_data = swod.get_data_dict(
+            dataset_id,
+            {
+                # 'Area_Code': area_code,
+                'Year_Code': 2015,
+                'AgeGroup_Code': 'AllAges'
+            }
+        )
+
+        rd = RemoteData()
+        region_id, topojson_file = rd.get_dataset_geodata(geog, user_prefs.topojson_high)
+
+        a = rd.update_topojson(topojson_file, all_data, measure_is_percentage=False)
+
         response_data['topojson'] = a
 
     # TODO we want to inject new variables into properties here

@@ -75,7 +75,7 @@ class StatsWalesOData():
             if 'Tag_ENG' in keyset and keyset['Tag_ENG'] == 'Lowest level of geographical disaggregation':
                 geographys.append(keyset['Description_ENG'])
 
-        print(set(geographys))
+        print('available geogs', set(geographys))
 
         keyword_dataset_ids = set()
         for dataset_id in datasets_by_id.keys():
@@ -94,11 +94,11 @@ class StatsWalesOData():
                         geog_dataset_ids.add(keyset['PartitionKey'])
 
         print('keyword_dataset_ids', keyword_dataset_ids)
-        print('geog_dataset_ids', geog_dataset_ids)
+        print('lsoa_dataset_ids', geog_dataset_ids)
 
         intersect_ids = keyword_dataset_ids.intersection(geog_dataset_ids)
 
-        print('intersect_ids', intersect_ids)
+        print('intersect_ids (keyword+lsoa)', intersect_ids)
 
         matching_datasets = []
         for dataset_id in datasets_by_id.keys():
@@ -139,31 +139,109 @@ class StatsWalesOData():
         return data_url
 
 
-swod = StatsWalesOData()
+    def get_data_from_url(self, url):
+        print (url)
 
-keyword_results = swod.keyword_search('deprivation+health', {'Geography', ''})
-# print(keyword_results)
-print (len(keyword_results))
+        data = requests.get(url)
+        data_json = json.loads(data.text)
 
-# area_code = 'W01001434'
-dataset_id = list(keyword_results)[0]['PartitionKey']
-print(dataset_id)
-dataset_id = 'wimd0020'
+        # for data_value in data_json['value']:
+        #     print(pprint.pformat(data_value, indent=4))
+        #     print('')
 
-swod.get_metadata_for_dataset('WIMD0006')
+        data_count = data_json['value']
+        if 'odata.nextLink' in data_json:
+            data_count += self.get_data_from_url(data_json['odata.nextLink'])
 
-data_url = swod.get_data_url(dataset_id, {'Area_Code': 'W01001434', 'Year_Code': 2014})
+        return data_count
 
-print (data_url)
+    def get_data(self, dataset_id, options):
+        data_url = self.get_data_url(dataset_id, options)
+        return self.get_data_from_url(data_url)
 
-data = requests.get(data_url)
+    def get_data_dict(self, dataset_id, options):
+        data_list = self.get_data(dataset_id, options)
+        return self.odata_to_dict(data_list)
 
-# print(pprint.pformat(data.text))
+    def odata_to_dict(self, all_data_list):
+        all_data_dict = {}
+        # area_codes = []
+        for data_value in all_data_list:
+            # area_codes.append(data_value['Area_Code'])
+            # print(pprint.pformat(data_value, indent=4))
+            # print('')
 
-data_json = json.loads(data.text)
+            # We need data this shape for the topojson code to fill
+            # {
+            #     'w010000000': [
+            #         {
+            #             "name": "Persons Percent for Wrexham 009B (geography), Very good health (General Health) for 2011 from QS302EW - General health",
+            #             "value": 40.5,
+            #             "geography_id": 1249935771,
+            #             "geography_code": "W01000342",
+            #             "data_status": "A",
+            #             "geography": "Wrexham 009B"
+            #         }
+            #     ]
+            # }
 
-for data_value in data_json['value']:
-    print(pprint.pformat(data_value, indent=4))
-    print('')
+            # OData is this shape, so we need to rejig it a bit
+            # {u'AgeGroup_Code': u'AllAges',
+            #  u'AgeGroup_Hierarchy': u'',
+            #  u'AgeGroup_ItemName_ENG': u'All Ages',
+            #  u'AgeGroup_SortOrder': u'1',
+            #  u'Area_AltCode1': u'W01000821',
+            #  u'Area_Code': u'W01000821',
+            #  u'Area_ItemName_ENG': u'Swansea 009E',
+            #  u'Area_SortOrder': u'110415',
+            #  u'Data': u'16',
+            #  u'Indicator_Code': u'INCO',
+            #  u'Indicator_ItemName_ENG': u'Income deprivation (percentage of population)',
+            #  u'PartitionKey': u'',
+            #  u'RowKey': u'0000000000035928',
+            #  u'Year_Code': u'2014',
+            #  u'Year_ItemName_ENG': u'2014'}
 
-print(len(data_json['value']))
+            data_array = [
+                {
+                    "name": data_value['Indicator_ItemName_ENG'],
+                    "value": data_value['Data'],
+                    "geography_id": data_value['Area_Code'],
+                    "geography_code": data_value['Area_Code'],
+                    "data_status": "A",
+                    "geography": data_value['Area_ItemName_ENG']
+                }
+            ]
+            all_data_dict[data_value['Area_Code']] = data_array
+        return all_data_dict
+
+
+def do_test():
+    swod = StatsWalesOData()
+
+    keyword_results = swod.keyword_search('deprivation+health', {'Geography', ''})
+    # print(keyword_results)
+    print (len(keyword_results))
+
+    # area_code = 'W01001434'
+    dataset_id = list(keyword_results)[0]['PartitionKey']
+    print(dataset_id)
+    dataset_id = 'wimd0020'
+
+    swod.get_metadata_for_dataset('WIMD0006')
+
+    all_data_list = swod.get_data(
+        dataset_id,
+        {
+            # 'Area_Code': area_code,
+            'Year_Code': 2014,
+            'AgeGroup_Code': 'AllAges'
+        }
+    )
+
+    all_data_dict = swod.odata_to_dict(all_data_list)
+
+    print(len(all_data_dict))
+
+if __name__ == '__main__':
+    do_test()

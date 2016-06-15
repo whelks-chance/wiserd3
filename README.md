@@ -192,6 +192,12 @@ Members of group Z can view A, E
 A single user can be in any/ all groups without any contradictions.
 If a user both *Can* and *Cannot* view a survey due to visibilities specifically denying access, access is still granted.
 
+
+## selenium, firefox headless
+
+Xvfb :99 -ac -screen 0 1280x1024x24 &
+
+
 ## Credits
 ### Code not necessarily lifted entirely, but debugging help or guidance was found here:
 

@@ -114,7 +114,7 @@
 
             {% if naw_key_search.item_list %}
                 <li>
-                    <a href="#"> {% if use_welsh %}{{ naw_key_search.description_cy }}{% else %}{{ naw_key_search.description }}{% endif %}<span class="fa arrow"></span></a>
+                    <a href="#"> {% if use_welsh and naw_key_search.description_cy %}{{ naw_key_search.description_cy }}{% else %}{{ naw_key_search.description }}{% endif %}<span class="fa arrow"></span></a>
 
                     <ul class="nav nav-ul nav-second-level">
 
@@ -122,14 +122,14 @@
 
                             {% if naw_key_two.item_list %}
                                 <li>
-                                    <a href="#"> {% if use_welsh %}{{ naw_key_two.description_cy }}{% else %}{{ naw_key_two.description }}{% endif %}<span class="fa arrow"></span></a>
+                                    <a href="#"> {% if use_welsh and naw_key_two.description_cy %}{{ naw_key_two.description_cy }}{% else %}{{ naw_key_two.description }}{% endif %}<span class="fa arrow"></span></a>
 
                                     <ul class="nav nav-ul nav-third-level scrollable_ul">
 
                                         {% for naw_key_three in naw_key_two.item_list %}
                                             <li>
                                                 <a href="#" data-naw_key_search_uid="{{ naw_key_three.uid }}" class="remote_data_uid">
-                                                    <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh %}{{ naw_key_three.description_cy }}{% else %}{{ naw_key_three.description }}{% endif %}</a>
+                                                    <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and naw_key_three.description_cy %}{{ naw_key_three.description_cy }}{% else %}{{ naw_key_three.description }}{% endif %}</a>
                                             </li>
                                         {% endfor %}
 
@@ -138,7 +138,7 @@
                             {% else %}
                                 <li>
                                     <a href="#" data-naw_key_search_uid="{{ naw_key_two.uid }}" class="remote_data_uid">
-                                        <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh %}{{ naw_key_two.description_cy }}{% else %}{{ naw_key_two.description }}{% endif %}</a>
+                                        <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and naw_key_two.description_cy %}{{ naw_key_two.description_cy }}{% else %}{{ naw_key_two.description }}{% endif %}</a>
                                 </li>
                             {% endif %}
 
@@ -150,7 +150,7 @@
             {% else %}
                 <li>
                     <a href="#" data-naw_key_search_uid="{{ naw_key_search.uid }}" class="remote_data_uid">
-                        <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh %}{{ naw_key_search.description_cy }}{% else %}{{ naw_key_search.description }}{% endif %}</a>
+                        <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and naw_key_search.description_cy %}{{ naw_key_search.description_cy }}{% else %}{{ naw_key_search.description }}{% endif %}</a>
                 </li>
             {% endif %}
         {% endfor %}

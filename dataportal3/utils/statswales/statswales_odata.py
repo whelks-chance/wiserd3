@@ -10,9 +10,11 @@ class StatsWalesOData():
         self.metadata_edmx_url = 'http://open.statswales.gov.wales/en-gb/dataset/$metadata'
         self.metadata_url = 'http://open.statswales.gov.wales/en-gb/discover/metadata'
         self.dataset_url = 'http://open.statswales.gov.wales/en-gb/dataset/{}'
+        self.datasetdimensionitems_url = 'http://open.statswales.gov.wales/en-gb/discover/datasetdimensionitems'
         self.filter_prepend = '?$filter={}'
         self.equals_conditional = '%20eq%20'
         self.and_conditional = '%20and%20'
+        self.not_equals_conditional = '%20ne%20'
         self.quotes_conditional = '%27{}%27'
 
         self.available_geographies = {
@@ -45,9 +47,19 @@ class StatsWalesOData():
         #     print(item.attrs)
 
         dataset_entityset = entitycontainer.find('entityset', attrs={'name': str(dataset_id).lower()})
-        entity_type_name = dataset_entityset.get('entitytype')
-        entitytype = schema.find('entityType', Name=entity_type_name.split('.')[1])
-        print(entitytype)
+        print dataset_entityset
+        entity_type_name = dataset_entityset.get('entitytype').split('.')[1]
+        print entity_type_name
+
+        entitytype = schema.find('entitytype', attrs={'name': entity_type_name})
+        # print(entitytype)
+
+        entity_properties = entitytype.findAll('property')
+        # print entity_properties
+
+        for property in entity_properties:
+            print property['name']
+
 
     def keyword_search(self, keyword_string, args=None):
         if args is None:
@@ -109,35 +121,46 @@ class StatsWalesOData():
         return matching_datasets
 
     def get_data_url(self, dataset_id, args=None):
-        if args is None:
-            args = {}
-
-        filter_string = ''
-
-        for count, key_value in enumerate(args.items()):
-            field = key_value[0]
-            value = key_value[1]
-            if isinstance(key_value[1], int):
-                print (count, key_value, 'int')
-                filter_string += '{}{}{}'.format(field, self.equals_conditional, value)
-                if count < (len(args) - 1):
-                    filter_string += self.and_conditional
-
-        for count, key_value in enumerate(args.items()):
-            field = key_value[0]
-            value = key_value[1]
-            if isinstance(key_value[1], str):
-                print (count, key_value, 'str')
-                value = self.quotes_conditional.format(value)
-                filter_string += '{}{}{}'.format(field, self.equals_conditional, value)
-                if count < (len(args) - 1):
-                    filter_string += self.and_conditional
-
         data_url = self.dataset_url.format(dataset_id)
-        data_url += self.filter_prepend.format(filter_string)
+        data_url += self.filter_prepend.format(self.get_filter_string(args))
 
         return data_url
 
+    def get_filter_string(self, args=None):
+        if args is None:
+            args = []
+
+        filter_string = ''
+
+        for count, key_value in enumerate(args):
+            field = key_value[0]
+            conditional = key_value[1]
+            value = key_value[2]
+
+            print(type(value))
+
+            if isinstance(value, int):
+                print (count, key_value, 'int')
+                filter_string += '{}{}{}'.format(field, conditional, value)
+                if count < (len(args) - 1):
+                    filter_string += self.and_conditional
+
+        for count, key_value in enumerate(args):
+            field = key_value[0]
+            conditional = key_value[1]
+            value = key_value[2]
+            if isinstance(value, str) or isinstance(value, unicode):
+                print (count, key_value, 'str')
+                value = self.quotes_conditional.format(value)
+                filter_string += '{}{}{}'.format(field, conditional, value)
+                if count < (len(args) - 1):
+                    filter_string += self.and_conditional
+
+        return filter_string
+
+        # data_url = self.dataset_url.format(dataset_id)
+        # data_url += self.filter_prepend.format(filter_string)
+        # return data_url
 
     def get_data_from_url(self, url):
         print (url)
@@ -215,12 +238,74 @@ class StatsWalesOData():
             all_data_dict[data_value['Area_Code']] = data_array
         return all_data_dict
 
+    def get_dataset_overview(self, dataset_id):
+        data_url = self.get_dataset_overview_url(dataset_id)
+        result = requests.get(data_url)
+        # print result.text
+        print data_url
+
+        result_json = json.loads(result.text)
+
+        dimensions = {}
+
+        for datasetdimensionitem in result_json['value']:
+            dimension_name = datasetdimensionitem['DimensionName_ENG']
+            if dimension_name in dimensions:
+                dimensions[dimension_name]['measures'].append({
+                    'id': datasetdimensionitem['Code'],
+                    'name': datasetdimensionitem['Description_ENG']
+                })
+            else:
+                dimensions[dimension_name] = {
+                    "concept": dimension_name,
+                    "name": dimension_name,
+                    'measures': [{
+                        'id': datasetdimensionitem['Code'],
+                        'name': datasetdimensionitem['Description_ENG']
+                    }]
+                }
+            print datasetdimensionitem
+
+        return_data = {
+            'concepts': [],
+            'codelists': dimensions
+        }
+
+        # return_data['concepts'].append({
+        #     'codelist': codelist,
+        #     'codelist_ref': codelist_ref
+        # })
+
+        return return_data
+
+    def get_dataset_overview_url(self, dataset_id):
+        # http: // open.statswales.gov.wales / en - gb / discover / datasetdimensionitems?$filter = Dataset % 20
+        # eq % 20 % 27
+        # wimd0020 % 27 % 20 and % 20
+        # DimensionName_ENG % 20
+        # ne % 20 % 27
+        # Area % 27
+
+        data_url = self.datasetdimensionitems_url
+        # FIXME the lower() is hacky, get the proper format from somewhere
+        data_url += self.filter_prepend.format(
+            self.get_filter_string(
+                [
+                    ('Dataset', StatsWalesOData().equals_conditional, str(dataset_id).lower()),
+                    ('DimensionName_ENG', StatsWalesOData().not_equals_conditional, 'Area')
+                ]
+            )
+        )
+
+        return data_url
+
+
 
 def do_test():
     swod = StatsWalesOData()
 
     keyword_results = swod.keyword_search('deprivation+health', {'Geography', ''})
-    # print(keyword_results)
+    print(keyword_results)
     print (len(keyword_results))
 
     # area_code = 'W01001434'
@@ -232,11 +317,11 @@ def do_test():
 
     all_data_list = swod.get_data(
         dataset_id,
-        {
+        [
             # 'Area_Code': area_code,
-            'Year_Code': 2014,
-            'AgeGroup_Code': 'AllAges'
-        }
+            ('Year_Code', StatsWalesOData().equals_conditional, 2014),
+            ('AgeGroup_Code', StatsWalesOData().equals_conditional, 'AllAges')
+        ]
     )
 
     all_data_dict = swod.odata_to_dict(all_data_list)

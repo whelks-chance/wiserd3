@@ -1696,7 +1696,7 @@
                                     type: 'radio',
                                     name: 'nomis_search_radio',
                                     text: remote_dataset_radio.name
-                                }));
+                                }).attr({'source': remote_dataset_radio.source}));
                                 radio_div.append($('<label>', {
                                     value: remote_dataset_radio.id,
                                     for: remote_dataset_radio.id,
@@ -1748,15 +1748,18 @@
                             add_ajax_waiting('{% trans 'Inspecting dataset ...' %}');
 
                             $( this ).dialog( "close" );
-                            var dataset_id = $("#dataset_radio").find(":radio:checked").attr('id');
-                            var dataset_name = $("#dataset_radio").find(":radio:checked").text();
+                            var dataset_radio = $("#dataset_radio");
+                            var dataset_id = dataset_radio.find(":radio:checked").attr('id');
+                            var dataset_name = dataset_radio.find(":radio:checked").text();
+                            var source = dataset_radio.find(":radio:checked").attr('source');
 
                             $.ajax({
                                 url: "{% url 'data_api' %}",
                                 type: 'GET',
                                 data: {
                                     'method': 'remote_metadata',
-                                    'dataset_id': dataset_id
+                                    'dataset_id': dataset_id,
+                                    'source': source
                                 },
                                 success: function(data){
                                     $('#dataset_title').remove().end().append('<h3>' + dataset_name + '</h2>');

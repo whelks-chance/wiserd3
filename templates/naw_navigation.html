@@ -3,16 +3,34 @@
 {% load i18n %}
 
 {% block extra_head %}
-
-    {#    <script>#}
-    {#        $(document).ready(function () {#}
-    {#            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
-    {#        });#}
-    {#    </script>#}
-
 {% endblock %}
 
 {% block navigation %}
+    <script>
+{#        $(document).ready(function () {#}
+{#            $('#welsh_switch').click(function(){#}
+{#                waitingDialog.show('Saving ...');#}
+{#                $.ajax({#}
+{#                    url: "{% url 'edit_metadata' %}",#}
+{#                    type: 'GET',#}
+{#                    data: {user_language: '2'},#}
+{#                    success: function(data) {#}
+{#                        if(data['success']){#}
+{#                            location.reload(true);#}
+{#                        } else {#}
+{#                            console.log(data);#}
+{#                        }#}
+{#                    },#}
+{#                    complete: function() {#}
+{#                        setTimeout(function () {#}
+{#                            waitingDialog.hide();#}
+{#                        }, 1000);#}
+{#                    }#}
+{#                });#}
+{#            });#}
+{#        });#}
+    </script>
+
     <link rel="stylesheet" type="text/css" href="{% static 'dataportal/naw_dark.css' %}" />
 
     <div id="wrapper">
@@ -35,7 +53,13 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-
+{#                <li>#}
+{#                    <a><i>{% trans 'English' %}</i></a>#}
+{#                </li>#}
+                {#            <li> | </li>#}
+{#                <li id="welsh_switch">#}
+{#                    <a><i>{% trans 'Welsh' %}</i></a>#}
+{#                </li>#}
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-pencil-square-o fa-fw"></i>  {% trans 'Research' %}  <i class="fa fa-caret-down"></i>

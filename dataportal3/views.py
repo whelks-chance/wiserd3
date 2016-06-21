@@ -923,19 +923,51 @@ def data_api(request):
 
     if method == 'remote_search':
         search_term = request.GET.get("search_term", None)
-        print search_term, type(search_term)
+        remote_api = request.GET.get("remote_api", None)
+
+        print search_term
         if search_term:
             datasets = []
+
             try:
-                datasets = rd.search_datasets(search_term)
+                swod = StatsWalesOData()
+                swod_datasets = swod.keyword_search(search_term)
+
+                formatted = []
+                for d in swod_datasets:
+                    if d['Tag_ENG'] == 'Title':
+                        formatted.append({
+                            'id': d['Dataset'],
+                            'name': d['Description_ENG'],
+                            'source': 'StatsWales'
+                        })
+                datasets += formatted
+            except Exception as e87234:
+                print e87234
+
+                to_return['message'] = 'The WISERD DataPortal failed to connect to the remote data service.'
+                to_return['success'] = False
+
+            try:
+                nomis_datasets = rd.search_datasets(search_term)
+                datasets += nomis_datasets
+
             except:
                 to_return['message'] = 'The WISERD DataPortal failed to connect to the remote data service.'
                 to_return['success'] = False
+
             to_return['datasets'] = datasets
 
     if method == 'remote_metadata':
         dataset_id = request.GET.get("dataset_id", None)
-        to_return['metadata'] = rd.get_dataset_overview(dataset_id)
+        source = request.GET.get("source", None)
+
+        if source == 'Nomis':
+            to_return['metadata'] = rd.get_dataset_overview(dataset_id)
+        if source == 'StatsWales':
+            swod = StatsWalesOData()
+
+            to_return['metadata'] = swod.get_dataset_overview(dataset_id)
 
     if method == 'remote_data_render_data':
         remote_layer_ids = request.GET.getlist('remote_layer_ids[]', [])

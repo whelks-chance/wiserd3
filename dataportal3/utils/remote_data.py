@@ -34,7 +34,8 @@ class RemoteData():
             for f in s:
                 k = {
                     'id': f['id'],
-                    'name': f['name']['value']
+                    'name': f['name']['value'],
+                    'source': 'Nomis'
                 }
                 datasets.append(k)
                 # print pprint.pformat(k)

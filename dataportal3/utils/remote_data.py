@@ -299,7 +299,7 @@ class RemoteData():
         matches = {}
         loops = 0
 
-        print 'remote_data', type(remote_data)
+        # print 'remote_data', type(remote_data)
         print 'length', len(remote_data)
 
         for geom_data in remote_data.keys()[:100]:

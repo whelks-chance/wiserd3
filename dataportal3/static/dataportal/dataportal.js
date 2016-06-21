@@ -25,14 +25,16 @@ function get_remote_dataset_csv_url(data_api_url, topojson_geography, dataset_id
     });
 }
 
-function get_remote_dataset_topojson(remote_data_topojson_url, topojson_geography, dataset_id, codelist_selected, callback) {
+function get_remote_dataset_topojson(remote_data_topojson_url, topojson_geography,
+                                     dataset_id, codelist_selected, source, callback) {
     $.ajax({
         url: remote_data_topojson_url,
         type: 'GET',
         data: {
             'geography': topojson_geography,
             'dataset_id': dataset_id,
-            'codelist_selected': JSON.stringify(codelist_selected)
+            'codelist_selected': JSON.stringify(codelist_selected),
+            'source': source
         },
         success: function(data){
             callback(data);

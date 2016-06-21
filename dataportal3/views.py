@@ -433,7 +433,12 @@ def get_remote_layer_render_data_for_uid(nomissearch_uids, request_user):
         else:
             search_type = remote_layer_model.search_type.name
 
+        layer_data['source'] = search_type
+
         if search_type == 'Nomis':
+            remote_layer_data.append(layer_data)
+
+        if search_type == 'StatsWales':
             remote_layer_data.append(layer_data)
 
         if search_type == 'Survey':
@@ -1057,6 +1062,7 @@ def remote_data_topojson(request):
     dataset_id = request.GET.get('dataset_id', '')
     nomis_variable = request.GET.get('nomis_variable', '')
     geog = request.GET.get('geography', '')
+    source = request.GET.get('source', '')
     print dataset_id, nomis_variable, geog
 
     user_prefs = get_user_preferences(request)
@@ -1067,11 +1073,35 @@ def remote_data_topojson(request):
     nomis_search.dataset_id = dataset_id
     nomis_search.geography_id = geog
     nomis_search.search_attributes = codelist_to_attributes(codelist)
-    nomis_search.search_type = models.SearchType.objects.get(name='Nomis')
+    nomis_search.search_type = models.SearchType.objects.get(name=source)
     nomis_search.save()
 
-    rd = RemoteData()
-    a = rd.get_topojson_with_data(dataset_id, geog, nomis_variable, codelist, high=user_prefs.topojson_high)
+    if source == 'Nomis':
+        rd = RemoteData()
+        a = rd.get_topojson_with_data(dataset_id, geog, nomis_variable, codelist, high=user_prefs.topojson_high)
+
+    if source == 'StatsWales':
+        swod = StatsWalesOData()
+        filter_option_data_types = swod.get_metadata_for_dataset(dataset_id)
+
+        filter_options = []
+        for code in codelist:
+            option = str(code['option']).replace(' ', '') + '_Code'
+            variable = code['variable']
+
+            if filter_option_data_types[option] == 'Edm.Int64':
+                variable = int(variable)
+
+            filter_options.append([option, swod.equals_conditional, variable])
+
+        all_data = swod.get_data_dict(
+            str(dataset_id).lower(),
+            filter_options
+        )
+
+        rd = RemoteData()
+        region_id, topojson_file = rd.get_dataset_geodata(geog, user_prefs.topojson_high)
+        a = rd.update_topojson(topojson_file, all_data, measure_is_percentage=False)
 
     to_return = {
         'topojson': a,
@@ -1920,11 +1950,11 @@ def get_topojson_for_uuid(request, search_uuid):
         swod = StatsWalesOData()
         all_data = swod.get_data_dict(
             dataset_id,
-            {
+            [
                 # 'Area_Code': area_code,
-                'Year_Code': 2015,
-                'AgeGroup_Code': 'AllAges'
-            }
+                ('Year_Code', swod.equals_conditional, 2015),
+                ('AgeGroup_Code', swod.equals_conditional , 'AllAges')
+            ]
         )
 
         rd = RemoteData()

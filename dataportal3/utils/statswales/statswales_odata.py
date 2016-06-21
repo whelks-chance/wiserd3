@@ -36,9 +36,7 @@ class StatsWalesOData():
         schema = data_services.find('schema')
         schema_namespace = schema.get('namespace')
 
-
         entitycontainer = schema.find('entitycontainer')
-
 
         # for item in entitycontainer.findAll(recursive=False):
         #     assert item, Tag
@@ -47,9 +45,9 @@ class StatsWalesOData():
         #     print(item.attrs)
 
         dataset_entityset = entitycontainer.find('entityset', attrs={'name': str(dataset_id).lower()})
-        print dataset_entityset
+        # print dataset_entityset
         entity_type_name = dataset_entityset.get('entitytype').split('.')[1]
-        print entity_type_name
+        # print entity_type_name
 
         entitytype = schema.find('entitytype', attrs={'name': entity_type_name})
         # print(entitytype)
@@ -57,9 +55,11 @@ class StatsWalesOData():
         entity_properties = entitytype.findAll('property')
         # print entity_properties
 
+        property_data_types = {}
         for property in entity_properties:
-            print property['name']
-
+            print property['name'], property['type']
+            property_data_types[property['name']] = property['type']
+        return property_data_types
 
     def keyword_search(self, keyword_string, args=None):
         if args is None:
@@ -132,18 +132,21 @@ class StatsWalesOData():
 
         filter_string = ''
 
+        print args
+        counter = 0
         for count, key_value in enumerate(args):
             field = key_value[0]
             conditional = key_value[1]
             value = key_value[2]
 
-            print(type(value))
+            # print(field, conditional, value)
 
             if isinstance(value, int):
                 print (count, key_value, 'int')
                 filter_string += '{}{}{}'.format(field, conditional, value)
-                if count < (len(args) - 1):
+                if counter < (len(args) - 1):
                     filter_string += self.and_conditional
+                counter += 1
 
         for count, key_value in enumerate(args):
             field = key_value[0]
@@ -153,9 +156,12 @@ class StatsWalesOData():
                 print (count, key_value, 'str')
                 value = self.quotes_conditional.format(value)
                 filter_string += '{}{}{}'.format(field, conditional, value)
-                if count < (len(args) - 1):
+                if counter < (len(args) - 1):
                     filter_string += self.and_conditional
+                counter += 1
+        # print counter, len(args)
 
+        print filter_string
         return filter_string
 
         # data_url = self.dataset_url.format(dataset_id)
@@ -184,9 +190,9 @@ class StatsWalesOData():
 
     def get_data_dict(self, dataset_id, options):
         data_list = self.get_data(dataset_id, options)
-        return self.odata_to_dict(data_list)
+        return self.odata_to_dict(data_list, options)
 
-    def odata_to_dict(self, all_data_list):
+    def odata_to_dict(self, all_data_list, options):
         all_data_dict = {}
         # area_codes = []
         for data_value in all_data_list:
@@ -225,6 +231,20 @@ class StatsWalesOData():
             #  u'Year_Code': u'2014',
             #  u'Year_ItemName_ENG': u'2014'}
 
+            string_data = [
+                {
+                    'title': 'Category',
+                    'value': data_value['Indicator_Code']
+                }
+            ]
+            for option in options:
+                string_data.append(
+                    {
+                        'title': option[0],
+                        'value': option[2]
+                    }
+                )
+
             data_array = [
                 {
                     "name": data_value['Indicator_ItemName_ENG'],
@@ -232,7 +252,9 @@ class StatsWalesOData():
                     "geography_id": data_value['Area_Code'],
                     "geography_code": data_value['Area_Code'],
                     "data_status": "A",
-                    "geography": data_value['Area_ItemName_ENG']
+                    "geography": data_value['Area_ItemName_ENG'],
+                    "data_title": data_value['Indicator_ItemName_ENG'],
+                    "string_data": string_data
                 }
             ]
             all_data_dict[data_value['Area_Code']] = data_array
@@ -264,7 +286,7 @@ class StatsWalesOData():
                         'name': datasetdimensionitem['Description_ENG']
                     }]
                 }
-            print datasetdimensionitem
+            # print datasetdimensionitem
 
         return_data = {
             'concepts': [],
@@ -313,7 +335,19 @@ def do_test():
     print(dataset_id)
     dataset_id = 'wimd0020'
 
-    swod.get_metadata_for_dataset('WIMD0006')
+    data_types = swod.get_metadata_for_dataset('wimd0020')
+
+    codelist = [{u'variable': u'AllAges', u'option': u'Age Group'},
+     {u'variable': u'INCO', u'option': u'Indicator'},
+     {u'variable': u'2015', u'option': u'Year'}]
+
+    filter_options = []
+    for code in codelist:
+        print 'code', code
+        option = str(code['option']).replace(' ', '') + '_Code'
+        variable = code['variable']
+        filter_options.append([option, swod.equals_conditional, variable])
+    print 'filter_options', filter_options
 
     all_data_list = swod.get_data(
         dataset_id,

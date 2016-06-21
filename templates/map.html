@@ -584,28 +584,29 @@
             function get_sidebar_text(props, item) {
                 var strings = '';
                 if (props.STRING_DATA[item]['value']) {
+                    var string_data_value = props.STRING_DATA[item]['value'].toString();
                     {#  is it a link? #}
-                    if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('http://') == 0) {
-                        if (props.STRING_DATA[item]['value'].toLowerCase().indexOf('.jpg') > -1 ||
-                                props.STRING_DATA[item]['value'].toLowerCase().indexOf('.png') > -1) {
+                    if (string_data_value.toLowerCase().indexOf('http://') == 0) {
+                        if (string_data_value.toLowerCase().indexOf('.jpg') > -1 ||
+                                string_data_value.toLowerCase().indexOf('.png') > -1) {
                             {#  it's an image? #}
                             strings += ''
                                     {#                                    + '<p><b>' + props.STRING_DATA[item]['title'] + '</b></p>'#}
-                                    + '<p><img src="' + props.STRING_DATA[item]['value'] + '"></p>';
+                                    + '<p><img src="' + string_data_value + '"></p>';
                         } else {
                             {#                                        It's a hyperlink #}
                             strings += ''
                                     {#                                    + '<p><b>' + props.STRING_DATA[item]['title']#}
                                     {#                                    + '</b></p>'#}
                                     + '<p><a target="_blank" href="'
-                                    + props.STRING_DATA[item]['value']
+                                    + string_data_value
                                     + '">' + props.STRING_DATA[item]['title'] + '</a></p>';
                         }
                     }
                     else {
                         strings += '<p><b>' + props.STRING_DATA[item]['title']
-                                + '</b>:' + props.STRING_DATA[item]['value'] + '</p>';
-                        {#                        console.log(props.STRING_DATA[item]['value']);#}
+                                + '</b>:' + string_data_value + '</p>';
+                        {#                        console.log(string_data_value);#}
                     }
                 }
                 return strings;
@@ -1806,6 +1807,7 @@
                                     $('#topojson_geography_radio').buttonset();
                                     $('#dataset_define_vars_form').data({
                                         'dataset_id': dataset_id,
+                                        'source': source,
                                         'dataset_name': dataset_name,
                                         'codelists': data['metadata']['codelists']
                                     }).dialog('open');
@@ -1853,9 +1855,12 @@
                         var codelist_selected = [];
 
                         var nomis_variable = $("#nomis_variable").val();
+                        console.log('codelists');
+                        console.log(codelists);
 
                         for(var remote_codelist in codelists) {
-                            var remote_codelist_selection = $('#' + remote_codelist +'_radio').find(":radio:checked").attr('value');
+                            var codelist_selector = "div[id='" + remote_codelist + "_radio']";
+                            var remote_codelist_selection = $(codelist_selector).find(":radio:checked").attr('value');
 
                             {#                            alert(remote_codelist + ' ' + remote_codelist_selection);#}
                             codelist_selected.push({
@@ -1870,6 +1875,7 @@
                         {#                    console.log(codelist_selected);#}
 
                         var dataset_id = $(this).data('dataset_id');
+                        var source = $(this).data('source');
 
                         {#                        var topojson_geography = $("#topojson_geographies").val();#}
 
@@ -1884,6 +1890,7 @@
                                 topojson_geography,
                                 dataset_id,
                                 codelist_selected,
+                                source,
                                 function(data){
                                     get_remote_dataset_csv_url(
                                             "{% url 'data_api' %}",
@@ -2096,6 +2103,7 @@
                                     {#                                    alert(metadata['local_data_metadata']['data_names']);#}
                                     $("#local_dataset_define_vars_form").data({
                                         survey_id: local_data_layer['survey_id'],
+                                        source: local_data_layer['source'],
                                         boundary_name: local_data_layer['boundary_name'],
                                         available_data: metadata['local_data_metadata']['data_names'],
                                         unicode_data: metadata['local_data_metadata']['unicode_data']
@@ -2201,6 +2209,7 @@
                             remote_data_layer['geography_id'],
                             remote_data_layer['dataset_id'],
                             remote_data_layer['codelist'],
+                            remote_data_layer['source'],
                             function(topojson_data) {
                                 {#                            console.log(remote_data_layer);#}
 

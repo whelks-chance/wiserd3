@@ -37,11 +37,15 @@ The topojson file is printed all on a single line in the file, which breaks edit
     node -e "console.log(JSON.stringify(JSON.parse(require('fs') \
       .readFileSync(process.argv[1])), null, 4));" output-fixed-1.json > pretty.json
 
+## Backup the Database
+
+    sudo -u <postgres_user> pg_dump new2 --file /tmp/new_survey_jun_16_dir --format=d
+
 ## Build the Database
 
 DB VM
 
-    sudo -u postgres psql < build_sql.sql
+    sudo -u <postgres_user> psql < build_sql.sql
 
 Django VM
 

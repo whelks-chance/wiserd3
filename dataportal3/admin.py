@@ -12,6 +12,12 @@ from django.contrib.gis import admin as gis_admin
 from dataportal3.models import Question, UserGroupSurveyCollection, SurveyVisibilityMetadata, Response
 
 
+class DublinCoreAdmin(admin.ModelAdmin):
+    readonly_fields = ('created', 'updated')
+
+admin.site.register(models.DcInfo, DublinCoreAdmin)
+
+
 class QuestionAdmin(FiltersMixin, admin.ModelAdmin):
     raw_id_fields = ("survey", "link_from_question", "subof_question", "response")
     list_filter = (

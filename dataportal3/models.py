@@ -95,31 +95,85 @@ class Search(models.Model):
         return str(self.id) + ':' + self.user.user.username + ':' + self.query + ':' + str(self.datetime)
 
 
+class DcCreator(models.Model):
+    name = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return '{}'.format(self.name)
+
+
+class DcPublisher(models.Model):
+    name = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return '{}'.format(self.name)
+
+
+class DcContributor(models.Model):
+    name = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return '{}'.format(self.name)
+
+
+class DcGeography(models.Model):
+    name = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    higher_geographies = models.ForeignKey('DcGeography', blank=True, null=True)
+    ons_gss_code = models.CharField(max_length=9, blank=True, null=True)
+
+    def __unicode__(self):
+        return '{} : {}'.format(self.name, self.ons_gss_code)
+
+
 class DcInfo(models.Model):
     identifier = models.CharField(primary_key=True, max_length=255)
-    title = models.TextField(blank=True, null=True)
-    creator = models.TextField(blank=True, null=True)
-    subject = models.TextField(blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
-    publisher = models.CharField(max_length=255, blank=True, null=True)
-    contributor = models.CharField(max_length=255, blank=True, null=True)
-    date = models.DateField(blank=True, null=True)
-    type = models.ForeignKey('DublincoreType', blank=True, null=True)
-    format = models.ForeignKey('DublincoreFormat', blank=True, null=True)
-    source = models.CharField(max_length=255, blank=True, null=True)
-    language = models.ForeignKey('DublincoreLanguage', blank=True, null=True)
-    relation = models.CharField(max_length=255, blank=True, null=True)
-    coverage = models.TextField(blank=True, null=True)
-    rights = models.TextField(blank=True, null=True)
-    user_id = models.ForeignKey('UserDetail', blank=True, null=True)
-    created = models.DateTimeField(blank=True, null=True)
-    updated = models.DateTimeField(blank=True, null=True)
+    title = models.TextField(null=True)
+
+    # creator_old = models.TextField(blank=True, null=True)
+    # subject_old = models.TextField(blank=True, null=True)
+    # publisher_old = models.CharField(max_length=255, blank=True, null=True)
+    # contributor_old = models.CharField(max_length=255, blank=True, null=True)
+    # relation_old = models.CharField(max_length=255, blank=True, null=True)
+    # coverage_old = models.TextField(blank=True, null=True)
+    # date = models.DateField(blank=True, null=True)
+
+    subjects = models.ManyToManyField('ThematicTag')
+    creators = models.ManyToManyField('DcCreator')
+    publishers = models.ManyToManyField('DcPublisher')
+    contributors = models.ManyToManyField('DcContributor', blank=True)
+
+    description = models.TextField(null=True)
+    type = models.ForeignKey('DublincoreType', null=True)
+    format = models.ForeignKey('DublincoreFormat', null=True)
+
+    source_url = models.TextField(blank=True, null=True)
+    source_doi = models.TextField(blank=True, null=True)
+    language = models.ForeignKey('DublincoreLanguage', null=True)
+
+    relation_same_collection = models.ManyToManyField(
+        'DcInfo', related_name='dc_relation_same_collection', blank=True)
+    relation_different_collection = models.ManyToManyField(
+        'DcInfo', related_name='dc_relation_different_collection', blank=True)
+
+    coverage_spatial = models.ManyToManyField('DcGeography', blank=True)
+
+    coverage_temporal_start = models.DateTimeField(null=True)
+    coverage_temporal_end = models.DateTimeField(null=True)
+
+    rights = models.TextField(null=True)
+    user_id = models.ForeignKey('UserDetail', null=True)
+    created = models.DateTimeField(auto_now_add=True, null=True)
+    updated = models.DateTimeField(auto_now=True, null=True)
 
     class Meta:
         db_table = 'dc_info'
 
     def __unicode__(self):
-        return str(self.identifier) + ':' + self.title
+        return '{} : {}'.format(self.identifier, self.title)
 
 
 class DublincoreFormat(models.Model):
@@ -131,7 +185,7 @@ class DublincoreFormat(models.Model):
         db_table = 'dublincore_format'
 
     def __unicode__(self):
-        return str(self.dcformatid) + ':' + self.dc_format_title
+        return '{} : {}'.format(self.dcformatid, self.dc_format_title)
 
 
 class DublincoreLanguage(models.Model):
@@ -143,7 +197,7 @@ class DublincoreLanguage(models.Model):
         db_table = 'dublincore_language'
 
     def __unicode__(self):
-        return str(self.dclangid) + ':' + self.dc_language_title
+        return '{} : {}'.format(self.dclangid, self.dc_language_title)
 
 
 class DublincoreType(models.Model):
@@ -155,7 +209,7 @@ class DublincoreType(models.Model):
         db_table = 'dublincore_type'
 
     def __unicode__(self):
-        return str(self.dctypeid) + ':' + self.dc_type_title
+        return '{} : {}'.format(self.dctypeid, self.dc_type_title)
 
 
 class ThematicGroup(models.Model):
@@ -167,7 +221,7 @@ class ThematicGroup(models.Model):
         db_table = 'thematic_group'
 
     def __unicode__(self):
-        return str(self.tgroupid) + ':' + self.grouptitle
+        return '{} : {}'.format(self.tgroupid, self.grouptitle)
 
 
 class ThematicTag(models.Model):
@@ -180,7 +234,7 @@ class ThematicTag(models.Model):
         db_table = 'thematic_tag'
 
     def __unicode__(self):
-        return str(self.tagid) + ':' + self.tag_text
+        return '{} : {}'.format(self.tagid, self.tag_text)
 
 
 class QType(models.Model):
@@ -192,7 +246,7 @@ class QType(models.Model):
         db_table = 'q_type'
 
     def __unicode__(self):
-        return str(self.q_typeid) + ':' + self.q_type_text
+        return '{} : {}'.format(self.q_typeid, self.q_type_text)
 
 
 class Question(models.Model):

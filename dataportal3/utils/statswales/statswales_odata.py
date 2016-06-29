@@ -109,6 +109,8 @@ class StatsWalesOData():
         print('lsoa_dataset_ids', geog_dataset_ids)
 
         intersect_ids = keyword_dataset_ids.intersection(geog_dataset_ids)
+        # intersect_ids = keyword_dataset_ids
+
 
         print('intersect_ids (keyword+lsoa)', intersect_ids)
 

@@ -218,7 +218,13 @@ def has_numbers(input_string):
 def survey_dc_data(request, wiserd_id):
     wiserd_id = wiserd_id.strip()
     # survey_dc_models = old_models.DcInfo.objects.using('survey').all().filter(identifier=wiserd_id).values("identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "source", "language", "relation", "coverage", "rights", "user_id", "created", "updated")
-    survey_dc_models = models.DcInfo.objects.all().filter(identifier=wiserd_id).values("identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type__dc_type_title", "format__dc_format_title", "source", "language__dc_language_title", "relation", "coverage", "rights", "user_id", "created", "updated")
+    survey_dc_models = models.DcInfo.objects.all()\
+        .filter(identifier=wiserd_id)\
+        .values("identifier", "title", "creators", "subjects", "description",
+                "publishers", "contributors", "type__dc_type_title",
+                "format__dc_format_title", "source_url",
+                "language__dc_language_title", "relation_same_collection", "relation_different_collection",
+                "coverage_spatial", "rights", "user_id", "created", "updated")
 
     surveys = []
     for dc_model in survey_dc_models:

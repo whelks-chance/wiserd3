@@ -1,0 +1,45 @@
+{% load i18n %}
+
+<script>
+        $(document).ready(function () {
+            $('.lang_toggle').click(function(){
+                waitingDialog.show('Saving ...');
+
+                var lang = $(this).data('lang');
+
+                var user_language = (lang == 'welsh' ? '2' : '1');
+                $.ajax({
+                    url: "{% url 'edit_metadata' %}",
+                    type: 'GET',
+                    data: {
+                        'function': 'set_user_preferences',
+                        'user_language': user_language
+                    },
+                    success: function(data) {
+                        if(data['success']){
+                            location.reload(true);
+                        } else {
+                            console.log(data);
+                        }
+                    },
+                    complete: function() {
+                        setTimeout(function () {
+                            waitingDialog.hide();
+                        }, 1000);
+                    }
+                });
+            });
+        });
+    </script>
+
+<li>
+    <a href="#" class="lang_toggle" data-lang="english">
+        <i class="">English</i>
+    </a>
+</li>
+<li> | </li>
+<li>
+    <a href="#" class="lang_toggle" data-lang="welsh">
+        <i class="">{% trans 'Welsh' %}</i>
+    </a>
+</li>

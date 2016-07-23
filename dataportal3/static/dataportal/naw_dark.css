@@ -67,3 +67,7 @@ li.active > a
     color: rgb(0, 30, 98);
             background-color: #fff;
 }
+
+.panel-primary a {
+    color: #337ab7;
+}

@@ -6,14 +6,21 @@
 {% endblock %}
 
 {% block navigation %}
-    <script>
+{#    <script>#}
 {#        $(document).ready(function () {#}
-{#            $('#welsh_switch').click(function(){#}
+{#            $('.lang_toggle').click(function(){#}
 {#                waitingDialog.show('Saving ...');#}
+{##}
+{#                var lang = $(this).data('lang');#}
+{##}
+{#                var user_language = (lang == 'welsh' ? '2' : '1');#}
 {#                $.ajax({#}
 {#                    url: "{% url 'edit_metadata' %}",#}
 {#                    type: 'GET',#}
-{#                    data: {user_language: '2'},#}
+{#                    data: {#}
+{#                        'function': 'set_user_preferences',#}
+{#                        'user_language': user_language#}
+{#                    },#}
 {#                    success: function(data) {#}
 {#                        if(data['success']){#}
 {#                            location.reload(true);#}
@@ -29,7 +36,7 @@
 {#                });#}
 {#            });#}
 {#        });#}
-    </script>
+{#    </script>#}
 
     <link rel="stylesheet" type="text/css" href="{% static 'dataportal/naw_dark.css' %}" />
 
@@ -54,12 +61,18 @@
 
             <ul class="nav navbar-top-links navbar-right">
 {#                <li>#}
-{#                    <a><i>{% trans 'English' %}</i></a>#}
+{#                    <a href="#" class="lang_toggle" data-lang="english">#}
+{#                        <i class="">{% trans 'English' %}</i>#}
+{#                    </a>#}
 {#                </li>#}
-                {#            <li> | </li>#}
-{#                <li id="welsh_switch">#}
-{#                    <a><i>{% trans 'Welsh' %}</i></a>#}
+{#                <li> | </li>#}
+{#                <li>#}
+{#                    <a href="#" class="lang_toggle" data-lang="welsh">#}
+{#                        <i class="">{% trans 'Welsh' %}</i>#}
+{#                    </a>#}
 {#                </li>#}
+                {% include 'lang_toggle.html' %}
+
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-pencil-square-o fa-fw"></i>  {% trans 'Research' %}  <i class="fa fa-caret-down"></i>

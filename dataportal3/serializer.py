@@ -32,7 +32,6 @@ class DcInfoSerializer(serializers.ModelSerializer):
     relation_same_collection = serializers.SlugRelatedField(many=True, read_only=True, slug_field='title')
     relation_different_collection = serializers.SlugRelatedField(many=True, read_only=True, slug_field='title')
 
-
     type = serializers.SlugRelatedField(read_only=True, slug_field='dc_type_title')
     format = serializers.SlugRelatedField(read_only=True, slug_field='dc_format_title')
     language = serializers.SlugRelatedField(read_only=True, slug_field='dc_language_title')

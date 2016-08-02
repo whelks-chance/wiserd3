@@ -44,7 +44,7 @@
                 'dc' : {
                     'title': '{% trans 'Dublin Core' %}',
                     'style': 'form',
-                    'url': "{% url 'survey_dc_data' survey_id %}",
+                    'url': "{% url 'api:metadata:DcInfo-detail' pk=survey_id%}",
                     'columns': [],
                     'fields': [
                         {'display': false, 'displayName': '{% trans 'Identifier' %}', 'id': 'identifier'},
@@ -54,12 +54,13 @@
                         {'display': true, 'displayName': '{% trans 'Description' %}', 'id': 'description'},
                         {'display': true, 'displayName': '{% trans 'Publishers' %}', 'id': 'publishers'},
                         {'display': true, 'displayName': '{% trans 'Contributors' %}', 'id': 'contributors'},
-                        {'display': true, 'displayName': '{% trans 'Date' %}', 'id': 'date'},
-                        {'display': true, 'displayName': '{% trans 'Type' %}', 'id': 'type__dc_type_title'},
-                        {'display': true, 'displayName': '{% trans 'Format' %}', 'id': 'format__dc_format_title'},
-                        {'display': true, 'displayName': '{% trans 'Source URL' %}', 'id': 'source_url'},
+                        {'display': true, 'displayName': '{% trans 'Start Date' %}', 'id': 'coverage_temporal_start'},
+                        {'display': true, 'displayName': '{% trans 'End Date' %}', 'id': 'coverage_temporal_end'},
+                        {'display': true, 'displayName': '{% trans 'Type' %}', 'id': 'type'},
+                        {'display': true, 'displayName': '{% trans 'Format' %}', 'id': 'format'},
+                        {'display': true, 'displayName': '{% trans 'Source URL' %}', 'id': 'source_url', 'type': 'link'},
                         {'display': true, 'displayName': '{% trans 'Source DOI' %}', 'id': 'source_doi'},
-                        {'display': true, 'displayName': '{% trans 'Language' %}', 'id': 'language__dc_language_title'},
+                        {'display': true, 'displayName': '{% trans 'Language' %}', 'id': 'language'},
                         {'display': true, 'displayName': '{% trans 'Relation Same Collection' %}', 'id': 'relation_same_collection'},
                         {'display': true, 'displayName': '{% trans 'Relation Different Collection' %}', 'id': 'relation_different_collection'},
                         {'display': true, 'displayName': '{% trans 'Coverage Spatial' %}', 'id': 'coverage_spatial'},
@@ -128,16 +129,21 @@
             });
 
             $.ajax({
-                url: "{% url 'survey_dc_data' survey_id %}",
-                type: 'POST',
+                {#                url: "{% url 'survey_dc_data' survey_id %}",#}
+                url: "{% url 'api:metadata:DcInfo-detail' pk=survey_id%}",
+{#                data: {#}
+{#                    csrfmiddlewaretoken: '{{ csrf_token }}'#}
+{#                },#}
+                type: 'GET',
                 success: function(data) {
                     var dataContent = '';
                     for (var j = 0; j < survey_description['tabs']['dc']['fields'].length; j++) {
                         if (survey_description['tabs']['dc']['fields'][j]['display']) {
                             var field = survey_description['tabs']['dc']['fields'][j]['id'];
-                            var value = data['search_result_data'][0]['data'][field];
+{#                            var value = data['search_result_data'][0]['data'][field];#}
+                            var value = data[field];
                             var display_name = survey_description['tabs']['dc']['fields'][j]['displayName'];
-                            var type = survey_description['tabs']['survey']['fields'][j]['type'];
+                            var type = survey_description['tabs']['dc']['fields'][j]['type'];
 
                             dataContent += get_data_row_html(field, display_name, value, type);
                         }
@@ -235,6 +241,15 @@
 
         function get_data_row_html(field, display_name, value, type) {
             if (type == undefined) {
+
+                if (value.constructor === Array) {
+                    var break_value = '';
+                    for (var val in value) {
+                        break_value += '\n' + value[val];
+                    }
+                    value = break_value;
+                }
+
                 return ('<div class="control-group">' +
                 '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
                 '<div class="controls">' +
@@ -252,14 +267,14 @@
                 if (value != 'N/A') {
 
                     link_formatted += '<div class="col-sm-8" name="text_input_{0}" ' +
-                    'style="padding-top: 4px; padding-bottom: 4px; border: 1px solid rgb(169, 169, 169); ' +
-                    'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; ' +
-                    'white-space: -o-pre-wrap; word-wrap: break-word;" ' +
-                    'id="text_input_{0}" size="20" value="{2}">' +
-                    '<a href="{2}" target="_blank">{2}</a>';
+                            'style="padding-top: 4px; padding-bottom: 4px; border: 1px solid rgb(169, 169, 169); ' +
+                            'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; ' +
+                            'white-space: -o-pre-wrap; word-wrap: break-word;" ' +
+                            'id="text_input_{0}" size="20" value="{2}">' +
+                            '<a href="{2}" target="_blank">{2}</a>';
                 } else {
                     link_formatted += '<textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input" name="text_input_{0}" ' +
-                    'id="text_input_{0}" size="20" value="{2}">{2}</textarea>';
+                            'id="text_input_{0}" size="20" value="{2}">{2}</textarea>';
                 }
                 link_formatted += '</div></div></div>';
 
@@ -292,12 +307,12 @@
 
     {% if access_allow %}
         {% for access in access_allow.access_data %}
-    <div class="alert alert-info alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <p>{% trans 'You have access to this {{ access_allow.document_type }} because you are a member of the "{{ access.survey_collection_user_group_name }}" group.' %}</p>
-        <p>{% trans 'Please be aware that the information for "{{ access.survey_collection_name}}" has restricted access.' %}</p>
-        <p>{% trans 'Contact the WISERD DataPortal admin team for more information' %}</p>
-    </div>
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <p>{% trans 'You have access to this {{ access_allow.document_type }} because you are a member of the "{{ access.survey_collection_user_group_name }}" group.' %}</p>
+                <p>{% trans 'Please be aware that the information for "{{ access.survey_collection_name}}" has restricted access.' %}</p>
+                <p>{% trans 'Contact the WISERD DataPortal admin team for more information' %}</p>
+            </div>
         {% endfor %}
     {% endif %}
 
@@ -356,11 +371,11 @@
                                     </table>
                                 </div>
                                 <!-- /.table-responsive -->
-{#                                <div class="well">#}
-{#                                    <h4>DataTables Usage Information</h4>#}
-{#                                    <p></p>#}
-{#                                    <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>#}
-{#                                </div>#}
+                                {#                                <div class="well">#}
+                                {#                                    <h4>DataTables Usage Information</h4>#}
+                                {#                                    <p></p>#}
+                                {#                                    <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>#}
+                                {#                                </div>#}
                             </div>
 
                         </div>

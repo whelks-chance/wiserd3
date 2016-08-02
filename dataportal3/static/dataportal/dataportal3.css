@@ -222,3 +222,15 @@
 {
     background-color: #F4F4F4;
 }
+
+.StatsWales {
+    /* #561862 */
+    border: #561862 2px double !important;
+    /*color: darkblue !important;*/
+}
+
+.Nomis {
+    /* #561862 */
+    border: darkgreen 2px double !important;
+    /*color: darkblue !important;*/
+}

@@ -148,7 +148,7 @@
                     </ul>
                 </li>
             {% else %}
-                <li>
+        description_cy        <li>
                     <a href="#" data-naw_key_search_uid="{{ naw_key_search.uid }}" class="remote_data_uid">
                         <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and naw_key_search.description_cy %}{{ naw_key_search.description_cy }}{% else %}{{ naw_key_search.description }}{% endif %}</a>
                 </li>
@@ -162,7 +162,7 @@
             <a href="#"><i class="fa fa-sitemap fa-fw"></i> {% trans 'Map layers' %}<span class="fa arrow"></span></a>
             <ul class="nav nav-ul nav-second-level">
                 <li>
-                    <a id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> {% trans 'NomisAPI Data' %}</a>
+                    <a id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> {% trans 'Remote Data' %}</a>
 
                     {#                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>#}
                     {#                <ul aria-expanded="false" class="nav nav-third-level collapse">#}
@@ -1665,7 +1665,7 @@
 
             $("#remote_search_btn").click(function(e){
                 var search_term = $('#remote_search_term').val();
-                add_ajax_waiting('{% trans 'Searching NomisWeb...' %}');
+                add_ajax_waiting('{% trans 'Searching NomisWeb/ StatsWales...' %}');
 
                 $.ajax({
                     url: "{% url 'data_api' %}",
@@ -1702,7 +1702,8 @@
                                     value: remote_dataset_radio.id,
                                     for: remote_dataset_radio.id,
                                     text: remote_dataset_radio.name
-                                }));
+                                }).attr({'source': remote_dataset_radio.source})
+                                        .addClass(remote_dataset_radio.source));
                                 dataset_radio.append(radio_div);
                             }
                             dataset_radio.buttonset();

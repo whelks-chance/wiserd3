@@ -23,6 +23,21 @@ class SearchSerializer(serializers.ModelSerializer):
 
 
 class DcInfoSerializer(serializers.ModelSerializer):
+    subjects = serializers.SlugRelatedField(many=True, read_only=True, slug_field='tag_text')
+    creators = serializers.SlugRelatedField(many=True, read_only=True, slug_field='name')
+    publishers = serializers.SlugRelatedField(many=True, read_only=True, slug_field='name')
+    contributors = serializers.SlugRelatedField(many=True, read_only=True, slug_field='name')
+    coverage_spatial = serializers.SlugRelatedField(many=True, read_only=True, slug_field='name')
+
+    relation_same_collection = serializers.SlugRelatedField(many=True, read_only=True, slug_field='title')
+    relation_different_collection = serializers.SlugRelatedField(many=True, read_only=True, slug_field='title')
+
+
+    type = serializers.SlugRelatedField(read_only=True, slug_field='dc_type_title')
+    format = serializers.SlugRelatedField(read_only=True, slug_field='dc_format_title')
+    language = serializers.SlugRelatedField(read_only=True, slug_field='dc_language_title')
+    user_id = serializers.SlugRelatedField(read_only=True, slug_field='user_name')
+
     class Meta:
         model = DcInfo
 

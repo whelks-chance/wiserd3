@@ -5,6 +5,7 @@ import django
 from django.contrib import auth
 from django.contrib.auth.models import AnonymousUser
 from django.db import connections
+from django.db.models.fields.related import ManyToManyField
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.template.context import RequestContext
@@ -217,6 +218,17 @@ def has_numbers(input_string):
 @csrf_exempt
 def survey_dc_data(request, wiserd_id):
     wiserd_id = wiserd_id.strip()
+
+    # model_field_names = models.DcInfo._meta.get_all_field_names()
+    # print model_field_names
+    #
+    # model_field_types = models.DcInfo._meta.get_fields()
+    # for mft in model_field_types:
+    #     print type(mft)
+    #     print isinstance(mft, ManyToManyField)
+    #     print mft.__dict__
+    #     print
+
     # survey_dc_models = old_models.DcInfo.objects.using('survey').all().filter(identifier=wiserd_id).values("identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "source", "language", "relation", "coverage", "rights", "user_id", "created", "updated")
     survey_dc_models = models.DcInfo.objects.all()\
         .filter(identifier=wiserd_id)\
@@ -225,18 +237,39 @@ def survey_dc_data(request, wiserd_id):
                 "format__dc_format_title", "source_url",
                 "language__dc_language_title", "relation_same_collection", "relation_different_collection",
                 "coverage_spatial", "rights", "user_id", "created", "updated")
+        # .values(*model_field_names)
 
     surveys = []
+
+    # survey_flat = {}
+    # for f in model_field_types:
+    #     if isinstance(f, ManyToManyField):
+    #         survey_flat[f.name] = set()
+    #     else:
+    #         survey_flat[f.name] = None
+
     for dc_model in survey_dc_models:
+        # for f in model_field_types:
+        #     if isinstance(f, ManyToManyField):
+        #         survey_flat[f.name].add(dc_model[f.name])
+        #     else:
+        #         survey_flat[f.name] = dc_model[f.name]
+
         surveys.append({
             'data': dc_model,
             'wiserd_id': wiserd_id
         })
+
+    # for f in model_field_types:
+    #     if isinstance(f, ManyToManyField):
+    #         survey_flat[f.name] = list(survey_flat[f.name])
+
     api_data = {
         'url': request.get_full_path(),
         'method': 'survey_dc_data',
         'search_result_data': surveys,
         'results_count': len(surveys),
+        # 'flat': survey_flat
         }
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 

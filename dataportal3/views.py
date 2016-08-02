@@ -2385,3 +2385,7 @@ def gen_screenshot(request, search_uuid):
             return HttpResponse(f.read(), content_type="image/jpeg")
     except IOError:
         return render(request, '404.html', {'error': 'dataset_not_found'}, context_instance=RequestContext(request))
+
+
+def user_guide(request):
+    return render(request, 'user_guide.html', {}, context_instance=RequestContext(request))

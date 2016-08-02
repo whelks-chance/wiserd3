@@ -40,6 +40,7 @@ urlpatterns = [
     url(r'^profile', views.profile, name='profile'),
     url(r'^welcome', views.welcome, name='welcome'),
     url(r'^help_support', views.help_support, name='help_support'),
+    url(r'^user_guide', views.user_guide, name='user_guide'),
     url(r'^licence_attribution', views.licence_attribution, name='licence_attribution'),
     url(r'^save_profile_extras', views.save_profile_extras, name='save_profile_extras'),
 

@@ -68,6 +68,7 @@ class StatsWalesOData():
 
         # Grab the discovery metadata json from StatsWales
         keyword_description = requests.get(self.metadata_url)
+        print(self.metadata_url)
         keyword_description_objects = json.loads(keyword_description.text)
 
 
@@ -108,10 +109,8 @@ class StatsWalesOData():
         print('keyword_dataset_ids', keyword_dataset_ids)
         print('lsoa_dataset_ids', geog_dataset_ids)
 
-        intersect_ids = keyword_dataset_ids.intersection(geog_dataset_ids)
-        # intersect_ids = keyword_dataset_ids
-
-
+        # intersect_ids = keyword_dataset_ids.intersection(geog_dataset_ids)
+        intersect_ids = keyword_dataset_ids
         print('intersect_ids (keyword+lsoa)', intersect_ids)
 
         matching_datasets = []
@@ -233,12 +232,15 @@ class StatsWalesOData():
             #  u'Year_Code': u'2014',
             #  u'Year_ItemName_ENG': u'2014'}
 
-            string_data = [
-                {
-                    'title': 'Category',
-                    'value': data_value['Indicator_Code']
-                }
-            ]
+            string_data = []
+            if data_value.get('Indicator_Code', None):
+
+                string_data.append(
+                    {
+                        'title': 'Category',
+                        'value': data_value.get('Indicator_Code', None)
+                    }
+                )
             for option in options:
                 string_data.append(
                     {
@@ -247,15 +249,27 @@ class StatsWalesOData():
                     }
                 )
 
+            name = data_value.get('Indicator_ItemName_ENG', None)
+            if name is None:
+                name = data_value['Component_ItemName_ENG']
+
+            data_title = data_value.get('Indicator_ItemName_ENG', None)
+            if data_title is None:
+                data_title = data_value['Measure_ItemName_ENG']
+
+            data = data_value.get('Data', None)
+            if data is None:
+                data = data_value['RoundedData']
+
             data_array = [
                 {
-                    "name": data_value['Indicator_ItemName_ENG'],
-                    "value": data_value['Data'],
+                    "name": name,
+                    "value": data,
                     "geography_id": data_value['Area_Code'],
                     "geography_code": data_value['Area_Code'],
                     "data_status": "A",
                     "geography": data_value['Area_ItemName_ENG'],
-                    "data_title": data_value['Indicator_ItemName_ENG'],
+                    "data_title": data_title,
                     "string_data": string_data
                 }
             ]

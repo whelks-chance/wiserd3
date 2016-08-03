@@ -326,6 +326,9 @@ try:
 except ImportError:
     pass
 
+# Here be dragons.
+# Hard coded dodgy translations of words
+# based on the occurrence in a filename.
 try:
     uid_path = os.path.join(BASE_DIR, './uids')
     if os.path.exists(uid_path):
@@ -349,8 +352,19 @@ try:
 
                     sorted_items = [ordered_items[k] for k in sorted(ordered_items)]
                     sorted_items.extend(unordered)
+
+                    en_name = uid_file.replace('.py', '')
+                    cy_name = en_name
+
+                    if 'regions' in en_name.lower():
+                        cy_name = 'Rhanbarth'
+
+                    if 'constituencies' in en_name.lower():
+                        cy_name = 'Etholaeth'
+
                     values = {
-                        'description': uid_file.replace('.py', ''),
+                        'description': en_name,
+                        'description_cy': cy_name,
                         'item_list': sorted_items
                     }
                     # print pprint.pformat(values)

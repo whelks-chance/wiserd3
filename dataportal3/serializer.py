@@ -147,6 +147,9 @@ class FeatureStoreSerializer(serializers.ModelSerializer):
 
 
 class NomisSearchSerializer(serializers.ModelSerializer):
+    search_type = serializers.SlugRelatedField(read_only=True, slug_field='name')
+    datetime = serializers.DateTimeField('%d/%b/%y %H:%M:%S %z')
+
     class Meta:
         model = NomisSearch
 

@@ -240,7 +240,7 @@
         function get_data_row_html(field, display_name, value, type) {
             if (type == undefined) {
 
-                if (value.constructor === Array) {
+                if (value != null && value.constructor === Array) {
                     var break_value = '';
                     for (var val in value) {
                         break_value += '\n' + value[val];

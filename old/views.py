@@ -12,6 +12,7 @@ from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 import requests
 from dataportal3 import models
+from dataportal3.utils.generic.generic_dataportal import raise_deprecation
 from dataportal3.utils.userAdmin import get_anon_user, survey_visible_to_user, get_request_user
 from old import survey_models as old_models
 from django.apps import apps
@@ -216,13 +217,14 @@ def has_numbers(input_string):
 
 
 @csrf_exempt
+@raise_deprecation(suggested_alternative="DRF DcInfo API endpoint")
 def survey_dc_data(request, wiserd_id):
     wiserd_id = wiserd_id.strip()
 
     # model_field_names = models.DcInfo._meta.get_all_field_names()
     # print model_field_names
     #
-    # model_field_types = models.DcInfo._meta.get_fields()
+    model_field_types = models.DcInfo._meta.get_fields()
     # for mft in model_field_types:
     #     print type(mft)
     #     print isinstance(mft, ManyToManyField)

@@ -189,11 +189,11 @@ class StatsWalesOData():
         data_url = self.get_data_url(dataset_id, options)
         return self.get_data_from_url(data_url)
 
-    def get_data_dict(self, dataset_id, options):
+    def get_data_dict(self, dataset_id, options, constants):
         data_list = self.get_data(dataset_id, options)
-        return self.odata_to_dict(data_list, options)
+        return self.odata_to_dict(data_list, options, constants)
 
-    def odata_to_dict(self, all_data_list, options):
+    def odata_to_dict(self, all_data_list, options, constants):
         all_data_dict = {}
         # area_codes = []
         for data_value in all_data_list:
@@ -261,8 +261,7 @@ class StatsWalesOData():
             if data is None:
                 data = data_value['RoundedData']
 
-            data_array = [
-                {
+            data_dict = {
                     "name": name,
                     "value": data,
                     "geography_id": data_value['Area_Code'],
@@ -272,6 +271,14 @@ class StatsWalesOData():
                     "data_title": data_title,
                     "string_data": string_data
                 }
+
+            if constants:
+                for key, value in constants.items():
+                    data_dict[key] = value
+
+            # why is this in a one item array?
+            data_array = [
+                data_dict
             ]
             all_data_dict[data_value['Area_Code']] = data_array
         return all_data_dict

@@ -277,3 +277,5 @@ $.ui.dialog.prototype.open = function () {
     }
 };
 //end open
+
+$.fn.dataTable.ext.errMode = 'throw';

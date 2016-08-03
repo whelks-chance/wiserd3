@@ -7,7 +7,7 @@ from rest_framework_jwt.views import refresh_jwt_token, obtain_jwt_token
 __author__ = 'ubuntu'
 
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 router.register(r'UserRole', UserRoleViewSet, base_name='UserRole')
 router.register(r'UserProfile', UserProfileViewSet, base_name='UserProfile')
 router.register(r'UserPreferences', UserPreferencesViewSet, base_name='UserPreferences')
@@ -47,7 +47,7 @@ router.register(r'UserGroup', UserGroupViewSet, base_name='UserGroup')
 router.register(r'UserGroupSurveyCollection', UserGroupSurveyCollectionViewSet, base_name='UserGroupSurveyCollection')
 
 urlpatterns = [
-    url(r'^', include(router.urls, namespace='metadata')),
+    url(r'^metadata/', include(router.urls, namespace='metadata')),
     url(r'^refresh-api-token-auth/', refresh_jwt_token),
     url(r'^obtain-api-token-auth/', obtain_jwt_token),
     url(r'^docs/', include('rest_framework_swagger.urls'))

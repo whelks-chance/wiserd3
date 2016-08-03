@@ -131,6 +131,7 @@ class FeatureStoreViewSet(viewsets.ModelViewSet):
 class NomisSearchViewSet(viewsets.ModelViewSet):
     queryset = NomisSearch.objects.all()
     serializer_class = NomisSearchSerializer
+    filter_fields = ('user', 'search_type', 'uuid')
 
 
 # class Aberystwyth_Locality_DissolvedViewSet(viewsets.ModelViewSet):

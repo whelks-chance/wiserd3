@@ -1096,7 +1096,8 @@ def remote_data_topojson(request):
 
         all_data = swod.get_data_dict(
             str(dataset_id).lower(),
-            filter_options
+            filter_options,
+            {'SEARCH_UUID': nomis_search.uuid}
         )
 
         rd = RemoteData()
@@ -1954,7 +1955,8 @@ def get_topojson_for_uuid(request, search_uuid):
                 # 'Area_Code': area_code,
                 ('Year_Code', swod.equals_conditional, 2015),
                 ('AgeGroup_Code', swod.equals_conditional , 'AllAges')
-            ]
+            ],
+            {'search_uuid': search_uuid}
         )
 
         rd = RemoteData()

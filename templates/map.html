@@ -65,7 +65,6 @@
 
     <script type="text/javascript" src="{% static 'html2canvas.js' %}"></script>
 
-    <script type="text/javascript" src="{% static 'dataportal/dataportal.js' %}"></script>
     <script type="text/javascript" src="{% static 'dataportal/local_data_layers.js' %}"></script>
 
     <script type="text/javascript" src="{% static 'leaflet-pip/leaflet-pip.js' %}"></script>
@@ -148,10 +147,10 @@
                     </ul>
                 </li>
             {% else %}
-        description_cy        <li>
-                    <a href="#" data-naw_key_search_uid="{{ naw_key_search.uid }}" class="remote_data_uid">
-                        <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and naw_key_search.description_cy %}{{ naw_key_search.description_cy }}{% else %}{{ naw_key_search.description }}{% endif %}</a>
-                </li>
+                description_cy        <li>
+                <a href="#" data-naw_key_search_uid="{{ naw_key_search.uid }}" class="remote_data_uid">
+                    <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and naw_key_search.description_cy %}{{ naw_key_search.description_cy }}{% else %}{{ naw_key_search.description }}{% endif %}</a>
+            </li>
             {% endif %}
         {% endfor %}
         {#            </ul>#}
@@ -413,7 +412,7 @@
                 height: map_height - header_height - 5
             });
 
-{#            L.CRS.EPSG4326;#}
+            {#            L.CRS.EPSG4326;#}
 
             var map = L.map('map_div', {crs: L.CRS.EPSG3857}).setView([52.4, -3.51], 8);
 
@@ -435,27 +434,27 @@
                         id: 'your.mapbox.project.id',
                         accessToken: 'your.mapbox.public.access.token'
                     });
-{#            openstreetmap.options.crs = L.CRS.EPSG3857;#}
+            {#            openstreetmap.options.crs = L.CRS.EPSG3857;#}
             openstreetmap.addTo(map);
 
 
             L.control.scale().addTo(map);
 
-{#        var lidar = L.tileLayer('http://lt.houseprices.io/t/a/{z}/{x}/{y}.png', {#}
-{#    		continuousWorld: true,#}
-{#    		tileSize: 250#}
-{#    	});#}
-{##}
-{#        var lidar_2m_dsm = L.tileLayer('http://d3rykcmoi4kytu.cloudfront.net/lidar/latest/2m_dsm/{z}/{x}/{y}.png', {#}
-{#    		continuousWorld: true,#}
-{#    		tileSize: 250#}
-{#    	});#}
-{#        lidar_2m_dsm.options.crs = L.CRS.EPSG3857;#}
+            {#        var lidar = L.tileLayer('http://lt.houseprices.io/t/a/{z}/{x}/{y}.png', {#}
+            {#    		continuousWorld: true,#}
+            {#    		tileSize: 250#}
+            {#    	});#}
+            {##}
+            {#        var lidar_2m_dsm = L.tileLayer('http://d3rykcmoi4kytu.cloudfront.net/lidar/latest/2m_dsm/{z}/{x}/{y}.png', {#}
+            {#    		continuousWorld: true,#}
+            {#    		tileSize: 250#}
+            {#    	});#}
+            {#        lidar_2m_dsm.options.crs = L.CRS.EPSG3857;#}
 
-{#        http://d3rykcmoi4kytu.cloudfront.net/lidar/latest/2m_dsm/{z}/{x}/{y}.png#}
+            {#        http://d3rykcmoi4kytu.cloudfront.net/lidar/latest/2m_dsm/{z}/{x}/{y}.png#}
 
-                    var layerControl = L.control.layers({'OpenStreetMap': openstreetmap}, []).addTo(map);
-{#                    var layerControl = L.control.layers([openstreetmap, lidar, lidar_2m_dsm], []).addTo(map);#}
+            var layerControl = L.control.layers({'OpenStreetMap': openstreetmap}, []).addTo(map);
+            {#                    var layerControl = L.control.layers([openstreetmap, lidar, lidar_2m_dsm], []).addTo(map);#}
 
 
             var north = L.control({position: "bottomleft"});
@@ -477,7 +476,8 @@
 
 // method that we will use to update the control based on feature properties passed
             info.update = function (props) {
-            console.log(props);
+                console.log(props);
+                console.log(props);
                 var value = '';
                 if (props) {
                     if (props.hasOwnProperty('response_rate')) {
@@ -566,16 +566,20 @@
                     {#                FIXME this is nuts #}
                     {#                this._div.innerHTML = info_text;#}
 
-                    $('#right-component1').html(info_text)
-                            .append(
-                                    $('<div/>')
-                                            .addClass('btn btn-info')
-                                            .text('Download Dataset')
-                                            .on('click', function(){
-                                                var dl_link = '{% url 'download_dataset_zip' %}' + '?dataset_id=' + props.SEARCH_UUID;
-                                                window.open(dl_link, '_blank');
-                                            })
-                            );
+                    var right_pane = $('#right-component1');
+                    right_pane.html(info_text);
+
+                    if (props.SEARCH_UUID) {
+                        right_pane.append(
+                                $('<div/>')
+                                        .addClass('btn btn-info')
+                                        .text('Download Dataset')
+                                        .on('click', function(){
+                                            var dl_link = '{% url 'download_dataset_zip' %}' + '?dataset_id=' + props.SEARCH_UUID;
+                                            window.open(dl_link, '_blank');
+                                        })
+                        );
+                    }
 
                 }
             };
@@ -846,7 +850,8 @@
             }
 
 
-            function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins, nomis_variable, layer_name_text, csv_url){
+            function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins,
+                                         nomis_variable, layer_name_text, csv_url){
 
                 if (layer_name_counter.hasOwnProperty(layer_name_text)) {
                     var counter = layer_name_counter[layer_name_text];

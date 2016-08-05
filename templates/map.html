@@ -303,6 +303,29 @@
         };
 
         $(document).ready(function () {
+            var hide_right_sidebar_btn = $('#hide_right_sidebar');
+            var show_right_sidebar_btn = $('#show_right_sidebar');
+            show_right_sidebar_btn.hide();
+
+            hide_right_sidebar_btn.click(hide_sidebar);
+
+            show_right_sidebar_btn.click(show_sidebar);
+
+            function show_sidebar() {
+                $('#right_sidebar').show();
+                $('#right_sidebar_col').css({'width': '25%'});
+                $('#map_div_col').css({'width': '75%'});
+                show_right_sidebar_btn.hide();
+                hide_right_sidebar_btn.show();
+            }
+
+            function hide_sidebar() {
+                $('#right_sidebar').hide();
+                $('#right_sidebar_col').css({'width': '4em'});
+                $('#map_div_col').css({'width': 'calc(100% - 4em'});
+                hide_right_sidebar_btn.hide();
+                show_right_sidebar_btn.show();
+            }
 
             $('.nav-ul').each(function(i, obj) {
                 $(this).metisMenu();
@@ -477,7 +500,6 @@
 // method that we will use to update the control based on feature properties passed
             info.update = function (props) {
                 console.log(props);
-                console.log(props);
                 var value = '';
                 if (props) {
                     if (props.hasOwnProperty('response_rate')) {
@@ -495,10 +517,10 @@
                     if (props.DATA_TITLE) {
                         header_title = props.DATA_TITLE;
 
-{#                        info_text += '<h3>' + props.DATA_TITLE + '</h3>';#}
+                        {#                        info_text += '<h3>' + props.DATA_TITLE + '</h3>';#}
                     } else {
                         header_title = '{% trans 'Region Data' %}';
-{#                        info_text += '<h3>{% trans 'Region Data' %}</h3>';#}
+                        {#                        info_text += '<h3>{% trans 'Region Data' %}</h3>';#}
                     }
 
                     {% if use_welsh %}
@@ -1158,6 +1180,7 @@
                         {#                        info.update();#}
                     },
                     click: function(e) {
+                        show_sidebar();
                         layer.bringToFront();
 
                         info.update(layer.feature.properties);
@@ -2682,6 +2705,7 @@
                             });
 
 
+
                         }},{
                         text: '{% trans 'Cancel' %}',
                         click: function() {
@@ -2698,12 +2722,14 @@
     </script>
 
     <div class="row" style="height: 100%; margin-right: 0">
-        <div class="col-lg-9 col-sm-12" style="padding-right: 0">
+        <div id="map_div_col" class="col-lg-9 col-sm-12" style="padding-right: 0">
             <div id="map_div"></div>
         </div>
 
         {% if use_template %}
-            <div class="col-lg-3 col-sm-12" style="padding-right: 0">
+            <div id="right_sidebar_col" class="col-lg-3 col-sm-12" style="padding-right: 0">
+
+                <div class="btn btn-default" id="show_right_sidebar"><i class="fa f-2x fa-angle-double-left"></i></div>
 
                 <div class="right_sidebar" id="right_sidebar"
                      style="
@@ -2716,17 +2742,14 @@
                              overflow-y: scroll;
                              overflow-x: hidden">
 
-                    {#                <div class="row">#}
-                    {#                    <div class="col-lg-12">#}
+                    <div>
+                        <div class="btn btn-default" id="hide_right_sidebar"><i class="fa f-2x fa-angle-double-right"></i></div>
+                    </div>
+
                     <div class="split-pane-component" id="right-component1"
                          style="margin: 0.5em;
                                  {#                     word-break: break-all;#}
                                  word-wrap: normal; word-break: normal"></div>
-                    {#                    </div>#}
-                    {#                    <div class="col-lg-12">#}
-                    {#                        <div class="split-pane-component" id="right-component2"></div>#}
-                    {#                    </div>#}
-                    {#                </div>#}
                 </div>
             </div>
         {% endif %}

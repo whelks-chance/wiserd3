@@ -370,6 +370,9 @@ class RemoteData():
                                 if 'data_title' in remote_data_object:
                                     geom['properties']['DATA_TITLE'] = remote_data_object['data_title']
 
+                                if 'data_title_alt1' in remote_data_object:
+                                    geom['properties']['DATA_TITLE_ALT1'] = remote_data_object['data_title_alt1']
+
                                 if 'search_uuid' in remote_data_object:
                                     geom['properties']['SEARCH_UUID'] = remote_data_object['search_uuid']
 

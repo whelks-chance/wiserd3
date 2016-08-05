@@ -489,11 +489,26 @@
                 }
                 var info_text = '<div style="min-height: 10%">';
                 if (props) {
+
+                    var header_title = '';
+
                     if (props.DATA_TITLE) {
-                        info_text += '<h3>' + props.DATA_TITLE + '</h3>';
+                        header_title = props.DATA_TITLE;
+
+{#                        info_text += '<h3>' + props.DATA_TITLE + '</h3>';#}
                     } else {
-                        info_text += '<h3>{% trans 'Region Data' %}</h3>';
+                        header_title = '{% trans 'Region Data' %}';
+{#                        info_text += '<h3>{% trans 'Region Data' %}</h3>';#}
                     }
+
+                    {% if use_welsh %}
+                        if (props.DATA_TITLE_ALT1) {
+                            header_title = props.DATA_TITLE_ALT1;
+                        }
+                    {% endif %}
+
+                    info_text += '<h3>' + header_title + '</h3>';
+
                     if (props.NAME) {
                         info_text += '<h4>' + props.NAME + '</h4>';
                     }
@@ -516,7 +531,7 @@
                         }
                     }
                     {#                    info_text += '<h4>' + props.AREA_NAME + '</h4>';#}
-                    info_text += '<p><b>VALUE : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</p>';
+                    info_text += '<p><b>{% trans 'VALUE' %} : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</p>';
 
                     var groups = {};
 

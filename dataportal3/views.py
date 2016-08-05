@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import base64
 import zipfile
 from datetime import datetime
@@ -2017,6 +2019,9 @@ def get_topojson_for_uuid(request, search_uuid):
         if user_prefs.preferred_language == welsh_language_model:
             use_welsh = True
 
+            if survey_spatial_data.full_name_cy:
+                layer_data['name'] = survey_spatial_data.full_name_cy
+
         # This is smarter than doing it in the loop, as grouping for an attr won't change within a layer
         attr_groupings = {}
         for attr in survey_spatial_data_strings:
@@ -2090,13 +2095,13 @@ def get_topojson_for_uuid(request, search_uuid):
 
             spatial_survey_fields_cy =[
                 {
-                    'field': 'category_cy', 'name': 'Category CY'
+                    'field': 'category_cy', 'name': 'Categorïau'
                 },
                 {
-                    'field': 'full_name_cy', 'name': 'Full Name CY'
+                    'field': 'full_name_cy', 'name': 'Enw'
                 },
                 {
-                    'field': 'notes_cy', 'name': 'Notes CY'
+                    'field': 'notes_cy', 'name': 'Nodiadau'
                 }
             ]
 
@@ -2133,6 +2138,9 @@ def get_topojson_for_uuid(request, search_uuid):
                 "data_title": data_name,
                 "search_uuid": found_search_model.uuid
             }
+
+            if survey_spatial_data.full_name_cy:
+                region_dict['data_title_alt1'] = survey_spatial_data.full_name_cy
 
             # FIXME - no idea why dict into array into dict
             regions = [region_dict]
@@ -2182,6 +2190,7 @@ def get_data_for_search_uuid(search_uuid):
                 'variable': found_search.search_attributes[code]
             })
 
+        # Check for statswales
         rd = RemoteData()
         region_id, topojson_file = rd.get_dataset_geodata(geog, high=False)
         dataset_url, dataset_file = rd.get_dataset_url(dataset_id, region_id, '', codelist)
@@ -2330,8 +2339,8 @@ def download_dataset_zip(request):
         try:
             screenshot_file = do_screenshot(dataset_id)
             zf.write(screenshot_file)
-        except:
-            pass
+        except Exception as e:
+            print e
 
         zf.close()
 
@@ -2372,9 +2381,10 @@ def do_screenshot(search_uuid):
     except Exception as e32564:
         print type(e32564), e32564
         raise
+    finally:
+        browser.quit()
+        display.stop()
 
-    browser.quit()
-    display.stop()
     return filename
 
 

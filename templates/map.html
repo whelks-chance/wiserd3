@@ -500,6 +500,11 @@
 // method that we will use to update the control based on feature properties passed
             info.update = function (props) {
                 console.log(props);
+                if (props == null) {
+                    console.log('empty props');
+
+                    $('#right-component1').html('');
+                }
                 var value = '';
                 if (props) {
                     if (props.hasOwnProperty('response_rate')) {
@@ -889,6 +894,8 @@
 
             function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins,
                                          nomis_variable, layer_name_text, csv_url){
+
+                info.update();
 
                 if (layer_name_counter.hasOwnProperty(layer_name_text)) {
                     var counter = layer_name_counter[layer_name_text];
@@ -1293,7 +1300,10 @@
                 $(accordionDiv).append(accordionInner);
             }
 
-            var legend_two = L.control({id: 'legend_control', position: 'bottomright'});
+            var legend_two = L.control({
+                id: 'legend_control',
+                position: 'bottomright'
+            });
             legend_two.onAdd = function (map) {
                 var div = L.DomUtil.create('div', 'legend info');
 
@@ -1388,6 +1398,7 @@
             var featureGroup = L.featureGroup().addTo(map);
 
             map.addControl( new L.Control.Search({
+                textPlaceholder: '{% trans 'Search' %}',
                 url: 'http://nominatim.openstreetmap.org/search?format=json&q={s}',
                 jsonpParam: 'json_callback',
                 propertyName: 'display_name',

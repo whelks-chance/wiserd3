@@ -165,6 +165,20 @@
     color: rebeccapurple;
 }
 
+.panel-naw {
+    border-color: rgb(0, 30, 98);
+}
+
+.panel-naw .panel-heading {
+    color: white;
+    border-color: rgb(0, 30, 98);
+    background-color: rgb(0, 30, 98);
+}
+.panel-naw .panel-footer {
+    color: rgb(0, 30, 98);
+}
+
+
 .leaflet-control-layers-toggle {
     height: 4em;
     width: 4em;

@@ -81,7 +81,7 @@ def user_settings(request):
 
 def search_survey_question_gui(request):
     search_terms = request.GET.get('search_terms', '')
-    ors = search_terms.split(',')
+    # ors = search_terms.split(',')
     return render(request, 'search.html',
                   {
                       'preferences': get_user_preferences(request),
@@ -94,12 +94,14 @@ def search_survey_question_gui(request):
 def search_survey_question_api(request):
     search_terms = request.GET.get('search_terms', '')
 
-    user_profile = get_request_user(request)
-    search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
-                                                                       query=search_terms,
-                                                                       readable_name=search_terms,
-                                                                       type='text')
-    search.save()
+    if search_terms:
+        # Don't save a blank search
+        user_profile = get_request_user(request)
+        search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
+                                                                           query=search_terms,
+                                                                           readable_name=search_terms,
+                                                                           type='text')
+        search.save()
     api_data = text_search(search_terms)
     api_data['url'] = request.get_full_path()
 
@@ -114,15 +116,18 @@ def search_survey_api(request):
     search_terms = request.GET.get('search_terms', '')
     user_profile = get_request_user(request)
 
-    search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
-                                                                       query=search_terms,
-                                                                       readable_name=search_terms,
-                                                                       type='text')
-    search.save()
+    if search_terms:
+        search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
+                                                                           query=search_terms,
+                                                                           readable_name=search_terms,
+                                                                           type='text')
+        search.save()
 
-    survey_models = models.Survey.objects.filter(
-        Q(survey_title__icontains=search_terms) | Q(short_title__icontains=search_terms)
-    ).distinct("identifier").values()
+        survey_models = models.Survey.objects.filter(
+            Q(survey_title__icontains=search_terms) | Q(short_title__icontains=search_terms)
+        ).distinct("identifier").values()
+    else:
+        survey_models = models.Survey.objects.none()
 
     data = []
     for survey_model in survey_models:
@@ -1293,14 +1298,16 @@ def search_qual_api(request):
 def qual_search(search_terms):
 
     fields = ['identifier']
-    qual_models = models.QualTranscriptData.objects.filter(
-        dc_info__qualcalais__value__icontains=search_terms
-    ).distinct('identifier').prefetch_related('dc_info').values('identifier', 'pages', 'dc_info__title', 'dc_info__date', 'dc_info__tier', 'dc_info__description')
+    if search_terms:
+        qual_models = models.QualTranscriptData.objects.filter(
+            dc_info__qualcalais__value__icontains=search_terms
+        ).distinct('identifier').prefetch_related('dc_info').values('identifier', 'pages', 'dc_info__title', 'dc_info__date', 'dc_info__tier', 'dc_info__description')
+    else:
+        qual_models = models.QualTranscriptData.objects.none()
 
     data = []
     for qual_model in qual_models:
         data.append(qual_model)
-
 
     api_data = {
         'fields': fields,
@@ -2190,37 +2197,66 @@ def get_data_for_search_uuid(search_uuid):
                 'variable': found_search.search_attributes[code]
             })
 
-        # Check for statswales
-        rd = RemoteData()
-        region_id, topojson_file = rd.get_dataset_geodata(geog, high=False)
-        dataset_url, dataset_file = rd.get_dataset_url(dataset_id, region_id, '', codelist)
+        if found_search.search_type == 'StatsWales':
+            swod = StatsWalesOData()
+            swod_const_options = [
+                    # 'Area_Code': area_code,
+                    ('Year_Code', swod.equals_conditional, 2015),
+                    ('AgeGroup_Code', swod.equals_conditional, 'AllAges')
+                ]
 
-        dataset_url = dataset_url.replace('.json', '.csv')
+            all_data = swod.get_data_dict(
+                dataset_id,
+                swod_const_options,
+                {'search_uuid': search_uuid}
+            )
 
-        dataset_data = requests.get(dataset_url).text
-        dataset_data_list = dataset_data.split('\n')
+            rd = RemoteData()
+            region_id, topojson_file = rd.get_dataset_geodata(geog, high=False)
 
-        dataset_data_header = dataset_data_list[0]
-        dataset_data_header_items = dataset_data_header.split(',')
-        # print dataset_data_header_items
+            a = rd.update_topojson(topojson_file, all_data, measure_is_percentage=False)
+            dataset_url = swod.get_data_url(
+                dataset_id,
+                swod_const_options
+            )
 
-        dataset_data_header_items_clean = []
-        for header_item in dataset_data_header_items:
-            dataset_data_header_items_clean.append(header_item.rstrip('"').lstrip('"'))
-        # print dataset_data_header_items_clean
+            # region_id = ''
+            # topojson_file = ''
+            # dataset_url = ''
+            dataset_file = 'swod_{}_{}.dat'.format(dataset_id, search_uuid)
 
-        for data_row_index, data_row in enumerate(dataset_data_list[1:]):
-            # print data_row
-            # print data_row_index
-            data_row_items = data_row.split(',')
+        if found_search.search_type == 'Nomis':
 
-            if len(data_row_items) == len(dataset_data_header_items_clean):
-                dataset_data_dict = {}
-                for header_index, header_item in enumerate(dataset_data_header_items_clean):
-                    # print header_index, len(data_row_items), header_item, data_row_items[header_index]
-                    dataset_data_dict[header_item] = data_row_items[header_index].rstrip('"').lstrip('"')
-                    # dataset_data_dict.append(data_row_items[header_index].rstrip('"').lstrip('"'))
-                dataset_data_list_full.append(dataset_data_dict)
+            rd = RemoteData()
+            region_id, topojson_file = rd.get_dataset_geodata(geog, high=False)
+            dataset_url, dataset_file = rd.get_dataset_url(dataset_id, region_id, '', codelist)
+
+            dataset_url = dataset_url.replace('.json', '.csv')
+
+            dataset_data = requests.get(dataset_url).text
+            dataset_data_list = dataset_data.split('\n')
+
+            dataset_data_header = dataset_data_list[0]
+            dataset_data_header_items = dataset_data_header.split(',')
+            # print dataset_data_header_items
+
+            dataset_data_header_items_clean = []
+            for header_item in dataset_data_header_items:
+                dataset_data_header_items_clean.append(header_item.rstrip('"').lstrip('"'))
+            # print dataset_data_header_items_clean
+
+            for data_row_index, data_row in enumerate(dataset_data_list[1:]):
+                # print data_row
+                # print data_row_index
+                data_row_items = data_row.split(',')
+
+                if len(data_row_items) == len(dataset_data_header_items_clean):
+                    dataset_data_dict = {}
+                    for header_index, header_item in enumerate(dataset_data_header_items_clean):
+                        # print header_index, len(data_row_items), header_item, data_row_items[header_index]
+                        dataset_data_dict[header_item] = data_row_items[header_index].rstrip('"').lstrip('"')
+                        # dataset_data_dict.append(data_row_items[header_index].rstrip('"').lstrip('"'))
+                    dataset_data_list_full.append(dataset_data_dict)
     except Exception as e8943279:
         error = str(e8943279)
     return dataset_data_list_full

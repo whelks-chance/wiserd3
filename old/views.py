@@ -377,8 +377,22 @@ def text_search(search_terms):
     search_terms = search_terms.replace(' ', ' & ')
     search_terms = search_terms.replace('+', ' & ')
 
-    # questions_models = old_models.Questions.objects.search(search_terms, raw=True).using('survey').values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
-    questions_models = models.Question.objects.search(search_terms, raw=True).prefetch_related('type').prefetch_related('survey').distinct("qid").values("survey__identifier", "survey__collectionstartdate", "survey__survey_title", "qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    if len(search_terms):
+
+    # questions_models = old_models.Questions.objects.search(search_terms, raw=True).using('survey')
+    # .values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags",
+    # "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+        questions_models = models.Question.objects.search(
+            search_terms, raw=True
+        ).prefetch_related('type')\
+            .prefetch_related('survey').distinct("qid")\
+            .values("survey__identifier", "survey__collectionstartdate",
+                    "survey__survey_title", "qid", "literal_question_text",
+                    "questionnumber", "thematic_groups", "thematic_tags", "link_from",
+                    "subof", "type__q_type_text", "variableid", "notes", "user_id",
+                    "created", "updated", "qtext_index")
+    else:
+        questions_models = models.Question.objects.none()
 
     # print questions_models.query
 

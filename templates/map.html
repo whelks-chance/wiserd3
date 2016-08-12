@@ -157,8 +157,10 @@
         {#        </li>#}
     {% endif %}
     {% if not naw %}
-        <li>
-            <a href="#"><i class="fa fa-sitemap fa-fw"></i> {% trans 'Map layers' %}<span class="fa arrow"></span></a>
+        <li id="map_layers_menu_li">
+            <a href="#" id="map_layers_menu_link">
+                <i class="fa fa-sitemap fa-fw"></i> {% trans 'Map layers' %}<span class="fa arrow"></span>
+            </a>
             <ul class="nav nav-ul nav-second-level">
                 <li>
                     <a id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> {% trans 'Remote Data' %}</a>
@@ -1315,7 +1317,7 @@
                         .attr("id", "legend_accordion")
                         .addClass("panel-group");
 
-                $(div).append(accordionDiv)
+                $(div).attr("id", "legend").append(accordionDiv)
                         .css({'max-height': map_div.height() * 0.8, 'overflow-y': 'auto'});
                 {#                        .draggable().resizable();#}
 
@@ -1783,6 +1785,37 @@
                         ajax_finished();
                     }
                 });
+            });
+
+            $( "#welcome_form" ).dialog({
+                autoOpen: false,
+                height: map_div.height() * 0.8,
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: map_div
+                },
+                width: map_div.width() / 2,
+                modal: true,
+                buttons: [
+                    {
+                        id: 'cancel',
+                        text: '{% trans 'Cancel' %}',
+                        click: function(){
+                            $( this ).dialog( "close" );
+
+                        }
+                    },
+                    {
+                        id: 'learn_more',
+                        text: '{% trans 'Learn More' %}',
+                        click: function(){
+                            $( this ).dialog( "close" );
+
+                            do_intro();
+                        }
+                    }
+                ]
             });
 
             $( "#search-remote-form" ).dialog({
@@ -2728,12 +2761,89 @@
                 }
             });
 
+            $('#help_intro').click(function(){
+                $( "#welcome_form" ).dialog('open');
+            });
+
+            function do_intro() {
+                bootstro.start('', {
+                    onStep: function(obj) {
+                        {#  alert(' --- ' + obj.idx + ' --- ' + obj.direction);#}
+
+                        if (obj.idx == 3) {
+                            if(!$('#map_layers_menu_li').hasClass('active')) {
+                                $('#map_layers_menu_link').click();
+                            }
+                        }
+                    },
+                    items: [
+                        {
+                            selector: '#lang_toggle_split',
+                            title: 'Change language',
+                            content: 'These buttons can be used to toggle the language the site displays in.' +
+                            '<br><br>' +
+                            'If you sign-up and login, this preference will be stored for future visits.',
+                            placement: 'bottom',
+                            step: 0
+                        }
+                        ,{
+                            selector: '#map_div_col',
+                            title: 'The Map',
+                            content: 'The Map is the primary focus here.<br><br>' +
+                            'Layers of data are displayed, and most can be selected to show further detail.',
+                            placement: 'right',
+                            step: 1
+                        }
+                        ,{
+                            selector: '#map_div',
+                            title: 'Legend',
+                            content: 'Once data layers have been added, the legend will be displayed here.<br><br>' +
+                            'Colours and the number of categories are selected when the layer is first added.',
+                            placement: 'right',
+                            step: 2
+                        }
+                        ,{
+                            selector: '#side-menu',
+                            title: 'Side menu',
+                            content: '<p>This is where new map layers are added.</p>' +
+                            '<h4>MapMyData</h4><p>Upload an Excel file with geographies and values for mapping</p>' +
+                            '<h4>RemoteData</h4><p>Import data from Nomis and/or StatsWales</p>' +
+                            '<h4>Welsh Government Data</h4><p>WMS layers made available by LLE, Welsh Government</p>',
+                            placement: 'right',
+                            step: 3
+                        }
+                        ,{
+                            selector: '#right_sidebar_col',
+                            title: 'Info Pane',
+                            content: 'When regions on the map are selected, ' +
+                            'the corresponding data for that area are shown here',
+                            placement: 'left',
+                            step: 4
+                        }
+
+                    ]
+                });
+
+
+            }
+
+            if ($.cookie("WDP_returning_user")) {
+                var view = parseInt($.cookie("WDP_returning_user"));
+                view += 1;
+                $.cookie("WDP_returning_user", view, {expires: 365, path: '/'});
+                $('#welcome_form').dialog('open');
+
+            } else {
+                $('#welcome_form').dialog('open');
+                $.cookie("WDP_returning_user", 0, {expires: 365, path: '/'});
+            }
+
         });
 
     </script>
 
     <div class="row" style="height: 100%; margin-right: 0">
-        <div id="map_div_col" class="col-lg-9 col-sm-12" style="padding-right: 0">
+        <div id="map_div_col" class="col-lg-9 col-sm-12 "  style="padding-right: 0">
             <div id="map_div"></div>
         </div>
 
@@ -2860,6 +2970,13 @@
         <div>{% trans 'Geography' %}</div>
         <div id="topojson_geography_radio" class="controls input-block-level tab_data_input">
 
+        </div>
+    </div>
+
+    <div id="welcome_form" title="{% trans 'Welcome' %}">
+        <div class="panel fill_properly">
+            <p>{% trans 'Welcome to the WISERD DataPortal.<br><br>For more information, follow this tutorial.' %}</p>
+            <p>{% trans 'Links to help and support links and PDF downloads here.' %}</p>
         </div>
     </div>
 

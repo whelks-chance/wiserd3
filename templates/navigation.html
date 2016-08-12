@@ -5,7 +5,8 @@
 {% block extra_head %}
     <script>
         $(document).ready(function () {
-{#            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
+            {#            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
+
         });
     </script>
 
@@ -28,12 +29,22 @@
                 <a class="navbar-brand" href="{% url 'dashboard' %}">
                     <p><img style="margin: 0.5em; max-height: 3em; margin-top: -15px; margin-left: -15px"
                             src="{% static 'dataportal/media/dataportowl.jpg' %}">
-                    WISERD DataPortal {% include 'version_number.html' %}</p></a>
+                        WISERD DataPortal
+                    <i id="version_tag">{% include 'version_number.html' %}</i>
+                    </p></a>
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
                 {% include 'lang_toggle.html' %}
+            <li> | </li>
+
+                <li>
+<a href="#" id="help_intro">
+        <i class="">?</i>
+    </a>
+                </li>
+            <li> | </li>
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">

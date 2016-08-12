@@ -114,8 +114,13 @@
 
 
 
-                            {% if regex_match_and_valid %}
+                            {% if regex_match_and_valid or request.user.is_staff %}
                                 <div class="control-group">
+                                {% if request.user.is_staff %}
+                                <p>
+                                    Showing option as you appear to be staff
+                                </p>
+                                    {% endif %}
                                     <p>
                                         It looks like you have a valid National Assembly for Wales email address, would you like to enable NAW features for this account?
                                     </p>

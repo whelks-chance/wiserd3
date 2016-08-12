@@ -93,6 +93,11 @@
                     </div>
                 </div>
 
+                {% if request.user.is_staff %}
+                                <a href="{% url 'welcome' %}">Welcome</a>
+                            {% endif %}
+
+
                 <a href="{% url 'welcome' %}"><div class="btn btn-info pull-right">{% trans 'Edit details' %}</div></a>
             </div>
         </div>

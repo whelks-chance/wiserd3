@@ -248,3 +248,13 @@
     border: darkgreen 2px double !important;
     /*color: darkblue !important;*/
 }
+
+.fill_properly {
+    bottom:0;
+  top:0;
+  left:0;
+  right:0;
+    position: absolute;
+    margin: 1em;
+    padding: 0.5em;
+}

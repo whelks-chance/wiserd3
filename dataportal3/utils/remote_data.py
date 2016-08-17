@@ -376,6 +376,12 @@ class RemoteData():
                                 if 'search_uuid' in remote_data_object:
                                     geom['properties']['SEARCH_UUID'] = remote_data_object['search_uuid']
 
+                                if 'data_prefix' in remote_data_object:
+                                    geom['properties']['DATA_PREFIX'] = remote_data_object['data_prefix']
+
+                                if 'data_suffix' in remote_data_object:
+                                    geom['properties']['DATA_SUFFIX'] = remote_data_object['data_suffix']
+
                                 found += 1
 
                         # Separate, because this needs tidying in future

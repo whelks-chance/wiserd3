@@ -141,8 +141,11 @@ $(document).ready(function(){
                 $.each(e, function(j, attr){
                     $(e.selector).attr('data-bootstro-' + j, attr);
                 });
-                if ($(e.selector).is(":visible"))
+                
+                // Allow it in the list even if not currently visible
+                // if ($(e.selector).is(":visible"))
                     selectorArr.push(e.selector);
+
             });
             return selectorArr.join(",");
         }

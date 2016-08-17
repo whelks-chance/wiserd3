@@ -102,6 +102,14 @@
         // Copyright (c) 2013 Ryan Clark
     </script>
 
+    <style>
+            .navbar
+            {
+                z-index: 2000
+            }
+
+    </style>
+
 {% endblock %}
 
 {% block nav_extras %}
@@ -941,17 +949,6 @@
                     opacity = 0;
                 }
 
-                {#                if (!data.hasOwnProperty('objects')) {#}
-                {#                    var untouched = jQuery.extend(true, {}, data);#}
-                {#                    console.log(untouched);#}
-                {#                    var features = data['features'];#}
-                {#                    delete data['features'];#}
-                {#                    data['objects'] = {#}
-                {#                        'name': features#}
-                {#                    };#}
-
-                {#                console.log(data);#}
-
                 var data_objects = data['objects'];
                 var feature_data = [];
                 var feature_string_data = [];
@@ -1245,6 +1242,7 @@
                         } else {
                             legend_row += (is_percentage ? '%' : '');
                         }
+                        legend_row += unique_feature_string_data;
                         legend_row += '</p>';
                         labels.push(legend_row);
                     }
@@ -2885,7 +2883,7 @@
     {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
     {#        </div>#}
     {#    </div>#}
-    <div id="chloropleth_option_form" title="{% trans 'Chloropleth options' %}">
+    <div id="chloropleth_option_form" title="{% trans 'Choropleth options' %}">
         <table>
             <tr>
                 <td>

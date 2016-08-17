@@ -3,6 +3,8 @@
 {% load i18n %}
 
 {% block content %}
+    <script type="text/javascript" src="{% static 'dataportal/page_js/survey_detail.js' %}"></script>
+
     <script>
 
         var survey_description = {
@@ -324,21 +326,24 @@
                 <div class="panel-body">
                     <!-- Nav tabs -->
                     <ul class="nav nav-pills">
-                        <li><a href="#survey_dc_tab" data-toggle="tab">{% trans 'Dublin Core' %}</a>
+                        <li class="active">
+                            <a id="survey_dc_tab_li" href="#survey_dc_tab" data-toggle="tab">{% trans 'Dublin Core' %}</a>
                         </li>
-                        <li class="active"><a href="#survey_tab" data-toggle="tab">{% trans 'Survey' %}</a>
+                        <li>
+                            <a id="survey_tab_li" href="#survey_tab" data-toggle="tab">{% trans 'Survey' %}</a>
                         </li>
-                        <li><a href="#survey_questions" data-toggle="tab">{% trans 'Questions' %}</a>
+                        <li>
+                            <a id="survey_questions_li" href="#survey_questions" data-toggle="tab">{% trans 'Questions' %}</a>
                         </li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div class="tab-pane fade" id="survey_dc_tab">
+                        <div class="tab-pane fade in active" id="survey_dc_tab">
                             <h4>{% trans 'Dublin Core' %}</h4>
                             <div id="dc_info"></div>
                         </div>
-                        <div class="tab-pane fade in active" id="survey_tab">
+                        <div class="tab-pane fade" id="survey_tab">
                             <h4>{% trans 'Survey' %}</h4>
                             <div id="survey_info"></div>
                         </div>

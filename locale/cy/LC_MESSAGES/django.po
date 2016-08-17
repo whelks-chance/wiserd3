@@ -1080,7 +1080,7 @@ msgid "Save"
 msgstr "Cadw"
 
 #: templates/map.html:2778
-msgid "Chloropleth options"
+msgid "Choropleth options"
 msgstr "Dewisiadau choropleth"
 
 #: templates/map.html:2782
@@ -1670,7 +1670,7 @@ msgstr "Cyflymder/Ansawdd Chloropleth"
 
 #: templates/settings.html:88
 msgid ""
-"Using high resolution regions, generating a chloropleth can be very "
+"Using high resolution regions, generating a choropleth can be very "
 "strenuous for your browser and also requires larger downloads."
 msgstr ""
 "Wrth ddefnyddio rhanbarthau lliwiau cryf, gall cynhyrchu chloropeth roi "

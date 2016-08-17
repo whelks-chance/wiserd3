@@ -3,6 +3,7 @@
 {% load i18n %}
 
 {% block extra_head %}
+    <script type="text/javascript" src="{% static 'dataportal/page_js/search.js' %}"></script>
 
     <script>
 
@@ -118,7 +119,7 @@
     <div class="row">
     <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
     <form action="{% url 'search_survey_question_gui' %}" method="get" role="search">
-                                <div class="input-group custom-search-form">
+                                <div id="search_box" class="input-group custom-search-form">
                                     <input value="{{ search_terms }}" type="text" class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit">
@@ -138,13 +139,13 @@
 {#                <p style="padding: 10px">{% trans 'Jump to:' %}</p>#}
 {#            </li>#}
             <li>
-                <a class="btn btn-outline btn-default" href="#question_row">{% trans 'Questions' %}</a>
+                <a id="question_row_jump" class="btn btn-outline btn-default" href="#question_row">{% trans 'Questions' %}</a>
             </li>
             <li>
-                <a class="btn btn-outline btn-default" href="#survey_row">{% trans 'Surveys' %}</a>
+                <a id="survey_row_jump" class="btn btn-outline btn-default" href="#survey_row">{% trans 'Surveys' %}</a>
             </li>
             <li>
-                <a class="btn btn-outline btn-default" href="#qual_row">{% trans 'Qualitative Records' %}</a>
+                <a id="qual_row_jump" class="btn btn-outline btn-default" href="#qual_row">{% trans 'Qualitative Records' %}</a>
             </li>
         </ul>
     </div>

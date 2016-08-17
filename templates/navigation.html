@@ -3,16 +3,19 @@
 {% load i18n %}
 
 {% block extra_head %}
-    <script>
-        $(document).ready(function () {
-            {#            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
 
-        });
-    </script>
 
 {% endblock %}
 
 {% block navigation %}
+
+    <script>
+        $(document).ready(function () {
+            $('#help_intro').click(function(){
+                do_intro('{{ LANGUAGE_CODE }}');
+            });
+        });
+    </script>
 
     <div id="wrapper">
 
@@ -20,8 +23,8 @@
         <nav class="navbar navbar-default navbar-static-top"
              role="navigation"
              style="margin-bottom: 0;
-{#        z-index: 2000#}
-        ">
+                     {#        z-index: 2000#}
+                     ">
             <div class="navbar-header">
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

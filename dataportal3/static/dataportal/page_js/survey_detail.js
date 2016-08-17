@@ -5,7 +5,7 @@
 
 function do_intro() {
     bootstro.start('', {
-        // prevButton: '',
+        prevButton: '',
         onStep: function(obj) {
             // alert(' --- ' + obj.idx + ' --- ' + obj.direction);
 
@@ -15,12 +15,12 @@ function do_intro() {
                 // $('#survey_dc_tab').tab('show');
 
             }
-             if (obj.idx == 2 || obj.idx == 3) {
+             if (obj.idx == 3 || obj.idx == 4) {
                 $('#survey_tab_li').click();
                 // $('#survey_tab').tab('show');
 
             }
-            if (obj.idx == 4 || obj.idx == 5) {
+            if (obj.idx == 5 || obj.idx == 6) {
                 $('#survey_questions_li').click();
                 // $('#survey_questions').tab('show');
 
@@ -44,11 +44,18 @@ function do_intro() {
                 step: 1
             },
             {
+                selector: '#text_input_source_url',
+                title: 'Download',
+                content: 'Data url',
+                placement: 'bottom',
+                step: 2
+            },
+            {
                 selector: '#survey_tab_li',
                 title: 'Survey Tab',
                 content: 'This button shows the WISERD Survey Metadata',
                 placement: 'bottom',
-                step: 2
+                step: 3
             },
             {
                 selector: '#survey_tab',
@@ -57,14 +64,14 @@ function do_intro() {
                 '<br><br>' +
                 'This has WISERD metadata specific to the interests of the Social Sciences',
                 placement: 'top',
-                step: 3
+                step: 4
             },
             {
                 selector: '#survey_questions_li',
                 title: 'Survey Questions Tab',
                 content: 'This button shows the surveys questions',
                 placement: 'bottom',
-                step: 4
+                step: 5
             },
             {
                 selector: '#survey_questions',
@@ -73,8 +80,10 @@ function do_intro() {
                 '<br><br>' +
                 'This has the questions from the survey',
                 placement: 'top',
-                step: 5
+                step: 6
             }
+
+
 
         ]
     });
@@ -83,12 +92,12 @@ function do_intro() {
 }
 
 
-
-$(document).ready(function () {
-    $('#help_intro').click(function(){
-        $('#survey_dc_tab_li').click();
-
-        // alert('survey detail');
-        do_intro();
-    });
-});
+//
+// $(document).ready(function () {
+//     $('#help_intro').click(function(){
+//         $('#survey_dc_tab_li').click();
+//
+//         // alert('survey detail');
+//         do_intro();
+//     });
+// });

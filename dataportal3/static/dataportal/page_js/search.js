@@ -2,7 +2,19 @@
  * Created by ianh on 17/08/16.
  */
 
-function do_intro() {
+
+var i18n_text = {
+    'question_row_jump' : {
+        'en-GB': 'This button show the questions discovered during the search',
+        'cy': 'Welsh text for question_row_jump'
+    }
+};
+
+
+function do_intro(lang) {
+    
+    $('#survey_dc_tab_li').click();
+
     bootstro.start('', {
         // prevButton: '',
         onStep: function(obj) {
@@ -13,7 +25,7 @@ function do_intro() {
             {
                 selector: '#question_row_jump',
                 title: 'Jump to Questions',
-                content: 'This button shows the Dublin Core data',
+                content: get_i18n_text('question_row_jump', lang),
                 placement: 'bottom',
                 step: 0
             },
@@ -76,11 +88,11 @@ function do_intro() {
 
 
 
-$(document).ready(function () {
-    $('#help_intro').click(function(){
-        $('#survey_dc_tab_li').click();
-
-        // alert('survey detail');
-        do_intro();
-    });
-});
+// $(document).ready(function () {
+//     $('#help_intro').click(function(){
+//         $('#survey_dc_tab_li').click();
+//
+//         // alert('survey detail');
+//         do_intro();
+//     });
+// });

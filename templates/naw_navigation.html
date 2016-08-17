@@ -6,37 +6,46 @@
 {% endblock %}
 
 {% block navigation %}
-{#    <script>#}
-{#        $(document).ready(function () {#}
-{#            $('.lang_toggle').click(function(){#}
-{#                waitingDialog.show('Saving ...');#}
-{##}
-{#                var lang = $(this).data('lang');#}
-{##}
-{#                var user_language = (lang == 'welsh' ? '2' : '1');#}
-{#                $.ajax({#}
-{#                    url: "{% url 'edit_metadata' %}",#}
-{#                    type: 'GET',#}
-{#                    data: {#}
-{#                        'function': 'set_user_preferences',#}
-{#                        'user_language': user_language#}
-{#                    },#}
-{#                    success: function(data) {#}
-{#                        if(data['success']){#}
-{#                            location.reload(true);#}
-{#                        } else {#}
-{#                            console.log(data);#}
-{#                        }#}
-{#                    },#}
-{#                    complete: function() {#}
-{#                        setTimeout(function () {#}
-{#                            waitingDialog.hide();#}
-{#                        }, 1000);#}
-{#                    }#}
-{#                });#}
-{#            });#}
-{#        });#}
-{#    </script>#}
+
+        <script>
+        $(document).ready(function () {
+            $('#help_intro').click(function(){
+                do_intro('{{ LANGUAGE_CODE }}');
+            });
+        });
+    </script>
+
+    {#    <script>#}
+    {#        $(document).ready(function () {#}
+    {#            $('.lang_toggle').click(function(){#}
+    {#                waitingDialog.show('Saving ...');#}
+    {##}
+    {#                var lang = $(this).data('lang');#}
+    {##}
+    {#                var user_language = (lang == 'welsh' ? '2' : '1');#}
+    {#                $.ajax({#}
+    {#                    url: "{% url 'edit_metadata' %}",#}
+    {#                    type: 'GET',#}
+    {#                    data: {#}
+    {#                        'function': 'set_user_preferences',#}
+    {#                        'user_language': user_language#}
+    {#                    },#}
+    {#                    success: function(data) {#}
+    {#                        if(data['success']){#}
+    {#                            location.reload(true);#}
+    {#                        } else {#}
+    {#                            console.log(data);#}
+    {#                        }#}
+    {#                    },#}
+    {#                    complete: function() {#}
+    {#                        setTimeout(function () {#}
+    {#                            waitingDialog.hide();#}
+    {#                        }, 1000);#}
+    {#                    }#}
+    {#                });#}
+    {#            });#}
+    {#        });#}
+    {#    </script>#}
 
     <link rel="stylesheet" type="text/css" href="{% static 'dataportal/naw_dark.css' %}" />
 
@@ -60,18 +69,27 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-{#                <li>#}
-{#                    <a href="#" class="lang_toggle" data-lang="english">#}
-{#                        <i class="">{% trans 'English' %}</i>#}
-{#                    </a>#}
-{#                </li>#}
-{#                <li> | </li>#}
-{#                <li>#}
-{#                    <a href="#" class="lang_toggle" data-lang="welsh">#}
-{#                        <i class="">{% trans 'Welsh' %}</i>#}
-{#                    </a>#}
-{#                </li>#}
+                {#                <li>#}
+                {#                    <a href="#" class="lang_toggle" data-lang="english">#}
+                {#                        <i class="">{% trans 'English' %}</i>#}
+                {#                    </a>#}
+                {#                </li>#}
+                {#                <li> | </li>#}
+                {#                <li>#}
+                {#                    <a href="#" class="lang_toggle" data-lang="welsh">#}
+                {#                        <i class="">{% trans 'Welsh' %}</i>#}
+                {#                    </a>#}
+                {#                </li>#}
                 {% include 'lang_toggle.html' %}
+
+                <li> | </li>
+
+                <li>
+                    <a href="#" id="help_intro">
+                        <i class="">?</i>
+                    </a>
+                </li>
+                <li> | </li>
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">

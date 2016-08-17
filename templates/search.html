@@ -8,10 +8,14 @@
     <script>
 
         $(document).ready(function(){
+
             var survey_questions_table = $('#survey_questions_table').DataTable({
                 serverSide: false,
                 processing: true,
                 "bAutoWidth": false,
+                "oLanguage": {
+                    "sSearch": "Filter :"
+                },
                 responsive: true,
                 ajax: {
                     url: "{% url 'search_survey_question_api'%}?search_terms={{ search_terms }}",
@@ -51,6 +55,9 @@
                 processing: true,
                 "bAutoWidth": false,
                 responsive: true,
+                "oLanguage": {
+                    "sSearch": "Filter :"
+                },
                 ajax: {
                     url: "{% url 'search_survey_api'%}?search_terms={{ search_terms }}",
                     type: 'GET',
@@ -80,6 +87,9 @@
                 processing: true,
                 "bAutoWidth": false,
                 responsive: true,
+                "oLanguage": {
+                    "sSearch": "Filter :"
+                },
                 ajax: {
                     url: "{% url 'search_qual_api'%}?search_terms={{ search_terms }}",
                     type: 'GET',
@@ -117,39 +127,39 @@
     </div>
 
     <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-    <form action="{% url 'search_survey_question_gui' %}" method="get" role="search">
-                                <div id="search_box" class="input-group custom-search-form">
-                                    <input value="{{ search_terms }}" type="text" class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
+        <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <form action="{% url 'search_survey_question_gui' %}" method="get" role="search">
+                <div id="search_box" class="input-group custom-search-form">
+                    <input value="{{ search_terms }}" type="text" class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </span>
-                                </div>
-                            </form>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
     <div class="row">
-    <div class="col-lg-12">
+        <div class="col-lg-12">
             <h4>{% trans 'Jump to:' %}</h4>
 
-        <ul class="nav nav-pills">
-{#            <li>#}
-{#                <p style="padding: 10px">{% trans 'Jump to:' %}</p>#}
-{#            </li>#}
-            <li>
-                <a id="question_row_jump" class="btn btn-outline btn-default" href="#question_row">{% trans 'Questions' %}</a>
-            </li>
-            <li>
-                <a id="survey_row_jump" class="btn btn-outline btn-default" href="#survey_row">{% trans 'Surveys' %}</a>
-            </li>
-            <li>
-                <a id="qual_row_jump" class="btn btn-outline btn-default" href="#qual_row">{% trans 'Qualitative Records' %}</a>
-            </li>
-        </ul>
-    </div>
+            <ul class="nav nav-pills">
+                {#            <li>#}
+                {#                <p style="padding: 10px">{% trans 'Jump to:' %}</p>#}
+                {#            </li>#}
+                <li>
+                    <a id="question_row_jump" class="btn btn-outline btn-default" href="#question_row">{% trans 'Questions' %}</a>
+                </li>
+                <li>
+                    <a id="survey_row_jump" class="btn btn-outline btn-default" href="#survey_row">{% trans 'Surveys' %}</a>
+                </li>
+                <li>
+                    <a id="qual_row_jump" class="btn btn-outline btn-default" href="#qual_row">{% trans 'Qualitative Records' %}</a>
+                </li>
+            </ul>
         </div>
+    </div>
 
     <div id="question_row" class="row">
         <h3>{% trans 'Questions' %}</h3>
@@ -189,7 +199,7 @@
     <div id="survey_row" class="row">
         <h3>{% trans 'Survey Results' %}</h3>
 
-<a href="#table_nav_row" class="pull-right">
+        <a href="#table_nav_row" class="pull-right">
             <button class="btn btn-info btn-outline">
                 <i class="fa fa-arrow-circle-up"></i> {% trans 'Top' %}
             </button>

@@ -1,0 +1,37 @@
+{% load i18n %}
+
+
+<script>
+    var datatables_language = {
+        "sSearch": "{% trans 'Filter :' %}",
+
+        "sLengthMenu": '{% trans 'Display' %} <select>'+
+        '<option value="10">10</option>'+
+        '<option value="20">20</option>'+
+        '<option value="30">30</option>'+
+        '<option value="40">40</option>'+
+        '<option value="50">50</option>'+
+        '<option value="-1">{% trans 'All' %}</option>'+
+        '</select> {% trans 'records' %}'
+    };
+
+
+    var i18n_text = {
+        'question_row_jump' : {
+            'en': 'This button show the questions discovered during the search',
+            'cy': 'Welsh text for question_row_jump'
+        },
+        'question_tab' : {
+            'en': 'This tab shows metadata for the selected question',
+            'cy': 'Welsh text for question_tab'
+        },
+
+
+{#        'question_row_jump' : {#}
+{#            'en': 'This button show the questions discovered during the search',#}
+{#            'cy': 'Welsh text for question_row_jump'#}
+{#        },#}
+    };
+
+</script>
+

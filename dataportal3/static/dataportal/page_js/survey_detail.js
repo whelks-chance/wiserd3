@@ -91,13 +91,3 @@ function do_intro() {
 
 }
 
-
-//
-// $(document).ready(function () {
-//     $('#help_intro').click(function(){
-//         $('#survey_dc_tab_li').click();
-//
-//         // alert('survey detail');
-//         do_intro();
-//     });
-// });

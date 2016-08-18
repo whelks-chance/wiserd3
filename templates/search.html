@@ -13,9 +13,7 @@
                 serverSide: false,
                 processing: true,
                 "bAutoWidth": false,
-                "oLanguage": {
-                    "sSearch": "Filter :"
-                },
+                "oLanguage": datatables_language,
                 responsive: true,
                 ajax: {
                     url: "{% url 'search_survey_question_api'%}?search_terms={{ search_terms }}",
@@ -55,9 +53,7 @@
                 processing: true,
                 "bAutoWidth": false,
                 responsive: true,
-                "oLanguage": {
-                    "sSearch": "Filter :"
-                },
+                "oLanguage": datatables_language,
                 ajax: {
                     url: "{% url 'search_survey_api'%}?search_terms={{ search_terms }}",
                     type: 'GET',
@@ -87,9 +83,7 @@
                 processing: true,
                 "bAutoWidth": false,
                 responsive: true,
-                "oLanguage": {
-                    "sSearch": "Filter :"
-                },
+                "oLanguage": datatables_language,
                 ajax: {
                     url: "{% url 'search_qual_api'%}?search_terms={{ search_terms }}",
                     type: 'GET',

@@ -4,6 +4,8 @@
 {% load i18n %}
 
 {% block content %}
+        <script type="text/javascript" src="{% static 'dataportal/page_js/question_detail.js' %}"></script>
+
     <script>
 
         var question_description = {
@@ -131,6 +133,7 @@
                     var survey_questions_table = $('#survey_questions_table').DataTable({
                         serverSide: false,
                         processing: true,
+                                        "oLanguage": datatables_language,
                         data: data['search_result_data'],
                         {#                        ajax: {#}
                         {#                            url: "{% url 'survey_question_result_table' question_id%}",#}
@@ -233,11 +236,14 @@
                 <div class="panel-body">
                     <!-- Nav tabs -->
                     <ul id="question_panel_nav" class="nav nav-pills">
-                        <li class="active"><a href="#question_tab" data-toggle="tab">{% trans 'Question' %}</a>
+                        <li class="active">
+                            <a id="question_tab_li" href="#question_tab" data-toggle="tab">{% trans 'Question' %}</a>
                         </li>
-                        <li><a href="#results_tab" data-toggle="tab">{% trans 'Results' %}</a>
+                        <li>
+                            <a  id="results_tab_li" href="#results_tab" data-toggle="tab">{% trans 'Results' %}</a>
                         </li>
-                        <li><a href="#survey_questions" data-toggle="" class="disabled" style="cursor: not-allowed;">{% trans 'Results Table' %}</a>
+                        <li >
+                            <a id="survey_questions_li" href="#survey_questions" data-toggle="" class="disabled" style="cursor: not-allowed;">{% trans 'Results Table' %}</a>
                         </li>
                     </ul>
 

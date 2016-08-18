@@ -97,6 +97,7 @@
                 processing: true,
                 bAutoWidth: false,
                 responsive: true,
+                                "oLanguage": datatables_language,
                 ajax: {
                     url: "{% url 'csv_view_data' 'nomis' search_uuid %}",
                     type: 'GET',

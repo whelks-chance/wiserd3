@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html>
@@ -37,7 +38,6 @@
     <script src="{% static 'startbootstrap-sb-admin-2-1.0.7/bower_components/jquery/dist/jquery.min.js' %}"></script>
 
     <!-- jQuery Form -->
-    {#ddd#}
     {#    <script src="http://malsup.github.com/min/jquery.form.min.js"></script>#}
 
     <!-- Bootstrap Core JavaScript -->
@@ -82,10 +82,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bootstro/bootstro.css' %}" />
 
 
-
-
-
-
     {% if use_template %}
         <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
         <script type="text/javascript">
@@ -112,6 +108,7 @@
             return formatted;
         };
     </script>
+                {% include 'base_vars.html' %}
 
     {% block extra_head %}
     {% endblock %}

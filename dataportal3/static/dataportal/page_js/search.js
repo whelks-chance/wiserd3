@@ -3,12 +3,6 @@
  */
 
 
-var i18n_text = {
-    'question_row_jump' : {
-        'en-GB': 'This button show the questions discovered during the search',
-        'cy': 'Welsh text for question_row_jump'
-    }
-};
 
 
 function do_intro(lang) {
@@ -87,12 +81,3 @@ function do_intro(lang) {
 }
 
 
-
-// $(document).ready(function () {
-//     $('#help_intro').click(function(){
-//         $('#survey_dc_tab_li').click();
-//
-//         // alert('survey detail');
-//         do_intro();
-//     });
-// });

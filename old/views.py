@@ -285,12 +285,15 @@ def survey_questions(request, wiserd_id):
     # questions_models = old_models.Questions.objects.using('survey').filter(qid__in=survey_question_link_models).values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
 
     survey_model_ids = models.Survey.objects.all().filter(identifier=wiserd_id).values_list("surveyid", flat=True)
-    questions_models = models.Survey.objects.get(identifier=wiserd_id).question_set.all().values("qid", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+    questions_models = models.Survey.objects.get(identifier=wiserd_id)\
+        .question_set.all().values("qid", "link_from_question__questionnumber", "subof_question__questionnumber", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
 
     data = []
     for question_model in questions_models:
         # question_model_tidy = [a.strip() for a in question_model if type(a) == 'unicode']
         question_model['type'] = question_model['type__q_type_text']
+        question_model['from_name'] = question_model['link_from_question__questionnumber']
+        question_model['subof_name'] = question_model['subof_question__questionnumber']
         data.append(question_model)
     api_data = {
         'url': request.get_full_path(),

@@ -156,6 +156,7 @@
             var survey_questions_table = $('#survey_questions_table').DataTable({
                 serverSide: false,
                 processing: true,
+                                "oLanguage": datatables_language,
                 ajax: {
                     url: "{% url 'survey_questions' survey_id%}",
                     type: 'POST',
@@ -176,7 +177,7 @@
                         "targets": -3,
                         "data": null,
                         "render": function ( data, type, full, meta ) {
-                            if (data['link_from'] != null && data['link_from'].trim() != '' && data['link_from'].trim() != 'N/A' ) {
+                            if (data['from_name'] != null && data['from_name'].trim() != '' && data['from_name'].trim() != 'N/A' ) {
                                 return "<div class='btn btn-info search_from'>{% trans 'Previous' %}</div>";
                             } else {
                                 return ""
@@ -187,7 +188,7 @@
                         "targets": -2,
                         "data": null,
                         "render": function ( data, type, full, meta ) {
-                            if (data['subof'] != null && data['subof'].trim() != '' && data['subof'].trim() != 'N/A' ) {
+                            if (data['subof_name'] != null && data['subof_name'].trim() != '' && data['subof_name'].trim() != 'N/A' ) {
                                 return "<div class='btn btn-info search_parent'>{% trans 'Parent' %}</div>";
                             } else {
                                 return ""
@@ -210,11 +211,11 @@
                 var table_body = $('#survey_questions_table').find('tbody');
                 table_body.on('click', '.search_from', function () {
                     var data = survey_questions_table.row($(this).parents('tr')).data();
-                    survey_questions_table.search( data['link_from'].trim() ).draw();
+                    survey_questions_table.search( data['from_name'].trim() ).draw();
                 });
                 table_body.on('click', '.search_parent', function () {
                     var data = survey_questions_table.row($(this).parents('tr')).data();
-                    survey_questions_table.search( data['subof'].trim() ).draw();
+                    survey_questions_table.search( data['subof_name'].trim() ).draw();
                 });
                 table_body.on('click', '.view_question', function () {
                     var data = survey_questions_table.row($(this).parents('tr')).data();

@@ -258,3 +258,15 @@
     margin: 1em;
     padding: 0.5em;
 }
+
+.btn-help {
+    color: #337ab7 !important;
+}
+
+.btn-help :hover {
+    color: #eb8f00;
+}
+
+.dialog-container {
+    width: 100%;
+}

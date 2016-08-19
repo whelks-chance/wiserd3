@@ -943,7 +943,7 @@ def data_api(request):
 
             try:
                 swod = StatsWalesOData()
-                swod_datasets = swod.keyword_search(search_term)
+                swod_datasets = swod.keyword_search(search_term.lower())
 
                 formatted = []
                 for d in swod_datasets:

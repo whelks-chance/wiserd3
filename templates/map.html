@@ -1595,6 +1595,7 @@
                             if ($("#binno").val() != '') {
 
                                 var layer_id = $(this).data('layer_names');
+                                var dataset_name = $(this).data('dataset_name');
                                 var topojson_data = topojson_layers[$(this).data('layer_names')];
                                 var nomis_variable = $(this).data('nomis_variable');
                                 var layer_name_text = $("#layer_name_text_entry").val();
@@ -2556,11 +2557,16 @@
 
                 var dataset_radio = $('#local_column_headers_radio');
                 dataset_radio.find('div').remove().end();
+                {#                dataset_radio.addClass('row');#}
 
                 $('#mapmydata_help').off('click').on('click', do_mapmydata_tutorial_2);
 
-                var codelist_label = $('<div>', {text: '{% trans 'Select geography id column' %}'});
-                dataset_radio.append(codelist_label);
+                var geog_column = $('<div>').addClass('col-md-4 col-sm-12');
+                var codelist_label = $('<div>', {
+                    text: '{% trans 'Select geography id column' %}',
+                    id: 'geography_label'
+                });
+                geog_column.append(codelist_label);
 
                 var codelist_radio_div = $('<div>', {id: 'local_data_geography_radio'});
                 for(var column_header_idx in column_headers) {
@@ -2586,11 +2592,21 @@
                     codelist_radio_div.append(radio_div);
                 }
                 codelist_radio_div.buttonset();
-                dataset_radio.append(codelist_radio_div);
+                geog_column.append(codelist_radio_div);
+
+                dataset_radio.append(geog_column);
 
 
-                var codelist_label = $('<div>', {text: '{% trans 'Select data value column' %}'});
-                dataset_radio.append(codelist_label);
+
+
+                var data_column = $('<div>').addClass('col-md-4 col-sm-12');
+
+
+                var codelist_label = $('<div>', {
+                    text: '{% trans 'Select data value column' %}',
+                    id: 'data_column_label'
+                });
+                data_column.append(codelist_label);
 
                 var local_data_value_radio_div = $('<div>', {id: 'local_data_value_radio'});
                 for(var column_header_idx in column_headers) {
@@ -2630,12 +2646,19 @@
                 }));
                 local_data_value_radio_div.append(radio_div);
                 local_data_value_radio_div.buttonset();
-                dataset_radio.append(local_data_value_radio_div);
+                data_column.append(local_data_value_radio_div);
+
+                dataset_radio.append(data_column);
 
 
+                var codelist_column = $('<div>').addClass('col-md-4 col-sm-12');
 
-                var codelist_label = $('<div>', {text: '{% trans 'Select additional secondary data' %}'});
-                dataset_radio.append(codelist_label);
+
+                var codelist_label = $('<div>', {
+                    text: '{% trans 'Select additional secondary data' %}',
+                    id: 'secondary_data_label'
+                });
+                codelist_column.append(codelist_label);
 
                 var local_data_secondary_check_div = $('<div>', {id: 'local_data_secondary_check'});
                 for(var column_header_idx in column_headers) {
@@ -2661,9 +2684,12 @@
                     local_data_secondary_check_div.append(radio_div);
                 }
                 local_data_secondary_check_div.buttonset();
-                dataset_radio.append(local_data_secondary_check_div);
+                codelist_column.append(local_data_secondary_check_div);
 
+                dataset_radio.append(codelist_column);
             }
+
+
 
 
             $( "#local-data-form" ).dialog({
@@ -2674,7 +2700,7 @@
                     at: "center",
                     of: map_div
                 },
-                width: map_div.width() / 2,
+                width: map_div.width() * 0.8,
                 modal: true,
                 buttons: [
                     {
@@ -2737,10 +2763,12 @@
                                     all_topojson_data = thing(all_topojson_data, ordered_data, local_data_name,
                                             area_values, local_data_geography_column, secondary_data_keys);
 
-                                    console.log(jQuery.extend(true, {}, all_topojson_data));
+{#                                    console.log(jQuery.extend(true, {}, all_topojson_data));#}
 
                                     var layer_name = all_topojson_data['search_uuid'];
                                     topojson_layers[layer_name] = all_topojson_data['topojson'];
+
+                                    $('#layer_name_text_entry').val(local_data_name);
 
                                     $( "#chloropleth_option_form").data({
                                         layer_names: layer_name,
@@ -2826,72 +2854,90 @@
 
     </div>
 
-    {#    <div class="">#}
-    {#        <div class="col-lg-12">#}
-    {##}
-    {#            <div id="naw_output" >NAW = {{ naw }}</div>#}
-    {#            <div id="outputs">{{ local_data_layers }}<br><br>{{ local_searches }}</div>#}
-    {#                        <div id="language">Language : {{ preferences.preferred_language.user_language_title }}</div>#}
-    {#        </div>#}
-    {#    </div>#}
+
     <div id="chloropleth_option_form" title="{% trans 'Choropleth options' %}">
-        <table>
-            <tr>
-                <td>
-                    <label for="bintype" class="control-label">{% trans "Category Types" %}</label>
-                </td>
-                <td>
-                    <div class="controls">
-                        <select name="bintype" id="bintype" class="form-control input-block-level tab_data_input">
-                            <option value="e">{% trans 'Equal size categories' %}</option>
-                            <option value="q" selected="selected">{% trans 'Quantiles' %}</option>
-                            <option value="k">{% trans 'K-Means' %}</option>
-                        </select>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="binno" class="control-label">{% trans 'Number of Categories' %}</label>
-                </td>
-                <td>
-                    <select name="binno" id="binno" class="form-control input-block-leveltab_data_input">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5" selected="selected">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="colorpicker" class="control-label">{% trans 'Choropleth colour scheme' %}</label>
-                </td>
-                <td>
-                    <select name="colorpicker" id="colorpicker" class="form-control input-block-level tab_data_input">
-                        <option value="OrRd">{% trans 'Orange - Red' %}</option>
-                        <option value="RdYlBu">{% trans 'Red - Yellow - Blue' %}</option>
-                        <option value="YlGnBu" selected="selected">{% trans 'Yellow - Green - Blue' %}</option>
-                        <option value="Spectral">{% trans 'Spectral' %}</option>
-                        <option value="b_w">{% trans 'Greyscale' %}</option>
-                        <option value="WISERD">{% trans 'WISERD' %}</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="layer_name_text_entry" class="control-label">{% trans 'Layer Name' %}</label>
-                </td>
-                <td>
-                    <input class="form-control input-block-level tab_data_input"
-                           id="layer_name_text_entry" type="text">
-                </td>
-            </tr>
-        </table>
+
+        <div class="container dialog-container">
+
+            <div class="row">
+                <div class="pull-right"><a id="choro_help" class="btn btn-circle btn-default btn-help" href="#">
+                    <i class="fa fa-question-circle"></i></a></div>
+            </div>
+
+            <div class="row">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <label for="bintype" class="control-label">{% trans "Category Types" %}</label>
+                        </td>
+                        <td>
+                            <div class="controls">
+                                <select name="bintype" id="bintype" class="form-control input-block-level tab_data_input">
+                                    <option value="e">{% trans 'Equal size categories' %}</option>
+                                    <option value="q" selected="selected">{% trans 'Quantiles' %}</option>
+                                    <option value="k">{% trans 'K-Means' %}</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="binno" class="control-label">{% trans 'Number of Categories' %}</label>
+                        </td>
+                        <td>
+                            <div class="controls">
+
+                                <select name="binno" id="binno" class="form-control input-block-level tab_data_input">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5" selected="selected">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="colorpicker" class="control-label">{% trans 'Choropleth colour scheme' %}</label>
+                        </td>
+                        <td>
+                            <div class="controls">
+
+                                <select name="colorpicker" id="colorpicker" class="form-control input-block-level tab_data_input">
+                                    <option value="OrRd">{% trans 'Orange - Red' %}</option>
+                                    <option value="RdYlBu">{% trans 'Red - Yellow - Blue' %}</option>
+                                    <option value="YlGnBu" selected="selected">{% trans 'Yellow - Green - Blue' %}</option>
+                                    <option value="Spectral">{% trans 'Spectral' %}</option>
+                                    <option value="b_w">{% trans 'Greyscale' %}</option>
+                                    <option value="WISERD">{% trans 'WISERD' %}</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="layer_name_text_entry" class="control-label">{% trans 'Layer Name' %}</label>
+                        </td>
+                        <td>
+                            <div class="controls">
+                                <input autofocus="autofocus" class="form-control input-block-level tab_data_input"
+                                       id="layer_name_text_entry" type="text">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+
+
+        </div>
+
+
 
     </div>
 
@@ -2931,45 +2977,66 @@
 
 
     <div id="search-remote-form" title="{% trans 'Search Remote' %}">
-        <div class="input-group custom-search-form">
-            <label for="remote_search_term" class="control-label">{% trans 'Search Remote' %}</label>
-        </div>
-        <div class="input-group custom-search-form">
-            <input type="text" id="remote_search_term" name="remote_search_term"
-                   class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
+        <div class="container dialog-container" >
+            <div class="row">
+                <div class="pull-right"><a id="search_remote_help" class="btn btn-circle btn-default btn-help" href="#">
+                    <i class="fa fa-question-circle"></i></a></div>
+            </div>
+
+            <div class="row">
+                <div class="input-group custom-search-form">
+                    <label for="remote_search_term" class="control-label">{% trans 'Search Remote' %}</label>
+                </div>
+                <div class="input-group custom-search-form">
+                    <input autofocus="autofocus" type="text" id="remote_search_term" name="remote_search_term"
+                           class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
                         <span class="input-group-btn">
                             <button id="remote_search_btn" class="btn btn-default" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
                         </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <fieldset>
+                    <div id="dataset_radio"></div>
+                </fieldset>
+            </div>
         </div>
-        <fieldset>
-            <div id="dataset_radio"></div>
-        </fieldset>
+
     </div>
 
     <div id="local-data-form" title="{% trans 'MapMyData' %}">
 
-<div><a id="mapmydata_help" class="btn btn-circle btn-info" href="#">
-                <i class="fa fa-question-circle"></i></a></div>
+        <div class="container dialog-container">
 
-        <div id="local-data-drop-zone" class="input-group custom-search-form">
+            <div class="row">
+                <div class="pull-right"><a id="mapmydata_help" class="btn btn-circle btn-default btn-help" href="#">
+                    <i class="fa fa-question-circle"></i></a></div>
 
+            </div>
 
-            <div id="drop">Drop an XLSX / XLSM / XLSB / ODS / XLS / XML file here to see sheet data</div>
-            <p><input type="file" name="xlfile" id="xlf" /></p>
+            <div class="row">
+                <div class="input-group custom-search-form">
+                    <label for="local_data_name_input" class="control-label">{% trans 'Name this Layer' %}</label>
+                </div>
+                <div class="input-group custom-search-form">
+                    <input type="text" id="local_data_name_input" name="local_data_name"
+                           class="form-control" placeholder="{% trans 'New Layer...' %}">
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="local-data-drop-zone" class="input-group custom-search-form">
+                    <div id="drop">Drop an XLSX / XLSM / XLSB / ODS / XLS / XML file here to see sheet data</div>
+                    <p><input autofocus="autofocus"  type="file" name="xlfile" id="xlf" /></p>
+                </div>
+            </div>
+
+            <div id="local_column_headers_radio" class="row"></div>
         </div>
 
-        <div class="input-group custom-search-form">
-            <label for="local_data_name_input" class="control-label">{% trans 'Name this Layer' %}</label>
-        </div>
-        <div class="input-group custom-search-form">
-            <input type="text" id="local_data_name_input" name="local_data_name"
-                   class="form-control" placeholder="{% trans 'New Layer...' %}">
-        </div>
-        <div>
-            <div id="local_column_headers_radio"></div>
-        </div>
     </div>
 
     <input hidden="hidden" type="checkbox" name="useworker" disabled>

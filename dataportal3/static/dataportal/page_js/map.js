@@ -9,14 +9,80 @@ function do_intro() {
 
 }
 
-//
-// $(document).ready(function () {
+function do_choro_tutorial() {
+    bootstro.start('', {
+        onStep: function(obj) {
+            // alert('1 --- ' + obj.idx + ' --- ' + obj.direction);
+        },
+        items: [
+            {
+                selector: '#bintype',
+                title: 'Select bin type',
+                content: 'etc',
+                placement: 'bottom',
+                step: 0
+            },
+            {
+                selector: '#binno',
+                title: 'Select number of bins',
+                content: 'etc',
+                placement: 'bottom',
+                step: 1
+            },
+            {
+                selector: '#colorpicker',
+                title: 'Select Colour scheme',
+                content: 'etc',
+                placement: 'bottom',
+                step: 2
+            },
+            {
+                selector: '#layer_name_text_entry',
+                title: 'Name it',
+                content: 'etc',
+                placement: 'bottom',
+                step: 3
+            }
 
-// });
+        ]
+    });
+}
+
+function do_remote_data_tutorial() {
+    bootstro.start('', {
+        onStep: function(obj) {
+            // alert('1 --- ' + obj.idx + ' --- ' + obj.direction);
+        },
+        items: [
+            {
+                selector: '#remote_search_term',
+                title: 'Search term goes here',
+                content: 'The thing to searc Nomis/ StatsWales for - keyword',
+                placement: 'bottom',
+                step: 0
+            }
+
+        ]
+    });
+}
+
+
+$(document).ready(function () {
+    $('#search_remote_help').click(do_remote_data_tutorial);
+    $('#choro_help').click(do_choro_tutorial);
+
+
+
+    // $('#chloro_test').click(function (){
+    //     $( "#chloropleth_option_form").data(
+    //         {}
+    //     ).dialog( "open" );
+    // });
+});
 
 function do_mapmydata_tutorial_1() {
     bootstro.start('', {
-           onStep: function(obj) {
+        onStep: function(obj) {
             // alert('1 --- ' + obj.idx + ' --- ' + obj.direction);
         },
         items: [
@@ -45,24 +111,24 @@ function do_mapmydata_tutorial_2() {
         },
         items: [
             {
-                selector: '#local_data_geography_radio',
+                selector: '#geography_label',
                 title: 'Geography column',
                 content: 'Pick a column showing the geography',
                 placement: 'bottom',
                 step: 0
             }
             ,{
-                selector: '#local_data_value_radio',
+                selector: '#data_column_label',
                 title: 'Data value',
                 content: 'Pick a column showing the data to be mapped',
-                placement: 'top',
+                placement: 'bottom',
                 step: 1
             }
             ,{
-                selector: '#local_data_secondary_check',
+                selector: '#secondary_data_label',
                 title: 'Any other data to display',
                 content: 'This will be displayed in the sidebar when clicking on the map later.',
-                placement: 'top',
+                placement: 'bottom',
                 step: 2
             }
 

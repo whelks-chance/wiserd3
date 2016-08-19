@@ -71,3 +71,10 @@ li.active > a
 .panel-primary a {
     color: #337ab7;
 }
+
+
+.ui-widget-header {
+        background-color: rgb(0, 30, 98);
+        border-color: rgb(0, 30, 98);
+
+}

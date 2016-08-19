@@ -105,10 +105,10 @@
     </script>
 
     <style>
-            .navbar
-            {
-                z-index: 2000
-            }
+        .navbar
+        {
+            z-index: 2000
+        }
 
     </style>
 
@@ -1706,6 +1706,7 @@
                 resetFormElement($('#local-data-drop-zone'));
 
                 $('#local-data-drop-zone').show();
+                $('#mapmydata_help').off('click').on('click', do_mapmydata_tutorial_1);
                 $( "#local-data-form").dialog( "open" );
             });
 
@@ -2135,43 +2136,47 @@
                     codelist_radio_div.find('input')[0].click();
 
                 },
-                buttons: {
-                    "{% trans 'Render to Map' %}": function() {
-                        add_ajax_waiting('{% trans 'Fetching map layer...' %}');
-                        $( this ).dialog( "close" );
+                buttons: [
+                    {
+                        text: '{% trans 'Render to Map' %}',
+                        click: function() {
+                            add_ajax_waiting('{% trans 'Fetching map layer...' %}');
+                            $( this ).dialog( "close" );
 
-                        var local_available_data_selection = $('#local_available_data_radio').find(":radio:checked").attr('value');
+                            var local_available_data_selection = $('#local_available_data_radio').find(":radio:checked").attr('value');
 
-                        var survey_id = $(this).data('survey_id');
+                            var survey_id = $(this).data('survey_id');
 
-                        {#                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');#}
-                        var topojson_geography = $(this).data('boundary_name');
+                            {#                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');#}
+                            var topojson_geography = $(this).data('boundary_name');
 
 
-                        get_local_dataset_topojson(
-                                "{% url 'local_data_topojson' %}",
-                                topojson_geography,
-                                survey_id,
-                                local_available_data_selection,
-                                function(data) {
-                                    var layer_name = data['search_uuid'];
-                                    topojson_layers[layer_name] = data['topojson'];
+                            get_local_dataset_topojson(
+                                    "{% url 'local_data_topojson' %}",
+                                    topojson_geography,
+                                    survey_id,
+                                    local_available_data_selection,
+                                    function(data) {
+                                        var layer_name = data['search_uuid'];
+                                        topojson_layers[layer_name] = data['topojson'];
 
-                                    $( "#chloropleth_option_form").data({
-                                        layer_names: layer_name,
-                                        nomis_variable: '20301',
-                                        csv_url: ''
-                                    }).dialog( "open" );
-                                }
-                        );
+                                        $( "#chloropleth_option_form").data({
+                                            layer_names: layer_name,
+                                            nomis_variable: '20301',
+                                            csv_url: ''
+                                        }).dialog( "open" );
+                                    }
+                            );
 
+                        }
                     },
-                    Cancel: function() {
-                        $( this ).dialog( "close" );
+                    {
+                        text: '{% trans 'Cancel' %}',
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
                     }
-                },
-                close: function() {
-                }
+                ]
             });
 
 
@@ -2552,6 +2557,8 @@
                 var dataset_radio = $('#local_column_headers_radio');
                 dataset_radio.find('div').remove().end();
 
+                $('#mapmydata_help').off('click').on('click', do_mapmydata_tutorial_2);
+
                 var codelist_label = $('<div>', {text: '{% trans 'Select geography id column' %}'});
                 dataset_radio.append(codelist_label);
 
@@ -2750,12 +2757,19 @@
 
 
 
-                        }},{
+                        }
+                    },
+                    {
                         text: '{% trans 'Cancel' %}',
                         click: function() {
                             $( this ).dialog( "close" );
                         }
-                    }
+                    },
+                    {#                    {#}
+                    {#                        text: '{% trans 'Help' %}',#}
+                    {#                        id: 'mapmydata_help',#}
+                    {#                        click: do_mapmydata_tutorial#}
+                    {#                    }#}
                 ],
                 close: function() {
                 }
@@ -2766,7 +2780,7 @@
                 var view = parseInt($.cookie("WDP_returning_user"));
                 view += 1;
                 $.cookie("WDP_returning_user", view, {expires: 365, path: '/'});
-                $('#welcome_form').dialog('open');
+                {#                $('#welcome_form').dialog('open');#}
 
             } else {
                 $('#welcome_form').dialog('open');
@@ -2935,7 +2949,13 @@
     </div>
 
     <div id="local-data-form" title="{% trans 'MapMyData' %}">
+
+<div><a id="mapmydata_help" class="btn btn-circle btn-info" href="#">
+                <i class="fa fa-question-circle"></i></a></div>
+
         <div id="local-data-drop-zone" class="input-group custom-search-form">
+
+
             <div id="drop">Drop an XLSX / XLSM / XLSB / ODS / XLS / XML file here to see sheet data</div>
             <p><input type="file" name="xlfile" id="xlf" /></p>
         </div>

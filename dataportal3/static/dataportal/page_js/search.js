@@ -61,7 +61,7 @@ function do_intro(lang) {
             {
                 selector: '#search_box',
                 title: 'Search box',
-                content: 'This shows the current search, and can be modified or refined to search again',
+                content: 'Data can be searched here. This shows the current search, and can be modified or refined to search again',
                 placement: 'bottom',
                 step: 0
             },

@@ -1,4 +1,4 @@
-# WISERD DataPortal v3 asdfghj
+# WISERD DataPortal v3
 
 ## Install and runtime notes
 

@@ -67,11 +67,35 @@ function do_remote_data_tutorial() {
 }
 
 
+function do_local_dataset_define_vars_tutorial() {
+
+    bootstro.start('', {
+        onStep: function(obj) {
+            // alert('1 --- ' + obj.idx + ' --- ' + obj.direction);
+        },
+        items: [
+            {
+                selector: '#local_dataset_define_vars_form',
+                title: 'tutorial',
+                content: 'blargh',
+                placement: 'right',
+                step: 0
+            }
+
+        ]
+    });
+}
+
 $(document).ready(function () {
     $('#search_remote_help').click(do_remote_data_tutorial);
     $('#choro_help').click(do_choro_tutorial);
+    $('#dataset_define_vars_help').click(function(){
+        alert('dataset_define_vars_help');
+    });
 
-
+    $('#local_dataset_define_vars_help').click(function(){
+        do_local_dataset_define_vars_tutorial();
+    });
 
     // $('#chloro_test').click(function (){
     //     $( "#chloropleth_option_form").data(

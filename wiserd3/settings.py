@@ -263,6 +263,7 @@ TOPOJSON_OPTIONS = [
 ]
 
 NAW_LAYER_UUIDS = []
+NAW_CY_LAYER_UUIDS = []
 
 NAW_SEARCH_LAYER_UUIDS = []
 
@@ -288,18 +289,18 @@ WMS_LAYERS = [
 ]
 
 KNOWING_LOCALITIES_TABLES = [
-    # {
-    #     'display_name': 'Aberystwyth Locality Dissolved',
-    #     'table_name': 'aberystwyth_locality_dissolved'
-    # },
-    # {
-    #     'display_name': 'Bangor Locality Dissolved',
-    #     'table_name': 'bangor_locality_dissolved'
-    # },
-    # {
-    #     'display_name': 'Heads of_the Valleys',
-    #     'table_name': 'heads_of_the_valleys'
-    # }
+    {
+        'display_name': 'Aberystwyth Locality Dissolved',
+        'table_name': 'aberystwyth_locality_dissolved'
+    },
+    {
+        'display_name': 'Bangor Locality Dissolved',
+        'table_name': 'bangor_locality_dissolved'
+    },
+    {
+        'display_name': 'Heads of_the Valleys',
+        'table_name': 'heads_of_the_valleys'
+    }
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

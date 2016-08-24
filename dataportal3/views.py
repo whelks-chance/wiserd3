@@ -26,6 +26,7 @@ from django.forms.models import model_to_dict
 from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import RequestContext
+from django.utils.translation import get_language
 from django.views.decorators.csrf import csrf_exempt
 import operator
 from dataportal3 import models
@@ -40,7 +41,7 @@ from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_re
 import requests
 from old.views import text_search, date_handler
 from wiserd3 import settings
-from wiserd3.settings import NAW_LAYER_UUIDS
+from wiserd3.settings import NAW_LAYER_UUIDS, NAW_CY_LAYER_UUIDS
 from verbalexpressions import VerEx
 
 
@@ -131,6 +132,14 @@ def search_survey_api(request):
 
     data = []
     for survey_model in survey_models:
+        geogs_list = models.SpatialSurveyLink.objects.filter(
+            survey__identifier=survey_model['identifier']
+        ).values_list('boundary_name', flat=True)
+
+        print '***'
+        print geogs_list.query
+
+        survey_model['area'] = list(set(geogs_list))
         data.append(survey_model)
 
     api_data = {
@@ -319,9 +328,6 @@ def map_search(request):
                 'data': list(link_table_data)
             })
 
-    if naw:
-        layer_uuids.extend(NAW_LAYER_UUIDS)
-
     uploaded_layers_clean = []
     try:
         # wiserd_layers = models.GeometryColumns.objects.using('survey').filter(f_table_schema='spatialdata')
@@ -377,6 +383,15 @@ def map_search(request):
     if user_prefs.preferred_language:
         if user_prefs.preferred_language.user_language_title == 'Welsh':
             use_welsh = True
+
+    if get_language() == 'cy':
+        use_welsh = True
+
+    if naw:
+        if use_welsh:
+            layer_uuids.extend(NAW_CY_LAYER_UUIDS)
+        else:
+            layer_uuids.extend(NAW_LAYER_UUIDS)
 
     template_name = 'navigation.html'
     if naw:

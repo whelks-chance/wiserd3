@@ -9,7 +9,7 @@ from django.contrib.gis import admin as gis_admin
 # from old import models
 
 # Register your models here.
-from dataportal3.models import Question, UserGroupSurveyCollection, SurveyVisibilityMetadata, Response
+from dataportal3.models import Question, UserGroupSurveyCollection, SurveyVisibilityMetadata, Response, Search
 
 
 class DublinCoreAdmin(admin.ModelAdmin):
@@ -26,8 +26,19 @@ class QuestionAdmin(FiltersMixin, admin.ModelAdmin):
         ('questionnumber', SearchFilter),
         ('survey__surveyid', SearchFilter)
     )
-
 admin.site.register(Question, QuestionAdmin)
+
+
+class SearchAdmin(FiltersMixin, admin.ModelAdmin):
+    list_filter = (
+        ('query', SearchFilter),
+        ('type', SearchFilter),
+        ('readable_name', SearchFilter),
+        ('user__user__username', SearchFilter)
+    )
+
+
+admin.site.register(Search, SearchAdmin)
 admin.site.register(models.FeatureStore, gis_admin.GeoModelAdmin)
 
 

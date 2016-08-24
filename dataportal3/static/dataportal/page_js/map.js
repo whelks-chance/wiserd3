@@ -17,29 +17,29 @@ function do_choro_tutorial() {
         items: [
             {
                 selector: '#bintype',
-                title: 'Select bin type',
-                content: 'etc',
+                title: 'Select category type.',
+                content: 'This will change the distribution of data. Use Quantiles by default',
                 placement: 'bottom',
                 step: 0
             },
             {
                 selector: '#binno',
-                title: 'Select number of bins',
-                content: 'etc',
+                title: 'Select number of categories',
+                content: 'This will be the number of categories your data is divided into',
                 placement: 'bottom',
                 step: 1
             },
             {
                 selector: '#colorpicker',
                 title: 'Select Colour scheme',
-                content: 'etc',
+                content: 'Select the colour range of your data',
                 placement: 'bottom',
                 step: 2
             },
             {
                 selector: '#layer_name_text_entry',
                 title: 'Name it',
-                content: 'etc',
+                content: 'This name will appear on the map key',
                 placement: 'bottom',
                 step: 3
             }
@@ -57,7 +57,7 @@ function do_remote_data_tutorial() {
             {
                 selector: '#remote_search_term',
                 title: 'Search term goes here',
-                content: 'The thing to searc Nomis/ StatsWales for - keyword',
+                content: 'The thing to search Nomis/ StatsWales for - keyword',
                 placement: 'bottom',
                 step: 0
             }

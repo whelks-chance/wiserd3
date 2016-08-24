@@ -68,15 +68,71 @@
                     {'data': 'collectionsituation'},
                     {'data': 'collectionstartdate'},
                     {
-                        "targets": -1,
+                        "targets": -3,
                         "data": 'identifier',
                         "render": function ( data, type, full, meta ) {
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
                                     "href='/survey/" + data.trim() + "' class='btn btn-success view_survey'>View</a>";
                         }
+                    },
+                    {
+                        "targets": -2,
+                        data: "area",
+                        'render': function ( data, type, full, meta ) {
+
+                            if (data.length > 0) {
+
+                                var select_box = "<select class='select'>";
+                                for (var o in data) {
+                                    select_box += '<option value="' + data[o] + '">' + data[o] + '</option>';
+                                }
+                                select_box += "</select>";
+                                return select_box;
+                            } else {
+                                return ''
+                            }
+                        }
+                    },
+                    {
+                        "targets": -1,
+                        "data": "area",
+                        "render" : function( data, type, full, meta ) {
+                            if (data.length > 0) {
+                                return "<div class='btn btn-success map_survey'>{% trans 'Map Survey' %}</div>";
+                            } else {
+                                return ''
+                            }
+                        }
+{#                        "defaultContent": "<div class='btn btn-success map_survey'>{% trans 'Map Survey' %}</div>"#}
                     }
                 ]
             });
+
+            function attach_map_survey_buttons() {
+                $('#survey_table').find('tbody').on('click', '.map_survey', function () {
+
+                    var select_box_row = $(this).parents('tr');
+                    console.log(select_box_row);
+
+                    var select_box = select_box_row.find('select');
+                    console.log(select_box);
+                    console.log(select_box.val());
+
+                    var data = survey_table.row($(this).parents('tr')).data();
+                    var url_params = $.param({
+                        'surveys': data['identifier'],
+                        'boundary':select_box.val()
+                    });
+
+                    var url_complete = "{% url 'map' %}" + '?' + url_params;
+                    {% if preferences.links_new_tab %}
+                        window.open(url_complete, '_blank');
+                    {% else %}
+                        window.location.href = url_complete;
+                    {% endif %}
+                });
+            }
+            attach_map_survey_buttons();
 
             var qual_table = $('#qual_table').DataTable({
                 serverSide: false,
@@ -210,14 +266,17 @@
                         <th>{% trans 'Date' %}</th>
 
                         <th>{% trans 'View' %}</th>
+                        <th>{% trans 'Area' %}</th>
+                        <th>{% trans 'Map' %}</th>
+
                     </tr>
                     </thead>
                     <tbody>
-                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                     </tbody>
                 </table>
             </div>

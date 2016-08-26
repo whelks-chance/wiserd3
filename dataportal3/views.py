@@ -115,9 +115,14 @@ def search_survey_question_api(request):
 
 def search_survey_api(request):
     search_terms = request.GET.get('search_terms', '')
+    show_all = request.GET.get('show_all', '')
+
     user_profile = get_request_user(request)
 
-    if search_terms:
+    if show_all:
+        survey_models = models.Survey.objects.all().values()
+
+    elif search_terms:
         search, created = models.Search.objects.using('new').get_or_create(user=user_profile,
                                                                            query=search_terms,
                                                                            readable_name=search_terms,
@@ -136,8 +141,8 @@ def search_survey_api(request):
             survey__identifier=survey_model['identifier']
         ).values_list('boundary_name', flat=True)
 
-        print '***'
-        print geogs_list.query
+        # print '***'
+        # print geogs_list.query
 
         survey_model['area'] = list(set(geogs_list))
         data.append(survey_model)
@@ -2454,3 +2459,7 @@ def gen_screenshot(request, search_uuid):
 
 def user_guide(request):
     return render(request, 'user_guide.html', {}, context_instance=RequestContext(request))
+
+
+def browse_surveys(request):
+    return render(request, 'browse_surveys.html', {}, context_instance=RequestContext(request))

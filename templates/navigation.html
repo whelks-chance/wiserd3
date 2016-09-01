@@ -97,7 +97,7 @@
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
+                <div id="nav_bar_side" class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <form action="{% url 'search_survey_question_gui' %}" method="get" role="search">
@@ -124,8 +124,8 @@
                             <a href="{% url 'map' %}"><i class="fa fa-map-marker fa-fw"></i> {% trans 'Map' %}</a>
                         </li>
 
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> {% trans 'Recent Search Results' %}<span class="fa arrow"></span></a>
+                        <li id="Recent_Search_Results_li">
+                            <a id="Recent_Search_Results_btn" href="#"><i class="fa fa-sitemap fa-fw"></i> {% trans 'Recent Search Results' %}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#"> {% trans 'Text Results' %}<span class="fa arrow"></span></a>

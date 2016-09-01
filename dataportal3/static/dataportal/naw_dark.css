@@ -78,3 +78,12 @@ li.active > a
         border-color: rgb(0, 30, 98);
 
 }
+
+.popover-title {
+    color: #0f0f0f;
+
+}
+.popover-content {
+    color: #0f0f0f;
+
+}

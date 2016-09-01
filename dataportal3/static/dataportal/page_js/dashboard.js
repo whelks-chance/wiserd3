@@ -23,7 +23,7 @@ function do_intro() {
             {
                 selector: '#dashboard_grid',
                 title: 'The Dashboard',
-                content: 'These buttons take you to different parts of the DataPortal',
+                content: 'These buttons take you to different sections of the DataPortal',
                 placement: 'left',
                 step: 1
             },

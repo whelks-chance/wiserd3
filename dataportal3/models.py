@@ -378,8 +378,6 @@ class Survey(models.Model):
     identifier = models.CharField(unique=True, max_length=255, blank=True, null=True)
     survey_title = models.TextField(blank=True, null=True)
     datacollector = models.CharField(max_length=50, blank=True, null=True)
-    collectionstartdate = models.DateField(blank=True, null=True)
-    collectionenddate = models.DateField(blank=True, null=True)
     moc_description = models.TextField(blank=True, null=True)
     samp_procedure = models.TextField(blank=True, null=True)
     collectionsituation = models.TextField(blank=True, null=True)
@@ -390,17 +388,21 @@ class Survey(models.Model):
     samplesize = models.CharField(max_length=100, blank=True, null=True)
     responserate = models.CharField(max_length=20, blank=True, null=True)
     descriptionofsamplingerror = models.TextField(blank=True, null=True)
+    user_id = models.CharField(max_length=25, blank=True, null=True)
+    created = models.DateTimeField(blank=True, null=True)
+    updated = models.DateTimeField(blank=True, null=True)
+    long = models.TextField(blank=True, null=True)
+    spatialdata = models.NullBooleanField()
+
+    # hide
+    collectionstartdate = models.DateField(blank=True, null=True)
+    collectionenddate = models.DateField(blank=True, null=True)
     dataproduct = models.CharField(max_length=255, blank=True, null=True)
     dataproductid = models.CharField(max_length=25, blank=True, null=True)
     location = models.TextField(blank=True, null=True)
     link = models.TextField(blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
-    user_id = models.CharField(max_length=25, blank=True, null=True)
-    created = models.DateTimeField(blank=True, null=True)
-    updated = models.DateTimeField(blank=True, null=True)
-    long = models.TextField(blank=True, null=True)
     short_title = models.TextField(blank=True, null=True)
-    spatialdata = models.NullBooleanField()
 
     class Meta:
         db_table = 'survey'

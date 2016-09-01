@@ -1,0 +1,84 @@
+{% load i18n %}
+
+
+
+            <div class="control-group">
+                <label for="text_input_institution" class="control-label col-sm-4">{% trans 'Institution/ Organisation' %}</label>
+                <div class="controls">
+                <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="institution" placeholder="Tell us where you're from"
+                          id="text_input_institution" size="20">{% if userr.institution %}{{ userr.institution }}{% endif %}</textarea>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="text_input_specialty" class="control-label col-sm-4">Area of Work</label>
+                <div class="controls">
+                <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="specialty"
+                          placeholder="What are your research or professional interests in this service?"
+                          id="text_input_specialty" size="20">{% if userr.specialty %}{{ userr.specialty }}{% endif %}</textarea>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="text_input_specialty" class="control-label col-sm-4">Sector</label>
+                <div class="controls">
+                <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="sector"
+                          placeholder="eg academia, local government, voluntary?"
+                          id="text_input_sector" size="20">{% if userr.sector %}{{ userr.sector }}{% endif %}</textarea>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="text_input_comments" class="control-label col-sm-4">Comments</label>
+                <div class="controls">
+                <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
+                          name="comments"
+                          placeholder="Any other comments about your position?"
+                          id="text_input_comments" size="20">{% if userr.comments %}{{ userr.comments }}{% endif %}</textarea>
+                </div>
+            </div>
+
+{#            <div class="control-group">#}
+{#                <label for="text_input_comments" class="control-label col-sm-4">Select your preferred language</label>#}
+{#                <div class="controls col-sm-8">#}
+{#                    {% for language in languages %}#}
+{#                        <div class="radio">#}
+{#                            <label>#}
+{#                                <input id="user_language" name="user_language"#}
+{#                                       {% if preferences.preferred_language == language %}checked="checked"{% endif %}#}
+{#                                       {% if forloop.first and preferences.preferred_language == null %}checked="checked"{% endif %}#}
+{#                                       type="radio"#}
+{#                                       value="{{ language.id }}">{{ language.user_language_title }}#}
+{#                            </label>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            </div>#}
+
+
+
+            {% if regex_match_and_valid or request.user.is_staff %}
+                <div class="control-group">
+                    {% if request.user.is_staff %}
+                        <hr>
+                        <h4>
+                            Showing option as you appear to be staff
+                        </h4>
+                    {% endif %}
+                    <p>
+                        It looks like you have a valid National Assembly for Wales email address, would you like to enable NAW features for this account?
+                    </p>
+                    <label for="check_enable_naw" class="control-label col-sm-4">Enable</label>
+                    <div class="controls">
+                        <input type="checkbox"
+                               {% if userr.init_user == True and userr.role != 'naw' %}{% else %}checked="checked"{% endif %}
+                               class="input-block-level col-sm-8 tab_data_input"
+                               id="check_enable_naw" name="check_enable_naw"/>
+                    </div>
+                </div>
+            {% endif %}
+
+

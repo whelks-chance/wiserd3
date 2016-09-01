@@ -527,6 +527,22 @@ def edit_metadata(request):
                     edit_metadata_response['success'] = True
 
         if function == 'set_user_preferences':
+
+            request_user = get_request_user(request)
+            request_user.institution = request.GET.get('institution', '')
+            request_user.specialty = request.GET.get('specialty', '')
+            request_user.sector = request.GET.get('sector', '')
+            request_user.comments = request.GET.get('comments', '')
+            check_enable_naw = request.GET.get('check_enable_naw', '')
+            if check_enable_naw:
+                request_user.role = 'naw'
+            else:
+                # Forms don't send unchecked checkboxes
+                request_user.role = 'regular'
+
+            request_user.init_user = True
+            request_user.save()
+
             user_prefs = get_user_preferences(request)
             if 'links_new_tab' in request.GET:
                 user_prefs.links_new_tab = True
@@ -906,6 +922,7 @@ def profile(request):
     userr = get_request_user(request)
     return render(request, 'profile.html',
                   {
+                      'languages': models.UserLanguage.objects.all(),
                       'nomis_layers': get_nomis_searches(request),
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
@@ -1627,20 +1644,23 @@ def welcome(request):
             verified = True
         if matched and verified:
             regex_match_and_valid = True
+
+        print matched, verified, regex_match_and_valid
     except Exception as ex423:
         print ex423
         pass
 
-    return render(request, 'welcome.html',
-                  {
-                      'userr': userr,
-                      'email': email,
-                      'regex_match_and_valid': regex_match_and_valid,
-                      'verified': verified,
-                      'matched': matched,
-                      'preferences': get_user_preferences(request),
-                      'languages': models.UserLanguage.objects.all()
-                  }, context_instance=RequestContext(request))
+    data = {
+        'userr': userr,
+        'email': email,
+        'regex_match_and_valid': regex_match_and_valid,
+        'verified': verified,
+        'matched': matched,
+        'preferences': get_user_preferences(request),
+        'languages': models.UserLanguage.objects.all()
+    }
+    print data
+    return render(request, 'welcome.html', data, context_instance=RequestContext(request))
 
 
 def save_profile_extras(request):
@@ -1653,6 +1673,9 @@ def save_profile_extras(request):
     check_enable_naw = request.POST.get('check_enable_naw', '')
     if check_enable_naw:
         request_user.role = 'naw'
+    else:
+        # Forms don't send unchecked checkboxes
+        request_user.role = 'regular'
 
     request_user.init_user = True
     request_user.save()
@@ -1662,6 +1685,8 @@ def save_profile_extras(request):
         user_preferences = get_user_preferences(request)
         user_preferences.preferred_language = models.UserLanguage.objects.get(id=user_language_id)
         user_preferences.save()
+
+        set_session_preferred_language(request)
 
     if request_user.role == 'naw':
         return redirect('naw_dashboard')
@@ -2222,10 +2247,10 @@ def get_data_for_search_uuid(search_uuid):
         if found_search.search_type == 'StatsWales':
             swod = StatsWalesOData()
             swod_const_options = [
-                    # 'Area_Code': area_code,
-                    ('Year_Code', swod.equals_conditional, 2015),
-                    ('AgeGroup_Code', swod.equals_conditional, 'AllAges')
-                ]
+                # 'Area_Code': area_code,
+                ('Year_Code', swod.equals_conditional, 2015),
+                ('AgeGroup_Code', swod.equals_conditional, 'AllAges')
+            ]
 
             all_data = swod.get_data_dict(
                 dataset_id,
@@ -2463,3 +2488,7 @@ def user_guide(request):
 
 def browse_surveys(request):
     return render(request, 'browse_surveys.html', {}, context_instance=RequestContext(request))
+
+
+def data_and_history(request):
+    return render(request, 'data_and_history.html', {}, context_instance=RequestContext(request))

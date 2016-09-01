@@ -54,6 +54,7 @@ urlpatterns = [
 
     url(r'^search_layer_topojson/(?P<search_uuid>\S+)', views.get_topojson_for_uuid_view, name='search_layer_topojson'),
 
+    url(r'^data_and_history', views.data_and_history, name='data_and_history'),
     url(r'^file_management', views.file_management, name='file_management'),
     url(r'^events', views.events, name='events'),
     url(r'^search_data/(?P<search_uuid>\S+)', views.search_data, name='search_data'),

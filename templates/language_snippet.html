@@ -1,0 +1,23 @@
+{% load i18n %}
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        {% trans 'Language' %}
+    </div>
+    <div class="panel-body">
+        <label>{% trans 'Select your preferred language.' %}</label>
+        <div class="form-group">
+{#        {{ preferences.preferred_language }}#}
+            {% for language in languages %}
+                <div class="radio">
+                    <label>
+                        <input id="user_language" name="user_language"
+                               {% if preferences.preferred_language == language %}checked="checked"{% endif %}
+                               type="radio"
+                               value="{{ language.id }}">{{ language.user_language_title }}
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

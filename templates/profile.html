@@ -40,66 +40,51 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{% trans 'Profile' %}</h1>
+                <h1 class="page-header"><i class="fa fa-user"></i>    {% trans 'Profile' %}</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
+    </div>
 
 
-{#        <div class="row">#}
-{#            <div class="col-lg-12">#}
-{##}
-{#                <form role="form" action="{% url 'save_profile_extras' %}" enctype="multipart/form-data"#}
-{#                      method="POST" id="form_welcome_extras" >#}
-{#                    {% csrf_token %}#}
-{##}
-{#                    <div class="row">#}
-{#                        <div class="panel panel-info">#}
-{#                            <div class="panel-heading">#}
-{#                                <h3>{{ user }}'s Profile</h3>#}
-{#                            </div>#}
-{#                            <div class="panel-body">#}
-{#                                {% include 'profile_snippet.html' %}#}
-{##}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{#            <div class="row">#}
-{#                <button class="btn btn-success pull-right" type="submit">Save and continue</button>#}
-{#            </div>#}
-{##}
-{#                </form>#}
-{#            </div>#}
-{#        </div>#}
+    <form id="preferences_form" action="{% url 'edit_metadata' %}" method="get" role="search">
+        <input type="hidden" name="function" value="set_user_preferences">
+        {% csrf_token %}
+        <div class="container">
 
-
-        <form id="preferences_form" action="{% url 'edit_metadata' %}" method="get" role="search">
-            <input type="hidden" name="function" value="set_user_preferences">
-                            {% csrf_token %}
-
-        <div class="row">
+            <div class="row">
                 <div class="input-group-btn">
-                    <div id="submit_preferences" class="btn btn-success pull-right" >{% trans 'Save' %}</div>
+                    <div id="submit_preferences" class="btn btn-success" >{% trans 'Save' %}</div>
                 </div>
             </div>
 
-        <div class="row">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                <h3>{{ user }}'s Profile</h3>
-                            </div>
-                            <div class="panel-body">
-                                {% include 'profile_snippet.html' %}
-
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3>{{ user }}'s Profile</h3>
                     </div>
+                    <div class="panel-body">
+                        {% include 'profile_snippet.html' %}
+
+                    </div>
+                </div>
+            </div>
 
 
             <div class="row">
 
                 {% include 'language_snippet.html' %}
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header"><i class="fa fa-cog"></i>    {% trans 'Settings' %}</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+            <div class="row">
 
                 <div class="panel panel-info">
                     <div class="panel-heading">
@@ -142,15 +127,14 @@
                 </div>
             </div>
 
+        </div>
+    </form>
 
-        </form>
-
-    </div>
 
     <script>
         $(document).ready(function(){
 
-$('#submit_preferences').click(function(){
+            $('#submit_preferences').click(function(){
                 waitingDialog.show('Saving ...');
                 $.ajax({
                     url: "{% url 'edit_metadata' %}",

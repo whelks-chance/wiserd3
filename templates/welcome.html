@@ -6,29 +6,16 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">{% trans 'Welcome ' %} {{ user }}</h1>
-                <h2>{% trans 'Thank you for signing up to the WISERD DataPortal' %}</h2>
-            </div>
-            {#        <div>#}
-            {#            <p>#}
+            <h1 class="page-header">{% trans 'Welcome ' %} {{ user }}</h1>
+            <h2>{% trans 'Thank you for signing up to the WISERD DataPortal' %}</h2>
+
             {#                {{ email }}#}
-            {#            </p>#}
-            {##}
-            {#            <p>#}
             {#                regex_match_and_valid : {{ regex_match_and_valid }}#}
-            {#            </p>#}
-            {##}
-            {#            <p>#}
             {#                verified : {{ verified }}#}
-            {#            </p>#}
-            {##}
-            {#            <p>#}
             {#                matched : {{ matched }}#}
-            {#            </p>#}
-            {#        </div>#}
+
         </div>
 
         {% if matched and not verified %}
@@ -51,7 +38,9 @@
             {% csrf_token %}
 
             <div class="row">
-                <button class="btn btn-success pull-right" type="submit">Save and continue</button>
+                <div class="col-lg-12">
+                    <button class="btn btn-success pull-right" type="submit">Save and continue</button>
+                </div>
             </div>
 
             <div class="row">

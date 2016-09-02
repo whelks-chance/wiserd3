@@ -74,8 +74,8 @@
                         {% if request.user.is_authenticated %}
                             <li><a href="{% url 'profile' %}"><i class="fa fa-user fa-fw"></i> {% trans 'User Profile' %}</a>
                             </li>
-                            <li><a href="{% url 'settings' %}"><i class="fa fa-gear fa-fw"></i> {% trans 'Personal Settings' %}</a>
-                            </li>
+{#                            <li><a href="{% url 'settings' %}"><i class="fa fa-gear fa-fw"></i> {% trans 'Personal Settings' %}</a>#}
+{#                            </li>#}
                             <li class="divider"></li>
 
                             <li><a target="_blank" href="/api/"><i class="fa fa-cloud-download fa-fw"></i> {% trans 'API' %}</a>
@@ -125,7 +125,7 @@
                         </li>
 
                         <li id="Recent_Search_Results_li">
-                            <a id="Recent_Search_Results_btn" href="#"><i class="fa fa-sitemap fa-fw"></i> {% trans 'Recent Search Results' %}<span class="fa arrow"></span></a>
+                            <a id="Recent_Search_Results_btn" href="#"><i class="fa fa-search fa-fw"></i> {% trans 'Recent Search Results' %}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#"> {% trans 'Text Results' %}<span class="fa arrow"></span></a>

@@ -36,26 +36,24 @@
 
     </style>
 
-    <div class="container">
+    <div class="container-fluid">
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header"><i class="fa fa-user"></i>    {% trans 'Profile' %}</h1>
+                <h1 class="page-header"><i class="icon-background icon-background-blue fa fa-user"></i>    {% trans 'Profile' %}</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
     </div>
 
+    <div class="container-fluid">
 
-    <form id="preferences_form" action="{% url 'edit_metadata' %}" method="get" role="search">
-        <input type="hidden" name="function" value="set_user_preferences">
-        {% csrf_token %}
-        <div class="container">
+        <form id="preferences_form" action="{% url 'edit_metadata' %}" method="get" role="search">
+            <input type="hidden" name="function" value="set_user_preferences">
+            {% csrf_token %}
 
             <div class="row">
-                <div class="input-group-btn">
-                    <div id="submit_preferences" class="btn btn-success" >{% trans 'Save' %}</div>
-                </div>
+                    <button id="submit_preferences" class="btn btn-success pull-right" >{% trans 'Save' %}</button>
             </div>
 
             <div class="row">
@@ -79,7 +77,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header"><i class="fa fa-cog"></i>    {% trans 'Settings' %}</h1>
+                    <h1 class="page-header"><i class="icon-background icon-background-red fa fa-cogs"></i>    {% trans 'Settings' %}</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -127,8 +125,8 @@
                 </div>
             </div>
 
-        </div>
-    </form>
+        </form>
+    </div>
 
 
     <script>

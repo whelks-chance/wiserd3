@@ -171,7 +171,7 @@
     {% if not naw %}
         <li id="map_layers_menu_li">
             <a href="#" id="map_layers_menu_link">
-                <i class="fa fa-sitemap fa-fw"></i> {% trans 'Map layers' %}<span class="fa arrow"></span>
+                <i class="fa fa-map-o fa-fw"></i> {% trans 'Map layers' %}<span class="fa arrow"></span>
             </a>
             <ul class="nav nav-ul nav-second-level">
                 <li>
@@ -466,7 +466,8 @@
                     'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                     {
                         {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
-                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+{#                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',#}
+                        attribution: '<a target="_blank" href="{% url 'licence_attribution' %}">Licence & attribution</a> | Map data &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
                         maxZoom: 15,
                         id: 'your.mapbox.project.id',
                         accessToken: 'your.mapbox.public.access.token'
@@ -1450,7 +1451,7 @@
 
                     var controlUI = L.DomUtil.create('div', 'leaflet-control-command-interior', controlDiv);
                     controlUI.title = '{% trans "Reset" %}';
-                    controlUI.innerHTML = '<a><i class="fa fa-minus-circle"></a>';
+                    controlUI.innerHTML = '<a><i class="fa fa-refresh"></a>';
                     return controlDiv;
                 }
             });

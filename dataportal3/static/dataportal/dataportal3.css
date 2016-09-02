@@ -251,9 +251,9 @@
 
 .fill_properly {
     bottom:0;
-  top:0;
-  left:0;
-  right:0;
+    top:0;
+    left:0;
+    right:0;
     position: absolute;
     margin: 1em;
     padding: 0.5em;
@@ -269,4 +269,40 @@
 
 .dialog-container {
     width: 100%;
+}
+
+.icon-background {
+    color: #fff;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.icon-background-blue {
+      background-color: #337ab7;
+    border: 1px solid #337ab7;
+}
+
+.icon-background-purple {
+    background-color: rebeccapurple;
+    border: 1px solid rebeccapurple;
+}
+
+.icon-background-red {
+    background-color: #d9534f;
+    border: 1px solid #d9534f;
+}
+
+.icon-background-green {
+    background-color: #5cb85c;
+    border: 1px solid #5cb85c;
+}
+
+.icon-background-yellow {
+    background-color: #f0ad4e;
+    border: 1px solid #f0ad4e;
+    border-radius: 12px;
 }

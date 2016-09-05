@@ -2,6 +2,8 @@
 {% load staticfiles %}
 {% load i18n %}
 
+{% block page_name %}{% trans 'Browse Surveys' %}{% endblock %}
+
 {% block content %}
 
     <script>
@@ -47,52 +49,47 @@
 
 
     <div class="container-fluid">
-        <div class="row">
+
+        <div id="survey_row" class="row">
+            <h1 class="page-header">
+                <i class="icon-background icon-background-red fa fa-list-alt"></i>     {% trans 'Browse Surveys' %}</h1>
 
 
-            <div id="survey_row" class="row">
-                <h3>{% trans 'Browse Surveys' %}</h3>
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+                    <table class="table table-striped table-bordered table-hover" id="survey_table">
+                        <thead>
+                        <tr>
+                            <th>{% trans 'Title' %}</th>
+                            {#                                    <th>{% trans 'Frequency' %}</th>#}
+                            {#                                    <th>{% trans 'Collection Method' %}</th>#}
+                            <th>{% trans 'Date' %}</th>
 
+                            <th>{% trans 'View' %}</th>
+                            {#                                    <th>{% trans 'Area' %}</th>#}
+                            {#                                    <th>{% trans 'Map' %}</th>#}
 
-                <div class="panel-body">
-                    <div class="dataTable_wrapper">
-                        <table class="table table-striped table-bordered table-hover" id="survey_table">
-                            <thead>
-                            <tr>
-                                <th>{% trans 'Title' %}</th>
-                                {#                                    <th>{% trans 'Frequency' %}</th>#}
-                                {#                                    <th>{% trans 'Collection Method' %}</th>#}
-                                <th>{% trans 'Date' %}</th>
-
-                                <th>{% trans 'View' %}</th>
-                                {#                                    <th>{% trans 'Area' %}</th>#}
-                                {#                                    <th>{% trans 'Map' %}</th>#}
-
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
                 </div>
-
-            <a href="#survey_row" class="pull-right">
-                    <button class="btn btn-info btn-outline">
-                        <i class="fa fa-arrow-circle-up"></i> {% trans 'Top' %}
-                    </button>
-                </a>
-
             </div>
 
-            <!-- /.col-lg-12 -->
+            <a href="#survey_row" class="pull-right">
+                <button class="btn btn-info btn-outline">
+                    <i class="fa fa-arrow-circle-up"></i> {% trans 'Top' %}
+                </button>
+            </a>
+
         </div>
-        <!-- /.row -->
+
     </div>
-    <!-- /.container-fluid -->
 
 {% endblock %}

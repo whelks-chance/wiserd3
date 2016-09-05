@@ -2389,32 +2389,32 @@ def local_data(request):
 
 @csrf_exempt
 def download_dataset_zip(request):
-
     dataset_id = request.GET.get('dataset_id')
+
+    zip_subdir = 'wiserd_docs'
+    zip_filename = "{}.zip".format(zip_subdir)
+
+    # Open StringIO to grab in-memory ZIP contents
+    s = StringIO.StringIO()
+
+    # The zip compressor
+    zf = zipfile.ZipFile(s, "w", zipfile.ZIP_DEFLATED)
+
+    print os.path.abspath('./')
+
+    filenames = ['./dataportal3/static/dataportal/docs/licence_attribution_en.html']
+
+    for fpath in filenames:
+
+        # Calculate path for file in zip
+        fdir, fname = os.path.split(fpath)
+        zip_path = os.path.join(zip_subdir, fname)
+
+        # Add file, at correct path
+        zf.write(fpath, zip_path)
+
     if dataset_id:
         print dataset_id
-
-        zip_subdir = 'wiserd_docs'
-        zip_filename = "{}.zip".format(zip_subdir)
-
-        # Open StringIO to grab in-memory ZIP contents
-        s = StringIO.StringIO()
-
-        # The zip compressor
-        zf = zipfile.ZipFile(s, "w", zipfile.ZIP_DEFLATED)
-
-        print os.path.abspath('./')
-
-        filenames = ['./dataportal3/static/dataportal/docs/licence_attribution_en.html']
-
-        for fpath in filenames:
-
-            # Calculate path for file in zip
-            fdir, fname = os.path.split(fpath)
-            zip_path = os.path.join(zip_subdir, fname)
-
-            # Add file, at correct path
-            zf.write(fpath, zip_path)
 
         zf.writestr('data.json', json.dumps(get_data_for_search_uuid(dataset_id), indent=4))
         zf.writestr('topojson_data.json', json.dumps(get_topojson_for_uuid(request, dataset_id), indent=4))
@@ -2425,16 +2425,17 @@ def download_dataset_zip(request):
         except Exception as e:
             print e
 
-        zf.close()
+    zf.close()
 
-        # Grab ZIP file from in-memory, make response with correct MIME-type
-        resp = HttpResponse(s.getvalue(), content_type="application/x-zip-compressed")
-        # ..and correct content-disposition
-        resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    # Grab ZIP file from in-memory, make response with correct MIME-type
+    # and correct content-disposition
+    resp = HttpResponse(s.getvalue(), content_type="application/x-zip-compressed")
+    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
 
-        return resp
-    else:
-        return render(request, '404.html', {'error': 'dataset_not_found'}, context_instance=RequestContext(request))
+    return resp
+
+    # else:
+    #     return render(request, '404.html', {'error': 'dataset_not_found'}, context_instance=RequestContext(request))
 
 
 def do_screenshot(search_uuid):

@@ -12,6 +12,8 @@ Array.prototype.forEach.call(els, function(el) {
 {% load staticfiles %}
 {% load i18n %}
 
+{% block page_name %}{% trans 'Licences and Attributions' %}{% endblock %}
+
 {% block content %}
     <div class="container-fluid">
         <div class="row">
@@ -21,6 +23,12 @@ Array.prototype.forEach.call(els, function(el) {
                     </i>   {% trans 'Licences and Attributions' %}</h1>
             </div>
         </div>
+
+        <div class="row">
+                <div class="col-lg-12">
+                    <a href="{% url 'download_dataset_zip' %}" class="btn btn-success pull-right">Download as zip</a>
+                </div>
+            </div>
 
         <div class="row">
             <div class="col-lg-12">

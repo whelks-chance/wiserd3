@@ -2,6 +2,8 @@
 {% load staticfiles %}
 {% load i18n %}
 
+{% block page_name %}{% trans 'Survey' %}{% endblock %}
+
 {% block content %}
     <script type="text/javascript" src="{% static 'dataportal/page_js/survey_detail.js' %}"></script>
 
@@ -19,8 +21,8 @@
                         {'display': false, 'displayName': '{% trans 'Identifier' %}', 'id': 'identifier'},
                         {'display': true, 'displayName': '{% trans 'Survey Title' %}', 'id': 'survey_title'},
                         {'display': true, 'displayName': '{% trans 'Data Collector' %}', 'id': 'datacollector'},
-                        {'display': true, 'displayName': '{% trans 'Collection Start Date' %}', 'id': 'collectionstartdate'},
-                        {'display': true, 'displayName': '{% trans 'Collection End Date' %}', 'id': 'collectionenddate'},
+                        {'display': false, 'displayName': '{% trans 'Collection Start Date' %}', 'id': 'collectionstartdate'},
+                        {'display': false, 'displayName': '{% trans 'Collection End Date' %}', 'id': 'collectionenddate'},
                         {'display': true, 'displayName': '{% trans 'Method of Collection Description' %}', 'id': 'moc_description'},
                         {'display': true, 'displayName': '{% trans 'Sampling Procedure' %}', 'id': 'samp_procedure'},
                         {'display': true, 'displayName': '{% trans 'Collection Situation' %}', 'id': 'collectionsituation'},
@@ -33,14 +35,14 @@
                         {'display': true, 'displayName': '{% trans 'Description Of Sampling Error' %}', 'id': 'descriptionofsamplingerror'},
                         {'display': false, 'displayName': '{% trans 'Data Product' %}', 'id': 'dataproduct'},
                         {'display': false, 'displayName': '{% trans 'Data Product ID' %}', 'id': 'dataproductid'},
-                        {'display': true, 'displayName': '{% trans 'Location' %}', 'id': 'location'},
-                        {'display': true, 'displayName': '{% trans 'URL' %}', 'id': 'link', 'type': 'link'},
-                        {'display': true, 'displayName': '{% trans 'Notes' %}', 'id': 'notes'},
+                        {'display': false, 'displayName': '{% trans 'Location' %}', 'id': 'location'},
+                        {'display': false, 'displayName': '{% trans 'URL' %}', 'id': 'link', 'type': 'link'},
+                        {'display': false, 'displayName': '{% trans 'Notes' %}', 'id': 'notes'},
                         {'display': false, 'displayName': '{% trans 'User ID' %}', 'id': 'user_id'},
                         {'display': true, 'displayName': '{% trans 'Created' %}', 'id': 'created'},
                         {'display': true, 'displayName': '{% trans 'Updated' %}', 'id': 'updated'},
                         {'display': false, 'displayName': '{% trans 'Long' %}', 'id': 'long'},
-                        {'display': true, 'displayName': '{% trans 'Short Title' %}', 'id': 'short_title'},
+                        {'display': false, 'displayName': '{% trans 'Short Title' %}', 'id': 'short_title'},
                         {'display': false, 'displayName': '{% trans 'Spatial Data' %}', 'id': 'spatialdata'}]
                 },
                 'dc' : {

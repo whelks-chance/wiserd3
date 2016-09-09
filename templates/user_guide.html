@@ -2,61 +2,587 @@
 {% load staticfiles %}
 {% load i18n %}
 
+{% block page_name %}{% trans 'User Guide' %}{% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
+
+    <div class="container-fluid user_guide_page">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{% trans 'User Guide' %}</h1>
+                <h1 class="page-header"><i class="icon-background icon-background-yellow fa fa-book"></i>   {% trans 'User Guide' %}</h1>
+
             </div>
         </div>
 
+
+        <p class="c7 c29"><span class="c31 c30">Contents</span></p>
         <div class="row">
-            <ul>
+            <ol>
                 <li>
-                    <a href="#remote_data_mapping">{% trans 'Remote Data Mapping' %}</a>
+                    <a class="c6" href="#h.32pbpe1hbhs">The DataPortal</a>
                 </li>
+                <li class="c10 c15">
+                    <span class="c0"><a class="c6" href="#h.gjdgxs">Creating an Account</a></span>
+                </li>
+
+                <li class="c10 c15">
+                    <span class="c0">
+                        <a class="c6" href="#h.1xvls23yy78a">Navigating through The Dashboard</a>
+                    </span>
+
+                    <ol>
+                        <li class="c10 c21">
+                            <span class="c0"><a class="c6" href="#h.8eof9hrl1oa4">View Profile</a></span>
+                        </li>
+                        <li class="c10 c21">
+                            <span class="c0"><a class="c6" href="#h.wg4ln1l4w5f6">Settings</a></span>
+                        </li>
+                    </ol>
+                </li>
+
                 <li>
-                    <a href="#discover_wiserd_metadata">{% trans 'Discovering WISERD metadata' %}</a>
+                    <span class="c0"><a class="c6" href="#h.piaxtyvftoqq">Browse Surveys</a></span>
                 </li>
-                <li>
-                    <a href="#data_upload">{% trans 'Data Upload' %}</a>
+
+                <li class="c10 c15">
+                    <span class="c0"><a class="c6" href="#h.1g84zcsswfju">Searching for Data</a></span>
                 </li>
-                <li>
-                    <a href="#naw">{% trans 'National Assembley of Wales' %}</a>
+
+                <li class="c10 c15">
+                    <span class="c0"><a class="c6" href="#h.fy307n6k33g">View Map</a></span>
+                    <ol>
+                        <li class="c10 c21"><span class="c0"><a class="c6"
+                                                                href="#h.c5idbt16gymn">Using the Map</a></span></li>
+                        <li class="c10 c21">
+                            <span class="c0"><a class="c6" href=
+                                    "#h.9lvwa9az9loq">Adding data to the Map</a></span>
+                            <ol>
+                                <li class="c10 c36">
+                                    <span class="c0"><a class="c6" href="#h.h8vtoyxx1sv2">Remote Data</a></span>
+                                </li>
+                                <li class="c10 c36">
+                                    <span class="c0"><a class="c6" href="#h.7twlsztxteyi">Local Data</a></span>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
                 </li>
-            </ul>
+                <li class="c10 c15">
+                    <span class="c0"><a class="c6" href="#h.bbgz0jct9r5n">National Assembly for Wales</a></span>
+                </li>
+                <li class="c10 c15">
+                    <span class="c0"><a class="c6" href="#h.98t3j95vmsqu">Event Presentation Files</a></span>
+                </li>
+                <li class="c10 c15">
+                    <span class="c0"><a class="c6" href="#h.moaux88strx0">View Tech Blog Posts</a></span>
+                </li>
+                <li class="c10 c15">
+                    <span class="c0"><a class="c6" href="#h.hxx4wrloq5q2">About, Help and Support</a></span>
+                </li>
+                <li class="c10 c15">
+                    <span class="c0"><a class="c6" href="#h.ry7upru5w1lm">Languages</a></span>
+                </li>
+            </ol>
         </div>
 
-        <div class="row">
-            <h2 id="remote_data_mapping">{% trans 'Remote Data Mapping' %}</h2>
-            <p>{% trans 'Map layers -> Remote Data' %}</p>
-            <p>{% trans 'Keyword search' %}</p>
-            <p>{% trans 'Select attributes' %}</p>
-        </div>
 
-        <div class="row">
-            <h2 id="discover_wiserd_metadata">{% trans 'Discovering WISERD metadata' %}</h2>
-            <p>{% trans 'Do a keyword search' %}</p>
+        <div class="row inline_li_h1">
+            <ol>
+                <li>
+                    <h1 class="c7 c22" id="h.32pbpe1hbhs"><span class="c9 c3 c13">The DataPortal</span></h1>
 
-            <h4>{% trans 'Dublin Core' %}</h4>
-            <p>{% trans 'Standards complient metadata' %}</p>
+                    <p class="c10"><span class="c35">The WISERD DataPortal is a web
+            application that enhances a researcher&rsquo;s ability to search,
+            discover, map and download socio-economic research data related to
+            Wales. The aim is to encourage the re-use and repurposing of
+            existing data.</span></p>
 
-            <h4>{% trans 'WISERD Survey Metadata' %}</h4>
-            <p>{% trans 'Metadata not covered by the Dublin Core metadata standard' %}</p>
-        </div>
+                    <p class="c10 c16">
+                        <span>To access the WISERD DataPortal visit:</span> <span class="c0">
+                    <a class="c6" href="http://data.wiserd.ac.uk">http://data.wiserd.ac.uk</a>
+                </span>
+                <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 29.00px; height: 33.00px;">
+                    <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/image09.png'%}"
+                         style="width: 4274.84px; height: 1856.26px; margin-left: -3848.02px; margin-top: -140.40px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                         title="">
+                </span>
+                    </p>
+                    <p class="c10"><span>This is the DataPortal on-screen help guide.
+            It provides advice on different parts of each page.</span></p>
+                </li>
 
-        <div class="row">
-            <h2 id="data_upload">{% trans 'Data Upload' %}</h2>
-            <p>{% trans 'Go to this page and upload a shapefile' %}</p>
-        </div>
 
-        <div class="row">
-            <h2 id="naw" >{% trans 'National Assembley of Wales' %}</h2>
-            <p>{% trans 'Specific features and data.' %}</p>
+
+
+
+
+                <li class="c10 c15">
+                    <h1 class="c7 c22" id="h.gjdgxs"><span class="c30 c9 c3 c13">Creating an Account</span></h1>
+                    <p class="c5 c10 c4"><span class="c33 c30 c26">To use the full
+            suite of DataPortal functionality you must first create an account
+            using the</span> <span class="c26 c3 c30">Login</span> <span class=
+                                                                                 "c30 c26 c33">button in the top right hand corner. You can either
+            sign in straight away using an existing Google account, or create a
+            new username and password.</span></p>
+                    <p class="c5 c10"><span style=
+                                                    "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 602.00px; height: 246.00px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image03.png'%}"
+                 style=
+                         "width: 602.00px; height: 376.00px; margin-left: 0.00px; margin-top: -11.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                </li>
+
+
+
+
+
+
+                <li class="c10 c15">
+                    <h1 class="c7 c16" id="h.1xvls23yy78a">
+                        <span class="c30 c9 c3 c13">Navigating through The Dashboard</span>
+                    </h1>
+                    <p class="c10 c4"><span>Once logged in you will be directed back to
+                        the Dashboard. From this page all sections of the DataPortal can be
+                        accessed using the buttons shown. The sidebar contains a dashboard
+                        button throughout the DataPortal, however, the logo at the top of
+                        the page can also be used to navigate back to the dashboard as
+                        well.</span>
+                    </p>
+
+                    <h1 class="c7" id="h.t7wre9efhpj0">
+                        <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 580.00px; height: 339.00px;">
+            <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/image31.png'%}"
+                 style="width: 1162.14px; height: 465.08px; margin-left: -582.14px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title="">
+                        </span>
+                    </h1>
+
+
+                    <ol>
+                        <li class="c10 c21">
+
+                            <h2 class="c7 c20" id="h.8eof9hrl1oa4"><span class="c13">View Profile</span> <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 163.00px; height: 69.00px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image06.png'%}"
+                 style="width: 602.00px; height: 376.00px; margin-left: -107.00px; margin-top: -117.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span>
+                            </h2>
+                            <p class="c10 c4"><span>Your profile contains details about you and
+            your settings, as well as the toggle at the top of each page you
+            can set your language preference here. Always remember to click
+            Save when you have updated your profile/settings.</span>
+                            </p>
+
+                            <h2 class="c7 c8" id="h.hbolhva1kyb4"></h2>
+                            <p class="c10 c4"><span class="user_guide_img" style=
+                                    "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 591.00px; height: 468.00px;">
+            <img alt="" src="{% static 'dataportal/media/help_guide_img/image14.png'%}"
+                 style="width: 1185.94px; height: 474.00px; margin-left: -594.94px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span>
+                            </p>
+
+
+                        </li>
+                        <li class="c10 c21">
+                            <h2 class="c7 c20" id="h.wg4ln1l4w5f6"><span class="c13">Settings</span></h2>
+                        </li>
+                    </ol>
+                </li>
+
+
+
+
+
+                <li>
+                    <h1 class="c7 c20" id="h.piaxtyvftoqq"><span class="c9 c3">Browse Surveys</span> <span class="user_guide_img" style=
+                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 201.50px; height: 94.88px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image18.png'%}"
+                 style=
+                         "width: 1461.48px; height: 586.29px; margin-left: -1259.98px; margin-top: -221.38px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></h1>
+                    <p class="c10 c4"><span>Browse Surveys is an easy to use overview
+            listing all the surveys the DataPortal has to offer. On this page
+            you can filter the surveys and view their content.</span></p>
+                    <h2 class="c7" id="h.xoipdj9hm9x8">
+                <span class="user_guide_img" style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 569.00px; height: 451.00px;">
+            <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/image12.png'%}"
+                 style="width: 1145.61px; height: 458.00px; margin-left: -576.61px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span>
+                    </h2>
+                </li>
+
+
+
+
+
+                <li class="c10 c15">
+                    <h1 class="c7" id="h.1g84zcsswfju">
+                        <span class="c9 c3 c13">Searching for Data</span>
+                    </h1>
+
+                <span class="user_guide_img" style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 153.00px; height: 65.00px;">
+            <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/image11.png' %}"
+                 style="width: 153.00px; height: 65.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span>
+                    <p class="c10"><span>Datasets can be found and searched through
+            the</span> <span class="c3">Search Metadata</span>
+            <span>&nbsp;button, or simply by using the search bar on the left
+            hand side of the DataPortal.</span>
+                    </p>
+                    <p>
+                <span class="user_guide_img" style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 170.00px; height: 167.00px;">
+            <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/image23.png'%}"
+                 style="width: 546.00px; height: 285.00px; margin-left: 0.00px; margin-top: -22.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span>
+                    </p>
+                    <p class="c10"><span>When searching a keyword such as Health, all
+            related questions, surveys and qualitative records will be
+            displayed.</span></p>
+                    <p class="c10 c4"><span>These results appear in a grid format which
+            can be filtered between</span> <span class="c3">Questions</span>
+                        <span>,</span> <span class="c3">Surveys</span> <span>and</span>
+                        <span class="c3">Qualitative Records</span> <span>. You can also
+            use the search bars at the top of each subsection to search through
+            the results as well as sorting the results by clicking on a column
+            headings (for example sorting by date).</span></p>
+                    <p class="c10"><span class="user_guide_img" style=
+                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 586.50px; height: 471.16px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image09.png'%}"
+                 style=
+                         "width: 1176.91px; height: 471.16px; margin-left: -590.41px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                    <p class="c10"><span>Once you've found data of interest to
+            you there are two options,</span>
+                        <span class="c3">View Question</span><span> or </span><span class="c3">View Survey</span> <span>.</span></p>
+
+                    <p><span>View Question</span> <span> will bring up this page.</span></p>
+                    <p class="c10"><span class="user_guide_img" style=
+                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 586.00px; height: 329.00px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image10.png'%}"
+                 style=
+                         "width: 602.00px; height: 376.00px; margin-left: -9.00px; margin-top: -26.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+
+                </li>
+
+
+
+                <li class="c10 c15">
+                    <h1 class="c7" id="h.fy307n6k33g">
+                                <span class="c9 c3">View Map</span>
+                <span class="user_guide_img" style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 153.00px; height: 65.00px;">
+            <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/image02.png'%}"
+                 style="width: 153.00px; height: 65.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span>
+                            </h1>
+                            <p class="c4 c10"><span>On clicking the View Map button DataPortal
+            is directed to this page - an interactive mapping section.
+            DataPortal gives the user the ability to plot information on a map,
+            making the data easier to visualise and sort.</span></p>
+                            <p class="c10"><span class="user_guide_img" style=
+                                    "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 603.00px; height: 477.00px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image32.png'%}"
+                 style=
+                         "width: 1210.02px; height: 484.00px; margin-left: -607.02px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                    <ol>
+                        <li class="c10 c21">
+
+                            <h2 class="c7" id="h.c5idbt16gymn"><span class="c13">Using the Map</span></h2>
+                            <p class="c10 c4"><span>The interface:</span></p>
+                            <p class="c10 c4"><span>This is the starting page where a user can
+            insert data onto a map to be analysed further. The familiar sidebar
+            contains the dashboard button, options for importing data onto the
+            map using layers, and</span> <span class="c3">Recent Search
+            Results</span> <span>&nbsp;which is a quick way of adding
+            previously used data. The</span> <span class="c3">layer
+            button</span> <span>(located in the top right hand corner of the
+            map, allows the user to selected layers to view or hide.</span></p>
+                            <p class="c11"><span class="user_guide_img" style=
+                                    "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 468.50px; height: 731.90px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image25.png'%}"
+                 style=
+                         "width: 2101.40px; height: 970.31px; margin-left: -278.40px; margin-top: -182.22px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                        </li>
+                        <li class="c10 c21">
+                            <h2 class="c7" id="h.9lvwa9az9loq">
+                                <span class="c13">Adding data to the Map</span>
+                            </h2>
+                            <p class="c10"><span>The WISERD DataPortal can be used to find and
+            map a variety of socio-economic data, points of interest and
+            boundary data for Wales. You can then export the map and download
+            the data for further analysis.</span></p>
+                            <ol>
+
+
+
+                                <li class="c10 c36">
+                                    <h3 class="c7" id="h.h8vtoyxx1sv2"><span class="c19">Remote Data</span></h3>
+                                    <p class="c10"><span>To add remote data to the map, click on
+            the</span> <span class="c3">Map Layers</span> <span>&nbsp;button
+            and select</span> <span class="c3">Remote Data</span>
+                                        <span>.</span></p>
+                                    <p class="c10 c14"><span class="user_guide_img" style=
+                                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 407.15px; height: 224.52px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image08.png'%}"
+                 style=
+                         "width: 1008.04px; height: 403.80px; margin-left: -502.34px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                                    <p class="c10 c17"><span>The following search box will appear, by
+            typing in a key word different datasets will appear. Select any
+            dataset of interest and click</span> <span class="c3">Add to
+            Map</span> <span>.</span></p>
+                                    <p class="c10 c14"><span class="user_guide_img" style=
+                                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 159.00px; height: 304.00px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image28.png'%}"
+                 style=
+                         "width: 997.60px; height: 398.17px; margin-left: -667.83px; margin-top: -69.39px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span> <span class="user_guide_img" style=
+                                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 170.86px; height: 304.50px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image26.png'%}"
+                 style=
+                         "width: 1018.38px; height: 407.69px; margin-left: -676.67px; margin-top: -71.05px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                                    <p class="c10 c17"><span>A list of variables will appear, these
+            help divide the data into meaningful layers, for example,
+            choosing</span> <span class="c3">Very Good Health, Annually</span>
+                                        <span>&nbsp;as a</span> <span class="c3">Percent</span>
+                                        <span>in</span> <span class="c3">Total</span> <span>by</span>
+                                        <span class="c3">LSOA.</span> <span>Click</span> <span class=
+                                                                                                       "c3">Render to Map.</span> <span>The following box will show</span>
+                                        <span class="c3">Choropleth Options</span> <span>(these are the
+            visual features of the layer) select the desired options and
+            click</span> <span class="c3">Show New Layer</span>
+                                        <span>.</span></p>
+                                    <p class="c10 c17"><span class="user_guide_img" style=
+                                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 206.57px; height: 373.50px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image07.png'%}"
+                 style=
+                         "width: 1256.13px; height: 502.87px; margin-left: -836.72px; margin-top: -89.72px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span> <span class="user_guide_img" style=
+                                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 267.21px; height: 372.50px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image04.png'%}"
+                 style=
+                         "width: 1227.93px; height: 490.56px; margin-left: -789.38px; margin-top: -85.49px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                                    <p class="c10 c17"><span>The following will be displayed.
+            The</span> <span class="c3">key</span> <span>at the bottom of the
+            map shows the different percentages of very good health in
+            different regions.</span></p>
+                                    <p class="c10 c17"><span>&nbsp;</span> <span class="user_guide_img"
+                                                                                 style=
+                                                                                         "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 522.20px; height: 528.78px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image33.png'%}"
+                 style=
+                         "width: 1321.40px; height: 528.78px; margin-left: -662.45px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                                    <p class="c10 c17"><span>From this map you can select a region and
+            find out information about it in the righthand sidebar (example
+            shown below).</span></p>
+                                    <p class="c10 c14"><span class="user_guide_img" style=
+                                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 519.50px; height: 311.33px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image16.png'%}"
+                 style=
+                         "width: 1045.95px; height: 418.48px; margin-left: -526.45px; margin-top: -45.15px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                                </li>
+
+
+                                <li class="c10 c36">
+                                    <h3 class="c7" id="h.7twlsztxteyi"><span class="c19">Local Data</span></h3>
+                                    <p class="c10"><span>The WISERD DataPortal allows users to map
+            their own data for areas in Wales and to export this as a
+            publishable map. This function has been specially designed so that
+            all the mapping occurs inside the user&rsquo;s browser rather than
+            on the WISERD DataPortal server. This means that potentially
+            sensitive data does not leave the user&rsquo;s machine.</span></p>
+                                    <p class="c10"><span>You can import your own data onto the
+            DataPortal by clicking the</span> <span class="c3">MapMyData</span>
+                                        <span>button.</span></p>
+                                    <p class="c10 c14"><span class="user_guide_img" style=
+                                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 368.50px; height: 251.89px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image17.png'%}"
+                 style=
+                         "width: 936.02px; height: 374.72px; margin-left: -468.01px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                                    <p class="c10"><span>A box will appear where you can choose a local
+            file to upload onto the map. The following box will display the
+            fields available to display on the map.</span></p>
+                                    <p class="c10 c14"><span class="user_guide_img" style=
+                                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 246.25px; height: 296.50px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image19.png'%}"
+                 style=
+                         "width: 1011.04px; height: 403.71px; margin-left: -634.89px; margin-top: -73.71px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span> <span class="user_guide_img" style=
+                                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 245.40px; height: 297.50px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image00.png'%}"
+                 style=
+                         "width: 1010.80px; height: 405.07px; margin-left: -634.69px; margin-top: -73.95px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                                    <p class="c10 c17"><span>You must select the Choropleth options so
+            that your data can be displayed correctly and name the layer.
+            Once</span> <span class="c3">Show New Layer</span> <span>is clicked
+            the data will be displayed on the map including a key on the
+            righthand side.</span></p>
+                                    <p class="c10"><span class="user_guide_img" style=
+                                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 229.83px; height: 302.50px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image27.png'%}"
+                 style=
+                         "width: 1017.35px; height: 407.28px; margin-left: -645.56px; margin-top: -74.36px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span> <span class="user_guide_img" style=
+                                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 259.50px; height: 304.13px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image05.png'%}"
+                 style=
+                         "width: 863.09px; height: 345.13px; margin-left: -517.57px; margin-top: -35.80px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                                    <p class="c10">
+                <span>This will remain on the map until you choose
+            to delete it. To turn the layer off use the</span> <span class="c3">Layer Manager</span>
+                                        <span>&nbsp;(the brown icon in the top right hand corner of the map).</span>
+                                    </p>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li class="c10 c15">
+                    <h1 class="c7" id="h.bbgz0jct9r5n"><span class="c9 c3">National Assembly for Wales</span> <span class="user_guide_img" style=
+                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 183.50px; height: 77.16px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image01.png'%}"
+                 style=
+                         "width: 183.50px; height: 77.16px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></h1>
+                    <p class="c10 c4"><span>As part of our work with the National
+            Assembly for Wales, a bespoke interface has been developed for the
+            WISERD DataPortal which allows Assembly research staff, Assembly
+            Members and their support staff to access and map a wide range of
+            data for National Assembly for Wales Constituencies and
+            Regions.</span></p>
+                    <p class="c10 c14"><span class="user_guide_img" style=
+                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 598.11px; height: 330.50px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image29.png'%}"
+                 style=
+                         "width: 1196.21px; height: 479.82px; margin-left: -598.11px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                </li>
+
+
+
+                <li class="c10 c15">
+                    <h1 class="c7 c16" id="h.98t3j95vmsqu"><span class="c3 c9">Event
+            Presentation Files</span> <sup><a href="#cmnt5" id=
+                            "cmnt_ref5">[e]</a></sup></h1>
+                    <p class="c10 c4"><span>This section displays all the Events that
+            the DataPortal team has attended and the event presentations. The
+            presentations are also available to download.</span></p>
+                    <p class="c10"><span class="user_guide_img" style=
+                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 602.00px; height: 369.00px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image22.png'%}"
+                 style=
+                         "width: 602.00px; height: 376.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                </li>
+
+
+
+                <li class="c10 c15">
+
+                    <h1 class="c7" id="h.moaux88strx0"><span class="c9 c3 c13">View
+            Tech Blog Posts</span> <span class="user_guide_img" style=
+                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 153.00px; height: 65.00px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image20.png'%}"
+                 style=
+                         "width: 153.00px; height: 65.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></h1>
+                    <p class="c10 c4"><span>On clicking this button a new tab will open
+            displaying the technical blog. The DataPortal is constantly being
+            updated and improved, so the technical blog gives an insight into
+            the behind-the-scenes workings of the DataPortal.</span></p>
+                    <p class="c10 c4"><span class="user_guide_img" style=
+                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 376.00px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image30.png'%}"
+                 style=
+                         "width: 601.70px; height: 376.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                </li>
+
+
+
+                <li class="c10 c15">
+                    <h1 class="c7" id="h.hxx4wrloq5q2"><span class="c9 c3 c13">About,
+            Help and Support</span> <span class="user_guide_img" style=
+                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 152.00px; height: 66.00px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image24.png'%}"
+                 style=
+                         "width: 152.00px; height: 66.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></h1>
+                    <p class="c10 c4"><span>Help using the DataPortal (such as this
+            downloadable guide), licensing agreements and contact information
+            of support can be found on this page along with a log of any
+            changes to the DataPortal.</span></p>
+                    <p class="c10"><span class="user_guide_img" style=
+                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 376.00px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image21.png'%}"
+                 style=
+                         "width: 601.70px; height: 376.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                </li>
+
+
+                <li class="c10 c15">
+                    <h1 class="c7 c16" id="h.ry7upru5w1lm"><span class="c9 c3 c13">Languages</span></h1>
+                    <p class="c10"><span>The DataPortal is available in both English
+            and Welsh, to alternate between languages you can use the toggle
+            buttons at the top of the page. You can find these buttons on each
+            page of the DataPortal, which allows you to switch between
+            languages whenever necessary.</span></p>
+                    <p class="c10"><span class="user_guide_img" style=
+                            "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 587.50px; height: 305.99px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image15.png'%}"
+                 style=
+                         "width: 2456.08px; height: 983.25px; margin-left: -342.71px; margin-top: -407.99px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                    <p class="c10"><span>You can also choose a language preference in
+            your profile settings, which will be stored and used each time you
+            log in.</span></p>
+                    <p class="c10 c14"><span>&nbsp;</span> <span class="user_guide_img"
+                                                                 style=
+                                                                         "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 479.00px; height: 114.00px;">
+            <img alt="" class="user_guide_img2" src=
+                    "{% static 'dataportal/media/help_guide_img/image13.png'%}"
+                 style=
+                         "width: 479.00px; height: 114.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                 title=""></span></p>
+                </li>
+            </ol>
         </div>
 
     </div>
-
 {% endblock %}
-

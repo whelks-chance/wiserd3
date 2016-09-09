@@ -306,3 +306,22 @@
     border: 1px solid #f0ad4e;
     border-radius: 12px;
 }
+
+.user_guide_img {
+    margin: 0 auto;
+}
+
+.user_guide_page OL { counter-reset: item }
+.user_guide_page LI { display: block}
+.user_guide_page LI:before { content: counters(item, ".") " "; counter-increment: item }
+
+
+.inline_li_h1 h1, h2, h3{
+    display: inline;
+}
+
+.inline_li_h1 li:before {
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: 36px;
+}

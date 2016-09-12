@@ -4,9 +4,59 @@
 
 This doesn't entirely explain how to get it all running, but it may help future debugging...
 
-## Static files
+## uWSGI and nginx setup
 
-In nginx.conf make sure /static points to the right django dir
+### add this to the nginx conf
+
+    location / {
+        include     uwsgi_params;
+        uwsgi_pass	unix:/home/spx5ich/wiserd3.5.0/wiserd3/wiserd3.sock;
+    }
+
+	location /static {
+	    autoindex on;
+	    alias /home/spx5ich/wiserd3.5.0/wiserd3/dataportal3/static/;
+    }
+
+
+### /etc/systemd/system/uwsgi.service
+
+    [Unit]
+    Description=uWSGI Emperor service
+    After=syslog.target
+
+    [Service]
+    ExecStart=/usr/bin/uwsgi --emperor /etc/uwsgi/sites
+    Restart=always
+    KillSignal=SIGQUIT
+    Type=notify
+    StandardError=syslog
+    NotifyAccess=all
+
+    [Install]
+    WantedBy=multi-user.target
+
+### /etc/uwsgi/sites/dataportal3.ini
+
+    [uwsgi]
+    project = wiserd3
+    base = /home/spx5ich/wiserd3.5.0
+
+    chdir = %(base)/%(project)
+    home = /home/spx5ich/venv_3.5/
+    module = %(project).wsgi:application
+
+    master = true
+    processes = 8
+
+    socket = %(base)/%(project)/%(project).sock
+    chmod-socket = 666
+    vacuum = true
+
+### Then to restart everything...
+    sudo service nginx restart
+    sudo systemctl daemon-reload
+    sudo systemctl restart uwsgi
 
 ## Mapshaper install
 

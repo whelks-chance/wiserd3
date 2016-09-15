@@ -142,7 +142,8 @@
                     var survey_questions_table = $('#survey_questions_table').DataTable({
                         serverSide: false,
                         processing: true,
-                                        "oLanguage": datatables_language,
+                        "pageLength": -1,
+                        "oLanguage": datatables_language,
                         data: data['search_result_data'],
                         columns: table_columns_complete
                     }).on( 'stateLoaded.dt', function (e, settings, data) {

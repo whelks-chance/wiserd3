@@ -12,10 +12,12 @@ from old import models as old_models
 
 
 def do_store(blob, response):
-    rt = ResponseTable()
-    rt.feature_attributes = blob
+
     if response:
-        rt.response = response
+        rt, created = ResponseTable.objects.get_or_create(response=response)
+    else:
+        rt = ResponseTable()
+    rt.feature_attributes = blob
     rt.save(using='new')
 
 
@@ -47,10 +49,21 @@ def dictfetchall(cursor):
     ]
 
 
+class NoLegacyResTableException(Exception):
+    def __init__(self, res_id):
+        self.res_id = res_id
+
+
+class NoResponseException(Exception):
+    def __init__(self, qid):
+        self.qid = qid
+
+
 def do_find_question(qid):
     cursor = connections['survey'].cursor()
 
     questions = Question.objects.filter(qid=qid)
+    missing_response = []
     for q in questions:
         assert isinstance(q, Question)
         response = q.response
@@ -58,9 +71,11 @@ def do_find_question(qid):
         if response:
             assert(response, Response)
             res_id = response.responseid
-            print res_id
 
             res_table_links = old_models.ResponsesTablesLink.objects.filter(responseid=res_id)
+            if len(res_table_links) == 0:
+                raise NoLegacyResTableException(res_id)
+
             for res_table_link in res_table_links:
 
                 blob = []
@@ -79,27 +94,33 @@ def do_find_question(qid):
                     if col[0] not in ['table_pk', 'res_table_id', 'user_id', 'date_time']:
                         clean_column_names.append(col[0])
 
-                print column_names
-                print clean_column_names
-                print ''
+                # print column_names
+                # print clean_column_names
+                # print ''
 
-                cursor.execute("select * from " + res_table_id)
+                try:
+                    cursor.execute("select * from " + res_table_id)
+                except:
+                    raise NoLegacyResTableException(res_table_id)
+
                 table_contents = dictfetchall(cursor)
 
-                # print table_contents
+                print res_id, res_table_id, len(table_contents), len(clean_column_names)
 
                 for row in table_contents:
                     blob_row = {}
-                    print row
-                    print ''
+                    # print row
+                    # print ''
 
                     for a_col in clean_column_names:
-                        print row[a_col]
+                        # print row[a_col]
                         blob_row[a_col] = row[a_col]
 
                     blob.append(blob_row)
                 do_store(blob, response)
-
+            return True
+        else:
+            raise NoResponseException(qid)
 
 if __name__ == '__main__':
 
@@ -130,6 +151,22 @@ if __name__ == '__main__':
 
     # do_find('category', 'Sometimes')
 
-    for q in Question.objects.all()[:1000]:
+    res_issues = []
+    res_table_issues = []
+
+    ok = []
+    for q in Question.objects.all():
         # qid_bes2005oyoq11
-        do_find_question(q.qid)
+        try:
+            success = do_find_question(q.qid)
+            if success:
+                ok.append(q.qid)
+        except NoResponseException as nre:
+            res_issues.append(nre.qid)
+
+        except NoLegacyResTableException as nlrt:
+            res_table_issues.append(nlrt.res_id)
+
+    print 'ok', len(ok)
+    print 'res_issues', len(res_issues), res_issues
+    print 'res_table_issues', len(res_table_issues), res_table_issues

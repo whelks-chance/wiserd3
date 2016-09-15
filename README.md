@@ -4,7 +4,12 @@
 
 This doesn't entirely explain how to get it all running, but it may help future debugging...
 
-## uWSGI and nginx setup
+## uWSGI and nginx setup (centos)
+
+### Install uWSGI
+Global pip install, the venv is specified in the uwsgi "home" below
+
+    pip install uwsgi
 
 ### add this to the nginx conf
 
@@ -57,6 +62,16 @@ This doesn't entirely explain how to get it all running, but it may help future 
     sudo service nginx restart
     sudo systemctl daemon-reload
     sudo systemctl restart uwsgi
+
+### Keep uWSGI on reboot
+    sudo systemctl enable uwsgi
+
+### Ubuntu differences
+https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-14-04
+
+BUT for 16.04 we use systemd, same as CentOS7 above
+
+http://serverfault.com/questions/775965/wiring-uwsgi-to-work-with-django-and-nginx-on-ubuntu-16-04
 
 ## Mapshaper install
 

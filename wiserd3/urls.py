@@ -87,8 +87,10 @@ urlpatterns = [
     url(r'^metadata/survey/questions/(?P<wiserd_id>\S+)', old_views.survey_questions, name='survey_questions'),
 
     url(r'^metadata/survey/question/(?P<question_id>\S+)/results', old_views.survey_questions_results, name='survey_question_results'),
-    url(r'^metadata/survey/question/(?P<question_id>\S+)/result_table',
-        old_views.survey_questions_results_table, name='survey_question_result_table'),
+    # url(r'^metadata/survey/question/(?P<question_id>\S+)/result_table', old_views.survey_questions_results_table, name='survey_question_result_table'),
+
+    url(r'^metadata/survey/question/(?P<question_id>\S+)/response_table', views.response_table,
+        name='response_table'),
 
     url(r'^metadata/survey/question/(?P<question_id>\S+)', old_views.survey_question, name='survey_single_question'),
     url(r'^metadata/survey/(?P<wiserd_id>\S+)', old_views.survey_metadata, name='survey_metadata'),

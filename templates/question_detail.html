@@ -3,6 +3,8 @@
 {% load staticfiles %}
 {% load i18n %}
 
+{% block page_name %}{% trans 'Question Detail' %}{% endblock %}
+
 {% block content %}
         <script type="text/javascript" src="{% static 'dataportal/page_js/question_detail.js' %}"></script>
 
@@ -32,7 +34,7 @@
                 },
 
                 'results':{
-                    'title': '{% trans 'Results' %}',
+                    'title': '{% trans 'Response' %}',
                     'style': 'form',
                     'url': "{% url 'survey_question_results' question_id %}",
                     'fields': [
@@ -46,7 +48,7 @@
                         {'display': false, 'displayName': '{% trans 'user_id' %}', 'id': 'user_id'},
                         {'display': true, 'displayName': '{% trans 'Checks' %}', 'id': 'checks'},
                         {'display': true, 'displayName': '{% trans 'Route Type' %}', 'id': 'routetype'},
-                        {'display': true, 'displayName': '{% trans 'Last Edit' %}', 'id': 'updated'},
+                        {'display': true, 'displayName': '{% trans 'Last Edit' %}', 'id': 'updated'}
                     ]
                 }
             }
@@ -110,10 +112,12 @@
             });
 
             $.ajax({
-                url: "{% url 'survey_question_result_table' question_id %}",
-                type: 'POST',
+                url: "{% url 'response_table' question_id %}",
+                type: 'GET',
                 success: function(data) {
                     var table_columns = data['columns'];
+                    var row_shim = $('</tr>');
+                    var header_shim = $('</tr>');
 
                     var table_columns_complete = [];
                     for (var k = 0; k < table_columns.length; k++) {
@@ -126,8 +130,13 @@
                                 'title': column_title,
                                 'data': table_columns[k]
                             });
+                            row_shim.append($('</td>'));
+                            header_shim.append($('</th>'));
                         }
+
                     }
+                    $('#response_table_body').empty().append(row_shim);
+                    $('#response_table_header').empty().append(header_shim);
                     console.log(table_columns_complete);
 
                     var survey_questions_table = $('#survey_questions_table').DataTable({
@@ -135,14 +144,6 @@
                         processing: true,
                                         "oLanguage": datatables_language,
                         data: data['search_result_data'],
-                        {#                        ajax: {#}
-                        {#                            url: "{% url 'survey_question_result_table' question_id%}",#}
-                        {#                            type: 'POST',#}
-                        {#                            data: function (d) {},#}
-                        {#                            dataSrc: function ( json ) {#}
-                        {#                                return json['search_result_data'];#}
-                        {#                            }#}
-                        {#                        },#}
                         columns: table_columns_complete
                     }).on( 'stateLoaded.dt', function (e, settings, data) {
                         {#                        attach_question_buttons();#}
@@ -223,7 +224,6 @@
         <div class="col-lg-12">
             <h1 class="page-header" id="question_number_header">{% trans 'Question Details for: ' %}{{ question_id }}</h1>
         </div>
-        <!-- /.col-lg-12 -->
     </div>
 
     <div class="row">
@@ -240,10 +240,12 @@
                             <a id="question_tab_li" href="#question_tab" data-toggle="tab">{% trans 'Question' %}</a>
                         </li>
                         <li>
-                            <a  id="results_tab_li" href="#results_tab" data-toggle="tab">{% trans 'Results' %}</a>
+                            <a  id="results_tab_li" href="#results_tab" data-toggle="tab">{% trans 'Response' %}</a>
                         </li>
                         <li >
-                            <a id="survey_questions_li" href="#survey_questions" data-toggle="" class="disabled" style="cursor: not-allowed;">{% trans 'Results Table' %}</a>
+                            <a id="survey_questions_li" href="#response_table" data-toggle="tab"
+{#                               class="disabled" style="cursor: not-allowed;"#}
+                            >{% trans 'Response Table' %}</a>
                         </li>
                     </ul>
 
@@ -254,39 +256,29 @@
                             <div id="question_info"></div>
                         </div>
                         <div class="tab-pane fade" id="results_tab">
-                            <h4>{% trans 'Results' %}</h4>
+                            <h4>{% trans 'Response' %}</h4>
                             <div id="results_info"></div>
                         </div>
-                        <div class="tab-pane fade" id="survey_questions">
-                            <h4>{% trans 'Results Table' %}</h4>
+                        <div class="tab-pane fade" id="response_table">
+                            <h4>{% trans 'Response Table' %}</h4>
 
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
                                     <table class="table table-striped table-bordered table-hover" id="survey_questions_table">
                                         <thead>
-                                        <tr>
+                                        <tr id="response_table_header">
                                             <th>{% trans 'QuestionID' %}</th>
                                             <th>{% trans 'QuestionText' %}</th>
                                             <th>{% trans 'Type' %}</th>
-                                            {#                                            <th>Notes</th>#}
-                                            {#                                            <th>From</th>#}
-                                            {#                                            <th>SubOf</th>#}
                                         </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="response_table_body">
                                         <tr><td></td><td></td><td></td></tr>
                                         <tr><td></td><td></td><td></td></tr>
                                         <tr><td></td><td></td><td></td></tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <!-- /.table-responsive -->
-{#                                <div class="well">#}
-{#                                    <h4>DataTables Usage Information</h4>#}
-{#                                    <p></p>#}
-{#                                    <a class="btn btn-default btn-lg btn-block" target="_blank"#}
-{#                                       href="https://datatables.net/">View DataTables Documentation</a>#}
-{#                                </div>#}
                             </div>
 
                         </div>

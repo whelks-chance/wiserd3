@@ -31,6 +31,7 @@ from django.views.decorators.csrf import csrf_exempt
 import operator
 from dataportal3 import models
 from dataportal3.forms import ShapefileForm
+from dataportal3.models import ResponseTable
 from dataportal3.utils.ShapeFileImport import celery_import, ShapeFileImport
 from dataportal3.utils.admin_email import EMAIL_TYPES, send_email
 from dataportal3.utils.remote_data import RemoteData
@@ -2493,3 +2494,28 @@ def browse_surveys(request):
 
 def data_and_history(request):
     return render(request, 'data_and_history.html', {}, context_instance=RequestContext(request))
+
+
+def response_table(request, question_id):
+    # rts = ResponseTable.objects.all()
+
+    question = models.Question.objects.get(qid=question_id)
+    response = question.response
+    rts = ResponseTable.objects.filter(response=response)
+
+    search_result_data = []
+    columns = []
+
+    for rt in rts:
+        attr = rt.feature_attributes
+
+        for itr in attr:
+            columns = itr.keys()
+            search_result_data.append(itr)
+
+    api_data = {
+        'columns': columns,
+        'search_result_data': search_result_data
+    }
+
+    return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")

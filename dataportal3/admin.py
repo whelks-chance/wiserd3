@@ -1,7 +1,12 @@
+import json
+import pprint
+
 from django.apps import apps
 from django.contrib import admin
-from grappelli_filters import SearchFilter, FiltersMixin
-
+from grappelli_filters.filters import SearchFilter
+from grappelli_filters.admin import  FiltersMixin
+from django import forms
+from django.forms.widgets import Textarea
 
 from dataportal3 import models
 from django.contrib.gis import admin as gis_admin
@@ -9,8 +14,47 @@ from django.contrib.gis import admin as gis_admin
 # from old import models
 
 # Register your models here.
-from dataportal3.models import Question, UserGroupSurveyCollection, SurveyVisibilityMetadata, Response, Search
+from dataportal3.models import Question, UserGroupSurveyCollection, SurveyVisibilityMetadata, Response, Search, \
+    ResponseTable
 
+
+class FlattenJsonWidget(Textarea):
+    # def my_safe_repr(self, object, context, maxlevels, level):
+    #     typ = pprint._type(object)
+    #     if typ is unicode:
+    #         object = str(object)
+    #     return pprint._safe_repr(object, context, maxlevels, level)
+
+    def render(self, name, value, attrs=None):
+        if not value is None:
+            print value, type(value)
+            try:
+                # # If there's no unicode awkwardness, print without u''
+                # printer = pprint.PrettyPrinter()
+                # printer.format = self.my_safe_repr
+                # parsed_val = printer.pformat(value)
+
+                parsed_val = json.dumps(value, indent=4)
+            except:
+                # use u'' for non ASCII data
+                parsed_val = pprint.pformat(value)
+
+            value = parsed_val
+        return super(FlattenJsonWidget, self).render(name, value, attrs)
+
+
+class JSONForm(forms.ModelForm):
+    feature_attributes = forms.CharField(widget=FlattenJsonWidget)
+
+    class Meta:
+        model = ResponseTable
+        fields = '__all__'
+
+class JSONAdmin(admin.ModelAdmin):
+    form = JSONForm
+
+
+# admin.site.register(ResponseTable, JSONAdmin)
 
 class DublinCoreAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'updated')

@@ -952,5 +952,16 @@ class SpatialdataNAWConstituency(models.Model):
         managed = False
         db_table = 'spatialdata_assemblyconstituency2'
 
+from django.contrib.postgres.fields.jsonb import JSONField
+
+
+class ResponseTable(models.Model):
+    feature_attributes = JSONField(blank=True, null=True)
+    survey = models.ForeignKey('Survey', blank=True, null=True)
+    link_from_question = models.ForeignKey('Question', blank=True, null=True)
+    response = models.ForeignKey('Response', blank=True, null=True, unique=True)
+
+    def __unicode__(self):
+        return str(self.response) + ':' + str(len(self.feature_attributes))
 
 import dataportal3.signals.handlers

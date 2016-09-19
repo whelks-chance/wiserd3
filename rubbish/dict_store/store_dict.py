@@ -50,8 +50,12 @@ def dictfetchall(cursor):
 
 
 class NoLegacyResTableException(Exception):
-    def __init__(self, res_id):
-        self.res_id = res_id
+    def __init__(self, response, ztab_name):
+        self.ztab_name = ztab_name
+        self.response = response
+
+    def __repr__(self):
+        return str((self.response.responseid, self.response.response_type, self.ztab_name))
 
 
 class NoResponseException(Exception):
@@ -74,7 +78,7 @@ def do_find_question(qid):
 
             res_table_links = old_models.ResponsesTablesLink.objects.filter(responseid=res_id)
             if len(res_table_links) == 0:
-                raise NoLegacyResTableException(res_id)
+                raise NoLegacyResTableException(response, None)
 
             for res_table_link in res_table_links:
 
@@ -101,7 +105,7 @@ def do_find_question(qid):
                 try:
                     cursor.execute("select * from " + res_table_id)
                 except:
-                    raise NoLegacyResTableException(res_table_id)
+                    raise NoLegacyResTableException(response, res_table_id)
 
                 table_contents = dictfetchall(cursor)
 
@@ -117,8 +121,12 @@ def do_find_question(qid):
                         blob_row[a_col] = row[a_col]
 
                     blob.append(blob_row)
+
+                #     todo replace
                 do_store(blob, response)
-            return True
+
+            # There should only be one of each of these if we get to here
+            return (res_id, res_table_id, len(table_contents), len(clean_column_names))
         else:
             raise NoResponseException(qid)
 
@@ -155,18 +163,40 @@ if __name__ == '__main__':
     res_table_issues = []
 
     ok = []
+    ok_ztabs = []
     for q in Question.objects.all():
         # qid_bes2005oyoq11
         try:
-            success = do_find_question(q.qid)
-            if success:
-                ok.append(q.qid)
+            res_id, res_table_id, len_table_contents, len_clean_column_names = do_find_question(q.qid)
+            ok.append(q.qid)
+            ok_ztabs.append(res_table_id)
         except NoResponseException as nre:
             res_issues.append(nre.qid)
 
         except NoLegacyResTableException as nlrt:
-            res_table_issues.append(nlrt.res_id)
+            # ignore non existing tables for open ended questions, obviously
+            if nlrt.response.response_type and nlrt.response.response_type.id not in [9, 8]:
+                # These should have a ztab_ responseTable but we couldn't find it
+                res_table_issues.append(nlrt)
 
     print 'ok', len(ok)
     print 'res_issues', len(res_issues), res_issues
     print 'res_table_issues', len(res_table_issues), res_table_issues
+
+    cursor = connections['survey'].cursor()
+    cursor.execute(
+        "select table_name from information_schema.columns where table_name ilike '%ztab_%'"
+    )
+    table_names_complex = cursor.fetchall()
+
+    table_names = [item[0] for item in table_names_complex]
+
+    all_ztabs = set(table_names)
+
+    print '\n\n\n\n'
+    # print all_ztabs
+    missing = all_ztabs - set(ok_ztabs)
+    print 'total ztabs', len(all_ztabs), 'total created', len(ok_ztabs)
+    print 'orphaned/ unused old ztab_ tables', len(missing)
+    # print missing
+

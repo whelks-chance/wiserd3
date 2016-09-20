@@ -31,7 +31,7 @@ function do_intro() {
             {
                 selector: '#nav_bar_side',
                 title: 'Side Menu',
-                content: 'Content',
+                content: 'This menu appears on all DataPortal pages. Go directly to the mapping page or browse recent search results.',
                 placement: 'right',
                 step: 2
 

@@ -4,7 +4,9 @@
 
 {% block page_name %}{% trans 'Browse Surveys' %}{% endblock %}
 
-{% block content %}
+{% block extra_head %}
+    <script type="text/javascript" src="{% static 'dataportal/page_js/browse_surveys.js' %}"></script>
+
 
     <script>
 
@@ -47,7 +49,9 @@
     </script>
 
 
+{% endblock %}
 
+{% block content %}
     <div class="container-fluid">
 
         <div id="survey_row" class="row">
@@ -82,7 +86,7 @@
                 </div>
             </div>
 
-            <a href="#survey_row" class="pull-right">
+            <a id="survey_row" href="#survey_row" class="pull-right">
                 <button class="btn btn-info btn-outline">
                     <i class="fa fa-arrow-circle-up"></i> {% trans 'Top' %}
                 </button>

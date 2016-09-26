@@ -53,7 +53,7 @@
             {% csrf_token %}
 
             <div class="row">
-                    <button id="submit_preferences" class="btn btn-success pull-right" >{% trans 'Save' %}</button>
+                <button id="submit_preferences" class="btn btn-success pull-right" >{% trans 'Save' %}</button>
             </div>
 
             <div class="row">
@@ -73,6 +73,15 @@
 
                 {% include 'language_snippet.html' %}
 
+            </div>
+
+            <div class="row">
+                <div class="panel panel-info">
+                    <div class="panel-heading">{% trans "Local data layers" %}</div>
+                    <div class="panel-body">
+                        <div id="out"></div>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
@@ -131,6 +140,49 @@
 
     <script>
         $(document).ready(function(){
+
+
+            if(typeof(Storage) !== "undefined") {
+                var localLayers = {};
+                if (localStorage.DataPortalLocalLayers) {
+                    localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));
+                    {#                    console.log(localLayers);#}
+                }
+
+                for (var key in localLayers) {
+                    if (localLayers.hasOwnProperty(key)) {
+                        var row = $('<a/>').addClass("list-group-item");
+                        var button = $('<button/>')
+                                .attr('id', 'button_' + key)
+                                .attr('data-local_uuid', key)
+                                .addClass("btn btn-danger");
+                        var icon = $('<i/>').addClass('fa fa-close col-sm-2');
+                        button.append(icon);
+                        button.click(function(){
+                            var uuid = $(this).data('local_uuid');
+                            var delete_confirm = window.confirm("Delete layer data " + uuid + " ?");
+
+                            if (delete_confirm) {
+                                if (localStorage.DataPortalLocalLayers) {
+                                    localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));
+                                    delete localLayers[uuid];
+                                    localStorage.setItem("DataPortalLocalLayers", JSON.stringify(localLayers));
+                                }
+                                location.reload();
+                            }
+                        });
+
+                        row.append(button);
+                        var key_div = $('<div/>')
+                                .addClass('control-label col-sm-10')
+                                .text(localLayers[key]['layer_data']['name'] + ' : ' + key);
+                        row.append(key_div);
+                        $('#out').append(row);
+                    }
+                }
+            } else {
+                alert('Sorry! Your browser does not support local data storage.');
+            }
 
             $('#submit_preferences').click(function(){
                 waitingDialog.show('Saving ...');

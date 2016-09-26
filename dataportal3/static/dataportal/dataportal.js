@@ -111,18 +111,45 @@ function isPostcodeish(input_string) {
     return re.exec(input_string)
 }
 
-function thing(all_topojson_data, ordered_data, local_data_name, area_values, local_data_geography_column, secondary_data_keys) {
+function thing(all_topojson_data, ordered_data, local_data_name,
+               area_values, local_data_geography_column,
+               secondary_data_keys) {
 
     var topojson_data = all_topojson_data['topojson'];
+
+    // Collected name for all the geometries
     var geom_name = Object.keys(topojson_data['objects'])[0];
+
+    //The geometry objects
     var geometries = topojson_data['objects'][geom_name]['geometries'];
+
+    //An array to add the modified geometries to, instead of making changes in-place
+    // TODO Probably something which could be made more efficient
     var new_data = [];
 
+    // Title for the layer, recorded in each geometry
+    // This then appears as the Big text in the sidebar
+    // console.log('local_data_name');
+    // console.log(local_data_name);
+
+    //Basically an array of arrays holding the whole XLS
+    // console.log('area_values');
     // console.log(area_values);
-    // console.log(geometries);
+
+    //The column of the XLS to use to define geometry names
+    // Column contains eg W01000001, "North Wales" or CF24 1aa
+    // console.log('local_data_geography_column');
+    // console.log(local_data_geography_column);
+
+    // An object with the local_data_name mapped to the value - both from the XLS
+    // console.log('ordered_data');
     // console.log(ordered_data);
 
+    // Will appear in the sidebar, but doesn't affect the colour of the map
+    // console.log('secondary_data_keys');
     // console.log(secondary_data_keys);
+
+    var db_boundary_key = 'code';
 
     for (var geom in geometries) {
         if (geometries.hasOwnProperty(geom)) {
@@ -131,8 +158,34 @@ function thing(all_topojson_data, ordered_data, local_data_name, area_values, lo
             if (geometries[geom]['properties'].hasOwnProperty('postcode')) {
                 area_code = geometries[geom]['properties']['postcode'];
             } else {
-                area_code = geometries[geom]['properties']['code'];
+                area_code = geometries[geom]['properties'][db_boundary_key];
             }
+
+            // assume that 'code' in the topojson is an appropriate key
+            // if not, try name, and if it hits, use that.
+            // if not, try altname, if it hits, use that as the area_name
+            // very brute-force, trial and error
+            if (!area_code || ordered_data[area_code] == null) {
+                var boundary_name = geometries[geom]['properties']['name'];
+                if ( boundary_name && ordered_data[boundary_name]) {
+                    db_boundary_key = 'name';
+                    area_code = geometries[geom]['properties'][db_boundary_key];
+                } else {
+                    var alt_boundary_name = geometries[geom]['properties']['altname'];
+
+                    if ( alt_boundary_name && ordered_data[alt_boundary_name]) {
+                        db_boundary_key = 'altname';
+                        area_code = geometries[geom]['properties'][db_boundary_key];
+                    }
+                }
+            }
+            // Which key did we end up with, after the above brute force search?
+            // console.log('db_boundary_key');
+            // console.log(db_boundary_key);
+
+            // Name of the area we're using to match a boundary with the ordered data
+            // console.log('area_code');
+            // console.log(area_code);
 
             if (area_code && ordered_data[area_code] != null) {
                 // console.log(ordered_data[area_code]);
@@ -142,6 +195,7 @@ function thing(all_topojson_data, ordered_data, local_data_name, area_values, lo
                 geometries[geom]['properties']['DATA_TITLE'] = local_data_name;
 
                 var string_data = [];
+                // Grab all the secondary data and group it together
                 for (var secondary_idx in secondary_data_keys) {
                     if (secondary_data_keys.hasOwnProperty(secondary_idx)) {
 
@@ -172,6 +226,7 @@ function thing(all_topojson_data, ordered_data, local_data_name, area_values, lo
     }
 
     // {#                        delete topojson_data['topojson']['objects'][geom_name];#}
+    //Replace the previous geoms with this new array we've built up
     all_topojson_data['topojson']['objects'][geom_name]['geometries'] = new_data;
     all_topojson_data['layer_data']['name'] = local_data_name;
 

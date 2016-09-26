@@ -1091,7 +1091,10 @@ def data_api(request):
 def codelist_to_attributes(codelist):
     code_dict = {}
     for code in codelist:
-        code_dict[code['option']] = code['variable']
+        try:
+            code_dict[code['option']] = code['variable']
+        except:
+            raise Exception(code)
     return code_dict
 
 
@@ -1839,7 +1842,7 @@ def get_topojson_by_name(request, topojson_name):
         filter_var_altname = 'altname__istartswith'
 
         if len(codes) == 0:
-            constituency_subset = models.SpatialdataNawer.objects.using('new').all()
+            region_subset = models.SpatialdataNawer.objects.using('new').all()
         else:
             ors = []
             for code in codes:
@@ -1847,10 +1850,10 @@ def get_topojson_by_name(request, topojson_name):
                 ors.append(Q(**{filter_var_name: code}))
                 ors.append(Q(**{filter_var_altname: code}))
 
-            constituency_subset = models.SpatialdataNawer.objects.using('new').all().filter(
+            region_subset = models.SpatialdataNawer.objects.using('new').all().filter(
                 reduce(operator.or_, ors)
             )
-        s = serialize('geojson', constituency_subset, fields=('geom', 'code', 'REMOTE_VALUE'))
+        s = serialize('geojson', region_subset, fields=('geom', 'code','name', 'altname', 'REMOTE_VALUE'))
         topojson_conv = topojson(json.loads(s))
         response_data['topojson'] = topojson_conv
 

@@ -13,7 +13,10 @@ anyjson==0.3.3
 argparse==1.2.1
 billiard==3.3.0.20
 celery==3.1.18
-cffi==1.2.1
+
+#cffi==1.2.1
+cffi
+
 cryptography==1.2.3
 django-allauth==0.23.0
 django-celery==3.1.16

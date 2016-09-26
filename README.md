@@ -296,6 +296,23 @@ https://dzone.com/articles/taking-browser-screenshots-no
 
 http://selenium-python.readthedocs.io/waits.html
 
+#### Updating psql and db clusters, when CentOS postgresql 9.2 upgraded to 9.5
+
+http://tuxtrix.com/2014/12/how-to-fix-psql-version-84-server.html
+
+https://www.postgresql.org/docs/9.2/static/upgrading.html
+
+https://www.postgresql.org/docs/9.5/static/functions-json.html
+
+https://www.postgresql.org/docs/current/static/datatype-json.html
+
+https://blog.chaps.io/2016/02/08/upgrading-postgresql-from-9-4-to-9-5-on-ubuntu-15-10.html
+
+https://docs.djangoproject.com/en/1.9/ref/contrib/postgres/fields/#jsonfield
+
+http://www.postgresonline.com/journal/archives/362-An-almost-idiots-guide-to-install-PostgreSQL-9.5,-PostGIS-2.2-and-pgRouting-2.1.0-with-Yum.html
+
+
 ## Awkwardness
 
     ALTER TABLE django_content_type ADD COLUMN name character varying(50) NOT NULL DEFAULT 'someName';

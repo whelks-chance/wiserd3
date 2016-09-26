@@ -153,17 +153,60 @@
 }
 
 .panel-purple {
-    border-color: rebeccapurple;
+    border-color: #54075B;
 }
 
 .panel-purple .panel-heading {
     color: white;
-    border-color: rebeccapurple;
-    background-color: rebeccapurple;
+    border-color: #54075B;
+    background-color: #54075B;
 }
 .panel-purple .panel-footer {
-    color: rebeccapurple;
+    color: #54075B;
 }
+
+
+
+
+.panel-orange {
+    border-color: #eb8f00;
+}
+
+.panel-orange .panel-heading {
+    color: white;
+    border-color: #eb8f00;
+    background-color: #eb8f00;
+}
+
+/*.panel-orange .panel-footer {*/
+    /*color: #eb8f00;*/
+/*}*/
+
+.panel-orange a {
+    color: #eb8f00;
+}
+
+.panel-orange a:hover {
+    color: #af6d00;
+}
+
+
+
+
+.panel-red {
+    border-color: #b22222;
+}
+
+.panel-red .panel-heading {
+    color: white;
+    border-color: #b22222;
+    background-color: #b22222;
+}
+.panel-red .panel-footer {
+    color: #b22222;
+}
+
+
 
 .panel-naw {
     border-color: rgb(0, 30, 98);
@@ -208,8 +251,8 @@
 }
 
 .ui-widget-header {
-    background: rebeccapurple;
-    border: rebeccapurple;
+    background: #54075B;
+    border: #54075B;
 }
 
 
@@ -287,13 +330,13 @@
 }
 
 .icon-background-purple {
-    background-color: rebeccapurple;
-    border: 1px solid rebeccapurple;
+    background-color: #54075B;
+    border: 1px solid #54075B;
 }
 
 .icon-background-red {
-    background-color: #d9534f;
-    border: 1px solid #d9534f;
+    background-color: #b22222;
+    border: 1px solid #b22222;
 }
 
 .icon-background-green {
@@ -311,17 +354,33 @@
     margin: 0 auto;
 }
 
-.user_guide_page OL { counter-reset: item }
-.user_guide_page LI { display: block}
-.user_guide_page LI:before { content: counters(item, ".") " "; counter-increment: item }
-
-
-.inline_li_h1 h1, h2, h3{
-    display: inline;
-}
-
-.inline_li_h1 li:before {
+.user_guide_page ol { counter-reset: item }
+.user_guide_page li { display: block}
+.user_guide_page li:before {
     font-weight: 500;
     line-height: 1.1;
     font-size: 36px;
+
+    content: counters(item, ".") " ";
+    counter-increment: item
 }
+
+.user_guide_contents li:before{
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: 14px;
+}
+
+.user_guide_page h1, .user_guide_page h2, .user_guide_page h3 {
+    display: inline;
+}
+
+/*#inline_li h1, #inline_li h2, #inline_li h3{*/
+    /*display: inline;*/
+/*}*/
+
+/*.user_guide_page > li:before {*/
+    /*font-weight: 500;*/
+    /*line-height: 1.1;*/
+    /*font-size: 36px;*/
+/*}*/

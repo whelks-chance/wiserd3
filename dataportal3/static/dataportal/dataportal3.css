@@ -374,13 +374,3 @@
 .user_guide_page h1, .user_guide_page h2, .user_guide_page h3 {
     display: inline;
 }
-
-/*#inline_li h1, #inline_li h2, #inline_li h3{*/
-    /*display: inline;*/
-/*}*/
-
-/*.user_guide_page > li:before {*/
-    /*font-weight: 500;*/
-    /*line-height: 1.1;*/
-    /*font-size: 36px;*/
-/*}*/

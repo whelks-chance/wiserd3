@@ -107,6 +107,16 @@ class ResponseAdmin(FiltersMixin, admin.ModelAdmin):
 admin.site.register(Response, ResponseAdmin)
 
 
+
+
+class ResponseTableAdmin(FiltersMixin, admin.ModelAdmin):
+    list_filter = (
+        ('response__responseid', SearchFilter),
+    )
+
+
+admin.site.register(ResponseTable, ResponseTableAdmin)
+
     # TODO this is a mess
 class SurveyVisibilityMetadataInline(admin.StackedInline):
     model = SurveyVisibilityMetadata

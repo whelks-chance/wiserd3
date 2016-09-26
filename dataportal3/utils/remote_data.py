@@ -23,7 +23,9 @@ class RemoteData():
 
         try:
             # Do keyword search
-            r = requests.get('http://www.nomisweb.co.uk/api/v01/dataset/def.sdmx.json?search=*{0}*'.format(search_term))
+            r = requests.get(
+                'http://www.nomisweb.co.uk/api/v01/dataset/def.sdmx.json?search=*{0}*'.format(search_term),
+                timeout=10)
             print r.url
             j = json.loads(r.text)
             datasets = []
@@ -40,7 +42,7 @@ class RemoteData():
                 datasets.append(k)
                 # print pprint.pformat(k)
             # print json.dumps(s, indent=4)
-            return datasets
+            return datasets, r
         except Exception as e:
             raise e
 

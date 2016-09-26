@@ -975,13 +975,17 @@ def data_api(request):
         search_term = request.GET.get("search_term", None)
         remote_api = request.GET.get("remote_api", None)
 
-        print search_term
+        # print search_term
         if search_term:
             datasets = []
+            services = []
 
+            stats_wales_service = {
+                'name': 'StatsWales'
+            }
             try:
                 swod = StatsWalesOData()
-                swod_datasets = swod.keyword_search(search_term.lower())
+                swod_datasets, statswales_request = swod.keyword_search(search_term.lower())
 
                 formatted = []
                 for d in swod_datasets:
@@ -992,20 +996,32 @@ def data_api(request):
                             'source': 'StatsWales'
                         })
                 datasets += formatted
+
+                stats_wales_service['message'] = 'Success'
+                stats_wales_service['time'] = statswales_request.elapsed.total_seconds()
+                stats_wales_service['success'] = True
             except Exception as e87234:
-                print e87234
+                stats_wales_service['message'] = 'The WISERD DataPortal failed to connect to the remote data service.'
+                stats_wales_service['error'] = str(e87234)
+                stats_wales_service['success'] = False
+            services.append(stats_wales_service)
 
-                to_return['message'] = 'The WISERD DataPortal failed to connect to the remote data service.'
-                to_return['success'] = False
-
+            nomis_service = {
+                'name': 'NomisWeb'
+            }
             try:
-                nomis_datasets = rd.search_datasets(search_term)
+                nomis_datasets, nomis_request = rd.search_datasets(search_term)
                 datasets += nomis_datasets
+                nomis_service['message'] = 'Success'
+                nomis_service['time'] = nomis_request.elapsed.total_seconds()
+                nomis_service['success'] = True
+            except Exception as e53264:
+                nomis_service['message'] = 'The WISERD DataPortal failed to connect to the remote data service.'
+                nomis_service['error'] = str(e53264)
+                nomis_service['success'] = False
+            services.append(nomis_service)
 
-            except:
-                to_return['message'] = 'The WISERD DataPortal failed to connect to the remote data service.'
-                to_return['success'] = False
-
+            to_return['services'] = services
             to_return['datasets'] = datasets
 
     if method == 'remote_metadata':

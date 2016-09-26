@@ -57,7 +57,7 @@ class StatsWalesOData():
 
         property_data_types = {}
         for property in entity_properties:
-            print property['name'], property['type']
+            # print property['name'], property['type']
             property_data_types[property['name']] = property['type']
         return property_data_types
 
@@ -67,8 +67,8 @@ class StatsWalesOData():
         keyword_list = keyword_string.split('+')
 
         # Grab the discovery metadata json from StatsWales
-        keyword_description = requests.get(self.metadata_url)
-        print(self.metadata_url)
+        keyword_description = requests.get(self.metadata_url, timeout=10)
+        # print(self.metadata_url)
         keyword_description_objects = json.loads(keyword_description.text)
 
 
@@ -88,7 +88,7 @@ class StatsWalesOData():
             if 'Tag_ENG' in keyset and keyset['Tag_ENG'] == 'Lowest level of geographical disaggregation':
                 geographys.append(keyset['Description_ENG'])
 
-        print('available geogs', set(geographys))
+        # print('available geogs', set(geographys))
 
         keyword_dataset_ids = set()
         for dataset_id in datasets_by_id.keys():
@@ -106,12 +106,12 @@ class StatsWalesOData():
                     if 'Lower-layer super output areas' in keyset['Description_ENG']:
                         geog_dataset_ids.add(keyset['PartitionKey'])
 
-        print('keyword_dataset_ids', keyword_dataset_ids)
-        print('lsoa_dataset_ids', geog_dataset_ids)
+        # print('keyword_dataset_ids', keyword_dataset_ids)
+        # print('lsoa_dataset_ids', geog_dataset_ids)
 
         # intersect_ids = keyword_dataset_ids.intersection(geog_dataset_ids)
         intersect_ids = keyword_dataset_ids
-        print('intersect_ids (keyword+lsoa)', intersect_ids)
+        # print('intersect_ids (keyword+lsoa)', intersect_ids)
 
         matching_datasets = []
         for dataset_id in datasets_by_id.keys():
@@ -119,7 +119,7 @@ class StatsWalesOData():
                 if keyset['PartitionKey'] in intersect_ids:
                     matching_datasets.append(keyset)
 
-        return matching_datasets
+        return matching_datasets, keyword_description
 
     def get_data_url(self, dataset_id, args=None):
         data_url = self.dataset_url.format(dataset_id)

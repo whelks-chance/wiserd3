@@ -24,7 +24,7 @@
     <link href="{% static 'startbootstrap-sb-admin-2-1.0.7/dist/css/sb-admin-2.css' %}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-{#    <link href="{% static 'startbootstrap-sb-admin-2-1.0.7/bower_components/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">#}
+    {#    <link href="{% static 'startbootstrap-sb-admin-2-1.0.7/bower_components/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">#}
     {#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">#}
 
     <script src="https://use.fontawesome.com/bb58de4280.js"></script>
@@ -111,7 +111,7 @@
             return formatted;
         };
     </script>
-                {% include 'base_vars.html' %}
+    {% include 'base_vars.html' %}
 
     {% block extra_head %}
     {% endblock %}
@@ -119,10 +119,30 @@
 
 <body>
 
-{#<div class="alert alert-info alert-dismissable">#}
-{#    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>#}
-{#    This site is currently under heavy development and major changes are scheduled until 7 Apr 16. Some functions may be broken or missing during this time.#}
-{#</div>#}
+{% if is_dev %}
+    <div
+            class="alert alert-danger alert-dismissable"
+            style="
+                top: 0;
+                position: fixed;
+                width: 100%;
+                    z-index: 9999;
+                    height: 3em;
+                    ">THIS IS THE DEV SITE THIS IS THE DEV SITE THIS IS THE DEV SITE THIS IS THE DEV SITE THIS IS THE DEV SITE
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    </div>
+
+    <div
+            class="alert alert-danger alert-dismissable"
+            style="
+                bottom: 0;
+                position: fixed;
+                width: 100%;
+                    z-index: 9999;
+                    ">THIS IS THE DEV SITE THIS IS THE DEV SITE THIS IS THE DEV SITE THIS IS THE DEV SITE THIS IS THE DEV SITE
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    </div>
+{% endif %}
 
 {% block navigation %}
 {% endblock %}

@@ -29,6 +29,8 @@ SECRET_KEY = 'ltn)r4*te4&f--z694+7m#fy9$-n)pe=&804xgk4g10wgn7uqa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+IS_DEV = False
+
 ALLOWED_HOSTS = ['127.0.0.1', 'dataportal1-wiserd.cf.ac.uk']
 
 # Application definition
@@ -116,6 +118,7 @@ TEMPLATES = [
                 'django.core.context_processors.media',
                 'django.core.context_processors.static',
 
+                'dataportal3.context_processors.is_dev_processor'
                 # "allauth.account.context_processors.account",
                 # "allauth.socialaccount.context_processors.socialaccount",
             ],

@@ -1914,7 +1914,7 @@ def get_topojson_by_name(request, topojson_name):
             )
 
         print len(list(lsoa_subset))
-        print list(lsoa_subset)
+        # print list(lsoa_subset)
 
         s = serialize('geojson', lsoa_subset, fields=('geom', 'code', 'name', 'REMOTE_VALUE'))
         topojson_conv = topojson(json.loads(s), quantization=1e6, simplify=0.0005)
@@ -1940,7 +1940,7 @@ def get_topojson_by_name(request, topojson_name):
             )
         # print postcode_subset.query
 
-        print list(postcode_subset)
+        # print list(postcode_subset)
         print len(list(postcode_subset))
         s = serialize('geojson', postcode_subset, fields=('geom', 'postcode', 'REMOTE_VALUE'))
         # format it like it's topojson, which for some reason the other topojson lib can't do for points

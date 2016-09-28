@@ -378,6 +378,21 @@
     counter-increment: item
 }
 
+.user_guide_page .h1,
+.user_guide_page .h2,
+.user_guide_page .h3,
+.user_guide_page .h4,
+.user_guide_page .h5,
+.user_guide_page .h6,
+.user_guide_page h1,
+.user_guide_page h2,
+.user_guide_page h3,
+.user_guide_page h4,
+.user_guide_page h5,
+.user_guide_page h6 {
+    line-height: 2;
+}
+
 /*.user_guide_page h1, .user_guide_page h2, .user_guide_page h3 {*/
     /*display: inline;*/
 /*}

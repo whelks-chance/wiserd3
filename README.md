@@ -66,6 +66,11 @@ Global pip install, the venv is specified in the uwsgi "home" below
 ### Keep uWSGI on reboot
     sudo systemctl enable uwsgi
 
+### DB server security
+Install iptables and fail2ban
+
+    firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" source address="<webserver_ip>" port port=<postgresql_port> protocol="tcp" accept'
+
 ### Ubuntu differences
 https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-14-04
 

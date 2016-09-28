@@ -4,17 +4,21 @@
 
 {% block page_name %}{% trans 'Help and Support' %}{% endblock %}
 
+{% block extra_head %}
+    <script type="text/javascript" src="{% static 'dataportal/page_js/help.js' %}"></script>
+{% endblock %}
+
 {% block content %}
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header"><i class="icon-background icon-background-yellow fa fa-question-circle"></i>   {% trans 'Help and Support' %}</h1>
+                <h1 class="page-header"><i id="help_title" class="icon-background icon-background-yellow fa fa-question-circle"></i>   {% trans 'Help and Support' %}</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <div class="row">
-            <h2>{% trans 'Help' %}</h2>
-            <p>{% trans 'Download or view Usage Guide here' %}, or find the online user support page <a href="{% url 'user_guide' %}">here</a></p>
+            <h2> {% trans 'Help' %}</h2>
+            <p>{% trans 'Download or view Usage Guide here' %}, or find the online user support page <a id="user_guide_link" href="{% url 'user_guide' %}">here</a></p>
         </div>
 
         <div class="row">
@@ -24,7 +28,7 @@
             <p>{% blocktrans %}The information on usage of WISERD metadata, data and data from other external sources is available <a href={{ licence_attribution_url }}>here</a>.{% endblocktrans%}</p>
         </div>
 
-        <div class="row">
+        <div id="support_people" class="row">
             <h2>{% trans 'Support' %}</h2>
             <h4>{% trans 'Contact Us' %}</h4>
             <p>

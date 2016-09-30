@@ -12,23 +12,30 @@ function do_intro() {
             {
                 selector: '#help_title',
                 title: 'Help and Support',
-                content: 'help',
+                content: 'This page provides help and support to you while using the DataPortal',
                 placement: 'bottom',
                 step: 0
             },
             {
                 selector: '#user_guide_link',
                 title: 'User Guide',
-                content: 'help',
+                content: 'If you need more assistance than these tip boxes here is the link to a detailed user help guide.',
                 placement: 'right',
                 step: 1
             },
             {
                 selector: '#support_people',
                 title: 'The Experts',
-                content: 'content',
-                placement: 'bottom',
+                content: 'If you have questions or need more support please contact the experts.',
+                placement: 'top',
                 step: 2
+            },
+            {
+                selector: '#useful_links',
+                title: 'Useful Links',
+                content: 'Please find links related to the DataPortal here.',
+                placement: 'top',
+                step: 3
             },
 
         ]

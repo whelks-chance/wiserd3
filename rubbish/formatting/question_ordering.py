@@ -23,7 +23,6 @@ class QuestionSorter():
 
         first_questions = survey.question_set.filter(link_from_question=None)
 
-        # print list(first_questions)
         if len(first_questions) == 1:
             first_question = first_questions[0]
             print 'OK'
@@ -39,7 +38,7 @@ class QuestionSorter():
                 else:
                     return self.ordered_questions
         else:
-            print 'There were {} first questions'.format(len(first_questions))
+            print 'There were {} first questions in survey {}'.format(len(first_questions), survey.surveyid)
             return self.ordered_questions
 
     def do_order_questions(self, ):
@@ -47,6 +46,7 @@ class QuestionSorter():
         print len(list(surveys))
 
         for survey in surveys:
+            print survey.surveyid
             survey_question_order = self.get_ordered_questions_in_survey(survey)
             print survey_question_order
             self.total_ordered += len(survey_question_order)
@@ -65,10 +65,10 @@ if __name__ == "__main__":
     qs = QuestionSorter()
     qs.do_order_questions()
 
-    print qs.counter
+    print 'total questions considered', qs.counter
 
-    print len(models.Question.objects.all())
+    print 'total questions in table', len(models.Question.objects.all())
 
-    print qs.total_ordered
+    print 'total ordered', qs.total_ordered
 
-    print qs.counter - qs.total_ordered
+    print 'failed to order', qs.counter - qs.total_ordered

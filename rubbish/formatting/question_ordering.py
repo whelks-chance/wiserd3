@@ -41,7 +41,7 @@ class QuestionSorter():
             print 'There were {} first questions in survey {} out of {} total questions'.format(
                 len(first_questions),
                 survey.surveyid,
-                self.survey.question_set.count()
+                survey.question_set.count()
             )
             return self.ordered_questions
 

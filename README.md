@@ -50,6 +50,7 @@ Global pip install, the venv is specified in the uwsgi "home" below
     chdir = %(base)/%(project)
     home = /home/spx5ich/venv_3.5/
     module = %(project).wsgi:application
+    buffer-size = 32768
 
     master = true
     processes = 8

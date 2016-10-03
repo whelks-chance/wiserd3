@@ -72,6 +72,14 @@ class QTypeSerializer(serializers.ModelSerializer):
 
 
 class QuestionSerializer(serializers.ModelSerializer):
+    # thematic_tags_set = ThematicTagSerializer(read_only=True, many=True)
+    # thematic_groups_set = ThematicGroupSerializer(read_only=True, many=True)
+
+    thematic_tags_set = serializers.SlugRelatedField(slug_field="tag_text", read_only=True, many=True)
+    thematic_groups_set = serializers.SlugRelatedField(slug_field="grouptitle", read_only=True, many=True)
+
+    type = serializers.SlugRelatedField(read_only=True, slug_field='q_type_text')
+
     class Meta:
         model = Question
 

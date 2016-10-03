@@ -20,8 +20,8 @@
                         {'display': false, 'displayName': '{% trans 'Question ID' %}', 'id': 'qid'},
                         {'display': true, 'displayName': '{% trans 'Question Text' %}', 'id': 'literal_question_text'},
                         {'display': true, 'displayName': '{% trans 'Question Number' %}', 'id': 'questionnumber'},
-                        {'display': true, 'displayName': '{% trans 'Thematic Groups' %}', 'id': 'thematic_groups'},
-                        {'display': true, 'displayName': '{% trans 'Thematic Tags' %}', 'id': 'thematic_tags'},
+                        {'display': true, 'displayName': '{% trans 'Thematic Groups' %}', 'id': 'thematic_groups_set'},
+                        {'display': true, 'displayName': '{% trans 'Thematic Tags' %}', 'id': 'thematic_tags_set'},
                         {'display': true, 'displayName': '{% trans 'Link From' %}', 'id': 'link_from'},
                         {'display': true, 'displayName': '{% trans 'Sub Of' %}', 'id': 'subof'},
                         {'display': true, 'displayName': '{% trans 'Question Type' %}', 'id': 'type'},
@@ -66,16 +66,18 @@
             });
 
             $.ajax({
-                url: "{% url 'survey_single_question' question_id %}",
-                type: 'POST',
+{#                url: "{% url 'survey_single_question' question_id %}",#}
+{#            {% url 'api:metadata:DcInfo-detail' pk=survey_id%}#}
+                url: "{% url 'api:metadata:Question-detail' pk=question_id%}",
+                type: 'GET',
                 success: function(data) {
-                    $('#question_number_header').html(data['search_result_data'][0]['questionnumber']);
+                    $('#question_number_header').html(data['questionnumber']);
 
                     var dataContent = '';
                     for (var j = 0; j < question_description['tabs']['question']['fields'].length; j++) {
                         if (question_description['tabs']['question']['fields'][j]['display']) {
                             var field = question_description['tabs']['question']['fields'][j]['id'];
-                            var value = data['search_result_data'][0][field];
+                            var value = data[field];
                             var display_name = question_description['tabs']['question']['fields'][j]['displayName'];
                             var type = question_description['tabs']['question']['fields'][j]['type'];
 
@@ -185,6 +187,15 @@
                 return '';
             }
             if (type == undefined) {
+
+                if (value != null && value.constructor === Array) {
+                    var break_value = '';
+                    for (var val in value) {
+                        break_value += '\n' + value[val];
+                    }
+                    value = break_value;
+                }
+
                 return ('<div class="control-group">' +
                 '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
                 '<div class="controls">' +

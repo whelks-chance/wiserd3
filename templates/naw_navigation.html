@@ -15,37 +15,37 @@
         });
     </script>
 
-    {#    <script>#}
-    {#        $(document).ready(function () {#}
-    {#            $('.lang_toggle').click(function(){#}
-    {#                waitingDialog.show('Saving ...');#}
-    {##}
-    {#                var lang = $(this).data('lang');#}
-    {##}
-    {#                var user_language = (lang == 'welsh' ? '2' : '1');#}
-    {#                $.ajax({#}
-    {#                    url: "{% url 'edit_metadata' %}",#}
-    {#                    type: 'GET',#}
-    {#                    data: {#}
-    {#                        'function': 'set_user_preferences',#}
-    {#                        'user_language': user_language#}
-    {#                    },#}
-    {#                    success: function(data) {#}
-    {#                        if(data['success']){#}
-    {#                            location.reload(true);#}
-    {#                        } else {#}
-    {#                            console.log(data);#}
-    {#                        }#}
-    {#                    },#}
-    {#                    complete: function() {#}
-    {#                        setTimeout(function () {#}
-    {#                            waitingDialog.hide();#}
-    {#                        }, 1000);#}
-    {#                    }#}
-    {#                });#}
-    {#            });#}
-    {#        });#}
-    {#    </script>#}
+{#        <script>#}
+{#            $(document).ready(function () {#}
+{#                $('.lang_toggle').click(function(){#}
+{#                    waitingDialog.show('Saving ...');#}
+{##}
+{#                    var lang = $(this).data('lang');#}
+{##}
+{#                    var user_language = (lang == 'welsh' ? '2' : '1');#}
+{#                    $.ajax({#}
+{#                        url: "{% url 'edit_metadata' %}",#}
+{#                        type: 'GET',#}
+{#                        data: {#}
+{#                            'function': 'set_user_preferences',#}
+{#                            'user_language': user_language#}
+{#                        },#}
+{#                        success: function(data) {#}
+{#                            if(data['success']){#}
+{#                                location.reload(true);#}
+{#                            } else {#}
+{#                                console.log(data);#}
+{#                            }#}
+{#                        },#}
+{#                        complete: function() {#}
+{#                            setTimeout(function () {#}
+{#                                waitingDialog.hide();#}
+{#                            }, 1000);#}
+{#                        }#}
+{#                    });#}
+{#                });#}
+{#            });#}
+{#        </script>#}
 
     <link rel="stylesheet" type="text/css" href="{% static 'dataportal/naw_dark.css' %}" />
 

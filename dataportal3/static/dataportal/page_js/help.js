@@ -11,8 +11,8 @@ function do_intro() {
         items: [
             {
                 selector: '#help_title',
-                title: 'Help and Support',
-                content: 'This page provides help and support to you while using the DataPortal',
+                title: i18n_translation['help_support.help_title.title'],
+                content: i18n_translation['help_support.help_title.content'],
                 placement: 'bottom',
                 step: 0
             },

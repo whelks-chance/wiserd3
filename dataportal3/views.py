@@ -41,6 +41,7 @@ from dataportal3.utils.userAdmin import get_anon_user, get_user_searches, get_re
     survey_visible_to_user, set_session_preferred_language
 import requests
 from old.views import text_search, date_handler
+from rubbish.formatting.question_ordering import QuestionSorter
 from wiserd3 import settings
 from wiserd3.settings import NAW_LAYER_UUIDS, NAW_CY_LAYER_UUIDS
 from verbalexpressions import VerEx
@@ -2535,6 +2536,29 @@ def response_table(request, question_id):
     api_data = {
         'columns': columns,
         'search_result_data': search_result_data
+    }
+
+    return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
+
+
+def question_links(request):
+    qs = QuestionSorter()
+    qs.do_order_questions()
+
+
+
+    api_data = {
+        'text_output': qs.output_logs(),
+
+        'total questions considered': qs.counter,
+
+        'total questions in table': len(models.Question.objects.all()),
+
+        'total ordered': qs.total_ordered,
+
+        'total unlinked': qs.unlinked,
+
+        'failed to order': qs.counter - qs.total_ordered,
     }
 
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")

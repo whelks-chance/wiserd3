@@ -86,11 +86,36 @@ function do_local_dataset_define_vars_tutorial() {
     });
 }
 
+function do_dataset_define_vars_tutorial() {
+
+    bootstro.start('', {
+        onStep: function(obj) {
+            // alert('1 --- ' + obj.idx + ' --- ' + obj.direction);
+        },
+        items: [
+            {
+                selector: '#data_cell_radio > div:nth-child(2)',
+                title: 'Variables',
+                content: 'Make sure to select a variable from each section.',
+                placement: 'bottom',
+                step: 0
+            },
+            //  {
+            //     selector: '#',
+            //     title: 'Variables',
+            //     content: 'Make sure to select a variable from each section.',
+            //     placement: 'bottom',
+            //     step: 1
+            // }
+        ]          
+    });                                                                                
+}
+
 $(document).ready(function () {
     $('#search_remote_help').click(do_remote_data_tutorial);
     $('#choro_help').click(do_choro_tutorial);
     $('#dataset_define_vars_help').click(function(){
-        alert('dataset_define_vars_help');
+        do_dataset_define_vars_tutorial();
     });
 
     $('#local_dataset_define_vars_help').click(function(){

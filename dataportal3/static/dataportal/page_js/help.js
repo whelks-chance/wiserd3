@@ -18,26 +18,25 @@ function do_intro() {
             },
             {
                 selector: '#user_guide_link',
-                title: 'User Guide',
-                content: 'If you need more assistance than these tip boxes here is the link to a detailed user help guide.',
+                title: i18n_translation['help_support.user_guide_link.title'],
+                content: i18n_translation['help_support.user_guide_link.content'],
                 placement: 'right',
                 step: 1
             },
             {
                 selector: '#support_people',
-                title: 'The Experts',
-                content: 'If you have questions or need more support please contact the experts.',
+                title: i18n_translation['help_support.support_people.title'],
+                content: i18n_translation['help_support.support_people.content'],
                 placement: 'top',
                 step: 2
             },
             {
                 selector: '#useful_links',
-                title: 'Useful Links',
-                content: 'Please find links related to the DataPortal here.',
+                title: i18n_translation['help_support.useful_links.title'],
+                content: i18n_translation['help_support.useful_links.content'],
                 placement: 'top',
                 step: 3
-            },
-
+            }
         ]
     }
     )};

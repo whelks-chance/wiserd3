@@ -2,21 +2,21 @@
  * Created by ubuntu on 19/11/15.
  */
 
-function get_i18n_text(text_key, lang_key) {
-    // alert(text_key + ' : ' + lang_key);
-
-    if(i18n_text.hasOwnProperty(text_key)) {
-        var text_set = i18n_text[text_key];
-        if(text_set.hasOwnProperty(lang_key)) {
-            return i18n_text[text_key][lang_key];
-        } else {
-            return text_key + ' : ' + lang_key
-        }
-    } else {
-        return text_key;
-    }
-
-}
+// function get_i18n_text(text_key, lang_key) {
+//     // alert(text_key + ' : ' + lang_key);
+//
+//     if(i18n_text.hasOwnProperty(text_key)) {
+//         var text_set = i18n_text[text_key];
+//         if(text_set.hasOwnProperty(lang_key)) {
+//             return i18n_text[text_key][lang_key];
+//         } else {
+//             return text_key + ' : ' + lang_key
+//         }
+//     } else {
+//         return text_key;
+//     }
+//
+// }
 
 function get_remote_dataset_csv_url(data_api_url, topojson_geography, dataset_id, codelist_selected, callback) {
     var csv_url = '';

@@ -25,29 +25,29 @@ function do_intro(lang) {
         items: [
             {
                 selector: '#question_tab_li',
-                title: 'Question Metadata',
-                content: get_i18n_text('question_tab_li', lang),
+                title: i18n_translation['question_detail.question_tab_li.title'],
+                content: i18n_translation['question_detail.question_tab_li.content'],
                 placement: 'bottom',
                 step: 0
             },
             {
                 selector: '#question_tab',
-                title: 'Question Metadata',
-                content: get_i18n_text('question_tab', lang),
+                title: i18n_translation['question_detail.question_tab.title'],
+                content: i18n_translation['question_detail.question_tab.content'],
                 placement: 'top',
                 step: 1
             },
             {
                 selector: '#results_tab_li',
-                title: 'Jump to Surveys',
-                content: 'This shows the surveys discovered during the search',
+                title: i18n_translation['question_detail.results_tab_li.title'],
+                content: i18n_translation['question_detail.results_tab_li.content'],
                 placement: 'bottom',
                 step: 2
             },
             {
                 selector: '#results_tab',
-                title: 'Survey table',
-                content: 'This shows the surveys discovered during the search',
+                title: i18n_translation['question_detail.results_tab.title'],
+                content: i18n_translation['question_detail.results_tab.content'],
                 placement: 'top',
                 step: 3
             }

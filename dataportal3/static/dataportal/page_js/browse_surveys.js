@@ -9,22 +9,22 @@ function do_intro() {
         items: [
             {
                 selector: '#survey_table',
-                title: 'Browse Surveys',
-                content: 'This page allows you to browse all the surveys available.',
+                title: i18n_translation['browse_surveys.survey_table.title'],
+                content: i18n_translation['browse_surveys.survey_table.content'],
                 placement: 'top',
                 step: 0
             },
             {
                 selector: '#survey_table_filter',
-                title: 'Filter',
-                content: 'You can filter the table of surveys using key words.',
+                title: i18n_translation['browse_surveys.survey_table_filter.title'],
+                content: i18n_translation['browse_surveys.survey_table_filter.content'],
                 placement: 'left',
                 step: 1
             },
             {
                 selector: '#survey_table_length',
-                title: 'View',
-                content: 'This button allows you to choose the number of surveys you view per page.',
+                title: i18n_translation['browse_surveys.survey_table_length.title'],
+                content: i18n_translation['browse_surveys.survey_table_length.content'],
                 placement: 'right',
                 step: 2
             }

@@ -56,8 +56,8 @@ function do_remote_data_tutorial() {
         items: [
             {
                 selector: '#remote_search_term',
-                title: 'Search term goes here',
-                content: 'The thing to search Nomis/ StatsWales for - keyword',
+                title: 'Search',
+                content: 'Enter a keyword to search for surveys.',
                 placement: 'bottom',
                 step: 0
             }
@@ -138,14 +138,14 @@ function do_mapmydata_tutorial_1() {
             {
                 selector: '#drop',
                 title: 'Drop a file',
-                content: 'This is where the Excel file goes. Drag-and-drop it here.',
+                content: 'Use your own data file. Drag-and-drop it here.',
                 placement: 'bottom',
                 step: 0
             }
             ,{
                 selector: '#xlf',
                 title: 'Select file from filesystem',
-                content: 'Regular file selection dialog box',
+                content: 'Search for your file by clicking here.',
                 placement: 'bottom',
                 step: 1
             }
@@ -162,14 +162,14 @@ function do_mapmydata_tutorial_2() {
             {
                 selector: '#geography_label',
                 title: 'Geography column',
-                content: 'Pick a column showing the geography',
+                content: 'Pick the geography ID of your data',
                 placement: 'bottom',
                 step: 0
             }
             ,{
                 selector: '#data_column_label',
                 title: 'Data value',
-                content: 'Pick a column showing the data to be mapped',
+                content: 'Pick the data values you want mapped.',
                 placement: 'bottom',
                 step: 1
             }

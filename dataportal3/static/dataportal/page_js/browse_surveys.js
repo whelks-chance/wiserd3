@@ -17,7 +17,7 @@ function do_intro() {
             {
                 selector: '#survey_table_filter',
                 title: 'Filter',
-                content: 'You can filter the table of surveys using key words',
+                content: 'You can filter the table of surveys using key words.',
                 placement: 'left',
                 step: 1
             },

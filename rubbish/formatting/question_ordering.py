@@ -25,7 +25,6 @@ class QuestionSorter():
 
         if len(first_questions) == 1:
             first_question = first_questions[0]
-            print 'OK'
 
             self.current_question = first_question
             self.ordered_questions.append(first_question.qid)
@@ -54,6 +53,11 @@ class QuestionSorter():
             survey_question_order = self.get_ordered_questions_in_survey(survey)
             print survey_question_order
             self.total_ordered += len(survey_question_order)
+            print 'Ordered {} of {} questions. {} unlinked.'.format(
+                len(survey_question_order),
+                survey.question_set.count(),
+                survey.question_set.count() - len(survey_question_order)
+            )
 
             print '\n\n\n'
 

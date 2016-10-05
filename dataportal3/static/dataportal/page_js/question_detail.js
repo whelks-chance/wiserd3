@@ -18,9 +18,9 @@ function do_intro(lang) {
              if (obj.idx == 2 || obj.idx == 3) {
                 $('#results_tab_li').click();
             }
-            // if (obj.idx == 4 || obj.idx == 5) {
-            //     $('#survey_questions_li').click();
-            // }
+            if (obj.idx == 4 || obj.idx == 5) {
+                $('#response_table_li').click();
+            }
         },
         items: [
             {
@@ -50,21 +50,21 @@ function do_intro(lang) {
                 content: i18n_translation['question_detail.results_tab.content'],
                 placement: 'top',
                 step: 3
+            },
+            {
+                selector: '#response_table_li',
+                title: i18n_translation['question_detail.response_table_li.title'],
+                content: i18n_translation['question_detail.response_table_li.content'],
+                placement: 'bottom',
+                step: 4
+            },
+            {
+                selector: '#response_table',
+                title: i18n_translation['question_detail.response_table.title'],
+                content: i18n_translation['question_detail.response_table.content'],
+                placement: 'top',
+                step: 5
             }
-            // {
-            //     selector: '#survey_questions_li',
-            //     title: 'Jump to Qualitative records',
-            //     content: 'This button shows the Qualitative records discovered during the search',
-            //     placement: 'bottom',
-            //     step: 4
-            // },
-            // {
-            //     selector: '#survey_questions',
-            //     title: 'Qualitative Records',
-            //     content: 'This shows the Qualitative records discovered during the search',
-            //     placement: 'top',
-            //     step: 5
-            // }
 
 
         ]

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-05 13:08+0000\n"
+"POT-Creation-Date: 2016-10-05 14:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -499,7 +499,24 @@ msgstr ""
 msgid "Response Metadata table"
 msgstr "Testun Ymateb"
 
-#: templates/base_vars.html:27 templates/browse_surveys.html.py:5
+#: templates/base_vars.html:25 templates/base_vars.html.py:27
+#: templates/question_detail.html:260 templates/question_detail.html.py:275
+#, fuzzy
+#| msgid "Response Text"
+msgid "Response Table"
+msgstr "Testun Ymateb"
+
+#: templates/base_vars.html:26
+msgid "This button shows the Response Table for the question."
+msgstr ""
+
+#: templates/base_vars.html:28
+msgid ""
+"This shows a table of valid responses to the questions, along with the "
+"variable used to record it."
+msgstr ""
+
+#: templates/base_vars.html:31 templates/browse_surveys.html.py:5
 #: templates/browse_surveys.html:59 templates/dashboard.html.py:161
 #: templates/dashboard.html:168 templates/user_guide.html.py:64
 #: templates/user_guide.html:389
@@ -508,19 +525,19 @@ msgstr "Testun Ymateb"
 msgid "Browse Surveys"
 msgstr "Arolygon"
 
-#: templates/base_vars.html:28
+#: templates/base_vars.html:32
 msgid "This page allows you to browse all the surveys available."
 msgstr ""
 
-#: templates/base_vars.html:29
+#: templates/base_vars.html:33 templates/base_vars.html.py:103
 msgid "Filter"
 msgstr ""
 
-#: templates/base_vars.html:30
+#: templates/base_vars.html:34
 msgid "You can filter the table of surveys using key words."
 msgstr ""
 
-#: templates/base_vars.html:31 templates/browse_surveys.html.py:72
+#: templates/base_vars.html:35 templates/browse_surveys.html.py:72
 #: templates/data_and_history.html:44 templates/data_and_history.html.py:161
 #: templates/search.html:164 templates/search.html.py:271
 #: templates/search.html:310 templates/survey_detail.html.py:204
@@ -528,155 +545,155 @@ msgstr ""
 msgid "View"
 msgstr "Gweld"
 
-#: templates/base_vars.html:32
+#: templates/base_vars.html:36
 msgid ""
 "This button allows you to choose the number of surveys you view per page."
 msgstr ""
 
-#: templates/base_vars.html:35
+#: templates/base_vars.html:39
 #, fuzzy
 #| msgid "Secondary Attributes"
 msgid "Select category type"
 msgstr "Nodweddion Eilaidd"
 
-#: templates/base_vars.html:36
+#: templates/base_vars.html:40
 msgid "This will change the distribution of data. Use Quantiles by default"
 msgstr ""
 
-#: templates/base_vars.html:37
+#: templates/base_vars.html:41
 #, fuzzy
 #| msgid "Number of Categories"
 msgid "Select number of categories"
 msgstr "Nifer y Categorïau"
 
-#: templates/base_vars.html:38
+#: templates/base_vars.html:42
 msgid "This will be the number of categories your data is divided into"
 msgstr ""
 
-#: templates/base_vars.html:39
+#: templates/base_vars.html:43
 #, fuzzy
 #| msgid "Choropleth colour scheme"
 msgid "Select Colour scheme"
 msgstr "Cynllun lliwiau choropleth"
 
-#: templates/base_vars.html:40
+#: templates/base_vars.html:44
 msgid "Select the colour range of your data"
 msgstr ""
 
-#: templates/base_vars.html:41
+#: templates/base_vars.html:45
 msgid "Name it"
 msgstr ""
 
-#: templates/base_vars.html:42
+#: templates/base_vars.html:46
 msgid "This name will appear on the map key"
 msgstr ""
 
-#: templates/base_vars.html:44 templates/map.html.py:1436
+#: templates/base_vars.html:48 templates/map.html.py:1436
 #: templates/search.html:5 templates/search.html.py:182
 #, fuzzy
 #| msgid "Search..."
 msgid "Search"
 msgstr "Chwilio..."
 
-#: templates/base_vars.html:45
+#: templates/base_vars.html:49
 msgid "Enter a keyword to search for surveys."
 msgstr ""
 
-#: templates/base_vars.html:47
+#: templates/base_vars.html:51
 #, fuzzy
 #| msgid "Variable ID"
 msgid "Variables"
 msgstr "Modd Adnabod Amrywiadwy"
 
-#: templates/base_vars.html:48
+#: templates/base_vars.html:52
 msgid "Make sure to select a variable from each section."
 msgstr ""
 
-#: templates/base_vars.html:50
+#: templates/base_vars.html:54
 #, fuzzy
 #| msgid "Profile"
 msgid "Drop a file"
 msgstr "Proffil"
 
-#: templates/base_vars.html:51
+#: templates/base_vars.html:55
 msgid "Use your own data file. Drag-and-drop it here."
 msgstr ""
 
-#: templates/base_vars.html:52
+#: templates/base_vars.html:56
 msgid "Select file from filesystem"
 msgstr ""
 
-#: templates/base_vars.html:53
+#: templates/base_vars.html:57
 msgid "Search for your file by clicking here."
 msgstr ""
 
-#: templates/base_vars.html:55
+#: templates/base_vars.html:59
 #, fuzzy
 #| msgid "Geography"
 msgid "Geography column"
 msgstr "Daearyddiaeth"
 
-#: templates/base_vars.html:56
+#: templates/base_vars.html:60
 msgid "Pick the geography ID of your data."
 msgstr ""
 
-#: templates/base_vars.html:57
+#: templates/base_vars.html:61
 msgid "Data value"
 msgstr ""
 
-#: templates/base_vars.html:58
+#: templates/base_vars.html:62
 msgid "Pick the data values you want mapped."
 msgstr ""
 
-#: templates/base_vars.html:59
+#: templates/base_vars.html:63
 msgid "Any other data to display"
 msgstr ""
 
-#: templates/base_vars.html:60
+#: templates/base_vars.html:64
 msgid "This will be displayed in the sidebar when clicking on the map later."
 msgstr ""
 
-#: templates/base_vars.html:62
+#: templates/base_vars.html:66 templates/base_vars.html.py:77
 #, fuzzy
 #| msgid "Change Log"
 msgid "Change language"
 msgstr "Newid y Log"
 
-#: templates/base_vars.html:63
+#: templates/base_vars.html:67
 msgid ""
 "These buttons can be used to toggle the language the site displays in."
 "<br><br>If you sign-up and login, this preference will be stored for future "
 "visits."
 msgstr ""
 
-#: templates/base_vars.html:64
+#: templates/base_vars.html:68
 #, fuzzy
 #| msgid "View Map"
 msgid "The Map"
 msgstr "Gweld y Map"
 
-#: templates/base_vars.html:65
+#: templates/base_vars.html:69
 msgid ""
 "The Map is the primary focus here.<br><br>Layers of data are displayed, and "
 "most can be selected to show further detail."
 msgstr ""
 
-#: templates/base_vars.html:66
+#: templates/base_vars.html:70
 msgid "Legend"
 msgstr ""
 
-#: templates/base_vars.html:67
+#: templates/base_vars.html:71
 msgid ""
 "Once data layers have been added, the legend will be displayed here."
 "<br><br>Colours and the number of categories are selected when the layer is "
 "first added."
 msgstr ""
 
-#: templates/base_vars.html:68
+#: templates/base_vars.html:72
 msgid "Side menu"
 msgstr ""
 
-#: templates/base_vars.html:69
+#: templates/base_vars.html:73
 msgid ""
 "<p>This is where new map layers are added.</p><h4>RemoteData</h4><p>Import "
 "data from Nomis and/or StatsWales</p><h4>MapMyData</h4><p>Upload an Excel "
@@ -684,31 +701,209 @@ msgid ""
 "h4><p>WMS layers made available by LLE, Welsh Government</p>"
 msgstr ""
 
-#: templates/base_vars.html:70
+#: templates/base_vars.html:74
 #, fuzzy
 #| msgid "Admin Panel"
 msgid "Info Pane"
 msgstr "Panel Gweinyddu"
 
-#: templates/base_vars.html:71
+#: templates/base_vars.html:75
 msgid ""
 "When regions on the map are selected, the corresponding data for that area "
 "are shown here"
 msgstr ""
 
-#: templates/base_vars.html:77
-msgid "Filter :"
+#: templates/base_vars.html:78
+msgid ""
+"These buttons can be used throughout the website to toggle the language the "
+"site displays in.<br><br>If you sign-up and login, this preference will be "
+"stored for future visits."
 msgstr ""
 
 #: templates/base_vars.html:79
-msgid "Display"
+#, fuzzy
+#| msgid "Dashboard"
+msgid "The Dashboard"
+msgstr "Dangosfwrdd"
+
+#: templates/base_vars.html:80
+msgid "These buttons take you to different sections of the DataPortal"
 msgstr ""
 
+#: templates/base_vars.html:81
+msgid "Side Menu"
+msgstr ""
+
+#: templates/base_vars.html:82
+msgid ""
+"This menu appears on all DataPortal pages. Go directly to the mapping page "
+"or browse recent search results."
+msgstr ""
+
+#: templates/base_vars.html:84 templates/events.html.py:5
+#: templates/events.html:18
+msgid "Events and Presentations"
+msgstr "Digwyddiadau a Chyflwyniadau"
+
 #: templates/base_vars.html:85
-msgid "All"
+msgid ""
+"Welcome to the events page, here you can find out about events that the "
+"DataPortal team will be attending as well as the accompanying presentations."
 msgstr ""
 
 #: templates/base_vars.html:86
+msgid "Downloadable content"
+msgstr ""
+
+#: templates/base_vars.html:87
+msgid "The presentation can be downloaded via this link."
+msgstr ""
+
+#: templates/base_vars.html:89
+#, fuzzy
+#| msgid "Questions"
+msgid "Jump to Questions"
+msgstr "Cwestiynau"
+
+#: templates/base_vars.html:90
+msgid "This button shows the questions discovered during the search."
+msgstr ""
+
+#: templates/base_vars.html:91
+#, fuzzy
+#| msgid "Question Details for: "
+msgid "Question table"
+msgstr "Manylion Cwestiwn ar gyfer: "
+
+#: templates/base_vars.html:92
+msgid "This shows the questions discovered during the search."
+msgstr ""
+
+#: templates/base_vars.html:93
+#, fuzzy
+#| msgid "Map Survey"
+msgid "Jump to Surveys"
+msgstr "Arolwg"
+
+#: templates/base_vars.html:94
+msgid "This button shows the surveys discovered during the search."
+msgstr ""
+
+#: templates/base_vars.html:95
+#, fuzzy
+#| msgid "Survey Title"
+msgid "Survey table"
+msgstr "Teitl yr Arolwg"
+
+#: templates/base_vars.html:96
+msgid "This shows the surveys discovered during the search."
+msgstr ""
+
+#: templates/base_vars.html:97
+#, fuzzy
+#| msgid "Qualitative Records"
+msgid "Jump to Qualitative records"
+msgstr "Cofnodion Ansoddol"
+
+#: templates/base_vars.html:98
+msgid "This button shows the Qualitative records discovered during the search."
+msgstr ""
+
+#: templates/base_vars.html:99 templates/search.html.py:211
+msgid "Qualitative Records"
+msgstr "Cofnodion Ansoddol"
+
+#: templates/base_vars.html:100
+msgid "This shows the Qualitative records discovered during the search."
+msgstr ""
+
+#: templates/base_vars.html:101
+#, fuzzy
+#| msgid "Search..."
+msgid "Search box"
+msgstr "Chwilio..."
+
+#: templates/base_vars.html:102
+msgid ""
+"Data can be searched here. This shows the current search, and can be "
+"modified or refined to search again."
+msgstr ""
+
+#: templates/base_vars.html:104
+msgid "Filter searches to refine the results."
+msgstr ""
+
+#: templates/base_vars.html:106 templates/base_vars.html.py:108
+#, fuzzy
+#| msgid "Dublin Core"
+msgid "Dublin Core Tab"
+msgstr "Craidd Dulyn"
+
+#: templates/base_vars.html:107
+msgid "This button shows the Dublin Core data."
+msgstr ""
+
+#: templates/base_vars.html:109
+msgid ""
+"The Dublin Core tab<br><br>This has standardised data focussing on the "
+"collection and repository of the Survey data."
+msgstr ""
+
+#: templates/base_vars.html:110
+msgid "Download"
+msgstr ""
+
+#: templates/base_vars.html:111
+#, fuzzy
+#| msgid "Data Product"
+msgid "Data url"
+msgstr "Cynnyrch Data"
+
+#: templates/base_vars.html:112 templates/base_vars.html.py:114
+#, fuzzy
+#| msgid "Survey"
+msgid "Survey Tab"
+msgstr "Arolwg"
+
+#: templates/base_vars.html:113
+#, fuzzy
+#| msgid "Survey Metadata"
+msgid "This button shows the WISERD Survey Metadata."
+msgstr "Metaddata’r Arolwg"
+
+#: templates/base_vars.html:115
+msgid ""
+"The survey tab<br><br>This has WISERD metadata specific to the interests of "
+"the Social Sciences."
+msgstr ""
+
+#: templates/base_vars.html:116 templates/base_vars.html.py:118
+#, fuzzy
+#| msgid "Survey Results"
+msgid "Survey Questions Tab"
+msgstr "Canlyniadau’r Arolwg"
+
+#: templates/base_vars.html:117
+msgid "This button shows the surveys questions."
+msgstr ""
+
+#: templates/base_vars.html:119
+msgid "The Survey Questions Tab<br><br>This has the questions from the survey."
+msgstr ""
+
+#: templates/base_vars.html:126
+msgid "Filter :"
+msgstr ""
+
+#: templates/base_vars.html:128
+msgid "Display"
+msgstr ""
+
+#: templates/base_vars.html:134
+msgid "All"
+msgstr ""
+
+#: templates/base_vars.html:135
 msgid "records"
 msgstr ""
 
@@ -830,10 +1025,6 @@ msgstr "Chwilio o Bell"
 #| msgid "Search Remote"
 msgid "Search Type"
 msgstr "Chwilio o Bell"
-
-#: templates/events.html:5 templates/events.html.py:18
-msgid "Events and Presentations"
-msgstr "Digwyddiadau a Chyflwyniadau"
 
 #: templates/events.html:24
 msgid "ESRC Festival of Social Science 2015 – WISERD DataPortal demonstration"
@@ -1920,12 +2111,6 @@ msgstr "Gweld yr Arolwg"
 msgid "Question Details for: "
 msgstr "Manylion Cwestiwn ar gyfer: "
 
-#: templates/question_detail.html:260 templates/question_detail.html.py:275
-#, fuzzy
-#| msgid "Response Text"
-msgid "Response Table"
-msgstr "Testun Ymateb"
-
 #: templates/question_detail.html:282
 msgid "QuestionID"
 msgstr "Modd Adnabod y Cwestiwn"
@@ -1946,10 +2131,6 @@ msgstr "Arolwg"
 #: templates/search.html:201
 msgid "Jump to:"
 msgstr "Neidio i:"
-
-#: templates/search.html:211
-msgid "Qualitative Records"
-msgstr "Cofnodion Ansoddol"
 
 #: templates/search.html:231 templates/survey_detail.html.py:22
 #: templates/tables.html:180
@@ -2799,11 +2980,6 @@ msgstr "Cymraeg"
 #~ msgstr "Chwilio Data o Bell"
 
 #, fuzzy
-#~| msgid "Data Product"
-#~ msgid "Data Upload"
-#~ msgstr "Cynnyrch Data"
-
-#, fuzzy
 #~| msgid "National Assembly for Wales"
 #~ msgid "National Assembley of Wales"
 #~ msgstr "Cynulliad Cenedlaethol Cymru"
@@ -2812,11 +2988,6 @@ msgstr "Cymraeg"
 #~| msgid "Secondary Attributes"
 #~ msgid "Select attributes"
 #~ msgstr "Nodweddion Eilaidd"
-
-#, fuzzy
-#~| msgid "Survey Metadata"
-#~ msgid "WISERD Survey Metadata"
-#~ msgstr "Metaddata’r Arolwg"
 
 #~ msgid "View Blog posts"
 #~ msgstr "Gweld y negeseuon Blog"

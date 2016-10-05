@@ -14,75 +14,73 @@
             </div>
         </div>
 
-{%  blocktrans %}
-        <p class="c7 c29"><span class="c31 c30">Contents</span></p>
+        <p class="c7 c29"><span class="c31 c30">{% trans 'Contents'%}</span></p>
         <div class="row user_guide_contents">
             <ol>
                 <li>
-                    <a class="c6" href="#h.32pbpe1hbhs">The DataPortal</a>
+                    <a class="c6" href="#h.32pbpe1hbhs">{% trans 'The DataPortal'%}</a>
                 </li>
                 <li class="c10 c15">
-                    <span class="c0"><a class="c6" href="#h.ry7upru5w1lm">Languages</a></span>
+                    <span class="c0"><a class="c6" href="#h.ry7upru5w1lm">{% trans 'Languages'%}</a></span>
                 </li>
                 <li class="c10 c15">
-                    <span class="c0"><a class="c6" href="#h.gjdgxs">Creating an Account</a></span>
+                    <span class="c0"><a class="c6" href="#h.gjdgxs">{% trans 'Creating an Account'%}</a></span>
                 </li>
 
                 <li class="c10 c15">
                     <span class="c0">
-                        <a class="c6" href="#h.1xvls23yy78a">Navigating through The Dashboard</a>
+                        <a class="c6" href="#h.1xvls23yy78a">{% trans 'Navigating through The Dashboard'%}</a>
                     </span>
 
                     <ol>
                         <li class="c10 c21">
-                            <span class="c0"><a class="c6" href="#h.8eof9hrl1oa4">View Profile</a></span>
+                            <span class="c0"><a class="c6" href="#h.8eof9hrl1oa4">{% trans 'View Profile'%}</a></span>
                         </li>
                     </ol>
                 </li>
 
                 <li>
-                    <span class="c0"><a class="c6" href="#h.piaxtyvftoqq">Browse Surveys</a></span>
+                    <span class="c0"><a class="c6" href="#h.piaxtyvftoqq">{% trans 'Browse Surveys'%}</a></span>
                 </li>
 
                 <li class="c10 c15">
-                    <span class="c0"><a class="c6" href="#h.1g84zcsswfju">Searching for Data</a></span>
+                    <span class="c0"><a class="c6" href="#h.1g84zcsswfju">{% trans 'Searching for Data'%}</a></span>
                 </li>
 
                 <li class="c10 c15">
-                    <span class="c0"><a class="c6" href="#h.fy307n6k33g">View Map</a></span>
+                    <span class="c0"><a class="c6" href="#h.fy307n6k33g">{% trans 'View Map'%}</a></span>
                     <ol>
                         <li class="c10 c21"><span class="c0"><a class="c6"
-                                                                href="#h.c5idbt16gymn">Using the Map</a></span></li>
+                                                                href="#h.c5idbt16gymn">{% trans 'Using the Map'%}</a></span></li>
                         <li class="c10 c21">
                             <span class="c0"><a class="c6" href=
-                                    "#h.9lvwa9az9loq">Adding data to the Map</a></span>
+                                    "#h.9lvwa9az9loq">{% trans 'Adding data to the Map'%}</a></span>
                             <ol>
                                 <li class="c10 c36">
-                                    <span class="c0"><a class="c6" href="#h.h8vtoyxx1sv2">Remote Data</a></span>
+                                    <span class="c0"><a class="c6" href="#h.h8vtoyxx1sv2">{% trans 'Remote Data'%}</a></span>
                                 </li>
                                 <li class="c10 c36">
-                                    <span class="c0"><a class="c6" href="#h.7twlsztxteyi">Local Data</a></span>
+                                    <span class="c0"><a class="c6" href="#h.7twlsztxteyi">{% trans 'Local Data'%}</a></span>
                                 </li>
                             </ol>
                         </li>
                     </ol>
                 </li>
                 <li class="c10 c15">
-                    <span class="c0"><a class="c6" href="#h.bbgz0jct9r5n">National Assembly for Wales</a></span>
+                    <span class="c0"><a class="c6" href="#h.bbgz0jct9r5n">{% trans 'National Assembly for Wales'%}</a></span>
                 </li>
                 <li class="c10 c15">
-                    <span class="c0"><a class="c6" href="#h.98t3j95vmsqu">Event Presentation Files</a></span>
+                    <span class="c0"><a class="c6" href="#h.98t3j95vmsqu">{% trans 'Event Presentation Files'%}</a></span>
                 </li>
                 <li class="c10 c15">
-                    <span class="c0"><a class="c6" href="#h.moaux88strx0">View Tech Blog Posts</a></span>
+                    <span class="c0"><a class="c6" href="#h.moaux88strx0">{% trans 'View Tech Blog Posts'%}</a></span>
                 </li>
                 <li class="c10 c15">
-                    <span class="c0"><a class="c6" href="#h.hxx4wrloq5q2">About, Help and Support</a></span>
+                    <span class="c0"><a class="c6" href="#h.hxx4wrloq5q2">{% trans 'About, Help and Support'%}</a></span>
                 </li>
             </ol>
         </div>
 
-{% endblocktrans %}
         <div class="row inline_li_h1 user_guide_page">
             <ol>
                 <li>
@@ -306,15 +304,15 @@
                     <h1 class="c7 c16" id="h.1xvls23yy78a">
                         <span class="c30 c9 c3 c13">{%  trans 'Navigating through The Dashboard'%}</span>
                     </h1>
-                    {% blocktrans %}
-                    <p class="c10 c4"><span>Once logged in you will be directed back to
+
+                    <p class="c10 c4"><span>{% blocktrans %} Once logged in you will be directed back to
                         the Dashboard. From this page all sections of the DataPortal can be
                         accessed using the buttons shown. The sidebar contains a dashboard
                         button throughout the DataPortal, however, the logo at the top of
                         the page can also be used to navigate back to the dashboard as
-                        well.</span>
+                        well.{% endblocktrans %}</span>
                     </p>
-                    {% endblocktrans %}
+
 
                     <h1 class="c7" id="h.t7wre9efhpj0">
                         <span style="
@@ -359,13 +357,12 @@
                          "
                  title=""></span>
                             </h2>
-                            {% blocktrans %}
-                            <p class="c10 c4"><span>Your profile contains details about you and
+
+                            <p class="c10 c4"><span> {% blocktrans %} Your profile contains details about you and
             your settings, as well as the toggle at the top of each page you
             can set your language preference here. Your preference will be stored and used each time you log into the DataPortal. Always remember to click
-            Save when you have updated your profile/settings.</span>
+            Save when you have updated your profile/settings.{% endblocktrans %}</span>
                             </p>
-                            {% endblocktrans %}
 
                             <h2 class="c7 c8" id="h.hbolhva1kyb4"></h2>
                             <p class="c10 c4"><span class="user_guide_img" style=
@@ -428,11 +425,10 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                                  "
                  title=""></span></h1>
-                  {% blocktrans %}
-                    <p class="c10 c4"><span>Browse Surveys is an easy to use overview
+                    <p class="c10 c4"><span>{% blocktrans %} Browse Surveys is an easy to use overview
             listing all the surveys the DataPortal has to offer. On this page
-            you can filter the surveys and view their content.</span></p>
-                    {% endblocktrans %}
+            you can filter the surveys and view their content.{% endblocktrans %}</span></p>
+
                     <h2 class="c7" id="h.xoipdj9hm9x8">
                 <span class="user_guide_img"
                       style="
@@ -492,12 +488,8 @@
 {#                 -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                  "
                  title=""></span></h1>
-                    {% blocktrans %}
-                    <p class="c10"><span>Datasets can be found and searched through
-            the</span> <span class="c3">Search Metadata</span>
-            <span>&nbsp;button, or simply by using the search bar on the left
-            hand side of the DataPortal.</span>
-                        {% endblocktrans %}
+
+                    <p class="c10"><span> {% blocktrans %} Datasets can be found and searched through the Search Metadata button, or simply by using the search bar on the left hand side of the DataPortal.{% endblocktrans %}</span>
                     </p>
                     <p>
                 <span class="user_guide_img"
@@ -522,18 +514,10 @@
                  "
                  title=""></span>
                     </p>
-                {% blocktrans %}
-                    <p class="c10"><span>When searching a keyword such as Health, all
-            related questions, surveys and qualitative records will be
-            displayed.</span></p>
-                    <p class="c10 c4"><span>These results appear in a grid format which
-            can be filtered between</span> <span class="c3">Questions</span>
-                        <span>,</span> <span class="c3">Surveys</span> <span>and</span>
-                        <span class="c3">Qualitative Records</span> <span>. You can also
-            use the search bars at the top of each subsection to search through
-            the results as well as sorting the results by clicking on a column
-            headings (for example sorting by date).</span></p>
-                {% endblocktrans %}
+
+                    <p class="c10"><span>{% trans 'When searching a keyword such as Health, all related questions, surveys and qualitative records will be displayed.'%}</span></p>
+                    <p class="c10 c4"><span> {%trans 'These results appear in a grid format which can be filtered between Questions, Surveys and Qualitative Records. You can also use the search bars at the top of each subsection to search through the results as well as sorting the results by clicking on a column headings (for example sorting by date).' %}</span></p>
+
                     <p class="c10"><span class="user_guide_img" style=
                             "
                                     {#                            overflow: hidden; #}
@@ -580,11 +564,8 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                                  "
                  title=""></span></p>
-                  {% blocktrans %}
-                    <p class="c10"><span>Once you've found data of interest to
-            you there are two options,</span>
-                        <span class="c3">View Question</span><span> or </span><span class="c3">View Survey</span> <span>.</span></p>
-                {% endblocktrans %}
+
+                    <p class="c10"><span>{% blocktrans %}Once you've found data of interest to you there are two options, View Question or View Survey.{% endblocktrans %}</span></p>
 
                     <p><span class="user_guide_img" style=
                             "
@@ -811,10 +792,10 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                                  "
                  title=""></span>
-                 {% blocktrans %}
-            <span> The DataPortal provides a simple way of mapping data you have found quickly and easily by clicking the Map Survey button.</span></p>
-             <p>Once you have clicked this button it will take you to the map page and ask you to choose some data in order to present the information.</p>
-                {% endblocktrans %}
+
+            <span>{% trans 'The DataPortal provides a simple way of mapping data you have found quickly and easily by clicking the Map Survey button.' %}</span></p>
+             <p>{% trans 'Once you have clicked this button it will take you to the map page and ask you to choose some data in order to present the information.'%}</p>
+
                     <p class="c10"><span class="user_guide_img" style=
                             "
 {#                            overflow: hidden; #}
@@ -849,9 +830,9 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                                  "
                  title=""></span></p>
-                {% blocktrans %}
-             <p><span>By clicking <b>Show New Layer</b> the survey data is added to the map. as you can see a key for the data has been added.</span></p>
-                {% endblocktrans %}
+
+             <p><span>{% trans 'By clicking' %} <b>{% trans 'Show New Layer'%}</b> {% trans 'the survey data is added to the map. as you can see a key for the data has been added.' %}</span></p>
+
             <img alt="" class="user_guide_img2" src=
                     "{% static 'dataportal/media/help_guide_img/mapsurvey_clicked_outcome.png'%}"
                  style=
@@ -892,12 +873,11 @@
                          "
                  title=""></span>
                     </h1>
-                    {% blocktrans %}
-                    <p class="c4 c10"><span>On clicking the View Map button DataPortal
+                    <p class="c4 c10"><span>{% blocktrans %} On clicking the View Map button DataPortal
             is directed to this page - an interactive mapping section.
             DataPortal gives the user the ability to plot information on a map,
-            making the data easier to visualise and sort.</span></p>
-                    {% endblocktrans %}
+            making the data easier to visualise and sort.{% endblocktrans %}</span></p>
+
                     <p class="c10"><span class="user_guide_img" style=
                             "
                                     {#                                    overflow: hidden; #}
@@ -926,16 +906,14 @@
 
                             <h2 class="c7" id="h.c5idbt16gymn"><span class="c13">{% trans 'Using the Map' %}</span></h2>
                             <p class="c10 c4"><span>{% trans 'The interface:'%}</span></p>
-                            {% blocktrans %}
-                            <p class="c10 c4"><span>This is the starting page where a user can
-            insert data onto a map to be analysed further. The familiar sidebar
-            contains the dashboard button, options for importing data onto the
-            map using layers, and</span> <span class="c3">Recent Search
-            Results</span> <span>&nbsp;which is a quick way of adding
-            previously used data. The</span> <span class="c3">layer
-            button</span> <span>(located in the top right hand corner of the
-            map, allows the user to selected layers to view or hide.</span></p>
-                            {% endblocktrans %}
+
+                            <p class="c10 c4"><span>{% blocktrans %}This is the starting page where a user can
+                insert data onto a map to be analysed further. The familiar sidebar
+                contains the dashboard button, options for importing data onto the
+                map using layers, and Recent Search Results which is a quick way of adding
+                previously used data. The layer button (located in the top right hand corner of the
+                map, allows the user to selected layers to view or hide.{% endblocktrans %}</span></p>
+
                             <p class="c11"><span class="user_guide_img" style=
                                     "
                                             {#                                    overflow: hidden; #}
@@ -964,22 +942,21 @@
                             <h2 class="c7" id="h.9lvwa9az9loq">
                                 <span class="c13">{% trans 'Adding data to the Map' %}</span>
                             </h2>
-                        {% blocktrans %}
-                            <p class="c10"><span>The WISERD DataPortal can be used to find and
+
+                            <p class="c10"><span>{% blocktrans %}The WISERD DataPortal can be used to find and
             map a variety of socio-economic data, points of interest and
             boundary data for Wales. You can then export the map and download
-            the data for further analysis.</span></p>
-                        {% endblocktrans %}
+            the data for further analysis.{% endblocktrans %}</span></p>
+
                             <ol>
 
                                 <li class="c10 c36">
                                     <h3 class="c7" id="h.h8vtoyxx1sv2"><span class="c19">{% trans 'Remote Data' %}</span></h3>
-                                {% blocktrans %}
-                                    <p class="c10"><span>To add remote data to the map, click on
-            the</span> <span class="c3">Map Layers</span> <span>&nbsp;button
-            and select</span> <span class="c3">Remote Data</span>
-                                        <span>.</span></p>
-                                    {% endblocktrans %}
+
+                                    <p class="c10"><span>{% blocktrans %}To add remote data to the map, click on the Map Layers button
+                                                        and select Remote Data.
+                                                {% endblocktrans %}</span></p>
+
                                     <p class="c10 c14"><span class="user_guide_img" style=
                                             "
 {#                                            overflow: hidden; #}
@@ -1003,12 +980,9 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                          "
                  title=""></span></p>
-                                {% blocktrans %}
-                                    <p class="c10 c17"><span>The following search box will appear, by
-            typing in a key word different datasets will appear. Select any
-            dataset of interest and click</span> <span class="c3">Add to
-            Map</span> <span>.</span></p>
-                                {% endblocktrans %}
+
+                                    <p class="c10 c17"><span>{% blocktrans %}The following search box will appear, by
+            typing in a key word different datasets will appear. Select any dataset of interest and click Add to Map.{% endblocktrans %}</span> </p>
                                     <p class="c10 c14"><span class="user_guide_img" style=
                                             "
 {#                                            overflow: hidden; #}
@@ -1054,15 +1028,12 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                          "
                  title=""></span></p>
-                                {% blocktrans %}
-                                    <p class="c10 c17"><span>A list of variables will appear, these
-            help divide the data into meaningful layers, for example,
-            choosing</span> <span class="c3">Very Good Health, Annually</span>
-                                        <span>&nbsp;as a</span> <span class="c3">Percent</span>
-                                        <span>in</span> <span class="c3">Total</span> <span>by</span>
-                                        <span class="c3">LSOA.</span> <span>Click</span> <b>Render to Map.</b>
-                                    One common error that may occur is shown below, if you see this error it means you haven't selected enough variables. The error box will list all the variables that have not been chosen to help you select the correct ones.</p>
-                                {% endblocktrans %}
+
+                                    <p class="c10 c17"><span>{% blocktrans %}A list of variables will appear, these
+            help divide the data into meaningful layers, for example, choosing Very Good Health, Annually
+                                        as a Percent in Total by LSOA. Click {% endblocktrans %}<b>{% trans 'Render to Map.'%}</b>
+                                   {% blocktrans %} One common error that may occur is shown below, if you see this error
+                                       it means you haven't selected enough variables. The error box will list all the variables that have not been chosen to help you select the correct ones.{% endblocktrans %}</span></p>
                                     <p class="c10 c17"><span class="user_guide_img" style=
                                             "
 {#                                            overflow: hidden; #}
@@ -1118,10 +1089,9 @@
                                             width: 40%;
 {#                                            height: 372.50px;#}
                                             ">
-            {% blocktrans %}
-            <p><span>The following box will show <b>Choropleth Options</b> (these are the
-            visual features of the layer) select the desired options and click <b>Show New Layer</b>.</span></p>
-            {% endblocktrans %}
+
+            <p><span>{% trans 'The following box will show'%} <b>{% trans 'Choropleth Options'%}</b> {% trans '(these are the visual features of the layer) select the desired options and click'%} <b>{% trans 'Show New Layer.'%}</b></span></p>
+
                                     <p><span>
                 <img alt="" class="user_guide_img2" src=
                     "{% static 'dataportal/media/help_guide_img/remote_data_options.png'%}"
@@ -1135,12 +1105,11 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                          "
                  title=""></span></p>
-            {% blocktrans %}
-                                    <p class="c10 c17"><span>The following will be displayed.
-            The</span> <span class="c3">key</span> <span>at the bottom of the
+
+                                    <p class="c10 c17"><span>{% blocktrans %}The following will be displayed. The key at the bottom of the
             map shows the different percentages of very good health in
-            different regions.</span></p>
-            {% endblocktrans %}
+            different regions.{% endblocktrans %}</span></p>
+
                                     <p class="c10 c17"><span>&nbsp;</span> <span class="user_guide_img"
                                     style=
                                             "
@@ -1165,11 +1134,10 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                          "
                  title=""></span></p>
-            {% blocktrans %}
-                                    <p class="c10 c17"><span>From this map you can select a region and
-            find out information about it in the righthand sidebar (example
-            shown below).</span></p>
-            {% endblocktrans %}
+
+                                    <p class="c10 c17"><span>{% blocktrans %}From this map you can select a region and
+            find out information about it in the righthand sidebar (example shown below).{% endblocktrans %}</span></p>
+
                                     <p class="c10 c14"><span class="user_guide_img" style=
                                             "
 {#                                            overflow: hidden; #}
@@ -1196,16 +1164,16 @@
                                 </li>
                                 <li class="c10 c36">
                                     <h3 class="c7" id="h.7twlsztxteyi"><span class="c19">{% trans 'Local Data'%}</span></h3>
-            {% blocktrans %}
-                                    <p class="c10"><span>The WISERD DataPortal allows users to map
+
+                                    <p class="c10"><span>{% blocktrans %}The WISERD DataPortal allows users to map
             their own data for areas in Wales and to export this as a
             publishable map. This function has been specially designed so that
-            all the mapping occurs inside the user&rsquo;s browser rather than
+            all the mapping occurs inside the users browser rather than
             on the WISERD DataPortal server. This means that potentially
-            sensitive data does not leave the user&rsquo;s machine.</span></p>
-            {% endblocktrans %}
-                                    <p class="c10"><span>{% trans 'You can import your own data onto the DataPortal by clicking the</span> <span class="c3">MapMyData'%}</span>
-                                        <span>button.</span></p>
+            sensitive data does not leave the users machine.{% endblocktrans %}</span></p>
+
+                                    <p class="c10"><span>{% trans 'You can import your own data onto the DataPortal by clicking the MapMyData button.'%}</span>
+                                    </p>
                                     <p class="c10 c14"><span class="user_guide_img" style=
                                             "
 {#                                            /overflow: hidden; #}
@@ -1229,11 +1197,11 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                          "
                  title=""></span></p>
-            {% blocktrans %}
-                                    <p class="c10"><span>A box will appear where you can choose a local
+
+                                    <p class="c10"><span>{% blocktrans %}A box will appear where you can choose a local
             file to upload onto the map. The following box will display the
-            fields available to display on the map.</span></p>
-            {% endblocktrans %}
+            fields available to display on the map.{% endblocktrans %}</span></p>
+
                                     <p class="c10 c14"><span class="user_guide_img" style=
                                             "
 {#                                            overflow: hidden; #}
@@ -1279,12 +1247,11 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                          "
                  title=""></span></p>
-            {% blocktrans %}
-                                    <p class="c10 c17"><span>You must select the Choropleth options so
-            that your data can be displayed correctly and name the layer.
-            Once <b>Show New Layer</b> is clicked the data will be displayed on the map including a key on the
-            righthand side.</span></p>
-            {% endblocktrans %}
+
+                                    <p class="c10 c17"><span>{% blocktrans %}You must select the Choropleth options so
+            that your data can be displayed correctly and name the layer. Once {% endblocktrans %} <b>{% trans 'Show New Layer' %}</b> {% blocktrans %}is clicked the data will be displayed on the map including a key on the
+            righthand side. {% endblocktrans %}</span></p>
+
                                     <p class="c10"><span class="user_guide_img" style=
                                             "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 229.83px; height: 302.50px;">
             <img alt="" class="user_guide_img2" src=
@@ -1298,12 +1265,12 @@
                  style=
                          "width: 863.09px; height: 345.13px; margin-left: -517.57px; margin-top: -35.80px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
                  title=""></span></p>
-            {% blocktrans %}
+
                                     <p class="c10">
-                <span>This will remain on the map until you choose
-            to delete it. To turn the layer off use the <b>Layer Manager</b> (the brown icon in the top right hand corner of the map).</span>
+                <span> {% blocktrans %}This will remain on the map until you choose
+            to delete it. To turn the layer off use the {% endblocktrans %}<b> {% trans 'Layer Manager'%}</b> {% trans '(the brown icon in the top right hand corner of the map).'%}</span>
                                     </p>
-            {% endblocktrans %}
+
                                 </li>
                             </ol>
                         </li>
@@ -1334,14 +1301,14 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                          "
                  title=""></span></h1>
-            {% blocktrans %}
-                    <p class="c10 c4"><span>As part of our work with the National
+
+                    <p class="c10 c4"><span>{% blocktrans %}As part of our work with the National
             Assembly for Wales, a bespoke interface has been developed for the
             WISERD DataPortal which allows Assembly research staff, Assembly
             Members and their support staff to access and map a wide range of
             data for National Assembly for Wales Constituencies and
-            Regions.</span></p>
-            {% endblocktrans %}
+            Regions.{% endblocktrans %}</span></p>
+
                     <p class="c10 c14"><span class="user_guide_img" style=
                             "
 {#                            overflow: hidden; #}
@@ -1395,11 +1362,11 @@
                          "
                  title=""></span>
                     </h1>
-                    {% blocktrans %}
-                    <p class="c10 c4"><span>This section displays all the Events that
+
+                    <p class="c10 c4"><span>{% blocktrans %}This section displays all the Events that
             the DataPortal team has attended and the event presentations. The
-            presentations are also available to download.</span></p>
-                    {% endblocktrans %}
+            presentations are also available to download.{% endblocktrans %}</span></p>
+
                     <p class="c10"><span class="user_guide_img" style=
                             "
 {#                            overflow: hidden; #}
@@ -1453,12 +1420,12 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                          "
                  title=""></span></h1>
-            {% blocktrans %}
-                    <p class="c10 c4"><span>On clicking this button a new tab will open
+
+                    <p class="c10 c4"><span>{% blocktrans %}On clicking this button a new tab will open
             displaying the technical blog. The DataPortal is constantly being
             updated and improved, so the technical blog gives an insight into
-            the behind-the-scenes workings of the DataPortal.</span></p>
-            {% endblocktrans %}
+            the behind-the-scenes workings of the DataPortal.{% endblocktrans %}</span></p>
+
                     <p class="c10 c4"><span class="user_guide_img" style=
                             "
 {#                            overflow: hidden; #}
@@ -1511,12 +1478,12 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                          "
                  title=""></span></h1>
-            {% blocktrans %}
-                    <p class="c10 c4"><span>Help using the DataPortal (such as this
+
+                    <p class="c10 c4"><span>{% blocktrans %}Help using the DataPortal (such as this
             downloadable guide), licensing agreements and contact information
             of support can be found on this page along with a log of any
-            changes to the DataPortal.</span></p>
-            {% endblocktrans %}
+            changes to the DataPortal.{% endblocktrans %}</span></p>
+
                     <p class="c10"><span class="user_guide_img" style=
                             "
 {#                            overflow: hidden; #}
@@ -1546,3 +1513,4 @@
         </div>
     </div>
 {% endblock %}
+

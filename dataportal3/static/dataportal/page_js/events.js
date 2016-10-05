@@ -11,18 +11,18 @@ function do_intro() {
         items: [
             {
                 selector: '#events_logo',
-                title: 'Events and Presentations',
-                content: 'Welcome to the events page, here you can find out about events that the DataPortal team will be attending as well as the accompanying presentations.',
+                title: i18n_translation['events.events_logo.title'],
+                content: i18n_translation['events.events_logo.content'],
                 placement: 'bottom',
                 step: 0
             },
             {
                 selector: '#download_box',
-                title: 'Downloadable content',
-                content: 'The presentation can be downloaded via this link.',
+                title: i18n_translation['events.download_box.title'],
+                content: i18n_translation['events.download_box.content'],
                 placement: 'right',
                 step: 1
-            },
+            }
         ]
     }
-    )};
+    )}

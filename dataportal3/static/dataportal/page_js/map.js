@@ -17,29 +17,29 @@ function do_choro_tutorial() {
         items: [
             {
                 selector: '#bintype',
-                title: 'Select category type.',
-                content: 'This will change the distribution of data. Use Quantiles by default',
+                title: i18n_translation['map.bintype.title'],
+                content: i18n_translation['map.bintype.content'],
                 placement: 'bottom',
                 step: 0
             },
             {
                 selector: '#binno',
-                title: 'Select number of categories',
-                content: 'This will be the number of categories your data is divided into',
+                title: i18n_translation['map.binno.title'],
+                content: i18n_translation['map.binno.content'],
                 placement: 'bottom',
                 step: 1
             },
             {
                 selector: '#colorpicker',
-                title: 'Select Colour scheme',
-                content: 'Select the colour range of your data',
+                title: i18n_translation['map.colorpicker.title'],
+                content: i18n_translation['map.colorpicker.content'],
                 placement: 'bottom',
                 step: 2
             },
             {
                 selector: '#layer_name_text_entry',
-                title: 'Name it',
-                content: 'This name will appear on the map key',
+                title: i18n_translation['map.layer_name_text_entry.title'],
+                content: i18n_translation['map.layer_name_text_entry.content'],
                 placement: 'bottom',
                 step: 3
             }
@@ -56,8 +56,8 @@ function do_remote_data_tutorial() {
         items: [
             {
                 selector: '#remote_search_term',
-                title: 'Search',
-                content: 'Enter a keyword to search for surveys.',
+                title: i18n_translation['map.remote_search_term.title'],
+                content: i18n_translation['map.remote_search_term.content'],
                 placement: 'bottom',
                 step: 0
             }
@@ -76,8 +76,8 @@ function do_local_dataset_define_vars_tutorial() {
         items: [
             {
                 selector: '#local_dataset_define_vars_form',
-                title: 'tutorial',
-                content: 'blargh',
+                title: i18n_translation['map.local_dataset_define_vars_form.title'],
+                content: i18n_translation['map.local_dataset_define_vars_form.content'],
                 placement: 'right',
                 step: 0
             }
@@ -95,8 +95,8 @@ function do_dataset_define_vars_tutorial() {
         items: [
             {
                 selector: '#data_cell_radio > div:nth-child(2)',
-                title: 'Variables',
-                content: 'Make sure to select a variable from each section.',
+                title: i18n_translation['map.dataset_define_vars_form.title'],
+                content: i18n_translation['map.dataset_define_vars_form.content'],
                 placement: 'bottom',
                 step: 0
             },
@@ -137,15 +137,15 @@ function do_mapmydata_tutorial_1() {
         items: [
             {
                 selector: '#drop',
-                title: 'Drop a file',
-                content: 'Use your own data file. Drag-and-drop it here.',
+                title: i18n_translation['map.mapmydata.drop.title'],
+                content: i18n_translation['map.mapmydata.drop.content'],
                 placement: 'bottom',
                 step: 0
             }
             ,{
                 selector: '#xlf',
-                title: 'Select file from filesystem',
-                content: 'Search for your file by clicking here.',
+                title: i18n_translation['map.mapmydata.xlf.title'],
+                content: i18n_translation['map.mapmydata.xlf.content'],
                 placement: 'bottom',
                 step: 1
             }
@@ -161,22 +161,22 @@ function do_mapmydata_tutorial_2() {
         items: [
             {
                 selector: '#geography_label',
-                title: 'Geography column',
-                content: 'Pick the geography ID of your data',
+                title: i18n_translation['map.mapmydata_2.geography_label.title'],
+                content: i18n_translation['map.mapmydata_2.geography_label.content'],
                 placement: 'bottom',
                 step: 0
             }
             ,{
                 selector: '#data_column_label',
-                title: 'Data value',
-                content: 'Pick the data values you want mapped.',
+                title: i18n_translation['map.mapmydata_2.data_column_label.title'],
+                content: i18n_translation['map.mapmydata_2.data_column_label.content'],
                 placement: 'bottom',
                 step: 1
             }
             ,{
                 selector: '#secondary_data_label',
-                title: 'Any other data to display',
-                content: 'This will be displayed in the sidebar when clicking on the map later.',
+                title: i18n_translation['map.mapmydata_2.secondary_data_label.title'],
+                content: i18n_translation['map.mapmydata_2.secondary_data_label.content'],
                 placement: 'bottom',
                 step: 2
             }
@@ -200,44 +200,36 @@ function do_tutorial() {
         items: [
             {
                 selector: '#lang_toggle_split',
-                title: 'Change language',
-                content: 'These buttons can be used to toggle the language the site displays in.' +
-                '<br><br>' +
-                'If you sign-up and login, this preference will be stored for future visits.',
+                title: i18n_translation['map.lang_toggle_split.title'],
+                content: i18n_translation['map.lang_toggle_split.content'],
                 placement: 'bottom',
                 step: 0
             }
             ,{
                 selector: '#map_div_col',
-                title: 'The Map',
-                content: 'The Map is the primary focus here.<br><br>' +
-                'Layers of data are displayed, and most can be selected to show further detail.',
+                title: i18n_translation['map.map_div_col.title'],
+                content: i18n_translation['map.map_div_col.content'],
                 placement: 'right',
                 step: 1
             }
             ,{
                 selector: '#map_div',
-                title: 'Legend',
-                content: 'Once data layers have been added, the legend will be displayed here.<br><br>' +
-                'Colours and the number of categories are selected when the layer is first added.',
+                title: i18n_translation['map.map_div.title'],
+                content: i18n_translation['map.map_div.content'],
                 placement: 'right',
                 step: 2
             }
             ,{
                 selector: '#side-menu',
-                title: 'Side menu',
-                content: '<p>This is where new map layers are added.</p>' +
-                '<h4>RemoteData</h4><p>Import data from Nomis and/or StatsWales</p>' +
-                '<h4>MapMyData</h4><p>Upload an Excel file with geographies and values for mapping</p>' +
-                '<h4>Welsh Government Data</h4><p>WMS layers made available by LLE, Welsh Government</p>',
+                title: i18n_translation['map.side-menu.title'],
+                content: i18n_translation['map.side-menu.content'],
                 placement: 'right',
                 step: 3
             }
             ,{
                 selector: '#right_sidebar_col',
-                title: 'Info Pane',
-                content: 'When regions on the map are selected, ' +
-                'the corresponding data for that area are shown here',
+                title: i18n_translation['map.right_sidebar_col.title'],
+                content: i18n_translation['map.right_sidebar_col.content'],
                 placement: 'left',
                 step: 4
             }

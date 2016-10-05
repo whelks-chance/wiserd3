@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-04 12:00+0000\n"
+"POT-Creation-Date: 2016-10-05 13:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -436,37 +436,281 @@ msgstr ""
 "<strong>Nodyn:</strong> gallwch <a href=\"%(email_url)s\">newid eich "
 "cyfeiriad e-bost o hyd</a>."
 
-#: templates/base_vars.html:7
-msgid "This page provides help and support to you while using the DataPortal"
-msgstr "HERE IS SOME WELSH TEXT"
-
-#: templates/base_vars.html:8 templates/help_support.html.py:5
+#: templates/base_vars.html:7 templates/help_support.html.py:5
 #: templates/help_support.html:15
 msgid "Help and Support"
 msgstr "Help a Chymorth"
 
+#: templates/base_vars.html:8
+msgid "This page provides help and support to you while using the DataPortal"
+msgstr "HERE IS SOME WELSH TEXT"
+
+#: templates/base_vars.html:9 templates/user_guide.html.py:5
+#: templates/user_guide.html:13
+#, fuzzy
+#| msgid "User Profile"
+msgid "User Guide"
+msgstr "Proffil y Defnyddiwr"
+
+#: templates/base_vars.html:10
+msgid ""
+"If you need more assistance than these tip boxes here is the link to a "
+"detailed user help guide."
+msgstr ""
+
+#: templates/base_vars.html:11
+msgid "The Experts"
+msgstr ""
+
+#: templates/base_vars.html:12
+msgid "If you have questions or need more support please contact the experts."
+msgstr ""
+
+#: templates/base_vars.html:13 templates/help_support.html.py:207
+msgid "Useful Links"
+msgstr ""
+
 #: templates/base_vars.html:14
-msgid "Filter :"
+msgid "Please find links related to the DataPortal here."
 msgstr ""
 
-#: templates/base_vars.html:16
-msgid "Display"
+#: templates/base_vars.html:17 templates/base_vars.html.py:19
+#: templates/question_detail.html:245
+msgid "Question Metadata"
+msgstr "Metaddata Cwestiwn"
+
+#: templates/base_vars.html:18 templates/base_vars.html.py:20
+msgid "This tab shows metadata for the selected question"
 msgstr ""
 
-#: templates/base_vars.html:22
-msgid "All"
+#: templates/base_vars.html:21
+#, fuzzy
+#| msgid "Question Metadata"
+msgid "Response Metadata"
+msgstr "Metaddata Cwestiwn"
+
+#: templates/base_vars.html:22 templates/base_vars.html.py:24
+msgid "This tab shows metadata for the selected response"
 msgstr ""
 
 #: templates/base_vars.html:23
-msgid "records"
-msgstr ""
+#, fuzzy
+#| msgid "Response Text"
+msgid "Response Metadata table"
+msgstr "Testun Ymateb"
 
-#: templates/browse_surveys.html:5 templates/browse_surveys.html.py:59
-#: templates/dashboard.html:161 templates/dashboard.html.py:168
+#: templates/base_vars.html:27 templates/browse_surveys.html.py:5
+#: templates/browse_surveys.html:59 templates/dashboard.html.py:161
+#: templates/dashboard.html:168 templates/user_guide.html.py:64
+#: templates/user_guide.html:389
 #, fuzzy
 #| msgid "Surveys"
 msgid "Browse Surveys"
 msgstr "Arolygon"
+
+#: templates/base_vars.html:28
+msgid "This page allows you to browse all the surveys available."
+msgstr ""
+
+#: templates/base_vars.html:29
+msgid "Filter"
+msgstr ""
+
+#: templates/base_vars.html:30
+msgid "You can filter the table of surveys using key words."
+msgstr ""
+
+#: templates/base_vars.html:31 templates/browse_surveys.html.py:72
+#: templates/data_and_history.html:44 templates/data_and_history.html.py:161
+#: templates/search.html:164 templates/search.html.py:271
+#: templates/search.html:310 templates/survey_detail.html.py:204
+#: templates/survey_detail.html:367
+msgid "View"
+msgstr "Gweld"
+
+#: templates/base_vars.html:32
+msgid ""
+"This button allows you to choose the number of surveys you view per page."
+msgstr ""
+
+#: templates/base_vars.html:35
+#, fuzzy
+#| msgid "Secondary Attributes"
+msgid "Select category type"
+msgstr "Nodweddion Eilaidd"
+
+#: templates/base_vars.html:36
+msgid "This will change the distribution of data. Use Quantiles by default"
+msgstr ""
+
+#: templates/base_vars.html:37
+#, fuzzy
+#| msgid "Number of Categories"
+msgid "Select number of categories"
+msgstr "Nifer y Categorïau"
+
+#: templates/base_vars.html:38
+msgid "This will be the number of categories your data is divided into"
+msgstr ""
+
+#: templates/base_vars.html:39
+#, fuzzy
+#| msgid "Choropleth colour scheme"
+msgid "Select Colour scheme"
+msgstr "Cynllun lliwiau choropleth"
+
+#: templates/base_vars.html:40
+msgid "Select the colour range of your data"
+msgstr ""
+
+#: templates/base_vars.html:41
+msgid "Name it"
+msgstr ""
+
+#: templates/base_vars.html:42
+msgid "This name will appear on the map key"
+msgstr ""
+
+#: templates/base_vars.html:44 templates/map.html.py:1436
+#: templates/search.html:5 templates/search.html.py:182
+#, fuzzy
+#| msgid "Search..."
+msgid "Search"
+msgstr "Chwilio..."
+
+#: templates/base_vars.html:45
+msgid "Enter a keyword to search for surveys."
+msgstr ""
+
+#: templates/base_vars.html:47
+#, fuzzy
+#| msgid "Variable ID"
+msgid "Variables"
+msgstr "Modd Adnabod Amrywiadwy"
+
+#: templates/base_vars.html:48
+msgid "Make sure to select a variable from each section."
+msgstr ""
+
+#: templates/base_vars.html:50
+#, fuzzy
+#| msgid "Profile"
+msgid "Drop a file"
+msgstr "Proffil"
+
+#: templates/base_vars.html:51
+msgid "Use your own data file. Drag-and-drop it here."
+msgstr ""
+
+#: templates/base_vars.html:52
+msgid "Select file from filesystem"
+msgstr ""
+
+#: templates/base_vars.html:53
+msgid "Search for your file by clicking here."
+msgstr ""
+
+#: templates/base_vars.html:55
+#, fuzzy
+#| msgid "Geography"
+msgid "Geography column"
+msgstr "Daearyddiaeth"
+
+#: templates/base_vars.html:56
+msgid "Pick the geography ID of your data."
+msgstr ""
+
+#: templates/base_vars.html:57
+msgid "Data value"
+msgstr ""
+
+#: templates/base_vars.html:58
+msgid "Pick the data values you want mapped."
+msgstr ""
+
+#: templates/base_vars.html:59
+msgid "Any other data to display"
+msgstr ""
+
+#: templates/base_vars.html:60
+msgid "This will be displayed in the sidebar when clicking on the map later."
+msgstr ""
+
+#: templates/base_vars.html:62
+#, fuzzy
+#| msgid "Change Log"
+msgid "Change language"
+msgstr "Newid y Log"
+
+#: templates/base_vars.html:63
+msgid ""
+"These buttons can be used to toggle the language the site displays in."
+"<br><br>If you sign-up and login, this preference will be stored for future "
+"visits."
+msgstr ""
+
+#: templates/base_vars.html:64
+#, fuzzy
+#| msgid "View Map"
+msgid "The Map"
+msgstr "Gweld y Map"
+
+#: templates/base_vars.html:65
+msgid ""
+"The Map is the primary focus here.<br><br>Layers of data are displayed, and "
+"most can be selected to show further detail."
+msgstr ""
+
+#: templates/base_vars.html:66
+msgid "Legend"
+msgstr ""
+
+#: templates/base_vars.html:67
+msgid ""
+"Once data layers have been added, the legend will be displayed here."
+"<br><br>Colours and the number of categories are selected when the layer is "
+"first added."
+msgstr ""
+
+#: templates/base_vars.html:68
+msgid "Side menu"
+msgstr ""
+
+#: templates/base_vars.html:69
+msgid ""
+"<p>This is where new map layers are added.</p><h4>RemoteData</h4><p>Import "
+"data from Nomis and/or StatsWales</p><h4>MapMyData</h4><p>Upload an Excel "
+"file with geographies and values for mapping</p><h4>Welsh Government Data</"
+"h4><p>WMS layers made available by LLE, Welsh Government</p>"
+msgstr ""
+
+#: templates/base_vars.html:70
+#, fuzzy
+#| msgid "Admin Panel"
+msgid "Info Pane"
+msgstr "Panel Gweinyddu"
+
+#: templates/base_vars.html:71
+msgid ""
+"When regions on the map are selected, the corresponding data for that area "
+"are shown here"
+msgstr ""
+
+#: templates/base_vars.html:77
+msgid "Filter :"
+msgstr ""
+
+#: templates/base_vars.html:79
+msgid "Display"
+msgstr ""
+
+#: templates/base_vars.html:85
+msgid "All"
+msgstr ""
+
+#: templates/base_vars.html:86
+msgid "records"
+msgstr ""
 
 #: templates/browse_surveys.html:67 templates/qual_detail.html.py:37
 #: templates/search.html:266 templates/search.html.py:304
@@ -481,13 +725,6 @@ msgstr "Teitl"
 msgid "Date"
 msgstr "Dyddiad"
 
-#: templates/browse_surveys.html:72 templates/data_and_history.html.py:44
-#: templates/data_and_history.html:161 templates/search.html.py:164
-#: templates/search.html:271 templates/search.html.py:310
-#: templates/survey_detail.html:204 templates/survey_detail.html.py:367
-msgid "View"
-msgstr "Gweld"
-
 #: templates/browse_surveys.html:91 templates/search.html.py:222
 #: templates/search.html:257 templates/search.html.py:295
 #: templates/search.html:335
@@ -496,7 +733,7 @@ msgstr "Brig"
 
 #: templates/dashboard.html:5 templates/dashboard.html.py:56
 #: templates/navigation.html:116 templates/naw_dashboard.html.py:5
-#: templates/naw_dashboard.html:50 templates/naw_navigation.html.py:146
+#: templates/naw_dashboard.html:51 templates/naw_navigation.html.py:146
 msgid "Dashboard"
 msgstr "Dangosfwrdd"
 
@@ -507,15 +744,17 @@ msgid "Search Metadata"
 msgstr "Metaddata’r Arolwg"
 
 #: templates/dashboard.html:97 templates/map.html.py:10
-#: templates/naw_dashboard.html:131
+#: templates/naw_dashboard.html:132
 msgid "Mapping tools"
 msgstr "Offer Mapio"
 
-#: templates/dashboard.html:104 templates/naw_dashboard.html.py:138
+#: templates/dashboard.html:104 templates/naw_dashboard.html.py:139
+#: templates/user_guide.html:72 templates/user_guide.html.py:836
 msgid "View Map"
 msgstr "Gweld y Map"
 
 #: templates/dashboard.html:137 templates/naw_dashboard.html.py:5
+#: templates/user_guide.html:91 templates/user_guide.html.py:1233
 msgid "National Assembly for Wales"
 msgstr "Cynulliad Cenedlaethol Cymru"
 
@@ -523,16 +762,18 @@ msgstr "Cynulliad Cenedlaethol Cymru"
 msgid "Events"
 msgstr "Digwyddiadau"
 
-#: templates/dashboard.html:196
+#: templates/dashboard.html:196 templates/user_guide.html.py:94
+#: templates/user_guide.html:1289
 msgid "Event Presentation Files"
 msgstr "Ffeiliau Cyflwyno Digwyddiad"
 
 #: templates/dashboard.html:219 templates/help_support.html.py:20
-#: templates/naw_dashboard.html:183
+#: templates/naw_dashboard.html:184
 msgid "Help"
 msgstr "Help"
 
-#: templates/dashboard.html:226 templates/naw_dashboard.html.py:190
+#: templates/dashboard.html:226 templates/naw_dashboard.html.py:191
+#: templates/user_guide.html:100 templates/user_guide.html.py:1400
 msgid "About, Help and Support"
 msgstr "Gwybodaeth, Help a Chymorth"
 
@@ -544,18 +785,19 @@ msgstr "Blog Technegol"
 msgid "View DataPortal technical developments"
 msgstr ""
 
-#: templates/dashboard.html:287 templates/naw_dashboard.html.py:219
+#: templates/dashboard.html:287 templates/naw_dashboard.html.py:220
 #, fuzzy
 #| msgid "WISERD Homepage"
 msgid "WISERD DataPortal Homepage"
 msgstr "Hafan WISERD"
 
-#: templates/dashboard.html:308 templates/naw_dashboard.html.py:76
+#: templates/dashboard.html:308 templates/naw_dashboard.html.py:77
 #: templates/profile.html:5 templates/profile.html.py:43
 msgid "Profile"
 msgstr "Proffil"
 
-#: templates/dashboard.html:315 templates/naw_dashboard.html.py:83
+#: templates/dashboard.html:315 templates/naw_dashboard.html.py:84
+#: templates/user_guide.html:58 templates/user_guide.html.py:331
 msgid "View Profile"
 msgstr "Gweld Proffil"
 
@@ -836,10 +1078,6 @@ msgstr "Dechrau 2012"
 msgid "The initial release of the WISERD GeoPortal at University of Glamorgan"
 msgstr "Rhyddhau WISERD DataPortal am y tro cyntaf ym Mhrifysgol Morgannwg"
 
-#: templates/help_support.html:207
-msgid "Useful Links"
-msgstr ""
-
 #: templates/language_snippet.html:5 templates/qual_detail.html.py:47
 #: templates/survey_detail.html:65
 msgid "Language"
@@ -1003,7 +1241,8 @@ msgstr ""
 "Cod ffynhonnell ar gael yn <a class=\"c0\" target=\"_blank\" href=\"https://"
 "github.com/whelks-chance/wiserd3\">GitHub</a>."
 
-#: templates/local_data.html:26
+#: templates/local_data.html:26 templates/user_guide.html.py:84
+#: templates/user_guide.html:1129
 msgid "Local Data"
 msgstr "Data Lleol"
 
@@ -1011,7 +1250,8 @@ msgstr "Data Lleol"
 msgid "Map layers"
 msgstr "Haenau map"
 
-#: templates/map.html:178
+#: templates/map.html:178 templates/user_guide.html.py:81
+#: templates/user_guide.html:925
 #, fuzzy
 #| msgid "Remote Data Search"
 msgid "Remote Data"
@@ -1096,12 +1336,6 @@ msgstr ""
 "Neu, efallai bod eich ymholiad yn rhy benodol. Er enghraifft, pan gaiff data "
 "eu hatal oherwydd ystyriaethau cyfrinachedd ystadegol. "
 
-#: templates/map.html:1436 templates/search.html.py:5 templates/search.html:182
-#, fuzzy
-#| msgid "Search..."
-msgid "Search"
-msgstr "Chwilio..."
-
 #: templates/map.html:1461
 msgid "Screenshot"
 msgstr "Sgrinlun"
@@ -1110,7 +1344,8 @@ msgstr "Sgrinlun"
 msgid "Reset"
 msgstr ""
 
-#: templates/map.html:1648
+#: templates/map.html:1648 templates/user_guide.html.py:816
+#: templates/user_guide.html:1207
 msgid "Show New Layer"
 msgstr "Dangos Haen Newydd"
 
@@ -1344,15 +1579,15 @@ msgstr "Arolygon"
 msgid "Questions"
 msgstr "Cwestiynau"
 
-#: templates/naw_dashboard.html:27
+#: templates/naw_dashboard.html:28
 msgid "Stay on this page"
 msgstr "Aros ar y dudalen hon"
 
-#: templates/naw_dashboard.html:30
+#: templates/naw_dashboard.html:31
 msgid "Navigate to WISERD HOME"
 msgstr "Llywio i HAFAN WISERD"
 
-#: templates/naw_dashboard.html:112
+#: templates/naw_dashboard.html:113
 msgid "WISERD Dashboard"
 msgstr "Dangosfwrdd WISERD"
 
@@ -1684,10 +1919,6 @@ msgstr "Gweld yr Arolwg"
 #: templates/question_detail.html:237
 msgid "Question Details for: "
 msgstr "Manylion Cwestiwn ar gyfer: "
-
-#: templates/question_detail.html:245
-msgid "Question Metadata"
-msgstr "Metaddata Cwestiwn"
 
 #: templates/question_detail.html:260 templates/question_detail.html.py:275
 #, fuzzy
@@ -2088,11 +2319,397 @@ msgstr "Golygu’r manylion"
 msgid "Spatial search area : "
 msgstr ""
 
-#: templates/user_guide.html:5 templates/user_guide.html.py:12
+#: templates/user_guide.html:17
+msgid "For on-screen help on each page of the DataPortal click this button."
+msgstr ""
+
+#: templates/user_guide.html:38
 #, fuzzy
-#| msgid "User Profile"
-msgid "User Guide"
-msgstr "Proffil y Defnyddiwr"
+#| msgid "Comments"
+msgid "Contents"
+msgstr "Sylwadau"
+
+#: templates/user_guide.html:42 templates/user_guide.html.py:108
+#, fuzzy
+#| msgid "Lle Portal"
+msgid "The DataPortal"
+msgstr "Porth Lle"
+
+#: templates/user_guide.html:45 templates/user_guide.html.py:165
+#, fuzzy
+#| msgid "Language"
+msgid "Languages"
+msgstr "Iaith"
+
+#: templates/user_guide.html:48 templates/user_guide.html.py:220
+msgid "Creating an Account"
+msgstr ""
+
+#: templates/user_guide.html:53 templates/user_guide.html.py:297
+msgid "Navigating through The Dashboard"
+msgstr ""
+
+#: templates/user_guide.html:68 templates/user_guide.html.py:441
+#, fuzzy
+#| msgid "Survey Metadata"
+msgid "Searching for Data"
+msgstr "Metaddata’r Arolwg"
+
+#: templates/user_guide.html:75 templates/user_guide.html.py:886
+msgid "Using the Map"
+msgstr ""
+
+#: templates/user_guide.html:78 templates/user_guide.html.py:917
+#, fuzzy
+#| msgid "Add to Map"
+msgid "Adding data to the Map"
+msgstr "Ychwanegu at y map"
+
+#: templates/user_guide.html:97 templates/user_guide.html.py:1345
+#, fuzzy
+#| msgid "View Blog Posts"
+msgid "View Tech Blog Posts"
+msgstr "Gweld y Negeseuon Blog"
+
+#: templates/user_guide.html:110
+msgid ""
+"The WISERD DataPortal is a web application that enhances a researchers "
+"ability to search, discover, map and download socio-economic research data "
+"related to Wales. The aim is to encourage the re-use & repurposing of "
+"existing data."
+msgstr ""
+
+#: templates/user_guide.html:113
+msgid "To access the WISERD DataPortal visit:"
+msgstr ""
+
+#: templates/user_guide.html:118
+msgid ""
+"To find out more about the DataPortal project you can click on the WISERD "
+"button."
+msgstr ""
+
+#: templates/user_guide.html:166
+msgid ""
+"The DataPortal is available in both English and Welsh, to alternate between "
+"languages you can use the toggle buttons at the top of the page. You can "
+"find these buttons on each page of the DataPortal, which allows you to "
+"switch between languages whenever necessary."
+msgstr ""
+
+#: templates/user_guide.html:190
+msgid ""
+"You can also choose a language preference in your profile settings, which "
+"will be stored and used each time you log in."
+msgstr ""
+
+#: templates/user_guide.html:221
+msgid ""
+"To use the full suite of DataPortal functionality you must first create an "
+"account using the Login button in the top right hand corner. You can either "
+"sign in straight away using an existing Google account, or create a new "
+"username and password."
+msgstr ""
+
+#: templates/user_guide.html:246
+msgid ""
+"Signing up to the Dataportal requires you to create a username and password, "
+"as well as providing an email address to verify your account."
+msgstr ""
+
+#: templates/user_guide.html:300
+msgid ""
+" Once logged in you will be directed back to the Dashboard. From this page "
+"all sections of the DataPortal can be accessed using the buttons shown. The "
+"sidebar contains a dashboard button throughout the DataPortal, however, the "
+"logo at the top of the page can also be used to navigate back to the "
+"dashboard as well."
+msgstr ""
+
+#: templates/user_guide.html:348
+msgid ""
+" Your profile contains details about you and your settings, as well as the "
+"toggle at the top of each page you can set your language preference here. "
+"Your preference will be stored and used each time you log into the "
+"DataPortal. Always remember to click Save when you have updated your profile/"
+"settings."
+msgstr ""
+
+#: templates/user_guide.html:412
+msgid ""
+" Browse Surveys is an easy to use overview listing all the surveys the "
+"DataPortal has to offer. On this page you can filter the surveys and view "
+"their content."
+msgstr ""
+
+#: templates/user_guide.html:474
+msgid ""
+" Datasets can be found and searched through the Search Metadata button, or "
+"simply by using the search bar on the left hand side of the DataPortal."
+msgstr ""
+
+#: templates/user_guide.html:500
+msgid ""
+"When searching a keyword such as Health, all related questions, surveys and "
+"qualitative records will be displayed."
+msgstr ""
+
+#: templates/user_guide.html:501
+msgid ""
+"These results appear in a grid format which can be filtered between "
+"Questions, Surveys and Qualitative Records. You can also use the search bars "
+"at the top of each subsection to search through the results as well as "
+"sorting the results by clicking on a column headings (for example sorting by "
+"date)."
+msgstr ""
+
+#: templates/user_guide.html:550
+msgid ""
+"Once you've found data of interest to you there are two options, View "
+"Question or View Survey."
+msgstr ""
+
+#: templates/user_guide.html:575
+msgid "View Question will bring up this page."
+msgstr ""
+
+#: templates/user_guide.html:576
+msgid "This page gives you information about the question"
+msgstr ""
+
+#: templates/user_guide.html:599
+msgid ""
+"By clicking on the tabs at the top of each page you can see the Response "
+"information and the Response table."
+msgstr ""
+
+#: templates/user_guide.html:668
+msgid "The Survey button will open the following page."
+msgstr ""
+
+#: templates/user_guide.html:669
+msgid ""
+"The Dublin Core, this page provides all the metadata about the survey as a "
+"whole. They may provide information on who produced the survey, how the "
+"survey data was collected, how many people responded and how to obtain the "
+"response data. The <b>Source URL</b> will take you to the downloadable data."
+msgstr ""
+
+#: templates/user_guide.html:693
+msgid ""
+"The Survey page provides all the information about the survey itself, some "
+"information included here is the survey title, the start and end dates of "
+"the survey and the sample size."
+msgstr ""
+
+#: templates/user_guide.html:717
+msgid ""
+"The questions page provides you with all the questions that were included in "
+"the survey and links to view each sepereate question."
+msgstr ""
+
+#: templates/user_guide.html:741
+msgid ""
+"The search page offers 3 different sections of results, by clicking the "
+"Survey tab you can search through the survey section, this offer different "
+"functions to the questions section."
+msgstr ""
+
+#: templates/user_guide.html:778
+msgid ""
+"The DataPortal provides a simple way of mapping data you have found quickly "
+"and easily by clicking the Map Survey button."
+msgstr ""
+
+#: templates/user_guide.html:779
+msgid ""
+"Once you have clicked this button it will take you to the map page and ask "
+"you to choose some data in order to present the information."
+msgstr ""
+
+#: templates/user_guide.html:816
+msgid "By clicking"
+msgstr ""
+
+#: templates/user_guide.html:816
+msgid ""
+"the survey data is added to the map. as you can see a key for the data has "
+"been added."
+msgstr ""
+
+#: templates/user_guide.html:858
+msgid ""
+" On clicking the View Map button DataPortal is directed to this page - an "
+"interactive mapping section. DataPortal gives the user the ability to plot "
+"information on a map, making the data easier to visualise and sort."
+msgstr ""
+
+#: templates/user_guide.html:887
+msgid "The interface:"
+msgstr ""
+
+#: templates/user_guide.html:889
+msgid ""
+"This is the starting page where a user can insert data onto a map to be "
+"analysed further. The familiar sidebar contains the dashboard button, "
+"options for importing data onto the map using layers, and Recent Search "
+"Results which is a quick way of adding previously used data. The layer "
+"button (located in the top right hand corner of the map, allows the user to "
+"select layers to view or hide."
+msgstr ""
+
+#: templates/user_guide.html:920
+msgid ""
+"The WISERD DataPortal can be used to find and map a variety of socio-"
+"economic data, points of interest and boundary data for Wales. You can then "
+"export the map and download the data for further analysis."
+msgstr ""
+
+#: templates/user_guide.html:927
+msgid ""
+"To add remote data to the map, click on the Map Layers button and select "
+"Remote Data.\n"
+"                                                "
+msgstr ""
+
+#: templates/user_guide.html:954
+msgid ""
+"The following search box will appear, by typing in a key word different "
+"datasets will appear. Select any dataset of interest and click Add to Map."
+msgstr ""
+
+#: templates/user_guide.html:1001
+msgid ""
+"A list of variables will appear, these help divide the data into meaningful "
+"layers, for example, choosing Very Good Health, Annually as a Percent in "
+"Total by LSOA. Click "
+msgstr ""
+
+#: templates/user_guide.html:1001
+#, fuzzy
+#| msgid "Render to Map"
+msgid "Render to Map."
+msgstr "Rendro i’r map"
+
+#: templates/user_guide.html:1002
+msgid ""
+" One common error that may occur is shown below, if you see this error it "
+"means you haven't selected enough variables. The error box will list all the "
+"variables that have not been chosen to help you select the correct ones."
+msgstr ""
+
+#: templates/user_guide.html:1059
+msgid "The following box will show"
+msgstr ""
+
+#: templates/user_guide.html:1059
+#, fuzzy
+#| msgid "Choropleth options"
+msgid "Choropleth Options"
+msgstr "Dewisiadau choropleth"
+
+#: templates/user_guide.html:1059
+msgid ""
+"(these are the visual features of the layer) select the desired options and "
+"click"
+msgstr ""
+
+#: templates/user_guide.html:1059
+#, fuzzy
+#| msgid "Show New Layer"
+msgid "Show New Layer."
+msgstr "Dangos Haen Newydd"
+
+#: templates/user_guide.html:1075
+msgid ""
+"The following will be displayed. The key at the bottom of the map shows the "
+"different percentages of very good health in different regions."
+msgstr ""
+
+#: templates/user_guide.html:1102
+msgid ""
+"From this map you can select a region and find out information about it in "
+"the righthand sidebar (example shown below)."
+msgstr ""
+
+#: templates/user_guide.html:1131
+msgid ""
+"The WISERD DataPortal allows users to map their own data for areas in Wales "
+"and to export this as a publishable map. This function has been specially "
+"designed so that all the mapping occurs inside the users browser rather than "
+"on the WISERD DataPortal server. This means that potentially sensitive data "
+"does not leave the users machine."
+msgstr ""
+
+#: templates/user_guide.html:1133
+msgid ""
+"You can import your own data onto the DataPortal by clicking the MapMyData "
+"button."
+msgstr ""
+
+#: templates/user_guide.html:1159
+msgid ""
+"A box will appear where you can choose a local file to upload onto the map. "
+"The following box will display the fields available to display on the map."
+msgstr ""
+
+#: templates/user_guide.html:1207
+msgid ""
+"You must select the Choropleth options so that your data can be displayed "
+"correctly and name the layer. Once "
+msgstr ""
+
+#: templates/user_guide.html:1207
+msgid ""
+"is clicked the data will be displayed on the map including a key on the "
+"righthand side. "
+msgstr ""
+
+#: templates/user_guide.html:1224
+msgid ""
+"This will remain on the map until you choose to delete it. To turn the layer "
+"off use the "
+msgstr ""
+
+#: templates/user_guide.html:1224
+#, fuzzy
+#| msgid "Layer Name"
+msgid "Layer Manager"
+msgstr "Enw’r Haen"
+
+#: templates/user_guide.html:1224
+msgid "(the brown icon in the top right hand corner of the map)."
+msgstr ""
+
+#: templates/user_guide.html:1258
+msgid ""
+"As part of our work with the National Assembly for Wales, a bespoke "
+"interface has been developed for the WISERD DataPortal which allows Assembly "
+"research staff, Assembly Members and their support staff to access and map a "
+"wide range of data for National Assembly for Wales Constituencies and "
+"Regions."
+msgstr ""
+
+#: templates/user_guide.html:1314
+msgid ""
+"This section displays all the Events that the DataPortal team has attended "
+"and the event presentations. The presentations are also available to "
+"download."
+msgstr ""
+
+#: templates/user_guide.html:1370
+msgid ""
+"On clicking this button a new tab will open displaying the technical blog. "
+"The DataPortal is constantly being updated and improved, so the technical "
+"blog gives an insight into the behind-the-scenes workings of the DataPortal."
+msgstr ""
+
+#: templates/user_guide.html:1425
+msgid ""
+"Help using the DataPortal (such as this downloadable guide), licensing "
+"agreements and contact information of support can be found on this page "
+"along with a log of any changes to the DataPortal."
+msgstr ""
 
 #: templates/welcome.html:11
 msgid "Welcome "
@@ -2164,9 +2781,6 @@ msgstr "Cymraeg"
 #~ msgid "Sector?"
 #~ msgstr "Sector?"
 
-#~ msgid "Comments"
-#~ msgstr "Sylwadau"
-
 #~ msgid "Edit details"
 #~ msgstr "Golygu’r manylion"
 
@@ -2209,9 +2823,6 @@ msgstr "Cymraeg"
 
 #~ msgid "WISERD Blog"
 #~ msgstr "Blog WISERD"
-
-#~ msgid "View Blog Posts"
-#~ msgstr "Gweld y Negeseuon Blog"
 
 #~ msgid "NomisAPI Data"
 #~ msgstr "Data NomisAPI"

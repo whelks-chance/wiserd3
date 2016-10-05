@@ -12,26 +12,24 @@ function do_intro() {
         items: [
             {
                 selector: '#lang_toggle_split',
-                title: 'Change language',
-                content: 'These buttons can be used throughout the website to toggle the language the site displays in.' +
-                '<br><br>' +
-                'If you sign-up and login, this preference will be stored for future visits.',
+                title: i18n_translation['dashboard.lang_toggle_split.title'],
+                content: i18n_translation['dashboard.lang_toggle_split.content'],
                 placement: 'bottom',
                 step: 0
             },
 
             {
                 selector: '#dashboard_grid',
-                title: 'The Dashboard',
-                content: 'These buttons take you to different sections of the DataPortal',
+                title: i18n_translation['dashboard.dashboard_grid.title'],
+                content: i18n_translation['dashboard.dashboard_grid.content'],
                 placement: 'left',
                 step: 1
             },
 
             {
                 selector: '#nav_bar_side',
-                title: 'Side Menu',
-                content: 'This menu appears on all DataPortal pages. Go directly to the mapping page or browse recent search results.',
+                title: i18n_translation['dashboard.nav_bar_side.title'],
+                content: i18n_translation['dashboard.nav_bar_side.content'],
                 placement: 'right',
                 step: 2
 

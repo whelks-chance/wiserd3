@@ -32,8 +32,88 @@
         "browse_surveys.survey_table_length.content": "{% trans 'This button allows you to choose the number of surveys you view per page.' %}",
 
 
-{#        "question_detail.results_tab.title": "{% trans 'Response Metadata table' %}",#}
-{#        "question_detail.results_tab.content": "{% trans 'This tab shows metadata for the selected response' %}"#}
+        "map.bintype.title": "{% trans 'Select category type' %}",
+        "map.bintype.content": "{% trans 'This will change the distribution of data. Use Quantiles by default' %}",
+        "map.binno.title": "{% trans 'Select number of categories' %}",
+        "map.binno.content": "{% trans 'This will be the number of categories your data is divided into' %}",
+        "map.colorpicker.title": "{% trans 'Select Colour scheme' %}",
+        "map.colorpicker.content": "{% trans 'Select the colour range of your data' %}",
+        "map.layer_name_text_entry.title": "{% trans 'Name it' %}",
+        "map.layer_name_text_entry.content": "{% trans 'This name will appear on the map key' %}",
+
+        "map.remote_search_term.title": "{% trans 'Search' %}",
+        "map.remote_search_term.content": "{% trans 'Enter a keyword to search for surveys.' %}",
+
+        "map.dataset_define_vars_form.title": "{% trans 'Variables' %}",
+        "map.dataset_define_vars_form.content": "{% trans 'Make sure to select a variable from each section.' %}",
+
+        "map.mapmydata.drop.title": "{% trans 'Drop a file' %}",
+        "map.mapmydata.drop.content": "{% trans 'Use your own data file. Drag-and-drop it here.' %}",
+        "map.mapmydata.xlf.title": "{% trans 'Select file from filesystem' %}",
+        "map.mapmydata.xlf.content": "{% trans 'Search for your file by clicking here.' %}",
+
+        "map.mapmydata_2.geography_label.title": "{% trans 'Geography column' %}",
+        "map.mapmydata_2.geography_label.content": "{% trans 'Pick the geography ID of your data.' %}",
+        "map.mapmydata_2.data_column_label.title": "{% trans 'Data value' %}",
+        "map.mapmydata_2.data_column_label.content": "{% trans 'Pick the data values you want mapped.' %}",
+        "map.mapmydata_2.secondary_data_label.title": "{% trans 'Any other data to display' %}",
+        "map.mapmydata_2.secondary_data_label.content": "{% trans 'This will be displayed in the sidebar when clicking on the map later.' %}",
+
+        "map.lang_toggle_split.title": "{% trans 'Change language' %}",
+        "map.lang_toggle_split.content": "{% blocktrans %}These buttons can be used to toggle the language the site displays in.<br><br>If you sign-up and login, this preference will be stored for future visits.{% endblocktrans %}",
+        "map.map_div_col.title": "{% trans 'The Map' %}",
+        "map.map_div_col.content": "{% blocktrans %}The Map is the primary focus here.<br><br>Layers of data are displayed, and most can be selected to show further detail.{% endblocktrans %}",
+        "map.map_div.title": "{% trans 'Legend' %}",
+        "map.map_div.content": "{% blocktrans %}Once data layers have been added, the legend will be displayed here.<br><br>Colours and the number of categories are selected when the layer is first added.{% endblocktrans %}",
+        "map.side-menu.title": "{% trans 'Side menu' %}",
+        "map.side-menu.content": "{% blocktrans %}<p>This is where new map layers are added.</p><h4>RemoteData</h4><p>Import data from Nomis and/or StatsWales</p><h4>MapMyData</h4><p>Upload an Excel file with geographies and values for mapping</p><h4>Welsh Government Data</h4><p>WMS layers made available by LLE, Welsh Government</p>{% endblocktrans %}",
+        "map.right_sidebar_col.title": "{% trans 'Info Pane' %}",
+        "map.right_sidebar_col.content": "{% trans 'When regions on the map are selected, the corresponding data for that area are shown here' %}",
+
+        "dashboard.lang_toggle_split.title": "{% trans 'Change language' %}",
+        "dashboard.lang_toggle_split.content": "{% blocktrans %}These buttons can be used throughout the website to toggle the language the site displays in.<br><br>If you sign-up and login, this preference will be stored for future visits.{% endblocktrans %}",
+        "dashboard.dashboard_grid.title": "{% trans 'The Dashboard' %}",
+        "dashboard.dashboard_grid.content": "{% trans 'These buttons take you to different sections of the DataPortal' %}",
+        "dashboard.nav_bar_side.title": "{% trans 'Side Menu' %}",
+        "dashboard.nav_bar_side.content": "{% trans 'This menu appears on all DataPortal pages. Go directly to the mapping page or browse recent search results.' %}",
+
+        "events.events_logo.title": "{% trans 'Events and Presentations' %}",
+        "events.events_logo.content": "{% trans 'Welcome to the events page, here you can find out about events that the DataPortal team will be attending as well as the accompanying presentations.' %}",
+        "events.download_box.title": "{% trans 'Downloadable content' %}",
+        "events.download_box.content": "{% trans 'The presentation can be downloaded via this link.' %}",
+
+        "search.question_row_jump.title": "{% trans 'Jump to Questions' %}",
+        "search.question_row_jump.content": "{% trans 'This button shows the questions discovered during the search.' %}",
+        "search.question_row.title": "{% trans 'Question table' %}",
+        "search.question_row.content": "{% trans 'This shows the questions discovered during the search.' %}",
+        "search.survey_row_jump.title": "{% trans 'Jump to Surveys' %}",
+        "search.survey_row_jump.content": "{% trans 'This button shows the surveys discovered during the search.' %}",
+        "search.survey_row.title": "{% trans 'Survey table' %}",
+        "search.survey_row.content": "{% trans 'This shows the surveys discovered during the search.' %}",
+        "search.qual_row_jump.title": "{% trans 'Jump to Qualitative records' %}",
+        "search.qual_row_jump.content": "{% trans 'This button shows the Qualitative records discovered during the search.' %}",
+        "search.qual_row.title": "{% trans 'Qualitative Records' %}",
+        "search.qual_row.content": "{% trans 'This shows the Qualitative records discovered during the search.' %}",
+        "search.search_box.title": "{% trans 'Search box' %}",
+        "search.search_box.content": "{% trans 'Data can be searched here. This shows the current search, and can be modified or refined to search again.' %}",
+        "search.survey_questions_table_filter.title": "{% trans 'Filter' %}",
+        "search.survey_questions_table_filter.content": "{% trans 'Filter searches to refine the results.' %}",
+
+        "survey_detail.survey_dc_tab_li.title": "{% trans 'Dublin Core Tab' %}",
+        "survey_detail.survey_dc_tab_li.content": "{% trans 'This button shows the Dublin Core data.' %}",
+        "survey_detail.survey_dc_tab.title": "{% trans 'Dublin Core Tab' %}",
+        "survey_detail.survey_dc_tab.content": "{% trans 'The Dublin Core tab<br><br>This has standardised data focussing on the collection and repository of the Survey data.' %}",
+        "survey_detail.text_input_source_url.title": "{% trans 'Download' %}",
+        "survey_detail.text_input_source_url.content": "{% trans 'Data url' %}",
+        "survey_detail.survey_tab_li.title": "{% trans 'Survey Tab' %}",
+        "survey_detail.survey_tab_li.content": "{% trans 'This button shows the WISERD Survey Metadata.' %}",
+        "survey_detail.survey_tab.title": "{% trans 'Survey Tab' %}",
+        "survey_detail.survey_tab.content": "{% trans 'The survey tab<br><br>This has WISERD metadata specific to the interests of the Social Sciences.' %}",
+        "survey_detail.survey_questions_li.title": "{% trans 'Survey Questions Tab' %}",
+        "survey_detail.survey_questions_li.content": "{% trans 'This button shows the surveys questions.' %}",
+        "survey_detail.survey_questions.title": "{% trans 'Survey Questions Tab' %}",
+        "survey_detail.survey_questions.content": "{% trans 'The Survey Questions Tab<br><br>This has the questions from the survey.' %}",
+
 
     };
 

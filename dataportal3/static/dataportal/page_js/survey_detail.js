@@ -29,61 +29,53 @@ function do_intro() {
         items: [
             {
                 selector: '#survey_dc_tab_li',
-                title: 'Dublin Core Tab',
-                content: 'This button shows the Dublin Core data',
+                title: i18n_translation['survey_detail.survey_dc_tab_li.title'],
+                content: i18n_translation['survey_detail.survey_dc_tab_li.content'],
                 placement: 'bottom',
                 step: 0
             },
             {
                 selector: '#survey_dc_tab',
-                title: 'Dublin Core Tab',
-                content: 'The Dublin Core tab' +
-                '<br><br>' +
-                'This has standardised data focussing on the collection and repository of the Survey data',
+                title: i18n_translation['survey_detail.survey_dc_tab.title'],
+                content: i18n_translation['survey_detail.survey_dc_tab.content'],
                 placement: 'top',
                 step: 1
             },
             {
                 selector: '#text_input_source_url',
-                title: 'Download',
-                content: 'Data url',
+                title: i18n_translation['survey_detail.text_input_source_url.title'],
+                content: i18n_translation['survey_detail.text_input_source_url.content'],
                 placement: 'bottom',
                 step: 2
             },
             {
                 selector: '#survey_tab_li',
-                title: 'Survey Tab',
-                content: 'This button shows the WISERD Survey Metadata',
+                title: i18n_translation['survey_detail.survey_tab_li.title'],
+                content: i18n_translation['survey_detail.survey_tab_li.content'],
                 placement: 'bottom',
                 step: 3
             },
             {
                 selector: '#survey_tab',
-                title: 'Survey Tab',
-                content: 'The survey tab' +
-                '<br><br>' +
-                'This has WISERD metadata specific to the interests of the Social Sciences',
+                title: i18n_translation['survey_detail.survey_tab.title'],
+                content: i18n_translation['survey_detail.survey_tab.content'],
                 placement: 'top',
                 step: 4
             },
             {
                 selector: '#survey_questions_li',
-                title: 'Survey Questions Tab',
-                content: 'This button shows the surveys questions',
+                title: i18n_translation['survey_detail.survey_questions_li.title'],
+                content: i18n_translation['survey_detail.survey_questions_li.content'],
                 placement: 'bottom',
                 step: 5
             },
             {
                 selector: '#survey_questions',
-                title: 'Survey Questions Tab',
-                content: 'The Survey Questions Tab' +
-                '<br><br>' +
-                'This has the questions from the survey',
+                title: i18n_translation['survey_detail.survey_questions.title'],
+                content: i18n_translation['survey_detail.survey_questions.content'],
                 placement: 'top',
                 step: 6
             }
-
-
 
         ]
     });

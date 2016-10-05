@@ -6,6 +6,7 @@
 
 {% block content %}
 
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -13,6 +14,35 @@
 
             </div>
         </div>
+    <p class="c10"><span> {% trans 'For on-screen help on each page of the DataPortal click this button.' %}</span>
+                <span style=
+                              "
+{#                                overflow: hidden; display: #}
+{#                                inline-block; #}
+{#                                margin: 0.00px 0.00px; #}
+{#                                border: 0.00px solid #000000; #}
+{#                                transform: rotate(0.00rad) translateZ(0px); #}
+{#                                -webkit-transform: rotate(0.00rad) translateZ(0px); #}
+                                width: 1em;
+{#                                      height: 1em;#}
+                                ">
+                                      {#                                overflow: hidden; display: #}
+                                      {#                                inline-block; #}
+                                      {#                                margin: 0.00px 0.00px; #}
+                                      {#                                border: 0.00px solid #000000; #}
+                                      {#                                transform: rotate(0.00rad) translateZ(0px); #}
+                                      {#                                -webkit-transform: rotate(0.00rad) translateZ(0px); #}
+{#                                      width: 1em; #}
+{#                    height: 1em;#}
+
+                    <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/image000.png'%}"
+{#                         style="
+                                   width: 2em;
+{#                                   height: 1856.26px; margin-left: -3848.02px; margin-top: -140.40px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);#}
+                                   "
+                            {#                         style="width: 4274.84px; height: 1856.26px; margin-left: -3848.02px; margin-top: -140.40px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"#}
+                         title="">
+                </span></p>
 
         <p class="c7 c29"><span class="c31 c30">{% trans 'Contents'%}</span></p>
         <div class="row user_guide_contents">
@@ -92,34 +122,6 @@
                         <span> {%  trans 'To access the WISERD DataPortal visit:' %}</span> <span class="c0">
                     <a class="c6" href="http://data.wiserd.ac.uk">http://data.wiserd.ac.uk</a>
                 </span>
-                <span style=
-                              "
-{#                                overflow: hidden; display: #}
-{#                                inline-block; #}
-{#                                margin: 0.00px 0.00px; #}
-{#                                border: 0.00px solid #000000; #}
-{#                                transform: rotate(0.00rad) translateZ(0px); #}
-{#                                -webkit-transform: rotate(0.00rad) translateZ(0px); #}
-                                width: 1em;
-{#                                      height: 1em;#}
-                                ">
-                                      {#                                overflow: hidden; display: #}
-                                      {#                                inline-block; #}
-                                      {#                                margin: 0.00px 0.00px; #}
-                                      {#                                border: 0.00px solid #000000; #}
-                                      {#                                transform: rotate(0.00rad) translateZ(0px); #}
-                                      {#                                -webkit-transform: rotate(0.00rad) translateZ(0px); #}
-{#                                      width: 1em; #}
-{#                    height: 1em;#}
-
-                    <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/image000.png'%}"
-{#                         style="
-                                   width: 4em;
-{#                                   height: 1856.26px; margin-left: -3848.02px; margin-top: -140.40px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);#}
-                                   "
-                            {#                         style="width: 4274.84px; height: 1856.26px; margin-left: -3848.02px; margin-top: -140.40px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"#}
-                         title="">
-                </span>
 
                 </p>
                 <p><span> {% trans 'To find out more about the DataPortal project you can click on the WISERD button.' %} </span>
@@ -165,7 +167,6 @@
 
                  title=""></span></p>
 
-                    <p class="c10"><span> {% trans 'This is the DataPortal on-screen help guide. It provides advice on different parts of each page.' %}</span></p>
                 </li>
 
 

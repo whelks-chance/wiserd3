@@ -2337,16 +2337,16 @@ def csv_view_data(request, provider, search_uuid):
 
 def naw_dashboard(request):
 
-    use_welsh = False
-    user_prefs = get_user_preferences(request)
-    assert isinstance(user_prefs, models.UserPreferences)
-    if user_prefs.preferred_language:
-        if user_prefs.preferred_language.user_language_title == 'Welsh':
-            use_welsh = True
+    # use_welsh = False
+    # user_prefs = get_user_preferences(request)
+    # assert isinstance(user_prefs, models.UserPreferences)
+    # if user_prefs.preferred_language:
+    #     if user_prefs.preferred_language.user_language_title == 'Welsh':
+    #         use_welsh = True
 
     return render(request, 'naw_dashboard.html',
                   {
-                      'use_welsh': use_welsh,
+                      # 'use_welsh': use_welsh,
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
                   },context_instance=RequestContext(request))

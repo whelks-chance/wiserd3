@@ -128,6 +128,11 @@ urlpatterns += patterns(
     'djcelery.views', url(r'^task/status/(?P<task_id>.+)/$', 'task_status', name='task-status')
 )
 
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += patterns('',
+        url(r'^rosetta/', include('rosetta.urls')),
+    )
+
 # urlpatterns += i18n_patterns(
 #     url(r'^$', views.dashboard, name='home'),
 #     url(r'^index', views.dashboard, name='index'),

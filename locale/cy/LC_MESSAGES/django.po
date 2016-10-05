@@ -520,7 +520,6 @@ msgstr ""
 #: templates/browse_surveys.html:59 templates/dashboard.html.py:161
 #: templates/dashboard.html:168 templates/user_guide.html.py:64
 #: templates/user_guide.html:389
-#, fuzzy
 #| msgid "Surveys"
 msgid "Browse Surveys"
 msgstr "Arolygon"
@@ -933,7 +932,6 @@ msgid "Dashboard"
 msgstr "Dangosfwrdd"
 
 #: templates/dashboard.html:71 templates/dashboard.html.py:78
-#, fuzzy
 #| msgid "Survey Metadata"
 msgid "Search Metadata"
 msgstr "Metaddata’r Arolwg"

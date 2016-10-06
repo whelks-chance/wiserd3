@@ -1,3 +1,5 @@
+import os
+
 from django.utils.translation import get_language
 
 from dataportal3 import models
@@ -17,9 +19,15 @@ def is_dev_processor(request):
     if get_language() == 'cy':
         use_welsh = True
 
+    if use_welsh:
+        media_lang = settings.MEDIA_CY
+    else:
+        media_lang = settings.MEDIA_DEFAULT
+
     data = {
         'is_dev': settings.IS_DEV,
-        'use_welsh': use_welsh
+        'use_welsh': use_welsh,
+        'media_lang': media_lang
     }
 
     return data

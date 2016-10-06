@@ -318,6 +318,22 @@ https://docs.djangoproject.com/en/1.9/ref/contrib/postgres/fields/#jsonfield
 
 http://www.postgresonline.com/journal/archives/362-An-almost-idiots-guide-to-install-PostgreSQL-9.5,-PostGIS-2.2-and-pgRouting-2.1.0-with-Yum.html
 
+#### Redis
+
+http://docs.celeryproject.org/en/latest/getting-started/brokers/redis.html#broker-redis
+
+http://michal.karzynski.pl/blog/2013/07/14/using-redis-as-django-session-store-and-cache-backend/
+
+http://django-rosetta.readthedocs.io/en/latest/settings.html
+
+https://github.com/mbi/django-rosetta/issues/51
+
+    CACHES = {
+        'default': {
+            'BACKEND': 'redis_cache.RedisCache',
+            'LOCATION': '/tmp/redis.sock',
+        },
+    }
 
 ## Awkwardness
 

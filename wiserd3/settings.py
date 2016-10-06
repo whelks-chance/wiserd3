@@ -114,11 +114,16 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.i18n',
+
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.core.context_processors.i18n',
-                'django.core.context_processors.media',
-                'django.core.context_processors.static',
+
+                # 'django.core.context_processors.i18n',
+                # 'django.core.context_processors.media',
+                # 'django.core.context_processors.static',
 
                 'dataportal3.context_processors.is_dev_processor'
                 # "allauth.account.context_processors.account",
@@ -128,11 +133,16 @@ TEMPLATES = [
     },
 ]
 
+MEDIA_ROOT = './dataportal3/media/'
+MEDIA_URL = '/media/'
+MEDIA_CY = 'help_guide_img_cy/'
+MEDIA_DEFAULT = 'help_guide_img/'
+
 TEMPLATE_CONTEXT_PROCESSORS = (
     # 'django.contrib.auth.context_processors.auth',
     # 'django.core.context_processors.debug',
     # 'django.core.context_processors.i18n',
-    # 'django.core.context_processors.media',
+    'django.core.context_processors.media',
     # 'django.core.context_processors.static',
     # 'django.core.context_processors.request',
     # 'django.contrib.messages.context_processors.messages',
@@ -210,6 +220,17 @@ STATICFILES_FINDERS = (
 # import django.core.files.uploadhandler
 # FILE_UPLOAD_HANDLERS = ('uploadprogresscachedhandler.UploadProgressCachedHandler', ) \
 #     + global_settings.FILE_UPLOAD_HANDLERS
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'redis_cache.RedisCache',
+        'LOCATION': '/var/run/redis/redis.sock',
+        # 'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        # 'LOCATION': '127.0.0.1:11211',
+        'KEY_PREFIX': 'ROSETTA_TEST'
+    }
+}
 
 
 BROKER_URL = 'redis://localhost:6379/0'
@@ -326,7 +347,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 # ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 # CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
-MEDIA_ROOT = '/tmp/shapefiles/'
+
 try:
     from wiserd3.settings_local import *
 except ImportError:

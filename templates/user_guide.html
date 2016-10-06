@@ -14,6 +14,12 @@
 
             </div>
         </div>
+    <p>
+        {{ MEDIA_URL }}{{ media_lang }}image000.png
+    </p>
+{#    <p>#}
+{#        {% static 'dataportal/media/help_guide_img/image000.png'%}#}
+{#    </p>#}
     <p class="c10"><span> {% trans 'For on-screen help on each page of the DataPortal click this button.' %}</span>
                 <span style=
                               "
@@ -26,7 +32,8 @@
                                 width: 1em;
 {#                                      height: 1em;#}
                                 ">
-                    <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/image000.png'%}"
+
+                    <img alt="" class="user_guide_img2" src="{{ MEDIA_URL }}{{ media_lang }}image000.png"
 {#                         style="#}
 {#                                   width: 2em;#}
 {#                                   height: 1856.26px; margin-left: -3848.02px; margin-top: -140.40px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);#}

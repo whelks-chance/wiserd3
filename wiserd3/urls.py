@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url, patterns
+from django.conf.urls.static import static
 from django.contrib import admin, auth
 from dataportal3 import views, urls as api_urls
 from old import views as old_views
@@ -122,7 +123,7 @@ urlpatterns = [
 
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.STATIC_ROOT}),
     # url(r'^i18n/', include('django.conf.urls.i18n')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += patterns(
     'djcelery.views', url(r'^task/status/(?P<task_id>.+)/$', 'task_status', name='task-status')

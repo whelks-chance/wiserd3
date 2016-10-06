@@ -28,6 +28,9 @@ django-grappelli-extensions==0.1.3
 -e git://github.com/vosi/django-grappelli-filters.git#egg=grappelli_filters
 django-hstore==1.4.2
 django-jsonify==0.3.0
+
+django-redis-cache==1.7.0
+
 django-rest-swagger==0.3.4
 
 django-rosetta==0.7.12

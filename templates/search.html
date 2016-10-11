@@ -74,7 +74,7 @@
                         "data": 'identifier',
                         "render": function ( data, type, full, meta ) {
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
-                                    "href='/survey/" + data.trim() + "' class='btn btn-success view_survey'>View</a>";
+                                    "href='/survey/" + data.trim() + "' class='btn btn-success view_survey'>{% trans 'View' %}</a>";
                         }
                     },
                     {

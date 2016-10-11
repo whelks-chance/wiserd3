@@ -188,7 +188,6 @@ function thing(all_topojson_data, ordered_data, local_data_name,
             // console.log(area_code);
 
             if (area_code && ordered_data[area_code] != null) {
-                // console.log(ordered_data[area_code]);
 
                 geometries[geom]['properties']['REMOTE_VALUE'] = ordered_data[area_code];
                 geometries[geom]['properties']['RENDER'] = true;
@@ -204,7 +203,10 @@ function thing(all_topojson_data, ordered_data, local_data_name,
                             if (area_values.hasOwnProperty(area_value_key)) {
                                 var area_item = area_values[area_value_key];
 
-                                if (area_item[local_data_geography_column] == area_code) {
+                                var xls_areacode = area_item[local_data_geography_column];
+                                var cleaned_xls_areacode = clean_xls_areacode(xls_areacode);
+
+                                if (cleaned_xls_areacode == area_code) {
                                     string_data.push(
                                         {
                                             "grouping": [],
@@ -218,12 +220,27 @@ function thing(all_topojson_data, ordered_data, local_data_name,
                     }
                 }
 
+                delete ordered_data[area_code];
+
                 geometries[geom]['properties']['STRING_DATA'] = string_data;
                 new_data.push(geometries[geom]);
             }
 
         }
     }
+
+    console.log('Error mapping: ');
+    console.log(ordered_data);
+    var unmapped_data_string = '';
+    for(var unmapped in ordered_data) {
+        if (ordered_data.hasOwnProperty(unmapped)) {
+            unmapped_data_string += unmapped + ' : ' + ordered_data[unmapped] + '\n';
+        }
+    }
+
+    alert('Failed to map the following data.\n' +
+        'Please check each have a valid geography id and value.\n\n'
+        + unmapped_data_string);
 
     // {#                        delete topojson_data['topojson']['objects'][geom_name];#}
     //Replace the previous geoms with this new array we've built up
@@ -234,6 +251,22 @@ function thing(all_topojson_data, ordered_data, local_data_name,
     // topojson_layers[layer_name] = all_topojson_data['topojson'];
 
     return all_topojson_data;
+}
+
+function clean_xls_areacode(unclean_areacode) {
+    // console.log(unclean_areacode);
+    var clean_areacode = unclean_areacode;
+    if (isPostcodeish(unclean_areacode)) {
+    //    Need to format this in a way we expect:
+    //    AA111AA or AA1 1AA - not 'AA11 1AA'
+        if(unclean_areacode.length > 7) {
+            clean_areacode = unclean_areacode.slice(0, 4) + unclean_areacode.slice(5, unclean_areacode.length);
+            // console.log('Cleaned ' + clean_areacode + ' from ' + unclean_areacode);
+        }
+        return clean_areacode;
+    } else {
+        return clean_areacode;
+    }
 }
 
 $.ui.dialog.prototype.options.responsive = true;

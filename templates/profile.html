@@ -152,7 +152,7 @@
                 for (var key in localLayers) {
                     if (localLayers.hasOwnProperty(key)) {
                         var row = $('<a/>').addClass("list-group-item");
-                        var button = $('<button/>')
+                        var button = $('<div/>')
                                 .attr('id', 'button_' + key)
                                 .attr('data-local_uuid', key)
                                 .addClass("btn btn-danger");

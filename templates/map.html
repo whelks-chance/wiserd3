@@ -1644,89 +1644,95 @@
                     of: map_div
                 },
                 modal: true,
-                buttons: {
-                    "{% trans 'Show New Layer' %}": function() {
-                        if ($("#bintype").val() != '') {
-                            if ($("#binno").val() != '') {
+                buttons: [
+                    {
+                        text: "{% trans 'Show New Layer' %}",
+                        click: function() {
+                            if ($("#bintype").val() != '') {
+                                if ($("#binno").val() != '') {
 
-                                var layer_id = $(this).data('layer_names');
-                                var dataset_name = $(this).data('dataset_name');
-                                var topojson_data = topojson_layers[$(this).data('layer_names')];
-                                var nomis_variable = $(this).data('nomis_variable');
-                                var layer_name_text = $("#layer_name_text_entry").val();
-                                var csv_url = $(this).data('csv_url');
+                                    var layer_id = $(this).data('layer_names');
+                                    var dataset_name = $(this).data('dataset_name');
+                                    var topojson_data = topojson_layers[$(this).data('layer_names')];
+                                    var nomis_variable = $(this).data('nomis_variable');
+                                    var layer_name_text = $("#layer_name_text_entry").val();
+                                    var csv_url = $(this).data('csv_url');
 
-                                var colorpicker = $("#colorpicker").val();
-                                var bin_type = $("#bintype").val();
-                                var bin_num = $("#binno").val();
+                                    var colorpicker = $("#colorpicker").val();
+                                    var bin_type = $("#bintype").val();
+                                    var bin_num = $("#binno").val();
 
-                                var saveToLocalStorage = $(this).data('localStorage');
-                                if (saveToLocalStorage) {
-                                    var all_topojson_data = $(this).data('all_topojson_data');
-                                    all_topojson_data['layer_data']['colorpicker'] = colorpicker;
-                                    all_topojson_data['layer_data']['bin_type'] = bin_type;
-                                    all_topojson_data['layer_data']['bin_num'] = bin_num;
-                                    all_topojson_data['layer_data']['name'] = layer_name_text;
+                                    var saveToLocalStorage = $(this).data('localStorage');
+                                    if (saveToLocalStorage) {
+                                        var all_topojson_data = $(this).data('all_topojson_data');
+                                        all_topojson_data['layer_data']['colorpicker'] = colorpicker;
+                                        all_topojson_data['layer_data']['bin_type'] = bin_type;
+                                        all_topojson_data['layer_data']['bin_num'] = bin_num;
+                                        all_topojson_data['layer_data']['name'] = layer_name_text;
 
-                                    if(typeof(Storage) !== "undefined") {
-                                        var localLayers = {};
-                                        if (localStorage.DataPortalLocalLayers) {
-                                            localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));
+                                        if(typeof(Storage) !== "undefined") {
+                                            var localLayers = {};
+                                            if (localStorage.DataPortalLocalLayers) {
+                                                localLayers = JSON.parse(localStorage.getItem('DataPortalLocalLayers'));
+                                            }
+                                            localLayers[layer_id] = all_topojson_data;
+                                            localStorage.setItem("DataPortalLocalLayers", JSON.stringify(localLayers));
+                                        } else {
+                                            alert('Sorry! Your browser does not support local data storage.');
                                         }
-                                        localLayers[layer_id] = all_topojson_data;
-                                        localStorage.setItem("DataPortalLocalLayers", JSON.stringify(localLayers));
-                                    } else {
-                                        alert('Sorry! Your browser does not support local data storage.');
                                     }
+
+                                    var new_layer = new MapLayer();
+                                    new_layer.layer_id = $(this).data('layer_names');
+                                    new_layer.topojson_data = topojson_layers[$(this).data('layer_names')];
+                                    new_layer.nomis_variable = $(this).data('nomis_variable');
+                                    new_layer.layer_name_text = $("#layer_name_text_entry").val();
+                                    new_layer.csv_url = $(this).data('csv_url');
+                                    new_layer.colorpicker = $("#colorpicker").val();
+                                    new_layer.bin_type = $("#bintype").val();
+                                    new_layer.bin_num = $("#binno").val();
+
+                                    store.add_layer(new_layer);
+
+
+                                    $.ajax({
+                                        url: "{% url 'data_api' %}",
+                                        type: 'GET',
+                                        data: {
+                                            method: 'record_nomis_search',
+                                            layer_id: layer_id,
+                                            layer_name: layer_name_text,
+                                            colorpicker: colorpicker,
+                                            bin_type: bin_type,
+                                            bin_num: bin_num
+                                        },
+                                        success: function(data) {},
+                                        error: function() {}
+                                    });
+
+                                    handleUploadedLayer(
+                                            topojson_data,
+                                            colorpicker,
+                                            bin_type,
+                                            bin_num,
+                                            nomis_variable,
+                                            layer_name_text,
+                                            csv_url
+                                    );
+
+                                    $(this).dialog("close");
+
                                 }
-
-                                var new_layer = new MapLayer();
-                                new_layer.layer_id = $(this).data('layer_names');
-                                new_layer.topojson_data = topojson_layers[$(this).data('layer_names')];
-                                new_layer.nomis_variable = $(this).data('nomis_variable');
-                                new_layer.layer_name_text = $("#layer_name_text_entry").val();
-                                new_layer.csv_url = $(this).data('csv_url');
-                                new_layer.colorpicker = $("#colorpicker").val();
-                                new_layer.bin_type = $("#bintype").val();
-                                new_layer.bin_num = $("#binno").val();
-
-                                store.add_layer(new_layer);
-
-
-                                $.ajax({
-                                    url: "{% url 'data_api' %}",
-                                    type: 'GET',
-                                    data: {
-                                        method: 'record_nomis_search',
-                                        layer_id: layer_id,
-                                        layer_name: layer_name_text,
-                                        colorpicker: colorpicker,
-                                        bin_type: bin_type,
-                                        bin_num: bin_num
-                                    },
-                                    success: function(data) {},
-                                    error: function() {}
-                                });
-
-                                handleUploadedLayer(
-                                        topojson_data,
-                                        colorpicker,
-                                        bin_type,
-                                        bin_num,
-                                        nomis_variable,
-                                        layer_name_text,
-                                        csv_url
-                                );
-
-                                $(this).dialog("close");
-
                             }
                         }
                     },
-                    Cancel: function() {
-                        $( this ).dialog( "close" );
+                    {
+                        text: '{% trans 'Cancel' %}',
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
                     }
-                },
+                ],
                 close: function() {
                 }
             });
@@ -1948,7 +1954,8 @@
                                 }
                             });
 
-                        }},{
+                        }},
+                    {
                         text: '{% trans 'Cancel' %}',
                         click: function() {
                             $( this ).dialog( "close" );
@@ -1976,88 +1983,94 @@
                 },
                 width: map_div.width()/2,
                 modal: true,
-                buttons: {
-                    "{% trans 'Render to Map' %}": function() {
+                buttons: [
+                    {
+                        text: "{% trans 'Render to Map' %}",
+                        click: function() {
 
 
-                        var codelists = $(this).data('codelists');
-                        var codelist_selected = [];
+                            var codelists = $(this).data('codelists');
+                            var codelist_selected = [];
 
-                        var nomis_variable = $("#nomis_variable").val();
-{#                        console.log('codelists');#}
-{#                        console.log(codelists);#}
+                            var nomis_variable = $("#nomis_variable").val();
+                            {#                        console.log('codelists');#}
+                            {#                        console.log(codelists);#}
 
-                        var missing_measures = [];
-                        for(var remote_codelist in codelists) {
-                            var codelist_selector = "div[id='" + remote_codelist + "_radio']";
-                            var remote_codelist_selected_item = $(codelist_selector).find(":radio:checked");
-                            var remote_codelist_selection = remote_codelist_selected_item.attr('value');
+                            var missing_measures = [];
+                            for(var remote_codelist in codelists) {
+                                var codelist_selector = "div[id='" + remote_codelist + "_radio']";
+                                var remote_codelist_selected_item = $(codelist_selector).find(":radio:checked");
+                                var remote_codelist_selection = remote_codelist_selected_item.attr('value');
 
-                            if (remote_codelist_selection == null) {
-                                missing_measures.push(codelists[remote_codelist]['name']);
-                            }
-
-                            codelist_selected.push({
-                                option: remote_codelist,
-                                variable: remote_codelist_selection
-                            });
-                            if (remote_codelist == 'MEASURES') {
-                                nomis_variable = remote_codelist_selection;
-                            }
-                        }
-
-
-{#                        console.log(codelist_selected);#}
-
-                        var dataset_id = $(this).data('dataset_id');
-                        var source = $(this).data('source');
-
-                        var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');
-                        if (topojson_geography == null) {
-                            missing_measures.push("{% trans 'Geography' %}");
-                        }
-                        if (missing_measures.length > 0) {
-                            var err_msg = '{% trans 'Please select an option for each selection : ' %}\n\n' + missing_measures.join('\n');
-                            alert(err_msg);
-                            return;
-                        }
-
-                        $( this ).dialog( "close" );
-
-                        add_ajax_waiting('{% trans 'Fetching map layer...' %}');
-
-                        get_remote_dataset_topojson(
-                                "{% url 'remote_data_topojson' %}",
-                                topojson_geography,
-                                dataset_id,
-                                codelist_selected,
-                                source,
-                                function(data){
-                                    get_remote_dataset_csv_url(
-                                            "{% url 'data_api' %}",
-                                            topojson_geography,
-                                            dataset_id,
-                                            codelist_selected,
-                                            function(csv_url) {
-
-                                                {#                                                waitingDialog.hide();#}
-                                                ajax_finished();
-                                                var layer_name = data['search_uuid'];
-                                                topojson_layers[layer_name] = data['topojson'];
-                                                $( "#chloropleth_option_form").data({
-                                                    layer_names: layer_name,
-                                                    nomis_variable: nomis_variable,
-                                                    csv_url: csv_url
-                                                }).dialog( "open" );
-                                            }
-                                    );
+                                if (remote_codelist_selection == null) {
+                                    missing_measures.push(codelists[remote_codelist]['name']);
                                 }
-                        );
+
+                                codelist_selected.push({
+                                    option: remote_codelist,
+                                    variable: remote_codelist_selection
+                                });
+                                if (remote_codelist == 'MEASURES') {
+                                    nomis_variable = remote_codelist_selection;
+                                }
+                            }
+
+
+                            {#                        console.log(codelist_selected);#}
+
+                            var dataset_id = $(this).data('dataset_id');
+                            var source = $(this).data('source');
+
+                            var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');
+                            if (topojson_geography == null) {
+                                missing_measures.push("{% trans 'Geography' %}");
+                            }
+                            if (missing_measures.length > 0) {
+                                var err_msg = '{% trans 'Please select an option for each selection : ' %}\n\n' + missing_measures.join('\n');
+                                alert(err_msg);
+                                return;
+                            }
+
+                            $( this ).dialog( "close" );
+
+                            add_ajax_waiting('{% trans 'Fetching map layer...' %}');
+
+                            get_remote_dataset_topojson(
+                                    "{% url 'remote_data_topojson' %}",
+                                    topojson_geography,
+                                    dataset_id,
+                                    codelist_selected,
+                                    source,
+                                    function(data){
+                                        get_remote_dataset_csv_url(
+                                                "{% url 'data_api' %}",
+                                                topojson_geography,
+                                                dataset_id,
+                                                codelist_selected,
+                                                function(csv_url) {
+
+                                                    {#                                                waitingDialog.hide();#}
+                                                    ajax_finished();
+                                                    var layer_name = data['search_uuid'];
+                                                    topojson_layers[layer_name] = data['topojson'];
+                                                    $( "#chloropleth_option_form").data({
+                                                        layer_names: layer_name,
+                                                        nomis_variable: nomis_variable,
+                                                        csv_url: csv_url
+                                                    }).dialog( "open" );
+                                                }
+                                        );
+                                    }
+                            );
+                        }
                     },
-                    Cancel: function() {
-                        $( this ).dialog( "close" );
+                    {
+                        text: '{% trans 'Cancel' %}',
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
                     }
-                },
+                ],
                 close: function() {
                 }
             });
@@ -2111,11 +2124,11 @@
                 });
             }
 
-{#            var local_dataset_define_vars_radios = [];#}
-{#            function local_dataset_define_vars_radio_select(myRadio) {#}
-{#                for (var input_select in local_dataset_define_vars_radios) {#}
-{#                }#}
-{#            }#}
+            {#            var local_dataset_define_vars_radios = [];#}
+            {#            function local_dataset_define_vars_radio_select(myRadio) {#}
+            {#                for (var input_select in local_dataset_define_vars_radios) {#}
+            {#                }#}
+            {#            }#}
 
             $( "#local_dataset_define_vars_form" ).dialog({
                 autoOpen: false,
@@ -2129,7 +2142,7 @@
                 modal: true,
                 open: function( event, ui ) {
 //                   Clear this out
-{#                    local_dataset_define_vars_radios = [];#}
+                    {#                    local_dataset_define_vars_radios = [];#}
 
                     var available_data = $(this).data('available_data');
                     var unicode_data = $(this).data('unicode_data');
@@ -2412,13 +2425,22 @@
                             var ordered_data = {};
                             for (var area in area_values) {
                                 if (area_values.hasOwnProperty(area)) {
-                                    ordered_data[area_values[area][local_data_geography_column]] = area_values[area][local_data_value_column];
 
                                     var geo_string = area_values[area][local_data_geography_column];
 
                                     if (isPostcodeish(geo_string)) {
                                         topojson_layer_name = 'pcode_point';
-                                        var clean_geostring = geo_string.replace(' ', '');
+
+                                        //    Need to format this in a way we expect:
+                                        //    AA111AA or AA1 1AA - not 'AA11 1AA'
+                                        //    console.log(geo_string);
+                                        //    second thoughts, do it later to retain XLS value as a key
+
+                                        if(geo_string.length > 7) {
+{#                                            console.log('>7');#}
+                                            geo_string = geo_string.slice(0, 4) + geo_string.slice(5, geo_string.length);
+{#                                            console.log(geo_string);#}
+                                        }
                                         codes.push(geo_string.slice(0, -2))
                                     }
 
@@ -2441,8 +2463,12 @@
                                         topojson_layer_name = local_data_boundary;
                                         codes.push(geo_string);
                                     }
+
+                                    ordered_data[geo_string] = area_values[area][local_data_value_column];
+
                                 }
                             }
+                            console.log('XLS found ' + Object.keys(ordered_data).length + ' items');
 
                             $.ajax({
                                 url: "{% url 'data_api' %}",
@@ -3137,9 +3163,9 @@
                             <option value="pcode_point">Post Code</option>
                             <option value="lsoa">LSOA</option>
                             <option value="assembly_constituency">Assembly Constituency</option>
-{#                            <option value="assembly_constituency_cy">Assembly Constituency (Welsh)</option>#}
+                            {#                            <option value="assembly_constituency_cy">Assembly Constituency (Welsh)</option>#}
                             <option value="assembly_region">Assembly Region</option>
-{#                            <option value="assembly_region_cy">Assembly Region (Welsh)</option>#}
+                            {#                            <option value="assembly_region_cy">Assembly Region (Welsh)</option>#}
                         </select>
                     </div>
                 </div>

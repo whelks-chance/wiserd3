@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-05 20:49+0000\n"
-"PO-Revision-Date: 2016-10-11 13:21+0000\n"
+"PO-Revision-Date: 2016-10-12 07:13+0000\n"
 "Last-Translator:   <eirian.williams@cynulliad.cymru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -625,7 +625,7 @@ msgstr "Colofn ddaearyddiaeth"
 
 #: templates/base_vars.html:60
 msgid "Pick the geography ID of your data."
-msgstr ""
+msgstr "Dewiswch ddynodydd daearyddol eich data."
 
 #: templates/base_vars.html:61
 msgid "Data value"
@@ -675,7 +675,7 @@ msgstr ""
 
 #: templates/base_vars.html:70
 msgid "Legend"
-msgstr ""
+msgstr "Eglurhad"
 
 #: templates/base_vars.html:71
 msgid ""
@@ -683,6 +683,9 @@ msgid ""
 "here.<br><br>Colours and the number of categories are selected when the "
 "layer is first added."
 msgstr ""
+"Ar ôl i haenau data gael eu hychwanegu, bydd yr eglurhad yn cael ei ddangos "
+"yma.<br><brDewisir lliwiau a nifer y categorïau pan gaiff yr haen gyntaf ei "
+"hychwanegu."
 
 #: templates/base_vars.html:72
 msgid "Side menu"
@@ -846,17 +849,19 @@ msgstr "Hidlo'r chwiliadau i fireinio'r canlyniadau."
 #: templates/base_vars.html:106 templates/base_vars.html.py:108
 #| msgid "Dublin Core"
 msgid "Dublin Core Tab"
-msgstr ""
+msgstr "Tab Craidd Dulyn"
 
 #: templates/base_vars.html:107
 msgid "This button shows the Dublin Core data."
-msgstr ""
+msgstr "Mae'r botwm hwn yn dangos data Craidd Dulyn."
 
 #: templates/base_vars.html:109
 msgid ""
 "The Dublin Core tab<br><br>This has standardised data focussing on the "
 "collection and repository of the Survey data."
 msgstr ""
+"Tab Craidd Dulyn<br><br>Mae data safonol yn hwn sy'n canolbwyntio ar gasglu "
+"a storio data'r Arolwg."
 
 #: templates/base_vars.html:110
 msgid "Download"
@@ -1600,7 +1605,7 @@ msgstr "Cadw"
 
 #: templates/map.html:2749
 msgid "Select geography id column"
-msgstr ""
+msgstr "Dewis colofn dynodydd daearyddol"
 
 #: templates/map.html:2789
 msgid "Select data value column"
@@ -2402,11 +2407,11 @@ msgstr "Ffynhonnell : DOI"
 #: templates/survey_detail.html:66
 #| msgid "Data Collector"
 msgid "Relation : Same Collection"
-msgstr ""
+msgstr "Cysylltiad: Yr un Casgliad"
 
 #: templates/survey_detail.html:67
 msgid "Relation : Different Collection"
-msgstr ""
+msgstr "Cysylltiad: Casgliad Gwahanol"
 
 #: templates/survey_detail.html:68
 msgid "Coverage : Spatial "
@@ -2707,6 +2712,11 @@ msgid ""
 "survey data was collected, how many people responded and how to obtain the "
 "response data. The <b>Source URL</b> will take you to the downloadable data."
 msgstr ""
+"Craidd Dulyn, mae'r dudalen hon yn darparu'r holl fetadata am yr arolwg yn "
+"ei gyfanrwydd. Gallant ddarparu gwybodaeth am bwy gynhyrchodd yr arolwg, sut"
+" y casglwyd data'r arolwg, faint o bobl wnaeth ymateb a sut i gaffael y data"
+" ymateb.  Bydd yr<b>URL Ffynhonnell</b> yn mynd â chi i'r data y gellir eu "
+"lawrlwytho."
 
 #: templates/user_guide.html:695
 msgid ""

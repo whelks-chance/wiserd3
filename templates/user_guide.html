@@ -3,7 +3,9 @@
 {% load i18n %}
 
 {% block page_name %}{% trans 'User Guide' %}{% endblock %}
-
+{% block extra_head %}
+    <script type="text/javascript" src="{% static 'dataportal/page_js/helpguide.js' %}"></script>
+{% endblock %}
 {% block content %}
 
 
@@ -15,7 +17,6 @@
             </div>
         </div>
     <p>
-        {{ MEDIA_URL }}{{ media_lang }}image000.png
     </p>
 {#    <p>#}
 {#        {% static 'dataportal/media/help_guide_img/image000.png'%}#}
@@ -43,7 +44,7 @@
                 </span></p>
 
         <p class="c7 c29"><span class="c31 c30">{% trans 'Contents'%}</span></p>
-        <div class="row user_guide_contents">
+        <div id="contents" class="row user_guide_contents">
             <ol>
                 <li>
                     <a class="c6" href="#h.32pbpe1hbhs">{% trans 'The DataPortal'%}</a>
@@ -153,7 +154,7 @@
                                                             {#                                                            height: 246.00px;#}
                                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/wiserdpage.png'%}"
+                    "{% if use_welsh %}{% static 'dataportal/media/help_guide_img_cy/wiserdpage.png'%}{% else %}{% static 'dataportal/media/help_guide_img/wiserdpage.png'%}{% endif %}"
                  style=
                          "width: 100%;
                                  {#                          height: 376.00px; #}

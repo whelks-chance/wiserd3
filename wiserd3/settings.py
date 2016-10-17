@@ -87,7 +87,7 @@ SWAGGER_SETTINGS = {
     'unauthenticated_user': 'django.contrib.auth.models.AnonymousUser',
     'permission_denied_handler': 'dataportal3.views.permission_denied_handler',
     'resource_access_handler': None,
-    'base_path':'helloreverb.com/docs',
+    # 'base_path':'helloreverb.com/docs',
     # 'info': {
     #     'contact': 'apiteam@wordnik.com',
     #     'description': 'This is a sample server Petstore server. '

@@ -1,3 +1,4 @@
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from dataportal3.models import *
 from dataportal3.serializer import *
 from rest_framework import viewsets
@@ -6,16 +7,19 @@ from rest_framework import viewsets
 class UserRoleViewSet(viewsets.ModelViewSet):
     queryset = UserRole.objects.all()
     serializer_class = UserRoleSerializer
+    permission_classes = (IsAuthenticated, IsAdminUser)
 
 
 class UserProfileViewSet(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
+    permission_classes = (IsAuthenticated, IsAdminUser)
 
 
 class UserPreferencesViewSet(viewsets.ModelViewSet):
     queryset = UserPreferences.objects.all()
     serializer_class = UserPreferencesSerializer
+    permission_classes = (IsAuthenticated, IsAdminUser)
 
 
 class SearchViewSet(viewsets.ModelViewSet):
@@ -111,11 +115,13 @@ class SurveySpatialLinkViewSet(viewsets.ModelViewSet):
 class UserDetailViewSet(viewsets.ModelViewSet):
     queryset = UserDetail.objects.all()
     serializer_class = UserDetailSerializer
+    permission_classes = (IsAuthenticated, IsAdminUser)
 
 
 class ShapeFileUploadViewSet(viewsets.ModelViewSet):
     queryset = ShapeFileUpload.objects.all()
     serializer_class = ShapeFileUploadSerializer
+    permission_classes = (IsAuthenticated, IsAdminUser)
 
 
 class FeatureCollectionStoreViewSet(viewsets.ModelViewSet):
@@ -182,8 +188,10 @@ class SurveyVisibilityMetadataViewSet(viewsets.ModelViewSet):
 class UserGroupViewSet(viewsets.ModelViewSet):
     queryset = UserGroup.objects.all()
     serializer_class = UserGroupSerializer
+    permission_classes = (IsAuthenticated, IsAdminUser)
 
 
 class UserGroupSurveyCollectionViewSet(viewsets.ModelViewSet):
     queryset = UserGroupSurveyCollection.objects.all()
     serializer_class = UserGroupSurveyCollectionSerializer
+    permission_classes = (IsAuthenticated, IsAdminUser)

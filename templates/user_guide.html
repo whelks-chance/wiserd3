@@ -3,7 +3,9 @@
 {% load i18n %}
 
 {% block page_name %}{% trans 'User Guide' %}{% endblock %}
-
+{% block extra_head %}
+    <script type="text/javascript" src="{% static 'dataportal/page_js/helpguide.js' %}"></script>
+{% endblock %}
 {% block content %}
 
 
@@ -15,7 +17,6 @@
             </div>
         </div>
     <p>
-        {{ MEDIA_URL }}{{ media_lang }}image000.png
     </p>
 {#    <p>#}
 {#        {% static 'dataportal/media/help_guide_img/image000.png'%}#}
@@ -43,7 +44,7 @@
                 </span></p>
 
         <p class="c7 c29"><span class="c31 c30">{% trans 'Contents'%}</span></p>
-        <div class="row user_guide_contents">
+        <div id="contents" class="row user_guide_contents">
             <ol>
                 <li>
                     <a class="c6" href="#h.32pbpe1hbhs">{% trans 'The DataPortal'%}</a>
@@ -133,7 +134,7 @@
                                       width: 10em;
 {#                    height: 1em;#}
                         ">
-                    <img alt="" class="user_guide_img2" src="{% if use_welsh %}{% static 'dataportal/media/help_guide_img_cy/wiserdbutton.png'%}{% else %}{% static 'dataportal/media/help_guide_img/wiserdbutton.png'%}{% endif %}"
+                    <img alt="" class="user_guide_img2" src="{{ MEDIA_URL }}{{ media_lang }}wiserdbutton.png"
 {#                         style="
                                    width: 10em;
 {#                                   height: 1856.26px; margin-left: -3848.02px; margin-top: -140.40px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);#}
@@ -153,7 +154,7 @@
                                                             {#                                                            height: 246.00px;#}
                                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/wiserdpage.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}wiserdpage.png"
                  style=
                          "width: 100%;
                                  {#                          height: 376.00px; #}
@@ -183,7 +184,7 @@
 {#                            height: 305.99px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/languages.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}languages.png"
                  style=
                          "
                          width: 40%;
@@ -208,7 +209,7 @@
 {#                                                                         height: 114.00px;#}
                                                                          ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/languagesprof.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}languagesprof.png"
                  style=
                          "
                          width: 100%;
@@ -238,7 +239,7 @@
                                                             {#                                                            height: 246.00px;#}
                                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/AccountScreen.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}AccountScreen.png"
                  style=
                          "width: 100%;
                                  {#                          height: 376.00px; #}
@@ -263,7 +264,7 @@
                                                             {#                                                            height: 246.00px;#}
                                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/accountsignuppage.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}accountsignuppage.png"
                  style=
                          "width: 100%;
                                  {#                          height: 376.00px; #}
@@ -286,7 +287,7 @@
                                                             {#                                                            height: 246.00px;#}
                                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/accountsigneduppage.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}accountsigneduppage.png"
                  style=
                          "width: 100%;
                                  {#                          height: 376.00px; #}
@@ -319,7 +320,7 @@
                         width: 100%;
 {#                        height: 339.00px;#}
                         ">
-            <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/dashboard.png'%}"
+            <img alt="" class="user_guide_img2" src="{{ MEDIA_URL }}{{ media_lang }}dashboard.png"
                  style="
                  width: 100%;
 {#                 height: 465.08px; #}
@@ -340,7 +341,7 @@
                                             {#                                    overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 163.00px; height: 69.00px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/ProfileButton.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}ProfileButton.png"
                  style="
                          width: 6em;
                          {#                    height: 376.00px; #}
@@ -367,7 +368,7 @@
                                     width: 100%;
 {#                                    height: 468.00px;#}
                                     ">
-            <img alt="" src="{% static 'dataportal/media/help_guide_img/profile.png'%}"
+            <img alt="" src="{{ MEDIA_URL }}{{ media_lang }}profile.png"
                  style="
                         width: 100%;
 {#                        height: 474.00px; #}
@@ -377,7 +378,7 @@
 {#                        -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                          "
                  title="">
-                            <img alt="" src="{% static 'dataportal/media/help_guide_img/settings.png'%}"
+                            <img alt="" src="{{ MEDIA_URL }}{{ media_lang }}settings.png"
                  style="
                         width: 100%;
 {#                        height: 474.00px; #}
@@ -405,7 +406,7 @@
 {#                            height: 94.88px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/browsesurveysbutton.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}browsesurveysbutton.png"
                  style=
                          "
                          width: 6em;
@@ -430,7 +431,7 @@
                       width: 569.00px;
 {#                      height: 451.00px;#}
                               ">
-            <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/Browse_Surveys.png'%}"
+            <img alt="" class="user_guide_img2" src="{{ MEDIA_URL }}{{ media_lang }}Browse_Surveys.png"
                  style="
                  width: 100%;
 {#                 height: 458.00px; #}
@@ -467,7 +468,7 @@
                         {#                height: 65.00px;#}
                         ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/SearchMetadatabutton.png' %}"
+                    "{{ MEDIA_URL }}{{ media_lang }}SearchMetadatabutton.png"
                  style="
                  width: 6em;
 {#                 height: 65.00px; #}
@@ -492,7 +493,7 @@
                       width: 170.00px;
 {#                      height: 167.00px;#}
                       ">
-            <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/SearchBar.png'%}"
+            <img alt="" class="user_guide_img2" src="{{ MEDIA_URL }}{{ media_lang }}SearchBar.png"
                  style="
 {#                 width: ; #}
 {#                 height: 285.00px; #}
@@ -519,7 +520,7 @@
                                     {#                            height: 471.16px;#}
                                     ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/SearchData.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}SearchData.png"
                  style=
                          "
                                  width: 100%;
@@ -542,7 +543,7 @@
 {#                            height: 471.16px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/search_data_results_view.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}search_data_results_view.png"
                  style=
                          "
                          width: 100%;
@@ -568,7 +569,7 @@
 {#                            height: 471.16px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/search_qbutton.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}search_qbutton.png"
                  style=
                          "
                          width: 5em;
@@ -593,7 +594,7 @@
                                     {#                            height: 329.00px;#}
                                     ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/question_tab_1.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}question_tab_1.png"
                  style="
                          width: 100%;
 {#                         height: 376.00px; #}
@@ -616,7 +617,7 @@
 {#                            height: 329.00px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/question_tab_response.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}question_tab_response.png"
                  style="
                          width: 100%;
 {#                         height: 376.00px; #}
@@ -638,7 +639,7 @@
 {#                            height: 329.00px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/question_tab_responsetable.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}question_tab_responsetable.png"
                  style="
                          width: 100%;
                          {#                         height: 376.00px; #}
@@ -661,7 +662,7 @@
 {#                            height: 471.16px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/search_sbutton.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}search_sbutton.png"
                  style=
                          "
                          width: 5em;
@@ -686,7 +687,7 @@
 {#                            height: 471.16px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/survey_dc.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}survey_dc.png"
                  style=
                          "
                          width: 100%;
@@ -710,7 +711,7 @@
 {#                            height: 471.16px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/survey_survey_tab.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}survey_survey_tab.png"
                  style=
                          "
                          width: 100%;
@@ -734,7 +735,7 @@
 {#                            height: 471.16px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/survey_questionstab.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}survey_questionstab.png"
                  style=
                          "
                          width: 100%;
@@ -747,7 +748,7 @@
                  title=""></span></p>
             <p><span>{% trans 'The search page offers 3 different sections of results, by clicking the Survey tab you can search through the survey section, this offer different functions to the questions section.' %}</span></p>
                     <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/survey_mapsurveybutton.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}survey_mapsurveybutton.png"
                  style=
                          "
                          width: 100%;
@@ -770,7 +771,7 @@
 {#                            height: 471.16px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/search_mbutton.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}search_mbutton.png"
                  style=
                          "
                          width: 6em;
@@ -797,7 +798,7 @@
 {#                            height: 471.16px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/mapsurvey_clicked_1.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}mapsurvey_clicked_1.png"
                  style=
                          "
                          width: 40%;
@@ -808,7 +809,7 @@
 {#                         -webkit-transform: rotate(0.00rad) translateZ(0px);#}
                                  "
                  title=""><img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/mapsurvey_clicked_2.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}mapsurvey_clicked_2.png"
                  style=
                          "
                          width: 40%;
@@ -823,7 +824,7 @@
              <p><span>{% trans 'By clicking' %} <b>{% trans 'Show New Layer'%}</b> {% trans 'the survey data is added to the map. as you can see a key for the data has been added.' %}</span></p>
 
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/mapsurvey_clicked_outcome.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}mapsurvey_clicked_outcome.png"
                  style=
                          "
                          width: 90%;
@@ -851,7 +852,7 @@
                         width: 3em;
                         {#                height: 65.00px;#}
                         ">
-            <img alt="" class="user_guide_img2" src="{% static 'dataportal/media/help_guide_img/ViewMapButton.png'%}"
+            <img alt="" class="user_guide_img2" src="{{ MEDIA_URL }}{{ media_lang }}ViewMapButton.png"
                  style="
                          width: 6em;
                          {#                 height: 65.00px; #}
@@ -876,7 +877,7 @@
                                     {#                                    height: 477.00px;#}
                                     ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/MapPage.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}MapPage.png"
                  style=
                          "
                                  width: 100%;
@@ -907,7 +908,7 @@
                                             {#                                            height: 731.90px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/map_tools_image.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}map_tools_image.png"
                  style=
                          "
                                  width: 100%;
@@ -946,7 +947,7 @@
 {#                                                    height: 224.52px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/remote_data_menu.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}remote_data_menu.png"
                  style=
                          "
                          width: 100%;
@@ -971,7 +972,7 @@
 {#                                            height: 304.00px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/add_remote_data_image1.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}add_remote_data_image1.png"
                  style=
                          "
                          width: 40%;
@@ -993,7 +994,7 @@
 {#                                            height: 304.50px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/add_remote_data_2_image.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}add_remote_data_2_image.png"
                  style=
                          "
                          width: 40%;
@@ -1019,7 +1020,7 @@
 {#                                            height: 373.50px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/remote_data_variables copy.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}remote_data_variables copy.png"
                  style=
                          "
                          width: 35%;
@@ -1041,7 +1042,7 @@
 {#                                            height: 372.50px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/errormessage.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}errormessage.png"
                  style=
                          "
                          width: 50%;
@@ -1067,7 +1068,7 @@
 
                                     <p><span>
                 <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/remote_data_options.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}remote_data_options.png"
                  style=
                          "
                          width: 40%;
@@ -1094,7 +1095,7 @@
 {#                                            height: 528.78px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/remote_data_view_map.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}remote_data_view_map.png"
                  style=
                          "
                          width: 100%;
@@ -1120,7 +1121,7 @@
 {#                                            height: 311.33px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/side_bar_map.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}side_bar_map.png"
                  style=
                          "
                          width: 100%;
@@ -1151,7 +1152,7 @@
                                                     height: 251.89px;
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/map_sidebar_image.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}map_sidebar_image.png"
                  style=
                          "
                          width: 100%;
@@ -1177,7 +1178,7 @@
 {#                                                    height: 296.50px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/MapMyDataMenu1.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}MapMyDataMenu1.png"
                  style=
                          "
                          width: 40%;
@@ -1199,7 +1200,7 @@
 {#                                            height: 297.50px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/MapMyDataMenu2.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}MapMyDataMenu2.png"
                  style=
                          "
                          width: 40%;
@@ -1225,7 +1226,7 @@
 {#                                            height: 302.50px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/ChoroplethScreen.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}ChoroplethScreen.png"
                  style=
                          "
                          width: 40%;
@@ -1247,7 +1248,7 @@
 {#                                            height: 304.13px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/MyData_Outcome.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}MyData_Outcome.png"
                  style=
                          "
                          width: 50%;
@@ -1282,7 +1283,7 @@
 {#                                    height: 77.16px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/NAWButton.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}NAWButton.png"
                  style=
                          "
                          width: 6em;
@@ -1308,7 +1309,7 @@
 {#                            height: 330.50px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/NAWdashboard.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}NAWdashboard.png"
                  style=
                          "
                          width: 100%;
@@ -1338,7 +1339,7 @@
 {#                                            height: 69.00px;#}
                                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/eventsbutton.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}eventsbutton.png"
                  style="
                     width: 6em;
 {#                    height: 376.00px; #}
@@ -1364,7 +1365,7 @@
 {#                            height: 369.00px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/events_presentations_page.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}events_presentations_page.png"
                  style=
                          "
                          width: 90%;
@@ -1394,7 +1395,7 @@
 {#                            height: 65.00px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/blogbutton.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}blogbutton.png"
                  style=
                          "
                          width: 6em;
@@ -1420,7 +1421,7 @@
 {#                            height: 376.00px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/blogpage.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}blogpage.png"
                  style=
                          "
                          width: 100%;
@@ -1449,7 +1450,7 @@
 {#                            height: 66.00px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/help_support_button.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}help_support_button.png"
                  style=
                          "
                          width: 6em;
@@ -1475,7 +1476,7 @@
 {#                            height: 376.00px;#}
                             ">
             <img alt="" class="user_guide_img2" src=
-                    "{% static 'dataportal/media/help_guide_img/helppage.png'%}"
+                    "{{ MEDIA_URL }}{{ media_lang }}helppage.png"
                  style=
                          "
                          width: 95%;

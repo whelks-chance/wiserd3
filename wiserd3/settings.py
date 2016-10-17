@@ -68,6 +68,44 @@ INSTALLED_APPS = (
     # 'dja'
 )
 
+SWAGGER_SETTINGS = {
+    'exclude_url_names': [],
+    'exclude_namespaces': [],
+    'api_version': '0.1',
+    # 'api_path': '/',
+    'relative_paths': False,
+    'enabled_methods': [
+        'get',
+        # 'post',
+        # 'put',
+        # 'patch',
+        # 'delete'
+    ],
+    'api_key': '',
+    'is_authenticated': True,
+    'is_superuser': True,
+    'unauthenticated_user': 'django.contrib.auth.models.AnonymousUser',
+    'permission_denied_handler': 'dataportal3.views.permission_denied_handler',
+    'resource_access_handler': None,
+    'base_path':'helloreverb.com/docs',
+    # 'info': {
+    #     'contact': 'apiteam@wordnik.com',
+    #     'description': 'This is a sample server Petstore server. '
+    #                    'You can find out more about Swagger at '
+    #                    '<a href="http://swagger.wordnik.com">'
+    #                    'http://swagger.wordnik.com</a> '
+    #                    'or on irc.freenode.net, #swagger. '
+    #                    'For this sample, you can use the api key '
+    #                    '"special-key" to test '
+    #                    'the authorization filters',
+    #     'license': 'Apache 2.0',
+    #     'licenseUrl': 'http://www.apache.org/licenses/LICENSE-2.0.html',
+    #     'termsOfServiceUrl': 'http://helloreverb.com/terms/',
+    #     'title': 'Swagger Sample App',
+    # },
+    'doc_expansion': 'none',
+}
+
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',

@@ -4,8 +4,9 @@ from pprint import pformat
 from allauth.account import signals
 from django.contrib.auth import user_logged_out
 from django.dispatch import receiver
+from django.utils.translation import LANGUAGE_SESSION_KEY
 
-from dataportal3.models import UserProfile
+from dataportal3.models import UserProfile, UserPreferences, UserLanguage
 from dataportal3.utils.userAdmin import set_session_preferred_language
 
 
@@ -19,6 +20,16 @@ def new_user_signup(sender, **kwargs):
     # lv_user = UserProfile(user=kwargs['user'], sign_up_timestamp=time_now)
     lv_user.save()
 
+    user_language_title = 'English'
+    request = kwargs['request']
+    if request.session[LANGUAGE_SESSION_KEY] == 'cy':
+        user_language_title = 'Welsh'
+
+    language = UserLanguage.objects.get(user_language_title=user_language_title)
+    lv_user_preferences = UserPreferences()
+    lv_user_preferences.preferred_language = language
+    lv_user_preferences.user = lv_user
+    lv_user_preferences.save()
 
 @receiver(signals.user_logged_in)
 def user_logged_in(sender, user, request, **kwargs):

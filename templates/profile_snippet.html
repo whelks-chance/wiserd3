@@ -12,7 +12,7 @@
             </div>
 
             <div class="control-group">
-                <label for="text_input_specialty" class="control-label col-sm-4">Area of Work</label>
+                <label for="text_input_specialty" class="control-label col-sm-4">{% trans 'Area of Work' %}</label>
                 <div class="controls">
                 <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="specialty"
@@ -22,7 +22,7 @@
             </div>
 
             <div class="control-group">
-                <label for="text_input_specialty" class="control-label col-sm-4">Sector</label>
+                <label for="text_input_specialty" class="control-label col-sm-4">{% trans 'Sector' %}</label>
                 <div class="controls">
                 <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="sector"
@@ -32,7 +32,7 @@
             </div>
 
             <div class="control-group">
-                <label for="text_input_comments" class="control-label col-sm-4">Comments</label>
+                <label for="text_input_comments" class="control-label col-sm-4">{% trans 'Comments' %}</label>
                 <div class="controls">
                 <textarea type="text" class="input-block-level col-sm-8 tab_data_input"
                           name="comments"
@@ -69,9 +69,9 @@
                         </h4>
                     {% endif %}
                     <p>
-                        It looks like you have a valid National Assembly for Wales email address, would you like to enable NAW features for this account?
+                        {% blocktrans %}It looks like you have a valid National Assembly for Wales email address, would you like to enable NAW features for this account?{% endblocktrans %}
                     </p>
-                    <label for="check_enable_naw" class="control-label col-sm-4">Enable</label>
+                    <label for="check_enable_naw" class="control-label col-sm-4">{% trans 'Enable' %}</label>
                     <div class="controls">
                         <input type="checkbox"
                                {% if userr.init_user == True and userr.role != 'naw' %}{% else %}checked="checked"{% endif %}

@@ -1715,6 +1715,11 @@ def save_profile_extras(request):
         return redirect('index')
 
 
+def permission_denied_handler(request):
+    from django.http import HttpResponse
+    return HttpResponse('you have no permissions!')
+
+
 def events(request):
     return render(request, 'events.html',
                   {

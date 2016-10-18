@@ -502,24 +502,24 @@
                 selectedBasemap: 'Streets', //selected basemap when it loads
                 selectedOverlays: ["ASTER Digital Elevation Model 30M", "ASTER Digital Elevation Model Color 30M", "Cities"], //which overlays should be on by default
                 mapServers: [
-{#                    {#}
-{#                        "url": "http://services.arcgisonline.com/arcgis/rest/services",#}
-{#                        "dictionary": "http://services.arcgisonline.com/arcgis/rest/services?f=pjson",#}
-{#                        "tileUrl": "/MapServer/tile/{z}/{y}/{x}",#}
-{#                        "name": "ArcGIS Online",#}
-{#                        "type": "esri",#}
-{#                        "baseLayers": ["ESRI_Imagery_World_2D", "ESRI_StreetMap_World_2D", "NGS_Topo_US_2D"],#}
-{#                        "whitelist": ["ESRI_Imagery_World_2D", "ESRI_StreetMap_World_2D", "NGS_Topo_US_2D"]#}
-{#                    },#}
-{#                    {#}
-{#                        "url": "http://geoint.nrlssc.navy.mil/nrltileserver",#}
-{#                        "dictionary": "http://geoint.nrlssc.navy.mil/nrltileserver/wms?REQUEST=GetCapabilities&VERSION=1.1.1&SERVICE=WMS",#}
-{#                        "tileUrl": "/{z}/{x}/{y}.png",#}
-{#                        "name": "Navy NRL",#}
-{#                        "type": "nrltileserver",#}
-{#                        "baseLayers": ["bluemarble", "Landsat7", "DTED0_GRID_COLOR1", "ETOPO1_COLOR1", "NAIP", "DRG_AUTO"],#}
-{#                        "blacklist": ["BlackMarble"]#}
-{#                    }#}
+                    {#                    {#}
+                    {#                        "url": "http://services.arcgisonline.com/arcgis/rest/services",#}
+                    {#                        "dictionary": "http://services.arcgisonline.com/arcgis/rest/services?f=pjson",#}
+                    {#                        "tileUrl": "/MapServer/tile/{z}/{y}/{x}",#}
+                    {#                        "name": "ArcGIS Online",#}
+                    {#                        "type": "esri",#}
+                    {#                        "baseLayers": ["ESRI_Imagery_World_2D", "ESRI_StreetMap_World_2D", "NGS_Topo_US_2D"],#}
+                    {#                        "whitelist": ["ESRI_Imagery_World_2D", "ESRI_StreetMap_World_2D", "NGS_Topo_US_2D"]#}
+                    {#                    },#}
+                    {#                    {#}
+                    {#                        "url": "http://geoint.nrlssc.navy.mil/nrltileserver",#}
+                    {#                        "dictionary": "http://geoint.nrlssc.navy.mil/nrltileserver/wms?REQUEST=GetCapabilities&VERSION=1.1.1&SERVICE=WMS",#}
+                    {#                        "tileUrl": "/{z}/{x}/{y}.png",#}
+                    {#                        "name": "Navy NRL",#}
+                    {#                        "type": "nrltileserver",#}
+                    {#                        "baseLayers": ["bluemarble", "Landsat7", "DTED0_GRID_COLOR1", "ETOPO1_COLOR1", "NAIP", "DRG_AUTO"],#}
+                    {#                        "blacklist": ["BlackMarble"]#}
+                    {#                    }#}
                 ]
             };
             var layerControl = L.control.autolayers(autolayers_config).addTo(map);
@@ -3167,12 +3167,32 @@
 
     <div id="local-data-form" title="{% trans 'MapMyData' %}">
 
-        <div class="container dialog-container">
+        <div class="container dialog-container"
+                {% if request.user.is_authenticated %}
+             hidden="hidden"
+                {% endif %}>
+            <p>
+                {% blocktrans %}The WISERD DataPortal allows users to map their own data for areas in Wales and to export this as a publishable map. This function has been specially designed so that all the mapping occurs inside the users browser rather than on the WISERD DataPortal server. This means that potentially sensitive data does not leave the users machine.{% endblocktrans %}
+            </p>
+            <p>
+                {% trans 'You can import your own data onto the DataPortal by clicking the MapMyData button.'%}
+            </p>
+            <div class="row">
+                <a style="color: white; border-width: 2px; border-style: outset;" href="{% url 'account_login' %}" class="btn btn-lg btn-success btn-block primaryAction">
+                    {% trans 'Please log in to use this feature.' %}
+                </a>
+            </div>
+
+        </div>
+
+        <div class="container dialog-container"
+                {% if not request.user.is_authenticated %}
+             hidden="hidden"
+                {% endif %}>
 
             <div class="row">
                 <div class="pull-right"><a id="mapmydata_help" class="btn btn-circle btn-default btn-help" href="#">
                     <i class="fa fa-question-circle"></i></a></div>
-
             </div>
 
             <div class="row">
@@ -3184,7 +3204,6 @@
                            class="form-control" placeholder="{% trans 'New Layer...' %}">
                 </div>
             </div>
-
             <div class="row">
                 <div class="control-group">
                     <label for="local_data_boundary_select" class="control-label cols-m-4">{% trans 'Select boundary type' %}</label>
@@ -3194,16 +3213,12 @@
                             <option value="pcode_point">Post Code</option>
                             <option value="lsoa">LSOA</option>
                             <option value="assembly_constituency">Assembly Constituency</option>
-                            {#                            <option value="assembly_constituency_cy">Assembly Constituency (Welsh)</option>#}
                             <option value="assembly_region">Assembly Region</option>
-                            {#                            <option value="assembly_region_cy">Assembly Region (Welsh)</option>#}
                         </select>
                     </div>
                 </div>
 
             </div>
-
-
             <div class="row">
                 <div id="local-data-drop-zone" class="input-group custom-search-form">
                     <div id="drop">Drop an XLSX / XLSM / XLSB / ODS / XLS / XML file here to see sheet data</div>

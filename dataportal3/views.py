@@ -9,6 +9,7 @@ import pprint
 import uuid
 
 import StringIO
+import re
 from BeautifulSoup import BeautifulSoup
 from allauth.account.models import EmailAddress
 from allauth.account.utils import send_email_confirmation
@@ -1633,47 +1634,38 @@ def site_setup(request):
 
 def welcome(request):
     userr = get_request_user(request)
-    email = userr.user.email
-
-    verbal_expression = VerEx()
-    tester = (verbal_expression.
-              start_of_line().
-              anything_but(' ').
-              find('@').
-              maybe('assembly.wales').
-              maybe('cynulliad.cymru').
-              maybe('wales.gov.uk').
-              maybe('cymru.gov.uk').
-              anything_but(' ').
-              end_of_line()
-              )
-
-    # Print the generated regex
-    # print tester.source() # => ^(http)(s)?(\:\/\/)(www\.)?([^\ ]*)$
+    default_email = userr.user.email
 
     regex_match_and_valid = False
     matched = False
     verified = False
+    email_address = None
 
     try:
-        email_address = EmailAddress.objects.get_for_user(userr.user, email)
+        # Get the address object for this email address string
+        email_address = EmailAddress.objects.get_for_user(userr.user, default_email)
+
+        matches = re.search(
+            '(.+)\@(assembly\.wales|cynulliad\.cymru|wales\.gov\.uk|cymru\.gov\.uk)',
+            email_address.email
+        )
 
         # Test if the email is valid gmail
-        if tester.match(email):
+        if matches:
             matched = True
         if email_address.verified:
             verified = True
         if matched and verified:
             regex_match_and_valid = True
 
-        print matched, verified, regex_match_and_valid
+        print 'matched:', matched, 'verified:', verified, 'regex_match_and_valid:', regex_match_and_valid
     except Exception as ex423:
-        print ex423
-        pass
+        print 'regex email check error: ', ex423
 
     data = {
         'userr': userr,
-        'email': email,
+        'default_email': default_email,
+        'email': email_address.email,
         'regex_match_and_valid': regex_match_and_valid,
         'verified': verified,
         'matched': matched,

@@ -335,6 +335,14 @@ https://github.com/mbi/django-rosetta/issues/51
         },
     }
 
+also make sure redis unixsocket is enabled and pointing to the location listed in settings.py
+
+    sudo nano /etc/redis.conf
+
+    unixsocket /var/run/redis/redis.sock
+    unixsocketperm 700
+
+
 ## Awkwardness
 
     ALTER TABLE django_content_type ADD COLUMN name character varying(50) NOT NULL DEFAULT 'someName';

@@ -79,6 +79,16 @@ class UserPreferences(models.Model):
         return str(self.id) + ':' + self.user.user.username
 
 
+class UserTracking(models.Model):
+    user = models.ForeignKey(UserProfile)
+    datetime = models.DateTimeField(auto_now=True)
+    ip = models.TextField(blank=True, null=True)
+    url = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return str(self.id) + ' : ' + self.user.user.username + ' : ' + self.url + ' : ' + str(self.datetime)
+
+
 class Search(models.Model):
     user = models.ForeignKey(UserProfile)
     query = models.TextField(blank=True, null=True)

@@ -163,7 +163,8 @@ TEMPLATES = [
                 # 'django.core.context_processors.media',
                 # 'django.core.context_processors.static',
 
-                'dataportal3.context_processors.is_dev_processor'
+                'dataportal3.context_processors.is_dev_processor',
+                'dataportal3.context_processors.usage_tracker',
                 # "allauth.account.context_processors.account",
                 # "allauth.socialaccount.context_processors.socialaccount",
             ],

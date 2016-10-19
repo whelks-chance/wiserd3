@@ -23,6 +23,10 @@ Global pip install, the venv is specified in the uwsgi "home" below
 	    alias /home/spx5ich/wiserd3.5.0/wiserd3/dataportal3/static/;
     }
 
+    client_max_body_size 10m;
+    client_header_buffer_size 32k;
+    large_client_header_buffers 4 32k;
+
 
 ### /etc/systemd/system/uwsgi.service
 
@@ -50,7 +54,7 @@ Global pip install, the venv is specified in the uwsgi "home" below
     chdir = %(base)/%(project)
     home = /home/spx5ich/venv_3.5/
     module = %(project).wsgi:application
-    buffer-size = 32768
+    buffer-size = 65536
 
     master = true
     processes = 8

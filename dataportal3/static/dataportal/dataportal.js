@@ -18,6 +18,31 @@
 //
 // }
 
+
+// Thanks to : http://crocodillon.com/blog/always-catch-localstorage-security-and-quota-exceeded-errors
+function isQuotaExceeded(e) {
+    var quotaExceeded = false;
+    if (e) {
+        if (e.code) {
+            switch (e.code) {
+                case 22:
+                    quotaExceeded = true;
+                    break;
+                case 1014:
+                    // Firefox
+                    if (e.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
+                        quotaExceeded = true;
+                    }
+                    break;
+            }
+        } else if (e.number === -2147024882) {
+            // Internet Explorer 8
+            quotaExceeded = true;
+        }
+    }
+    return quotaExceeded;
+}
+
 function get_remote_dataset_csv_url(data_api_url, topojson_geography, dataset_id, codelist_selected, callback) {
     var csv_url = '';
     $.ajax({
@@ -257,8 +282,8 @@ function clean_xls_areacode(unclean_areacode) {
     // console.log(unclean_areacode);
     var clean_areacode = unclean_areacode;
     if (isPostcodeish(unclean_areacode)) {
-    //    Need to format this in a way we expect:
-    //    AA111AA or AA1 1AA - not 'AA11 1AA'
+        //    Need to format this in a way we expect:
+        //    AA111AA or AA1 1AA - not 'AA11 1AA'
         if(unclean_areacode.length > 7) {
             clean_areacode = unclean_areacode.slice(0, 4) + unclean_areacode.slice(5, unclean_areacode.length);
             // console.log('Cleaned ' + clean_areacode + ' from ' + unclean_areacode);
@@ -339,9 +364,9 @@ $.ui.dialog.prototype.open = function () {
     if (!self.options.showTitleBar) {
         self.uiDialogTitlebar.css({
             "height": 0,
-                "padding": 0,
-                "background": "none",
-                "border": 0
+            "padding": 0,
+            "background": "none",
+            "border": 0
         });
         self.uiDialogTitlebar.find(".ui-dialog-title").css("display", "none");
     }
@@ -357,11 +382,11 @@ $.ui.dialog.prototype.open = function () {
         $('<div id="dialog-overlay"></div>').insertBefore(self.element.parent());
         $('#dialog-overlay').css({
             "position": "fixed",
-                "top": 0,
-                "right": 0,
-                "bottom": 0,
-                "left": 0,
-                "background-color": "transparent"
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0,
+            "background-color": "transparent"
         });
         $('#dialog-overlay').click(function (e) {
             e.preventDefault();

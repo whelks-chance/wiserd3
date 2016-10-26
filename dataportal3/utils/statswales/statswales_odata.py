@@ -17,12 +17,31 @@ class StatsWalesOData():
         self.not_equals_conditional = '%20ne%20'
         self.quotes_conditional = '%27{}%27'
 
-        self.available_geographies = {
-            'Communities First Areas', 'Local authorities',
-            'UK regions', 'Lower-layer super output areas',
-            'Strategic regeneration areas', 'Local health boards',
-            'EU NUTS3 regions', 'Middle-layer super output areas',
-            'Wales', 'No drop down value selected'
+        # self.available_geographies = {
+        #     'Communities First Areas', 'Local authorities',
+        #     'UK regions', 'Lower-layer super output areas',
+        #     'Strategic regeneration areas', 'Local health boards',
+        #     'EU NUTS3 regions', 'Middle-layer super output areas',
+        #     'Wales', 'No drop down value selected'
+        # }
+
+        self.geog_options = {
+            u'Planning authorities': '',
+            u'UK regions': '',  # TODO const regions??
+            u'Middle-layer super output areas': 'msoa',
+            u'Strategic regeneration areas': '',
+            u'EU NUTS2 regions': '',
+            u'National Assembly for Wales constituencies': 'parl2011',
+            u'Local authorities by National Park sub-divisions': '',
+            u'Fire and rescue authorities': '',
+            u'Local health boards': '',
+            u'Communities First Areas': '',
+            u'Wales': '',
+            u'EU NUTS3 regions': '',
+            u'Lower-layer super output areas': 'lsoa',
+            u'GB regions': '',
+            u'Local authorities': 'ua',  # TODO ??
+            u'No drop down value selected': ''
         }
 
     def get_metadata_for_dataset(self, dataset_id):
@@ -61,21 +80,55 @@ class StatsWalesOData():
             property_data_types[property['name']] = property['type']
         return property_data_types
 
+    def get_geographies_for_dataset(self, dataset_id):
+
+        # TODO figure out why sometimes we use the lower() or upper() dataset ids
+        filter_args = [
+            ('Dataset', StatsWalesOData().equals_conditional, str(dataset_id).upper()),
+            ('Tag_ENG', StatsWalesOData().equals_conditional, 'Lowest level of geographical disaggregation'),
+        ]
+
+        dataset_geog_url = self.metadata_url + self.filter_prepend.format(
+            self.get_filter_string(filter_args)
+        )
+        print(dataset_geog_url)
+
+        dataset_metadata = requests.get(dataset_geog_url, timeout=10)
+        dataset_metadata_objects = json.loads(dataset_metadata.text)
+
+        print dataset_metadata_objects
+
+        return_data = []
+        for geog in dataset_metadata_objects['value']:
+            return_data.append(
+                {
+                    'name': geog['Description_ENG'],
+                    'id': self.get_code_for_geog_text(geog['Description_ENG'])
+                }
+            )
+
+
+        return return_data
+
     def keyword_search(self, keyword_string, args=None):
         if args is None:
             args = {}
         keyword_list = keyword_string.split('+')
 
         # Grab the discovery metadata json from StatsWales
-        keyword_description = requests.get(self.metadata_url, timeout=10)
-        # print(self.metadata_url)
-        keyword_description_objects = json.loads(keyword_description.text)
+        # metadata_url = self.metadata_url + self.filter_prepend.format(
+        #     self.get_known_geogs_filter_string()
+        # )
 
+        keyword_description = requests.get(self.metadata_url, timeout=10)
+        print(self.metadata_url)
+        print 'SWOD keywords :', keyword_description.elapsed.total_seconds()
+        keyword_description_objects = json.loads(keyword_description.text)
 
         # This is a link from the dataset id to all individual data "keysets" about that metadata
         # {'id': [{}, {}]}
         datasets_by_id = {}
-        geographys = []
+        # geographys = []
 
         # First go through the entire metadata json and sort keysets by dataset id
         for keyset in keyword_description_objects['value']:
@@ -85,12 +138,14 @@ class StatsWalesOData():
                 datasets_by_id[keyset['PartitionKey']] = [keyset]
 
             # grab geographies to create a nice list of possibilities
-            if 'Tag_ENG' in keyset and keyset['Tag_ENG'] == 'Lowest level of geographical disaggregation':
-                geographys.append(keyset['Description_ENG'])
+            # if 'Tag_ENG' in keyset and keyset['Tag_ENG'] == 'Lowest level of geographical disaggregation':
+            #     geographys.append(keyset['Description_ENG'])
 
         # print('available geogs', set(geographys))
 
         keyword_dataset_ids = set()
+        geog_dataset_ids = set()
+
         for dataset_id in datasets_by_id.keys():
             for keyset in datasets_by_id[dataset_id]:
                 if 'Description_ENG' in keyset and keyset['TagType_ENG'] == 'Keywords':
@@ -98,19 +153,30 @@ class StatsWalesOData():
                         if find_me in str(keyset['Description_ENG']).lower():
                             keyword_dataset_ids.add(keyset['PartitionKey'])
 
-        geog_dataset_ids = set()
-        for dataset_id in datasets_by_id.keys():
-            for keyset in datasets_by_id[dataset_id]:
                 if keyset['Tag_ENG'] == 'Lowest level of geographical disaggregation':
 
-                    if 'Lower-layer super output areas' in keyset['Description_ENG']:
+                    # if 'Lower-layer super output areas' in keyset['Description_ENG']:
+                    #     geog_dataset_ids.add(keyset['PartitionKey'])
+                    if keyset['Description_ENG'] in self.get_known_geogs_list():
+                        # print keyset['Description_ENG'], 'in known geoms', dataset_id
                         geog_dataset_ids.add(keyset['PartitionKey'])
+
+        # print self.get_known_geogs_list()
+        # for dataset_id in datasets_by_id.keys():
+        #     for keyset in datasets_by_id[dataset_id]:
+        #         if keyset['Tag_ENG'] == 'Lowest level of geographical disaggregation':
+        #
+        #             # if 'Lower-layer super output areas' in keyset['Description_ENG']:
+        #             #     geog_dataset_ids.add(keyset['PartitionKey'])
+        #             if keyset['Description_ENG'] in self.get_known_geogs_list():
+        #                 # print keyset['Description_ENG'], 'in known geoms', dataset_id
+        #                 geog_dataset_ids.add(keyset['PartitionKey'])
 
         # print('keyword_dataset_ids', keyword_dataset_ids)
         # print('lsoa_dataset_ids', geog_dataset_ids)
 
-        # intersect_ids = keyword_dataset_ids.intersection(geog_dataset_ids)
-        intersect_ids = keyword_dataset_ids
+        intersect_ids = keyword_dataset_ids.intersection(geog_dataset_ids)
+        # intersect_ids = keyword_dataset_ids
         # print('intersect_ids (keyword+lsoa)', intersect_ids)
 
         matching_datasets = []
@@ -262,15 +328,15 @@ class StatsWalesOData():
                 data = data_value['RoundedData']
 
             data_dict = {
-                    "name": name,
-                    "value": data,
-                    "geography_id": data_value['Area_Code'],
-                    "geography_code": data_value['Area_Code'],
-                    "data_status": "A",
-                    "geography": data_value['Area_ItemName_ENG'],
-                    "data_title": data_title,
-                    "string_data": string_data
-                }
+                "name": name,
+                "value": data,
+                "geography_id": data_value['Area_Code'],
+                "geography_code": data_value['Area_Code'],
+                "data_status": "A",
+                "geography": data_value['Area_ItemName_ENG'],
+                "data_title": data_title,
+                "string_data": string_data
+            }
 
             if constants:
                 for key, value in constants.items():
@@ -309,11 +375,12 @@ class StatsWalesOData():
                         'name': datasetdimensionitem['Description_ENG']
                     }]
                 }
-            # print datasetdimensionitem
+                # print datasetdimensionitem
 
         return_data = {
             'concepts': [],
-            'codelists': dimensions
+            'codelists': dimensions,
+            'geographies': self.get_geographies_for_dataset(dataset_id)
         }
 
         # return_data['concepts'].append({
@@ -344,12 +411,21 @@ class StatsWalesOData():
 
         return data_url
 
+    def get_code_for_geog_text(self, geog_text):
+        return self.geog_options.get(geog_text)
+
+    def get_known_geogs_list(self):
+        known_geogs = []
+        for geog in self.geog_options:
+            if len(self.geog_options[geog]):
+                known_geogs.append(geog)
+        return known_geogs
 
 
 def do_test():
     swod = StatsWalesOData()
 
-    keyword_results = swod.keyword_search('deprivation+health', {'Geography', ''})
+    keyword_results, keyword_description = swod.keyword_search('deprivation+health', {'Geography', ''})
     print(keyword_results)
     print (len(keyword_results))
 
@@ -357,12 +433,14 @@ def do_test():
     dataset_id = list(keyword_results)[0]['PartitionKey']
     print(dataset_id)
     dataset_id = 'wimd0020'
-
     data_types = swod.get_metadata_for_dataset('wimd0020')
+    print 'data_types', data_types
 
+    geogs = swod.get_geographies_for_dataset('wimd0020')
+    print 'geogs', geogs
     codelist = [{u'variable': u'AllAges', u'option': u'Age Group'},
-     {u'variable': u'INCO', u'option': u'Indicator'},
-     {u'variable': u'2015', u'option': u'Year'}]
+                {u'variable': u'INCO', u'option': u'Indicator'},
+                {u'variable': u'2015', u'option': u'Year'}]
 
     filter_options = []
     for code in codelist:
@@ -381,7 +459,15 @@ def do_test():
         ]
     )
 
-    all_data_dict = swod.odata_to_dict(all_data_list)
+    all_data_dict = swod.odata_to_dict(
+        all_data_list,
+        [
+            # 'Area_Code': area_code,
+            ('Year_Code', swod.equals_conditional, 2015),
+            ('AgeGroup_Code', swod.equals_conditional, 'AllAges')
+        ],
+        {'search_uuid': 'search_uuid00000000'}
+    )
 
     print(len(all_data_dict))
 

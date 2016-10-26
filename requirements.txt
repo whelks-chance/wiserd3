@@ -83,7 +83,11 @@ requests-oauthlib==0.7.0
 selenium==2.53.5
 six==1.9.0
 sqlparse==0.1.19
-topojson==0.1.0
+
+# topojson==0.1.0
+-e git://github.com/calvinmetcalf/topojson.py.git#egg=topojson-0.1.0-py2.7
+# -e git://github.com/vosi/django-grappelli-filters.git#egg=grappelli_filters
+
 unicodecsv==0.14.1
 urllib3==1.12
 wsgiref==0.1.2

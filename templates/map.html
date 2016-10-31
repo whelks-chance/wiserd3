@@ -16,9 +16,12 @@
     {#    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>#}
     {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>#}
 
+{#    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>#}
+{#    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />#}
+
     {#  local leaflet  #}
-    <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
+        <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
 
     {#    <script type="text/javascript" src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script>#}
     {#    <script type="text/javascript" src="https://rawgit.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script>#}
@@ -26,6 +29,9 @@
     {#  remote mapbox - use this is leaflet, probably not both  #}
     {#    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>#}
     {#    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />#}
+
+{#    <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>#}
+{#    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />#}
 
 
     {#  remote mapbox draw buttons  #}
@@ -87,8 +93,8 @@
 
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-heat/v0.1.3/leaflet-heat.js'></script>
 
-{#    <script src='http://aebadirad.github.io/Leaflet.AutoLayers/src/leaflet-autolayers.js'></script>#}
-{#    <link rel="stylesheet" type="text/css" href="http://aebadirad.github.io/Leaflet.AutoLayers/example/css/leaflet.auto-layers.css"/>#}
+    {#    <script src='http://aebadirad.github.io/Leaflet.AutoLayers/src/leaflet-autolayers.js'></script>#}
+    {#    <link rel="stylesheet" type="text/css" href="http://aebadirad.github.io/Leaflet.AutoLayers/example/css/leaflet.auto-layers.css"/>#}
 
     <script type="text/javascript" src="{% static 'dataportal/page_js/map.js' %}"></script>
 
@@ -522,19 +528,19 @@
                     {#                    }#}
                 ]
             };
-{#            var layerControl = L.control.autolayers(autolayers_config).addTo(map);#}
+            {#            var layerControl = L.control.autolayers(autolayers_config).addTo(map);#}
             {#                    var layerControl = L.control.layers([openstreetmap, lidar, lidar_2m_dsm], []).addTo(map);#}
             var layerControl = L.control.layers({'OpenStreetMap': openstreetmap}, []).addTo(map);
 
 
-{#            var nE = new LatLng(52, -4);#}
-{#            var sW = new LatLng(51, -1.5);#}
-{#            var bounds = new L.LatLngBounds(sW, nE);#}
-{##}
-{#            var test_layer_url = 'http://ishare.cardiff.gov.uk//MapGetImage.aspx?mapsource=Cardiff_Live%2FAllMaps&transparent=true&RequestType=OLMap&MapID=-1&ServiceAction=ZoomToLocation&layers=SecondaryCatch,SecondarySchools&mapwidth=1514&mapheight=672&easting=317773.63595385&northing=178110.82010021&zoom=255000';#}
-{#            var test_layer = L.imageOverlay(test_layer_url, bounds);#}
-{#            test_layer.addTo(map);#}
-{#            layerControl.addOverlay(test_layer, 'Cardiff Schools');#}
+            {#            var nE = new LatLng(52, -4);#}
+            {#            var sW = new LatLng(51, -1.5);#}
+            {#            var bounds = new L.LatLngBounds(sW, nE);#}
+            {##}
+            {#            var test_layer_url = 'http://ishare.cardiff.gov.uk//MapGetImage.aspx?mapsource=Cardiff_Live%2FAllMaps&transparent=true&RequestType=OLMap&MapID=-1&ServiceAction=ZoomToLocation&layers=SecondaryCatch,SecondarySchools&mapwidth=1514&mapheight=672&easting=317773.63595385&northing=178110.82010021&zoom=255000';#}
+            {#            var test_layer = L.imageOverlay(test_layer_url, bounds);#}
+            {#            test_layer.addTo(map);#}
+            {#            layerControl.addOverlay(test_layer, 'Cardiff Schools');#}
 
             var north = L.control({position: "bottomleft"});
             north.onAdd = function(map) {
@@ -878,7 +884,10 @@
 
                             });
                             geojson.addTo(map);
+
+                            {#                            Survey on highlight #}
                             geojson.bringToFront();
+
                             map_layers[data['properties']['name']] = geojson;
                         }
 
@@ -1090,7 +1099,22 @@
                             {#                        if (feature.properties.RENDER == true) {#}
                             if (isNaN(feature.properties.REMOTE_VALUE)) {
                                 {#                            TODO do something interesting with non number markers? #}
-                                return L.circleMarker(latlng, geojsonMarkerOptions);
+                                {#                                return L.circleMarker(latlng, geojsonMarkerOptions);#}
+{#<i class="fa fa-eye"></i>#}
+
+                                var myIcon = L.divIcon({
+{#                                    html: '<div style="border: 2px solid black"></div>',#}
+                                    className: 'fa fa-2x fa-institution',
+                                    iconSize: [26, 26],
+                                    iconAnchor: [13, 13],
+                                    popupAnchor: [0, 0],
+                                    shadowSize: [0, 0]
+                                });
+                                var marker = L.marker(latlng, {icon: myIcon}).addTo(map);
+                                marker.valueOf()._icon.style.backgroundColor = 'green';
+                                marker.valueOf()._icon.style.color = 'white';
+
+                                return marker
                             } else {
                                 return L.circleMarker(latlng, geojsonMarkerOptions);
                             }
@@ -1102,6 +1126,21 @@
                         layer: myLayer,
                         attribution: 'hello world'
                     });
+
+{#                    var aa, ab, ac = myLayer.setZIndex(leaflet_layers.length);#}
+{#                    console.log(aa, ab, ac);#}
+{#                    var ba, bb, bc = myLayer.options.zIndex = leaflet_layers.length;#}
+{##}
+{#                    try {#}
+{#                        myLayer._updateZIndex();#}
+{#                    }catch (e){#}
+{#                        console.log(e);#}
+{#                        alert(e);#}
+{#                    }#}
+
+{#                    console.log(layer_name_text + ' layer indexes');#}
+{#                    console.log(myLayer.zIndex);#}
+{#                    console.log(myLayer.options.zIndex);#}
 
                     myLayer.eachLayer(function (layer) {
                         if (typeof layer.setStyle === 'function') {
@@ -1135,8 +1174,8 @@
                     myLayer.eachLayer(function (layer) {
                         if (layer.feature.type === 'Feature') {
                             {# enable this line if we want clustered markers #}
-                            {#                                                                        is_clustermarkers = true;#}
-                            {#                                                is_heatmap = true;#}
+                            {#        is_clustermarkers = true;#}
+                            {#        is_heatmap = true;#}
 
                         }
                     });
@@ -1150,7 +1189,9 @@
                         });
                         map.addLayer(markers);
                         map.fitBounds(markers.getBounds(), { paddingBottomRight: [200, 0] });
-                        markers.bringToFront();
+
+                        {#                        markers.bringToFront();#}
+
                     }
                     else if (is_heatmap){
                         var heat_data = [];
@@ -1169,6 +1210,7 @@
                     else{
                         myLayer.addTo(map);
                         map.fitBounds(myLayer.getBounds(), { paddingBottomRight: [200, 0] });
+
                         myLayer.bringToFront();
                     }
                 } catch (e) {
@@ -1194,15 +1236,41 @@
 
             }
 
+            var layers = {};
+            function recordLayerOrders() {
+                map.eachLayer(function(layer) {
+                    if( layer instanceof L.TileLayer ) {
+                        console.log('Recording layer ' + layer + ' as ' + layers[layer]);
+                        console.log(layer);
+                        layers[layer] = layer.zIndex;
+                    }
+                });
+            }
+            function updateLayerOrders() {
+                map.eachLayer(function(layer) {
+                    if( layer instanceof L.TileLayer ) {
+                        console.log('Setting layer ' + layer + ' to ' + layers[layer]);
+                        layer.setZIndex(layers[layer]);
+                    }
+                });
+            }
+
             function handleLayer(layer) {
 
                 {#                layer.bindPopup(layer.feature.properties.AREA_NAME + '<br>'#}
                 {#                        + layer.feature.properties.REMOTE_VALUE +#}
                 {#                        (layer.feature.properties.PERCENTAGE == true ? '%': ''));#}
 
+                if(isNaN(layer.feature.properties.REMOTE_VALUE)) {
+                    console.log('icon item');
+                }
+
                 layer.on({
                     mouseover: function (e) {
+                    console.log('icon item 2');
                         {#                        console.log(e.target.feature.properties.RESPONSE_R);#}
+
+                        {#                        recordLayerOrders();#}
                         var layer = e.target;
                         layer.setStyle({
                             weight: 5,
@@ -1210,40 +1278,13 @@
                             dashArray: '',
                             fillOpacity: {% if naw %}1{% else %}0.7{% endif %}
                         });
-
-                        {#                        layer.bringToFront();#}
-
-                        {#                        info.update(layer.feature.properties);#}
-
-                        {#                        var html = '';#}
-                        {#                        // look through each layer in order and see if the clicked point,#}
-                        {#                        // e.latlng, overlaps with one of the shapes in it.#}
-                        {##}
-                        {#                        for (var i = 0; i < leaflet_layers.length; i++) {#}
-                        {##}
-                        {#                            var match = leafletPip.pointInLayer(#}
-                        {#                                    // the clicked point#}
-                        {#                                    e.latlng,#}
-                        {#                                    // this layer#}
-                        {#                                    leaflet_layers[i].layer,#}
-                        {#                                    // whether to stop at first match#}
-                        {#                                    true);#}
-                        {##}
-                        {#                            // if there's overlap, add some content to the popup: the layer name#}
-                        {#                            // and a table of attributes#}
-                        {#                            if (match.length) {#}
-                        {#                                .log(match[0].feature.properties);#}
-                        {#                                html += '<strong>' + leaflet_layers[i].name + '</strong>';#}
-                        {#                                html += propertyTable(match[0].feature.properties) + '<br><br>';#}
-                        {#                            }#}
-                        {#                        }#}
-                        {#                        if (html) {#}
-                        {#                            $('#right-component1').append(html);#}
-                        {#                        }#}
+                        {#                        updateLayerOrders();#}
 
                     },
                     mouseout: function (e) {
                         {#                        e.target.resetStyle(e.target);#}
+
+                        {#                        recordLayerOrders();#}
                         e.target.setStyle({
                             {#                            fillColor: '#0044AA',#}
                             fillOpacity: {% if naw %}1{% else %}0.7{% endif %},
@@ -1252,11 +1293,17 @@
                             color: 'white',
                             dashArray: '3'
                         });
+                        {#                        updateLayerOrders();#}
+
                         {#                        info.update();#}
                     },
                     click: function(e) {
+                        console.log('icon item 3');
                         show_sidebar();
-                        layer.bringToFront();
+
+                        try {
+                            layer.bringToFront();
+                        }catch (e){}
 
                         info.update(layer.feature.properties);
 

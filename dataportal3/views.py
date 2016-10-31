@@ -2562,3 +2562,7 @@ def question_links(request):
     }
 
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
+
+
+def map_test(request):
+    return render(request, 'map_test.html', {}, context_instance=RequestContext(request))

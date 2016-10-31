@@ -1,0 +1,300 @@
+{% extends "navigation.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block page_name %}{% trans 'Map Test' %}{% endblock %}
+
+{% block extra_head %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="http://localhost:8000/static/startbootstrap-sb-admin-2-1.0.7/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{% static 'test_data/cardiff_catchment.js' %}"></script>
+
+    <script src="https://use.fontawesome.com/bb58de4280.js"></script>
+
+    {#    <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>#}
+    {#    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />#}
+
+    <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
+
+    <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script><!-- proj4js -->
+    <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script><!-- proj4leaflet -->
+    <script src="https://rawgithub.com/rob-murray/os-leaflet/master/OSOpenSpace.js"></script><!-- OS OpenSpace layer -->
+
+    <script src='http://aebadirad.github.io/Leaflet.AutoLayers/src/leaflet-autolayers.js'></script>
+    <link rel="stylesheet" type="text/css" href="http://aebadirad.github.io/Leaflet.AutoLayers/example/css/leaflet.auto-layers.css"/>
+
+    <style>
+        .test_fa_btn {
+            border: 1px solid gray;
+            padding: 1.5em;
+            margin: 1.5em;
+            display: inline-block;
+            background-color: lightgoldenrodyellow;
+            color: darkred;
+        }
+
+        .main_container {
+            text-align-last: justify;
+        }
+
+        .map_div {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <script>
+        $(document).ready(function () {
+
+            proj4.defs('EPSG:27700', '+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +datum=OSGB36 +units=m +no_defs');
+
+            var map = L.map('map_div',
+                    {
+                        crs: L.CRS.EPSG3857
+                        {#    crs: L.CRS.EPSG4326  #}
+                        {#    crs: L.OSOpenSpace.getCRS()  #}
+                    }
+            ).setView([52.4, -3.51], 8);
+
+
+            var openstreetmap = L.tileLayer(
+                    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    {
+                        attribution: '<a target="_blank" href="{% url 'licence_attribution' %}">Licence & attribution</a> | Map data &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
+                        maxZoom: 15,
+                        id: 'your.mapbox.project.id',
+                        accessToken: 'your.mapbox.public.access.token'
+                    });
+            openstreetmap.addTo(map);
+            {#            var layerControl = L.control.layers({'OpenStreetMap': openstreetmap}, []).addTo(map);#}
+
+            var autolayers_config = {
+                overlays: [],
+                baseLayers: {'OpenStreetMap': openstreetmap},
+                selectedBasemap: 'Streets',
+                selectedOverlays: [],
+                mapServers: []
+            };
+
+            var layerControl = L.control.autolayers(autolayers_config).addTo(map);
+
+
+            function add_geojson(data, name) {
+                {#                console.log('Adding new data ' + name);#}
+                {#                console.log(data);#}
+
+                {#                var geojson_obj = L.geoJson();#}
+                var geojson_obj = L.Proj.geoJson();
+
+                geojson_obj.addData(data, {
+                    style: function (feature) {
+                        return {
+                            fillColor: '#0044AA',
+                            fillOpacity: 0.7,
+                            weight: 2,
+                            opacity: 1,
+                            color: 'orangered',
+                            dashArray: '3'
+                        };
+                    }
+                });
+
+                geojson_obj.on({
+                    click: function(e) {
+                        L.popup()
+                                .setLatLng(e.latlng)
+                                .setContent(data['properties']['html'])
+                                .openOn(map);
+                    }
+                });
+
+                var display_name = name;
+                if (data['properties']['fields'].hasOwnProperty('_')) {
+                    display_name = data['properties']['fields']['_'];
+                }
+                if (data['properties']['fields'].hasOwnProperty('Primary_Catchment')) {
+                    display_name = data['properties']['fields']['Primary_Catchment'];
+                }
+                if (data['properties']['fields'].hasOwnProperty('Welsh_Medium_Catchment')) {
+                    display_name = data['properties']['fields']['Welsh_Medium_Catchment'];
+                }
+                if (data['properties']['fields'].hasOwnProperty('Secondary_School_Current_Clusters')) {
+                    display_name = data['properties']['fields']['Secondary_School_Current_Clusters'];
+                }
+                if (data['properties']['fields'].hasOwnProperty('Secondary__School__Current__Clusters')) {
+                    display_name = data['properties']['fields']['Secondary__School__Current__Clusters'];
+                }
+                if (data['properties']['fields'].hasOwnProperty('School_Name')) {
+                    display_name = data['properties']['fields']['School_Name'];
+                }
+
+                {#                console.log(name + ' ' + display_name);#}
+
+                layerControl.addOverlay(geojson_obj, display_name);
+                {#                geojson_obj.addTo(map);#}
+                {#                map.fitBounds(geojson_obj.getBounds(), { paddingBottomRight: [200, 0] });#}
+
+            }
+
+            var cardiff_data_url = 'http://ishare.cardiff.gov.uk//MapGetImage.aspx?Type=jsonp&MapSource=Cardiff_Live/AllMaps&RequestType=GeoJSON&ActiveTool=MultiInfo&ActiveLayer=&Layers=AdultLearning,AllYouthCentres,flyingstart,Nursery,Primary,SecondarySchools,PrimarySchoolsWelsh,SecondarySchoolsWelsh,SpecialSchools,IndependentSchools,PrimaryCatch,SecondaryCatch,WelshPrimaryCatch,WelshSecondaryCatch&mapid=-1&axuid=1477696987512&ServiceAction=GetMultiInfoFromPoint&Easting=308063.98969994&Northing=181815.92394351&tolerance=30000.5665043607543&_=1477696987512';
+
+
+            var vale_data_url = 'http://myvale.valeofglamorgan.gov.uk/MapGetImage.aspx?Type=jsonp&MapSource=ValeOfGlamorgan/AllMaps&RequestType=GeoJSON&ActiveTool=MultiInfo&ActiveLayer=&Layers=nursery,primary,cwprimary,secondary,special,welshprime,welshsecond,RC_Primary,RC_secondary,primarycatch,CWprimarycatch,secondarycatch,welshpricatch,welshseccatch,RCpricatch,RCseccatch&mapid=-1&axuid=1477839695264&ServiceAction=GetMultiInfoFromPoint&Easting=303038.22385107&Northing=173138.20653456&tolerance=50000.999725680148&_=1477839695265';
+
+            var newport_url = 'http://my.newport.gov.uk/iShare/MapGetImage.aspx?Type=jsonp&MapSource=Newport/AllMaps&RequestType=GeoJSON&ActiveTool=MultiInfo&ActiveLayer=&Layers=Primary_School,welshmedschool,romcathschool,SecondarySchool,Denotedprimarycatch,Denotedwelshmedcatch,secondcatch,secondarywelshcatch&mapid=-1&axuid=1477875535129&ServiceAction=GetMultiInfoFromPoint&Easting=330740&Northing=185490&tolerance=455000&_=1477875535130';
+
+            var rondda_url = 'http://my.rctcbc.gov.uk//MapGetImage.aspx?Type=jsonp&MapSource=RCT/AllMaps_english&RequestType=GeoJSON&ActiveTool=MultiInfo&ActiveLayer=&Layers=EnglishPrimaryCatchment,EnglishSecondaryCatchment,WelshPrimaryCatchment,WelshSecondaryCatchment,EnglishSecondarySchools,Libraries,MobileLibraryStops,Museums&mapid=-1&axuid=1477879997327&ServiceAction=GetMultiInfoFromPoint&Easting=297533.00015259&Northing=197911.6000061&tolerance=300000&_=1477879997328';
+
+            var monmouth_url = 'http://maps.monmouthshire.gov.uk/MapGetImage.aspx?Type=jsonp&MapSource=Monmouthshire54/Monmouth&RequestType=GeoJSON&ActiveTool=MultiInfo&ActiveLayer=&Layers=PrimarySchoolCatchment,WelshPrimarySchoolCatchment,SecondarySchoolCatchment,School,Adulted,EarlyYears&mapid=-1&axuid=1477880484992&ServiceAction=GetMultiInfoFromPoint&Easting=342262.9987793&Northing=211173.00183105&tolerance=240000&_=1477880484993';
+
+            function add_council_data(data_url) {
+                $.ajax({
+                    url: data_url,
+                    type: 'GET',
+                    data: {},
+                    crossDomain: true,
+                    dataType: 'jsonp',
+                    success: function (data) {
+                        {#                        alert(data.length);#}
+                        read_ishare_data(data);
+
+                    },
+                    error: function () {
+                        alert('Sorry, an error occurred. Please try again, or report it.')
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+
+            function read_ishare_data(data) {
+                for (var feature_col in data) {
+                    var name = data[feature_col]['properties']['layerName'];
+
+                    {#                    console.log('found ' + name);#}
+                    {#                    console.log(data[feature_col]);#}
+
+                    for (var feature_idx in data[feature_col]['features'] ) {
+                        var feature = data[feature_col]['features'][feature_idx];
+
+                        if (feature["geometry"]["type"] == 'Polygon') {
+                            feature["geometry"]["coordinates"] = [feature["geometry"]["coordinates"]];
+                        }
+                        feature["crs"] = {
+                            'type': 'name',
+                            'properties': {
+                                'name': 'urn:ogc:def:crs:EPSG::27700'
+                            }
+                        };
+
+                        add_geojson(feature, name);
+
+                    }
+                }
+            }
+
+            function do_font_awesome() {
+                var body = $('#test_container');
+                var container = $('<div>').addClass('main_container');
+                $.get('http://fontawesome.io/cheatsheet/', function (data) {
+
+                    var names = [];
+
+                    $(data).find('.row .col-md-4').each(function () {
+                        var s = $(this).text();
+                        var m = s.match(/fa-.*/);
+                        if (m && m[0] && s.indexOf('(alias)') < 0) {
+                            names.push(m[0]);
+
+                            container.append('<div class="test_fa_btn"><i class="fa fa-3x ' + m[0] + '"></i>  ' + m[0] + '</div>');
+
+                        }
+                    });
+                    body.append(container);
+
+                });
+            }
+
+            do_font_awesome();
+
+            {#            add_council_data(cardiff_data_url);#}
+{#            add_council_data(vale_data_url);#}
+            add_council_data(newport_url);
+            add_council_data(rondda_url);
+{#            add_council_data(monmouth_url);#}
+
+            {#                        read_ishare_data(cardiff_catchment);#}
+
+
+            var point_ex = {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [437324, 115386]
+                },
+                "properties": {
+                    "name": "OSG"
+                },
+                "crs":
+                {
+                    'type': 'name',
+                    'properties': {
+                        'name': 'urn:ogc:def:crs:EPSG::27700'
+                    }
+                }
+            };
+            {#            add_geojson(point_ex, 'TEST point');#}
+            var poly_ex = {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [[
+                        [437324, 115386],
+                        [457324, 155386],
+                        [467324, 195386],
+                        [437324, 115386]
+                    ]]
+                },
+                "properties": {
+                    "name": "OSG"
+                },
+                "crs":
+                {
+                    'type': 'name',
+                    'properties': {
+                        'name': 'urn:ogc:def:crs:EPSG::27700'
+                    }
+                }
+            };
+            {#            add_geojson(poly_ex, 'TEST poly');#}
+
+        });
+    </script>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% trans 'Map Test' %}</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="map_div" id="map_div"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="test_container"></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

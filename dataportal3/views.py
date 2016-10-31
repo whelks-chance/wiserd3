@@ -1932,8 +1932,9 @@ def get_topojson_by_name(request, topojson_name):
         else:
             ors = []
             for code in codes:
-                if code[4] == ' ':
-                    code = code.replace(' ', '')
+                if len(code) > 4:
+                    if code[4] == ' ':
+                        code = code.replace(' ', '')
 
                 ors.append(Q(**{filter_var: code}))
             postcode_subset = models.SpatialdataPostCodePoint.objects.using('new').all().filter(

@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% load i18n %}
 
-{% block page_name %}{% trans 'Civil Society and Third Sector' %}{% endblock %}
+{% block page_name %}{% trans 'Civil Society and Third Sector data' %}{% endblock %}
 
 {% block content %}
     <div class="container-fluid">
@@ -11,6 +11,101 @@
                 <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/WISERDCSLogo.png' %}{% else %}{% static 'dataportal/media/WISERDCSLogo.png' %}{% endif %}">
 
                 <h1 class="page-header">{% trans 'Civil Society and Third Sector' %}</h1>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-12 col-m-6 col-lg-3">
+                <h2 class="page-header">{% trans 'Theme 1' %}</h2>
+                <h3 class="">{% trans 'Locality, Community and Landscapes of Civil Society' %}</h3>
+                <h4 class="">{% trans 'Survey' %}</h4>
+                <ul>
+                    <li>
+                        BRITISH ELECTION STUDY 2005 POST-ELECTION WAVE QUESTIONNAIRE
+                        <a href="http://data.wiserd.ac.uk/survey/wisid_SCELI87MS" target="_blank">Section: S Involvement in politics and community affairs q16</a>
+                    </li>
+                </ul>
+                <h4 class="">{% trans 'Mapped Dataset' %}</h4>
+                <ul>
+                    <li>
+                        <a href="http://data.wiserd.ac.uk/map?layers=c0ece04c-90d4-4953-97c3-ae3cbd13681c" target="_blank">Percentage of the population aged 16 to 64 with no qualifications</a>
+                    </li>
+                </ul>
+                <h4 class="">{% trans 'Search Keywords' %}</h4>
+                <p>
+Researching Civil Participation, Global, Interconnectivity, Migrants, Minorities, Engagement, Spaces, New Localism, Stakeholder, Engagement, Economic Development
+                </p>
+            </div>
+
+
+
+            <div class="col-sm-12 col-m-6 col-lg-3">
+                <h2 class="page-header">{% trans 'Theme 2' %}</h2>
+                <h3 class="">{% trans 'Individuals, Institutions and Governance' %}</h3>
+                <h4 class="">{% trans 'Survey' %}</h4>
+                <ul>
+                    <li>
+                        <a href="http://data.wiserd.ac.uk/survey/wisid_SCELI87MS" target="_blank">Social Change and Economic Life Survey- Household and Community Main Survey 1987</a>
+                    </li>
+                </ul>
+                <h4 class="">{% trans 'Mapped Dataset' %}</h4>
+                <ul>
+                    <li>
+                        <a href="http://data.wiserd.ac.uk/map?layers=c0ece04c-90d4-4953-97c3-ae3cbd13681c" target="_blank">Percentage of the population aged 16 to 64 with no qualifications</a>
+                    </li>
+                </ul>
+                <h4 class="">{% trans 'Search Keywords' %}</h4>
+                <p>
+                    Education, Territoriality, third sector, engagement, policymaking, welfare provision, Language, Identity
+                </p>
+            </div>
+
+
+
+            <div class="col-sm-12 col-m-6 col-lg-3">
+                <h2 class="page-header">{% trans 'Theme 3' %}</h2>
+                <h3 class="">{% trans 'Economic Austerity, Social Enterprise and Inequality' %}</h3>
+                <h4 class="">{% trans 'Survey' %}</h4>
+                <ul>
+                    <li>
+                        2005-06 BRITISH ELECTION STUDY - ONE YEAR OUT (INTERNET) QUESTIONNAIRE
+                        <a href="http://data.wiserd.ac.uk/question/qid_bes2005oyoq6" target="_blank">Section: A q6, "How well do you think the present government has handled the economy in general?"</a>
+                    </li>
+                </ul>
+                <h4 class="">{% trans 'Mapped Dataset' %}</h4>
+                <ul>
+                    <li>
+                        <a href="http://data.wiserd.ac.uk/map?layers=76c97526-cd5e-4b48-ad76-a3b137517dde" target="_blank">Percentage of the population aged 16 to 64 who are economically inactive (excluding students)</a>
+                    </li>
+                </ul>
+                <h4 class="">{% trans 'Search Keywords' %}</h4>
+                <p>
+Social Enterprise, Service Provision, Inequalities, Trade Union Membership, Associational Life, Wellbeing, Equality, Diversity, Third Sector Welfare, Wellbeing, Deprivation, Social Cohesion
+                </p>
+            </div>
+
+
+
+            <div class="col-sm-12 col-m-6 col-lg-3">
+                <h2 class="page-header">{% trans 'Theme 4' %}</h2>
+                <h3 class="">{% trans 'Generation, Life Course and Social Participation' %}</h3>
+                <h4 class="">{% trans 'Survey' %}</h4>
+                <ul>
+                    <li>
+                        <a href="#" target="_blank">YOUR SURVEY HERE !!</a>
+                    </li>
+                </ul>
+                <h4 class="">{% trans 'Mapped Dataset' %}</h4>
+                <ul>
+                    <li>
+                        <a href="http://data.wiserd.ac.uk/map?layers=455c5853-4058-4b77-82ea-e10c579ca477" target="_blank">Percentage of the total population estimated to be aged 65+ years.</a>
+                    </li>
+                </ul>
+                <h4 class="">{% trans 'Search Keywords' %}</h4>
+                <p>
+Generativity, Social Participation, Intergenerational Capital, Language, Religion, Community, Ageing, Serious Leisure, Grey Economy, Social Capital, Cultural Capital, Later Life, Involvement, Grandparents
+                </p>
             </div>
         </div>
     </div>

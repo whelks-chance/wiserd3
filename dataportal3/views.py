@@ -2566,3 +2566,11 @@ def question_links(request):
 
 def map_test(request):
     return render(request, 'map_test.html', {}, context_instance=RequestContext(request))
+
+
+def wiserd_education(request):
+    return render(request, 'wiserd_education.html', {}, context_instance=RequestContext(request))
+
+
+def civil_society(request):
+    return render(request, 'civil_society.html', {}, context_instance=RequestContext(request))

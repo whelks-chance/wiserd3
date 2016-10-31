@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://localhost:8000/static/startbootstrap-sb-admin-2-1.0.7/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script src="https://use.fontawesome.com/bb58de4280.js"></script>
+
+    <style>
+        .btn {
+            border: 1px solid gray;
+            padding: 1.5em;
+            margin: 1.5em;
+            display: inline-block;
+            background-color: lightgoldenrodyellow;
+            color: darkred;
+        }
+
+        .main_container {
+            text-align-last: justify;
+        }
+
+    </style>
+</head>
+<body>
+
+<script>
+
+    var cardiff_data_url = 'http://ishare.cardiff.gov.uk//MapGetImage.aspx?Type=jsonp&MapSource=Cardiff_Live/AllMaps&RequestType=GeoJSON&ActiveTool=MultiInfo&ActiveLayer=&Layers=CouncilOffices,Community,CommunityCouncils,Divisions,NMAS,Polling,PollingStn,WelshAssembly,Allotments,Cinemas,CommunityHalls,PlacesOfInterest,DigitalInclusion,SportsLeisure,Libraries,MajorSports,SportRecParks,PlacesToSee,Skateparks,AdviceOffices,CareHomes,Cemeteries,HousingOffices,Registrar,AdultLearning,AllYouthCentres,flyingstart,Nursery,Primary,SecondarySchools,PrimarySchoolsWelsh,SecondarySchoolsWelsh,SpecialSchools,IndependentSchools,PrimaryCatch,SecondaryCatch,WelshPrimaryCatch,WelshSecondaryCatch,AncientMonuments,Recycling,commonland,ConservationArea,CountryParks,HistoricPG,CivicAmenityDepots,ListedBuildings,LocallyListedBuildings,NatureSites,PublicArt,toilets,railbuffer200,greenbagstockists,TPO,CollectionDays,BusStops,CarParks,CycleRoutes,Improvementlines,ParkRide,PayandDisplay,PublicRightsOfWay,pendingdmmos,RailwayStations,elginroadworks,SpeedCameras,CCTV,Consultations,permissivepaths,RoadResurfacing,StreetLighting,StreetTrees,GritBins,allroutes,Sect38,Sect278,Adopted,LocalImages,OldStreetNames,planningapplication01,planningapplication02,planningapplication03,planningapplication04,MajorProjects,ShoppingCentres,Workshops,Clinics,GPs,Pharmacies,NLPG&mapid=-1&axuid=1477696987512&ServiceAction=GetMultiInfoFromPoint&Easting=308063.98969994&Northing=181815.92394351&tolerance=300.5665043607543&_=1477696987512';
+
+    function add_cardiff_council_data() {
+        $.ajax({
+            url: cardiff_data_url,
+            type: 'GET',
+            data: {},
+            crossDomain: true,
+            dataType: 'jsonp',
+            success: function (data) {
+                for (var feature in data) {
+                    console.log(feature);
+                }
+            },
+            error: function () {
+                alert('Sorry, an error occurred. Please try again, or report it.')
+            },
+            complete: function () {
+            }
+        });
+    }
+</script>
+
+<script>
+    var body = $('body');
+    var container = $('<div>').addClass('main_container');
+    $.get('http://fontawesome.io/cheatsheet/', function(data){
+
+        var names = [];
+
+        $(data).find('.row .col-md-4').each(function() {
+            var s = $(this).text();
+            var m = s.match(/fa-.*/);
+            if (m && m[0] && s.indexOf('(alias)') < 0) {
+                names.push(m[0]);
+
+                container.append('<div class="btn"><i class="fa fa-3x ' + m[0] + '"></i>  '  + m[0] + '</div>');
+
+            }
+        });
+        body.append(container);
+        console.log( JSON.stringify( names ) );
+
+
+
+    });
+
+    add_cardiff_council_data();
+</script>
+
+</body>
+</html>

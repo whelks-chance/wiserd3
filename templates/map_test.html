@@ -220,13 +220,13 @@
                 });
             }
 
-            do_font_awesome();
+            {#            do_font_awesome();#}
 
             {#            add_council_data(cardiff_data_url);#}
-{#            add_council_data(vale_data_url);#}
-{#            add_council_data(newport_url);#}
-            add_council_data(rondda_url);
-{#            add_council_data(monmouth_url);#}
+            {#            add_council_data(vale_data_url);#}
+            {#            add_council_data(newport_url);#}
+            {#            add_council_data(rondda_url);#}
+            {#            add_council_data(monmouth_url);#}
 
             {#                        read_ishare_data(cardiff_catchment);#}
 
@@ -273,6 +273,33 @@
             };
             {#            add_geojson(poly_ex, 'TEST poly');#}
 
+                $('.layer_toggle').click(function(){
+                    var council_url = null;
+                        alert('clicked ' + $(this).data('id'));
+                    console.log($(this));
+                    console.log(this);
+
+                    switch ($(this).data('id')){
+
+                        case 'cardiff':
+                            council_url = cardiff_data_url;
+                            break;
+                        case 'newport':
+                            council_url = newport_url;
+                            break;
+                        case 'rhonda':
+                            council_url = rondda_url;
+                            break;
+                        case 'glam_vale':
+                            council_url = vale_data_url;
+                            break;
+                        case 'monmouth':
+                            council_url = monmouth_url;
+                    }
+                    if (council_url != null){
+                        add_council_data(council_url);
+                    }
+                });
         });
     </script>
 
@@ -281,6 +308,25 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">{% trans 'Map Test' %}</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <h4>Select an region to load catchments for:</h4>
+            <div class="col-lg-2">
+                <div class="btn btn-info layer_toggle" data-id="cardiff">Cardiff</div>
+            </div>
+            <div class="col-lg-2">
+                <div class="btn btn-info layer_toggle" data-id="newport">Newport</div>
+            </div>
+            <div class="col-lg-2">
+                <div class="btn btn-info layer_toggle" data-id="rhonda">Rhonda</div>
+            </div>
+            <div class="col-lg-2">
+                <div class="btn btn-info layer_toggle" data-id="glam_vale">Glam Vale</div>
+            </div>
+            <div class="col-lg-2">
+                <div class="btn btn-info layer_toggle" data-id="monmouth">Monmouth</div>
             </div>
         </div>
 

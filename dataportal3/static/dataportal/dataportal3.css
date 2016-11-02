@@ -393,6 +393,38 @@
     line-height: 2;
 }
 
+
+.naw-panel-map {
+    border-color: #3FA628;
+}
+
+.naw-panel-map .panel-heading {
+    color: white;
+    border-color: #3FA628;
+    background-color: #3FA628;
+}
+.naw-panel-map .panel-footer {
+    color: #3FA628;
+}
+
+
+
+.naw-panel-help {
+    border-color: #FE5000;
+}
+
+.naw-panel-help .panel-heading {
+    color: white;
+    border-color: #FE5000;
+    background-color: #FE5000;
+}
+.naw-panel-help .panel-footer {
+    color: #FE5000;
+}
+
+
+
+
 /*.user_guide_page h1, .user_guide_page h2, .user_guide_page h3 {*/
     /*display: inline;*/
 /*}

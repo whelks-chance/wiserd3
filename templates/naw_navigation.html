@@ -61,10 +61,20 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="{% url 'naw_dashboard' %}">
-                    <img style="margin: 0.5em; max-height: 3em; height: 5em;
-                                    margin-top: -15px; margin-left: -15px; padding: 0.5em"
-                         src="{% static 'dataportal/media/Branding for WISERD website-01.svg' %}"></a>
+                <a
+{#                        class="navbar-brand" #}
+                        href="{% url 'naw_dashboard' %}">
+                    <img style="
+{#                    margin: 0.5em; #}
+                    max-height: inherit;
+                            height: 3em;
+                    background-color: #eeeeee;
+                                    margin-top: 0.2em;
+                            margin-left: 0.2em;
+                                    padding: 0.1em;
+                            border-radius: 3px;
+                                    "
+                         src="{% if use_welsh %}{% static 'dataportal/media/Research-logo-2016-Welsh.png' %}{% else %}{% static 'dataportal/media/Research-logo-2016-English.png' %}{% endif %}"></a>
             </div>
             <!-- /.navbar-header -->
 

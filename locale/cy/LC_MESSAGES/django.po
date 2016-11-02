@@ -466,7 +466,7 @@ msgstr "Lincs Defnyddiol"
 
 #: templates/base_vars.html:14
 msgid "Please find links related to the DataPortal here."
-msgstr "Mae'r lincs sy'n ymwneud â'r Porth Data yma."
+msgstr "Mae'r lincs sy'n ymwneud â'r DataPortal yma."
 
 #: templates/base_vars.html:17 templates/base_vars.html.py:19
 #: templates/question_detail.html:245
@@ -715,7 +715,7 @@ msgstr "Dangosfwrdd"
 
 #: templates/base_vars.html:80
 msgid "These buttons take you to different sections of the DataPortal"
-msgstr "Mae'r botymau hyn yn mynd â chi i wahanol adrannau'r Porth Data."
+msgstr "Mae'r botymau hyn yn mynd â chi i wahanol adrannau'r DataPortal."
 
 #: templates/base_vars.html:81
 msgid "Side Menu"
@@ -726,7 +726,7 @@ msgid ""
 "This menu appears on all DataPortal pages. Go directly to the mapping page "
 "or browse recent search results."
 msgstr ""
-"Mae'r ddewislen hon yn ymddangos ar holl dudalennau'r Porth Data. Ewch yn "
+"Mae'r ddewislen hon yn ymddangos ar holl dudalennau'r DataPortal. Ewch yn "
 "syth i'r dudalen fapio neu porwch ganlyniadau chwilio diweddar. "
 
 #: templates/base_vars.html:84 templates/events.html.py:5
@@ -740,7 +740,7 @@ msgid ""
 "DataPortal team will be attending as well as the accompanying presentations."
 msgstr ""
 "Croeso i'r dudalen digwyddiadau, yma gallwch weld y digwyddiadau y bydd "
-"aelodau'r tîm Porth Data yn mynd iddynt yn ogystal â'r cyflwyniadau "
+"aelodau'r tîm DataPortal yn mynd iddynt yn ogystal â'r cyflwyniadau "
 "cysylltiedig. "
 
 #: templates/base_vars.html:86
@@ -958,11 +958,11 @@ msgstr "Blog Technegol"
 
 #: templates/dashboard.html:256
 msgid "View DataPortal technical developments"
-msgstr "Ewch i ddatblygiadau technegol y Porth Data"
+msgstr "Ewch i ddatblygiadau technegol y DataPortal"
 
 #: templates/dashboard.html:287 templates/naw_dashboard.html.py:220
 msgid "WISERD DataPortal Homepage"
-msgstr "Hafan Porth Data WISERD"
+msgstr "Hafan DataPortal WISERD"
 
 #: templates/dashboard.html:308 templates/naw_dashboard.html.py:77
 #: templates/profile.html:5 templates/profile.html.py:43
@@ -1648,7 +1648,7 @@ msgid ""
 "Welcome to the WISERD DataPortal.<br><br>For more information, follow this "
 "tutorial."
 msgstr ""
-"Croeso i'r Porth Data WISERD.<br><br>Am ragor o wybodaeth, dilynwch y "
+"Croeso i'r DataPortal WISERD.<br><br>Am ragor o wybodaeth, dilynwch y "
 "tiwtorial hwn."
 
 #: templates/map.html:3101
@@ -1837,19 +1837,11 @@ msgstr ""
 #: templates/profile.html:123
 #, python-format
 msgid ""
-"View <a href=\"https://github.com/mbloch/mapshaper/wiki/Command-"
-"Reference#-simplify\" target=\"_blank\"> Mapshaper \"simplify\"</a> for more"
-" information on the process of simplification used and <a "
-"href=\"https://en.wikipedia.org/wiki/Ramer%%E2%%80%%93Douglas%%E2%%80%%93Peucker_algorithm\""
-" target=\"_blank\">Wikipedia Ramer-Douglas-Peucker</a> for information on "
-"the algorithm the process uses."
+"View <a href=\"https://github.com/mbloch/mapshaper/wiki/Command-Reference#-simplify\" target=\"_blank\"> Mapshaper \"simplify\"</a> for more"
+" information on the process of simplification used and <a href=\"https://en.wikipedia.org/wiki/Ramer%%E2%%80%%93Douglas%%E2%%80%%93Peucker_algorithm\" target=\"_blank\">Wikipedia Ramer-Douglas-Peucker</a> for information on the algorithm the process uses."
 msgstr ""
-"Ewch i<a href=\"https://github.com/mbloch/mapshaper/wiki/Command-"
-"Reference#-simplify\" target=\"_blank\"> Mapshaper \"simplify\"</a> i gael "
-"rhagor o wybodaeth am y broses symleiddio a ddefnyddir a <a "
-"href='https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm'"
-" target='_blank'>Wikipedia Ramer-Douglas-Peucker</a> gwybodaeth am yr "
-"algorithm y defnyddia’r broses."
+"Ewch i <a href=\"https://github.com/mbloch/mapshaper/wiki/Command-Reference#-simplify\" target=\"_blank\"> Mapshaper \"simplify\"</a> i gael "
+"rhagor o wybodaeth am y broses symleiddio a ddefnyddir a <a href=\"https://en.wikipedia.org/wiki/Ramer%%E2%%80%%93Douglas%%E2%%80%%93Peucker_algorithm\" target=\"_blank\">Wikipedia Ramer-Douglas-Peucker</a> gwybodaeth am yr algorithm y defnyddia’r broses."
 
 #: templates/profile.html:129
 msgid "Use High Resolution Regions"
@@ -2471,7 +2463,7 @@ msgstr "Maes chwilio gofodol:"
 #: templates/user_guide.html:23
 msgid "For on-screen help on each page of the DataPortal click this button."
 msgstr ""
-"I gael cymorth ar y sgrîn ar bob tudalen o'r Porth Data cliciwch y botwm "
+"I gael cymorth ar y sgrîn ar bob tudalen o'r DataPortal cliciwch y botwm "
 "hwn."
 
 #: templates/user_guide.html:45
@@ -2480,7 +2472,7 @@ msgstr "Cynnwys"
 
 #: templates/user_guide.html:49 templates/user_guide.html.py:115
 msgid "The DataPortal"
-msgstr "Y Porth Data"
+msgstr "Y DataPortal"
 
 #: templates/user_guide.html:52 templates/user_guide.html.py:172
 msgid "Languages"
@@ -2517,21 +2509,21 @@ msgid ""
 "related to Wales. The aim is to encourage the re-use & repurposing of "
 "existing data."
 msgstr ""
-"Mae Porth Data WISERD yn gymhwysiad gwe sy'n gwella gallu ymchwilydd i "
+"Mae DataPortal WISERD yn gymhwysiad gwe sy'n gwella gallu ymchwilydd i "
 "chwilio, darganfod, mapio a lawrlwytho data cymdeithasol-economaidd sy'n "
 "gysylltiedig â Chymru. Y nod yw annog ailddefnyddio ac ailbennu defnydd data"
 " presennol."
 
 #: templates/user_guide.html:120
 msgid "To access the WISERD DataPortal visit:"
-msgstr "I fynd at y Porth Data WISERD ewch i:"
+msgstr "I fynd at y DataPortal WISERD ewch i:"
 
 #: templates/user_guide.html:125
 msgid ""
 "To find out more about the DataPortal project you can click on the WISERD "
 "button."
 msgstr ""
-"I gael gwybod rhagor am y prosiect Porth Data gallwch glicio ar y botwm "
+"I gael gwybod rhagor am y prosiect DataPortal gallwch glicio ar y botwm "
 "WISERD."
 
 #: templates/user_guide.html:173
@@ -2541,9 +2533,9 @@ msgid ""
 "find these buttons on each page of the DataPortal, which allows you to "
 "switch between languages whenever necessary."
 msgstr ""
-"Mae'r Porth Data ar gael yn Gymraeg ac yn Saesneg, i symud rhwng y ddwy "
+"Mae'r DataPortal ar gael yn Gymraeg ac yn Saesneg, i symud rhwng y ddwy "
 "iaith gallwch ddefnyddio'r botymau toglo ar frig y dudalen. Mae'r botymau "
-"hyn ar bob tudalen o'r Porth Data, sy'n caniatau i chi newid rhwng ieithoedd"
+"hyn ar bob tudalen o'r DataPortal, sy'n caniatau i chi newid rhwng ieithoedd"
 " pryd bynnag y bo angen. "
 
 #: templates/user_guide.html:197
@@ -2561,7 +2553,7 @@ msgid ""
 "sign in straight away using an existing Google account, or create a new "
 "username and password."
 msgstr ""
-"I ddefnyddio'r gyfres lawn o swyddogaethau'r Porth Data rhaid i chi greu "
+"I ddefnyddio'r gyfres lawn o swyddogaethau'r DataPortal rhaid i chi greu "
 "cyfrif yn gyntaf gan ddefnyddio'r botwm Mewngofnodi ar y brig yn y gornel "
 "dde. Gallwch naill ai mewngofnodi yn syth gan ddefnyddio cyfrif Google sy'n "
 "bodoli eisoes, neu greu enw defnyddiwr a chyfrinair newydd."
@@ -2571,7 +2563,7 @@ msgid ""
 "Signing up to the Dataportal requires you to create a username and password,"
 " as well as providing an email address to verify your account."
 msgstr ""
-"Mae cofrestru ar gyfer y Porth Data yn gofyn i chi greu enw defnyddiwr a "
+"Mae cofrestru ar gyfer y DataPortal yn gofyn i chi greu enw defnyddiwr a "
 "chyfrinair, yn ogystal â darparu cyfeiriad e-bost i ddilysu eich cyfrif."
 
 #: templates/user_guide.html:307
@@ -2583,9 +2575,9 @@ msgid ""
 "dashboard as well."
 msgstr ""
 "Ar ôl i chi fewngofnodi cewch eich cyfeirio yn ôl at y dangosfwrdd. O'r "
-"dudalen hon gellir mynd at holl adrannau'r Porth Data gan ddefnyddio'r "
+"dudalen hon gellir mynd at holl adrannau'r DataPortal gan ddefnyddio'r "
 "botymau a ddangosir. Mae'r bar ochr yn cynnwys botwm dangosfwrdd drwy gydol "
-"y Porth Data, fodd bynnag, gellir defnyddio'r logo ar frig y dudalen i lywio"
+"y DataPortal, fodd bynnag, gellir defnyddio'r logo ar frig y dudalen i lywio"
 " yn ôl ac ymlaen i'r dangosfwrdd hefyd."
 
 #: templates/user_guide.html:355
@@ -2599,7 +2591,7 @@ msgstr ""
 "Mae eich proffil yn cynnwys manylion amdanoch chi a'ch gosodiadau, yn "
 "ogystal â'r togl ar frig pob tudalen a gallwch osod eich dewis iaith yma. "
 "Bydd eich dewis yn cael ei storio a'i ddefnyddio bob tro y byddwch yn "
-"mewngofnodi i'r Porth Data. Cofiwch glicio ar Arbed pan fyddwch wedi "
+"mewngofnodi i'r DataPortal. Cofiwch glicio ar Arbed pan fyddwch wedi "
 "diweddaru eich proffil/gosodiadau."
 
 #: templates/user_guide.html:419
@@ -2609,7 +2601,7 @@ msgid ""
 "their content."
 msgstr ""
 "Mae Pori Arolygon yn drosolwg hawdd ei ddefnyddio sy'n rhestru'r holl "
-"arolygon sydd gan y Porth Data i'w cynnig. Ar y dudalen hon gallwch hidlo'r "
+"arolygon sydd gan y DataPortal i'w cynnig. Ar y dudalen hon gallwch hidlo'r "
 "arolygon a gweld eu cynnwys."
 
 #: templates/user_guide.html:481
@@ -2618,7 +2610,7 @@ msgid ""
 "simply by using the search bar on the left hand side of the DataPortal."
 msgstr ""
 "Gellir dod o hyd i setiau data a'u chwilio drwy'r botwm Chwilio Metadata, "
-"neu drwy ddefnyddio'r bar chwilio ar ochr chwith y Porth Data."
+"neu drwy ddefnyddio'r bar chwilio ar ochr chwith y DataPortal."
 
 #: templates/user_guide.html:507
 msgid ""
@@ -2716,7 +2708,7 @@ msgid ""
 "The DataPortal provides a simple way of mapping data you have found quickly "
 "and easily by clicking the Map Survey button."
 msgstr ""
-"Mae'r Porth Data yn cynnig ffordd syml o fapio data yr ydych wedi eu canfod "
+"Mae'r DataPortal yn cynnig ffordd syml o fapio data yr ydych wedi eu canfod "
 "yn gyflym ac yn hawdd drwy glicio ar y botwm Mapio Arolwg."
 
 #: templates/user_guide.html:786
@@ -2745,8 +2737,8 @@ msgid ""
 "interactive mapping section. DataPortal gives the user the ability to plot "
 "information on a map, making the data easier to visualise and sort."
 msgstr ""
-"Wrth glicio'r botwm Gweld y Map mae'r Porth Data yn cael ei chyfeirio i'r "
-"dudalen hon - adran fapio ryngweithiol. Mae'r Porth Data yn rhoi'r gallu i'r"
+"Wrth glicio'r botwm Gweld y Map mae'r DataPortal yn cael ei chyfeirio i'r "
+"dudalen hon - adran fapio ryngweithiol. Mae'r DataPortal yn rhoi'r gallu i'r"
 " defnyddiwr i osod gwybodaeth ar fap, gan wneud y data yn hawdd i'w deall "
 "a'u didoli."
 
@@ -2776,7 +2768,7 @@ msgid ""
 "economic data, points of interest and boundary data for Wales. You can then "
 "export the map and download the data for further analysis."
 msgstr ""
-"Gellir defnyddio Porth Data WISERD i ddod o hyd i amrywiaeth o ddata "
+"Gellir defnyddio DataPortal WISERD i ddod o hyd i amrywiaeth o ddata "
 "cymdeithasol-economaidd, mannau o ddiddordeb a data ffiniau i Gymru, yn "
 "ogystal â'u mapio. Yna gallwch allforio'r map a lawrlwytho'r data i'w "
 "dadansoddi ymhellach."
@@ -2867,11 +2859,11 @@ msgid ""
 " on the WISERD DataPortal server. This means that potentially sensitive data"
 " does not leave the users machine."
 msgstr ""
-"Mae'r Porth Data WISERD yn caniatau i ddefnyddwyr fapio eu data eu hunain ar"
+"Mae'r DataPortal WISERD yn caniatau i ddefnyddwyr fapio eu data eu hunain ar"
 " gyfer ardaloedd yng Nghymru ac i allforio hyn fel map y gellir ei gyhoeddi."
 " Mae'r  swyddogaeth hon wedi cael ei chynllunio'n arbennig fel bod yr holl "
 "fapio yn digwydd y tu mewn i borwr y defnyddiwr yn hytrach nag ar weinydd "
-"Porth Data WISERD. Mae hyn yn golygu nad yw data a allai fod yn sensitif yn "
+"DataPortal WISERD. Mae hyn yn golygu nad yw data a allai fod yn sensitif yn "
 "gadael peiriant y defnyddiwr."
 
 #: templates/user_guide.html:1140
@@ -2879,7 +2871,7 @@ msgid ""
 "You can import your own data onto the DataPortal by clicking the MapMyData "
 "button."
 msgstr ""
-"Gallwch fewnforio eich data eich hun i'r Porth Data drwy glicio ar y botwm "
+"Gallwch fewnforio eich data eich hun i'r DataPortal drwy glicio ar y botwm "
 "MapioFyNata."
 
 #: templates/user_guide.html:1166
@@ -2931,7 +2923,7 @@ msgid ""
 "Regions."
 msgstr ""
 "Fel rhan o'n gwaith gyda Chynulliad Cenedlaethol Cymru, mae rhyngwyneb at y "
-"diben wedi cael ei ddatblygu ar gyfer y Porth Data WISERD sy'n caniatau i "
+"diben wedi cael ei ddatblygu ar gyfer y DataPortal WISERD sy'n caniatau i "
 "staff ymchwil y Cynulliad, Aelodau'r Cynulliad a'u staff cymorth i gael "
 "mynediad at amrediad eang o ddata ar gyfer Etholaethau a Rhanbarthau "
 "Cynulliad Cenedlaethol Cymru a'u mapio."
@@ -2942,7 +2934,7 @@ msgid ""
 "and the event presentations. The presentations are also available to "
 "download."
 msgstr ""
-"Mae'r adran hon yn dangos yr holl Ddigwyddiadau y mae tîm y Porth Data "
+"Mae'r adran hon yn dangos yr holl Ddigwyddiadau y mae tîm y DataPortal "
 "wedi'u mynychu a chyflwyniadau'r digwyddiadau. Mae'r cyflwyniadau hefyd ar "
 "gael i'w lawrlwytho. "
 
@@ -2953,7 +2945,7 @@ msgid ""
 "blog gives an insight into the behind-the-scenes workings of the DataPortal."
 msgstr ""
 "Wrth glicio ar y botwm hwn bydd tab newydd yn agor gan ddangos y blog "
-"technegol. Mae'r Porth Data yn cael ei diweddaru a'i gwella o hyd, felly "
+"technegol. Mae'r DataPortal yn cael ei diweddaru a'i gwella o hyd, felly "
 "mae'r blog technegol yn cynnig cipolwg ar weithrediadau cefndirol y Porth "
 "Data."
 
@@ -2963,9 +2955,9 @@ msgid ""
 "agreements and contact information of support can be found on this page "
 "along with a log of any changes to the DataPortal."
 msgstr ""
-"Mae cymorth gyda defnyddio'r Porth Data (fel y canllaw hwn y gellir ei "
+"Mae cymorth gyda defnyddio'r DataPortal (fel y canllaw hwn y gellir ei "
 "lawrlwytho), cytundebau trwyddedu a gwybodaeth gyswllt cymorth ar gael ar y "
-"dudalen hon ynghyd â log o unrhyw newidiadau i'r Porth Data."
+"dudalen hon ynghyd â log o unrhyw newidiadau i'r DataPortal."
 
 #: templates/welcome.html:11
 msgid "Welcome "

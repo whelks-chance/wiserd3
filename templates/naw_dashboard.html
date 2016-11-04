@@ -148,23 +148,30 @@
 
     <div class="col-lg-4 col-md-6">
             <div class="panel panel-red">
-                <a href="http://www.assembly.wales/en/bus-home/research/Pages/research.aspx">
+                <a target="_blank" href="http://www.assembly.wales/en/bus-home/research/Pages/research.aspx">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-globe fa-5x"></i>
+                            <div class="col-xs-10">
+                                <img style="
+                                            max-width: 90%;
+                                            {#                                background-color: white;#}
+                                            height: 4.5em;
+{#                                                                            padding-top: 0.5em;#}
+                                            margin-top: 0.3em
+                                            "
+                                         src="{% static 'dataportal/media/naw-logo-circle.png' %}">
                             </div>
-                            <div class="col-xs-9 text-right">
+                            <div class="col-xs-2 text-right">
                                 <div class="huge">_</div>
-                                <div>{% trans 'National Assembly Research Service' %}</div>
+                                <div>.</div>
                             </div>
                         </div>
                     </div>
                 </a>
-                <a href="http://www.assembly.wales/en/bus-home/research/Pages/research.aspx">
+                <a target="_blank" href="http://www.assembly.wales/en/bus-home/research/Pages/research.aspx">
                     <div class="panel-footer">
                         <span class="pull-left">{% trans 'National Assembly Research Service' %}</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <span class="pull-right"><i class="fa fa-external-link"></i></span>
                         <div class="clearfix"></div>
                     </div>
                 </a>
@@ -231,11 +238,11 @@
 
     <div class="col-lg-4 col-md-6">
             <div class="panel panel-red">
-                <a href="https://assemblyinbrief.wordpress.com/">
+                <a target="_blank" href="https://assemblyinbrief.wordpress.com/">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-globe fa-5x"></i>
+                                <i class="fa fa-rss fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">_</div>
@@ -244,10 +251,10 @@
                         </div>
                     </div>
                 </a>
-                <a href="https://assemblyinbrief.wordpress.com/">
+                <a target="_blank" href="https://assemblyinbrief.wordpress.com/">
                     <div class="panel-footer">
                         <span class="pull-left">{% trans '"In Brief" Blog' %}</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <span class="pull-right"><i class="fa fa-external-link"></i></span>
                         <div class="clearfix"></div>
                     </div>
                 </a>

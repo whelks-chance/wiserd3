@@ -1111,7 +1111,7 @@
                                     shadowSize: [0, 0]
                                 });
                                 var marker = L.marker(latlng, {icon: myIcon}).addTo(map);
-                                marker.valueOf()._icon.style.backgroundColor = 'green';
+                                marker.valueOf()._icon.style.backgroundColor = getColorFromString(feature.properties.REMOTE_VALUE);
                                 marker.valueOf()._icon.style.color = 'white';
 
                                 return marker

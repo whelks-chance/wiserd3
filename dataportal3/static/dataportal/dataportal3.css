@@ -424,6 +424,33 @@
 
 
 
+.panel-naw-research {
+    border-color: #009ca6;
+}
+
+.panel-naw-research .panel-heading {
+    color: white;
+    border-color: #009ca6;
+    background-color: #009ca6;
+}
+.panel-naw-research .panel-footer {
+    color: #009ca6;
+}
+
+
+
+.panel-naw-blog {
+    border-color: #009ca6;
+}
+
+.panel-naw-blog .panel-heading {
+    color: white;
+    border-color: #009ca6;
+    background-color: #009ca6;
+}
+.panel-naw-blog .panel-footer {
+    color: #009ca6;
+}
 
 /*.user_guide_page h1, .user_guide_page h2, .user_guide_page h3 {*/
     /*display: inline;*/

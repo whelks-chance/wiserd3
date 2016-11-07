@@ -262,11 +262,12 @@ function thing(all_topojson_data, ordered_data, local_data_name,
             unmapped_data_string += unmapped + ' : ' + ordered_data[unmapped] + '\n';
         }
     }
-
-    alert('Failed to map the following data.\n' +
-        'Please check each have a valid geography id and value.\n\n'
-        + unmapped_data_string);
-
+    
+    if (unmapped_data_string.length > 0) {
+        alert('Failed to map the following data.\n' +
+            'Please check each have a valid geography id and value.\n\n'
+            + unmapped_data_string);
+    }
     // {#                        delete topojson_data['topojson']['objects'][geom_name];#}
     //Replace the previous geoms with this new array we've built up
     all_topojson_data['topojson']['objects'][geom_name]['geometries'] = new_data;

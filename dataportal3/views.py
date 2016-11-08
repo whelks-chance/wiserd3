@@ -1885,7 +1885,7 @@ def get_topojson_by_name(request, topojson_name):
                 ors.append(Q(**{filter_var_name: code}))
                 # ors.append(Q(**{filter_var_altname: code}))
 
-                ua_subset = models.SpatialdataNawer.objects.using('new').all().filter(
+                ua_subset = models.SpatialdataUA.objects.using('new').all().filter(
                 reduce(operator.or_, ors)
             )
         s = serialize('geojson', ua_subset, fields=('geom', 'label', 'REMOTE_VALUE'))

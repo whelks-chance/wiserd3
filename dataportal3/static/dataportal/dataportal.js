@@ -201,6 +201,13 @@ function thing(all_topojson_data, ordered_data, local_data_name,
                     if ( alt_boundary_name && ordered_data[alt_boundary_name]) {
                         db_boundary_key = 'altname';
                         area_code = geometries[geom]['properties'][db_boundary_key];
+                    } else {
+                        var boundary_label = geometries[geom]['properties']['label'];
+
+                        if ( boundary_label && ordered_data[boundary_label]) {
+                            db_boundary_key = 'label';
+                            area_code = geometries[geom]['properties'][db_boundary_key];
+                        }
                     }
                 }
             }

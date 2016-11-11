@@ -145,7 +145,7 @@ def search_survey_question_api(request):
 
     api_data['thematic_tags'] = thematic_tags
     api_data['thematic_tags_questions'] = thematic_tags_questions
-    api_data['search_result_data'] = thematic_tags_questions
+    api_data['search_result_data'].extend(thematic_tags_questions)
 
     # conn_queries = connections['new'].queries
     # print 'question conn num end', len(conn_queries)

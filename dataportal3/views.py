@@ -45,7 +45,7 @@ from old.views import text_search, date_handler
 from rubbish.formatting.question_ordering import QuestionSorter
 from wiserd3 import settings
 from wiserd3.settings import NAW_LAYER_UUIDS, NAW_CY_LAYER_UUIDS
-from verbalexpressions import VerEx
+# from verbalexpressions import VerEx
 
 
 def dashboard(request):
@@ -97,6 +97,10 @@ def search_survey_question_gui(request):
 
 def search_survey_question_api(request):
     search_terms = request.GET.get('search_terms', '')
+    thematic_groups = []
+    thematic_tags = []
+    thematic_groups_questions = []
+    thematic_tags_questions = []
 
     if search_terms:
         # Don't save a blank search
@@ -106,8 +110,42 @@ def search_survey_question_api(request):
                                                                            readable_name=search_terms,
                                                                            type='text')
         search.save()
+
+        # thematic_groups_objects = models.ThematicGroup.objects.filter(
+        #     Q(grouptitle__icontains=search_terms) | Q(groupdescription__icontains=search_terms)
+        # )
+        # thematic_groups = list(thematic_groups_objects.values())
+        #
+        # thematic_groups_questions_objects = models.Question.objects.filter(
+        #     thematic_groups_set__in=thematic_groups_objects
+        # )
+        # thematic_groups_questions = list(thematic_groups_questions_objects.values())
+
+        thematic_tags_objects = models.ThematicTag.objects.filter(
+            Q(tag_text__icontains=search_terms) | Q(tag_description__icontains=search_terms)
+        )
+        thematic_tags = list(thematic_tags_objects.values())
+
+        thematic_tags_questions_objects = models.Question.objects.filter(
+            thematic_tags_set__in=thematic_tags_objects
+        ).prefetch_related('type')\
+            .prefetch_related('survey').distinct("qid")\
+            .values("survey__identifier", "survey__collectionstartdate",
+                    "survey__survey_title", "qid", "literal_question_text",
+                    "questionnumber", "thematic_groups", "thematic_tags", "link_from",
+                    "subof", "type__q_type_text", "variableid", "notes", "user_id",
+                    "created", "updated", "qtext_index")
+        thematic_tags_questions = list(thematic_tags_questions_objects)
+
     api_data = text_search(search_terms)
     api_data['url'] = request.get_full_path()
+
+    api_data['thematic_groups'] = thematic_groups
+    api_data['thematic_groups_questions'] = thematic_groups_questions
+
+    api_data['thematic_tags'] = thematic_tags
+    api_data['thematic_tags_questions'] = thematic_tags_questions
+    api_data['search_result_data'] = thematic_tags_questions
 
     # conn_queries = connections['new'].queries
     # print 'question conn num end', len(conn_queries)

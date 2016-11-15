@@ -31,6 +31,19 @@
                     {'data': 'literal_question_text'},
                     {'data': 'survey__collectionstartdate'},
                     {
+                        "targets": -3,
+                        "data": 'metadatatoremotemapping__remote_dataset__dataset_identifier',
+                        "render": function ( data, type, full, meta ) {
+                            if (data) {
+
+                                return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                                        "href='/map?rd_srcs=Nomis&rd_ids=" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Map Dataset' %}</a>";
+                            } else {
+                                return ''
+                            }
+                        }
+                    },
+                    {
                         "targets": -2,
                         "data": 'qid',
                         "render": function ( data, type, full, meta ) {
@@ -233,16 +246,17 @@
                             <th>{% trans 'Question Text' %}</th>
                             <th>{% trans 'Date' %}</th>
 
+                            <th>{% trans 'Map dataset' %}</th>
                             <th>{% trans 'View Question' %}</th>
                             <th>{% trans 'View Survey' %}</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>

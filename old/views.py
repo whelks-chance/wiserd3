@@ -286,7 +286,7 @@ def survey_questions(request, wiserd_id):
 
     survey_model_ids = models.Survey.objects.all().filter(identifier=wiserd_id).values_list("surveyid", flat=True)
     questions_models = models.Survey.objects.get(identifier=wiserd_id)\
-        .question_set.all().values("qid", "link_from_question__questionnumber", "subof_question__questionnumber", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index")
+        .question_set.all().values("qid", "link_from_question__questionnumber", "subof_question__questionnumber", "literal_question_text", "questionnumber", "thematic_groups", "thematic_tags", "link_from", "subof", "type__q_type_text", "variableid", "notes", "user_id", "created", "updated", "qtext_index", 'metadatatoremotemapping__remote_dataset__dataset_identifier')
 
     data = []
     for question_model in questions_models:
@@ -416,7 +416,7 @@ def text_search(search_terms):
         'results_count': len(data),
         'search_term': search_terms
     }
-    return api_data
+    return api_data, questions_models
 
 
 def date_handler(obj):

@@ -101,6 +101,9 @@ def search_survey_question_api(request):
     thematic_tags = []
     thematic_groups_questions = []
     thematic_tags_questions = []
+    combine_text_and_tags_questions = models.Question.objects.none()
+
+    api_data, questions_models = text_search(search_terms)
 
     if search_terms:
         # Don't save a blank search
@@ -128,28 +131,45 @@ def search_survey_question_api(request):
 
         thematic_tags_questions_objects = models.Question.objects.filter(
             thematic_tags_set__in=thematic_tags_objects
-        ).prefetch_related('type')\
+        ).distinct("qid")
+
+        combine_text_and_tags = thematic_tags_questions_objects | questions_models
+        print combine_text_and_tags.count(), 'forces eval'
+
+        combine_text_and_tags_values = combine_text_and_tags.prefetch_related('type')\
             .prefetch_related('survey').distinct("qid")\
             .values("survey__identifier", "survey__collectionstartdate",
                     "survey__survey_title", "qid", "literal_question_text",
                     "questionnumber", "thematic_groups", "thematic_tags", "link_from",
                     "subof", "type__q_type_text", "variableid", "notes", "user_id",
-                    "created", "updated", "qtext_index")
-        thematic_tags_questions = list(thematic_tags_questions_objects)
+                    "created", "updated", "qtext_index", 'metadatatoremotemapping__remote_dataset__dataset_identifier')
+        combine_text_and_tags_questions = list(combine_text_and_tags_values)
 
-    api_data = text_search(search_terms)
+        # question_mappings = models.MetaDataToRemoteMapping.objects.filter(wiserd_question__in=list(models.Question.objects.search(combine_text_and_tags)))
+
+        # qid_sublist = list(combine_text_and_tags.values_list('qid', flat=True))
+
+        question_mappings = models.MetaDataToRemoteMapping.objects.filter(wiserd_question__qid__in=list(combine_text_and_tags.values_list('qid', flat=True))).prefetch_related('wiserd_question').prefetch_related('remote_dataset')
+
+        print question_mappings.query
+        print question_mappings
+
+        api_data['question_mappings'] = list(question_mappings.values('wiserd_question__qid', "remote_dataset__dataset_identifier"))
+
     api_data['url'] = request.get_full_path()
 
-    api_data['thematic_groups'] = thematic_groups
-    api_data['thematic_groups_questions'] = thematic_groups_questions
+    # api_data['thematic_groups'] = thematic_groups
+    # api_data['thematic_groups_questions'] = thematic_groups_questions
 
     api_data['thematic_tags'] = thematic_tags
-    api_data['thematic_tags_questions'] = thematic_tags_questions
-    api_data['search_result_data'].extend(thematic_tags_questions)
+    # api_data['thematic_tags_questions'] = combine_text_and_tags_questions
+    api_data['search_result_data'] = combine_text_and_tags_questions
 
-    # conn_queries = connections['new'].queries
-    # print 'question conn num end', len(conn_queries)
-    # print 'question queries', conn_queries
+    conn_queries = connections['new'].queries
+    # for q in connections['new'].queries:
+    #     print '\n\n', q
+    print 'question conn num end', len(conn_queries)
+    # print question_mappings.query
 
     return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")
 
@@ -411,6 +431,20 @@ def map_search(request):
         get_request_user(request)
     )
 
+    remote_data_layers = []
+    remote_data_ids = request.GET.getlist('rd_ids', [])
+    remote_data_sources = request.GET.getlist('rd_srcs', [])
+
+    if len(remote_data_ids) == len(remote_data_sources):
+        for count, data in enumerate(remote_data_ids):
+            remote_data_layers.append(
+                {
+                    'id': remote_data_ids[count],
+                    'src': remote_data_sources[count]
+                }
+            )
+
+
     # TODO remove hard coded uids especially if they're not unique
     naw_key_searches = [
         # {
@@ -464,7 +498,8 @@ def map_search(request):
                       'wms_layers': wms_layers,
                       'wiserd_layers': settings.KNOWING_LOCALITIES_TABLES,
                       'upload_layers': uploaded_layers_clean,
-                      'area_names': json.dumps(area_names)
+                      'area_names': json.dumps(area_names),
+                      'remote_data_layers': remote_data_layers
                   },
                   context_instance=RequestContext(request))
 

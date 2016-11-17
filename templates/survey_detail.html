@@ -133,16 +133,16 @@
             $.ajax({
                 {#                url: "{% url 'survey_dc_data' survey_id %}",#}
                 url: "{% url 'api:metadata:DcInfo-detail' pk=survey_id%}",
-{#                data: {#}
-{#                    csrfmiddlewaretoken: '{{ csrf_token }}'#}
-{#                },#}
+                {#                data: {#}
+                {#                    csrfmiddlewaretoken: '{{ csrf_token }}'#}
+                {#                },#}
                 type: 'GET',
                 success: function(data) {
                     var dataContent = '';
                     for (var j = 0; j < survey_description['tabs']['dc']['fields'].length; j++) {
                         if (survey_description['tabs']['dc']['fields'][j]['display']) {
                             var field = survey_description['tabs']['dc']['fields'][j]['id'];
-{#                            var value = data['search_result_data'][0]['data'][field];#}
+                            {#                            var value = data['search_result_data'][0]['data'][field];#}
                             var value = data[field];
                             var display_name = survey_description['tabs']['dc']['fields'][j]['displayName'];
                             var type = survey_description['tabs']['dc']['fields'][j]['type'];
@@ -158,7 +158,7 @@
             var survey_questions_table = $('#survey_questions_table').DataTable({
                 serverSide: false,
                 processing: true,
-                                "oLanguage": datatables_language,
+                "oLanguage": datatables_language,
                 ajax: {
                     url: "{% url 'survey_questions' survey_id%}",
                     type: 'POST',
@@ -176,7 +176,7 @@
                     {'data': 'type'},
                     {'data': 'notes'},
                     {
-                        "targets": -3,
+                        "targets": -4,
                         "data": null,
                         "render": function ( data, type, full, meta ) {
                             if (data['from_name'] != null && data['from_name'].trim() != '' && data['from_name'].trim() != 'N/A' ) {
@@ -187,7 +187,7 @@
                         }
                     },
                     {
-                        "targets": -2,
+                        "targets": -3,
                         "data": null,
                         "render": function ( data, type, full, meta ) {
                             if (data['subof_name'] != null && data['subof_name'].trim() != '' && data['subof_name'].trim() != 'N/A' ) {
@@ -197,11 +197,25 @@
                             }
                         }
                     },
+                {
+                        "targets": -2,
+                        "data": 'metadatatoremotemapping__remote_dataset__dataset_identifier',
+                        "render": function ( data, type, full, meta ) {
+                            if (data) {
+
+                                return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                                        "href='/map?rd_srcs=Nomis&rd_ids=" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Map Dataset' %}</a>";
+                            } else {
+                                return ''
+                            }
+                        }
+                    },
                     {
                         "targets": -1,
-                        "data": null,
+                        "data": 'qid',
                         "render": function ( data, type, full, meta ) {
-                            return "<div class='btn btn-success view_question'>{% trans 'View' %}</div>";
+                            return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                                    "href='/question/" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Question' %}</a>";
                         }
                     }
                 ]
@@ -219,14 +233,14 @@
                     var data = survey_questions_table.row($(this).parents('tr')).data();
                     survey_questions_table.search( data['subof_name'].trim() ).draw();
                 });
-                table_body.on('click', '.view_question', function () {
-                    var data = survey_questions_table.row($(this).parents('tr')).data();
-                    {% if preferences.links_new_tab %}
-                        window.open('/question/' + data['qid'], '_blank');
-                    {% else %}
-                        window.location.href = '/question/' + data['qid'];
-                    {% endif %}
-                });
+{#                table_body.on('click', '.view_question', function () {#}
+{#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
+{#                    {% if preferences.links_new_tab %}#}
+{#                        window.open('/question/' + data['qid'], '_blank');#}
+{#                    {% else %}#}
+{#                        window.location.href = '/question/' + data['qid'];#}
+{#                    {% endif %}#}
+{#                });#}
             }
             attach_question_buttons();
 
@@ -364,15 +378,16 @@
                                             <th>{% trans 'Notes' %}</th>
                                             <th>{% trans 'From' %}</th>
                                             <th>{% trans 'SubOf' %}</th>
+                                            <th>{% trans 'Map It' %}</th>
                                             <th>{% trans 'View' %}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                                        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                                         </tbody>
                                     </table>
                                 </div>

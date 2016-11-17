@@ -15,7 +15,7 @@ from django.contrib.gis import admin as gis_admin
 
 # Register your models here.
 from dataportal3.models import Question, UserGroupSurveyCollection, SurveyVisibilityMetadata, Response, Search, \
-    ResponseTable
+    ResponseTable, MetaDataToRemoteMapping
 
 
 class FlattenJsonWidget(Textarea):
@@ -126,6 +126,16 @@ class UserGroupSurveyCollectionAdmin(admin.ModelAdmin):
         SurveyVisibilityMetadataInline,
     ]
 admin.site.register(UserGroupSurveyCollection, UserGroupSurveyCollectionAdmin)
+
+
+class MetadataMappingAdmin(FiltersMixin, admin.ModelAdmin):
+    raw_id_fields = ("wiserd_question", "remote_dataset")
+    list_filter = (
+        ('wiserd_question__qid', SearchFilter),
+        ('remote_dataset__dataset_identifier', SearchFilter)
+    )
+
+admin.site.register(MetaDataToRemoteMapping, MetadataMappingAdmin)
 
 # class SurveyVisibilityMetadataAdmin(admin.ModelAdmin):
     # list_filter = ('survey',)

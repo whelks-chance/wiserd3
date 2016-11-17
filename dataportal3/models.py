@@ -974,4 +974,40 @@ class ResponseTable(models.Model):
     def __unicode__(self):
         return str(self.response) + ':' + str(len(self.feature_attributes))
 
+
+class RemoteDataProvider(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+
+    def __unicode__(self):
+        return str(self.name) + ':' + str(self.description)
+
+
+class RemoteDataset(models.Model):
+    remote_data_provider = models.ForeignKey('RemoteDataProvider', blank=True, null=True)
+
+    name = models.CharField(max_length=255)
+    dataset_identifier = models.CharField(max_length=255, blank=True, null=True)
+
+    description = models.CharField(max_length=255)
+    api_url = models.TextField(blank=True, null=True)
+    description_url = models.TextField(blank=True, null=True)
+    dataset_attributes = hstore.DictionaryField(blank=True, null=True)
+
+    def __unicode__(self):
+        return str(self.name) + ':' + str(self.dataset_identifier) + ':' + str(self.remote_data_provider.name)
+
+
+class MetaDataToRemoteMapping(models.Model):
+    wiserd_question = models.ForeignKey('Question', blank=True, null=True)
+    remote_dataset = models.ForeignKey('RemoteDataset', blank=True, null=True)
+
+    def __unicode__(self):
+        return '{}:{}:{}:{}'.format(
+            self.wiserd_question.survey.identifier,
+            self.wiserd_question.qid,
+            self.remote_dataset.dataset_identifier,
+            self.remote_dataset.name
+        )
+
 import dataportal3.signals.handlers

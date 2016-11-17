@@ -74,6 +74,9 @@ class Questions(models.Model):
         managed = False
         db_table = 'questions'
 
+    def __unicode__(self):
+        return '{} : {}'.format(self.qid, self.literal_question_text)
+
 
 class SurveySpatialLink(models.Model):
     surveyid = models.CharField(max_length=255)

@@ -32,16 +32,442 @@
             <h2>{% trans 'Support' %}</h2>
             <h4>{% trans 'Contact Us' %}</h4>
             <p>
-                <a href="http://www.wiserd.ac.uk/how-to-contact-us/" target="_blank">{% trans 'Contact WISERD' %}</a>
+                <a href="http://www.wiserd.ac.uk/how-to-contact-us/" target="_blank">{% trans 'Contact WISERD' %} <i class="fa fa-external-link"></i></a>
             </p>
             <p>{% trans 'Scott Orford, Project PI : OrfordS (at) cardiff.ac.uk' %}</p>
             <p>{% trans 'Ian Harvey, Lead Software Engineer/ Developer: HarveyIC (at) cardiff.ac.uk' %}</p>
             <p>{% trans 'Sam Jones, Research Technician : JonesS97 (at) cardiff.ac.uk' %}</p>
 
+            <h2>{% trans 'Feedback' %}</h2>
+            <p>
+                {% blocktrans%}You can leave feedback using the <a href="https://cardiff.onlinesurveys.ac.uk/dataportal-lts" target="_blank">online survey here. <i class="fa fa-external-link"></i></a>{% endblocktrans %}
+            </p>
+
         </div>
 
         <div class="row">
             <h2>{% trans 'Change Log' %}</h2>
+
+            <p>
+                {% blocktrans %}Below is a Change Log for all the major additions made to the codebase. Many details have been left out, and it can be assumed that every item can contain:{% endblocktrans %}
+            </p>
+
+            <ul>
+                <li>Code refactoring</li>
+                <li>CSS changes</li>
+                <li>Bugfixing</li>
+                <li>Minor changes to the overall look-and-feel of the site.</li>
+            </ul>
+            <p>
+                {% blocktrans %}Additionally, not mentioned are all the false starts, broken features and long rabbit holes traversed in order to experiment with new functions and features. Thus, any long breaks can assumed to be time spent discovering what the DataPortal may be able to do in future, which may or may not ever come to fruition.{% endblocktrans %}
+            </p>
+            <p>
+                {% blocktrans %}For those who are interested in the precise changes in code over time, please see the <a href="https://github.com/whelks-chance/wiserd3/commits/master" target="_blank">GitHub commit log here. <i class="fa fa-external-link"></i></a>{% endblocktrans %}
+            </p>
+
+
+            <h3>v3.6.5a</h3>
+            <h4>{% trans '15 November 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Mapping local metadata to remote data sources.' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.6.4a</h3>
+            <h4>{% trans '7 November 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'MapMyData Unitary Authority option' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.6.3a</h3>
+            <h4>{% trans '31 October 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Civil Society page.' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'WISERD Education page' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Tidy up for multiple presentations (National Assembly for Wales, WISERD Away Days and the ESRC Festival of Social Science)' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.6.2a</h3>
+            <h4>{% trans '17 October 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Usablility tracking added to DB' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.6.1a</h3>
+            <h4>{% trans '27 September 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Updating packages to work with Django 1.8' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'User guide styling' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Tools to aid question ordering connections.' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Rosetta added to Django to aid translation service data input.' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.6a</h3>
+            <h4>{% trans '15 September 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Updating codebase from Django 1.8 to 1.9. This gives us access to JSONP fields in PostgreSQL which makes response tables far easier to work with.' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Response tables' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Many more help file screenshots' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.5.5a</h3>
+            <h4>{% trans '02 August 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Dublin core fully using DRF API' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'GUI tidy up' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Help pages, support popups, ' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.5.4a</h3>
+            <h4>{% trans '15 June 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'StatsWales mapping and inclusion in menus' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Updating of Dublin Core models' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.5.3a</h3>
+            <h4>{% trans '08 June 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'StatsWales API compatibility' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Another round of translations' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'NAW Regions and Constituencies 2016 boundary changes' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.5.2a</h3>
+            <h4>{% trans '10 May 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'MapMyData XLSX importing' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'MapMyData styling' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'MapMyData rendering' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'MapMyData point data' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Backend tooling - SQLExplorer' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'National Assembly for Wales data importing' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.5.1a</h3>
+            <h4>{% trans '19 April 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Language support' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Assorted bugfixes' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.5</h3>
+            <h4>{% trans '11 April 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Screenshot options' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Extra options when importing data from CSV' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.5.0a</h3>
+            <h4>{% trans '16 March 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Much better side panel for properly showing layer data' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Tidying up the install process' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Rearranging the page ordering logic, cleanup for major v3.5 release' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.4.5a</h3>
+            <h4>{% trans '17 February 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Shapefile importing, DB tables and  models better defined and matched' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.4.4a</h3>
+            <h4>{% trans '08 February 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Layers can be referenced by UUID' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.4.3a</h3>
+            <h4>{% trans '04 February 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Better legends' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Secondary data GUI options' %}
+                </li>
+
+            </ul>
+
+
+            <h3>v3.4.2a</h3>
+            <h4>{% trans '19 January 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'API (using Django Rest Framework) and documentation' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Significant code refactoring' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.4.1a</h3>
+            <h4>{% trans '06 January 2016' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Cookies to store user options' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Considering access rules, user groups etc' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.4.0a</h3>
+            <h4>{% trans '14 December 2015' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Beginning work for the National Assembly for Wales' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'NAW key datasets added' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.3.3a</h3>
+            <h4>{% trans '07 December 2015' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'More error catching' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.3.2a</h3>
+            <h4>{% trans '02 December 2015' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Mapping non-string values' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Error catching with null or invalid data' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Layer info pane' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.3a</h3>
+            <h4>{% trans '24 November 2015' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Local data rendering on map' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Choropleth colours and settings' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.2a</h3>
+            <h4>{% trans '24 November 2015' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Local data rendering on map' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.1a</h3>
+            <h4>{% trans '17 November 2015' %}</h4>
+            <ul>
+
+                <li style="list-style-type:square">
+                    {% trans 'Rerun previous remote data layers' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Access remote data CSV' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.0a</h3>
+            <h4>{% trans '23 October 2015' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Qualitative data models' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Remote data from Nomis requested using requried options and variables' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Futher movement to new data models, data linkages clarified' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Futher GUI refinements' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Welcome, event and user profile pages' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.0 pre-alpha</h3>
+            <h4>{% trans 'September 2015' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'ShapeFiles understood by the system for data/ boundary importing' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Remote data search from Nomis' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'General work to clarify how layers are stored, modeled, requested, rendered and GUI options displayed.' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.0 pre-alpha</h3>
+            <h4>{% trans 'August 2015' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'GeoJson from DB data, to leaflet layer' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Mapping GUI, leaflet' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Correct use of Django models for spatial data searches' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Begin to move to new Django models' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.0 pre-alpha</h3>
+            <h4>{% trans '11-15 July 2015' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Viewing survey questions' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Survey Dublin Core, Survey Metadata' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Results metadata' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Linking of questions from old database' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Spatial search results' %}
+                </li>
+            </ul>
+
+
+            <h3>v3.0 pre-alpha</h3>
+            <h4>{% trans '08 July 2015' %}</h4>
+            <ul>
+                <li style="list-style-type:square">
+                    {% trans 'Initial commit of v3 of the DataPortal' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Now in Python Django' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'JQuery, JQueryUI' %}
+                </li>
+                <li style="list-style-type:square">
+                    {% trans 'Leaflet, Mapbox' %}
+                </li>
+            </ul>
+
+
+            <h3>
+                ~1.5 year break ...
+            </h3>
+
 
             <h3>v2.0</h3>
             <h4>{% trans 'December 2nd, 2013' %}</h4>
@@ -203,22 +629,22 @@
             </ul>
         </div>
 
-    <div>
-        <h2 id="useful_links">{%trans 'Useful Links' %}</h2>
-        <p>
-            <a href="https://theidpblog.files.wordpress.com/2014/08/hierarchical_representation_of_uk_statistical_geographies_july_2014.pdf" target="_blank">Statistical Geographies</a>
-        </p>
-    </div>
+        <div>
+            <h2 id="useful_links">{%trans 'Useful Links' %}</h2>
+            <p>
+                <a href="https://theidpblog.files.wordpress.com/2014/08/hierarchical_representation_of_uk_statistical_geographies_july_2014.pdf" target="_blank">Statistical Geographies</a>
+            </p>
+        </div>
 
-    <div>
-        <h2 id="example_datasets">{%trans 'Example Datasets' %}</h2>
-        <p>
-            <a href="{{ MEDIA_URL }}example_data/school_data.xlsx" target="_blank">{%trans 'School Data 100.XLS' %}</a>
-        </p>
-        <p>
-            <a href="{{ MEDIA_URL }}example_data/school_data_all.xlsx" target="_blank">{%trans 'School Data 2000.XLS' %}</a>
-        </p>
-    </div>
+        <div>
+            <h2 id="example_datasets">{%trans 'Example Datasets' %}</h2>
+            <p>
+                <a href="{{ MEDIA_URL }}example_data/school_data.xlsx" target="_blank">{%trans 'School Data 100.XLS' %}</a>
+            </p>
+            <p>
+                <a href="{{ MEDIA_URL }}example_data/school_data_all.xlsx" target="_blank">{%trans 'School Data 2000.XLS' %}</a>
+            </p>
+        </div>
 
     </div>
 

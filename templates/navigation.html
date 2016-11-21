@@ -74,18 +74,24 @@
                         {% if request.user.is_authenticated %}
                             <li><a href="{% url 'profile' %}"><i class="fa fa-user fa-fw"></i> {% trans 'User Profile' %}</a>
                             </li>
-{#                            <li><a href="{% url 'settings' %}"><i class="fa fa-gear fa-fw"></i> {% trans 'Personal Settings' %}</a>#}
-{#                            </li>#}
+                            {#                            <li><a href="{% url 'settings' %}"><i class="fa fa-gear fa-fw"></i> {% trans 'Personal Settings' %}</a>#}
+                            {#                            </li>#}
                             <li class="divider"></li>
 
                             <li><a target="_blank" href="/api/"><i class="fa fa-cloud-download fa-fw"></i> {% trans 'API' %}</a>
                             </li>
                             <li><a target="_blank" href="/api/docs/"><i class="fa fa-file-text-o fa-fw"></i> {% trans 'API Docs' %}</a>
                             </li>
+
+                            <li class="divider"></li>
+                            <li><a href="https://cardiff.onlinesurveys.ac.uk/dataportal-lts" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {% trans 'Give Feedback' %}</a></li>
+
                             <li class="divider"></li>
 
                             <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out fa-fw"></i> {% trans 'Logout' %}</a></li>
                         {% else %}
+                            <li><a href="https://cardiff.onlinesurveys.ac.uk/dataportal-lts" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {% trans 'Give Feedback' %}</a></li>
+                                                        <li class="divider"></li>
                             <li><a href="{% url 'account_login' %}"><i class="fa fa-sign-in fa-fw"></i> {% trans 'Login' %}</a></li>
                         {% endif %}
 

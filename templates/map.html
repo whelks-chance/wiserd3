@@ -93,14 +93,16 @@
 
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-heat/v0.1.3/leaflet-heat.js'></script>
 
-    {#    <script src='http://aebadirad.github.io/Leaflet.AutoLayers/src/leaflet-autolayers.js'></script>#}
-    {#    <link rel="stylesheet" type="text/css" href="http://aebadirad.github.io/Leaflet.AutoLayers/example/css/leaflet.auto-layers.css"/>#}
+{#    <script src='http://aebadirad.github.io/Leaflet.AutoLayers/src/leaflet-autolayers.js'></script>#}
+{#    <link rel="stylesheet" type="text/css" href="http://aebadirad.github.io/Leaflet.AutoLayers/example/css/leaflet.auto-layers.css"/>#}
+
+    <script type="text/javascript" src="{% static 'leaflet-autolayers/leaflet-autolayers.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaflet-autolayers/leaflet.auto-layers.css' %}" />
 
     <script type="text/javascript" src="{% static 'dataportal/page_js/map.js' %}"></script>
 
-    <script>
-
-    </script>
+    <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script><!-- proj4js -->
+    <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script><!-- proj4leaflet -->
 
     <style>
         .navbar
@@ -524,10 +526,12 @@
                     {#                    }#}
                 ]
             };
-            {#            var layerControl = L.control.autolayers(autolayers_config).addTo(map);#}
-            {#                    var layerControl = L.control.layers([openstreetmap, lidar, lidar_2m_dsm], []).addTo(map);#}
-            var layerControl = L.control.layers({'OpenStreetMap': openstreetmap}, []).addTo(map);
 
+                var layerControl = L.control.autolayers(autolayers_config).addTo(map);
+{#                var layerControl = L.control.layers({'OpenStreetMap': openstreetmap}, []).addTo(map);#}
+
+
+{#               var layerControl = L.control.layers([openstreetmap, lidar, lidar_2m_dsm], []).addTo(map);#}
 
             {#            var nE = new LatLng(52, -4);#}
             {#            var sW = new LatLng(51, -1.5);#}
@@ -947,7 +951,6 @@
                         alert('{% trans 'Sorry, an error occurred. Please try again, or report it.' %}')
                     },
                     complete: function() {
-                        {#                        waitingDialog.hide();#}
                         ajax_finished();
 
                     }
@@ -1127,7 +1130,7 @@
 
                     myLayer.eachLayer(function (layer) {
                         if (typeof layer.setStyle === 'function') {
-{#                            console.log(layer);#}
+                            {#                            console.log(layer);#}
                             layer.setStyle(styleFeature(layer.feature, grades, chroma_scale, opacity));
                         }
                     });
@@ -1677,9 +1680,7 @@
                         }
                     },
                     complete: function() {
-                        {#                        waitingDialog.hide();#}
                         ajax_finished();
-
                     }
                 });
             }
@@ -1904,7 +1905,6 @@
                         alert('{% trans 'Sorry, an error occurred. Please try again, or report it.\n\n' %}');
                     },
                     complete: function() {
-                        {#                        waitingDialog.hide();#}
                         ajax_finished();
                     }
                 });
@@ -2062,7 +2062,6 @@
                                                 codelist_selected,
                                                 function(csv_url) {
 
-                                                    {#                                                waitingDialog.hide();#}
                                                     ajax_finished();
                                                     var layer_name = data['search_uuid'];
                                                     topojson_layers[layer_name] = data['topojson'];
@@ -2321,7 +2320,6 @@
             }
 
             function do_layer_single_uuid(uuid, search_layer_topojson_url) {
-                {#                waitingDialog.show('{% trans 'Fetching map layer...' %}');#}
                 add_ajax_waiting('{% trans 'Fetching map layer...' %}');
 
                 $.ajax({
@@ -2347,7 +2345,6 @@
                         );
                     },
                     complete: function() {
-                        {#                        waitingDialog.hide();#}
                         ajax_finished();
                     }
                 });
@@ -2947,7 +2944,228 @@
                 $.cookie("WDP_returning_user", 0, {expires: 365, path: '/'});
             }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            function add_geojson(data, name) {
+                {#                console.log('Adding new data ' + name);#}
+                {#                console.log(data);#}
+
+                {#                                var geojson_obj = L.geoJson();#}
+                var geojson_obj = L.Proj.geoJson();
+                        geojson_obj.addData(data, {
+                            style: function (feature) {
+                                return {
+                                    fillColor: '#0044AA',
+                                    fillOpacity: 0.7,
+                                    weight: 2,
+                                    opacity: 1,
+                                    color: 'orangered',
+                                    dashArray: '3'
+                                };
+                            }
+                        });
+
+                geojson_obj.on({
+                    click: function(e) {
+                        console.log(data);
+
+                        var content = '';
+                        if (data.hasOwnProperty('properties')) {
+
+                            if (data['properties'].hasOwnProperty('html')) {
+                                content += data['properties']['html'];
+                            }
+                            if (data['properties'].hasOwnProperty('name')) {
+                                content += data['properties']['name'] + '\n</br>';
+                            }
+                            if (data['properties'].hasOwnProperty('postcode')) {
+                                content += data['properties']['postcode'] + '\n</br>';
+                            }
+                            if (data['properties'].hasOwnProperty('number_of_households')) {
+                                content += 'Households: ' + data['properties']['number_of_households'] + '\n</br>';
+                            }
+                            if (data['properties'].hasOwnProperty('scheme_number_of_members')) {
+                                content += 'Members: ' + data['properties']['scheme_number_of_members'] + '\n</br>';
+                            }
+                            if (data['properties'].hasOwnProperty('id')) {
+                                content += data['properties']['id'];
+                            }
+                        }
+
+                        L.popup()
+                                .setLatLng(e.latlng)
+                                .setContent(content)
+                                .openOn(map);
+                    }
+                });
+
+
+
+                var display_name = name;
+                if (data.hasOwnProperty('properties')) {
+                    if (data['properties'].hasOwnProperty('name')) {
+                        display_name = data['properties']['name'];
+                    }
+
+                    if (data['properties'].hasOwnProperty('fields')) {
+                        if (data['properties']['fields'].hasOwnProperty('_')) {
+                            display_name = data['properties']['fields']['_'];
+                        }
+                        if (data['properties']['fields'].hasOwnProperty('Primary_Catchment')) {
+                            display_name = data['properties']['fields']['Primary_Catchment'];
+                        }
+                        if (data['properties']['fields'].hasOwnProperty('Welsh_Medium_Catchment')) {
+                            display_name = data['properties']['fields']['Welsh_Medium_Catchment'];
+                        }
+                        if (data['properties']['fields'].hasOwnProperty('Secondary_School_Current_Clusters')) {
+                            display_name = data['properties']['fields']['Secondary_School_Current_Clusters'];
+                        }
+                        if (data['properties']['fields'].hasOwnProperty('Secondary__School__Current__Clusters')) {
+                            display_name = data['properties']['fields']['Secondary__School__Current__Clusters'];
+                        }
+                        if (data['properties']['fields'].hasOwnProperty('School_Name')) {
+                            display_name = data['properties']['fields']['School_Name'];
+                        }
+                    }
+                }
+                {#                console.log(name + ' ' + display_name);#}
+
+                layerControl.addOverlay(geojson_obj, display_name);
+                geojson_obj.addTo(map);
+                {#                map.fitBounds(geojson_obj.getBounds(), { paddingBottomRight: [200, 0] });#}
+
+            }
+
+
+            var do_nhw = false;
+
+            if(do_nhw) {
+                $.ajax({
+                    url: "{% static 'big.geojson' %}",
+                    type: 'GET',
+                    data: {},
+                    crossDomain: true,
+                    dataType: 'json',
+                    success: function (data) {
+                        {#                    console.log(data);#}
+                        {#                    alert(data.length);#}
+                        for (var feature_idx in data['features']) {
+                            {#                        console.log(data['features'][feature_idx]);#}
+
+                            add_geojson(data['features'][feature_idx], 'nw');
+                        }
+                        {#                    add_geojson(data, 'nw');#}
+
+
+                    },
+                    error: function () {
+                        alert('Sorry, an error occurred. Please try again, or report it.')
+                    },
+                    complete: function () {
+                    }
+                });
+
+            }
+
+
+
+
+
+
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
 

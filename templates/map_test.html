@@ -23,8 +23,11 @@
     <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script><!-- proj4leaflet -->
     <script src="https://rawgithub.com/rob-murray/os-leaflet/master/OSOpenSpace.js"></script><!-- OS OpenSpace layer -->
 
-    <script src='http://aebadirad.github.io/Leaflet.AutoLayers/src/leaflet-autolayers.js'></script>
-    <link rel="stylesheet" type="text/css" href="http://aebadirad.github.io/Leaflet.AutoLayers/example/css/leaflet.auto-layers.css"/>
+{#    <script src='http://aebadirad.github.io/Leaflet.AutoLayers/src/leaflet-autolayers.js'></script>#}
+{#    <link rel="stylesheet" type="text/css" href="http://aebadirad.github.io/Leaflet.AutoLayers/example/css/leaflet.auto-layers.css"/>#}
+
+    <script type="text/javascript" src="{% static 'leaflet-autolayers/leaflet-autolayers.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaflet-autolayers/leaflet.auto-layers.css' %}" />
 
     <style>
         .test_fa_btn {
@@ -41,8 +44,8 @@
         }
 
         .map_div {
-            width: 800px;
-            height: 600px;
+            width: 100%;
+            height: 800px;
         }
     </style>
 {% endblock %}
@@ -71,7 +74,6 @@
                         accessToken: 'your.mapbox.public.access.token'
                     });
             openstreetmap.addTo(map);
-            {#            var layerControl = L.control.layers({'OpenStreetMap': openstreetmap}, []).addTo(map);#}
 
             var autolayers_config = {
                 overlays: [],
@@ -81,14 +83,19 @@
                 mapServers: []
             };
 
-            var layerControl = L.control.autolayers(autolayers_config).addTo(map);
 
-
+            try {
+                // Throw an error if we know this will fail later
+{#                do_default_vars_check();#}
+                var layerControl = L.control.autolayers(autolayers_config).addTo(map);
+            } catch (Exception) {
+                var layerControl = L.control.layers({'OpenStreetMap': openstreetmap}, []).addTo(map);
+            }
             function add_geojson(data, name) {
                 {#                console.log('Adding new data ' + name);#}
                 {#                console.log(data);#}
 
-                {#                var geojson_obj = L.geoJson();#}
+                {#                                var geojson_obj = L.geoJson();#}
                 var geojson_obj = L.Proj.geoJson();
 
                 geojson_obj.addData(data, {
@@ -106,38 +113,57 @@
 
                 geojson_obj.on({
                     click: function(e) {
+                        console.log(data);
+
+                        var content = '';
+                        if (data.hasOwnProperty('properties')) {
+
+                            if (data['properties'].hasOwnProperty('html')) {
+                                content += data['properties']['html'];
+                            }
+                            if (data['properties'].hasOwnProperty('name')) {
+                                content += data['properties']['name'] + '\n</br>';
+                            }
+                            if (data['properties'].hasOwnProperty('id')) {
+                                content += data['properties']['id'];
+                            }
+                        }
+
                         L.popup()
                                 .setLatLng(e.latlng)
-                                .setContent(data['properties']['html'])
+                                .setContent(content)
                                 .openOn(map);
                     }
                 });
 
                 var display_name = name;
-                if (data['properties']['fields'].hasOwnProperty('_')) {
-                    display_name = data['properties']['fields']['_'];
+                if (data.hasOwnProperty('properties')) {
+                    if (data['properties'].hasOwnProperty('fields')) {
+                        if (data['properties']['fields'].hasOwnProperty('_')) {
+                            display_name = data['properties']['fields']['_'];
+                        }
+                        if (data['properties']['fields'].hasOwnProperty('Primary_Catchment')) {
+                            display_name = data['properties']['fields']['Primary_Catchment'];
+                        }
+                        if (data['properties']['fields'].hasOwnProperty('Welsh_Medium_Catchment')) {
+                            display_name = data['properties']['fields']['Welsh_Medium_Catchment'];
+                        }
+                        if (data['properties']['fields'].hasOwnProperty('Secondary_School_Current_Clusters')) {
+                            display_name = data['properties']['fields']['Secondary_School_Current_Clusters'];
+                        }
+                        if (data['properties']['fields'].hasOwnProperty('Secondary__School__Current__Clusters')) {
+                            display_name = data['properties']['fields']['Secondary__School__Current__Clusters'];
+                        }
+                        if (data['properties']['fields'].hasOwnProperty('School_Name')) {
+                            display_name = data['properties']['fields']['School_Name'];
+                        }
+                    }
                 }
-                if (data['properties']['fields'].hasOwnProperty('Primary_Catchment')) {
-                    display_name = data['properties']['fields']['Primary_Catchment'];
-                }
-                if (data['properties']['fields'].hasOwnProperty('Welsh_Medium_Catchment')) {
-                    display_name = data['properties']['fields']['Welsh_Medium_Catchment'];
-                }
-                if (data['properties']['fields'].hasOwnProperty('Secondary_School_Current_Clusters')) {
-                    display_name = data['properties']['fields']['Secondary_School_Current_Clusters'];
-                }
-                if (data['properties']['fields'].hasOwnProperty('Secondary__School__Current__Clusters')) {
-                    display_name = data['properties']['fields']['Secondary__School__Current__Clusters'];
-                }
-                if (data['properties']['fields'].hasOwnProperty('School_Name')) {
-                    display_name = data['properties']['fields']['School_Name'];
-                }
-
                 {#                console.log(name + ' ' + display_name);#}
 
                 layerControl.addOverlay(geojson_obj, display_name);
-                                geojson_obj.addTo(map);
-                                map.fitBounds(geojson_obj.getBounds(), { paddingBottomRight: [200, 0] });
+                geojson_obj.addTo(map);
+                map.fitBounds(geojson_obj.getBounds(), { paddingBottomRight: [200, 0] });
 
             }
 
@@ -220,7 +246,7 @@
                 });
             }
 
-                        do_font_awesome();
+            do_font_awesome();
 
             {#            add_council_data(cardiff_data_url);#}
             {#            add_council_data(vale_data_url);#}
@@ -272,36 +298,38 @@
                     }
                 }
             };
-                        add_geojson(poly_ex, 'TEST poly');
+            {#                        add_geojson(poly_ex, 'TEST poly');#}
 
-                $('.layer_toggle').click(function(){
-                    var council_url = null;
-                        alert('clicked ' + $(this).data('id'));
-                    console.log($(this));
-                    console.log(this);
 
-                    switch ($(this).data('id')){
 
-                        case 'cardiff':
-{#                            council_url = cardiff_data_url;#}
-                            read_ishare_data(cardiff_catchment);
-                            break;
-                        case 'newport':
-                            council_url = newport_url;
-                            break;
-                        case 'rhonda':
-                            council_url = rondda_url;
-                            break;
-                        case 'glam_vale':
-                            council_url = vale_data_url;
-                            break;
-                        case 'monmouth':
-                            council_url = monmouth_url;
-                    }
-                    if (council_url != null){
-                        add_council_data(council_url);
-                    }
-                });
+            $('.layer_toggle').click(function(){
+                var council_url = null;
+                alert('clicked ' + $(this).data('id'));
+                console.log($(this));
+                console.log(this);
+
+                switch ($(this).data('id')){
+
+                    case 'cardiff':
+                    {#                            council_url = cardiff_data_url;#}
+                        read_ishare_data(cardiff_catchment);
+                        break;
+                    case 'newport':
+                        council_url = newport_url;
+                        break;
+                    case 'rhonda':
+                        council_url = rondda_url;
+                        break;
+                    case 'glam_vale':
+                        council_url = vale_data_url;
+                        break;
+                    case 'monmouth':
+                        council_url = monmouth_url;
+                }
+                if (council_url != null){
+                    add_council_data(council_url);
+                }
+            });
 
             var canvas = document.getElementById('myCanvas');
             var context = canvas.getContext('2d');
@@ -309,6 +337,32 @@
             var output = document.getElementById('output');
             var newContent = document.createTextNode("Hi there and greetings!" + data_length);
             output.appendChild(newContent);
+
+
+            $.ajax({
+                url: "{% static 'big.geojson' %}",
+                type: 'GET',
+                data: {},
+                crossDomain: true,
+                dataType: 'json',
+                success: function (data) {
+{#                    console.log(data);#}
+{#                    alert(data.length);#}
+                    for (var feature_idx in data['features']) {
+{#                        console.log(data['features'][feature_idx]);#}
+
+                        add_geojson(data['features'][feature_idx], 'nw');
+                    }
+                    {#                    add_geojson(data, 'nw');#}
+
+
+                },
+                error: function () {
+                    alert('Sorry, an error occurred. Please try again, or report it.')
+                },
+                complete: function () {
+                }
+            });
 
         });
     </script>

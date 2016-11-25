@@ -38,7 +38,11 @@ class DcInfo(models.Model):
 class SurveyQuestionsLink(models.Model):
     surveyid = models.CharField(max_length=50, blank=True, null=True)
     qid = models.CharField(max_length=50, blank=True, null=True)
-    pkid = models.IntegerField(verbose_name='pk')
+    pkid = models.IntegerField(
+        # verbose_name='pk',
+        # name='pk',
+        primary_key=True
+    )
 
     class Meta:
         managed = False

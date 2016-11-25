@@ -78,8 +78,8 @@ class QuestionSerializer(serializers.ModelSerializer):
     thematic_tags_set = serializers.SlugRelatedField(slug_field="tag_text", read_only=True, many=True)
     thematic_groups_set = serializers.SlugRelatedField(slug_field="grouptitle", read_only=True, many=True)
 
-    # link_from_question = serializers.SlugRelatedField(many=True, read_only=True, slug_field='name')
-    # subof_question = serializers.SlugRelatedField(many=True, read_only=True, slug_field='name')
+    link_from = serializers.SlugRelatedField(many=True, read_only=True, slug_field='questionnumber')
+    subof = serializers.SlugRelatedField(many=True, read_only=True, slug_field='questionnumber')
 
     type = serializers.SlugRelatedField(read_only=True, slug_field='q_type_text')
     survey = serializers.SlugRelatedField(read_only=True, slug_field='identifier')

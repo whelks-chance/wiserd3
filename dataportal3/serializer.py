@@ -78,8 +78,24 @@ class QuestionSerializer(serializers.ModelSerializer):
     thematic_tags_set = serializers.SlugRelatedField(slug_field="tag_text", read_only=True, many=True)
     thematic_groups_set = serializers.SlugRelatedField(slug_field="grouptitle", read_only=True, many=True)
 
-    link_from = serializers.SlugRelatedField(many=True, read_only=True, slug_field='questionnumber')
-    subof = serializers.SlugRelatedField(many=True, read_only=True, slug_field='questionnumber')
+    link_from_name = serializers.SerializerMethodField()
+    def get_link_from_name(self, foo):
+        # print type(foo)
+        if foo.link_from_question:
+            return foo.link_from_question.questionnumber
+        else:
+            return None
+
+    sub_of_name = serializers.SerializerMethodField()
+    def get_sub_of_name(self, foo):
+        # print type(foo)
+        if foo.subof_question:
+            return foo.subof_question.questionnumber
+        else:
+            return None
+
+    # link_from_name = serializers.SlugRelatedField(many=True, read_only=True, slug_field='questionnumber')
+    # subof_name = serializers.SlugRelatedField(many=True, read_only=True, slug_field='questionnumber')
 
     type = serializers.SlugRelatedField(read_only=True, slug_field='q_type_text')
     survey = serializers.SlugRelatedField(read_only=True, slug_field='identifier')

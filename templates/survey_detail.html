@@ -160,16 +160,24 @@
                 processing: true,
                 "oLanguage": datatables_language,
                 ajax: {
-{#                    url: "{% url 'survey_questions' survey_id%}",#}
+
+
+{#                    url: "{% url 'survey_questions' survey_id %}",#}
+{#                    type: 'POST',#}
+{#                    data: function (d) {},#}
+{#                    dataSrc: function ( json ) {#}
+{#                        return json['search_result_data'];#}
+{#                    }#}
+
                     url: "{% url 'api:metadata:Question-list' %}",
                     type: 'GET',
-{#                    type: 'POST',#}
                     data: function (d) {
                         d.survey__identifier = "{{ survey_id }}"
                     },
                     dataSrc: function ( json ) {
                         return json['results'];
                     }
+
                 },
                 columns: [
                     {'data': 'questionnumber'},
@@ -183,7 +191,8 @@
                         "targets": -4,
                         "data": null,
                         "render": function ( data, type, full, meta ) {
-                            if (data['link_from'].length > 0 && data['link_from'] != '' ) {
+                            {# if (data['from_name'] != null && data['from_name'].trim() != '' && data['from_name'].trim() != 'N/A' ) {#}
+                            if (data['link_from_name'] && data['link_from_name'].length > 0 && data['link_from_name'] != '' ) {
                                 return "<div class='btn btn-info search_from'>{% trans 'Previous' %}</div>";
                             } else {
                                 return ""
@@ -194,14 +203,15 @@
                         "targets": -3,
                         "data": null,
                         "render": function ( data, type, full, meta ) {
-                            if (data['subof'].length > 0 && data['subof'][0] != '' ) {
+                            {# if (data['subof_name'] != null && data['subof_name'].trim() != '' && data['subof_name'].trim() != 'N/A' ) {#}
+                            if (data['sub_of_name'] && data['sub_of_name'].length > 0 && data['sub_of_name'] != '' ) {
                                 return "<div class='btn btn-info search_parent'>{% trans 'Parent' %}</div>";
                             } else {
                                 return ""
                             }
                         }
                     },
-                {
+                    {
                         "targets": -2,
                         "data": 'metadatatoremotemapping__remote_dataset__dataset_identifier',
                         "render": function ( data, type, full, meta ) {
@@ -231,20 +241,15 @@
                 var table_body = $('#survey_questions_table').find('tbody');
                 table_body.on('click', '.search_from', function () {
                     var data = survey_questions_table.row($(this).parents('tr')).data();
-                    survey_questions_table.search( data['link_from'][0]).draw();
+                    survey_questions_table.search(data['link_from_name']).draw();
                 });
+
+{#                "^\\s*"+'1'+"\\s*$"#}
+
                 table_body.on('click', '.search_parent', function () {
                     var data = survey_questions_table.row($(this).parents('tr')).data();
-                    survey_questions_table.search( data['subof'][0] ).draw();
+                    survey_questions_table.column(0).search( '^' + data['sub_of_name'] + '$', true, false, true).draw();
                 });
-{#                table_body.on('click', '.view_question', function () {#}
-{#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
-{#                    {% if preferences.links_new_tab %}#}
-{#                        window.open('/question/' + data['qid'], '_blank');#}
-{#                    {% else %}#}
-{#                        window.location.href = '/question/' + data['qid'];#}
-{#                    {% endif %}#}
-{#                });#}
             }
             attach_question_buttons();
 

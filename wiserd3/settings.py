@@ -65,7 +65,7 @@ INSTALLED_APPS = (
     'rest_framework_swagger',
     'django_filters',
     'rosetta',
-    # 'dja'
+    'djorm_pgfulltext'
 )
 
 SWAGGER_SETTINGS = {

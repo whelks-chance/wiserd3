@@ -11,11 +11,13 @@ import nltk
 from django.db import connections
 from dataportal3 import models
 from nltk.corpus import stopwords
+import pprint
 
 
 class FullTextSearch():
     def __init__(self):
-        pass
+        self.survey_common_words = {}
+        self.survey_names = []
 
     def build_keyword_set(self):
 
@@ -23,7 +25,9 @@ class FullTextSearch():
 
         stop_words = set(stopwords.words('english'))
         stop_words.update(['...', '.', ',', '"', "'", '?', '!', ':', ';',
-                           '(', ')', '[', ']', '{', '}', '/', '-', '…?', '…', '£'])
+                           '(', ')', '[', ']', '{', '}', '.)', ')?', '=',
+                           '/', '-', '…?', '…', '£', '\u2026', '\u2013'])
+        stop_words.update(['12', '10', '0', '2'])
         stop_words.update(['agree', 'disagree', 'please', 'would',
                            'last', 'think', 'much', 'following', 'many', 'item', 'ask', 'show',
                            'say', 'take', 'name', 'like', 'one', 'card',
@@ -33,6 +37,7 @@ class FullTextSearch():
         all_surveys = models.Survey.objects.all()
         for s in all_surveys:
             assert isinstance(s, models.Survey)
+            self.survey_names.append(s.survey_title.replace(',', ''))
             print s.survey_title, '\n'
             keyword_list = []
 
@@ -40,7 +45,7 @@ class FullTextSearch():
 
             dublin_core_text = s.dublin_core.description
             if dublin_core_text:
-                filtered_words = [i.lower() for i in nltk.wordpunct_tokenize(dublin_core_text) if i.lower() not in stop_words]
+                filtered_words = [i.lower() for i in nltk.wordpunct_tokenize(dublin_core_text.replace(',', '')) if i.lower() not in stop_words]
                 keyword_list.extend(filtered_words)
 
             questions = s.question_set.all()
@@ -55,12 +60,15 @@ class FullTextSearch():
 
             all_question_words.extend(filtered_words)
 
-            # filtered_set = set(filtered_words)
-            # keyword_list.extend(list(filtered_set))
-
             c = Counter(filtered_words)
-            most_common = c.most_common(20)
+            most_common = c.most_common(50)
             print most_common
+
+            for smc in most_common:
+                if self.survey_common_words.has_key(smc[0]):
+                    self.survey_common_words[smc[0]][s.survey_title.replace(',', '')] = smc[1]
+                else:
+                    self.survey_common_words[smc[0]] = {s.survey_title.replace(',', ''): smc[1]}
 
             keyword_list.extend([x[0] for x in most_common])
 
@@ -78,9 +86,38 @@ class FullTextSearch():
             print q, '\n'
         print 'qual conn num end', len(conn_queries)
 
+        all_common_words = {}
+
         c = Counter(all_question_words)
-        most_common = c.most_common(30)
+        most_common = c.most_common(40)
         print most_common
+        for mc in most_common:
+            print mc
+
+            if self.survey_common_words.has_key(mc[0]):
+                all_common_words[(mc[1], mc[0])] = self.survey_common_words[mc[0]]
+
+        print '\n\n'
+
+        # print pprint.pformat(self.survey_common_words)
+
+        print pprint.pformat(all_common_words)
+
+        num_records = 500
+
+        with open('../../dataportal3/static/test_data/data.csv', 'w') as dat:
+            dat.write('word,' + ','.join(self.survey_names[:num_records]) + '\n')
+
+            for word in all_common_words:
+                sur_words = []
+                for sur in self.survey_names[:num_records]:
+                    if sur in all_common_words[word]:
+                        sur_words.append(str(all_common_words[word][sur]).encode('utf-8'))
+                    else:
+                        sur_words.append('0')
+
+                comma = ','.encode('utf-8')
+                dat.writelines(word[1].encode('utf-8') + ',' + comma.join(sur_words) + '\n')
 
     def test_search(self):
         all_surveys = models.Survey.objects.search('care', raw=True)

@@ -384,6 +384,8 @@ class Survey(models.Model):
     frequency = models.ForeignKey('SurveyFrequency', blank=True, null=True)
     data_entry = models.ForeignKey('UserDetail', blank=True, null=True)
 
+    keywords = models.TextField(blank=True, null=True)
+
     surveyid = models.CharField(unique=True, max_length=255, blank=True, null=True)
     identifier = models.CharField(unique=True, max_length=255, blank=True, null=True)
     survey_title = models.TextField(blank=True, null=True)
@@ -413,6 +415,18 @@ class Survey(models.Model):
     link = models.TextField(blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     short_title = models.TextField(blank=True, null=True)
+
+    qtext_index = VectorField()
+
+    objects = SearchManager(
+        fields=('survey_title',
+                'keywords',
+                # 'dublin_core__description',
+                'datacollector'),
+        config='pg_catalog.english',  # this is default
+        search_field='qtext_index',
+        auto_update_search_field=True
+    )
 
     class Meta:
         db_table = 'survey'

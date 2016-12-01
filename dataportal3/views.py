@@ -149,12 +149,14 @@ def search_survey_question_api(request):
 
         # qid_sublist = list(combine_text_and_tags.values_list('qid', flat=True))
 
-        question_mappings = models.MetaDataToRemoteMapping.objects.filter(wiserd_question__qid__in=list(combine_text_and_tags.values_list('qid', flat=True))).prefetch_related('wiserd_question').prefetch_related('remote_dataset')
+        # Don't need this as we have metadatatoremotemapping__remote_dataset__dataset_identifier above
 
-        print question_mappings.query
-        print question_mappings
-
-        api_data['question_mappings'] = list(question_mappings.values('wiserd_question__qid', "remote_dataset__dataset_identifier"))
+        # question_mappings = models.MetaDataToRemoteMapping.objects.filter(wiserd_question__qid__in=list(combine_text_and_tags.values_list('qid', flat=True))).prefetch_related('wiserd_question').prefetch_related('remote_dataset')
+        #
+        # print question_mappings.query
+        # print question_mappings
+        #
+        # api_data['question_mappings'] = list(question_mappings.values('wiserd_question__qid', "remote_dataset__dataset_identifier"))
 
     api_data['url'] = request.get_full_path()
 

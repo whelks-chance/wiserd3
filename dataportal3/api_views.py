@@ -1,7 +1,7 @@
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from dataportal3.models import *
 from dataportal3.serializer import *
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 
 
 class UserRoleViewSet(viewsets.ModelViewSet):
@@ -65,6 +65,8 @@ class QTypeViewSet(viewsets.ModelViewSet):
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
+    # filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = ('qid', 'survey__surveyid', 'survey__identifier',)
 
 
 class ResponseTypeViewSet(viewsets.ModelViewSet):
@@ -90,6 +92,7 @@ class SpatialLevelViewSet(viewsets.ModelViewSet):
 class SurveyViewSet(viewsets.ModelViewSet):
     queryset = Survey.objects.all()
     serializer_class = SurveySerializer
+    filter_fields = ('identifier', 'survey_title', 'surveyid',)
 
 
 class SurveyFrequencyViewSet(viewsets.ModelViewSet):

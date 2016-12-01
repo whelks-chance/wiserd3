@@ -116,7 +116,7 @@ function do_dataset_define_vars_tutorial() {
                 content: i18n_translation['map.dataset_define_vars_form.content'],
                 placement: 'bottom',
                 step: 0
-            },
+            }
             //  {
             //     selector: '#',
             //     title: 'Variables',
@@ -472,6 +472,8 @@ function do_tutorial() {
 
 
 function ready_and_load_remote_var_form(url, dataset_id, source, dataset_name) {
+    add_ajax_waiting(i18n_translation['map.inspecting_dataset']);
+
     $.ajax({
         // url: "{% url 'data_api' %}",
         url : url,

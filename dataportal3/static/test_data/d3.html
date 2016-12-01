@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .bar {
+            fill: steelblue;
+        }
+
+        .axis path {
+            display: none;
+        }
+
+    </style>
+
+    <script src="//d3js.org/d3.v4.min.js"></script>
+
+</head>
+<body>
+
+<svg id="main" width="500" height="500"></svg>
+<script>
+
+    var height_multiplier = 2;
+
+    String.prototype.replace_all = function(search, replace)
+    {
+        //if replace is not sent, return original string otherwise it will
+        //replace search string with 'undefined'.
+        if (replace === undefined) {
+            return this.toString();
+        }
+
+        return this.replace(new RegExp('[' + search + ']', 'g'), replace);
+    };
+
+    var w = window,
+            d = document,
+            e = d.documentElement,
+            wg = d.getElementsByTagName('body')[0],
+            wx = w.innerWidth || e.clientWidth || wg.clientWidth,
+            wy = w.innerHeight|| e.clientHeight|| wg.clientHeight;
+
+    document.getElementById('main').setAttribute("height", wy * height_multiplier);
+    document.getElementById('main').setAttribute("width", (wx - 50));
+
+    var svg = d3.select("svg"),
+            margin = {top: 20, right: 20, bottom: 130, left: 40},
+            width = +svg.attr("width") - margin.left - margin.right,
+            height = +svg.attr("height") - margin.top - margin.bottom,
+            g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var x = d3.scaleBand()
+            .rangeRound([0, width])
+            .padding(0.1)
+            .align(0.1);
+
+    var y = d3.scaleLinear()
+            .rangeRound([height, 0]);
+
+    var zi = d3.scaleOrdinal(d3.schemeCategory20);
+
+    var r = [];
+    for (var i = 0; i < 20; i++) {
+        r.push(zi(i));
+    }
+    var z = d3.scaleOrdinal().range(r);
+
+    var stack = d3.stack();
+
+    d3.csv("data.csv", type, function(error, data) {
+        if (error) throw error;
+
+        data.sort(function(a, b) { return b.total - a.total; });
+
+        x.domain(data.map(function(d) { return d.word; }));
+        y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
+        z.domain(data.columns.slice(1));
+
+        function colour_from_string(key) {
+            console.log(key);
+
+            var id = data.columns.indexOf(key);
+            console.log(id);
+
+            if (id / 20  <= 1 ) {
+                return z(key);
+
+            } else if (id / 20  > 1 && id / 20  <= 2) {
+                var fillPattern = svg.append("pattern")
+                        .attr("id", "rectpattern" + id)
+                        .attr("patternUnits", "userSpaceOnUse")
+                        .attr("width", 10)
+                        .attr("height", 10)
+                        .attr("patternTransform", "rotate(-45)");
+                var fillPatternRectangle = fillPattern.append("rect")
+                        .attr("height", 20)
+                        .attr("width", 5)
+                        .attr("fill", z(key));
+                return "url(#rectpattern" + id + ")";
+
+            } else if (id / 20  > 2 && id / 20  <= 3) {
+                var fillPattern = svg.append("pattern")
+                        .attr("id", "rectpattern" + id)
+                        .attr("patternUnits", "userSpaceOnUse")
+                        .attr("width", 3)
+                        .attr("height", 5)
+                        .attr("patternTransform", "rotate(90)");
+                var fillPatternRectangle = fillPattern.append("rect")
+                        .attr("height", 20)
+                        .attr("width", 2)
+                        .attr("fill", z(key));
+                return "url(#rectpattern" + id + ")";
+
+            } else if (id / 20  > 3 && id / 20  <= 4) {
+                var fillPattern = svg.append("pattern")
+                        .attr("id", "rectpattern" + id)
+                        .attr("patternUnits", "userSpaceOnUse")
+                        .attr("width", 10)
+                        .attr("height", 10)
+                        .attr("patternTransform", "rotate(0)");
+                var fillPatternRectangle = fillPattern.append("rect")
+                        .attr("height", 20)
+                        .attr("width", 5)
+                        .attr("fill", z(key));
+                return "url(#rectpattern" + id + ")";
+
+            } else if (id / 20  > 4 && id / 20  <= 5) {
+                var fillPattern = svg.append("pattern")
+                        .attr("id", "rectpattern" + id)
+                        .attr("patternUnits", "userSpaceOnUse")
+                        .attr("width", 3)
+                        .attr("height", 5)
+                        .attr("patternTransform", "rotate(45)");
+                var fillPatternRectangle = fillPattern.append("rect")
+                        .attr("height", 20)
+                        .attr("width", 2)
+                        .attr("fill", z(key));
+                return "url(#rectpattern" + id + ")";
+
+            } else if (id / 20  > 5 && id / 20  <= 6) {
+                var fillPattern = svg.append("pattern")
+                        .attr("id", "rectpattern" + id)
+                        .attr("patternUnits", "userSpaceOnUse")
+                        .attr("width", 10)
+                        .attr("height", 10)
+                        .attr("patternTransform", "rotate(45)");
+                var fillPatternRectangle = fillPattern.append("rect")
+                        .attr("height", 20)
+                        .attr("width", 5)
+                        .attr("fill", z(key));
+                return "url(#rectpattern" + id + ")";
+
+            } else {
+                var fillPattern = svg.append("pattern")
+                        .attr("id", "rectpattern" + id)
+                        .attr("patternUnits", "userSpaceOnUse")
+                        .attr("width", 3)
+                        .attr("height", 4)
+                        .attr("patternTransform", "rotate(45)");
+                var fillPatternRectangle = fillPattern.append("rect")
+                        .attr("height", 2)
+                        .attr("width", 2)
+                        .attr("fill", z(key));
+                return "url(#rectpattern" + id + ")";
+            }
+        }
+
+        function colour_pattern(d) {
+
+            return colour_from_string(d.key);
+        }
+
+        g.selectAll(".serie")
+                .data(stack.keys(data.columns.slice(1))(data))
+                .enter().append("g")
+                .attr("class", "serie")
+                .attr("fill", colour_pattern)
+                .selectAll("rect")
+                .data(function(d) { return d; })
+                .enter().append("rect")
+                .attr("x", function(d) { return x(d.data.word); })
+                .attr("y", function(d) { return y(d[1]); })
+                .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+                .attr("width", x.bandwidth());
+
+        g.append("g")
+                .attr("class", "axis axis--x")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x)).selectAll("text")
+                .attr("y", 0)
+                .attr("x", 9)
+                .attr("dy", ".35em")
+                .attr("transform", "rotate(45)")
+                .style("text-anchor", "start");
+
+        g.append("g")
+                .attr("class", "axis axis--y")
+                .call(d3.axisLeft(y).ticks(10, "s"))
+                .append("text")
+                .attr("x", 2)
+                .attr("y", y(y.ticks(10).pop()))
+                .attr("dy", "0.35em")
+                .attr("text-anchor", "start")
+                .attr("fill", "#000")
+                .text("Occurs");
+
+        var legend = g.selectAll(".legend")
+                .data(data.columns.slice(1).reverse())
+                .enter().append("g")
+                .attr("class", "legend")
+                .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
+                .style("font", "10px sans-serif");
+
+        legend.append("rect")
+                .attr("x", width - 18)
+                .attr("width", 18)
+                .attr("height", 18)
+                .attr("fill", colour_from_string);
+
+        legend.append("text")
+                .attr("x", width - 24)
+                .attr("y", 9)
+                .attr("dy", ".35em")
+                .attr("text-anchor", "end")
+                .text(function(d) { return d; });
+    });
+
+    function type(d, i, columns) {
+        for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+        d.total = t;
+        return d;
+    }
+
+</script>
+
+
+</body>
+</html>

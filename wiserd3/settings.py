@@ -65,7 +65,7 @@ INSTALLED_APPS = (
     'rest_framework_swagger',
     'django_filters',
     'rosetta',
-    # 'dja'
+    'djorm_pgfulltext'
 )
 
 SWAGGER_SETTINGS = {
@@ -109,7 +109,7 @@ SWAGGER_SETTINGS = {
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    # 'PAGE_SIZE': 99999,
+    'PAGE_SIZE': 999,
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),

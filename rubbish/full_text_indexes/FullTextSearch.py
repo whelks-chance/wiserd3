@@ -18,26 +18,38 @@ class FullTextSearch():
     def __init__(self):
         self.survey_common_words = {}
         self.survey_names = []
+        self.survey_question_num = {}
 
-    def build_keyword_set(self, csv_records=200, csv_num_words=50):
+    def build_keyword_set(self, csv_records=200, csv_num_words=50, search_string=None, use_weighting=False):
 
         all_question_words = []
 
         stop_words = set(stopwords.words('english'))
         stop_words.update(['...', '.', ',', '"', "'", '?', '!', ':', ';',
                            '(', ')', '[', ']', '{', '}', '.)', ')?', '=',
-                           '/', '-', '…?', '…', '£', '\u2026', '\u2013'])
+                           '/', '-', '–', '…?', '…', '£', '\u2026', '\u2013'])
         stop_words.update(['12', '10', '0', '2'])
         stop_words.update(['agree', 'disagree', 'please', 'would',
                            'last', 'think', 'much', 'following', 'many', 'item', 'ask', 'show',
                            'say', 'take', 'name', 'like', 'one', 'card',
-                           'things', 'first', 'tell', 'tick', 'box'
+                           'things', 'first', 'tell', 'tick', 'box', 'answer', '?(', 'use',
+                           'long', 'yes', 'whether', 'non', 'total', 'give', 'could', 'ever',
+                           'get', 'made', 'often', 'may', 'way'
                            ])
 
-        all_surveys = models.Survey.objects.all()
+        if not search_string:
+            all_surveys = models.Survey.objects.all()
+        else:
+            all_surveys = models.Survey.objects.search(search_string, raw=True)
+
         for s in all_surveys:
             assert isinstance(s, models.Survey)
-            self.survey_names.append(s.survey_title.replace(',', ''))
+
+            clean_survey_name = s.survey_title.replace(',', '')
+
+            self.survey_names.append(clean_survey_name)
+            self.survey_question_num[clean_survey_name] = s.question_set.count()
+
             print '\n----\n', s.survey_title, '\n'
             keyword_list = []
 
@@ -100,7 +112,6 @@ class FullTextSearch():
         print '\n\n'
 
         # print pprint.pformat(self.survey_common_words)
-
         print pprint.pformat(all_common_words)
 
         num_records = csv_records
@@ -112,15 +123,22 @@ class FullTextSearch():
                 sur_words = []
                 for sur in self.survey_names[:num_records]:
                     if sur in all_common_words[word]:
-                        sur_words.append(str(all_common_words[word][sur]).encode('utf-8'))
+
+                        if use_weighting:
+                            weighting = float(all_common_words[word][sur]) / self.survey_question_num[sur] * 100
+                        else:
+                            weighting = all_common_words[word][sur]
+
+                        sur_words.append(
+                            str(weighting).encode('utf-8'))
                     else:
                         sur_words.append('0')
 
                 comma = ','.encode('utf-8')
                 dat.writelines(word[1].encode('utf-8') + ',' + comma.join(sur_words) + '\n')
 
-    def test_search(self):
-        all_surveys = models.Survey.objects.search('care', raw=True)
+    def test_search(self, search_string):
+        all_surveys = models.Survey.objects.search(search_string, raw=True)
         print all_surveys
         print all_surveys.count()
 
@@ -129,5 +147,6 @@ if __name__ == '__main__':
     nltk.download("stopwords")
 
     fts = FullTextSearch()
-    fts.build_keyword_set(csv_records=40, csv_num_words=30)
-    # fts.test_search()
+    fts.build_keyword_set(csv_records=200, csv_num_words=30, search_string="job")
+    search_string = "how | many | people"
+    # fts.test_search(search_string)

@@ -19,7 +19,7 @@ class FullTextSearch():
         self.survey_common_words = {}
         self.survey_names = []
 
-    def build_keyword_set(self):
+    def build_keyword_set(self, csv_records=200, csv_num_words=50):
 
         all_question_words = []
 
@@ -38,7 +38,7 @@ class FullTextSearch():
         for s in all_surveys:
             assert isinstance(s, models.Survey)
             self.survey_names.append(s.survey_title.replace(',', ''))
-            print s.survey_title, '\n'
+            print '\n----\n', s.survey_title, '\n'
             keyword_list = []
 
             keyword_list.extend(s.survey_title.split())
@@ -61,7 +61,7 @@ class FullTextSearch():
             all_question_words.extend(filtered_words)
 
             c = Counter(filtered_words)
-            most_common = c.most_common(50)
+            most_common = c.most_common(30)
             print most_common
 
             for smc in most_common:
@@ -81,15 +81,15 @@ class FullTextSearch():
             s.keywords = u' '.join(keyword_list)
             s.save()
 
-        conn_queries = connections['new'].queries
-        for q in conn_queries:
-            print q, '\n'
-        print 'qual conn num end', len(conn_queries)
+        # conn_queries = connections['new'].queries
+        # for q in conn_queries:
+        #     print q, '\n'
+        # print 'conn num end', len(conn_queries)
 
         all_common_words = {}
 
         c = Counter(all_question_words)
-        most_common = c.most_common(40)
+        most_common = c.most_common(csv_num_words)
         print most_common
         for mc in most_common:
             print mc
@@ -103,7 +103,7 @@ class FullTextSearch():
 
         print pprint.pformat(all_common_words)
 
-        num_records = 500
+        num_records = csv_records
 
         with open('../../dataportal3/static/test_data/data.csv', 'w') as dat:
             dat.write('word,' + ','.join(self.survey_names[:num_records]) + '\n')
@@ -129,5 +129,5 @@ if __name__ == '__main__':
     nltk.download("stopwords")
 
     fts = FullTextSearch()
-    fts.build_keyword_set()
+    fts.build_keyword_set(csv_records=40, csv_num_words=30)
     # fts.test_search()

@@ -1957,7 +1957,7 @@
                         text: '{% trans 'Add to Map' %}',
                         disabled: true,
                         click: function() {
-                            add_ajax_waiting('{% trans 'Inspecting dataset ...' %}');
+{#                            add_ajax_waiting('{% trans 'Inspecting dataset ...' %}');#}
 
                             $( this ).dialog( "close" );
                             var dataset_radio = $("#dataset_radio");

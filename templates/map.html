@@ -2457,44 +2457,46 @@
 
                                         var geo_string = area_values[area][local_data_geography_column];
 
-                                        if (isPostcodeish(geo_string)) {
-                                            topojson_layer_name = 'pcode_point';
+                                        if (geo_string != null) {
 
-                                            //    Need to format this in a way we expect:
-                                            //    AA111AA or AA1 1AA - not 'AA11 1AA'
-                                            //    console.log(geo_string);
-                                            //    second thoughts, do it later to retain XLS value as a key
+                                            if (isPostcodeish(geo_string)) {
+                                                topojson_layer_name = 'pcode_point';
 
-                                            if(geo_string.length > 7) {
-                                                {#                                            console.log('>7');#}
-                                                geo_string = geo_string.slice(0, 4) + geo_string.slice(5, geo_string.length);
-                                                {#                                            console.log(geo_string);#}
+                                                //    Need to format this in a way we expect:
+                                                //    AA111AA or AA1 1AA - not 'AA11 1AA'
+                                                //    console.log(geo_string);
+                                                //    second thoughts, do it later to retain XLS value as a key
+
+                                                if (geo_string.length > 7) {
+                                                    {#                                            console.log('>7');#}
+                                                    geo_string = geo_string.slice(0, 4) + geo_string.slice(5, geo_string.length);
+                                                    {#                                            console.log(geo_string);#}
+                                                }
+                                                codes.push(geo_string.slice(0, -2))
                                             }
-                                            codes.push(geo_string.slice(0, -2))
+
+                                            else if (geo_string.length > 3 && geo_string.substring(0, 3) == 'W01') {
+                                                topojson_layer_name = 'lsoa';
+                                                codes.push(geo_string.slice(0, -1));
+                                            }
+
+                                            else if (geo_string.length > 3 && geo_string.substring(0, 3) == 'W09') {
+                                                topojson_layer_name = 'assembly_constituency';
+                                                codes.push(geo_string);
+                                            }
+
+                                            else if (geo_string.length > 3 && geo_string.substring(0, 3) == 'W10') {
+                                                topojson_layer_name = 'assembly_region';
+                                                codes.push(geo_string);
+                                            }
+
+                                            else {
+                                                topojson_layer_name = local_data_boundary;
+                                                codes.push(geo_string);
+                                            }
+
+                                            ordered_data[geo_string] = area_values[area][local_data_value_column];
                                         }
-
-                                        else if (geo_string.substring(0, 3) == 'W01') {
-                                            topojson_layer_name = 'lsoa';
-                                            codes.push(geo_string.slice(0, -1));
-                                        }
-
-                                        else if (geo_string.substring(0, 3) == 'W09') {
-                                            topojson_layer_name = 'assembly_constituency';
-                                            codes.push(geo_string);
-                                        }
-
-                                        else if (geo_string.substring(0, 3) == 'W10') {
-                                            topojson_layer_name = 'assembly_region';
-                                            codes.push(geo_string);
-                                        }
-
-                                        else {
-                                            topojson_layer_name = local_data_boundary;
-                                            codes.push(geo_string);
-                                        }
-
-                                        ordered_data[geo_string] = area_values[area][local_data_value_column];
-
                                     }
                                 }
                                 console.log('XLS found ' + Object.keys(ordered_data).length + ' items');

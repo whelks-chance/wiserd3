@@ -6,19 +6,27 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-13 11:14+0000\n"
+"POT-Creation-Date: 2016-12-05 14:12+0000\n"
 "PO-Revision-Date: 2016-10-13 11:16+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: cy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cy\n"
-"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != 11) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != "
+"11) ? 2 : 3;\n"
 "AAAAAAaaaahhhhProject-Id-Version: PACKAGE VERSION\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
-#: templates/404_template.html:9 templates/blank.html.py:9
+#: src/grappelli-filters/grappelli_filters/templates/grappelli_filters/related_autocomplete.html:6
+#: src/grappelli-filters/grappelli_filters/templates/grappelli_filters/search.html:6
+#, python-format
+msgid "%(filter_title)s"
+msgstr ""
+
+#: templates/404_template.html:9 templates/blank.html.py:5
+#: templates/blank.html:11
 msgid "Blank"
 msgstr "Gwag"
 
@@ -74,8 +82,7 @@ msgstr "Rhybudd:"
 #: templates/account/email.html:43
 msgid ""
 "You currently do not have any e-mail address set up. You should really add "
-"an e-mail address so you can receive notifications, reset your password, "
-"etc."
+"an e-mail address so you can receive notifications, reset your password, etc."
 msgstr ""
 "Nid ydych wedi nodi cyfeiriad e-bost ar hyn o bryd. Dylech ychwanegu "
 "cyfeiriad e-bost fel y gallwch gael hysbysiadau, ailosod eich cyfrinair ac "
@@ -98,13 +105,16 @@ msgstr "A ydych chi wir am ddileu’r cyfeiriad e-bost sydd wedi’i ddewis?"
 msgid ""
 "Hello from %(site_name)s!\n"
 "\n"
-"You're receiving this e-mail because user %(user_display)s at %(site_domain)s has given yours as an e-mail address to connect their account.\n"
+"You're receiving this e-mail because user %(user_display)s at "
+"%(site_domain)s has given yours as an e-mail address to connect their "
+"account.\n"
 "\n"
 "To confirm this is correct, go to %(activate_url)s\n"
 msgstr ""
 "Helo gan %(site_name)s!\n"
 "\n"
-"Anfonwyd y neges e-bost hon atoch am fod %(user_display)s yn %(site_domain)s wedi rhoi eich cyfeiriad e-bost chi ar gyfer cysylltu eu cyfrif.\n"
+"Anfonwyd y neges e-bost hon atoch am fod %(user_display)s yn %(site_domain)s "
+"wedi rhoi eich cyfeiriad e-bost chi ar gyfer cysylltu eu cyfrif.\n"
 "\n"
 "I gadarnhau hyn, ewch i  %(activate_url)s\n"
 
@@ -126,13 +136,17 @@ msgstr "Cadarnhewch eich Cyfeiriad e-bost"
 msgid ""
 "Hello from %(site_name)s!\n"
 "\n"
-"You're receiving this e-mail because you or someone else has requested a password for your user account at %(site_domain)s.\n"
-"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
+"You're receiving this e-mail because you or someone else has requested a "
+"password for your user account at %(site_domain)s.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
 msgstr ""
 "Helo gan %(site_name)s!\n"
 "\n"
-"Anfonwyd y neges e-bost hon atoch am eich bod chi neu rywun arall wedi gwneud cais am gyfrinair i’ch cyfrif defnyddiwr yn %(site_domain)s.\n"
-"Mae’n ddiogel i chi ei hanwybyddu os na wnaethoch gais i ailosod cyfrinair. Cliciwch y linc isod i ailosod eich cyfrinair."
+"Anfonwyd y neges e-bost hon atoch am eich bod chi neu rywun arall wedi "
+"gwneud cais am gyfrinair i’ch cyfrif defnyddiwr yn %(site_domain)s.\n"
+"Mae’n ddiogel i chi ei hanwybyddu os na wnaethoch gais i ailosod cyfrinair. "
+"Cliciwch y linc isod i ailosod eich cyfrinair."
 
 #: templates/account/email/password_reset_key_message.txt:8
 #, python-format
@@ -165,8 +179,8 @@ msgid ""
 "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
 "address for user %(user_display)s."
 msgstr ""
-"Cadarnhewch bod <a href=\"mailto:%(email)s\">%(email)s</a> yn gyfeiriad "
-"e-bost ar gyfer y defnyddiwr %(user_display)s."
+"Cadarnhewch bod <a href=\"mailto:%(email)s\">%(email)s</a> yn gyfeiriad e-"
+"bost ar gyfer y defnyddiwr %(user_display)s."
 
 #: templates/account/email_confirm.html:20
 msgid "Confirm"
@@ -175,18 +189,18 @@ msgstr "Cadarnhau"
 #: templates/account/email_confirm.html:27
 #, python-format
 msgid ""
-"This e-mail confirmation link expired or is invalid. Please <a "
-"href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
 msgstr ""
 "Mae’r linc hwn i gadarnhau e-bost wedi dod i ben neu mae’n annilys. "
-"Defnyddiwch <a href=\"%(email_url)s\">i anfon cais newydd i gadarnhau "
-"e-bost</a>."
+"Defnyddiwch <a href=\"%(email_url)s\">i anfon cais newydd i gadarnhau e-"
+"bost</a>."
 
 #: templates/account/email_confirmed.html:15
 #, python-format
 msgid ""
-"You have confirmed that <a href=\"mailto:%(email)s\">%(email)s</a> is an "
-"e-mail address for user %(user_display)s."
+"You have confirmed that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-"
+"mail address for user %(user_display)s."
 msgstr ""
 "Rydych wedi cadarnhau bod <a href=\"mailto:%(email)s\">%(email)s</a> yn "
 "gyfeiriad e-bost ar gyfer %(user_display)s."
@@ -211,7 +225,8 @@ msgid ""
 "                            <a href=\"%(signup_url)s\">sign up</a> first."
 msgstr ""
 "Os nad ydych wedi creu cyfrif eto, \n"
-"                            <a href=\"%(signup_url)s\">cofrestrwch</a> yn gyntaf."
+"                            <a href=\"%(signup_url)s\">cofrestrwch</a> yn "
+"gyntaf."
 
 #: templates/account/login.html:45
 #, python-format
@@ -299,11 +314,11 @@ msgstr "Ailosod Cyfrinair"
 
 #: templates/account/password_reset.html:20
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll send you"
-" an e-mail allowing you to reset it."
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
 msgstr ""
-"Wedi anghofio eich cyfrinair? Rhowch eich cyfeiriad e-bost isod, a byddwn yn"
-" anfon e-bost atoch yn caniatáu i chi ei ailosod."
+"Wedi anghofio eich cyfrinair? Rhowch eich cyfeiriad e-bost isod, a byddwn yn "
+"anfon e-bost atoch yn caniatáu i chi ei ailosod."
 
 #: templates/account/password_reset.html:25
 msgid "Reset My Password"
@@ -318,8 +333,8 @@ msgid ""
 "We have sent you an e-mail. Please contact us if you do not receive it "
 "within a few minutes."
 msgstr ""
-"Rydym wedi anfon neges e-bost atoch. Cysylltwch â ni os nad yw wedi cyrraedd"
-" o fewn ychydig funudau."
+"Rydym wedi anfon neges e-bost atoch. Cysylltwch â ni os nad yw wedi cyrraedd "
+"o fewn ychydig funudau."
 
 #: templates/account/password_reset_from_key.html:7
 msgid "Bad Token"
@@ -329,8 +344,8 @@ msgstr "Tocyn Gwael"
 #, python-format
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
-"reset</a>."
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
 msgstr ""
 "Roedd y linc ailosod cyfrinair yn annilys, efallai am ei fod wedi ei "
 "ddefnyddio eisoes. Gwnewch gais i <a href=\"%(passwd_reset_url)s\">ailosod "
@@ -397,8 +412,8 @@ msgid ""
 "finalize the signup process. Please contact us if you do not receive it "
 "within a few minutes."
 msgstr ""
-"Rydym wedi anfon neges e-bost atoch ar gyfer dilysu. Dilynwch y linc ynddi i"
-" gwblhau’r broses gofrestru. Cysylltwch â ni os na fydd yn cyrraedd o fewn "
+"Rydym wedi anfon neges e-bost atoch ar gyfer dilysu. Dilynwch y linc ynddi i "
+"gwblhau’r broses gofrestru. Cysylltwch â ni os na fydd yn cyrraedd o fewn "
 "ychydig funudau."
 
 #: templates/account/verified_email_required.html:12
@@ -424,8 +439,8 @@ msgstr ""
 #: templates/account/verified_email_required.html:20
 #, python-format
 msgid ""
-"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
-"e-mail address</a>."
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
 msgstr ""
 "<strong>Nodyn:</strong> gallwch <a href=\"%(email_url)s\">newid eich "
 "cyfeiriad e-bost o hyd</a>."
@@ -440,7 +455,7 @@ msgid "This page provides help and support to you while using the DataPortal"
 msgstr "HERE IS SOME WELSH TEXT"
 
 #: templates/base_vars.html:9 templates/user_guide.html.py:5
-#: templates/user_guide.html:13
+#: templates/user_guide.html:15
 msgid "User Guide"
 msgstr "Canllaw Defnyddiwr"
 
@@ -460,7 +475,7 @@ msgstr ""
 "Os oes gennych unrhyw gwestiynau neu os oes angen rhagor o gymorth arnoch "
 "cysylltwch â'r arbenigwyr. "
 
-#: templates/base_vars.html:13 templates/help_support.html.py:207
+#: templates/base_vars.html:13 templates/help_support.html.py:633
 msgid "Useful Links"
 msgstr "Lincs Defnyddiol"
 
@@ -468,33 +483,45 @@ msgstr "Lincs Defnyddiol"
 msgid "Please find links related to the DataPortal here."
 msgstr "Mae'r lincs sy'n ymwneud â'r DataPortal yma."
 
-#: templates/base_vars.html:17 templates/base_vars.html.py:19
+#: templates/base_vars.html:16
+#, fuzzy
+#| msgid "User Guide"
+msgid "User Help Guide"
+msgstr "Canllaw Defnyddiwr"
+
+#: templates/base_vars.html:17
+msgid ""
+"Welcome to the User Help Guide. You can click on the contents to find what "
+"you are looking for."
+msgstr ""
+
+#: templates/base_vars.html:19 templates/base_vars.html.py:21
 #: templates/question_detail.html:245
 msgid "Question Metadata"
 msgstr "Metaddata Cwestiwn"
 
-#: templates/base_vars.html:18 templates/base_vars.html.py:20
+#: templates/base_vars.html:20 templates/base_vars.html.py:22
 msgid "This tab shows metadata for the selected question"
 msgstr "Mae'r tab hwn yn dangos y metadata ar gyfer y cwestiwn a ddewiswyd. "
 
-#: templates/base_vars.html:21 templates/base_vars.html.py:23
+#: templates/base_vars.html:23 templates/base_vars.html.py:25
 msgid "Response Metadata"
 msgstr "Metadata Ymateb"
 
-#: templates/base_vars.html:22 templates/base_vars.html.py:24
+#: templates/base_vars.html:24 templates/base_vars.html.py:26
 msgid "This tab shows metadata for the selected response"
 msgstr "Mae'r tab hwn yn dangos y metadata ar gyfer yr ymateb a ddewiswyd. "
 
-#: templates/base_vars.html:25 templates/base_vars.html.py:27
+#: templates/base_vars.html:27 templates/base_vars.html.py:29
 #: templates/question_detail.html:260 templates/question_detail.html.py:275
 msgid "Response Table"
 msgstr "Tabl Ymateb"
 
-#: templates/base_vars.html:26
+#: templates/base_vars.html:28
 msgid "This button shows the Response Table for the question."
 msgstr "Mae'r botwm hwn yn dangos y Tabl Ymateb ar gyfer y cwestiwn."
 
-#: templates/base_vars.html:28
+#: templates/base_vars.html:30
 msgid ""
 "This shows a table of valid responses to the questions, along with the "
 "variable used to record it."
@@ -502,152 +529,153 @@ msgstr ""
 "Mae hwn yn dangos tabl o ymatebion dilys i'r cwestiynau, ynghyd â'r newidyn "
 "a ddefnyddiwyd i'w gofnodi."
 
-#: templates/base_vars.html:31 templates/browse_surveys.html.py:5
+#: templates/base_vars.html:33 templates/browse_surveys.html.py:5
 #: templates/browse_surveys.html:59 templates/dashboard.html.py:161
-#: templates/dashboard.html:168 templates/user_guide.html.py:71
-#: templates/user_guide.html:396
+#: templates/dashboard.html:168 templates/user_guide.html.py:72
+#: templates/user_guide.html:397
 msgid "Browse Surveys"
 msgstr "Arolygon"
 
-#: templates/base_vars.html:32
+#: templates/base_vars.html:34
 msgid "This page allows you to browse all the surveys available."
 msgstr ""
 "Mae'r dudalen hon yn gadael i chi bori drwy'r holl arolygon sydd ar gael. "
 
-#: templates/base_vars.html:33 templates/base_vars.html.py:103
+#: templates/base_vars.html:35 templates/base_vars.html.py:105
 msgid "Filter"
 msgstr "Hidlo"
 
-#: templates/base_vars.html:34
+#: templates/base_vars.html:36
 msgid "You can filter the table of surveys using key words."
 msgstr "Gallwch hidlo'r tabl o arolygon yn defnyddio geiriau allweddol."
 
-#: templates/base_vars.html:35 templates/browse_surveys.html.py:72
-#: templates/data_and_history.html:44 templates/data_and_history.html.py:161
-#: templates/search.html:77 templates/search.html.py:164
-#: templates/search.html:271 templates/search.html.py:310
-#: templates/survey_detail.html:204 templates/survey_detail.html.py:367
+#: templates/base_vars.html:37 templates/browse_surveys.html.py:72
+#: templates/data_and_history.html:44 templates/data_and_history.html:161
+#: templates/profile.html.py:100 templates/profile.html:274
+#: templates/search.html.py:90 templates/search.html:177
+#: templates/search.html.py:285 templates/search.html:324
+#: templates/survey_detail.html.py:391 templates/wiserd_education.html:78
 msgid "View"
 msgstr "Gweld"
 
-#: templates/base_vars.html:36
+#: templates/base_vars.html:38
 msgid ""
 "This button allows you to choose the number of surveys you view per page."
 msgstr ""
 "Mae'r botwm hwn yn caniatau i chi ddewis nifer yr arolygon yr ydych yn eu "
 "gweld ar bob tudalen."
 
-#: templates/base_vars.html:39
+#: templates/base_vars.html:41
 msgid "Select category type"
 msgstr "Dewis math o gategori"
 
-#: templates/base_vars.html:40
+#: templates/base_vars.html:42
 msgid "This will change the distribution of data. Use Quantiles by default"
 msgstr ""
 "Bydd hyn yn newid dosbarthiad y data. Defnyddiwch Gwantiliau yn ddiofyn "
 
-#: templates/base_vars.html:41
+#: templates/base_vars.html:43
 msgid "Select number of categories"
 msgstr "Dewis nifer y categorïau"
 
-#: templates/base_vars.html:42
+#: templates/base_vars.html:44
 msgid "This will be the number of categories your data is divided into"
 msgstr "Dyma fydd nifer y categorïau y caiff eich data eu rhannu iddynt"
 
-#: templates/base_vars.html:43
+#: templates/base_vars.html:45
 msgid "Select Colour scheme"
 msgstr "Dewis cynllun lliwiau"
 
-#: templates/base_vars.html:44
+#: templates/base_vars.html:46
 msgid "Select the colour range of your data"
 msgstr "Dewiswch amrediad lliw eich data"
 
-#: templates/base_vars.html:45
+#: templates/base_vars.html:47
 msgid "Name it"
 msgstr "Enwch ef"
 
-#: templates/base_vars.html:46
+#: templates/base_vars.html:48
 msgid "This name will appear on the map key"
 msgstr "Bydd yr enw hwn yn ymddangos ar allwedd y map"
 
-#: templates/base_vars.html:48 templates/map.html.py:1436
-#: templates/search.html:5 templates/search.html.py:182
+#: templates/base_vars.html:50 templates/map.html.py:1510
+#: templates/search.html:5 templates/search.html.py:195
 msgid "Search"
 msgstr "Chwilio"
 
-#: templates/base_vars.html:49
+#: templates/base_vars.html:51
 msgid "Enter a keyword to search for surveys."
 msgstr "Nodwch air allweddol i chwilio am arolygon."
 
-#: templates/base_vars.html:51
+#: templates/base_vars.html:53
 msgid "Variables"
 msgstr "Newidynnau"
 
-#: templates/base_vars.html:52
+#: templates/base_vars.html:54
 msgid "Make sure to select a variable from each section."
 msgstr "Gwnewch yn siwr eich bod yn dewis newidyn o bob adran."
 
-#: templates/base_vars.html:54
+#: templates/base_vars.html:56
 msgid "Drop a file"
 msgstr "Gollwng ffeil"
 
-#: templates/base_vars.html:55
+#: templates/base_vars.html:57
 msgid "Use your own data file. Drag-and-drop it here."
 msgstr "Defnyddiwch eich ffeil data eich hun. Llusgwch a gollyngwch hi yma. "
 
-#: templates/base_vars.html:56
+#: templates/base_vars.html:58
 msgid "Select file from filesystem"
 msgstr "Dewiswch y ffeil o'r system ffeiliau."
 
-#: templates/base_vars.html:57
+#: templates/base_vars.html:59
 msgid "Search for your file by clicking here."
 msgstr "Chwiliwch am eich ffeil drwy glicio yma. "
 
-#: templates/base_vars.html:59
+#: templates/base_vars.html:61
 msgid "Geography column"
 msgstr "Colofn ddaearyddiaeth"
 
-#: templates/base_vars.html:60
+#: templates/base_vars.html:62
 msgid "Pick the geography ID of your data."
 msgstr "Dewiswch ddynodydd daearyddol eich data."
 
-#: templates/base_vars.html:61
+#: templates/base_vars.html:63
 msgid "Data value"
 msgstr "Gwerth data"
 
-#: templates/base_vars.html:62
+#: templates/base_vars.html:64
 msgid "Pick the data values you want mapped."
 msgstr "Dewiswch y gwerthoedd data yr ydych am eu mapio."
 
-#: templates/base_vars.html:63
+#: templates/base_vars.html:65
 msgid "Any other data to display"
 msgstr "Unrhyw ddata eraill i'w dangos."
 
-#: templates/base_vars.html:64
+#: templates/base_vars.html:66
 msgid "This will be displayed in the sidebar when clicking on the map later."
 msgstr ""
 "Bydd hyn yn cael ei ddangos yn y bar ochr wrth glicio ar y map yn "
 "ddiweddarach. "
 
-#: templates/base_vars.html:66 templates/base_vars.html.py:77
+#: templates/base_vars.html:68 templates/base_vars.html.py:79
 msgid "Change language"
 msgstr "Newid Iaith"
 
-#: templates/base_vars.html:67
+#: templates/base_vars.html:69
 msgid ""
-"These buttons can be used to toggle the language the site displays "
-"in.<br><br>If you sign-up and login, this preference will be stored for "
-"future visits."
+"These buttons can be used to toggle the language the site displays in."
+"<br><br>If you sign-up and login, this preference will be stored for future "
+"visits."
 msgstr ""
 "Gellir defnyddio'r botymau hyn i doglo'r iaith y mae'r wefan yn dangos "
 "ynddi. <br><br>Os byddwch yn cofrestru ac yn mewngofnodi, bydd y dewis hwn "
 "yn cael ei gadw ar gyfer ymweliadau yn y dyfodol."
 
-#: templates/base_vars.html:68
+#: templates/base_vars.html:70
 msgid "The Map"
 msgstr "Y Map"
 
-#: templates/base_vars.html:69
+#: templates/base_vars.html:71
 msgid ""
 "The Map is the primary focus here.<br><br>Layers of data are displayed, and "
 "most can be selected to show further detail."
@@ -655,42 +683,42 @@ msgstr ""
 "Y Map yw'r prif ffocws yma.<br><br>Mae haenau o ddata yn cael eu dangos, a "
 "gellir dewis y rhan fwyaf ohonynt i ddangos manylion pellach."
 
-#: templates/base_vars.html:70
+#: templates/base_vars.html:72
 msgid "Legend"
 msgstr "Eglurhad"
 
-#: templates/base_vars.html:71
+#: templates/base_vars.html:73
 msgid ""
-"Once data layers have been added, the legend will be displayed "
-"here.<br><br>Colours and the number of categories are selected when the "
-"layer is first added."
+"Once data layers have been added, the legend will be displayed here."
+"<br><br>Colours and the number of categories are selected when the layer is "
+"first added."
 msgstr ""
 "Ar ôl i haenau data gael eu hychwanegu, bydd yr eglurhad yn cael ei ddangos "
 "yma.<br><brDewisir lliwiau a nifer y categorïau pan gaiff yr haen gyntaf ei "
 "hychwanegu."
 
-#: templates/base_vars.html:72
+#: templates/base_vars.html:74
 msgid "Side menu"
 msgstr "Dewislen ochr"
 
-#: templates/base_vars.html:73
+#: templates/base_vars.html:75
 msgid ""
 "<p>This is where new map layers are added.</p><h4>RemoteData</h4><p>Import "
 "data from Nomis and/or StatsWales</p><h4>MapMyData</h4><p>Upload an Excel "
-"file with geographies and values for mapping</p><h4>Welsh Government "
-"Data</h4><p>WMS layers made available by LLE, Welsh Government</p>"
+"file with geographies and values for mapping</p><h4>Welsh Government Data</"
+"h4><p>WMS layers made available by LLE, Welsh Government</p>"
 msgstr ""
-"<p>Dyma lle mae haenau map newydd yn cael eu "
-"hychwanegu.</p><h4>Dataobell</h4><p>Mewnforio data o Nomis a/neu "
-"YstadegauCymru</p><h4>MapiofyNata</h4><p>Llwytho ffeil Excel file gyda "
-"daearyddiaethau a gwerthoedd i'w mapio</p><h4>Data Llywodraeth Cymru "
-"</h4><p>Haenau WMS ar gael gan LLE, Llywodraeth Cymru</p>"
+"<p>Dyma lle mae haenau map newydd yn cael eu hychwanegu.</p><h4>Dataobell</"
+"h4><p>Mewnforio data o Nomis a/neu YstadegauCymru</p><h4>MapiofyNata</"
+"h4><p>Llwytho ffeil Excel file gyda daearyddiaethau a gwerthoedd i'w mapio</"
+"p><h4>Data Llywodraeth Cymru </h4><p>Haenau WMS ar gael gan LLE, Llywodraeth "
+"Cymru</p>"
 
-#: templates/base_vars.html:74
+#: templates/base_vars.html:76
 msgid "Info Pane"
 msgstr "Panel Gwybodaeth"
 
-#: templates/base_vars.html:75
+#: templates/base_vars.html:77
 msgid ""
 "When regions on the map are selected, the corresponding data for that area "
 "are shown here"
@@ -698,7 +726,7 @@ msgstr ""
 "Pan gaiff rhanbarthau ar y map eu dethol, mae'r data cyfatebol ar gyfer yr "
 "ardal honno yn cael eu dangos yma."
 
-#: templates/base_vars.html:78
+#: templates/base_vars.html:80
 msgid ""
 "These buttons can be used throughout the website to toggle the language the "
 "site displays in.<br><br>If you sign-up and login, this preference will be "
@@ -709,19 +737,19 @@ msgstr ""
 "mewngofnodi, bydd y dewis hwn yn cael ei storio ar gyfer ymweliadau yn y "
 "dyfodol."
 
-#: templates/base_vars.html:79
+#: templates/base_vars.html:81
 msgid "The Dashboard"
 msgstr "Dangosfwrdd"
 
-#: templates/base_vars.html:80
+#: templates/base_vars.html:82
 msgid "These buttons take you to different sections of the DataPortal"
 msgstr "Mae'r botymau hyn yn mynd â chi i wahanol adrannau'r DataPortal."
 
-#: templates/base_vars.html:81
+#: templates/base_vars.html:83
 msgid "Side Menu"
 msgstr "Dewislen Ochr"
 
-#: templates/base_vars.html:82
+#: templates/base_vars.html:84
 msgid ""
 "This menu appears on all DataPortal pages. Go directly to the mapping page "
 "or browse recent search results."
@@ -729,12 +757,12 @@ msgstr ""
 "Mae'r ddewislen hon yn ymddangos ar holl dudalennau'r DataPortal. Ewch yn "
 "syth i'r dudalen fapio neu porwch ganlyniadau chwilio diweddar. "
 
-#: templates/base_vars.html:84 templates/events.html.py:5
+#: templates/base_vars.html:86 templates/events.html.py:5
 #: templates/events.html:18
 msgid "Events and Presentations"
 msgstr "Digwyddiadau a Chyflwyniadau"
 
-#: templates/base_vars.html:85
+#: templates/base_vars.html:87
 msgid ""
 "Welcome to the events page, here you can find out about events that the "
 "DataPortal team will be attending as well as the accompanying presentations."
@@ -743,174 +771,248 @@ msgstr ""
 "aelodau'r tîm DataPortal yn mynd iddynt yn ogystal â'r cyflwyniadau "
 "cysylltiedig. "
 
-#: templates/base_vars.html:86
+#: templates/base_vars.html:88
 msgid "Downloadable content"
 msgstr "Cynnwys y gellir ei lawrlwytho"
 
-#: templates/base_vars.html:87
+#: templates/base_vars.html:89
 msgid "The presentation can be downloaded via this link."
 msgstr "Gellir lawrlwytho'r cyflwyniad drwy'r linc hwn."
 
-#: templates/base_vars.html:89
+#: templates/base_vars.html:91
 msgid "Jump to Questions"
 msgstr "Mynd i'r Cwestiynau"
 
-#: templates/base_vars.html:90
+#: templates/base_vars.html:92
 msgid "This button shows the questions discovered during the search."
 msgstr "Mae'r botwm hwn yn dangos y cwestiynau  a gafwyd yn ystod y chwiliad."
 
-#: templates/base_vars.html:91
+#: templates/base_vars.html:93
 msgid "Question table"
 msgstr "Tabl Cwestiynau"
 
-#: templates/base_vars.html:92
+#: templates/base_vars.html:94
 msgid "This shows the questions discovered during the search."
 msgstr "Mae hwn yn dangos y cwestiynau a gafwyd yn ystod y chwiliad."
 
-#: templates/base_vars.html:93
+#: templates/base_vars.html:95
 msgid "Jump to Surveys"
 msgstr "Arolygon"
 
-#: templates/base_vars.html:94
+#: templates/base_vars.html:96
 msgid "This button shows the surveys discovered during the search."
 msgstr "Mae'r botwm hwn yn dangos yr arolygon a gafwyd yn ystod y chwiliad."
 
-#: templates/base_vars.html:95
+#: templates/base_vars.html:97
 msgid "Survey table"
 msgstr "Tabl yr Arolwg"
 
-#: templates/base_vars.html:96
+#: templates/base_vars.html:98
 msgid "This shows the surveys discovered during the search."
 msgstr "Mae hwn yn dangos yr arolygon a gafwyd yn ystod y chwiliad."
 
-#: templates/base_vars.html:97
+#: templates/base_vars.html:99
 msgid "Jump to Qualitative records"
 msgstr "Mynd i'r Cofnodion Ansoddol"
 
-#: templates/base_vars.html:98
-msgid ""
-"This button shows the Qualitative records discovered during the search."
+#: templates/base_vars.html:100
+msgid "This button shows the Qualitative records discovered during the search."
 msgstr ""
 "Mae'r botwm hwn yn dangos y cofnodion Ansoddol y cafwyd hyd iddynt yn ystod "
 "y chwiliad."
 
-#: templates/base_vars.html:99 templates/search.html.py:211
+#: templates/base_vars.html:101 templates/search.html.py:224
 msgid "Qualitative Records"
 msgstr "Cofnodion Ansoddol"
 
-#: templates/base_vars.html:100
+#: templates/base_vars.html:102
 msgid "This shows the Qualitative records discovered during the search."
 msgstr ""
 "Mae hwn yn dangos y cofnodion Ansoddol y cafwyd hyd iddynt yn ystod y "
 "chwiliad."
 
-#: templates/base_vars.html:101
+#: templates/base_vars.html:103
 msgid "Search box"
 msgstr "Bocs chwilio"
 
-#: templates/base_vars.html:102
+#: templates/base_vars.html:104
 msgid ""
 "Data can be searched here. This shows the current search, and can be "
 "modified or refined to search again."
 msgstr ""
-"Gellir chwilio am ddata yma. Mae hwn yn dangos y chwiliad cyfredol, a gellir"
-" ei addasu neu ei fireinio i chwilio eto."
+"Gellir chwilio am ddata yma. Mae hwn yn dangos y chwiliad cyfredol, a gellir "
+"ei addasu neu ei fireinio i chwilio eto."
 
-#: templates/base_vars.html:104
+#: templates/base_vars.html:106
 msgid "Filter searches to refine the results."
 msgstr "Hidlo'r chwiliadau i fireinio'r canlyniadau."
 
-#: templates/base_vars.html:106 templates/base_vars.html.py:108
+#: templates/base_vars.html:108 templates/base_vars.html.py:110
 msgid "Dublin Core Tab"
 msgstr "Tab Craidd Dulyn"
 
-#: templates/base_vars.html:107
+#: templates/base_vars.html:109
 msgid "This button shows the Dublin Core data."
 msgstr "Mae'r botwm hwn yn dangos data Craidd Dulyn."
 
-#: templates/base_vars.html:109
+#: templates/base_vars.html:111
 msgid ""
-"The Dublin Core tab<br><br>This has standardised data focussing on the "
-"collection and repository of the Survey data."
+"This has standardised data focussing on the collection and repository of the "
+"Survey data."
 msgstr ""
-"Tab Craidd Dulyn<br><br>Mae data safonol yn hwn sy'n canolbwyntio ar gasglu "
-"a storio data'r Arolwg."
+"Mae data safonol yn hwn sy'n canolbwyntio ar gasglu a storio data'r Arolwg."
 
-#: templates/base_vars.html:110
+#: templates/base_vars.html:112
 msgid "Download"
 msgstr "Lawrlwytho"
 
-#: templates/base_vars.html:111
+#: templates/base_vars.html:113
 msgid "Data url"
 msgstr "Url Data"
 
-#: templates/base_vars.html:112 templates/base_vars.html.py:114
+#: templates/base_vars.html:114 templates/base_vars.html.py:116
 msgid "Survey Tab"
 msgstr "Tab Arolwg"
 
-#: templates/base_vars.html:113
+#: templates/base_vars.html:115
 msgid "This button shows the WISERD Survey Metadata."
 msgstr "Mae'r botwm hwn yn dangos Metadata Arolwg WISERD."
 
-#: templates/base_vars.html:115
+#: templates/base_vars.html:117
 msgid ""
-"The survey tab<br><br>This has WISERD metadata specific to the interests of "
-"the Social Sciences."
+"This has WISERD metadata specific to the interests of the Social Sciences."
 msgstr ""
-"Y tab arolwg<br><br>Mae gan hwn fetadata WISERD sy'n benodol i "
-"ddiddordebau'r Gwyddorau Cymdeithasol."
+"Mae gan hwn fetadata WISERD sy'n benodol i ddiddordebau'r Gwyddorau "
+"Cymdeithasol."
 
-#: templates/base_vars.html:116 templates/base_vars.html.py:118
+#: templates/base_vars.html:118 templates/base_vars.html.py:120
 msgid "Survey Questions Tab"
 msgstr "Tab Cwestiynau'r Arolwg"
 
-#: templates/base_vars.html:117
+#: templates/base_vars.html:119
 msgid "This button shows the surveys questions."
 msgstr "Mae'r botwm hwn yn dangos cwestiynau'r arolwg."
 
-#: templates/base_vars.html:119
-msgid ""
-"The Survey Questions Tab<br><br>This has the questions from the survey."
-msgstr "Tab Cwestiynau'r Arolwg.<br><br>Mae'r cwestiynau o'r arolwg yn hwn."
+#: templates/base_vars.html:121
+msgid "This has the questions from the survey."
+msgstr "Mae'r cwestiynau o'r arolwg yn hwn."
 
-#: templates/base_vars.html:126
+#: templates/base_vars.html:123 templates/map.html.py:951
+msgid "Sorry, an error occurred. Please try again, or report it."
+msgstr ""
+"Mae’n ddrwg gennym, cafwyd gwall. Rhowch gynnig arall arni, neu rhowch wybod "
+"amdano."
+
+#: templates/base_vars.html:124 templates/map.html.py:825
+#: templates/map.html:2049 templates/map.html.py:2234 templates/map.html:2323
+#: templates/map.html.py:2355 templates/map.html:2450
+msgid "Fetching map layer..."
+msgstr "Casglu haen map..."
+
+#: templates/base_vars.html:125 templates/map.html.py:1960
+msgid "Inspecting dataset ..."
+msgstr "Archwilio setiau data ..."
+
+#: templates/base_vars.html:131
 msgid "Filter :"
 msgstr "Hidlwr:"
 
-#: templates/base_vars.html:128
+#: templates/base_vars.html:133
 msgid "Display"
 msgstr "Dangos"
 
-#: templates/base_vars.html:134
+#: templates/base_vars.html:139
 msgid "All"
 msgstr "Pob un"
 
-#: templates/base_vars.html:135
+#: templates/base_vars.html:140
 msgid "records"
 msgstr "Cofnodion"
 
 #: templates/browse_surveys.html:67 templates/qual_detail.html.py:37
-#: templates/search.html:266 templates/search.html.py:304
-#: templates/survey_detail.html:55
+#: templates/search.html:280 templates/search.html.py:318
+#: templates/survey_detail.html:55 templates/wiserd_education.html.py:73
 msgid "Title"
 msgstr "Teitl"
 
 #: templates/browse_surveys.html:70 templates/data_and_history.html.py:43
-#: templates/qual_detail.html:43 templates/search.html.py:234
-#: templates/search.html:269 templates/search.html.py:308
-#: templates/tables.html:181
+#: templates/profile.html:99 templates/qual_detail.html.py:43
+#: templates/search.html:247 templates/search.html.py:283
+#: templates/search.html:322 templates/tables.html.py:181
+#: templates/wiserd_education.html:76
 msgid "Date"
 msgstr "Dyddiad"
 
-#: templates/browse_surveys.html:91 templates/search.html.py:222
-#: templates/search.html:257 templates/search.html.py:295
-#: templates/search.html:335
+#: templates/browse_surveys.html:91 templates/search.html.py:235
+#: templates/search.html:271 templates/search.html.py:309
+#: templates/search.html:349 templates/wiserd_education.html.py:97
 msgid "Top"
 msgstr "Brig"
 
+#: templates/civil_society.html:5
+msgid "Civil Society and Third Sector data"
+msgstr ""
+
+#: templates/civil_society.html:13
+msgid "Civil Society and Third Sector - example surveys and data"
+msgstr ""
+
+#: templates/civil_society.html:22
+msgid "Theme 1"
+msgstr ""
+
+#: templates/civil_society.html:23
+msgid "Locality, Community and Landscapes of Civil Society"
+msgstr ""
+
+#: templates/civil_society.html:24 templates/civil_society.html.py:48
+#: templates/civil_society.html:71 templates/civil_society.html.py:95
+#: templates/search.html:59 templates/survey_detail.html.py:5
+#: templates/survey_detail.html:359 templates/survey_detail.html.py:373
+msgid "Survey"
+msgstr "Arolwg"
+
+#: templates/civil_society.html:31 templates/civil_society.html.py:54
+#: templates/civil_society.html:78 templates/civil_society.html.py:101
+#, fuzzy
+#| msgid "MapMyData"
+msgid "Mapped Dataset"
+msgstr "MapioFyNata"
+
+#: templates/civil_society.html:37 templates/civil_society.html.py:60
+#: templates/civil_society.html:84 templates/civil_society.html.py:107
+#, fuzzy
+#| msgid "Searches"
+msgid "Search Keywords"
+msgstr "Chwiliadau"
+
+#: templates/civil_society.html:46
+msgid "Theme 2"
+msgstr ""
+
+#: templates/civil_society.html:47
+msgid "Individuals, Institutions and Governance"
+msgstr ""
+
+#: templates/civil_society.html:69
+msgid "Theme 3"
+msgstr ""
+
+#: templates/civil_society.html:70
+msgid "Economic Austerity, Social Enterprise and Inequality"
+msgstr ""
+
+#: templates/civil_society.html:93
+msgid "Theme 4"
+msgstr ""
+
+#: templates/civil_society.html:94
+msgid "Generation, Life Course and Social Participation"
+msgstr ""
+
 #: templates/dashboard.html:5 templates/dashboard.html.py:56
-#: templates/navigation.html:116 templates/naw_dashboard.html.py:5
-#: templates/naw_dashboard.html:51 templates/naw_navigation.html.py:146
+#: templates/navigation.html:122 templates/naw_dashboard.html.py:5
+#: templates/naw_dashboard.html:51 templates/naw_navigation.html.py:156
 msgid "Dashboard"
 msgstr "Dangosfwrdd"
 
@@ -924,61 +1026,70 @@ msgid "Mapping tools"
 msgstr "Offer Mapio"
 
 #: templates/dashboard.html:104 templates/naw_dashboard.html.py:139
-#: templates/user_guide.html:79 templates/user_guide.html.py:843
+#: templates/user_guide.html:80 templates/user_guide.html.py:844
 msgid "View Map"
 msgstr "Gweld y Map"
 
 #: templates/dashboard.html:137 templates/naw_dashboard.html.py:5
-#: templates/user_guide.html:98 templates/user_guide.html.py:1272
+#: templates/user_guide.html:99 templates/user_guide.html.py:1273
 msgid "National Assembly for Wales"
 msgstr "Cynulliad Cenedlaethol Cymru"
 
-#: templates/dashboard.html:189
+#: templates/dashboard.html:191 templates/dashboard.html.py:198
+#: templates/wiserd_education.html:5 templates/wiserd_education.html.py:63
+msgid "WISERDEducation"
+msgstr ""
+
+#: templates/dashboard.html:221 templates/dashboard.html.py:228
+msgid "Civil Society"
+msgstr ""
+
+#: templates/dashboard.html:253
 msgid "Events"
 msgstr "Digwyddiadau"
 
-#: templates/dashboard.html:196 templates/user_guide.html.py:101
-#: templates/user_guide.html:1328
+#: templates/dashboard.html:260 templates/user_guide.html.py:102
+#: templates/user_guide.html:1329
 msgid "Event Presentation Files"
 msgstr "Ffeiliau Cyflwyno Digwyddiad"
 
-#: templates/dashboard.html:219 templates/help_support.html.py:20
-#: templates/naw_dashboard.html:184
+#: templates/dashboard.html:283 templates/help_support.html.py:20
+#: templates/naw_dashboard.html:223
 msgid "Help"
 msgstr "Help"
 
-#: templates/dashboard.html:226 templates/naw_dashboard.html.py:191
-#: templates/user_guide.html:107 templates/user_guide.html.py:1439
+#: templates/dashboard.html:290 templates/naw_dashboard.html.py:230
+#: templates/user_guide.html:108 templates/user_guide.html.py:1440
 msgid "About, Help and Support"
 msgstr "Gwybodaeth, Help a Chymorth"
 
-#: templates/dashboard.html:249
+#: templates/dashboard.html:313
 msgid "Tech Blog"
 msgstr "Blog Technegol"
 
-#: templates/dashboard.html:256
+#: templates/dashboard.html:320
 msgid "View DataPortal technical developments"
 msgstr "Ewch i ddatblygiadau technegol y DataPortal"
 
-#: templates/dashboard.html:287 templates/naw_dashboard.html.py:220
+#: templates/dashboard.html:351 templates/naw_dashboard.html.py:288
 msgid "WISERD DataPortal Homepage"
 msgstr "Hafan DataPortal WISERD"
 
-#: templates/dashboard.html:308 templates/naw_dashboard.html.py:77
+#: templates/dashboard.html:372 templates/naw_dashboard.html.py:77
 #: templates/profile.html:5 templates/profile.html.py:43
 msgid "Profile"
 msgstr "Proffil"
 
-#: templates/dashboard.html:315 templates/naw_dashboard.html.py:84
-#: templates/user_guide.html:65 templates/user_guide.html.py:338
+#: templates/dashboard.html:379 templates/naw_dashboard.html.py:84
+#: templates/user_guide.html:66 templates/user_guide.html.py:339
 msgid "View Profile"
 msgstr "Gweld Proffil"
 
-#: templates/dashboard.html:366 templates/file_management.html.py:5
+#: templates/dashboard.html:430 templates/file_management.html.py:5
 msgid "File Management"
 msgstr "Rheoli Ffeiliau"
 
-#: templates/dashboard.html:373
+#: templates/dashboard.html:437
 msgid "Shapefile Upload"
 msgstr "Llwytho Shapefile"
 
@@ -986,35 +1097,50 @@ msgstr "Llwytho Shapefile"
 msgid "My Data and History"
 msgstr "Fy Nata a'm Hanes"
 
-#: templates/data_and_history.html:34
+#: templates/data_and_history.html:34 templates/profile.html.py:90
 msgid "Searches"
 msgstr "Chwiliadau"
 
-#: templates/data_and_history.html:41
+#: templates/data_and_history.html:41 templates/profile.html.py:97
 msgid "Search Title"
 msgstr "Teitl y Chwiliad"
 
-#: templates/data_and_history.html:42
+#: templates/data_and_history.html:42 templates/profile.html.py:98
 msgid "Search Type"
 msgstr "Math y Chwiliad"
 
-#: templates/events.html:24
-msgid "ESRC Festival of Social Science 2015 – WISERD DataPortal demonstration"
+#: templates/events.html:27
+#, fuzzy
+#| msgid ""
+#| "ESRC Festival of Social Science 2015 – WISERD DataPortal demonstration"
+msgid "ESRC Festival of Social Science 2016 – WISERD DataPortal demonstration"
 msgstr ""
-"Gŵyl Gwyddor Gymdeithasol 2015 y Cyngor Ymchwil Economaidd a Chymdeithasol –"
-" Dangos WISERD DataPortal"
+"Gŵyl Gwyddor Gymdeithasol 2015 y Cyngor Ymchwil Economaidd a Chymdeithasol – "
+"Dangos WISERD DataPortal"
 
-#: templates/events.html:25
-msgid "11th November 2015"
+#: templates/events.html:28
+#, fuzzy
+#| msgid "11th November 2015"
+msgid "8th November 2016"
 msgstr "11 Tachwedd 2015"
 
-#: templates/events.html:26
+#: templates/events.html:29 templates/events.html.py:46
 msgid "Download the presentation here : "
 msgstr "Llwythwch y cyflwyniad yma : "
 
-#: templates/events.html:27
+#: templates/events.html:30 templates/events.html.py:47
 msgid "link"
 msgstr "linc"
+
+#: templates/events.html:44
+msgid "ESRC Festival of Social Science 2015 – WISERD DataPortal demonstration"
+msgstr ""
+"Gŵyl Gwyddor Gymdeithasol 2015 y Cyngor Ymchwil Economaidd a Chymdeithasol – "
+"Dangos WISERD DataPortal"
+
+#: templates/events.html:45
+msgid "11th November 2015"
+msgstr "11 Tachwedd 2015"
 
 #: templates/file_management.html:51
 msgid "Upload ShapeFile"
@@ -1065,182 +1191,718 @@ msgstr "Scott Orford, Prif Ymchwilydd y Prosiect : OrfordS (yn) cardiff.ac.uk"
 msgid ""
 "Ian Harvey, Lead Software Engineer/ Developer: HarveyIC (at) cardiff.ac.uk"
 msgstr ""
-"Ian Harvey, Prif Beiriannydd / Ddatblygwr Meddalwedd: HarveyIC (yn) "
-"cardiff.ac.uk "
+"Ian Harvey, Prif Beiriannydd / Ddatblygwr Meddalwedd: HarveyIC (yn) cardiff."
+"ac.uk "
 
 #: templates/help_support.html:39
 msgid "Sam Jones, Research Technician : JonesS97 (at) cardiff.ac.uk"
 msgstr "Sam Jones, Technegydd Ymchwil : JonesS97 (yn) cardiff.ac.uk"
 
-#: templates/help_support.html:44
+#: templates/help_support.html:41
+msgid "Feedback"
+msgstr ""
+
+#: templates/help_support.html:43
+msgid ""
+"You can leave feedback using the <a href=\"https://cardiff.onlinesurveys.ac."
+"uk/dataportal-lts\" target=\"_blank\">online survey here. <i class=\"fa fa-"
+"external-link\"></i></a>"
+msgstr ""
+
+#: templates/help_support.html:49
 msgid "Change Log"
 msgstr "Newid y Log"
 
-#: templates/help_support.html:47
+#: templates/help_support.html:52
+msgid ""
+"Below is a Change Log for all the major additions made to the codebase. Many "
+"details have been left out, and it can be assumed that every item can "
+"contain:"
+msgstr ""
+
+#: templates/help_support.html:62
+msgid ""
+"Additionally, not mentioned are all the false starts, broken features and "
+"long rabbit holes traversed in order to experiment with new functions and "
+"features. Thus, any long breaks can assumed to be time spent discovering "
+"what the DataPortal may be able to do in future, which may or may not ever "
+"come to fruition."
+msgstr ""
+
+#: templates/help_support.html:65
+msgid ""
+"For those who are interested in the precise changes in code over time, "
+"please see the <a href=\"https://github.com/whelks-chance/wiserd3/commits/"
+"master\" target=\"_blank\">GitHub commit log here. <i class=\"fa fa-external-"
+"link\"></i></a>"
+msgstr ""
+
+#: templates/help_support.html:70
+#, fuzzy
+#| msgid "11th November 2015"
+msgid "15 November 2016"
+msgstr "11 Tachwedd 2015"
+
+#: templates/help_support.html:73
+#, fuzzy
+#| msgid "Matching of local WISERD metadata to remote datasets"
+msgid "Mapping local metadata to remote data sources."
+msgstr "Cydweddu metaddata WISERD lleol i’r setiau data o bell"
+
+#: templates/help_support.html:79
+#, fuzzy
+#| msgid "11th November 2015"
+msgid "7 November 2016"
+msgstr "11 Tachwedd 2015"
+
+#: templates/help_support.html:82
+msgid "MapMyData Unitary Authority option"
+msgstr ""
+
+#: templates/help_support.html:88
+#, fuzzy
+#| msgid "October 7th, 2013"
+msgid "31 October 2016"
+msgstr "7 Hydref 2013"
+
+#: templates/help_support.html:91
+msgid "Civil Society page."
+msgstr ""
+
+#: templates/help_support.html:94
+#, fuzzy
+#| msgid "WISERD DataPortal Homepage"
+msgid "WISERD Education page"
+msgstr "Hafan DataPortal WISERD"
+
+#: templates/help_support.html:97
+msgid ""
+"Tidy up for multiple presentations (National Assembly for Wales, WISERD Away "
+"Days and the ESRC Festival of Social Science)"
+msgstr ""
+
+#: templates/help_support.html:103
+#, fuzzy
+#| msgid "October 7th, 2013"
+msgid "17 October 2016"
+msgstr "7 Hydref 2013"
+
+#: templates/help_support.html:106
+msgid "Usablility tracking added to DB"
+msgstr ""
+
+#: templates/help_support.html:112
+msgid "27 September 2016"
+msgstr ""
+
+#: templates/help_support.html:115
+msgid "Updating packages to work with Django 1.8"
+msgstr ""
+
+#: templates/help_support.html:118
+#, fuzzy
+#| msgid "User Guide"
+msgid "User guide styling"
+msgstr "Canllaw Defnyddiwr"
+
+#: templates/help_support.html:121
+msgid "Tools to aid question ordering connections."
+msgstr ""
+
+#: templates/help_support.html:124
+msgid "Rosetta added to Django to aid translation service data input."
+msgstr ""
+
+#: templates/help_support.html:130
+#, fuzzy
+#| msgid "11th November 2015"
+msgid "15 September 2016"
+msgstr "11 Tachwedd 2015"
+
+#: templates/help_support.html:133
+msgid ""
+"Updating codebase from Django 1.8 to 1.9. This gives us access to JSONP "
+"fields in PostgreSQL which makes response tables far easier to work with."
+msgstr ""
+
+#: templates/help_support.html:136
+#, fuzzy
+#| msgid "Response Table"
+msgid "Response tables"
+msgstr "Tabl Ymateb"
+
+#: templates/help_support.html:139
+msgid "Many more help file screenshots"
+msgstr ""
+
+#: templates/help_support.html:145
+#, fuzzy
+#| msgid "August 6th, 2013"
+msgid "02 August 2016"
+msgstr "6 Awst 2013"
+
+#: templates/help_support.html:148
+msgid "Dublin core fully using DRF API"
+msgstr ""
+
+#: templates/help_support.html:151
+msgid "GUI tidy up"
+msgstr ""
+
+#: templates/help_support.html:154
+msgid "Help pages, support popups, "
+msgstr ""
+
+#: templates/help_support.html:160
+#, fuzzy
+#| msgid "June 4th, 2013"
+msgid "15 June 2016"
+msgstr "4 Mehefin 2013"
+
+#: templates/help_support.html:163
+msgid "StatsWales mapping and inclusion in menus"
+msgstr ""
+
+#: templates/help_support.html:166
+msgid "Updating of Dublin Core models"
+msgstr ""
+
+#: templates/help_support.html:172
+#, fuzzy
+#| msgid "June 4th, 2013"
+msgid "08 June 2016"
+msgstr "4 Mehefin 2013"
+
+#: templates/help_support.html:175
+#, fuzzy
+#| msgid "Increased brower compatibility"
+msgid "StatsWales API compatibility"
+msgstr "Mwy o gydnawsedd porwr"
+
+#: templates/help_support.html:178
+msgid "Another round of translations"
+msgstr ""
+
+#: templates/help_support.html:181
+msgid "NAW Regions and Constituencies 2016 boundary changes"
+msgstr ""
+
+#: templates/help_support.html:187
+msgid "10 May 2016"
+msgstr ""
+
+#: templates/help_support.html:190
+msgid "MapMyData XLSX importing"
+msgstr ""
+
+#: templates/help_support.html:193
+#, fuzzy
+#| msgid "MapMyData"
+msgid "MapMyData styling"
+msgstr "MapioFyNata"
+
+#: templates/help_support.html:196
+#, fuzzy
+#| msgid "MapMyData"
+msgid "MapMyData rendering"
+msgstr "MapioFyNata"
+
+#: templates/help_support.html:199
+#, fuzzy
+#| msgid "MapMyData"
+msgid "MapMyData point data"
+msgstr "MapioFyNata"
+
+#: templates/help_support.html:202
+msgid "Backend tooling - SQLExplorer"
+msgstr ""
+
+#: templates/help_support.html:205
+#, fuzzy
+#| msgid "National Assembly for Wales"
+msgid "National Assembly for Wales data importing"
+msgstr "Cynulliad Cenedlaethol Cymru"
+
+#: templates/help_support.html:211
+#, fuzzy
+#| msgid "April 12th, 2013"
+msgid "19 April 2016"
+msgstr "12 Ebrill 2013"
+
+#: templates/help_support.html:214
+#, fuzzy
+#| msgid "Languages"
+msgid "Language support"
+msgstr "Ieithoedd"
+
+#: templates/help_support.html:217
+msgid "Assorted bugfixes"
+msgstr ""
+
+#: templates/help_support.html:223
+#, fuzzy
+#| msgid "April 12th, 2013"
+msgid "11 April 2016"
+msgstr "12 Ebrill 2013"
+
+#: templates/help_support.html:226
+#, fuzzy
+#| msgid "Screenshot"
+msgid "Screenshot options"
+msgstr "Sgrinlun"
+
+#: templates/help_support.html:229
+msgid "Extra options when importing data from CSV"
+msgstr ""
+
+#: templates/help_support.html:235
+msgid "16 March 2016"
+msgstr ""
+
+#: templates/help_support.html:238
+msgid "Much better side panel for properly showing layer data"
+msgstr ""
+
+#: templates/help_support.html:241
+msgid "Tidying up the install process"
+msgstr ""
+
+#: templates/help_support.html:244
+msgid "Rearranging the page ordering logic, cleanup for major v3.5 release"
+msgstr ""
+
+#: templates/help_support.html:250
+msgid "17 February 2016"
+msgstr ""
+
+#: templates/help_support.html:253
+msgid "Shapefile importing, DB tables and  models better defined and matched"
+msgstr ""
+
+#: templates/help_support.html:259
+msgid "08 February 2016"
+msgstr ""
+
+#: templates/help_support.html:262
+msgid "Layers can be referenced by UUID"
+msgstr ""
+
+#: templates/help_support.html:268
+msgid "04 February 2016"
+msgstr ""
+
+#: templates/help_support.html:271
+msgid "Better legends"
+msgstr ""
+
+#: templates/help_support.html:274
+#, fuzzy
+#| msgid "Secondary Attributes"
+msgid "Secondary data GUI options"
+msgstr "Nodweddion Eilaidd"
+
+#: templates/help_support.html:281
+msgid "19 January 2016"
+msgstr ""
+
+#: templates/help_support.html:284
+msgid "API (using Django Rest Framework) and documentation"
+msgstr ""
+
+#: templates/help_support.html:287
+msgid "Significant code refactoring"
+msgstr ""
+
+#: templates/help_support.html:293
+msgid "06 January 2016"
+msgstr ""
+
+#: templates/help_support.html:296
+msgid "Cookies to store user options"
+msgstr ""
+
+#: templates/help_support.html:299
+msgid "Considering access rules, user groups etc"
+msgstr ""
+
+#: templates/help_support.html:305
+#, fuzzy
+#| msgid "December 2nd, 2013"
+msgid "14 December 2015"
+msgstr "2 Rhagfyr 2013"
+
+#: templates/help_support.html:308
+#, fuzzy
+#| msgid "National Assembly for Wales"
+msgid "Beginning work for the National Assembly for Wales"
+msgstr "Cynulliad Cenedlaethol Cymru"
+
+#: templates/help_support.html:311
+msgid "NAW key datasets added"
+msgstr ""
+
+#: templates/help_support.html:317
+#, fuzzy
+#| msgid "December 2nd, 2013"
+msgid "07 December 2015"
+msgstr "2 Rhagfyr 2013"
+
+#: templates/help_support.html:320
+msgid "More error catching"
+msgstr ""
+
+#: templates/help_support.html:326
+#, fuzzy
+#| msgid "December 2nd, 2013"
+msgid "02 December 2015"
+msgstr "2 Rhagfyr 2013"
+
+#: templates/help_support.html:329
+#, fuzzy
+#| msgid "Mapping colours"
+msgid "Mapping non-string values"
+msgstr "Lliwiau’r map"
+
+#: templates/help_support.html:332
+msgid "Error catching with null or invalid data"
+msgstr ""
+
+#: templates/help_support.html:335
+#, fuzzy
+#| msgid "Layer Manager"
+msgid "Layer info pane"
+msgstr "Enw’r Haen"
+
+#: templates/help_support.html:341 templates/help_support.html.py:353
+#, fuzzy
+#| msgid "11th November 2015"
+msgid "24 November 2015"
+msgstr "11 Tachwedd 2015"
+
+#: templates/help_support.html:344 templates/help_support.html.py:356
+msgid "Local data rendering on map"
+msgstr ""
+
+#: templates/help_support.html:347
+#, fuzzy
+#| msgid "Choropleth colour scheme"
+msgid "Choropleth colours and settings"
+msgstr "Cynllun lliwiau choropleth"
+
+#: templates/help_support.html:362
+#, fuzzy
+#| msgid "11th November 2015"
+msgid "17 November 2015"
+msgstr "11 Tachwedd 2015"
+
+#: templates/help_support.html:366
+msgid "Rerun previous remote data layers"
+msgstr ""
+
+#: templates/help_support.html:369
+msgid "Access remote data CSV"
+msgstr ""
+
+#: templates/help_support.html:375
+#, fuzzy
+#| msgid "October 7th, 2013"
+msgid "23 October 2015"
+msgstr "7 Hydref 2013"
+
+#: templates/help_support.html:378
+#, fuzzy
+#| msgid "Qualitative Records"
+msgid "Qualitative data models"
+msgstr "Cofnodion Ansoddol"
+
+#: templates/help_support.html:381
+msgid "Remote data from Nomis requested using requried options and variables"
+msgstr ""
+
+#: templates/help_support.html:384
+msgid "Futher movement to new data models, data linkages clarified"
+msgstr ""
+
+#: templates/help_support.html:387
+msgid "Futher GUI refinements"
+msgstr ""
+
+#: templates/help_support.html:390
+msgid "Welcome, event and user profile pages"
+msgstr ""
+
+#: templates/help_support.html:396
+#, fuzzy
+#| msgid "11th November 2015"
+msgid "September 2015"
+msgstr "11 Tachwedd 2015"
+
+#: templates/help_support.html:399
+msgid "ShapeFiles understood by the system for data/ boundary importing"
+msgstr ""
+
+#: templates/help_support.html:402
+#, fuzzy
+#| msgid "Remote data feed from NomisWeb added"
+msgid "Remote data search from Nomis"
+msgstr "Ychwanegwyd ffrwd data o bell o NomisWeb"
+
+#: templates/help_support.html:405
+msgid ""
+"General work to clarify how layers are stored, modeled, requested, rendered "
+"and GUI options displayed."
+msgstr ""
+
+#: templates/help_support.html:411
+#, fuzzy
+#| msgid "August 6th, 2013"
+msgid "August 2015"
+msgstr "6 Awst 2013"
+
+#: templates/help_support.html:414
+msgid "GeoJson from DB data, to leaflet layer"
+msgstr ""
+
+#: templates/help_support.html:417
+msgid "Mapping GUI, leaflet"
+msgstr ""
+
+#: templates/help_support.html:420
+msgid "Correct use of Django models for spatial data searches"
+msgstr ""
+
+#: templates/help_support.html:423
+msgid "Begin to move to new Django models"
+msgstr ""
+
+#: templates/help_support.html:429
+msgid "11-15 July 2015"
+msgstr ""
+
+#: templates/help_support.html:432
+#, fuzzy
+#| msgid "View Question"
+msgid "Viewing survey questions"
+msgstr "Gweld y Cwestiwn"
+
+#: templates/help_support.html:435
+#, fuzzy
+#| msgid "Survey Metadata"
+msgid "Survey Dublin Core, Survey Metadata"
+msgstr "Metaddata’r Arolwg"
+
+#: templates/help_support.html:438
+#, fuzzy
+#| msgid "Response Metadata"
+msgid "Results metadata"
+msgstr "Metadata Ymateb"
+
+#: templates/help_support.html:441
+msgid "Linking of questions from old database"
+msgstr ""
+
+#: templates/help_support.html:444
+#, fuzzy
+#| msgid "Spatial search area : "
+msgid "Spatial search results"
+msgstr "Maes chwilio gofodol:"
+
+#: templates/help_support.html:450
+msgid "08 July 2015"
+msgstr ""
+
+#: templates/help_support.html:453
+msgid "Initial commit of v3 of the DataPortal"
+msgstr ""
+
+#: templates/help_support.html:456
+msgid "Now in Python Django"
+msgstr ""
+
+#: templates/help_support.html:459
+msgid "JQuery, JQueryUI"
+msgstr ""
+
+#: templates/help_support.html:462
+msgid "Leaflet, Mapbox"
+msgstr ""
+
+#: templates/help_support.html:473
 msgid "December 2nd, 2013"
 msgstr "2 Rhagfyr 2013"
 
-#: templates/help_support.html:50
+#: templates/help_support.html:476
 msgid "Tidying up for development hiatus"
 msgstr "Twtio yn ystod bwlch yn y gwaith datblygu"
 
-#: templates/help_support.html:53
+#: templates/help_support.html:479
 msgid ""
 "Addition of this information to welcome screen (data taken from github "
 "commit logs)"
 msgstr ""
 "Ychwanegu’r wybodaeth hon i’r sgrin groeso (data o logiau ymrwymo github)"
 
-#: templates/help_support.html:56 templates/help_support.html.py:74
-#: templates/help_support.html:97 templates/help_support.html.py:114
-#: templates/help_support.html:136 templates/help_support.html.py:165
-#: templates/help_support.html:192
+#: templates/help_support.html:482 templates/help_support.html.py:500
+#: templates/help_support.html:523 templates/help_support.html.py:540
+#: templates/help_support.html:562 templates/help_support.html.py:591
+#: templates/help_support.html:618
 msgid "Bug fixes"
 msgstr "Cywiro bygiau"
 
-#: templates/help_support.html:62
+#: templates/help_support.html:488
 msgid "November 13th, 2013"
 msgstr "13 Tachwedd 2013"
 
-#: templates/help_support.html:65
+#: templates/help_support.html:491
 msgid "Reads and displays response tables from database metadata"
 msgstr "Mae’n darllen a dangos tablau ymateb o fetaddata cronfa ddata"
 
-#: templates/help_support.html:68
+#: templates/help_support.html:494
 msgid "Increase metadata access through linking of orphaned metadata IDs"
 msgstr ""
-"Cynyddu mynediad at fetadata drwy gysylltu dulliau adnabod metaddata "
-"amddifad"
+"Cynyddu mynediad at fetadata drwy gysylltu dulliau adnabod metaddata amddifad"
 
-#: templates/help_support.html:71
+#: templates/help_support.html:497
 msgid "Early stages of ONS API integration"
 msgstr "Camau cyntaf integreiddio API Swyddfa Ystadegau Gwladol"
 
-#: templates/help_support.html:82
+#: templates/help_support.html:508
 msgid "October 7th, 2013"
 msgstr "7 Hydref 2013"
 
-#: templates/help_support.html:85
+#: templates/help_support.html:511
 msgid "Huge update to database access security and speed"
 msgstr ""
 "Diweddariad anferth i ddiogelwch a chyflymder mynediad at y gronfa ddata"
 
-#: templates/help_support.html:88
+#: templates/help_support.html:514
 msgid "Qualitative data tagging added to Data Entry tools"
 msgstr "Tagio data ansoddol wedi’i ychwanegu at yr offer Cofnodi Data"
 
-#: templates/help_support.html:91
+#: templates/help_support.html:517
 msgid "Review of APIs used to generate Qual metadata"
 msgstr "Defnyddio adolygiad o API i gynhyrchu metaddata ansoddol"
 
-#: templates/help_support.html:94
+#: templates/help_support.html:520
 msgid "Increase database continuity and metadata mapping connectivity"
 msgstr "Cynyddu parhad y gronfa ddata a chysylltedd mapio metaddata"
 
-#: templates/help_support.html:102
+#: templates/help_support.html:528
 msgid "August 6th, 2013"
 msgstr "6 Awst 2013"
 
-#: templates/help_support.html:105
+#: templates/help_support.html:531
 msgid "New Data Entry toolkit developed and embedded within the DataPortal"
 msgstr "Datblygwyd a gwreiddwyd offer Cofnodi Data newydd yn y DataPortal"
 
-#: templates/help_support.html:108
+#: templates/help_support.html:534
 msgid "User and Project Management GUI panel added"
 msgstr "Ychwanegwyd panel GUI Defnyddwyr a Rheolwyr y Prosiect"
 
-#: templates/help_support.html:111
+#: templates/help_support.html:537
 msgid "Yii RBAC (role based access control) added to the back-end"
 msgstr "Ychwanegwyd RBAC Yii (dull rheoli mynediad ar sail rôl) i’r cefn"
 
-#: templates/help_support.html:121
+#: templates/help_support.html:547
 msgid "June 4th, 2013"
 msgstr "4 Mehefin 2013"
 
-#: templates/help_support.html:124
+#: templates/help_support.html:550
 msgid "Database query efficiencies"
 msgstr "Effeithlonrwydd ymholiadau’r gronfa ddata"
 
-#: templates/help_support.html:127
+#: templates/help_support.html:553
 msgid "Remote data from Neighbourhood Statistics"
 msgstr "Data o bell o Ystadegau’r Gymdogaeth"
 
-#: templates/help_support.html:130
+#: templates/help_support.html:556
 msgid "Updates to advanced search speed, relevance and pagination of results"
 msgstr ""
 "Diweddariad i gyflymder, perthnasedd a thudaleniad canlyniadau chwilio uwch"
 
-#: templates/help_support.html:133
+#: templates/help_support.html:559
 msgid "Analysis of Database consistency issues"
 msgstr "Dadansoddiad o faterion cysondeb y gronfa ddata"
 
-#: templates/help_support.html:141
+#: templates/help_support.html:567
 msgid "April 12th, 2013"
 msgstr "12 Ebrill 2013"
 
-#: templates/help_support.html:144
+#: templates/help_support.html:570
 msgid "GeoPortal -&gt; DataPortal rebranding"
 msgstr "GeoPortal -&gt; ailfrandio DataPortal"
 
-#: templates/help_support.html:147
+#: templates/help_support.html:573
 msgid "Increased brower compatibility"
 msgstr "Mwy o gydnawsedd porwr"
 
-#: templates/help_support.html:150
+#: templates/help_support.html:576
 msgid "Bug report and sign-up emails"
 msgstr "Negeseuon e-bost cofnodi bygiau a negeseuon cofrestru"
 
-#: templates/help_support.html:153
+#: templates/help_support.html:579
 msgid "Advanced search added"
 msgstr "Ychwanegwyd gallu chwilio uwch"
 
-#: templates/help_support.html:156
+#: templates/help_support.html:582
 msgid "Remote data feed from NomisWeb added"
 msgstr "Ychwanegwyd ffrwd data o bell o NomisWeb"
 
-#: templates/help_support.html:159
+#: templates/help_support.html:585
 msgid "Matching of local WISERD metadata to remote datasets"
 msgstr "Cydweddu metaddata WISERD lleol i’r setiau data o bell"
 
-#: templates/help_support.html:162
+#: templates/help_support.html:588
 msgid "SLD layer icons and legend creation and rendering"
 msgstr "Ficonau haen SLD a chreu eglurhad a rendro"
 
-#: templates/help_support.html:171
+#: templates/help_support.html:597
 msgid "Feb 16th, 2013"
 msgstr "16 Chwefror 2013"
 
-#: templates/help_support.html:174
+#: templates/help_support.html:600
 msgid "A complete rewrite of the back end to use Yii"
 msgstr "Ailysgrifennu’r cefn i gyd i ddefnyddio Yii"
 
-#: templates/help_support.html:177
+#: templates/help_support.html:603
 msgid "User registration and login fixed"
 msgstr "Atgyweirio cofrestru a mewngofnodi defnyddiwr"
 
-#: templates/help_support.html:180
+#: templates/help_support.html:606
 msgid "Search efficiency optimised"
 msgstr "Gwella effeithlonrwydd chwilio"
 
-#: templates/help_support.html:183
+#: templates/help_support.html:609
 msgid "Logging added"
 msgstr "Ychwanegu logio"
 
-#: templates/help_support.html:186
+#: templates/help_support.html:612
 msgid "Updated OpenLayers to v2.12"
 msgstr "Diweddaru OpenLayers i v2.12"
 
-#: templates/help_support.html:189
+#: templates/help_support.html:615
 msgid "Account and Password management updated"
 msgstr "Diweddaru rheoli cyfrif a chyfrinair"
 
-#: templates/help_support.html:198
+#: templates/help_support.html:624
 msgid "Early 2012"
 msgstr "Dechrau 2012"
 
-#: templates/help_support.html:201
+#: templates/help_support.html:627
 msgid "The initial release of the WISERD GeoPortal at University of Glamorgan"
 msgstr "Rhyddhau WISERD DataPortal am y tro cyntaf ym Mhrifysgol Morgannwg"
+
+#: templates/help_support.html:640
+msgid "Example Datasets"
+msgstr ""
+
+#: templates/help_support.html:642
+msgid "School Data 100.XLS"
+msgstr ""
+
+#: templates/help_support.html:645
+msgid "School Data 2000.XLS"
+msgstr ""
 
 #: templates/language_snippet.html:5 templates/qual_detail.html.py:47
 #: templates/survey_detail.html:65
@@ -1259,24 +1921,23 @@ msgstr "Trwydded a Phriodoliad"
 msgid ""
 "Unless otherwise noted, the data and information available through the "
 "WISERD DataPortal is public sector information released under the Open "
-"Government Data License. The following accepted <a class=\"c0\" "
-"target=\"_blank\" href=\"http://www.nationalarchives.gov.uk/doc/open-"
-"government-licence/version/3/\">generic attribution</a> relating to the use "
-"of such data and information from various sources has been applied where "
-"appropriate."
+"Government Data License. The following accepted <a class=\"c0\" target="
+"\"_blank\" href=\"http://www.nationalarchives.gov.uk/doc/open-government-"
+"licence/version/3/\">generic attribution</a> relating to the use of such "
+"data and information from various sources has been applied where appropriate."
 msgstr ""
 "Oni nodir yn wahanol, gwybodaeth o'r sector cyhoeddus a ryddhawyd o dan y "
 "Drwydded Data Llywodraeth Agored yw'r data a'r wybodaeth sydd ar gael drwy "
-"WISERD DataPortal. Isod, mae'r <a class=\"c0\" target=\"_blank\" "
-"href=\"http://www.nationalarchives.gov.uk/doc/open-government-"
-"licence/version/3/\">gydnabyddiaeth gyffredinol</a> y cytunwyd arni ar gyfer"
-" defnyddio'r fath ddata a gwybodaeth o ffynonellau amrywiol. Defnyddir y "
-"gydnabyddiaeth hon lle y bo'n briodol."
+"WISERD DataPortal. Isod, mae'r <a class=\"c0\" target=\"_blank\" href="
+"\"http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+"\">gydnabyddiaeth gyffredinol</a> y cytunwyd arni ar gyfer defnyddio'r fath "
+"ddata a gwybodaeth o ffynonellau amrywiol. Defnyddir y gydnabyddiaeth hon "
+"lle y bo'n briodol."
 
 #: templates/licence_attribution.html:39
 msgid ""
-"&lsquo;Contains public sector information licensed under the Open Government"
-" Licence v3.0&rsquo;."
+"&lsquo;Contains public sector information licensed under the Open Government "
+"Licence v3.0&rsquo;."
 msgstr ""
 "&lsquo;Yn cynnwys gwybodaeth sector cyhoeddus a drwyddedwyd o dan Drwydded "
 "Llywodraeth Agored v3.0 Licence v3.0&rsquo;."
@@ -1312,8 +1973,8 @@ msgstr "Porth Lle"
 msgid ""
 "Attribution: &copy; Crown copyright <span class=\"current_year\">2016</span>"
 msgstr ""
-"Cydnabyddiaeth: &copy; Hawlfraint y Goron <span "
-"class=\"current_year\">2016</span>"
+"Cydnabyddiaeth: &copy; Hawlfraint y Goron <span class=\"current_year\">2016</"
+"span>"
 
 #: templates/licence_attribution.html:65
 msgid "Office for National Statistics (ONS)"
@@ -1401,62 +2062,51 @@ msgstr "CC-BY-SA"
 
 #: templates/licence_attribution.html:140
 msgid ""
-"Source code available at <a class=\"c0\" target=\"_blank\" "
-"href=\"https://github.com/whelks-chance/wiserd3\">GitHub</a>."
+"Source code available at <a class=\"c0\" target=\"_blank\" href=\"https://"
+"github.com/whelks-chance/wiserd3\">GitHub</a>."
 msgstr ""
-"Cod ffynhonnell ar gael yn <a class=\"c0\" target=\"_blank\" "
-"href=\"https://github.com/whelks-chance/wiserd3\">GitHub</a>."
+"Cod ffynhonnell ar gael yn <a class=\"c0\" target=\"_blank\" href=\"https://"
+"github.com/whelks-chance/wiserd3\">GitHub</a>."
 
-#: templates/local_data.html:26 templates/user_guide.html.py:91
-#: templates/user_guide.html:1136
+#: templates/local_data.html:26 templates/user_guide.html.py:92
+#: templates/user_guide.html:1137
 msgid "Local Data"
 msgstr "Data Lleol"
 
-#: templates/map.html:174
+#: templates/map.html:172
 msgid "Map layers"
 msgstr "Haenau map"
 
-#: templates/map.html:178 templates/user_guide.html.py:88
-#: templates/user_guide.html:932
+#: templates/map.html:176 templates/user_guide.html.py:89
+#: templates/user_guide.html:933
 msgid "Remote Data"
 msgstr "Data o Bell"
 
-#: templates/map.html:188 templates/map.html.py:3137
+#: templates/map.html:186 templates/map.html.py:3388
 msgid "MapMyData"
 msgstr "MapioFyNata"
 
-#: templates/map.html:191
+#: templates/map.html:189
 msgid "Welsh Government Mapping Service"
 msgstr "Gwasanaeth Mapio Llywodraeth Cymru"
 
-#: templates/map.html:205
+#: templates/map.html:203
 msgid "WISERD Knowing Localities Research"
 msgstr "Ymchwil Gwybod Lleoliadau WISERD"
 
-#: templates/map.html:542
+#: templates/map.html:589
 msgid "Region Data"
 msgstr "Data Rhanbarth"
 
-#: templates/map.html:576
+#: templates/map.html:623
 msgid "VALUE"
 msgstr "GWERTH"
 
-#: templates/map.html:775 templates/map.html.py:2036 templates/map.html:2222
-#: templates/map.html.py:2310 templates/map.html:2343
-msgid "Fetching map layer..."
-msgstr "Casglu haen map..."
-
-#: templates/map.html:899
-msgid "Sorry, an error occurred. Please try again, or report it."
-msgstr ""
-"Mae’n ddrwg gennym, cafwyd gwall. Rhowch gynnig arall arni, neu rhowch wybod"
-" amdano."
-
-#: templates/map.html:1135 templates/map.html.py:1140 templates/map.html:1146
+#: templates/map.html:1205 templates/map.html.py:1210 templates/map.html:1216
 msgid "Sorry, an error occurred. \\n\\n"
 msgstr "Mae’n ddrwg gennym, cafwyd gwall. \\n\\n"
 
-#: templates/map.html:1136
+#: templates/map.html:1206
 msgid ""
 "It looks like your query was too specific, for example, when data are "
 "suppressed due to statistical confidentiality considerations. \\n\\n"
@@ -1464,186 +2114,200 @@ msgstr ""
 "Mae’n edrych fel fod eich ymholiad yn rhy benodol, er enghraifft pan gaiff "
 "data eu hatal oherwydd ystyriaethau cyfrinachedd ystadegol. \\n\\n"
 
-#: templates/map.html:1137 templates/map.html.py:1150
+#: templates/map.html:1207 templates/map.html.py:1220
 msgid "In this case, try a larger area to map data for."
-msgstr ""
-"Yn yr achos hwn, rhowch gynnig ar ardal fwy i fapio data ar ei chyfer."
+msgstr "Yn yr achos hwn, rhowch gynnig ar ardal fwy i fapio data ar ei chyfer."
 
-#: templates/map.html:1141
+#: templates/map.html:1211
 msgid "No data could be found for this query. \\n\\n"
 msgstr "Nid oedd yn bosibl dod o hyd i ddata ar gyfer yr ymholiad hwn. \\n\\n"
 
-#: templates/map.html:1142
+#: templates/map.html:1212
 msgid "Please try again, or report it."
 msgstr "Rhowch gynnig arall arni, neu rhowch wybod amdano."
 
-#: templates/map.html:1147
+#: templates/map.html:1217
 msgid ""
-"Unfortunately, some types of dataset are incompatible with this service. "
-"\\n\\n"
+"Unfortunately, some types of dataset are incompatible with this service. \\n"
+"\\n"
 msgstr ""
 "Yn anffodus, mae rhai mathau o setiau data yn anghyson â’r gwasanaeth hwn. "
 "\\n\\n"
 
-#: templates/map.html:1148
+#: templates/map.html:1218
 msgid ""
-"Try being more specific with the dataset variable you are trying to map. "
-"\\n\\n"
+"Try being more specific with the dataset variable you are trying to map. \\n"
+"\\n"
 msgstr ""
 "Ceisiwch fod yn fwy penodol am yr amrywiad set data rydych yn ceisio’i "
 "fapio. \\n\\n"
 
-#: templates/map.html:1149
+#: templates/map.html:1219
 msgid ""
 "Or, it may be the case that your query was too specific. For example, when "
 "data are suppressed due to statistical confidentiality considerations. "
 msgstr ""
-"Neu, efallai bod eich ymholiad yn rhy benodol. Er enghraifft, pan gaiff data"
-" eu hatal oherwydd ystyriaethau cyfrinachedd ystadegol. "
+"Neu, efallai bod eich ymholiad yn rhy benodol. Er enghraifft, pan gaiff data "
+"eu hatal oherwydd ystyriaethau cyfrinachedd ystadegol. "
 
-#: templates/map.html:1461
+#: templates/map.html:1535
 msgid "Screenshot"
 msgstr "Sgrinlun"
 
-#: templates/map.html:1483
+#: templates/map.html:1557
 msgid "Reset"
 msgstr "Ailosod"
 
-#: templates/map.html:1649 templates/user_guide.html.py:823
-#: templates/user_guide.html:1214
+#: templates/map.html:1721 templates/user_guide.html.py:824
+#: templates/user_guide.html:1215
 msgid "Show New Layer"
 msgstr "Dangos Haen Newydd"
 
-#: templates/map.html:1730 templates/map.html.py:1846 templates/map.html:1959
-#: templates/map.html.py:2068 templates/map.html:2253
-#: templates/map.html.py:2517
+#: templates/map.html:1756
+msgid ""
+"You have reached the maximum amount of data which can be stored locally in "
+"your browser.\\n\\nYou will need to delete some layers before more can be "
+"stored.\\n\\nThe data can still be shown on the map, but you will continue "
+"to see this error each time new data is added."
+msgstr ""
+
+#: templates/map.html:1762
+msgid ""
+"Sorry! Your browser does not support local data storage. You will need to "
+"add data each time you refresh the page"
+msgstr ""
+
+#: templates/map.html:1811 templates/map.html.py:1926 templates/map.html:1972
+#: templates/map.html.py:2080 templates/map.html:2267
+#: templates/map.html.py:2547
 msgid "Cancel"
 msgstr "Canslo"
 
-#: templates/map.html:1767
+#: templates/map.html:1848
 msgid "Searching NomisWeb/ StatsWales..."
 msgstr "Chwilio drwy NomisWeb/Ystadegau Cymru..."
 
-#: templates/map.html:1786 templates/map.html.py:1824 templates/map.html:1949
+#: templates/map.html:1867 templates/map.html.py:1905
 msgid "Sorry, an error occurred. Please try again, or report it.\\n\\n"
 msgstr ""
-"Mae’n ddrwg gennym, cafwyd gwall. Rhowch gynnig arall arni, neu rhowch wybod"
-" amdano.\\n\\n"
+"Mae’n ddrwg gennym, cafwyd gwall. Rhowch gynnig arall arni, neu rhowch wybod "
+"amdano.\\n\\n"
 
-#: templates/map.html:1814
+#: templates/map.html:1895
 msgid "Sorry, no results were found for that search.\\n"
-msgstr "Mae’n ddrwg gennym, ni chafwyd canlyniadau ar gyfer y chwilio hwnnw.\\n"
+msgstr ""
+"Mae’n ddrwg gennym, ni chafwyd canlyniadau ar gyfer y chwilio hwnnw.\\n"
 
-#: templates/map.html:1815
+#: templates/map.html:1896
 msgid "Please refine the search terms and try again"
 msgstr "Addaswch eich ymadrodd chwilio a rhowch gynnig arall arni"
 
-#: templates/map.html:1854
+#: templates/map.html:1934
 msgid "Learn More"
 msgstr "Dysgwch ragor"
 
-#: templates/map.html:1877
+#: templates/map.html:1957
 msgid "Add to Map"
 msgstr "Ychwanegu at y map"
 
-#: templates/map.html:1880
-msgid "Inspecting dataset ..."
-msgstr "Archwilio setiau data ..."
-
-#: templates/map.html:1988 templates/map.html.py:2220
+#: templates/map.html:2001 templates/map.html.py:2232
 msgid "Render to Map"
 msgstr "Rendro i’r map"
 
-#: templates/map.html:2026 templates/map.html.py:3062 templates/map.html:3091
+#: templates/map.html:2039 templates/map.html.py:3313 templates/map.html:3342
 msgid "Geography"
 msgstr "Daearyddiaeth"
 
-#: templates/map.html:2029
+#: templates/map.html:2042
 msgid "Please select an option for each selection : "
 msgstr "Dewiswch opsiwn ar gyfer pob detholiad:"
 
-#: templates/map.html:2415 templates/profile.html.py:56
+#: templates/map.html:2440 templates/profile.html.py:56
 #: templates/search_data.html:203
 msgid "Save"
 msgstr "Cadw"
 
-#: templates/map.html:2775
+#: templates/map.html:2448
+msgid "Please select a Geography ID column and a data value column"
+msgstr ""
+
+#: templates/map.html:2805
 msgid "Select geography id column"
 msgstr "Dewis colofn dynodydd daearyddol"
 
-#: templates/map.html:2815
+#: templates/map.html:2845
 msgid "Select data value column"
 msgstr "Dewis y golofn gwerth data"
 
-#: templates/map.html:2867
+#: templates/map.html:2897
 msgid "Select additional secondary data"
 msgstr "Dewis data eilaidd ychwanegol"
 
-#: templates/map.html:2957
+#: templates/map.html:3208
 msgid "Choropleth options"
 msgstr "Dewisiadau choropleth"
 
-#: templates/map.html:2970
+#: templates/map.html:3221
 msgid "Category Types"
 msgstr "Mathau o gategorïau"
 
-#: templates/map.html:2975
+#: templates/map.html:3226
 msgid "Equal size categories"
 msgstr "Categorïau o’r un maint"
 
-#: templates/map.html:2976
+#: templates/map.html:3227
 msgid "Quantiles"
 msgstr "Cwantelau"
 
-#: templates/map.html:2977
+#: templates/map.html:3228
 msgid "K-Means"
 msgstr "K-Means"
 
-#: templates/map.html:2984
+#: templates/map.html:3235
 msgid "Number of Categories"
 msgstr "Nifer y Categorïau"
 
-#: templates/map.html:3004
+#: templates/map.html:3255
 msgid "Choropleth colour scheme"
 msgstr "Cynllun lliwiau choropleth"
 
-#: templates/map.html:3010
+#: templates/map.html:3261
 msgid "Orange - Red"
 msgstr "Oren - Coch"
 
-#: templates/map.html:3011
+#: templates/map.html:3262
 msgid "Red - Yellow - Blue"
 msgstr "Coch – Melyn - Glas"
 
-#: templates/map.html:3012
+#: templates/map.html:3263
 msgid "Yellow - Green - Blue"
 msgstr "Melyn – Gwyrdd - Glas"
 
-#: templates/map.html:3013
+#: templates/map.html:3264
 msgid "Spectral"
 msgstr "Sbectrol"
 
-#: templates/map.html:3014
+#: templates/map.html:3265
 msgid "Greyscale"
 msgstr "Graddlwyd"
 
-#: templates/map.html:3015
+#: templates/map.html:3266
 msgid "WISERD"
 msgstr "WISERD"
 
-#: templates/map.html:3022
+#: templates/map.html:3273
 msgid "Layer Name"
 msgstr "Enw’r Haen"
 
-#: templates/map.html:3044 templates/map.html.py:3077
+#: templates/map.html:3295 templates/map.html.py:3328
 msgid "Dataset Variables"
 msgstr "Amrywiadau Set Ddata"
 
-#: templates/map.html:3098 templates/welcome.html.py:5
+#: templates/map.html:3349 templates/welcome.html.py:5
 msgid "Welcome"
 msgstr "Croeso"
 
-#: templates/map.html:3100
+#: templates/map.html:3351
 msgid ""
 "Welcome to the WISERD DataPortal.<br><br>For more information, follow this "
 "tutorial."
@@ -1651,42 +2315,75 @@ msgstr ""
 "Croeso i'r DataPortal WISERD.<br><br>Am ragor o wybodaeth, dilynwch y "
 "tiwtorial hwn."
 
-#: templates/map.html:3101
+#: templates/map.html:3352
 msgid "Links to help and support links and PDF downloads here."
 msgstr ""
 "Lincs i lincs cymorth a chefnogaeth a dogfennau PDF i'w lawrlwytho yma."
 
-#: templates/map.html:3106 templates/map.html.py:3115
+#: templates/map.html:3357 templates/map.html.py:3366
 msgid "Search Remote"
 msgstr "Chwilio o Bell"
 
-#: templates/map.html:3119 templates/navigation.html.py:105
-#: templates/search.html:189
+#: templates/map.html:3370 templates/navigation.html.py:111
+#: templates/search.html:202
 msgid "Search..."
 msgstr "Chwilio..."
 
-#: templates/map.html:3149
+#: templates/map.html:3395 templates/user_guide.html.py:1139
+msgid ""
+"The WISERD DataPortal allows users to map their own data for areas in Wales "
+"and to export this as a publishable map. This function has been specially "
+"designed so that all the mapping occurs inside the users browser rather than "
+"on the WISERD DataPortal server. This means that potentially sensitive data "
+"does not leave the users machine."
+msgstr ""
+"Mae'r DataPortal WISERD yn caniatau i ddefnyddwyr fapio eu data eu hunain ar "
+"gyfer ardaloedd yng Nghymru ac i allforio hyn fel map y gellir ei gyhoeddi. "
+"Mae'r  swyddogaeth hon wedi cael ei chynllunio'n arbennig fel bod yr holl "
+"fapio yn digwydd y tu mewn i borwr y defnyddiwr yn hytrach nag ar weinydd "
+"DataPortal WISERD. Mae hyn yn golygu nad yw data a allai fod yn sensitif yn "
+"gadael peiriant y defnyddiwr."
+
+#: templates/map.html:3398 templates/user_guide.html.py:1141
+msgid ""
+"You can import your own data onto the DataPortal by clicking the MapMyData "
+"button."
+msgstr ""
+"Gallwch fewnforio eich data eich hun i'r DataPortal drwy glicio ar y botwm "
+"MapioFyNata."
+
+#: templates/map.html:3402
+msgid "Please log in to use this feature."
+msgstr ""
+
+#: templates/map.html:3420
 msgid "Name this Layer"
 msgstr "Enwch yr Haen hon"
 
 # Google Translated
-#: templates/map.html:3153
+#: templates/map.html:3424
 msgid "New Layer..."
 msgstr "Haen Newydd"
 
-#: templates/map.html:3159
+#: templates/map.html:3429
 msgid "Select boundary type"
 msgstr "Dewis math o ffin"
+
+#: templates/map_test.html:5 templates/map_test.html.py:373
+#, fuzzy
+#| msgid "Map It"
+msgid "Map Test"
+msgstr "Ei Fapio"
 
 #: templates/navigation.html:31 templates/naw_navigation.html.py:58
 msgid "Toggle navigation"
 msgstr "Toglo’r llywio"
 
-#: templates/navigation.html:61 templates/naw_navigation.html.py:112
+#: templates/navigation.html:61 templates/naw_navigation.html.py:122
 msgid "Site Setup"
 msgstr "Sefydlu’r Safle"
 
-#: templates/navigation.html:67 templates/naw_navigation.html.py:118
+#: templates/navigation.html:67 templates/naw_navigation.html.py:128
 msgid "Admin Panel"
 msgstr "Panel Gweinyddu"
 
@@ -1694,7 +2391,7 @@ msgstr "Panel Gweinyddu"
 msgid "SQL Explorer"
 msgstr "Archwiliwr SQL"
 
-#: templates/navigation.html:75 templates/naw_navigation.html.py:124
+#: templates/navigation.html:75 templates/naw_navigation.html.py:134
 msgid "User Profile"
 msgstr "Proffil y Defnyddiwr"
 
@@ -1706,38 +2403,42 @@ msgstr "API"
 msgid "API Docs"
 msgstr "Dogfennau API"
 
-#: templates/navigation.html:87 templates/naw_navigation.html.py:129
+#: templates/navigation.html:87 templates/navigation.html.py:93
+msgid "Give Feedback"
+msgstr ""
+
+#: templates/navigation.html:91 templates/naw_navigation.html.py:139
 msgid "Logout"
 msgstr "Allgofnodi"
 
-#: templates/navigation.html:89 templates/naw_navigation.html.py:131
+#: templates/navigation.html:95 templates/naw_navigation.html.py:141
 msgid "Login"
 msgstr "Mewngofnodi"
 
-#: templates/navigation.html:124 templates/search.html.py:273
+#: templates/navigation.html:130 templates/search.html.py:287
 #: templates/tables.html:185
 msgid "Map"
 msgstr "Map"
 
-#: templates/navigation.html:128
+#: templates/navigation.html:134
 msgid "Recent Search Results"
 msgstr "Canlyniadau Chwilio Diweddar"
 
-#: templates/navigation.html:131
+#: templates/navigation.html:137
 msgid "Text Results"
 msgstr "Canlyniadau Testun"
 
-#: templates/navigation.html:149 templates/tables.html.py:173
+#: templates/navigation.html:155 templates/tables.html.py:173
 msgid "Spatial Results"
 msgstr "Canlyniadau Gofodol"
 
-#: templates/navigation.html:167 templates/search.html.py:208
+#: templates/navigation.html:173 templates/search.html.py:221
 msgid "Surveys"
 msgstr "Arolygon"
 
-#: templates/navigation.html:180 templates/search.html.py:205
-#: templates/search.html:218 templates/survey_detail.html.py:339
-#: templates/survey_detail.html:354
+#: templates/navigation.html:186 templates/search.html.py:218
+#: templates/search.html:231 templates/survey_detail.html.py:362
+#: templates/survey_detail.html:377
 msgid "Questions"
 msgstr "Cwestiynau"
 
@@ -1753,18 +2454,19 @@ msgstr "Llywio i HAFAN WISERD"
 msgid "WISERD Dashboard"
 msgstr "Dangosfwrdd WISERD"
 
-#: templates/naw_navigation.html:96
-msgid "Research"
-msgstr "Ymchwil"
+# Google Translated
+#: templates/naw_dashboard.html:173 templates/naw_navigation.html.py:111
+msgid "National Assembly Research Service"
+msgstr "Cynulliad Cenedlaethol Y Gwasanaeth Ymchwil"
 
-#: templates/naw_navigation.html:99
+#: templates/naw_dashboard.html:249 templates/naw_dashboard.html.py:256
+#: templates/naw_navigation.html:109
 msgid "\"In Brief\" Blog"
 msgstr "Blog 'Yn Gryno\""
 
-# Google Translated
-#: templates/naw_navigation.html:101
-msgid "National Assembly Research Service"
-msgstr "Cynulliad Cenedlaethol Y Gwasanaeth Ymchwil"
+#: templates/naw_navigation.html:106
+msgid "Research"
+msgstr "Ymchwil"
 
 #: templates/openid/login.html:9
 msgid "OpenID Sign In"
@@ -1774,15 +2476,15 @@ msgstr "Mewngofnodi i OpenID"
 msgid "Local data layers"
 msgstr "Data Lleol"
 
-#: templates/profile.html:89
+#: templates/profile.html:115
 msgid "Settings"
 msgstr "Gosodiadau"
 
-#: templates/profile.html:98
+#: templates/profile.html:124
 msgid "Links and Tabs"
 msgstr "Lincs a Thabiau"
 
-#: templates/profile.html:101
+#: templates/profile.html:127
 msgid ""
 "This is not advised on mobile, as tab management is not as easy as when "
 "using a desktop browser."
@@ -1790,7 +2492,7 @@ msgstr ""
 "Nid ydym yn argymell hyn ar ddyfeisiadau symudol, gan nad yw mor hawdd "
 "rheoli tabiau ag ydyw wrth ddefnyddio porwr pen desg."
 
-#: templates/profile.html:102
+#: templates/profile.html:128
 msgid ""
 "However it can be desirable to have multiple tabs open to view multiple "
 "surveys, for example."
@@ -1798,23 +2500,23 @@ msgstr ""
 "Ond, gall fod yn ddymunol gadael nifer o dabiau ar agor i weld mwy nag un "
 "arolwg, er enghraifft."
 
-#: templates/profile.html:108
+#: templates/profile.html:134
 msgid "Open links in new tabs"
 msgstr "Agor lincs mewn tabiau newydd"
 
-#: templates/profile.html:117
+#: templates/profile.html:143
 msgid "Choropleth Speed/ Quality"
 msgstr "Cyflymder/Ansawdd Chloropleth"
 
-#: templates/profile.html:120
+#: templates/profile.html:146
 msgid ""
-"Using high resolution regions, generating a choropleth can be very strenuous"
-" for your browser and also requires larger downloads."
+"Using high resolution regions, generating a choropleth can be very strenuous "
+"for your browser and also requires larger downloads."
 msgstr ""
 "Wrth ddefnyddio rhanbarthau lliwiau cryf, gall cynhyrchu chloropeth roi "
 "pwysau ar eich porwr a bydd golygu llwytho dogfennau mwy."
 
-#: templates/profile.html:121
+#: templates/profile.html:147
 #, python-format
 msgid ""
 "For this reason, the TopoJSON layer used is \"simplified\" down to 1%% "
@@ -1823,7 +2525,7 @@ msgstr ""
 "Felly, caiff yr haen TopoJSON a ddefnyddir ei \"symleiddio\" i gymhlethdod  "
 "1%% er mwyn cyflymder a hwyluso defnydd."
 
-#: templates/profile.html:122
+#: templates/profile.html:148
 #, python-format
 msgid ""
 "As an example a postcode sector topojson layer at 1%% is approx 900kb, full "
@@ -1834,16 +2536,24 @@ msgstr ""
 "ansawdd llawn yn 30MB! Nid ydym yn argymell llwytho a chyfleu, yn arbennig "
 "ar ddyfais symudol oni bai fod hynny’n hollol angenrheidiol."
 
-#: templates/profile.html:123
+#: templates/profile.html:149
 #, python-format
 msgid ""
-"View <a href=\"https://github.com/mbloch/mapshaper/wiki/Command-Reference#-simplify\" target=\"_blank\"> Mapshaper \"simplify\"</a> for more"
-" information on the process of simplification used and <a href=\"https://en.wikipedia.org/wiki/Ramer%%E2%%80%%93Douglas%%E2%%80%%93Peucker_algorithm\" target=\"_blank\">Wikipedia Ramer-Douglas-Peucker</a> for information on the algorithm the process uses."
+"View <a href=\"https://github.com/mbloch/mapshaper/wiki/Command-Reference#-"
+"simplify\" target=\"_blank\"> Mapshaper \"simplify\"</a> for more "
+"information on the process of simplification used and <a href=\"https://en."
+"wikipedia.org/wiki/Ramer%%E2%%80%%93Douglas%%E2%%80%%93Peucker_algorithm\" "
+"target=\"_blank\">Wikipedia Ramer-Douglas-Peucker</a> for information on the "
+"algorithm the process uses."
 msgstr ""
-"Ewch i <a href=\"https://github.com/mbloch/mapshaper/wiki/Command-Reference#-simplify\" target=\"_blank\"> Mapshaper \"simplify\"</a> i gael "
-"rhagor o wybodaeth am y broses symleiddio a ddefnyddir a <a href=\"https://en.wikipedia.org/wiki/Ramer%%E2%%80%%93Douglas%%E2%%80%%93Peucker_algorithm\" target=\"_blank\">Wikipedia Ramer-Douglas-Peucker</a> gwybodaeth am yr algorithm y defnyddia’r broses."
+"Ewch i <a href=\"https://github.com/mbloch/mapshaper/wiki/Command-Reference#-"
+"simplify\" target=\"_blank\"> Mapshaper \"simplify\"</a> i gael rhagor o "
+"wybodaeth am y broses symleiddio a ddefnyddir a <a href=\"https://en."
+"wikipedia.org/wiki/Ramer%%E2%%80%%93Douglas%%E2%%80%%93Peucker_algorithm\" "
+"target=\"_blank\">Wikipedia Ramer-Douglas-Peucker</a> gwybodaeth am yr "
+"algorithm y defnyddia’r broses."
 
-#: templates/profile.html:129
+#: templates/profile.html:155
 msgid "Use High Resolution Regions"
 msgstr "Defnyddio Rhanbarthau Lliwiau Cryf"
 
@@ -1860,7 +2570,6 @@ msgid "Sector"
 msgstr "Sector"
 
 #: templates/profile_snippet.html:35
-#| msgid "Contents"
 msgid "Comments"
 msgstr "Cynnwys"
 
@@ -1888,7 +2597,7 @@ msgstr "Cofnod Ansoddol"
 msgid "Raw Text"
 msgstr "Testun Crai"
 
-#: templates/qual_detail.html:24 templates/search.html.py:306
+#: templates/qual_detail.html:24 templates/search.html.py:320
 msgid "Pages"
 msgstr "Tudalennau"
 
@@ -1907,7 +2616,7 @@ msgstr "Dynodwr"
 
 #: templates/qual_detail.html:31 templates/qual_detail.html.py:234
 #: templates/qual_detail.html:245 templates/survey_detail.html.py:49
-#: templates/survey_detail.html:333 templates/survey_detail.html.py:346
+#: templates/survey_detail.html:356 templates/survey_detail.html.py:369
 msgid "Dublin Core"
 msgstr "Craidd Dulyn"
 
@@ -1919,7 +2628,7 @@ msgstr "Crëwr"
 msgid "Subject"
 msgstr "Pwnc"
 
-#: templates/qual_detail.html:40 templates/search.html.py:305
+#: templates/qual_detail.html:40 templates/search.html.py:319
 #: templates/survey_detail.html:58
 msgid "Description"
 msgstr "Disgrifiad"
@@ -1933,7 +2642,7 @@ msgid "Contributor"
 msgstr "Cyfrannwr"
 
 #: templates/qual_detail.html:44 templates/question_detail.html.py:284
-#: templates/survey_detail.html:61 templates/survey_detail.html.py:363
+#: templates/survey_detail.html:61 templates/survey_detail.html.py:386
 msgid "Type"
 msgstr "Math"
 
@@ -1988,8 +2697,8 @@ msgid "Question Detail"
 msgstr "Manylion Cwestiwn"
 
 #: templates/question_detail.html:16 templates/question_detail.html.py:252
-#: templates/question_detail.html:267 templates/search.html.py:38
-#: templates/survey_detail.html:77
+#: templates/question_detail.html:267 templates/search.html.py:51
+#: templates/survey_detail.html:77 templates/survey_detail.html.py:232
 msgid "Question"
 msgstr "Cwestiwn"
 
@@ -1997,12 +2706,12 @@ msgstr "Cwestiwn"
 msgid "Question ID"
 msgstr "Modd o Adnabod y cwestiwn"
 
-#: templates/question_detail.html:21 templates/search.html.py:233
+#: templates/question_detail.html:21 templates/search.html.py:246
 msgid "Question Text"
 msgstr "Testun y Cwestiwn"
 
-#: templates/question_detail.html:22 templates/search.html.py:232
-#: templates/survey_detail.html:361
+#: templates/question_detail.html:22 templates/search.html.py:245
+#: templates/survey_detail.html:384
 msgid "Question Number"
 msgstr "Rhif y Cwestiwn"
 
@@ -2031,7 +2740,7 @@ msgid "Variable ID"
 msgstr "Modd Adnabod Amrywiadwy"
 
 #: templates/question_detail.html:29 templates/survey_detail.html.py:40
-#: templates/survey_detail.html:364
+#: templates/survey_detail.html:387
 msgid "Notes"
 msgstr "Nodiadau"
 
@@ -2084,7 +2793,7 @@ msgstr "Gwiriadau"
 msgid "Route Type"
 msgstr "Math o Lwybr"
 
-#: templates/question_detail.html:90 templates/search.html.py:237
+#: templates/question_detail.html:90 templates/search.html.py:251
 msgid "View Survey"
 msgstr "Gweld yr Arolwg"
 
@@ -2096,53 +2805,58 @@ msgstr "Manylion Cwestiwn ar gyfer: "
 msgid "QuestionID"
 msgstr "Modd Adnabod y Cwestiwn"
 
-#: templates/question_detail.html:283 templates/survey_detail.html.py:362
+#: templates/question_detail.html:283 templates/survey_detail.html.py:385
 msgid "QuestionText"
 msgstr "Testun y Cwestiwn"
 
-#: templates/search.html:46 templates/survey_detail.html.py:5
-#: templates/survey_detail.html:336 templates/survey_detail.html.py:350
-msgid "Survey"
-msgstr "Arolwg"
+#: templates/search.html:40 templates/survey_detail.html.py:221
+#, fuzzy
+#| msgid "MapMyData"
+msgid "Map Dataset"
+msgstr "MapioFyNata"
 
-#: templates/search.html:103 templates/tables.html.py:73
+#: templates/search.html:116 templates/tables.html.py:73
 msgid "Map Survey"
 msgstr "Arolwg"
 
-#: templates/search.html:201
+#: templates/search.html:214
 msgid "Jump to:"
 msgstr "Neidio i:"
 
-#: templates/search.html:231 templates/survey_detail.html.py:22
+#: templates/search.html:244 templates/survey_detail.html.py:22
 #: templates/tables.html:180
 msgid "Survey Title"
 msgstr "Teitl yr Arolwg"
 
-#: templates/search.html:236
+#: templates/search.html:249
+msgid "Map dataset"
+msgstr ""
+
+#: templates/search.html:250
 msgid "View Question"
 msgstr "Gweld y Cwestiwn"
 
-#: templates/search.html:253
+#: templates/search.html:267
 msgid "Survey Results"
 msgstr "Canlyniadau’r Arolwg"
 
-#: templates/search.html:267
+#: templates/search.html:281
 msgid "Frequency"
 msgstr "Amlder"
 
-#: templates/search.html:268
+#: templates/search.html:282
 msgid "Collection Method"
 msgstr "Dull Casglu"
 
-#: templates/search.html:272 templates/tables.html.py:182
+#: templates/search.html:286 templates/tables.html.py:182
 msgid "Area"
 msgstr "Maes"
 
-#: templates/search.html:291
+#: templates/search.html:305
 msgid "Qualitative Results"
 msgstr "Canlyniadau Ansoddol"
 
-#: templates/search.html:307
+#: templates/search.html:321
 msgid "Tier"
 msgstr "Haen"
 
@@ -2150,7 +2864,7 @@ msgstr "Haen"
 msgid "Remote Data Search"
 msgstr "Chwilio Data o Bell"
 
-#: templates/search_data.html:124
+#: templates/search_data.html:124 templates/survey_detail.html.py:390
 msgid "Map It"
 msgstr "Ei Fapio"
 
@@ -2191,8 +2905,7 @@ msgstr "Methiant Mewngofnodi Rhwydwaith Cymdeithasol"
 msgid ""
 "An error occurred while attempting to login via your social network account."
 msgstr ""
-"Roedd gwall wrth geisio mewngofnodi drwy eich cyfrif rhwydwaith "
-"cymdeithasol."
+"Roedd gwall wrth geisio mewngofnodi drwy eich cyfrif rhwydwaith cymdeithasol."
 
 #: templates/socialaccount/connections.html:5
 #: templates/socialaccount/connections.html:8
@@ -2227,12 +2940,12 @@ msgstr "Mewngofnodi wedi’i ganslo"
 #, python-format
 msgid ""
 "You decided to cancel logging in to our site using one of your existing "
-"accounts. If this was a mistake, please proceed to <a "
-"href=\"%(login_url)s\">sign in</a>."
+"accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s"
+"\">sign in</a>."
 msgstr ""
 "Rydych wedi penderfynu canslo mewngofnodi i’n safle drwy ddefnyddio un o’ch "
-"cyfrifon cyfredol. Os mai camgymeriad oedd hyn, ewch i <a "
-"href=\"%(login_url)s\">sign in</a>."
+"cyfrifon cyfredol. Os mai camgymeriad oedd hyn, ewch i <a href="
+"\"%(login_url)s\">sign in</a>."
 
 #: templates/socialaccount/messages/account_connected.txt:2
 msgid "The social account has been connected."
@@ -2391,19 +3104,19 @@ msgstr "Cwmpasiad : Dyddiad Dechrau"
 msgid "Coverage : End Date"
 msgstr "Cwmpasiad : Dyddiad Gorffen"
 
-#: templates/survey_detail.html:183
+#: templates/survey_detail.html:196
 msgid "Previous"
 msgstr "Blaenorol"
 
-#: templates/survey_detail.html:194
+#: templates/survey_detail.html:208
 msgid "Parent"
 msgstr "Rhiant"
 
-#: templates/survey_detail.html:306
+#: templates/survey_detail.html:329
 msgid "Survey Details for : "
 msgstr "Manylion Arolwg ar gyfer : "
 
-#: templates/survey_detail.html:315
+#: templates/survey_detail.html:338
 msgid ""
 "You have access to this {{ access_allow.document_type }} because you are a "
 "member of the \"{{ access.survey_collection_user_group_name }}\" group."
@@ -2411,28 +3124,28 @@ msgstr ""
 "Mae gennych fynediad at hwn {{ access_allow.document_type }} am eich bod yn "
 "aelod o grŵp \"{{ access.survey_collection_user_group_name }}\"."
 
-#: templates/survey_detail.html:316
+#: templates/survey_detail.html:339
 msgid ""
-"Please be aware that the information for \"{{ "
-"access.survey_collection_name}}\" has restricted access."
+"Please be aware that the information for \"{{ access."
+"survey_collection_name}}\" has restricted access."
 msgstr ""
-"Cofiwch bod y gallu i gael gafael ar wybodaeth am \"{{ "
-"access.survey_collection_name}}\" yn gyfyngedig."
+"Cofiwch bod y gallu i gael gafael ar wybodaeth am \"{{ access."
+"survey_collection_name}}\" yn gyfyngedig."
 
-#: templates/survey_detail.html:317
+#: templates/survey_detail.html:340
 msgid "Contact the WISERD DataPortal admin team for more information"
 msgstr ""
 "Cysylltwch â thîm gweinyddu WISERD DataPortal i gael rhagor o wybodaeth"
 
-#: templates/survey_detail.html:326
+#: templates/survey_detail.html:349
 msgid "Survey Metadata"
 msgstr "Metaddata’r Arolwg"
 
-#: templates/survey_detail.html:365
+#: templates/survey_detail.html:388
 msgid "From"
 msgstr "Gan"
 
-#: templates/survey_detail.html:366
+#: templates/survey_detail.html:389
 msgid "SubOf"
 msgstr "Is-gymal"
 
@@ -2460,49 +3173,48 @@ msgstr "Golygu’r manylion"
 msgid "Spatial search area : "
 msgstr "Maes chwilio gofodol:"
 
-#: templates/user_guide.html:23
+#: templates/user_guide.html:24
 msgid "For on-screen help on each page of the DataPortal click this button."
 msgstr ""
-"I gael cymorth ar y sgrîn ar bob tudalen o'r DataPortal cliciwch y botwm "
-"hwn."
+"I gael cymorth ar y sgrîn ar bob tudalen o'r DataPortal cliciwch y botwm hwn."
 
-#: templates/user_guide.html:45
+#: templates/user_guide.html:46
 msgid "Contents"
 msgstr "Cynnwys"
 
-#: templates/user_guide.html:49 templates/user_guide.html.py:115
+#: templates/user_guide.html:50 templates/user_guide.html.py:116
 msgid "The DataPortal"
 msgstr "Y DataPortal"
 
-#: templates/user_guide.html:52 templates/user_guide.html.py:172
+#: templates/user_guide.html:53 templates/user_guide.html.py:173
 msgid "Languages"
 msgstr "Ieithoedd"
 
-#: templates/user_guide.html:55 templates/user_guide.html.py:227
+#: templates/user_guide.html:56 templates/user_guide.html.py:228
 msgid "Creating an Account"
 msgstr "Creu Cyfrif"
 
-#: templates/user_guide.html:60 templates/user_guide.html.py:304
+#: templates/user_guide.html:61 templates/user_guide.html.py:305
 msgid "Navigating through The Dashboard"
 msgstr "Llywio drwy'r Dangosfwrdd"
 
-#: templates/user_guide.html:75 templates/user_guide.html.py:448
+#: templates/user_guide.html:76 templates/user_guide.html.py:449
 msgid "Searching for Data"
 msgstr "Metadata’r Arolwg"
 
-#: templates/user_guide.html:82 templates/user_guide.html.py:893
+#: templates/user_guide.html:83 templates/user_guide.html.py:894
 msgid "Using the Map"
 msgstr "Defnyddio'r Map"
 
-#: templates/user_guide.html:85 templates/user_guide.html.py:924
+#: templates/user_guide.html:86 templates/user_guide.html.py:925
 msgid "Adding data to the Map"
 msgstr "Ychwanegu data at y map"
 
-#: templates/user_guide.html:104 templates/user_guide.html.py:1384
+#: templates/user_guide.html:105 templates/user_guide.html.py:1385
 msgid "View Tech Blog Posts"
 msgstr "Gweld Negeseuon Blog Technegol "
 
-#: templates/user_guide.html:117
+#: templates/user_guide.html:118
 msgid ""
 "The WISERD DataPortal is a web application that enhances a researchers "
 "ability to search, discover, map and download socio-economic research data "
@@ -2511,14 +3223,14 @@ msgid ""
 msgstr ""
 "Mae DataPortal WISERD yn gymhwysiad gwe sy'n gwella gallu ymchwilydd i "
 "chwilio, darganfod, mapio a lawrlwytho data cymdeithasol-economaidd sy'n "
-"gysylltiedig â Chymru. Y nod yw annog ailddefnyddio ac ailbennu defnydd data"
-" presennol."
+"gysylltiedig â Chymru. Y nod yw annog ailddefnyddio ac ailbennu defnydd data "
+"presennol."
 
-#: templates/user_guide.html:120
+#: templates/user_guide.html:121
 msgid "To access the WISERD DataPortal visit:"
 msgstr "I fynd at y DataPortal WISERD ewch i:"
 
-#: templates/user_guide.html:125
+#: templates/user_guide.html:126
 msgid ""
 "To find out more about the DataPortal project you can click on the WISERD "
 "button."
@@ -2526,7 +3238,7 @@ msgstr ""
 "I gael gwybod rhagor am y prosiect DataPortal gallwch glicio ar y botwm "
 "WISERD."
 
-#: templates/user_guide.html:173
+#: templates/user_guide.html:174
 msgid ""
 "The DataPortal is available in both English and Welsh, to alternate between "
 "languages you can use the toggle buttons at the top of the page. You can "
@@ -2535,10 +3247,10 @@ msgid ""
 msgstr ""
 "Mae'r DataPortal ar gael yn Gymraeg ac yn Saesneg, i symud rhwng y ddwy "
 "iaith gallwch ddefnyddio'r botymau toglo ar frig y dudalen. Mae'r botymau "
-"hyn ar bob tudalen o'r DataPortal, sy'n caniatau i chi newid rhwng ieithoedd"
-" pryd bynnag y bo angen. "
+"hyn ar bob tudalen o'r DataPortal, sy'n caniatau i chi newid rhwng ieithoedd "
+"pryd bynnag y bo angen. "
 
-#: templates/user_guide.html:197
+#: templates/user_guide.html:198
 msgid ""
 "You can also choose a language preference in your profile settings, which "
 "will be stored and used each time you log in."
@@ -2546,7 +3258,7 @@ msgstr ""
 "Gallwch hefyd ddewis eich dewis iaith yn eich gosodiadau proffil, fydd yn "
 "cael ei storio a'i ddefnyddio bob tro y byddwch yn mewngofnodi."
 
-#: templates/user_guide.html:228
+#: templates/user_guide.html:229
 msgid ""
 "To use the full suite of DataPortal functionality you must first create an "
 "account using the Login button in the top right hand corner. You can either "
@@ -2558,15 +3270,15 @@ msgstr ""
 "dde. Gallwch naill ai mewngofnodi yn syth gan ddefnyddio cyfrif Google sy'n "
 "bodoli eisoes, neu greu enw defnyddiwr a chyfrinair newydd."
 
-#: templates/user_guide.html:253
+#: templates/user_guide.html:254
 msgid ""
-"Signing up to the Dataportal requires you to create a username and password,"
-" as well as providing an email address to verify your account."
+"Signing up to the Dataportal requires you to create a username and password, "
+"as well as providing an email address to verify your account."
 msgstr ""
 "Mae cofrestru ar gyfer y DataPortal yn gofyn i chi greu enw defnyddiwr a "
 "chyfrinair, yn ogystal â darparu cyfeiriad e-bost i ddilysu eich cyfrif."
 
-#: templates/user_guide.html:307
+#: templates/user_guide.html:308
 msgid ""
 " Once logged in you will be directed back to the Dashboard. From this page "
 "all sections of the DataPortal can be accessed using the buttons shown. The "
@@ -2577,16 +3289,16 @@ msgstr ""
 "Ar ôl i chi fewngofnodi cewch eich cyfeirio yn ôl at y dangosfwrdd. O'r "
 "dudalen hon gellir mynd at holl adrannau'r DataPortal gan ddefnyddio'r "
 "botymau a ddangosir. Mae'r bar ochr yn cynnwys botwm dangosfwrdd drwy gydol "
-"y DataPortal, fodd bynnag, gellir defnyddio'r logo ar frig y dudalen i lywio"
-" yn ôl ac ymlaen i'r dangosfwrdd hefyd."
+"y DataPortal, fodd bynnag, gellir defnyddio'r logo ar frig y dudalen i lywio "
+"yn ôl ac ymlaen i'r dangosfwrdd hefyd."
 
-#: templates/user_guide.html:355
+#: templates/user_guide.html:356
 msgid ""
 " Your profile contains details about you and your settings, as well as the "
 "toggle at the top of each page you can set your language preference here. "
 "Your preference will be stored and used each time you log into the "
-"DataPortal. Always remember to click Save when you have updated your "
-"profile/settings."
+"DataPortal. Always remember to click Save when you have updated your profile/"
+"settings."
 msgstr ""
 "Mae eich proffil yn cynnwys manylion amdanoch chi a'ch gosodiadau, yn "
 "ogystal â'r togl ar frig pob tudalen a gallwch osod eich dewis iaith yma. "
@@ -2594,7 +3306,7 @@ msgstr ""
 "mewngofnodi i'r DataPortal. Cofiwch glicio ar Arbed pan fyddwch wedi "
 "diweddaru eich proffil/gosodiadau."
 
-#: templates/user_guide.html:419
+#: templates/user_guide.html:420
 msgid ""
 " Browse Surveys is an easy to use overview listing all the surveys the "
 "DataPortal has to offer. On this page you can filter the surveys and view "
@@ -2604,7 +3316,7 @@ msgstr ""
 "arolygon sydd gan y DataPortal i'w cynnig. Ar y dudalen hon gallwch hidlo'r "
 "arolygon a gweld eu cynnwys."
 
-#: templates/user_guide.html:481
+#: templates/user_guide.html:482
 msgid ""
 " Datasets can be found and searched through the Search Metadata button, or "
 "simply by using the search bar on the left hand side of the DataPortal."
@@ -2612,7 +3324,7 @@ msgstr ""
 "Gellir dod o hyd i setiau data a'u chwilio drwy'r botwm Chwilio Metadata, "
 "neu drwy ddefnyddio'r bar chwilio ar ochr chwith y DataPortal."
 
-#: templates/user_guide.html:507
+#: templates/user_guide.html:508
 msgid ""
 "When searching a keyword such as Health, all related questions, surveys and "
 "qualitative records will be displayed."
@@ -2620,37 +3332,37 @@ msgstr ""
 "Wrth chwilio am air allweddol fel Iechyd, bydd yr holl gwestiynau, arolygon "
 "a chofnodion ansoddol yn cael eu dangos."
 
-#: templates/user_guide.html:508
+#: templates/user_guide.html:509
 msgid ""
 "These results appear in a grid format which can be filtered between "
-"Questions, Surveys and Qualitative Records. You can also use the search bars"
-" at the top of each subsection to search through the results as well as "
-"sorting the results by clicking on a column headings (for example sorting by"
-" date)."
+"Questions, Surveys and Qualitative Records. You can also use the search bars "
+"at the top of each subsection to search through the results as well as "
+"sorting the results by clicking on a column headings (for example sorting by "
+"date)."
 msgstr ""
 "Mae'r canlyniadau hyn yn ymddangos ar ffurf grid y gellir eu hidlo rhwng "
 "Cwestiynau, Arolygon a Chofnodion Ansoddol. Gallwch hefyd ddefnyddio'r "
-"bariau chwilio ar frig pob isadran i chwilio drwy'r canlyniadau yn ogystal â"
-" didoli'r canlyniadau drwy glicio ar benawdau colofnau (er enghraifft didoli"
-" yn ôl dyddiad)."
+"bariau chwilio ar frig pob isadran i chwilio drwy'r canlyniadau yn ogystal â "
+"didoli'r canlyniadau drwy glicio ar benawdau colofnau (er enghraifft didoli "
+"yn ôl dyddiad)."
 
-#: templates/user_guide.html:557
+#: templates/user_guide.html:558
 msgid ""
 "Once you've found data of interest to you there are two options, View "
 "Question or View Survey."
 msgstr ""
-"Ar ôl i chi ddod o hyd i ddata sydd o ddiddordeb i chi mae dau opsiwn, Gweld"
-" y Cwestiwn neu Gweld yr Arolwg."
+"Ar ôl i chi ddod o hyd i ddata sydd o ddiddordeb i chi mae dau opsiwn, Gweld "
+"y Cwestiwn neu Gweld yr Arolwg."
 
-#: templates/user_guide.html:582
+#: templates/user_guide.html:583
 msgid "View Question will bring up this page."
 msgstr "Bydd Gweld y Cwestiwn yn dangos y dudalen hon. "
 
-#: templates/user_guide.html:583
+#: templates/user_guide.html:584
 msgid "This page gives you information about the question"
 msgstr "Mae'r dudalen hon yn rhoi gwybodaeth i chi am y cwestiwn."
 
-#: templates/user_guide.html:606
+#: templates/user_guide.html:607
 msgid ""
 "By clicking on the tabs at the top of each page you can see the Response "
 "information and the Response table."
@@ -2658,11 +3370,11 @@ msgstr ""
 "Trwy glicio ar y tabiau ar frig pob tudalen gallwch weld y wybodaeth Ymateb "
 "a'r tabl Ymateb."
 
-#: templates/user_guide.html:675
+#: templates/user_guide.html:676
 msgid "The Survey button will open the following page."
 msgstr "Bydd y botwm Arolwg yn agor y dudalen ganlynol. "
 
-#: templates/user_guide.html:676
+#: templates/user_guide.html:677
 msgid ""
 "The Dublin Core, this page provides all the metadata about the survey as a "
 "whole. They may provide information on who produced the survey, how the "
@@ -2670,12 +3382,12 @@ msgid ""
 "response data. The <b>Source URL</b> will take you to the downloadable data."
 msgstr ""
 "Craidd Dulyn, mae'r dudalen hon yn darparu'r holl fetadata am yr arolwg yn "
-"ei gyfanrwydd. Gallant ddarparu gwybodaeth am bwy gynhyrchodd yr arolwg, sut"
-" y casglwyd data'r arolwg, faint o bobl wnaeth ymateb a sut i gaffael y data"
-" ymateb.  Bydd yr<b>URL Ffynhonnell</b> yn mynd â chi i'r data y gellir eu "
+"ei gyfanrwydd. Gallant ddarparu gwybodaeth am bwy gynhyrchodd yr arolwg, sut "
+"y casglwyd data'r arolwg, faint o bobl wnaeth ymateb a sut i gaffael y data "
+"ymateb.  Bydd yr<b>URL Ffynhonnell</b> yn mynd â chi i'r data y gellir eu "
 "lawrlwytho."
 
-#: templates/user_guide.html:700
+#: templates/user_guide.html:701
 msgid ""
 "The Survey page provides all the information about the survey itself, some "
 "information included here is the survey title, the start and end dates of "
@@ -2685,25 +3397,25 @@ msgstr ""
 "pheth o'r wybodaeth sydd wedi'i chynnwys yma yw teitl yr arolwg, dyddiadau "
 "dechrau a gorffen yr arolwg a maint y sampl."
 
-#: templates/user_guide.html:724
+#: templates/user_guide.html:725
 msgid ""
-"The questions page provides you with all the questions that were included in"
-" the survey and links to view each sepereate question."
+"The questions page provides you with all the questions that were included in "
+"the survey and links to view each sepereate question."
 msgstr ""
 "Mae'r dudalen gwestiynau yn rhoi yr holl gwestiynau i chi a gafodd eu "
 "cynnwys yn yr arolwg a lincs i weld pob cwestiwn unigol."
 
-#: templates/user_guide.html:748
+#: templates/user_guide.html:749
 msgid ""
 "The search page offers 3 different sections of results, by clicking the "
 "Survey tab you can search through the survey section, this offer different "
 "functions to the questions section."
 msgstr ""
-"Mae'r dudalen chwilio yn cynnig 3 adran wahanol o ganlyniadau, drwy glicio'r"
-" tab Arolygon gallwch chwilio drwy adran yr arolwg, mae hwn yn cynnig "
+"Mae'r dudalen chwilio yn cynnig 3 adran wahanol o ganlyniadau, drwy glicio'r "
+"tab Arolygon gallwch chwilio drwy adran yr arolwg, mae hwn yn cynnig "
 "gwahanol swyddogaethau i'r adran gwestiynau. "
 
-#: templates/user_guide.html:785
+#: templates/user_guide.html:786
 msgid ""
 "The DataPortal provides a simple way of mapping data you have found quickly "
 "and easily by clicking the Map Survey button."
@@ -2711,7 +3423,7 @@ msgstr ""
 "Mae'r DataPortal yn cynnig ffordd syml o fapio data yr ydych wedi eu canfod "
 "yn gyflym ac yn hawdd drwy glicio ar y botwm Mapio Arolwg."
 
-#: templates/user_guide.html:786
+#: templates/user_guide.html:787
 msgid ""
 "Once you have clicked this button it will take you to the map page and ask "
 "you to choose some data in order to present the information."
@@ -2719,11 +3431,11 @@ msgstr ""
 "Ar ôl i chi glicio ar y botwm hwn bydd yn mynd â chi at y dudalen fap a "
 "gofyn i chi ddewis data er mwyn cyflwyno'r wybodaeth."
 
-#: templates/user_guide.html:823
+#: templates/user_guide.html:824
 msgid "By clicking"
 msgstr "Trwy glicio"
 
-#: templates/user_guide.html:823
+#: templates/user_guide.html:824
 msgid ""
 "the survey data is added to the map. as you can see a key for the data has "
 "been added."
@@ -2731,22 +3443,22 @@ msgstr ""
 "bydd data'r arolwg yn cael ei ychwanegu at y map. Fel y gwelwch mae allwedd "
 "ar gyfer y data wedi cael ei hychwanegu."
 
-#: templates/user_guide.html:865
+#: templates/user_guide.html:866
 msgid ""
 " On clicking the View Map button DataPortal is directed to this page - an "
 "interactive mapping section. DataPortal gives the user the ability to plot "
 "information on a map, making the data easier to visualise and sort."
 msgstr ""
 "Wrth glicio'r botwm Gweld y Map mae'r DataPortal yn cael ei chyfeirio i'r "
-"dudalen hon - adran fapio ryngweithiol. Mae'r DataPortal yn rhoi'r gallu i'r"
-" defnyddiwr i osod gwybodaeth ar fap, gan wneud y data yn hawdd i'w deall "
-"a'u didoli."
+"dudalen hon - adran fapio ryngweithiol. Mae'r DataPortal yn rhoi'r gallu i'r "
+"defnyddiwr i osod gwybodaeth ar fap, gan wneud y data yn hawdd i'w deall a'u "
+"didoli."
 
-#: templates/user_guide.html:894
+#: templates/user_guide.html:895
 msgid "The interface:"
 msgstr "Y rhyngwyneb:"
 
-#: templates/user_guide.html:896
+#: templates/user_guide.html:897
 msgid ""
 "This is the starting page where a user can insert data onto a map to be "
 "analysed further. The familiar sidebar contains the dashboard button, "
@@ -2756,13 +3468,13 @@ msgid ""
 "select layers to view or hide."
 msgstr ""
 "Dyma'r dudalen gychwyn lle gall defnyddiwr roi data ar fap i'w dadansoddi "
-"ymhellach. Mae'r bar ochr cyfarwydd yn cynnwys botwm y dangosfwrdd, opsiynau"
-" ar gyfer mewnforio data i'r map gan ddefnyddio haenau, a Chanlyniadau "
+"ymhellach. Mae'r bar ochr cyfarwydd yn cynnwys botwm y dangosfwrdd, opsiynau "
+"ar gyfer mewnforio data i'r map gan ddefnyddio haenau, a Chanlyniadau "
 "Chwiliadau Diweddar sy'n ffordd gyflym o ychwanegu data a ddefnyddiwyd yn "
 "flaenorol. Mae'r botwm haen (ar frig y map yn y gornel dde) yn caniatau i'r "
 "defnyddiwr ddewis haenau i'w gweld neu eu cuddio."
 
-#: templates/user_guide.html:927
+#: templates/user_guide.html:928
 msgid ""
 "The WISERD DataPortal can be used to find and map a variety of socio-"
 "economic data, points of interest and boundary data for Wales. You can then "
@@ -2773,15 +3485,16 @@ msgstr ""
 "ogystal â'u mapio. Yna gallwch allforio'r map a lawrlwytho'r data i'w "
 "dadansoddi ymhellach."
 
-#: templates/user_guide.html:934
+#: templates/user_guide.html:935
 msgid ""
-"To add remote data to the map, click on the Map Layers button and select Remote Data.\n"
+"To add remote data to the map, click on the Map Layers button and select "
+"Remote Data.\n"
 "                                                "
 msgstr ""
 "I ychwanegu data o bell at y map, cliciwch ar y botwm Haenau Map a dewiswch "
 "Data o Bell."
 
-#: templates/user_guide.html:961
+#: templates/user_guide.html:962
 msgid ""
 "The following search box will appear, by typing in a key word different "
 "datasets will appear. Select any dataset of interest and click Add to Map."
@@ -2790,7 +3503,7 @@ msgstr ""
 "gwahanol setiau data yn ymddangos. Dewiswch unrhyw set ddata o ddiddordeb a "
 "chliciwch Ychwanegu at y Map."
 
-#: templates/user_guide.html:1008
+#: templates/user_guide.html:1009
 msgid ""
 "A list of variables will appear, these help divide the data into meaningful "
 "layers, for example, choosing Very Good Health, Annually as a Percent in "
@@ -2800,30 +3513,30 @@ msgstr ""
 "yn haenau ystyrlon, er enghraifft, dewis Iechyd Da Iawn, yn Flynyddol fel "
 "Canran mewn Cyfanswm yn ôl LSOA. "
 
-#: templates/user_guide.html:1008
+#: templates/user_guide.html:1009
 msgid "Render to Map."
 msgstr "Rendro i’r map"
 
-#: templates/user_guide.html:1009
+#: templates/user_guide.html:1010
 msgid ""
 " One common error that may occur is shown below, if you see this error it "
-"means you haven't selected enough variables. The error box will list all the"
-" variables that have not been chosen to help you select the correct ones."
+"means you haven't selected enough variables. The error box will list all the "
+"variables that have not been chosen to help you select the correct ones."
 msgstr ""
 "Dangosir un gwall cyffredin a allai ddigwydd isod, os gwelwch y gwall hwn "
 "mae'n golygu nad ydych wedi dewis digon o newidynnau. Bydd y blwch gwallau "
 "yn dangos yr holl newidynnau nad ydynt wedi cael eu dewis i'ch helpu i "
 "ddewis y rhai cywir."
 
-#: templates/user_guide.html:1066
+#: templates/user_guide.html:1067
 msgid "The following box will show"
 msgstr "Bydd y blwch canlynol yn dangos"
 
-#: templates/user_guide.html:1066
+#: templates/user_guide.html:1067
 msgid "Choropleth Options"
 msgstr "Dewisiadau choropleth"
 
-#: templates/user_guide.html:1066
+#: templates/user_guide.html:1067
 msgid ""
 "(these are the visual features of the layer) select the desired options and "
 "click"
@@ -2831,11 +3544,11 @@ msgstr ""
 "(rhain yw nodweddion gweledol yr haen) dewiswch yr opsiynau a ddymunir a "
 "chliciwch"
 
-#: templates/user_guide.html:1066
+#: templates/user_guide.html:1067
 msgid "Show New Layer."
 msgstr "Dangos Haen Newydd"
 
-#: templates/user_guide.html:1082
+#: templates/user_guide.html:1083
 msgid ""
 "The following will be displayed. The key at the bottom of the map shows the "
 "different percentages of very good health in different regions."
@@ -2843,46 +3556,23 @@ msgstr ""
 "Bydd y canlynol yn cael ei ddangos. Mae'r allwedd ar waelod y map yn dangos "
 "y gwahanol ganrannau o iechyd da iawn mewn gwahanol ranbarthau."
 
-#: templates/user_guide.html:1109
+#: templates/user_guide.html:1110
 msgid ""
 "From this map you can select a region and find out information about it in "
 "the righthand sidebar (example shown below)."
 msgstr ""
-"O'r map hwn gallwch ddewis rhanbarth a chael gwybodaeth amdano yn y bar ochr"
-" ar y dde (dangosir enghraifft isod)."
+"O'r map hwn gallwch ddewis rhanbarth a chael gwybodaeth amdano yn y bar ochr "
+"ar y dde (dangosir enghraifft isod)."
 
-#: templates/user_guide.html:1138
-msgid ""
-"The WISERD DataPortal allows users to map their own data for areas in Wales "
-"and to export this as a publishable map. This function has been specially "
-"designed so that all the mapping occurs inside the users browser rather than"
-" on the WISERD DataPortal server. This means that potentially sensitive data"
-" does not leave the users machine."
-msgstr ""
-"Mae'r DataPortal WISERD yn caniatau i ddefnyddwyr fapio eu data eu hunain ar"
-" gyfer ardaloedd yng Nghymru ac i allforio hyn fel map y gellir ei gyhoeddi."
-" Mae'r  swyddogaeth hon wedi cael ei chynllunio'n arbennig fel bod yr holl "
-"fapio yn digwydd y tu mewn i borwr y defnyddiwr yn hytrach nag ar weinydd "
-"DataPortal WISERD. Mae hyn yn golygu nad yw data a allai fod yn sensitif yn "
-"gadael peiriant y defnyddiwr."
-
-#: templates/user_guide.html:1140
-msgid ""
-"You can import your own data onto the DataPortal by clicking the MapMyData "
-"button."
-msgstr ""
-"Gallwch fewnforio eich data eich hun i'r DataPortal drwy glicio ar y botwm "
-"MapioFyNata."
-
-#: templates/user_guide.html:1166
+#: templates/user_guide.html:1167
 msgid ""
 "A box will appear where you can choose a local file to upload onto the map. "
 "The following box will display the fields available to display on the map."
 msgstr ""
-"Bydd blwch yn ymddangos lle y gallwch ddewis ffeil leol i'w llwytho i'r map."
-" Bydd y blwch canlynol yn dangos y meysydd sydd ar gael i'w dangos ar y map."
+"Bydd blwch yn ymddangos lle y gallwch ddewis ffeil leol i'w llwytho i'r map. "
+"Bydd y blwch canlynol yn dangos y meysydd sydd ar gael i'w dangos ar y map."
 
-#: templates/user_guide.html:1214
+#: templates/user_guide.html:1215
 msgid ""
 "You must select the Choropleth options so that your data can be displayed "
 "correctly and name the layer. Once "
@@ -2890,7 +3580,7 @@ msgstr ""
 "Rhaid i chi ddewis yr opsiynau Choropleth er mwyn i'ch data gael eu dangos "
 "yn gywir ac enwi'r haen. Unwaith y bydd"
 
-#: templates/user_guide.html:1214
+#: templates/user_guide.html:1215
 msgid ""
 "is clicked the data will be displayed on the map including a key on the "
 "righthand side. "
@@ -2898,28 +3588,28 @@ msgstr ""
 "yn cael ei glicio bydd y data yn cael eu dangos ar y map yn cynnwys allwedd "
 "ar yr ochr dde. "
 
-#: templates/user_guide.html:1263
+#: templates/user_guide.html:1264
 msgid ""
-"This will remain on the map until you choose to delete it. To turn the layer"
-" off use the "
+"This will remain on the map until you choose to delete it. To turn the layer "
+"off use the "
 msgstr ""
-"Bydd hwn yn aros ar y map tan i chi ddewis ei ddileu. I droi'r haen i ffwrdd"
-" defnyddiwch y"
+"Bydd hwn yn aros ar y map tan i chi ddewis ei ddileu. I droi'r haen i ffwrdd "
+"defnyddiwch y"
 
-#: templates/user_guide.html:1263
+#: templates/user_guide.html:1264
 msgid "Layer Manager"
 msgstr "Enw’r Haen"
 
-#: templates/user_guide.html:1263
+#: templates/user_guide.html:1264
 msgid "(the brown icon in the top right hand corner of the map)."
 msgstr "(yr eicon brown ar frig y map yn y gornel dde)."
 
-#: templates/user_guide.html:1297
+#: templates/user_guide.html:1298
 msgid ""
 "As part of our work with the National Assembly for Wales, a bespoke "
-"interface has been developed for the WISERD DataPortal which allows Assembly"
-" research staff, Assembly Members and their support staff to access and map "
-"a wide range of data for National Assembly for Wales Constituencies and "
+"interface has been developed for the WISERD DataPortal which allows Assembly "
+"research staff, Assembly Members and their support staff to access and map a "
+"wide range of data for National Assembly for Wales Constituencies and "
 "Regions."
 msgstr ""
 "Fel rhan o'n gwaith gyda Chynulliad Cenedlaethol Cymru, mae rhyngwyneb at y "
@@ -2928,7 +3618,7 @@ msgstr ""
 "mynediad at amrediad eang o ddata ar gyfer Etholaethau a Rhanbarthau "
 "Cynulliad Cenedlaethol Cymru a'u mapio."
 
-#: templates/user_guide.html:1353
+#: templates/user_guide.html:1354
 msgid ""
 "This section displays all the Events that the DataPortal team has attended "
 "and the event presentations. The presentations are also available to "
@@ -2938,7 +3628,7 @@ msgstr ""
 "wedi'u mynychu a chyflwyniadau'r digwyddiadau. Mae'r cyflwyniadau hefyd ar "
 "gael i'w lawrlwytho. "
 
-#: templates/user_guide.html:1409
+#: templates/user_guide.html:1410
 msgid ""
 "On clicking this button a new tab will open displaying the technical blog. "
 "The DataPortal is constantly being updated and improved, so the technical "
@@ -2949,7 +3639,7 @@ msgstr ""
 "mae'r blog technegol yn cynnig cipolwg ar weithrediadau cefndirol y Porth "
 "Data."
 
-#: templates/user_guide.html:1464
+#: templates/user_guide.html:1465
 msgid ""
 "Help using the DataPortal (such as this downloadable guide), licensing "
 "agreements and contact information of support can be found on this page "
@@ -2995,11 +3685,11 @@ msgstr "Cliciwch yma"
 msgid "Please tell us more about yourself"
 msgstr "Dywedwch ragor wrthym amdanoch eich hun"
 
-#: wiserd3/settings.py:196
+#: wiserd3/settings.py:235
 msgid "English"
 msgstr "Saesneg"
 
-#: wiserd3/settings.py:197
+#: wiserd3/settings.py:236
 msgid "Welsh"
 msgstr "Cymraeg"
 

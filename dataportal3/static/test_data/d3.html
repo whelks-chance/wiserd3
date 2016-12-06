@@ -218,7 +218,7 @@
           console.log(d);
           console.log(data);
 
-          return "data found: " + JSON.stringify(d);
+          return "Survey : " + JSON.stringify(data.columns[d[0] + 1]) + "<br>Word *" + d.data.word + "* used " + JSON.stringify(d[1]) + " times.";
       });
     svg.call(tool_tip);
 

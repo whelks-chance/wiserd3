@@ -2502,6 +2502,8 @@
                                         }
                                     }
                                 }
+
+                                codes = _.uniq(codes);
                                 console.log('XLS found ' + Object.keys(ordered_data).length + ' items');
 
                                 $.ajax({
@@ -2800,6 +2802,9 @@
 
             var area_values = {};
             function do_layer_single_local(json_object) {
+
+                console.log(json_object);
+
                 $('#local-data-drop-zone').hide();
 
                 ordered_data = {};

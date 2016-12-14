@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import base64
+#import base64
 import zipfile
-from datetime import datetime
+#from datetime import datetime
 import json
 import os
 import pprint
@@ -21,7 +21,7 @@ from django.contrib.auth.models import AnonymousUser
 from django.contrib.gis.geos import GEOSGeometry
 from django.core.exceptions import MultipleObjectsReturned
 from django.core.serializers import serialize
-from django.db import connections, connection
+from django.db import connections
 from django.db.models import Q
 from django.forms.models import model_to_dict
 from django.http.response import HttpResponse
@@ -46,6 +46,7 @@ from rubbish.formatting.question_ordering import QuestionSorter
 from wiserd3 import settings
 from wiserd3.settings import NAW_LAYER_UUIDS, NAW_CY_LAYER_UUIDS
 # from verbalexpressions import VerEx
+from djgeojson.serializers import Serializer as GeoJSONSerializer
 
 
 def dashboard(request):
@@ -136,8 +137,8 @@ def search_survey_question_api(request):
         combine_text_and_tags = thematic_tags_questions_objects | questions_models
         print combine_text_and_tags.count(), 'forces eval'
 
-        combine_text_and_tags_values = combine_text_and_tags.prefetch_related('type')\
-            .prefetch_related('survey').distinct("qid")\
+        combine_text_and_tags_values = combine_text_and_tags.prefetch_related('type') \
+            .prefetch_related('survey').distinct("qid") \
             .values("survey__identifier", "survey__collectionstartdate",
                     "survey__survey_title", "qid", "literal_question_text",
                     "questionnumber", "thematic_groups", "thematic_tags", "link_from",
@@ -1961,8 +1962,8 @@ def get_topojson_by_name(request, topojson_name):
                 # ors.append(Q(**{filter_var_altname: code}))
 
                 ua_subset = models.SpatialdataUA.objects.using('new').all().filter(
-                reduce(operator.or_, ors)
-            )
+                    reduce(operator.or_, ors)
+                )
         s = serialize('geojson', ua_subset, fields=('geom', 'label', 'REMOTE_VALUE'))
         topojson_conv = topojson(json.loads(s))
         response_data['topojson'] = topojson_conv
@@ -1990,6 +1991,8 @@ def get_topojson_by_name(request, topojson_name):
         filter_var = 'label__istartswith'
         code = 'CF1'
         postcode_subset = models.SpatialdataPostCode.objects.using('new').all().filter(**{filter_var: code})
+
+        # TODO check if this needs better serialisation as below
         s = serialize('geojson', postcode_subset, fields=('geom', 'label', 'REMOTE_VALUE'))
         topojson_conv = topojson(json.loads(s), quantization=1e6, simplify=0.0005)
         response_data['topojson'] = topojson_conv
@@ -2010,8 +2013,19 @@ def get_topojson_by_name(request, topojson_name):
         print len(list(lsoa_subset))
         # print list(lsoa_subset)
 
-        s = serialize('geojson', lsoa_subset, fields=('geom', 'code', 'name', 'REMOTE_VALUE'))
-        topojson_conv = topojson(json.loads(s), quantization=1e6, simplify=0.0005)
+        s = GeoJSONSerializer().serialize(
+            lsoa_subset,
+            use_natural_keys=True,
+            with_modelname=False,
+            simplify=0.0005
+        )
+
+        # s = serialize('geojson', lsoa_subset, fields=('geom', 'code', 'name', 'REMOTE_VALUE'))
+        topojson_conv = topojson(
+            json.loads(s),
+            quantization=1e4,
+            # simplify=0.0005
+        )
         response_data['topojson'] = topojson_conv
 
     elif topojson_name == 'pcode_point':

@@ -65,8 +65,13 @@ INSTALLED_APPS = (
     'rest_framework_swagger',
     'django_filters',
     'rosetta',
-    'djorm_pgfulltext'
+    'djorm_pgfulltext',
+    'djgeojson'
 )
+
+SERIALIZATION_MODULES = {
+    'geojson' : 'djgeojson.serializers'
+}
 
 SWAGGER_SETTINGS = {
     'exclude_url_names': [],

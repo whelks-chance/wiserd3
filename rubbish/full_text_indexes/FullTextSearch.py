@@ -147,6 +147,6 @@ if __name__ == '__main__':
     nltk.download("stopwords")
 
     fts = FullTextSearch()
-    fts.build_keyword_set(csv_records=200, csv_num_words=30, search_string="job")
+    fts.build_keyword_set(csv_records=200, csv_num_words=30)
     search_string = "how | many | people"
     # fts.test_search(search_string)

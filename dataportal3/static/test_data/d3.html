@@ -13,9 +13,40 @@
             display: none;
         }
 
+        .d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
     </style>
 
-    <script src="//d3js.org/d3.v4.min.js"></script>
+//    https://github.com/VACLab/d3-tip
+    <script src="../d3.v4.min.js"></script>
+        <script src="../d3-tip-master/d3-tip.js"></script>
 
 </head>
 <body>
@@ -26,7 +57,7 @@
     // http://blog.simontimms.com/2014/07/17/d3-patterns/
     // http://bl.ocks.org/mbostock/3886208
 
-    var height_multiplier = 2;
+    var height_multiplier = 6;
 
     String.prototype.replace_all = function(search, replace)
     {
@@ -64,6 +95,10 @@
             .rangeRound([height, 0]);
 
     var zi = d3.scaleOrdinal(d3.schemeCategory20);
+
+    console.log(x);
+    console.log(y);
+    console.log(zi);
 
     var r = [];
     for (var i = 0; i < 20; i++) {
@@ -176,6 +211,18 @@
             return colour_from_string(d.key);
         }
 
+         var tool_tip = d3.tip()
+      .attr("class", "d3-tip")
+      .offset([-8, 0])
+      .html(function(d) {
+          console.log(d);
+          console.log(data);
+
+          return "Survey : " + JSON.stringify(data.columns[d[0] + 1]) + "<br>Word *" + d.data.word + "* used " + JSON.stringify(d[1]) + " times.";
+      });
+    svg.call(tool_tip);
+
+
         g.selectAll(".serie")
                 .data(stack.keys(data.columns.slice(1))(data))
                 .enter().append("g")
@@ -184,6 +231,8 @@
                 .selectAll("rect")
                 .data(function(d) { return d; })
                 .enter().append("rect")
+                .on('mouseover', tool_tip.show)
+                .on('mouseout', tool_tip.hide)
                 .attr("x", function(d) { return x(d.data.word); })
                 .attr("y", function(d) { return y(d[1]); })
                 .attr("height", function(d) { return y(d[0]) - y(d[1]); })

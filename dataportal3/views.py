@@ -2054,7 +2054,7 @@ def get_topojson_by_name(request, topojson_name):
 
         # print list(postcode_subset)
         print len(list(postcode_subset))
-        s = serialize('geojson', postcode_subset, fields=('geom', 'postcode', 'REMOTE_VALUE'))
+        s = serialize('geojson', postcode_subset, properties=['geom', 'postcode', 'REMOTE_VALUE'])
         # format it like it's topojson, which for some reason the other topojson lib can't do for points
         response_data['topojson'] = geojson_points_to_topojson(json.loads(s))
 

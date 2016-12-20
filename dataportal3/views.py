@@ -35,6 +35,7 @@ from dataportal3.forms import ShapefileForm
 from dataportal3.models import ResponseTable
 from dataportal3.utils.ShapeFileImport import celery_import, ShapeFileImport
 from dataportal3.utils.admin_email import EMAIL_TYPES, send_email
+from dataportal3.utils.ckan.ckan_data import CKANdata
 from dataportal3.utils.remote_data import RemoteData
 from dataportal3.utils.spatial_search.spatial_search import find_intersects, geometry_columns
 from dataportal3.utils.statswales.statswales_odata import StatsWalesOData
@@ -1099,6 +1100,22 @@ def data_api(request):
                 nomis_service['success'] = False
             services.append(nomis_service)
 
+            datahub_service = {
+                'name': 'DataHub'
+            }
+            try:
+                ckan_data = CKANdata()
+                ckan_datasets, ckan_request = ckan_data.keyword_search(search_term.lower())
+                datasets += ckan_datasets
+                datahub_service['message'] = 'Success'
+                # datahub_service['time'] = ckan_request.elapsed.total_seconds()
+                datahub_service['success'] = True
+            except Exception as e87234:
+                datahub_service['message'] = 'The WISERD DataPortal failed to connect to the remote data service.'
+                datahub_service['error'] = str(e87234)
+                datahub_service['success'] = False
+            services.append(datahub_service)
+
             to_return['services'] = services
             to_return['datasets'] = datasets
 
@@ -1110,8 +1127,10 @@ def data_api(request):
             to_return['metadata'] = rd.get_dataset_overview(dataset_id)
         if source == 'StatsWales':
             swod = StatsWalesOData()
-
             to_return['metadata'] = swod.get_dataset_overview(dataset_id)
+        if source == 'CKAN_datahub':
+            ckan_data = CKANdata()
+            to_return['metadata'] = ckan_data.get_dataset_overview(dataset_id)
 
     if method == 'remote_data_render_data':
         remote_layer_ids = request.GET.getlist('remote_layer_ids[]', [])
@@ -1221,6 +1240,21 @@ def remote_data_topojson(request):
     if source == 'Nomis':
         rd = RemoteData()
         a = rd.get_topojson_with_data(dataset_id, geog, nomis_variable, codelist, high=user_prefs.topojson_high)
+
+    if source == 'CKAN_datahub':
+        ckan_data = CKANdata()
+
+        # TODO what are filter options?
+        filter_options = []
+        all_data = ckan_data.get_data_dict(
+            str(dataset_id).lower(),
+            filter_options,
+            {'SEARCH_UUID': nomis_search.uuid}
+        )
+
+        rd = RemoteData()
+        region_id, topojson_file = rd.get_dataset_geodata(geog, user_prefs.topojson_high)
+        a = rd.update_topojson(topojson_file, all_data, measure_is_percentage=False)
 
     if source == 'StatsWales':
         swod = StatsWalesOData()

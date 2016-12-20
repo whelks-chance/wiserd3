@@ -484,101 +484,104 @@ function ready_and_load_remote_var_form(url, dataset_id, source, dataset_name) {
             'source': source
         },
         success: function (data) {
-            $('#dataset_title').remove().end().append('<h3>' + dataset_name + '</h2>');
+            try {
+                $('#dataset_title').remove().end().append('<h3>' + dataset_name + '</h2>');
 
-            var dataset_radio = $('#data_cell_radio');
-            dataset_radio.find('div').remove().end();
+                var dataset_radio = $('#data_cell_radio');
+                dataset_radio.find('div').remove().end();
 
-            for (var remote_codelist in data['metadata']['codelists']) {
-                var remote_codelist_data = data['metadata']['codelists'][remote_codelist];
+                for (var remote_codelist in data['metadata']['codelists']) {
+                    var remote_codelist_data = data['metadata']['codelists'][remote_codelist];
 
-                var codelist_label = $('<div>', {text: remote_codelist_data['name']});
-                dataset_radio.append(codelist_label);
+                    var codelist_label = $('<div>', {text: remote_codelist_data['name']});
+                    dataset_radio.append(codelist_label);
 
-                var codelist_radio_div = $('<div>', {id: remote_codelist + '_radio'});
+                    var codelist_radio_div = $('<div>', {id: remote_codelist + '_radio'});
 
-                for (var remote_codelist_option in remote_codelist_data['measures']) {
-                    var remote_codelist_option_data = remote_codelist_data['measures'][remote_codelist_option];
+                    for (var remote_codelist_option in remote_codelist_data['measures']) {
+                        var remote_codelist_option_data = remote_codelist_data['measures'][remote_codelist_option];
 
-                    var radio_div = $('<div>');
+                        var radio_div = $('<div>');
 
-                    radio_div.append($('<input>', {
-                        value: remote_codelist_option_data.id,
-                        id: remote_codelist + '_' + remote_codelist_option_data.id,
-                        type: 'radio',
-                        name: (remote_codelist + '_option'),
-                        text: remote_codelist_option_data.name
-                    }));
-                    radio_div.append($('<label>', {
-                        class: 'dialog_radio_option',
-                        value: remote_codelist_option_data.id,
-                        for: remote_codelist + '_' + remote_codelist_option_data.id,
-                        text: remote_codelist_option_data.name
-                    }));
-                    codelist_radio_div.append(radio_div);
+                        radio_div.append($('<input>', {
+                            value: remote_codelist_option_data.id,
+                            id: remote_codelist + '_' + remote_codelist_option_data.id,
+                            type: 'radio',
+                            name: (remote_codelist + '_option'),
+                            text: remote_codelist_option_data.name
+                        }));
+                        radio_div.append($('<label>', {
+                            class: 'dialog_radio_option',
+                            value: remote_codelist_option_data.id,
+                            for: remote_codelist + '_' + remote_codelist_option_data.id,
+                            text: remote_codelist_option_data.name
+                        }));
+                        codelist_radio_div.append(radio_div);
+                    }
+                    codelist_radio_div.buttonset();
+
+                    dataset_radio.append(codelist_radio_div);
                 }
-                codelist_radio_div.buttonset();
 
-                dataset_radio.append(codelist_radio_div);
-            }
+                var geography_options = $('#topojson_geography_radio');
+                geography_options.find('div').remove().end();
 
-            var geography_options = $('#topojson_geography_radio');
-            geography_options.find('div').remove().end();
+                if (data['metadata'].hasOwnProperty('geographies')) {
 
-            if (data['metadata'].hasOwnProperty('geographies')) {
+                    for (var remote_geography_option in data['metadata']['geographies']) {
+                        var remote_geography_option_data = data['metadata']['geographies'][remote_geography_option];
 
-                for (var remote_geography_option in data['metadata']['geographies']) {
-                    var remote_geography_option_data = data['metadata']['geographies'][remote_geography_option];
+                        var radio_div = $('<div>');
 
+                        radio_div.append($('<input>', {
+                            value: remote_geography_option_data.id,
+                            id: 'geog_' + remote_geography_option_data.id,
+                            type: 'radio',
+                            name: 'geog_option',
+                            text: remote_geography_option_data.name
+                        }));
+                        radio_div.append($('<label>', {
+                            class: 'dialog_radio_option',
+                            value: remote_geography_option_data.id,
+                            for: 'geog_' + remote_geography_option_data.id,
+                            text: remote_geography_option_data.name
+                        }));
+                        geography_options.append(radio_div);
+                    }
+                } else {
                     var radio_div = $('<div>');
 
-                    radio_div.append($('<input>', {
-                        value: remote_geography_option_data.id,
-                        id: 'geog_' + remote_geography_option_data.id,
-                        type: 'radio',
-                        name: 'geog_option',
-                        text: remote_geography_option_data.name
-                    }));
-                    radio_div.append($('<label>', {
-                        class: 'dialog_radio_option',
-                        value: remote_geography_option_data.id,
-                        for: 'geog_' + remote_geography_option_data.id,
-                        text: remote_geography_option_data.name
-                    }));
+                    for (var geography_idx in DataPortal.TopoJsonGeographies) {
+                        var geography = DataPortal.TopoJsonGeographies[geography_idx];
+                        radio_div.append($('<input>', {
+                            type: "radio",
+                            name: "geographies",
+                            id: 'geog_' + geography['geog_short_code'],
+                            value: geography['geog_short_code']
+                        }));
+
+                        radio_div.append($('<label>', {
+                            class: 'dialog_radio_option',
+                            value: geography['geog_short_code'],
+                            for: 'geog_' + geography['geog_short_code'],
+                            text: geography['name']
+                        }));
+                    }
                     geography_options.append(radio_div);
+
                 }
-            } else {
-                var radio_div = $('<div>');
 
-                for (var geography_idx in DataPortal.TopoJsonGeographies) {
-                    var geography = DataPortal.TopoJsonGeographies[geography_idx];
-                    radio_div.append($('<input>', {
-                        type: "radio",
-                        name: "geographies",
-                        id: 'geog_' + geography['geog_short_code'],
-                        value: geography['geog_short_code']
-                    }));
+                geography_options.buttonset();
 
-                    radio_div.append($('<label>', {
-                        class: 'dialog_radio_option',
-                        value: geography['geog_short_code'],
-                        for: 'geog_' + geography['geog_short_code'],
-                        text: geography['name']
-                    }));
-                }
-                geography_options.append(radio_div);
-
+                $('#dataset_define_vars_form').data({
+                    'dataset_id': dataset_id,
+                    'source': source,
+                    'dataset_name': dataset_name,
+                    'codelists': data['metadata']['codelists']
+                }).dialog('open');
+            } catch (e) {
+                ajax_finished();
             }
-
-            geography_options.buttonset();
-
-            $('#dataset_define_vars_form').data({
-                'dataset_id': dataset_id,
-                'source': source,
-                'dataset_name': dataset_name,
-                'codelists': data['metadata']['codelists']
-            }).dialog('open');
-
         },
         error: function () {
             alert(i18n_translation['map.ready_and_load_remote_var_form.err']);

@@ -19,6 +19,27 @@ class CKANdata(RemoteDataDefault):
         return self.ckan_api
 
     def get_data_dict(self, dataset_id, options, constants):
+        print 'options', options, 'constants', constants
+
+        # value_id = 'WIMD2014'
+        # geog_id = 'LSOACode'
+        # name_id = 'LSOAName'
+
+        value_id = ''
+        geog_id = ''
+        name_id = ''
+
+        for op in options:
+            if op[0] == 'Name_Code':
+                name_id = op[1]
+            if op[0] == 'Value_Code':
+                value_id = op[1]
+            if op[0] == 'Geography_Code':
+                geog_id = op[1]
+
+        if name_id == '':
+            name_id = value_id
+
         ckan_api = self.init()
 
         offset = 0
@@ -27,21 +48,15 @@ class CKANdata(RemoteDataDefault):
         while offset < 2000:
 
             data = ckan_api.action.datastore_search(resource_id=dataset_id, offset=offset)
-
-            # print data, '\n\n'
-
-
             for d in data['records']:
-                print '\n', d
 
-                return_data[d['LSOAName']] = [
+                return_data[d[name_id]] = [
                     {
-                        "name": d['LSOAName'],
-                        "value": d['WIMD2014'],
-                        # "geography_id": 1946157398,
-                        "geography_code": d['LSOACode'],
+                        "name": d[name_id],
+                        "value": d[value_id],
+                        "geography_code": d[geog_id],
                         "data_status": "A",
-                        "geography": d['LSOAName']
+                        "geography": d[name_id]
                     }
                 ]
 
@@ -52,16 +67,50 @@ class CKANdata(RemoteDataDefault):
         pass
 
     def get_dataset_overview(self, dataset_id):
+        ckan_api = self.init()
+        data = ckan_api.action.datastore_search(resource_id=dataset_id)
 
         dimensions = {}
+        value_measures = []
+        geog_measures = []
+        name_measures = []
 
-        dimensions['LSOACode'] = {
-            "concept": 'LSOACode',
-            "name": 'LSOACode',
-            'measures': [{
-                'id': 'LSOACode',
-                'name': 'LSOACode'
-            }]
+        for f in data['fields']:
+            if f['id'] != '_id':
+
+                value_measures.append(
+                    {
+                        'id': f['id'],
+                        'name': f['id']
+                    }
+                )
+                geog_measures.append(
+                    {
+                        'id': f['id'],
+                        'name': f['id']
+                    }
+                )
+                name_measures.append(
+                    {
+                        'id': f['id'],
+                        'name': f['id']
+                    }
+                )
+
+        dimensions['Geography'] = {
+            "concept": 'Geography',
+            "name": 'Geography',
+            'measures': geog_measures
+        }
+        dimensions['Value'] = {
+            "concept": 'Value',
+            "name": 'Value',
+            'measures': value_measures
+        }
+        dimensions['Name'] = {
+            "concept": 'Name',
+            "name": 'Name',
+            'measures': name_measures
         }
 
         return_data = {
@@ -79,14 +128,28 @@ class CKANdata(RemoteDataDefault):
 
     def keyword_search(self, keyword_string, args=None):
 
+        found_datasets = []
+
         ckan_api = self.init()
 
-        found_datasets = [
-            {
-                'id': '650200e9-cfad-4efa-9fbf-cf35483b1e36',
-                'name': 'wimd2014',
-                'source': 'CKAN_datahub'
-            }
-        ]
+        organization_show = ckan_api.action.organization_show(id=ckan_org_name, include_datasets=True)
+
+        # print organization_show['packages']
+
+        for p in organization_show['packages']:
+            print '\n', p['id']
+            package_data = ckan_api.action.package_show(id=p['id'])
+
+            for r in package_data['resources']:
+                print '\n', r['package_id'], r['datastore_active'], r['id']
+
+                if r['datastore_active']:
+                    found_datasets.append(
+                        {
+                            'id': r['id'],
+                            'name': r['name'],
+                            'source': 'CKAN_datahub'
+                        }
+                    )
         return found_datasets, None
 

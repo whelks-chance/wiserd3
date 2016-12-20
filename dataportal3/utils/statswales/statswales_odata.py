@@ -189,9 +189,8 @@ class StatsWalesOData(RemoteDataDefault):
                 if keyset['PartitionKey'] in intersect_ids:
                     matching_datasets.append(keyset)
 
-        print "matching_datasets, keyword_description"
-
-        print matching_datasets, keyword_description
+        # print "matching_datasets, keyword_description"
+        # print matching_datasets, keyword_description
 
         return matching_datasets, keyword_description
 

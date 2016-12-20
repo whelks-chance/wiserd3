@@ -1244,8 +1244,12 @@ def remote_data_topojson(request):
     if source == 'CKAN_datahub':
         ckan_data = CKANdata()
 
-        # TODO what are filter options?
         filter_options = []
+        for code in codelist:
+            option = str(code['option']).replace(' ', '') + '_Code'
+            variable = code['variable']
+            filter_options.append([option, variable])
+
         all_data = ckan_data.get_data_dict(
             str(dataset_id).lower(),
             filter_options,
@@ -1782,7 +1786,7 @@ def welcome(request):
         'preferences': get_user_preferences(request),
         'languages': models.UserLanguage.objects.all()
     }
-    print data
+    # print data
     return render(request, 'welcome.html', data, context_instance=RequestContext(request))
 
 

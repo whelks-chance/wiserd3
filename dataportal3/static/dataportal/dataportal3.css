@@ -292,6 +292,10 @@
     /*color: darkblue !important;*/
 }
 
+.CKAN_datahub {
+    border: black 4px double !important;
+}
+
 .fill_properly {
     bottom:0;
     top:0;

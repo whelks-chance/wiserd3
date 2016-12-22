@@ -29,8 +29,6 @@
                 },
                 columns: [
                     {'data': 'survey_title'},
-                    {#                    {'data': 'surveyfrequency'},#}
-                    {#                    {'data': 'collectionsituation'},#}
                     {'data': 'collectionstartdate'},
                     {
                         "targets": -1,
@@ -39,8 +37,7 @@
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
                                     "href='/survey/" + data.trim() + "' class='btn btn-success view_survey'>View</a>";
                         }
-                    },
-
+                    }
                 ]
             });
 

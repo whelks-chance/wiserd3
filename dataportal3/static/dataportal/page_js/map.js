@@ -591,3 +591,76 @@ function ready_and_load_remote_var_form(url, dataset_id, source, dataset_name) {
         }
     });
 }
+
+function build_datatable(data, div_id) {
+    var table_div = $(div_id);
+
+    var table_body = table_div.find('tbody');
+
+    // for (var item in data['datasets']) {
+    //     var tr = $('<tr>');
+    //     tr.append($('<td>'), {text: item.name});
+    //     tr.append($('<td>'), {text: item.id});
+    //     tr.append($('<td>'), {text: item.source});
+    // }
+    //
+    // table_body.append(tr);
+
+
+
+    if ( ! $.fn.DataTable.isDataTable( div_id ) ) {
+
+        var selected = [];
+
+        var survey_table = table_div.DataTable({
+            serverSide: false,
+            processing: true,
+            "bAutoWidth": false,
+            responsive: true,
+            "pageLength": 30,
+            "oLanguage": datatables_language,
+            data: data['datasets'],
+            "rowCallback": function( row, data ) {
+                if ( $.inArray(data.DT_RowId, selected) !== -1 ) {
+                    $(row).addClass('selected');
+                }
+            },
+            columns: [
+                {'data': 'name'},
+                {'data': 'source'},
+                // {'data': 'id'}
+                {
+                    "targets": -1,
+                    "data": 'id',
+                    "render": function ( data, type, full, meta ) {
+                        return "<a target='_blank' " +
+                            "href='/survey/" + data + "' class='btn btn-success view_survey'>View</a>"
+                    }
+                }
+            ]
+        });
+
+        $('#remote_results_table tbody').on('click', 'tr', function () {
+            var id = this.id;
+            var index = $.inArray(id, selected);
+
+            $('#remote_results_table tbody tr').each(function( index ) {
+                    $( this ).removeClass('selected');
+                });
+
+            if ( index === -1 ) {
+                selected = [];
+                selected.push( id );
+
+            } else {
+                selected.splice( index, 1 );
+            }
+
+            $(this).toggleClass('selected');
+        } );
+
+
+    }
+
+
+}

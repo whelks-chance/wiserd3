@@ -3,12 +3,17 @@
 
 {% block content %}
 
+    <p>
+        <a target="_blank" href="{% url 'question_links' %}">Click here for question link details</a>
+    </p>
 
-
-    <a target="_blank" href="{% url 'question_links' %}">Click here for question link details</a>
 
     <p>
-    {{ MEDIA_URL }}
+        <a target="_blank" href="{% url 'snippet_test' %}">Click here for gui testing snippets</a>
+    </p>
+
+    <p>
+        {{ MEDIA_URL }}
     </p>
 
     <h3>Preferences</h3>

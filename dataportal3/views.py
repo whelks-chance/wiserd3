@@ -2723,3 +2723,7 @@ def wiserd_education(request):
 
 def civil_society(request):
     return render(request, 'civil_society.html', {}, context_instance=RequestContext(request))
+
+
+def snippet_test(request):
+    return render(request, 'snippet_test.html', {}, context_instance=RequestContext(request))

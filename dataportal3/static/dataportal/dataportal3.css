@@ -1,3 +1,54 @@
+.navbar-brand {
+    display: flex;
+}
+
+.navbar-brand-text {
+    flex-direction: column;
+    flex-flow: row wrap;
+}
+
+.navbar-version {
+    text-align: end;
+    justify-content: flex-end;
+    font-style: italic;
+    font-size: small;
+}
+
+.lang-toggle {
+    border-top: #337ab7 solid 2px;
+    border-bottom: #337ab7 solid 2px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.lang-toggle-a:hover {
+    border-radius: 10px;
+}
+
+.lang-toggle-a{
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    min-height: 2em !important;
+}
+
+.lang-toggle-split {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-left: -0.4em;
+    margin-right: -0.4em;
+}
+
+.lang-toggle-left {
+    border-left: #337ab7 solid 2px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.lang-toggle-right {
+    border-right: #337ab7 solid 2px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;}
+
 .leaflet-top {
     z-index: 500;
 }
@@ -179,7 +230,7 @@
 }
 
 /*.panel-orange .panel-footer {*/
-    /*color: #eb8f00;*/
+/*color: #eb8f00;*/
 /*}*/
 
 .panel-orange a {
@@ -329,7 +380,7 @@
 }
 
 .icon-background-blue {
-      background-color: #337ab7;
+    background-color: #337ab7;
     border: 1px solid #337ab7;
 }
 
@@ -457,26 +508,32 @@
 }
 
 /*.user_guide_page h1, .user_guide_page h2, .user_guide_page h3 {*/
-    /*display: inline;*/
+/*display: inline;*/
 /*}
 
 /*.user_guide_page ol { counter-reset: item }*/
 /*.user_guide_page li { display: block}*/
 /*.user_guide_page li:before {*/
-    /*font-weight: 500;*/
-    /*line-height: 1.1;*/
-    /*font-size: 36px;*/
+/*font-weight: 500;*/
+/*line-height: 1.1;*/
+/*font-size: 36px;*/
 
-    /*content: counters(item, ".") " ";*/
-    /*counter-increment: item*/
+/*content: counters(item, ".") " ";*/
+/*counter-increment: item*/
 /*}*/
 
 /*.user_guide_contents li:before{*/
-    /*font-weight: 500;*/
-    /*line-height: 1.1;*/
-    /*font-size: 14px;*/
+/*font-weight: 500;*/
+/*line-height: 1.1;*/
+/*font-size: 14px;*/
 /*}*/
 
 /*.user_guide_page h1, .user_guide_page h2, .user_guide_page h3 {*/
-    /*display: inline;*/
+/*display: inline;*/
 /*}*/
+
+.ui-dialog,.ui-dialog-content {
+    -webkit-box-sizing: content-box!important;
+    -moz-box-sizing:content-box!important;
+    box-sizing: content-box!important;
+}

@@ -594,6 +594,7 @@ function ready_and_load_remote_var_form(url, dataset_id, source, dataset_name) {
 
 function build_datatable(data, div_id) {
     var table_div = $(div_id);
+    table_div.toggle(true);
 
     var table_body = table_div.find('tbody');
 
@@ -647,11 +648,12 @@ function build_datatable(data, div_id) {
             $('#remote_results_table tbody tr').each(function( index ) {
                     $( this ).removeClass('selected');
                 });
+            $('#add_to_map_dialog_btn').button('disable');
 
             if ( index === -1 ) {
                 selected = [];
                 selected.push( id );
-
+                $('#add_to_map_dialog_btn').button('enable');
             } else {
                 selected.splice( index, 1 );
             }

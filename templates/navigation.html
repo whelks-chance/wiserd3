@@ -34,11 +34,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{% url 'dashboard' %}">
-                    <p><img style="margin: 0.5em; max-height: 3em; margin-top: -15px; margin-left: -15px"
-                            src="{% static 'dataportal/media/dataportowl.jpg' %}">
-                        WISERD DataPortal
-                        <i id="version_tag">{% include 'version_number.html' %}</i>
-                    </p></a>
+                    <img style="margin: 0.5em; height: 3em; margin-top: -15px; margin-left: -15px"
+                         src="{% static 'dataportal/media/dataportowl.jpg' %}">
+                    <div class="navbar-brand-text">
+                        <div>WISERD DataPortal</div>
+                        <div class="navbar-version" id="version_tag">{% include 'version_number.html' %}</div>
+                    </div>
+                </a>
             </div>
             <!-- /.navbar-header -->
 
@@ -91,7 +93,7 @@
                             <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out fa-fw"></i> {% trans 'Logout' %}</a></li>
                         {% else %}
                             <li><a href="https://cardiff.onlinesurveys.ac.uk/dataportal-lts" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {% trans 'Give Feedback' %}</a></li>
-                                                        <li class="divider"></li>
+                            <li class="divider"></li>
                             <li><a href="{% url 'account_login' %}"><i class="fa fa-sign-in fa-fw"></i> {% trans 'Login' %}</a></li>
                         {% endif %}
 

@@ -228,26 +228,7 @@
 {% block content %}
     <script>
 
-        var ajax_count = 0;
-        var wait_dialog_active = false;
-        function add_ajax_waiting(content) {
-            ajax_count += 1;
-            if (ajax_count == 1 && wait_dialog_active == false) {
-                waitingDialog.show(content);
-                wait_dialog_active = true;
-            }
-            console.log('adding ' + ajax_count + wait_dialog_active);
 
-        }
-        function ajax_finished() {
-            ajax_count -= 1;
-            if (ajax_count == 0 && wait_dialog_active == true) {
-                wait_dialog_active = false;
-                waitingDialog.hide();
-            }
-            console.log('removing ' + ajax_count + wait_dialog_active);
-
-        }
 
         var uid = 0;
         function get_next_uid() {
@@ -1950,13 +1931,13 @@
 
             $( "#search-remote-form" ).dialog({
                 autoOpen: false,
-                height: map_div.height() * 0.8,
+                height: map_div.height() * 0.9,
                 position: {
                     my: "center",
                     at: "center",
                     of: map_div
                 },
-                width: map_div.width() * 0.8,
+                width: map_div.width() * 0.9,
                 modal: true,
                 buttons: [
                     {

@@ -1,0 +1,98 @@
+{% extends "navigation.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block page_name %}{% trans 'Snippet test' %}{% endblock %}
+
+{% block content %}
+
+    <style>
+            .child {
+                padding: 20px;
+                margin: 30px 30px;
+                border-radius: 10px;
+            }
+
+            .child:hover {
+                border: inset 4px grey;
+                padding: 16px;
+            }
+
+            .child_big {
+                width: 20em;
+            }
+
+            .child_small {
+                width: 10em;
+            }
+
+            .flex_text {
+                background-color: whitesmoke;
+                padding: 3px;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+    .flex_parent {
+        display: flex;
+        height: inherit;
+{#        justify-content: flex-end;#}
+  flex-flow: row wrap;
+          justify-content: space-around;
+
+    }
+        </style>
+
+    <script type="text/javascript" src="{% static 'dataportal/page_js/dialogs.js' %}"></script>
+
+    <div id="main_test" style="height: 100%" class="container-fluid">
+        <div class="row">
+            <h1 class="page-header">{% trans 'Welcome ' %} {{ user }}</h1>
+            <h2>{% trans 'Test stuff' %}</h2>
+
+        </div>
+
+        <div id="new_layer_btn" class="btn btn-danger">Press</div>
+
+        <div id="reset" class="btn btn-danger">Reset</div>
+
+
+    <div id="flex_test" class="flex_parent">
+        <div class="child child_small" style="background-color: red"><div class="flex_text">AAAA</div></div>
+        <div class="child child_big" style="background-color: blue"><div class="flex_text">BBBB</div></div>
+        <div class="child child_big" style="background-color: orange"><div class="flex_text">CCCC</div></div>
+        <div class="child child_small" style="background-color: green"><div class="flex_text">DDDD</div></div>
+        <div class="child child_big" style="background-color: black"><div class="flex_text">EEEE</div></div>
+        <div class="child child_big" style="background-color: rebeccapurple"><div class="flex_text">FFFF</div></div>
+    </div>
+
+
+    </div>
+
+    {% include 'snippets/dialogs.html' %}
+
+    <script>
+        $(document).ready(function(){
+            setup_search_remote_form(
+                    $('#main_test'),
+                    "{% url 'data_api' %}"
+            );
+
+            $("#new_layer_btn").click(function(e){
+                $( "#search-remote-form").dialog( "open" );
+            });
+
+             $(".child").click(function(e){
+                $( this).toggle(false);
+            });
+            $("#reset").click(function(e){
+                $('.child').each(function(){
+                    $(this).toggle(true);
+                });
+            });
+
+        });
+    </script>
+
+
+{% endblock %}

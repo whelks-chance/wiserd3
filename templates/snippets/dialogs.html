@@ -1,4 +1,9 @@
 {% load i18n %}
+{% load staticfiles %}
+
+    <script type="text/javascript" src="{% static 'DataTables-1.10.7/extensions/Scroller/dataTables.scroller.min.js' %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'DataTables-1.10.7/extensions/Scroller/scroller.dataTables.min.css' %}" />
 
 
     <div id="search-remote-form" title="{% trans 'Search Remote' %}">
@@ -36,7 +41,7 @@
                             <thead id="remote_results_thead">
                             <tr>
                                 <th>{% trans 'Title' %}</th>
-                                <th>{% trans 'Date' %}</th>
+                                <th>{% trans 'Source' %}</th>
                                 <th>{% trans 'View' %}</th>
                             </tr>
                             </thead>

@@ -26,11 +26,24 @@ function build_datatable(data, div_id) {
         var selected = [];
 
         var survey_table = table_div.DataTable({
+
+            deferRender:    true,
+            scrollY:        200,
+            scrollCollapse: true,
+
+            // serverSide: true,
+
+            // ordering: false,
+            // searching: false,
+            scroller:       {
+                loadingIndicator: true
+            },
+
             serverSide: false,
-            processing: true,
+            // processing: true,
             "bAutoWidth": false,
             responsive: true,
-            "pageLength": 30,
+            // "pageLength": 30,
             "oLanguage": datatables_language,
             data: data['datasets'],
             "rowCallback": function( row, data ) {
@@ -38,8 +51,11 @@ function build_datatable(data, div_id) {
                     $(row).addClass('selected');
                 }
             },
+            "columnDefs": [
+                { "width": "50%", "targets": 0 }
+            ],
             columns: [
-                {'data': 'name'},
+                {'data': 'name', width: '50%', "targets": 0},
                 {'data': 'source'},
                 // {'data': 'id'}
                 {
@@ -58,8 +74,8 @@ function build_datatable(data, div_id) {
             var index = $.inArray(id, selected);
 
             $('#remote_results_table tbody tr').each(function( index ) {
-                    $( this ).removeClass('selected');
-                });
+                $( this ).removeClass('selected');
+            });
             $('#add_to_map_dialog_btn').button('disable');
 
             if ( index === -1 ) {
@@ -84,6 +100,7 @@ function build_datatable(data, div_id) {
 function setup_search_remote_form(parent_div, remote_api_url) {
 
     $("#search-remote-form").dialog({
+
         autoOpen: false,
         dialogClass:"dialogClass",
 
@@ -125,79 +142,86 @@ function setup_search_remote_form(parent_div, remote_api_url) {
     });
 
 
+    $('#remote_search_term').keyup(function(event){
+        if(event.keyCode == 13){
+            $("#remote_search_btn").click();
+        }
+    });
+
+
     $("#remote_search_btn").click(function(e){
-    var search_term = $('#remote_search_term').val();
-    //TODO trans
-    add_ajax_waiting('Searching NomisWeb/ StatsWales...');
+        var search_term = $('#remote_search_term').val();
+        //TODO trans
+        add_ajax_waiting('Searching NomisWeb/ StatsWales...');
 
-    $.ajax({
-        url: remote_api_url,
-        type: 'GET',
-        data: {
-            'method': 'remote_search',
-            'remote_api': 'nomis',
-            'search_term': search_term,
-            'method_data': {
-                'search_term': search_term
-            }
-        },
-        success: function (data) {
-
-            build_datatable(data, '#remote_results_table');
-
-
-            var dataset_radio = $('#dataset_radio');
-            dataset_radio.find('input').remove().end();
-            dataset_radio.find('label').remove().end();
-
-            if (data['success'] == false) {
-                //TODO trans
-                alert('Sorry, an error occurred. Please try again, or report it.\n\n' + data['message'])
-            } else {
-
-                for (var rd_radio in data['datasets']) {
-                    var remote_dataset_radio = data['datasets'][rd_radio];
-                    var radio_div = $('<div>');
-
-                    radio_div.append($('<input>', {
-                        value: remote_dataset_radio.id,
-                        id: remote_dataset_radio.id,
-                        type: 'radio',
-                        name: 'nomis_search_radio',
-                        text: remote_dataset_radio.name
-                    }).attr({'source': remote_dataset_radio.source}));
-                    radio_div.append($('<label>', {
-                        value: remote_dataset_radio.id,
-                        for: remote_dataset_radio.id,
-                        text: remote_dataset_radio.name
-                    }).attr({'source': remote_dataset_radio.source})
-                        .addClass(remote_dataset_radio.source));
-                    dataset_radio.append(radio_div);
+        $.ajax({
+            url: remote_api_url,
+            type: 'GET',
+            data: {
+                'method': 'remote_search',
+                'remote_api': 'nomis',
+                'search_term': search_term,
+                'method_data': {
+                    'search_term': search_term
                 }
-                dataset_radio.buttonset();
-                dataset_radio.find('input[type=radio]').change(function () {
-                    $('#add_to_map_dialog_btn').button('enable');
-                });
+            },
+            success: function (data) {
 
-                if (data['datasets'].length == 0) {
-                    alert("{% trans 'Sorry, no results were found for that search.\n' %}" +
-                        "{% trans 'Please refine the search terms and try again' %}");
+                build_datatable(data, '#remote_results_table');
+
+
+                var dataset_radio = $('#dataset_radio');
+                dataset_radio.find('input').remove().end();
+                dataset_radio.find('label').remove().end();
+
+                if (data['success'] == false) {
+                    //TODO trans
+                    alert('Sorry, an error occurred. Please try again, or report it.\n\n' + data['message'])
                 } else {
+
+                    // for (var rd_radio in data['datasets']) {
+                    //     var remote_dataset_radio = data['datasets'][rd_radio];
+                    //     var radio_div = $('<div>');
+                    //
+                    //     radio_div.append($('<input>', {
+                    //         value: remote_dataset_radio.id,
+                    //         id: remote_dataset_radio.id,
+                    //         type: 'radio',
+                    //         name: 'nomis_search_radio',
+                    //         text: remote_dataset_radio.name
+                    //     }).attr({'source': remote_dataset_radio.source}));
+                    //     radio_div.append($('<label>', {
+                    //         value: remote_dataset_radio.id,
+                    //         for: remote_dataset_radio.id,
+                    //         text: remote_dataset_radio.name
+                    //     }).attr({'source': remote_dataset_radio.source})
+                    //         .addClass(remote_dataset_radio.source));
+                    //     dataset_radio.append(radio_div);
+                    // }
+                    dataset_radio.buttonset();
                     dataset_radio.find('input[type=radio]').change(function () {
                         $('#add_to_map_dialog_btn').button('enable');
                     });
+
+                    if (data['datasets'].length == 0) {
+                        alert("{% trans 'Sorry, no results were found for that search.\n' %}" +
+                            "{% trans 'Please refine the search terms and try again' %}");
+                    } else {
+                        dataset_radio.find('input[type=radio]').change(function () {
+                            $('#add_to_map_dialog_btn').button('enable');
+                        });
+                    }
                 }
+            },
+            error: function() {
+                //TODO trans
+                alert('Sorry, an error occurred. Please try again, or report it.\n\n');
+            },
+            complete: function() {
+                ajax_finished();
             }
-        },
-        error: function() {
-            //TODO trans
-            alert('Sorry, an error occurred. Please try again, or report it.\n\n');
-        },
-        complete: function() {
-            ajax_finished();
-        }
+        });
     });
-});
 
 
 }

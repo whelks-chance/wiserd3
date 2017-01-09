@@ -1844,7 +1844,7 @@
                     },
                     success: function (data) {
 
-                        build_datatable(data, '#remote_results_table');
+                        build_datatable(data, '#remote_results_table', "{% url 'data_api' %}");
 
 
                         var dataset_radio = $('#dataset_radio');
@@ -1872,7 +1872,9 @@
                                     text: remote_dataset_radio.name
                                 }).attr({'source': remote_dataset_radio.source})
                                         .addClass(remote_dataset_radio.source));
-                                dataset_radio.append(radio_div);
+
+{#                                dataset_radio.append(radio_div);#}
+
                             }
                             dataset_radio.buttonset();
                             dataset_radio.find('input[type=radio]').change(function () {
@@ -3358,7 +3360,7 @@
 
 
     <div id="search-remote-form" title="{% trans 'Search Remote' %}">
-        <div class="container dialog-container" >
+        <div id="search-remote-form-input-container" class="container dialog-container" >
             <div class="row">
                 <div class="pull-right"><a id="search_remote_help" class="btn btn-circle btn-default btn-help" href="#">
                     <i class="fa fa-question-circle"></i></a></div>
@@ -3379,31 +3381,32 @@
                 </div>
             </div>
 
-            <div class="row">
-                <fieldset>
-                    <div id="dataset_radio"></div>
-                </fieldset>
-            </div>
+{#            <div class="row">#}
+{#                <fieldset>#}
+{#                    <div id="dataset_radio"></div>#}
+{#                </fieldset>#}
+{#            </div>#}
 
             <div class="row">
                 <fieldset>
                     <div id="remote_results_table_div">
-                        <table class="table table-striped table-bordered table-hover" id="remote_results_table">
+                        <table class="table table-striped table-bordered table-hover" id="remote_results_table" >
                             <thead id="remote_results_thead">
                             <tr>
                                 <th>{% trans 'Title' %}</th>
-                                <th>{% trans 'Date' %}</th>
+                                <th>{% trans 'Source' %}</th>
+                                <th>{% trans 'Metadata' %}</th>
                                 <th>{% trans 'View' %}</th>
                             </tr>
                             </thead>
                             <tbody id="remote_results_tbody">
-                            <tr><td></td><td></td><td></td></tr>
-
+                            <tr><td style="word-wrap: normal"></td><td></td><td></td><td></td></tr>
                             </tbody>
                         </table>
                     </div>
                 </fieldset>
             </div>
+
 
 
         </div>

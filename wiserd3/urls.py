@@ -29,6 +29,7 @@ urlpatterns = [
                   url(r'^api/', include(api_urls, namespace='api')),
 
                   url(r'^map_test', views.map_test, name='map_test'),
+                  url(r'^snippet_test', views.snippet_test, name='snippet_test'),
 
                   url(r'^$', views.dashboard, name='root'),
                   url(r'^index', views.dashboard, name='index'),

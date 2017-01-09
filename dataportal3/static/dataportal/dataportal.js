@@ -43,6 +43,30 @@ function isQuotaExceeded(e) {
     return quotaExceeded;
 }
 
+
+        var ajax_count = 0;
+        var wait_dialog_active = false;
+        function add_ajax_waiting(content) {
+            ajax_count += 1;
+            if (ajax_count == 1 && wait_dialog_active == false) {
+                waitingDialog.show(content);
+                wait_dialog_active = true;
+            }
+            console.log('adding ' + ajax_count + wait_dialog_active);
+
+        }
+        function ajax_finished() {
+            ajax_count -= 1;
+            if (ajax_count == 0 && wait_dialog_active == true) {
+                wait_dialog_active = false;
+                waitingDialog.hide();
+            }
+            console.log('removing ' + ajax_count + wait_dialog_active);
+
+        }
+
+
+
 function get_remote_dataset_csv_url(data_api_url, topojson_geography, dataset_id, codelist_selected, callback) {
     var csv_url = '';
     $.ajax({

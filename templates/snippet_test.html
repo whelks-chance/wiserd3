@@ -1,0 +1,165 @@
+{% extends "navigation.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block page_name %}{% trans 'Snippet test' %}{% endblock %}
+
+{% block content %}
+
+    <style>
+        .child {
+            padding: 20px;
+            margin: 30px 30px;
+            border-radius: 10px;
+        }
+
+        .child:hover {
+            border: inset 4px grey;
+            padding: 16px;
+        }
+
+        .child_big {
+            width: 20em;
+        }
+
+        .child_small {
+            width: 10em;
+        }
+
+        .flex_text {
+            background-color: whitesmoke;
+            padding: 3px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .flex_parent {
+            display: flex;
+            height: inherit;
+        {#        justify-content: flex-end;#}
+            flex-flow: row wrap;
+            justify-content: space-around;
+
+        }
+
+        .key {
+            color: red;
+        }
+        .string {
+            color: lightskyblue;
+        }
+
+    </style>
+
+    <script type="text/javascript" src="{% static 'dataportal/page_js/dialogs.js' %}"></script>
+
+    <div id="main_test" style="height: 600px" class="container-fluid">
+        <div class="row">
+            <h1 class="page-header">{% trans 'Welcome ' %} {{ user }}</h1>
+            <h2>{% trans 'Test stuff' %}</h2>
+
+        </div>
+
+        <div id="new_layer_btn" class="btn btn-danger">Press</div>
+
+        <div id="reset" class="btn btn-danger">Reset</div>
+
+        <div id="d3_test" class="btn btn-info">D3js</div>
+
+        <div class="row">
+            <div id="json_output"></div>
+        </div>
+
+
+        <div id="flex_test" class="flex_parent">
+            <div class="child child_small" style="background-color: red"><div class="flex_text">AAAA</div></div>
+            <div class="child child_big" style="background-color: blue"><div class="flex_text">BBBB</div></div>
+            <div class="child child_big" style="background-color: orange"><div class="flex_text">CCCC</div></div>
+            <div class="child child_small" style="background-color: green"><div class="flex_text">DDDD</div></div>
+            <div class="child child_big" style="background-color: black"><div class="flex_text">EEEE</div></div>
+            <div class="child child_big" style="background-color: rebeccapurple"><div class="flex_text">FFFF</div></div>
+        </div>
+
+
+    </div>
+
+    {% include 'snippets/dialogs.html' %}
+
+    <script>
+        $(document).ready(function(){
+
+            function syntaxHighlight(json) {
+                if (typeof json != 'string') {
+                    json = JSON.stringify(json, undefined, 2);
+                }
+                json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                    var cls = 'number';
+                    if (/^"/.test(match)) {
+                        if (/:$/.test(match)) {
+                            cls = 'key';
+                        } else {
+                            cls = 'string';
+                        }
+                    } else if (/true|false/.test(match)) {
+                        cls = 'boolean';
+                    } else if (/null/.test(match)) {
+                        cls = 'null';
+                    }
+                    return '<span class="' + cls + '">' + match + '</span>';
+                });
+            }
+
+            var innerHeight = window.innerHeight;
+            var header_height = $('.navbar-header').height();
+            var main_test_div = $('#main_test');
+            main_test_div.css({
+                height: innerHeight - header_height - 5
+            });
+
+            setup_search_remote_form(
+                    main_test_div,
+                    "{% url 'data_api' %}"
+            );
+
+            $("#new_layer_btn").click(function(e){
+                $( "#search-remote-form").dialog( "open" );
+            });
+
+            $(".child").click(function(e){
+                $( this).toggle(false);
+            });
+
+            $("#reset").click(function(e){
+                $('.child').each(function(){
+                    $(this).toggle(true);
+                });
+            });
+
+            {#        If you need to hardcode a primary key. Avoid this. #}
+            {% with "141" as survey_id %}
+                $("#d3_test").click(function(e){
+                    $.ajax({
+                        {#                    pk is a primary key, which can be set with a template variable from the server, or hard coded as above. #}
+                        {#                    url: "{% url 'api:metadata:Survey-detail' pk=survey_id%}",#}
+
+                        {#                    This url is a list of all the surveys. #}
+                        url: "{% url 'api:metadata:Survey-list'%}",
+                        type: 'GET',
+                        data: {},
+                        success: function (data) {
+
+                            {#                        Do whatever d3 stuff here. or use the url formatting above in the d3 ajax stuff. #}
+                            console.log(data);
+
+                            $('#json_output').html(syntaxHighlight(data));
+                        }
+                    });
+                });
+            {% endwith %}
+
+        });
+    </script>
+
+
+{% endblock %}

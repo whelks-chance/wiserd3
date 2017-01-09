@@ -1,0 +1,63 @@
+{% load i18n %}
+{% load staticfiles %}
+
+<script type="text/javascript" src="{% static 'DataTables-1.10.7/extensions/Scroller/dataTables.scroller.min.js' %}"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'DataTables-1.10.7/extensions/Scroller/scroller.dataTables.min.css' %}" />
+
+
+<div id="search-remote-form" title="{% trans 'Search Remote' %}">
+    <div id="search-remote-form-input-container" class="container dialog-container" >
+        <div class="row">
+            <div class="pull-right"><a id="search_remote_help" class="btn btn-circle btn-default btn-help" href="#">
+                <i class="fa fa-question-circle"></i></a></div>
+        </div>
+
+        <div class="row">
+            <div class="input-group custom-search-form">
+                <label for="remote_search_term" class="control-label">{% trans 'Search Remote' %}</label>
+            </div>
+            <div class="input-group custom-search-form">
+                <input value="health" autofocus="autofocus" type="text" id="remote_search_term" name="remote_search_term"
+                       class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
+                        <span class="input-group-btn">
+                            <button id="remote_search_btn" class="btn btn-default" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container dialog-container" >
+
+        <div class="row">
+            <fieldset>
+                <div id="dataset_radio"></div>
+            </fieldset>
+        </div>
+
+        <div class="row">
+            <fieldset>
+                <div id="remote_results_table_div">
+                    <table class="table table-striped table-bordered table-hover" id="remote_results_table" style="display: none;">
+                        <thead id="remote_results_thead">
+                        <tr>
+                            <th>{% trans 'Title' %}</th>
+                            <th>{% trans 'Source' %}</th>
+                            <th>{% trans 'View' %}</th>
+                        </tr>
+                        </thead>
+                        <tbody id="remote_results_tbody">
+                        <tr><td style="word-wrap: normal"></td><td></td><td></td></tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+
+
+    </div>
+
+</div>

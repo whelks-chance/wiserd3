@@ -3,10 +3,14 @@ import pprint
 import requests
 from BeautifulSoup import BeautifulStoneSoup, Tag
 
+from dataportal3.utils.generic.remote_data_default import RemoteDataDefault
 
-class StatsWalesOData():
+
+class StatsWalesOData(RemoteDataDefault):
 
     def __init__(self):
+        RemoteDataDefault.__init__(self)
+
         self.metadata_edmx_url = 'http://open.statswales.gov.wales/en-gb/dataset/$metadata'
         self.metadata_url = 'http://open.statswales.gov.wales/en-gb/discover/metadata'
         self.dataset_url = 'http://open.statswales.gov.wales/en-gb/dataset/{}'
@@ -184,6 +188,9 @@ class StatsWalesOData():
             for keyset in datasets_by_id[dataset_id]:
                 if keyset['PartitionKey'] in intersect_ids:
                     matching_datasets.append(keyset)
+
+        # print "matching_datasets, keyword_description"
+        # print matching_datasets, keyword_description
 
         return matching_datasets, keyword_description
 

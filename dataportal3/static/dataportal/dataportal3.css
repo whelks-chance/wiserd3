@@ -53,6 +53,10 @@
     z-index: 500;
 }
 
+#remote_results_tbody > tr > td {
+    white-space: normal;
+}
+
 #map_div > div.leaflet-control-container > div.leaflet-top.leaflet-right {
     z-index: 1500;
 }

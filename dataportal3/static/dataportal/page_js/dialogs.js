@@ -25,25 +25,24 @@ function build_datatable(data, div_id) {
 
         var selected = [];
 
+        var search_remote_form = $('#search-remote-form').height();
+        var input_container = $('#search-remote-form-input-container').height();
+
         var survey_table = table_div.DataTable({
 
             deferRender:    true,
-            scrollY:        200,
+            scrollY:        (search_remote_form - input_container) * 0.7,
             scrollCollapse: true,
-
-            // serverSide: true,
-
             // ordering: false,
             // searching: false,
+            // processing: true,
+            // "pageLength": 30,
             scroller:       {
                 loadingIndicator: true
             },
-
             serverSide: false,
-            // processing: true,
             "bAutoWidth": false,
             responsive: true,
-            // "pageLength": 30,
             "oLanguage": datatables_language,
             data: data['datasets'],
             "rowCallback": function( row, data ) {
@@ -76,7 +75,7 @@ function build_datatable(data, div_id) {
             $('#remote_results_table tbody tr').each(function( index ) {
                 $( this ).removeClass('selected');
             });
-            $('#add_to_map_dialog_btn').button('disable');
+            // $('#add_to_map_dialog_btn').button('disable');
 
             if ( index === -1 ) {
                 selected = [];
@@ -125,8 +124,8 @@ function setup_search_remote_form(parent_div, remote_api_url) {
                     var dataset_name = dataset_radio.find(":radio:checked").text();
                     var source = dataset_radio.find(":radio:checked").attr('source');
 
-                    ready_and_load_remote_var_form("{% url 'data_api' %}", dataset_id, source, dataset_name);
-
+                    // ready_and_load_remote_var_form("{% url 'data_api' %}", dataset_id, source, dataset_name);
+                    alert("{% url 'data_api' %}", dataset_id, source, dataset_name);
                 }
             },
             {

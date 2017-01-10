@@ -599,10 +599,22 @@ function ready_and_load_remote_var_form(url, dataset_id, source, dataset_name) {
 }
 
 function build_datatable(data, div_id, data_api_url) {
+
+    var calcDataTableHeight = function() {
+        return $('#table_div').height() - (em*8);
+    };
+
+    $(window).resize(function() {
+        var oSettings = survey_table.fnSettings();
+        oSettings.oScroll.sY = calcDataTableHeight();
+        survey_table.fnDraw();
+    });
+
     var table_div = $(div_id);
     table_div.toggle(true);
 
     var table_body = table_div.find('tbody');
+
     if ( ! $.fn.DataTable.isDataTable( div_id ) ) {
 
         var selected = [];
@@ -611,7 +623,9 @@ function build_datatable(data, div_id, data_api_url) {
 
         var survey_table = table_div.DataTable({
             deferRender:    true,
-            scrollY:        (search_remote_form - input_container) * 0.7,
+            // scrollY:        (search_remote_form - input_container) * 0.7,
+            "sScrollY": calcDataTableHeight(),
+
             scrollCollapse: true,
             // ordering: false,
             // searching: false,
@@ -641,7 +655,7 @@ function build_datatable(data, div_id, data_api_url) {
                     "data": 'id',
                     "render": function ( data, type, full, meta ) {
                         return "<a target='_blank' " +
-                            "href='/survey/" + data + "' class='btn btn-success view_metadata'>Metadata</a>"
+                            "href='/survey/" + data + "' class='btn btn-success view_metadata'>" + i18n_translation['map.metadata'] + "</a>";
                     },
                     "hidden": true
                 },
@@ -649,43 +663,54 @@ function build_datatable(data, div_id, data_api_url) {
                     "rowIndex": -1,
                     "data": 'id',
                     "render": function ( data, type, full, meta ) {
-                        return "<div class='btn btn-success view_survey'>View</div>"
+                        return "<div class='btn btn-success view_survey'>" + i18n_translation['map.view'] + "</div>";
                     },
                     "hidden": true
                 }
             ]
         });
 
-
-        table_body.on('click', '.view_survey', function () {
-            var dataa = survey_table.row($(this).parents('tr')).data();
-            console.log(dataa);
-
-            $('#search-remote-form').dialog( "close" );
-
-            ready_and_load_remote_var_form(data_api_url, dataa['id'], dataa['source'], dataa['name']);
-        });
-
-
-        $('#remote_results_table tbody').on('click', 'tr', function () {
-            var id = this.id;
-            var index = $.inArray(id, selected);
-
-            // $('#remote_results_table tbody tr').each(function( index ) {
-                // $( this ).removeClass('selected');
-            // });
-            if ( index === -1 ) {
-                selected = [];
-                selected.push( id );
-                $('#add_to_map_dialog_btn').button('enable');
-            } else {
-                selected.splice( index, 1 );
-            }
-
-            // $(this).toggleClass('selected');
-        });
     }
+    else
+    {
+        table_div.DataTable().rows.add(data['datasets']).draw(false);
+    }
+
+
+    table_body.on('click', '.view_survey', function () {
+        var dataa = survey_table.row($(this).parents('tr')).data();
+
+        // console.log(dataa);
+
+        $('#search-remote-form').dialog( "close" );
+
+        ready_and_load_remote_var_form(data_api_url, dataa['id'], dataa['source'], dataa['name']);
+    });
+
+
+    $('#remote_results_table tbody').on('click', 'tr', function () {
+        var id = this.id;
+        var index = $.inArray(id, selected);
+
+        // $('#remote_results_table tbody tr').each(function( index ) {
+        // $( this ).removeClass('selected');
+        // });
+        if ( index === -1 ) {
+            selected = [];
+            selected.push( id );
+            $('#add_to_map_dialog_btn').button('enable');
+        } else {
+            selected.splice( index, 1 );
+        }
+
+        // $(this).toggleClass('selected');
+    });
+
 }
+
+var calcDataTableHeight = function() {
+    return $('#table_div').height() - (em*8);
+};
 
 
 

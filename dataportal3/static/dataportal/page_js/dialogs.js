@@ -4,7 +4,20 @@
 
 
 
+
 function build_datatable(data, div_id, data_api_url) {
+
+var calcDataTableHeight = function() {
+    return $('#table_div').height() - (em*9);
+};
+
+
+    $(window).resize(function() {
+        var oSettings = survey_table.fnSettings();
+        oSettings.oScroll.sY = calcDataTableHeight();
+        survey_table.fnDraw();
+    });
+
     var table_div = $(div_id);
     table_div.toggle(true);
 
@@ -16,8 +29,12 @@ function build_datatable(data, div_id, data_api_url) {
         var input_container = $('#search-remote-form-input-container').height();
 
         var survey_table = table_div.DataTable({
+
+            "sScrollY": calcDataTableHeight(),
+
             deferRender:    true,
-            scrollY:        (search_remote_form - input_container) * 0.7,
+            // scrollY:        (search_remote_form - input_container) * 0.7,
+            // scrollY: '100hv',
             scrollCollapse: true,
             // ordering: false,
             // searching: false,
@@ -61,22 +78,23 @@ function build_datatable(data, div_id, data_api_url) {
                 }
             ]
         });
+        survey_table.scroller.measure();
 
-        
+
         table_body.on('click', '.view_survey', function () {
             var dataa = survey_table.row($(this).parents('tr')).data();
             console.log(dataa);
-            
+
             ready_and_load_remote_var_form(data_api_url, dataa['id'], dataa['source'], dataa['name']);
         });
-        
+
 
         $('#remote_results_table tbody').on('click', 'tr', function () {
             var id = this.id;
             var index = $.inArray(id, selected);
 
             // $('#remote_results_table tbody tr').each(function( index ) {
-                // $( this ).removeClass('selected');
+            // $( this ).removeClass('selected');
             // });
             if ( index === -1 ) {
                 selected = [];
@@ -342,4 +360,6 @@ function ready_and_load_remote_var_form(url, dataset_id, source, dataset_name) {
             ajax_finished();
         }
     });
+
+
 }

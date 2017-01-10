@@ -44,26 +44,38 @@ function isQuotaExceeded(e) {
 }
 
 
-        var ajax_count = 0;
-        var wait_dialog_active = false;
-        function add_ajax_waiting(content) {
-            ajax_count += 1;
-            if (ajax_count == 1 && wait_dialog_active == false) {
-                waitingDialog.show(content);
-                wait_dialog_active = true;
-            }
-            console.log('adding ' + ajax_count + wait_dialog_active);
+var ajax_count = 0;
+var wait_dialog_active = false;
+function add_ajax_waiting(content) {
+    ajax_count += 1;
+    if (ajax_count == 1 && wait_dialog_active == false) {
+        waitingDialog.show(content);
+        wait_dialog_active = true;
+    }
+    console.log('adding ' + ajax_count + wait_dialog_active);
 
-        }
-        function ajax_finished() {
-            ajax_count -= 1;
-            if (ajax_count == 0 && wait_dialog_active == true) {
-                wait_dialog_active = false;
-                waitingDialog.hide();
-            }
-            console.log('removing ' + ajax_count + wait_dialog_active);
+}
+function ajax_finished() {
+    ajax_count -= 1;
+    if (ajax_count == 0 && wait_dialog_active == true) {
+        wait_dialog_active = false;
+        waitingDialog.hide();
+    }
+    console.log('removing ' + ajax_count + wait_dialog_active);
 
-        }
+}
+
+
+var em;
+function getValue(id){
+    var div = document.getElementById(id);
+    div.style.height = '1em';
+    em = div.offsetHeight;
+}
+
+$(document).ready(function() {
+    getValue('em_div');
+});
 
 
 
@@ -293,7 +305,7 @@ function thing(all_topojson_data, ordered_data, local_data_name,
             unmapped_data_string += unmapped + ' : ' + ordered_data[unmapped] + '\n';
         }
     }
-    
+
     if (unmapped_data_string.length > 0) {
         alert('Failed to map the following data.\n' +
             'Please check each have a valid geography id and value.\n\n'

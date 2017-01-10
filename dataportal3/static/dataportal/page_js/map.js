@@ -673,7 +673,7 @@ function build_datatable(data, div_id, data_api_url) {
     }
     else
     {
-        table_div.DataTable().rows.add(data['datasets']).draw(false);
+        table_div.DataTable().rows.add(data['datasets']).draw();
     }
 
 

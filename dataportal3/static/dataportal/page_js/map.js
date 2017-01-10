@@ -484,6 +484,10 @@ function ready_and_load_remote_var_form(url, dataset_id, source, dataset_name) {
             'source': source
         },
         success: function (data) {
+
+            console.log('ready_and_load_remote_var_form');
+            console.log(data);
+
             try {
                 $('#dataset_title').remove().end().append('<h3>' + dataset_name + '</h2>');
 
@@ -580,6 +584,8 @@ function ready_and_load_remote_var_form(url, dataset_id, source, dataset_name) {
                     'codelists': data['metadata']['codelists']
                 }).dialog('open');
             } catch (e) {
+                console.log(e);
+
                 ajax_finished();
             }
         },
@@ -592,33 +598,31 @@ function ready_and_load_remote_var_form(url, dataset_id, source, dataset_name) {
     });
 }
 
-function build_datatable(data, div_id) {
+function build_datatable(data, div_id, data_api_url) {
     var table_div = $(div_id);
     table_div.toggle(true);
 
     var table_body = table_div.find('tbody');
-
-    // for (var item in data['datasets']) {
-    //     var tr = $('<tr>');
-    //     tr.append($('<td>'), {text: item.name});
-    //     tr.append($('<td>'), {text: item.id});
-    //     tr.append($('<td>'), {text: item.source});
-    // }
-    //
-    // table_body.append(tr);
-
-
-
     if ( ! $.fn.DataTable.isDataTable( div_id ) ) {
 
         var selected = [];
+        var search_remote_form = $('#search-remote-form').height();
+        var input_container = $('#search-remote-form-input-container').height();
 
         var survey_table = table_div.DataTable({
+            deferRender:    true,
+            scrollY:        (search_remote_form - input_container) * 0.7,
+            scrollCollapse: true,
+            // ordering: false,
+            // searching: false,
+            // processing: true,
+            // "pageLength": 30,
+            scroller:       {
+                loadingIndicator: true
+            },
             serverSide: false,
-            processing: true,
             "bAutoWidth": false,
             responsive: true,
-            "pageLength": 30,
             "oLanguage": datatables_language,
             data: data['datasets'],
             "rowCallback": function( row, data ) {
@@ -627,29 +631,49 @@ function build_datatable(data, div_id) {
                 }
             },
             columns: [
-                {'data': 'name'},
-                {'data': 'source'},
-                // {'data': 'id'}
+                {'data': 'name', width: '50%', "targets": 0},
                 {
-                    "targets": -1,
+                    'data': 'source',
+                    "hidden": true
+                },
+                {
+                    "rowIndex": -2,
                     "data": 'id',
                     "render": function ( data, type, full, meta ) {
                         return "<a target='_blank' " +
-                            "href='/survey/" + data + "' class='btn btn-success view_survey'>View</a>"
-                    }
+                            "href='/survey/" + data + "' class='btn btn-success view_metadata'>Metadata</a>"
+                    },
+                    "hidden": true
+                },
+                {
+                    "rowIndex": -1,
+                    "data": 'id',
+                    "render": function ( data, type, full, meta ) {
+                        return "<div class='btn btn-success view_survey'>View</div>"
+                    },
+                    "hidden": true
                 }
             ]
         });
+
+
+        table_body.on('click', '.view_survey', function () {
+            var dataa = survey_table.row($(this).parents('tr')).data();
+            console.log(dataa);
+
+            $('#search-remote-form').dialog( "close" );
+
+            ready_and_load_remote_var_form(data_api_url, dataa['id'], dataa['source'], dataa['name']);
+        });
+
 
         $('#remote_results_table tbody').on('click', 'tr', function () {
             var id = this.id;
             var index = $.inArray(id, selected);
 
-            $('#remote_results_table tbody tr').each(function( index ) {
-                    $( this ).removeClass('selected');
-                });
-            $('#add_to_map_dialog_btn').button('disable');
-
+            // $('#remote_results_table tbody tr').each(function( index ) {
+                // $( this ).removeClass('selected');
+            // });
             if ( index === -1 ) {
                 selected = [];
                 selected.push( id );
@@ -658,11 +682,11 @@ function build_datatable(data, div_id) {
                 selected.splice( index, 1 );
             }
 
-            $(this).toggleClass('selected');
-        } );
-
-
+            // $(this).toggleClass('selected');
+        });
     }
-
-
 }
+
+
+
+

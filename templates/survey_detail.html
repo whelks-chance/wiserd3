@@ -7,6 +7,10 @@
 {% block content %}
     <script type="text/javascript" src="{% static 'dataportal/page_js/survey_detail.js' %}"></script>
 
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+    <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+
     <script>
 
         var survey_description = {
@@ -162,12 +166,12 @@
                 ajax: {
 
 
-{#                    url: "{% url 'survey_questions' survey_id %}",#}
-{#                    type: 'POST',#}
-{#                    data: function (d) {},#}
-{#                    dataSrc: function ( json ) {#}
-{#                        return json['search_result_data'];#}
-{#                    }#}
+                    {#                    url: "{% url 'survey_questions' survey_id %}",#}
+                    {#                    type: 'POST',#}
+                    {#                    data: function (d) {},#}
+                    {#                    dataSrc: function ( json ) {#}
+                    {#                        return json['search_result_data'];#}
+                    {#                    }#}
 
                     url: "{% url 'api:metadata:Question-list' %}",
                     type: 'GET',
@@ -244,7 +248,7 @@
                     survey_questions_table.search(data['link_from_name']).draw();
                 });
 
-{#                "^\\s*"+'1'+"\\s*$"#}
+                {#                "^\\s*"+'1'+"\\s*$"#}
 
                 table_body.on('click', '.search_parent', function () {
                     var data = survey_questions_table.row($(this).parents('tr')).data();
@@ -256,6 +260,8 @@
             $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                 tidy_tab_fields()
             });
+
+            do_wordcloud('wordcloud', "{% url 'api:metadata:Survey-list' %}?identifier={{ survey_id }}")
 
         });
 
@@ -361,6 +367,9 @@
                         <li>
                             <a id="survey_questions_li" href="#survey_questions" data-toggle="tab">{% trans 'Questions' %}</a>
                         </li>
+                        <li>
+                            <a id="survey_visuals_li" href="#survey_visuals" data-toggle="tab">{% trans 'Visuals' %}</a>
+                        </li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -408,6 +417,10 @@
                                 {#                                </div>#}
                             </div>
 
+                        </div>
+                        <div class="tab-pane fade" id="survey_visuals">
+                            <h4>{% trans 'Visuals' %}</h4>
+                            <wordcloud id="wordcloud"></wordcloud>
                         </div>
                     </div>
                 </div>

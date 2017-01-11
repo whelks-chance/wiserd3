@@ -129,7 +129,7 @@
                             for (var word_idx in word_arr) {
                                 var word = word_arr[word_idx];
 
-                                if (word.length > 3) {
+                                if (word.length > 4) {
 
                                     var obj_def = {
                                         'name': data['results'][i]['survey_title'],
@@ -150,7 +150,7 @@
                         }
 
                         for (var keyword_key in json_interm) {
-                            if (json_interm[keyword_key].length > 1) {
+                            if (json_interm[keyword_key].length > 3) {
                                 json_formatted.push(
                                         {
                                             'name': keyword_key,
@@ -175,6 +175,7 @@
 
             console.log(JSON.stringify(output,null,2));
 
+            console.log(output.length);
         });
     </script>
 

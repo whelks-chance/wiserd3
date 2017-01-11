@@ -6,9 +6,9 @@
 
 {% block content %}
 
-        <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
 
-        <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+    <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
 
 
     <h1>Testing D3</h1>
@@ -106,9 +106,78 @@
             var myWordCloud = wordCloud('wordcloud');
             showNewWords(myWordCloud);
 
+
+            var survey_json = (function()
+            {
+
+                var keywords = [];
+                var json_formatted = [];
+                var json_interm = {};
+
+                $.ajax({
+                    'type': 'GET',
+                    'async': false,
+                    'global': false,
+                    'url': "{% url 'api:metadata:Survey-list' %}",
+
+                    'dataType': 'json',
+                    'success' : function (data) {
+
+                        for (var i in data['results']) {
+                            var word_arr = data['results'][i]['keywords'].split(' ');
+
+                            for (var word_idx in word_arr) {
+                                var word = word_arr[word_idx];
+
+                                if (word.length > 3) {
+
+                                    var obj_def = {
+                                        'name': data['results'][i]['survey_title'],
+                                        'title': data['results'][i]['survey_title'],
+                                        'key': data['results'][i]['identifier'],
+                                        'url': 'http://www.google.com'
+                                    };
+
+                                    if (json_interm.hasOwnProperty(word)) {
+                                        json_interm[word].push(obj_def)
+                                    } else {
+                                        json_interm[word] = [obj_def]
+                                    }
+                                }
+                            }
+
+                            keywords = keywords.concat(word_arr);
+                        }
+
+                        for (var keyword_key in json_interm) {
+                            if (json_interm[keyword_key].length > 1) {
+                                json_formatted.push(
+                                        {
+                                            'name': keyword_key,
+                                            'key': keyword_key,
+                                            'count': json_interm[keyword_key].length,
+                                            'pages': json_interm[keyword_key]
+                                        }
+                                )
+                            }
+                        }
+
+                        {#                            json_formatted['uniques'] = _.uniq(keywords);#}
+
+                    }
+                });
+
+
+                return json_formatted;
+            });
+
+            var output = survey_json();
+
+            console.log(JSON.stringify(output,null,2));
+
         });
     </script>
 
-<wordcloud id="wordcloud_div"></wordcloud>
+    <wordcloud id="wordcloud_div"></wordcloud>
 
 {% endblock %}

@@ -50,6 +50,10 @@
         }
 
     </style>
+    <script src="../d3.v3.min.js"></script>
+    <script src="../d3-tip-master/d3-tip.js"></script>
+
+<body>
 
     <script type="text/javascript" src="{% static 'dataportal/page_js/dialogs.js' %}"></script>
 
@@ -150,6 +154,8 @@
                         success: function (data) {
 
                             {#                        Do whatever d3 stuff here. or use the url formatting above in the d3 ajax stuff. #}
+
+
                             console.log(data);
 
                             $('#json_output').html(syntaxHighlight(data));
@@ -159,7 +165,10 @@
             {% endwith %}
 
         });
-    </script>
 
+</script>
+
+
+</body>
 
 {% endblock %}

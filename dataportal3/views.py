@@ -15,6 +15,7 @@ from allauth.account.models import EmailAddress
 from allauth.account.utils import send_email_confirmation
 from django.apps import apps
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import AnonymousUser
 # from django.contrib.gis.gdal import CoordTransform
 # from django.contrib.gis.gdal import SpatialReference
@@ -2385,6 +2386,7 @@ def site_setup(request):
                   }, context_instance=RequestContext(request))
 
 
+@login_required
 def welcome(request):
     userr = get_request_user(request)
     default_email = userr.user.email
@@ -3366,3 +3368,7 @@ def civil_society(request):
 
 def snippet_test(request):
     return render(request, 'snippet_test.html', {}, context_instance=RequestContext(request))
+
+
+def d3_test(request):
+    return render(request, 'd3_test.html', {}, context_instance=RequestContext(request))

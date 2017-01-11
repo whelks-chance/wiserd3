@@ -30,6 +30,7 @@ urlpatterns = [
 
                   url(r'^map_test', views.map_test, name='map_test'),
                   url(r'^snippet_test', views.snippet_test, name='snippet_test'),
+                  url(r'^d3_test', views.d3_test, name='d3_test'),
 
                   url(r'^$', views.dashboard, name='root'),
                   url(r'^index', views.dashboard, name='index'),

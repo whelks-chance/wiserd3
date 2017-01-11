@@ -114,7 +114,8 @@
     }
 
     var json = (function()
-    {                       {% with "141" as survey_id %}
+    {
+{#        {% with "141" as survey_id %}#}
 
         $.ajax({
             'type': 'GET',
@@ -127,7 +128,7 @@
                 json = data['keywords'];
             }
         });
-    {% endwith %}
+{#    {% endwith %}#}
 
         return [json];
     });

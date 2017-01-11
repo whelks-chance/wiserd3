@@ -3370,5 +3370,5 @@ def snippet_test(request):
     return render(request, 'snippet_test.html', {}, context_instance=RequestContext(request))
 
 
-def d3_test(request):
-    return render(request, 'd3_test.html', {}, context_instance=RequestContext(request))
+def d3_test(request, survey_id):
+    return render(request, 'd3_test.html', {'survey_id': survey_id}, context_instance=RequestContext(request))

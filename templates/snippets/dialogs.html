@@ -6,8 +6,20 @@
 <link rel="stylesheet" type="text/css" href="{% static 'DataTables-1.10.7/extensions/Scroller/scroller.dataTables.min.css' %}" />
 
 
-<div id="search-remote-form" title="{% trans 'Search Remote' %}">
-    <div id="search-remote-form-input-container" class="container dialog-container" >
+<div id="search-remote-form"
+
+     style="
+             display: flex;
+             flex-direction: column;
+             flex-flow: column nowrap;
+             "
+
+     title="{% trans 'Search Remote' %}">
+    <div
+            style="flex: none"
+
+            id="search-remote-form-input-container"
+            class="container dialog-container" >
         <div class="row">
             <div class="pull-right"><a id="search_remote_help" class="btn btn-circle btn-default btn-help" href="#">
                 <i class="fa fa-question-circle"></i></a></div>
@@ -29,35 +41,29 @@
         </div>
     </div>
 
-    <div class="container dialog-container" >
+    <div
+        id="table_div"
+        class="container dialog-container"
+        style="
+            flex: auto;
+        "
+    >
 
-        <div class="row">
-            <fieldset>
-                <div id="dataset_radio"></div>
-            </fieldset>
-        </div>
-
-        <div class="row">
-            <fieldset>
-                <div id="remote_results_table_div">
-                    <table class="table table-striped table-bordered table-hover" id="remote_results_table" >
-                        <thead id="remote_results_thead">
-                        <tr>
-                            <th>{% trans 'Title' %}</th>
-                            <th>{% trans 'Source' %}</th>
-                            <th>{% trans 'Metadata' %}</th>
-                            <th>{% trans 'View' %}</th>
-                        </tr>
-                        </thead>
-                        <tbody id="remote_results_tbody">
-                        <tr><td style="word-wrap: normal"></td><td></td><td></td><td></td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </fieldset>
-        </div>
-
-
+        <table
+                class="table table-striped table-bordered table-hover" id="remote_results_table"
+        >
+            <thead id="remote_results_thead">
+            <tr>
+                <th>{% trans 'Title' %}</th>
+                <th>{% trans 'Source' %}</th>
+                <th>{% trans 'Metadata' %}</th>
+                <th>{% trans 'View' %}</th>
+            </tr>
+            </thead>
+            <tbody id="remote_results_tbody">
+            <tr><td style="word-wrap: normal"></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
     </div>
 
 </div>

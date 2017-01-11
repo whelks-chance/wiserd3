@@ -1039,11 +1039,18 @@
                         }
                     }
 
+
+
+                    if (suppressed_data) {
+                        alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
+                                "{% trans 'It looks like your query was too specific, for example, when data are suppressed due to statistical confidentiality considerations. \n\n' %}" +
+                                "{% trans 'In this case, try a larger area to map data for.' %}")
+                    }
+
+
                     if (feature_string_data.length > 0) {
                     } else {
-                        if (suppressed_data) {
-                            throw "suppressed_data";
-                        }
+
                         if (feature_data.length == 0) {
                             throw "feature_data_0";
                         }
@@ -1185,12 +1192,8 @@
                         myLayer.bringToFront();
                     }
                 } catch (e) {
-                    if (e == 'suppressed_data') {
-                        alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
-                                "{% trans 'It looks like your query was too specific, for example, when data are suppressed due to statistical confidentiality considerations. \n\n' %}" +
-                                "{% trans 'In this case, try a larger area to map data for.' %}")
-                    }
-                    else if (e == 'feature_data_0') {
+
+                    if (e == 'feature_data_0') {
                         alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
                                 "{% trans 'No data could be found for this query. \n\n' %}" +
                                 "{% trans 'Please try again, or report it.' %}")
@@ -1873,7 +1876,7 @@
                                 }).attr({'source': remote_dataset_radio.source})
                                         .addClass(remote_dataset_radio.source));
 
-{#                                dataset_radio.append(radio_div);#}
+                                {#                                dataset_radio.append(radio_div);#}
 
                             }
                             dataset_radio.buttonset();
@@ -1942,22 +1945,22 @@
                 width: map_div.width() * 0.9,
                 modal: true,
                 buttons: [
-                    {
-                        id: 'add_to_map_dialog_btn',
-                        text: '{% trans 'Add to Map' %}',
-                        disabled: true,
-                        click: function() {
-                            {#                            add_ajax_waiting('{% trans 'Inspecting dataset ...' %}');#}
-
-                            $( this ).dialog( "close" );
-                            var dataset_radio = $("#dataset_radio");
-                            var dataset_id = dataset_radio.find(":radio:checked").attr('id');
-                            var dataset_name = dataset_radio.find(":radio:checked").text();
-                            var source = dataset_radio.find(":radio:checked").attr('source');
-
-                            ready_and_load_remote_var_form("{% url 'data_api' %}", dataset_id, source, dataset_name);
-
-                        }},
+                    {#                    {#}
+                    {#                        id: 'add_to_map_dialog_btn',#}
+                    {#                        text: '{% trans 'Add to Map' %}',#}
+                    {#                        disabled: true,#}
+                    {#                        click: function() {#}
+                    {#                            add_ajax_waiting('{% trans 'Inspecting dataset ...' %}');#}
+                    {##}
+                    {#                            $( this ).dialog( "close" );#}
+                    {#                            var dataset_radio = $("#dataset_radio");#}
+                    {#                            var dataset_id = dataset_radio.find(":radio:checked").attr('id');#}
+                    {#                            var dataset_name = dataset_radio.find(":radio:checked").text();#}
+                    {#                            var source = dataset_radio.find(":radio:checked").attr('source');#}
+                    {##}
+                    {#                            ready_and_load_remote_var_form("{% url 'data_api' %}", dataset_id, source, dataset_name);#}
+                    {##}
+                    {#                        }},#}
                     {
                         text: '{% trans 'Cancel' %}',
                         click: function() {
@@ -3359,59 +3362,67 @@
     </div>
 
 
-    <div id="search-remote-form" title="{% trans 'Search Remote' %}">
-        <div id="search-remote-form-input-container" class="container dialog-container" >
-            <div class="row">
-                <div class="pull-right"><a id="search_remote_help" class="btn btn-circle btn-default btn-help" href="#">
-                    <i class="fa fa-question-circle"></i></a></div>
-            </div>
+<div id="search-remote-form"
 
-            <div class="row">
-                <div class="input-group custom-search-form">
-                    <label for="remote_search_term" class="control-label">{% trans 'Search Remote' %}</label>
-                </div>
-                <div class="input-group custom-search-form">
-                    <input autofocus="autofocus" type="text" id="remote_search_term" name="remote_search_term"
-                           class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
+     style="
+             display: flex;
+             flex-direction: column;
+             flex-flow: column nowrap;
+             "
+
+     title="{% trans 'Search Remote' %}">
+    <div
+            style="flex: none"
+
+            id="search-remote-form-input-container"
+            class="container dialog-container" >
+        <div class="row">
+            <div class="pull-right"><a id="search_remote_help" class="btn btn-circle btn-default btn-help" href="#">
+                <i class="fa fa-question-circle"></i></a></div>
+        </div>
+
+        <div class="row">
+            <div class="input-group custom-search-form">
+                <label for="remote_search_term" class="control-label">{% trans 'Search Remote' %}</label>
+            </div>
+            <div class="input-group custom-search-form">
+                <input value="" autofocus="autofocus" type="text" id="remote_search_term" name="remote_search_term"
+                       class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
                         <span class="input-group-btn">
                             <button id="remote_search_btn" class="btn btn-default" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
                         </span>
-                </div>
             </div>
-
-{#            <div class="row">#}
-{#                <fieldset>#}
-{#                    <div id="dataset_radio"></div>#}
-{#                </fieldset>#}
-{#            </div>#}
-
-            <div class="row">
-                <fieldset>
-                    <div id="remote_results_table_div">
-                        <table class="table table-striped table-bordered table-hover" id="remote_results_table" >
-                            <thead id="remote_results_thead">
-                            <tr>
-                                <th>{% trans 'Title' %}</th>
-                                <th>{% trans 'Source' %}</th>
-                                <th>{% trans 'Metadata' %}</th>
-                                <th>{% trans 'View' %}</th>
-                            </tr>
-                            </thead>
-                            <tbody id="remote_results_tbody">
-                            <tr><td style="word-wrap: normal"></td><td></td><td></td><td></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </fieldset>
-            </div>
-
-
-
         </div>
-
     </div>
+
+    <div
+        id="table_div"
+        class="container dialog-container"
+        style="
+            flex: auto;
+        "
+    >
+
+        <table
+                class="table table-striped table-bordered table-hover" id="remote_results_table"
+        >
+            <thead id="remote_results_thead">
+            <tr>
+                <th>{% trans 'Title' %}</th>
+                <th>{% trans 'Source' %}</th>
+                <th>{% trans 'Metadata' %}</th>
+                <th>{% trans 'View' %}</th>
+            </tr>
+            </thead>
+            <tbody id="remote_results_tbody">
+            <tr><td style="word-wrap: normal"></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
 
     <div id="local-data-form" title="{% trans 'MapMyData' %}">
 

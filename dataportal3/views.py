@@ -1056,7 +1056,7 @@ def data_api(request):
         search_term = request.GET.get("search_term", None)
         print type(search_term), search_term
 
-        if search_term == u'health':
+        if search_term == u'health_hack':
             # TODO remove
             print 'shortcut'
 

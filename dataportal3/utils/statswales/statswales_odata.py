@@ -97,20 +97,22 @@ class StatsWalesOData(RemoteDataDefault):
         )
         print(dataset_geog_url)
 
-        dataset_metadata = requests.get(dataset_geog_url, timeout=10)
-        dataset_metadata_objects = json.loads(dataset_metadata.text)
-
-        print dataset_metadata_objects
-
         return_data = []
-        for geog in dataset_metadata_objects['value']:
-            return_data.append(
-                {
-                    'name': geog['Description_ENG'],
-                    'id': self.get_code_for_geog_text(geog['Description_ENG'])
-                }
-            )
 
+        dataset_metadata = requests.get(dataset_geog_url, timeout=10)
+
+        if dataset_metadata.status_code == requests.codes.ok:
+            dataset_metadata_objects = json.loads(dataset_metadata.text)
+
+            print dataset_metadata_objects
+
+            for geog in dataset_metadata_objects['value']:
+                return_data.append(
+                    {
+                        'name': geog['Description_ENG'],
+                        'id': self.get_code_for_geog_text(geog['Description_ENG'])
+                    }
+                )
 
         return return_data
 
@@ -362,27 +364,29 @@ class StatsWalesOData(RemoteDataDefault):
         # print result.text
         print data_url
 
-        result_json = json.loads(result.text)
-
         dimensions = {}
 
-        for datasetdimensionitem in result_json['value']:
-            dimension_name = datasetdimensionitem['DimensionName_ENG']
-            if dimension_name in dimensions:
-                dimensions[dimension_name]['measures'].append({
-                    'id': datasetdimensionitem['Code'],
-                    'name': datasetdimensionitem['Description_ENG']
-                })
-            else:
-                dimensions[dimension_name] = {
-                    "concept": dimension_name,
-                    "name": dimension_name,
-                    'measures': [{
+        if result.status_code == requests.codes.ok:
+
+            result_json = json.loads(result.text)
+
+            for datasetdimensionitem in result_json['value']:
+                dimension_name = datasetdimensionitem['DimensionName_ENG']
+                if dimension_name in dimensions:
+                    dimensions[dimension_name]['measures'].append({
                         'id': datasetdimensionitem['Code'],
                         'name': datasetdimensionitem['Description_ENG']
-                    }]
-                }
-                # print datasetdimensionitem
+                    })
+                else:
+                    dimensions[dimension_name] = {
+                        "concept": dimension_name,
+                        "name": dimension_name,
+                        'measures': [{
+                            'id': datasetdimensionitem['Code'],
+                            'name': datasetdimensionitem['Description_ENG']
+                        }]
+                    }
+                    # print datasetdimensionitem
 
         return_data = {
             'concepts': [],

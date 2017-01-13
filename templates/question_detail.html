@@ -38,7 +38,7 @@
                     'style': 'form',
                     'url': "{% url 'survey_question_results' question_id %}",
                     'fields': [
-                        {'display': true, 'displayName': '{% trans 'Response ID' %}', 'id': 'responseid'},
+                        {'display': false, 'displayName': '{% trans 'Response ID' %}', 'id': 'responseid'},
                         {'display': true, 'displayName': '{% trans 'Response Text' %}', 'id': 'responsetext'},
                         {'display': false, 'displayName': '{% trans 'created' %}', 'id': 'created'},
                         {'display': true, 'displayName': '{% trans 'Route Notes' %}', 'id': 'route_notes'},
@@ -48,7 +48,7 @@
                         {'display': false, 'displayName': '{% trans 'user_id' %}', 'id': 'user_id'},
                         {'display': true, 'displayName': '{% trans 'Checks' %}', 'id': 'checks'},
                         {'display': true, 'displayName': '{% trans 'Route Type' %}', 'id': 'routetype'},
-                        {'display': true, 'displayName': '{% trans 'Last Edit' %}', 'id': 'updated'}
+                        {'display': false, 'displayName': '{% trans 'Last Edit' %}', 'id': 'updated'}
                     ]
                 }
             }

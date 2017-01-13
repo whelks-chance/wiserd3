@@ -34,10 +34,23 @@ class RemoteData():
                 return datasets
             s = j['structure']['keyfamilies']['keyfamily']
             for f in s:
+
+                text1 = ''
+                text2 = ''
+
+                for anno1 in f['annotations']['annotation']:
+                    if anno1['annotationtitle'] == 'MetadataText0':
+                        text1 = anno1['annotationtext']
+
+                    if anno1['annotationtitle'] == 'MetadataText1':
+                        text2 = anno1['annotationtext']
+
                 k = {
                     'id': f['id'],
                     'name': f['name']['value'],
-                    'source': 'Nomis'
+                    'source': 'Nomis',
+                    'text1': text1,
+                    'text2': text2
                 }
                 datasets.append(k)
                 # print pprint.pformat(k)
@@ -91,7 +104,8 @@ class RemoteData():
 
         return_data = {
             'concepts': [],
-            'codelists': {}
+            'codelists': {},
+            'name': j6['structure']['keyfamilies']['keyfamily'][0]['name']['value'],
         }
 
         concepts = j6['structure']['keyfamilies']['keyfamily'][0]['components']['dimension']

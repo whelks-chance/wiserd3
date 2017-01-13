@@ -489,7 +489,8 @@ function ready_and_load_remote_var_form(url, dataset_id, source, dataset_name) {
             console.log(data);
 
             try {
-                $('#dataset_title').remove().end().append('<h3>' + dataset_name + '</h2>');
+                // $('#dataset_title').remove().end().append('<h3>' + dataset_name + '</h2>');
+                $('#dataset_title').html('<h4 class="dataset_title">' + dataset_name + '</h4>');
 
                 var dataset_radio = $('#data_cell_radio');
                 dataset_radio.find('div').remove().end();
@@ -497,7 +498,7 @@ function ready_and_load_remote_var_form(url, dataset_id, source, dataset_name) {
                 for (var remote_codelist in data['metadata']['codelists']) {
                     var remote_codelist_data = data['metadata']['codelists'][remote_codelist];
 
-                    var codelist_label = $('<div>', {text: remote_codelist_data['name']});
+                    var codelist_label = $('<div>', {id: remote_codelist_data['name'] + '_label', text: remote_codelist_data['name']});
                     dataset_radio.append(codelist_label);
 
                     var codelist_radio_div = $('<div>', {id: remote_codelist + '_radio'});
@@ -605,7 +606,7 @@ function build_datatable(data, div_id, data_api_url) {
     };
 
     $(window).resize(function() {
-        var oSettings = survey_table.fnSettings();
+        var oSettings = survey_table.settings;
         oSettings.oScroll.sY = calcDataTableHeight();
         survey_table.fnDraw();
     });
@@ -647,8 +648,7 @@ function build_datatable(data, div_id, data_api_url) {
             columns: [
                 {'data': 'name', width: '50%', "targets": 0},
                 {
-                    'data': 'source',
-                    "hidden": true
+                    'data': 'source'
                 },
                 {
                     "rowIndex": -2,
@@ -656,16 +656,28 @@ function build_datatable(data, div_id, data_api_url) {
                     "render": function ( data, type, full, meta ) {
                         return "<a target='_blank' " +
                             "href='/survey/" + data + "' class='btn btn-success view_metadata'>" + i18n_translation['map.metadata'] + "</a>";
-                    },
-                    "hidden": true
+                    }
                 },
                 {
                     "rowIndex": -1,
                     "data": 'id',
                     "render": function ( data, type, full, meta ) {
                         return "<div class='btn btn-success view_survey'>" + i18n_translation['map.view'] + "</div>";
-                    },
-                    "hidden": true
+                    }
+                },
+                {
+                    "data": 'text1',
+                    "defaultContent": "<i>Not found</i>",
+                    "hidden": true,
+                    "className": 'none'
+                    // "visible": false
+                },
+                {
+                    "data": 'text2',
+                    "defaultContent": "<i>Not found</i>",
+                    "hidden": true,
+                    // "visible": false,
+                    "className": 'none'
                 }
             ]
         });

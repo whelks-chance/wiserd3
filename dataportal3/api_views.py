@@ -1,3 +1,5 @@
+import django_filters
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from dataportal3.models import *
 from dataportal3.serializer import *
@@ -138,9 +140,47 @@ class FeatureStoreViewSet(viewsets.ModelViewSet):
 
 
 class NomisSearchViewSet(viewsets.ModelViewSet):
-    queryset = NomisSearch.objects.all()
+    # def get_queryset(self):
+    #
+    #     queryset_parent = super(NomisSearchViewSet, self).get_queryset()
+    #
+    #     print 'queryset_parent', queryset_parent.query
+    #
+    #     print 'query_params', self.request.query_params
+    #
+    #     kargs = {}
+    #
+    #     for opt in self.request.query_params:
+    #         if '__isnull' in opt:
+    #
+    #             # Stupid check because "False" is true
+    #             res = None
+    #             if self.request.query_params[opt] in ['False', 'false']:
+    #                 res = False
+    #             elif self.request.query_params[opt] in ['True', 'true']:
+    #                 res = True
+    #
+    #             if res is not None:
+    #                 kargs[opt] = res
+    #             else:
+    #                 kargs[opt] = self.request.query_params[opt]
+    #
+    #     print 'kargs', kargs
+    #
+    #     if len(kargs):
+    #         query = queryset_parent.filter(**kargs)
+    #         print query.query
+    #         return query
+    #
+    #     query = queryset_parent
+    #     print query.query
+    #     return query
+
+    model = NomisSearch
+    queryset = model.objects.all()
     serializer_class = NomisSearchSerializer
-    filter_fields = ('user', 'search_type', 'uuid')
+    filter_fields = ('user', 'search_type', 'name', 'uuid')
+    # filter_backends = (DjangoFilterBackend,)
 
 
 # class Aberystwyth_Locality_DissolvedViewSet(viewsets.ModelViewSet):

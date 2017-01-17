@@ -53,7 +53,10 @@
     <script src="../d3.v3.min.js"></script>
     <script src="../d3-tip-master/d3-tip.js"></script>
 
-<body>
+    <script src="{% static 'fontawesome-iconpicker-1.2.2/dist/js/fontawesome-iconpicker.js' %}"></script>
+    <link href="{% static 'fontawesome-iconpicker-1.2.2/dist/css/fontawesome-iconpicker.min.css' %}" rel="stylesheet">
+
+    <body>
 
     <script type="text/javascript" src="{% static 'dataportal/page_js/dialogs.js' %}"></script>
 
@@ -71,104 +74,155 @@
         <div id="d3_test" class="btn btn-info">D3js</div>
 
         <div class="row">
-            <div id="json_output"></div>
+            <div class="form-group">
+                <label>As a component</label>
+
+                <div class="input-group">
+                    <input data-placement="bottomRight" class="form-control icp icp-auto" value="fa-archive" type="text" />
+                    <span class="input-group-addon"></span>
+                </div>
+            </div>
         </div>
 
+        <div class="row">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary iconpicker-component"><i class="fa fa-comment-o"></i></button>
+                <button type="button" class="icp icp-dd btn btn-primary
 
-        <div id="flex_test" class="flex_parent">
-            <div class="child child_small" style="background-color: red"><div class="flex_text">AAAA</div></div>
-            <div class="child child_big" style="background-color: blue"><div class="flex_text">BBBB</div></div>
-            <div class="child child_big" style="background-color: orange"><div class="flex_text">CCCC</div></div>
-            <div class="child child_small" style="background-color: green"><div class="flex_text">DDDD</div></div>
-            <div class="child child_big" style="background-color: black"><div class="flex_text">EEEE</div></div>
-            <div class="child child_big" style="background-color: rebeccapurple"><div class="flex_text">FFFF</div></div>
+                dropdown-toggle
+{#                iconpicker-element #}
+{#                iconpicker-input#}
+
+                " data-selected="fa-car" data-toggle="dropdown" aria-expanded="false" data-input-search="true">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+
+                </button>
+
+                <div class="dropdown-menu iconpicker-container"></div>
+            </div>
+
+
+            <div class="row">
+                <div id="json_output"></div>
+            </div>
+
+
+            <div id="flex_test" class="flex_parent">
+                <div class="child child_small" style="background-color: red"><div class="flex_text">AAAA</div></div>
+                <div class="child child_big" style="background-color: blue"><div class="flex_text">BBBB</div></div>
+                <div class="child child_big" style="background-color: orange"><div class="flex_text">CCCC</div></div>
+                <div class="child child_small" style="background-color: green"><div class="flex_text">DDDD</div></div>
+                <div class="child child_big" style="background-color: black"><div class="flex_text">EEEE</div></div>
+                <div class="child child_big" style="background-color: rebeccapurple"><div class="flex_text">FFFF</div></div>
+            </div>
+
+
         </div>
 
+        {% include 'snippets/dialogs.html' %}
 
-    </div>
+        <script>
+            $(document).ready(function(){
 
-    {% include 'snippets/dialogs.html' %}
+                $('.icp-auto').iconpicker();
 
-    <script>
-        $(document).ready(function(){
+                $(document).on('click', '.action-placement', function(e) {
+                    $('.action-placement').removeClass('active');
+                    $(this).addClass('active');
+                    $('.icp-opts').data('iconpicker').updatePlacement($(this).text());
+                    e.preventDefault();
+                    return false;
+                });
 
-            function syntaxHighlight(json) {
-                if (typeof json != 'string') {
-                    json = JSON.stringify(json, undefined, 2);
-                }
-                json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
-                    var cls = 'number';
-                    if (/^"/.test(match)) {
-                        if (/:$/.test(match)) {
-                            cls = 'key';
-                        } else {
-                            cls = 'string';
-                        }
-                    } else if (/true|false/.test(match)) {
-                        cls = 'boolean';
-                    } else if (/null/.test(match)) {
-                        cls = 'null';
+
+                $('.icp-dd').iconpicker();
+
+                $('.icp').on('iconpickerSelected', function(e) {
+                    console.log(e.iconpickerValue);
+                    $('.lead .picker-target').get(0).className = 'picker-target fa-3x ' +
+                            e.iconpickerInstance.options.iconBaseClass + ' ' +
+                            e.iconpickerInstance.options.fullClassFormatter(e.iconpickerValue);
+                });
+
+
+                function syntaxHighlight(json) {
+                    if (typeof json != 'string') {
+                        json = JSON.stringify(json, undefined, 2);
                     }
-                    return '<span class="' + cls + '">' + match + '</span>';
-                });
-            }
-
-            var innerHeight = window.innerHeight;
-            var header_height = $('.navbar-header').height();
-            var main_test_div = $('#main_test');
-            main_test_div.css({
-                height: innerHeight - header_height - 5
-            });
-
-            setup_search_remote_form(
-                    main_test_div,
-                    "{% url 'data_api' %}"
-            );
-
-            $("#new_layer_btn").click(function(e){
-                $( "#search-remote-form").dialog( "open" );
-            });
-
-            $(".child").click(function(e){
-                $( this).toggle(false);
-            });
-
-            $("#reset").click(function(e){
-                $('.child').each(function(){
-                    $(this).toggle(true);
-                });
-            });
-
-            {#        If you need to hardcode a primary key. Avoid this. #}
-            {% with "141" as survey_id %}
-                $("#d3_test").click(function(e){
-                    $.ajax({
-                        {#                    pk is a primary key, which can be set with a template variable from the server, or hard coded as above. #}
-                        {#                    url: "{% url 'api:metadata:Survey-detail' pk=survey_id%}",#}
-
-                        {#                    This url is a list of all the surveys. #}
-                        url: "{% url 'api:metadata:Survey-list'%}",
-                        type: 'GET',
-                        data: {},
-                        success: function (data) {
-
-                            {#                        Do whatever d3 stuff here. or use the url formatting above in the d3 ajax stuff. #}
-
-
-                            console.log(data);
-
-                            $('#json_output').html(syntaxHighlight(data));
+                    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                        var cls = 'number';
+                        if (/^"/.test(match)) {
+                            if (/:$/.test(match)) {
+                                cls = 'key';
+                            } else {
+                                cls = 'string';
+                            }
+                        } else if (/true|false/.test(match)) {
+                            cls = 'boolean';
+                        } else if (/null/.test(match)) {
+                            cls = 'null';
                         }
+                        return '<span class="' + cls + '">' + match + '</span>';
+                    });
+                }
+
+                var innerHeight = window.innerHeight;
+                var header_height = $('.navbar-header').height();
+                var main_test_div = $('#main_test');
+                main_test_div.css({
+                    height: innerHeight - header_height - 5
+                });
+
+                setup_search_remote_form(
+                        main_test_div,
+                        "{% url 'data_api' %}"
+                );
+
+                $("#new_layer_btn").click(function(e){
+                    $( "#search-remote-form").dialog( "open" );
+                });
+
+                $(".child").click(function(e){
+                    $( this).toggle(false);
+                });
+
+                $("#reset").click(function(e){
+                    $('.child').each(function(){
+                        $(this).toggle(true);
                     });
                 });
-            {% endwith %}
 
-        });
+                {#        If you need to hardcode a primary key. Avoid this. #}
+                {% with "141" as survey_id %}
+                    $("#d3_test").click(function(e){
+                        $.ajax({
+                            {#                    pk is a primary key, which can be set with a template variable from the server, or hard coded as above. #}
+                            {#                    url: "{% url 'api:metadata:Survey-detail' pk=survey_id%}",#}
 
-</script>
+                            {#                    This url is a list of all the surveys. #}
+                            url: "{% url 'api:metadata:Survey-list'%}",
+                            type: 'GET',
+                            data: {},
+                            success: function (data) {
+
+                                {#                        Do whatever d3 stuff here. or use the url formatting above in the d3 ajax stuff. #}
 
 
-</body>
+                                console.log(data);
+
+                                $('#json_output').html(syntaxHighlight(data));
+                            }
+                        });
+                    });
+                {% endwith %}
+
+            });
+
+        </script>
+
+
+    </body>
 
 {% endblock %}

@@ -144,6 +144,44 @@ $(document).ready(function () {
     //         {}
     //     ).dialog( "open" );
     // });
+
+    $(document).on('click', '.action-placement', function(e) {
+        $('.action-placement').removeClass('active');
+        $(this).addClass('active');
+        $('.icp-opts').data('iconpicker').updatePlacement($(this).text());
+        e.preventDefault();
+        return false;
+    });
+
+    $('.icp-auto').iconpicker({
+            templates: {
+                popover: '<div class="iconpicker-popover popover" style="width: 100%"><div class="arrow"></div>' +
+                '<div class="popover-title"></div><div class="popover-content"></div></div>',
+                footer: '<div class="popover-footer"></div>',
+                buttons: '<button class="iconpicker-btn iconpicker-btn-cancel btn btn-default btn-sm">Cancel</button>' +
+                ' <button class="iconpicker-btn iconpicker-btn-accept btn btn-primary btn-sm">Accept</button>',
+                search: '<input type="search" class="form-control iconpicker-search" placeholder="Type to filter" />',
+                iconpicker: '<div class="iconpicker"><div class="iconpicker-items"></div></div>',
+                iconpickerItem: '<a role="button" href="#" class="iconpicker-item"><i></i></a>'
+            }
+        }
+    );
+
+    $('.icp-dd').iconpicker({
+        placement: 'top'
+    });
+
+    $('.icp').on('iconpickerSelected', function(e) {
+        // alert(e.iconpickerValue);
+        console.log(e.iconpickerValue);
+        var picker_target = $('.lead .picker-target');
+        picker_target.get(0).className = 'picker-target fa-3x ' +
+            e.iconpickerInstance.options.iconBaseClass + ' ' +
+            e.iconpickerInstance.options.fullClassFormatter(e.iconpickerValue);
+        picker_target.attr('data-icon_fa', e.iconpickerValue);
+    });
+
+
 });
 
 function do_mapmydata_tutorial_1() {

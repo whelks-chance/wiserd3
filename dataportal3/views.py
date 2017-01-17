@@ -525,10 +525,15 @@ def get_remote_layer_render_data_for_uid(nomissearch_uids, request_user):
 
         print remote_layer_model.display_attributes
 
+        point_icon = ''
+        if 'point_icon' in remote_layer_model.display_attributes:
+            point_icon = remote_layer_model.display_attributes['point_icon']
+
         layer_data = {
             'bin_num': remote_layer_model.display_attributes['bin_num'],
             'bin_type': remote_layer_model.display_attributes['bin_type'],
             'colorpicker': remote_layer_model.display_attributes['colorpicker'],
+            'point_icon': point_icon,
             'codelist': codelist,
             'geography_id': remote_layer_model.geography_id,
             'uuid': remote_layer_model.uuid,
@@ -1785,6 +1790,8 @@ def data_api(request):
                 'bin_type': request.GET.get("bin_type", ''),
                 'bin_num': request.GET.get("bin_num", ''),
                 'colorpicker': request.GET.get("colorpicker", ''),
+                'point_icon': request.GET.get("point_icon", '')
+
             }
 
             search_object = models.NomisSearch.objects.get(uuid=layer_id)
@@ -2785,6 +2792,7 @@ def get_topojson_for_uuid(request, search_uuid):
         'bin_num': found_search_model.display_attributes['bin_num'],
         'bin_type': found_search_model.display_attributes['bin_type'],
         'colorpicker': found_search_model.display_attributes['colorpicker'],
+        'point_icon': found_search_model.display_attributes['point_icon'],
         'codelist': codelist,
         'geography_id': found_search_model.geography_id,
         'uuid': found_search_model.uuid,

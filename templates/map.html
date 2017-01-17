@@ -104,8 +104,14 @@
 
     <script type="text/javascript" src="{% static 'dataportal/page_js/map.js' %}"></script>
 
-    <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script><!-- proj4js -->
-    <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script><!-- proj4leaflet -->
+    {#    <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script><!-- proj4js -->#}
+    {#    <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script><!-- proj4leaflet -->#}
+
+    <script src="{% static 'proj4leaflet/proj4-compressed.js' %}"></script>
+    <script src="{% static 'proj4leaflet/proj4leaflet.js' %}"></script>
+
+    <script src="{% static 'fontawesome-iconpicker-1.2.2/dist/js/fontawesome-iconpicker.js' %}"></script>
+    <link href="{% static 'fontawesome-iconpicker-1.2.2/dist/css/fontawesome-iconpicker.min.css' %}" rel="stylesheet">
 
     <style>
         .navbar
@@ -1195,6 +1201,7 @@
 
                     if (e == 'feature_data_0') {
                         alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
+                                        "{% trans 'Layer: ' %}" + layer_name_text + "\n\n" +
                                 "{% trans 'No data could be found for this query. \n\n' %}" +
                                 "{% trans 'Please try again, or report it.' %}")
                     } else {
@@ -1695,8 +1702,8 @@
 
             $( "#chloropleth_option_form" ).dialog({
                 autoOpen: false,
-                height: map_div.height() * 0.8,
-                width: $('#page-wrapper').width()/2,
+                height: map_div.height() * 0.9,
+                width: $('#page-wrapper').width() * 0.7,
                 position: {
                     my: "center",
                     at: "center",
@@ -1720,6 +1727,8 @@
                                     var colorpicker = $("#colorpicker").val();
                                     var bin_type = $("#bintype").val();
                                     var bin_num = $("#binno").val();
+
+                                    var point_icon = $('.lead .picker-target').data("icon_fa");
 
                                     var saveToLocalStorage = $(this).data('localStorage');
                                     if (saveToLocalStorage) {
@@ -1759,6 +1768,8 @@
                                     new_layer.colorpicker = $("#colorpicker").val();
                                     new_layer.bin_type = $("#bintype").val();
                                     new_layer.bin_num = $("#binno").val();
+                                    new_layer.point_icon = point_icon;
+
 
                                     store.add_layer(new_layer);
 
@@ -1772,7 +1783,8 @@
                                             layer_name: layer_name_text,
                                             colorpicker: colorpicker,
                                             bin_type: bin_type,
-                                            bin_num: bin_num
+                                            bin_num: bin_num,
+                                            point_icon: point_icon
                                         },
                                         success: function(data) {},
                                         error: function() {}
@@ -3154,8 +3166,13 @@
 
             }
 
+            $('#point_data_icon_select').toggle(true);
 
-
+            $( "#chloropleth_option_form").data({
+                layer_names: 'remove me',
+                nomis_variable: '20301',
+                csv_url: ''
+            }).dialog( "open" );
 
 
 
@@ -3225,6 +3242,17 @@
             <div class="row">
                 <table class="table">
                     <tr>
+                        <td width="25%">
+                            <label for="layer_name_text_entry" class="control-label">{% trans 'Layer Name' %}</label>
+                        </td>
+                        <td>
+                            <div class="controls">
+                                <input autofocus="autofocus" class="form-control input-block-level tab_data_input"
+                                       id="layer_name_text_entry" type="text">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>
                             <label for="bintype" class="control-label">{% trans "Category Types" %}</label>
                         </td>
@@ -3276,17 +3304,20 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id="point_data_icon_select" style="display: none">
                         <td>
-                            <label for="layer_name_text_entry" class="control-label">{% trans 'Layer Name' %}</label>
-                        </td>
-                        <td>
-                            <div class="controls">
-                                <input autofocus="autofocus" class="form-control input-block-level tab_data_input"
-                                       id="layer_name_text_entry" type="text">
+                            <label for="point_icon_type" class="control-label">{% trans "Icon for point data" %}</label>
+
+                            <div class="lead">
+                        <i class="fa fa-graduation-cap fa-3x picker-target" data-icon_fa="fa-graduation-cap"></i>
+
                             </div>
                         </td>
+                        <td>
+                            <label id="point_icon_type" data-placement="inline" class="icp icp-auto" data-selected="fa-align-justify">
+                        </td>
                     </tr>
+
                 </table>
 
 
@@ -3362,69 +3393,69 @@
     </div>
 
 
-<div id="search-remote-form"
+    <div id="search-remote-form"
 
-     style="
+         style="
              display: flex;
              flex-direction: column;
              flex-flow: column nowrap;
              "
 
-     title="{% trans 'Search Remote' %}">
-    <div
-            style="flex: none"
+         title="{% trans 'Search Remote' %}">
+        <div
+                style="flex: none"
 
-            id="search-remote-form-input-container"
-            class="container dialog-container" >
-        <div class="row">
-            <div class="pull-right"><a id="search_remote_help" class="btn btn-circle btn-default btn-help" href="#">
-                <i class="fa fa-question-circle"></i></a></div>
-        </div>
-
-        <div class="row">
-            <div class="input-group custom-search-form">
-                <label for="remote_search_term" class="control-label">{% trans 'Search Remote' %}</label>
+                id="search-remote-form-input-container"
+                class="container dialog-container" >
+            <div class="row">
+                <div class="pull-right"><a id="search_remote_help" class="btn btn-circle btn-default btn-help" href="#">
+                    <i class="fa fa-question-circle"></i></a></div>
             </div>
-            <div class="input-group custom-search-form">
-                <input value="" autofocus="autofocus" type="text" id="remote_search_term" name="remote_search_term"
-                       class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
+
+            <div class="row">
+                <div class="input-group custom-search-form">
+                    <label for="remote_search_term" class="control-label">{% trans 'Search Remote' %}</label>
+                </div>
+                <div class="input-group custom-search-form">
+                    <input value="" autofocus="autofocus" type="text" id="remote_search_term" name="remote_search_term"
+                           class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
                         <span class="input-group-btn">
                             <button id="remote_search_btn" class="btn btn-default" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
                         </span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div
-        id="table_div"
-        class="container dialog-container"
-        style="
+        <div
+                id="table_div"
+                class="container dialog-container"
+                style="
             flex: auto;
         "
-    >
-
-        <table
-                class="table table-striped table-bordered table-hover" id="remote_results_table"
         >
-            <thead id="remote_results_thead">
-            <tr>
-                <th>{% trans 'Title' %}</th>
-                <th>{% trans 'Source' %}</th>
-                <th>{% trans 'Metadata' %}</th>
-                <th>{% trans 'View' %}</th>
-                <th>{% trans 'Info' %}</th>
-                <th>{% trans 'Disclosure' %}</th>
-            </tr>
-            </thead>
-            <tbody id="remote_results_tbody">
-            <tr><td style="word-wrap: normal"></td><td></td><td></td><td></td><td></td><td></td></tr>
-            </tbody>
-        </table>
-    </div>
 
-</div>
+            <table
+                    class="table table-striped table-bordered table-hover" id="remote_results_table"
+            >
+                <thead id="remote_results_thead">
+                <tr>
+                    <th>{% trans 'Title' %}</th>
+                    <th>{% trans 'Source' %}</th>
+                    <th>{% trans 'Metadata' %}</th>
+                    <th>{% trans 'View' %}</th>
+                    <th>{% trans 'Info' %}</th>
+                    <th>{% trans 'Disclosure' %}</th>
+                </tr>
+                </thead>
+                <tbody id="remote_results_tbody">
+                <tr><td style="word-wrap: normal"></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
 
     <div id="local-data-form" title="{% trans 'MapMyData' %}">
 

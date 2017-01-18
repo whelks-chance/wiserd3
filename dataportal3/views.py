@@ -2629,7 +2629,7 @@ def get_topojson_by_name(request, topojson_name):
             region_subset = models.SpatialdataNawer.objects.using('new').all().filter(
                 reduce(operator.or_, ors)
             )
-        s = serialize('geojson', region_subset, fields=('geom', 'code','name', 'altname', 'REMOTE_VALUE'))
+        s = serialize('geojson', region_subset, properties=('geom', 'code','name', 'altname', 'REMOTE_VALUE'))
         topojson_conv = topojson(json.loads(s))
         response_data['topojson'] = topojson_conv
 
@@ -2650,7 +2650,7 @@ def get_topojson_by_name(request, topojson_name):
                 ua_subset = models.SpatialdataUA.objects.using('new').all().filter(
                     reduce(operator.or_, ors)
                 )
-        s = serialize('geojson', ua_subset, fields=('geom', 'label', 'REMOTE_VALUE'))
+        s = serialize('geojson', ua_subset, properties=('geom', 'label', 'REMOTE_VALUE'))
         topojson_conv = topojson(json.loads(s))
         response_data['topojson'] = topojson_conv
 
@@ -2666,7 +2666,7 @@ def get_topojson_by_name(request, topojson_name):
             constituency_subset = models.SpatialdataConstituency.objects.using('new').all().filter(
                 reduce(operator.or_, ors)
             )
-        s = serialize('geojson', constituency_subset, fields=('geom', 'code', 'REMOTE_VALUE'))
+        s = serialize('geojson', constituency_subset, properties=('geom', 'code', 'REMOTE_VALUE'))
         # geos = GEOSGeometry(s)
         # new_geos = geos.simplify(tolerance=0.1, preserve_topology=True)
         # topojson_conv = topojson(json.loads(s), quantization=1e6, simplify=0.0005)
@@ -2679,7 +2679,7 @@ def get_topojson_by_name(request, topojson_name):
         postcode_subset = models.SpatialdataPostCode.objects.using('new').all().filter(**{filter_var: code})
 
         # TODO check if this needs better serialisation as below
-        s = serialize('geojson', postcode_subset, fields=('geom', 'label', 'REMOTE_VALUE'))
+        s = serialize('geojson', postcode_subset, properties=('geom', 'label', 'REMOTE_VALUE'))
         topojson_conv = topojson(json.loads(s), quantization=1e6, simplify=0.0005)
         response_data['topojson'] = topojson_conv
 

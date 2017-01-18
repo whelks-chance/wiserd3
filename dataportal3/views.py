@@ -2650,9 +2650,24 @@ def get_topojson_by_name(request, topojson_name):
                 ua_subset = models.SpatialdataUA.objects.using('new').all().filter(
                     reduce(operator.or_, ors)
                 )
-        s = serialize('geojson', ua_subset, properties=('geom', 'label', 'REMOTE_VALUE'))
-        topojson_conv = topojson(json.loads(s))
+
+        s = GeoJSONSerializer().serialize(
+            ua_subset,
+            use_natural_keys=True,
+            with_modelname=False,
+            simplify=0.0005
+        )
+
+        # s = serialize('geojson', lsoa_subset, fields=('geom', 'code', 'name', 'REMOTE_VALUE'))
+        topojson_conv = topojson(
+            json.loads(s),
+            quantization=1e4,
+            # simplify=0.0005
+        )
         response_data['topojson'] = topojson_conv
+        # s = serialize('geojson', ua_subset, properties=('geom', 'label', 'REMOTE_VALUE'))
+        # topojson_conv = topojson(json.loads(s))
+        # response_data['topojson'] = topojson_conv
 
     elif topojson_name == 'assembly_constituency':
         filter_var = 'code__istartswith'

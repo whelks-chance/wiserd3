@@ -2807,7 +2807,6 @@ def get_topojson_for_uuid(request, search_uuid):
         'bin_num': found_search_model.display_attributes['bin_num'],
         'bin_type': found_search_model.display_attributes['bin_type'],
         'colorpicker': found_search_model.display_attributes['colorpicker'],
-        'point_icon': found_search_model.display_attributes['point_icon'],
         'codelist': codelist,
         'geography_id': found_search_model.geography_id,
         'uuid': found_search_model.uuid,
@@ -2815,6 +2814,11 @@ def get_topojson_for_uuid(request, search_uuid):
         'dataset_id': found_search_model.dataset_id,
         'display_fields': found_search_model.display_fields
     }
+
+    if 'point_icon' in found_search_model.display_attributes:
+        layer_data['point_icon'] = found_search_model.display_attributes['point_icon']
+    else:
+        layer_data['point_icon'] = ''
 
     # local_search_layers = []
     # remote_search_layers = []

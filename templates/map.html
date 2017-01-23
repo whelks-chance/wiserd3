@@ -949,8 +949,10 @@
 
 
             function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins,
-                                         nomis_variable, layer_name_text, csv_url){
+                                         nomis_variable, layer_name_text, csv_url, layer_data){
 
+            console.log('layer_data');
+            console.log(layer_data);
                 try {
 
 
@@ -1201,7 +1203,7 @@
 
                     if (e == 'feature_data_0') {
                         alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
-                                        "{% trans 'Layer: ' %}" + layer_name_text + "\n\n" +
+                                "{% trans 'Layer: ' %}" + layer_name_text + "\n\n" +
                                 "{% trans 'No data could be found for this query. \n\n' %}" +
                                 "{% trans 'Please try again, or report it.' %}")
                     } else {
@@ -1797,7 +1799,15 @@
                                             bin_num,
                                             nomis_variable,
                                             layer_name_text,
-                                            csv_url
+                                            csv_url,
+                                            {
+                                                'layer_id': layer_id,
+                                                'layer_name': layer_name_text,
+                                                'colorpicker': colorpicker,
+                                                'bin_type': bin_type,
+                                                'bin_num': bin_num,
+                                                'point_icon': point_icon
+                                            }
                                     );
 
                                     $(this).dialog("close");
@@ -2346,7 +2356,8 @@
                                 layer_data['bin_num'],
                                 '',
                                 layer_data['name'],
-                                ''
+                                '',
+                                layer_data
                         );
                     },
                     complete: function() {
@@ -2373,7 +2384,7 @@
                                 topojson_data['layer_data']['bin_num'],
                                 '',
                                 topojson_data['layer_data']['name'],
-                                ''
+                                '', topojson_data['layer_data']
                         );
                     },
                     complete: function() {
@@ -2409,7 +2420,8 @@
                                         remote_data_layer['bin_num'],
                                         '',
                                         remote_data_layer['name'],
-                                        ''
+                                        '',
+                                        remote_data_layer
                                 );
                             }
                     );
@@ -2598,7 +2610,7 @@
                                 topojson_data['layer_data']['bin_num'],
                                 '',
                                 topojson_data['layer_data']['name'],
-                                ''
+                                '', topojson_data['layer_data']
                         );
                     }
                 }
@@ -3168,11 +3180,11 @@
 
             $('#point_data_icon_select').toggle(true);
 
-            $( "#chloropleth_option_form").data({
-                layer_names: 'remove me',
-                nomis_variable: '20301',
-                csv_url: ''
-            }).dialog( "open" );
+{#            $( "#chloropleth_option_form").data({#}
+{#                layer_names: 'remove me',#}
+{#                nomis_variable: '20301',#}
+{#                csv_url: ''#}
+{#            }).dialog( "open" );#}
 
 
 
@@ -3309,7 +3321,7 @@
                             <label for="point_icon_type" class="control-label">{% trans "Icon for point data" %}</label>
 
                             <div class="lead">
-                        <i class="fa fa-graduation-cap fa-3x picker-target" data-icon_fa="fa-graduation-cap"></i>
+                                <i class="fa fa-graduation-cap fa-3x picker-target" data-icon_fa="fa-graduation-cap"></i>
 
                             </div>
                         </td>

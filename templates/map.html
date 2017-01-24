@@ -1102,9 +1102,17 @@
                                 {#                                return L.circleMarker(latlng, geojsonMarkerOptions);#}
                                 {#<i class="fa fa-eye"></i>#}
 
+                                var iconClassName = 'fa fa-2x ';
+
+                                if (layer_data.hasOwnProperty('point_icon')) {
+                                    iconClassName += layer_data['point_icon']
+                                } else {
+                                    iconClassName += 'fa-institution';
+                                }
+
                                 var myIcon = L.divIcon({
                                     {#                                    html: '<div style="border: 2px solid black"></div>',#}
-                                    className: 'fa fa-2x fa-institution',
+                                    className: iconClassName,
                                     iconSize: [26, 26],
                                     iconAnchor: [13, 13],
                                     popupAnchor: [0, 0],
@@ -1739,6 +1747,7 @@
                                         all_topojson_data['layer_data']['bin_type'] = bin_type;
                                         all_topojson_data['layer_data']['bin_num'] = bin_num;
                                         all_topojson_data['layer_data']['name'] = layer_name_text;
+                                        all_topojson_data['layer_data']['point_icon'] = point_icon;
 
                                         if(typeof(Storage) !== "undefined") {
                                             var localLayers = {};
@@ -1786,7 +1795,15 @@
                                             colorpicker: colorpicker,
                                             bin_type: bin_type,
                                             bin_num: bin_num,
-                                            point_icon: point_icon
+                                            point_icon: point_icon,
+                                            layer_data: {
+                                                layer_id: layer_id,
+                                                layer_name: layer_name_text,
+                                                colorpicker: colorpicker,
+                                                bin_type: bin_type,
+                                                bin_num: bin_num,
+                                                point_icon: point_icon
+                                            }
                                         },
                                         success: function(data) {},
                                         error: function() {}

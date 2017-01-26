@@ -37,28 +37,28 @@ function do_choro_tutorial() {
                 title: i18n_translation['map.bintype.title'],
                 content: i18n_translation['map.bintype.content'],
                 placement: 'bottom',
-                step: 0
+                step: 1
             },
             {
                 selector: '#binno',
                 title: i18n_translation['map.binno.title'],
                 content: i18n_translation['map.binno.content'],
                 placement: 'bottom',
-                step: 1
+                step: 2
             },
             {
                 selector: '#colorpicker',
                 title: i18n_translation['map.colorpicker.title'],
                 content: i18n_translation['map.colorpicker.content'],
                 placement: 'bottom',
-                step: 2
+                step: 3
             },
             {
                 selector: '#layer_name_text_entry',
                 title: i18n_translation['map.layer_name_text_entry.title'],
                 content: i18n_translation['map.layer_name_text_entry.content'],
                 placement: 'bottom',
-                step: 3
+                step: 0
             }
 
         ]
@@ -77,6 +77,27 @@ function do_remote_data_tutorial() {
                 content: i18n_translation['map.remote_search_term.content'],
                 placement: 'bottom',
                 step: 0
+            },
+            {
+                selector: '#table_div',
+                title: i18n_translation['map.table_div.title'],
+                content: i18n_translation['map.table_div.content'],
+                placement: 'top',
+                step: 1
+            },
+            {
+                selector: '#metadata_column',
+                title: i18n_translation['map.metadata_column.title'],
+                content: i18n_translation['map.metadata_column.content'],
+                placement: 'bottom',
+                step: 2
+            },
+            {
+                selector: '#view_column',
+                title: i18n_translation['map.view_column.title'],
+                content: i18n_translation['map.view_column.content'],
+                placement: 'bottom',
+                step: 3
             }
 
         ]

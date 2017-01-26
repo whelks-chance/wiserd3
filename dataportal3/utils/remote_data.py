@@ -37,6 +37,7 @@ class RemoteData():
 
                 text1 = ''
                 text2 = ''
+                link = ''
 
                 for anno1 in f['annotations']['annotation']:
                     if anno1['annotationtitle'] == 'MetadataText0':
@@ -50,7 +51,8 @@ class RemoteData():
                     'name': f['name']['value'],
                     'source': 'Nomis',
                     'text1': text1,
-                    'text2': text2
+                    'text2': text2,
+                    'link': link
                 }
                 datasets.append(k)
                 # print pprint.pformat(k)

@@ -951,8 +951,8 @@
             function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins,
                                          nomis_variable, layer_name_text, csv_url, layer_data){
 
-            console.log('layer_data');
-            console.log(layer_data);
+                {#                console.log('layer_data');#}
+                {#                console.log(layer_data);#}
                 try {
 
 
@@ -1104,7 +1104,7 @@
 
                                 var iconClassName = 'fa fa-2x ';
 
-                                if (layer_data.hasOwnProperty('point_icon')) {
+                                if (layer_data['point_icon']) {
                                     iconClassName += layer_data['point_icon']
                                 } else {
                                     iconClassName += 'fa-institution';
@@ -1113,8 +1113,8 @@
                                 var myIcon = L.divIcon({
                                     {#                                    html: '<div style="border: 2px solid black"></div>',#}
                                     className: iconClassName,
-                                    iconSize: [26, 26],
-                                    iconAnchor: [13, 13],
+                                    iconSize: [28, 28],
+                                    iconAnchor: [15, 15],
                                     popupAnchor: [0, 0],
                                     shadowSize: [0, 0]
                                 });
@@ -1153,6 +1153,7 @@
                     });
                     map.on('overlayadd', function (eventLayer) {
                         if (eventLayer.name == layer_name_text) {
+                            console.log(layer_name_text);
                             var div_inner = build_legend(feature_data,
                                     unique_feature_string_data,
                                     chroma_scale,
@@ -1248,46 +1249,52 @@
 
             function handleLayer(layer) {
 
-                {#                layer.bindPopup(layer.feature.properties.AREA_NAME + '<br>'#}
-                {#                        + layer.feature.properties.REMOTE_VALUE +#}
-                {#                        (layer.feature.properties.PERCENTAGE == true ? '%': ''));#}
-
-                if(isNaN(layer.feature.properties.REMOTE_VALUE)) {
-                    console.log('icon item');
-                }
-
                 layer.on({
                     mouseover: function (e) {
-                        console.log('icon item 2');
-                        {#                        console.log(e.target.feature.properties.RESPONSE_R);#}
-
-                        {#                        recordLayerOrders();#}
                         var layer = e.target;
-                        layer.setStyle({
-                            weight: 5,
-                            color: '#666',
-                            dashArray: '',
-                            fillOpacity: {% if naw %}1{% else %}0.7{% endif %}
-                        });
-                        {#                        updateLayerOrders();#}
+
+                        if(isNaN(layer.feature.properties.REMOTE_VALUE)) {
+{#                            console.log('icon item remote value ' + layer.feature.properties.REMOTE_VALUE);#}
+                        }
+
+                        if (layer._icon) {
+                            var col = getColorFromString(layer.feature.properties.REMOTE_VALUE);
+                            var adv_col = '#' + ('000000' + (('0xffffff' ^ col.replace('#', '0x')).toString(16))).slice(-6);
+
+{#                            console.log(col + ' ' + adv_col);#}
+                            layer._icon.style.backgroundColor = col;
+                            layer._icon.style.color = adv_col;
+{#                            layer._icon.style.border = 'red solid 2px';#}
+
+                        }
+
+                        if (layer.setStyle) {
+                            layer.setStyle({
+                                weight: 5,
+                                color: '#666',
+                                dashArray: '',
+                                fillOpacity: {% if naw %}1{% else %}0.7{% endif %}
+                            });
+                        }
 
                     },
                     mouseout: function (e) {
-                        console.log(e);
-                        {#                        e.target.resetStyle(e.target);#}
 
-                        {#                        recordLayerOrders();#}
-                        e.target.setStyle({
-                            {#                            fillColor: '#0044AA',#}
-                            fillOpacity: {% if naw %}1{% else %}0.7{% endif %},
-                            weight: 2,
-                            opacity: 1,
-                            color: 'white',
-                            dashArray: '3'
-                        });
-                        {#                        updateLayerOrders();#}
+                        if (e.target._icon) {
+                            e.target._icon.style.backgroundColor = getColorFromString(e.target.feature.properties.REMOTE_VALUE);
+                            e.target._icon.style.color = 'white';
+                            e.target._icon.style.border = '';
+                        }
 
-                        {#                        info.update();#}
+                        if (e.target.setStyle) {
+                            e.target.setStyle({
+                                fillOpacity: {% if naw %}1{% else %}0.7{% endif %},
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3'
+                            });
+                        }
                     },
                     click: function(e) {
                         console.log('icon item 3');
@@ -1333,6 +1340,7 @@
             }
 
             function build_legend(feature_data, unique_feature_string_data, chroma_scale, grades, is_percentage) {
+                console.log('Legend:');
                 console.log({
                     'feature_data': feature_data,
                     'unique_feature_string_data': unique_feature_string_data,
@@ -3197,11 +3205,11 @@
 
             $('#point_data_icon_select').toggle(true);
 
-{#            $( "#chloropleth_option_form").data({#}
-{#                layer_names: 'remove me',#}
-{#                nomis_variable: '20301',#}
-{#                csv_url: ''#}
-{#            }).dialog( "open" );#}
+            {#            $( "#chloropleth_option_form").data({#}
+            {#                layer_names: 'remove me',#}
+            {#                nomis_variable: '20301',#}
+            {#                csv_url: ''#}
+            {#            }).dialog( "open" );#}
 
 
 

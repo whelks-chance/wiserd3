@@ -665,7 +665,7 @@ function build_datatable(data, div_id, data_api_url) {
             // scrollY:        (search_remote_form - input_container) * 0.7,
             "sScrollY": calcDataTableHeight(),
 
-            scrollCollapse: true,
+            scrollCollapse: false,
             // ordering: false,
             // searching: false,
             // processing: true,
@@ -723,7 +723,7 @@ function build_datatable(data, div_id, data_api_url) {
     }
     else
     {
-        table_div.DataTable().rows.add(data['datasets']).draw();
+        table_div.DataTable().clear().rows.add(data['datasets']).draw();
     }
 
 

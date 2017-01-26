@@ -1711,22 +1711,24 @@ def data_api(request):
                 swod = StatsWalesOData()
                 swod_datasets, statswales_request = swod.keyword_search(search_term.lower())
 
-                formatted = []
-                for d in swod_datasets:
-                    if d['Tag_ENG'] == 'Title':
-                        formatted.append({
-                            'id': d['Dataset'],
-                            'name': d['Description_ENG'],
-                            'source': 'StatsWales'
-                        })
-                datasets += formatted
+                # formatted = []
+                # for d in swod_datasets:
+                #     if d['Tag_ENG'] == 'Title':
+                #         formatted.append({
+                #             'id': d['Dataset'],
+                #             'name': d['Description_ENG'],
+                #             'source': 'StatsWales'
+                #         })
+                # datasets += formatted
+
+                datasets += swod_datasets
 
                 stats_wales_service['message'] = 'Success'
                 stats_wales_service['time'] = statswales_request.elapsed.total_seconds()
                 stats_wales_service['success'] = True
             except Exception as e87234:
                 stats_wales_service['message'] = 'The WISERD DataPortal failed to connect to the remote data service.'
-                stats_wales_service['error'] = str(e87234)
+                stats_wales_service['error'] = (str(e87234), str(type(e87234)))
                 stats_wales_service['success'] = False
             services.append(stats_wales_service)
 
@@ -2623,7 +2625,7 @@ def get_topojson_by_name(request, topojson_name):
             ors = []
             for code in codes:
                 ors.append(Q(**{filter_var_code: code}))
-                ors.append(Q(**{filter_var_name: code}))
+                ors.append(Q(**{filter_var_name: code.lower().strip()}))
                 ors.append(Q(**{filter_var_altname: code}))
 
             region_subset = models.SpatialdataNawer.objects.using('new').all().filter(
@@ -2633,7 +2635,7 @@ def get_topojson_by_name(request, topojson_name):
         topojson_conv = topojson(json.loads(s))
         response_data['topojson'] = topojson_conv
 
-    if topojson_name == 'unitary_authority':
+    elif topojson_name == 'unitary_authority':
         # filter_var_code = 'code__istartswith'
         filter_var_name = 'label__istartswith'
         # filter_var_altname = 'altname__istartswith'

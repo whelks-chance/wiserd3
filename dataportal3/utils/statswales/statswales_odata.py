@@ -194,7 +194,39 @@ class StatsWalesOData(RemoteDataDefault):
         # print "matching_datasets, keyword_description"
         # print matching_datasets, keyword_description
 
-        return matching_datasets, keyword_description
+        matching_datasets_dict = {}
+        for d in matching_datasets:
+
+            # Building the reformatted dataset
+            # Get existing by id, or build new one
+            if d['Dataset'] in matching_datasets_dict:
+                mdd = matching_datasets_dict[d['Dataset']]
+            else:
+                mdd = {
+                    'id': d['Dataset'],
+                    'source': 'StatsWales'
+                }
+
+            #   Add to dataset description as we go
+            if d['Tag_ENG'] == 'Title':
+                mdd['name'] = d['Description_ENG']
+
+            if d['Tag_ENG'] == 'General description':
+                mdd['text1'] = d['Description_ENG']
+
+            if d['Tag_ENG'] == 'Data collection and calculation':
+                mdd['text2'] = d['Description_ENG']
+            if d['Tag_ENG'] == 'Weblinks':
+                    mdd['link'] = d['Description_ENG']
+
+            #     Add it back to the set - todo required?
+            matching_datasets_dict[d['Dataset']] = mdd
+
+        datasets_final = []
+        for a in matching_datasets_dict:
+            datasets_final.append(matching_datasets_dict[a])
+
+        return datasets_final, keyword_description
 
     def get_data_url(self, dataset_id, args=None):
         data_url = self.dataset_url.format(dataset_id)

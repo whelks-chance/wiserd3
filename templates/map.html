@@ -378,9 +378,9 @@
                     $(toggle_button).addClass('wms_layer_active');
                     var btn_layer_url = $(toggle_button).data('layer_url');
                     var legend_url = $(toggle_button).data('legend_img');
-
-                    addLegend('', btn_layer_name, '<img src="' + legend_url + '" style="width:100%; max-width:10em !important">', '');
-
+                    if (legend_url) {
+                        addLegend(btn_layer_name + '_' + get_next_uid(), btn_layer_name, '<img src="' + legend_url + '" style="width:100%; max-width:10em !important">', '');
+                    }
 
                     {#                    var inspire = L.tileLayer.wms("http://inspire.wales.gov.uk/maps/wms", {#}
                     var inspire = L.tileLayer.wms(btn_layer_url, {
@@ -1377,7 +1377,7 @@
                         from = grades[i];
                         to = grades[i + 1];
 
-                        var legend_row = '<p style="white-space: nowrap; padding: 0 1em;"><i style="background:' + getColor(from, grades, chroma_scale) + '"></i> ';
+                        var legend_row = '<p style="padding: 0 1em;"><i style="background:' + getColor(from, grades, chroma_scale) + '"></i> ';
                         legend_row += from.toFixed(2);
                         if (to) {
                             legend_row += (to).toFixed(2) ? (i == 0 ? ' &ndash; ': ' &le; ') + (to).toFixed(2) + (is_percentage ? '%' : '') : (is_percentage ? '%+' : '+');

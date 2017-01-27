@@ -377,6 +377,10 @@
                 } else {
                     $(toggle_button).addClass('wms_layer_active');
                     var btn_layer_url = $(toggle_button).data('layer_url');
+                    var legend_url = $(toggle_button).data('legend_img');
+
+                    addLegend('', btn_layer_name, '<img src="' + legend_url + '" style="width:100%; max-width:10em !important">', '');
+
 
                     {#                    var inspire = L.tileLayer.wms("http://inspire.wales.gov.uk/maps/wms", {#}
                     var inspire = L.tileLayer.wms(btn_layer_url, {

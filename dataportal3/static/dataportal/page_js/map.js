@@ -736,6 +736,20 @@ function build_datatable(data, div_id, data_api_url) {
                     "hidden": true,
                     // "visible": false,
                     "className": 'none'
+                },
+                {
+                    "data": 'link',
+                    "defaultContent": "<i>Not found</i>",
+                    "hidden": true,
+                    // "visible": false,
+                    "className": 'none',
+                    "render": function ( data, type, full, meta ) {
+                        if (data) {
+                            return urlify(data);
+                        } else {
+                           return "<i>Not found</i>";
+                        }
+                    }
                 }
             ]
         });
@@ -781,6 +795,15 @@ function build_datatable(data, div_id, data_api_url) {
 var calcDataTableHeight = function() {
     return $('#table_div').height() - (em*8);
 };
+
+function urlify(text) {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function(url) {
+        return '<a target="_blank" href="' + url + '">' + url + '</a><br>';
+    });
+    // or alternatively
+    // return text.replace(urlRegex, '<a href="$1">$1</a>')
+}
 
 
 

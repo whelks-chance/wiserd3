@@ -53,6 +53,15 @@
     z-index: 500;
 }
 
+.nav > li > a.lle_flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.lle_search {
+    padding-left: 52px;
+}
+
 #remote_results_tbody > tr > td {
     white-space: normal;
 }

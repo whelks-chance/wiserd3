@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities xmlns:srv="http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd" xmlns:gmd="http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd" xmlns:gco="http://schemas.opengis.net/iso/19139/20060504/gco/gco.xsd" xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xmlns:gml="http://schemas.opengis.net/gml" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" version="1.3.0" updateSequence="17866" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://lle.gov.wales/services/schemas/wms/1.3.0/capabilities_1_3_0.xsd http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://lle.gov.wales/services/www/inspire/inspire_vs.xsd">
+<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" version="1.3.0" updateSequence="23690" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://lle.gov.wales/services/schemas/wms/1.3.0/capabilities_1_3_0.xsd http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd">
   <Service>
     <Name>WMS</Name>
     <Title>Welsh Government INSPIRE WMS</Title>
@@ -53,7 +53,6 @@
         <Format>application/vnd.google-earth.kml+xml</Format>
         <Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
         <Format>application/vnd.google-earth.kmz</Format>
-        <Format>application/x-sqlite3</Format>
         <Format>image/geotiff</Format>
         <Format>image/geotiff8</Format>
         <Format>image/gif</Format>
@@ -94,23 +93,6 @@
       <Format>INIMAGE</Format>
       <Format>BLANK</Format>
     </Exception>
-    <inspire_vs:ExtendedCapabilities>
-      <inspire_common:MetadataUrl xsi:type="inspire_common:resourceLocatorType">
-        <inspire_common:URL/>
-        <inspire_common:MediaType>application/vnd.iso.19139+xml</inspire_common:MediaType>
-      </inspire_common:MetadataUrl>
-      <inspire_common:SupportedLanguages xsi:type="inspire_common:supportedLanguagesType">
-        <inspire_common:DefaultLanguage>
-          <inspire_common:Language>eng</inspire_common:Language>
-        </inspire_common:DefaultLanguage>
-        <inspire_common:SupportedLanguage>
-          <inspire_common:Language>eng</inspire_common:Language>
-        </inspire_common:SupportedLanguage>
-      </inspire_common:SupportedLanguages>
-      <inspire_common:ResponseLanguage>
-        <inspire_common:Language>eng</inspire_common:Language>
-      </inspire_common:ResponseLanguage>
-    </inspire_vs:ExtendedCapabilities>
     <Layer>
       <Title>Welsh Government INSPIRE WMS</Title>
       <Abstract>Licensing for INSPIRE data is available from http://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html</Abstract>
@@ -121,12 +103,53 @@
       <CRS>EPSG:900913</CRS>
       <CRS>CRS:84</CRS>
       <EX_GeographicBoundingBox>
-        <westBoundLongitude>-22.094845</westBoundLongitude>
+        <westBoundLongitude>-10.583452</westBoundLongitude>
         <eastBoundLongitude>3.9979</eastBoundLongitude>
         <southBoundLatitude>48.236998</southBoundLatitude>
         <northBoundLatitude>63.890408</northBoundLatitude>
       </EX_GeographicBoundingBox>
-      <BoundingBox CRS="CRS:84" minx="-22.094845" miny="48.236998" maxx="3.9979" maxy="63.890408"/>
+      <BoundingBox CRS="CRS:84" minx="-10.583452" miny="48.236998" maxx="3.9979" maxy="63.890408"/>
+      <Layer queryable="1">
+        <Name>cadw_world_heritage_sites_combined</Name>
+        <Title>CADW - World Heritage Sites (combined)</Title>
+        <Abstract>Layer-Group type layer: cadw_world_heritage_sites_combined</Abstract>
+        <CRS>EPSG:27700</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-4.368425722510313</westBoundLongitude>
+          <eastBoundLongitude>-2.9819549134491625</eastBoundLongitude>
+          <southBoundLatitude>51.7126609331585</southBoundLatitude>
+          <northBoundLatitude>53.31577160445503</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:27700" minx="242250.94050539096" miny="204019.01863371424" maxx="332280.11377820827" maxy="380354.4288272509"/>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>active_travel_designated_localities</Name>
+        <Title>Active Travel Designated Localities</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>active_travel_designated_localities</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.18034930565755</westBoundLongitude>
+          <eastBoundLongitude>-2.6595880525225475</eastBoundLongitude>
+          <southBoundLatitude>51.350970875602236</southBoundLatitude>
+          <northBoundLatitude>53.43717630188416</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.18034930565755" miny="51.350970875602236" maxx="-2.6595880525225475" maxy="53.43717630188416"/>
+        <BoundingBox CRS="EPSG:27700" minx="188650.004" miny="165699.998" maxx="354199.997" maxy="393600.002"/>
+        <Style>
+          <Name>ActiveTravel_DesignatedLocalities</Name>
+          <Title>Default Polygon</Title>
+          <Abstract>A styled polygon</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=active_travel_designated_localities"/>
+          </LegendURL>
+        </Style>
+      </Layer>
       <Layer queryable="1" opaque="0">
         <Name>All_Schools_Wales</Name>
         <Title>All_Schools_Wales</Title>
@@ -155,10 +178,36 @@ Schools    alias  Other Schools</Abstract>
         <Style>
           <Name>WG_INSPIRE_Schools</Name>
           <Title>All Schools in Wales</Title>
-          <Abstract/>
           <LegendURL width="128" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=All_Schools_Wales"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>all_wales_mobile_library_stops</Name>
+        <Title>Mobile Library Stops in Wales</Title>
+        <Abstract>Created by R Helm for CyMAL</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>all_wales_mobile_library_stops</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.153880338661343</westBoundLongitude>
+          <eastBoundLongitude>-2.7332583778486907</eastBoundLongitude>
+          <southBoundLatitude>51.423585803656344</southBoundLatitude>
+          <northBoundLatitude>53.45149458232641</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.153880338661343" miny="51.423585803656344" maxx="-2.7332583778486907" maxy="53.45149458232641"/>
+        <BoundingBox CRS="EPSG:27700" minx="190485.515625" miny="173711.296875" maxx="349153.5" maxy="395244.6875"/>
+        <Style>
+          <Name>Purple_Point</Name>
+          <Title>purple_point</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=all_wales_mobile_library_stops"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -183,10 +232,37 @@ Schools    alias  Other Schools</Abstract>
         <Style>
           <Name>WG_INSPIRE_Ambulance</Name>
           <Title>Ambulance Stations</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Ambulance_Stations"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>anchorcompanies</Name>
+        <Title>anchorcompanies</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>anchorcompanies</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.149074584120027</westBoundLongitude>
+          <eastBoundLongitude>-1.8227356472945961</eastBoundLongitude>
+          <southBoundLatitude>51.36278931958587</southBoundLatitude>
+          <northBoundLatitude>53.272026411432705</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.149074584120027" miny="51.36278931958587" maxx="-1.8227356472945961" maxy="53.272026411432705"/>
+        <BoundingBox CRS="EPSG:27700" minx="189912.9375" miny="166964.03125" maxx="411919.0625" maxy="375018.96875"/>
+        <Style>
+          <Name>poi</Name>
+          <Title>Points of interest</Title>
+          <Abstract>points of interest</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=anchorcompanies"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -211,7 +287,6 @@ Schools    alias  Other Schools</Abstract>
         <Style>
           <Name>Assembly Constituencies</Name>
           <Title>Assembly Constituencies</Title>
-          <Abstract/>
           <LegendURL width="88" height="40">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Assembly_Constituencies"/>
@@ -239,7 +314,6 @@ Schools    alias  Other Schools</Abstract>
         <Style>
           <Name>Assembly Electoral Regions</Name>
           <Title>Assembly Electoral Regions</Title>
-          <Abstract/>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Assembly_Electoral_Regions"/>
@@ -284,44 +358,17 @@ Schools    alias  Other Schools</Abstract>
         </Style>
       </Layer>
       <Layer queryable="0" opaque="0" cascaded="1">
-        <Name>BGS.offshore.marine.products</Name>
-        <Title>BGS offshore marine products</Title>
-        <Abstract>BGS offshore marine products are made available to view via this web map service.</Abstract>
+        <Name>BGS250k.SBS</Name>
+        <Title>Offshore 1:250 000 scale sea bed sediment</Title>
+        <Abstract>1:250 000 scale offshore geological map in the UTM series (Universal Transverse Mercator projection) - Offshore sea-bed sediments (DigSBS250).</Abstract>
         <KeywordList>
-          <Keyword>Maps</Keyword>
           <Keyword>Geology</Keyword>
-          <Keyword>United Kingdom</Keyword>
-          <Keyword>Continental shelf</Keyword>
           <Keyword>Marine</Keyword>
-          <Keyword>Data</Keyword>
-          <Keyword>Spatial</Keyword>
           <Keyword>Offshore</Keyword>
           <Keyword>Sea-bed</Keyword>
           <Keyword>Sediment</Keyword>
-          <Keyword>Hard substrate</Keyword>
         </KeywordList>
-        <CRS>EPSG:3857</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-22.094845</westBoundLongitude>
-          <eastBoundLongitude>3.9979</eastBoundLongitude>
-          <southBoundLatitude>48.236998</southBoundLatitude>
-          <northBoundLatitude>63.890408</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-22.094845" miny="48.236998" maxx="3.9979" maxy="63.890408"/>
-        <BoundingBox CRS="EPSG:3857" minx="-2671667.778994" miny="6106854.834952" maxx="445277.963195" maxy="9349764.174122"/>
-      </Layer>
-      <Layer queryable="0" opaque="0" cascaded="1">
-        <Name>BGS250k.Bedrock</Name>
-        <Title>Offshore 1:250 000 scale marine bedrock polygons</Title>
-        <Abstract>DiGRock250k is a digital geological map showing the distribution of bedrock types in the UK Continental Shelf (UKCS) area, representing the natural continuation of the onshore bedrock geology into the offshore. The bedrock divisions on the map represent the principal lithostratigraphical units (e.g. formations and groups) in the UK, ranging in age from Proterozoic to Cainozoic in age, as defined in the BGS Lexicon of Named Rock Units. This dataset can be used in conjunction with other BGS offshore datasets that include DiGSBS250k (Sea-Bed Sediments) and the DiGBath250k (Bathymetry) datasets. The bedrock geology below the sea-bed is of importance to a range of groups, including marine habitat mappers, marine spatial planners, the offshore construction and development sector, and the dredging and aggregate industries.</Abstract>
-        <KeywordList>
-          <Keyword>Geology</Keyword>
-          <Keyword>Marine</Keyword>
-          <Keyword>Offshore</Keyword>
-          <Keyword>Bedrock</Keyword>
-        </KeywordList>
-        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:4326</CRS>
         <CRS>CRS:84</CRS>
         <EX_GeographicBoundingBox>
           <westBoundLongitude>-10.583452</westBoundLongitude>
@@ -330,50 +377,35 @@ Schools    alias  Other Schools</Abstract>
           <northBoundLatitude>63.890408</northBoundLatitude>
         </EX_GeographicBoundingBox>
         <BoundingBox CRS="CRS:84" minx="-10.583452" miny="48.236998" maxx="3.9979" maxy="63.890408"/>
-        <BoundingBox CRS="EPSG:3857" minx="-2671667.778994" miny="6106854.834952" maxx="445277.963195" maxy="9349764.174122"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.236998" miny="-10.583452" maxx="63.890408" maxy="3.9979"/>
       </Layer>
-      <Layer queryable="0" opaque="0" cascaded="1">
-        <Name>BGS250k.HardSubstrate</Name>
-        <Title>Offshore 1:250 000 scale hard substrate</Title>
-        <Abstract>1:250 000 scale offshore geological map in the UTM series (Universal Transverse Mercator projection) - Offshore Bedrock geology (DiGHardSubstrate250k). The Marine Hard Substrate dataset maps areas of rock or hard substrate outcropping or within 0.5m of the sea-bed.</Abstract>
+      <Layer queryable="1" opaque="0">
+        <Name>bua_2011_wales</Name>
+        <Title>Built Up Areas Wales 2011</Title>
+        <Abstract/>
         <KeywordList>
-          <Keyword>Geology</Keyword>
-          <Keyword>Marine</Keyword>
-          <Keyword>Offshore</Keyword>
-          <Keyword>Bedrock</Keyword>
-          <Keyword>Hard Substrate</Keyword>
+          <Keyword>features</Keyword>
+          <Keyword>bua_2011_wales</Keyword>
         </KeywordList>
-        <CRS>EPSG:3857</CRS>
+        <CRS>EPSG:27700</CRS>
         <CRS>CRS:84</CRS>
         <EX_GeographicBoundingBox>
-          <westBoundLongitude>-22.094845</westBoundLongitude>
-          <eastBoundLongitude>2.850634</eastBoundLongitude>
-          <southBoundLatitude>48.264471</southBoundLatitude>
-          <northBoundLatitude>62.092779</northBoundLatitude>
+          <westBoundLongitude>-5.404743940076509</westBoundLongitude>
+          <eastBoundLongitude>-2.634266513531303</eastBoundLongitude>
+          <southBoundLatitude>51.33453351833653</southBoundLatitude>
+          <northBoundLatitude>53.45524776412136</northBoundLatitude>
         </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-22.094845" miny="48.264471" maxx="2.850634" maxy="62.092779"/>
-        <BoundingBox CRS="EPSG:3857" minx="-2671667.778994" miny="6106854.834952" maxx="445277.963195" maxy="9349764.174122"/>
-      </Layer>
-      <Layer queryable="0" opaque="0" cascaded="1">
-        <Name>BGS250k.LinearBedrock</Name>
-        <Title>Offshore 1:250 000 scale marine bedrock linear features</Title>
-        <Abstract>DiGRock250k is a digital geological map showing the distribution of bedrock types in the UK Continental Shelf (UKCS) area, representing the natural continuation of the onshore bedrock geology into the offshore. The bedrock divisions on the map represent the principal lithostratigraphical units (e.g. formations and groups) in the UK, ranging in age from Proterozoic to Cainozoic in age, as defined in the BGS Lexicon of Named Rock Units. This dataset can be used in conjunction with other BGS offshore datasets that include DiGSBS250k (Sea-Bed Sediments) and the DiGBath250k (Bathymetry) datasets. The bedrock geology below the sea-bed is of importance to a range of groups, including marine habitat mappers, marine spatial planners, the offshore construction and development sector, and the dredging and aggregate industries.</Abstract>
-        <KeywordList>
-          <Keyword>Geology</Keyword>
-          <Keyword>Marine</Keyword>
-          <Keyword>Offshore</Keyword>
-          <Keyword>Bedrock</Keyword>
-        </KeywordList>
-        <CRS>EPSG:3857</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-10.583452</westBoundLongitude>
-          <eastBoundLongitude>3.9979</eastBoundLongitude>
-          <southBoundLatitude>48.236998</southBoundLatitude>
-          <northBoundLatitude>63.890408</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-10.583452" miny="48.236998" maxx="3.9979" maxy="63.890408"/>
-        <BoundingBox CRS="EPSG:3857" minx="-2671667.778994" miny="6106854.834952" maxx="445277.963195" maxy="9349764.174122"/>
+        <BoundingBox CRS="CRS:84" minx="-5.404743940076509" miny="51.33453351833653" maxx="-2.634266513531303" maxy="53.45524776412136"/>
+        <BoundingBox CRS="EPSG:27700" minx="173798.25" miny="164506.0" maxx="355951.75" maxy="395594.0"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=bua_2011_wales"/>
+          </LegendURL>
+        </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
         <Name>cadw_designated_wrecks</Name>
@@ -398,7 +430,6 @@ http://cadw.wales.gov.uk/historicenvironment/protection/maritimewrecks/wrecksnwr
         <Style>
           <Name>CADW_Wreck</Name>
           <Title>CADW - Designated Wrecks</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=cadw_designated_wrecks"/>
@@ -426,10 +457,36 @@ http://cadw.wales.gov.uk/historicenvironment/protection/maritimewrecks/wrecksnwr
         <Style>
           <Name>CADW_Wreck</Name>
           <Title>CADW - Designated Wrecks</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=cadw_designated_wrecks_vw"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Cadw_DesignatedWrecks</Name>
+        <Title>Cadw_DesignatedWrecks</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>vGeoServer_Wrecks_PublicLayer</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813559518286905</westBoundLongitude>
+          <eastBoundLongitude>-3.4934044903624546</eastBoundLongitude>
+          <southBoundLatitude>51.7191150923917</southBoundLatitude>
+          <northBoundLatitude>53.44073430217336</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813559518286905" miny="51.7191150923917" maxx="-3.4934044903624546" maxy="53.44073430217336"/>
+        <BoundingBox CRS="EPSG:27700" minx="146525.9359" miny="208647.19349999912" maxx="297041.98620000016" maxy="394894.6389000006"/>
+        <Style>
+          <Name>CADW_Wreck</Name>
+          <Title>CADW - Designated Wrecks</Title>
+          <LegendURL width="66" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Cadw_DesignatedWrecks"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -490,6 +547,34 @@ http://cadw.wales.gov.uk/historicenvironment/protection/maritimewrecks/wrecksnwr
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>Cadw_HistoricLandscapes</Name>
+        <Title>Cadw Historic Landscapes</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>vGeoServer_HistoricLandscape_PublicLayer</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.475959004015287</westBoundLongitude>
+          <eastBoundLongitude>-2.6154689344573026</eastBoundLongitude>
+          <southBoundLatitude>51.36612957481803</southBoundLatitude>
+          <northBoundLatitude>53.440713434388464</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.475959004015287" miny="51.36612957481803" maxx="-2.6154689344573026" maxy="53.440713434388464"/>
+        <BoundingBox CRS="EPSG:27700" minx="168975.94392507343" miny="168241.85052647622" maxx="357291.5151882071" maxy="393964.5980620931"/>
+        <Style>
+          <Name>cadw_historiclandscapes</Name>
+          <Title>Default Polygon</Title>
+          <Abstract>A styled polygon</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Cadw_HistoricLandscapes"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>CADW_Listed_Buildings</Name>
         <Title>CADW_Listed_Buildings</Title>
         <Abstract>CADW ListedBbuildings - October 2014</Abstract>
@@ -518,40 +603,96 @@ http://cadw.wales.gov.uk/historicenvironment/protection/maritimewrecks/wrecksnwr
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
-        <Name>CADW_SAM</Name>
-        <Title>CADW Scheduled Ancient Monuments</Title>
-        <Abstract>CADW Scheduled Ancient Monuments - December 2013</Abstract>
+        <Name>Cadw_ListedBuildings</Name>
+        <Title>Cadw_ListedBuildings</Title>
+        <Abstract/>
         <KeywordList>
-          <Keyword>CADW_SAM</Keyword>
           <Keyword>features</Keyword>
+          <Keyword>vGeoServer_ListedBuildings_PublicLayer</Keyword>
         </KeywordList>
         <CRS>EPSG:27700</CRS>
         <CRS>CRS:84</CRS>
         <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.440746194660953</westBoundLongitude>
-          <eastBoundLongitude>-2.662284264195732</eastBoundLongitude>
-          <southBoundLatitude>51.334479968657</southBoundLatitude>
-          <northBoundLatitude>53.45269540758846</northBoundLatitude>
+          <westBoundLongitude>-5.812018659608335</westBoundLongitude>
+          <eastBoundLongitude>-2.6582899610342423</eastBoundLongitude>
+          <southBoundLatitude>51.32447714533985</southBoundLatitude>
+          <northBoundLatitude>53.449047351302085</northBoundLatitude>
         </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.440746194660953" miny="51.334479968657" maxx="-2.662284264195732" maxy="53.45269540758846"/>
-        <BoundingBox CRS="EPSG:27700" minx="171387.7999999998" miny="164607.44434712268" maxx="354002.4993584482" maxy="395328.6000000015"/>
+        <BoundingBox CRS="CRS:84" minx="-5.812018659608335" miny="51.32447714533985" maxx="-2.6582899610342423" maxy="53.449047351302085"/>
+        <BoundingBox CRS="EPSG:27700" minx="146629.9970674" miny="164661.99670676" maxx="354281.00708562" maxy="394920.0078984"/>
         <Style>
-          <Name>RedOutlinePoly_NoFill</Name>
-          <Title>RedOutlinePoly_NoFill</Title>
-          <Abstract>RedOutlinePoly_NoFill</Abstract>
-          <LegendURL width="20" height="20">
+          <Name>cadw_listedbuildings</Name>
+          <Title>Listed Building</Title>
+          <Abstract>A sample style that draws a point</Abstract>
+          <LegendURL width="111" height="40">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=CADW_SAM"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Cadw_ListedBuildings"/>
           </LegendURL>
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
-        <Name>CADW_World_Heritage_Sites</Name>
-        <Title>CADW_World_Heritage_Sites</Title>
-        <Abstract>CADW World Heritage Sites - December 2013</Abstract>
+        <Name>Cadw_SAM</Name>
+        <Title>Cadw_SAM</Title>
+        <Abstract/>
         <KeywordList>
           <Keyword>features</Keyword>
-          <Keyword>CADW_World_Heritage_Sites</Keyword>
+          <Keyword>vGeoServer_SAM_PublicLayer</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.44071166150349</westBoundLongitude>
+          <eastBoundLongitude>-2.662034895000377</eastBoundLongitude>
+          <southBoundLatitude>51.334480893564276</southBoundLatitude>
+          <northBoundLatitude>53.452696926231</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.44071166150349" miny="51.334480893564276" maxx="-2.662034895000377" maxy="53.452696926231"/>
+        <BoundingBox CRS="EPSG:27700" minx="171390.1" miny="164607.44434712268" maxx="354019.8563591633" maxy="395328.6000000015"/>
+        <Style>
+          <Name>cadw_sams</Name>
+          <Title>Default Polygon</Title>
+          <Abstract>A styled polygon</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Cadw_SAM"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>cadw_whs_arcs_of_view</Name>
+        <Title>CADW - World Heritage Sites (Arcs of view)</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>whs_arcs_of_view</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-4.290020158965214</westBoundLongitude>
+          <eastBoundLongitude>-3.804423825112079</eastBoundLongitude>
+          <southBoundLatitude>52.85167617367699</southBoundLatitude>
+          <northBoundLatitude>53.282043148210136</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-4.290020158965214" miny="52.85167617367699" maxx="-3.804423825112079" maxy="53.282043148210136"/>
+        <BoundingBox CRS="EPSG:27700" minx="247394.893194965" miny="330651.771170279" maxx="278611.07379654" maxy="377667.902942554"/>
+        <Style>
+          <Name>line</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a green line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=cadw_whs_arcs_of_view"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>cadw_whs_boundary</Name>
+        <Title>CADW - World Heritage Sites boundary</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>vGeoServer_WorldHeritageSites</Keyword>
         </KeywordList>
         <CRS>EPSG:27700</CRS>
         <CRS>CRS:84</CRS>
@@ -564,12 +705,67 @@ http://cadw.wales.gov.uk/historicenvironment/protection/maritimewrecks/wrecksnwr
         <BoundingBox CRS="CRS:84" minx="-4.28563766495604" miny="51.73047508820538" maxx="-3.017400172003108" maxy="53.292197189711025"/>
         <BoundingBox CRS="EPSG:27700" minx="247690.53404631471" miny="205834.36902191507" maxx="329857.07392547897" maxy="377766.46532030916"/>
         <Style>
-          <Name>wrecks</Name>
-          <Title>OrangeOutlinePoly_NoFill</Title>
-          <Abstract>OrangeOutlinePoly_NoFill</Abstract>
+          <Name>cadw_world_heritage_sites</Name>
+          <Title>Default Polygon</Title>
+          <Abstract>A styled polygon</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=CADW_World_Heritage_Sites"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=cadw_whs_boundary"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>cadw_whs_essential_setting</Name>
+        <Title>CADW - World Heritage Sites (Essential Setting)</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>whs_essential_setting</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-4.293744622802201</westBoundLongitude>
+          <eastBoundLongitude>-3.0410646398533667</eastBoundLongitude>
+          <southBoundLatitude>52.851428010285424</southBoundLatitude>
+          <northBoundLatitude>53.29805508299467</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-4.293744622802201" miny="52.851428010285424" maxx="-3.0410646398533667" maxy="53.29805508299467"/>
+        <BoundingBox CRS="EPSG:27700" minx="247170.338955877" miny="330631.237048111" maxx="330017.974394077" maxy="378415.898830959"/>
+        <Style>
+          <Name>whs_essential_setting</Name>
+          <Title>OrangeStripeFill_OrangeOutline</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=cadw_whs_essential_setting"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>cadw_whs_significant_view</Name>
+        <Title>CADW - World Heritage Sites (Significant View)</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>whs_significant_view</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-4.299689549426355</westBoundLongitude>
+          <eastBoundLongitude>-3.7878953345139346</eastBoundLongitude>
+          <southBoundLatitude>52.84661986267833</southBoundLatitude>
+          <northBoundLatitude>53.28977174405694</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-4.299689549426355" miny="52.84661986267833" maxx="-3.7878953345139346" maxy="53.28977174405694"/>
+        <BoundingBox CRS="EPSG:27700" minx="246776.347546189" miny="330108.416703876" maxx="279710.956702367" maxy="378500.214695793"/>
+        <Style>
+          <Name>line</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a green line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=cadw_whs_significant_view"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -594,10 +790,36 @@ http://cadw.wales.gov.uk/historicenvironment/protection/maritimewrecks/wrecksnwr
         <Style>
           <Name>WG_INSPIRE_CareersWales</Name>
           <Title>Multi Polygons</Title>
-          <Abstract/>
           <LegendURL width="94" height="80">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Careers_Wales_Regions"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Coastal_Focus_Draft_Dev_Plan</Name>
+        <Title>Coastal_Focus_Draft_Dev_Plan</Title>
+        <Abstract>Coastal Focus Draft Development Plans from fig 3.4 WWF Terrestrial Planning Study</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Coastal_Focus_Draft_Dev_Plan</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813365079139652</westBoundLongitude>
+          <eastBoundLongitude>-2.6435253255365234</eastBoundLongitude>
+          <southBoundLatitude>51.32378323566581</southBoundLatitude>
+          <northBoundLatitude>53.45870046943395</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813365079139652" miny="51.32378323566581" maxx="-2.6435253255365234" maxy="53.45870046943395"/>
+        <BoundingBox CRS="EPSG:27700" minx="146597.19979790214" miny="164586.29691780935" maxx="355308.0" maxy="395984.1999570724"/>
+        <Style>
+          <Name>Coastal Focus DDP</Name>
+          <Title>Coastal Focus Draft Dev Plans</Title>
+          <LegendURL width="52" height="140">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Coastal_Focus_Draft_Dev_Plan"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -707,7 +929,6 @@ Uploaded 20150604</Abstract>
         <Style>
           <Name>Community</Name>
           <Title>Community</Title>
-          <Abstract/>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Community_Wards"/>
@@ -719,19 +940,19 @@ Uploaded 20150604</Abstract>
         <Title>Conservation Areas (Wales)</Title>
         <Abstract/>
         <KeywordList>
-          <Keyword>Conservation_Areas_Wales</Keyword>
           <Keyword>features</Keyword>
+          <Keyword>conservation_areas_wales</Keyword>
         </KeywordList>
         <CRS>EPSG:27700</CRS>
         <CRS>CRS:84</CRS>
         <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.390095783592412</westBoundLongitude>
+          <westBoundLongitude>-5.390095783592406</westBoundLongitude>
           <eastBoundLongitude>-2.662726502867349</eastBoundLongitude>
           <southBoundLatitude>51.34708919179637</southBoundLatitude>
           <northBoundLatitude>53.43731524276684</northBoundLatitude>
         </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.390095783592412" miny="51.34708919179637" maxx="-2.662726502867349" maxy="53.43731524276684"/>
-        <BoundingBox CRS="EPSG:27700" minx="174679.72877476053" miny="165865.60072090497" maxx="353983.093725718" maxy="393617.5673985954"/>
+        <BoundingBox CRS="CRS:84" minx="-5.390095783592406" miny="51.34708919179637" maxx="-2.662726502867349" maxy="53.43731524276684"/>
+        <BoundingBox CRS="EPSG:27700" minx="174679.728774761" miny="165865.600720905" maxx="353983.093725718" maxy="393617.567398595"/>
         <Style>
           <Name>Conservation Area</Name>
           <Title>Default Polygon</Title>
@@ -765,7 +986,6 @@ Maximum aid levels have reduced by 5% in the West Wales and the Valleys region (
         <Style>
           <Name>WG_INSPIRE_AssistedAreas_Tier1</Name>
           <Title>Blue/ Grey Polygon</Title>
-          <Abstract/>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Convergence_AssistedAreas_Tier1"/>
@@ -794,7 +1014,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>WG_INSPIRE_AssistedAreas_Tier2</Name>
           <Title>Blue/ Green Polygon</Title>
-          <Abstract/>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Convergence_AssistedAreas_Tier2"/>
@@ -822,7 +1041,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>WG_INSPIRE_Courts</Name>
           <Title>Courts</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Courts_England_wales"/>
@@ -850,10 +1068,121 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>WG_Inspire_Dentist</Name>
           <Title>Dentist</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Dentists"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>draft_aggregates_ra</Name>
+        <Title>(DRAFT) Aggregates RA</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>draft_aggregates_ra</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.87246513366699</westBoundLongitude>
+          <eastBoundLongitude>-2.677241563797</eastBoundLongitude>
+          <southBoundLatitude>50.838695526123</southBoundLatitude>
+          <northBoundLatitude>54.6796836853027</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.87246513366699" miny="50.838695526123" maxx="-2.677241563797" maxy="54.6796836853027"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.838695526123" miny="-5.87246513366699" maxx="54.6796836853027" maxy="-2.677241563797"/>
+        <Style>
+          <Name>Resource Area</Name>
+          <Title>RA</Title>
+          <Abstract>Blue fill with no outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=draft_aggregates_ra"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>draft_aggregates_sra</Name>
+        <Title>(DRAFT) Aggregates SRAs</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>draft_aggregates_sra</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-4.8959846496582</westBoundLongitude>
+          <eastBoundLongitude>-2.69792413711548</eastBoundLongitude>
+          <southBoundLatitude>51.3027839660645</southBoundLatitude>
+          <northBoundLatitude>53.5534706115723</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-4.8959846496582" miny="51.3027839660645" maxx="-2.69792413711548" maxy="53.5534706115723"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.3027839660645" miny="-4.8959846496582" maxx="53.5534706115723" maxy="-2.69792413711548"/>
+        <Style>
+          <Name>SRA</Name>
+          <Title>SRA</Title>
+          <Abstract>Orange fill with no outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=draft_aggregates_sra"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>draft_shipping_sra</Name>
+        <Title>(Draft) Shipping SRA</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>draft_shipping_sra</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-6.03332867899996</westBoundLongitude>
+          <eastBoundLongitude>-2.66428247399995</eastBoundLongitude>
+          <southBoundLatitude>50.9917988240001</southBoundLatitude>
+          <northBoundLatitude>53.9610318410001</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-6.03332867899996" miny="50.9917988240001" maxx="-2.66428247399995" maxy="53.9610318410001"/>
+        <BoundingBox CRS="EPSG:4326" minx="50.9917988240001" miny="-6.03332867899996" maxx="53.9610318410001" maxy="-2.66428247399995"/>
+        <Style>
+          <Name>SRA</Name>
+          <Title>SRA</Title>
+          <Abstract>Orange fill with no outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=draft_shipping_sra"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ecas_in_enterprise_zones</Name>
+        <Title>Enhanced Capital Allowance areas (in EZs)</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ecas_in_enterprise_zones</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.097498802337176</westBoundLongitude>
+          <eastBoundLongitude>-2.9631878452156095</eastBoundLongitude>
+          <southBoundLatitude>51.55443271869672</southBoundLatitude>
+          <northBoundLatitude>53.22436143738854</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.097498802337176" miny="51.55443271869672" maxx="-2.9631878452156095" maxy="53.22436143738854"/>
+        <BoundingBox CRS="EPSG:27700" minx="193150.678933343" miny="188174.308195954" maxx="333367.426302332" maxy="370168.110057946"/>
+        <Style>
+          <Name>Light Yellow - no outline</Name>
+          <Title>Light Yellow polygon</Title>
+          <Abstract>Light Yellow fill with no outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ecas_in_enterprise_zones"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -914,32 +1243,33 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
-        <Name>Enterprise_Zones</Name>
-        <Title>Enterprise_Zones</Title>
-        <Abstract>Updated June 215</Abstract>
+        <Name>enterprise_zones</Name>
+        <Title>Enterprise Zones</Title>
+        <Abstract/>
         <KeywordList>
-          <Keyword>Enterprise_Zones</Keyword>
+          <Keyword>enterprise_zones</Keyword>
           <Keyword>features</Keyword>
         </KeywordList>
         <CRS>EPSG:27700</CRS>
         <CRS>CRS:84</CRS>
         <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.21874490894485</westBoundLongitude>
-          <eastBoundLongitude>-2.9170785699451507</eastBoundLongitude>
-          <southBoundLatitude>51.35715700285227</southBoundLatitude>
-          <northBoundLatitude>53.45682878668488</northBoundLatitude>
+          <westBoundLongitude>-5.215609017374781</westBoundLongitude>
+          <eastBoundLongitude>-2.9171145345817138</eastBoundLongitude>
+          <southBoundLatitude>51.35723977294625</southBoundLatitude>
+          <northBoundLatitude>53.41523558798316</northBoundLatitude>
         </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.21874490894485" miny="51.35715700285227" maxx="-2.9170785699451507" maxy="53.45682878668488"/>
-        <BoundingBox CRS="EPSG:27700" minx="186200.9566593215" miny="166491.03169315142" maxx="336290.62724338897" maxy="395994.0971240378"/>
+        <BoundingBox CRS="CRS:84" minx="-5.215609017374781" miny="51.35723977294625" maxx="-2.9171145345817138" maxy="53.41523558798316"/>
+        <BoundingBox CRS="EPSG:27700" minx="186200.96" miny="166500.25" maxx="336288.24" maxy="391366.1"/>
         <Style>
-          <Name>RedOutlinePoly_NoFill</Name>
-          <Title>RedOutlinePoly_NoFill</Title>
-          <Abstract>RedOutlinePoly_NoFill</Abstract>
+          <Name>EnterpriseZones</Name>
+          <Title>Enterprise Zones</Title>
+          <Abstract>Enterprise Zones</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Enterprise_Zones"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=enterprise_zones"/>
           </LegendURL>
         </Style>
+        <MaxScaleDenominator>2500000.0</MaxScaleDenominator>
       </Layer>
       <Layer queryable="1" opaque="0">
         <Name>Fire_Authorities</Name>
@@ -990,10 +1320,63 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>WG_INSPIRE_Fire_Station</Name>
           <Title>Courts</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Fire_Stations"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>fuel_poverty_by_la_geom_vw</Name>
+        <Title>Fuel Poverty by LA</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>fuel_poverty_by_la_geom_vw</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.8131461283272206</westBoundLongitude>
+          <eastBoundLongitude>-2.643456371178087</eastBoundLongitude>
+          <southBoundLatitude>51.32378974047095</southBoundLatitude>
+          <northBoundLatitude>53.458702674670775</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.8131461283272206" miny="51.32378974047095" maxx="-2.643456371178087" maxy="53.458702674670775"/>
+        <BoundingBox CRS="EPSG:27700" minx="146611.801078724" miny="164586.296917809" maxx="355312.799464676" maxy="395984.399899839"/>
+        <Style>
+          <Name>FuelPovertyThematic</Name>
+          <Title>FuelPovertyThematic</Title>
+          <LegendURL width="121" height="120">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=fuel_poverty_by_la_geom_vw"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>fuel_poverty_by_lsoa_geom_vw</Name>
+        <Title>Estimated Fuel poverty by LSOA</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>fuel_poverty_by_lsoa_geom_vw</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813146144595325</westBoundLongitude>
+          <eastBoundLongitude>-2.643456191470625</eastBoundLongitude>
+          <southBoundLatitude>51.32378976764875</southBoundLatitude>
+          <northBoundLatitude>53.45870267663705</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813146144595325" miny="51.32378976764875" maxx="-2.643456191470625" maxy="53.45870267663705"/>
+        <BoundingBox CRS="EPSG:27700" minx="146611.8" miny="164586.3" maxx="355312.812" maxy="395984.4"/>
+        <Style>
+          <Name>FuelPovertyThematicLSOA</Name>
+          <Title>FuelPovertyThematic</Title>
+          <LegendURL width="121" height="120">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=fuel_poverty_by_lsoa_geom_vw"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -1018,7 +1401,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>WG_INSPIRE_GP_Surgeries</Name>
           <Title>GP Surgeries</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=gp_surgeries"/>
@@ -1046,7 +1428,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>WG_INSPIRE_GP_Surgeries_SubBranch</Name>
           <Title>GP Surgeries</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=gp_surgeries_subbranch"/>
@@ -1128,40 +1509,11 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <BoundingBox CRS="CRS:84" minx="-5.402398262083955" miny="51.346114924229916" maxx="-2.6435933364733724" maxy="53.447509292518724"/>
         <BoundingBox CRS="EPSG:27700" minx="173913.645" miny="165790.970000001" maxx="355313.844" maxy="394739.0"/>
         <Style>
-          <Name>GWCExistingWoodland</Name>
-          <Title>GWC Existing Woodland polygon</Title>
-          <Abstract/>
+          <Name>inspire-wg:GWCExistingWoodland</Name>
+          <Title>A dark yellow polygon style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=GWCExistingWoodland"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>GWCFinalTransparentArea</Name>
-        <Title>final_transparent_area</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>final_transparent_area</Keyword>
-          <Keyword>features</Keyword>
-        </KeywordList>
-        <CRS>EPSG:27700</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.813146128008077</westBoundLongitude>
-          <eastBoundLongitude>-2.6434564899152178</eastBoundLongitude>
-          <southBoundLatitude>51.323789740320635</southBoundLatitude>
-          <northBoundLatitude>53.458702673969384</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.813146128008077" miny="51.323789740320635" maxx="-2.6434564899152178" maxy="53.458702673969384"/>
-        <BoundingBox CRS="EPSG:27700" minx="146611.8011" miny="164586.2969" maxx="355312.7912" maxy="395984.399900001"/>
-        <Style>
-          <Name>point</Name>
-          <Title>A boring default style</Title>
-          <Abstract>A sample style that just prints out a purple square</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=GWCFinalTransparentArea"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -1194,64 +1546,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
-        <Name>gwcScore</Name>
-        <Title>Woodland Creation Opportunities Scoring Layer</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>WCS</Keyword>
-          <Keyword>GeoTIFF</Keyword>
-          <Keyword>score_3857</Keyword>
-        </KeywordList>
-        <CRS>EPSG:3857</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.537085033883852</westBoundLongitude>
-          <eastBoundLongitude>-2.6437205367836127</eastBoundLongitude>
-          <southBoundLatitude>51.340382016160646</southBoundLatitude>
-          <northBoundLatitude>53.45861731598496</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.537085033883852" miny="51.340382016160646" maxx="-2.6437205367836127" maxy="53.45861731598496"/>
-        <BoundingBox CRS="EPSG:3857" minx="-616385.4864510064" miny="6681725.66079341" maxx="-294297.6239544716" maxy="7068284.394334381"/>
-        <Style>
-          <Name>gwcScore</Name>
-          <Title>Default Raster</Title>
-          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=gwcScore"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>GWCScore</Name>
-        <Title>Scoring3</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>WCS</Keyword>
-          <Keyword>GeoTIFF</Keyword>
-          <Keyword>Scoring3</Keyword>
-        </KeywordList>
-        <CRS>EPSG:27700</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.306244738726862</westBoundLongitude>
-          <eastBoundLongitude>-2.659642351779508</eastBoundLongitude>
-          <southBoundLatitude>51.346530498908436</southBoundLatitude>
-          <northBoundLatitude>53.45852193263496</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.306244738726862" miny="51.346530498908436" maxx="-2.659642351779508" maxy="53.45852193263496"/>
-        <BoundingBox CRS="EPSG:27700" minx="180374.9134" miny="165554.99962954002" maxx="354194.91339999996" maxy="395974.99962954"/>
-        <Style>
-          <Name>gwcScore</Name>
-          <Title>Default Raster</Title>
-          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=GWCScore"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
         <Name>GWCSquirrels</Name>
         <Title>squirrel dissolve</Title>
         <Abstract/>
@@ -1276,62 +1570,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=GWCSquirrels"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>GWCTransparentArea</Name>
-        <Title>transparent_area</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>transparent_area</Keyword>
-          <Keyword>features</Keyword>
-        </KeywordList>
-        <CRS>EPSG:27700</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.817854500419845</westBoundLongitude>
-          <eastBoundLongitude>-2.5219385911701884</eastBoundLongitude>
-          <southBoundLatitude>51.28686918658623</southBoundLatitude>
-          <northBoundLatitude>53.459439246108104</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.817854500419845" miny="51.28686918658623" maxx="-2.5219385911701884" maxy="53.459439246108104"/>
-        <BoundingBox CRS="EPSG:27700" minx="146298.56" miny="160487.5" maxx="363741.53" maxy="395994.1"/>
-        <Style>
-          <Name>point</Name>
-          <Title>A boring default style</Title>
-          <Abstract>A sample style that just prints out a purple square</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=GWCTransparentArea"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>gwcWaterBodies</Name>
-        <Title>gwcWaterBodies</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>features</Keyword>
-          <Keyword>gwcWaterBodies</Keyword>
-        </KeywordList>
-        <CRS>EPSG:27700</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.059339550704442</westBoundLongitude>
-          <eastBoundLongitude>-2.7624208619331267</eastBoundLongitude>
-          <southBoundLatitude>51.41437294719909</southBoundLatitude>
-          <northBoundLatitude>53.40524352519183</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.059339550704442" miny="51.41437294719909" maxx="-2.7624208619331267" maxy="53.40524352519183"/>
-        <BoundingBox CRS="EPSG:27700" minx="196558.99988963892" miny="172438.87661565648" maxx="347113.9998896384" maxy="390120.9996156563"/>
-        <Style>
-          <Name>GWCWaterBodies</Name>
-          <Title>GWC Water Body polygon</Title>
-          <Abstract/>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=gwcWaterBodies"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -1364,62 +1602,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
-        <Name>GWCWoodlandCreationScoreConstraintsErased</Name>
-        <Title>woodlandcreationscore_sensitivesites_and_constraintserased</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>features</Keyword>
-          <Keyword>woodlandcreationscore_sensitivesites_and_constraintserased</Keyword>
-        </KeywordList>
-        <CRS>EPSG:27700</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.320385340351528</westBoundLongitude>
-          <eastBoundLongitude>-2.6595648758515495</eastBoundLongitude>
-          <southBoundLatitude>51.346165831799276</southBoundLatitude>
-          <northBoundLatitude>53.4585224025623</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.320385340351528" miny="51.346165831799276" maxx="-2.6595648758515495" maxy="53.4585224025623"/>
-        <BoundingBox CRS="EPSG:27700" minx="179433.443500004" miny="165554.999629544" maxx="354200.305000005" maxy="395974.999629552"/>
-        <Style>
-          <Name>GWCWoodlandScore</Name>
-          <Title>GWC Woodland Score</Title>
-          <Abstract/>
-          <LegendURL width="60" height="100">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=GWCWoodlandCreationScoreConstraintsErased"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>GWVScoredMerge0Excluded</Name>
-        <Title>scoredlayers_merge_0_excluded</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>features</Keyword>
-          <Keyword>scoredlayers_merge_0_excluded</Keyword>
-        </KeywordList>
-        <CRS>EPSG:27700</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.486225329666623</westBoundLongitude>
-          <eastBoundLongitude>-2.6299715824523444</eastBoundLongitude>
-          <southBoundLatitude>51.32292284300837</southBoundLatitude>
-          <northBoundLatitude>53.46288414764227</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.486225329666623" miny="51.32292284300837" maxx="-2.6299715824523444" maxy="53.46288414764227"/>
-        <BoundingBox CRS="EPSG:27700" minx="168413.0625" miny="163454.09375" maxx="356241.65625" maxy="396440.9375"/>
-        <Style>
-          <Name>point</Name>
-          <Title>A boring default style</Title>
-          <Abstract>A sample style that just prints out a purple square</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=GWVScoredMerge0Excluded"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
         <Name>historic_landscapes</Name>
         <Title>Historic Landscapes</Title>
         <Abstract/>
@@ -1448,6 +1630,33 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>HLMO_Adopted_dev_plans</Name>
+        <Title>HLMO_Adopted_dev_plans</Title>
+        <Abstract>High Level Marine Objectives - Adopted development plans, from WWF Terrestrial Planning Study</Abstract>
+        <KeywordList>
+          <Keyword>HLMO_Adopted_dev_plans</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813365079139652</westBoundLongitude>
+          <eastBoundLongitude>-2.6435253255365234</eastBoundLongitude>
+          <southBoundLatitude>51.32378323566581</southBoundLatitude>
+          <northBoundLatitude>53.45870046943395</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813365079139652" miny="51.32378323566581" maxx="-2.6435253255365234" maxy="53.45870046943395"/>
+        <BoundingBox CRS="EPSG:27700" minx="146597.19979790214" miny="164586.29691780935" maxx="355308.0" maxy="395984.1999570724"/>
+        <Style>
+          <Name>HLMO ADP</Name>
+          <Title>HLMO Adopted Develompent Plans</Title>
+          <LegendURL width="137" height="280">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=HLMO_Adopted_dev_plans"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>Hospitals</Name>
         <Title>Hospitals</Title>
         <Abstract>Updated list of Hospitals (all services) in Wales - 2014-04-01</Abstract>
@@ -1468,10 +1677,225 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Hospitals</Name>
           <Title>Hospitals in Wales</Title>
-          <Abstract/>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Hospitals"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>la_employment_rates</Name>
+        <Title>la_employment_rates</Title>
+        <Abstract>Employment Rates - data provided by Adam Al Nuaimi - and matched to Local Authority Boundaries</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>la_employment_rates</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.8133667352807095</westBoundLongitude>
+          <eastBoundLongitude>-2.6435253253438327</eastBoundLongitude>
+          <southBoundLatitude>51.32378319126505</southBoundLatitude>
+          <northBoundLatitude>53.458702266489475</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.8133667352807095" miny="51.32378319126505" maxx="-2.6435253253438327" maxy="53.458702266489475"/>
+        <BoundingBox CRS="EPSG:27700" minx="146597.100134781" miny="164586.296917809" maxx="355308.000013412" maxy="395984.399899839"/>
+        <Style>
+          <Name>Valleys_TaskForce_Employment_Rates_pg</Name>
+          <Title>Valleys_TaskForce_Employment_Rates</Title>
+          <LegendURL width="277" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=la_employment_rates"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>LA_Employment_Rates</Name>
+        <Title>LA_Employment_Rates</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>LA_Employment_Rates</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.8133667352807175</westBoundLongitude>
+          <eastBoundLongitude>-2.6435253253438256</eastBoundLongitude>
+          <southBoundLatitude>51.32378319126504</southBoundLatitude>
+          <northBoundLatitude>53.458702266489475</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.8133667352807175" miny="51.32378319126504" maxx="-2.6435253253438256" maxy="53.458702266489475"/>
+        <BoundingBox CRS="EPSG:27700" minx="146597.1001347805" miny="164586.29691780935" maxx="355308.00001341244" maxy="395984.39989983937"/>
+        <Style>
+          <Name>Valleys_TaskForce_Employment_Rates</Name>
+          <Title>Valleys_TaskForce_Employment_Rates</Title>
+          <LegendURL width="277" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LA_Employment_Rates"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>la_ilo_unemployment_rates</Name>
+        <Title>la_ilo_unemployment_rates</Title>
+        <Abstract>ILO Unemployment Rates - data provided by Adam Al Nuaimi - and matched to Local Authority Boundaries</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>la_ilo_unemployment_rates</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.8133667352807095</westBoundLongitude>
+          <eastBoundLongitude>-2.6435253253438327</eastBoundLongitude>
+          <southBoundLatitude>51.32378319126505</southBoundLatitude>
+          <northBoundLatitude>53.458702266489475</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.8133667352807095" miny="51.32378319126505" maxx="-2.6435253253438327" maxy="53.458702266489475"/>
+        <BoundingBox CRS="EPSG:27700" minx="146597.100134781" miny="164586.296917809" maxx="355308.000013412" maxy="395984.399899839"/>
+        <Style>
+          <Name>Valleys_TaskForce_ILO_Unemployment_Rates_pg</Name>
+          <Title>Valleys_TaskForce_ILO_Unemployment_Rates</Title>
+          <LegendURL width="263" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=la_ilo_unemployment_rates"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>LA_ILO_Unemployment_Rates</Name>
+        <Title>LA_ILO_Unemployment_Rates</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>LA_ILO_Unemployment_Rates</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.8133667352807175</westBoundLongitude>
+          <eastBoundLongitude>-2.6435253253438256</eastBoundLongitude>
+          <southBoundLatitude>51.32378319126504</southBoundLatitude>
+          <northBoundLatitude>53.458702266489475</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.8133667352807175" miny="51.32378319126504" maxx="-2.6435253253438256" maxy="53.458702266489475"/>
+        <BoundingBox CRS="EPSG:27700" minx="146597.1001347805" miny="164586.29691780935" maxx="355308.00001341244" maxy="395984.39989983937"/>
+        <Style>
+          <Name>Valleys_TaskForce_ILO_Unemployment_Rates</Name>
+          <Title>Valleys_TaskForce_ILO_Unemployment_Rates</Title>
+          <LegendURL width="263" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LA_ILO_Unemployment_Rates"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>la_inactivity_rates_exc_students</Name>
+        <Title>la_inactivity_rates_exc_students</Title>
+        <Abstract>Inactivity Rates (excluding students) - data provided by Adam Al Nuaimi - and matched to Local Authority Boundaries</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>la_inactivity_rates_exc_students</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.8133667352807095</westBoundLongitude>
+          <eastBoundLongitude>-2.6435253253438327</eastBoundLongitude>
+          <southBoundLatitude>51.32378319126505</southBoundLatitude>
+          <northBoundLatitude>53.458702266489475</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.8133667352807095" miny="51.32378319126505" maxx="-2.6435253253438327" maxy="53.458702266489475"/>
+        <BoundingBox CRS="EPSG:27700" minx="146597.100134781" miny="164586.296917809" maxx="355308.000013412" maxy="395984.399899839"/>
+        <Style>
+          <Name>Valleys_TaskForce_Inactivity_Rates(exc Students)_pg</Name>
+          <Title>Valleys_TaskForce_Inactivity_Rates(exc Students)</Title>
+          <LegendURL width="277" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=la_inactivity_rates_exc_students"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>LA_Inactivity_Rates_exc_students</Name>
+        <Title>LA_Inactivity_Rates_exc_students</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>LA_Inactivity_Rates_exc_students</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.8133667352807175</westBoundLongitude>
+          <eastBoundLongitude>-2.6435253253438256</eastBoundLongitude>
+          <southBoundLatitude>51.32378319126504</southBoundLatitude>
+          <northBoundLatitude>53.458702266489475</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.8133667352807175" miny="51.32378319126504" maxx="-2.6435253253438256" maxy="53.458702266489475"/>
+        <BoundingBox CRS="EPSG:27700" minx="146597.1001347805" miny="164586.29691780935" maxx="355308.00001341244" maxy="395984.39989983937"/>
+        <Style>
+          <Name>Valleys_TaskForce_Inactivity_Rates(exc Students)</Name>
+          <Title>Valleys_TaskForce_Inactivity_Rates(exc Students)</Title>
+          <LegendURL width="277" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LA_Inactivity_Rates_exc_students"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>la_inactivity_rates_inc_students</Name>
+        <Title>la_inactivity_rates_inc_students</Title>
+        <Abstract>Inactivity Rates (including students) - data provided by Adam Al Nuaimi - and matched to Local Authority Boundaries</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>la_inactivity_rates_inc_students</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.8133667352807095</westBoundLongitude>
+          <eastBoundLongitude>-2.6435253253438327</eastBoundLongitude>
+          <southBoundLatitude>51.32378319126505</southBoundLatitude>
+          <northBoundLatitude>53.458702266489475</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.8133667352807095" miny="51.32378319126505" maxx="-2.6435253253438327" maxy="53.458702266489475"/>
+        <BoundingBox CRS="EPSG:27700" minx="146597.100134781" miny="164586.296917809" maxx="355308.000013412" maxy="395984.399899839"/>
+        <Style>
+          <Name>Valleys_TaskForce_Inactivity_Rates(inc Students)_pg</Name>
+          <Title>Valleys_TaskForce_Inactivity_Rates(inc Students)</Title>
+          <LegendURL width="277" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=la_inactivity_rates_inc_students"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>LA_Inactivity_Rates_inc_students</Name>
+        <Title>LA_Inactivity_Rates_inc_students</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>LA_Inactivity_Rates_inc_students</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.8133667352807175</westBoundLongitude>
+          <eastBoundLongitude>-2.6435253253438256</eastBoundLongitude>
+          <southBoundLatitude>51.32378319126504</southBoundLatitude>
+          <northBoundLatitude>53.458702266489475</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.8133667352807175" miny="51.32378319126504" maxx="-2.6435253253438256" maxy="53.458702266489475"/>
+        <BoundingBox CRS="EPSG:27700" minx="146597.1001347805" miny="164586.29691780935" maxx="355308.00001341244" maxy="395984.39989983937"/>
+        <Style>
+          <Name>Valleys_TaskForce_Inactivity_Rates(inc Students)</Name>
+          <Title>Valleys_TaskForce_Inactivity_Rates(inc Students)</Title>
+          <LegendURL width="277" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LA_Inactivity_Rates_inc_students"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -1496,7 +1920,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>WG_Inspire_Lifeboats</Name>
           <Title>Lifeboat Stations</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Lifeboat_Stations"/>
@@ -1532,6 +1955,33 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>Local_Authorities</Name>
+        <Title>Local_Authorities</Title>
+        <Abstract>Local Authority boundaries from Boundaryline 2016 (November) cut to HWM</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Local_Authorities</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813365079139652</westBoundLongitude>
+          <eastBoundLongitude>-2.6435253255365234</eastBoundLongitude>
+          <southBoundLatitude>51.32378323566581</southBoundLatitude>
+          <northBoundLatitude>53.45870046943395</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813365079139652" miny="51.32378323566581" maxx="-2.6435253255365234" maxy="53.45870046943395"/>
+        <BoundingBox CRS="EPSG:27700" minx="146597.19979790214" miny="164586.29691780935" maxx="355308.0" maxy="395984.1999570724"/>
+        <Style>
+          <Name>LocalAuthorities</Name>
+          <Title>Default Polygon</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Local_Authorities"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>Local_Health_Boards</Name>
         <Title>Local_Health_Boards</Title>
         <Abstract/>
@@ -1560,6 +2010,529 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>localauthorities</Name>
+        <Title>Wales Local Authorities (high water mark)</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>localauthorities</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.8131461283272206</westBoundLongitude>
+          <eastBoundLongitude>-2.643456371178087</eastBoundLongitude>
+          <southBoundLatitude>51.32378974047095</southBoundLatitude>
+          <northBoundLatitude>53.458702674670775</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.8131461283272206" miny="51.32378974047095" maxx="-2.643456371178087" maxy="53.458702674670775"/>
+        <BoundingBox CRS="EPSG:27700" minx="146611.801078724" miny="164586.296917809" maxx="355312.799464676" maxy="395984.399899839"/>
+        <Style>
+          <Name>LocalAuthorities</Name>
+          <Title>Default Polygon</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=localauthorities"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>localauthorities_lwm</Name>
+        <Title>Wales Local Authorities (low water mark)</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>localauthorities_lwm</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.829967676262459</westBoundLongitude>
+          <eastBoundLongitude>-2.628383906480035</eastBoundLongitude>
+          <southBoundLatitude>51.312502632511304</southBoundLatitude>
+          <northBoundLatitude>53.46927888515197</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.829967676262459" miny="51.312502632511304" maxx="-2.628383906480035" maxy="53.46927888515197"/>
+        <BoundingBox CRS="EPSG:27700" minx="145553.546875" miny="163381.109375" maxx="356351.5625" maxy="397151.40625"/>
+        <Style>
+          <Name>LocalAuthorities</Name>
+          <Title>Default Polygon</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=localauthorities_lwm"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>lsoa_benefit_change_2011_2016</Name>
+        <Title>lsoa_benefit_change_2011_2016</Title>
+        <Abstract>Benefit Change between 2011 and 2016 - data provided by Adam Al Nuaimi - and matched to LSOA Boundaries</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>lsoa_benefit_change_2011_2016</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.82973441076573</westBoundLongitude>
+          <eastBoundLongitude>-2.6284382835692015</eastBoundLongitude>
+          <southBoundLatitude>51.321444128402455</southBoundLatitude>
+          <northBoundLatitude>53.469146989855275</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.82973441076573" miny="51.321444128402455" maxx="-2.6284382835692015" maxy="53.469146989855275"/>
+        <BoundingBox CRS="EPSG:27700" minx="145568.296875" miny="164376.8125" maxx="356356.3125" maxy="397136.6875"/>
+        <Style>
+          <Name>Valleys_TaskForce_Benefits_Change_2011_2016_pg</Name>
+          <Title>Valleys_TaskForce_Benefits_Change_2011_2016</Title>
+          <LegendURL width="206" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=lsoa_benefit_change_2011_2016"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>LSOA_Benefit_Change_2011_2016</Name>
+        <Title>LSOA_Benefit_Change_2011_2016</Title>
+        <Abstract>Data derived for the Valleys TaskForce project&#13;
+Benefits Change  between 2011 and 2016, as described by LSOA&#13;
+&#13;
+For internal business use on MyCarto</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>LSOA_Benefit_Change_2011_2016</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813146143351339</westBoundLongitude>
+          <eastBoundLongitude>-2.64345619126793</eastBoundLongitude>
+          <southBoundLatitude>51.32378976696929</southBoundLatitude>
+          <northBoundLatitude>53.458702675280286</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813146143351339" miny="51.32378976696929" maxx="-2.64345619126793" maxy="53.458702675280286"/>
+        <BoundingBox CRS="EPSG:27700" minx="146611.80007481299" miny="164586.29992056964" maxx="355312.81201341096" maxy="395984.39984891884"/>
+        <Style>
+          <Name>Valleys_TaskForce_Benefits_Change_2011_2016</Name>
+          <Title>Valleys_TaskForce_Benefits_Change_2011_2016</Title>
+          <LegendURL width="206" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LSOA_Benefit_Change_2011_2016"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>lsoa_benefit_rate_2016_per_1000_pop</Name>
+        <Title>lsoa_benefit_rate_2016_per_1000_pop</Title>
+        <Abstract>Benefit Rates for 2016 - data provided by Adam Al Nuaimi - and matched to LSOA Boundaries</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>lsoa_benefit_rate_2016_per_1000_pop</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.829738217801499</westBoundLongitude>
+          <eastBoundLongitude>-2.6283216125655953</eastBoundLongitude>
+          <southBoundLatitude>51.312941777156674</southBoundLatitude>
+          <northBoundLatitude>53.46918940130415</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.829738217801499" miny="51.312941777156674" maxx="-2.6283216125655953" maxy="53.46918940130415"/>
+        <BoundingBox CRS="EPSG:27700" minx="145568.296875" miny="163429.3125" maxx="356356.3125" maxy="397141.40625"/>
+        <Style>
+          <Name>Valleys_TaskForce_Benefits_Rate_per_1000_Head_pg</Name>
+          <Title>Valleys_TaskForce_Benefits_Rate_per_1000_Head</Title>
+          <LegendURL width="283" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=lsoa_benefit_rate_2016_per_1000_pop"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>LSOA_Benefit_Rate_2016_per_1000_pop</Name>
+        <Title>LSOA_Benefit_Rate_2016_per_1000_pop</Title>
+        <Abstract>Data derived for the Valleys TaskForce project&#13;
+Benefits Rate for 2016, as described by LSOA, per 1000 head of population&#13;
+&#13;
+For internal business use on MyCarto</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>LSOA_Benefit_Rate_2016_per_1000_pop</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813146143351339</westBoundLongitude>
+          <eastBoundLongitude>-2.64345619126793</eastBoundLongitude>
+          <southBoundLatitude>51.32378976696929</southBoundLatitude>
+          <northBoundLatitude>53.458702675280286</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813146143351339" miny="51.32378976696929" maxx="-2.64345619126793" maxy="53.458702675280286"/>
+        <BoundingBox CRS="EPSG:27700" minx="146611.80007481299" miny="164586.29992056964" maxx="355312.81201341096" maxy="395984.39984891884"/>
+        <Style>
+          <Name>Valleys_TaskForce_Benefits_Rate_per_1000_Head</Name>
+          <Title>Valleys_TaskForce_Benefits_Rate_per_1000_Head</Title>
+          <LegendURL width="283" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LSOA_Benefit_Rate_2016_per_1000_pop"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>lsoa_claimant_count_change_2013_2016</Name>
+        <Title>lsoa_claimant_count_change_2013_2016</Title>
+        <Abstract>Claimannt Count Change between 2013 and 2016 - data provided by Adam Al Nuaimi - and matched to LSOA Boundaries</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>lsoa_claimant_count_change_2013_2016</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.829738217801499</westBoundLongitude>
+          <eastBoundLongitude>-2.6283216125655953</eastBoundLongitude>
+          <southBoundLatitude>51.312941777156674</southBoundLatitude>
+          <northBoundLatitude>53.46918940130415</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.829738217801499" miny="51.312941777156674" maxx="-2.6283216125655953" maxy="53.46918940130415"/>
+        <BoundingBox CRS="EPSG:27700" minx="145568.296875" miny="163429.3125" maxx="356356.3125" maxy="397141.40625"/>
+        <Style>
+          <Name>Valleys_TaskForce_Claimant_Count_Change_2013_2016_pg</Name>
+          <Title>Valleys_TaskForce_Claimant_Count_Change_2013_2016</Title>
+          <LegendURL width="200" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=lsoa_claimant_count_change_2013_2016"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>LSOA_Claimant_Count_Change_2013_2016</Name>
+        <Title>LSOA_Claimant_Count_Change_2013_2016</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>LSOA_Claimant_Count_Change_2013_2016</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813146143351339</westBoundLongitude>
+          <eastBoundLongitude>-2.64345619126793</eastBoundLongitude>
+          <southBoundLatitude>51.32378976696929</southBoundLatitude>
+          <northBoundLatitude>53.458702675280286</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813146143351339" miny="51.32378976696929" maxx="-2.64345619126793" maxy="53.458702675280286"/>
+        <BoundingBox CRS="EPSG:27700" minx="146611.80007481299" miny="164586.29992056964" maxx="355312.81201341096" maxy="395984.39984891884"/>
+        <Style>
+          <Name>Valleys_TaskForce_Claimant_Count_Change_2013_2016</Name>
+          <Title>Valleys_TaskForce_Claimant_Count_Change_2013_2016</Title>
+          <LegendURL width="200" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LSOA_Claimant_Count_Change_2013_2016"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>lsoa_claimant_count_rate_2016_per_1000_pop</Name>
+        <Title>lsoa_claimant_count_rate_2016_per_1000_pop</Title>
+        <Abstract>Claimant Count Rate for 2016 - data provided by Adam Al Nuaimi - and matched to LSOA Boundaries</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>lsoa_claimant_count_rate_2016_per_1000_pop</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.829738217801499</westBoundLongitude>
+          <eastBoundLongitude>-2.6283216125655953</eastBoundLongitude>
+          <southBoundLatitude>51.312941777156674</southBoundLatitude>
+          <northBoundLatitude>53.46918940130415</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.829738217801499" miny="51.312941777156674" maxx="-2.6283216125655953" maxy="53.46918940130415"/>
+        <BoundingBox CRS="EPSG:27700" minx="145568.296875" miny="163429.3125" maxx="356356.3125" maxy="397141.40625"/>
+        <Style>
+          <Name>Valleys_TaskForce_Claimant_Count_Rate_per_1000_Head_pg</Name>
+          <Title>Valleys_TaskForce_Claimant_Count_Rate_per_1000_Head</Title>
+          <LegendURL width="269" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=lsoa_claimant_count_rate_2016_per_1000_pop"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>LSOA_Claimant_Count_Rate_2016_per_1000_pop</Name>
+        <Title>LSOA_Claimant_Count_Rate_2016_per_1000_pop</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>LSOA_Claimant_Count_Rate_2016_per_1000_pop</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813146143351339</westBoundLongitude>
+          <eastBoundLongitude>-2.64345619126793</eastBoundLongitude>
+          <southBoundLatitude>51.32378976696929</southBoundLatitude>
+          <northBoundLatitude>53.458702675280286</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813146143351339" miny="51.32378976696929" maxx="-2.64345619126793" maxy="53.458702675280286"/>
+        <BoundingBox CRS="EPSG:27700" minx="146611.80007481299" miny="164586.29992056964" maxx="355312.81201341096" maxy="395984.39984891884"/>
+        <Style>
+          <Name>Valleys_TaskForce_Claimant_Count_Rate_per_1000_Head</Name>
+          <Title>Valleys_TaskForce_Claimant_Count_Rate_per_1000_Head</Title>
+          <LegendURL width="269" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LSOA_Claimant_Count_Rate_2016_per_1000_pop"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>LSOA_Pop_16_64_2015</Name>
+        <Title>LSOA_Pop_16_64_2015</Title>
+        <Abstract>Data derived for the Valleys TaskForce project&#13;
+Population between ages 16 - 64, as described by LSOA&#13;
+&#13;
+For internal business use on MyCarto</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>LSOA_Pop_16_64_2015</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813146143351339</westBoundLongitude>
+          <eastBoundLongitude>-2.64345619126793</eastBoundLongitude>
+          <southBoundLatitude>51.32378976696929</southBoundLatitude>
+          <northBoundLatitude>53.458702675280286</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813146143351339" miny="51.32378976696929" maxx="-2.64345619126793" maxy="53.458702675280286"/>
+        <BoundingBox CRS="EPSG:27700" minx="146611.80007481299" miny="164586.29992056964" maxx="355312.81201341096" maxy="395984.39984891884"/>
+        <Style>
+          <Name>Valleys_TaskForce_Population_16_64</Name>
+          <Title>Valleys_TaskForce_Population_16_64</Title>
+          <LegendURL width="108" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=LSOA_Pop_16_64_2015"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>metro_stations</Name>
+        <Title>metro_stations</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>metro_stations</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-3.6666423943156388</westBoundLongitude>
+          <eastBoundLongitude>-2.752613470660408</eastBoundLongitude>
+          <southBoundLatitude>51.381138048533494</southBoundLatitude>
+          <northBoundLatitude>51.82109881423165</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-3.6666423943156388" miny="51.381138048533494" maxx="-2.752613470660408" maxy="51.82109881423165"/>
+        <BoundingBox CRS="EPSG:27700" minx="285201.9375" miny="165970.390625" maxx="347729.15625" maxy="213881.421875"/>
+        <Style>
+          <Name>Metro_Stations</Name>
+          <Title>White Circle, Black Outline</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=metro_stations"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>metro_stations_phase1</Name>
+        <Title>Metrolink Stations phase1</Title>
+        <Abstract>Phase 1 stations for MetroLink development</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>metro_stations_phase1</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-3.6666423943156388</westBoundLongitude>
+          <eastBoundLongitude>-2.752613470660408</eastBoundLongitude>
+          <southBoundLatitude>51.381138048533494</southBoundLatitude>
+          <northBoundLatitude>51.82109881423165</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-3.6666423943156388" miny="51.381138048533494" maxx="-2.752613470660408" maxy="51.82109881423165"/>
+        <BoundingBox CRS="EPSG:27700" minx="285201.9375" miny="165970.390625" maxx="347729.15625" maxy="213881.421875"/>
+        <Style>
+          <Name>Metrolink Stations</Name>
+          <Title>Metro_Stations</Title>
+          <LegendURL width="146" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=metro_stations_phase1"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>metro_stations_phase2</Name>
+        <Title>Metrolink Stations phase2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>metro_stations_phase2</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-3.5063197289018007</westBoundLongitude>
+          <eastBoundLongitude>-2.7739987906381893</eastBoundLongitude>
+          <southBoundLatitude>51.38537088635321</southBoundLatitude>
+          <northBoundLatitude>51.750102817954655</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-3.5063197289018007" miny="51.38537088635321" maxx="-2.7739987906381893" maxy="51.750102817954655"/>
+        <BoundingBox CRS="EPSG:27700" minx="296095.7403" miny="166207.58" maxx="346243.51" maxy="206000.08"/>
+        <Style>
+          <Name>Metrolink Stations</Name>
+          <Title>Metro_Stations</Title>
+          <LegendURL width="146" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=metro_stations_phase2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>metro_stations_phase3</Name>
+        <Title>Metrolink Stations phase3</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>metro_stations_phase3</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-3.7142040555700637</westBoundLongitude>
+          <eastBoundLongitude>-2.708757951102337</eastBoundLongitude>
+          <southBoundLatitude>51.38259189116525</southBoundLatitude>
+          <northBoundLatitude>51.81326863027154</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-3.7142040555700637" miny="51.38259189116525" maxx="-2.708757951102337" maxy="51.81326863027154"/>
+        <BoundingBox CRS="EPSG:27700" minx="281900.357727777" miny="166207.58" maxx="350783.209703501" maxy="212979.540712871"/>
+        <Style>
+          <Name>Metrolink Stations</Name>
+          <Title>Metro_Stations</Title>
+          <LegendURL width="146" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=metro_stations_phase3"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>metrolink_phase1</Name>
+        <Title>Metrolink Network phase1</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>metrolink_phase1</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-3.6948778342984623</westBoundLongitude>
+          <eastBoundLongitude>-2.6547740026689435</eastBoundLongitude>
+          <southBoundLatitude>51.38155024373259</southBoundLatitude>
+          <northBoundLatitude>51.9362491707122</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-3.6948778342984623" miny="51.38155024373259" maxx="-2.6547740026689435" maxy="51.9362491707122"/>
+        <BoundingBox CRS="EPSG:27700" minx="283551.15" miny="166053.699999999" maxx="354538.16" maxy="226623.35"/>
+        <Style>
+          <Name>Metrolink Network</Name>
+          <Title>Metrolink Network</Title>
+          <LegendURL width="212" height="180">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=metrolink_phase1"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>metrolink_phase2</Name>
+        <Title>Metrolink Network phase2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>metrolink_phase2</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-3.648666145484926</westBoundLongitude>
+          <eastBoundLongitude>-2.92304215411894</eastBoundLongitude>
+          <southBoundLatitude>51.382108769665216</southBoundLatitude>
+          <northBoundLatitude>51.76493994552272</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-3.648666145484926" miny="51.382108769665216" maxx="-2.92304215411894" maxy="51.76493994552272"/>
+        <BoundingBox CRS="EPSG:27700" minx="286303.561709295" miny="166053.699999999" maxx="335870.1442" maxy="207772.15"/>
+        <Style>
+          <Name>Metrolink Network</Name>
+          <Title>Metrolink Network</Title>
+          <LegendURL width="212" height="180">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=metrolink_phase2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>metrolink_phase3</Name>
+        <Title>Metrolink Network phase3</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>metrolink_phase3</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-3.7189481827782545</westBoundLongitude>
+          <eastBoundLongitude>-2.694631365532914</eastBoundLongitude>
+          <southBoundLatitude>51.38046091192885</southBoundLatitude>
+          <northBoundLatitude>51.936015043986046</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-3.7189481827782545" miny="51.38046091192885" maxx="-2.694631365532914" maxy="51.936015043986046"/>
+        <BoundingBox CRS="EPSG:27700" minx="281895.19" miny="165970.6" maxx="351763.93" maxy="226623.35"/>
+        <Style>
+          <Name>Metrolink Network</Name>
+          <Title>Metrolink Network</Title>
+          <LegendURL width="212" height="180">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=metrolink_phase3"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Middle_schools_open_at_20160831</Name>
+        <Title>Middle_Schools_20160831</Title>
+        <Abstract>Updated Middle Schools 20160831&#13;
+published four times from schoolsopenat_20160831 for each type of school (sector)</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>schoolsopenat_20160831</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.27786684036255</westBoundLongitude>
+          <eastBoundLongitude>-2.65657329559326</eastBoundLongitude>
+          <southBoundLatitude>51.3783798217773</southBoundLatitude>
+          <northBoundLatitude>53.4219169616699</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.27786684036255" miny="51.3783798217773" maxx="-2.65657329559326" maxy="53.4219169616699"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.3783798217773" miny="-5.27786684036255" maxx="53.4219169616699" maxy="-2.65657329559326"/>
+        <Style>
+          <Name>Middle_Schools</Name>
+          <Title>Middle Schools in Wales</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Middle_schools_open_at_20160831"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>NAP_ard_l1018</Name>
         <Title>Road Traffic Noise in Agglomerations (L10,18h)</Title>
         <Abstract/>
@@ -1580,7 +2553,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ard_l1018"/>
@@ -1608,7 +2580,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ard_lday"/>
@@ -1636,7 +2607,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ard_lden"/>
@@ -1664,7 +2634,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ard_leve"/>
@@ -1692,7 +2661,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - night</Name>
           <Title>Average Noise level at night (dB)</Title>
-          <Abstract/>
           <LegendURL width="86" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ard_lngt"/>
@@ -1720,7 +2688,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ard_lq16"/>
@@ -1748,7 +2715,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_lday"/>
@@ -1776,7 +2742,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_lden"/>
@@ -1804,7 +2769,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_leve"/>
@@ -1832,7 +2796,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - night</Name>
           <Title>Average Noise level at night (dB)</Title>
-          <Abstract/>
           <LegendURL width="86" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_lngt"/>
@@ -1860,7 +2823,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_lq16"/>
@@ -1888,7 +2850,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_lq18"/>
@@ -1916,7 +2877,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - night</Name>
           <Title>Average Noise level at night (dB)</Title>
-          <Abstract/>
           <LegendURL width="86" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_lq6"/>
@@ -1944,7 +2904,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ind_lday"/>
@@ -1972,7 +2931,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ind_lden"/>
@@ -2000,7 +2958,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ind_leve"/>
@@ -2028,7 +2985,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - night</Name>
           <Title>Average Noise level at night (dB)</Title>
-          <Abstract/>
           <LegendURL width="86" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ind_lngt"/>
@@ -2056,7 +3012,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ind_lq16"/>
@@ -2112,7 +3067,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrd_l1018"/>
@@ -2140,7 +3094,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrd_lday"/>
@@ -2168,7 +3121,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrd_lden"/>
@@ -2196,7 +3148,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrd_leve"/>
@@ -2224,7 +3175,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - night</Name>
           <Title>Average Noise level at night (dB)</Title>
-          <Abstract/>
           <LegendURL width="86" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrd_lngt"/>
@@ -2252,7 +3202,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrd_lq16"/>
@@ -2280,7 +3229,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrl_lday"/>
@@ -2308,7 +3256,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrl_lden"/>
@@ -2336,7 +3283,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrl_leve"/>
@@ -2364,7 +3310,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - night</Name>
           <Title>Average Noise level at night (dB)</Title>
-          <Abstract/>
           <LegendURL width="86" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrl_lngt"/>
@@ -2392,7 +3337,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrl_lq16"/>
@@ -2420,7 +3364,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - day</Name>
           <Title>Noise Major Rd L1018</Title>
-          <Abstract/>
           <LegendURL width="96" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrl_lq18"/>
@@ -2448,7 +3391,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>Noise - night</Name>
           <Title>Average Noise level at night (dB)</Title>
-          <Abstract/>
           <LegendURL width="86" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrl_lq6"/>
@@ -2624,6 +3566,59 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>nga_postcodes</Name>
+        <Title>nga_postcodes</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>nga_postcodes</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.44872335299291</westBoundLongitude>
+          <eastBoundLongitude>-2.6332693838760846</eastBoundLongitude>
+          <southBoundLatitude>51.33222358698922</southBoundLatitude>
+          <northBoundLatitude>53.46920685204071</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.44872335299291" miny="51.33222358698922" maxx="-2.6332693838760846" maxy="53.46920685204071"/>
+        <BoundingBox CRS="EPSG:27700" minx="170944.46875" miny="164375.96875" maxx="356020.03125" maxy="397146.46875"/>
+        <Style>
+          <Name>nga_pcodes</Name>
+          <LegendURL width="234" height="64">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nga_postcodes"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>NVZConsultation</Name>
+        <Title>NVZConsultation</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>NVZConsultation</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.24800609892999</westBoundLongitude>
+          <eastBoundLongitude>-2.7020932643229028</eastBoundLongitude>
+          <southBoundLatitude>51.59101124438961</southBoundLatitude>
+          <northBoundLatitude>53.36041209109253</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.24800609892999" miny="51.59101124438961" maxx="-2.7020932643229028" maxy="53.36041209109253"/>
+        <BoundingBox CRS="EPSG:27700" minx="183756.24" miny="192641.0021" maxx="351500.6" maxy="385086.017100001"/>
+        <Style>
+          <Name>NVZConsultation</Name>
+          <Title>NVZ Consultation polygon</Title>
+          <LegendURL width="139" height="80">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NVZConsultation"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>Opticians</Name>
         <Title>Opticians</Title>
         <Abstract/>
@@ -2644,10 +3639,124 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>WG_INSPIRE_Optician</Name>
           <Title>Opticians</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Opticians"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>OS_VMD_Motorways</Name>
+        <Title>OS_VMD_Motorways</Title>
+        <Abstract>OS Vector Map District Motorways &#13;
+Derived from the OS VMD roads network</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>OS_VMD_Motorways</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-4.154368049146362</westBoundLongitude>
+          <eastBoundLongitude>-1.977740817121995</eastBoundLongitude>
+          <southBoundLatitude>50.7797367970105</southBoundLatitude>
+          <northBoundLatitude>53.50352644804534</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-4.154368049146362" miny="50.7797367970105" maxx="-1.977740817121995" maxy="53.50352644804534"/>
+        <BoundingBox CRS="EPSG:27700" minx="257144.93" miny="99756.04000000001" maxx="401573.87" maxy="400759.5"/>
+        <Style>
+          <Name>OS_VMD_Motorways</Name>
+          <Title>Zoom Based Motorway</Title>
+          <LegendURL width="66" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=OS_VMD_Motorways"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>OS_VMD_Primary_A_Roads</Name>
+        <Title>OS_VMD_Primary_A_Roads</Title>
+        <Abstract>OS Vector Map District Primary and A-Roads&#13;
+Derived from the OS VMD Roads dataset</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>OS_VMD_Primary_A_Roads</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.3854472970094545</westBoundLongitude>
+          <eastBoundLongitude>-1.9846377592349846</eastBoundLongitude>
+          <southBoundLatitude>50.74759993829442</southBoundLatitude>
+          <northBoundLatitude>53.50025690804829</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.3854472970094545" miny="50.74759993829442" maxx="-1.9846377592349846" maxy="53.50025690804829"/>
+        <BoundingBox CRS="EPSG:27700" minx="175311.43" miny="99065.07" maxx="401116.48" maxy="400395.63"/>
+        <Style>
+          <Name>OS_VMD_Primary_A_Roads</Name>
+          <Title>Zoom Based Primary and A Roads</Title>
+          <LegendURL width="66" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=OS_VMD_Primary_A_Roads"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>OS_VMD_Surface_Water_Area</Name>
+        <Title>OS_VMD_Major_Rivers_Water_Bodies</Title>
+        <Abstract>OS Vector Map District 2016&#13;
+Dataset showing the major rivers and water bodies as polygon areas&#13;
+For internal Use Only</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>OS_VMD_Surface_Water_Area</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.463492051976146</westBoundLongitude>
+          <eastBoundLongitude>-1.9513379294796134</eastBoundLongitude>
+          <southBoundLatitude>50.72632597697596</southBoundLatitude>
+          <northBoundLatitude>53.51221224945915</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.463492051976146" miny="50.72632597697596" maxx="-1.9513379294796134" maxy="53.51221224945915"/>
+        <BoundingBox CRS="EPSG:27700" minx="170183.87" miny="96919.12" maxx="403324.49" maxy="401726.7"/>
+        <Style>
+          <Name>Water Bodies</Name>
+          <Title>A blue polygon style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=OS_VMD_Surface_Water_Area"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>OS_VMD_Surface_Water_Line</Name>
+        <Title>OS_VMD_Minor_Rivers</Title>
+        <Abstract>OS Vector Map District 2016&#13;
+Dataset showing the minor rivers as polylines&#13;
+For internal Use Only</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>OS_VMD_Surface_Water_Line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.466203963751992</westBoundLongitude>
+          <eastBoundLongitude>-1.9931979227972514</eastBoundLongitude>
+          <southBoundLatitude>50.748260975046946</southBoundLatitude>
+          <northBoundLatitude>53.500206358990404</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.466203963751992" miny="50.748260975046946" maxx="-1.9931979227972514" maxy="53.500206358990404"/>
+        <BoundingBox CRS="EPSG:27700" minx="169938.43" miny="99373.12" maxx="400548.65" maxy="400389.92"/>
+        <Style>
+          <Name>line</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a green line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=OS_VMD_Surface_Water_Line"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -2672,7 +3781,6 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
         <Style>
           <Name>WG_INSPIRE_Pharmacies</Name>
           <Title>Pharmacies</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Pharmacies"/>
@@ -2682,22 +3790,21 @@ For the East Wales region these are also known as 'Tier 2' areas, aid to large e
       <Layer queryable="1" opaque="0">
         <Name>PLGZ_Central_Corridor</Name>
         <Title>PLGZ_Central_Corridor</Title>
-        <Abstract>Powys Local Growth Zone Corridor&#13;
-Based around a 5km buffer of the trunk road network of the specific areas, and excluding Brecon Beacons National Park</Abstract>
+        <Abstract/>
         <KeywordList>
           <Keyword>features</Keyword>
-          <Keyword>PLGZ_Central_Corridor</Keyword>
+          <Keyword>plgz_central_corridor</Keyword>
         </KeywordList>
         <CRS>EPSG:27700</CRS>
         <CRS>CRS:84</CRS>
         <EX_GeographicBoundingBox>
-          <westBoundLongitude>-3.8840179253114866</westBoundLongitude>
-          <eastBoundLongitude>-3.004421875074975</eastBoundLongitude>
+          <westBoundLongitude>-3.8840179253114786</westBoundLongitude>
+          <eastBoundLongitude>-3.004421875074969</eastBoundLongitude>
           <southBoundLatitude>51.733875247134115</southBoundLatitude>
           <northBoundLatitude>52.74347594981062</northBoundLatitude>
         </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-3.8840179253114866" miny="51.733875247134115" maxx="-3.004421875074975" maxy="52.74347594981062"/>
-        <BoundingBox CRS="EPSG:27700" minx="272883.5984229155" miny="205513.4893999628" maxx="330748.8051116586" maxy="316700.7424462168"/>
+        <BoundingBox CRS="CRS:84" minx="-3.8840179253114786" miny="51.733875247134115" maxx="-3.004421875074969" maxy="52.74347594981062"/>
+        <BoundingBox CRS="EPSG:27700" minx="272883.598422916" miny="205513.489399963" maxx="330748.805111659" maxy="316700.742446217"/>
         <Style>
           <Name>BlueOutlinePoly_NoFill</Name>
           <Title>BlueOutlinePoly_NoFill</Title>
@@ -2729,7 +3836,6 @@ Based around a 5km buffer of the trunk road network of the specific areas, and e
         <Style>
           <Name>Police Service Areas</Name>
           <Title>Police Service Areas</Title>
-          <Abstract/>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Police_Authorities_Wales"/>
@@ -2757,10 +3863,91 @@ Based around a 5km buffer of the trunk road network of the specific areas, and e
         <Style>
           <Name>WG_INSPIRE_Police</Name>
           <Title>Police Station</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Police_Stations_Wales"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>primary_schools_open_at_20160831</Name>
+        <Title>Primary_Schools_20160831</Title>
+        <Abstract>Updated Primary Schools 20160831&#13;
+published four times from schoolsopenat_20160831 for each type of school (sector)</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>schoolsopenat_20160831</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.27786684036255</westBoundLongitude>
+          <eastBoundLongitude>-2.65657329559326</eastBoundLongitude>
+          <southBoundLatitude>51.3783798217773</southBoundLatitude>
+          <northBoundLatitude>53.4219169616699</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.27786684036255" miny="51.3783798217773" maxx="-2.65657329559326" maxy="53.4219169616699"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.3783798217773" miny="-5.27786684036255" maxx="53.4219169616699" maxy="-2.65657329559326"/>
+        <Style>
+          <Name>Primary_schools</Name>
+          <Title>Primary Schools in Wales</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=primary_schools_open_at_20160831"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>proposed_metro</Name>
+        <Title>proposed_metro</Title>
+        <Abstract>Proposed MetroStations for MetroLink</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>proposed_metro</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-3.6948778342984623</westBoundLongitude>
+          <eastBoundLongitude>-2.6547740026689435</eastBoundLongitude>
+          <southBoundLatitude>51.38155024373259</southBoundLatitude>
+          <northBoundLatitude>51.9362491707122</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-3.6948778342984623" miny="51.38155024373259" maxx="-2.6547740026689435" maxy="51.9362491707122"/>
+        <BoundingBox CRS="EPSG:27700" minx="283551.15" miny="166053.699999999" maxx="354538.16" maxy="226623.35"/>
+        <Style>
+          <Name>Proposed_Metro_Lines</Name>
+          <Title>Proposed_Metro_Lines</Title>
+          <LegendURL width="192" height="80">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=proposed_metro"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>proposed_nvz_designations_06_2016</Name>
+        <Title>Proposed NVZ Designations 06 2016</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>proposed_nvz_designations_06_2016</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.248006099612114</westBoundLongitude>
+          <eastBoundLongitude>-2.2478287638488017</eastBoundLongitude>
+          <southBoundLatitude>51.475683452225375</southBoundLatitude>
+          <northBoundLatitude>53.36236698189515</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.248006099612114" miny="51.475683452225375" maxx="-2.2478287638488017" maxy="53.36236698189515"/>
+        <BoundingBox CRS="EPSG:27700" minx="183756.24" miny="179795.5099" maxx="382899.9997" maxy="385086.018100001"/>
+        <Style>
+          <Name>NVZProposed</Name>
+          <Title>NVZ Proposed polygon</Title>
+          <LegendURL width="257" height="80">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=proposed_nvz_designations_06_2016"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -2827,7 +4014,6 @@ greater stability and reduced complexity.</Abstract>
         <Style>
           <Name>star</Name>
           <Title>A boring default style</Title>
-          <Abstract/>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=PublicLibraries"/>
@@ -2874,6 +4060,34 @@ The regeneration area programmes are now drawing to a close.  Future targeted re
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>regionallyimportantcos</Name>
+        <Title>Regionally Important Companies</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>regionallyimportantcos</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.165780001675229</westBoundLongitude>
+          <eastBoundLongitude>-2.87026118752979</eastBoundLongitude>
+          <southBoundLatitude>51.36953902854211</southBoundLatitude>
+          <northBoundLatitude>53.447170823862365</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.165780001675229" miny="51.36953902854211" maxx="-2.87026118752979" maxy="53.447170823862365"/>
+        <BoundingBox CRS="EPSG:27700" minx="189676.96875" miny="167725.46875" maxx="339563.03125" maxy="394876.5"/>
+        <Style>
+          <Name>Blue point</Name>
+          <Title>Points of interest</Title>
+          <Abstract>points of interest.</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=regionallyimportantcos"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>rural_classification_september_11</Name>
         <Title>rural_classification_september_11</Title>
         <Abstract>Rural Urban Classification data from ONS, based on LSOA</Abstract>
@@ -2893,8 +4107,6 @@ The regeneration area programmes are now drawing to a close.  Future targeted re
         <BoundingBox CRS="EPSG:27700" minx="146611.8" miny="164586.3" maxx="355312.812" maxy="395984.4"/>
         <Style>
           <Name>WG_INSPIRE_Rural_Urban_Classfn</Name>
-          <Title/>
-          <Abstract/>
           <LegendURL width="161" height="120">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=rural_classification_september_11"/>
@@ -2902,144 +4114,86 @@ The regeneration area programmes are now drawing to a close.  Future targeted re
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
-        <Name>sams</Name>
-        <Title>Scheduled Ancient Monuments</Title>
-        <Abstract/>
+        <Name>Secondary_schools_open_at_20160831</Name>
+        <Title>Secondary_Schools_20160831</Title>
+        <Abstract>Updated Secondary Schools 20160831&#13;
+published four times from schoolsopenat_20160831 for each type of school (sector)</Abstract>
         <KeywordList>
           <Keyword>features</Keyword>
-          <Keyword>ScheduledAncientMonuments</Keyword>
+          <Keyword>schoolsopenat_20160831</Keyword>
         </KeywordList>
-        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:4326</CRS>
         <CRS>CRS:84</CRS>
         <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.440746194660953</westBoundLongitude>
-          <eastBoundLongitude>-2.662284264195732</eastBoundLongitude>
-          <southBoundLatitude>51.334479968657</southBoundLatitude>
-          <northBoundLatitude>53.45269540758846</northBoundLatitude>
+          <westBoundLongitude>-5.27786684036255</westBoundLongitude>
+          <eastBoundLongitude>-2.65657329559326</eastBoundLongitude>
+          <southBoundLatitude>51.3783798217773</southBoundLatitude>
+          <northBoundLatitude>53.4219169616699</northBoundLatitude>
         </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.440746194660953" miny="51.334479968657" maxx="-2.662284264195732" maxy="53.45269540758846"/>
-        <BoundingBox CRS="EPSG:27700" minx="171387.7999999998" miny="164607.44434712268" maxx="354002.4993584482" maxy="395328.6000000015"/>
+        <BoundingBox CRS="CRS:84" minx="-5.27786684036255" miny="51.3783798217773" maxx="-2.65657329559326" maxy="53.4219169616699"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.3783798217773" miny="-5.27786684036255" maxx="53.4219169616699" maxy="-2.65657329559326"/>
         <Style>
-          <Name>Scheduled Ancient Monument</Name>
-          <Title>Default Polygon</Title>
-          <Abstract>A styled polygon</Abstract>
+          <Name>Secondary_Schools</Name>
+          <Title>Secondary Schools in Wales</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sams"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Secondary_schools_open_at_20160831"/>
           </LegendURL>
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
-        <Name>shpremoved</Name>
-        <Title>shpremoved</Title>
-        <Abstract/>
+        <Name>Special_schools_open_at_20160831</Name>
+        <Title>Special_Schools_20160831</Title>
+        <Abstract>Updated Special Schools 20160831&#13;
+published four times from schoolsopenat_20160831 for each type of school (sector)</Abstract>
         <KeywordList>
           <Keyword>features</Keyword>
-          <Keyword>shpremoved</Keyword>
+          <Keyword>schoolsopenat_20160831</Keyword>
         </KeywordList>
-        <CRS>EPSG:27700</CRS>
+        <CRS>EPSG:4326</CRS>
         <CRS>CRS:84</CRS>
         <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.825346151717648</westBoundLongitude>
-          <eastBoundLongitude>-2.522317696225538</eastBoundLongitude>
-          <southBoundLatitude>51.3199090121069</southBoundLatitude>
-          <northBoundLatitude>53.459439246108104</northBoundLatitude>
+          <westBoundLongitude>-5.27786684036255</westBoundLongitude>
+          <eastBoundLongitude>-2.65657329559326</eastBoundLongitude>
+          <southBoundLatitude>51.3783798217773</southBoundLatitude>
+          <northBoundLatitude>53.4219169616699</northBoundLatitude>
         </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.825346151717648" miny="51.3199090121069" maxx="-2.522317696225538" maxy="53.459439246108104"/>
-        <BoundingBox CRS="EPSG:27700" minx="145799.3197" miny="164194.23" maxx="363741.53" maxy="395994.1"/>
+        <BoundingBox CRS="CRS:84" minx="-5.27786684036255" miny="51.3783798217773" maxx="-2.65657329559326" maxy="53.4219169616699"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.3783798217773" miny="-5.27786684036255" maxx="53.4219169616699" maxy="-2.65657329559326"/>
         <Style>
-          <Name>polygon</Name>
-          <Title>A boring default style</Title>
-          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <Name>Special_Schools</Name>
+          <Title>Special Schools in Wales</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=shpremoved"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Special_schools_open_at_20160831"/>
           </LegendURL>
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
-        <Name>Super_Councils</Name>
-        <Title>Super_Councils</Title>
-        <Abstract>Super_Councils_20110901&#13;
-Uploaded 20150604</Abstract>
+        <Name>Strategic_Regeneration_Areas</Name>
+        <Title>Strategic_Regeneration_Areas</Title>
+        <Abstract/>
         <KeywordList>
           <Keyword>features</Keyword>
-          <Keyword>Super_Councils</Keyword>
+          <Keyword>Strategic_Regeneration_Areas</Keyword>
         </KeywordList>
         <CRS>EPSG:27700</CRS>
         <CRS>CRS:84</CRS>
         <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.813146128327213</westBoundLongitude>
-          <eastBoundLongitude>-2.6434563711780914</eastBoundLongitude>
-          <southBoundLatitude>51.32378974047098</southBoundLatitude>
-          <northBoundLatitude>53.458702674670775</northBoundLatitude>
+          <westBoundLongitude>-4.708328042537946</westBoundLongitude>
+          <eastBoundLongitude>-3.022168173789614</eastBoundLongitude>
+          <southBoundLatitude>51.535973879534005</southBoundLatitude>
+          <northBoundLatitude>53.45592385370226</northBoundLatitude>
         </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.813146128327213" miny="51.32378974047098" maxx="-2.6434563711780914" maxy="53.458702674670775"/>
-        <BoundingBox CRS="EPSG:27700" minx="146611.80107872467" miny="164586.29691780935" maxx="355312.79946467566" maxy="395984.39989983954"/>
+        <BoundingBox CRS="CRS:84" minx="-4.708328042537946" miny="51.535973879534005" maxx="-3.022168173789614" maxy="53.45592385370226"/>
+        <BoundingBox CRS="EPSG:27700" minx="220165.41994184343" miny="185087.95849802147" maxx="329237.46336593945" maxy="395993.7279916995"/>
         <Style>
-          <Name>point</Name>
-          <Title>A boring default style</Title>
-          <Abstract>A sample style that just prints out a purple square</Abstract>
+          <Name>Parish</Name>
+          <Title>Hollow_Polygon_Blue_Border</Title>
+          <Abstract>A style that draws a highlighted polygon</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Super_Councils"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>TAN15_201412</Name>
-        <Title>TAN15 December 2014</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>WCS</Keyword>
-          <Keyword>MBTiles</Keyword>
-          <Keyword>TAN15</Keyword>
-        </KeywordList>
-        <CRS>EPSG:3857</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-6.185300000000001</westBoundLongitude>
-          <eastBoundLongitude>-1.3293</eastBoundLongitude>
-          <southBoundLatitude>51.01379999999998</southBoundLatitude>
-          <northBoundLatitude>53.81359999999999</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-6.185300000000001" miny="51.01379999999998" maxx="-1.3293" maxy="53.81359999999999"/>
-        <BoundingBox CRS="EPSG:3857" minx="-688544.446403635" miny="6623735.146081259" maxx="-147976.99911149853" maxy="7134933.105236907"/>
-        <Style>
-          <Name>raster</Name>
-          <Title>Default Raster</Title>
-          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TAN15_201412"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>TAN15_201503</Name>
-        <Title>TAN15_201503</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>features</Keyword>
-          <Keyword>TAN15_201503</Keyword>
-        </KeywordList>
-        <CRS>EPSG:27700</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.443100480158996</westBoundLongitude>
-          <eastBoundLongitude>-2.4645972855372102</eastBoundLongitude>
-          <southBoundLatitude>51.27261843649286</southBoundLatitude>
-          <northBoundLatitude>53.45466120429045</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.443100480158996" miny="51.27261843649286" maxx="-2.4645972855372102" maxy="53.45466120429045"/>
-        <BoundingBox CRS="EPSG:27700" minx="171236.07182009204" miny="157723.12148134244" maxx="367718.2112115963" maxy="395433.6275567827"/>
-        <Style>
-          <Name>TAN15_201503</Name>
-          <Title>TAN15 style</Title>
-          <Abstract>Basic polygon fills</Abstract>
-          <LegendURL width="69" height="60">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TAN15_201503"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Strategic_Regeneration_Areas"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -3068,34 +4222,6 @@ Uploaded 20150604</Abstract>
           <LegendURL width="69" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tan15_201505"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>TAN15_may2013</Name>
-        <Title>TAN15_may2013</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>TAN15_may2013</Keyword>
-          <Keyword>features</Keyword>
-        </KeywordList>
-        <CRS>EPSG:900913</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-5.323879022583304</westBoundLongitude>
-          <eastBoundLongitude>-2.4854758715688687</eastBoundLongitude>
-          <southBoundLatitude>51.314683274236565</southBoundLatitude>
-          <northBoundLatitude>53.4421115133248</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-5.323879022583304" miny="51.314683274236565" maxx="-2.4854758715688687" maxy="53.4421115133248"/>
-        <BoundingBox CRS="EPSG:900913" minx="-592651.5018389644" miny="6677147.457110037" maxx="-276681.9084020143" maxy="7065198.988601571"/>
-        <Style>
-          <Name>TAN15</Name>
-          <Title>TAN15 style</Title>
-          <Abstract>Basic polygon fills</Abstract>
-          <LegendURL width="69" height="60">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TAN15_may2013"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -3269,6 +4395,233 @@ Uploaded 20150604</Abstract>
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>TrunkRoadNetwork_2016</Name>
+        <Title>TrunkRoadNetwork_2016</Title>
+        <Abstract>Trunk Road Network for 2016&#13;
+Not for release as an Open dataset until it has been verified</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>TrunkRoadNetwork_2016</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.154598956582621</westBoundLongitude>
+          <eastBoundLongitude>-2.662204501207114</eastBoundLongitude>
+          <southBoundLatitude>51.43375025465173</southBoundLatitude>
+          <northBoundLatitude>53.33433681330079</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.154598956582621" miny="51.43375025465173" maxx="-2.662204501207114" maxy="53.33433681330079"/>
+        <BoundingBox CRS="EPSG:27700" minx="189858.984" miny="174869.156" maxx="354100.813" maxy="382159.0"/>
+        <Style>
+          <Name>Trunk Roads</Name>
+          <Title>Default Line</Title>
+          <Abstract>Trunk Road green line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>valleys_taskforce_draft_boundary</Name>
+        <Title>valleys_taskforce_draft_boundary</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>valleys_taskforce_draft_boundary</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-4.0603033645696165</westBoundLongitude>
+          <eastBoundLongitude>-2.956211202342728</eastBoundLongitude>
+          <southBoundLatitude>51.48960745721796</southBoundLatitude>
+          <northBoundLatitude>51.866031403152604</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-4.0603033645696165" miny="51.48960745721796" maxx="-2.956211202342728" maxy="51.866031403152604"/>
+        <BoundingBox CRS="EPSG:27700" minx="258192.700042376" miny="178721.398916268" maxx="333727.250019886" maxy="219045.202903948"/>
+        <Style>
+          <Name>BlueOutlinePoly_NoFill</Name>
+          <Title>BlueOutlinePoly_NoFill</Title>
+          <Abstract>BlueOutlinePoly_NoFill</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=valleys_taskforce_draft_boundary"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>valleys_taskforce_draft_la_boundary</Name>
+        <Title>valleys_taskforce_draft_la_boundary</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>valleys_taskforce_draft_la_boundary</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-3.93890030516474</westBoundLongitude>
+          <eastBoundLongitude>-2.9562232126113996</eastBoundLongitude>
+          <southBoundLatitude>51.49154709141776</southBoundLatitude>
+          <northBoundLatitude>51.839688902630925</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-3.93890030516474" miny="51.49154709141776" maxx="-2.9562232126113996" maxy="51.839688902630925"/>
+        <BoundingBox CRS="EPSG:27700" minx="266481.7" miny="178712.5" maxx="333726.3" maxy="216114.9"/>
+        <Style>
+          <Name>RedOutlinePoly_NoFill</Name>
+          <Title>RedOutlinePoly_NoFill</Title>
+          <Abstract>RedOutlinePoly_NoFill</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=valleys_taskforce_draft_la_boundary"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>vtf_household_internet_access</Name>
+        <Title>vtf_household_internet_access</Title>
+        <Abstract>Household internet Acccess - data supplied by Adam al Nuaimi</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>vtf_household_internet_access</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.829738217801499</westBoundLongitude>
+          <eastBoundLongitude>-2.6283216125655953</eastBoundLongitude>
+          <southBoundLatitude>51.312941777156674</southBoundLatitude>
+          <northBoundLatitude>53.46918940130415</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.829738217801499" miny="51.312941777156674" maxx="-2.6283216125655953" maxy="53.46918940130415"/>
+        <BoundingBox CRS="EPSG:27700" minx="145568.296875" miny="163429.3125" maxx="356356.3125" maxy="397141.40625"/>
+        <Style>
+          <Name>Valleys_TaskForce_Household Internet Access_pg</Name>
+          <Title>Valleys_TaskForce_Household Internet Access</Title>
+          <LegendURL width="177" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=vtf_household_internet_access"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>VTF_Household_Internet_Access</Name>
+        <Title>VTF_Household_Internet_Access</Title>
+        <Abstract>Data derived for the Valleys TaskForce project&#13;
+Household Internet Access&#13;
+&#13;
+For internal business use on MyCarto</Abstract>
+        <KeywordList>
+          <Keyword>VTF_Household_Internet_Access</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813146143351339</westBoundLongitude>
+          <eastBoundLongitude>-2.64345619126793</eastBoundLongitude>
+          <southBoundLatitude>51.32378976696929</southBoundLatitude>
+          <northBoundLatitude>53.458702675280286</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813146143351339" miny="51.32378976696929" maxx="-2.64345619126793" maxy="53.458702675280286"/>
+        <BoundingBox CRS="EPSG:27700" minx="146611.80007481299" miny="164586.29992056964" maxx="355312.81201341096" maxy="395984.39984891884"/>
+        <Style>
+          <Name>Valleys_TaskForce_Household Internet Access</Name>
+          <Title>Valleys_TaskForce_Household Internet Access</Title>
+          <LegendURL width="177" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=VTF_Household_Internet_Access"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>vtf_personal_internet_use</Name>
+        <Title>vtf_personal_internet_use</Title>
+        <Abstract>Personal internet Use - data supplied by Adam al Nuaimi</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>vtf_personal_internet_use</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.829738217801499</westBoundLongitude>
+          <eastBoundLongitude>-2.6283216125655953</eastBoundLongitude>
+          <southBoundLatitude>51.312941777156674</southBoundLatitude>
+          <northBoundLatitude>53.46918940130415</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.829738217801499" miny="51.312941777156674" maxx="-2.6283216125655953" maxy="53.46918940130415"/>
+        <BoundingBox CRS="EPSG:27700" minx="145568.296875" miny="163429.3125" maxx="356356.3125" maxy="397141.40625"/>
+        <Style>
+          <Name>Valleys_TaskForce_Personal_Internet_Use_pg</Name>
+          <Title>Valleys_TaskForce_Personal_Internet_Use</Title>
+          <LegendURL width="177" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=vtf_personal_internet_use"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>VTF_Personal_Internet_Use</Name>
+        <Title>VTF_Personal_Internet_Use</Title>
+        <Abstract>Data derived for the Valleys TaskForce project&#13;
+Personal Internet Use&#13;
+&#13;
+For internal business use on MyCarto</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>VTF_Personal_Internet_Use</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.813146143351339</westBoundLongitude>
+          <eastBoundLongitude>-2.64345619126793</eastBoundLongitude>
+          <southBoundLatitude>51.32378976696929</southBoundLatitude>
+          <northBoundLatitude>53.458702675280286</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.813146143351339" miny="51.32378976696929" maxx="-2.64345619126793" maxy="53.458702675280286"/>
+        <BoundingBox CRS="EPSG:27700" minx="146611.80007481299" miny="164586.29992056964" maxx="355312.81201341096" maxy="395984.39984891884"/>
+        <Style>
+          <Name>Valleys_TaskForce_Personal_Internet_Use</Name>
+          <Title>Valleys_TaskForce_Personal_Internet_Use</Title>
+          <LegendURL width="177" height="100">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=VTF_Personal_Internet_Use"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>wales_hwm</Name>
+        <Title>Wales (High water mark)</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>wales_hwm</Keyword>
+        </KeywordList>
+        <CRS>EPSG:27700</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-5.829958049454857</westBoundLongitude>
+          <eastBoundLongitude>-2.6283898411179534</eastBoundLongitude>
+          <southBoundLatitude>51.312935223542105</southBoundLatitude>
+          <northBoundLatitude>53.469187321364025</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-5.829958049454857" miny="51.312935223542105" maxx="-2.6283898411179534" maxy="53.469187321364025"/>
+        <BoundingBox CRS="EPSG:27700" minx="145553.640625" miny="163429.3125" maxx="356351.5625" maxy="397141.21875"/>
+        <Style>
+          <Name>Blue_trans_fill_poly</Name>
+          <Title>Blue trans polygon</Title>
+          <Abstract>Blue 30 %fill with blue outline.</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=wales_hwm"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>Welsh_Government_Offices</Name>
         <Title>Welsh_Government_Offices</Title>
         <Abstract/>
@@ -3289,7 +4642,6 @@ Uploaded 20150604</Abstract>
         <Style>
           <Name>WG_INSPIRE_Govt_Office</Name>
           <Title>Govt_Office</Title>
-          <Abstract/>
           <LegendURL width="66" height="60">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Welsh_Government_Offices"/>
@@ -3298,26 +4650,26 @@ Uploaded 20150604</Abstract>
       </Layer>
       <Layer queryable="1" opaque="0">
         <Name>westminster_const_region</Name>
-        <Title>westminster_const_region</Title>
+        <Title>Westminster Constituency</Title>
         <Abstract/>
         <KeywordList>
-          <Keyword>westminster_const_region</Keyword>
           <Keyword>features</Keyword>
+          <Keyword>westminster_const_region</Keyword>
         </KeywordList>
         <CRS>EPSG:27700</CRS>
         <CRS>CRS:84</CRS>
         <EX_GeographicBoundingBox>
-          <westBoundLongitude>-9.23063680749877</westBoundLongitude>
-          <eastBoundLongitude>2.7017811505420553</eastBoundLongitude>
-          <southBoundLatitude>49.81819939330706</southBoundLatitude>
-          <northBoundLatitude>60.86355836832326</northBoundLatitude>
+          <westBoundLongitude>-5.829967676262459</westBoundLongitude>
+          <eastBoundLongitude>-2.628383906480035</eastBoundLongitude>
+          <southBoundLatitude>51.312502632511304</southBoundLatitude>
+          <northBoundLatitude>53.46927888515197</northBoundLatitude>
         </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-9.23063680749877" miny="49.81819939330706" maxx="2.7017811505420553" maxy="60.86355836832326"/>
-        <BoundingBox CRS="EPSG:27700" minx="5513.0" miny="5333.6" maxx="655989.0" maxy="1220301.5"/>
+        <BoundingBox CRS="CRS:84" minx="-5.829967676262459" miny="51.312502632511304" maxx="-2.628383906480035" maxy="53.46927888515197"/>
+        <BoundingBox CRS="EPSG:27700" minx="145553.546875" miny="163381.109375" maxx="356351.5625" maxy="397151.40625"/>
         <Style>
-          <Name>WG_INSPIRE_Westminster</Name>
-          <Title>Westminster_Constituencies</Title>
-          <Abstract/>
+          <Name>RedOutlinePoly_NoFill</Name>
+          <Title>RedOutlinePoly_NoFill</Title>
+          <Abstract>RedOutlinePoly_NoFill</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=westminster_const_region"/>
@@ -3372,8 +4724,6 @@ Uploaded 20150604</Abstract>
         <BoundingBox CRS="EPSG:27700" minx="146611.8" miny="164586.3" maxx="355312.812" maxy="395984.4"/>
         <Style>
           <Name>WG_INSPIRE_WIMD2014</Name>
-          <Title/>
-          <Abstract/>
           <LegendURL width="133" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=WIMD2014_Access_to_Services"/>
@@ -3400,8 +4750,6 @@ Uploaded 20150604</Abstract>
         <BoundingBox CRS="EPSG:27700" minx="146611.8" miny="164586.3" maxx="355312.812" maxy="395984.4"/>
         <Style>
           <Name>WG_INSPIRE_WIMD2014</Name>
-          <Title/>
-          <Abstract/>
           <LegendURL width="133" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=WIMD2014_Community_Safety"/>
@@ -3428,8 +4776,6 @@ Uploaded 20150604</Abstract>
         <BoundingBox CRS="EPSG:27700" minx="146611.8" miny="164586.3" maxx="355312.812" maxy="395984.4"/>
         <Style>
           <Name>WG_INSPIRE_WIMD2014</Name>
-          <Title/>
-          <Abstract/>
           <LegendURL width="133" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=WIMD2014_Education"/>
@@ -3456,8 +4802,6 @@ Uploaded 20150604</Abstract>
         <BoundingBox CRS="EPSG:27700" minx="146611.8" miny="164586.3" maxx="355312.812" maxy="395984.4"/>
         <Style>
           <Name>WG_INSPIRE_WIMD2014</Name>
-          <Title/>
-          <Abstract/>
           <LegendURL width="133" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=WIMD2014_Employment"/>
@@ -3484,8 +4828,6 @@ Uploaded 20150604</Abstract>
         <BoundingBox CRS="EPSG:27700" minx="146611.8" miny="164586.3" maxx="355312.812" maxy="395984.4"/>
         <Style>
           <Name>WG_INSPIRE_WIMD2014</Name>
-          <Title/>
-          <Abstract/>
           <LegendURL width="133" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=WIMD2014_Health"/>
@@ -3512,8 +4854,6 @@ Uploaded 20150604</Abstract>
         <BoundingBox CRS="EPSG:27700" minx="146611.8" miny="164586.3" maxx="355312.812" maxy="395984.4"/>
         <Style>
           <Name>WG_INSPIRE_WIMD2014</Name>
-          <Title/>
-          <Abstract/>
           <LegendURL width="133" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=WIMD2014_Housing"/>
@@ -3540,8 +4880,6 @@ Uploaded 20150604</Abstract>
         <BoundingBox CRS="EPSG:27700" minx="146611.8" miny="164586.3" maxx="355312.812" maxy="395984.4"/>
         <Style>
           <Name>WG_INSPIRE_WIMD2014</Name>
-          <Title/>
-          <Abstract/>
           <LegendURL width="133" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=WIMD2014_Income"/>
@@ -3568,8 +4906,6 @@ Uploaded 20150604</Abstract>
         <BoundingBox CRS="EPSG:27700" minx="146611.8" miny="164586.3" maxx="355312.812" maxy="395984.4"/>
         <Style>
           <Name>WG_INSPIRE_WIMD2014</Name>
-          <Title/>
-          <Abstract/>
           <LegendURL width="133" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=WIMD2014_Overall"/>
@@ -3596,67 +4932,11 @@ Uploaded 20150604</Abstract>
         <BoundingBox CRS="EPSG:27700" minx="146611.8" miny="164586.3" maxx="355312.812" maxy="395984.4"/>
         <Style>
           <Name>WG_INSPIRE_WIMD2014</Name>
-          <Title/>
-          <Abstract/>
           <LegendURL width="133" height="100">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=WIMD2014_Physical_Environment"/>
           </LegendURL>
         </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>world_heritage_sites</Name>
-        <Title>World Heritage Sites</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>features</Keyword>
-          <Keyword>World_Heritage_Sites</Keyword>
-        </KeywordList>
-        <CRS>EPSG:27700</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-4.285635058636589</westBoundLongitude>
-          <eastBoundLongitude>-3.01740020369409</eastBoundLongitude>
-          <southBoundLatitude>51.730475320107054</southBoundLatitude>
-          <northBoundLatitude>53.29219529737841</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-4.285635058636589" miny="51.730475320107054" maxx="-3.01740020369409" maxy="53.29219529737841"/>
-        <BoundingBox CRS="EPSG:27700" minx="247690.70125208874" miny="205834.38977404914" maxx="329857.0720266894" maxy="377766.254789631"/>
-        <Style>
-          <Name>World Heritage</Name>
-          <Title>Default Polygon</Title>
-          <Abstract>A styled polygon</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=world_heritage_sites"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer>
-        <Name>https:</Name>
-        <Title>https:</Title>
-        <Layer queryable="0" opaque="0" cascaded="1">
-          <Name>BGS250k.SBS</Name>
-          <Title>Offshore 1:250 000 scale sea bed sediment</Title>
-          <Abstract>1:250 000 scale offshore geological map in the UTM series (Universal Transverse Mercator projection) - Offshore sea-bed sediments (DigSBS250).</Abstract>
-          <KeywordList>
-            <Keyword>Geology</Keyword>
-            <Keyword>Marine</Keyword>
-            <Keyword>Offshore</Keyword>
-            <Keyword>Sea-bed</Keyword>
-            <Keyword>Sediment</Keyword>
-          </KeywordList>
-          <CRS>EPSG:3857</CRS>
-          <CRS>CRS:84</CRS>
-          <EX_GeographicBoundingBox>
-            <westBoundLongitude>-10.583452</westBoundLongitude>
-            <eastBoundLongitude>3.9979</eastBoundLongitude>
-            <southBoundLatitude>48.236998</southBoundLatitude>
-            <northBoundLatitude>63.890408</northBoundLatitude>
-          </EX_GeographicBoundingBox>
-          <BoundingBox CRS="CRS:84" minx="-10.583452" miny="48.236998" maxx="3.9979" maxy="63.890408"/>
-          <BoundingBox CRS="EPSG:3857" minx="-2671667.778994" miny="6106854.834952" maxx="445277.963195" maxy="9349764.174122"/>
-        </Layer>
       </Layer>
     </Layer>
   </Capability>

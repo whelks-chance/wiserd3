@@ -202,7 +202,6 @@ $(document).ready(function () {
         picker_target.attr('data-icon_fa', e.iconpickerValue);
     });
 
-
 });
 
 function do_mapmydata_tutorial_1() {

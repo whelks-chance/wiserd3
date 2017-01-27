@@ -359,8 +359,8 @@ def map_search(request):
     print layer_uuids, type(layer_uuids)
 
     wms_layers = {}
-    try:
-        for layer in settings.WMS_LAYERS:
+    for layer in settings.WMS_LAYERS:
+        try:
             filename = os.path.join(settings.BASE_DIR, os.path.join('dataportal3', os.path.join('static', layer['filename'])))
             print filename
             capabilities = open(filename, 'r').read()
@@ -374,8 +374,8 @@ def map_search(request):
                 })
             wms_layers[layer['url_wms']] = b
 
-    except Exception as e9832478:
-        print e9832478
+        except Exception as e9832478:
+            print type(e9832478), e9832478
 
     surveys = request.GET.getlist('surveys', [])
     boundaries = request.GET.getlist('boundary', [])

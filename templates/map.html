@@ -113,6 +113,9 @@
     <script src="{% static 'fontawesome-iconpicker-1.2.2/dist/js/fontawesome-iconpicker.js' %}"></script>
     <link href="{% static 'fontawesome-iconpicker-1.2.2/dist/css/fontawesome-iconpicker.min.css' %}" rel="stylesheet">
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.4.1/list.min.js"></script>
+
+
     <style>
         .navbar
         {
@@ -176,58 +179,70 @@
         {#        </li>#}
     {% endif %}
     {% if not naw %}
-        <li id="map_layers_menu_li">
-            <a href="#" id="map_layers_menu_link">
-                <i class="fa fa-map-o fa-fw"></i> {% trans 'Map layers' %}<span class="fa arrow"></span>
-            </a>
-            <ul class="nav nav-ul nav-second-level">
-                <li>
-                    <a id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> {% trans 'Remote Data' %}</a>
+        {#        <li id="map_layers_menu_li">#}
+        {#            <a href="#" id="map_layers_menu_link">#}
+        {#                <i class="fa fa-map-o fa-fw"></i> {% trans 'Map layers' %}<span class="fa arrow"></span>#}
+        {#            </a>#}
+        {#            <ul class="nav nav-ul nav-second-level">#}
+        <li>
+            <a id="new_layer_btn" href="#"><i class="fa fa-feed fa-fw"></i> {% trans 'Remote Data' %}</a>
 
-                    {#                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>#}
-                    {#                <ul aria-expanded="false" class="nav nav-third-level collapse">#}
-                    {#                    <li>#}
-                    {#                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>#}
-                    {#                    </li>#}
-                    {#                </ul>#}
-                </li>
-                <li>
-                    <a id="import_local_data_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> {% trans 'MapMyData' %}</a>
-                </li>
-                <li>
-                    <a href="#"> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>
-                    <ul class="nav nav-ul nav-third-level scrollable_ul">
-                        {% for wms_url, wms_layer_set in wms_layers.items %}
-                            {% for wms_layer in wms_layer_set %}
-                                <li>
-                                    <a href="#" data-layer_name="{{ wms_layer.tile_name }}" data-layer_url="{{ wms_url }}" class="wms_toggle">
-                                        <i class="fa fa-map-marker fa-fw"></i> {{ wms_layer.name }}</a>
-                                </li>
-                            {% endfor %}
-                        {% endfor %}
-                    </ul>
-                </li>
+            {#                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>#}
+            {#                <ul aria-expanded="false" class="nav nav-third-level collapse">#}
+            {#                    <li>#}
+            {#                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>#}
+            {#                    </li>#}
+            {#                </ul>#}
+        </li>
+        <li>
+            <a id="import_local_data_btn" href="#"><i class="fa fa-file-excel-o fa-fw"></i> {% trans 'MapMyData' %}</a>
+        </li>
+{#        <li>#}
+{#            <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>#}
+{#            <ul class="nav nav-ul nav-third-level scrollable_ul">#}
+{#                {% for wms_url, wms_layer_set in wms_layers.items %}#}
+{#                    {% for wms_layer in wms_layer_set %}#}
+{#                        <li>#}
+{#                            <a href="#" data-layer_name="{{ wms_layer.tile_name }}" data-layer_url="{{ wms_url }}" class="wms_toggle">#}
+{#                                <i class="fa fa-map-marker fa-fw"></i> {{ wms_layer.name }}</a>#}
+{#                        </li>#}
+{#                    {% endfor %}#}
+{#                {% endfor %}#}
+{#            </ul>#}
+{#        </li>#}
 
-                <li>
-                    <a href="#"> {% trans 'WISERD Knowing Localities Research' %}<span class="fa arrow"></span></a>
-                    <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
-                        {% for upload_layer in upload_layers %}
-                            <li>
-                                <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">
-                                    <i class="fa fa-map-marker fa-fw"></i> {{ upload_layer.display_name }}</a>
-                            </li>
-                        {% endfor %}
+        <li>
+            <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>
 
-                        {% for wiserd_layer in wiserd_layers %}
-                            <li>
-                                <a href="#" data-layer_name="{{ wiserd_layer.table_name }}" class="wiserd_layer_toggle">
-                                    <i class="fa fa-map-marker fa-fw"></i> {{ wiserd_layer.display_name }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
+
+            <ul id="lle_wms" class="nav nav-ul nav-third-level scrollable_ul">
+                <input class="lle_search search" placeholder="Search" />
+
+                <ul class="list nav nav-ul"></ul>
+            </ul>
+
+        </li>
+
+        <li>
+            <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'WISERD Knowing Localities Research' %}<span class="fa arrow"></span></a>
+            <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
+                {% for upload_layer in upload_layers %}
+                    <li>
+                        <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">
+                            <i class="fa fa-map-marker fa-fw"></i> {{ upload_layer.display_name }}</a>
+                    </li>
+                {% endfor %}
+
+                {% for wiserd_layer in wiserd_layers %}
+                    <li>
+                        <a href="#" data-layer_name="{{ wiserd_layer.table_name }}" class="wiserd_layer_toggle">
+                            <i class="fa fa-map-marker fa-fw"></i> {{ wiserd_layer.display_name }}</a>
+                    </li>
+                {% endfor %}
             </ul>
         </li>
+        {#            </ul>#}
+        {#        </li>#}
     {% endif %}
 {% endblock %}
 
@@ -1254,17 +1269,17 @@
                         var layer = e.target;
 
                         if(isNaN(layer.feature.properties.REMOTE_VALUE)) {
-{#                            console.log('icon item remote value ' + layer.feature.properties.REMOTE_VALUE);#}
+                            {#                            console.log('icon item remote value ' + layer.feature.properties.REMOTE_VALUE);#}
                         }
 
                         if (layer._icon) {
                             var col = getColorFromString(layer.feature.properties.REMOTE_VALUE);
                             var adv_col = '#' + ('000000' + (('0xffffff' ^ col.replace('#', '0x')).toString(16))).slice(-6);
 
-{#                            console.log(col + ' ' + adv_col);#}
+                            {#                            console.log(col + ' ' + adv_col);#}
                             layer._icon.style.backgroundColor = col;
                             layer._icon.style.color = adv_col;
-{#                            layer._icon.style.border = 'red solid 2px';#}
+                            {#                            layer._icon.style.border = 'red solid 2px';#}
 
                         }
 
@@ -3213,6 +3228,46 @@
 
 
 
+            $.ajax({
+                url: "{% static 'lle.json' %}",
+                type: 'GET',
+                data: {},
+                crossDomain: true,
+                dataType: 'json',
+                success: function (data) {
+
+                    console.log(data);
+
+                    var options = {
+                        valueNames: [ 'name',
+                            { name: 'tile_name', attr: 'data-layer_name'},
+                            { name: 'source', attr: 'data-layer_url'
+                            },
+                            { name: 'legend_img', attr: 'data-legend_img'
+                            }
+                        ],
+
+                        item: '<li><a href="#" class="wms_toggle lle_flex tile_name source legend_img"><i class="fa fa-map-marker fa-fw"></i><p class="name"></p></a></li>'
+
+                    };
+
+                    var userList = new List('lle_wms', options, data);
+                    $('.wms_toggle').click(function () {
+                        toggle_layer(this)
+                    });
+
+                },
+                error: function () {
+                    alert('Sorry, an error occurred. Please try again, or report it.')
+                },
+                complete: function () {
+                }
+            });
+
+
+
+
+
         });
 
 
@@ -3474,7 +3529,7 @@
         >
 
             <table
-                    class="table table-striped table-bordered table-hover" id="remote_results_table"
+                    class="table table-striped table-bordered table-hover responsive" id="remote_results_table"
             >
                 <thead id="remote_results_thead">
                 <tr>

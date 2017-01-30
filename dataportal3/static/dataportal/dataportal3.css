@@ -59,7 +59,7 @@
 }
 
 .lle_search {
-    padding-left: 52px;
+    padding-left: 64px;
 }
 
 #remote_results_tbody > tr > td {
@@ -201,7 +201,8 @@
 }
 
 .scrollable_ul {
-    max-height: 15em;
+    margin-top: 3px;
+    max-height: 25em;
     overflow-y: auto;
     overflow-x: hidden;
 }

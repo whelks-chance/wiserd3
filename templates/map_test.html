@@ -19,16 +19,18 @@
     <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
 
+    <script type="text/javascript" src="{% static 'Leaflet-WFST/Leaflet-WFST.src.js' %}"></script>
+
     <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script><!-- proj4js -->
-    <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script><!-- proj4leaflet -->
+    {#    <script src="https://rawgithub.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script><!-- proj4leaflet -->#}
+    <script src="{% static 'proj4leaflet/proj4leaflet.js' %}"></script>
     <script src="https://rawgithub.com/rob-murray/os-leaflet/master/OSOpenSpace.js"></script><!-- OS OpenSpace layer -->
 
-{#    <script src='http://aebadirad.github.io/Leaflet.AutoLayers/src/leaflet-autolayers.js'></script>#}
-{#    <link rel="stylesheet" type="text/css" href="http://aebadirad.github.io/Leaflet.AutoLayers/example/css/leaflet.auto-layers.css"/>#}
+    {#    <script src='http://aebadirad.github.io/Leaflet.AutoLayers/src/leaflet-autolayers.js'></script>#}
+    {#    <link rel="stylesheet" type="text/css" href="http://aebadirad.github.io/Leaflet.AutoLayers/example/css/leaflet.auto-layers.css"/>#}
 
     <script type="text/javascript" src="{% static 'leaflet-autolayers/leaflet-autolayers.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'leaflet-autolayers/leaflet.auto-layers.css' %}" />
-
     <style>
         .test_fa_btn {
             border: 1px solid gray;
@@ -55,6 +57,9 @@
         $(document).ready(function () {
 
             proj4.defs('EPSG:27700', '+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +datum=OSGB36 +units=m +no_defs');
+
+            var epsg27700 = new L.Proj.CRS("EPSG:27700","+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 +units=m +no_defs");
+
 
             var map = L.map('map_div',
                     {
@@ -86,7 +91,7 @@
 
             try {
                 // Throw an error if we know this will fail later
-{#                do_default_vars_check();#}
+                {#                do_default_vars_check();#}
                 var layerControl = L.control.autolayers(autolayers_config).addTo(map);
             } catch (Exception) {
                 var layerControl = L.control.layers({'OpenStreetMap': openstreetmap}, []).addTo(map);
@@ -246,7 +251,7 @@
                 });
             }
 
-            do_font_awesome();
+            {#            do_font_awesome();#}
 
             {#            add_council_data(cardiff_data_url);#}
             {#            add_council_data(vale_data_url);#}
@@ -339,30 +344,59 @@
             output.appendChild(newContent);
 
 
-            $.ajax({
-                url: "{% static 'big.geojson' %}",
-                type: 'GET',
-                data: {},
-                crossDomain: true,
-                dataType: 'json',
-                success: function (data) {
-{#                    console.log(data);#}
-{#                    alert(data.length);#}
-                    for (var feature_idx in data['features']) {
-{#                        console.log(data['features'][feature_idx]);#}
+            function do_big(){
+                $.ajax({
+                    url: "{% static 'big.geojson' %}",
+                    type: 'GET',
+                    data: {},
+                    crossDomain: true,
+                    dataType: 'json',
+                    success: function (data) {
+                        {#                    console.log(data);#}
+                        {#                    alert(data.length);#}
+                        for (var feature_idx in data['features']) {
+                            {#                        console.log(data['features'][feature_idx]);#}
 
-                        add_geojson(data['features'][feature_idx], 'nw');
+                            add_geojson(data['features'][feature_idx], 'nw');
+                        }
+                        {#                    add_geojson(data, 'nw');#}
+
+
+                    },
+                    error: function () {
+                        alert('Sorry, an error occurred. Please try again, or report it.')
+                    },
+                    complete: function () {
                     }
-                    {#                    add_geojson(data, 'nw');#}
+                });
+            }
+            {#            do_big();#}
 
 
-                },
-                error: function () {
-                    alert('Sorry, an error occurred. Please try again, or report it.')
-                },
-                complete: function () {
+            var wfst = new L.WFST({
+                url: 'http://lle.gov.wales/services/inspire-nrw/wms?',
+                typeNS: 'inspire-nrw',
+                typeName: 'Areas_Affecting_Bathing_Waters',
+                geometryField: 'fme_geometry',
+                crs: epsg27700,
+                style: {
+                    color: 'blue',
+                    weight: 2
                 }
+            }).addTo(map).once('load', function () {
+                map.fitBounds(wfst);
             });
+
+            var popup = new L.Popup();
+            wfst.on('click', function(e){
+                console.log('click');
+                console.log(e.layer.feature);
+
+                popup.setLatLng(e.latlng)
+                        .setContent('You clicked at '+ JSON.stringify(e.layer.feature))
+                        .openOn(map);
+            });
+
 
         });
     </script>

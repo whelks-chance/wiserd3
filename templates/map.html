@@ -115,6 +115,7 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.4.1/list.min.js"></script>
 
+    <script type="text/javascript" src="{% static 'Leaflet-WFST/Leaflet-WFST.src.js' %}"></script>
 
     <style>
         .navbar
@@ -197,28 +198,29 @@
         <li>
             <a id="import_local_data_btn" href="#"><i class="fa fa-file-excel-o fa-fw"></i> {% trans 'MapMyData' %}</a>
         </li>
-{#        <li>#}
-{#            <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>#}
-{#            <ul class="nav nav-ul nav-third-level scrollable_ul">#}
-{#                {% for wms_url, wms_layer_set in wms_layers.items %}#}
-{#                    {% for wms_layer in wms_layer_set %}#}
-{#                        <li>#}
-{#                            <a href="#" data-layer_name="{{ wms_layer.tile_name }}" data-layer_url="{{ wms_url }}" class="wms_toggle">#}
-{#                                <i class="fa fa-map-marker fa-fw"></i> {{ wms_layer.name }}</a>#}
-{#                        </li>#}
-{#                    {% endfor %}#}
-{#                {% endfor %}#}
-{#            </ul>#}
-{#        </li>#}
+        {#        <li>#}
+        {#            <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>#}
+        {#            <ul class="nav nav-ul nav-third-level scrollable_ul">#}
+        {#                {% for wms_url, wms_layer_set in wms_layers.items %}#}
+        {#                    {% for wms_layer in wms_layer_set %}#}
+        {#                        <li>#}
+        {#                            <a href="#" data-layer_name="{{ wms_layer.tile_name }}" data-layer_url="{{ wms_url }}" class="wms_toggle">#}
+        {#                                <i class="fa fa-map-marker fa-fw"></i> {{ wms_layer.name }}</a>#}
+        {#                        </li>#}
+        {#                    {% endfor %}#}
+        {#                {% endfor %}#}
+        {#            </ul>#}
+        {#        </li>#}
 
         <li>
             <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>
 
 
-            <ul id="lle_wms" class="nav nav-ul nav-third-level scrollable_ul">
-                <input class="lle_search search" placeholder="Search" />
-
-                <ul class="list nav nav-ul"></ul>
+            <ul id="lle_wms" class="nav nav-ul nav-third-level">
+                <li>
+                    <input class="lle_search search" placeholder="Search" />
+                </li>
+                <ul class="list nav nav-ul scrollable_ul"></ul>
             </ul>
 
         </li>
@@ -329,6 +331,9 @@
         };
 
         $(document).ready(function () {
+            var epsg27700 = new L.Proj.CRS("EPSG:27700","+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 +units=m +no_defs");
+
+
             var hide_right_sidebar_btn = $('#hide_right_sidebar');
             var show_right_sidebar_btn = $('#show_right_sidebar');
             show_right_sidebar_btn.hide();
@@ -375,8 +380,9 @@
                     map.removeLayer(wms_layers[btn_layer_name]);
                     delete wms_layers[btn_layer_name];
                 } else {
-                    $(toggle_button).addClass('wms_layer_active');
                     var btn_layer_url = $(toggle_button).data('layer_url');
+
+                    $(toggle_button).addClass('wms_layer_active');
                     var legend_url = $(toggle_button).data('legend_img');
                     if (legend_url) {
                         addLegend(btn_layer_name + '_' + get_next_uid(), btn_layer_name, '<img src="' + legend_url + '" style="width:100%; max-width:10em !important">', '');
@@ -391,8 +397,43 @@
                     });
                     wms_layers[btn_layer_name] = inspire;
                     layerControl.addOverlay(inspire, btn_layer_name);
-
                     inspire.addTo(map);
+
+
+                    try {
+                        var wfs = $(toggle_button).data('wfs');
+                        if (wfs) {
+                            var wfst = new L.WFST({
+                                url: btn_layer_url,
+                                typeNS: 'inspire-nrw',
+                                typeName: btn_layer_name,
+                                geometryField: 'fme_geometry',
+                                crs: epsg27700,
+                                style: {
+                                    color: 'blue',
+                                    weight: 2
+                                }
+                            }).addTo(map).once('load', function () {
+                                map.fitBounds(wfst);
+                            });
+                            layerControl.addOverlay(wfst, btn_layer_name);
+
+                            var popup = new L.Popup();
+                            wfst.on('click', function (e) {
+                                console.log('click');
+                                console.log(e.layer.feature);
+
+                                 var right_pane = $('#right-component1');
+                    right_pane.html('<pre id="lle_json">' + JSON.stringify(e.layer.feature, null, 2) + '</pre>');
+
+{#                                popup.setLatLng(e.latlng).setContent('You clicked at ' + JSON.stringify(e.layer.feature)).openOn(map);#}
+                            });
+                        }
+                    }catch (e){
+                        console.log(e);
+                    }
+
+
                 }
             }
 
@@ -3251,7 +3292,7 @@
                             }
                         ],
 
-                        item: '<li><a href="#" class="wms_toggle lle_flex tile_name source legend_img"><i class="fa fa-map-marker fa-fw"></i><p class="name"></p></a></li>'
+                        item: '<li><a href="#" data-wfs="true" class="wms_toggle lle_flex tile_name source legend_img"><i class="fa fa-map-marker fa-fw"></i><p class="name"></p></a></li>'
 
                     };
 

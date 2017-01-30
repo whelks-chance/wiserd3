@@ -71,6 +71,7 @@ function getValue(id){
     var div = document.getElementById(id);
     div.style.height = '1em';
     em = div.offsetHeight;
+    // console.log(em);
 }
 
 $(document).ready(function() {

@@ -797,7 +797,9 @@ var calcDataTableHeight = function() {
 };
 
 function urlify(text) {
-    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    // var urlRegex = /(https?:\/\/[^\s]+)/g;
+    var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+
     return text.replace(urlRegex, function(url) {
         return '<a target="_blank" href="' + url + '">' + url + '</a><br>';
     });

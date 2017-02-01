@@ -342,18 +342,23 @@ WMS_LAYERS = [
         'name': 'Inspire Wales',
         'url': 'http://inspire.wales.gov.uk/maps/wms?request=getCapabilities&version=1.3.0',
         'url_wms': 'http://inspire.wales.gov.uk/maps/wms',
+        'namespace': '',
         'filename': 'inspire_wales_wms.xml'
     },
     {
         'name': 'LLE Inspire NRW Wales',
         'url': 'http://lle.gov.wales/services/inspire-nrw/wms?request=getCapabilities',
         'url_wms': 'http://lle.gov.wales/services/inspire-nrw/wms',
+        'wfs_namespace': 'inspire-nrw',
+        'wfs_geometry_field': ['GEOM', 'fme_geometry', 'geom', 'OBJECTID', 'geodb_oid'],
         'filename': 'lle_inspire_nrw_wales_wms.xml'
     },
     {
         'name': 'LLE Inspire WG Wales',
         'url': 'http://lle.wales.gov.uk/services/inspire-wg/wms?request=getCapabilities',
         'url_wms': 'http://lle.wales.gov.uk/services/inspire-wg/wms',
+        'wfs_namespace': 'inspire-wg',
+        'wfs_geometry_field': ['geom'],
         'filename': 'lle_inspire_wg_wales_wms.xml'
     },
 ]

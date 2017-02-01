@@ -1,1887 +1,3668 @@
 [
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "CADW - World Heritage Sites (combined)", 
         "tile_name": "cadw_world_heritage_sites_combined"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Areas Affecting Bathing Waters", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Areas_Affecting_Bathing_Waters", 
-        "tile_name": "Areas_Affecting_Bathing_Waters"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Areas Affecting Bathing Waters", 
+        "tile_name": "Areas_Affecting_Bathing_Waters", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Biogenetic Reserves", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=biogenetic_reserves", 
-        "tile_name": "biogenetic_reserves"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Biogenetic Reserves", 
+        "tile_name": "biogenetic_reserves", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Catchment Abstraction Management Strategy (CAMS) Reference Boundaries", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=CatchmentAbstractionManagementStrategyCAMSReferenceBoundaries", 
-        "tile_name": "CatchmentAbstractionManagementStrategyCAMSReferenceBoundaries"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Catchment Abstraction Management Strategy (CAMS) Reference Boundaries", 
+        "tile_name": "CatchmentAbstractionManagementStrategyCAMSReferenceBoundaries", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Country Park", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=country_park", 
-        "tile_name": "country_park"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Country Park", 
+        "tile_name": "country_park", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "EU Bathing Water Compliance", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=EUBathingWaterCompliance", 
-        "tile_name": "EUBathingWaterCompliance"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "EU Bathing Water Compliance", 
+        "tile_name": "EUBathingWaterCompliance", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Better Woods for Wales", 
         "tile_name": "fcproduct_w_bww"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Forestry CROW access land", 
         "tile_name": "fcproduct_w_crow_access_land"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Dedicated Woodlands", 
         "tile_name": "fcproduct_w_dedication"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Felling Licence Applications", 
         "tile_name": "fcproduct_w_fla"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Woodland Grant Scheme 1", 
         "tile_name": "fcproduct_w_wgs1"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Woodland Grant Scheme 2", 
         "tile_name": "fcproduct_w_wgs2"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Woodland Grant Scheme 3", 
         "tile_name": "fcproduct_w_wgs3"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Areas closed to Scalloping", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_CLOSED_SCALLOP_FISHING", 
-        "tile_name": "FISHMAPMON_CLOSED_SCALLOP_FISHING"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Areas closed to Scalloping", 
+        "tile_name": "FISHMAPMON_CLOSED_SCALLOP_FISHING", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - Casual Hand Gathering", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_CAS_HAND_GATHER", 
-        "tile_name": "FISHMAPMON_INTENSITY_CAS_HAND_GATHER"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - Casual Hand Gathering", 
+        "tile_name": "FISHMAPMON_INTENSITY_CAS_HAND_GATHER", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - King Scallops", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_KING_SCALLOPS", 
-        "tile_name": "FISHMAPMON_INTENSITY_KING_SCALLOPS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - King Scallops", 
+        "tile_name": "FISHMAPMON_INTENSITY_KING_SCALLOPS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - Light Otter Trawl", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_LOT", 
-        "tile_name": "FISHMAPMON_INTENSITY_LOT"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - Light Otter Trawl", 
+        "tile_name": "FISHMAPMON_INTENSITY_LOT", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - Mussel Seed Dredging", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_MUSSELS", 
-        "tile_name": "FISHMAPMON_INTENSITY_MUSSELS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - Mussel Seed Dredging", 
+        "tile_name": "FISHMAPMON_INTENSITY_MUSSELS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - Netting", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_NETS", 
-        "tile_name": "FISHMAPMON_INTENSITY_NETS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - Netting", 
+        "tile_name": "FISHMAPMON_INTENSITY_NETS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - Potting, Commercial", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_POTS_COMMERCIAL", 
-        "tile_name": "FISHMAPMON_INTENSITY_POTS_COMMERCIAL"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - Potting, Commercial", 
+        "tile_name": "FISHMAPMON_INTENSITY_POTS_COMMERCIAL", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - Potting, Non Commercial", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_POTS_NON_COMMERCIAL", 
-        "tile_name": "FISHMAPMON_INTENSITY_POTS_NON_COMMERCIAL"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - Potting, Non Commercial", 
+        "tile_name": "FISHMAPMON_INTENSITY_POTS_NON_COMMERCIAL", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - Potting, Combined", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_POTTING_COMBINED", 
-        "tile_name": "FISHMAPMON_INTENSITY_POTTING_COMBINED"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - Potting, Combined", 
+        "tile_name": "FISHMAPMON_INTENSITY_POTTING_COMBINED", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - Hand Gathering,Professional", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_PRO_HAND_GATHER", 
-        "tile_name": "FISHMAPMON_INTENSITY_PRO_HAND_GATHER"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - Hand Gathering,Professional", 
+        "tile_name": "FISHMAPMON_INTENSITY_PRO_HAND_GATHER", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - Queen Scallops", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_QUEEN_SCALLOPS", 
-        "tile_name": "FISHMAPMON_INTENSITY_QUEEN_SCALLOPS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - Queen Scallops", 
+        "tile_name": "FISHMAPMON_INTENSITY_QUEEN_SCALLOPS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - RSA, Charter Boats", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_RSA_CHARTERBOATS", 
-        "tile_name": "FISHMAPMON_INTENSITY_RSA_CHARTERBOATS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - RSA, Charter Boats", 
+        "tile_name": "FISHMAPMON_INTENSITY_RSA_CHARTERBOATS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - RSA, Combined", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_RSA_COMBINED", 
-        "tile_name": "FISHMAPMON_INTENSITY_RSA_COMBINED"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - RSA, Combined", 
+        "tile_name": "FISHMAPMON_INTENSITY_RSA_COMBINED", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - RSA, Non Charter Boats", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_RSA_NONCHARTER", 
-        "tile_name": "FISHMAPMON_INTENSITY_RSA_NONCHARTER"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - RSA, Non Charter Boats", 
+        "tile_name": "FISHMAPMON_INTENSITY_RSA_NONCHARTER", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Intensity - RSA, Shore", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_INTENSITY_RSA_SHORE", 
-        "tile_name": "FISHMAPMON_INTENSITY_RSA_SHORE"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Intensity - RSA, Shore", 
+        "tile_name": "FISHMAPMON_INTENSITY_RSA_SHORE", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - Hand Gathering,Casual", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_CAS_HANDGATHER", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_CAS_HANDGATHER"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - Hand Gathering,Casual", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_CAS_HANDGATHER", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - King Scallops", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_KING_SCALLOPS", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_KING_SCALLOPS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - King Scallops", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_KING_SCALLOPS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - Light Otter Trawl", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_LOT", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_LOT"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - Light Otter Trawl", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_LOT", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - Mussel Seed Dredging", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_MUSSELS", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_MUSSELS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - Mussel Seed Dredging", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_MUSSELS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - Netting", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_NETTING", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_NETTING"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - Netting", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_NETTING", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - Potting, Combined", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_POTTING_COMBINED", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_POTTING_COMBINED"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - Potting, Combined", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_POTTING_COMBINED", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - Potting, Commercial", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_POTTING_COMMERCIAL", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_POTTING_COMMERCIAL"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - Potting, Commercial", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_POTTING_COMMERCIAL", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - Potting, Recreational", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_POTTING_RECREATIONAL", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_POTTING_RECREATIONAL"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - Potting, Recreational", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_POTTING_RECREATIONAL", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - Hand Gathering, Professional", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_PROHANDGATHER", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_PROHANDGATHER"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - Hand Gathering, Professional", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_PROHANDGATHER", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - Queen Scallops", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_QUEEN_SCALLOPS", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_QUEEN_SCALLOPS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - Queen Scallops", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_QUEEN_SCALLOPS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - RSA, Charter Boats", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_RSA_CHARTERBOATS", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_RSA_CHARTERBOATS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - RSA, Charter Boats", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_RSA_CHARTERBOATS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - RSA,  Combined", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_RSA_COMBINED", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_RSA_COMBINED"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - RSA,  Combined", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_RSA_COMBINED", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - RSA,  Commercial", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_RSA_COMMERCIAL", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_RSA_COMMERCIAL"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - RSA,  Commercial", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_RSA_COMMERCIAL", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - RSA, Non Charter Boats", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_RSA_NONCHARTERBOAT", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_RSA_NONCHARTERBOAT"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - RSA, Non Charter Boats", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_RSA_NONCHARTERBOAT", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "FishMapMon - Sensitivity - RSA, Shore", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=FISHMAPMON_SENSITIVITY_RSA_SHORE", 
-        "tile_name": "FISHMAPMON_SENSITIVITY_RSA_SHORE"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "FishMapMon - Sensitivity - RSA, Shore", 
+        "tile_name": "FISHMAPMON_SENSITIVITY_RSA_SHORE", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "FLOODMAP FLOOD DEFENCES", 
         "tile_name": "FLOODMAP_FLOOD_DEFENCES"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "GB Lakes Inventory (England &amp; Wales)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=GBLakesInventoryEnglandWales", 
-        "tile_name": "GBLakesInventoryEnglandWales"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "GB Lakes Inventory (England &amp; Wales)", 
+        "tile_name": "GBLakesInventoryEnglandWales", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Inventory of Closed Mining Waste Facilities", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=InventoryofClosedMiningWasteFacilities", 
-        "tile_name": "InventoryofClosedMiningWasteFacilities"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Inventory of Closed Mining Waste Facilities", 
+        "tile_name": "InventoryofClosedMiningWasteFacilities", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Local Nature Reserves", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=lnr", 
-        "tile_name": "lnr"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Local Nature Reserves", 
+        "tile_name": "lnr", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "MARINE CHARACTER AREAS", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=MARINE_CHARACTER_AREAS", 
-        "tile_name": "MARINE_CHARACTER_AREAS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "MARINE CHARACTER AREAS", 
+        "tile_name": "MARINE_CHARACTER_AREAS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Marine Nature Reserves", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=mnr", 
-        "tile_name": "mnr"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Marine Nature Reserves", 
+        "tile_name": "mnr", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "National Parks", 
         "tile_name": "national_parks"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "National Forest Estate Legal Boundary (Wales)", 
         "tile_name": "nfe_legal_boundary_wales"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "National Forest Estate Roads (Wales)", 
         "tile_name": "nfe_roads_wales"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "National Nature Reserves (declared)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=nnr_declared", 
-        "tile_name": "nnr_declared"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "National Nature Reserves (declared)", 
+        "tile_name": "nnr_declared", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Flood Risk Areas", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW+Flood+Risk+Areas", 
-        "tile_name": "NRW Flood Risk Areas"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Flood Risk Areas", 
+        "tile_name": "NRW Flood Risk Areas", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "WFD Acid Sensitive Waterbodies Cycle 2 (2016)", 
         "tile_name": "NRW_ACID_SENSITIVE_WB_CYCLE2_2016"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Ancient Woodland Inventory", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_ANCIENT_WOODLAND_INVENTORY_2011", 
-        "tile_name": "NRW_ANCIENT_WOODLAND_INVENTORY_2011"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Ancient Woodland Inventory", 
+        "tile_name": "NRW_ANCIENT_WOODLAND_INVENTORY_2011", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Areas of Outstanding Natural Beauty", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_AONB", 
-        "tile_name": "NRW_AONB"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Areas of Outstanding Natural Beauty", 
+        "tile_name": "NRW_AONB", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW AREAS", 
         "tile_name": "NRW_AREAS"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Biogenetic Reserve", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_BIOGENETIC_RESERVE", 
-        "tile_name": "NRW_BIOGENETIC_RESERVE"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Biogenetic Reserve", 
+        "tile_name": "NRW_BIOGENETIC_RESERVE", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Biospheric Reserve", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_BIOSPHERE", 
-        "tile_name": "NRW_BIOSPHERE"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Biospheric Reserve", 
+        "tile_name": "NRW_BIOSPHERE", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW BIOSPHERE vw", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_BIOSPHERE_vw", 
-        "tile_name": "NRW_BIOSPHERE_vw"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW BIOSPHERE vw", 
+        "tile_name": "NRW_BIOSPHERE_vw", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Broadscale Habitats - InterTidal", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_BS_HABITATS_INTERTIDAL", 
-        "tile_name": "NRW_BS_HABITATS_INTERTIDAL"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Broadscale Habitats - InterTidal", 
+        "tile_name": "NRW_BS_HABITATS_INTERTIDAL", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Broadscale Habitats - SubTidal", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_BS_HABITATS_SUBTIDAL", 
-        "tile_name": "NRW_BS_HABITATS_SUBTIDAL"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Broadscale Habitats - SubTidal", 
+        "tile_name": "NRW_BS_HABITATS_SUBTIDAL", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Better Woodlands for Wales Case Boundaries", 
         "tile_name": "NRW_BWW_CASE_BOUNDARIES"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW COMMON LAND 2014", 
         "tile_name": "NRW_COMMON_LAND_2014"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW CROW DEDICATED LAND", 
         "tile_name": "NRW_CROW_DEDICATED_LAND"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "National Forest Inventory Map (2012)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_FCGB_NFI_2012_Map", 
-        "tile_name": "NRW_FCGB_NFI_2012_Map"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "National Forest Inventory Map (2012)", 
+        "tile_name": "NRW_FCGB_NFI_2012_Map", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "National Inventory of Woodlands and Trees", 
         "tile_name": "NRW_FCGB_NIWT"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW FELLING LICENCE APPLICATIONS", 
         "tile_name": "NRW_FELLING_LICENCE_APPLICATIONS"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW FLOOD WARNING", 
         "tile_name": "NRW_FLOOD_WARNING"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW FLOOD WATCH AREAS", 
         "tile_name": "NRW_FLOOD_WATCH_AREAS"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW FLOODMAP AREAS BENEFIT DEFENCE", 
         "tile_name": "NRW_FLOODMAP_AREAS_BENEFIT_DEFENCE"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW FLOODMAP FLOOD STORAGE", 
         "tile_name": "NRW_FLOODMAP_FLOOD_STORAGE"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW FLOODMAP FLOOD ZONE 2", 
         "tile_name": "NRW_FLOODMAP_FLOOD_ZONE_2"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW FLOODMAP FLOOD ZONE 3", 
         "tile_name": "NRW_FLOODMAP_FLOOD_ZONE_3"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Flood Warning Areas", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_FloodWarningAreas", 
-        "tile_name": "NRW_FloodWarningAreas"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Flood Warning Areas", 
+        "tile_name": "NRW_FloodWarningAreas", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "National Forest Estate GB Legal Boundary", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_FORESTRY_LEGAL_V_GB", 
-        "tile_name": "NRW_FORESTRY_LEGAL_V_GB"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "National Forest Estate GB Legal Boundary", 
+        "tile_name": "NRW_FORESTRY_LEGAL_V_GB", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW FORESTRY OWNERSHIP GB", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_FORESTRY_OWNERSHIP_GB", 
-        "tile_name": "NRW_FORESTRY_OWNERSHIP_GB"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW FORESTRY OWNERSHIP GB", 
+        "tile_name": "NRW_FORESTRY_OWNERSHIP_GB", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "National Forest Estate Recreation Areas", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_GB_RECREATION_AREAS", 
-        "tile_name": "NRW_GB_RECREATION_AREAS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "National Forest Estate Recreation Areas", 
+        "tile_name": "NRW_GB_RECREATION_AREAS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "National Forest Estate Recreation Points", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_GB_RECREATION_POINTS", 
-        "tile_name": "NRW_GB_RECREATION_POINTS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "National Forest Estate Recreation Points", 
+        "tile_name": "NRW_GB_RECREATION_POINTS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "National Forest Estate Recreation Routes", 
         "tile_name": "NRW_GB_RECREATION_ROUTES"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Historic GQA Assessment (Biology)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_GQA_BIOLOGY", 
-        "tile_name": "NRW_GQA_BIOLOGY"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Historic GQA Assessment (Biology)", 
+        "tile_name": "NRW_GQA_BIOLOGY", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Heritage Coasts", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_HERITAGE_COAST", 
-        "tile_name": "NRW_HERITAGE_COAST"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Heritage Coasts", 
+        "tile_name": "NRW_HERITAGE_COAST", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW HISTORIC FLOODMAP", 
         "tile_name": "NRW_HISTORIC_FLOODMAP"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW LANDMAP CULTURAL LANDSCAPE", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_LANDMAP_CULTURAL_LANDSCAPE", 
-        "tile_name": "NRW_LANDMAP_CULTURAL_LANDSCAPE"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW LANDMAP CULTURAL LANDSCAPE", 
+        "tile_name": "NRW_LANDMAP_CULTURAL_LANDSCAPE", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW LANDMAP GEOLOGICAL LANDSCAPES", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_LANDMAP_GEOLOGICAL_LANDSCAPES", 
-        "tile_name": "NRW_LANDMAP_GEOLOGICAL_LANDSCAPES"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW LANDMAP GEOLOGICAL LANDSCAPES", 
+        "tile_name": "NRW_LANDMAP_GEOLOGICAL_LANDSCAPES", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW LANDMAP HISTORIC LANDSCAPE", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_LANDMAP_HISTORIC_LANDSCAPE", 
-        "tile_name": "NRW_LANDMAP_HISTORIC_LANDSCAPE"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW LANDMAP HISTORIC LANDSCAPE", 
+        "tile_name": "NRW_LANDMAP_HISTORIC_LANDSCAPE", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW LANDMAP LANDSCAPE HABITATS", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_LANDMAP_LANDSCAPE_HABITATS", 
-        "tile_name": "NRW_LANDMAP_LANDSCAPE_HABITATS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW LANDMAP LANDSCAPE HABITATS", 
+        "tile_name": "NRW_LANDMAP_LANDSCAPE_HABITATS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW LANDMAP VISUAL SENSORY", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_LANDMAP_VISUAL_SENSORY", 
-        "tile_name": "NRW_LANDMAP_VISUAL_SENSORY"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW LANDMAP VISUAL SENSORY", 
+        "tile_name": "NRW_LANDMAP_VISUAL_SENSORY", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Historic LiDAR Tile Archive Catalogue", 
         "tile_name": "NRW_LIDAR_ARCHIVE_TILE_CATALOGUE"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Local Nature Reserves", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_LNR", 
-        "tile_name": "NRW_LNR"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Local Nature Reserves", 
+        "tile_name": "NRW_LNR", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Main Rivers", 
         "tile_name": "NRW_MAIN_RIVERS"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Marine Character Areas", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_MARINE_CHARACTER_AREAS", 
-        "tile_name": "NRW_MARINE_CHARACTER_AREAS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Marine Character Areas", 
+        "tile_name": "NRW_MARINE_CHARACTER_AREAS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Marine Licence Applications", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_MARINE_LICENCE_APPLICATIONS", 
-        "tile_name": "NRW_MARINE_LICENCE_APPLICATIONS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Marine Licence Applications", 
+        "tile_name": "NRW_MARINE_LICENCE_APPLICATIONS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW MARINE LICENCE APPS", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_MARINE_LICENCE_APPS", 
-        "tile_name": "NRW_MARINE_LICENCE_APPS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW MARINE LICENCE APPS", 
+        "tile_name": "NRW_MARINE_LICENCE_APPS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Marine Disposal Sites", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_MARINE_LICENCE_DISPOSAL_SITES", 
-        "tile_name": "NRW_MARINE_LICENCE_DISPOSAL_SITES"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Marine Disposal Sites", 
+        "tile_name": "NRW_MARINE_LICENCE_DISPOSAL_SITES", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Marine Conservation Zone", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_MNR", 
-        "tile_name": "NRW_MNR"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Marine Conservation Zone", 
+        "tile_name": "NRW_MNR", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "National Forest Inventory Map (2014)", 
         "tile_name": "NRW_NAT_FOREST_INVENTORY_2014"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - National Parks", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_NATIONAL_PARK", 
-        "tile_name": "NRW_NATIONAL_PARK"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - National Parks", 
+        "tile_name": "NRW_NATIONAL_PARK", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "National Trails", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_NATIONAL_TRAIL", 
-        "tile_name": "NRW_NATIONAL_TRAIL"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "National Trails", 
+        "tile_name": "NRW_NATIONAL_TRAIL", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - National Nature Reserves", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_NNR", 
-        "tile_name": "NRW_NNR"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - National Nature Reserves", 
+        "tile_name": "NRW_NNR", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW OPEN COUNTRY 2014", 
         "tile_name": "NRW_OPEN_COUNTRY_2014"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW OTHER STATUTORY LAND 2014", 
         "tile_name": "NRW_OTHER_STATUTORY_LAND_2014"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW PH1 VEG VORONOI", 
         "tile_name": "NRW_PH1_VEG_VORONOI"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Grey Seal Pupping Haul Out Sites", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_PUPPING_HAUL_OUT_SEALS_5KM", 
-        "tile_name": "NRW_PUPPING_HAUL_OUT_SEALS_5KM"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Grey Seal Pupping Haul Out Sites", 
+        "tile_name": "NRW_PUPPING_HAUL_OUT_SEALS_5KM", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Ramsar", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_RAMSAR", 
-        "tile_name": "NRW_RAMSAR"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Ramsar", 
+        "tile_name": "NRW_RAMSAR", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW RECORDED FLOOD OUTLINES", 
         "tile_name": "NRW_RECORDED_FLOOD_OUTLINES"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW RISK FLOODING RIVER SEA", 
         "tile_name": "NRW_RISK_FLOODING_RIVER_SEA"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "nrw river body management areas", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=nrw_river_body_management_areas", 
-        "tile_name": "nrw_river_body_management_areas"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "nrw river body management areas", 
+        "tile_name": "nrw_river_body_management_areas", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Special Areas of Conservation", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC", 
-        "tile_name": "NRW_SAC"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Special Areas of Conservation", 
+        "tile_name": "NRW_SAC", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Article 17 SAC Habitat Features  - Estuaries", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC_HAB_ESTUARIES_ART17", 
-        "tile_name": "NRW_SAC_HAB_ESTUARIES_ART17"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Article 17 SAC Habitat Features  - Estuaries", 
+        "tile_name": "NRW_SAC_HAB_ESTUARIES_ART17", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Article 17 SAC Habitat Features - Intertidal Reefs", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC_HAB_INTERTIDAL_REEFS_ART17", 
-        "tile_name": "NRW_SAC_HAB_INTERTIDAL_REEFS_ART17"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Article 17 SAC Habitat Features - Intertidal Reefs", 
+        "tile_name": "NRW_SAC_HAB_INTERTIDAL_REEFS_ART17", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Article 17 SAC Habitat Features  - Large Shallow Inlets and Bays", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC_HAB_LSI_AND_BAYS_ART17", 
-        "tile_name": "NRW_SAC_HAB_LSI_AND_BAYS_ART17"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Article 17 SAC Habitat Features  - Large Shallow Inlets and Bays", 
+        "tile_name": "NRW_SAC_HAB_LSI_AND_BAYS_ART17", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Article 17 SAC Habitat Features  - Methane Derived Authigenic Clays", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC_HAB_MDAC_ART17", 
-        "tile_name": "NRW_SAC_HAB_MDAC_ART17"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Article 17 SAC Habitat Features  - Methane Derived Authigenic Clays", 
+        "tile_name": "NRW_SAC_HAB_MDAC_ART17", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Article 17 SAC Habitat Features  - Mudflats and Sandflats", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC_HAB_MUDFLATS_AND_SANDFLATS_ART17", 
-        "tile_name": "NRW_SAC_HAB_MUDFLATS_AND_SANDFLATS_ART17"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Article 17 SAC Habitat Features  - Mudflats and Sandflats", 
+        "tile_name": "NRW_SAC_HAB_MUDFLATS_AND_SANDFLATS_ART17", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Article 17 SAC Habitat Features  - Saline Lagoons", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC_HAB_SALINE_LAGOONS_ART17", 
-        "tile_name": "NRW_SAC_HAB_SALINE_LAGOONS_ART17"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Article 17 SAC Habitat Features  - Saline Lagoons", 
+        "tile_name": "NRW_SAC_HAB_SALINE_LAGOONS_ART17", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Article 17 SAC Habitat Features  - Sandbanks", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC_HAB_SANDBANKS_ART17", 
-        "tile_name": "NRW_SAC_HAB_SANDBANKS_ART17"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Article 17 SAC Habitat Features  - Sandbanks", 
+        "tile_name": "NRW_SAC_HAB_SANDBANKS_ART17", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Article 17 SAC Habitat Features  - Sea Caves (Points)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC_HAB_SEACAVES_POINTS_ART17", 
-        "tile_name": "NRW_SAC_HAB_SEACAVES_POINTS_ART17"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Article 17 SAC Habitat Features  - Sea Caves (Points)", 
+        "tile_name": "NRW_SAC_HAB_SEACAVES_POINTS_ART17", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Article 17 SAC Habitat Features  - Sea Caves (Lines)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC_HAB_SEACAVES_POLYLINES_ART17", 
-        "tile_name": "NRW_SAC_HAB_SEACAVES_POLYLINES_ART17"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Article 17 SAC Habitat Features  - Sea Caves (Lines)", 
+        "tile_name": "NRW_SAC_HAB_SEACAVES_POLYLINES_ART17", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Article 17 SAC Habitat Features  - Subtidal Reefs (Points)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC_HAB_SUBTIDAL_REEF_POINTS_ART17", 
-        "tile_name": "NRW_SAC_HAB_SUBTIDAL_REEF_POINTS_ART17"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Article 17 SAC Habitat Features  - Subtidal Reefs (Points)", 
+        "tile_name": "NRW_SAC_HAB_SUBTIDAL_REEF_POINTS_ART17", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Article 17 SAC Habitat Features  - Subtidal Reefs (Polygons)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SAC_HAB_SUBTIDAL_REEF_POLYGON_ART17", 
-        "tile_name": "NRW_SAC_HAB_SUBTIDAL_REEF_POLYGON_ART17"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Article 17 SAC Habitat Features  - Subtidal Reefs (Polygons)", 
+        "tile_name": "NRW_SAC_HAB_SUBTIDAL_REEF_POLYGON_ART17", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW SALTMARSH EXTENTS", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SALTMARSH_EXTENTS", 
-        "tile_name": "NRW_SALTMARSH_EXTENTS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW SALTMARSH EXTENTS", 
+        "tile_name": "NRW_SALTMARSH_EXTENTS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Shellfish Water Compliance", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SHELLFISHWATERCOMPLIANCE", 
-        "tile_name": "NRW_SHELLFISHWATERCOMPLIANCE"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Shellfish Water Compliance", 
+        "tile_name": "NRW_SHELLFISHWATERCOMPLIANCE", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW shoreline management", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_shoreline_management", 
-        "tile_name": "NRW_shoreline_management"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW shoreline management", 
+        "tile_name": "NRW_shoreline_management", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW Shoreline Management Plan", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SHORELINE_MANAGEMENT_PLAN2", 
-        "tile_name": "NRW_SHORELINE_MANAGEMENT_PLAN2"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW Shoreline Management Plan", 
+        "tile_name": "NRW_SHORELINE_MANAGEMENT_PLAN2", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Special Protected Areas", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SPA", 
-        "tile_name": "NRW_SPA"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Special Protected Areas", 
+        "tile_name": "NRW_SPA", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Sites of Special Scientific Interest", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_SSSI", 
-        "tile_name": "NRW_SSSI"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Sites of Special Scientific Interest", 
+        "tile_name": "NRW_SSSI", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "NRW TEAM BOUNDARIES", 
         "tile_name": "NRW_TEAM_BOUNDARIES"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Sensitive Area Maps (Bathing Waters)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_UWWTD_SA_BATHING_WATERS", 
-        "tile_name": "NRW_UWWTD_SA_BATHING_WATERS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Sensitive Area Maps (Bathing Waters)", 
+        "tile_name": "NRW_UWWTD_SA_BATHING_WATERS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW UWWTD SA SHELLFISH WATERS", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_UWWTD_SA_SHELLFISH_WATERS", 
-        "tile_name": "NRW_UWWTD_SA_SHELLFISH_WATERS"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW UWWTD SA SHELLFISH WATERS", 
+        "tile_name": "NRW_UWWTD_SA_SHELLFISH_WATERS", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Urban Tree Cover: 2006 Land Categories", 
         "tile_name": "NRW_W_UWT_2006_LANDCAT"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Urban Tree Cover: 2006 Points", 
         "tile_name": "NRW_W_UWT_2006_POINT"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Urban Tree Cover: 2006 Polygons", 
         "tile_name": "NRW_W_UWT_2006_POLY"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Urban Tree Cover: 2009 Land Categories", 
         "tile_name": "NRW_W_UWT_2009_LANDCAT"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Urban Tree Cover: 2009 Points", 
         "tile_name": "NRW_W_UWT_2009_POINT"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Urban Tree Cover: 2009 Polygons", 
         "tile_name": "NRW_W_UWT_2009_POLY"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "Urban Tree Cover: Urban Extents", 
         "tile_name": "NRW_W_UWT_URBAN_EXTENT"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Wales Coastal Path", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_WALES_COASTAL_PATH", 
-        "tile_name": "NRW_WALES_COASTAL_PATH"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Wales Coastal Path", 
+        "tile_name": "NRW_WALES_COASTAL_PATH", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Wales Marine pSAC", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_WALES_MARINE_pSAC", 
-        "tile_name": "NRW_WALES_MARINE_pSAC"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Wales Marine pSAC", 
+        "tile_name": "NRW_WALES_MARINE_pSAC", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "NRW - Wales Marine pSPA", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_WALES_MARINE_pSPA", 
-        "tile_name": "NRW_WALES_MARINE_pSPA"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "NRW - Wales Marine pSPA", 
+        "tile_name": "NRW_WALES_MARINE_pSPA", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Water Framework Directive Coastal Waterbodies (Cycle 1)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_WFD_COASTAL", 
-        "tile_name": "NRW_WFD_COASTAL"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Water Framework Directive Coastal Waterbodies (Cycle 1)", 
+        "tile_name": "NRW_WFD_COASTAL", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Water Framework Directive Lake Waterbodies (Cycle 1)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_WFD_LAKES", 
-        "tile_name": "NRW_WFD_LAKES"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Water Framework Directive Lake Waterbodies (Cycle 1)", 
+        "tile_name": "NRW_WFD_LAKES", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Water Framework Directive Lake Waterbodies (Cycle 2)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_WFD_LAKES_C2", 
-        "tile_name": "NRW_WFD_LAKES_C2"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Water Framework Directive Lake Waterbodies (Cycle 2)", 
+        "tile_name": "NRW_WFD_LAKES_C2", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Water Framework Directive River Basin Districts (Cycle 2)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_WFD_RIVER_BASIN_DISTRICTS_C2", 
-        "tile_name": "NRW_WFD_RIVER_BASIN_DISTRICTS_C2"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Water Framework Directive River Basin Districts (Cycle 2)", 
+        "tile_name": "NRW_WFD_RIVER_BASIN_DISTRICTS_C2", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Water Framework Directive River Catchment Waterbodies (Cycle 2)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_WFD_RIVER_CATCHMENTS_C2", 
-        "tile_name": "NRW_WFD_RIVER_CATCHMENTS_C2"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Water Framework Directive River Catchment Waterbodies (Cycle 2)", 
+        "tile_name": "NRW_WFD_RIVER_CATCHMENTS_C2", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Water Framework Directive River Waterbodies (Cycle 2)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_WFD_RIVERS_C2", 
-        "tile_name": "NRW_WFD_RIVERS_C2"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Water Framework Directive River Waterbodies (Cycle 2)", 
+        "tile_name": "NRW_WFD_RIVERS_C2", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Water Framework Directive Transitional Waterbodies (Cycle 1)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NRW_WFD_TRANSITIONAL", 
-        "tile_name": "NRW_WFD_TRANSITIONAL"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Water Framework Directive Transitional Waterbodies (Cycle 1)", 
+        "tile_name": "NRW_WFD_TRANSITIONAL", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "sac", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=sac", 
-        "tile_name": "sac"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "sac", 
+        "tile_name": "sac", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Sensitive Area Maps (Nitrate Rivers)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Sensitive+Area+Maps+%28Nitrate+Rivers%29", 
-        "tile_name": "Sensitive Area Maps (Nitrate Rivers)"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Sensitive Area Maps (Nitrate Rivers)", 
+        "tile_name": "Sensitive Area Maps (Nitrate Rivers)", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Special Protection Areas", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=spa", 
-        "tile_name": "spa"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Special Protection Areas", 
+        "tile_name": "spa", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "wfs_namespace": "inspire-nrw", 
         "name": "TRADITIONAL ORCHARDS", 
         "tile_name": "TRADITIONAL_ORCHARDS"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Water Framework Directive Coastal Waterbodies (Cycle 2)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WaterFrameworkDirectiveCoastalWaterbodiesCycle2", 
-        "tile_name": "WaterFrameworkDirectiveCoastalWaterbodiesCycle2"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Water Framework Directive Coastal Waterbodies (Cycle 2)", 
+        "tile_name": "WaterFrameworkDirectiveCoastalWaterbodiesCycle2", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Water Framework Directive Operational Catchments (Cycle 2)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WaterFrameworkDirectiveOperationalCatchmentsCycle2", 
-        "tile_name": "WaterFrameworkDirectiveOperationalCatchmentsCycle2"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Water Framework Directive Operational Catchments (Cycle 2)", 
+        "tile_name": "WaterFrameworkDirectiveOperationalCatchmentsCycle2", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "Water Framework Directive Transitional Waterbodies (Cycle 2)", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WaterFrameworkDirectiveTransitionalWaterbodiesCycle2", 
-        "tile_name": "WaterFrameworkDirectiveTransitionalWaterbodiesCycle2"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "Water Framework Directive Transitional Waterbodies (Cycle 2)", 
+        "tile_name": "WaterFrameworkDirectiveTransitionalWaterbodiesCycle2", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
-        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
-        "name": "WFD LAKES", 
         "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WFD_LAKES", 
-        "tile_name": "WFD_LAKES"
+        "wfs_geometry_field": [
+            "GEOM", 
+            "fme_geometry", 
+            "geom", 
+            "OBJECTID"
+        ], 
+        "name": "WFD LAKES", 
+        "tile_name": "WFD_LAKES", 
+        "source": "http://lle.gov.wales/services/inspire-nrw/wms", 
+        "wfs_namespace": "inspire-nrw"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "CADW - World Heritage Sites (combined)", 
         "tile_name": "cadw_world_heritage_sites_combined"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Active Travel Designated Localities", 
         "tile_name": "active_travel_designated_localities"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "All Schools Wales", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=All_Schools_Wales", 
-        "tile_name": "All_Schools_Wales"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "All Schools Wales", 
+        "tile_name": "All_Schools_Wales", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Mobile Library Stops in Wales", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=all_wales_mobile_library_stops", 
-        "tile_name": "all_wales_mobile_library_stops"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Mobile Library Stops in Wales", 
+        "tile_name": "all_wales_mobile_library_stops", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Ambulance Stations", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Ambulance_Stations", 
-        "tile_name": "Ambulance_Stations"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Ambulance Stations", 
+        "tile_name": "Ambulance_Stations", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "anchorcompanies", 
         "tile_name": "anchorcompanies"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Assembly Constituencies", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Assembly_Constituencies", 
-        "tile_name": "Assembly_Constituencies"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Assembly Constituencies", 
+        "tile_name": "Assembly_Constituencies", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Assembly Electoral Regions", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Assembly_Electoral_Regions", 
-        "tile_name": "Assembly_Electoral_Regions"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Assembly Electoral Regions", 
+        "tile_name": "Assembly_Electoral_Regions", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Basic Payment Scheme Regions", 
         "tile_name": "BasicPaymentSchemeRegions"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Built Up Areas Wales 2011", 
         "tile_name": "bua_2011_wales"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "cadw designated wrecks", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=cadw_designated_wrecks", 
-        "tile_name": "cadw_designated_wrecks"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "cadw designated wrecks", 
+        "tile_name": "cadw_designated_wrecks", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "cadw designated wrecks vw", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=cadw_designated_wrecks_vw", 
-        "tile_name": "cadw_designated_wrecks_vw"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "cadw designated wrecks vw", 
+        "tile_name": "cadw_designated_wrecks_vw", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Cadw DesignatedWrecks", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Cadw_DesignatedWrecks", 
-        "tile_name": "Cadw_DesignatedWrecks"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Cadw DesignatedWrecks", 
+        "tile_name": "Cadw_DesignatedWrecks", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "CADW Historic Landscapes", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=CADW_Historic_Landscapes", 
-        "tile_name": "CADW_Historic_Landscapes"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "CADW Historic Landscapes", 
+        "tile_name": "CADW_Historic_Landscapes", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "CADW Historic Parks Gardens", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=CADW_Historic_Parks_Gardens", 
-        "tile_name": "CADW_Historic_Parks_Gardens"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "CADW Historic Parks Gardens", 
+        "tile_name": "CADW_Historic_Parks_Gardens", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Cadw Historic Landscapes", 
         "tile_name": "Cadw_HistoricLandscapes"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "CADW Listed Buildings", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=CADW_Listed_Buildings", 
-        "tile_name": "CADW_Listed_Buildings"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "CADW Listed Buildings", 
+        "tile_name": "CADW_Listed_Buildings", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Cadw ListedBuildings", 
         "tile_name": "Cadw_ListedBuildings"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Cadw SAM", 
         "tile_name": "Cadw_SAM"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "CADW - World Heritage Sites (Arcs of view)", 
         "tile_name": "cadw_whs_arcs_of_view"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "CADW - World Heritage Sites boundary", 
         "tile_name": "cadw_whs_boundary"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "CADW - World Heritage Sites (Essential Setting)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=cadw_whs_essential_setting", 
-        "tile_name": "cadw_whs_essential_setting"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "CADW - World Heritage Sites (Essential Setting)", 
+        "tile_name": "cadw_whs_essential_setting", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "CADW - World Heritage Sites (Significant View)", 
         "tile_name": "cadw_whs_significant_view"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Careers Wales Regions", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Careers_Wales_Regions", 
-        "tile_name": "Careers_Wales_Regions"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Careers Wales Regions", 
+        "tile_name": "Careers_Wales_Regions", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Coastal Focus Draft Dev Plan", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Coastal_Focus_Draft_Dev_Plan", 
-        "tile_name": "Coastal_Focus_Draft_Dev_Plan"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Coastal Focus Draft Dev Plan", 
+        "tile_name": "Coastal_Focus_Draft_Dev_Plan", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Communities First 2010", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Communities_First_2010", 
-        "tile_name": "Communities_First_2010"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Communities First 2010", 
+        "tile_name": "Communities_First_2010", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Communities1st Clusters", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Communities1st_Clusters", 
-        "tile_name": "Communities1st_Clusters"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Communities1st Clusters", 
+        "tile_name": "Communities1st_Clusters", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Community Parishes", 
         "tile_name": "Community_Parishes"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Community Wards", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Community_Wards", 
-        "tile_name": "Community_Wards"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Community Wards", 
+        "tile_name": "Community_Wards", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Conservation Areas (Wales)", 
         "tile_name": "conservation_areas"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Convergence AssistedAreas Tier1", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Convergence_AssistedAreas_Tier1", 
-        "tile_name": "Convergence_AssistedAreas_Tier1"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Convergence AssistedAreas Tier1", 
+        "tile_name": "Convergence_AssistedAreas_Tier1", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Convergence AssistedAreas Tier2", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Convergence_AssistedAreas_Tier2", 
-        "tile_name": "Convergence_AssistedAreas_Tier2"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Convergence AssistedAreas Tier2", 
+        "tile_name": "Convergence_AssistedAreas_Tier2", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Courts England wales", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Courts_England_wales", 
-        "tile_name": "Courts_England_wales"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Courts England wales", 
+        "tile_name": "Courts_England_wales", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Dentists", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Dentists", 
-        "tile_name": "Dentists"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Dentists", 
+        "tile_name": "Dentists", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "(DRAFT) Aggregates RA", 
         "tile_name": "draft_aggregates_ra"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "(DRAFT) Aggregates SRAs", 
         "tile_name": "draft_aggregates_sra"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "(Draft) Shipping SRA", 
         "tile_name": "draft_shipping_sra"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Enhanced Capital Allowance areas (in EZs)", 
         "tile_name": "ecas_in_enterprise_zones"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "EFZ Regional Competitiveness", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=EFZ_Regional_Competitiveness", 
-        "tile_name": "EFZ_Regional_Competitiveness"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "EFZ Regional Competitiveness", 
+        "tile_name": "EFZ_Regional_Competitiveness", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Electoral Divisions", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Electoral_Divisions", 
-        "tile_name": "Electoral_Divisions"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Electoral Divisions", 
+        "tile_name": "Electoral_Divisions", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Enterprise Zones", 
         "tile_name": "enterprise_zones"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Fire and Rescue Service Areas", 
         "tile_name": "Fire_Authorities"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Fire Stations", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Fire_Stations", 
-        "tile_name": "Fire_Stations"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Fire Stations", 
+        "tile_name": "Fire_Stations", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Fuel Poverty by LA", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=fuel_poverty_by_la_geom_vw", 
-        "tile_name": "fuel_poverty_by_la_geom_vw"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Fuel Poverty by LA", 
+        "tile_name": "fuel_poverty_by_la_geom_vw", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Estimated Fuel poverty by LSOA", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=fuel_poverty_by_lsoa_geom_vw", 
-        "tile_name": "fuel_poverty_by_lsoa_geom_vw"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Estimated Fuel poverty by LSOA", 
+        "tile_name": "fuel_poverty_by_lsoa_geom_vw", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "gp surgeries", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=gp_surgeries", 
-        "tile_name": "gp_surgeries"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "gp surgeries", 
+        "tile_name": "gp_surgeries", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "gp surgeries subbranch", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=gp_surgeries_subbranch", 
-        "tile_name": "gp_surgeries_subbranch"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "gp surgeries subbranch", 
+        "tile_name": "gp_surgeries_subbranch", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "acid sensitive water-bodies 20131114 cycle2", 
         "tile_name": "GWCAcidSensitiveWaterBodies"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "common land dissolve", 
         "tile_name": "GWCCommonLandv2"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "existing woodland", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=GWCExistingWoodland", 
-        "tile_name": "GWCExistingWoodland"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "existing woodland", 
+        "tile_name": "GWCExistingWoodland", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "open access dissolve", 
         "tile_name": "GWCOpenAccess"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "squirrel dissolve", 
         "tile_name": "GWCSquirrels"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "water vole dissolve", 
         "tile_name": "GWCWaterVole"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Historic Landscapes", 
         "tile_name": "historic_landscapes"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "HLMO Adopted dev plans", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=HLMO_Adopted_dev_plans", 
-        "tile_name": "HLMO_Adopted_dev_plans"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "HLMO Adopted dev plans", 
+        "tile_name": "HLMO_Adopted_dev_plans", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Hospitals", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Hospitals", 
-        "tile_name": "Hospitals"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Hospitals", 
+        "tile_name": "Hospitals", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "la employment rates", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=la_employment_rates", 
-        "tile_name": "la_employment_rates"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "la employment rates", 
+        "tile_name": "la_employment_rates", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "LA Employment Rates", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=LA_Employment_Rates", 
-        "tile_name": "LA_Employment_Rates"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "LA Employment Rates", 
+        "tile_name": "LA_Employment_Rates", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "la ilo unemployment rates", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=la_ilo_unemployment_rates", 
-        "tile_name": "la_ilo_unemployment_rates"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "la ilo unemployment rates", 
+        "tile_name": "la_ilo_unemployment_rates", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "LA ILO Unemployment Rates", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=LA_ILO_Unemployment_Rates", 
-        "tile_name": "LA_ILO_Unemployment_Rates"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "LA ILO Unemployment Rates", 
+        "tile_name": "LA_ILO_Unemployment_Rates", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "la inactivity rates exc students", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=la_inactivity_rates_exc_students", 
-        "tile_name": "la_inactivity_rates_exc_students"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "la inactivity rates exc students", 
+        "tile_name": "la_inactivity_rates_exc_students", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "LA Inactivity Rates exc students", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=LA_Inactivity_Rates_exc_students", 
-        "tile_name": "LA_Inactivity_Rates_exc_students"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "LA Inactivity Rates exc students", 
+        "tile_name": "LA_Inactivity_Rates_exc_students", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "la inactivity rates inc students", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=la_inactivity_rates_inc_students", 
-        "tile_name": "la_inactivity_rates_inc_students"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "la inactivity rates inc students", 
+        "tile_name": "la_inactivity_rates_inc_students", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "LA Inactivity Rates inc students", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=LA_Inactivity_Rates_inc_students", 
-        "tile_name": "LA_Inactivity_Rates_inc_students"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "LA Inactivity Rates inc students", 
+        "tile_name": "LA_Inactivity_Rates_inc_students", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Lifeboat Stations", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Lifeboat_Stations", 
-        "tile_name": "Lifeboat_Stations"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Lifeboat Stations", 
+        "tile_name": "Lifeboat_Stations", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Listed Buildings", 
         "tile_name": "listed_buildings"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Local Authorities", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Local_Authorities", 
-        "tile_name": "Local_Authorities"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Local Authorities", 
+        "tile_name": "Local_Authorities", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Local Health Boards", 
         "tile_name": "Local_Health_Boards"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Wales Local Authorities (high water mark)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=localauthorities", 
-        "tile_name": "localauthorities"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Wales Local Authorities (high water mark)", 
+        "tile_name": "localauthorities", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Wales Local Authorities (low water mark)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=localauthorities_lwm", 
-        "tile_name": "localauthorities_lwm"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Wales Local Authorities (low water mark)", 
+        "tile_name": "localauthorities_lwm", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "lsoa benefit change 2011 2016", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=lsoa_benefit_change_2011_2016", 
-        "tile_name": "lsoa_benefit_change_2011_2016"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "lsoa benefit change 2011 2016", 
+        "tile_name": "lsoa_benefit_change_2011_2016", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "LSOA Benefit Change 2011 2016", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=LSOA_Benefit_Change_2011_2016", 
-        "tile_name": "LSOA_Benefit_Change_2011_2016"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "LSOA Benefit Change 2011 2016", 
+        "tile_name": "LSOA_Benefit_Change_2011_2016", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "lsoa benefit rate 2016 per 1000 pop", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=lsoa_benefit_rate_2016_per_1000_pop", 
-        "tile_name": "lsoa_benefit_rate_2016_per_1000_pop"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "lsoa benefit rate 2016 per 1000 pop", 
+        "tile_name": "lsoa_benefit_rate_2016_per_1000_pop", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "LSOA Benefit Rate 2016 per 1000 pop", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=LSOA_Benefit_Rate_2016_per_1000_pop", 
-        "tile_name": "LSOA_Benefit_Rate_2016_per_1000_pop"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "LSOA Benefit Rate 2016 per 1000 pop", 
+        "tile_name": "LSOA_Benefit_Rate_2016_per_1000_pop", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "lsoa claimant count change 2013 2016", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=lsoa_claimant_count_change_2013_2016", 
-        "tile_name": "lsoa_claimant_count_change_2013_2016"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "lsoa claimant count change 2013 2016", 
+        "tile_name": "lsoa_claimant_count_change_2013_2016", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "LSOA Claimant Count Change 2013 2016", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=LSOA_Claimant_Count_Change_2013_2016", 
-        "tile_name": "LSOA_Claimant_Count_Change_2013_2016"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "LSOA Claimant Count Change 2013 2016", 
+        "tile_name": "LSOA_Claimant_Count_Change_2013_2016", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "lsoa claimant count rate 2016 per 1000 pop", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=lsoa_claimant_count_rate_2016_per_1000_pop", 
-        "tile_name": "lsoa_claimant_count_rate_2016_per_1000_pop"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "lsoa claimant count rate 2016 per 1000 pop", 
+        "tile_name": "lsoa_claimant_count_rate_2016_per_1000_pop", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "LSOA Claimant Count Rate 2016 per 1000 pop", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=LSOA_Claimant_Count_Rate_2016_per_1000_pop", 
-        "tile_name": "LSOA_Claimant_Count_Rate_2016_per_1000_pop"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "LSOA Claimant Count Rate 2016 per 1000 pop", 
+        "tile_name": "LSOA_Claimant_Count_Rate_2016_per_1000_pop", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "LSOA Pop 16 64 2015", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=LSOA_Pop_16_64_2015", 
-        "tile_name": "LSOA_Pop_16_64_2015"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "LSOA Pop 16 64 2015", 
+        "tile_name": "LSOA_Pop_16_64_2015", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "metro stations", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=metro_stations", 
-        "tile_name": "metro_stations"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "metro stations", 
+        "tile_name": "metro_stations", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Metrolink Stations phase1", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=metro_stations_phase1", 
-        "tile_name": "metro_stations_phase1"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Metrolink Stations phase1", 
+        "tile_name": "metro_stations_phase1", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Metrolink Stations phase2", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=metro_stations_phase2", 
-        "tile_name": "metro_stations_phase2"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Metrolink Stations phase2", 
+        "tile_name": "metro_stations_phase2", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Metrolink Stations phase3", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=metro_stations_phase3", 
-        "tile_name": "metro_stations_phase3"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Metrolink Stations phase3", 
+        "tile_name": "metro_stations_phase3", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Metrolink Network phase1", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=metrolink_phase1", 
-        "tile_name": "metrolink_phase1"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Metrolink Network phase1", 
+        "tile_name": "metrolink_phase1", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Metrolink Network phase2", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=metrolink_phase2", 
-        "tile_name": "metrolink_phase2"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Metrolink Network phase2", 
+        "tile_name": "metrolink_phase2", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Metrolink Network phase3", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=metrolink_phase3", 
-        "tile_name": "metrolink_phase3"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Metrolink Network phase3", 
+        "tile_name": "metrolink_phase3", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Middle Schools 20160831", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Middle_schools_open_at_20160831", 
-        "tile_name": "Middle_schools_open_at_20160831"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Middle Schools 20160831", 
+        "tile_name": "Middle_schools_open_at_20160831", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Road Traffic Noise in Agglomerations (L10,18h)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_ard_l1018", 
-        "tile_name": "NAP_ard_l1018"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Road Traffic Noise in Agglomerations (L10,18h)", 
+        "tile_name": "NAP_ard_l1018", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Road Traffic Noise in Agglomerations (Daytime average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_ard_lday", 
-        "tile_name": "NAP_ard_lday"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Road Traffic Noise in Agglomerations (Daytime average)", 
+        "tile_name": "NAP_ard_lday", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Road Traffic Noise in Agglomerations (Daily average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_ard_lden", 
-        "tile_name": "NAP_ard_lden"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Road Traffic Noise in Agglomerations (Daily average)", 
+        "tile_name": "NAP_ard_lden", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Road Traffic Noise in Agglomerations (Evening average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_ard_leve", 
-        "tile_name": "NAP_ard_leve"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Road Traffic Noise in Agglomerations (Evening average)", 
+        "tile_name": "NAP_ard_leve", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Road Traffic Noise in Agglomerations (Nightly average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_ard_lngt", 
-        "tile_name": "NAP_ard_lngt"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Road Traffic Noise in Agglomerations (Nightly average)", 
+        "tile_name": "NAP_ard_lngt", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Road Traffic Noise in Agglomerations (LAeq,16h)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_ard_lq16", 
-        "tile_name": "NAP_ard_lq16"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Road Traffic Noise in Agglomerations (LAeq,16h)", 
+        "tile_name": "NAP_ard_lq16", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Railway Noise in Agglomerations (Daytime average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_arl_lday", 
-        "tile_name": "NAP_arl_lday"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Railway Noise in Agglomerations (Daytime average)", 
+        "tile_name": "NAP_arl_lday", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Railway Noise in Agglomerations (Daily average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_arl_lden", 
-        "tile_name": "NAP_arl_lden"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Railway Noise in Agglomerations (Daily average)", 
+        "tile_name": "NAP_arl_lden", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Railway Noise in Agglomerations (Evening average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_arl_leve", 
-        "tile_name": "NAP_arl_leve"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Railway Noise in Agglomerations (Evening average)", 
+        "tile_name": "NAP_arl_leve", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Railway Noise in Agglomerations (Nightly average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_arl_lngt", 
-        "tile_name": "NAP_arl_lngt"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Railway Noise in Agglomerations (Nightly average)", 
+        "tile_name": "NAP_arl_lngt", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Railway Noise in Agglomerations (LAeq,16h)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_arl_lq16", 
-        "tile_name": "NAP_arl_lq16"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Railway Noise in Agglomerations (LAeq,16h)", 
+        "tile_name": "NAP_arl_lq16", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Railway Noise in Agglomerations (LAeq,18h)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_arl_lq18", 
-        "tile_name": "NAP_arl_lq18"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Railway Noise in Agglomerations (LAeq,18h)", 
+        "tile_name": "NAP_arl_lq18", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Railway Noise in Agglomerations (LAeq, 6h)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_arl_lq6", 
-        "tile_name": "NAP_arl_lq6"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Railway Noise in Agglomerations (LAeq, 6h)", 
+        "tile_name": "NAP_arl_lq6", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Industrial Noise (Daytime average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_ind_lday", 
-        "tile_name": "NAP_ind_lday"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Industrial Noise (Daytime average)", 
+        "tile_name": "NAP_ind_lday", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Industrial Noise (Daily average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_ind_lden", 
-        "tile_name": "NAP_ind_lden"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Industrial Noise (Daily average)", 
+        "tile_name": "NAP_ind_lden", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Industrial Noise (Evening average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_ind_leve", 
-        "tile_name": "NAP_ind_leve"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Industrial Noise (Evening average)", 
+        "tile_name": "NAP_ind_leve", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Industrial Noise (Nightly average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_ind_lngt", 
-        "tile_name": "NAP_ind_lngt"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Industrial Noise (Nightly average)", 
+        "tile_name": "NAP_ind_lngt", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Industrial Noise (LAeq, 16h)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_ind_lq16", 
-        "tile_name": "NAP_ind_lq16"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Industrial Noise (LAeq, 16h)", 
+        "tile_name": "NAP_ind_lq16", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "(Noise Action Plan) Major Roads", 
         "tile_name": "NAP_majorroadsr2"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Road Traffic Noise (LA10,18h)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrd_l1018", 
-        "tile_name": "NAP_mrd_l1018"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Road Traffic Noise (LA10,18h)", 
+        "tile_name": "NAP_mrd_l1018", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Road Traffic Noise (Daytime average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrd_lday", 
-        "tile_name": "NAP_mrd_lday"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Road Traffic Noise (Daytime average)", 
+        "tile_name": "NAP_mrd_lday", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Road Traffic Noise (Daily average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrd_lden", 
-        "tile_name": "NAP_mrd_lden"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Road Traffic Noise (Daily average)", 
+        "tile_name": "NAP_mrd_lden", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Road Traffic Noise (Evening average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrd_leve", 
-        "tile_name": "NAP_mrd_leve"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Road Traffic Noise (Evening average)", 
+        "tile_name": "NAP_mrd_leve", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Road Traffic Noise (Nightime average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrd_lngt", 
-        "tile_name": "NAP_mrd_lngt"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Road Traffic Noise (Nightime average)", 
+        "tile_name": "NAP_mrd_lngt", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Road Traffic Noise (LAeq, 16h)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrd_lq16", 
-        "tile_name": "NAP_mrd_lq16"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Road Traffic Noise (LAeq, 16h)", 
+        "tile_name": "NAP_mrd_lq16", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Railway Noise (Daytime average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrl_lday", 
-        "tile_name": "NAP_mrl_lday"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Railway Noise (Daytime average)", 
+        "tile_name": "NAP_mrl_lday", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Railway Noise (Daily average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrl_lden", 
-        "tile_name": "NAP_mrl_lden"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Railway Noise (Daily average)", 
+        "tile_name": "NAP_mrl_lden", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Railway Noise (Evening average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrl_leve", 
-        "tile_name": "NAP_mrl_leve"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Railway Noise (Evening average)", 
+        "tile_name": "NAP_mrl_leve", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Railway Noise (Nightime average)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrl_lngt", 
-        "tile_name": "NAP_mrl_lngt"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Railway Noise (Nightime average)", 
+        "tile_name": "NAP_mrl_lngt", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Railway Noise (LAeq, 16h)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrl_lq16", 
-        "tile_name": "NAP_mrl_lq16"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Railway Noise (LAeq, 16h)", 
+        "tile_name": "NAP_mrl_lq16", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Railway Noise (LAeq, 18h)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrl_lq18", 
-        "tile_name": "NAP_mrl_lq18"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Railway Noise (LAeq, 18h)", 
+        "tile_name": "NAP_mrl_lq18", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Major Railway Noise (LAeq, 6h)", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NAP_mrl_lq6", 
-        "tile_name": "NAP_mrl_lq6"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Major Railway Noise (LAeq, 6h)", 
+        "tile_name": "NAP_mrl_lq6", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Air Quality Mngt. Areas (April 2014)", 
         "tile_name": "NAP_napst_aqmas_apr14"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "(Noise Action Plan) Priority Areas (Railways)", 
         "tile_name": "NAP_priorityareas_railways"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "(Noise Action Plan) Priority Areas (Roads)", 
         "tile_name": "NAP_priorityareas_roads"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "(Noise Action Plan) Quiet Areas", 
         "tile_name": "NAP_quietareas"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "(Noise Action Plan) Industry Locations", 
         "tile_name": "NAP_r2industrylocations"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "(Noise Action Plan) Agglomerations", 
         "tile_name": "NAP_uk_w_agg_areas_2015"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "nga postcodes", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=nga_postcodes", 
-        "tile_name": "nga_postcodes"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "nga postcodes", 
+        "tile_name": "nga_postcodes", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "NVZConsultation", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=NVZConsultation", 
-        "tile_name": "NVZConsultation"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "NVZConsultation", 
+        "tile_name": "NVZConsultation", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Opticians", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Opticians", 
-        "tile_name": "Opticians"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Opticians", 
+        "tile_name": "Opticians", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "OS VMD Motorways", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=OS_VMD_Motorways", 
-        "tile_name": "OS_VMD_Motorways"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "OS VMD Motorways", 
+        "tile_name": "OS_VMD_Motorways", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "OS VMD Primary A Roads", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=OS_VMD_Primary_A_Roads", 
-        "tile_name": "OS_VMD_Primary_A_Roads"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "OS VMD Primary A Roads", 
+        "tile_name": "OS_VMD_Primary_A_Roads", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "OS VMD Major Rivers Water Bodies", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=OS_VMD_Surface_Water_Area", 
-        "tile_name": "OS_VMD_Surface_Water_Area"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "OS VMD Major Rivers Water Bodies", 
+        "tile_name": "OS_VMD_Surface_Water_Area", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "OS VMD Minor Rivers", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=OS_VMD_Surface_Water_Line", 
-        "tile_name": "OS_VMD_Surface_Water_Line"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "OS VMD Minor Rivers", 
+        "tile_name": "OS_VMD_Surface_Water_Line", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Pharmacies", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Pharmacies", 
-        "tile_name": "Pharmacies"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Pharmacies", 
+        "tile_name": "Pharmacies", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "PLGZ Central Corridor", 
         "tile_name": "PLGZ_Central_Corridor"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Police Authorities Wales", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Police_Authorities_Wales", 
-        "tile_name": "Police_Authorities_Wales"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Police Authorities Wales", 
+        "tile_name": "Police_Authorities_Wales", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Police Stations Wales", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Police_Stations_Wales", 
-        "tile_name": "Police_Stations_Wales"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Police Stations Wales", 
+        "tile_name": "Police_Stations_Wales", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Primary Schools 20160831", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=primary_schools_open_at_20160831", 
-        "tile_name": "primary_schools_open_at_20160831"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Primary Schools 20160831", 
+        "tile_name": "primary_schools_open_at_20160831", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "proposed metro", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=proposed_metro", 
-        "tile_name": "proposed_metro"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "proposed metro", 
+        "tile_name": "proposed_metro", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Proposed NVZ Designations 06 2016", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=proposed_nvz_designations_06_2016", 
-        "tile_name": "proposed_nvz_designations_06_2016"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Proposed NVZ Designations 06 2016", 
+        "tile_name": "proposed_nvz_designations_06_2016", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Public Service Footprint Areas", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Public_Service_Footprint_Areas", 
-        "tile_name": "Public_Service_Footprint_Areas"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Public Service Footprint Areas", 
+        "tile_name": "Public_Service_Footprint_Areas", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Public Libraries October 2015", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=PublicLibraries", 
-        "tile_name": "PublicLibraries"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Public Libraries October 2015", 
+        "tile_name": "PublicLibraries", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Regeneration Areas", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Regeneration_Areas", 
-        "tile_name": "Regeneration_Areas"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Regeneration Areas", 
+        "tile_name": "Regeneration_Areas", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Regionally Important Companies", 
         "tile_name": "regionallyimportantcos"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "rural classification september 11", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=rural_classification_september_11", 
-        "tile_name": "rural_classification_september_11"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "rural classification september 11", 
+        "tile_name": "rural_classification_september_11", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Secondary Schools 20160831", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Secondary_schools_open_at_20160831", 
-        "tile_name": "Secondary_schools_open_at_20160831"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Secondary Schools 20160831", 
+        "tile_name": "Secondary_schools_open_at_20160831", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Special Schools 20160831", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Special_schools_open_at_20160831", 
-        "tile_name": "Special_schools_open_at_20160831"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Special Schools 20160831", 
+        "tile_name": "Special_schools_open_at_20160831", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Strategic Regeneration Areas", 
         "tile_name": "Strategic_Regeneration_Areas"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "tan15 201505", 
         "tile_name": "tan15_201505"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "TAN8 Indicative", 
         "tile_name": "TAN8_Indicative"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Teifi Valley LGZ", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Teifi_Valley_LGZ", 
-        "tile_name": "Teifi_Valley_LGZ"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Teifi Valley LGZ", 
+        "tile_name": "Teifi_Valley_LGZ", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Teifi Valley LGZ outline", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Teifi_Valley_LGZ_outline", 
-        "tile_name": "Teifi_Valley_LGZ_outline"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Teifi Valley LGZ outline", 
+        "tile_name": "Teifi_Valley_LGZ_outline", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Town and Community Councils", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Town_and_Community_Councils", 
-        "tile_name": "Town_and_Community_Councils"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Town and Community Councils", 
+        "tile_name": "Town_and_Community_Councils", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Travel To Work Areas 2007", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Travel_To_Work_Areas_2007", 
-        "tile_name": "Travel_To_Work_Areas_2007"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Travel To Work Areas 2007", 
+        "tile_name": "Travel_To_Work_Areas_2007", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "TrunkRoadNetwork", 
         "tile_name": "TrunkRoadNetwork"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "TrunkRoadNetwork 2016", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=TrunkRoadNetwork_2016", 
-        "tile_name": "TrunkRoadNetwork_2016"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "TrunkRoadNetwork 2016", 
+        "tile_name": "TrunkRoadNetwork_2016", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "valleys taskforce draft boundary", 
         "tile_name": "valleys_taskforce_draft_boundary"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "valleys taskforce draft la boundary", 
         "tile_name": "valleys_taskforce_draft_la_boundary"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "vtf household internet access", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=vtf_household_internet_access", 
-        "tile_name": "vtf_household_internet_access"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "vtf household internet access", 
+        "tile_name": "vtf_household_internet_access", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "VTF Household Internet Access", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=VTF_Household_Internet_Access", 
-        "tile_name": "VTF_Household_Internet_Access"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "VTF Household Internet Access", 
+        "tile_name": "VTF_Household_Internet_Access", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "vtf personal internet use", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=vtf_personal_internet_use", 
-        "tile_name": "vtf_personal_internet_use"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "vtf personal internet use", 
+        "tile_name": "vtf_personal_internet_use", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "VTF Personal Internet Use", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=VTF_Personal_Internet_Use", 
-        "tile_name": "VTF_Personal_Internet_Use"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "VTF Personal Internet Use", 
+        "tile_name": "VTF_Personal_Internet_Use", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Wales (High water mark)", 
         "tile_name": "wales_hwm"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "Welsh Government Offices", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Welsh_Government_Offices", 
-        "tile_name": "Welsh_Government_Offices"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "Welsh Government Offices", 
+        "tile_name": "Welsh_Government_Offices", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "Westminster Constituency", 
         "tile_name": "westminster_const_region"
     }, 
     {
         "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "wfs_namespace": "inspire-wg", 
         "name": "WG Economic Operating Regions", 
         "tile_name": "WG_Economic_Operating_Regions"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "WIMD2014 Access to Services", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WIMD2014_Access_to_Services", 
-        "tile_name": "WIMD2014_Access_to_Services"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "WIMD2014 Access to Services", 
+        "tile_name": "WIMD2014_Access_to_Services", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "WIMD2014 Community Safety", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WIMD2014_Community_Safety", 
-        "tile_name": "WIMD2014_Community_Safety"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "WIMD2014 Community Safety", 
+        "tile_name": "WIMD2014_Community_Safety", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "WIMD2014 Education", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WIMD2014_Education", 
-        "tile_name": "WIMD2014_Education"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "WIMD2014 Education", 
+        "tile_name": "WIMD2014_Education", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "WIMD2014 Employment", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WIMD2014_Employment", 
-        "tile_name": "WIMD2014_Employment"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "WIMD2014 Employment", 
+        "tile_name": "WIMD2014_Employment", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "WIMD2014 Health", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WIMD2014_Health", 
-        "tile_name": "WIMD2014_Health"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "WIMD2014 Health", 
+        "tile_name": "WIMD2014_Health", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "WIMD2014 Housing", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WIMD2014_Housing", 
-        "tile_name": "WIMD2014_Housing"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "WIMD2014 Housing", 
+        "tile_name": "WIMD2014_Housing", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "WIMD2014 Income", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WIMD2014_Income", 
-        "tile_name": "WIMD2014_Income"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "WIMD2014 Income", 
+        "tile_name": "WIMD2014_Income", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "WIMD2014 Overall", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WIMD2014_Overall", 
-        "tile_name": "WIMD2014_Overall"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "WIMD2014 Overall", 
+        "tile_name": "WIMD2014_Overall", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }, 
     {
-        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
-        "name": "WIMD2014 Physical Environment", 
         "legend_img": "http://lle.gov.wales/services/inspire-wg/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=WIMD2014_Physical_Environment", 
-        "tile_name": "WIMD2014_Physical_Environment"
+        "wfs_geometry_field": [
+            "geom"
+        ], 
+        "name": "WIMD2014 Physical Environment", 
+        "tile_name": "WIMD2014_Physical_Environment", 
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms", 
+        "wfs_namespace": "inspire-wg"
     }
 ]

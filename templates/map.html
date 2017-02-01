@@ -117,6 +117,9 @@
 
     <script type="text/javascript" src="{% static 'Leaflet-WFST/Leaflet-WFST.src.js' %}"></script>
 
+    <script type="text/javascript" src="{% static 'prettyprintjs/prettyprint.js' %}"></script>
+
+
     <style>
         .navbar
         {
@@ -396,37 +399,60 @@
                         attribution: "wales.gov"
                     });
                     wms_layers[btn_layer_name] = inspire;
-                    layerControl.addOverlay(inspire, btn_layer_name);
+                    layerControl.addOverlay(inspire, btn_layer_name + '-wms');
                     inspire.addTo(map);
 
 
                     try {
                         var wfs = $(toggle_button).data('wfs');
                         if (wfs) {
-                            var wfst = new L.WFST({
-                                url: btn_layer_url,
-                                typeNS: 'inspire-nrw',
-                                typeName: btn_layer_name,
-                                geometryField: 'fme_geometry',
-                                crs: epsg27700,
-                                style: {
-                                    color: 'blue',
-                                    weight: 2
+                            var typeNS = $(toggle_button).data('wfs_namespace');
+                            var geometryFields = $(toggle_button).data('wfs_geometry_field');
+
+                            var geometryFieldsArr = geometryFields.split(',');
+                            for (var geometryIdx in geometryFieldsArr) {
+                                try {
+
+                                    var wfst = new L.WFST({
+                                        url: btn_layer_url,
+                                        typeNS: typeNS,
+                                        typeName: btn_layer_name,
+{#                                        geometryField: geometryFieldsArr[geometryIdx],#}
+                                        geometryField: 'fme_geometry',
+                                        crs: epsg27700,
+                                        style: {
+                                            color: 'blue',
+                                            weight: 2
+                                        }
+                                    });
+
+                                } catch (e) {
+                                    console.log(e);
                                 }
-                            }).addTo(map).once('load', function () {
+                            }
+
+                            wfst.addTo(map).once('load', function () {
                                 map.fitBounds(wfst);
                             });
-                            layerControl.addOverlay(wfst, btn_layer_name);
+                            layerControl.addOverlay(wfst, btn_layer_name + '-wfs');
 
-                            var popup = new L.Popup();
+                            {# var popup = new L.Popup(); #}
+
                             wfst.on('click', function (e) {
                                 console.log('click');
                                 console.log(e.layer.feature);
 
-                                 var right_pane = $('#right-component1');
-                    right_pane.html('<pre id="lle_json">' + JSON.stringify(e.layer.feature, null, 2) + '</pre>');
+                                                                 var right_pane = $('#right-component1');
 
-{#                                popup.setLatLng(e.latlng).setContent('You clicked at ' + JSON.stringify(e.layer.feature)).openOn(map);#}
+                                var ppTable = prettyPrint(e.layer.feature);
+
+                                {#                    right_pane.html('<pre id="lle_json">' + JSON.stringify(e.layer.feature, null, 2) + '</pre>');#}
+                                right_pane.empty().append($(ppTable));
+
+{#                                document.getElementById('right-component1').empty().appendChild(ppTable);#}
+
+                                {#                                popup.setLatLng(e.latlng).setContent('You clicked at ' + JSON.stringify(e.layer.feature)).openOn(map);#}
+
                             });
                         }
                     }catch (e){
@@ -3284,15 +3310,19 @@
                     console.log(data);
 
                     var options = {
-                        valueNames: [ 'name',
+                        valueNames: [
+                            'name',
                             { name: 'tile_name', attr: 'data-layer_name'},
                             { name: 'source', attr: 'data-layer_url'
                             },
                             { name: 'legend_img', attr: 'data-legend_img'
+                            },
+                            { name: 'wfs_namespace', attr: 'data-wfs_namespace'
+                            },
+                            { name: 'wfs_geometry_field', attr: 'data-wfs_geometry_field'
                             }
                         ],
-
-                        item: '<li><a href="#" data-wfs="true" class="wms_toggle lle_flex tile_name source legend_img"><i class="fa fa-map-marker fa-fw"></i><p class="name"></p></a></li>'
+                        item: '<li><a href="#" data-wfs="true" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field"><i class="fa fa-map-marker fa-fw"></i><p class="name"></p></a></li>'
 
                     };
 
@@ -3350,7 +3380,7 @@
                              {#                         width:250px;#}
                              width: 100%;
                              overflow-y: scroll;
-                             overflow-x: hidden">
+                             overflow-x: scroll">
 
                     <div>
                         <div class="btn btn-default" id="hide_right_sidebar"><i class="fa f-2x fa-angle-double-right"></i></div>

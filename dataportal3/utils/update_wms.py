@@ -40,7 +40,9 @@ def get_wms_layer():
                 desc = {
                     'tile_name': [z.string for z in y.findAll('name')][0],
                     'name': [z.string for z in y.findAll('title')][0].replace('_', ' '),
-                    'source': layer['url_wms']
+                    'source': layer['url_wms'],
+                    'wfs_namespace': layer['wfs_namespace'],
+                    'wfs_geometry_field': layer['wfs_geometry_field'],
                 }
 
                 if y.style:

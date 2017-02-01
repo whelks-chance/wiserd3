@@ -386,7 +386,7 @@
                 {% blocktrans %}The WISERD DataPortal allows users to search and discover survey metadata.{% endblocktrans %}
             </p>
             <p>
-                {% trans 'You can import your own data onto the DataPortal by clicking the MapMyData button.'%}
+                {% trans 'You can view Dublin Core data for this survey here.'%}
             </p>
             <div class="row">
                 <a style="color: white; border-width: 2px; border-style: outset;" href="{% url 'account_login' %}" class="btn btn-lg btn-success btn-block primaryAction">
@@ -440,11 +440,11 @@
                 {% if request.user.is_authenticated %}
              hidden="hidden"
                 {% endif %}>
-            <p>
-                {% blocktrans %}The WISERD DataPortal allows users to map their own data for areas in Wales and to export this as a publishable map. This function has been specially designed so that all the mapping occurs inside the users browser rather than on the WISERD DataPortal server. This means that potentially sensitive data does not leave the users machine.{% endblocktrans %}
+                <p>
+                {% blocktrans %}The WISERD DataPortal allows users to search and discover survey metadata.{% endblocktrans %}
             </p>
             <p>
-                {% trans 'You can import your own data onto the DataPortal by clicking the MapMyData button.'%}
+                {% trans 'You can view the questions for this survey here.'%}
             </p>
             <div class="row">
                 <a style="color: white; border-width: 2px; border-style: outset;" href="{% url 'account_login' %}" class="btn btn-lg btn-success btn-block primaryAction">
@@ -472,10 +472,10 @@
              hidden="hidden"
                 {% endif %}>
             <p>
-                {% blocktrans %}The WISERD DataPortal allows users to map their own data for areas in Wales and to export this as a publishable map. This function has been specially designed so that all the mapping occurs inside the users browser rather than on the WISERD DataPortal server. This means that potentially sensitive data does not leave the users machine.{% endblocktrans %}
+                {% blocktrans %}The WISERD DataPortal allows users to search and discover survey metadata.{% endblocktrans %}
             </p>
             <p>
-                {% trans 'You can import your own data onto the DataPortal by clicking the MapMyData button.'%}
+                {% trans 'You can view visualisations of data for this survey here.'%}
             </p>
             <div class="row">
                 <a style="color: white; border-width: 2px; border-style: outset;" href="{% url 'account_login' %}" class="btn btn-lg btn-success btn-block primaryAction">

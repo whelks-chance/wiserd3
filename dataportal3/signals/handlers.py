@@ -22,8 +22,9 @@ def new_user_signup(sender, **kwargs):
 
     user_language_title = 'English'
     request = kwargs['request']
-    if request.session[LANGUAGE_SESSION_KEY] == 'cy':
-        user_language_title = 'Welsh'
+    if LANGUAGE_SESSION_KEY in request.session:
+        if request.session[LANGUAGE_SESSION_KEY] == 'cy':
+            user_language_title = 'Welsh'
 
     language = UserLanguage.objects.get(user_language_title=user_language_title)
     lv_user_preferences = UserPreferences()

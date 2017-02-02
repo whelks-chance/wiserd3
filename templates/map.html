@@ -131,7 +131,7 @@
 {% endblock %}
 
 {% block nav_extras %}
-    {% if naw %}
+    {% if naw or tpt == 'm4w' %}
         {#        <li>#}
         {#            <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> National Assembley for Wales Searches<span class="fa arrow"></span></a>#}
         {#            <ul aria-expanded="false" class="nav nav-second-level scrollable_ul collapse">#}
@@ -183,42 +183,17 @@
         {#        </li>#}
     {% endif %}
     {% if not naw %}
-        {#        <li id="map_layers_menu_li">#}
-        {#            <a href="#" id="map_layers_menu_link">#}
-        {#                <i class="fa fa-map-o fa-fw"></i> {% trans 'Map layers' %}<span class="fa arrow"></span>#}
-        {#            </a>#}
-        {#            <ul class="nav nav-ul nav-second-level">#}
+
         <li>
             <a id="new_layer_btn" href="#"><i class="fa fa-feed fa-fw"></i> {% trans 'Remote Data' %}</a>
-
-            {#                <a aria-expanded="false" href="#"> Remote Data<span class="fa arrow"></span></a>#}
-            {#                <ul aria-expanded="false" class="nav nav-third-level collapse">#}
-            {#                    <li>#}
-            {#                        <a aria-expanded="false" id="new_layer_btn" href="#"><i class="fa fa-map-marker fa-fw"></i> NomisApi Data</a>#}
-            {#                    </li>#}
-            {#                </ul>#}
         </li>
         <li>
             <a id="import_local_data_btn" href="#"><i class="fa fa-file-excel-o fa-fw"></i> {% trans 'MapMyData' %}</a>
         </li>
-        {#        <li>#}
-        {#            <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>#}
-        {#            <ul class="nav nav-ul nav-third-level scrollable_ul">#}
-        {#                {% for wms_url, wms_layer_set in wms_layers.items %}#}
-        {#                    {% for wms_layer in wms_layer_set %}#}
-        {#                        <li>#}
-        {#                            <a href="#" data-layer_name="{{ wms_layer.tile_name }}" data-layer_url="{{ wms_url }}" class="wms_toggle">#}
-        {#                                <i class="fa fa-map-marker fa-fw"></i> {{ wms_layer.name }}</a>#}
-        {#                        </li>#}
-        {#                    {% endfor %}#}
-        {#                {% endfor %}#}
-        {#            </ul>#}
-        {#        </li>#}
+
 
         <li>
             <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>
-
-
             <ul id="lle_wms" class="nav nav-ul nav-third-level">
                 <li>
                     <input class="lle_search search" placeholder="Search" />
@@ -227,6 +202,8 @@
             </ul>
 
         </li>
+    {% endif %}
+    {% if tpt == 'default' %}
 
         <li>
             <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'WISERD Knowing Localities Research' %}<span class="fa arrow"></span></a>
@@ -3481,7 +3458,7 @@
                             </div>
                         </td>
                         <td>
-                            <label id="point_icon_type" data-placement="inline" class="icp icp-auto" data-selected="fa-align-justify">
+                            <label id="point_icon_type" data-placement="inline" class="icp icp-auto" data-selected="fa-align-justify"></label>
                         </td>
                     </tr>
 

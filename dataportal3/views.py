@@ -25,9 +25,11 @@ from django.core.serializers import serialize
 from django.db import connections
 from django.db.models import Q
 from django.forms.models import model_to_dict
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, Http404
 from django.shortcuts import render, redirect
 from django.template import RequestContext
+from django.template.exceptions import TemplateDoesNotExist
+from django.template.loader import get_template
 from django.utils.translation import get_language
 from django.views.decorators.csrf import csrf_exempt
 import operator
@@ -76,14 +78,14 @@ def dashboard(request):
                   },context_instance=RequestContext(request))
 
 
-def user_settings(request):
-    return render(request, 'settings.html',
-                  {
-                      'languages': models.UserLanguage.objects.all(),
-                      'preferences': get_user_preferences(request),
-                      'searches': get_user_searches(request),
-                  },
-                  context_instance=RequestContext(request))
+# def user_settings(request):
+#     return render(request, 'settings.html',
+#                   {
+#                       'languages': models.UserLanguage.objects.all(),
+#                       'preferences': get_user_preferences(request),
+#                       'searches': get_user_searches(request),
+#                   },
+#                   context_instance=RequestContext(request))
 
 
 def search_survey_question_gui(request):
@@ -352,30 +354,56 @@ def tables(request):
 
 def map_search(request):
     print request.GET
+
+    # Default template
+    template_name = 'navigation.html'
+    # Third Party Templating
+    tpt = request.GET.get('tpt', 'default')
+
     naw = request.GET.get('naw', False)
+    if naw:
+        template_name = 'naw_navigation.html'
+
     use_template = request.GET.get('use_template', True)
+    if use_template == 'False':
+        template_name = 'empty.html'
+        use_template = False
+
+    if tpt in settings.THIRD_PARTY_INTERFACES:
+        template_name = tpt + '_navigation.html'
+        if tpt == 'm4w':
+            template_name = 'm4w_navigation.html'
+
+        if tpt == 'naw':
+            naw = True
+            template_name = 'naw_navigation.html'
+
+    try:
+        get_template(template_name)
+    except TemplateDoesNotExist:
+        raise Http404
 
     layer_uuids = request.GET.getlist('layers', [])
-    print layer_uuids, type(layer_uuids)
+    print 'layer_uuids', layer_uuids, type(layer_uuids)
 
     wms_layers = {}
-    for layer in settings.WMS_LAYERS:
-        try:
-            filename = os.path.join(settings.BASE_DIR, os.path.join('dataportal3', os.path.join('static', layer['filename'])))
-            print filename
-            capabilities = open(filename, 'r').read()
-            soup = BeautifulSoup(capabilities)
-            x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
-            b = []
-            for y in x:
-                b.append({
-                    'tile_name': [z.string for z in y.findAll('name')][0],
-                    'name': [z.string for z in y.findAll('title')][0]
-                })
-            wms_layers[layer['url_wms']] = b
-
-        except Exception as e9832478:
-            print type(e9832478), e9832478
+    # for layer in settings.WMS_LAYERS:
+    #     try:
+    #         filename = os.path.join(settings.BASE_DIR, os.path.join('dataportal3', os.path.join('static', layer['filename'])))
+    #         print filename
+    #         capabilities = open(filename, 'r').read()
+    #         soup = BeautifulSoup(capabilities)
+    #         x = soup.wms_capabilities.capability.findAll('layer', queryable=1)
+    #         b = []
+    #         for y in x:
+    #             b.append({
+    #                 'tile_name': [z.string for z in y.findAll('name')][0],
+    #                 'name': [z.string for z in y.findAll('title')][0]
+    #             })
+    #         wms_layers[layer['url_wms']] = b
+    #
+    #     except Exception as e9832478:
+    #         print type(e9832478), e9832478
 
     surveys = request.GET.getlist('surveys', [])
     boundaries = request.GET.getlist('boundary', [])
@@ -478,15 +506,9 @@ def map_search(request):
         else:
             layer_uuids.extend(NAW_LAYER_UUIDS)
 
-    template_name = 'navigation.html'
-    if naw:
-        template_name = 'naw_navigation.html'
-    if use_template == 'False':
-        template_name = 'empty.html'
-        use_template = False
-
     return render(request, 'map.html',
                   {
+                      'tpt': tpt,
                       'naw': naw,
                       'template_name': template_name,
                       'use_template': use_template,
@@ -3155,17 +3177,16 @@ def csv_view_data(request, provider, search_uuid):
 
 
 def naw_dashboard(request):
-
-    # use_welsh = False
-    # user_prefs = get_user_preferences(request)
-    # assert isinstance(user_prefs, models.UserPreferences)
-    # if user_prefs.preferred_language:
-    #     if user_prefs.preferred_language.user_language_title == 'Welsh':
-    #         use_welsh = True
-
     return render(request, 'naw_dashboard.html',
                   {
-                      # 'use_welsh': use_welsh,
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request)
+                  },context_instance=RequestContext(request))
+
+
+def m4w_dashboard(request):
+    return render(request, 'm4w_dashboard.html',
+                  {
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
                   },context_instance=RequestContext(request))

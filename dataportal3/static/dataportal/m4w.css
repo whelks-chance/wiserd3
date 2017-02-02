@@ -1,0 +1,89 @@
+.navbar-default {
+    background-color: rgb(220, 30, 98);
+        color: lightgrey;
+}
+
+#wrapper, .right_sidebar {
+    background-color: #eeeeee;
+    color: rgb(220, 30, 98);
+}
+
+.right_sidebar a {
+    background-color: lightgrey;
+    color: rgb(220, 30, 98);
+}
+
+a {
+    background-color: rgb(220, 30, 98);
+            color: lightgrey;
+}
+
+a:hover {
+        color: #eeeeee;
+    background-color: rgba(220, 30, 98, 0.5);
+
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover,
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover,
+li.active > a
+{
+     background-color: rgba(220, 30, 98, 0.5);
+    color: #eeeeee;
+}
+
+.navbar-top-links li a{
+    /*color: rgba(36, 36, 36, 0.8);*/
+                color: lightgrey;
+}
+
+.navbar-top-links .dropdown-menu li a {
+    color: rgb(220, 30, 98);
+    background-color: #fff;
+}
+
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+        background-color: rgba(220, 30, 98, 0.15);
+}
+
+.navbar-default .navbar-toggle {
+    border-color: rgba(36, 36, 36, 0.8);
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: rgba(220, 30, 98, 0.5);
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
+        background-color: #eeeeee;
+        border-color: #eeeeee;
+}
+
+.leaflet-container a {
+    color: rgb(220, 30, 98);
+            background-color: #fff;
+}
+
+.panel-primary a {
+    color: #337ab7;
+}
+
+
+.ui-widget-header {
+        background-color: rgb(220, 30, 98);
+        border-color: rgb(220, 30, 98);
+
+}
+
+.popover-title {
+    color: #0f0f0f;
+
+}
+.popover-content {
+    color: #0f0f0f;
+
+}

@@ -36,6 +36,7 @@ urlpatterns = [
                   url(r'^index', views.dashboard, name='index'),
                   url(r'^dashboard', views.dashboard, name='dashboard'),
                   url(r'^naw_dashboard', views.naw_dashboard, name='naw_dashboard'),
+                  url(r'^m4w_dashboard', views.m4w_dashboard, name='m4w_dashboard'),
                   url(r'^http_404', views.http_404_error, name='http_404'),
 
                   # Legacy - Because we shared this address once

@@ -337,6 +337,8 @@ NAW_CY_LAYER_UUIDS = []
 
 NAW_SEARCH_LAYER_UUIDS = []
 
+THIRD_PARTY_INTERFACES = ['naw', 'm4w']
+
 WMS_LAYERS = [
     {
         'name': 'Inspire Wales',

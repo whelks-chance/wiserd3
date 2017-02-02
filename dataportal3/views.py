@@ -362,6 +362,7 @@ def map_search(request):
 
     naw = request.GET.get('naw', False)
     if naw:
+        tpt = 'naw'
         template_name = 'naw_navigation.html'
 
     use_template = request.GET.get('use_template', True)

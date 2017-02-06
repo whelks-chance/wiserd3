@@ -717,14 +717,14 @@ class QualTranscriptData(models.Model):
     stats = models.TextField()
     pages = models.IntegerField()
     errors = models.TextField(blank=True, null=True)
-    # text_index = VectorField(db_index=False)
-    #
-    # objects = SearchManager(
-    #     fields = ('rawtext'),
-    #     config = 'pg_catalog.english',  # this is default
-    #     search_field = 'text_index',  # this is default
-    #     auto_update_search_field = True
-    # )
+    text_index = VectorField(db_index=False)
+
+    objects = SearchManager(
+        fields = ('rawtext'),
+        config = 'pg_catalog.english',  # this is default
+        search_field = 'text_index',  # this is default
+        auto_update_search_field = True
+    )
 
     class Meta:
         db_table = 'qual_transcript_data'

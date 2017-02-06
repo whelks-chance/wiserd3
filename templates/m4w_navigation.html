@@ -9,6 +9,16 @@
 
     <script>
         $(document).ready(function () {
+            $.cookie("WDP_view_type", "m4w", {expires: 365, path: '/'});
+
+            if ($.cookie("WDP_m4w_returning_user")) {
+                var view = parseInt($.cookie("WDP_m4w_returning_user"));
+                view += 1;
+                $.cookie("WDP_m4w_returning_user", view, {expires: 365, path: '/'});
+            } else {
+                $.cookie("WDP_m4w_returning_user", 0, {expires: 365, path: '/'});
+            }
+
             $('#help_intro').click(function(){
                 do_intro('{{ LANGUAGE_CODE }}');
             });
@@ -32,21 +42,21 @@
                 <a
                         {#                        class="navbar-brand" #}
                         href="{% url 'm4w_dashboard' %}">
-                    <div style="display: flex; flex-direction: row">
+                    <div style="display: flex; flex-direction: row; padding-top: 10px; padding-left: 15px">
 
-                    <h3>Map 4 Wales</h3>
+                    <h4>Map 4 Wales</h4>
                         <i style="
                     max-height: inherit;
                             margin-left: 0.2em;
                                     padding: 0.1em;
                                     "
-                                           class="fa fa-3x fa-map-o"></i>
+                                           class="fa fa-2x fa-map-o"></i>
                     <i style="
                     max-height: inherit;
                             margin-left: 0.2em;
                                     padding: 0.1em;
                                     "
-                                           class="fa fa-3x fa-globe"></i>
+                                           class="fa fa-2x fa-globe"></i>
                     </div>
                 </a>
             </div>

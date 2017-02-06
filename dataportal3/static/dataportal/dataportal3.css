@@ -196,7 +196,8 @@
 
 @media (min-width: 768px) {
     .page-wrapper {
-        padding: 0 15px !important;
+        /*padding: 0 15px !important;*/
+        padding: 0 !important;
     }
 }
 

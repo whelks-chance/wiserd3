@@ -1,26 +1,28 @@
 .navbar-default {
-    background-color: rgb(220, 30, 98);
+    /*background-color: rgb(58, 137, 175);*/
+        background-image: linear-gradient(#002E4B, #0081B6);
+
         color: lightgrey;
 }
 
 #wrapper, .right_sidebar {
     background-color: #eeeeee;
-    color: rgb(220, 30, 98);
+    color: rgb(58, 137, 175);
 }
 
 .right_sidebar a {
     background-color: lightgrey;
-    color: rgb(220, 30, 98);
+    color: rgb(58, 137, 175);
 }
 
 a {
-    background-color: rgb(220, 30, 98);
+    /*background-color: rgb(58, 137, 175);*/
             color: lightgrey;
 }
 
 a:hover {
         color: #eeeeee;
-    background-color: rgba(220, 30, 98, 0.5);
+    background-color: rgba(58, 137, 175, 0.5);
 
 }
 
@@ -31,7 +33,7 @@ a:hover {
 .nav .open>a:hover,
 li.active > a
 {
-     background-color: rgba(220, 30, 98, 0.5);
+     background-color: rgba(58, 137, 175, 0.5);
     color: #eeeeee;
 }
 
@@ -41,13 +43,13 @@ li.active > a
 }
 
 .navbar-top-links .dropdown-menu li a {
-    color: rgb(220, 30, 98);
+    color: rgb(58, 137, 175);
     background-color: #fff;
 }
 
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
-        background-color: rgba(220, 30, 98, 0.15);
+        background-color: rgba(58, 137, 175, 0.15);
 }
 
 .navbar-default .navbar-toggle {
@@ -55,7 +57,7 @@ li.active > a
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: rgba(220, 30, 98, 0.5);
+    background-color: rgba(58, 137, 175, 0.5);
 }
 
 .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
@@ -64,7 +66,7 @@ li.active > a
 }
 
 .leaflet-container a {
-    color: rgb(220, 30, 98);
+    color: rgb(58, 137, 175);
             background-color: #fff;
 }
 
@@ -74,8 +76,8 @@ li.active > a
 
 
 .ui-widget-header {
-        background-color: rgb(220, 30, 98);
-        border-color: rgb(220, 30, 98);
+        background-color: rgb(58, 137, 175);
+        border-color: rgb(58, 137, 175);
 
 }
 

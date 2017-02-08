@@ -978,6 +978,32 @@ class SpatialdataNAWConstituency(models.Model):
         managed = False
         db_table = 'spatialdata_assemblyconstituency2'
 
+
+class WelshRail(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=48, blank=True, null=True)
+    type = models.CharField(max_length=16, blank=True, null=True)
+    osm_id = models.BigIntegerField(max_length=9, blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    class Meta:
+        managed = False
+        db_table = 'welshrail'
+
+
+class UKRailStation(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    identifier = models.CharField(max_length=13, blank=True, null=True)
+    code = models.CharField(max_length=16, blank=True, null=True)
+    name = models.CharField(max_length=70, blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    class Meta:
+        managed = False
+        db_table = 'ukrailstation'
+
 from django.contrib.postgres.fields.jsonb import JSONField
 
 

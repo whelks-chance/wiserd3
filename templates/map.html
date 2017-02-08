@@ -625,8 +625,12 @@
                     if (props.hasOwnProperty('response_rate')) {
                         value = props.response_rate;
                     }
-                    if (props.hasOwnProperty('REMOTE_VALUE')) {
+                    else if (props.hasOwnProperty('REMOTE_VALUE')) {
                         value = props.REMOTE_VALUE;
+                    } else {
+                        var ppTable = prettyPrint(props);
+{#                        value += JSON.stringify(props);#}
+                        value = $(ppTable).prop('outerHTML')
                     }
                 }
                 var info_text = '<div style="min-height: 10%">';
@@ -722,7 +726,6 @@
                     info_text += '</div>';
                     {#                FIXME this is nuts #}
                     {#                this._div.innerHTML = info_text;#}
-
                     var right_pane = $('#right-component1');
                     right_pane.html(info_text);
 

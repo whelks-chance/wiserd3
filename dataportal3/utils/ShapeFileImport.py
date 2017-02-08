@@ -22,6 +22,7 @@ from dataportal3 import models
 import zipfile
 from django.contrib.gis.gdal import DataSource, CoordTransform, SpatialReference
 from dataportal3.models import FeatureCollectionStore, FeatureStore
+import logging
 
 __author__ = 'ubuntu'
 
@@ -192,15 +193,18 @@ class ShapeFileImport:
             return True, self.filenames, self.missing
 
     def extract_zip(self):
-        shapefile_zip = self.shapefile_upload.shapefile.url
-        print shapefile_zip
+        shapefile_zip = self.shapefile_upload.shapefile
+        print ('shapefile', shapefile_zip)
 
-        self.archive_dir = os.path.dirname(os.path.realpath(shapefile_zip))
-        print self.archive_dir
+        print ('shapefile path', self.shapefile_upload.shapefile.path)
+        print ('shapefile file', self.shapefile_upload.shapefile.file)
+
+        self.archive_dir = os.path.dirname(os.path.realpath(shapefile_zip.path))
+        print ('archive dir', self.archive_dir)
         self.extract_dir = os.path.join(self.archive_dir, 'extracted')
-        print self.extract_dir
+        print ('extract dir', self.extract_dir)
         try:
-            archive = zipfile.ZipFile(shapefile_zip, "r")
+            archive = zipfile.ZipFile(shapefile_zip.path, "r")
         except:
             self.shapefile_upload.progress = ShapeFileImport.progress_stage['verify_failure']
             self.shapefile_upload.save()
@@ -348,6 +352,9 @@ class ShapeFileImport:
             new_survey_link.data_type = str(field_type)
             new_survey_link.regional_data = regions_with_data
 
+            print new_survey_link
+            print new_survey_link.__dict__
+
             if overwrite:
                 # We can't bulk update, so individual update
                 new_survey_link.save()
@@ -445,6 +452,9 @@ def uniqid(prefix='', more_entropy=False):
 
 @app.task
 def celery_import(user_id, zip_file, filename, shapefile_upload_id=None):
+
+    logging.info((user_id, zip_file, filename, shapefile_upload_id))
+
     user = models.UserProfile.objects.get(id=user_id)
     sf = ShapeFileImport(
         user,

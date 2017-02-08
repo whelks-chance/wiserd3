@@ -377,6 +377,14 @@ KNOWING_LOCALITIES_TABLES = [
     {
         'display_name': 'Heads of_the Valleys',
         'table_name': 'heads_of_the_valleys'
+    },
+    {
+        'display_name': 'Rail',
+        'table_name': 'WelshRail'
+    },
+    {
+        'display_name': 'Rail Stations',
+        'table_name': 'ukrailstation'
     }
 ]
 

@@ -76,6 +76,9 @@ Install iptables and fail2ban
 
     firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" source address="<webserver_ip>" port port=<postgresql_port> protocol="tcp" accept'
 
+    sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" source address="131.251.239.154" port port=5432 protocol="tcp" accept'
+
+
 ### Ubuntu differences
 https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-14-04
 

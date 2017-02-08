@@ -115,26 +115,26 @@
                     <a href="{% url 'naw_dashboard' %}">
                         <div class="panel-heading">
                             <div class="row">
-                                <div class="col-xs-10">
+                                <div class="col-xs-3">
                                     <img style="
-                                            max-width: 90%;
+{#                                            max-width: 90%;#}
                                             {#                                background-color: white;#}
                                             height: 4.5em;
-{#                                                                            padding-top: 0.5em;#}
-                                                                            margin-top: 0.3em
+                                            {#                                                                            padding-top: 0.5em;#}
+                                            margin-top: 0.3em
                                             "
                                          src="{% static 'dataportal/media/naw-logo-circle.png' %}">
                                 </div>
-                                <div class="col-xs-2 text-right">
+                                <div class="col-xs-9 text-right">
                                     <div class="huge">_</div>
-                                    <div>.</div>
+                                    <div>{% trans 'National Assembly for Wales' %}</div>
                                 </div>
                             </div>
                         </div>
                     </a>
                     <a href="{% url 'naw_dashboard' %}">
                         <div class="panel-footer">
-                            <span class="pull-left">{% trans 'National Assembly for Wales' %}</span>
+                            <span class="pull-left">{% trans 'Constituency Mapper' %}</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
@@ -145,10 +145,35 @@
 
 
 
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-naw">
+                    <a href="{% url 'm4w_dashboard' %}">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-map-o fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">_</div>
+                                    <div>{% trans 'RTPI Cymru' %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{% url 'm4w_dashboard' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">{% trans 'Map for Wales' %}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
 
 
-<div class="col-lg-4 col-md-6">
+
+            <div class="col-lg-4 col-md-6">
                 <div class="panel panel-red">
                     <a href="{% url 'browse_surveys' %}">
                         <div class="panel-heading">
@@ -176,13 +201,13 @@
 
 
 
-        <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="panel panel-primary">
                     <a href="{% url 'wiserd_education' %}">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-{#                                    <i class="fa fa-list-alt fa-5x"></i>#}
+                                    {#                                    <i class="fa fa-list-alt fa-5x"></i>#}
                                     <img style="height: 5em"
                                          src="{% static 'dataportal/media/WISERDEducationIcoNew.png' %}">
                                 </div>
@@ -206,13 +231,13 @@
 
 
 
-        <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="panel panel-primary">
                     <a href="{% url 'civil_society' %}">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-{#                                    <i class="fa fa-list-alt fa-5x"></i>#}
+                                    {#                                    <i class="fa fa-list-alt fa-5x"></i>#}
                                     <img style="height: 5em"
                                          src="{% static 'dataportal/media/IcoCivilSocietyCol.png' %}">
                                 </div>
@@ -240,7 +265,7 @@
 
 
 
-        <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="panel panel-orange">
                     <a href="{% url 'events' %}">
                         <div class="panel-heading">
@@ -299,7 +324,7 @@
 
 
 
-<div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="panel panel-primary">
                     <a target="_blank" href="http://dataportal-development.blogspot.co.uk/">
 

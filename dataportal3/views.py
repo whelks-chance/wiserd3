@@ -772,6 +772,8 @@ def get_geojson(request):
     layer_type = request.POST.get('layer_type')
 
     if layer_type == 'wiserd_layer':
+        from topojson import topojson
+
         wiserd_layer = request.POST.getlist('layer_names[]')[0]
         spatial_table_name = str(wiserd_layer).replace('_', '').strip()
         wiserd_layer_model = apps.get_model(
@@ -780,11 +782,32 @@ def get_geojson(request):
         )
         shape_table_object = wiserd_layer_model.objects.all()
 
-        shape_list = shape_table_object.extra(
-            select={
-                'geometry': 'ST_AsGeoJSON(ST_Transform(ST_SetSRID("geom", 27700),4326))'
-            }
-        ).values('geometry')
+        # shape_list = shape_table_object.extra(
+        #     select={
+        #         'geometry': 'ST_AsGeoJSON(ST_Transform(ST_SetSRID("geom", 27700),4326))'
+        #     }
+        # ).values('geometry')
+
+        s = GeoJSONSerializer().serialize(
+            shape_table_object,
+            use_natural_keys=True,
+            with_modelname=False,
+            simplify=0.0005
+        )
+
+        # topojson_conv = topojson(
+        #     json.loads(s),
+        #     quantization=1e4,
+        #     # simplify=0.0005
+        # )
+
+        geo = json.loads(s)
+
+        geo['properties'] = {'name': wiserd_layer}
+
+        geos = json.dumps(geo)
+
+        return HttpResponse(geos, content_type="application/json")
 
     if layer_type == 'survey':
         surveys = request.POST.getlist('layer_names[]')

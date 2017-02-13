@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 import string
+from unicodedata import decimal
+
 from django.utils import timezone
 from django.utils.crypto import random
 from django.utils.datetime_safe import time
@@ -11,6 +13,8 @@ from django.contrib.auth.models import User
 import math
 from wiserd3.settings import MEDIA_ROOT
 from django_hstore import hstore
+
+from django.contrib.postgres.fields.jsonb import JSONField
 
 
 def uniqid(prefix='', more_entropy=False):
@@ -837,9 +841,56 @@ class SpatialdataPostCodePoint(models.Model):
     geom = models.GeometryField(blank=True, null=True)
     objects = models.GeoManager()
 
+    def __unicode__(self):
+        return str(self.postcode)
+
     class Meta:
         managed = False
         db_table = 'pcode_point'
+
+
+class SchoolData(models.Model):
+    # id = models.IntegerField(primary_key=True)
+    lat = models.DecimalField(decimal_places=20, max_digits=30, blank=True, null=True)
+    lea = models.IntegerField(blank=True, null=True)
+    lng = models.DecimalField(decimal_places=20, max_digits=30, blank=True, null=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    schoolCode = models.IntegerField(blank=True, null=True)
+    schoolType = models.IntegerField(blank=True, null=True)
+    statusNameEng = models.CharField(max_length=24, blank=True, null=True)
+    statusNameWelsh = models.CharField(max_length=24, blank=True, null=True)
+
+    LEANameEnglish = models.CharField(max_length=254, blank=True, null=True)
+    LEANameWelsh = models.CharField(max_length=254, blank=True, null=True)
+    schTypeEnglish = models.CharField(max_length=254, blank=True, null=True)
+    schTypeWelsh = models.CharField(max_length=254, blank=True, null=True)
+    schLanguageEnglish = models.CharField(max_length=254, blank=True, null=True)
+    schLanguageWelsh = models.CharField(max_length=254, blank=True, null=True)
+    genderMix = models.CharField(max_length=254, blank=True, null=True)
+    commentsEng = models.TextField(blank=True, null=True)
+    commentsCym = models.TextField(blank=True, null=True)
+    schoolGroupingCodePrim = models.IntegerField(blank=True, null=True)
+    addressLine1 = models.CharField(max_length=254, blank=True, null=True)
+    addressLine2 = models.CharField(max_length=254, blank=True, null=True)
+    addressLine3 = models.CharField(max_length=254, blank=True, null=True)
+    addressLine4 = models.CharField(max_length=254, blank=True, null=True)
+    postcode = models.CharField(max_length=254, blank=True, null=True)
+    telephoneNo = models.CharField(max_length=254, blank=True, null=True)
+
+    fsm_percent = models.DecimalField(decimal_places=5, max_digits=10, blank=True, null=True)
+
+    school_dict = hstore.DictionaryField(blank=True, null=True)
+    school_json = JSONField(blank=True, null=True)
+
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    def __unicode__(self):
+        return str(self.schoolCode) + ':' + str(self.name) + ':' + str(self.postcode)
+
+    class Meta:
+        managed = True
+        db_table = 'schools'
 
 
 class SpatialdataPostCodeS(models.Model):
@@ -1003,8 +1054,6 @@ class UKRailStation(models.Model):
     class Meta:
         managed = False
         db_table = 'ukrailstation'
-
-from django.contrib.postgres.fields.jsonb import JSONField
 
 
 class ResponseTable(models.Model):

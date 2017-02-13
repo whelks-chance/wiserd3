@@ -385,6 +385,10 @@ KNOWING_LOCALITIES_TABLES = [
     {
         'display_name': 'Rail Stations',
         'table_name': 'ukrailstation'
+    },
+    {
+        'display_name': 'Schools',
+        'table_name': 'SchoolData'
     }
 ]
 

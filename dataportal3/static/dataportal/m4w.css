@@ -1,6 +1,6 @@
 .navbar-default {
-    /*background-color: rgb(58, 137, 175);*/
-        background-image: linear-gradient(#002E4B, #0081B6);
+    background-color: rgb(58, 137, 175);
+        /*background-image: linear-gradient(#002E4B, #0081B6);*/
         color: lightgrey;
 }
 

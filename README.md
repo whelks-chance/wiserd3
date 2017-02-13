@@ -313,6 +313,10 @@ http://www.slideshare.net/syerram/postgres-search-in-django-34452700
 
 https://github.com/javve/list.js/
 
+http://mc.bbbike.org/mc/?num=2&mt0=mapnik&mt1=mapnik-bw
+
+http://www.mapcruzin.com/free-wales-arcgis-maps-shapefiles.htm
+
 #### Updating psql and db clusters, when CentOS postgresql 9.2 upgraded to 9.5
 
 http://tuxtrix.com/2014/12/how-to-fix-psql-version-84-server.html

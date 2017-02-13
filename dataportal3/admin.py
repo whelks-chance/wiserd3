@@ -15,7 +15,7 @@ from django.contrib.gis import admin as gis_admin
 
 # Register your models here.
 from dataportal3.models import Question, UserGroupSurveyCollection, SurveyVisibilityMetadata, Response, Search, \
-    ResponseTable, MetaDataToRemoteMapping
+    ResponseTable, MetaDataToRemoteMapping, SchoolData, SpatialdataPostCodePoint
 
 
 class FlattenJsonWidget(Textarea):
@@ -109,11 +109,29 @@ admin.site.register(Response, ResponseAdmin)
 
 class ResponseTableAdmin(FiltersMixin, admin.ModelAdmin):
     raw_id_fields = ("response", "survey", "link_from_question")
-    list_filter = (
-        ('response__responseid', SearchFilter),
-    )
 
 admin.site.register(ResponseTable, ResponseTableAdmin)
+
+
+class PostcodePointAdmin(FiltersMixin, admin.ModelAdmin):
+    list_filter = (
+        ('postcode', SearchFilter),
+    )
+
+admin.site.register(SpatialdataPostCodePoint, PostcodePointAdmin)
+
+
+class SchoolAdmin(FiltersMixin, admin.ModelAdmin):
+    # raw_id_fields = ("name", "postcode", "schoolType")
+    list_filter = (
+        ('name', SearchFilter),
+        ('postcode', SearchFilter),
+        ('schoolType', SearchFilter),
+        ('LEANameEnglish', SearchFilter),
+        ('schoolCode', SearchFilter),
+    )
+
+admin.site.register(SchoolData, SchoolAdmin)
 
 
 # TODO this is a mess

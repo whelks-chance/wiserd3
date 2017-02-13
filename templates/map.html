@@ -394,7 +394,7 @@
                                         url: btn_layer_url,
                                         typeNS: typeNS,
                                         typeName: btn_layer_name,
-{#                                        geometryField: geometryFieldsArr[geometryIdx],#}
+                                        {#                                        geometryField: geometryFieldsArr[geometryIdx],#}
                                         geometryField: 'fme_geometry',
                                         crs: epsg27700,
                                         style: {
@@ -419,14 +419,14 @@
                                 console.log('click');
                                 console.log(e.layer.feature);
 
-                                                                 var right_pane = $('#right-component1');
+                                var right_pane = $('#right-component1');
 
                                 var ppTable = prettyPrint(e.layer.feature);
 
                                 {#                    right_pane.html('<pre id="lle_json">' + JSON.stringify(e.layer.feature, null, 2) + '</pre>');#}
                                 right_pane.empty().append($(ppTable));
 
-{#                                document.getElementById('right-component1').empty().appendChild(ppTable);#}
+                                {#                                document.getElementById('right-component1').empty().appendChild(ppTable);#}
 
                                 {#                                popup.setLatLng(e.latlng).setContent('You clicked at ' + JSON.stringify(e.layer.feature)).openOn(map);#}
 
@@ -535,6 +535,17 @@
             {#            openstreetmap.options.crs = L.CRS.EPSG3857;#}
             openstreetmap.addTo(map);
 
+            var openstreetmap_bw = L.tileLayer(
+
+
+                    'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
+                    {
+                        attribution: '<a target="_blank" href="{% url 'licence_attribution' %}">Licence & attribution</a> | Map data &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
+                        maxZoom: 15,
+                        id: 'your.mapbox.project.id',
+                        accessToken: 'your.mapbox.public.access.token'
+                    });
+
 
             L.control.scale().addTo(map);
 
@@ -551,7 +562,10 @@
 
             {#        http://d3rykcmoi4kytu.cloudfront.net/lidar/latest/2m_dsm/{z}/{x}/{y}.png#}
 
-            var layers_config = {'OpenStreetMap': openstreetmap};
+            var layers_config = {
+                'OpenStreetMap': openstreetmap,
+                'BW': openstreetmap_bw
+            };
 
             var autolayers_config = {
                 overlays: [], //custom overlays group that are static
@@ -629,7 +643,7 @@
                         value = props.REMOTE_VALUE;
                     } else {
                         var ppTable = prettyPrint(props);
-{#                        value += JSON.stringify(props);#}
+                        {#                        value += JSON.stringify(props);#}
                         value = $(ppTable).prop('outerHTML')
                     }
                 }
@@ -950,26 +964,26 @@
                         }
 
                         if (layer_type == 'wiserd_layer') {
-                            {#                            wiserd_layer.addData(data);#}
+
+{#                            handleUploadedLayer(data, 'Spectral', 'k', '8', '', 'asdfgh', '', {'remote_value_key': 'fsm_percent'});#}
+
 
                             var myLayer = L.geoJson(data, {
                                 onEachFeature: function (feature, layer) {
-                                    {#                                    console.log(feature);#}
-                                    {#                                    console.log(layer);#}
-                                    {#                                    layer.bindPopup(layer.feature.properties.AREA_NAME);#}
+
                                     layer.on({
                                         mouseover: function(e){
+
                                             var layer = e.target;
+                                            console.log(layer);
+                                            info.update(layer.feature.properties);
+
                                             layer.setStyle({
                                                 weight: 5,
                                                 color: '#666',
                                                 dashArray: '',
                                                 fillOpacity: 0.7
                                             });
-                                            {#                if (!L.Browser.ie && !L.Browser.opera) {#}
-                                            {#                                            layer.bringToFront();#}
-                                            {#                }#}
-                                            info.update(layer.feature.properties);
                                         },
                                         mouseout: function(e){
                                             {#                                            console.log(e.target);#}
@@ -987,7 +1001,48 @@
                                         color: 'orangered',
                                         dashArray: '3'
                                     };
-                                }
+                                },
+{#                                pointToLayer: function (feature, latlng) {#}
+{#                                    var point_value = '';#}
+{##}
+{#                                    if (feature.properties.REMOTE_VALUE) {#}
+{#                                        point_value = feature.properties.REMOTE_VALUE;#}
+{##}
+{#                                    } else {#}
+{#                                        point_value = parseFloat(feature.properties.fsm_percent);#}
+{#                                    }#}
+{##}
+{##}
+{#                                    if (isNaN(point_value)) {#}
+{##}
+{#                                        var iconClassName = 'fa fa-2x ';#}
+{#                                        iconClassName += 'fa-institution';#}
+{##}
+{#                                        var myIcon = L.divIcon({#}
+{#                                            className: iconClassName,#}
+{#                                            iconSize: [28, 28],#}
+{#                                            iconAnchor: [15, 15],#}
+{#                                            popupAnchor: [0, 0],#}
+{#                                            shadowSize: [0, 0]#}
+{#                                        });#}
+{#                                        var marker = L.marker(latlng, {icon: myIcon}).addTo(map);#}
+{#                                        marker.valueOf()._icon.style.backgroundColor = getColorFromString(point_value);#}
+{#                                        marker.valueOf()._icon.style.color = 'white';#}
+{##}
+{#                                        return marker#}
+{#                                    } else {#}
+{#                                        var geojsonMarkerOptions = {#}
+{#                                            radius: 8,#}
+{#                                            fillColor: "#ff7800",#}
+{#                                            color: "#000",#}
+{#                                            weight: 1,#}
+{#                                            opacity: 1,#}
+{#                                            fillOpacity: 0.8#}
+{#                                        };#}
+{##}
+{#                                        return L.circleMarker(latlng, geojsonMarkerOptions);#}
+{#                                    }#}
+{#                                }#}
                             });
                             layerControl.addOverlay(myLayer, name);
                             myLayer.addTo(map);
@@ -1017,8 +1072,15 @@
             function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins,
                                          nomis_variable, layer_name_text, csv_url, layer_data){
 
-                {#                console.log('layer_data');#}
-                {#                console.log(layer_data);#}
+            console.log(data);
+            console.log(layer_data);
+
+                var remote_value_key = 'REMOTE_VALUE';
+
+                if (layer_data['remote_value_key']) {
+                    remote_value_key = layer_data['remote_value_key'];
+                }
+
                 try {
 
 
@@ -1079,8 +1141,8 @@
                                 suppressed_data = true;
                             }
 
-                            if (geometries_properties[a]['properties']['REMOTE_VALUE']) {
-                                var remote_value = geometries_properties[a]['properties']['REMOTE_VALUE'];
+                            if (geometries_properties[a]['properties'][remote_value_key]) {
+                                var remote_value = geometries_properties[a]['properties'][remote_value_key];
                                 if (isNaN(remote_value)) {
                                     feature_string_data.push(remote_value);
                                 } else {
@@ -1163,7 +1225,7 @@
                         pointToLayer: function (feature, latlng) {
                             {#                        console.log(feature);#}
                             {#                        if (feature.properties.RENDER == true) {#}
-                            if (isNaN(feature.properties.REMOTE_VALUE)) {
+                            if (isNaN(feature.properties[remote_value_key])) {
                                 {#                            TODO do something interesting with non number markers? #}
                                 {#                                return L.circleMarker(latlng, geojsonMarkerOptions);#}
                                 {#<i class="fa fa-eye"></i>#}
@@ -1185,7 +1247,7 @@
                                     shadowSize: [0, 0]
                                 });
                                 var marker = L.marker(latlng, {icon: myIcon}).addTo(map);
-                                marker.valueOf()._icon.style.backgroundColor = getColorFromString(feature.properties.REMOTE_VALUE);
+                                marker.valueOf()._icon.style.backgroundColor = getColorFromString(feature.properties[remote_value_key]);
                                 marker.valueOf()._icon.style.color = 'white';
 
                                 return marker

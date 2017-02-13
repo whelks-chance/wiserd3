@@ -802,6 +802,7 @@ def get_geojson(request):
         # )
 
         geo = json.loads(s)
+        # geo = geojson_points_to_topojson(geo)
 
         geo['properties'] = {'name': wiserd_layer}
 

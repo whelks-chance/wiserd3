@@ -772,15 +772,16 @@ def get_geojson(request):
     layer_type = request.POST.get('layer_type')
 
     if layer_type == 'wiserd_layer':
-        from topojson import topojson
+        # from topojson import topojson
 
         wiserd_layer = request.POST.getlist('layer_names[]')[0]
-        spatial_table_name = str(wiserd_layer).replace('_', '').strip()
+        # spatial_table_name = str(wiserd_layer).replace('_', '').strip()
+
         wiserd_layer_model = apps.get_model(
             app_label='dataportal3',
             model_name=wiserd_layer
         )
-        shape_table_object = wiserd_layer_model.objects.all()
+        shape_table_object = wiserd_layer_model.objects.all()[:20]
 
         # shape_list = shape_table_object.extra(
         #     select={
@@ -795,19 +796,21 @@ def get_geojson(request):
             simplify=0.0005
         )
 
-        # topojson_conv = topojson(
-        #     json.loads(s),
+        geo = json.loads(s)
+        # geo = geojson_points_to_topojson(geo)
+
+        #
+        # geo = topojson(
+        #     geo,
         #     quantization=1e4,
         #     # simplify=0.0005
         # )
 
-        geo = json.loads(s)
-        # geo = geojson_points_to_topojson(geo)
-
         geo['properties'] = {'name': wiserd_layer}
+        if wiserd_layer == 'SchoolData':
+            geo['properties']['remote_value_key'] = 'fsm_percent'
 
         geos = json.dumps(geo)
-
         return HttpResponse(geos, content_type="application/json")
 
     if layer_type == 'survey':

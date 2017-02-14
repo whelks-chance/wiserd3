@@ -96,7 +96,10 @@ six==1.9.0
 sqlparse==0.1.19
 
 # topojson==0.1.0
--e git://github.com/calvinmetcalf/topojson.py.git#egg=topojson-0.1.0-py2.7
+# -e git://github.com/calvinmetcalf/topojson.py.git#egg=topojson-0.1.0-py2.7
+
+git+git://github.com/martinvirtel/topojson.py.git@6af8ea5b550d9c747280ed7caff9ccbb7d046871#egg=topojson-0.1.0-py2.7-martinvirtel
+
 # -e git://github.com/vosi/django-grappelli-filters.git#egg=grappelli_filters
 
 unicodecsv==0.14.1

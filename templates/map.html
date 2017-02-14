@@ -965,97 +965,61 @@
 
                         if (layer_type == 'wiserd_layer') {
 
-{#                            handleUploadedLayer(data, 'Spectral', 'k', '8', '', 'asdfgh', '', {'remote_value_key': 'fsm_percent'});#}
+                            if (data['properties']['remote_value_key']) {
+
+                                handleUploadedLayer(data, 'Spectral', 'k', '8', '', data['properties']['name'], '', {'remote_value_key': data['properties']['remote_value_key']});
+                            }
+                            else {
+
+                                var myLayer = L.geoJson(data, {
+                                    onEachFeature: function (feature, layer) {
+
+                                        layer.on({
+                                            mouseover: function (e) {
+
+                                                var layer = e.target;
+                                                console.log(layer);
+                                                info.update(layer.feature.properties);
+
+                                                layer.setStyle({
+                                                    weight: 5,
+                                                    color: '#666',
+                                                    dashArray: '',
+                                                    fillOpacity: 0.7
+                                                });
+                                            },
+                                            mouseout: function (e) {
+                                                console.log(e.target);
+                                                myLayer.resetStyle(e.target);
+                                                info.update();
+                                            }
+                                        });
+                                    },
+                                    style: function (feature) {
+                                        return {
+                                            fillColor: '#0044AA',
+                                            fillOpacity: 0.7,
+                                            weight: 2,
+                                            opacity: 1,
+                                            color: 'orangered',
+                                            dashArray: '3'
+                                        };
+                                    },
+                                });
+                                layerControl.addOverlay(myLayer, name);
+                                myLayer.addTo(map);
+                                map_layers[data['properties']['name']] = myLayer;
 
 
-                            var myLayer = L.geoJson(data, {
-                                onEachFeature: function (feature, layer) {
+                                if (layer_type == 'upload_layer') {
 
-                                    layer.on({
-                                        mouseover: function(e){
+                                    topojson_layers[layer_names] = data;
+                                    $("#chloropleth_option_form").data(
+                                            {layer_names: layer_names}
+                                    ).dialog("open");
 
-                                            var layer = e.target;
-                                            console.log(layer);
-                                            info.update(layer.feature.properties);
-
-                                            layer.setStyle({
-                                                weight: 5,
-                                                color: '#666',
-                                                dashArray: '',
-                                                fillOpacity: 0.7
-                                            });
-                                        },
-                                        mouseout: function(e){
-                                            {#                                            console.log(e.target);#}
-                                            myLayer.resetStyle(e.target);
-                                            {#                                            info.update();#}
-                                        }
-                                    });
-                                },
-                                style: function (feature) {
-                                    return {
-                                        fillColor: '#0044AA',
-                                        fillOpacity: 0.7,
-                                        weight: 2,
-                                        opacity: 1,
-                                        color: 'orangered',
-                                        dashArray: '3'
-                                    };
-                                },
-{#                                pointToLayer: function (feature, latlng) {#}
-{#                                    var point_value = '';#}
-{##}
-{#                                    if (feature.properties.REMOTE_VALUE) {#}
-{#                                        point_value = feature.properties.REMOTE_VALUE;#}
-{##}
-{#                                    } else {#}
-{#                                        point_value = parseFloat(feature.properties.fsm_percent);#}
-{#                                    }#}
-{##}
-{##}
-{#                                    if (isNaN(point_value)) {#}
-{##}
-{#                                        var iconClassName = 'fa fa-2x ';#}
-{#                                        iconClassName += 'fa-institution';#}
-{##}
-{#                                        var myIcon = L.divIcon({#}
-{#                                            className: iconClassName,#}
-{#                                            iconSize: [28, 28],#}
-{#                                            iconAnchor: [15, 15],#}
-{#                                            popupAnchor: [0, 0],#}
-{#                                            shadowSize: [0, 0]#}
-{#                                        });#}
-{#                                        var marker = L.marker(latlng, {icon: myIcon}).addTo(map);#}
-{#                                        marker.valueOf()._icon.style.backgroundColor = getColorFromString(point_value);#}
-{#                                        marker.valueOf()._icon.style.color = 'white';#}
-{##}
-{#                                        return marker#}
-{#                                    } else {#}
-{#                                        var geojsonMarkerOptions = {#}
-{#                                            radius: 8,#}
-{#                                            fillColor: "#ff7800",#}
-{#                                            color: "#000",#}
-{#                                            weight: 1,#}
-{#                                            opacity: 1,#}
-{#                                            fillOpacity: 0.8#}
-{#                                        };#}
-{##}
-{#                                        return L.circleMarker(latlng, geojsonMarkerOptions);#}
-{#                                    }#}
-{#                                }#}
-                            });
-                            layerControl.addOverlay(myLayer, name);
-                            myLayer.addTo(map);
-                            map_layers[data['properties']['name']] = myLayer;
-                        }
-
-                        if (layer_type == 'upload_layer') {
-
-                            topojson_layers[layer_names] = data;
-                            $( "#chloropleth_option_form").data(
-                                    {layer_names: layer_names}
-                            ).dialog( "open" );
-
+                                }
+                            }
                         }
                     },
                     error: function() {
@@ -1072,8 +1036,9 @@
             function handleUploadedLayer(data, color_scheme, bin_breakdown, num_bins,
                                          nomis_variable, layer_name_text, csv_url, layer_data){
 
-            console.log(data);
-            console.log(layer_data);
+                console.log('handling new layer');
+                console.log(data);
+                console.log(layer_data);
 
                 var remote_value_key = 'REMOTE_VALUE';
 
@@ -1128,39 +1093,67 @@
                         opacity = 0;
                     }
 
-                    var data_objects = data['objects'];
                     var feature_data = [];
                     var feature_string_data = [];
                     var search_uuid = '0000';
 
-                    {#  This is listing all the response rate variables we know can find in the topojson #}
-                    for (var b in data_objects) {
-                        var geometries_properties = data_objects[b]['geometries'];
-                        for (var a in geometries_properties) {
-                            if (geometries_properties[a]['properties']['DATA_STATUS'] == 'Q') {
-                                suppressed_data = true;
+                    if (data['objects']) {
+                        {#                        Topojson #}
+
+                        var data_objects = data['objects'];
+                        for (var b in data_objects) {
+                            var geometries_properties = data_objects[b]['geometries'];
+                            for (var a in geometries_properties) {
+                                if (geometries_properties[a]['properties']['DATA_STATUS'] == 'Q') {
+                                    suppressed_data = true;
+                                }
+                                if (geometries_properties[a]['properties'][remote_value_key]) {
+                                    var remote_value = geometries_properties[a]['properties'][remote_value_key];
+                                    if (isNaN(remote_value)) {
+                                        feature_string_data.push(remote_value);
+                                    } else {
+                                        feature_data.push(parseFloat(remote_value));
+                                    }
+                                }
+                                if (geometries_properties[a]['properties']['SEARCH_UUID']) {
+                                    search_uuid = geometries_properties[a]['properties']['SEARCH_UUID'];
+                                }
+                            }
+                        }
+                    }
+
+
+                    if (data['features']) {
+                        {#                        Geojson (points) #}
+
+                        var data_objects = data['features'];
+                        for (var b in data_objects) {
+
+                            console.log(b);
+                            var geometries_properties = data_objects[b]['properties'];
+
+                            console.log(geometries_properties);
+
+                            if (geometries_properties['DATA_STATUS']) {
+                                if (geometries_properties['DATA_STATUS'] == 'Q') {
+                                    suppressed_data = true;
+                                }
                             }
 
-                            if (geometries_properties[a]['properties'][remote_value_key]) {
-                                var remote_value = geometries_properties[a]['properties'][remote_value_key];
+                            if (geometries_properties[remote_value_key]) {
+                                var remote_value = geometries_properties[remote_value_key];
                                 if (isNaN(remote_value)) {
                                     feature_string_data.push(remote_value);
                                 } else {
                                     feature_data.push(parseFloat(remote_value));
                                 }
-                            } else {
-                                {#                            var fake_value = Math.floor((Math.random() * 100) + 1);#}
-                                {#                            geometries_properties[a]['properties']['REMOTE_VALUE'] = fake_value;#}
-                                {#                            geometries_properties[a]['properties']['RENDER'] = false;#}
-                                {#                            feature_data.push(parseFloat(fake_value));#}
-                                {#                            fake_data = true;#}
                             }
-
-                            if (geometries_properties[a]['properties']['SEARCH_UUID']) {
-                                search_uuid = geometries_properties[a]['properties']['SEARCH_UUID'];
+                            if (geometries_properties['SEARCH_UUID']) {
+                                search_uuid = geometries_properties['SEARCH_UUID'];
                             }
                         }
                     }
+
 
                     if (fake_data) {
                         alert('WARNING: some required data not found, so has been spoofed with random data.');
@@ -1225,13 +1218,12 @@
                         pointToLayer: function (feature, latlng) {
                             {#                        console.log(feature);#}
                             {#                        if (feature.properties.RENDER == true) {#}
+
                             if (isNaN(feature.properties[remote_value_key])) {
-                                {#                            TODO do something interesting with non number markers? #}
-                                {#                                return L.circleMarker(latlng, geojsonMarkerOptions);#}
-                                {#<i class="fa fa-eye"></i>#}
+
+{#                            if (feature.properties[remote_value_key]) {#}
 
                                 var iconClassName = 'fa fa-2x ';
-
                                 if (layer_data['point_icon']) {
                                     iconClassName += layer_data['point_icon']
                                 } else {
@@ -1266,7 +1258,7 @@
                     myLayer.eachLayer(function (layer) {
                         if (typeof layer.setStyle === 'function') {
                             {#                            console.log(layer);#}
-                            layer.setStyle(styleFeature(layer.feature, grades, chroma_scale, opacity));
+                            layer.setStyle(styleFeature(layer.feature, grades, chroma_scale, opacity, remote_value_key));
                         }
                     });
                     myLayer.eachLayer(handleLayer);
@@ -1606,12 +1598,16 @@
                 return propertyList;
             }
 
-            function styleFeature(feature, feature_data, chroma_scale, opacity) {
+            function styleFeature(feature, feature_data, chroma_scale, opacity, remote_value_key) {
                 {#            console.log(feature, feature_data, chroma_scale, opacity);#}
 
                 var colour = '';
-                var remote_value = feature.properties.REMOTE_VALUE;
+                if (remote_value_key) {
+                    var remote_value = feature.properties[remote_value_key];
 
+                } else {
+                    var remote_value = feature.properties.REMOTE_VALUE;
+                }
                 if (remote_value === undefined){
                     return {
                         {#                        fillColor: '#333333',#}

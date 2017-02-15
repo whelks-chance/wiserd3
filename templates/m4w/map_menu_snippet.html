@@ -1,49 +1,65 @@
-        {% for m4w_key_search in m4w_key_searches %}
+{% for m4w_key_search in m4w_key_searches %}
 
-            {% if m4w_key_search.item_list %}
-                <li>
-                    <a href="#">
-                        {% if m4w_key_search.icon %}<i class="fa {{ m4w_key_search.icon }} fa-fw"></i>{% endif %}
-                        {% if use_welsh and m4w_key_search.description_cy %}{{ m4w_key_search.description_cy }}{% else %}{{ m4w_key_search.description }}{% endif %}<span class="fa arrow"></span></a>
+    {% if m4w_key_search.item_list %}
+        <li>
+            <a href="#">
+                {% if m4w_key_search.icon %}<i class="fa {{ m4w_key_search.icon }} fa-fw"></i>{% endif %}
+                {% if use_welsh and m4w_key_search.description_cy %}{{ m4w_key_search.description_cy }}{% else %}{{ m4w_key_search.description }}{% endif %}<span class="fa arrow"></span></a>
 
-                    <ul class="nav nav-ul nav-second-level scrollable_ul">
+            <ul class="nav nav-ul nav-second-level scrollable_ul">
 
-                        {% for m4w_key_two in m4w_key_search.item_list %}
+                {% for m4w_key_two in m4w_key_search.item_list %}
 
-                            {% if m4w_key_two.item_list %}
-                                <li>
-                                    <a href="#">
-                                        {% if m4w_key_two.icon %}<i class="fa {{ m4w_key_two.icon }} fa-fw"></i>{% endif %}
-                                        {% if use_welsh and m4w_key_two.description_cy %}{{ m4w_key_two.description_cy }}{% else %}{{ m4w_key_two.description }}{% endif %}<span class="fa arrow"></span></a>
+                    {% if m4w_key_two.item_list %}
+                        <li>
+                            <a href="#">
+                                {% if m4w_key_two.icon %}<i class="fa {{ m4w_key_two.icon }} fa-fw"></i>{% endif %}
+                                {% if use_welsh and m4w_key_two.description_cy %}{{ m4w_key_two.description_cy }}{% else %}{{ m4w_key_two.description }}{% endif %}<span class="fa arrow"></span></a>
 
-                                    <ul class="nav nav-ul nav-third-level scrollable_ul">
+                            <ul class="nav nav-ul nav-third-level scrollable_ul">
 
-                                        {% for m4w_key_three in m4w_key_two.item_list %}
-                                            <li>
-                                                <a href="#" data-m4w_key_search_uid="{{ m4w_key_three.uid }}" class="remote_data_uid">
-                                                    {% if m4w_key_three.icon %}<i class="fa {{ m4w_key_three.icon }} fa-fw"></i>{% else %}<i class="fa fa-map-marker fa-fw"></i>{% endif %}
-                                                    {% if use_welsh and m4w_key_three.description_cy %}{{ m4w_key_three.description_cy }}{% else %}{{ m4w_key_three.description }}{% endif %}</a>
-                                            </li>
-                                        {% endfor %}
+                                {% for m4w_key_three in m4w_key_two.item_list %}
 
-                                    </ul>
-                                </li>
-                            {% else %}
-                                <li>
-                                    <a href="#" data-m4w_key_search_uid="{{ m4w_key_two.uid }}" class="remote_data_uid">
-                                        <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and m4w_key_two.description_cy %}{{ m4w_key_two.description_cy }}{% else %}{{ m4w_key_two.description }}{% endif %}</a>
-                                </li>
-                            {% endif %}
+                                    <li>
+
+                                    {% if m4w_key_three.custom_link %}
+                                        {{ m4w_key_three.custom_link|safe }}
+                                    {% else %}
+
+                                        <a href="#" data-m4w_key_search_uid="{{ m4w_key_three.uid }}" class="remote_data_uid">
+                                            {% if m4w_key_three.icon %}<i class="fa {{ m4w_key_three.icon }} fa-fw"></i>{% else %}<i class="fa fa-map-marker fa-fw"></i>{% endif %}
+
+                                            {% if use_welsh and m4w_key_three.description_cy %}{{ m4w_key_three.description_cy }}{% else %}{{ m4w_key_three.description }}{% endif %}
+                                        </a>
+
+                                    {% endif %}
+
+                                    </li>
+
+                                {% endfor %}
+
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="#" data-m4w_key_search_uid="{{ m4w_key_two.uid }}" class="remote_data_uid">
+
+                                {% if m4w_key_three.icon %}<i class="fa {{ m4w_key_three.icon }} fa-fw"></i>{% else %}<i class="fa fa-map-marker fa-fw"></i>{% endif %}
+
+                                {% if use_welsh and m4w_key_two.description_cy %}{{ m4w_key_two.description_cy }}{% else %}{{ m4w_key_two.description }}{% endif %}
+                            </a>
+                        </li>
+                    {% endif %}
 
 
-                        {% endfor %}
+                {% endfor %}
 
-                    </ul>
-                </li>
-            {% else %}
-                description_cy        <li>
-                <a href="#" data-m4w_key_search_uid="{{ m4w_key_search.uid }}" class="remote_data_uid">
-                    <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and m4w_key_search.description_cy %}{{ m4w_key_search.description_cy }}{% else %}{{ m4w_key_search.description }}{% endif %}</a>
-            </li>
-            {% endif %}
-        {% endfor %}
+            </ul>
+        </li>
+    {% else %}
+        description_cy        <li>
+        <a href="#" data-m4w_key_search_uid="{{ m4w_key_search.uid }}" class="remote_data_uid">
+            <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and m4w_key_search.description_cy %}{{ m4w_key_search.description_cy }}{% else %}{{ m4w_key_search.description }}{% endif %}</a>
+    </li>
+    {% endif %}
+{% endfor %}

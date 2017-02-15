@@ -785,7 +785,7 @@ def get_geojson(request):
             app_label='dataportal3',
             model_name=wiserd_layer
         )
-        shape_table_object = wiserd_layer_model.objects.all()[':100']
+        shape_table_object = wiserd_layer_model.objects.all()
 
         # shape_list = shape_table_object.extra(
         #     select={

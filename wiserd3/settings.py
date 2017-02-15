@@ -426,10 +426,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Economic Renewal: a new direction',
                 'description_cy': u'Economic Renewal: a new direction',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -437,10 +438,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Energy Efficiency in Wales 2016-26',
                 'description_cy': u'Energy Efficiency in Wales 2016-26',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -448,10 +450,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Public Procurement of Steel: A Report into the Future Welsh Public Sector Steel Requirements and the Capacity and Capability of the Steel Sector',
                 'description_cy': u'Public Procurement of Steel: A Report into the Future Welsh Public Sector Steel Requirements and the Capacity and Capability of the Steel Sector',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -459,10 +462,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Department for Business, Enterprise, Technology & Science Sectors Delivery Plan',
                 'description_cy': u'Department for Business, Enterprise, Technology & Science Sectors Delivery Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -470,10 +474,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'The Implementation Plan for Economic Renewal: a new direction',
                 'description_cy': u'The Implementation Plan for Economic Renewal: a new direction',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -481,10 +486,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
                 'description_cy': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -492,10 +498,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
                 'description_cy': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -503,10 +510,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
                 'description_cy': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -514,10 +522,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Deeside Enterprise Zone Strategic Plan 2015',
                 'description_cy': u'Deeside Enterprise Zone Strategic Plan 2015',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -525,10 +534,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
                 'description_cy': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -536,10 +546,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
                 'description_cy': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -547,10 +558,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Snowdonia Enterprise Zone Strategic Plan 2015',
                 'description_cy': u'Snowdonia Enterprise Zone Strategic Plan 2015',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -558,10 +570,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Climbing Higher',
                 'description_cy': u'Climbing Higher',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -569,10 +582,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Coaching Plan for Wales',
                 'description_cy': u'Coaching Plan for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -580,10 +594,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Event Wales: A major events strategy for Wales 2010-20',
                 'description_cy': u'Event Wales: A major events strategy for Wales 2010-20',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -591,10 +606,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Sustainable Tourism A Framework for Wales',
                 'description_cy': u'Sustainable Tourism A Framework for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -602,10 +618,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'A Museums Strategy for Wales',
                 'description_cy': u'A Museums Strategy for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -613,10 +630,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Coastal Tourism Strategy',
                 'description_cy': u'Coastal Tourism Strategy',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -624,10 +642,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'The Welsh Government Strategy for Tourism 2013 - 2020 Partnership for Growth',
                 'description_cy': u'The Welsh Government Strategy for Tourism 2013 - 2020 Partnership for Growth',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -635,10 +654,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Framework Action Plan Years 1 - 3',
                 'description_cy': u'Framework Action Plan Years 1 - 3',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -646,10 +666,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Building a Brighter Future: Early Years and Childcare Plan',
                 'description_cy': u'Building a Brighter Future: Early Years and Childcare Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -657,10 +678,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Education for Sustainable Development and Global Citizenship In the Further Education Sector in Wales',
                 'description_cy': u'Education for Sustainable Development and Global Citizenship In the Further Education Sector in Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -668,10 +690,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'For Our Future The 21st Century Higher Education Strategy and Plan for Wales',
                 'description_cy': u'For Our Future The 21st Century Higher Education Strategy and Plan for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -679,10 +702,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Qualified for Life: An Education Improvement Plan for 3-19 year olds in Wales',
                 'description_cy': u'Qualified for Life: An Education Improvement Plan for 3-19 year olds in Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -690,10 +714,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Rewriting the Future 2015: A Year On',
                 'description_cy': u'Rewriting the Future 2015: A Year On',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -701,10 +726,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Science, Technology, Engineering and Mathematics (STEM) in education and training: A delivery plan for Wales',
                 'description_cy': u'Science, Technology, Engineering and Mathematics (STEM) in education and training: A delivery plan for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -712,10 +738,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Welsh-medium Education Strategy',
                 'description_cy': u'Welsh-medium Education Strategy',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -723,10 +750,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Raising the ambitions and educational attainment of children who are looked after in Wales Strategy',
                 'description_cy': u'Raising the ambitions and educational attainment of children who are looked after in Wales Strategy',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -734,10 +762,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Libraries Inspire: The strategic development framework for Welsh libraries 2012-16',
                 'description_cy': u'Libraries Inspire: The strategic development framework for Welsh libraries 2012-16',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -745,10 +774,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Rewriting the future: Raising ambition and attainment in Welsh schools',
                 'description_cy': u'Rewriting the future: Raising ambition and attainment in Welsh schools',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -756,10 +786,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Reducing the proportion of young people not in education, employment or training in Wales: Delivering Skills that Work for Wales',
                 'description_cy': u'Reducing the proportion of young people not in education, employment or training in Wales: Delivering Skills that Work for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -767,10 +798,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Youth engagement and progression framework: Implementation plan',
                 'description_cy': u'Youth engagement and progression framework: Implementation plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -778,10 +810,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Towards Sustainable Growth: An Action Plan for the Food and Drink Industry 2014-2020',
                 'description_cy': u'Towards Sustainable Growth: An Action Plan for the Food and Drink Industry 2014-2020',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -789,10 +822,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'The Action Plan for Pollinators in Wales',
                 'description_cy': u'The Action Plan for Pollinators in Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -800,10 +834,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'The Welsh Government\'s Action Plan for wild deer management in Wales 2011 - 2016',
                 'description_cy': u'The Welsh Government\'s Action Plan for wild deer management in Wales 2011 - 2016',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -811,10 +846,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Equine Health and Welfare Strategy for Great Britain',
                 'description_cy': u'Equine Health and Welfare Strategy for Great Britain',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -822,10 +858,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Welsh Government Contingency Plan for Exotic Animal Diseases 2016',
                 'description_cy': u'Welsh Government Contingency Plan for Exotic Animal Diseases 2016',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -833,10 +870,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Farming, Food & Countryside Building a secure future',
                 'description_cy': u'Farming, Food & Countryside Building a secure future',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -844,10 +882,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Fuel Poverty Strategy 2010',
                 'description_cy': u'Fuel Poverty Strategy 2010',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -855,10 +894,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Strategic Action Plan for the Welsh Horticulture Industry',
                 'description_cy': u'Strategic Action Plan for the Welsh Horticulture Industry',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -866,10 +906,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Towards Zero Waste One Wales: One Planet',
                 'description_cy': u'Towards Zero Waste One Wales: One Planet',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -877,10 +918,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Woodlands for Wales Action Plan',
                 'description_cy': u'Woodlands for Wales Action Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -888,10 +930,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Community Grown Food Action Plan',
                 'description_cy': u'Community Grown Food Action Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -899,10 +942,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Energy Wales: A Low Carbon Transition',
                 'description_cy': u'Energy Wales: A Low Carbon Transition',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -910,10 +954,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Environment strategy for Wales',
                 'description_cy': u'Environment strategy for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -921,10 +966,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'National Strategy for Flood and Coastal Erosion Risk Management in Wales',
                 'description_cy': u'National Strategy for Flood and Coastal Erosion Risk Management in Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -932,10 +978,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Food for Wales, Food from Wales: 2010-2020',
                 'description_cy': u'Food for Wales, Food from Wales: 2010-2020',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -943,10 +990,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Wales Marine and Fisheries: Strategic Action Plan',
                 'description_cy': u'Wales Marine and Fisheries: Strategic Action Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -954,10 +1002,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Ministerial Policy Statement on Marine Energy in Wales',
                 'description_cy': u'Ministerial Policy Statement on Marine Energy in Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -965,10 +1014,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Strategic Action Plan for the Welsh Red Meat Industry',
                 'description_cy': u'Strategic Action Plan for the Welsh Red Meat Industry',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -976,10 +1026,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Municipal Sector Plan Part 1 Towards Zero Waste One Wales: One Planet',
                 'description_cy': u'Municipal Sector Plan Part 1 Towards Zero Waste One Wales: One Planet',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -987,10 +1038,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
                 'description_cy': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -998,10 +1050,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'A noise action plan for Wales 2013-2018',
                 'description_cy': u'A noise action plan for Wales 2013-2018',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1009,10 +1062,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Climate Change Strategy for Wales',
                 'description_cy': u'Climate Change Strategy for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1020,10 +1074,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Energy Wales: A Low Carbon Transition Delivery Plan',
                 'description_cy': u'Energy Wales: A Low Carbon Transition Delivery Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1031,10 +1086,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Strategic Action Plan for the Welsh Dairy Industry',
                 'description_cy': u'Strategic Action Plan for the Welsh Dairy Industry',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1042,10 +1098,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Strategy for Wild Deer Management in Wales',
                 'description_cy': u'Strategy for Wild Deer Management in Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1053,10 +1110,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Wales Fisheries Strategy 2008',
                 'description_cy': u'Wales Fisheries Strategy 2008',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1064,10 +1122,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
                 'description_cy': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1075,10 +1134,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'The Welsh National Marine Plan: Initial draft',
                 'description_cy': u'The Welsh National Marine Plan: Initial draft',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1086,10 +1146,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Woodlands for Wales',
                 'description_cy': u'Woodlands for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1097,10 +1158,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Creating an Active Wales',
                 'description_cy': u'Creating an Active Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1108,10 +1170,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'A Strategy For Social Services In Wales Over The Next Decade: Fulfilled Lives, Supportive Communities',
                 'description_cy': u'A Strategy For Social Services In Wales Over The Next Decade: Fulfilled Lives, Supportive Communities',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1119,10 +1182,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Child Poverty: Strategy for Wales',
                 'description_cy': u'Child Poverty: Strategy for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1130,10 +1194,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Financial Inclusion Strategy for Wales 2016',
                 'description_cy': u'Financial Inclusion Strategy for Wales 2016',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1141,10 +1206,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'The Social Enterprise Action Plan for Wales 2009',
                 'description_cy': u'The Social Enterprise Action Plan for Wales 2009',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1152,10 +1218,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'The Right to be Safe',
                 'description_cy': u'The Right to be Safe',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1163,10 +1230,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Volunteering Policy Supporting Communities, Changing Lives: August',
                 'description_cy': u'Volunteering Policy Supporting Communities, Changing Lives: August',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1174,10 +1242,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'The Carers Strategy for Wales 2013',
                 'description_cy': u'The Carers Strategy for Wales 2013',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1185,10 +1254,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Wales Arson Reduction Strategy Report of the Joint Arson Group August 2007',
                 'description_cy': u'Wales Arson Reduction Strategy Report of the Joint Arson Group August 2007',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1196,10 +1266,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Fire and Rescue National Framework 2016',
                 'description_cy': u'Fire and Rescue National Framework 2016',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1207,10 +1278,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Working Together to Reduce Harm: The Substance Misuse Strategy for Wales 2008-2018',
                 'description_cy': u'Working Together to Reduce Harm: The Substance Misuse Strategy for Wales 2008-2018',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1218,10 +1290,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Children and Young People First',
                 'description_cy': u'Children and Young People First',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1229,10 +1302,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Rural Health Plan: Improving integrated service delivery across Wales',
                 'description_cy': u'Rural Health Plan: Improving integrated service delivery across Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1240,10 +1314,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
                 'description_cy': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1251,10 +1326,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Digital Wales: Delivery Plan Delivering a Digital Wales ',
                 'description_cy': u'Digital Wales: Delivery Plan Delivering a Digital Wales ',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1262,10 +1338,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Delivering a Digital Wales: The Welsh Assembly Government\'s Outline Framework for Action December 2010',
                 'description_cy': u'Delivering a Digital Wales: The Welsh Assembly Government\'s Outline Framework for Action December 2010',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1273,10 +1350,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Innovation Wales',
                 'description_cy': u'Innovation Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1284,10 +1362,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Science for Wales: A strategic agenda for science and innovation in Wales',
                 'description_cy': u'Science for Wales: A strategic agenda for science and innovation in Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1295,10 +1374,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Wales and the European Union The Welsh Government\'s EU Strategy',
                 'description_cy': u'Wales and the European Union The Welsh Government\'s EU Strategy',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1306,10 +1386,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'The Welsh Government\'s international agenda',
                 'description_cy': u'The Welsh Government\'s international agenda',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1317,10 +1398,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
                 'description_cy': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1328,10 +1410,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
                 'description_cy': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1339,10 +1422,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Improving Lives and Communities: Homes in Wales',
                 'description_cy': u'Improving Lives and Communities: Homes in Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1350,10 +1434,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Ten year homelessness plan for Wales 2009-2019',
                 'description_cy': u'Ten year homelessness plan for Wales 2009-2019',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1361,10 +1446,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Vibrant and Viable Places New Regeneration Framework',
                 'description_cy': u'Vibrant and Viable Places New Regeneration Framework',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1372,10 +1458,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Part 1: Local Government Improvement',
                 'description_cy': u'Part 1: Local Government Improvement',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1383,10 +1470,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'PPW Chapter 7 Economic Development',
                 'description_cy': u'PPW Chapter 7 Economic Development',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1394,10 +1482,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'PPW Chapter 11 Tourism, Sport and Recreation',
                 'description_cy': u'PPW Chapter 11 Tourism, Sport and Recreation',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1405,10 +1494,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'TAN 6: Planning for Sustainable Rural Communities',
                 'description_cy': u'TAN 6: Planning for Sustainable Rural Communities',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1416,10 +1506,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'TAN 21: Waste',
                 'description_cy': u'TAN 21: Waste',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1427,10 +1518,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Part 2: Community Strategies and Planning',
                 'description_cy': u'Part 2: Community Strategies and Planning',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1438,10 +1530,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Planning Policy Wales: Chapter 14 Minerals',
                 'description_cy': u'Planning Policy Wales: Chapter 14 Minerals',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1449,10 +1542,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Interim Marine Aggregates Dredging Policy South Wales',
                 'description_cy': u'Interim Marine Aggregates Dredging Policy South Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1460,10 +1554,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Minerals Planning Policy (Wales) Minerals Technical Advice Note (Wales) 1: Aggregates',
                 'description_cy': u'Minerals Planning Policy (Wales) Minerals Technical Advice Note (Wales) 1: Aggregates',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1471,10 +1566,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Minerals Technical Advice Note 2: Coal',
                 'description_cy': u'Minerals Technical Advice Note 2: Coal',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1482,10 +1578,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'TAN 8: Planning for renewable energy',
                 'description_cy': u'TAN 8: Planning for renewable energy',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1493,10 +1590,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'TAN 14: Coastal Planning - 1998 ',
                 'description_cy': u'TAN 14: Coastal Planning - 1998 ',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1504,10 +1602,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'TAN 15: Development And Flood Risk',
                 'description_cy': u'TAN 15: Development And Flood Risk',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1515,10 +1614,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Wales Spatial Plan',
                 'description_cy': u'Wales Spatial Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1526,10 +1626,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'A living language: a language for living - Welsh Language Strategy 2012-17 / Action Plan 2016-17',
                 'description_cy': u'A living language: a language for living - Welsh Language Strategy 2012-17 / Action Plan 2016-17',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1537,10 +1638,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'A living language: a language for living - Moving forward Policy statement',
                 'description_cy': u'A living language: a language for living - Moving forward Policy statement',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1548,10 +1650,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'A living language: a language for living Welsh Language Strategy 2012-17',
                 'description_cy': u'A living language: a language for living Welsh Language Strategy 2012-17',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     },
                 ]
@@ -1562,50 +1665,53 @@ M4W_SEARCH_LAYER_UUIDS = [
 
     {
         'description': u'Business and Economy',
-        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'description_cy': u'Map Item (Welsh)',
         'icon': 'fa-bar-chart',
         'item_list': [
             {
                 'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'description_cy': u'Map Item (Welsh)',
                 'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
                         'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description_cy': u'Map Item (Welsh)',
 
                     }
                 ]
             },
             {
                 'description': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'description_cy': u'Map Item (Welsh)',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
                         'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description_cy': u'Map Item (Welsh)',
 
                     }
                 ]
             },
             {
                 'description': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'description_cy': u'Map Item (Welsh)',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
                         'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description_cy': u'Map Item (Welsh)',
 
                     }
                 ]
             },
             {
                 'description': u'Deeside Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'description_cy': u'Map Item (Welsh)',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
                         'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description_cy': u'Map Item (Welsh)',
 
                     }
                 ]
@@ -1613,11 +1719,12 @@ M4W_SEARCH_LAYER_UUIDS = [
             },
             {
                 'description': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'description_cy': u'Map Item (Welsh)',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
                         'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description_cy': u'Map Item (Welsh)',
 
                     }
                 ]
@@ -1625,11 +1732,12 @@ M4W_SEARCH_LAYER_UUIDS = [
             },
             {
                 'description': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'description_cy': u'Map Item (Welsh)',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
                         'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description_cy': u'Map Item (Welsh)',
 
                     }
                 ]
@@ -1637,11 +1745,12 @@ M4W_SEARCH_LAYER_UUIDS = [
             },
             {
                 'description': u'Snowdonia Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'description_cy': u'Map Item (Welsh)',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
                         'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description_cy': u'Map Item (Welsh)',
 
                     }
                 ]
@@ -1651,40 +1760,41 @@ M4W_SEARCH_LAYER_UUIDS = [
     },
     {
         'description': u'Culture, Sport, and Tourism',
-        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'description_cy': u'Map Item (Welsh)',
         'icon': 'fa-futbol-o',
         'item_list': [
             {
-                'description': u'Business and Economy',
-                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'description': u'Map Item',
+                'description_cy': u'Map Item (Welsh)',
 
             }
         ]
     },
     {
         'description': u'Education and Skills',
-        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'description_cy': u'Map Item (Welsh)',
         'icon': 'fa-graduation-cap',
         'item_list': [
             {
-                'description': u'Business and Economy',
-                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'description': u'Map Item',
+                'description_cy': u'Map Item (Welsh)',
 
             }
         ]
     },
     {
         'description': u'Environment and Countryside',
-        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'description_cy': u'Map Item (Welsh)',
         'icon': 'fa-tree',
         'item_list': [
             {
                 'description': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
                 'description_cy': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1692,10 +1802,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'A noise action plan for Wales 2013-2018',
                 'description_cy': u'A noise action plan for Wales 2013-2018',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1703,10 +1814,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Climate Change Strategy for Wales',
                 'description_cy': u'Climate Change Strategy for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1714,10 +1826,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Energy Wales: A Low Carbon Transition Delivery Plan',
                 'description_cy': u'Energy Wales: A Low Carbon Transition Delivery Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1725,10 +1838,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Strategic Action Plan for the Welsh Dairy Industry',
                 'description_cy': u'Strategic Action Plan for the Welsh Dairy Industry',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1736,10 +1850,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Strategy for Wild Deer Management in Wales',
                 'description_cy': u'Strategy for Wild Deer Management in Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1747,10 +1862,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Wales Fisheries Strategy 2008',
                 'description_cy': u'Wales Fisheries Strategy 2008',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1758,10 +1874,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
                 'description_cy': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1769,10 +1886,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'The Welsh National Marine Plan: Initial draft',
                 'description_cy': u'The Welsh National Marine Plan: Initial draft',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1780,10 +1898,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Woodlands for Wales',
                 'description_cy': u'Woodlands for Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1792,16 +1911,17 @@ M4W_SEARCH_LAYER_UUIDS = [
     },
     {
         'description': u'Health and Social Services',
-        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'description_cy': u'Map Item (Welsh)',
         'icon': 'fa-heartbeat',
         'item_list': [
             {
                 'description': u'Rural Health Plan: Improving integrated service delivery across Wales',
                 'description_cy': u'Rural Health Plan: Improving integrated service delivery across Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1809,10 +1929,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
                 'description_cy': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1821,16 +1942,17 @@ M4W_SEARCH_LAYER_UUIDS = [
     },
     {
         'description': u'Planning and Housing',
-        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'description_cy': u'Map Item (Welsh)',
         'icon': 'fa-building-o',
         'item_list': [
             {
                 'description': u'Interim Marine Aggregates Dredging Policy South Wales',
                 'description_cy': u'Interim Marine Aggregates Dredging Policy South Wales',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1838,10 +1960,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Minerals Planning Policy (Wales) Minerals Technical Advice Note (Wales) 1: Aggregates',
                 'description_cy': u'Minerals Planning Policy (Wales) Minerals Technical Advice Note (Wales) 1: Aggregates',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1849,10 +1972,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Minerals Technical Advice Note 2: Coal',
                 'description_cy': u'Minerals Technical Advice Note 2: Coal',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1860,10 +1984,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'TAN 8: Planning for renewable energy',
                 'description_cy': u'TAN 8: Planning for renewable energy',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1871,10 +1996,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'TAN 14: Coastal Planning - 1998 ',
                 'description_cy': u'TAN 14: Coastal Planning - 1998 ',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1882,10 +2008,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'TAN 15: Development And Flood Risk',
                 'description_cy': u'TAN 15: Development And Flood Risk',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1893,10 +2020,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Wales Spatial Plan',
                 'description_cy': u'Wales Spatial Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1905,16 +2033,17 @@ M4W_SEARCH_LAYER_UUIDS = [
     },
     {
         'description': u'Infrastructure and Innovation',
-        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'description_cy': u'Map Item (Welsh)',
         'icon': 'fa-flask',
         'item_list': [
             {
                 'description': u'The Welsh Government\'s international agenda',
                 'description_cy': u'The Welsh Government\'s international agenda',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1922,10 +2051,11 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
                 'description_cy': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]
@@ -1933,11 +2063,13 @@ M4W_SEARCH_LAYER_UUIDS = [
             {
                 'description': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
                 'description_cy': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
+                        'custom_link': '<a href="#" data-wfs="true" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>TrunkRoadNetwork_2016</a>'
                     }
                 ]
             }
@@ -1945,16 +2077,17 @@ M4W_SEARCH_LAYER_UUIDS = [
     },
     {
         'description': u'Welsh Language',
-        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'description_cy': u'Map Item (Welsh)',
         'icon': 'fa-language',
         'item_list': [
             {
                 'description': u'A living language: a language for living Welsh Language Strategy 2012-17',
                 'description_cy': u'A living language: a language for living Welsh Language Strategy 2012-17',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'description': u'Winning Party 2016',
-                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
                     }
                 ]

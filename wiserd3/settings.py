@@ -416,6 +416,1554 @@ try:
 except ImportError:
     pass
 
+M4W_SEARCH_LAYER_UUIDS = [
+
+    {
+        'description': u'Policy Papers',
+        'description_cy': u'Etholiad y Cynulliad 2016: Pleidlais Etholaeth',
+        'icon': 'fa-book',
+        'item_list': [
+            {
+                'description': u'Economic Renewal: a new direction',
+                'description_cy': u'Economic Renewal: a new direction',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Energy Efficiency in Wales 2016-26',
+                'description_cy': u'Energy Efficiency in Wales 2016-26',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Public Procurement of Steel: A Report into the Future Welsh Public Sector Steel Requirements and the Capacity and Capability of the Steel Sector',
+                'description_cy': u'Public Procurement of Steel: A Report into the Future Welsh Public Sector Steel Requirements and the Capacity and Capability of the Steel Sector',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Department for Business, Enterprise, Technology & Science Sectors Delivery Plan',
+                'description_cy': u'Department for Business, Enterprise, Technology & Science Sectors Delivery Plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'The Implementation Plan for Economic Renewal: a new direction',
+                'description_cy': u'The Implementation Plan for Economic Renewal: a new direction',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Deeside Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Deeside Enterprise Zone Strategic Plan 2015',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Snowdonia Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Snowdonia Enterprise Zone Strategic Plan 2015',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Climbing Higher',
+                'description_cy': u'Climbing Higher',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Coaching Plan for Wales',
+                'description_cy': u'Coaching Plan for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Event Wales: A major events strategy for Wales 2010-20',
+                'description_cy': u'Event Wales: A major events strategy for Wales 2010-20',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Sustainable Tourism A Framework for Wales',
+                'description_cy': u'Sustainable Tourism A Framework for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'A Museums Strategy for Wales',
+                'description_cy': u'A Museums Strategy for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Coastal Tourism Strategy',
+                'description_cy': u'Coastal Tourism Strategy',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'The Welsh Government Strategy for Tourism 2013 - 2020 Partnership for Growth',
+                'description_cy': u'The Welsh Government Strategy for Tourism 2013 - 2020 Partnership for Growth',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Framework Action Plan Years 1 - 3',
+                'description_cy': u'Framework Action Plan Years 1 - 3',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Building a Brighter Future: Early Years and Childcare Plan',
+                'description_cy': u'Building a Brighter Future: Early Years and Childcare Plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Education for Sustainable Development and Global Citizenship In the Further Education Sector in Wales',
+                'description_cy': u'Education for Sustainable Development and Global Citizenship In the Further Education Sector in Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'For Our Future The 21st Century Higher Education Strategy and Plan for Wales',
+                'description_cy': u'For Our Future The 21st Century Higher Education Strategy and Plan for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Qualified for Life: An Education Improvement Plan for 3-19 year olds in Wales',
+                'description_cy': u'Qualified for Life: An Education Improvement Plan for 3-19 year olds in Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Rewriting the Future 2015: A Year On',
+                'description_cy': u'Rewriting the Future 2015: A Year On',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Science, Technology, Engineering and Mathematics (STEM) in education and training: A delivery plan for Wales',
+                'description_cy': u'Science, Technology, Engineering and Mathematics (STEM) in education and training: A delivery plan for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Welsh-medium Education Strategy',
+                'description_cy': u'Welsh-medium Education Strategy',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Raising the ambitions and educational attainment of children who are looked after in Wales Strategy',
+                'description_cy': u'Raising the ambitions and educational attainment of children who are looked after in Wales Strategy',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Libraries Inspire: The strategic development framework for Welsh libraries 2012-16',
+                'description_cy': u'Libraries Inspire: The strategic development framework for Welsh libraries 2012-16',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Rewriting the future: Raising ambition and attainment in Welsh schools',
+                'description_cy': u'Rewriting the future: Raising ambition and attainment in Welsh schools',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Reducing the proportion of young people not in education, employment or training in Wales: Delivering Skills that Work for Wales',
+                'description_cy': u'Reducing the proportion of young people not in education, employment or training in Wales: Delivering Skills that Work for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Youth engagement and progression framework: Implementation plan',
+                'description_cy': u'Youth engagement and progression framework: Implementation plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Towards Sustainable Growth: An Action Plan for the Food and Drink Industry 2014-2020',
+                'description_cy': u'Towards Sustainable Growth: An Action Plan for the Food and Drink Industry 2014-2020',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'The Action Plan for Pollinators in Wales',
+                'description_cy': u'The Action Plan for Pollinators in Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'The Welsh Government\'s Action Plan for wild deer management in Wales 2011 - 2016',
+                'description_cy': u'The Welsh Government\'s Action Plan for wild deer management in Wales 2011 - 2016',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Equine Health and Welfare Strategy for Great Britain',
+                'description_cy': u'Equine Health and Welfare Strategy for Great Britain',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Welsh Government Contingency Plan for Exotic Animal Diseases 2016',
+                'description_cy': u'Welsh Government Contingency Plan for Exotic Animal Diseases 2016',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Farming, Food & Countryside Building a secure future',
+                'description_cy': u'Farming, Food & Countryside Building a secure future',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Fuel Poverty Strategy 2010',
+                'description_cy': u'Fuel Poverty Strategy 2010',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Strategic Action Plan for the Welsh Horticulture Industry',
+                'description_cy': u'Strategic Action Plan for the Welsh Horticulture Industry',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Towards Zero Waste One Wales: One Planet',
+                'description_cy': u'Towards Zero Waste One Wales: One Planet',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Woodlands for Wales Action Plan',
+                'description_cy': u'Woodlands for Wales Action Plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Community Grown Food Action Plan',
+                'description_cy': u'Community Grown Food Action Plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Energy Wales: A Low Carbon Transition',
+                'description_cy': u'Energy Wales: A Low Carbon Transition',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Environment strategy for Wales',
+                'description_cy': u'Environment strategy for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'National Strategy for Flood and Coastal Erosion Risk Management in Wales',
+                'description_cy': u'National Strategy for Flood and Coastal Erosion Risk Management in Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Food for Wales, Food from Wales: 2010-2020',
+                'description_cy': u'Food for Wales, Food from Wales: 2010-2020',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Wales Marine and Fisheries: Strategic Action Plan',
+                'description_cy': u'Wales Marine and Fisheries: Strategic Action Plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Ministerial Policy Statement on Marine Energy in Wales',
+                'description_cy': u'Ministerial Policy Statement on Marine Energy in Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Strategic Action Plan for the Welsh Red Meat Industry',
+                'description_cy': u'Strategic Action Plan for the Welsh Red Meat Industry',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Municipal Sector Plan Part 1 Towards Zero Waste One Wales: One Planet',
+                'description_cy': u'Municipal Sector Plan Part 1 Towards Zero Waste One Wales: One Planet',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
+                'description_cy': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'A noise action plan for Wales 2013-2018',
+                'description_cy': u'A noise action plan for Wales 2013-2018',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Climate Change Strategy for Wales',
+                'description_cy': u'Climate Change Strategy for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Energy Wales: A Low Carbon Transition Delivery Plan',
+                'description_cy': u'Energy Wales: A Low Carbon Transition Delivery Plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Strategic Action Plan for the Welsh Dairy Industry',
+                'description_cy': u'Strategic Action Plan for the Welsh Dairy Industry',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Strategy for Wild Deer Management in Wales',
+                'description_cy': u'Strategy for Wild Deer Management in Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Wales Fisheries Strategy 2008',
+                'description_cy': u'Wales Fisheries Strategy 2008',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
+                'description_cy': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'The Welsh National Marine Plan: Initial draft',
+                'description_cy': u'The Welsh National Marine Plan: Initial draft',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Woodlands for Wales',
+                'description_cy': u'Woodlands for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Creating an Active Wales',
+                'description_cy': u'Creating an Active Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'A Strategy For Social Services In Wales Over The Next Decade: Fulfilled Lives, Supportive Communities',
+                'description_cy': u'A Strategy For Social Services In Wales Over The Next Decade: Fulfilled Lives, Supportive Communities',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Child Poverty: Strategy for Wales',
+                'description_cy': u'Child Poverty: Strategy for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Financial Inclusion Strategy for Wales 2016',
+                'description_cy': u'Financial Inclusion Strategy for Wales 2016',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'The Social Enterprise Action Plan for Wales 2009',
+                'description_cy': u'The Social Enterprise Action Plan for Wales 2009',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'The Right to be Safe',
+                'description_cy': u'The Right to be Safe',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Volunteering Policy Supporting Communities, Changing Lives: August',
+                'description_cy': u'Volunteering Policy Supporting Communities, Changing Lives: August',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'The Carers Strategy for Wales 2013',
+                'description_cy': u'The Carers Strategy for Wales 2013',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Wales Arson Reduction Strategy Report of the Joint Arson Group August 2007',
+                'description_cy': u'Wales Arson Reduction Strategy Report of the Joint Arson Group August 2007',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Fire and Rescue National Framework 2016',
+                'description_cy': u'Fire and Rescue National Framework 2016',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Working Together to Reduce Harm: The Substance Misuse Strategy for Wales 2008-2018',
+                'description_cy': u'Working Together to Reduce Harm: The Substance Misuse Strategy for Wales 2008-2018',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Children and Young People First',
+                'description_cy': u'Children and Young People First',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Rural Health Plan: Improving integrated service delivery across Wales',
+                'description_cy': u'Rural Health Plan: Improving integrated service delivery across Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
+                'description_cy': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Digital Wales: Delivery Plan Delivering a Digital Wales ',
+                'description_cy': u'Digital Wales: Delivery Plan Delivering a Digital Wales ',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Delivering a Digital Wales: The Welsh Assembly Government\'s Outline Framework for Action December 2010',
+                'description_cy': u'Delivering a Digital Wales: The Welsh Assembly Government\'s Outline Framework for Action December 2010',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Innovation Wales',
+                'description_cy': u'Innovation Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Science for Wales: A strategic agenda for science and innovation in Wales',
+                'description_cy': u'Science for Wales: A strategic agenda for science and innovation in Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Wales and the European Union The Welsh Government\'s EU Strategy',
+                'description_cy': u'Wales and the European Union The Welsh Government\'s EU Strategy',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'The Welsh Government\'s international agenda',
+                'description_cy': u'The Welsh Government\'s international agenda',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
+                'description_cy': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
+                'description_cy': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Improving Lives and Communities: Homes in Wales',
+                'description_cy': u'Improving Lives and Communities: Homes in Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Ten year homelessness plan for Wales 2009-2019',
+                'description_cy': u'Ten year homelessness plan for Wales 2009-2019',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Vibrant and Viable Places New Regeneration Framework',
+                'description_cy': u'Vibrant and Viable Places New Regeneration Framework',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Part 1: Local Government Improvement',
+                'description_cy': u'Part 1: Local Government Improvement',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'PPW Chapter 7 Economic Development',
+                'description_cy': u'PPW Chapter 7 Economic Development',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'PPW Chapter 11 Tourism, Sport and Recreation',
+                'description_cy': u'PPW Chapter 11 Tourism, Sport and Recreation',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'TAN 6: Planning for Sustainable Rural Communities',
+                'description_cy': u'TAN 6: Planning for Sustainable Rural Communities',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'TAN 21: Waste',
+                'description_cy': u'TAN 21: Waste',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Part 2: Community Strategies and Planning',
+                'description_cy': u'Part 2: Community Strategies and Planning',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Planning Policy Wales: Chapter 14 Minerals',
+                'description_cy': u'Planning Policy Wales: Chapter 14 Minerals',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Interim Marine Aggregates Dredging Policy South Wales',
+                'description_cy': u'Interim Marine Aggregates Dredging Policy South Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Minerals Planning Policy (Wales) Minerals Technical Advice Note (Wales) 1: Aggregates',
+                'description_cy': u'Minerals Planning Policy (Wales) Minerals Technical Advice Note (Wales) 1: Aggregates',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Minerals Technical Advice Note 2: Coal',
+                'description_cy': u'Minerals Technical Advice Note 2: Coal',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'TAN 8: Planning for renewable energy',
+                'description_cy': u'TAN 8: Planning for renewable energy',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'TAN 14: Coastal Planning - 1998 ',
+                'description_cy': u'TAN 14: Coastal Planning - 1998 ',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'TAN 15: Development And Flood Risk',
+                'description_cy': u'TAN 15: Development And Flood Risk',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'Wales Spatial Plan',
+                'description_cy': u'Wales Spatial Plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'A living language: a language for living - Welsh Language Strategy 2012-17 / Action Plan 2016-17',
+                'description_cy': u'A living language: a language for living - Welsh Language Strategy 2012-17 / Action Plan 2016-17',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'A living language: a language for living - Moving forward Policy statement',
+                'description_cy': u'A living language: a language for living - Moving forward Policy statement',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+            {
+                'description': u'A living language: a language for living Welsh Language Strategy 2012-17',
+                'description_cy': u'A living language: a language for living Welsh Language Strategy 2012-17',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
+            },
+
+        ]
+    },
+
+    {
+        'description': u'Business and Economy',
+        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'icon': 'fa-bar-chart',
+        'item_list': [
+            {
+                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+
+                    }
+                ]
+            },
+            {
+                'description': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'item_list': [
+                    {
+                        'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+
+                    }
+                ]
+            },
+            {
+                'description': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'item_list': [
+                    {
+                        'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+
+                    }
+                ]
+            },
+            {
+                'description': u'Deeside Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'item_list': [
+                    {
+                        'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+
+                    }
+                ]
+
+            },
+            {
+                'description': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'item_list': [
+                    {
+                        'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+
+                    }
+                ]
+
+            },
+            {
+                'description': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'item_list': [
+                    {
+                        'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+
+                    }
+                ]
+
+            },
+            {
+                'description': u'Snowdonia Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Y Blaid Lwyddiannus 2016',
+                'item_list': [
+                    {
+                        'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+
+                    }
+                ]
+
+            },
+        ]
+    },
+    {
+        'description': u'Culture, Sport, and Tourism',
+        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'icon': 'fa-futbol-o',
+        'item_list': [
+            {
+                'description': u'Business and Economy',
+                'description_cy': u'Y Blaid Lwyddiannus 2016',
+
+            }
+        ]
+    },
+    {
+        'description': u'Education and Skills',
+        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'icon': 'fa-graduation-cap',
+        'item_list': [
+            {
+                'description': u'Business and Economy',
+                'description_cy': u'Y Blaid Lwyddiannus 2016',
+
+            }
+        ]
+    },
+    {
+        'description': u'Environment and Countryside',
+        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'icon': 'fa-tree',
+        'item_list': [
+            {
+                'description': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
+                'description_cy': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'A noise action plan for Wales 2013-2018',
+                'description_cy': u'A noise action plan for Wales 2013-2018',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'Climate Change Strategy for Wales',
+                'description_cy': u'Climate Change Strategy for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'Energy Wales: A Low Carbon Transition Delivery Plan',
+                'description_cy': u'Energy Wales: A Low Carbon Transition Delivery Plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'Strategic Action Plan for the Welsh Dairy Industry',
+                'description_cy': u'Strategic Action Plan for the Welsh Dairy Industry',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'Strategy for Wild Deer Management in Wales',
+                'description_cy': u'Strategy for Wild Deer Management in Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'Wales Fisheries Strategy 2008',
+                'description_cy': u'Wales Fisheries Strategy 2008',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
+                'description_cy': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'The Welsh National Marine Plan: Initial draft',
+                'description_cy': u'The Welsh National Marine Plan: Initial draft',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'Woodlands for Wales',
+                'description_cy': u'Woodlands for Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        'description': u'Health and Social Services',
+        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'icon': 'fa-heartbeat',
+        'item_list': [
+            {
+                'description': u'Rural Health Plan: Improving integrated service delivery across Wales',
+                'description_cy': u'Rural Health Plan: Improving integrated service delivery across Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
+                'description_cy': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        'description': u'Planning and Housing',
+        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'icon': 'fa-building-o',
+        'item_list': [
+            {
+                'description': u'Interim Marine Aggregates Dredging Policy South Wales',
+                'description_cy': u'Interim Marine Aggregates Dredging Policy South Wales',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'Minerals Planning Policy (Wales) Minerals Technical Advice Note (Wales) 1: Aggregates',
+                'description_cy': u'Minerals Planning Policy (Wales) Minerals Technical Advice Note (Wales) 1: Aggregates',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'Minerals Technical Advice Note 2: Coal',
+                'description_cy': u'Minerals Technical Advice Note 2: Coal',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'TAN 8: Planning for renewable energy',
+                'description_cy': u'TAN 8: Planning for renewable energy',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'TAN 14: Coastal Planning - 1998 ',
+                'description_cy': u'TAN 14: Coastal Planning - 1998 ',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'TAN 15: Development And Flood Risk',
+                'description_cy': u'TAN 15: Development And Flood Risk',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'Wales Spatial Plan',
+                'description_cy': u'Wales Spatial Plan',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        'description': u'Infrastructure and Innovation',
+        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'icon': 'fa-flask',
+        'item_list': [
+            {
+                'description': u'The Welsh Government\'s international agenda',
+                'description_cy': u'The Welsh Government\'s international agenda',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
+                'description_cy': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            },
+            {
+                'description': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
+                'description_cy': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        'description': u'Welsh Language',
+        'description_cy': u'Y Blaid Lwyddiannus 2016',
+        'icon': 'fa-language',
+        'item_list': [
+            {
+                'description': u'A living language: a language for living Welsh Language Strategy 2012-17',
+                'description_cy': u'A living language: a language for living Welsh Language Strategy 2012-17',
+                'item_list': [
+                    {
+                        'description': u'Winning Party 2016',
+                        'description_cy': u'Y Blaid Lwyddiannus 2016',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ]
+            }
+        ]
+    },
+
+]
+
 # Here be dragons.
 # Hard coded dodgy translations of words
 # based on the occurrence in a filename.

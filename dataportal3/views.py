@@ -491,6 +491,9 @@ def map_search(request):
     ]
     naw_key_searches.extend(settings.NAW_SEARCH_LAYER_UUIDS)
 
+    m4w_key_searches = []
+    m4w_key_searches.extend(settings.M4W_SEARCH_LAYER_UUIDS)
+
     use_welsh = False
     user_prefs = get_user_preferences(request)
     assert isinstance(user_prefs, models.UserPreferences)
@@ -514,6 +517,7 @@ def map_search(request):
                       'template_name': template_name,
                       'use_template': use_template,
                       'naw_key_searches': naw_key_searches,
+                      'm4w_key_searches': m4w_key_searches,
                       'local_data_layers': local_data_layers,
                       'remote_searches': remote_layer_data,
                       'local_searches': local_layer_data,
@@ -781,7 +785,7 @@ def get_geojson(request):
             app_label='dataportal3',
             model_name=wiserd_layer
         )
-        shape_table_object = wiserd_layer_model.objects.all()[:20]
+        shape_table_object = wiserd_layer_model.objects.all()[':100']
 
         # shape_list = shape_table_object.extra(
         #     select={
@@ -809,6 +813,7 @@ def get_geojson(request):
         geo['properties'] = {'name': wiserd_layer}
         if wiserd_layer == 'SchoolData':
             geo['properties']['remote_value_key'] = 'fsm_percent'
+            # geo['properties']['remote_value_key'] = 'schTypeEnglish'
 
         geos = json.dumps(geo)
         return HttpResponse(geos, content_type="application/json")

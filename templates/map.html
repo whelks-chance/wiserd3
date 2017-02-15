@@ -131,10 +131,12 @@
 {% endblock %}
 
 {% block nav_extras %}
-    {% if naw or tpt == 'm4w' %}
-        {#        <li>#}
-        {#            <a aria-expanded="false" href="#"><i class="fa fa-sitemap fa-fw"></i> National Assembley for Wales Searches<span class="fa arrow"></span></a>#}
-        {#            <ul aria-expanded="false" class="nav nav-second-level scrollable_ul collapse">#}
+
+    {% if tpt == 'm4w' %}
+        {% include 'm4w/map_menu_snippet.html' %}
+    {% endif %}
+
+    {% if naw %}
         {% for naw_key_search in naw_key_searches %}
 
             {% if naw_key_search.item_list %}
@@ -179,9 +181,9 @@
             </li>
             {% endif %}
         {% endfor %}
-        {#            </ul>#}
-        {#        </li>#}
     {% endif %}
+
+
     {% if not naw %}
 
         <li>
@@ -967,7 +969,7 @@
 
                             if (data['properties']['remote_value_key']) {
 
-                                handleUploadedLayer(data, 'Spectral', 'k', '8', '', data['properties']['name'], '', {'remote_value_key': data['properties']['remote_value_key']});
+                                handleUploadedLayer(data, 'Spectral', 'q', '8', '', data['properties']['name'], '', {'remote_value_key': data['properties']['remote_value_key']});
                             }
                             else {
 
@@ -1037,8 +1039,8 @@
                                          nomis_variable, layer_name_text, csv_url, layer_data){
 
                 console.log('handling new layer');
-                console.log(data);
-                console.log(layer_data);
+{#                console.log(data);#}
+{#                console.log(layer_data);#}
 
                 var remote_value_key = 'REMOTE_VALUE';
 
@@ -1128,18 +1130,12 @@
 
                         var data_objects = data['features'];
                         for (var b in data_objects) {
-
-                            console.log(b);
                             var geometries_properties = data_objects[b]['properties'];
-
-                            console.log(geometries_properties);
-
                             if (geometries_properties['DATA_STATUS']) {
                                 if (geometries_properties['DATA_STATUS'] == 'Q') {
                                     suppressed_data = true;
                                 }
                             }
-
                             if (geometries_properties[remote_value_key]) {
                                 var remote_value = geometries_properties[remote_value_key];
                                 if (isNaN(remote_value)) {

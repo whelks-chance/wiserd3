@@ -73,17 +73,10 @@
                         <i class="">?</i>
                     </a>
                 </li>
-                <li> | </li>
 
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-pencil-square-o fa-fw"></i>  {% trans 'Research' %}  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="http://www.rtpi.org.uk/the-rtpi-near-you/rtpi-cymru/" target="_blank"><i class="fa fa-external-link fa-fw"></i> {% trans 'RTPI Cymru' %}</a>
-                        </li>
-                    </ul>
-                </li>
+
+            {% block top_nav_extras %}
+            {% endblock %}
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -119,9 +112,9 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav nav-ul" id="side-menu">
 
-                        <li>
-                            <a href="{% url 'm4w_dashboard' %}"><i class="fa fa-dashboard fa-fw"></i> {% trans 'Dashboard' %}</a>
-                        </li>
+{#                        <li>#}
+{#                            <a href="{% url 'm4w_dashboard' %}"><i class="fa fa-dashboard fa-fw"></i> {% trans 'Dashboard' %}</a>#}
+{#                        </li>#}
 
                         {% block nav_extras %}
                         {% endblock %}

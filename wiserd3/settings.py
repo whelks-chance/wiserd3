@@ -366,18 +366,18 @@ WMS_LAYERS = [
 ]
 
 KNOWING_LOCALITIES_TABLES = [
-    {
-        'display_name': 'Aberystwyth Locality Dissolved',
-        'table_name': 'aberystwyth_locality_dissolved'
-    },
-    {
-        'display_name': 'Bangor Locality Dissolved',
-        'table_name': 'bangor_locality_dissolved'
-    },
-    {
-        'display_name': 'Heads of_the Valleys',
-        'table_name': 'heads_of_the_valleys'
-    },
+    # {
+    #     'display_name': 'Aberystwyth Locality Dissolved',
+    #     'table_name': 'aberystwyth_locality_dissolved'
+    # },
+    # {
+    #     'display_name': 'Bangor Locality Dissolved',
+    #     'table_name': 'bangor_locality_dissolved'
+    # },
+    # {
+    #     'display_name': 'Heads of_the Valleys',
+    #     'table_name': 'heads_of_the_valleys'
+    # },
     {
         'display_name': 'Rail',
         'table_name': 'WelshRail'
@@ -422,6 +422,7 @@ M4W_SEARCH_LAYER_UUIDS = [
         'description': u'Policy Papers',
         'description_cy': u'Etholiad y Cynulliad 2016: Pleidlais Etholaeth',
         'icon': 'fa-book',
+        'list_id': 'policy_papers',
         'item_list': [
             {
                 'description': u'Economic Renewal: a new direction',

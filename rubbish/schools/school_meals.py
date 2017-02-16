@@ -24,7 +24,7 @@ class FreeSchoolMeals():
         self.school_data = json.loads(res.text)
         print 'Found {} schools ({} reported)'.format(len(self.school_data['schools']), len(self.school_data['schools']))
 
-    def get_school_data(self, limit=2):
+    def get_school_data(self, limit=2, save_to_db=True):
         data = {}
         with open('temp.txt', 'a') as tmp_file:
 
@@ -32,14 +32,23 @@ class FreeSchoolMeals():
             for school in self.school_data['schools'][:limit]:
                 try:
                     school_code = school['schoolCode']
-                    res = requests.get(
-                        'http://mylocalschool.wales.gov.uk/schools/{}.json?807022358'.format(school_code)
-                    )
-                    print 'Retrieved school data for {}.'.format(school_code)
-                    school_detail = json.loads(res.text)
+                    school_data_file = 'school_{}_data.txt'.format(school_code)
 
-                    with open('school_{}_data.txt'.format(school_code), 'a') as school_tmp_file:
-                        school_tmp_file.write(json.dumps(school_detail, indent=4))
+                    if os.path.isfile(school_data_file):
+                        print 'found file ', school_data_file
+                        with open(school_data_file, 'r') as school_tmp_file:
+                            school_detail = json.load(school_tmp_file)
+
+                            print "read ", len(school_detail.keys())
+                    else:
+                        res = requests.get(
+                            'http://mylocalschool.wales.gov.uk/schools/{}.json?807022358'.format(school_code)
+                        )
+                        print 'Retrieved school data for {}.'.format(school_code)
+                        school_detail = json.loads(res.text)
+
+                        with open(school_data_file, 'a') as school_tmp_file:
+                            school_tmp_file.write(json.dumps(school_detail, indent=4))
 
                     school_detail_summary = school_detail['lstSummary']
 
@@ -95,10 +104,11 @@ class FreeSchoolMeals():
                     school_model.school_dict = self.flatten_dict(school_detail_summary_dict)
                     school_model.school_json = school_detail_summary
 
-                    school_model.save()
+                    if save_to_db:
+                        school_model.save()
 
-                    save_count += 1
-                    print 'Saved : ', save_count, school_detail['postcode']
+                        save_count += 1
+                        print 'Saved : ', save_count, school_detail['postcode']
 
                     # address_line = school_detail['school']['basicDetails']['address']
                     # address_line = '<a>' + address_line + '</a>'
@@ -135,11 +145,11 @@ class FreeSchoolMeals():
 
         return dict(items)
 
-    def get_school_data_xls(self, filename='default.xls', limit=2, skip=None):
+    def get_school_data_xls(self, filename='default.xls', limit=2, skip=None, save_to_db=True):
         if not skip:
             skip = []
 
-        all_school_data = self.get_school_data(limit=limit)
+        all_school_data = self.get_school_data(limit=limit, save_to_db=save_to_db)
 
         wb = Workbook()
         ws = wb.active
@@ -258,12 +268,13 @@ if __name__ == "__main__":
 
     # print flat_D
 
-    # fsm.prepare()
-    # fsm.get_school_data_xls(
-    #     filename='school_data_all.xlsx',
-    #     limit=2000,
-    #     skip=[]
-    # )
+    fsm.prepare()
+    fsm.get_school_data_xls(
+        filename='school_data_all.xlsx',
+        limit=2000,
+        skip=[],
+        save_to_db=True
+    )
 
     # fsm.fix_null_geom()
 

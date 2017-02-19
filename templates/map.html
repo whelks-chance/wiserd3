@@ -478,10 +478,16 @@
             });
 
             $('.remote_data_uid').click(function () {
-                var uid = $(this).data('naw_key_search_uid');
-
-                do_layer_single_uuid(uid, "{% url 'data_api' %}");
-
+                var uid = null;
+                if ($(this).data('naw_key_search_uid')) {
+                    uid = $(this).data('naw_key_search_uid');
+                }
+                if ($(this).data('m4w_key_search_uid')) {
+                    uid = $(this).data('m4w_key_search_uid');
+                }
+                if (uid) {
+                    do_layer_single_uuid(uid, "{% url 'data_api' %}");
+                }
             });
 
             function toggle_upload_layer(toggle_button) {

@@ -2067,10 +2067,15 @@ M4W_SEARCH_LAYER_UUIDS = [
         'description_cy': u'Map Item (Welsh)',
         'icon': 'fa-language',
         'item_list': [
+            # {
+            #     'description': u'lsoa van',
+            #     'description_cy': u'lsoa van (Welsh)',
+            #     'uid': 'f3dfd16a-25e8-4b13-8f3c-464f5b95c8d0',
+            # },
             {
-                'description': u'Map Item',
-                'description_cy': u'Map Item (Welsh)',
-                'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                'description': u'Speaks Welsh',
+                'description_cy': u'Speaks Welsh (Welsh)',
+                'uid': 'd6f02ee4-b84f-4d7a-b567-f2929fab631e'
             }
         ]
     },

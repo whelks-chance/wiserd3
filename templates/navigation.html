@@ -62,6 +62,11 @@
                         <i class="fa fa-user fa-fw"></i>  {{ user }} <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
+
+
+                            <li><a href="https://cardiff.onlinesurveys.ac.uk/dataportal-lts" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {% trans 'Give Feedback' %}</a></li>
+                                                                        <li class="divider"></li>
+
                         {% if request.user.is_superuser  %}
                             <li><a href="{% url 'site_setup' %}" target="_blank"><i class="fa fa-cogs fa-fw"></i> {% trans 'Site Setup' %}</a>
                             </li>
@@ -87,9 +92,6 @@
                             </li>
                             <li><a target="_blank" href="/api/docs/"><i class="fa fa-file-text-o fa-fw"></i> {% trans 'API Docs' %}</a>
                             </li>
-
-                            <li class="divider"></li>
-                            <li><a href="https://cardiff.onlinesurveys.ac.uk/dataportal-lts" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {% trans 'Give Feedback' %}</a></li>
 
                             <li class="divider"></li>
 

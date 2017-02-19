@@ -3400,7 +3400,6 @@
                 var has_info = $(this).data('secondary_info');
                 var qualdcinfo_id = $(this).data('qualdcinfo');
 
-
                 $.ajax({
 
                     url: "{% url 'api:metadata:QualDcInfo-detail' pk="12345"%}".replace('12345', qualdcinfo_id),
@@ -3411,7 +3410,7 @@
                         var qual_dc_keys = [
 {#                            'identifier',#}
                             'title',
-                            'creator',
+{#                            'creator',#}
                             'subject',
                             'description',
                             'publisher',
@@ -3424,18 +3423,20 @@
                         ];
 
                         var model_data = '';
-
                         for (var idx in qual_dc_keys) {
                             var key = qual_dc_keys[idx];
                             model_data += '<h4>' + titleCase(key) + '</h4><p>' + data[key] + '</p>';
                         }
 
-
                         var info_text = '<h2>Record Details</h2>' + model_data;
-
                         var right_pane = $('#right-component1');
-                        right_pane.html(info_text);
+                        right_pane.html(urlify(info_text));
+                    },
+                    error: function(){
 
+                        var info_text = '<h2>Record Details</h2><p>None found</p>';
+                        var right_pane = $('#right-component1');
+                        right_pane.html(urlify(info_text));
                     }
                 });
 

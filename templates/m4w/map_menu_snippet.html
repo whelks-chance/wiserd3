@@ -22,7 +22,12 @@
 
                     {% if m4w_key_two.item_list %}
                         <li>
-                            <a href="#" class="name">
+                            <a href="#"
+                               {% if m4w_key_two.secondary_info %}
+                               data-secondary_info="True"
+                               {% if m4w_key_two.secondary_info.qualdcinfo %}data-qualdcinfo="{{ m4w_key_two.secondary_info.qualdcinfo }}"{% endif %}
+                               {% endif %}
+                               class="name{% if m4w_key_two.secondary_info %} secondary_info{% endif %}">
                                 {% if m4w_key_two.icon %}<i class="fa {{ m4w_key_two.icon }} fa-fw"></i>{% endif %}
                                 {% if use_welsh and m4w_key_two.description_cy %}{{ m4w_key_two.description_cy }}{% else %}{{ m4w_key_two.description }}{% endif %}<span class="fa arrow"></span></a>
 

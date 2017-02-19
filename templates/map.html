@@ -395,27 +395,27 @@
                             var geometryFields = $(toggle_button).data('wfs_geometry_field');
 
                             var geometryFieldsArr = geometryFields.split(',');
-{#                            for (var geometryIdx in geometryFieldsArr) {#}
-                                try {
+                            {#                            for (var geometryIdx in geometryFieldsArr) {#}
+                            try {
 
-                                    var wfst = new L.WFST({
-                                        url: btn_layer_url,
-                                        typeNS: typeNS,
-                                        typeName: btn_layer_name,
-                                        {#                                        geometryField: geometryFieldsArr[geometryIdx],#}
-                                        geometryField: 'fme_geometry',
-                                        crs: epsg27700,
-                                        style: {
-                                            color: 'blue',
-                                            weight: 2
-                                        }
-                                    });
+                                var wfst = new L.WFST({
+                                    url: btn_layer_url,
+                                    typeNS: typeNS,
+                                    typeName: btn_layer_name,
+                                    {#                                        geometryField: geometryFieldsArr[geometryIdx],#}
+                                    geometryField: 'fme_geometry',
+                                    crs: epsg27700,
+                                    style: {
+                                        color: 'blue',
+                                        weight: 2
+                                    }
+                                });
 
-                                } catch (e) {
-                                    console.log('Failed wfs geometryfield = fme_geometry');
-                                    console.log(e);
-                                }
-{#                            }#}
+                            } catch (e) {
+                                console.log('Failed wfs geometryfield = fme_geometry');
+                                console.log(e);
+                            }
+                            {#                            }#}
 
                             wfst.addTo(map).once('load', function () {
                                 map.fitBounds(wfst);
@@ -1047,8 +1047,8 @@
                                          nomis_variable, layer_name_text, csv_url, layer_data){
 
                 console.log('handling new layer');
-{#                console.log(data);#}
-{#                console.log(layer_data);#}
+                {#                console.log(data);#}
+                {#                console.log(layer_data);#}
 
                 var remote_value_key = 'REMOTE_VALUE';
 
@@ -1225,7 +1225,7 @@
 
                             if (isNaN(feature.properties[remote_value_key])) {
 
-{#                            if (feature.properties[remote_value_key]) {#}
+                                {#                            if (feature.properties[remote_value_key]) {#}
 
                                 var iconClassName = 'fa fa-2x ';
                                 if (layer_data['point_icon']) {
@@ -1706,25 +1706,25 @@
 
             {% if tpt == 'default' %}
 
-            var drawControl = new L.Control.Draw({
-                edit: {
-                    featureGroup: featureGroup
-                },
-                draw: {
-                    polygon: true,
-                    polyline: false,
-                    rectangle: {
-                        shapeOptions : {
-                            color : '#888888'
-                        }
+                var drawControl = new L.Control.Draw({
+                    edit: {
+                        featureGroup: featureGroup
                     },
-                    circle: true,
-                    marker: false
-                }
-            }).addTo(map);
+                    draw: {
+                        polygon: true,
+                        polyline: false,
+                        rectangle: {
+                            shapeOptions : {
+                                color : '#888888'
+                            }
+                        },
+                        circle: true,
+                        marker: false
+                    }
+                }).addTo(map);
 
-            map.on('draw:created', showPolygonArea);
-            map.on('draw:edited', showPolygonAreaEdited);
+                map.on('draw:created', showPolygonArea);
+                map.on('draw:edited', showPolygonAreaEdited);
 
             {% endif %}
 
@@ -3389,11 +3389,61 @@
             {% if tpt == 'm4w' %}
 
                 var policy_papers_options = {
-                      valueNames: ['name']
+                    valueNames: ['name']
                 };
                 var policyPaperList = new List('policy_papers', policy_papers_options);
 
             {% endif %}
+
+            $('.secondary_info').click(function () {
+
+                var has_info = $(this).data('secondary_info');
+                var qualdcinfo_id = $(this).data('qualdcinfo');
+
+
+                $.ajax({
+
+                    url: "{% url 'api:metadata:QualDcInfo-detail' pk="12345"%}".replace('12345', qualdcinfo_id),
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+
+                        var qual_dc_keys = [
+{#                            'identifier',#}
+                            'title',
+                            'creator',
+                            'subject',
+                            'description',
+                            'publisher',
+                            'contributor',
+                            'date',
+                            'type',
+                            'format',
+                            'source',
+                            'language'
+                        ];
+
+                        var model_data = '';
+
+                        for (var idx in qual_dc_keys) {
+                            var key = qual_dc_keys[idx];
+                            model_data += '<h4>' + titleCase(key) + '</h4><p>' + data[key] + '</p>';
+                        }
+
+
+                        var info_text = '<h2>Record Details</h2>' + model_data;
+
+                        var right_pane = $('#right-component1');
+                        right_pane.html(info_text);
+
+                    }
+                });
+
+
+
+
+
+            });
 
         });
 

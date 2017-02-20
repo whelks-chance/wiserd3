@@ -277,7 +277,26 @@ class RemoteData():
                     'geography': f5['geography']['description'],
                     'geography_code': f5['geography']['geogcode'],
                     'geography_id': f5['geography']['value'],
-                    'data_status': f5['obs_status']['value']
+                    'data_status': f5['obs_status']['value'],
+                    'string_data': [
+                        {
+                            'title': 'Dataset',
+                            'value': f5['dataset']['description'],
+                        },
+                        {
+                            'title': 'Licence',
+                            'value': f5['obs_conf']['description'],
+                        },
+                        {
+                            'title': 'Description',
+                            'value': f5['obs_value']['description']
+                        },
+                        {
+                            'title': 'Data link',
+                            'value': j5['header']['uri']
+                        }
+                    ]
+
                 }
                 if search_uuid:
                     k5['search_uuid'] = search_uuid

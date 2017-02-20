@@ -390,10 +390,10 @@ KNOWING_LOCALITIES_TABLES = [
         'display_name': 'Schools',
         'table_name': 'SchoolData'
     },
-    {
-        'display_name': 'Welsh Language ABS',
-        'table_name': 'WelshLanguageABS'
-    }
+    # {
+    #     'display_name': 'Welsh Language ABS',
+    #     'table_name': 'WelshLanguageABS'
+    # }
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

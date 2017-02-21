@@ -709,6 +709,10 @@
                     {#                    info_text += '<h4>' + props.AREA_NAME + '</h4>';#}
                     info_text += '<p><b>{% trans 'VALUE' %} : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</p>';
 
+                    if (props.DATA_GLOBAL_AVERAGE) {
+                        info_text += '<p><b>{% trans 'Global Average' %}</b> : ' + props.DATA_GLOBAL_AVERAGE + '</p>';
+                    }
+
                     var groups = {};
 
                     if (props.STRING_DATA) {
@@ -799,7 +803,7 @@
                     }
                     else {
                         strings += '<p><b>' + props.STRING_DATA[item]['title']
-                                + '</b>:' + string_data_value + '</p>';
+                                + '</b> : ' + string_data_value + '</p>';
                         {#                        console.log(string_data_value);#}
                     }
                 }

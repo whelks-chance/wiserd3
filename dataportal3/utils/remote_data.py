@@ -416,6 +416,8 @@ class RemoteData():
                                 if 'data_prefix' in remote_data_object:
                                     geom['properties']['DATA_PREFIX'] = remote_data_object['data_prefix']
 
+                                if 'data_global_average' in remote_data_object:
+                                    geom['properties']['DATA_GLOBAL_AVERAGE'] = remote_data_object['data_global_average']
                                 if 'data_suffix' in remote_data_object:
                                     geom['properties']['DATA_SUFFIX'] = remote_data_object['data_suffix']
 

@@ -4,6 +4,18 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from dataportal3.models import *
 from dataportal3.serializer import *
 from rest_framework import viewsets, filters
+from rest_framework import permissions
+
+
+class AnonGetAllowed(permissions.BasePermission):
+
+    def has_permission(self, request, view):
+        if request.user.is_staff:
+            return True
+        else:
+            if request.method == 'GET':
+                return True
+            return False
 
 
 class UserRoleViewSet(viewsets.ModelViewSet):
@@ -199,6 +211,7 @@ class NomisSearchViewSet(viewsets.ModelViewSet):
 
 
 class QualDcInfoViewSet(viewsets.ModelViewSet):
+    permission_classes = [AnonGetAllowed]
     queryset = QualDcInfo.objects.all()
     serializer_class = QualDcInfoSerializer
 

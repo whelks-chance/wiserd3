@@ -480,6 +480,7 @@ class SpatialSurveyLink(models.Model):
     boundary_name = models.TextField(null=True, blank=True)
     regional_data = hstore.DictionaryField(null=True, blank=True)
     data_name = models.TextField(null=True, blank=True)
+    data_global_average = models.TextField(null=True, blank=True)
     data_prefix = models.TextField(null=True, blank=True)
     data_suffix = models.TextField(null=True, blank=True)
     data_type = models.TextField(null=True, blank=True)
@@ -1034,7 +1035,7 @@ class WelshRail(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=48, blank=True, null=True)
     type = models.CharField(max_length=16, blank=True, null=True)
-    osm_id = models.BigIntegerField(max_length=9, blank=True, null=True)
+    osm_id = models.BigIntegerField(blank=True, null=True)
     geom = models.GeometryField(blank=True, null=True)
     objects = models.GeoManager()
 

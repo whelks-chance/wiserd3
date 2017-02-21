@@ -8,14 +8,13 @@ from grappelli_filters.admin import  FiltersMixin
 from django import forms
 from django.forms.widgets import Textarea
 
-from dataportal3 import models
 from django.contrib.gis import admin as gis_admin
 
 # from old import models
 
 # Register your models here.
 from dataportal3.models import Question, UserGroupSurveyCollection, SurveyVisibilityMetadata, Response, Search, \
-    ResponseTable, MetaDataToRemoteMapping, SchoolData, SpatialdataPostCodePoint
+    ResponseTable, MetaDataToRemoteMapping, SchoolData, SpatialdataPostCodePoint, NomisSearch, SpatialSurveyLink, FeatureStore, DcInfo
 
 
 class FlattenJsonWidget(Textarea):
@@ -59,7 +58,7 @@ class JSONAdmin(admin.ModelAdmin):
 class DublinCoreAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'updated')
 
-admin.site.register(models.DcInfo, DublinCoreAdmin)
+admin.site.register(DcInfo, DublinCoreAdmin)
 
 
 class QuestionAdmin(FiltersMixin, admin.ModelAdmin):
@@ -83,7 +82,7 @@ class SearchAdmin(FiltersMixin, admin.ModelAdmin):
 
 
 admin.site.register(Search, SearchAdmin)
-admin.site.register(models.FeatureStore, gis_admin.GeoModelAdmin)
+admin.site.register(FeatureStore, gis_admin.GeoModelAdmin)
 
 
 class QuestionInline(admin.StackedInline):
@@ -130,8 +129,24 @@ class SchoolAdmin(FiltersMixin, admin.ModelAdmin):
         ('LEANameEnglish', SearchFilter),
         ('schoolCode', SearchFilter),
     )
-
 admin.site.register(SchoolData, SchoolAdmin)
+
+
+class NomisSearchAdmin(FiltersMixin, admin.ModelAdmin):
+    list_filter = (
+        ('uuid', SearchFilter),
+        ('name', SearchFilter),
+    )
+admin.site.register(NomisSearch, NomisSearchAdmin)
+
+
+class SpatialSurveyLinkAdmin(FiltersMixin, admin.ModelAdmin):
+    list_filter = (
+        ('full_name', SearchFilter),
+        ('data_name', SearchFilter),
+        ('survey__identifier', SearchFilter)
+    )
+admin.site.register(SpatialSurveyLink, SpatialSurveyLinkAdmin)
 
 
 # TODO this is a mess

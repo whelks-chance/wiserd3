@@ -3077,6 +3077,7 @@ def get_topojson_for_uuid(request, search_uuid):
             region_dict = {
                 'name': '',
                 'value': region_value,
+                'data_global_average': survey_spatial_data.data_global_average,
                 'data_prefix': survey_spatial_data.data_prefix,
                 'data_suffix': survey_spatial_data.data_suffix,
                 "geography_id": '',

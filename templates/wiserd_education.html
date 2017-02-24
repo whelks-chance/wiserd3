@@ -45,7 +45,190 @@
                 ]
             });
 
+
+
+
+ var questions_table = $('#questions_table').DataTable({
+                serverSide: false,
+                processing: true,
+                "oLanguage": datatables_language,
+                "data": {},
+     columns: [
+                    {'data': 'questionnumber'},
+                    {'data': 'literal_question_text'},
+                    {#                    {'data': 'questionnumber'},#}
+                    {#                            {'data': 'thematic_groups'},#}
+                    {#                            {'data': 'thematic_tags'},#}
+                    {'data': 'type'},
+                    {'data': 'notes'},
+                    {
+                        "targets": -4,
+                        "data": null,
+                        "render": function ( data, type, full, meta ) {
+                            {# if (data['from_name'] != null && data['from_name'].trim() != '' && data['from_name'].trim() != 'N/A' ) {#}
+                            if (data['link_from_name'] && data['link_from_name'].length > 0 && data['link_from_name'] != '' ) {
+                                return "<div class='btn btn-info search_from'>{% trans 'Previous' %}</div>";
+                            } else {
+                                return ""
+                            }
+                        }
+                    },
+                    {
+                        "targets": -3,
+                        "data": null,
+                        "render": function ( data, type, full, meta ) {
+                            {# if (data['subof_name'] != null && data['subof_name'].trim() != '' && data['subof_name'].trim() != 'N/A' ) {#}
+                            if (data['sub_of_name'] && data['sub_of_name'].length > 0 && data['sub_of_name'] != '' ) {
+                                return "<div class='btn btn-info search_parent'>{% trans 'Parent' %}</div>";
+                            } else {
+                                return ""
+                            }
+                        }
+                    },
+                    {
+                        "targets": -2,
+                        "data": 'metadatatoremotemapping__remote_dataset__dataset_identifier',
+                        "render": function ( data, type, full, meta ) {
+                            if (data) {
+
+                                return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                                        "href='/map?rd_srcs=Nomis&rd_ids=" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Map Dataset' %}</a>";
+                            } else {
+                                return ''
+                            }
+                        }
+                    },
+                    {
+                        "targets": -1,
+                        "data": 'qid',
+                        "render": function ( data, type, full, meta ) {
+                            return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                                    "href='/question/" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Question' %}</a>";
+                        }
+                    }
+                ]
+            }).on( 'stateLoaded.dt', function (e, settings, data) {
+                attach_question_buttons();
+            });
+
+            function attach_question_buttons() {
+                var table_body = $('#survey_questions_table').find('tbody');
+                table_body.on('click', '.search_from', function () {
+                    var data = survey_questions_table.row($(this).parents('tr')).data();
+                    survey_questions_table.search(data['link_from_name']).draw();
+                });
+
+                {#                "^\\s*"+'1'+"\\s*$"#}
+
+                table_body.on('click', '.search_parent', function () {
+                    var data = survey_questions_table.row($(this).parents('tr')).data();
+                    survey_questions_table.column(0).search( '^' + data['sub_of_name'] + '$', true, false, true).draw();
+                });
+            }
+            attach_question_buttons();
+
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                tidy_tab_fields()
+            });
+
+        var surveyid=["wisid_cohortcyear11",
+            "wisid_cohortbyear9",
+            "wisid_cohortbyear8",
+            "wisid_cohortdyear11",
+            "wisid_cohortcyear9",
+            "wisid_cohortdyear10",
+            "wisid_cohortcyear8",
+            "wisid_cohortbyear6",
+            "wisid_cohortayear3",
+            "wisid_cohortbyear7",
+            "wisid_cohortayear2",
+            "wisid_cohortdmovers"];
+
+        var async_request=[];
+        for(var i in surveyid)
+
+            async_request.push($.ajax({
+
+                    url: "{% url 'api:metadata:Question-list' %}",
+                    type: 'GET',
+                    data: {
+                        "survey__identifier": surveyid[i]},
+
+                    success: function(data){
+                        questions_table.rows.add(data['results']).draw();
+                    },
+                error: function(){}
+
+
+                })
+            );
         });
+
+        function tidy_tab_fields() {
+            $(".tab_data_input").each( function() {
+                $(this).height(this.scrollHeight);
+            });
+        }
+
+        function get_data_row_html(field, display_name, value, type) {
+            if (type == undefined) {
+
+                if (value != null && value.constructor === Array) {
+                    var break_value = '';
+                    for (var val in value) {
+                        break_value += '\n' + value[val];
+                    }
+                    value = break_value;
+                }
+
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
+                '<div class="controls">' +
+                '<textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input" name="text_input_{0}" ' +
+                'id="text_input_{0}" size="20" value="{2}">{2}</textarea>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            } else if (type == 'link') {
+
+                var link_formatted = '<div class="control-group" id="link_{0}">' +
+                        '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
+                        '<div class="controls">';
+
+                if (value != 'N/A') {
+
+                    link_formatted += '<div class="col-sm-8" name="text_input_{0}" ' +
+                            'style="padding-top: 4px; padding-bottom: 4px; border: 1px solid rgb(169, 169, 169); ' +
+                            'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; ' +
+                            'white-space: -o-pre-wrap; word-wrap: break-word;" ' +
+                            'id="text_input_{0}" size="20" value="{2}">' +
+                            '<a href="{2}" target="_blank">{2}</a>';
+                } else {
+                    link_formatted += '<textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input" name="text_input_{0}" ' +
+                            'id="text_input_{0}" size="20" value="{2}">{2}</textarea>';
+                }
+                link_formatted += '</div></div></div>';
+
+                return (link_formatted).format(
+                        field, display_name, value
+                );
+
+            } else {
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-6">{1}</label>' +
+                '<div class="controls">' +
+                '<textarea readonly="true" type="text" class="input-block-level col-sm-6 tab_data_input" name="text_input_{0}" ' +
+                'id="text_input_{0}" size="20" value="{2}">{2}</textarea>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            }
+
+
+ }
+
+
+
 
     </script>
 
@@ -64,8 +247,22 @@
             </div>
         </div>
 
+    <ul class="nav nav-pills">
+        <li class="active">
+            <a id="survey_tab_li" href="#survey_tab" data-toggle="tab">{% trans 'Surveys' %}</a>
+        </li>
+        <li>
+            <a id="question_tab_li" href="#question_tab" data-toggle="tab">{% trans 'Questions' %}</a>
+        </li>
 
-    <div class="panel-body">
+    </ul>
+
+        <div class="tab-content">
+        <div class="tab-pane fade in active" id="survey_tab">
+                            <h4>{% trans 'Survey' %}</h4>
+                            <div id="survey_tab">
+
+                                    <div class="panel-body">
                 <div class="dataTable_wrapper">
                     <table class="table table-striped table-bordered table-hover" id="survey_table">
                         <thead>
@@ -92,6 +289,49 @@
                 </div>
             </div>
 
+
+                            </div>
+                        </div>
+
+
+        <div class="tab-pane fade" id="question_tab">
+            <h4>{% trans 'Questions' %}</h4>
+            <div id="question_tab"></div>
+       <div class="panel-body">
+                                    <div class="dataTable_wrapper">
+                                        <table class="table table-striped table-bordered table-hover" id="questions_table">
+                                            <thead>
+                                            <tr>
+                                                <th>{% trans 'Question Number' %}</th>
+                                                <th>{% trans 'QuestionText' %}</th>
+                                                <th>{% trans 'Type' %}</th>
+                                                <th>{% trans 'Notes' %}</th>
+                                                <th>{% trans 'From' %}</th>
+                                                <th>{% trans 'SubOf' %}</th>
+                                                <th>{% trans 'Map It' %}</th>
+                                                <th>{% trans 'View' %}</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                            </div>
+
+
+                            </div>
+                        </div>
+
+        </div>
+
+</div>
+
             <a id="survey_row" href="#survey_row" class="pull-right">
                 <button class="btn btn-info btn-outline">
                     <i class="fa fa-arrow-circle-up"></i> {% trans 'Top' %}
@@ -100,4 +340,5 @@
 
 
     </div>
+
 {% endblock %}

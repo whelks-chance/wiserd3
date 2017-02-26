@@ -68,6 +68,11 @@
     z-index: 500;
 }
 
+#side-menu > li > ul > li > a {
+    display: flex;
+    flex-direction: row;
+}
+
 #policy_papers > ul > ul > li > ul > li > a {
       display: flex;
     flex-direction: row;

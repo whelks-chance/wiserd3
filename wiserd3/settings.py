@@ -522,6 +522,11 @@ M4W_SEARCH_LAYER_UUIDS = [
                 },
                 'item_list': [
                     {
+                        'description': u'Power Stations',
+                        'description_cy': u'Power Stations (Welsh)',
+                        'custom_link': '<a href="#" data-layer_name="PowerStation" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> Power Stations</a>'
+                    },
+                    {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'custom_link': '<a href="#" '
@@ -536,7 +541,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
                         'custom_link': '<a href="#" '
                                        'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
-                    '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Trunk Road Network 2016</p></a>'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Trunk Road Network 2016</p></a>'
                     },
                     {
                         'description': u'Welsh Rail',
@@ -2146,8 +2151,99 @@ M4W_SEARCH_LAYER_UUIDS = [
         'icon': 'fa-bar-chart',
         'item_list': [
             {
-                'description': u'Map Item',
-                'description_cy': u'Map Item (Welsh)',
+                'description': u'Strategic Sites - Enterprise Zones',
+                'description_cy': u'Strategic Sites - Enterprise Zones (Welsh)',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Map Item (Welsh)',
+                        'icon': 'fa-file-pdf-o',
+                        'item_list': [
+                            {
+                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                                'description_cy': u'Map Item (Welsh)',
+
+                            }
+                        ]
+                    },
+                    {
+                        'description': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Map Item (Welsh)',
+                        'icon': 'fa-file-pdf-o',
+                        'item_list': [
+                            {
+                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                                'description_cy': u'Map Item (Welsh)',
+
+                            }
+                        ]
+                    },
+                    {
+                        'description': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Map Item (Welsh)',
+                        'icon': 'fa-file-pdf-o',
+                        'item_list': [
+                            {
+                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                                'description_cy': u'Map Item (Welsh)',
+
+                            }
+                        ]
+                    },
+                    {
+                        'description': u'Deeside Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Map Item (Welsh)',
+                        'icon': 'fa-file-pdf-o',
+                        'item_list': [
+                            {
+                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                                'description_cy': u'Map Item (Welsh)',
+
+                            }
+                        ]
+
+                    },
+                    {
+                        'description': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Map Item (Welsh)',
+                        'icon': 'fa-file-pdf-o',
+                        'item_list': [
+                            {
+                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                                'description_cy': u'Map Item (Welsh)',
+
+                            }
+                        ]
+
+                    },
+                    {
+                        'description': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Map Item (Welsh)',
+                        'icon': 'fa-file-pdf-o',
+                        'item_list': [
+                            {
+                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                                'description_cy': u'Map Item (Welsh)',
+
+                            }
+                        ]
+
+                    },
+                    {
+                        'description': u'Snowdonia Enterprise Zone Strategic Plan 2015',
+                        'description_cy': u'Map Item (Welsh)',
+                        'icon': 'fa-file-pdf-o',
+                        'item_list': [
+                            {
+                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                                'description_cy': u'Map Item (Welsh)',
+
+                            }
+                        ]
+
+                    },
+                ]
             }
         ]
     },
@@ -2217,10 +2313,14 @@ M4W_SEARCH_LAYER_UUIDS = [
         'icon': 'fa-flask',
         'item_list': [
             {
+                'description': u'Power Stations',
+                'description_cy': u'Power Stations (Welsh)',
+                'custom_link': '<a href="#" data-layer_name="PowerStation" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> Power Stations</a>'
+            },
+            {
                 'description': u'Trunk Road Network 2016',
                 'description_cy': u'Trunk Road Network 2016 (Welsh)',
-                'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
-                'custom_link': '<a href="#" data-wfs="true" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>TrunkRoadNetwork_2016</a>'
+                'custom_link': '<a href="#" data-wfs="false" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>TrunkRoadNetwork_2016</a>'
             }
         ]
     },

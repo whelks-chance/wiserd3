@@ -1082,6 +1082,9 @@ class PowerStation(models.Model):
     class Meta:
         db_table = 'power_station'
 
+    def __unicode__(self):
+        return u'{} :: {}'.format(self.name, self.type)
+
 
 # class WelshLanguageABS(models.Model):
 #     gid = models.IntegerField(primary_key=True)

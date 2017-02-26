@@ -458,7 +458,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Energy Efficiency in Wales 2016-26',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W2'
                 },
                 'item_list': [
                     {
@@ -473,7 +473,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Public Procurement of Steel: A Report into the Future Welsh Public Sector Steel Requirements and the Capacity and Capability of the Steel Sector',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W3'
                 },
                 'item_list': [
                     {
@@ -488,7 +488,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Department for Business, Enterprise, Technology & Science Sectors Delivery Plan',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W4'
                 },
                 'item_list': [
                     {
@@ -503,7 +503,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'The Implementation Plan for Economic Renewal: a new direction',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W1'
                 },
                 'item_list': [
                     {
@@ -753,7 +753,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Climbing Higher',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W5'
                 },
                 'item_list': [
                     {
@@ -768,7 +768,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Coaching Plan for Wales',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W6'
                 },
                 'item_list': [
                     {
@@ -783,7 +783,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Event Wales: A major events strategy for Wales 2010-20',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W7'
                 },
                 'item_list': [
                     {
@@ -798,7 +798,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Sustainable Tourism A Framework for Wales',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W8'
                 },
                 'item_list': [
                     {
@@ -873,7 +873,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Building a Brighter Future: Early Years and Childcare Plan',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W9'
                 },
                 'item_list': [
                     {
@@ -888,7 +888,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Education for Sustainable Development and Global Citizenship In the Further Education Sector in Wales',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W10'
                 },
                 'item_list': [
                     {
@@ -903,7 +903,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'For Our Future The 21st Century Higher Education Strategy and Plan for Wales',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W11'
                 },
                 'item_list': [
                     {
@@ -918,7 +918,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Qualified for Life: An Education Improvement Plan for 3-19 year olds in Wales',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W12'
                 },
                 'item_list': [
                     {
@@ -933,7 +933,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Rewriting the Future 2015: A Year On',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W13'
                 },
                 'item_list': [
                     {
@@ -948,7 +948,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Science, Technology, Engineering and Mathematics (STEM) in education and training: A delivery plan for Wales',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W14'
                 },
                 'item_list': [
                     {
@@ -963,7 +963,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Welsh-medium Education Strategy',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W15'
                 },
                 'item_list': [
                     {
@@ -1053,7 +1053,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Towards Sustainable Growth: An Action Plan for the Food and Drink Industry 2014-2020',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W16'
                 },
                 'item_list': [
                     {
@@ -1068,7 +1068,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'The Action Plan for Pollinators in Wales',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W17'
                 },
                 'item_list': [
                     {
@@ -1083,7 +1083,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'The Welsh Government\'s Action Plan for wild deer management in Wales 2011 - 2016',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W18'
                 },
                 'item_list': [
                     {
@@ -1098,7 +1098,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Equine Health and Welfare Strategy for Great Britain',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W19'
                 },
                 'item_list': [
                     {
@@ -1113,7 +1113,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Welsh Government Contingency Plan for Exotic Animal Diseases 2016',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W20'
                 },
                 'item_list': [
                     {
@@ -1128,7 +1128,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Farming, Food & Countryside Building a secure future',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W21'
                 },
                 'item_list': [
                     {
@@ -1143,7 +1143,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Fuel Poverty Strategy 2010',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W22'
                 },
                 'item_list': [
                     {
@@ -1158,7 +1158,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Strategic Action Plan for the Welsh Horticulture Industry',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W23'
                 },
                 'item_list': [
                     {
@@ -1188,7 +1188,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Woodlands for Wales Action Plan',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W25'
                 },
                 'item_list': [
                     {
@@ -1203,7 +1203,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Community Grown Food Action Plan',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': ''
                 },
                 'item_list': [
                     {
@@ -1323,7 +1323,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Municipal Sector Plan Part 1 Towards Zero Waste One Wales: One Planet',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W75'
                 },
                 'item_list': [
                     {
@@ -1410,7 +1410,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Energy Wales: A Low Carbon Transition Delivery Plan',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W64'
                 },
                 'item_list': [
                     {
@@ -1515,7 +1515,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Creating an Active Wales',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W26'
                 },
                 'item_list': [
                     {
@@ -1530,7 +1530,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'A Strategy For Social Services In Wales Over The Next Decade: Fulfilled Lives, Supportive Communities',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W27'
                 },
                 'item_list': [
                     {
@@ -1545,7 +1545,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Child Poverty: Strategy for Wales',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W28'
                 },
                 'item_list': [
                     {
@@ -1560,7 +1560,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Financial Inclusion Strategy for Wales 2016',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W29'
                 },
                 'item_list': [
                     {
@@ -1575,7 +1575,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'The Social Enterprise Action Plan for Wales 2009',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W30'
                 },
                 'item_list': [
                     {
@@ -1590,7 +1590,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'The Right to be Safe',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W31'
                 },
                 'item_list': [
                     {
@@ -1605,7 +1605,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Volunteering Policy Supporting Communities, Changing Lives: August',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W32'
                 },
                 'item_list': [
                     {
@@ -1725,7 +1725,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Digital Wales: Delivery Plan Delivering a Digital Wales ',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W41'
                 },
                 'item_list': [
                     {
@@ -1845,7 +1845,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Improving Lives and Communities: Homes in Wales',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W33'
                 },
                 'item_list': [
                     {
@@ -1860,7 +1860,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Ten year homelessness plan for Wales 2009-2019',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W34'
                 },
                 'item_list': [
                     {
@@ -1875,7 +1875,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Vibrant and Viable Places New Regeneration Framework',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W35'
                 },
                 'item_list': [
                     {
@@ -1890,7 +1890,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Part 1: Local Government Improvement',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W36'
                 },
                 'item_list': [
                     {
@@ -1905,7 +1905,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'PPW Chapter 7 Economic Development',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W37'
                 },
                 'item_list': [
                     {
@@ -1920,7 +1920,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'PPW Chapter 11 Tourism, Sport and Recreation',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W38'
                 },
                 'item_list': [
                     {
@@ -1935,7 +1935,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'TAN 6: Planning for Sustainable Rural Communities',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W39'
                 },
                 'item_list': [
                     {
@@ -1950,7 +1950,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'TAN 21: Waste',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W40'
                 },
                 'item_list': [
                     {
@@ -2100,7 +2100,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'A living language: a language for living - Welsh Language Strategy 2012-17 / Action Plan 2016-17',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': None
+                    'qualdcinfo': 'M4W42'
                 },
                 'item_list': [
                     {

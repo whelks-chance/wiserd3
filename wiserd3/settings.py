@@ -1203,7 +1203,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Community Grown Food Action Plan',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo': ''
+                    'qualdcinfo': 'M4W63'
                 },
                 'item_list': [
                     {

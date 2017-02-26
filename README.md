@@ -139,7 +139,7 @@ may also need the full postgresql9.4 packages
 
 note alternate shp2pgsql binaries location due to messed up install not updating alternatives
 left alone this time as previous postgresql version expects postgis-2.0.7
-at this point, 2 versions of each are installed....
+at this point, 2 versions of each are installed... shp2pgsql from 9.4 appears to work fine with 9.5 so far.
 
     /usr/pgsql-9.4/bin/shp2pgsql -I spatialdata.parl/spatialdata.parl.shp spatialdata_parl | sudo -u postgres psql -d "NewSurvey"
 

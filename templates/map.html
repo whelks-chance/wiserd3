@@ -16,12 +16,17 @@
     {#    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>#}
     {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>#}
 
-    {#    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>#}
-    {#    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />#}
+        <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+
+{#    <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>#}
+{#    <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />#}
 
     {#  local leaflet  #}
-    <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
+{#    <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />#}
+
+
 
     {#    <script type="text/javascript" src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script>#}
     {#    <script type="text/javascript" src="https://rawgit.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js"></script>#}
@@ -807,9 +812,12 @@
                         }
                     }
                     else {
-                        strings += '<p><b>' + props.STRING_DATA[item]['title']
-                                + '</b> : ' + string_data_value + '</p>';
-                        {#                        console.log(string_data_value);#}
+                        if (string_data_value.length) {
+
+                            strings += '<p><b>' + props.STRING_DATA[item]['title']
+                                    + '</b> : ' + string_data_value + '</p>';
+                            {#                        console.log(string_data_value);#}
+                        }
                     }
                 }
                 return strings;
@@ -937,7 +945,7 @@
                     },
                     success: function(data) {
 
-                        var name = layer_names;
+                        var name = layer_names[0];
 
                         {#                        $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
 
@@ -1000,10 +1008,10 @@
                                     onEachFeature: function (feature, layer) {
 
                                         layer.on({
-                                            mouseover: function (e) {
+                                            click: function (e) {
 
                                                 var layer = e.target;
-                                                console.log(layer);
+{#                                                console.log(layer);#}
                                                 info.update(layer.feature.properties);
 
                                                 layer.setStyle({
@@ -1013,11 +1021,11 @@
                                                     fillOpacity: 0.7
                                                 });
                                             },
-                                            mouseout: function (e) {
-                                                console.log(e.target);
-                                                myLayer.resetStyle(e.target);
-                                                info.update();
-                                            }
+{#                                            mouseout: function (e) {#}
+{#                                                console.log(e.target);#}
+{#                                                myLayer.resetStyle(e.target);#}
+{#                                                info.update();#}
+{#                                            }#}
                                         });
                                     },
                                     style: function (feature) {

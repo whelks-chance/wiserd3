@@ -774,6 +774,7 @@ def get_geojson(request):
 
     # time1 = datetime.now()
     layer_type = request.POST.get('layer_type')
+    app_label = request.POST.get('app_label', 'dataportal3')
 
     if layer_type == 'wiserd_layer':
         # from topojson import topojson
@@ -781,11 +782,19 @@ def get_geojson(request):
         wiserd_layer = request.POST.getlist('layer_names[]')[0]
         # spatial_table_name = str(wiserd_layer).replace('_', '').strip()
 
-        wiserd_layer_model = apps.get_model(
-            app_label='dataportal3',
-            model_name=wiserd_layer
-        )
-        shape_table_object = wiserd_layer_model.objects.all()
+        if wiserd_layer == 'TaxServicePropertyInformation':
+            wiserd_layer_model = apps.get_model(
+                app_label='scrape',
+                model_name=wiserd_layer
+            )
+            shape_table_object = wiserd_layer_model.objects.filter(lsoa_name__contains='Cardiff 032G')
+            print 'shape_table_object', shape_table_object.count()
+        else:
+            wiserd_layer_model = apps.get_model(
+                app_label=app_label,
+                model_name=wiserd_layer
+            )
+            shape_table_object = wiserd_layer_model.objects.all()
 
         # shape_list = shape_table_object.extra(
         #     select={

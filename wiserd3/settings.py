@@ -66,7 +66,8 @@ INSTALLED_APPS = (
     'django_filters',
     'rosetta',
     'djorm_pgfulltext',
-    'djgeojson'
+    'djgeojson',
+    'scrape'
 )
 
 SERIALIZATION_MODULES = {
@@ -390,6 +391,15 @@ KNOWING_LOCALITIES_TABLES = [
         'display_name': 'Schools',
         'table_name': 'SchoolData'
     },
+    {
+        'display_name': 'Rates',
+        'table_name': 'TaxServicePropertyInformation',
+        'app_label': 'scrape'
+    },
+    {
+        'display_name': 'Power Stations',
+        'table_name': 'PowerStation',
+    }
     # {
     #     'display_name': 'Welsh Language ABS',
     #     'table_name': 'WelshLanguageABS'
@@ -514,8 +524,30 @@ M4W_SEARCH_LAYER_UUIDS = [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'custom_link': '<a href="#" '
+                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
+                                       'data-layer_name="enterprise_zones" '
+                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
                     },
+                    {
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
+                        'custom_link': '<a href="#" '
+                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
+                    '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Trunk Road Network 2016</p></a>'
+                    },
+                    {
+                        'description': u'Welsh Rail',
+                        'description_cy': u'Welsh Rail (Welsh)',
+                        'custom_link': '<a href="#" data-layer_name="WelshRail" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> Welsh Rail</a>'
+                    },
+                    {
+                        'description': u'ukrailstation',
+                        'description_cy': u'ukrailstation (Welsh)',
+                        'custom_link': '<a href="#" data-layer_name="ukrailstation" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> ukrailstation</a>'
+                    }
                 ]
             },
             {
@@ -529,8 +561,25 @@ M4W_SEARCH_LAYER_UUIDS = [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
+                                       'data-layer_name="enterprise_zones" '
+                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
+                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
                     },
+                    {
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
+                        # 'data-wfs_namespace="inspire-wg" '
+                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
+                    }
                 ]
             },
             {
@@ -544,8 +593,25 @@ M4W_SEARCH_LAYER_UUIDS = [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
+                                       'data-layer_name="enterprise_zones" '
+                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
+                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
                     },
+                    {
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
+                        # 'data-wfs_namespace="inspire-wg" '
+                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
+                    }
                 ]
             },
             {
@@ -559,8 +625,25 @@ M4W_SEARCH_LAYER_UUIDS = [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
+                                       'data-layer_name="enterprise_zones" '
+                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
+                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
                     },
+                    {
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
+                        # 'data-wfs_namespace="inspire-wg" '
+                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
+                    }
                 ]
             },
             {
@@ -574,8 +657,25 @@ M4W_SEARCH_LAYER_UUIDS = [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
+                                       'data-layer_name="enterprise_zones" '
+                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
+                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
                     },
+                    {
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
+                        # 'data-wfs_namespace="inspire-wg" '
+                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
+                    }
                 ]
             },
             {
@@ -589,8 +689,25 @@ M4W_SEARCH_LAYER_UUIDS = [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
+                                       'data-layer_name="enterprise_zones" '
+                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
+                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
                     },
+                    {
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
+                        # 'data-wfs_namespace="inspire-wg" '
+                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
+                    }
                 ]
             },
             {
@@ -604,8 +721,26 @@ M4W_SEARCH_LAYER_UUIDS = [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
+                                       'data-layer_name="enterprise_zones" '
+                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
+                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
                     },
+                    {
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
+                        'custom_link': '<a href="#" '
+                        # 'data-wfs="true" '
+                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
+                        # 'data-wfs_namespace="inspire-wg" '
+                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
+                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
+                    }
+
                 ]
             },
             {
@@ -1217,9 +1352,36 @@ M4W_SEARCH_LAYER_UUIDS = [
                 },
                 'item_list': [
                     {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'description': u'Railway Noise in Agglomerations (Daytime average)',
+                        'description_cy': u'Railway Noise in Agglomerations (Daytime average) (Welsh)',
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_arl_lday" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_lday" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Railway Noise in Agglomerations (Daytime average)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_arl_leve" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_leve" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Railway Noise in Agglomerations (Evening average)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_ind_lden" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ind_lden" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Industrial Noise (Daily average)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_majorroadsr2" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">(Noise Action Plan) Major Roads</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_mrd_lday" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrd_lday" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Major Road Traffic Noise (Daytime average)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_mrd_leve" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrd_leve" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Major Road Traffic Noise (Evening average)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_priorityareas_railways" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">(Noise Action Plan) Priority Areas (Railways)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_priorityareas_roads" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">(Noise Action Plan) Priority Areas (Roads)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_quietareas" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">(Noise Action Plan) Quiet Areas</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_r2industrylocations" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">(Noise Action Plan) Industry Locations</p></a>'
                     },
                 ]
             },
@@ -2055,8 +2217,8 @@ M4W_SEARCH_LAYER_UUIDS = [
         'icon': 'fa-flask',
         'item_list': [
             {
-                'description': u'Map Item',
-                'description_cy': u'Map Item (Welsh)',
+                'description': u'Trunk Road Network 2016',
+                'description_cy': u'Trunk Road Network 2016 (Welsh)',
                 'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
                 'custom_link': '<a href="#" data-wfs="true" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>TrunkRoadNetwork_2016</a>'
             }

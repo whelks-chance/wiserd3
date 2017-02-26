@@ -225,7 +225,13 @@
 
                 {% for wiserd_layer in wiserd_layers %}
                     <li>
-                        <a href="#" data-layer_name="{{ wiserd_layer.table_name }}" class="wiserd_layer_toggle">
+                        <a href="#"
+                                {% if wiserd_layer.app_label %}
+                           data-app_label="{{ wiserd_layer.app_label }}"
+                                {% endif %}
+
+                           data-layer_name="{{ wiserd_layer.table_name }}"
+                           class="wiserd_layer_toggle">
                             <i class="fa fa-map-marker fa-fw"></i> {{ wiserd_layer.display_name }}</a>
                     </li>
                 {% endfor %}
@@ -373,7 +379,7 @@
                     $(toggle_button).addClass('wms_layer_active');
                     var legend_url = $(toggle_button).data('legend_img');
                     if (legend_url) {
-                        addLegend(btn_layer_name + '_' + get_next_uid(), btn_layer_name, '<img src="' + legend_url + '" style="width:100%; max-width:10em !important">', '');
+                        addLegend(btn_layer_name + '_' + get_next_uid(), btn_layer_name, '<img src="' + legend_url + '" style="width:100%; max-width:8em !important">', '');
                     }
 
                     {#                    var inspire = L.tileLayer.wms("http://inspire.wales.gov.uk/maps/wms", {#}
@@ -383,16 +389,18 @@
                         transparent: true,
                         attribution: "wales.gov"
                     });
-                    wms_layers[btn_layer_name] = inspire;
+                    inspire.addTo(map);
                     layerControl.addOverlay(inspire, btn_layer_name + '-wms');
+                    wms_layers[btn_layer_name] = inspire;
                     inspire.addTo(map);
 
 
                     try {
                         var wfs = $(toggle_button).data('wfs');
-                        if (wfs) {
-                            var typeNS = $(toggle_button).data('wfs_namespace');
-                            var geometryFields = $(toggle_button).data('wfs_geometry_field');
+                        var typeNS = $(toggle_button).data('wfs_namespace');
+                        var geometryFields = $(toggle_button).data('wfs_geometry_field');
+
+                        if (wfs && typeNS && geometryFields) {
 
                             var geometryFieldsArr = geometryFields.split(',');
                             {#                            for (var geometryIdx in geometryFieldsArr) {#}
@@ -411,35 +419,32 @@
                                     }
                                 });
 
+                                wfst.addTo(map).once('load', function () {
+                                    map.fitBounds(wfst);
+                                });
+                                layerControl.addOverlay(wfst, btn_layer_name + '-wfs');
+
+                                wfst.on('click', function (e) {
+                                    console.log('click');
+                                    console.log(e.layer.feature);
+
+                                    var right_pane = $('#right-component1');
+
+                                    var ppTable = prettyPrint(e.layer.feature);
+
+                                    {#                    right_pane.html('<pre id="lle_json">' + JSON.stringify(e.layer.feature, null, 2) + '</pre>');#}
+                                    right_pane.empty().append($(ppTable));
+
+                                    {#                                document.getElementById('right-component1').empty().appendChild(ppTable);#}
+
+                                    {#                                popup.setLatLng(e.latlng).setContent('You clicked at ' + JSON.stringify(e.layer.feature)).openOn(map);#}
+
+                                });
+
                             } catch (e) {
                                 console.log('Failed wfs geometryfield = fme_geometry');
                                 console.log(e);
                             }
-                            {#                            }#}
-
-                            wfst.addTo(map).once('load', function () {
-                                map.fitBounds(wfst);
-                            });
-                            layerControl.addOverlay(wfst, btn_layer_name + '-wfs');
-
-                            {# var popup = new L.Popup(); #}
-
-                            wfst.on('click', function (e) {
-                                console.log('click');
-                                console.log(e.layer.feature);
-
-                                var right_pane = $('#right-component1');
-
-                                var ppTable = prettyPrint(e.layer.feature);
-
-                                {#                    right_pane.html('<pre id="lle_json">' + JSON.stringify(e.layer.feature, null, 2) + '</pre>');#}
-                                right_pane.empty().append($(ppTable));
-
-                                {#                                document.getElementById('right-component1').empty().appendChild(ppTable);#}
-
-                                {#                                popup.setLatLng(e.latlng).setContent('You clicked at ' + JSON.stringify(e.layer.feature)).openOn(map);#}
-
-                            });
                         }
                     }catch (e){
                         console.log('wfs fail');
@@ -1297,7 +1302,7 @@
                     });
 
 
-                    var is_clustermarkers = false;
+                    var is_clustermarkers = true;
                     var is_heatmap = false;
 
                     myLayer.eachLayer(function (layer) {
@@ -3418,9 +3423,9 @@
                     success: function(data) {
 
                         var qual_dc_keys = [
-{#                            'identifier',#}
+                            {#                            'identifier',#}
                             'title',
-{#                            'creator',#}
+                            {#                            'creator',#}
                             'subject',
                             'description',
                             'publisher',

@@ -850,6 +850,19 @@ class SpatialdataPostCodePoint(models.Model):
         db_table = 'pcode_point'
 
 
+class PostcodePointLSOAlinks(models.Model):
+    postcode = models.CharField(max_length=254, blank=True, null=True)
+    lsoa_name = models.CharField(max_length=254, blank=True, null=True)
+    lsoa_code = models.CharField(max_length=254, blank=True, null=True)
+
+    def __unicode__(self):
+        return '{} :: {} :: {}'.format(str(self.postcode), str(self.lsoa_name), self.lsoa_code)
+
+    class Meta:
+        # managed = False
+        db_table = 'postcode_point_lsoa_links'
+
+
 class SchoolData(models.Model):
     # id = models.IntegerField(primary_key=True)
     lat = models.DecimalField(decimal_places=20, max_digits=30, blank=True, null=True)
@@ -1055,6 +1068,19 @@ class UKRailStation(models.Model):
     class Meta:
         managed = False
         db_table = 'ukrailstation'
+
+
+class PowerStation(models.Model):
+    name = models.CharField(max_length=255, blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    output = models.CharField(max_length=10, blank=True, null=True)
+    notes = models.CharField(max_length=255, blank=True, null=True)
+    location = models.CharField(max_length=255, blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    class Meta:
+        db_table = 'power_station'
 
 
 # class WelshLanguageABS(models.Model):

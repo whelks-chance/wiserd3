@@ -68,6 +68,11 @@
     z-index: 500;
 }
 
+#policy_papers > ul > ul > li > ul > li > a {
+      display: flex;
+    flex-direction: row;
+}
+
 .nav > li > a.lle_flex {
     display: flex;
     flex-direction: row;
@@ -181,6 +186,7 @@
     text-align: left;
     line-height: 18px;
     color: #555;
+    pointer-events: auto;
 
     /*position: fixed;*/
     /*display: block;*/

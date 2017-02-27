@@ -3448,7 +3448,9 @@
                         var model_data = '';
                         for (var idx in qual_dc_keys) {
                             var key = qual_dc_keys[idx];
-                            model_data += '<h4>' + titleCase(key) + '</h4><p>' + data[key] + '</p>';
+                            if (data[key].length) {
+                                model_data += '<h4>' + titleCase(key) + '</h4><p>' + data[key] + '</p>';
+                            }
                         }
 
                         var info_text = '<h2>Record Details</h2>' + model_data;

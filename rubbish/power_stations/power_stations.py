@@ -1,6 +1,7 @@
 # coding=utf-8
-
+import json
 import os
+import pprint
 
 from django.contrib.gis.geos import GEOSGeometry
 
@@ -9,6 +10,7 @@ import django
 django.setup()
 
 from dataportal3 import models
+from wiserd3 import settings
 
 
 a = {
@@ -221,6 +223,14 @@ class PowerStations:
 
 
 if __name__ == "__main__":
+
+    # list_to_be_sorted = settings.M4W_SEARCH_LAYER_UUIDS[0]['item_list']
+    # newlist = sorted(list_to_be_sorted, key=lambda k: k['description'])
+    #
+    # print pprint.pformat(newlist, indent=4)
+    # print json.dumps(newlist, indent=4)
+
+
     ps = PowerStations()
     ps.record()
     ps.do_geoms()

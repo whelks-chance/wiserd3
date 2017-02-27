@@ -439,927 +439,104 @@ M4W_SEARCH_LAYER_UUIDS = [
         'list_id': 'policy_papers',
         'item_list': [
             {
-                'description': u'Economic Renewal: a new direction',
-                'description_cy': u'Economic Renewal: a new direction',
+                'description': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
+                'description_cy': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W50'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Energy Efficiency in Wales 2016-26',
-                'description_cy': u'Energy Efficiency in Wales 2016-26',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W2'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Public Procurement of Steel: A Report into the Future Welsh Public Sector Steel Requirements and the Capacity and Capability of the Steel Sector',
-                'description_cy': u'Public Procurement of Steel: A Report into the Future Welsh Public Sector Steel Requirements and the Capacity and Capability of the Steel Sector',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W3'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Department for Business, Enterprise, Technology & Science Sectors Delivery Plan',
-                'description_cy': u'Department for Business, Enterprise, Technology & Science Sectors Delivery Plan',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W4'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'The Implementation Plan for Economic Renewal: a new direction',
-                'description_cy': u'The Implementation Plan for Economic Renewal: a new direction',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W1'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W43'
-                },
-                'item_list': [
-                    {
-                        'description': u'Power Stations',
-                        'description_cy': u'Power Stations (Welsh)',
-                        'custom_link': '<a href="#" data-layer_name="PowerStation" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> Power Stations</a>'
-                    },
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'custom_link': '<a href="#" '
-                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
-                                       'data-layer_name="enterprise_zones" '
-                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
-                    },
-                    {
-                        'description': u'Trunk Road Network 2016',
-                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
-                        'custom_link': '<a href="#" '
-                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Trunk Road Network 2016</p></a>'
-                    },
-                    {
-                        'description': u'Welsh Rail',
-                        'description_cy': u'Welsh Rail (Welsh)',
-                        'custom_link': '<a href="#" data-layer_name="WelshRail" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> Welsh Rail</a>'
-                    },
-                    {
-                        'description': u'ukrailstation',
-                        'description_cy': u'ukrailstation (Welsh)',
-                        'custom_link': '<a href="#" data-layer_name="ukrailstation" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> ukrailstation</a>'
                     }
-                ]
-            },
-            {
-                'description': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
-                'icon': 'fa-file-pdf-o',
+                ],
                 'secondary_info': {
-                    'qualdcinfo': 'M4W44'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
-                                       'data-layer_name="enterprise_zones" '
-                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
-                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
-                    },
-                    {
-                        'description': u'Trunk Road Network 2016',
-                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
-                        # 'data-wfs_namespace="inspire-wg" '
-                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
-                    }
-                ]
-            },
-            {
-                'description': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W45'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
-                                       'data-layer_name="enterprise_zones" '
-                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
-                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
-                    },
-                    {
-                        'description': u'Trunk Road Network 2016',
-                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
-                        # 'data-wfs_namespace="inspire-wg" '
-                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
-                    }
-                ]
-            },
-            {
-                'description': u'Deeside Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Deeside Enterprise Zone Strategic Plan 2015',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W46'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
-                                       'data-layer_name="enterprise_zones" '
-                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
-                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
-                    },
-                    {
-                        'description': u'Trunk Road Network 2016',
-                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
-                        # 'data-wfs_namespace="inspire-wg" '
-                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
-                    }
-                ]
-            },
-            {
-                'description': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W47'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
-                                       'data-layer_name="enterprise_zones" '
-                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
-                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
-                    },
-                    {
-                        'description': u'Trunk Road Network 2016',
-                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
-                        # 'data-wfs_namespace="inspire-wg" '
-                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
-                    }
-                ]
-            },
-            {
-                'description': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W48'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
-                                       'data-layer_name="enterprise_zones" '
-                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
-                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
-                    },
-                    {
-                        'description': u'Trunk Road Network 2016',
-                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
-                        # 'data-wfs_namespace="inspire-wg" '
-                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
-                    }
-                ]
-            },
-            {
-                'description': u'Snowdonia Enterprise Zone Strategic Plan 2015',
-                'description_cy': u'Snowdonia Enterprise Zone Strategic Plan 2015',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W49'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" '
-                                       'data-layer_name="enterprise_zones" '
-                                       'data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" '
-                        # 'data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
-                    },
-                    {
-                        'description': u'Trunk Road Network 2016',
-                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2',
-                        'custom_link': '<a href="#" '
-                        # 'data-wfs="true" '
-                                       'class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" '
-                        # 'data-wfs_namespace="inspire-wg" '
-                        # 'data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"'
-                                       '><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>'
-                    }
-
-                ]
-            },
-            {
-                'description': u'Climbing Higher',
-                'description_cy': u'Climbing Higher',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W5'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Coaching Plan for Wales',
-                'description_cy': u'Coaching Plan for Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W6'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Event Wales: A major events strategy for Wales 2010-20',
-                'description_cy': u'Event Wales: A major events strategy for Wales 2010-20',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W7'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Sustainable Tourism A Framework for Wales',
-                'description_cy': u'Sustainable Tourism A Framework for Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W8'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    'qualdcinfo': 'M4W83'
+                }
             },
             {
                 'description': u'A Museums Strategy for Wales',
                 'description_cy': u'A Museums Strategy for Wales',
                 'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
                 'secondary_info': {
                     'qualdcinfo': 'M4W51'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                }
             },
             {
-                'description': u'Coastal Tourism Strategy',
-                'description_cy': u'Coastal Tourism Strategy',
+                'description': u'A Strategy For Social Services In Wales Over The Next Decade: Fulfilled Lives, Supportive Communities',
+                'description_cy': u'A Strategy For Social Services In Wales Over The Next Decade: Fulfilled Lives, Supportive Communities',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W52'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W27'
+                }
             },
             {
-                'description': u'The Welsh Government Strategy for Tourism 2013 - 2020 Partnership for Growth',
-                'description_cy': u'The Welsh Government Strategy for Tourism 2013 - 2020 Partnership for Growth',
+                'description': u'A living language: a language for living - Moving forward Policy statement',
+                'description_cy': u'A living language: a language for living - Moving forward Policy statement',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W53'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W103'
+                }
             },
             {
-                'description': u'Framework Action Plan Years 1 - 3',
-                'description_cy': u'Framework Action Plan Years 1 - 3',
+                'description': u'A living language: a language for living - Welsh Language Strategy 2012-17 / Action Plan 2016-17',
+                'description_cy': u'A living language: a language for living - Welsh Language Strategy 2012-17 / Action Plan 2016-17',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W54'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W42'
+                }
             },
             {
-                'description': u'Building a Brighter Future: Early Years and Childcare Plan',
-                'description_cy': u'Building a Brighter Future: Early Years and Childcare Plan',
+                'description': u'A living language: a language for living Welsh Language Strategy 2012-17',
+                'description_cy': u'A living language: a language for living Welsh Language Strategy 2012-17',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W9'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Education for Sustainable Development and Global Citizenship In the Further Education Sector in Wales',
-                'description_cy': u'Education for Sustainable Development and Global Citizenship In the Further Education Sector in Wales',
-                'icon': 'fa-file-pdf-o',
+                    }
+                ],
                 'secondary_info': {
-                    'qualdcinfo': 'M4W10'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'For Our Future The 21st Century Higher Education Strategy and Plan for Wales',
-                'description_cy': u'For Our Future The 21st Century Higher Education Strategy and Plan for Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W11'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Qualified for Life: An Education Improvement Plan for 3-19 year olds in Wales',
-                'description_cy': u'Qualified for Life: An Education Improvement Plan for 3-19 year olds in Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W12'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Rewriting the Future 2015: A Year On',
-                'description_cy': u'Rewriting the Future 2015: A Year On',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W13'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Science, Technology, Engineering and Mathematics (STEM) in education and training: A delivery plan for Wales',
-                'description_cy': u'Science, Technology, Engineering and Mathematics (STEM) in education and training: A delivery plan for Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W14'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Welsh-medium Education Strategy',
-                'description_cy': u'Welsh-medium Education Strategy',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W15'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Raising the ambitions and educational attainment of children who are looked after in Wales Strategy',
-                'description_cy': u'Raising the ambitions and educational attainment of children who are looked after in Wales Strategy',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W55'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Libraries Inspire: The strategic development framework for Welsh libraries 2012-16',
-                'description_cy': u'Libraries Inspire: The strategic development framework for Welsh libraries 2012-16',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W56'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Rewriting the future: Raising ambition and attainment in Welsh schools',
-                'description_cy': u'Rewriting the future: Raising ambition and attainment in Welsh schools',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W57'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Reducing the proportion of young people not in education, employment or training in Wales: Delivering Skills that Work for Wales',
-                'description_cy': u'Reducing the proportion of young people not in education, employment or training in Wales: Delivering Skills that Work for Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W58'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Youth engagement and progression framework: Implementation plan',
-                'description_cy': u'Youth engagement and progression framework: Implementation plan',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W59'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Towards Sustainable Growth: An Action Plan for the Food and Drink Industry 2014-2020',
-                'description_cy': u'Towards Sustainable Growth: An Action Plan for the Food and Drink Industry 2014-2020',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W16'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'The Action Plan for Pollinators in Wales',
-                'description_cy': u'The Action Plan for Pollinators in Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W17'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'The Welsh Government\'s Action Plan for wild deer management in Wales 2011 - 2016',
-                'description_cy': u'The Welsh Government\'s Action Plan for wild deer management in Wales 2011 - 2016',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W18'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Equine Health and Welfare Strategy for Great Britain',
-                'description_cy': u'Equine Health and Welfare Strategy for Great Britain',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W19'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Welsh Government Contingency Plan for Exotic Animal Diseases 2016',
-                'description_cy': u'Welsh Government Contingency Plan for Exotic Animal Diseases 2016',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W20'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Farming, Food & Countryside Building a secure future',
-                'description_cy': u'Farming, Food & Countryside Building a secure future',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W21'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Fuel Poverty Strategy 2010',
-                'description_cy': u'Fuel Poverty Strategy 2010',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W22'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Strategic Action Plan for the Welsh Horticulture Industry',
-                'description_cy': u'Strategic Action Plan for the Welsh Horticulture Industry',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W23'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Towards Zero Waste One Wales: One Planet',
-                'description_cy': u'Towards Zero Waste One Wales: One Planet',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W75'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Woodlands for Wales Action Plan',
-                'description_cy': u'Woodlands for Wales Action Plan',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W25'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Community Grown Food Action Plan',
-                'description_cy': u'Community Grown Food Action Plan',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W63'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Energy Wales: A Low Carbon Transition',
-                'description_cy': u'Energy Wales: A Low Carbon Transition',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W65'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Environment strategy for Wales',
-                'description_cy': u'Environment strategy for Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W66'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'National Strategy for Flood and Coastal Erosion Risk Management in Wales',
-                'description_cy': u'National Strategy for Flood and Coastal Erosion Risk Management in Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W67'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Food for Wales, Food from Wales: 2010-2020',
-                'description_cy': u'Food for Wales, Food from Wales: 2010-2020',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W68'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Wales Marine and Fisheries: Strategic Action Plan',
-                'description_cy': u'Wales Marine and Fisheries: Strategic Action Plan',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W69'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Ministerial Policy Statement on Marine Energy in Wales',
-                'description_cy': u'Ministerial Policy Statement on Marine Energy in Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W70'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Strategic Action Plan for the Welsh Red Meat Industry',
-                'description_cy': u'Strategic Action Plan for the Welsh Red Meat Industry',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W72'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Municipal Sector Plan Part 1 Towards Zero Waste One Wales: One Planet',
-                'description_cy': u'Municipal Sector Plan Part 1 Towards Zero Waste One Wales: One Planet',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W75'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
-                'description_cy': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W60'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    'qualdcinfo': 'M4W102'
+                }
             },
             {
                 'description': u'A noise action plan for Wales 2013-2018',
                 'description_cy': u'A noise action plan for Wales 2013-2018',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W61'
-                },
                 'item_list': [
                     {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_arl_lday" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_lday" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Railway Noise in Agglomerations (Daytime average)</p></a>',
                         'description': u'Railway Noise in Agglomerations (Daytime average)',
-                        'description_cy': u'Railway Noise in Agglomerations (Daytime average) (Welsh)',
-                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_arl_lday" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_lday" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Railway Noise in Agglomerations (Daytime average)</p></a>'
+                        'description_cy': u'Railway Noise in Agglomerations (Daytime average) (Welsh)'
                     },
                     {
                         'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_arl_leve" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_leve" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Railway Noise in Agglomerations (Evening average)</p></a>'
@@ -1387,760 +564,1509 @@ M4W_SEARCH_LAYER_UUIDS = [
                     },
                     {
                         'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_r2industrylocations" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">(Noise Action Plan) Industry Locations</p></a>'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W61'
+                }
             },
             {
-                'description': u'Climate Change Strategy for Wales',
-                'description_cy': u'Climate Change Strategy for Wales',
+                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Anglesey Enterprise Zone Strategic Plan 2015',
                 'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'custom_link': '<a href="#" data-layer_name="PowerStation" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> Power Stations</a>',
+                        'description': u'Power Stations',
+                        'description_cy': u'Power Stations (Welsh)'
+                    },
+                    {
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)'
+                    },
+                    {
+                        'custom_link': '<a href="#" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Trunk Road Network 2016</p></a>',
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-layer_name="WelshRail" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> Welsh Rail</a>',
+                        'description': u'Welsh Rail',
+                        'description_cy': u'Welsh Rail (Welsh)'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-layer_name="ukrailstation" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> ukrailstation</a>',
+                        'description': u'ukrailstation',
+                        'description_cy': u'ukrailstation (Welsh)'
+                    }
+                ],
                 'secondary_info': {
-                    'qualdcinfo': 'M4W62'
-                },
+                    'qualdcinfo': 'M4W43'
+                }
+            },
+            {
+                'description': u'Building a Brighter Future: Early Years and Childcare Plan',
+                'description_cy': u'Building a Brighter Future: Early Years and Childcare Plan',
+                'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W9'
+                }
             },
             {
-                'description': u'Energy Wales: A Low Carbon Transition Delivery Plan',
-                'description_cy': u'Energy Wales: A Low Carbon Transition Delivery Plan',
+                'description': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W64'
-                },
                 'item_list': [
                     {
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
                         'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'description_cy': u'Map Item (Welsh)'
                     },
-                ]
+                    {
+                        'custom_link': '<a href="#" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>',
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W44'
+                }
             },
             {
-                'description': u'Strategic Action Plan for the Welsh Dairy Industry',
-                'description_cy': u'Strategic Action Plan for the Welsh Dairy Industry',
+                'description': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W71'
-                },
                 'item_list': [
                     {
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
                         'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'description_cy': u'Map Item (Welsh)'
                     },
-                ]
-            },
-            {
-                'description': u'Strategy for Wild Deer Management in Wales',
-                'description_cy': u'Strategy for Wild Deer Management in Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W73'
-                },
-                'item_list': [
                     {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
+                        'custom_link': '<a href="#" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>',
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Wales Fisheries Strategy 2008',
-                'description_cy': u'Wales Fisheries Strategy 2008',
-                'icon': 'fa-file-pdf-o',
+                    }
+                ],
                 'secondary_info': {
-                    'qualdcinfo': 'M4W74'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
-                'description_cy': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W76'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'The Welsh National Marine Plan: Initial draft',
-                'description_cy': u'The Welsh National Marine Plan: Initial draft',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W77'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Woodlands for Wales',
-                'description_cy': u'Woodlands for Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W78'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Creating an Active Wales',
-                'description_cy': u'Creating an Active Wales',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W26'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'A Strategy For Social Services In Wales Over The Next Decade: Fulfilled Lives, Supportive Communities',
-                'description_cy': u'A Strategy For Social Services In Wales Over The Next Decade: Fulfilled Lives, Supportive Communities',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W27'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    'qualdcinfo': 'M4W45'
+                }
             },
             {
                 'description': u'Child Poverty: Strategy for Wales',
                 'description_cy': u'Child Poverty: Strategy for Wales',
                 'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
                 'secondary_info': {
                     'qualdcinfo': 'M4W28'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Financial Inclusion Strategy for Wales 2016',
-                'description_cy': u'Financial Inclusion Strategy for Wales 2016',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W29'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'The Social Enterprise Action Plan for Wales 2009',
-                'description_cy': u'The Social Enterprise Action Plan for Wales 2009',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W30'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'The Right to be Safe',
-                'description_cy': u'The Right to be Safe',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W31'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Volunteering Policy Supporting Communities, Changing Lives: August',
-                'description_cy': u'Volunteering Policy Supporting Communities, Changing Lives: August',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W32'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'The Carers Strategy for Wales 2013',
-                'description_cy': u'The Carers Strategy for Wales 2013',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W79'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Wales Arson Reduction Strategy Report of the Joint Arson Group August 2007',
-                'description_cy': u'Wales Arson Reduction Strategy Report of the Joint Arson Group August 2007',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W81'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Fire and Rescue National Framework 2016',
-                'description_cy': u'Fire and Rescue National Framework 2016',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W82'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Working Together to Reduce Harm: The Substance Misuse Strategy for Wales 2008-2018',
-                'description_cy': u'Working Together to Reduce Harm: The Substance Misuse Strategy for Wales 2008-2018',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W84'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                }
             },
             {
                 'description': u'Children and Young People First',
                 'description_cy': u'Children and Young People First',
                 'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
                 'secondary_info': {
                     'qualdcinfo': 'M4W85'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                }
             },
             {
-                'description': u'Rural Health Plan: Improving integrated service delivery across Wales',
-                'description_cy': u'Rural Health Plan: Improving integrated service delivery across Wales',
+                'description': u'Climate Change Strategy for Wales',
+                'description_cy': u'Climate Change Strategy for Wales',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W80'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W62'
+                }
             },
             {
-                'description': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
-                'description_cy': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
+                'description': u'Climbing Higher',
+                'description_cy': u'Climbing Higher',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W83'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W5'
+                }
+            },
+            {
+                'description': u'Coaching Plan for Wales',
+                'description_cy': u'Coaching Plan for Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W6'
+                }
+            },
+            {
+                'description': u'Coastal Tourism Strategy',
+                'description_cy': u'Coastal Tourism Strategy',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W52'
+                }
+            },
+            {
+                'description': u'Community Grown Food Action Plan',
+                'description_cy': u'Community Grown Food Action Plan',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W63'
+                }
+            },
+            {
+                'description': u'Creating an Active Wales',
+                'description_cy': u'Creating an Active Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W26'
+                }
+            },
+            {
+                'description': u'Deeside Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Deeside Enterprise Zone Strategic Plan 2015',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)'
                     },
-                ]
+                    {
+                        'custom_link': '<a href="#" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>',
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W46'
+                }
+            },
+            {
+                'description': u"Delivering a Digital Wales: The Welsh Assembly Government's Outline Framework for Action December 2010",
+                'description_cy': u"Delivering a Digital Wales: The Welsh Assembly Government's Outline Framework for Action December 2010",
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W95'
+                }
+            },
+            {
+                'description': u'Department for Business, Enterprise, Technology & Science Sectors Delivery Plan',
+                'description_cy': u'Department for Business, Enterprise, Technology & Science Sectors Delivery Plan',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W4'
+                }
             },
             {
                 'description': u'Digital Wales: Delivery Plan Delivering a Digital Wales ',
                 'description_cy': u'Digital Wales: Delivery Plan Delivering a Digital Wales ',
                 'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
                 'secondary_info': {
                     'qualdcinfo': 'M4W41'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                }
             },
             {
-                'description': u'Delivering a Digital Wales: The Welsh Assembly Government\'s Outline Framework for Action December 2010',
-                'description_cy': u'Delivering a Digital Wales: The Welsh Assembly Government\'s Outline Framework for Action December 2010',
+                'description': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W95'
-                },
                 'item_list': [
                     {
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
                         'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                        'description_cy': u'Map Item (Welsh)'
                     },
-                ]
+                    {
+                        'custom_link': '<a href="#" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>',
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W47'
+                }
             },
             {
-                'description': u'Innovation Wales',
-                'description_cy': u'Innovation Wales',
+                'description': u'Economic Renewal: a new direction',
+                'description_cy': u'Economic Renewal: a new direction',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W96'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W50'
+                }
             },
             {
-                'description': u'Science for Wales: A strategic agenda for science and innovation in Wales',
-                'description_cy': u'Science for Wales: A strategic agenda for science and innovation in Wales',
+                'description': u'Education for Sustainable Development and Global Citizenship In the Further Education Sector in Wales',
+                'description_cy': u'Education for Sustainable Development and Global Citizenship In the Further Education Sector in Wales',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W97'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W10'
+                }
             },
             {
-                'description': u'Wales and the European Union The Welsh Government\'s EU Strategy',
-                'description_cy': u'Wales and the European Union The Welsh Government\'s EU Strategy',
+                'description': u'Energy Efficiency in Wales 2016-26',
+                'description_cy': u'Energy Efficiency in Wales 2016-26',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W98'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W2'
+                }
             },
             {
-                'description': u'The Welsh Government\'s international agenda',
-                'description_cy': u'The Welsh Government\'s international agenda',
+                'description': u'Energy Wales: A Low Carbon Transition',
+                'description_cy': u'Energy Wales: A Low Carbon Transition',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W99'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W65'
+                }
             },
             {
-                'description': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
-                'description_cy': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
+                'description': u'Energy Wales: A Low Carbon Transition Delivery Plan',
+                'description_cy': u'Energy Wales: A Low Carbon Transition Delivery Plan',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W100'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W64'
+                }
             },
             {
-                'description': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
-                'description_cy': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
+                'description': u'Environment strategy for Wales',
+                'description_cy': u'Environment strategy for Wales',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W101'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W66'
+                }
+            },
+            {
+                'description': u'Equine Health and Welfare Strategy for Great Britain',
+                'description_cy': u'Equine Health and Welfare Strategy for Great Britain',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W19'
+                }
+            },
+            {
+                'description': u'Event Wales: A major events strategy for Wales 2010-20',
+                'description_cy': u'Event Wales: A major events strategy for Wales 2010-20',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W7'
+                }
+            },
+            {
+                'description': u'Farming, Food & Countryside Building a secure future',
+                'description_cy': u'Farming, Food & Countryside Building a secure future',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W21'
+                }
+            },
+            {
+                'description': u'Financial Inclusion Strategy for Wales 2016',
+                'description_cy': u'Financial Inclusion Strategy for Wales 2016',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W29'
+                }
+            },
+            {
+                'description': u'Fire and Rescue National Framework 2016',
+                'description_cy': u'Fire and Rescue National Framework 2016',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W82'
+                }
+            },
+            {
+                'description': u'Food for Wales, Food from Wales: 2010-2020',
+                'description_cy': u'Food for Wales, Food from Wales: 2010-2020',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W68'
+                }
+            },
+            {
+                'description': u'For Our Future The 21st Century Higher Education Strategy and Plan for Wales',
+                'description_cy': u'For Our Future The 21st Century Higher Education Strategy and Plan for Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W11'
+                }
+            },
+            {
+                'description': u'Framework Action Plan Years 1 - 3',
+                'description_cy': u'Framework Action Plan Years 1 - 3',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W54'
+                }
+            },
+            {
+                'description': u'Fuel Poverty Strategy 2010',
+                'description_cy': u'Fuel Poverty Strategy 2010',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W22'
+                }
+            },
+            {
+                'description': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)'
                     },
-                ]
+                    {
+                        'custom_link': '<a href="#" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>',
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W48'
+                }
             },
             {
                 'description': u'Improving Lives and Communities: Homes in Wales',
                 'description_cy': u'Improving Lives and Communities: Homes in Wales',
                 'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
                 'secondary_info': {
                     'qualdcinfo': 'M4W33'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                }
             },
             {
-                'description': u'Ten year homelessness plan for Wales 2009-2019',
-                'description_cy': u'Ten year homelessness plan for Wales 2009-2019',
+                'description': u'Innovation Wales',
+                'description_cy': u'Innovation Wales',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W34'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Vibrant and Viable Places New Regeneration Framework',
-                'description_cy': u'Vibrant and Viable Places New Regeneration Framework',
-                'icon': 'fa-file-pdf-o',
+                    }
+                ],
                 'secondary_info': {
-                    'qualdcinfo': 'M4W35'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Part 1: Local Government Improvement',
-                'description_cy': u'Part 1: Local Government Improvement',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W36'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'PPW Chapter 7 Economic Development',
-                'description_cy': u'PPW Chapter 7 Economic Development',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W37'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'PPW Chapter 11 Tourism, Sport and Recreation',
-                'description_cy': u'PPW Chapter 11 Tourism, Sport and Recreation',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W38'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'TAN 6: Planning for Sustainable Rural Communities',
-                'description_cy': u'TAN 6: Planning for Sustainable Rural Communities',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W39'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'TAN 21: Waste',
-                'description_cy': u'TAN 21: Waste',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W40'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Part 2: Community Strategies and Planning',
-                'description_cy': u'Part 2: Community Strategies and Planning',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W87'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
-            },
-            {
-                'description': u'Planning Policy Wales: Chapter 14 Minerals',
-                'description_cy': u'Planning Policy Wales: Chapter 14 Minerals',
-                'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W88'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    'qualdcinfo': 'M4W96'
+                }
             },
             {
                 'description': u'Interim Marine Aggregates Dredging Policy South Wales',
                 'description_cy': u'Interim Marine Aggregates Dredging Policy South Wales',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W86'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W86'
+                }
+            },
+            {
+                'description': u'Libraries Inspire: The strategic development framework for Welsh libraries 2012-16',
+                'description_cy': u'Libraries Inspire: The strategic development framework for Welsh libraries 2012-16',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W56'
+                }
             },
             {
                 'description': u'Minerals Planning Policy (Wales) Minerals Technical Advice Note (Wales) 1: Aggregates',
                 'description_cy': u'Minerals Planning Policy (Wales) Minerals Technical Advice Note (Wales) 1: Aggregates',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W89'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W89'
+                }
             },
             {
                 'description': u'Minerals Technical Advice Note 2: Coal',
                 'description_cy': u'Minerals Technical Advice Note 2: Coal',
                 'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
                 'secondary_info': {
                     'qualdcinfo': 'M4W90'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                }
             },
             {
-                'description': u'TAN 8: Planning for renewable energy',
-                'description_cy': u'TAN 8: Planning for renewable energy',
+                'description': u'Ministerial Policy Statement on Marine Energy in Wales',
+                'description_cy': u'Ministerial Policy Statement on Marine Energy in Wales',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W91'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W70'
+                }
+            },
+            {
+                'description': u'Municipal Sector Plan Part 1 Towards Zero Waste One Wales: One Planet',
+                'description_cy': u'Municipal Sector Plan Part 1 Towards Zero Waste One Wales: One Planet',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W75'
+                }
+            },
+            {
+                'description': u'National Strategy for Flood and Coastal Erosion Risk Management in Wales',
+                'description_cy': u'National Strategy for Flood and Coastal Erosion Risk Management in Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W67'
+                }
+            },
+            {
+                'description': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
+                'description_cy': u'One Wales: Connecting the Nation - The Wales Transport Strategy',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W100'
+                }
+            },
+            {
+                'description': u'PPW Chapter 11 Tourism, Sport and Recreation',
+                'description_cy': u'PPW Chapter 11 Tourism, Sport and Recreation',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W38'
+                }
+            },
+            {
+                'description': u'PPW Chapter 7 Economic Development',
+                'description_cy': u'PPW Chapter 7 Economic Development',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W37'
+                }
+            },
+            {
+                'description': u'Part 1: Local Government Improvement',
+                'description_cy': u'Part 1: Local Government Improvement',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W36'
+                }
+            },
+            {
+                'description': u'Part 2: Community Strategies and Planning',
+                'description_cy': u'Part 2: Community Strategies and Planning',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W87'
+                }
+            },
+            {
+                'description': u'Planning Policy Wales: Chapter 14 Minerals',
+                'description_cy': u'Planning Policy Wales: Chapter 14 Minerals',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W88'
+                }
+            },
+            {
+                'description': u'Public Procurement of Steel: A Report into the Future Welsh Public Sector Steel Requirements and the Capacity and Capability of the Steel Sector',
+                'description_cy': u'Public Procurement of Steel: A Report into the Future Welsh Public Sector Steel Requirements and the Capacity and Capability of the Steel Sector',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W3'
+                }
+            },
+            {
+                'description': u'Qualified for Life: An Education Improvement Plan for 3-19 year olds in Wales',
+                'description_cy': u'Qualified for Life: An Education Improvement Plan for 3-19 year olds in Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W12'
+                }
+            },
+            {
+                'description': u'Raising the ambitions and educational attainment of children who are looked after in Wales Strategy',
+                'description_cy': u'Raising the ambitions and educational attainment of children who are looked after in Wales Strategy',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W55'
+                }
+            },
+            {
+                'description': u'Reducing the proportion of young people not in education, employment or training in Wales: Delivering Skills that Work for Wales',
+                'description_cy': u'Reducing the proportion of young people not in education, employment or training in Wales: Delivering Skills that Work for Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W58'
+                }
+            },
+            {
+                'description': u'Rewriting the Future 2015: A Year On',
+                'description_cy': u'Rewriting the Future 2015: A Year On',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W13'
+                }
+            },
+            {
+                'description': u'Rewriting the future: Raising ambition and attainment in Welsh schools',
+                'description_cy': u'Rewriting the future: Raising ambition and attainment in Welsh schools',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W57'
+                }
+            },
+            {
+                'description': u'Rural Health Plan: Improving integrated service delivery across Wales',
+                'description_cy': u'Rural Health Plan: Improving integrated service delivery across Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W80'
+                }
+            },
+            {
+                'description': u'Science for Wales: A strategic agenda for science and innovation in Wales',
+                'description_cy': u'Science for Wales: A strategic agenda for science and innovation in Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W97'
+                }
+            },
+            {
+                'description': u'Science, Technology, Engineering and Mathematics (STEM) in education and training: A delivery plan for Wales',
+                'description_cy': u'Science, Technology, Engineering and Mathematics (STEM) in education and training: A delivery plan for Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W14'
+                }
+            },
+            {
+                'description': u'Snowdonia Enterprise Zone Strategic Plan 2015',
+                'description_cy': u'Snowdonia Enterprise Zone Strategic Plan 2015',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)'
                     },
-                ]
+                    {
+                        'custom_link': '<a href="#" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>Trunk Road Network 2016</a>',
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W49'
+                }
+            },
+            {
+                'description': u'Strategic Action Plan for the Welsh Dairy Industry',
+                'description_cy': u'Strategic Action Plan for the Welsh Dairy Industry',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W71'
+                }
+            },
+            {
+                'description': u'Strategic Action Plan for the Welsh Horticulture Industry',
+                'description_cy': u'Strategic Action Plan for the Welsh Horticulture Industry',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W23'
+                }
+            },
+            {
+                'description': u'Strategic Action Plan for the Welsh Red Meat Industry',
+                'description_cy': u'Strategic Action Plan for the Welsh Red Meat Industry',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W72'
+                }
+            },
+            {
+                'description': u'Strategy for Wild Deer Management in Wales',
+                'description_cy': u'Strategy for Wild Deer Management in Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W73'
+                }
+            },
+            {
+                'description': u'Sustainable Tourism A Framework for Wales',
+                'description_cy': u'Sustainable Tourism A Framework for Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W8'
+                }
             },
             {
                 'description': u'TAN 14: Coastal Planning - 1998 ',
                 'description_cy': u'TAN 14: Coastal Planning - 1998 ',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W92'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W92'
+                }
             },
             {
                 'description': u'TAN 15: Development And Flood Risk',
                 'description_cy': u'TAN 15: Development And Flood Risk',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W93'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W93'
+                }
+            },
+            {
+                'description': u'TAN 21: Waste',
+                'description_cy': u'TAN 21: Waste',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W40'
+                }
+            },
+            {
+                'description': u'TAN 6: Planning for Sustainable Rural Communities',
+                'description_cy': u'TAN 6: Planning for Sustainable Rural Communities',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W39'
+                }
+            },
+            {
+                'description': u'TAN 8: Planning for renewable energy',
+                'description_cy': u'TAN 8: Planning for renewable energy',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W91'
+                }
+            },
+            {
+                'description': u'Ten year homelessness plan for Wales 2009-2019',
+                'description_cy': u'Ten year homelessness plan for Wales 2009-2019',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W34'
+                }
+            },
+            {
+                'description': u'The Action Plan for Pollinators in Wales',
+                'description_cy': u'The Action Plan for Pollinators in Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W17'
+                }
+            },
+            {
+                'description': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
+                'description_cy': u'The Air Quality Strategy for England, Scotland, Wales and Northern Ireland Vol 2 baseline data',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W60'
+                }
+            },
+            {
+                'description': u'The Carers Strategy for Wales 2013',
+                'description_cy': u'The Carers Strategy for Wales 2013',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W79'
+                }
+            },
+            {
+                'description': u'The Implementation Plan for Economic Renewal: a new direction',
+                'description_cy': u'The Implementation Plan for Economic Renewal: a new direction',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W1'
+                }
+            },
+            {
+                'description': u'The Right to be Safe',
+                'description_cy': u'The Right to be Safe',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W31'
+                }
+            },
+            {
+                'description': u'The Social Enterprise Action Plan for Wales 2009',
+                'description_cy': u'The Social Enterprise Action Plan for Wales 2009',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W30'
+                }
+            },
+            {
+                'description': u'The Welsh Government Strategy for Tourism 2013 - 2020 Partnership for Growth',
+                'description_cy': u'The Welsh Government Strategy for Tourism 2013 - 2020 Partnership for Growth',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W53'
+                }
+            },
+            {
+                'description': u"The Welsh Government's Action Plan for wild deer management in Wales 2011 - 2016",
+                'description_cy': u"The Welsh Government's Action Plan for wild deer management in Wales 2011 - 2016",
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W18'
+                }
+            },
+            {
+                'description': u"The Welsh Government's international agenda",
+                'description_cy': u"The Welsh Government's international agenda",
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W99'
+                }
+            },
+            {
+                'description': u'The Welsh National Marine Plan: Initial draft',
+                'description_cy': u'The Welsh National Marine Plan: Initial draft',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W77'
+                }
+            },
+            {
+                'description': u'Towards Sustainable Growth: An Action Plan for the Food and Drink Industry 2014-2020',
+                'description_cy': u'Towards Sustainable Growth: An Action Plan for the Food and Drink Industry 2014-2020',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W16'
+                }
+            },
+            {
+                'description': u'Towards Zero Waste One Wales: One Planet',
+                'description_cy': u'Towards Zero Waste One Wales: One Planet',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W75'
+                }
+            },
+            {
+                'description': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
+                'description_cy': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W101'
+                }
+            },
+            {
+                'description': u'Vibrant and Viable Places New Regeneration Framework',
+                'description_cy': u'Vibrant and Viable Places New Regeneration Framework',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W35'
+                }
+            },
+            {
+                'description': u'Volunteering Policy Supporting Communities, Changing Lives: August',
+                'description_cy': u'Volunteering Policy Supporting Communities, Changing Lives: August',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W32'
+                }
+            },
+            {
+                'description': u'Wales Arson Reduction Strategy Report of the Joint Arson Group August 2007',
+                'description_cy': u'Wales Arson Reduction Strategy Report of the Joint Arson Group August 2007',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W81'
+                }
+            },
+            {
+                'description': u'Wales Fisheries Strategy 2008',
+                'description_cy': u'Wales Fisheries Strategy 2008',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W74'
+                }
+            },
+            {
+                'description': u'Wales Marine and Fisheries: Strategic Action Plan',
+                'description_cy': u'Wales Marine and Fisheries: Strategic Action Plan',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W69'
+                }
             },
             {
                 'description': u'Wales Spatial Plan',
                 'description_cy': u'Wales Spatial Plan',
                 'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
                 'secondary_info': {
                     'qualdcinfo': 'M4W94'
-                },
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                }
             },
             {
-                'description': u'A living language: a language for living - Welsh Language Strategy 2012-17 / Action Plan 2016-17',
-                'description_cy': u'A living language: a language for living - Welsh Language Strategy 2012-17 / Action Plan 2016-17',
+                'description': u"Wales and the European Union The Welsh Government's EU Strategy",
+                'description_cy': u"Wales and the European Union The Welsh Government's EU Strategy",
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W42'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W98'
+                }
             },
             {
-                'description': u'A living language: a language for living - Moving forward Policy statement',
-                'description_cy': u'A living language: a language for living - Moving forward Policy statement',
+                'description': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
+                'description_cy': u'Water Strategy for Wales: Supporting the sustainable management of our natural resources',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W103'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W76'
+                }
             },
             {
-                'description': u'A living language: a language for living Welsh Language Strategy 2012-17',
-                'description_cy': u'A living language: a language for living Welsh Language Strategy 2012-17',
+                'description': u'Welsh Government Contingency Plan for Exotic Animal Diseases 2016',
+                'description_cy': u'Welsh Government Contingency Plan for Exotic Animal Diseases 2016',
                 'icon': 'fa-file-pdf-o',
-                'secondary_info': {
-                    'qualdcinfo': 'M4W102'
-                },
                 'item_list': [
                     {
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)',
                         'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    },
-                ]
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W20'
+                }
             },
-
+            {
+                'description': u'Welsh-medium Education Strategy',
+                'description_cy': u'Welsh-medium Education Strategy',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W15'
+                }
+            },
+            {
+                'description': u'Woodlands for Wales',
+                'description_cy': u'Woodlands for Wales',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W78'
+                }
+            },
+            {
+                'description': u'Woodlands for Wales Action Plan',
+                'description_cy': u'Woodlands for Wales Action Plan',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W25'
+                }
+            },
+            {
+                'description': u'Working Together to Reduce Harm: The Substance Misuse Strategy for Wales 2008-2018',
+                'description_cy': u'Working Together to Reduce Harm: The Substance Misuse Strategy for Wales 2008-2018',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W84'
+                }
+            },
+            {
+                'description': u'Youth engagement and progression framework: Implementation plan',
+                'description_cy': u'Youth engagement and progression framework: Implementation plan',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W59'
+                }
+            }
         ]
     },
 

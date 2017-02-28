@@ -1086,18 +1086,18 @@ class PowerStation(models.Model):
         return u'{} :: {}'.format(self.name, self.type)
 
 
-# class WelshLanguageABS(models.Model):
-#     gid = models.IntegerField(primary_key=True)
-#     name = models.CharField(max_length=254, blank=True, null=True)
-#     code = models.CharField(max_length=9, blank=True, null=True)
-#     data_lsoa = models.CharField(max_length=254, blank=True, null=True)
-#     data_welsh = models.IntegerField(max_length=10, blank=True, null=True)
-#     geom = models.GeometryField(blank=True, null=True)
-#     objects = models.GeoManager()
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'welsh_language_abs'
+class WelshLanguageABS(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    code = models.CharField(max_length=9, blank=True, null=True)
+    data_lsoa = models.CharField(max_length=254, blank=True, null=True)
+    data_welsh = models.IntegerField(max_length=10, blank=True, null=True)
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    class Meta:
+        managed = False
+        db_table = 'welsh_language_abs'
 
 
 class ResponseTable(models.Model):

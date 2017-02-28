@@ -399,11 +399,11 @@ KNOWING_LOCALITIES_TABLES = [
     {
         'display_name': 'Power Stations',
         'table_name': 'PowerStation',
+    },
+    {
+        'display_name': 'Welsh Language ABS',
+        'table_name': 'WelshLanguageABS'
     }
-    # {
-    #     'display_name': 'Welsh Language ABS',
-    #     'table_name': 'WelshLanguageABS'
-    # }
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -438,21 +438,6 @@ M4W_SEARCH_LAYER_UUIDS = [
         'icon': 'fa-book',
         'list_id': 'policy_papers',
         'item_list': [
-            {
-                'description': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
-                'description_cy': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
-                'icon': 'fa-file-pdf-o',
-                'item_list': [
-                    {
-                        'description': u'Map Item',
-                        'description_cy': u'Map Item (Welsh)',
-                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
-                    }
-                ],
-                'secondary_info': {
-                    'qualdcinfo': 'M4W83'
-                }
-            },
             {
                 'description': u'A Museums Strategy for Wales',
                 'description_cy': u'A Museums Strategy for Wales',
@@ -581,7 +566,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                         'description_cy': u'Power Stations (Welsh)'
                     },
                     {
-                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field " data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)'
                     },
@@ -627,7 +612,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field " data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)'
                     },
@@ -648,7 +633,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field " data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)'
                     },
@@ -789,7 +774,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field " data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)'
                     },
@@ -855,7 +840,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field " data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)'
                     },
@@ -1101,7 +1086,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field " data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)'
                     },
@@ -1482,7 +1467,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'icon': 'fa-file-pdf-o',
                 'item_list': [
                     {
-                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field wms_layer_active" data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field " data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>',
                         'description': u'Map Item',
                         'description_cy': u'Map Item (Welsh)'
                     },
@@ -1843,6 +1828,21 @@ M4W_SEARCH_LAYER_UUIDS = [
                 }
             },
             {
+                'description': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
+                'description_cy': u'"Travelling to a Better Future" Gypsy and Traveller Framework for Action and Delivery Plan',
+                'icon': 'fa-file-pdf-o',
+                'item_list': [
+                    {
+                        'description': u'Map Item',
+                        'description_cy': u'Map Item (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    }
+                ],
+                'secondary_info': {
+                    'qualdcinfo': 'M4W83'
+                }
+            },
+            {
                 'description': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
                 'description_cy': u'Trunk Road Estate Biodiversity Action Plan 2004-2014',
                 'icon': 'fa-file-pdf-o',
@@ -2077,98 +2077,18 @@ M4W_SEARCH_LAYER_UUIDS = [
         'icon': 'fa-bar-chart',
         'item_list': [
             {
-                'description': u'Strategic Sites - Enterprise Zones',
-                'description_cy': u'Strategic Sites - Enterprise Zones (Welsh)',
+                'description': u'Strategic Sites',
+                'description_cy': u'Strategic Sites (Welsh)',
                 'icon': 'fa-file-pdf-o',
+                'secondary_info': {
+                    'qualdcinfo_short_list': 'M4W43,M4W44,M4W45,M4W46,M4W47,M4W48,M4W49'
+                },
                 'item_list': [
                     {
-                        'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Map Item (Welsh)',
-                        'icon': 'fa-file-pdf-o',
-                        'item_list': [
-                            {
-                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                                'description_cy': u'Map Item (Welsh)',
-
-                            }
-                        ]
-                    },
-                    {
-                        'description': u'Cardiff Airport and St Athan Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Map Item (Welsh)',
-                        'icon': 'fa-file-pdf-o',
-                        'item_list': [
-                            {
-                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                                'description_cy': u'Map Item (Welsh)',
-
-                            }
-                        ]
-                    },
-                    {
-                        'description': u'Central Cardiff Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Map Item (Welsh)',
-                        'icon': 'fa-file-pdf-o',
-                        'item_list': [
-                            {
-                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                                'description_cy': u'Map Item (Welsh)',
-
-                            }
-                        ]
-                    },
-                    {
-                        'description': u'Deeside Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Map Item (Welsh)',
-                        'icon': 'fa-file-pdf-o',
-                        'item_list': [
-                            {
-                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                                'description_cy': u'Map Item (Welsh)',
-
-                            }
-                        ]
-
-                    },
-                    {
-                        'description': u'Ebbw Vale Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Map Item (Welsh)',
-                        'icon': 'fa-file-pdf-o',
-                        'item_list': [
-                            {
-                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                                'description_cy': u'Map Item (Welsh)',
-
-                            }
-                        ]
-
-                    },
-                    {
-                        'description': u'Haven Waterway Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Map Item (Welsh)',
-                        'icon': 'fa-file-pdf-o',
-                        'item_list': [
-                            {
-                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                                'description_cy': u'Map Item (Welsh)',
-
-                            }
-                        ]
-
-                    },
-                    {
-                        'description': u'Snowdonia Enterprise Zone Strategic Plan 2015',
-                        'description_cy': u'Map Item (Welsh)',
-                        'icon': 'fa-file-pdf-o',
-                        'item_list': [
-                            {
-                                'description': u'Anglesey Enterprise Zone Strategic Plan 2015',
-                                'description_cy': u'Map Item (Welsh)',
-
-                            }
-                        ]
-
-                    },
+                        'description': u'Enterprise Zones',
+                        'description_cy': u'Enterprise Zones (Welsh)',
+                        'custom_link': '<a href="#" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field " data-layer_name="enterprise_zones" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Enterprise Zones</p></a>'
+                    }
                 ]
             }
         ]
@@ -2203,9 +2123,46 @@ M4W_SEARCH_LAYER_UUIDS = [
         'icon': 'fa-tree',
         'item_list': [
             {
-                'description': u'Map Item',
-                'description_cy': u'Map Item (Welsh)',
-                'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                'description': u'Noise',
+                'description_cy': u'Noise (Welsh)',
+                'icon': 'fa-file-pdf-o',
+                'secondary_info': {
+                    'qualdcinfo_short_list': 'M4W61,'
+                },
+                'item_list': [
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_arl_lday" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_lday" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Railway Noise in Agglomerations (Daytime average)</p></a>',
+                        'description': u'Railway Noise in Agglomerations (Daytime average)',
+                        'description_cy': u'Railway Noise in Agglomerations (Daytime average) (Welsh)'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_arl_leve" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_arl_leve" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Railway Noise in Agglomerations (Evening average)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_ind_lden" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_ind_lden" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Industrial Noise (Daily average)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_majorroadsr2" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">(Noise Action Plan) Major Roads</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_mrd_lday" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrd_lday" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Major Road Traffic Noise (Daytime average)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_mrd_leve" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=NAP_mrd_leve" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Major Road Traffic Noise (Evening average)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_priorityareas_railways" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">(Noise Action Plan) Priority Areas (Railways)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_priorityareas_roads" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">(Noise Action Plan) Priority Areas (Roads)</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_quietareas" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">(Noise Action Plan) Quiet Areas</p></a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" data-wfs="false" class="wms_toggle lle_flex tile_name source legend_img wfs_namespace wfs_geometry_field" data-layer_name="NAP_r2industrylocations" data-layer_url="http://lle.wales.gov.uk/services/inspire-wg/wms" data-legend_img="" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="geom"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">(Noise Action Plan) Industry Locations</p></a>'
+                    }
+                ],
             }
         ]
     },
@@ -2238,17 +2195,51 @@ M4W_SEARCH_LAYER_UUIDS = [
         'description_cy': u'Map Item (Welsh)',
         'icon': 'fa-flask',
         'item_list': [
+
             {
-                'description': u'Power Stations',
-                'description_cy': u'Power Stations (Welsh)',
-                'custom_link': '<a href="#" data-layer_name="PowerStation" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> Power Stations</a>'
+                'description': u'Transportation',
+                'description_cy': u'Transportation (Welsh)',
+                'icon': 'fa-file-pdf-o',
+                'secondary_info': {
+                    'qualdcinfo_short_list': ''
+                },
+                'item_list': [
+                    {
+                        'description': u'Rail',
+                        'description_cy': u'Rail (Welsh)',
+                        'custom_link': '<a href="#" data-layer_name="WelshRail" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> Rail</a>'
+                    },
+                    {
+                        'description': u'Uk Railway Stations',
+                        'description_cy': u'Uk Railway Stations (Welsh)',
+                        'custom_link': '<a href="#" data-layer_name="ukrailstation" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> Uk Railway Stations</a>'
+                    },
+                    {
+                        'custom_link': '<a href="#" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" ><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name">Trunk Road Network 2016</p></a>',
+                        'description': u'Trunk Road Network 2016',
+                        'description_cy': u'Trunk Road Network 2016 (Welsh)',
+                        'uid': 'd58b5741-14c3-47c6-898a-161a4eda88a2'
+                    },
+                ]
             },
             {
-                'description': u'Trunk Road Network 2016',
-                'description_cy': u'Trunk Road Network 2016 (Welsh)',
-                'custom_link': '<a href="#" data-wfs="false" class="wms_toggle" data-layer_name="TrunkRoadNetwork_2016" data-layer_url="http://lle.gov.wales/services/inspire-wg/wms" data-legend_img="http://lle.gov.wales/services/inspire-wg/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=TrunkRoadNetwork_2016" data-wfs_namespace="inspire-wg" data-wfs_geometry_field="GEOM,fme_geometry,geom,OBJECTID"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><p class="name"></p>TrunkRoadNetwork_2016</a>'
+                'description': u'Energy',
+                'description_cy': u'Energy (Welsh)',
+                'icon': 'fa-file-pdf-o',
+                'secondary_info': {
+                    'qualdcinfo_short_list': 'M4W43'
+                },
+                'item_list': [
+                    {
+                        'description': u'Power Stations',
+                        'description_cy': u'Power Stations (Welsh)',
+                        'custom_link': '<a href="#" data-layer_name="PowerStation" class="wiserd_layer_toggle"><i class="fa fa-map-marker fa-fw"></i> Power Stations</a>'
+                    }
+                ]
+
             }
         ]
+
     },
     {
         'description': u'Welsh Language',

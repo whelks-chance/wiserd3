@@ -25,11 +25,20 @@
                             <a href="#"
                                {% if m4w_key_two.secondary_info %}
                                data-secondary_info="True"
+
                                {% if m4w_key_two.secondary_info.qualdcinfo %}data-qualdcinfo="{{ m4w_key_two.secondary_info.qualdcinfo }}"{% endif %}
                                {% endif %}
+
+                            {% if m4w_key_two.secondary_info.qualdcinfo_short_list %}data-qualdcinfo_short_list="{{ m4w_key_two.secondary_info.qualdcinfo_short_list }}"{% endif %}
+
                                class="name{% if m4w_key_two.secondary_info %} secondary_info{% endif %}">
+
                                 {% if m4w_key_two.icon %}<i class="fa {{ m4w_key_two.icon }} fa-fw"></i>{% endif %}
-                                {% if use_welsh and m4w_key_two.description_cy %}{{ m4w_key_two.description_cy }}{% else %}{{ m4w_key_two.description }}{% endif %}<span class="fa arrow"></span></a>
+
+                                {% if use_welsh and m4w_key_two.description_cy %}{{ m4w_key_two.description_cy }}{% else %}{{ m4w_key_two.description }}{% endif %}
+
+                                <span class="fa arrow"></span>
+                            </a>
 
                             <ul class="nav nav-ul nav-third-level">
 

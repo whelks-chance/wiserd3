@@ -287,6 +287,70 @@ class TaxService:
             else:
                print('Failed to find {} ({})'.format(prop_info.postcode, cleaned_postcode))
 
+    def tidy_building_type(self, building_type):
+        if building_type:
+            building_type = building_type.replace('&', 'and')
+            building_type = building_type.replace('and premises', '')
+            building_type = building_type.strip()
+        return building_type
+
+    def clean_building_types(self):
+        from fuzzywuzzy import fuzz
+
+        all_building_types = {}
+        seen_building_types = []
+        uniques = []
+
+        scrape_building_types = models.BuildingType.objects.all()
+        all_count = scrape_building_types.count()
+
+        for building_type_1 in scrape_building_types:
+            assert isinstance(building_type_1, models.BuildingType)
+
+            print '{} / {}'.format(building_type_1.id, all_count)
+            # We don't want to compare things multiple times
+            if building_type_1.id not in seen_building_types:
+                building_type_1_text = self.tidy_building_type(
+                    building_type_1.description
+                )
+                building_options = []
+
+                for building_type_2 in scrape_building_types:
+                    assert isinstance(building_type_2, models.BuildingType)
+                    if building_type_1.id != building_type_2.id:
+
+                        building_type_2_text = self.tidy_building_type(
+                            building_type_2.description
+                        )
+                        score = fuzz.ratio(building_type_1_text, building_type_2_text)
+
+                        if score > 85:
+                            seen_building_types.append(building_type_2.id)
+
+                            print(score, building_type_1_text, building_type_2_text)
+
+                            building_options.append(
+                                {
+                                    'id': building_type_2.id,
+                                    'term': building_type_2_text,
+                                    'score': score
+                                }
+                            )
+                if len(building_options):
+                    all_building_types[building_type_1_text] = building_options
+                else:
+                    uniques.append({
+                        'id': building_type_1.id,
+                        'term': building_type_1_text,
+                    })
+
+        with open('building_fuzz_1.json', 'a') as fuzz_file:
+            fuzz_file.write(json.dumps(all_building_types, indent=4))
+
+        # Stuff which doesn't match anything
+        with open('building_fuzz__unique_1.json', 'a') as fuzz_file:
+            fuzz_file.write(json.dumps(uniques, indent=4))
+
 if __name__ == "__main__":
     fsm = TaxService()
 
@@ -431,4 +495,5 @@ if __name__ == "__main__":
     # fsm.clean()
     # fsm.find_thing('public')
     # fsm.record_postcodes()
-    fsm.record_geoms()
+    # fsm.record_geoms()
+    fsm.clean_building_types()

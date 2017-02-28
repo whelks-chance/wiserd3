@@ -16,15 +16,15 @@
     {#    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>#}
     {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>#}
 
-        <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+{#        <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>#}
+{#        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />#}
 
 {#    <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>#}
 {#    <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />#}
 
     {#  local leaflet  #}
-{#    <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>#}
-{#    <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />#}
+    <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
 
 
 
@@ -3422,48 +3422,60 @@
 
                 var has_info = $(this).data('secondary_info');
                 var qualdcinfo_id = $(this).data('qualdcinfo');
+                var qualdcinfo_short_list = $(this).data('qualdcinfo_short_list');
 
-                $.ajax({
+                if (qualdcinfo_short_list) {
 
-                    url: "{% url 'api:metadata:QualDcInfo-detail' pk="12345"%}".replace('12345', qualdcinfo_id),
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
+                    var right_pane = $('#right-component1');
+                    right_pane.html('<h2>Policy Details</h2>');
 
-                        var qual_dc_keys = [
-                            {#                            'identifier',#}
-                            'title',
-                            {#                            'creator',#}
-                            'subject',
-                            'description',
-                            'publisher',
-                            'contributor',
-                            'date',
-                            'type',
-                            'format',
-                            'source',
-                            'language'
-                        ];
-
-                        var model_data = '';
-                        for (var idx in qual_dc_keys) {
-                            var key = qual_dc_keys[idx];
-                            if (data[key].length) {
-                                model_data += '<h4>' + titleCase(key) + '</h4><p>' + data[key] + '</p>';
-                            }
-                        }
-
-                        var info_text = '<h2>Record Details</h2>' + model_data;
-                        var right_pane = $('#right-component1');
-                        right_pane.html(urlify(info_text));
-                    },
-                    error: function(){
-
-                        var info_text = '<h2>Record Details</h2><p>None found</p>';
-                        var right_pane = $('#right-component1');
-                        right_pane.html(urlify(info_text));
+                    var qual_dc_ids = qualdcinfo_short_list.split(',');
+                    for (var idx in qual_dc_ids) {
+                        $.ajax({
+                            url: "{% url 'api:metadata:QualDcInfo-detail' pk="12345"%}".replace(
+                                    '12345',
+                                    qual_dc_ids[idx]
+                            ),
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function(data) {
+                                var qualdcinfo_short_list_html = '<h4>Title</h4><p>' + data['title'] + '</p><h4>Link</h4><p>' + data['source'] + '</p>';
+                                $('<div/>').html(urlify(qualdcinfo_short_list_html)).addClass('sidebar_group').appendTo(right_pane);
+                            },
+                            error: function() {}
+                        });
                     }
-                });
+
+                }
+
+                if (qualdcinfo_id) {
+                    $.ajax({
+                        url: "{% url 'api:metadata:QualDcInfo-detail' pk="12345"%}".replace('12345', qualdcinfo_id),
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            var qual_dc_keys = ['title','subject','description','publisher','contributor',
+                                'date','type','format','source','language'];
+
+                            var model_data = '';
+                            for (var idx in qual_dc_keys) {
+                                var key = qual_dc_keys[idx];
+                                if (data[key].length) {
+                                    model_data += '<h4>' + titleCase(key) + '</h4><p>' + data[key] + '</p>';
+                                }
+                            }
+
+                            var info_text = '<h2>Record Details</h2>' + model_data;
+                            var right_pane = $('#right-component1');
+                            right_pane.html(urlify(info_text));
+                        },
+                        error: function(){
+                            var info_text = '<h2>Record Details</h2><p>None found</p>';
+                            var right_pane = $('#right-component1');
+                            right_pane.html(urlify(info_text));
+                        }
+                    });
+                }
 
 
 

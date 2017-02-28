@@ -2127,7 +2127,7 @@ M4W_SEARCH_LAYER_UUIDS = [
                 'description_cy': u'Noise (Welsh)',
                 'icon': 'fa-file-pdf-o',
                 'secondary_info': {
-                    'qualdcinfo_short_list': 'M4W61,'
+                    'qualdcinfo_short_list': 'M4W61'
                 },
                 'item_list': [
                     {

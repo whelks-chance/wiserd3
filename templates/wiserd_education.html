@@ -142,7 +142,8 @@
             "wisid_cohortayear3",
             "wisid_cohortbyear7",
             "wisid_cohortayear2",
-            "wisid_cohortdmovers"];
+            "wisid_cohortdmovers",
+            ];
 
         var async_request=[];
         for(var i in surveyid)
@@ -241,7 +242,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/wiserd_education.jpg' %}{% else %}{% static 'dataportal/media/wiserd_education.jpg' %}{% endif %}">
+                <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/wiserdedwelsh.jpg' %}{% else %}{% static 'dataportal/media/wiserd_education.jpg' %}{% endif %}">
 
                 <h1 class="page-header">{% trans 'WISERDEducation' %}</h1>
             </div>
@@ -307,8 +308,8 @@
                                                 <th>{% trans 'Type' %}</th>
                                                 <th>{% trans 'Notes' %}</th>
                                                 <th>{% trans 'From' %}</th>
-                                                <th>{% trans 'SubOf' %}</th>
-                                                <th>{% trans 'Map It' %}</th>
+{#                                                <th>{% trans 'SubOf' %}</th>#}
+{#                                                <th>{% trans 'Map It' %}</th>#}
                                                 <th>{% trans 'View' %}</th>
                                             </tr>
                                             </thead>

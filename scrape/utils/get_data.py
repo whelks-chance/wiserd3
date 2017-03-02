@@ -1,6 +1,9 @@
 # coding=utf-8
 import json
 import os
+
+from django.contrib.gis.geos import Point
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wiserd3.settings')
 import django
 django.setup()
@@ -269,7 +272,7 @@ class TaxService:
                 # postcode_file.write(json.dumps(postcodes, indent=4))
 
     def record_geoms(self):
-        for prop_info in models.TaxServicePropertyInformation.objects.all():
+        for prop_info in models.TaxServicePropertyInformation.objects.filter(geocode__isnull=False):
             assert isinstance(prop_info, models.TaxServicePropertyInformation)
 
             cleaned_postcode = prop_info.postcode
@@ -294,7 +297,7 @@ class TaxService:
             building_type = building_type.strip()
         return building_type
 
-    def clean_building_types(self):
+    def clean_building_types(self, common_name_file='building_fuzz_1.json', unique_name_file='building_fuzz__unique_1.json'):
         from fuzzywuzzy import fuzz
 
         all_building_types = {}
@@ -344,12 +347,122 @@ class TaxService:
                         'term': building_type_1_text,
                     })
 
-        with open('building_fuzz_1.json', 'a') as fuzz_file:
+        with open(common_name_file, 'a') as fuzz_file:
             fuzz_file.write(json.dumps(all_building_types, indent=4))
 
         # Stuff which doesn't match anything
-        with open('building_fuzz__unique_1.json', 'a') as fuzz_file:
+        with open(unique_name_file, 'a') as fuzz_file:
             fuzz_file.write(json.dumps(uniques, indent=4))
+
+    def list_cleaned_building_types(self, common_name_file, unique_name_file, sorted_name_filename):
+        name_list = []
+
+        with open(common_name_file, 'r') as fuzz_file:
+            fuzz_common_data = json.load(fuzz_file)
+
+            for key in fuzz_common_data:
+                name_list.append(key)
+
+        # Stuff which doesn't match anything
+        with open(unique_name_file, 'r') as fuzz_unique_file:
+            fuzz_unique_data = json.load(fuzz_unique_file)
+
+            for unique_data in fuzz_unique_data:
+                name_list.append(unique_data['term'])
+
+        sorted_list = sorted(name_list, key=unicode.lower)
+
+        with open(sorted_name_filename, 'a') as sorted_name_file:
+            for n in sorted_list:
+                sorted_name_file.write(n + '\n')
+
+    def geocode_address(self, lsoa):
+        api_key = 'AIzaSyAxpFEwvBUVjmmDDtAcZYzXci0NyXH7p1Y'
+
+        tspis = models.TaxServicePropertyInformation.objects.filter(
+            lsoa_name=lsoa,
+            geocode=None,
+        )
+
+        tspis_count = tspis.count()
+        tspis_itr = 0
+        for tspi in tspis:
+
+            tspis_itr += 1
+            print '\n{} / {}'.format(tspis_itr, tspis_count)
+
+            assert isinstance(tspi, models.TaxServicePropertyInformation)
+
+            will_continue = False
+            if tspi.building_category:
+                if tspi.building_category.should_address_point:
+                    will_continue = True
+                else:
+                    will_continue = False
+            else:
+                will_continue = True
+
+            if will_continue:
+                url_address = tspi.address.replace(' ', '+')
+
+                print tspi.address
+                # print url_address
+
+                # &bounds=34.172684,-118.604794|34.236144,-118.500938
+
+                url = 'https://maps.googleapis.com/maps/api/geocode/json?address={}&key={}&region=uk'.format(url_address, api_key)
+
+                # print url
+                r = requests.get(url)
+                print r.status_code
+                # print r.text
+                json_response = json.loads(r.text)
+
+                if json_response['status'] == 'ZERO_RESULTS' or len(json_response['results']) == 0:
+                    print 'error with {}'.format(url_address)
+                else:
+                    location = json_response['results'][0]['geometry']['location']
+                    tspi.geocode = location
+                    tspi.save()
+
+    def record_building_categories(self, filter, category, should_address_point):
+        tspis = models.TaxServicePropertyInformation.objects.filter(description__istartswith=filter).filter(building_category=None)
+
+        tspis_count = tspis.count()
+        tspis_itr = 0
+        for tspi in tspis:
+            tspis_itr += 1
+            print '\n{} / {}'.format(tspis_itr, tspis_count)
+
+            assert isinstance(tspi, models.TaxServicePropertyInformation)
+            tspi.building_category, created = models.BuildingCategory.objects.get_or_create(
+                description=category,
+                should_address_point=should_address_point
+            )
+            tspi.save()
+
+    def update_geoms(self):
+        tspis = models.TaxServicePropertyInformation.objects.filter(geocode__isnull=False)
+
+        tspis_count = tspis.count()
+        tspis_itr = 0
+        for tspi in tspis:
+            assert isinstance(tspi, models.TaxServicePropertyInformation)
+            tspis_itr += 1
+            print '\n{} / {}'.format(tspis_itr, tspis_count)
+            encoded_location = json.loads(tspi.geocode.replace('u\'', '"').replace('\'', '"'))
+
+            print tspi.address
+            print encoded_location['lat']
+            print encoded_location['lng']
+
+            new_point = Point(encoded_location['lng'], encoded_location['lat'])
+            lsoa = dataportal_models.SpatialdataLSOA.objects.get(code=tspi.lsoa_code)
+
+            # We only want points very close to where we expect them to be
+            if lsoa.geom.contains(new_point):
+                tspi.geom = new_point
+                tspi.save()
 
 if __name__ == "__main__":
     fsm = TaxService()
@@ -371,7 +484,7 @@ if __name__ == "__main__":
         # },
         #
         # {
-        #     'code': "6920",
+        #     'code': "6920",pass
         #     'name': 'Caerphilly'
         # },
         #
@@ -491,9 +604,24 @@ if __name__ == "__main__":
     #     fsm.billing_authority_name = billing_authority['name']
     #     fsm.do_thing()
 
-
     # fsm.clean()
     # fsm.find_thing('public')
     # fsm.record_postcodes()
     # fsm.record_geoms()
-    fsm.clean_building_types()
+    # fsm.clean_building_types(
+    #     common_name_file='building_fuzz_1.json',
+    #     unique_name_file='building_fuzz__unique_1.json'
+    # )
+
+    # fsm.list_cleaned_building_types(
+    #     common_name_file='building_fuzz_1.json',
+    #     unique_name_file='building_fuzz__unique_1.json',
+    #     sorted_name_filename='sorted_building_types.txt'
+    # )
+
+    # fsm.record_building_categories('car park', 'Car Park', False)
+    # fsm.record_building_categories('market ', 'Market', False)
+    #
+    # fsm.geocode_address(lsoa='Cardiff 032F')
+
+    fsm.update_geoms()

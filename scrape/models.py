@@ -11,6 +11,14 @@ class BuildingType(models.Model):
         return u'{}'.format(self.description)
 
 
+class BuildingCategory(models.Model):
+    description = models.CharField(max_length=250, blank=True, null=True)
+    should_address_point = models.BooleanField(default=True)
+
+    def __unicode__(self):
+        return u'{}'.format(self.description)
+
+
 class BillingAuthority(models.Model):
     billing_authority_name = models.CharField(max_length=100, blank=True, null=True)
     billing_authority_code = models.CharField(max_length=10, blank=True, null=True)
@@ -23,9 +31,11 @@ class TaxServicePropertyInformation(models.Model):
 
     address = models.TextField(blank=True, null=True)
     postcode = models.CharField(max_length=10, blank=True, null=True)
+    geocode = models.CharField(max_length=250, blank=True, null=True)
 
     description = models.CharField(max_length=250, blank=True, null=True)
     building_type = models.ForeignKey(BuildingType, blank=True, null=True)
+    building_category = models.ForeignKey(BuildingCategory, blank=True, null=True)
 
     billing_authority_code = models.CharField(max_length=25, blank=True, null=True)
     billing_authority_link = models.ForeignKey(BillingAuthority, blank=True, null=True)

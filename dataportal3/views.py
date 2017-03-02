@@ -787,7 +787,7 @@ def get_geojson(request):
                 app_label='scrape',
                 model_name=wiserd_layer
             )
-            shape_table_object = wiserd_layer_model.objects.filter(lsoa_name__contains='Cardiff 032G')
+            shape_table_object = wiserd_layer_model.objects.filter(lsoa_name__contains='Cardiff 032F')
             print 'shape_table_object', shape_table_object.count()
         else:
             wiserd_layer_model = apps.get_model(

@@ -554,9 +554,11 @@
                         {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
                         {#                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',#}
                         attribution: '<a target="_blank" href="{% url 'licence_attribution' %}">Licence & attribution</a> | Map data &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
-                        maxZoom: 15,
+{#                        maxZoom: 15,#}
                         id: 'your.mapbox.project.id',
-                        accessToken: 'your.mapbox.public.access.token'
+                        accessToken: 'your.mapbox.public.access.token',
+                        maxZoom: 20,
+    maxNativeZoom: 18
                     });
             {#            openstreetmap.options.crs = L.CRS.EPSG3857;#}
             openstreetmap.addTo(map);

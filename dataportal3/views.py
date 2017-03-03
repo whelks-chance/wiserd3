@@ -787,8 +787,71 @@ def get_geojson(request):
                 app_label='scrape',
                 model_name=wiserd_layer
             )
-            shape_table_object = wiserd_layer_model.objects.filter(lsoa_name__contains='Cardiff 032F')
+            shape_table_object = wiserd_layer_model.objects.filter(
+                Q(lsoa_name__contains='Cardiff 032A') |
+                Q(lsoa_name__contains='Cardiff 032C') |
+                Q(lsoa_name__contains='Cardiff 032D') |
+                Q(lsoa_name__contains='Cardiff 032E') |
+                Q(lsoa_name__contains='Cardiff 032F') |
+                Q(lsoa_name__contains='Cardiff 032G') |
+
+                Q(lsoa_name__contains='Cardiff 033A') |
+                Q(lsoa_name__contains='Cardiff 033B') |
+                Q(lsoa_name__contains='Cardiff 033C') |
+                Q(lsoa_name__contains='Cardiff 033D') |
+
+                Q(lsoa_name__contains='Cardiff 036A') |
+                Q(lsoa_name__contains='Cardiff 036B') |
+                Q(lsoa_name__contains='Cardiff 036C') |
+                Q(lsoa_name__contains='Cardiff 036D') |
+
+                Q(lsoa_name__contains='Cardiff 042A') |
+                Q(lsoa_name__contains='Cardiff 042B') |
+                Q(lsoa_name__contains='Cardiff 042C') |
+                Q(lsoa_name__contains='Cardiff 042D') |
+
+                Q(lsoa_name__contains='Cardiff 044A') |
+                Q(lsoa_name__contains='Cardiff 044B') |
+                Q(lsoa_name__contains='Cardiff 044C') |
+                Q(lsoa_name__contains='Cardiff 044D') |
+
+                Q(lsoa_name__contains='Cardiff 046A') |
+                Q(lsoa_name__contains='Cardiff 046B') |
+                Q(lsoa_name__contains='Cardiff 046C') |
+                Q(lsoa_name__contains='Cardiff 046D') |
+
+                # Q(lsoa_name__contains='Cardiff 048A') |
+                # Q(lsoa_name__contains='Cardiff 048B') |
+                Q(lsoa_name__contains='Cardiff 048C') |
+                Q(lsoa_name__contains='Cardiff 048D') |
+                Q(lsoa_name__contains='Cardiff 048E') |
+
+                Q(lsoa_name__contains='Cardiff 049A') |
+                Q(lsoa_name__contains='Cardiff 049B') |
+                Q(lsoa_name__contains='Cardiff 049C') |
+                Q(lsoa_name__contains='Cardiff 049D') |
+                Q(lsoa_name__contains='Cardiff 049E') |
+                Q(lsoa_name__contains='Cardiff 049F')
+
+            )
             print 'shape_table_object', shape_table_object.count()
+
+        elif wiserd_layer == 'SchoolData':
+            wiserd_layer_model = apps.get_model(
+                app_label='dataportal3',
+                model_name=wiserd_layer
+            )
+            shape_table_object = wiserd_layer_model.objects.filter(LEANameEnglish__contains='Cardiff')
+            print 'shape_table_object', shape_table_object.count()
+
+        elif wiserd_layer == 'SpatialdataLSOA':
+            wiserd_layer_model = apps.get_model(
+                app_label='dataportal3',
+                model_name=wiserd_layer
+            )
+            shape_table_object = wiserd_layer_model.objects.filter(name__contains='Cardiff')
+            print 'shape_table_object', shape_table_object.count()
+
         else:
             wiserd_layer_model = apps.get_model(
                 app_label=app_label,
@@ -806,7 +869,7 @@ def get_geojson(request):
             shape_table_object,
             use_natural_keys=True,
             with_modelname=False,
-            simplify=0.0005
+            simplify=0.00005
         )
 
         geo = json.loads(s)
@@ -823,6 +886,9 @@ def get_geojson(request):
         if wiserd_layer == 'SchoolData':
             geo['properties']['remote_value_key'] = 'fsm_percent'
             # geo['properties']['remote_value_key'] = 'schTypeEnglish'
+
+        if wiserd_layer == 'TaxServicePropertyInformation':
+            geo['properties']['remote_value_key'] = 'building_type'
 
         geos = json.dumps(geo)
         return HttpResponse(geos, content_type="application/json")

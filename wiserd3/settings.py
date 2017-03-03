@@ -403,6 +403,10 @@ KNOWING_LOCALITIES_TABLES = [
     {
         'display_name': 'Welsh Language ABS',
         'table_name': 'WelshLanguageABS'
+    },
+    {
+        'display_name': 'LSOA',
+        'table_name': 'SpatialdataLSOA'
     }
 ]
 

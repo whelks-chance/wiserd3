@@ -40,24 +40,26 @@
                 </button>
 
                 <a
-                        {#                        class="navbar-brand" #}
-                        href="{% url 'm4w_dashboard' %}">
-                    <div style="display: flex; flex-direction: row; padding-top: 10px; padding-left: 15px">
+                        class="navbar-brand"
+                        href="{% url 'm4w_dashboard' %}"
+                            style="padding: 0 15px;">
 
-                    <h4>Map For Wales</h4>
-                        <i style="
-                    max-height: inherit;
-                            margin-left: 0.2em;
-                                    padding: 0.1em;
-                                    "
-                                           class="fa fa-2x fa-map-o"></i>
-                    <i style="
-                    max-height: inherit;
-                            margin-left: 0.2em;
-                                    padding: 0.1em;
-                                    "
-                                           class="fa fa-2x fa-globe"></i>
-                    </div>
+{#                    <h4>Map For Wales</h4>#}
+{#                        <i style="#}
+{#                    max-height: inherit;#}
+{#                            margin-left: 0.2em;#}
+{#                                    padding: 0.1em;#}
+{#                                    "#}
+{#                                           class="fa fa-2x fa-map-o"></i>#}
+{#                    <i style="#}
+{#                    max-height: inherit;#}
+{#                            margin-left: 0.2em;#}
+{#                                    padding: 0.1em;#}
+{#                                    "#}
+{#                                           class="fa fa-2x fa-globe"></i>#}
+                        <img src="{% static 'dataportal/media/m4w/m4wlogobw.gif' %}" style="height:2.6em">
+{#                    </div>#}
+
                 </a>
             </div>
             <!-- /.navbar-header -->

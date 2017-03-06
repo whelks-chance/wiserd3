@@ -91,6 +91,12 @@
     white-space: normal;
 }
 
+.powered_by {
+    background: lightgrey;
+    padding: 3px;
+    opacity: 0.85;
+}
+
 #map_div > div.leaflet-control-container > div.leaflet-top.leaflet-right {
     z-index: 1500;
 }

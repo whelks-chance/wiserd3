@@ -545,6 +545,14 @@
 
             var map = L.map('map_div', {crs: L.CRS.EPSG3857}).setView([52.4, -3.51], 8);
 
+            var powered_by = L.control({position: "topright"});
+            powered_by.onAdd = function(map) {
+                var div = L.DomUtil.create("div", "powered_by");
+                div.innerHTML = "{% trans 'Powered by the WISERD Dataportal' %}";
+                return div;
+            };
+            powered_by.addTo(map);
+
             var layer_group = new L.LayerGroup();
             {#            var overlays = {#}
             {#                "Empty group": layer_group#}

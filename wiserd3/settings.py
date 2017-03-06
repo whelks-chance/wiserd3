@@ -407,6 +407,10 @@ KNOWING_LOCALITIES_TABLES = [
     {
         'display_name': 'LSOA',
         'table_name': 'SpatialdataLSOA'
+    },
+    {
+        'display_name': 'Brexit',
+        'table_name': 'Brexit'
     }
 ]
 

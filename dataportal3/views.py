@@ -890,6 +890,10 @@ def get_geojson(request):
         if wiserd_layer == 'TaxServicePropertyInformation':
             geo['properties']['remote_value_key'] = 'building_type'
 
+        if wiserd_layer == 'Brexit':
+            'turnout_percent'
+            geo['properties']['remote_value_key'] = 'outcome'
+
         geos = json.dumps(geo)
         return HttpResponse(geos, content_type="application/json")
 

@@ -975,6 +975,9 @@ class SpatialdataUA(models.Model):
     geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
 
+    def __unicode__(self):
+        return str(self.label)
+
     class Meta:
         managed = False
         db_table = 'spatialdata_ua'
@@ -1044,6 +1047,24 @@ class SpatialdataNAWConstituency(models.Model):
         db_table = 'spatialdata_assemblyconstituency2'
 
 
+
+class SpatialdataUKUA(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    ctyua15cd = models.CharField(max_length=80, blank=True, null=True)
+    ctyua15nm = models.CharField(max_length=80, blank=True, null=True)
+    ctyua15nmw = models.CharField(max_length=80, blank=True, null=True)
+
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    def __unicode__(self):
+        return u'{} :: {}'.format(self.ctyua15cd, self.ctyua15nm)
+
+    class Meta:
+        managed = False
+        db_table = 'uk_ua'
+
+
 class WelshRail(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=48, blank=True, null=True)
@@ -1098,6 +1119,24 @@ class WelshLanguageABS(models.Model):
     class Meta:
         managed = False
         db_table = 'welsh_language_abs'
+
+
+class Brexit(models.Model):
+    region = models.CharField(max_length=25, blank=True, null=True)
+    leave_total = models.IntegerField(max_length=10, blank=True, null=True)
+    leave_percent = models.FloatField(max_length=10, blank=True, null=True)
+    remain_total = models.IntegerField(max_length=10, blank=True, null=True)
+    remain_percent = models.FloatField(max_length=10, blank=True, null=True)
+    outcome = models.CharField(max_length=10, blank=True, null=True)
+    outcome_int = models.IntegerField(max_length=10, blank=True, null=True)
+    turnout_percent = models.FloatField(max_length=10, blank=True, null=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
+
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    def __unicode__(self):
+        return str(self.name) + ':' + str(self.region) + ':' + str(self.outcome)
 
 
 class ResponseTable(models.Model):

@@ -283,6 +283,10 @@ BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}  # 1 hour.
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 app = Celery('dataportal3.utils.ShapeFileImport', backend=BROKER_URL, broker=BROKER_URL)
 
+REDIS_DATA_CACHE_HOST = 'localhost'
+REDIS_DATA_CACHE_PORT = '6379'
+REDIS_DATA_CACHE_DB = '0'
+
 nomis_uid = ''
 
 TMP_DIR = '/home/ubuntu/'
@@ -388,13 +392,20 @@ KNOWING_LOCALITIES_TABLES = [
         'table_name': 'ukrailstation'
     },
     {
-        'display_name': 'Schools',
-        'table_name': 'SchoolData'
+        'display_name': 'School Types',
+        'table_name': 'SchoolData',
+        'field': 'schTypeEnglish'
+    },
+    {
+        'display_name': 'Schools FSM',
+        'table_name': 'SchoolData',
+        'field': 'fsm_percent'
     },
     {
         'display_name': 'Rates',
         'table_name': 'TaxServicePropertyInformation',
-        'app_label': 'scrape'
+        'app_label': 'scrape',
+        'field': 'building_type'
     },
     {
         'display_name': 'Power Stations',

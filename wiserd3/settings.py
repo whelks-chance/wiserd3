@@ -409,8 +409,19 @@ KNOWING_LOCALITIES_TABLES = [
         'table_name': 'SpatialdataLSOA'
     },
     {
-        'display_name': 'Brexit',
-        'table_name': 'Brexit'
+        'display_name': 'Brexit Leave %',
+        'table_name': 'Brexit',
+        'field': 'leave_percent'
+    },
+    {
+        'display_name': 'Brexit Outcome',
+        'table_name': 'Brexit',
+        'field': 'outcome'
+    },
+    {
+        'display_name': 'Brexit Turnout',
+        'table_name': 'Brexit',
+        'field': 'turnout_percent'
     }
 ]
 

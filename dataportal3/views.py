@@ -775,6 +775,7 @@ def get_geojson(request):
     # time1 = datetime.now()
     layer_type = request.POST.get('layer_type')
     app_label = request.POST.get('app_label', 'dataportal3')
+    layer_field = request.POST.get('field', None)
 
     if layer_type == 'wiserd_layer':
         # from topojson import topojson
@@ -890,11 +891,14 @@ def get_geojson(request):
         if wiserd_layer == 'TaxServicePropertyInformation':
             geo['properties']['remote_value_key'] = 'building_type'
 
-        if wiserd_layer == 'Brexit':
-            # 'turnout_percent'
-            # 'outcome'
-            # 'leave_percent'
-            geo['properties']['remote_value_key'] = 'leave_percent'
+        # if wiserd_layer == 'Brexit':
+        #     # 'turnout_percent'
+        #     # 'outcome'
+        #     # 'leave_percent'
+        #     geo['properties']['remote_value_key'] = 'leave_percent'
+
+        if layer_field:
+            geo['properties']['remote_value_key'] = layer_field
 
         geos = json.dumps(geo)
         return HttpResponse(geos, content_type="application/json")

@@ -235,6 +235,10 @@
                            data-app_label="{{ wiserd_layer.app_label }}"
                                 {% endif %}
 
+                                {% if wiserd_layer.field %}
+                                   data-field="{{ wiserd_layer.field }}"
+                                {% endif %}
+
                            data-layer_name="{{ wiserd_layer.table_name }}"
                            class="wiserd_layer_toggle">
                             <i class="fa fa-map-marker fa-fw"></i> {{ wiserd_layer.display_name }}</a>
@@ -463,6 +467,8 @@
             function toggle_wiserd_layer(toggle_button) {
                 var btn_layer_name = $(toggle_button).data('layer_name');
 
+                var btn_layer_field = $(toggle_button).data('field');
+
                 {#                Remove the class regardless what's about to happen, can be added back again #}
                 $(toggle_button).removeClass('wms_layer_active');
                 if (map_layers.hasOwnProperty(btn_layer_name)) {
@@ -471,7 +477,7 @@
                 } else {
                     $(toggle_button).addClass('wms_layer_active');
 
-                    get_geojson_layer('wiserd_layer', [btn_layer_name]);
+                    get_geojson_layer('wiserd_layer', [btn_layer_name], btn_layer_field);
                 }
             }
 
@@ -511,7 +517,7 @@
                 } else {
                     $(toggle_button).addClass('wms_layer_active');
 
-                    get_geojson_layer('upload_layer', [btn_layer_name]);
+                    get_geojson_layer('upload_layer', [btn_layer_name], null);
                 }
             }
 
@@ -926,7 +932,7 @@
 
             {#            get_geojson_layer('survey', JSON.parse('{{ surveys|safe }}'));#}
 
-            function get_geojson_layer(layer_type, layer_names){
+            function get_geojson_layer(layer_type, layer_names, btn_layer_field){
                 add_ajax_waiting('{% trans 'Fetching map layer...' %}');
 
                 var ajax_url = "{% url 'get_geojson' %}";
@@ -942,7 +948,8 @@
                     type: 'POST',
                     data: {
                         'layer_type': layer_type,
-                        'layer_names': layer_names
+                        'layer_names': layer_names,
+                        'field': btn_layer_field
                         {#                        'area_names': {{ area_names|safe }}#}
                     },
                     success: function(data) {

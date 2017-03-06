@@ -1070,7 +1070,7 @@ class SpatialdataUKLAD(models.Model):
     lad13cd = models.CharField(max_length=9, blank=True, null=True)
     lad13cdo = models.CharField(max_length=4, blank=True, null=True)
     lad13nm = models.CharField(max_length=28, blank=True, null=True)
-    lad13nmw = models.IntegerField(max_length=80, blank=True, null=True)
+    lad13nmw = models.IntegerField(blank=True, null=True)
 
     geom = models.GeometryField(blank=True, null=True)
     objects = models.GeoManager()
@@ -1088,7 +1088,7 @@ class SpatialdataUKLADSCO(models.Model):
     lad13cd = models.CharField(max_length=9, blank=True, null=True)
     lad13cdo = models.CharField(max_length=4, blank=True, null=True)
     lad13nm = models.CharField(max_length=21, blank=True, null=True)
-    lad13nmw = models.IntegerField(max_length=80, blank=True, null=True)
+    lad13nmw = models.IntegerField(blank=True, null=True)
 
     geom = models.GeometryField(blank=True, null=True)
     objects = models.GeoManager()

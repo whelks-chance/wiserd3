@@ -92,7 +92,6 @@ class BrexitRecording:
             geom_obj = None
             try:
                 # if key[:1] == 'W':
-                    # geom_model = models.SpatialdataUA.objects.get(label=c_body[key]['name'])
                 geom_model = models.SpatialdataUKUA.objects.get(ctyua15cd=key)
                 geom_obj = geom_model.geom
             except Exception as e1:
@@ -107,11 +106,15 @@ class BrexitRecording:
 
                     except Exception as e3:
                         try:
-                            geom_model = models.SpatialdataParlConstNI.objects.get(pc_id=key)
+                            geom_model = models.SpatialdataUA.objects.get(label=c_body[key]['name'])
                             geom_obj = geom_model.geom
-
                         except Exception as e4:
-                            print 'Exception', type(e4), e4, key
+                            try:
+                                geom_model = models.SpatialdataParlConstNI.objects.get(pc_id=key)
+                                geom_obj = geom_model.geom
+
+                            except Exception as e5:
+                                print 'Exception', type(e5), e5, key
 
             br, created = models.Brexit.objects.get_or_create(region=key)
             # br.region = key

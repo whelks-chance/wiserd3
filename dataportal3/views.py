@@ -893,6 +893,7 @@ def get_geojson(request):
         if wiserd_layer == 'Brexit':
             # 'turnout_percent'
             # 'outcome'
+            # 'leave_percent'
             geo['properties']['remote_value_key'] = 'leave_percent'
 
         geos = json.dumps(geo)

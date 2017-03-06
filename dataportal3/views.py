@@ -779,6 +779,7 @@ def get_geojson(request):
     layer_type = request.POST.get('layer_type')
     app_label = request.POST.get('app_label', 'dataportal3')
     layer_field = request.POST.get('field', None)
+    update_cache = request.POST.get('update_cache', None)
 
     if layer_type == 'wiserd_layer':
         # from topojson import topojson
@@ -788,7 +789,9 @@ def get_geojson(request):
 
         layer_key = '{}-{}-{}-{}'.format(layer_type, app_label, wiserd_layer, layer_field)
 
-        redis_cached_data = redis_cache.get(layer_key)
+        redis_cached_data = None
+        if not update_cache:
+            redis_cached_data = redis_cache.get(layer_key)
 
         if redis_cached_data:
             s = redis_cached_data

@@ -63,7 +63,6 @@ class BrexitRecording:
         done_list = []
         itr_offset = 3
         for itr, key in enumerate(c_body.keys()):
-            print '\n'
             # print c_body[key]
             itr_offset += 1
 

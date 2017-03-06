@@ -14,7 +14,8 @@ from django.contrib.gis import admin as gis_admin
 
 # Register your models here.
 from dataportal3.models import Question, UserGroupSurveyCollection, SurveyVisibilityMetadata, Response, Search, \
-    ResponseTable, MetaDataToRemoteMapping, SchoolData, SpatialdataPostCodePoint, NomisSearch, SpatialSurveyLink, FeatureStore, DcInfo
+    ResponseTable, MetaDataToRemoteMapping, SchoolData, SpatialdataPostCodePoint, NomisSearch, SpatialSurveyLink, FeatureStore, DcInfo, \
+    SpatialdataUKUA
 
 
 class FlattenJsonWidget(Textarea):
@@ -147,6 +148,15 @@ class SpatialSurveyLinkAdmin(FiltersMixin, admin.ModelAdmin):
         ('survey__identifier', SearchFilter)
     )
 admin.site.register(SpatialSurveyLink, SpatialSurveyLinkAdmin)
+
+
+class UKUAAdmin(FiltersMixin, admin.ModelAdmin):
+    list_filter = (
+        ('ctyua15cd', SearchFilter),
+        ('ctyua15nm', SearchFilter),
+        ('ctyua15nmw', SearchFilter)
+    )
+admin.site.register(SpatialdataUKUA, UKUAAdmin)
 
 
 # TODO this is a mess

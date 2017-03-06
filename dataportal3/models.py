@@ -1065,6 +1065,59 @@ class SpatialdataUKUA(models.Model):
         db_table = 'uk_ua'
 
 
+class SpatialdataUKLAD(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    lad13cd = models.CharField(max_length=9, blank=True, null=True)
+    lad13cdo = models.CharField(max_length=4, blank=True, null=True)
+    lad13nm = models.CharField(max_length=28, blank=True, null=True)
+    lad13nmw = models.IntegerField(max_length=80, blank=True, null=True)
+
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    def __unicode__(self):
+        return u'{} :: {}'.format(self.lad13cd, self.lad13nm)
+
+    class Meta:
+        managed = False
+        db_table = 'uk_lad'
+
+
+class SpatialdataUKLADSCO(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    lad13cd = models.CharField(max_length=9, blank=True, null=True)
+    lad13cdo = models.CharField(max_length=4, blank=True, null=True)
+    lad13nm = models.CharField(max_length=21, blank=True, null=True)
+    lad13nmw = models.IntegerField(max_length=80, blank=True, null=True)
+
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    def __unicode__(self):
+        return u'{} :: {}'.format(self.lad13cd, self.lad13nm)
+
+    class Meta:
+        managed = False
+        db_table = 'uk_lad_sco'
+
+
+class SpatialdataParlConstNI(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    fid = models.CharField(max_length=9, blank=True, null=True)
+    pc_id = models.CharField(max_length=9, blank=True, null=True)
+    pc_name = models.CharField(max_length=26, blank=True, null=True)
+
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    def __unicode__(self):
+        return u'{} :: {}'.format(self.pc_id, self.pc_name)
+
+    class Meta:
+        managed = False
+        db_table = 'parl_const_ni'
+
+
 class WelshRail(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=48, blank=True, null=True)

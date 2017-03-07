@@ -464,6 +464,58 @@ class TaxService:
                 tspi.geom = new_point
                 tspi.save()
 
+    def write_xls(self, filename):
+        wb = Workbook()
+        ws = wb.active
+
+        ws.cell(row=1, column=1).value = 'address'
+        ws.cell(row=1, column=2).value = 'postcode'
+        ws.cell(row=1, column=3).value = 'billing_authority_name'
+        ws.cell(row=1, column=4).value = 'description'
+        ws.cell(row=1, column=5).value = 'billing_authority_code'
+        ws.cell(row=1, column=6).value = 'building_type'
+        ws.cell(row=1, column=7).value = 'total_area_m2_unit'
+        ws.cell(row=1, column=8).value = 'total_area_m2_unit_num'
+        ws.cell(row=1, column=9).value = 'price_per_m2_unit'
+        ws.cell(row=1, column=10).value = 'price_per_m2_unit_num'
+        ws.cell(row=1, column=11).value = 'current_rateable_value'
+        ws.cell(row=1, column=12).value = 'current_rateable_value_num'
+        ws.cell(row=1, column=13).value = 'lsoa_name'
+        ws.cell(row=1, column=14).value = 'lsoa_code'
+        ws.cell(row=1, column=15).value = 'geom_lat'
+        ws.cell(row=1, column=16).value = 'geom_lng'
+
+        itr_offset = 3
+
+        tspis = models.TaxServicePropertyInformation.objects.all()[:20]
+
+        for tspi in tspis:
+            assert isinstance(tspi, models.TaxServicePropertyInformation)
+            # print c_body[key]
+            itr_offset += 1
+
+            ws.cell(row=itr_offset, column=1).value = tspi.address
+            ws.cell(row=itr_offset, column=2).value = tspi.postcode
+            ws.cell(row=itr_offset, column=3).value = tspi.billing_authority_link.billing_authority_name
+            ws.cell(row=itr_offset, column=4).value = tspi.description
+            ws.cell(row=itr_offset, column=5).value = tspi.billing_authority_code
+            ws.cell(row=itr_offset, column=6).value = tspi.building_type.description
+            ws.cell(row=itr_offset, column=7).value = tspi.total_area_m2_unit
+            ws.cell(row=itr_offset, column=8).value = tspi.total_area_m2_unit_num
+            ws.cell(row=itr_offset, column=9).value = tspi.price_per_m2_unit
+            ws.cell(row=itr_offset, column=10).value = tspi.price_per_m2_unit_num
+            ws.cell(row=itr_offset, column=11).value = tspi.current_rateable_value
+            ws.cell(row=itr_offset, column=12).value = tspi.current_rateable_value_num
+            ws.cell(row=itr_offset, column=13).value = tspi.lsoa_name
+            ws.cell(row=itr_offset, column=14).value = tspi.lsoa_code
+
+            if tspi.geom:
+                ws.cell(row=itr_offset, column=15).value = tspi.geom.y
+                ws.cell(row=itr_offset, column=16).value = tspi.geom.x
+
+        return wb.save(filename)
+
+
 if __name__ == "__main__":
     fsm = TaxService()
 
@@ -624,4 +676,5 @@ if __name__ == "__main__":
     #
     # fsm.geocode_address(lsoa='Cardiff 032F')
 
-    fsm.update_geoms()
+    # fsm.update_geoms()
+    fsm.write_xls('dump.xls')

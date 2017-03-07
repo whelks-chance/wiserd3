@@ -532,6 +532,7 @@ def map_search(request):
                       'surveys': json.dumps(surveys),
                       'wms_layers': wms_layers,
                       'wiserd_layers': settings.KNOWING_LOCALITIES_TABLES,
+                      'brexit_layers': settings.BREXIT_LAYERS,
                       'upload_layers': uploaded_layers_clean,
                       'area_names': json.dumps(area_names),
                       'remote_data_layers': remote_data_layers
@@ -846,7 +847,9 @@ def get_geojson(request):
                     Q(lsoa_name__contains='Cardiff 049C') |
                     Q(lsoa_name__contains='Cardiff 049D') |
                     Q(lsoa_name__contains='Cardiff 049E') |
-                    Q(lsoa_name__contains='Cardiff 049F')
+                    Q(lsoa_name__contains='Cardiff 049F') |
+
+                    Q(lsoa_name__contains='Cardiff 005G')
 
                 )
                 print 'shape_table_object', shape_table_object.count()

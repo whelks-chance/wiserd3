@@ -249,6 +249,34 @@
         {#            </ul>#}
         {#        </li>#}
     {% endif %}
+
+    {% if tpt == 'default' %}
+
+        <li>
+            <a href="#" class="brexit_btn"><i class="fa fa-flag-o fa-fw"></i> {% trans 'Brexit' %}<div class="brexit_eu"></div><div class="brexit_uk"></div><span class="fa arrow"></span></a>
+            <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
+
+                {% for brexit_layer in brexit_layers %}
+                    <li>
+                        <a href="#"
+                                {% if brexit_layer.app_label %}
+                           data-app_label="{{ brexit_layer.app_label }}"
+                                {% endif %}
+
+                                {% if brexit_layer.field %}
+                                   data-field="{{ brexit_layer.field }}"
+                                {% endif %}
+
+                           data-layer_name="{{ brexit_layer.table_name }}"
+                           class="wiserd_layer_toggle">
+                            <i class="fa fa-map-marker fa-fw"></i> {{ brexit_layer.display_name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {#            </ul>#}
+        {#        </li>#}
+    {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -548,7 +576,7 @@
             var powered_by = L.control({position: "topright"});
             powered_by.onAdd = function(map) {
                 var div = L.DomUtil.create("div", "powered_by");
-                div.innerHTML = "{% trans 'Powered by the WISERD Dataportal' %}";
+                div.innerHTML = "<a target='_blank' href='{% url 'dashboard' %}'><div class='powered_txt'>{% trans 'Powered by the WISERD Dataportal' %}</div></a>";
                 return div;
             };
             powered_by.addTo(map);
@@ -2323,12 +2351,23 @@
                                 map_canvas.height - right_overlay_canvas.height
                         );
 
-                        var canvas_data_url = map_canvas.toDataURL("image/png", 0.5);
 
-                        if(callback) {
-                            callback(canvas_data_url);
-                        }
-                        return canvas_data_url;
+                        html2canvas(
+                            map_div.find('> div.leaflet-control-container > div.leaflet-top.leaflet-right > div.powered_by'), {}
+                        ).then(function(right_overlay_canvas) {
+                            ctx3.drawImage(
+                                    right_overlay_canvas,
+                                    map_canvas.width - right_overlay_canvas.width,
+                                    0
+                            );
+
+                            var canvas_data_url = map_canvas.toDataURL("image/png", 0.5);
+
+                            if (callback) {
+                                callback(canvas_data_url);
+                            }
+                            return canvas_data_url;
+                        });
                     });
                 });
             }
@@ -3477,7 +3516,7 @@
                             var model_data = '';
                             for (var idx in qual_dc_keys) {
                                 var key = qual_dc_keys[idx];
-                                if (data[key].length) {
+                                if (data[key] && data[key].length) {
                                     model_data += '<h4>' + titleCase(key) + '</h4><p>' + data[key] + '</p>';
                                 }
                             }

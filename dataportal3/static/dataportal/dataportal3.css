@@ -92,9 +92,38 @@
 }
 
 .powered_by {
-    background: lightgrey;
+    background: #f8f8f8;
     padding: 3px;
     opacity: 0.85;
+    border: 2px #e7e7e7 solid;
+}
+
+.powered_txt {
+    font-size: large;
+}
+
+.brexit_btn {
+
+}
+
+.brexit_eu {
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI4MTAiIGhlaWdodD0iNTQwIiB2aWV3Qm94PSIwIDAgODEwIDU0MCI+DQo8ZGVmcz48ZyBpZD0icyI+PGcgaWQ9ImMiPjxwYXRoIGlkPSJ0IiBkPSJNMCwwdjFoMC41eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwtMSlyb3RhdGUoMTgpIi8+PHVzZSB4bGluazpocmVmPSIjdCIgdHJhbnNmb3JtPSJzY2FsZSgtMSwxKSIvPjwvZz48ZyBpZD0iYSI+PHVzZSB4bGluazpocmVmPSIjYyIgdHJhbnNmb3JtPSJyb3RhdGUoNzIpIi8+PHVzZSB4bGluazpocmVmPSIjYyIgdHJhbnNmb3JtPSJyb3RhdGUoMTQ0KSIvPjwvZz48dXNlIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InNjYWxlKC0xLDEpIi8+PC9nPjwvZGVmcz4NCjxyZWN0IGZpbGw9IiMwMzkiIHdpZHRoPSI4MTAiIGhlaWdodD0iNTQwIi8+PGcgZmlsbD0iI2ZjMCIgdHJhbnNmb3JtPSJzY2FsZSgzMCl0cmFuc2xhdGUoMTMuNSw5KSI+PHVzZSB4bGluazpocmVmPSIjcyIgeT0iLTYiLz48dXNlIHhsaW5rOmhyZWY9IiNzIiB5PSI2Ii8+PGcgaWQ9ImwiPjx1c2UgeGxpbms6aHJlZj0iI3MiIHg9Ii02Ii8+PHVzZSB4bGluazpocmVmPSIjcyIgdHJhbnNmb3JtPSJyb3RhdGUoMTUwKXRyYW5zbGF0ZSgwLDYpcm90YXRlKDY2KSIvPjx1c2UgeGxpbms6aHJlZj0iI3MiIHRyYW5zZm9ybT0icm90YXRlKDEyMCl0cmFuc2xhdGUoMCw2KXJvdGF0ZSgyNCkiLz48dXNlIHhsaW5rOmhyZWY9IiNzIiB0cmFuc2Zvcm09InJvdGF0ZSg2MCl0cmFuc2xhdGUoMCw2KXJvdGF0ZSgxMikiLz48dXNlIHhsaW5rOmhyZWY9IiNzIiB0cmFuc2Zvcm09InJvdGF0ZSgzMCl0cmFuc2xhdGUoMCw2KXJvdGF0ZSg0MikiLz48L2c+PHVzZSB4bGluazpocmVmPSIjbCIgdHJhbnNmb3JtPSJzY2FsZSgtMSwxKSIvPjwvZz4NCjwvc3ZnPg==");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 1em;
+    width: 1.5em;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.brexit_uk {
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNjAgMzAiIGhlaWdodD0iNjAwIj4NCjxkZWZzPg0KPGNsaXBQYXRoIGlkPSJ0Ij4NCjxwYXRoIGQ9Im0zMCwxNWgzMHYxNXp2MTVoLTMwemgtMzB2LTE1enYtMTVoMzB6Ii8+DQo8L2NsaXBQYXRoPg0KPC9kZWZzPg0KPHBhdGggZmlsbD0iIzAwMjQ3ZCIgZD0ibTAsMHYzMGg2MHYtMzB6Ii8+DQo8cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNiIgZD0ibTAsMGw2MCwzMG0wLTMwbC02MCwzMCIvPg0KPHBhdGggc3Ryb2tlPSIjY2YxNDJiIiBzdHJva2Utd2lkdGg9IjQiIGQ9Im0wLDBsNjAsMzBtMC0zMGwtNjAsMzAiIGNsaXAtcGF0aD0idXJsKCN0KSIvPg0KPHBhdGggc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEwIiBkPSJtMzAsMHYzMG0tMzAtMTVoNjAiLz4NCjxwYXRoIHN0cm9rZT0iI2NmMTQyYiIgc3Ryb2tlLXdpZHRoPSI2IiBkPSJtMzAsMHYzMG0tMzAtMTVoNjAiLz4NCjwvc3ZnPg0K");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 1em;
+    width: 2em;
+    display: inline-block;
+    margin-left: 5px;
 }
 
 #map_div > div.leaflet-control-container > div.leaflet-top.leaflet-right {

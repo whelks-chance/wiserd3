@@ -124,6 +124,8 @@
 
     <script type="text/javascript" src="{% static 'prettyprintjs/prettyprint.js' %}"></script>
 
+        <script type="text/javascript" src="{% static 'leaflet-hash-master/leaflet-hash.js' %}"></script>
+
 
     <style>
         .navbar
@@ -572,6 +574,8 @@
             {#            L.CRS.EPSG4326;#}
 
             var map = L.map('map_div', {crs: L.CRS.EPSG3857}).setView([52.4, -3.51], 8);
+
+            var hash = new L.Hash(map);
 
             var powered_by = L.control({position: "topright"});
             powered_by.onAdd = function(map) {

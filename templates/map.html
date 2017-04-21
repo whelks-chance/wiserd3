@@ -16,11 +16,11 @@
     {#    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>#}
     {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>#}
 
-{#        <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>#}
-{#        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />#}
+    {#        <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>#}
+    {#        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />#}
 
-{#    <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>#}
-{#    <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />#}
+    {#    <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>#}
+    {#    <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />#}
 
     {#  local leaflet  #}
     <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
@@ -124,7 +124,7 @@
 
     <script type="text/javascript" src="{% static 'prettyprintjs/prettyprint.js' %}"></script>
 
-        <script type="text/javascript" src="{% static 'leaflet-hash-master/leaflet-hash.js' %}"></script>
+    <script type="text/javascript" src="{% static 'leaflet-hash-master/leaflet-hash.js' %}"></script>
 
 
     <style>
@@ -238,7 +238,7 @@
                                 {% endif %}
 
                                 {% if wiserd_layer.field %}
-                                   data-field="{{ wiserd_layer.field }}"
+                           data-field="{{ wiserd_layer.field }}"
                                 {% endif %}
 
                            data-layer_name="{{ wiserd_layer.table_name }}"
@@ -266,7 +266,7 @@
                                 {% endif %}
 
                                 {% if brexit_layer.field %}
-                                   data-field="{{ brexit_layer.field }}"
+                           data-field="{{ brexit_layer.field }}"
                                 {% endif %}
 
                            data-layer_name="{{ brexit_layer.table_name }}"
@@ -278,7 +278,7 @@
         </li>
 
         <li>
-            <a href="#" class="brexit_btn"><i class="fa fa-flag-o fa-fw"></i> {% trans 'General Elections' %}<span class="fa arrow"></span></a>
+            <a href="#" class="brexit_btn"><i class="fa fa-window-close-o fa-fw"></i> {% trans 'General Elections' %}<span class="fa arrow"></span></a>
             <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
 
                 {% for ge_layer in ge_layers %}
@@ -289,12 +289,12 @@
                                 {% endif %}
 
                                 {% if ge_layer.field %}
-                                   data-field="{{ ge_layer.field }}"
+                           data-field="{{ ge_layer.field }}"
                                 {% endif %}
 
                            data-layer_name="{{ ge_layer.table_name }}"
                            class="wiserd_layer_toggle">
-                            <i class="fa fa-map-marker fa-fw"></i> {{ ge_layer.display_name }}</a>
+                            <i class="fa fa-calendar fa-fw"></i> {{ ge_layer.display_name }}</a>
                     </li>
                 {% endfor %}
             </ul>
@@ -621,11 +621,11 @@
                         {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
                         {#                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',#}
                         attribution: '<a target="_blank" href="{% url 'licence_attribution' %}">Licence & attribution</a> | Map data &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a> | Contains Ordnance Survey, Office of National Statistics and National Records Scotland data © Crown copyright and database right [2014]. Ordnance Survey data covered by OS OpenData Licence. Any further sub-licences must retain this attribution.',
-{#                        maxZoom: 15,#}
+                        {#                        maxZoom: 15,#}
                         id: 'your.mapbox.project.id',
                         accessToken: 'your.mapbox.public.access.token',
                         maxZoom: 20,
-    maxNativeZoom: 18
+                        maxNativeZoom: 18
                     });
             {#            openstreetmap.options.crs = L.CRS.EPSG3857;#}
             openstreetmap.addTo(map);
@@ -929,36 +929,106 @@
             }
 
             function getColorFromString(string_value) {
-                {#                alert(string_value);#}
-                {#                alert(string_value.length);#}
-                if (string_value == 'LAB'|| string_value == 'Lab') {
-                    return '#e4002b'
+                switch (string_value) {
+
+                    case 'LAB':
+                       return '#e4002b';
+                    case 'Lab':
+                       return '#e4002b';
+
+                    case 'CON':
+                       return '#0057b8';
+                    case 'Con':
+                       return '#0057b8';
+
+                    case 'LIB':
+                       return '#fdbb30';
+                    case 'LD':
+                       return '#fdbb30';
+
+                    case 'PLC':
+                       return '#4c8c2b';
+                    case 'PC':
+                       return '#4c8c2b';
+
+                    case 'NAT':
+                       return '#4c8c2b';
+                    case 'UKIP':
+                       return '#70147A';
+                    case 'OTH':
+                       return '#888b8d';
+                    case 'DT':
+                       return '#993366';
+                    case 'SNP':
+                       return '#FFF95D';
+                    case 'DUP':
+                       return '#cc0202';
+                    case 'SDLP':
+                       return '#99FF66';
+                    case 'SF':
+                       return '#008800';
+                    case 'UUP':
+                       return '#9999FF';
+                    case 'Ind':
+                       return '#dddddd';
+                    case 'Spk':
+                       return '#ffffff';
+                    case 'Green':
+                       return '#6AB023';
+                    default:
+                        return hashStringToColor(string_value)
                 }
-                if (string_value == 'CON' || string_value == 'Con') {
-                    return '#0057b8'
-                }
-                if (string_value == 'LIB'|| string_value == 'LD') {
-                    return '#fdbb30'
-                }
-                if (string_value == 'NAT') {
-                    return '#4c8c2b'
-                }
-                if (string_value == 'PLC'|| string_value == 'PC') {
-                    return '#4c8c2b'
-                }
-                if (string_value == 'UKIP') {
-                    return '#653165'
-                }
-                if (string_value == 'OTH') {
-                    return '#888b8d'
-                }
-                if (string_value == 'DT') {
-                    return '#993366'
-                }
-                if (string_value == 'SNP') {
-                    return '#FFF95D'
-                }
-                return hashStringToColor(string_value)
+
+{#                if (string_value == 'LAB'|| string_value == 'Lab') {#}
+{#                    return '#e4002b'#}
+{#                }#}
+{#                if (string_value == 'CON' || string_value == 'Con') {#}
+{#                    return '#0057b8'#}
+{#                }#}
+{#                if (string_value == 'LIB'|| string_value == 'LD') {#}
+{#                    return '#fdbb30'#}
+{#                }#}
+{#                if (string_value == 'NAT') {#}
+{#                    return '#4c8c2b'#}
+{#                }#}
+{#                if (string_value == 'PLC' || string_value == 'PC') {#}
+{#                    return '#4c8c2b'#}
+{#                }#}
+{#                if (string_value == 'UKIP') {#}
+{#                    return '#70147A'#}
+{#                }#}
+{#                if (string_value == 'OTH') {#}
+{#                    return '#888b8d'#}
+{#                }#}
+{#                if (string_value == 'DT') {#}
+{#                    return '#993366'#}
+{#                }#}
+{#                if (string_value == 'SNP') {#}
+{#                    return '#FFF95D'#}
+{#                }#}
+{#                if (string_value == 'DUP') {#}
+{#                    return '#cc0202'#}
+{#                }#}
+{#                if (string_value == 'SDLP') {#}
+{#                    return '#99FF66'#}
+{#                }#}
+{#                if (string_value == 'SF') {#}
+{#                    return '#008800'#}
+{#                }#}
+{#                if (string_value == 'UUP') {#}
+{#                    return '#9999FF'#}
+{#                }#}
+{#                if (string_value == 'Ind') {#}
+{#                    return '#dddddd'#}
+{#                }#}
+{#                if (string_value == 'Spk') {#}
+{#                    return '#ffffff'#}
+{#                }#}
+{#                if (string_value == 'Green') {#}
+{#                    return '#6AB023'#}
+{#                }#}
+
+{#                return hashStringToColor(string_value)#}
             }
 
             {#        TODO check what this is returning #}
@@ -1084,7 +1154,7 @@
                                             click: function (e) {
 
                                                 var layer = e.target;
-{#                                                console.log(layer);#}
+                                                {#                                                console.log(layer);#}
                                                 info.update(layer.feature.properties);
 
                                                 layer.setStyle({
@@ -1094,11 +1164,11 @@
                                                     fillOpacity: 0.7
                                                 });
                                             },
-{#                                            mouseout: function (e) {#}
-{#                                                console.log(e.target);#}
-{#                                                myLayer.resetStyle(e.target);#}
-{#                                                info.update();#}
-{#                                            }#}
+                                            {#                                            mouseout: function (e) {#}
+                                            {#                                                console.log(e.target);#}
+                                            {#                                                myLayer.resetStyle(e.target);#}
+                                            {#                                                info.update();#}
+                                            {#                                            }#}
                                         });
                                     },
                                     style: function (feature) {
@@ -2381,7 +2451,7 @@
 
 
                         html2canvas(
-                            map_div.find('> div.leaflet-control-container > div.leaflet-top.leaflet-right > div.powered_by'), {}
+                                map_div.find('> div.leaflet-control-container > div.leaflet-top.leaflet-right > div.powered_by'), {}
                         ).then(function(right_overlay_canvas) {
                             ctx3.drawImage(
                                     right_overlay_canvas,

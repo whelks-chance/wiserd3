@@ -456,7 +456,7 @@ BREXIT_LAYERS = [
 
 GE_LAYERS = [
     {
-        'display_name': 'GE15',
+        'display_name': '2015',
         'table_name': 'ge15',
         'field': 'hocl_ge2_8'
     }

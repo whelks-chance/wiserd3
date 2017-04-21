@@ -276,8 +276,29 @@
                 {% endfor %}
             </ul>
         </li>
-        {#            </ul>#}
-        {#        </li>#}
+
+        <li>
+            <a href="#" class="brexit_btn"><i class="fa fa-flag-o fa-fw"></i> {% trans 'General Elections' %}<span class="fa arrow"></span></a>
+            <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
+
+                {% for ge_layer in ge_layers %}
+                    <li>
+                        <a href="#"
+                                {% if ge_layer.app_label %}
+                           data-app_label="{{ ge_layer.app_label }}"
+                                {% endif %}
+
+                                {% if ge_layer.field %}
+                                   data-field="{{ ge_layer.field }}"
+                                {% endif %}
+
+                           data-layer_name="{{ ge_layer.table_name }}"
+                           class="wiserd_layer_toggle">
+                            <i class="fa fa-map-marker fa-fw"></i> {{ ge_layer.display_name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
     {% endif %}
 {% endblock %}
 
@@ -910,19 +931,19 @@
             function getColorFromString(string_value) {
                 {#                alert(string_value);#}
                 {#                alert(string_value.length);#}
-                if (string_value == 'LAB') {
+                if (string_value == 'LAB'|| string_value == 'Lab') {
                     return '#e4002b'
                 }
-                if (string_value == 'CON') {
+                if (string_value == 'CON' || string_value == 'Con') {
                     return '#0057b8'
                 }
-                if (string_value == 'LIB') {
+                if (string_value == 'LIB'|| string_value == 'LD') {
                     return '#fdbb30'
                 }
                 if (string_value == 'NAT') {
                     return '#4c8c2b'
                 }
-                if (string_value == 'PLC') {
+                if (string_value == 'PLC'|| string_value == 'PC') {
                     return '#4c8c2b'
                 }
                 if (string_value == 'UKIP') {
@@ -933,6 +954,9 @@
                 }
                 if (string_value == 'DT') {
                     return '#993366'
+                }
+                if (string_value == 'SNP') {
+                    return '#FFF95D'
                 }
                 return hashStringToColor(string_value)
             }

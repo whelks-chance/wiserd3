@@ -659,7 +659,7 @@ if __name__ == "__main__":
     # fsm.clean()
     # fsm.find_thing('public')
     # fsm.record_postcodes()
-    # fsm.record_geoms()
+    fsm.record_geoms()
     # fsm.clean_building_types(
     #     common_name_file='building_fuzz_1.json',
     #     unique_name_file='building_fuzz__unique_1.json'
@@ -677,4 +677,4 @@ if __name__ == "__main__":
     # fsm.geocode_address(lsoa='Cardiff 032F')
 
     # fsm.update_geoms()
-    fsm.write_xls('dump.xls')
+    # fsm.write_xls('dump.xls')

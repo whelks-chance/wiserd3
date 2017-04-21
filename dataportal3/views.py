@@ -533,6 +533,7 @@ def map_search(request):
                       'wms_layers': wms_layers,
                       'wiserd_layers': settings.KNOWING_LOCALITIES_TABLES,
                       'brexit_layers': settings.BREXIT_LAYERS,
+                      'ge_layers': settings.GE_LAYERS,
                       'upload_layers': uploaded_layers_clean,
                       'area_names': json.dumps(area_names),
                       'remote_data_layers': remote_data_layers

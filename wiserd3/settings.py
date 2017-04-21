@@ -423,19 +423,42 @@ KNOWING_LOCALITIES_TABLES = [
 
 BREXIT_LAYERS = [
     {
-        'display_name': 'Brexit Leave %',
-        'table_name': 'Brexit',
-        'field': 'leave_percent'
-    },
-    {
         'display_name': 'Brexit Outcome',
         'table_name': 'Brexit',
         'field': 'outcome'
     },
     {
-        'display_name': 'Brexit Turnout',
+        'display_name': 'Brexit Leave %',
+        'table_name': 'Brexit',
+        'field': 'leave_percent'
+    },
+    {
+        'display_name': 'Brexit Remain %',
+        'table_name': 'Brexit',
+        'field': 'remain_percent'
+    },
+    {
+        'display_name': 'Brexit Turnout %',
         'table_name': 'Brexit',
         'field': 'turnout_percent'
+    },
+    # {
+    #     'display_name': 'Brexit Leave Total',
+    #     'table_name': 'Brexit',
+    #     'field': 'leave_total'
+    # },
+    # {
+    #     'display_name': 'Brexit Remain Total',
+    #     'table_name': 'Brexit',
+    #     'field': 'remain_total'
+    # },
+]
+
+GE_LAYERS = [
+    {
+        'display_name': 'GE15',
+        'table_name': 'ge15',
+        'field': 'hocl_ge2_8'
     }
 ]
 

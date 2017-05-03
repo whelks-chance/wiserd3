@@ -40,10 +40,20 @@
 		    zoom = map.getZoom(),
 		    precision = Math.max(0, Math.ceil(Math.log(zoom) / Math.LN2));
 
+        var old_hash = window.location.hash;
+        // console.log(old_hash);
+
+        var old_hash_arr = old_hash.split('/');
+        var old_text = '';
+
+        if (old_hash_arr.length > 3){
+            old_text = old_hash_arr.slice(3).join('/');
+        }
+
 		return "#" + [zoom,
 			center.lat.toFixed(precision),
 			center.lng.toFixed(precision)
-		].join("/");
+		].join("/") + "/" + old_text;
 	},
 
 	L.Hash.prototype = {

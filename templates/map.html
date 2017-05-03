@@ -125,7 +125,7 @@
     <script type="text/javascript" src="{% static 'prettyprintjs/prettyprint.js' %}"></script>
 
     <script type="text/javascript" src="{% static 'leaflet-hash-master/leaflet-hash.js' %}"></script>
-
+{#    <script type="text/javascript" src="{% static 'leaflet-fullHash-master/leaflet-fullHash.js' %}"></script>#}
 
     <style>
         .navbar
@@ -2668,6 +2668,9 @@
             }
 
             function do_layer_single_uuid(uuid, search_layer_topojson_url) {
+
+                window.location.hash += '/' + uuid;
+
                 add_ajax_waiting('{% trans 'Fetching map layer...' %}');
 
                 $.ajax({

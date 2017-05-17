@@ -93,6 +93,11 @@ class QuestionInline(admin.StackedInline):
     # fk_name = "response"
 
 
+class ResponseTableInline(admin.StackedInline):
+    model = ResponseTable
+    raw_id_fields = ("survey", "link_from_question", "response")
+
+
 class ResponseAdmin(FiltersMixin, admin.ModelAdmin):
     list_filter = (
         ('responseid', SearchFilter),
@@ -100,7 +105,7 @@ class ResponseAdmin(FiltersMixin, admin.ModelAdmin):
         ('route_notes', SearchFilter),
     )
     inlines = [
-        QuestionInline,
+        QuestionInline, ResponseTableInline
     ]
 
 
@@ -108,7 +113,11 @@ admin.site.register(Response, ResponseAdmin)
 
 
 class ResponseTableAdmin(FiltersMixin, admin.ModelAdmin):
-    raw_id_fields = ("response", "survey", "link_from_question")
+    list_filter = (
+        ('response_id', SearchFilter),
+        ('id', SearchFilter)
+    )
+    raw_id_fields = ("response_id", "survey", "link_from_question")
 
 admin.site.register(ResponseTable, ResponseTableAdmin)
 

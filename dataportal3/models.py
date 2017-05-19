@@ -346,7 +346,7 @@ class Response(models.Model):
         db_table = 'response'
 
     def __unicode__(self):
-        return self.responseid + ':' + self.responsetext
+        return '{} : {}'.format(self.responseid, self.responsetext)
 
 
 class RouteType(models.Model):
@@ -390,7 +390,7 @@ class Survey(models.Model):
 
     keywords = models.TextField(blank=True, null=True)
 
-    surveyid = models.CharField(unique=True, max_length=255, blank=True, null=True)
+    surveyid = models.CharField(unique=True, max_length=255) # blank=True, null=True
     identifier = models.CharField(unique=True, max_length=255, blank=True, null=True)
     survey_title = models.TextField(blank=True, null=True)
     datacollector = models.CharField(max_length=50, blank=True, null=True)
@@ -436,7 +436,7 @@ class Survey(models.Model):
         db_table = 'survey'
 
     def __unicode__(self):
-        return str(self.surveyid) + ':' + self.survey_title
+        return '{} : {}'.format(self.surveyid, self.survey_title)
 
 
 class SurveyFrequency(models.Model):

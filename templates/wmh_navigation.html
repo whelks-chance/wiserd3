@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block navigation %}
+
+    <script>
+        $(document).ready(function () {
+            $.cookie("WDP_view_type", "wmh", {expires: 365, path: '/'});
+
+            if ($.cookie("WDP_wmh_returning_user")) {
+                var view = parseInt($.cookie("WDP_wmh_returning_user"));
+                view += 1;
+                $.cookie("WDP_wmh_returning_user", view, {expires: 365, path: '/'});
+            } else {
+                $.cookie("WDP_wmh_returning_user", 0, {expires: 365, path: '/'});
+            }
+
+            $('#help_intro').click(function(){
+                do_intro('{{ LANGUAGE_CODE }}');
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'dataportal/wmh.css' %}" />
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; z-index: 2000">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">{% trans 'Toggle navigation' %}</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a
+                        class="navbar-brand"
+                        href="{% url 'wmh_dashboard' %}"
+                            style="padding: 0 15px;">
+
+{#                    <h4>Map For Wales</h4>#}
+{#                        <i style="#}
+{#                    max-height: inherit;#}
+{#                            margin-left: 0.2em;#}
+{#                                    padding: 0.1em;#}
+{#                                    "#}
+{#                                           class="fa fa-2x fa-map-o"></i>#}
+{#                    <i style="#}
+{#                    max-height: inherit;#}
+{#                            margin-left: 0.2em;#}
+{#                                    padding: 0.1em;#}
+{#                                    "#}
+{#                                           class="fa fa-2x fa-globe"></i>#}
+                        <img src="{% static 'dataportal/media/wmh/wmhlogobw.gif' %}" style="height:2.6em">
+{#                    </div>#}
+
+                </a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+
+                {% include 'lang_toggle.html' %}
+
+                <li> | </li>
+
+                <li>
+                    <a href="#" id="help_intro">
+                        <i class="">?</i>
+                    </a>
+                </li>
+
+
+            {% block top_nav_extras %}
+            {% endblock %}
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  {{ user }} <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+
+                                                <li><a href="https://cardiff.onlinesurveys.ac.uk/dataportal-lts" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {% trans 'Give Feedback' %}</a></li>
+                                                                        <li class="divider"></li>
+                        {% if request.user.is_superuser  %}
+                            <li><a href="{% url 'site_setup' %}" target="_blank"><i class="fa fa-cogs fa-fw"></i> {% trans 'Site Setup' %}</a>
+                            </li>
+                            <li class="divider"></li>
+                        {% endif %}
+
+                        {% if request.user.is_staff %}
+                            <li><a href="{% url 'admin:index' %}" target="_blank"><i class="fa fa-briefcase fa-fw"></i> {% trans 'Admin Panel' %}</a>
+                            </li>
+                            <li class="divider"></li>
+                        {% endif %}
+
+                        {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'profile' %}"><i class="fa fa-user fa-fw"></i> {% trans 'User Profile' %}</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out fa-fw"></i> {% trans 'Logout' %}</a></li>
+                        {% else %}
+                            <li><a href="{% url 'account_login' %}"><i class="fa fa-sign-in fa-fw"></i> {% trans 'Login' %}</a></li>
+                        {% endif %}
+
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav nav-ul" id="side-menu">
+
+{#                        <li>#}
+{#                            <a href="{% url 'm4w_dashboard' %}"><i class="fa fa-dashboard fa-fw"></i> {% trans 'Dashboard' %}</a>#}
+{#                        </li>#}
+
+                        {% block nav_extras %}
+                        {% endblock %}
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper" class="page-wrapper">
+            {% block content %}
+            {% endblock %}
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+
+
+{% endblock %}

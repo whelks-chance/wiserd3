@@ -382,6 +382,11 @@ def map_search(request):
             naw = True
             template_name = 'naw_navigation.html'
 
+        if tpt == 'wmh':
+            template_name = 'wmh_navigation.html'
+
+
+
     try:
         get_template(template_name)
     except TemplateDoesNotExist:
@@ -772,6 +777,148 @@ def get_imported_feature(request):
     return HttpResponse(final, content_type="application/json")
 
 
+def get_wiserd_layer_topojson(
+        layer_type,
+        wiserd_layer,
+        app_label,
+        layer_field,
+        update_cache):
+    # from topojson import topojson
+
+    # spatial_table_name = str(wiserd_layer).replace('_', '').strip()
+
+    layer_key = '{}-{}-{}-{}'.format(layer_type, app_label, wiserd_layer, layer_field)
+
+    redis_cached_data = None
+    if not update_cache:
+        redis_cached_data = redis_cache.get(layer_key)
+
+    if redis_cached_data:
+        s = redis_cached_data
+
+    else:
+        if wiserd_layer == 'TaxServicePropertyInformation':
+            wiserd_layer_model = apps.get_model(
+                app_label='scrape',
+                model_name=wiserd_layer
+            )
+            shape_table_object = wiserd_layer_model.objects.filter(
+                Q(lsoa_name__contains='Cardiff 032A') |
+                Q(lsoa_name__contains='Cardiff 032C') |
+                Q(lsoa_name__contains='Cardiff 032D') |
+                Q(lsoa_name__contains='Cardiff 032E') |
+                Q(lsoa_name__contains='Cardiff 032F') |
+                Q(lsoa_name__contains='Cardiff 032G') |
+
+                Q(lsoa_name__contains='Cardiff 033A') |
+                Q(lsoa_name__contains='Cardiff 033B') |
+                Q(lsoa_name__contains='Cardiff 033C') |
+                Q(lsoa_name__contains='Cardiff 033D') |
+
+                Q(lsoa_name__contains='Cardiff 036A') |
+                Q(lsoa_name__contains='Cardiff 036B') |
+                Q(lsoa_name__contains='Cardiff 036C') |
+                Q(lsoa_name__contains='Cardiff 036D') |
+
+                Q(lsoa_name__contains='Cardiff 042A') |
+                Q(lsoa_name__contains='Cardiff 042B') |
+                Q(lsoa_name__contains='Cardiff 042C') |
+                Q(lsoa_name__contains='Cardiff 042D') |
+
+                Q(lsoa_name__contains='Cardiff 044A') |
+                Q(lsoa_name__contains='Cardiff 044B') |
+                Q(lsoa_name__contains='Cardiff 044C') |
+                Q(lsoa_name__contains='Cardiff 044D') |
+
+                Q(lsoa_name__contains='Cardiff 046A') |
+                Q(lsoa_name__contains='Cardiff 046B') |
+                Q(lsoa_name__contains='Cardiff 046C') |
+                Q(lsoa_name__contains='Cardiff 046D') |
+
+                # Q(lsoa_name__contains='Cardiff 048A') |
+                # Q(lsoa_name__contains='Cardiff 048B') |
+                Q(lsoa_name__contains='Cardiff 048C') |
+                Q(lsoa_name__contains='Cardiff 048D') |
+                Q(lsoa_name__contains='Cardiff 048E') |
+
+                Q(lsoa_name__contains='Cardiff 049A') |
+                Q(lsoa_name__contains='Cardiff 049B') |
+                Q(lsoa_name__contains='Cardiff 049C') |
+                Q(lsoa_name__contains='Cardiff 049D') |
+                Q(lsoa_name__contains='Cardiff 049E') |
+                Q(lsoa_name__contains='Cardiff 049F') |
+
+                Q(lsoa_name__contains='Cardiff 005G')
+
+            )
+            print 'shape_table_object', shape_table_object.count()
+
+        elif wiserd_layer == 'SchoolData':
+            wiserd_layer_model = apps.get_model(
+                app_label='dataportal3',
+                model_name=wiserd_layer
+            )
+            shape_table_object = wiserd_layer_model.objects.filter(LEANameEnglish__contains='Cardiff')
+            print 'shape_table_object', shape_table_object.count()
+
+        elif wiserd_layer == 'SpatialdataLSOA':
+            wiserd_layer_model = apps.get_model(
+                app_label='dataportal3',
+                model_name=wiserd_layer
+            )
+            shape_table_object = wiserd_layer_model.objects.filter(name__contains='Cardiff')
+            print 'shape_table_object', shape_table_object.count()
+
+        else:
+
+            print("Looking for table {} in {}".format(wiserd_layer, app_label))
+
+            wiserd_layer_model = apps.get_model(
+                app_label=app_label,
+                model_name=wiserd_layer
+            )
+            shape_table_object = wiserd_layer_model.objects.all()
+
+        # shape_list = shape_table_object.extra(
+        #     select={
+        #         'geometry': 'ST_AsGeoJSON(ST_Transform(ST_SetSRID("geom", 27700),4326))'
+        #     }
+        # ).values('geometry')
+
+        s = GeoJSONSerializer().serialize(
+            shape_table_object,
+            use_natural_keys=True,
+            with_modelname=False,
+            simplify=0.00005
+        )
+
+        redis_cache.set(layer_key, s)
+
+    geo = json.loads(s)
+    # geo = geojson_points_to_topojson(geo)
+
+    #
+    # geo = topojson(
+    #     geo,
+    #     quantization=1e4,
+    #     # simplify=0.0005
+    # )
+
+    geo['properties'] = {'name': wiserd_layer}
+    # if wiserd_layer == 'SchoolData':
+    #     geo['properties']['remote_value_key'] = 'fsm_percent'
+    #     # geo['properties']['remote_value_key'] = 'schTypeEnglish'
+
+    # if wiserd_layer == 'TaxServicePropertyInformation':
+    #     geo['properties']['remote_value_key'] = 'building_type'
+
+    if layer_field:
+        geo['properties']['remote_value_key'] = layer_field
+
+    geos = json.dumps(geo)
+    return geos
+
+
 @csrf_exempt
 def get_geojson(request):
 
@@ -784,137 +931,16 @@ def get_geojson(request):
     update_cache = request.POST.get('update_cache', None)
 
     if layer_type == 'wiserd_layer':
-        # from topojson import topojson
-
         wiserd_layer = request.POST.getlist('layer_names[]')[0]
-        # spatial_table_name = str(wiserd_layer).replace('_', '').strip()
 
-        layer_key = '{}-{}-{}-{}'.format(layer_type, app_label, wiserd_layer, layer_field)
+        geos = get_wiserd_layer_topojson(
+            layer_type,
+            wiserd_layer,
+            app_label,
+            layer_field,
+            update_cache
+        )
 
-        redis_cached_data = None
-        if not update_cache:
-            redis_cached_data = redis_cache.get(layer_key)
-
-        if redis_cached_data:
-            s = redis_cached_data
-
-        else:
-            if wiserd_layer == 'TaxServicePropertyInformation':
-                wiserd_layer_model = apps.get_model(
-                    app_label='scrape',
-                    model_name=wiserd_layer
-                )
-                shape_table_object = wiserd_layer_model.objects.filter(
-                    Q(lsoa_name__contains='Cardiff 032A') |
-                    Q(lsoa_name__contains='Cardiff 032C') |
-                    Q(lsoa_name__contains='Cardiff 032D') |
-                    Q(lsoa_name__contains='Cardiff 032E') |
-                    Q(lsoa_name__contains='Cardiff 032F') |
-                    Q(lsoa_name__contains='Cardiff 032G') |
-
-                    Q(lsoa_name__contains='Cardiff 033A') |
-                    Q(lsoa_name__contains='Cardiff 033B') |
-                    Q(lsoa_name__contains='Cardiff 033C') |
-                    Q(lsoa_name__contains='Cardiff 033D') |
-
-                    Q(lsoa_name__contains='Cardiff 036A') |
-                    Q(lsoa_name__contains='Cardiff 036B') |
-                    Q(lsoa_name__contains='Cardiff 036C') |
-                    Q(lsoa_name__contains='Cardiff 036D') |
-
-                    Q(lsoa_name__contains='Cardiff 042A') |
-                    Q(lsoa_name__contains='Cardiff 042B') |
-                    Q(lsoa_name__contains='Cardiff 042C') |
-                    Q(lsoa_name__contains='Cardiff 042D') |
-
-                    Q(lsoa_name__contains='Cardiff 044A') |
-                    Q(lsoa_name__contains='Cardiff 044B') |
-                    Q(lsoa_name__contains='Cardiff 044C') |
-                    Q(lsoa_name__contains='Cardiff 044D') |
-
-                    Q(lsoa_name__contains='Cardiff 046A') |
-                    Q(lsoa_name__contains='Cardiff 046B') |
-                    Q(lsoa_name__contains='Cardiff 046C') |
-                    Q(lsoa_name__contains='Cardiff 046D') |
-
-                    # Q(lsoa_name__contains='Cardiff 048A') |
-                    # Q(lsoa_name__contains='Cardiff 048B') |
-                    Q(lsoa_name__contains='Cardiff 048C') |
-                    Q(lsoa_name__contains='Cardiff 048D') |
-                    Q(lsoa_name__contains='Cardiff 048E') |
-
-                    Q(lsoa_name__contains='Cardiff 049A') |
-                    Q(lsoa_name__contains='Cardiff 049B') |
-                    Q(lsoa_name__contains='Cardiff 049C') |
-                    Q(lsoa_name__contains='Cardiff 049D') |
-                    Q(lsoa_name__contains='Cardiff 049E') |
-                    Q(lsoa_name__contains='Cardiff 049F') |
-
-                    Q(lsoa_name__contains='Cardiff 005G')
-
-                )
-                print 'shape_table_object', shape_table_object.count()
-
-            elif wiserd_layer == 'SchoolData':
-                wiserd_layer_model = apps.get_model(
-                    app_label='dataportal3',
-                    model_name=wiserd_layer
-                )
-                shape_table_object = wiserd_layer_model.objects.filter(LEANameEnglish__contains='Cardiff')
-                print 'shape_table_object', shape_table_object.count()
-
-            elif wiserd_layer == 'SpatialdataLSOA':
-                wiserd_layer_model = apps.get_model(
-                    app_label='dataportal3',
-                    model_name=wiserd_layer
-                )
-                shape_table_object = wiserd_layer_model.objects.filter(name__contains='Cardiff')
-                print 'shape_table_object', shape_table_object.count()
-
-            else:
-                wiserd_layer_model = apps.get_model(
-                    app_label=app_label,
-                    model_name=wiserd_layer
-                )
-                shape_table_object = wiserd_layer_model.objects.all()
-
-            # shape_list = shape_table_object.extra(
-            #     select={
-            #         'geometry': 'ST_AsGeoJSON(ST_Transform(ST_SetSRID("geom", 27700),4326))'
-            #     }
-            # ).values('geometry')
-
-            s = GeoJSONSerializer().serialize(
-                shape_table_object,
-                use_natural_keys=True,
-                with_modelname=False,
-                simplify=0.00005
-            )
-
-            redis_cache.set(layer_key, s)
-
-        geo = json.loads(s)
-        # geo = geojson_points_to_topojson(geo)
-
-        #
-        # geo = topojson(
-        #     geo,
-        #     quantization=1e4,
-        #     # simplify=0.0005
-        # )
-
-        geo['properties'] = {'name': wiserd_layer}
-        # if wiserd_layer == 'SchoolData':
-        #     geo['properties']['remote_value_key'] = 'fsm_percent'
-        #     # geo['properties']['remote_value_key'] = 'schTypeEnglish'
-
-        # if wiserd_layer == 'TaxServicePropertyInformation':
-        #     geo['properties']['remote_value_key'] = 'building_type'
-
-        if layer_field:
-            geo['properties']['remote_value_key'] = layer_field
-
-        geos = json.dumps(geo)
         return HttpResponse(geos, content_type="application/json")
 
     if layer_type == 'survey':
@@ -1220,632 +1246,632 @@ def data_api(request):
             print 'shortcut'
 
             json_hack = {
-        "services": [
-            {
-                "message": "Success",
-                "name": "StatsWales",
-                "success": True,
-                "time": 1.343425
-            },
-            {
-                "message": "Success",
-                "name": "NomisWeb",
-                "success": True,
-                "time": 2.178326
-            },
-            {
-                "message": "Success",
-                "name": "DataHub",
-                "success": True
-            }
-        ],
-        "datasets": [
-            {
-                "source": "StatsWales",
-                "id": "HLTH1599",
-                "name": "Inequality gap in life expectancy and healthy life expectancy at birth (Slope Index of Inequality) in years by Local Health Board and Local Authority"
-            },
-            {
-                "source": "StatsWales",
-                "id": "HLTH1598",
-                "name": "Life expectancy and Healthy life expectancy at birth by Local Health Board and Local Authority"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0019",
-                "name": "WIMD 2014 Indicator Data - LSOA"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0031",
-                "name": "WIMD Indicator Data - RU"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0005",
-                "name": "WIMD Indicator Data - MSOA"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0004",
-                "name": "WIMD Indicator Data - LSOA"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0003",
-                "name": "WIMD Indicator Data - LA"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0020",
-                "name": "WIMD Indicator Data - LSOA"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0032",
-                "name": "WIMD 2014 Indicator Data - RU"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0036",
-                "name": "WIMD 2014 Indicator Data - LA"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0035",
-                "name": "WIMD Indicator Data - LSOA"
-            },
-            {
-                "source": "StatsWales",
-                "id": "HLTH1210",
-                "name": "Live births by Local Health Board of residence and place of birth"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0033",
-                "name": "WIMD 2014 Indicator Data - RU"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0030",
-                "name": "WIMD 2014 Indicator Data - CF"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0034",
-                "name": "WIMD Indicator Data - RU"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD1401",
-                "name": "WIMD 2014 Domain Ranks"
-            },
-            {
-                "source": "StatsWales",
-                "id": "wimd0038",
-                "name": "WIMD Indicator Data - RU"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0029",
-                "name": "WIMD 2014 Indicator Data - CF"
-            },
-            {
-                "source": "StatsWales",
-                "id": "WIMD0028",
-                "name": "WIMD Indicator Data - CF"
-            },
-            {
-                "source": "StatsWales",
-                "id": "HLTH1201",
-                "name": "Live births by mother's age and Local Health Board"
-            },
-            {
-                "source": "StatsWales",
-                "id": "HLTH1203",
-                "name": "Live births by birth weight and Local Health Board"
-            },
-            {
-                "source": "StatsWales",
-                "id": "HLTH1202",
-                "name": "Live births by gestational age and Local Health Board"
-            },
-            {
-                "source": "StatsWales",
-                "id": "HLTH1207",
-                "name": "Breastfeeding status at birth, live births to Welsh residents"
-            },
-            {
-                "source": "StatsWales",
-                "id": "HLTH1208",
-                "name": "Live births to Welsh residents by place of birth and Local Health Board (place of birth, Local Health Board)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_29_1",
-                "name": "vat registrations/deregistrations by industry"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_531_1",
-                "name": "QS302EW - General health"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_532_1",
-                "name": "QS303EW - Long-term health problem or disability"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_606_1",
-                "name": "KS106EW - Adults not in employment and dependent children and persons with long-term health problems or disability for all households"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_617_1",
-                "name": "KS301EW - Health and provision of unpaid care"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_666_1",
-                "name": "DC2301EW - Ethnic group by provision of unpaid care by general health"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_670_1",
-                "name": "DC3201EW - Long-term health problem or disability by general health by ethnic group by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_671_1",
-                "name": "DC3202WA - Long-term health problem or disability by general health by Welsh language skills by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_672_1",
-                "name": "DC3203EW - Long-term health problem or disability by general health by religion by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_673_1",
-                "name": "DC3301EW - Provision of unpaid care by general health by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_674_1",
-                "name": "DC3302EW - Long term health problem or disability by health by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_675_1",
-                "name": "DC3601EW - General health by NS-SeC by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_676_1",
-                "name": "DC3602EW - Long-term health problem or disability by NS-SeC by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_684_1",
-                "name": "DC6301EWla - Economic activity by provision of unpaid care by general health by sex"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_685_1",
-                "name": "DC6302EW - Economic activity by hours worked by sex by long-term health problem or disability"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_691_1",
-                "name": "DC3303EWr - Provision of unpaid care by general health by sex by age (regional)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_739_1",
-                "name": "DC3204EWr - General health by ethnic group by sex by age (regional)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_740_1",
-                "name": "DC3205EWr - Long-term health problem or disability by ethnic group by sex by age (regional)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_741_1",
-                "name": "DC6303EWr - NS-SeC by general health by sex by age (regional)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_742_1",
-                "name": "DC6304EWr - NS-SeC by long-term health problem or disability by sex by age (regional)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_758_1",
-                "name": "DC1301EW - Household composition by number of people in household with a long-term health problem or disability"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_766_1",
-                "name": "DC2302EWr - Proficiency in English by general health by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_767_1",
-                "name": "DC2303EW - Proficiency in English by general health by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_780_1",
-                "name": "DC3304EWla - Long-term health problem or disability by general health by age - Communal establishment residents"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_781_1",
-                "name": "DC3401EWla - General health by communal establishment management and type by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_782_1",
-                "name": "DC3402EWla - Long-term health problem or disability by communal establishment management and type by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_816_1",
-                "name": "LC3202WA - General health by ability to speak Welsh by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_817_1",
-                "name": "LC3204WA - Long-term health problem or disability by ability to speak Welsh by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_822_1",
-                "name": "LC2301EW - Ethnic group by provision of unpaid care by general health"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_823_1",
-                "name": "LC2303EW - Proficiency in English by general health by sex"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_824_1",
-                "name": "LC3203EW - General health by religion by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_826_1",
-                "name": "LC3205EW - Long-term health problems by ethnic group by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_827_1",
-                "name": "LC3207EW - Long-term health problem or disability by religion by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_828_1",
-                "name": "LC3301EW - Provision of unpaid care by general health by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_829_1",
-                "name": "LC3302EW - Long-term health problem or disability by general health by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_831_1",
-                "name": "LC3601EW - General health by NS-SeC"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_832_1",
-                "name": "LC3602EW - Long-term health problem or disability by NS-SeC by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_833_1",
-                "name": "LC6301EW - Economic activity by provision of unpaid care by general health"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_834_1",
-                "name": "LC6302EW - Economic activity by hours worked by long-term health problem or disability"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_835_1",
-                "name": "LC3206EW - General health by ethnic group by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_859_1",
-                "name": "LC1301EW - Household composition by number of people in household with a long-term health problem or disability"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_913_1",
-                "name": "ST302EWla - General Health"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_939_1",
-                "name": "WD302EW - General health"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_988_1",
-                "name": "CT0067 - General health by year of arrival in the UK by country of birth by age (national)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_989_1",
-                "name": "CT0068 - General health by year of arrival in the UK by passports held by age (national)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1042_1",
-                "name": "LC5301EW - Highest level of qualification by long-term health problem or disability"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1092_1",
-                "name": "LC3101EWls - Long term health problem or disability by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1097_1",
-                "name": "LC3403EW - General health by long-term health problem or disability by occupancy rating (rooms)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1098_1",
-                "name": "LC3404EW - General health by long-term health problem or disability by occupancy rating (bedrooms)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1099_1",
-                "name": "LC3405EW - General health by long-term health problem or disability by car or van availability by sex"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1115_1",
-                "name": "DC5301EW - Highest level of qualification by long-term health problem or disability"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1160_1",
-                "name": "DC3403EW - General health by long-term health problem or disability by occupancy rating (rooms) by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1161_1",
-                "name": "DC3404EW - General health by long-term health problem or disability by occupancy rating (bedrooms) by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1162_1",
-                "name": "DC3405EW - General health by long-term health problem or disability by car or van availability by sex"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1163_1",
-                "name": "DC3407EW - Long-term health problem or disability by car or van availability by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1164_1",
-                "name": "DC3408EW - Long-term health problem or disability by tenure by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1165_1",
-                "name": "DC3409EW - General health by tenure by sex by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1167_1",
-                "name": "DC3306EW -  Provision of unpaid care by number of people in household with a long-term health problem or disability by economic activity by sex"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1284_1",
-                "name": "UKMIG005 - Migration by long-term health problem or disability"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1309_1",
-                "name": "WP302EW - General Health (Workplace population)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1362_1",
-                "name": "OT302EW - General health (Out of term-time population)"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1400_1",
-                "name": "LC3406EW - General health by car or van availability by sex"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1403_1",
-                "name": "LC3408EW - Long-term health problem or disability by tenure by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1404_1",
-                "name": "LC3409EW - General health by tenure by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1405_1",
-                "name": "LC3305EW - Long-term health problem or disability by provision of unpaid care by sex"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1406_1",
-                "name": "LC3407EW - Long-term health problem or disability by car or van availability by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1407_1",
-                "name": "LC3307EW - Provision of unpaid care by general health by households with people who have a long-term health problem or disability"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1408_1",
-                "name": "LC3306EW - Provision of unpaid care by households with people with a long-term health problem or disability by economic activity by sex"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1410_1",
-                "name": "LC3102EW - Long-term health problem or disability by number of children in family"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1505_1",
-                "name": "KS301UK - Health and provision of unpaid care"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1546_1",
-                "name": "QS302UK - General health"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1547_1",
-                "name": "QS303UK - Long-term health problem or disability"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1608_1",
-                "name": "KS008 - Health and provision of unpaid care"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1645_1",
-                "name": "UV020 - General health"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1716_1",
-                "name": "CS016 - Sex and age by general health and limiting long-term illness"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1717_1",
-                "name": "CS017 - Tenure and age by general health and limiting long-term illness"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1718_1",
-                "name": "CS018 - Sex and amenities and central heating by general health and limiting long-term illness"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1719_1",
-                "name": "CS019 - General health and limiting long-term illness and occupancy rating by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1722_1",
-                "name": "CS022 - Sex and number of cars or vans in household by general health and limiting long-term illness"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1723_1",
-                "name": "CS023 - Age and general health by NS-Sec"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1725_1",
-                "name": "CS025 - Sex and age by general health and provision of unpaid care"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1726_1",
-                "name": "CS026 - Sex and economic activity by general health and provision of unpaid care"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1765_1",
-                "name": "CS065 - Sex and age by general health and limiting long-term illness"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1816_1",
-                "name": "ST016 - Sex and age by general health and limiting long-term illness"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1817_1",
-                "name": "ST017 - Tenure and age by general health and limiting long-term illness"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1818_1",
-                "name": "ST018 - Sex and amenities and central heating by general health and limiting long-term illness"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1819_1",
-                "name": "ST019 - General health and limiting long-term illness and occupancy rating by age"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1822_1",
-                "name": "ST022 - Sex and number of cars in household by general health and limiting long-term illness"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1823_1",
-                "name": "ST023 - Sex and age and general health by NS-SeC"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1825_1",
-                "name": "ST025 - Sex and age by general health and provision of unpaid care"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1826_1",
-                "name": "ST026 - Sex and economic activity by general health and provision of unpaid care"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1865_1",
-                "name": "ST065 - Sex and age by general health and limiting long-term illness"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1875_1",
-                "name": "ST107 - Sex and age and limiting long-term illness and general health by ethnic group"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1905_1",
-                "name": "ST137 - Sex and age and limiting long-term illness and general health by knowledge of Welsh"
-            },
-            {
-                "source": "Nomis",
-                "id": "NM_1920_1",
-                "name": "ST152 - Sex and age and limiting long-term illness and general health by religion"
-            },
-            {
-                "source": "CKAN_datahub",
-                "id": "059f7dd7-ca00-48e4-b291-46ef167cf2fc",
-                "name": "lsoa mapped data"
-            },
-            {
-                "source": "CKAN_datahub",
-                "id": "650200e9-cfad-4efa-9fbf-cf35483b1e36",
-                "name": "wimd2014"
-            }
-        ]
+                "services": [
+                    {
+                        "message": "Success",
+                        "name": "StatsWales",
+                        "success": True,
+                        "time": 1.343425
+                    },
+                    {
+                        "message": "Success",
+                        "name": "NomisWeb",
+                        "success": True,
+                        "time": 2.178326
+                    },
+                    {
+                        "message": "Success",
+                        "name": "DataHub",
+                        "success": True
+                    }
+                ],
+                "datasets": [
+                    {
+                        "source": "StatsWales",
+                        "id": "HLTH1599",
+                        "name": "Inequality gap in life expectancy and healthy life expectancy at birth (Slope Index of Inequality) in years by Local Health Board and Local Authority"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "HLTH1598",
+                        "name": "Life expectancy and Healthy life expectancy at birth by Local Health Board and Local Authority"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0019",
+                        "name": "WIMD 2014 Indicator Data - LSOA"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0031",
+                        "name": "WIMD Indicator Data - RU"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0005",
+                        "name": "WIMD Indicator Data - MSOA"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0004",
+                        "name": "WIMD Indicator Data - LSOA"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0003",
+                        "name": "WIMD Indicator Data - LA"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0020",
+                        "name": "WIMD Indicator Data - LSOA"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0032",
+                        "name": "WIMD 2014 Indicator Data - RU"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0036",
+                        "name": "WIMD 2014 Indicator Data - LA"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0035",
+                        "name": "WIMD Indicator Data - LSOA"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "HLTH1210",
+                        "name": "Live births by Local Health Board of residence and place of birth"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0033",
+                        "name": "WIMD 2014 Indicator Data - RU"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0030",
+                        "name": "WIMD 2014 Indicator Data - CF"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0034",
+                        "name": "WIMD Indicator Data - RU"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD1401",
+                        "name": "WIMD 2014 Domain Ranks"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "wimd0038",
+                        "name": "WIMD Indicator Data - RU"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0029",
+                        "name": "WIMD 2014 Indicator Data - CF"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "WIMD0028",
+                        "name": "WIMD Indicator Data - CF"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "HLTH1201",
+                        "name": "Live births by mother's age and Local Health Board"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "HLTH1203",
+                        "name": "Live births by birth weight and Local Health Board"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "HLTH1202",
+                        "name": "Live births by gestational age and Local Health Board"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "HLTH1207",
+                        "name": "Breastfeeding status at birth, live births to Welsh residents"
+                    },
+                    {
+                        "source": "StatsWales",
+                        "id": "HLTH1208",
+                        "name": "Live births to Welsh residents by place of birth and Local Health Board (place of birth, Local Health Board)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_29_1",
+                        "name": "vat registrations/deregistrations by industry"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_531_1",
+                        "name": "QS302EW - General health"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_532_1",
+                        "name": "QS303EW - Long-term health problem or disability"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_606_1",
+                        "name": "KS106EW - Adults not in employment and dependent children and persons with long-term health problems or disability for all households"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_617_1",
+                        "name": "KS301EW - Health and provision of unpaid care"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_666_1",
+                        "name": "DC2301EW - Ethnic group by provision of unpaid care by general health"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_670_1",
+                        "name": "DC3201EW - Long-term health problem or disability by general health by ethnic group by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_671_1",
+                        "name": "DC3202WA - Long-term health problem or disability by general health by Welsh language skills by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_672_1",
+                        "name": "DC3203EW - Long-term health problem or disability by general health by religion by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_673_1",
+                        "name": "DC3301EW - Provision of unpaid care by general health by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_674_1",
+                        "name": "DC3302EW - Long term health problem or disability by health by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_675_1",
+                        "name": "DC3601EW - General health by NS-SeC by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_676_1",
+                        "name": "DC3602EW - Long-term health problem or disability by NS-SeC by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_684_1",
+                        "name": "DC6301EWla - Economic activity by provision of unpaid care by general health by sex"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_685_1",
+                        "name": "DC6302EW - Economic activity by hours worked by sex by long-term health problem or disability"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_691_1",
+                        "name": "DC3303EWr - Provision of unpaid care by general health by sex by age (regional)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_739_1",
+                        "name": "DC3204EWr - General health by ethnic group by sex by age (regional)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_740_1",
+                        "name": "DC3205EWr - Long-term health problem or disability by ethnic group by sex by age (regional)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_741_1",
+                        "name": "DC6303EWr - NS-SeC by general health by sex by age (regional)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_742_1",
+                        "name": "DC6304EWr - NS-SeC by long-term health problem or disability by sex by age (regional)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_758_1",
+                        "name": "DC1301EW - Household composition by number of people in household with a long-term health problem or disability"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_766_1",
+                        "name": "DC2302EWr - Proficiency in English by general health by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_767_1",
+                        "name": "DC2303EW - Proficiency in English by general health by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_780_1",
+                        "name": "DC3304EWla - Long-term health problem or disability by general health by age - Communal establishment residents"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_781_1",
+                        "name": "DC3401EWla - General health by communal establishment management and type by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_782_1",
+                        "name": "DC3402EWla - Long-term health problem or disability by communal establishment management and type by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_816_1",
+                        "name": "LC3202WA - General health by ability to speak Welsh by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_817_1",
+                        "name": "LC3204WA - Long-term health problem or disability by ability to speak Welsh by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_822_1",
+                        "name": "LC2301EW - Ethnic group by provision of unpaid care by general health"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_823_1",
+                        "name": "LC2303EW - Proficiency in English by general health by sex"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_824_1",
+                        "name": "LC3203EW - General health by religion by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_826_1",
+                        "name": "LC3205EW - Long-term health problems by ethnic group by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_827_1",
+                        "name": "LC3207EW - Long-term health problem or disability by religion by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_828_1",
+                        "name": "LC3301EW - Provision of unpaid care by general health by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_829_1",
+                        "name": "LC3302EW - Long-term health problem or disability by general health by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_831_1",
+                        "name": "LC3601EW - General health by NS-SeC"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_832_1",
+                        "name": "LC3602EW - Long-term health problem or disability by NS-SeC by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_833_1",
+                        "name": "LC6301EW - Economic activity by provision of unpaid care by general health"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_834_1",
+                        "name": "LC6302EW - Economic activity by hours worked by long-term health problem or disability"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_835_1",
+                        "name": "LC3206EW - General health by ethnic group by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_859_1",
+                        "name": "LC1301EW - Household composition by number of people in household with a long-term health problem or disability"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_913_1",
+                        "name": "ST302EWla - General Health"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_939_1",
+                        "name": "WD302EW - General health"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_988_1",
+                        "name": "CT0067 - General health by year of arrival in the UK by country of birth by age (national)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_989_1",
+                        "name": "CT0068 - General health by year of arrival in the UK by passports held by age (national)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1042_1",
+                        "name": "LC5301EW - Highest level of qualification by long-term health problem or disability"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1092_1",
+                        "name": "LC3101EWls - Long term health problem or disability by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1097_1",
+                        "name": "LC3403EW - General health by long-term health problem or disability by occupancy rating (rooms)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1098_1",
+                        "name": "LC3404EW - General health by long-term health problem or disability by occupancy rating (bedrooms)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1099_1",
+                        "name": "LC3405EW - General health by long-term health problem or disability by car or van availability by sex"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1115_1",
+                        "name": "DC5301EW - Highest level of qualification by long-term health problem or disability"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1160_1",
+                        "name": "DC3403EW - General health by long-term health problem or disability by occupancy rating (rooms) by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1161_1",
+                        "name": "DC3404EW - General health by long-term health problem or disability by occupancy rating (bedrooms) by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1162_1",
+                        "name": "DC3405EW - General health by long-term health problem or disability by car or van availability by sex"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1163_1",
+                        "name": "DC3407EW - Long-term health problem or disability by car or van availability by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1164_1",
+                        "name": "DC3408EW - Long-term health problem or disability by tenure by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1165_1",
+                        "name": "DC3409EW - General health by tenure by sex by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1167_1",
+                        "name": "DC3306EW -  Provision of unpaid care by number of people in household with a long-term health problem or disability by economic activity by sex"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1284_1",
+                        "name": "UKMIG005 - Migration by long-term health problem or disability"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1309_1",
+                        "name": "WP302EW - General Health (Workplace population)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1362_1",
+                        "name": "OT302EW - General health (Out of term-time population)"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1400_1",
+                        "name": "LC3406EW - General health by car or van availability by sex"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1403_1",
+                        "name": "LC3408EW - Long-term health problem or disability by tenure by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1404_1",
+                        "name": "LC3409EW - General health by tenure by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1405_1",
+                        "name": "LC3305EW - Long-term health problem or disability by provision of unpaid care by sex"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1406_1",
+                        "name": "LC3407EW - Long-term health problem or disability by car or van availability by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1407_1",
+                        "name": "LC3307EW - Provision of unpaid care by general health by households with people who have a long-term health problem or disability"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1408_1",
+                        "name": "LC3306EW - Provision of unpaid care by households with people with a long-term health problem or disability by economic activity by sex"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1410_1",
+                        "name": "LC3102EW - Long-term health problem or disability by number of children in family"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1505_1",
+                        "name": "KS301UK - Health and provision of unpaid care"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1546_1",
+                        "name": "QS302UK - General health"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1547_1",
+                        "name": "QS303UK - Long-term health problem or disability"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1608_1",
+                        "name": "KS008 - Health and provision of unpaid care"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1645_1",
+                        "name": "UV020 - General health"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1716_1",
+                        "name": "CS016 - Sex and age by general health and limiting long-term illness"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1717_1",
+                        "name": "CS017 - Tenure and age by general health and limiting long-term illness"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1718_1",
+                        "name": "CS018 - Sex and amenities and central heating by general health and limiting long-term illness"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1719_1",
+                        "name": "CS019 - General health and limiting long-term illness and occupancy rating by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1722_1",
+                        "name": "CS022 - Sex and number of cars or vans in household by general health and limiting long-term illness"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1723_1",
+                        "name": "CS023 - Age and general health by NS-Sec"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1725_1",
+                        "name": "CS025 - Sex and age by general health and provision of unpaid care"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1726_1",
+                        "name": "CS026 - Sex and economic activity by general health and provision of unpaid care"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1765_1",
+                        "name": "CS065 - Sex and age by general health and limiting long-term illness"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1816_1",
+                        "name": "ST016 - Sex and age by general health and limiting long-term illness"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1817_1",
+                        "name": "ST017 - Tenure and age by general health and limiting long-term illness"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1818_1",
+                        "name": "ST018 - Sex and amenities and central heating by general health and limiting long-term illness"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1819_1",
+                        "name": "ST019 - General health and limiting long-term illness and occupancy rating by age"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1822_1",
+                        "name": "ST022 - Sex and number of cars in household by general health and limiting long-term illness"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1823_1",
+                        "name": "ST023 - Sex and age and general health by NS-SeC"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1825_1",
+                        "name": "ST025 - Sex and age by general health and provision of unpaid care"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1826_1",
+                        "name": "ST026 - Sex and economic activity by general health and provision of unpaid care"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1865_1",
+                        "name": "ST065 - Sex and age by general health and limiting long-term illness"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1875_1",
+                        "name": "ST107 - Sex and age and limiting long-term illness and general health by ethnic group"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1905_1",
+                        "name": "ST137 - Sex and age and limiting long-term illness and general health by knowledge of Welsh"
+                    },
+                    {
+                        "source": "Nomis",
+                        "id": "NM_1920_1",
+                        "name": "ST152 - Sex and age and limiting long-term illness and general health by religion"
+                    },
+                    {
+                        "source": "CKAN_datahub",
+                        "id": "059f7dd7-ca00-48e4-b291-46ef167cf2fc",
+                        "name": "lsoa mapped data"
+                    },
+                    {
+                        "source": "CKAN_datahub",
+                        "id": "650200e9-cfad-4efa-9fbf-cf35483b1e36",
+                        "name": "wimd2014"
+                    }
+                ]
             }
             return HttpResponse(json.dumps(json_hack), content_type="application/json")
         else:
@@ -2986,6 +3012,28 @@ def get_topojson_for_uuid(request, search_uuid):
 
     print 'search_type', search_type
 
+    if search_type == 'LocalResearch':
+
+        geo = get_wiserd_layer_topojson(
+            'wiserd_layer',
+            found_search_model.dataset_id,
+            'dataportal3',
+            None,
+            False
+        )
+
+        # topojson_conv = geojson_points_to_topojson(geo)
+        # from topojson import topojson
+
+        # topojson_conv = topojson(
+        #     json.loads(geo),
+        #     quantization=1e4,
+        #     # simplify=0.0005
+        # )
+
+        # TODO - this point data needs to be TopoJSON, not GeoJson
+        response_data['topojson'] = geo
+
     if search_type == 'Nomis':
         # remote_search_layers.append(layer_data)
 
@@ -3324,6 +3372,12 @@ def m4w_dashboard(request):
                       'searches': get_user_searches(request)
                   },context_instance=RequestContext(request))
 
+def wmh_dashboard(request):
+    return render(request, 'wmh_dashboard.html',
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request)
+                  },context_instance=RequestContext(request))
 
 def admin_api(request):
     userr = get_request_user(request)

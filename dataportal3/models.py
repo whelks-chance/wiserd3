@@ -1221,6 +1221,25 @@ class Brexit(models.Model):
         return str(self.name) + ':' + str(self.region) + ':' + str(self.outcome)
 
 
+class MineTest(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, blank=True, null=True)
+    postcode = models.CharField(max_length=7, blank=True, null=True)
+    coordinate = models.CharField(max_length=254, blank=True, null=True)
+    x = models.FloatField(max_length=10, blank=True, null=True)
+    y = models.FloatField(max_length=10, blank=True, null=True)
+    location = models.CharField(max_length=254, blank=True, null=True)
+    image = models.CharField(max_length=254, blank=True, null=True)
+    image_righ = models.CharField(max_length=254, blank=True, null=True)
+
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    class Meta:
+        managed = False
+        db_table = 'minetest'
+
+
 class ResponseTable(models.Model):
     feature_attributes = JSONField(blank=True, null=True)
     survey = models.ForeignKey('Survey', blank=True, null=True)

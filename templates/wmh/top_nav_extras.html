@@ -1,0 +1,32 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<li> | </li>
+
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-pencil-square-o fa-fw"></i>  {% trans 'Research' %}  <i class="fa fa-caret-down"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-user">
+        <li>
+            <a href="http://www.rtpi.org.uk/the-rtpi-near-you/rtpi-cymru/" target="_blank"><i class="fa fa-external-link fa-fw"></i> {% trans 'RTPI Cymru' %}</a>
+        </li>
+    </ul>
+</li>
+
+<li> | </li>
+
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-pencil-square-o fa-fw"></i>  {% trans 'Custom Data' %}  <i class="fa fa-caret-down"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-user">
+        <li>
+            <a id="new_layer_btn" href="#"><i class="fa fa-feed fa-fw"></i> {% trans 'Remote Data' %}</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a id="import_local_data_btn" href="#"><i class="fa fa-file-excel-o fa-fw"></i> {% trans 'MapMyData' %}</a>
+        </li>
+    </ul>
+</li>

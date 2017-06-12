@@ -73,6 +73,11 @@
     /*flex-direction: row;*/
 /*}*/
 
+.sidebar_group p img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
 #policy_papers > ul > ul > li > ul > li > a {
       display: flex;
     flex-direction: row;

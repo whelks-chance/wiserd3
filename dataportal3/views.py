@@ -2744,13 +2744,28 @@ def get_topojson_for_uuid_view(request, search_uuid):
 def geojson_points_to_topojson(geojson_object):
     geometries = []
     for f in geojson_object['features']:
-        geometries.append(
-            {
-                "type": "Point",
-                "properties": f['properties'],
-                "coordinates": f['geometry']['coordinates']
-            },
-        )
+        blob = {
+            "type": "Point",
+        }
+        if 'properties' in f:
+            blob["properties"] = f['properties']
+
+        if 'geometry' in f and f['geometry']:
+            if 'coordinates' in f['geometry'] and f['geometry']['coordinates']:
+                blob["coordinates"] = f['geometry']['coordinates']
+            # else:
+            #     blob["coordinates"] = []
+        # else:
+        #     blob["coordinates"] = []
+                geometries.append(blob)
+
+        # geometries.append(
+        #     {
+        #         "type": "Point",
+        #         "properties": f['properties'],
+        #         "coordinates": f['geometry']['coordinates']
+        #     },
+        # )
     topojson_conversion = {
         "objects": {
             "name": {
@@ -3013,6 +3028,7 @@ def get_topojson_for_uuid(request, search_uuid):
     print 'search_type', search_type
 
     if search_type == 'LocalResearch':
+        layer_data['remote_value_key'] = found_search_model.display_attributes['remote_value_key']
 
         geo = get_wiserd_layer_topojson(
             'wiserd_layer',
@@ -3022,7 +3038,8 @@ def get_topojson_for_uuid(request, search_uuid):
             False
         )
 
-        # topojson_conv = geojson_points_to_topojson(geo)
+
+        topojson_conv = geojson_points_to_topojson(json.loads(geo))
         # from topojson import topojson
 
         # topojson_conv = topojson(
@@ -3032,7 +3049,7 @@ def get_topojson_for_uuid(request, search_uuid):
         # )
 
         # TODO - this point data needs to be TopoJSON, not GeoJson
-        response_data['topojson'] = geo
+        response_data['topojson'] = topojson_conv
 
     if search_type == 'Nomis':
         # remote_search_layers.append(layer_data)

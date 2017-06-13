@@ -74,6 +74,8 @@
     {#    <script src="http://d3js.org/topojson.v1.min.js"></script>#}
     <script type="text/javascript" src="{% static 'd3js/topojson.v1.min.js' %}"></script>
 
+    <script type="text/javascript" src="{% static 'd3js/topojson_unmin.js' %}"></script>
+
     <script type="text/javascript" src="{% static 'chroma.min.js' %}"></script>
 
     <script type="text/javascript" src="{% static 'html2canvas.js' %}"></script>
@@ -231,6 +233,12 @@
         <li>
             <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'WISERD Research' %}<span class="fa arrow"></span></a>
             <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
+
+{#                <li>#}
+{#                    <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">#}
+{#                        <i class="fa fa-map-marker fa-fw"></i> {{ upload_layer.display_name }}</a>#}
+{#                </li>#}
+
                 {% for upload_layer in upload_layers %}
                     <li>
                         <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">
@@ -1410,7 +1418,7 @@
 
                                 {#                            if (feature.properties[remote_value_key]) {#}
 
-                                var iconClassName = 'fa fa-2x ';
+                                var iconClassName = 'fa fa-2x fa-fw ';
                                 if (layer_data['point_icon']) {
                                     iconClassName += layer_data['point_icon']
                                 } else {
@@ -1524,7 +1532,8 @@
                                 "{% trans 'Please try again, or report it.' %}")
                     } else {
 
-                        {#                                        console.log(e);#}
+                        console.log(e);
+
                         alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
                                 "{% trans 'Unfortunately, some types of dataset are incompatible with this service. \n\n' %}" +
                                 "{% trans 'Try being more specific with the dataset variable you are trying to map. \n\n' %}" +
@@ -1795,6 +1804,7 @@
                 } else {
                     var remote_value = feature.properties.REMOTE_VALUE;
                 }
+                console.log(remote_value);
                 if (remote_value === undefined){
                     return {
                         {#                        fillColor: '#333333',#}

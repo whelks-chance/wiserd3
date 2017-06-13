@@ -1239,6 +1239,9 @@ class MineTest(models.Model):
         managed = False
         db_table = 'minetest'
 
+    def __unicode__(self):
+        return "{} : {} : {}".format(self.name, self.x, self.y)
+
 
 class ResponseTable(models.Model):
     feature_attributes = JSONField(blank=True, null=True)

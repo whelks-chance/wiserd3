@@ -216,6 +216,22 @@ Similar to this, but with the correct field/ column names:
             managed = False
             db_table = 'spatialdata_aefa'
 
+### Search Types
+
+These have become pretty overloaded over the years, and need tidying up.
+At the moment we have:
+
+    LocalResearch:PostGIS database data
+	CKAN_datahub:DataHub, powered by CKAN
+	StatsWales:StatsWales
+	User:Local user data not stored on the server
+	Qual:DataPortal Qualitative data
+	Survey:DataPortal Survey data
+	Nomis:Data retrieved from the NomisAPI
+
+Also, LocalResearch searches need the extra "remote_value_key" key in the "Display Attributes" dict, pointing at a column name for that model.
+
+
 ## Celery
 Shapefile import process, celery needs explicit export of settings module location
 

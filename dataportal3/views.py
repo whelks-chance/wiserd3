@@ -3030,16 +3030,28 @@ def get_topojson_for_uuid(request, search_uuid):
     if search_type == 'LocalResearch':
         layer_data['remote_value_key'] = found_search_model.display_attributes['remote_value_key']
 
-        geo = get_wiserd_layer_topojson(
-            'wiserd_layer',
-            found_search_model.dataset_id,
-            'dataportal3',
-            None,
-            False
+        geo = json.loads(
+            get_wiserd_layer_topojson(
+                'wiserd_layer',
+                found_search_model.dataset_id,
+                'dataportal3',
+                None,
+                False
+            )
         )
 
+        # print pprint.pformat(geo)
 
-        topojson_conv = geojson_points_to_topojson(json.loads(geo))
+        for f in geo['features']:
+            if 'properties' in f:
+                f["properties"]['STRING_DATA'] = [
+                        {
+                            'title': 'test_img',
+                            'value': 'https://thumb7.shutterstock.com/display_pic_with_logo/1467269/284551751/stock-photo-heaps-of-coal-284551751.jpg'
+                        }
+                    ]
+
+        topojson_conv = geojson_points_to_topojson(geo)
         # from topojson import topojson
 
         # topojson_conv = topojson(

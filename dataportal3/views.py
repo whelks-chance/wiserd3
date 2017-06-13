@@ -3036,7 +3036,7 @@ def get_topojson_for_uuid(request, search_uuid):
                 found_search_model.dataset_id,
                 'dataportal3',
                 None,
-                False
+                request.GET.get("update_cache", False)
             )
         )
 

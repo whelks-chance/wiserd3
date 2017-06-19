@@ -1,19 +1,18 @@
 .navbar-default {
-    background-color: rgb(204, 0, 0);
+    background-color: rgb(84, 7, 91);
         /*background-image: linear-gradient(#002E4B, #0081B6);*/
-        color: lightgrey;
+        color: purple;
 }
 
 #wrapper, .right_sidebar {
     background-color: #eeeeee;
-    color: rgb(204, 0, 0);
+    color: rgb(84, 7, 91);
 }
 
 .right_sidebar a {
     background-color: lightgrey;
-    color: rgb(204, 0, 0);
+    color: rgb(84, 7, 91);
 }
-
 
 a {
     /*background-color: rgb(58, 137, 175);*/
@@ -22,7 +21,7 @@ a {
 
 a:hover {
         color: #eeeeee;
-    background-color: rgba(158, 0, 0, 0.5);
+    background-color: rgba(84, 7, 91, 0.5);
 
 }
 
@@ -33,7 +32,7 @@ a:hover {
 .nav .open>a:hover,
 li.active > a
 {
-     background-color: rgba(158, 0, 0, 0.5);
+     background-color: rgba(84, 7, 91, 0.5);
     color: #eeeeee;
 }
 
@@ -43,17 +42,13 @@ li.active > a
 }
 
 .navbar-top-links .dropdown-menu li a {
-    color: rgb(204, 0, 0);
+    color: rgb(84, 7, 91);
     background-color: #fff;
-}
-
-.navbar-brand-text {
-    color: lightgrey;
 }
 
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
-        background-color: rgba(158, 0, 0, 0.15);
+        background-color: rgba(58, 137, 175, 0.15);
 }
 
 .navbar-default .navbar-toggle {
@@ -61,7 +56,7 @@ li.active > a
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: rgba(158, 0, 0, 0.5);
+    background-color: rgba(84, 7, 91, 0.5);
 }
 
 .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
@@ -70,18 +65,18 @@ li.active > a
 }
 
 .leaflet-container a {
-    color: rgb(204, 0, 0);
+    color: rgb(592, 48, 175);
             background-color: #fff;
 }
 
 .panel-primary a {
-    color: #C20400;
+    color: #54075b;
 }
 
 
 .ui-widget-header {
-        background-color: rgb(204, 0, 0);
-        border-color: rgb(204, 0, 0);
+        background-color: rgb(84, 7, 91);
+        border-color: rgb(84, 7, 91);
 
 }
 
@@ -93,9 +88,10 @@ li.active > a
     color: #0f0f0f;
 
 }
+
 .lang-toggle {
-    border-top: #9E0000 solid 2px;
-    border-bottom: #9E0000 solid 2px;
+    border-top: #54075b solid 2px;
+    border-bottom: #54075b solid 2px;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
@@ -116,18 +112,14 @@ li.active > a
     margin-left: -0.4em;
     margin-right: -0.4em;
 }
-
 .lang-toggle-left {
-    border-left: #9E0000 solid 2px;
+    border-left: #54075b solid 2px;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
 }
 
 .lang-toggle-right {
-    border-right: #9E0000 solid 2px;
+    border-right: #54075b solid 2px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
 }
-
-
-

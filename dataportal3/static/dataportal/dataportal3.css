@@ -363,6 +363,18 @@
     color: rgb(0, 30, 98);
 }
 
+.panel-wmh {
+    border-color: rgb(204, 0, 0);
+}
+
+.panel-wmh .panel-heading {
+    color: white;
+    border-color: rgb(204, 0, 0);
+    background-color: rgb(204, 0, 0);
+}
+.panel-wmh .panel-footer {
+    color: rgb(204, 0, 0);
+}
 
 .leaflet-control-layers-toggle {
     height: 4em;

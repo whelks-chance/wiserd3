@@ -385,7 +385,8 @@ def map_search(request):
         if tpt == 'wmh':
             template_name = 'wmh_navigation.html'
 
-
+    if tpt == 'wiserd_projects':
+        template_name = 'wiserd_projects_navigation.html'
 
     try:
         get_template(template_name)
@@ -3401,12 +3402,21 @@ def m4w_dashboard(request):
                       'searches': get_user_searches(request)
                   },context_instance=RequestContext(request))
 
+
 def wmh_dashboard(request):
     return render(request, 'wmh_dashboard.html',
                   {
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
                   },context_instance=RequestContext(request))
+
+
+def wiserd_projects_dashboard(request):
+    return render(request, 'wiserd_projects_dashboard.html',
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request)
+                  }, context_instance=RequestContext(request))
 
 def admin_api(request):
     userr = get_request_user(request)

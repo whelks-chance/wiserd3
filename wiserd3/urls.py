@@ -38,8 +38,8 @@ urlpatterns = [
                   url(r'^naw_dashboard', views.naw_dashboard, name='naw_dashboard'),
                   url(r'^m4w_dashboard', views.m4w_dashboard, name='m4w_dashboard'),
                   url(r'^wmh_dashboard', views.wmh_dashboard, name='wmh_dashboard'),
+                  url(r'^wiserd_projects_dashboard', views.wiserd_projects_dashboard, name='wiserd_projects_dashboard'),
                   url(r'^http_404', views.http_404_error, name='http_404'),
-
                   # Legacy - Because we shared this address once
                   url(r'^dataportal', views.dataportal, name='dataportal'),
 

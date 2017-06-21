@@ -332,8 +332,28 @@
     color: #af6d00;
 }
 
+.panel-light-blue {
+    border-color: #009CA6;
+}
 
+.panel-light-blue .panel-heading {
+    color: white;
+    border-color: #009CA6;
+    background-color: #009CA6;
+}
 
+/*.panel-orange .panel-footer {*/
+/*color: #eb8f00;*/
+/*}*/
+
+.panel-light-blue a {
+    color: #009CA6;
+}
+
+.panel-light-blue a:hover {
+    color: #009CA6;
+
+}
 
 .panel-red {
     border-color: #b22222;
@@ -348,7 +368,49 @@
     color: #b22222;
 }
 
+.panel-grey {
+    border-color: lightgrey;
+}
 
+.panel-grey .panel-heading {
+    color: white;
+    border-color: lightgrey;
+    background-color: lightgrey;
+}
+.panel-grey .panel-footer {
+    color: lightgrey;
+}
+.panel-dark-green {
+    color: white;
+    border-color: #054b25;
+    background-color: #054b25;
+}
+
+.panel-dark-green .panel-heading {
+    color: white;
+    border-color: #054b25;
+    background-color: #054b25;
+}
+.panel-dark-green .panel-footer {
+    color: #054b25;
+
+}
+
+.panel-blue {
+    color: white;
+    border-color: #212899;
+    background-color: #212899;
+}
+
+.panel-blue .panel-heading {
+    color: white;
+    border-color: #212899;
+    background-color: #212899;
+}
+.panel-blue .panel-footer {
+    color: #212899;
+
+}
 
 .panel-naw {
     border-color: rgb(0, 30, 98);
@@ -594,8 +656,6 @@
 .panel-naw-research .panel-footer {
     color: #009ca6;
 }
-
-
 
 .panel-naw-blog {
     border-color: #c8102e;

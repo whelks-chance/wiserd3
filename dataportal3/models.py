@@ -1147,6 +1147,64 @@ class GE15(models.Model):
         db_table = 'ge15'
 
 
+class GE17(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    constituen = models.CharField(max_length=60, blank=True, null=True)
+    ons_id = models.CharField(max_length=3, blank=True, null=True)
+    # descriptio = models.CharField(max_length=50, blank=True, null=True)
+    # file_name = models.CharField(max_length=50, blank=True, null=True)
+    #
+    # number = models.FloatField(blank=True, null=True)
+    # number0 = models.FloatField(blank=True, null=True)
+    # polygon_id = models.FloatField(blank=True, null=True)
+    # unit_id = models.FloatField(blank=True, null=True)
+    #
+    # code = models.CharField(max_length=9, blank=True, null=True)
+    #
+    first_part = models.CharField(max_length=254, blank=True, null=True, db_column="first_part")
+    # hocl_ge2_1 = models.CharField(max_length=254, blank=True, null=True, db_column="hocl-ge2_1")
+    # hocl_ge2_8 = models.CharField(max_length=254, blank=True, null=True, db_column="hocl-ge2_8")
+
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    def __unicode__(self):
+        return u'{} :: {} :: {}'.format(self.constituen, self.ons_id, self.first_part)
+
+    class Meta:
+        managed = False
+        db_table = 'uk_ge_17'
+
+
+class GE17Cart(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    constituen = models.CharField(max_length=60, blank=True, null=True)
+    ons_id = models.CharField(max_length=3, blank=True, null=True)
+    # descriptio = models.CharField(max_length=50, blank=True, null=True)
+    # file_name = models.CharField(max_length=50, blank=True, null=True)
+    #
+    # number = models.FloatField(blank=True, null=True)
+    # number0 = models.FloatField(blank=True, null=True)
+    # polygon_id = models.FloatField(blank=True, null=True)
+    # unit_id = models.FloatField(blank=True, null=True)
+    #
+    # code = models.CharField(max_length=9, blank=True, null=True)
+    #
+    first_part = models.CharField(max_length=254, blank=True, null=True, db_column="first_part")
+    # hocl_ge2_1 = models.CharField(max_length=254, blank=True, null=True, db_column="hocl-ge2_1")
+    # hocl_ge2_8 = models.CharField(max_length=254, blank=True, null=True, db_column="hocl-ge2_8")
+
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    def __unicode__(self):
+        return u'{} :: {} :: {}'.format(self.constituen, self.ons_id, self.first_part)
+
+    class Meta:
+        managed = False
+        db_table = 'uk_ge_17_cart'
+
+
 class WelshRail(models.Model):
     gid = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=48, blank=True, null=True)

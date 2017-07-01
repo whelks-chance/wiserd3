@@ -459,6 +459,16 @@ GE_LAYERS = [
         'display_name': '2015',
         'table_name': 'ge15',
         'field': 'hocl_ge2_8'
+    },
+    {
+        'display_name': '2017',
+        'table_name': 'GE17',
+        'field': 'first_part'
+    },
+    {
+        'display_name': '2017 Catographic',
+        'table_name': 'GE17Cart',
+        'field': 'first_part'
     }
 ]
 

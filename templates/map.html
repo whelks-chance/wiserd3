@@ -761,7 +761,14 @@
                     else if (props.hasOwnProperty('REMOTE_VALUE')) {
                         value = props.REMOTE_VALUE;
                     } else {
-                        var ppTable = prettyPrint(props);
+
+                        var cleanedprops = JSON.parse(JSON.stringify(props));
+                        delete cleanedprops['STRING_DATA'];
+                        delete cleanedprops['model'];
+
+{#                        cleanedprops['STRING_DATA'] = null;#}
+{#                        cleanedprops['model'] = null;#}
+                        var ppTable = prettyPrint(cleanedprops);
                         {#                        value += JSON.stringify(props);#}
                         value = $(ppTable).prop('outerHTML')
                     }

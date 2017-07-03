@@ -5,6 +5,21 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
+
+    <script type="text/javascript">
+        function reveal()
+        {
+            var signup_submit = $('#signup_submit');
+            if($("#terms_conditions_check").is(':checked')) {
+                signup_submit.prop('disabled', false);
+            } else {
+                signup_submit.prop('disabled', true);
+            }
+        }
+    </script>
+
+
+
     <h1>{% trans "Sign Up" %}</h1>
 
     <div class="row">
@@ -17,7 +32,7 @@
                     <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                         {% csrf_token %}
 
-{#                          {{ form.as_p }}#}
+                        {#                          {{ form.as_p }}#}
 
                         <fieldset>
                             <legend>{{ title }}</legend>
@@ -45,12 +60,24 @@
                                     {% endif %}
                                 {% endif %}
                             {% endfor %}
+
+                        <div class="control-group">
+                                            <label for="terms_conditions_check" class="control-label col-sm-6">{% blocktrans %}I accept the terms and conditions{% endblocktrans %}</label>
+                                            <div class="controls col-sm-6">
+                                                <input type="checkbox" id="terms_conditions_check" onclick ="reveal()">
+
+                                                    <p class="help-inline">
+                                                        <small><a target="_blank" href="{% url 'terms_conditions' %}">{% blocktrans %}View terms and conditions{% endblocktrans %}</a></small>
+                                                    </p>
+                                            </div>
+                                        </div>
+
                         </fieldset>
 
                         {% if redirect_field_value %}
                             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                         {% endif %}
-                        <button class="pull-right btn btn-info" type="submit">{% trans "Sign Up" %} &raquo;</button>
+                        <button id="signup_submit" disabled="disabled" class="pull-right btn btn-info" type="submit">{% trans "Sign Up" %} &raquo;</button>
                     </form>
                 </div>
             </div>

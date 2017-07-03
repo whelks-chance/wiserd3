@@ -3648,3 +3648,7 @@ def snippet_test(request):
 
 def d3_test(request, survey_id):
     return render(request, 'd3_test.html', {'survey_id': survey_id}, context_instance=RequestContext(request))
+
+
+def terms_conditions(request):
+    return render(request, 'terms_conditions.html', {}, context_instance=RequestContext(request))

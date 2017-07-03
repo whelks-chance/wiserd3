@@ -8,6 +8,7 @@
 {% block navigation %}
 
     <script>
+
         $(document).ready(function () {
             $.cookie("WDP_view_type", "wiserd_projects", {expires: 365, path: '/'});
 
@@ -41,7 +42,7 @@
 
                 <a
                         class="navbar-brand"
-                        href="{% url 'wiserd_projects_dashboard' %}"
+                        href="{% url 'dashboard' %}"
                             style="padding: 0 15px;">
 
 {#                    <h4>Map For Wales</h4>#}

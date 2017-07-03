@@ -39,6 +39,8 @@ urlpatterns = [
                   url(r'^m4w_dashboard', views.m4w_dashboard, name='m4w_dashboard'),
                   url(r'^wmh_dashboard', views.wmh_dashboard, name='wmh_dashboard'),
                   url(r'^wiserd_projects_dashboard', views.wiserd_projects_dashboard, name='wiserd_projects_dashboard'),
+                  url(r'^partner_projects_dashboard', views.partner_projects_dashboard, name='partner_projects_dashboard'),
+                  url(r'^about_dashboard', views.about_dashboard, name='about_dashboard'),
                   url(r'^http_404', views.http_404_error, name='http_404'),
                   # Legacy - Because we shared this address once
                   url(r'^dataportal', views.dataportal, name='dataportal'),

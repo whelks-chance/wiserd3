@@ -466,7 +466,7 @@ GE_LAYERS = [
         'field': 'first_part'
     },
     {
-        'display_name': '2017 Catographic',
+        'display_name': '2017 Cartographic',
         'table_name': 'GE17Cart',
         'field': 'first_part'
     }

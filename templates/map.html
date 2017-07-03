@@ -61,7 +61,12 @@
     <script type="text/javascript" src="{% static 'jscoord-1.1.1.js' %}"></script>
 
     {#    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>#}
-    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js' %}"></script>#}
+    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/leaflet-image-0.3.0/leaflet-image.js' %}"></script>
+
+       	<script src="{% static 'leaflet-easyprint/easyprint-v2.js' %}"></script>
+
+
 
 
     <script type="text/javascript" src="{% static 'leaflet-search/leaflet-search.min.js' %}"></script>
@@ -622,6 +627,7 @@
 
             var hash = new L.Hash(map);
 
+            {% if tpt != 'default' %}
             var powered_by = L.control({position: "topright"});
             powered_by.onAdd = function(map) {
                 var div = L.DomUtil.create("div", "powered_by");
@@ -629,6 +635,14 @@
                 return div;
             };
             powered_by.addTo(map);
+            {% endif %}
+
+            L.easyPrint({
+        title: 'My awesome print button',
+        position: 'topleft',
+                      sizeModes: ['CurrentSize', 'A4Landscape', 'A4Portrait'],
+{#        elementsToHide: 'right_sidebar_col, h2'#}
+    }).addTo(map);
 
             var layer_group = new L.LayerGroup();
             {#            var overlays = {#}
@@ -1425,7 +1439,7 @@
 
                                 {#                            if (feature.properties[remote_value_key]) {#}
 
-                                var iconClassName = 'fa fa-2x fa-fw ';
+                                var iconClassName = 'marker_bkgd fa fa-2x fa-fw ';
                                 if (layer_data['point_icon']) {
                                     iconClassName += layer_data['point_icon']
                                 } else {
@@ -1474,13 +1488,22 @@
                         }
                     });
                     map.on('overlayadd', function (eventLayer) {
+
+                        console.log('eventLayer');
+                        console.log(eventLayer);
+
                         if (eventLayer.name == layer_name_text) {
                             console.log(layer_name_text);
                             var div_inner = build_legend(feature_data,
                                     unique_feature_string_data,
                                     chroma_scale,
                                     grades, is_percentage);
-                            addLegend(unique_layer_name_text, layer_name_text, div_inner, search_uuid);
+                            if (eventLayer._wdp_legend){
+                                addLegend(unique_layer_name_text, layer_name_text, eventLayer._wdp_legend, search_uuid);
+                            } else {
+                                addLegend(unique_layer_name_text, layer_name_text, div_inner, search_uuid);
+                                eventLayer._wdp_legend = div_inner;
+                            }
                         }
                     });
 
@@ -1573,6 +1596,14 @@
             function handleLayer(layer) {
 
                 layer.on({
+                    add: function (e) {
+                        var layer = e.target;
+                        if (layer._icon) {
+                            e.target._icon.style.backgroundColor = getColorFromString(e.target.feature.properties.REMOTE_VALUE);
+                            e.target._icon.style.color = 'white';
+                            e.target._icon.style.border = '';
+                        }
+                    },
                     mouseover: function (e) {
                         var layer = e.target;
 
@@ -1764,7 +1795,6 @@
                 $(div).attr("id", "legend").append(accordionDiv)
                         .css({'max-height': map_div.height() * 0.8, 'overflow-y': 'auto'});
                 {#                        .draggable().resizable();#}
-
                 return div;
             };
             legend_two.addTo(map);

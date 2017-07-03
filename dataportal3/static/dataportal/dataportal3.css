@@ -723,3 +723,7 @@
     -moz-box-sizing:content-box!important;
     box-sizing: content-box!important;
 }
+
+.marker_bkgd {
+    border-radius: 5px;
+}

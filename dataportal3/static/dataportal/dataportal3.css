@@ -369,16 +369,16 @@
 }
 
 .panel-grey {
-    border-color: lightgrey;
+    border-color: grey;
 }
 
 .panel-grey .panel-heading {
     color: white;
-    border-color: lightgrey;
-    background-color: lightgrey;
+    border-color: grey;
+    background-color: grey;
 }
 .panel-grey .panel-footer {
-    color: lightgrey;
+    color: grey;
 }
 .panel-dark-green {
     color: white;
@@ -409,6 +409,23 @@
 }
 .panel-blue .panel-footer {
     color: #212899;
+
+}
+
+
+.panel-light-purple {
+    color: white;
+    border-color: rebeccapurple;
+    background-color: rebeccapurple;
+}
+
+.panel-light-purple .panel-heading {
+    color: white;
+    border-color: rebeccapurple;
+    background-color: rebeccapurple;
+}
+.panel-light-purple .panel-footer {
+    color: rebeccapurple;
 
 }
 

@@ -8,16 +8,15 @@
 {% block navigation %}
 
     <script>
-
         $(document).ready(function () {
-            $.cookie("WDP_view_type", "wiserd_projects", {expires: 365, path: '/'});
+            $.cookie("WDP_view_type", "about_dashboard", {expires: 365, path: '/'});
 
-            if ($.cookie("WDP_WISERD_projects_returning_user")) {
+            if ($.cookie("WDP_about_dashboard_returning_user")) {
                 var view = parseInt($.cookie("WDP_wiserd_projects_returning_user"));
                 view += 1;
-                $.cookie("WDP_wiserd_projects_returning_user", view, {expires: 365, path: '/'});
+                $.cookie("WDP_about_dashboard_returning_user", view, {expires: 365, path: '/'});
             } else {
-                $.cookie("WDP_wiserd_projects_returning_user", 0, {expires: 365, path: '/'});
+                $.cookie("WDP_about_dashboard_returning_user", 0, {expires: 365, path: '/'});
             }
 
             $('#help_intro').click(function(){
@@ -26,7 +25,7 @@
         });
     </script>
 
-    <link rel="stylesheet" type="text/css" href="{% static 'dataportal/wiserd_projects.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dataportal/dataportal3.css' %}" />
 
     <div id="wrapper">
 
@@ -58,7 +57,7 @@
 {#                                    padding: 0.1em;#}
 {#                                    "#}
 {#                                           class="fa fa-2x fa-globe"></i>#}
-                        <img src="{% static 'dataportal/media/wiserd_logo_small.jpg' %}" style="height:2.6em">
+                        <img src="{% static 'dataportal/media/dataportowl.jpg' %}" style="height:2.6em">
 {#                    </div>#}
 
                 </a>

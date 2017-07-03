@@ -58,8 +58,8 @@
 
         <div id="dashboard_grid" class="row">
 
-            <div id="search_survey_question_gui" class="col-lg-4 col-md-6">
-                <div class="panel panel-green">
+            <div id="search_survey_question_gui" class="col-lg-4 col-md-4">
+                <div class="panel panel-blue">
                     <a href="{% url 'search_survey_question_gui' %}">
                         <div class="panel-heading">
                             <div class="row">
@@ -84,7 +84,7 @@
             </div>
 
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-4">
                 <div class="panel panel-green">
                     <a href="{% url 'map' %}">
                         <div class="panel-heading">
@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-4">
                 <div class="panel panel-red">
                     <a href="{% url 'browse_surveys' %}">
                         <div class="panel-heading">
@@ -134,66 +134,66 @@
                 </div>
             </div>
 
-
-            <div class="col-lg-4 col-md-6">
-                <div class="panel panel-naw">
-                    <a href="{% url 'naw_dashboard' %}">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <img style="
+{#Moved to Partner Projects#}
+{#            <div class="col-lg-4 col-md-6">#}
+{#                <div class="panel panel-naw">#}
+{#                    <a href="{% url 'naw_dashboard' %}">#}
+{#                        <div class="panel-heading">#}
+{#                            <div class="row">#}
+{#                                <div class="col-xs-3">#}
+{#                                    <img style="#}
                                             {#                                            max-width: 90%;#}
                                             {#                                background-color: white;#}
-                                            height: 4.5em;
+{#                                            height: 4.5em;#}
                                             {#                                                                            padding-top: 0.5em;#}
-                                            margin-top: 0.3em
-                                            "
-                                         src="{% static 'dataportal/media/naw-logo-circle.png' %}">
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">_</div>
-                                    <div>{% trans 'National Assembly for Wales' %}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{% url 'naw_dashboard' %}">
-                        <div class="panel-footer">
-                            <span class="pull-left">{% trans 'Constituency Mapper' %}</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-
-
-
-            <div class="col-lg-4 col-md-6">
-                <div class="panel panel-naw">
-                    <a href="{% url 'm4w_dashboard' %}">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-map-o fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">_</div>
-                                    <div>{% trans 'RTPI Cymru' %}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{% url 'm4w_dashboard' %}">
-                        <div class="panel-footer">
-                            <span class="pull-left">{% trans 'Map for Wales' %}</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+{#                                            margin-top: 0.3em#}
+{#                                            "#}
+{#                                         src="{% static 'dataportal/media/naw-logo-circle.png' %}">#}
+{#                                </div>#}
+{#                                <div class="col-xs-9 text-right">#}
+{#                                    <div class="huge">_</div>#}
+{#                                    <div>{% trans 'National Assembly for Wales' %}</div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                    <a href="{% url 'naw_dashboard' %}">#}
+{#                        <div class="panel-footer">#}
+{#                            <span class="pull-left">{% trans 'Constituency Mapper' %}</span>#}
+{#                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
+{#                            <div class="clearfix"></div>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{##}
+{##}
+{##}
+{#            <div class="col-lg-4 col-md-6">#}
+{#                <div class="panel panel-naw">#}
+{#                    <a href="{% url 'm4w_dashboard' %}">#}
+{#                        <div class="panel-heading">#}
+{#                            <div class="row">#}
+{#                                <div class="col-xs-3">#}
+{#                                    <i class="fa fa-map-o fa-5x"></i>#}
+{#                                </div>#}
+{#                                <div class="col-xs-9 text-right">#}
+{#                                    <div class="huge">_</div>#}
+{#                                    <div>{% trans 'RTPI Cymru' %}</div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                    <a href="{% url 'm4w_dashboard' %}">#}
+{#                        <div class="panel-footer">#}
+{#                            <span class="pull-left">{% trans 'Map for Wales' %}</span>#}
+{#                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
+{#                            <div class="clearfix"></div>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
 {#Tester button#}
 {#            <div class="col-lg-4 col-md-6">#}
 {#                <div class="panel panel-wmh">#}
@@ -226,7 +226,35 @@
 {#                    </a>#}
 {#                </div>#}
 {#            </div>#}
-            <div class="col-lg-4 col-md-6">
+
+
+            <div class="col-lg-6 col-md-6">
+                <div class="panel panel-dark-green">
+                    <a href="{% url 'partner_projects_dashboard' %}">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-list fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">_</div>
+                                    <div>{% trans 'Partner Projects' %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{% url 'partner_projects_dashboard' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">{% trans 'Partner Projects Dashboard' %}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6 col-md-6">
                 <div class="panel panel-purple">
                     <a href="{% url 'wiserd_projects_dashboard' %}">
                         <div class="panel-heading">
@@ -251,9 +279,6 @@
                     </a>
                 </div>
             </div>
-
-
-
 
 
 {#moved to wiserd projects#}
@@ -315,37 +340,35 @@
 {#            </div>#}
 
 
-            <div class="col-lg-4 col-md-6">
-                <div class="panel panel-orange">
-                    <a href="{% url 'events' %}">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-calendar fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">_</div>
-                                    <div>{% trans 'Events' %}</div>
-                                </div>
+<div class="col-lg-6 col-md-6">
+            <div class="panel panel-light-purple">
+              <a href="{% url 'about_dashboard' %}">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+{#                                <i class="fa fa-institution fa-5x"></i>#}
+                                <img style="margin-top: .5em"
+                                     src="{% static 'dataportal/media/dataportowl.jpg' %}">
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">_</div>
+                                <div>WISERD</div>
                             </div>
                         </div>
-                    </a>
-                    <a href="{% url 'events' %}">
-                        <div class="panel-footer">
-                            <span class="pull-left">{% trans 'Event Presentation Files' %}</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
+
+                <a href="http://www.wiserd.ac.uk" target="_blank">
+                    <div class="panel-footer">
+                        <span class="pull-left">{% trans 'About the DataPortal' %}</span>
+                        <span class="pull-right"><i class="fa fa-external-link"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
             </div>
+        </div>
 
-
-
-
-
-
-            <div class="col-lg-4 col-md-6">
+         <div class="col-lg-6 col-md-6">
                 <div class="panel panel-orange">
                     <a href="{% url 'help_support' %}">
                         <div class="panel-heading">
@@ -362,7 +385,7 @@
                     </a>
                     <a href="{% url 'help_support' %}">
                         <div class="panel-footer">
-                            <span class="pull-left">{% trans 'About, Help and Support' %}</span>
+                            <span class="pull-left">{% trans 'Help and Support' %}</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
@@ -370,71 +393,38 @@
                 </div>
             </div>
 
-
-
-
-
-            <div class="col-lg-4 col-md-6">
-                <div class="panel panel-primary">
-                    <a target="_blank" href="http://dataportal-development.blogspot.co.uk/">
-
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-rss fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">{{ tech_blog_posts }}</div>
-                                    <div>{% trans 'Tech Blog' %}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a target="_blank" href="http://dataportal-development.blogspot.co.uk/">
-                        <div class="panel-footer">
-                            <span class="pull-left">{% trans 'View DataPortal technical developments' %}</span>
-                            <span class="pull-right"><i class="fa fa-external-link"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-
-
-
-            <div class="col-lg-4 col-md-6">
-                <div class="panel panel-purple">
-                    <a href="http://www.wiserd.ac.uk/research/data-and-methods/current-projects/wiserd-dataportal/" target="_blank">
-
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
+{#            <div class="col-lg-4 col-md-6">#}
+{#                <div class="panel panel-purple">#}
+{#                    <a href="http://www.wiserd.ac.uk/research/data-and-methods/current-projects/wiserd-dataportal/" target="_blank">#}
+{##}
+{#                        <div class="panel-heading">#}
+{#                            <div class="row">#}
+{#                                <div class="col-xs-3">#}
                                     {#                                <i class="fa fa-institution fa-5x"></i>#}
-                                    <img style="margin-top: 1em"
-                                         src="{% static 'dataportal/media/wiserd_logo_small.jpg' %}">
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">_</div>
-                                    <div>WISERD</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="http://www.wiserd.ac.uk" target="_blank">
-                        <div class="panel-footer">
-                            <span class="pull-left">{% trans 'WISERD DataPortal Homepage' %}</span>
-                            <span class="pull-right"><i class="fa fa-external-link"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+{#                                    <img style="margin-top: 1em"#}
+{#                                         src="{% static 'dataportal/media/wiserd_logo_small.jpg' %}">#}
+{#                                </div>#}
+{#                                <div class="col-xs-9 text-right">#}
+{#                                    <div class="huge">_</div>#}
+{#                                    <div>WISERD</div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                    <a href="http://www.wiserd.ac.uk" target="_blank">#}
+{#                        <div class="panel-footer">#}
+{#                            <span class="pull-left">{% trans 'WISERD DataPortal Homepage' %}</span>#}
+{#                            <span class="pull-right"><i class="fa fa-external-link"></i></span>#}
+{#                            <div class="clearfix"></div>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
 
 
             {% if request.user.is_authenticated %}
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-4">
                     <div class="panel panel-primary">
                         <a href="{% url 'profile' %}">
                             <div class="panel-heading">
@@ -459,9 +449,6 @@
                     </div>
                 </div>
             {% endif %}
-
-
-
 
             {#        {% if request.user.is_authenticated %}#}
             {#            <div class="col-lg-4 col-md-6">#}
@@ -492,7 +479,7 @@
 
 
             {% if request.user.is_staff %}
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-4">
                     <div class="panel panel-orange">
                         <a href="{% url 'file_management' %}">
                             <div class="panel-heading">
@@ -543,10 +530,6 @@
             {#                </a>#}
             {#            </div>#}
             {#        </div>#}
-
-
-
-
 
         </div>
     </div>

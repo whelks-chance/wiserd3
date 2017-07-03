@@ -311,13 +311,13 @@
 
 
 .panel-orange {
-    border-color: #eb8f00;
+    border-color: orangered;
 }
 
 .panel-orange .panel-heading {
     color: white;
-    border-color: #eb8f00;
-    background-color: #eb8f00;
+    border-color: orangered;
+    background-color: orangered;
 }
 
 /*.panel-orange .panel-footer {*/
@@ -325,11 +325,11 @@
 /*}*/
 
 .panel-orange a {
-    color: #eb8f00;
+    color: orangered;
 }
 
 .panel-orange a:hover {
-    color: #af6d00;
+    color: orangered;
 }
 
 .panel-light-blue {
@@ -369,16 +369,16 @@
 }
 
 .panel-grey {
-    border-color: lightgrey;
+    border-color: grey;
 }
 
 .panel-grey .panel-heading {
     color: white;
-    border-color: lightgrey;
-    background-color: lightgrey;
+    border-color: grey;
+    background-color: grey;
 }
 .panel-grey .panel-footer {
-    color: lightgrey;
+    color: grey;
 }
 .panel-dark-green {
     color: white;
@@ -409,6 +409,23 @@
 }
 .panel-blue .panel-footer {
     color: #212899;
+
+}
+
+
+.panel-light-purple {
+    color: white;
+    border-color: rebeccapurple;
+    background-color: rebeccapurple;
+}
+
+.panel-light-purple .panel-heading {
+    color: white;
+    border-color: rebeccapurple;
+    background-color: rebeccapurple;
+}
+.panel-light-purple .panel-footer {
+    color: rebeccapurple;
 
 }
 
@@ -567,6 +584,12 @@
 .icon-background-yellow {
     background-color: #f0ad4e;
     border: 1px solid #f0ad4e;
+    border-radius: 12px;
+}
+
+.icon-background-orange {
+    background-color: orangered;
+    border: 1px solid orangered;
     border-radius: 12px;
 }
 

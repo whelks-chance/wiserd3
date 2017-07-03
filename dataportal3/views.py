@@ -388,6 +388,12 @@ def map_search(request):
     if tpt == 'wiserd_projects':
         template_name = 'wiserd_projects_navigation.html'
 
+    if tpt == 'partner_projects':
+        template_name = 'partner_projects_navigation.html'
+
+    if tpt == 'about':
+        template_name = 'about_navigation.html'
+
     try:
         get_template(template_name)
     except TemplateDoesNotExist:
@@ -3413,6 +3419,20 @@ def wmh_dashboard(request):
 
 def wiserd_projects_dashboard(request):
     return render(request, 'wiserd_projects_dashboard.html',
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request)
+                  }, context_instance=RequestContext(request))
+
+def partner_projects_dashboard(request):
+    return render(request, 'partner_projects_dashboard.html',
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request)
+                  }, context_instance=RequestContext(request))
+
+def about_dashboard(request):
+    return render(request, 'about_dashboard.html',
                   {
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)

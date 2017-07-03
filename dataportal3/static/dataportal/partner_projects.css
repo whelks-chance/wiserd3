@@ -1,0 +1,129 @@
+.navbar-default {
+    background-color: rgb(5, 100, 50);
+        /*background-image: linear-gradient(#002E4B, #0081B6);*/
+        color: #056432;
+}
+
+#wrapper, .right_sidebar {
+    background-color: #eeeeee;
+    color: rgb(5, 100, 50);
+}
+
+.right_sidebar a {
+    background-color: lightgrey;
+    color: rgb(5, 100, 50);
+}
+
+a {
+    /*background-color: rgb(58, 137, 175);*/
+            color: lightgrey;
+}
+
+a:hover {
+        color: #eeeeee;
+    background-color: rgba(5, 100, 50, 0.5);
+
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover,
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover,
+li.active > a
+{
+     background-color: rgba(5, 100, 50, 0.5);
+    color: #eeeeee;
+}
+
+.navbar-top-links li a{
+    /*color: rgba(36, 36, 36, 0.8);*/
+                color: lightgrey;
+}
+
+.navbar-top-links .dropdown-menu li a {
+    color: rgb(5, 100, 50);
+    background-color: #fff;
+}
+
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+        background-color: rgba(58, 137, 175, 0.15);
+}
+
+.navbar-default .navbar-toggle {
+    border-color: rgba(36, 36, 36, 0.8);
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: rgba(5, 100, 50, 0.5);
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
+        background-color: #eeeeee;
+        border-color: #eeeeee;
+}
+
+.leaflet-container a {
+    color: rgb(592, 48, 175);
+            background-color: #fff;
+}
+
+.panel-primary a {
+    color: #056432;
+}
+
+
+.ui-widget-header {
+        background-color: rgb(5, 100, 50);
+        border-color: rgb(5, 100, 50);
+
+}
+
+.popover-title {
+    color: #0f0f0f;
+
+}
+.popover-content {
+    color: #0f0f0f;
+
+}
+
+.lang-toggle {
+    border-top: #054b25 solid 2px;
+    border-bottom: #054b25 solid 2px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.lang-toggle-a:hover {
+    border-radius: 10px;
+}
+
+.lang-toggle-a{
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    min-height: 2em !important;
+}
+
+.lang-toggle-split {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-left: -0.4em;
+    margin-right: -0.4em;
+    color: #054b25
+}
+.lang-toggle-left {
+    border-left: #054b25 solid 2px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.lang-toggle-right {
+    border-right: #054b25 solid 2px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.page-header {
+    color: black;
+}

@@ -48,7 +48,7 @@
         <div class="col-lg-12">
             {#            <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/Research-logo-2016-Welsh.png' %}{% else %}{% static 'dataportal/media/Research-logo-2016-English.png' %}{% endif %}">#}
 
-            <h1 class="page-header">{% trans 'Dashboard' %}</h1>
+            <h1 class="page-header">{% trans 'About the DataPortal' %}</h1>
         </div>
         <div hidden="hidden" id="naw_message" class="row">
             <div class="alert alert-info alert-dismissable">
@@ -98,7 +98,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-dashboard fa-5x"></i>
+                            <i class="fa fa-arrow-circle-left fa-5x"></i>
                             {#                            <img src="{% static 'dataportal/media/dataportowl.jpg' %}">#}
                         </div>
                         <div class="col-xs-9 text-right">
@@ -111,8 +111,8 @@
 
             <a href="{% url 'dashboard' %}">
                 <div class="panel-footer">
-                    <span class="pull-left">{% trans 'WISERD Dashboard' %}</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <span class="pull-left">{% trans 'Back to the Dashboard' %}</span>
+                    <span class="pull-right"><i class="fa fa-dashboard fa"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>

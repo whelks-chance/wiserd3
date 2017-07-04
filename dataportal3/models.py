@@ -390,7 +390,7 @@ class Survey(models.Model):
 
     keywords = models.TextField(blank=True, null=True)
 
-    surveyid = models.CharField(unique=True, max_length=255) # blank=True, null=True
+    surveyid = models.CharField(unique=True, max_length=255, default=uniqid) # blank=True, null=True
     identifier = models.CharField(unique=True, max_length=255, blank=True, null=True)
     survey_title = models.TextField(blank=True, null=True)
     datacollector = models.CharField(max_length=50, blank=True, null=True)
@@ -1299,6 +1299,34 @@ class MineTest(models.Model):
 
     def __unicode__(self):
         return "{} : {} : {}".format(self.name, self.x, self.y)
+
+
+class WMHpoints(models.Model):
+    community_town = models.CharField(max_length=250, blank=True, null=True)
+    coords = models.TextField(blank=True, null=True)
+    y = models.CharField(max_length=25, blank=True, null=True)
+    x = models.CharField(max_length=25, blank=True, null=True)
+    name = models.CharField(max_length=250, blank=True, null=True)
+    postcode = models.CharField(max_length=25, blank=True, null=True)
+    council_borough = models.TextField(blank=True, null=True)
+    memory_of = models.TextField(blank=True, null=True)
+    date = models.CharField(max_length=25, blank=True, null=True)
+    colliery = models.TextField(blank=True, null=True)
+    category = models.CharField(max_length=250, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    built = models.CharField(max_length=25, blank=True, null=True)
+    artist_architect = models.TextField(blank=True, null=True)
+    people = models.TextField(blank=True, null=True)
+    img_1 = models.TextField(blank=True, null=True)
+    img_2 = models.TextField(blank=True, null=True)
+    img_3 = models.TextField(blank=True, null=True)
+    img_4 = models.TextField(blank=True, null=True)
+
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    def __unicode__(self):
+        return "{} : {} : {}".format(self.name, self.community_town, self.colliery)
 
 
 class ResponseTable(models.Model):

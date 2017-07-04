@@ -61,10 +61,10 @@
     <script type="text/javascript" src="{% static 'jscoord-1.1.1.js' %}"></script>
 
     {#    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>#}
-{#    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js' %}"></script>#}
-    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/leaflet-image-0.3.0/leaflet-image.js' %}"></script>
+    {#    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/leaflet-image-0.3.0/leaflet-image.js' %}"></script>#}
 
-       	<script src="{% static 'leaflet-easyprint/easyprint-v2.js' %}"></script>
+    <script src="{% static 'leaflet-easyprint/easyprint-v2.js' %}"></script>
 
 
 
@@ -79,7 +79,7 @@
     {#    <script src="http://d3js.org/topojson.v1.min.js"></script>#}
     <script type="text/javascript" src="{% static 'd3js/topojson.v1.min.js' %}"></script>
 
-{#    <script type="text/javascript" src="{% static 'd3js/topojson_unmin.js' %}"></script>#}
+    {#    <script type="text/javascript" src="{% static 'd3js/topojson_unmin.js' %}"></script>#}
 
     <script type="text/javascript" src="{% static 'chroma.min.js' %}"></script>
 
@@ -239,10 +239,10 @@
             <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'WISERD Research' %}<span class="fa arrow"></span></a>
             <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
 
-{#                <li>#}
-{#                    <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">#}
-{#                        <i class="fa fa-map-marker fa-fw"></i> {{ upload_layer.display_name }}</a>#}
-{#                </li>#}
+                {#                <li>#}
+                {#                    <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">#}
+                {#                        <i class="fa fa-map-marker fa-fw"></i> {{ upload_layer.display_name }}</a>#}
+                {#                </li>#}
 
                 {% for upload_layer in upload_layers %}
                     <li>
@@ -628,21 +628,22 @@
             var hash = new L.Hash(map);
 
             {% if tpt != 'default' %}
-            var powered_by = L.control({position: "topright"});
-            powered_by.onAdd = function(map) {
-                var div = L.DomUtil.create("div", "powered_by");
-                div.innerHTML = "<a target='_blank' href='{% url 'dashboard' %}'><div class='powered_txt'>{% trans 'Powered by the WISERD Dataportal' %}</div></a>";
-                return div;
-            };
-            powered_by.addTo(map);
+                var powered_by = L.control({position: "topright"});
+                powered_by.onAdd = function(map) {
+                    var div = L.DomUtil.create("div", "powered_by");
+                    div.innerHTML = "<a target='_blank' href='{% url 'dashboard' %}'><div class='powered_txt'>{% trans 'Powered by the WISERD Dataportal' %}</div></a>";
+                    return div;
+                };
+                powered_by.addTo(map);
             {% endif %}
 
             L.easyPrint({
-        title: 'My awesome print button',
-        position: 'topleft',
-                      sizeModes: ['CurrentSize', 'A4Landscape', 'A4Portrait'],
-{#        elementsToHide: 'right_sidebar_col, h2'#}
-    }).addTo(map);
+                title: '{% trans "Print and download" %}',
+                position: 'topleft',
+{#                sizeModes: "native",#}
+                                      sizeModes: ['CurrentSize', 'A4Landscape', 'A4Portrait'],
+                {#        elementsToHide: 'right_sidebar_col, h2'#}
+            }).addTo(map);
 
             var layer_group = new L.LayerGroup();
             {#            var overlays = {#}
@@ -761,7 +762,7 @@
 
 // method that we will use to update the control based on feature properties passed
             info.update = function (props) {
-                                console.log(props);
+                console.log(props);
                 if (props == null) {
                     {#                    console.log('empty props');#}
 
@@ -780,8 +781,8 @@
                         delete cleanedprops['STRING_DATA'];
                         delete cleanedprops['model'];
 
-{#                        cleanedprops['STRING_DATA'] = null;#}
-{#                        cleanedprops['model'] = null;#}
+                        {#                        cleanedprops['STRING_DATA'] = null;#}
+                        {#                        cleanedprops['model'] = null;#}
                         var ppTable = prettyPrint(cleanedprops);
                         {#                        value += JSON.stringify(props);#}
                         value = $(ppTable).prop('outerHTML')

@@ -10,7 +10,10 @@ var commonjsGlobal = "undefined" != typeof window ? window : "undefined" != type
         ! function(e) {
             function n(t, e) {
                 function n(t) {
-                    return e.bgcolor && (t.style.backgroundColor = e.bgcolor), e.width && (t.style.width = e.width + "px"), e.height && (t.style.height = e.height + "px"), e.style && Object.keys(e.style).forEach(function(n) {
+                    return e.bgcolor && (t.style.backgroundColor = e.bgcolor),
+                    e.width && (t.style.width = e.width + "px"),
+                    e.height && (t.style.height = e.height + "px"),
+                    e.style && Object.keys(e.style).forEach(function(n) {
                         t.style[n] = e.style[n]
                     }), t
                 }
@@ -307,8 +310,8 @@ var commonjsGlobal = "undefined" != typeof window ? window : "undefined" != type
                             var t = 0;
                             return function() {
                                 return "u" + function() {
-                                    return ("0000" + (Math.random() * Math.pow(36, 4) << 0).toString(36)).slice(-4)
-                                }() + t++
+                                        return ("0000" + (Math.random() * Math.pow(36, 4) << 0).toString(36)).slice(-4)
+                                    }() + t++
                             }
                         }(),
                         delay: l,
@@ -474,81 +477,81 @@ var commonjsGlobal = "undefined" != typeof window ? window : "undefined" != type
     }),
     FileSaver = createCommonjsModule(function(t) {
         var e = e || function(t) {
-            if (!(void 0 === t || "undefined" != typeof navigator && /MSIE [1-9]\./.test(navigator.userAgent))) {
-                var e = t.document,
-                    n = function() {
-                        return t.URL || t.webkitURL || t
-                    },
-                    i = e.createElementNS("http://www.w3.org/1999/xhtml", "a"),
-                    r = "download" in i,
-                    o = function(t) {
-                        var e = new MouseEvent("click");
-                        t.dispatchEvent(e)
-                    },
-                    a = /constructor/i.test(t.HTMLElement) || t.safari,
-                    u = /CriOS\/[\d]+/.test(navigator.userAgent),
-                    M = function(e) {
-                        (t.setImmediate || t.setTimeout)(function() {
-                            throw e
-                        }, 0)
-                    },
-                    c = function(t) {
-                        var e = function() {
-                            "string" == typeof t ? n().revokeObjectURL(t) : t.remove()
-                        };
-                        setTimeout(e, 4e4)
-                    },
-                    s = function(t, e, n) {
-                        e = [].concat(e);
-                        for (var i = e.length; i--;) {
-                            var r = t["on" + e[i]];
-                            if ("function" == typeof r) try {
-                                r.call(t, n || t)
-                            } catch (t) {
-                                M(t)
-                            }
-                        }
-                    },
-                    l = function(t) {
-                        return /^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(t.type) ? new Blob([String.fromCharCode(65279), t], {
-                            type: t.type
-                        }) : t
-                    },
-                    L = function(e, M, L) {
-                        L || (e = l(e));
-                        var g, w = this,
-                            d = e.type,
-                            y = "application/octet-stream" === d,
-                            j = function() {
-                                s(w, "writestart progress write writeend".split(" "))
+                if (!(void 0 === t || "undefined" != typeof navigator && /MSIE [1-9]\./.test(navigator.userAgent))) {
+                    var e = t.document,
+                        n = function() {
+                            return t.URL || t.webkitURL || t
+                        },
+                        i = e.createElementNS("http://www.w3.org/1999/xhtml", "a"),
+                        r = "download" in i,
+                        o = function(t) {
+                            var e = new MouseEvent("click");
+                            t.dispatchEvent(e)
+                        },
+                        a = /constructor/i.test(t.HTMLElement) || t.safari,
+                        u = /CriOS\/[\d]+/.test(navigator.userAgent),
+                        M = function(e) {
+                            (t.setImmediate || t.setTimeout)(function() {
+                                throw e
+                            }, 0)
+                        },
+                        c = function(t) {
+                            var e = function() {
+                                "string" == typeof t ? n().revokeObjectURL(t) : t.remove()
                             };
-                        if (w.readyState = w.INIT, r) return g = n().createObjectURL(e), void setTimeout(function() {
-                            i.href = g, i.download = M, o(i), j(), c(g), w.readyState = w.DONE
-                        });
-                        ! function() {
-                            if ((u || y && a) && t.FileReader) {
-                                var i = new FileReader;
-                                return i.onloadend = function() {
-                                    var e = u ? i.result : i.result.replace(/^data:[^;]*;/, "data:attachment/file;");
-                                    t.open(e, "_blank") || (t.location.href = e), e = void 0, w.readyState = w.DONE, j()
-                                }, i.readAsDataURL(e), void(w.readyState = w.INIT)
+                            setTimeout(e, 4e4)
+                        },
+                        s = function(t, e, n) {
+                            e = [].concat(e);
+                            for (var i = e.length; i--;) {
+                                var r = t["on" + e[i]];
+                                if ("function" == typeof r) try {
+                                    r.call(t, n || t)
+                                } catch (t) {
+                                    M(t)
+                                }
                             }
-                            if (g || (g = n().createObjectURL(e)), y) t.location.href = g;
-                            else {
-                                t.open(g, "_blank") || (t.location.href = g)
-                            }
-                            w.readyState = w.DONE, j(), c(g)
-                        }()
-                    },
-                    g = L.prototype,
-                    w = function(t, e, n) {
-                        return new L(t, e || t.name || "download", n)
-                    };
-                return "undefined" != typeof navigator && navigator.msSaveOrOpenBlob ? function(t, e, n) {
-                    return e = e || t.name || "download", n || (t = l(t)), navigator.msSaveOrOpenBlob(t, e)
-                } : (g.abort = function() {}, g.readyState = g.INIT = 0, g.WRITING = 1, g.DONE = 2, g.error = g.onwritestart = g.onprogress = g.onwrite = g.onabort = g.onerror = g.onwriteend = null, w)
-            }
-        }("undefined" != typeof self && self || "undefined" != typeof window && window || commonjsGlobal.content);
+                        },
+                        l = function(t) {
+                            return /^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(t.type) ? new Blob([String.fromCharCode(65279), t], {
+                                type: t.type
+                            }) : t
+                        },
+                        L = function(e, M, L) {
+                            L || (e = l(e));
+                            var g, w = this,
+                                d = e.type,
+                                y = "application/octet-stream" === d,
+                                j = function() {
+                                    s(w, "writestart progress write writeend".split(" "))
+                                };
+                            if (w.readyState = w.INIT, r) return g = n().createObjectURL(e), void setTimeout(function() {
+                                i.href = g, i.download = M, o(i), j(), c(g), w.readyState = w.DONE
+                            });
+                            ! function() {
+                                if ((u || y && a) && t.FileReader) {
+                                    var i = new FileReader;
+                                    return i.onloadend = function() {
+                                        var e = u ? i.result : i.result.replace(/^data:[^;]*;/, "data:attachment/file;");
+                                        t.open(e, "_blank") || (t.location.href = e), e = void 0, w.readyState = w.DONE, j()
+                                    }, i.readAsDataURL(e), void(w.readyState = w.INIT)
+                                }
+                                if (g || (g = n().createObjectURL(e)), y) t.location.href = g;
+                                else {
+                                    t.open(g, "_blank") || (t.location.href = g)
+                                }
+                                w.readyState = w.DONE, j(), c(g)
+                            }()
+                        },
+                        g = L.prototype,
+                        w = function(t, e, n) {
+                            return new L(t, e || t.name || "download", n)
+                        };
+                    return "undefined" != typeof navigator && navigator.msSaveOrOpenBlob ? function(t, e, n) {
+                        return e = e || t.name || "download", n || (t = l(t)), navigator.msSaveOrOpenBlob(t, e)
+                    } : (g.abort = function() {}, g.readyState = g.INIT = 0, g.WRITING = 1, g.DONE = 2, g.error = g.onwritestart = g.onprogress = g.onwrite = g.onabort = g.onerror = g.onwriteend = null, w)
+                }
+            }("undefined" != typeof self && self || "undefined" != typeof window && window || commonjsGlobal.content);
         t.exports && (t.exports.saveAs = e)
     });
 L.Control.EasyPrint = L.Control.extend({
@@ -561,30 +564,58 @@ L.Control.EasyPrint = L.Control.extend({
     onAdd: function() {
         this.addCss();
         var t = L.DomUtil.create("div", "leaflet-control-easyPrint leaflet-bar leaflet-control");
-        return L.DomEvent.addListener(t, "mouseover", this.displayPageSizeButtons, this), L.DomEvent.addListener(t, "mouseout", this.hidePageSizeButtons, this), this.link = L.DomUtil.create("a", "leaflet-control-easyPrint-button", t), this.link.id = "leafletEasyPrint", this.link.title = this.options.title, this.holder = L.DomUtil.create("ul", "easyPrintHolder", t), this.options.sizeModes.forEach(function(t) {
-            var e = L.DomUtil.create("li", "easyPrintSizeMode", this.holder);
-            e.title = t;
-            L.DomUtil.create("a", "easyPrint" + t, e);
-            L.DomEvent.addListener(e, "click", this.printPage, this)
-        }, this), L.DomEvent.disableClickPropagation(t), t
+        return L.DomEvent.addListener(t, "mouseover", this.displayPageSizeButtons, this),
+            L.DomEvent.addListener(t, "mouseout", this.hidePageSizeButtons, this),
+            this.link = L.DomUtil.create("a", "leaflet-control-easyPrint-button", t),
+            this.link.id = "leafletEasyPrint",
+            this.link.title = this.options.title,
+            this.holder = L.DomUtil.create("ul", "easyPrintHolder", t),
+            this.options.sizeModes.forEach(function(t) {
+                    var e = L.DomUtil.create("li", "easyPrintSizeMode", this.holder);
+                    e.title = t;
+                    L.DomUtil.create("a", "easyPrint" + t, e);
+                    L.DomEvent.addListener(e, "click", this.printPage, this)
+                },
+                this),
+            L.DomEvent.disableClickPropagation(t), t
     },
     createOuterContainer: function(t) {
         var e = document.createElement("div");
-        return t.parentNode.insertBefore(e, t), t.parentNode.removeChild(t), e.appendChild(t), e.style.width = t.style.width, e.style.height = t.style.height, e.style.display = "inline-block", e.style.overflow = "hidden", e
+        return t.parentNode.insertBefore(e, t),
+            t.parentNode.removeChild(t),
+            e.appendChild(t),
+            e.style.width = t.style.width,
+            e.style.height = t.style.height,
+            e.style.display = "inline-block",
+            e.style.overflow = "hidden", e
     },
     removeOuterContainer: function(t, e, n) {
-        e.parentNode.insertBefore(t, e), e.parentNode.removeChild(n), e.parentNode.removeChild(e)
+        e.parentNode.insertBefore(t, e),
+            e.parentNode.removeChild(n),
+            e.parentNode.removeChild(e)
     },
     printPage: function(t) {
-        if (this._map.fire("beforePrint"), this.hidePageSizeButtons(), this.mapContainer = this._map.getContainer(), "easyPrintCurrentSize" === t.target.className) return void this.printOpertion();
-        this.outerContainer = this.createOuterContainer(this.mapContainer), this.createImagePlaceholder(t.target.className)
+        if (this._map.fire("beforePrint"),
+                this.hidePageSizeButtons(),
+                this.mapContainer = this._map.getContainer(),
+            "easyPrintCurrentSize" === t.target.className) return void this.printOpertion();
+        this.outerContainer = this.createOuterContainer(this.mapContainer),
+            this.createImagePlaceholder(t.target.className)
     },
     createImagePlaceholder: function(t) {
         var e = this;
         domToImage.toPng(this.mapContainer).then(function(n) {
             e.blankDiv = document.createElement("div");
             var i = e.blankDiv;
-            e.outerContainer.parentElement.insertBefore(i, e.outerContainer), i.className = "epHolder", i.style.backgroundImage = 'url("' + n + '")', i.style.position = "absolute", i.style.zIndex = 1011, i.style.display = "initial", i.style.width = e.mapContainer.style.width, i.style.height = e.mapContainer.style.height, e.resizeAndPrintMap(t)
+            e.outerContainer.parentElement.insertBefore(i, e.outerContainer),
+                i.className = "epHolder",
+                i.style.backgroundImage = 'url("' + n + '")',
+                i.style.position = "absolute",
+                i.style.zIndex = 1011,
+                i.style.display = "initial",
+                i.style.width = e.mapContainer.style.width,
+                i.style.height = e.mapContainer.style.height,
+                e.resizeAndPrintMap(t)
         }).catch(function(t) {
             console.error("oops, something went wrong!", t)
         })
@@ -595,10 +626,29 @@ L.Control.EasyPrint = L.Control.extend({
                 width: "1045px"
             },
             n = this.mapContainer;
-        this.originalMapWidth = n.style.width, this.originalMapHeight = n.style.height, this.origCenter = this._map.getCenter(), this.origZoom = this._map.getZoom(), this.outerContainer.style.opacity = 0, "easyPrintA4Landscape" === t && (n.style.width = e.width, n.style.height = e.height), "easyPrintA4Portrait" === t && (n.style.width = e.height, n.style.height = e.width), this._map.setView(this.origCenter), this._map.setZoom(this.origZoom), this._map.invalidateSize();
+        this.originalMapWidth = n.style.width,
+            this.originalMapHeight = n.style.height,
+            this.origCenter = this._map.getCenter(),
+            this.origZoom = this._map.getZoom(),
+            this.outerContainer.style.opacity = 0,
+        "easyPrintA4Landscape" === t && (
+            n.style.width = e.width,
+                n.style.height = e.height
+        ),
+        "easyPrintA4Portrait" === t && (
+            n.style.width = e.height,
+                n.style.height = e.width
+        ),
+            this._map.setView(this.origCenter),
+            this._map.setZoom(this.origZoom),
+            this._map.invalidateSize();
         var i = this,
             r = setInterval(function() {
-                i.options.tileLayer.isLoading() || (clearInterval(r), i.printOpertion())
+                if (!i.options.tilelayer) {
+                    (clearInterval(r), i.printOpertion())
+                } else {
+                    i.options.tileLayer.isLoading() || (clearInterval(r), i.printOpertion())
+                }
             }, 500)
     },
     printOpertion: function() {
@@ -608,7 +658,19 @@ L.Control.EasyPrint = L.Control.extend({
             height: parseInt(t.mapContainer.style.height.replace("px"))
         }).then(function(e) {
             var n = t.dataURItoBlob(e);
-            window.FileSaver.saveAs(n, t.options.filename + ".png"), t._map.fire("afterPrint"), t.mapContainer.style.width = t.originalMapWidth, t.mapContainer.style.height = t.originalMapHeight, t.outerContainer && (t.removeOuterContainer(t.mapContainer, t.outerContainer, t.blankDiv), t._map.invalidateSize(), t._map.setView(t.origCenter), t._map.setZoom(t.origZoom))
+            window.FileSaver.saveAs(n, t.options.filename + ".png"),
+                t._map.fire("afterPrint"),
+                t.mapContainer.style.width = t.originalMapWidth,
+                t.mapContainer.style.height = t.originalMapHeight,
+            t.outerContainer && (
+                t.removeOuterContainer(
+                    t.mapContainer,
+                    t.outerContainer,
+                    t.blankDiv),
+                    t._map.invalidateSize(),
+                    t._map.setView(t.origCenter),
+                    t._map.setZoom(t.origZoom)
+            )
         }).catch(function(t) {
             console.error("Print operation failed", t)
         })
@@ -624,10 +686,14 @@ L.Control.EasyPrint = L.Control.extend({
         })
     },
     displayPageSizeButtons: function() {
-        this.holder.style.display = "block", this.link.style.borderTopRightRadius = "0", this.link.style.borderBottomRightRadius = "0"
+        this.holder.style.display = "block",
+            this.link.style.borderTopRightRadius = "0",
+            this.link.style.borderBottomRightRadius = "0"
     },
     hidePageSizeButtons: function() {
-        this.holder.style.display = "none", this.link.style.borderTopRightRadius = "2px", this.link.style.borderBottomRightRadius = "2px"
+        this.holder.style.display = "none",
+            this.link.style.borderTopRightRadius = "2px",
+            this.link.style.borderBottomRightRadius = "2px"
     }
 }), L.easyPrint = function(t) {
     return new L.Control.EasyPrint(t)

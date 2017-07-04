@@ -798,7 +798,10 @@ def get_wiserd_layer_topojson(
 
     redis_cached_data = None
     if not update_cache:
-        redis_cached_data = redis_cache.get(layer_key)
+        try:
+            redis_cached_data = redis_cache.get(layer_key)
+        except:
+            redis_cached_data = None
 
     if redis_cached_data:
         s = redis_cached_data

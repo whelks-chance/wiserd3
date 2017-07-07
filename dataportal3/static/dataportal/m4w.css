@@ -88,3 +88,18 @@ li.active > a
     color: #0f0f0f;
 
 }
+
+.panel-m4w {
+    color: whitesmoke;
+    border-color: rgb(58, 137, 175);
+    background-color: rgb(58, 137, 175);
+}
+
+.panel-m4w .panel-heading {
+    color: whitesmoke;
+    border-color: rgb(58, 137, 175);
+    background-color: rgb(58, 137, 175);
+}
+.panel-m4w .panel-footer {
+    color: rgb(58, 137, 175);
+}

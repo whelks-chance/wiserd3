@@ -636,6 +636,10 @@
     line-height: 2;
 }
 
+.vertical-flex {
+    display: flex;
+    align-items: center;
+}
 
 .naw-panel-map {
     border-color: #3FA628;
@@ -727,3 +731,129 @@
 .marker_bkgd {
     border-radius: 5px;
 }
+
+.panel-search_survey {
+    color: white;
+    border-color: #337ab7;
+    background-color: #337ab7;
+}
+
+.panel-search_survey .panel-heading {
+    color: white;
+    border-color: #337ab7;
+    background-color: #337ab7;
+}
+.panel-search_survey .panel-footer {
+    color: #337ab7;
+}
+
+
+.panel-map {
+    color: whitesmoke;
+    border-color: #3c763d;
+    background-color: #5cb85c;
+}
+
+.panel-map .panel-heading {
+    color: whitesmoke;
+    border-color: #3c763d;
+    background-color: #5cb85c;
+}
+.panel-map .panel-footer {
+    color: #3c763d;
+}
+
+
+.panel-browse_surveys {
+    color: whitesmoke;
+    border-color: #a94442;
+    background-color: #a94442;
+}
+
+.panel-browse_surveys .panel-heading {
+    color: whitesmoke;
+    border-color: #a94442;
+    background-color: #a94442;
+}
+.panel-browse_surveys .panel-footer {
+    color: #a94442;
+}
+
+
+.panel-help {
+    color: whitesmoke;
+    border-color: #f0ad4e;
+    background-color: #8a6d3b;
+}
+
+.panel-help .panel-heading {
+    color: whitesmoke;
+    border-color: #f0ad4e;
+    background-color: #f0ad4e;
+}
+.panel-help .panel-footer {
+    color: #8a6d3b;
+}
+
+.panel-shapefile_upload {
+    color: white;
+    border-color: #337ab7;
+    background-color: #337ab7;
+}
+
+.panel-shapefile_upload .panel-heading {
+    color: white;
+    border-color: #337ab7;
+    background-color: #337ab7;
+}
+.panel-shapefile_upload .panel-footer {
+    color: #337ab7;
+}
+
+.panel-user_profile {
+    color: white;
+    border-color: #337ab7;
+    background-color: #337ab7;
+}
+
+.panel-user_profile .panel-heading {
+    color: white;
+    border-color: #337ab7;
+    background-color: #337ab7;
+}
+.panel-user_profile .panel-footer {
+    color: #337ab7;
+}
+
+.panel-partner_projects {
+    color: whitesmoke;
+    border-color: #f0ad4e;
+    background-color: #8a6d3b;
+}
+
+.panel-partner_projects .panel-heading {
+    color: whitesmoke;
+    border-color: #f0ad4e;
+    background-color: #f0ad4e;
+}
+.panel-partner_projects .panel-footer {
+    color: #8a6d3b;
+}
+
+
+.panel-dash_back {
+    color: whitesmoke;
+    border-color: #54075B;
+    /*background-color: #54075B;*/
+}
+
+.panel-dash_back .panel-heading {
+    color: whitesmoke;
+    border-color: #54075B;
+    background-color: rgba(84, 7, 91, 0.7);
+}
+.panel-dash_back .panel-footer {
+    color: #54075B;
+}
+
+

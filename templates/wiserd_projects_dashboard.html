@@ -6,6 +6,13 @@
 
 
 {% block extra_head %}
+
+    <style>
+    .navbar-brand-text{
+        color: lightgrey;
+    }
+    </style>
+
     <script type="text/javascript" src="{% static 'dataportal/page_js/dashboard.js' %}"></script>
 
     <script>
@@ -44,252 +51,118 @@
 
 
 {% block content %}
-    <div class="row">
-        <div class="col-lg-12">
-            {#            <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/Research-logo-2016-Welsh.png' %}{% else %}{% static 'dataportal/media/Research-logo-2016-English.png' %}{% endif %}">#}
+    <div class="container-fluid">
 
-            <h1 class="page-header">{% trans 'WISERD Projects' %}</h1>
-        </div>
-        <div hidden="hidden" id="naw_message" class="row">
-            <div class="alert alert-info alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+        <div class="row">
+            <div class="col-lg-12">
+                {#            <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/Research-logo-2016-Welsh.png' %}{% else %}{% static 'dataportal/media/Research-logo-2016-English.png' %}{% endif %}">#}
 
+                <h1 class="page-header">{% trans 'WISERD Projects' %}</h1>
+            </div>
+            <div hidden="hidden" id="naw_message" class="row">
+                <div class="alert alert-info alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- /.row -->
-    {#    <div id="dashboard_grid" class="row">#}
-    {##}
-    {#    {% if request.user.is_authenticated %}#}
-    {##}
-    {#            <div class="col-lg-4 col-md-6">#}
-    {#                <div class="panel panel-primary">#}
-    {#                    <div class="panel-heading">#}
-    {#                        <div class="row">#}
-    {#                            <a href="{% url 'profile' %}">#}
-    {#                            <div class="col-xs-3">#}
-    {#                                <i class="fa fa-user fa-5x"></i>#}
-    {#                            </div>#}
-    {#                            <div class="col-xs-9 text-right">#}
-    {#                                <div class="huge">_</div>#}
-    {#                                <div>{% trans 'Profile' %}</div>#}
-    {#                            </div>#}
-    {#                            </a>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                    <a href="{% url 'profile' %}">#}
-    {#                        <div class="panel-footer">#}
-    {#                            <span class="pull-left">{% trans 'View Profile' %}</span>#}
-    {#                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
-    {#                            <div class="clearfix"></div>#}
-    {#                        </div>#}
-    {#                    </a>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        {% endif %}#}
 
 
-    <div class="col-lg-4 col-md-6">
-        <div class="panel panel-primary">
-            <a href="{% url 'wiserd_education' %}">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            {#                                    <i class="fa fa-list-alt fa-5x"></i>#}
-                            <img style="height: 5em"
-                                 src="{% static 'dataportal/media/WISERDEducationIcoNew.png' %}">
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">_</div>
-                            <div>{% trans 'WISERDEducation' %}</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="{% url 'wiserd_education' %}">
-                <div class="panel-footer">
-                    <span class="pull-left">{% trans 'WISERDEducation' %}</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
+        <div class="row">
 
-    <div class="col-lg-4 col-md-6">
-        <div class="panel panel-primary">
-            <a href="{% url 'civil_society' %}">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            {#                                    <i class="fa fa-list-alt fa-5x"></i>#}
-                            <img style="height: 5em"
-                                 src="{% static 'dataportal/media/IcoCivilSocietyCol.png' %}">
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">_</div>
-                            <div>{% trans 'Civil Society' %}</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="{% url 'civil_society' %}">
-                <div class="panel-footer">
-                    <span class="pull-left">{% trans 'Civil Society' %}</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    {% if request.user.is_staff %}
-        <div class="col-lg-4 col-md-6">
-            <div class="panel panel-wmh">
-                <a href="{% url 'wmh_dashboard' %}">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <img style="
-                                            max-width: 90%;
-                                            background-color: whitesmoke;
-                                            height: 4.5em;                                                                           padding-top: 0.5em;
-                                            margin-top: 0.3em;
-                                            border-radius: 5px;
-                                            "
-                                     src="{% static 'dataportal/media/wmh/pithead-40620_1280.png' %}">
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge">_</div>
-                                <div>{% trans 'Welsh Mining Heritage' %}</div>
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-primary">
+                    <a href="{% url 'wiserd_education' %}">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    {#                                    <i class="fa fa-list-alt fa-5x"></i>#}
+                                    <img style="height: 5em"
+                                         src="{% static 'dataportal/media/WISERDEducationIcoNew.png' %}">
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">_</div>
+                                    <div>{% trans 'WISERDEducation' %}</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href="{% url 'wmh_dashboard' %}">
-                    <div class="panel-footer">
-                        <span class="pull-left">{% trans 'Welsh Mining Heritage' %}</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
+                    </a>
+                    <a href="{% url 'wiserd_education' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">{% trans 'WISERDEducation' %}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
-    {% endif %}
 
-    <div class="col-lg-4 col-md-6">
-        <div class="panel panel-purple">
-            <a href="{% url 'dashboard' %}">
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-primary">
+                    <a href="{% url 'civil_society' %}">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    {#                                    <i class="fa fa-list-alt fa-5x"></i>#}
+                                    <img style="height: 5em"
+                                         src="{% static 'dataportal/media/IcoCivilSocietyCol.png' %}">
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">_</div>
+                                    <div>{% trans 'Civil Society' %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{% url 'civil_society' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">{% trans 'Civil Society' %}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-arrow-circle-left fa-5x"></i>
-                            {#                            <img src="{% static 'dataportal/media/dataportowl.jpg' %}">#}
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">_</div>
-                            <div>WISERD</div>
-                        </div>
+            {% if request.user.is_staff %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="panel panel-wmh">
+                        <a href="{% url 'wmh_dashboard' %}">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <img style="
+                                                {#                                            max-width: 90%;#}
+                                                background-color: whitesmoke;
+                                                height: 4.5em;
+                                                padding-top: 0.5em;
+                                                margin-top: 0.3em;
+                                                border-radius: 5px;
+                                                "
+                                             src="{% static 'dataportal/media/wmh/pithead-40620_1280.png' %}">
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">_</div>
+                                        <div>{% trans 'Welsh Mining Heritage' %}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="{% url 'wmh_dashboard' %}">
+                            <div class="panel-footer">
+                                <span class="pull-left">{% trans 'Welsh Mining Heritage' %}</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </a>
+            {% endif %}
 
-            <a href="{% url 'dashboard' %}">
-                <div class="panel-footer">
-                    <span class="pull-left">{% trans 'Back to the Dashboard' %}</span>
-                    <span class="pull-right"><i class="fa fa-dashboard fa-1.5x"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
+            {% include 'snippets/dashboad_buttons.html' %}
+
         </div>
-    </div>
-
-
-
-
-    {#{% if request.user.is_authenticated %}#}
-    {#            <div class="col-lg-4 col-md-6">#}
-    {#                <div class="panel panel-red">#}
-    {#                    <a href="{% url 'settings' %}">#}
-    {#                        <div class="panel-heading">#}
-    {#                            <div class="row">#}
-    {#                                <div class="col-xs-3">#}
-    {#                                    <i class="fa fa-cogs fa-5x"></i>#}
-    {#                                </div>#}
-    {#                                <div class="col-xs-9 text-right">#}
-    {#                                    <div class="huge">_</div>#}
-    {#                                    <div>{% trans 'Settings' %}</div>#}
-    {#                                </div>#}
-    {#                            </div>#}
-    {#                        </div>#}
-    {#                    </a>#}
-    {#                    <a href="{% url 'settings' %}">#}
-    {#                        <div class="panel-footer">#}
-    {#                            <span class="pull-left">{% trans 'Personal Settings' %}</span>#}
-    {#                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
-    {#                            <div class="clearfix"></div>#}
-    {#                        </div>#}
-    {#                    </a>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        {% endif %}#}
-
-    <div class="col-lg-4 col-md-6">
-        <div class="panel naw-panel-help">
-            <a href="{% url 'help_support' %}">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-question-circle fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">_</div>
-                            <div>{% trans 'Help' %}</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="{% url 'help_support' %}">
-                <div class="panel-footer">
-                    <span class="pull-left">{% trans 'About, Help and Support' %}</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6">
-        <div class="panel panel-purple">
-            <a href="http://www.wiserd.ac.uk/research/data-and-methods/current-projects/wiserd-dataportal/" target="_blank">
-
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            {#                                <i class="fa fa-institution fa-5x"></i>#}
-                            <img style="margin-top: 1em"
-                                 src="{% static 'dataportal/media/wiserd_logo_small.jpg' %}">
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">_</div>
-                            <div>WISERD</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="http://www.wiserd.ac.uk" target="_blank">
-                <div class="panel-footer">
-                    <span class="pull-left">{% trans 'WISERD DataPortal Homepage' %}</span>
-                    <span class="pull-right"><i class="fa fa-external-link"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
     </div>
 
 

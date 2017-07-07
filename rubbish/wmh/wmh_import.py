@@ -3,13 +3,13 @@ import json
 import os
 import csv
 import pprint
-
-# from django.contrib.gis.geos import Point
 import sys
-
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wiserd3.settings')
 import django
 django.setup()
+# from django.contrib.gis.geos import Point
+from dataportal3 import models
+from dataportal3.utils.userAdmin import get_anon_user, get_request_user
 
 
 def convert_csv_to_json(csv_file):
@@ -30,8 +30,10 @@ def convert_csv_to_json(csv_file):
     print header
     print pprint.pformat(ds)
     fixtures = []
+    categories = []
     for idx, d in enumerate(ds):
         d['geom'] = "POINT ({} {})".format(d['x'], d['y'])
+        categories.append(d['category'].strip())
         fixtures.append(
             {
                 "pk": str(idx),
@@ -46,6 +48,48 @@ def convert_csv_to_json(csv_file):
     from django.core.management import call_command
 
     call_command('loaddata', 'mining_features.json', app_label='dataportal3', database='new')
+
+    ns, created = models.NomisSearch.objects.get_or_create(
+        uuid = 'WMHpoints',
+        user=get_request_user()
+    )
+    ns.name = 'WMHpoints'
+    ns.uuid = 'WMHpoints'
+    ns.dataset_id = 'WMHpoints'
+    ns.geography_id = ''
+    ns.search_attributes = {}
+    ns.display_attributes = {
+        "bin_num": "5",
+        "bin_type": "q",
+        "colorpicker": "YlGnBu",
+        "point_icon": "fa-bolt",
+        "remote_value_key": "category",
+    }
+    ns.display_fields = {}
+    ns.search_type = models.SearchType.objects.get(name='LocalResearch')
+    ns.save()
+
+    for category in set(categories):
+        ns, created = models.NomisSearch.objects.get_or_create(
+            uuid = 'WMHpoints_{}'.format(category.replace(' ', '_')),
+            user=get_request_user()
+        )
+        ns.name = 'WMHpoints_{}'.format(category)
+        ns.dataset_id = 'WMHpoints'
+        ns.geography_id = ''
+        ns.search_attributes = {}
+        ns.display_attributes = {
+            "bin_num": "5",
+            "bin_type": "q",
+            "colorpicker": "YlGnBu",
+            "point_icon": "fa-bolt",
+            "remote_value_key": "category",
+            "filter": category
+        }
+        ns.display_fields = {}
+        ns.search_type = models.SearchType.objects.get(name='LocalResearch')
+        ns.save()
+
 
 if __name__ == "__main__":
     print sys.argv

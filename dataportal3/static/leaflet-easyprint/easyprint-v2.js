@@ -644,12 +644,14 @@ L.Control.EasyPrint = L.Control.extend({
             this._map.invalidateSize();
         var i = this,
             r = setInterval(function() {
+                console.log('i');
+                console.log(i);
                 if (!i.options.tilelayer) {
                     (clearInterval(r), i.printOpertion())
                 } else {
                     i.options.tileLayer.isLoading() || (clearInterval(r), i.printOpertion())
                 }
-            }, 500)
+            }, 500);
     },
     printOpertion: function() {
         var t = this;

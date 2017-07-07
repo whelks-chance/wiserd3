@@ -46,7 +46,7 @@ def get_request_user(request=None):
         dataportal_user = UserProfile.objects.get(user__username=request.user)
         return dataportal_user
     except Exception as e1:
-        print e1
+        # print e1
         # hack using the exception to use anonymous user if not logged in
         return UserProfile.objects.get(user=get_anon_user())
 

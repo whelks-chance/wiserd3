@@ -2,9 +2,10 @@ from __future__ import unicode_literals
 import string
 from unicodedata import decimal
 
+import time
 from django.utils import timezone
 from django.utils.crypto import random
-from django.utils.datetime_safe import time
+# from django.utils.datetime_safe import time
 from djorm_pgfulltext.models import SearchManager
 from djorm_pgfulltext.fields import VectorField
 import uuid

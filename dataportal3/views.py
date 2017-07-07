@@ -789,7 +789,8 @@ def get_wiserd_layer_topojson(
         wiserd_layer,
         app_label,
         layer_field,
-        update_cache):
+        update_cache,
+        remote_value_filter):
     # from topojson import topojson
 
     # spatial_table_name = str(wiserd_layer).replace('_', '').strip()
@@ -887,7 +888,16 @@ def get_wiserd_layer_topojson(
                 app_label=app_label,
                 model_name=wiserd_layer
             )
-            shape_table_object = wiserd_layer_model.objects.all()
+
+            print remote_value_filter
+            if remote_value_filter:
+                variable_column = layer_field
+                search_type = 'exact'
+                filter = variable_column + '__' + search_type
+                shape_table_object = wiserd_layer_model.objects.filter(**{filter: remote_value_filter})
+                print shape_table_object.query
+            else:
+                shape_table_object = wiserd_layer_model.objects.all()
 
         # shape_list = shape_table_object.extra(
         #     select={
@@ -902,7 +912,10 @@ def get_wiserd_layer_topojson(
             simplify=0.00005
         )
 
-        redis_cache.set(layer_key, s)
+        try:
+            redis_cache.set(layer_key, s)
+        except:
+            pass
 
     geo = json.loads(s)
     # geo = geojson_points_to_topojson(geo)
@@ -3039,14 +3052,18 @@ def get_topojson_for_uuid(request, search_uuid):
 
     if search_type == 'LocalResearch':
         layer_data['remote_value_key'] = found_search_model.display_attributes['remote_value_key']
+        layer_data['filter'] = found_search_model.display_attributes.get('filter')
+
+        print layer_data['filter']
 
         geo = json.loads(
             get_wiserd_layer_topojson(
                 'wiserd_layer',
                 found_search_model.dataset_id,
                 'dataportal3',
-                None,
-                request.GET.get("update_cache", False)
+                layer_data['remote_value_key'],
+                request.GET.get("update_cache", False),
+                layer_data['filter']
             )
         )
 

@@ -49,6 +49,13 @@ def convert_csv_to_json(csv_file):
 
     call_command('loaddata', 'mining_features.json', app_label='dataportal3', database='new')
 
+    html_snippet = '''
+    <li>
+        <a href="#" data-wiserd_layer_uuid="{}" class="wiserd_layer_toggle">
+            <i class="fa fa-map-marker fa-fw"></i> {}
+        </a>
+    </li>
+'''
     ns, created = models.NomisSearch.objects.get_or_create(
         uuid = 'WMHpoints',
         user=get_request_user()
@@ -68,6 +75,8 @@ def convert_csv_to_json(csv_file):
     ns.display_fields = {}
     ns.search_type = models.SearchType.objects.get(name='LocalResearch')
     ns.save()
+
+    all_html = html_snippet.format('WMHpoints', 'All locations')
 
     for category in set(categories):
         ns, created = models.NomisSearch.objects.get_or_create(
@@ -90,6 +99,9 @@ def convert_csv_to_json(csv_file):
         ns.search_type = models.SearchType.objects.get(name='LocalResearch')
         ns.save()
 
+        all_html += html_snippet.format(ns.uuid, category)
+
+    print all_html
 
 if __name__ == "__main__":
     print sys.argv

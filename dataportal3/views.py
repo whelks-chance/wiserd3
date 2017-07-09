@@ -3315,6 +3315,7 @@ def get_topojson_for_uuid(request, search_uuid):
         response_data['all_data'] = all_data
 
     response_data['search_uuid'] = search_uuid
+    response_data['connections'] = list(connections['new'].queries)
     response_data['layer_data'] = layer_data
     response_data['type'] = search_type
 

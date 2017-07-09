@@ -60,7 +60,7 @@ def convert_csv_to_json(csv_file):
         uuid = 'WMHpoints',
         user=get_request_user()
     )
-    ns.name = 'WMHpoints'
+    ns.name = 'All Locations'
     ns.uuid = 'WMHpoints'
     ns.dataset_id = 'WMHpoints'
     ns.geography_id = ''
@@ -83,7 +83,7 @@ def convert_csv_to_json(csv_file):
             uuid = 'WMHpoints_{}'.format(category.replace(' ', '_')),
             user=get_request_user()
         )
-        ns.name = 'WMHpoints_{}'.format(category)
+        ns.name = '{}'.format(category)
         ns.dataset_id = 'WMHpoints'
         ns.geography_id = ''
         ns.search_attributes = {}
@@ -112,5 +112,5 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         convert_csv_to_json(sys.argv[1])
     else:
-        csv_file = 'mining_heritage_formatted.csv'
+        csv_file = 'mining_heritage_formatted2.csv'
         convert_csv_to_json(csv_file)

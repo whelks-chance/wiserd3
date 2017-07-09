@@ -895,7 +895,7 @@ def get_wiserd_layer_topojson(
                 search_type = 'exact'
                 filter = variable_column + '__' + search_type
                 shape_table_object = wiserd_layer_model.objects.filter(**{filter: remote_value_filter})
-                print shape_table_object.query
+                # print shape_table_object.query
             else:
                 shape_table_object = wiserd_layer_model.objects.all()
 

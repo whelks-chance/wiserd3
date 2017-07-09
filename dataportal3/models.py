@@ -1327,7 +1327,7 @@ class WMHpoints(models.Model):
     objects = models.GeoManager()
 
     def __unicode__(self):
-        return "{} : {} : {}".format(self.name, self.community_town, self.colliery)
+        return "{} : {} : {}".format(self.name, self.community_town, self.category)
 
 
 class ResponseTable(models.Model):

@@ -1598,7 +1598,13 @@
                     add: function (e) {
                         var layer = e.target;
                         if (layer._icon) {
-                            e.target._icon.style.backgroundColor = getColorFromString(e.target.feature.properties.REMOTE_VALUE);
+                            if (e.target.feature.properties.REMOTE_VALUE) {
+                                e.target._icon.style.backgroundColor = getColorFromString(e.target.feature.properties.REMOTE_VALUE);
+                            }
+                            if (e.target.feature.properties.category) {
+                                e.target._icon.style.backgroundColor = getColorFromString(e.target.feature.properties.category);
+                            }
+                            
                             e.target._icon.style.color = 'white';
                             e.target._icon.style.border = '';
                         }

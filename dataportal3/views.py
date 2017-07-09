@@ -795,7 +795,7 @@ def get_wiserd_layer_topojson(
 
     # spatial_table_name = str(wiserd_layer).replace('_', '').strip()
 
-    layer_key = '{}-{}-{}-{}'.format(layer_type, app_label, wiserd_layer, layer_field)
+    layer_key = '{}-{}-{}-{}-{}'.format(layer_type, app_label, wiserd_layer, layer_field, remote_value_filter)
 
     redis_cached_data = None
     if not update_cache:
@@ -3315,7 +3315,9 @@ def get_topojson_for_uuid(request, search_uuid):
         response_data['all_data'] = all_data
 
     response_data['search_uuid'] = search_uuid
-    response_data['connections'] = list(connections['new'].queries)
+
+    # TODO remove this
+    # response_data['connections'] = list(connections['new'].queries)
     response_data['layer_data'] = layer_data
     response_data['type'] = search_type
 

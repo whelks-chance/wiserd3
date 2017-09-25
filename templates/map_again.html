@@ -1,0 +1,638 @@
+{#{% extends naw|yesno:"naw_navigation.html,navigation.html" %}#}
+
+{% extends template_name %}
+
+
+{% load staticfiles %}
+{% load jsonify %}
+{% load i18n %}
+
+{% block page_name %}{% trans 'Mapping tools' %}{% endblock %}
+
+{% block extra_head %}
+
+
+
+    {#  local leaflet  #}
+    <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
+
+    {#  local leaflet draw - with touch!  #}
+    <link rel="stylesheet" type="text/css" href="{% static 'Leaflet.draw-master/dist/leaflet.draw.css' %}"/>
+    <script type="text/javascript" src="{% static 'Leaflet.draw-master/dist/leaflet.draw.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'code.jquerygeo.com/jquery.geo-1.0.0-b2.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'jscoord-1.1.1.js' %}"></script>
+
+    <script src="{% static 'leaflet-easyprint/easyprint-v2.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'leaflet-search/leaflet-search.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaflet-search/leaflet-search.css' %}"/>
+
+    <script type="text/javascript" src="{% static 'd3js/topojson.v1.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'chroma.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'html2canvas.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'dataportal/local_data_layers.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'leaflet-pip/leaflet-pip.js' %}"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.core.min.js"></script>
+    <script src="{% static 'shim.js' %}"></script>
+    <script src="{% static 'xlsx/0.8.0/jszip.js' %}"></script>
+    <script src="{% static 'xlsx/0.8.0/xlsx.js' %}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/ods.js"></script>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/leaflet.markercluster-src.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.css"/>
+
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-heat/v0.1.3/leaflet-heat.js'></script>
+
+    <script type="text/javascript" src="{% static 'Leaflet.AutoLayers-master/src/leaflet-autolayers.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'Leaflet.AutoLayers-master/src/css/leaflet.auto-layers.css' %}" />
+
+    <script type="text/javascript" src="{% static 'dataportal/page_js/map_again.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dataportal/page_js/map.js' %}"></script>
+
+    <script src="{% static 'proj4leaflet/proj4-compressed.js' %}"></script>
+    <script src="{% static 'proj4leaflet/proj4leaflet.js' %}"></script>
+
+    <script src="{% static 'fontawesome-iconpicker-1.2.2/dist/js/fontawesome-iconpicker.js' %}"></script>
+    <link href="{% static 'fontawesome-iconpicker-1.2.2/dist/css/fontawesome-iconpicker.min.css' %}" rel="stylesheet">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.4.1/list.min.js"></script>
+
+    <script type="text/javascript" src="{% static 'Leaflet-WFST/Leaflet-WFST.src.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'prettyprintjs/prettyprint.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'leaflet-hash-master/leaflet-hash.js' %}"></script>
+    {#    <script type="text/javascript" src="{% static 'leaflet-fullHash-master/leaflet-fullHash.js' %}"></script>#}
+
+    <style>
+        .navbar
+        {
+            z-index: 2000
+        }
+
+    </style>
+
+    <script>
+
+    console.log('add_urls html block');
+        // todoPopulate via template tags, then overwrite?
+        DataPortal.django.add_urls(
+            {
+                'spatial_search': "{% url 'spatial_search' %}",
+                'data_api': "{% url 'data_api' %}",
+                'download_dataset_zip': "{% url 'download_dataset_zip' %}",
+
+                'licence_attribution': "{% url 'licence_attribution' %}",
+                'get_geojson': "{% url 'get_geojson' %}",
+                'get_imported_feature': "{% url 'get_imported_feature' %}",
+                'cancommute_to_location': "{% url 'cancommute_to_location' %}",
+                'dashboard': "{% url 'dashboard' %}"
+            }
+        );
+
+        DataPortal.django.extra_urls = function(name, args){
+            var extra_url_dict = {
+                'search_data': "{% url 'search_data' '12345' %}".replace('12345', args[0]),
+                'api:metadata:QualDcInfo-detail': "{% url 'api:metadata:QualDcInfo-detail' '12345' %}".replace('12345', args['pk'])
+            };
+            args = args || {};
+            return extra_url_dict[name]
+
+
+    }
+    </script>
+
+{% endblock %}
+
+{% block top_nav_extras %}
+    {% if tpt == 'm4w' %}
+        {% include 'm4w/top_nav_extras.html' %}
+    {% endif %}
+
+    {% if tpt == 'wmh' %}
+        {% include 'wmh/top_nav_extras.html' %}
+    {% endif %}
+
+    {% if tpt == 'can' %}
+        {% include 'can/top_nav_extras.html' %}
+    {% endif %}
+{% endblock %}
+
+{% block nav_extras %}
+
+    {% if tpt == 'm4w' %}
+        {% include 'm4w/map_menu_snippet.html' %}
+    {% endif %}
+
+    {% if tpt == 'wmh' %}
+        {% include 'wmh/map_menu_snippet.html' %}
+    {% endif %}
+
+    {% if tpt == 'can' %}
+        {% include 'can/map_menu_snippet.html' %}
+    {% endif %}
+
+    {% if naw %}
+        {% for naw_key_search in naw_key_searches %}
+
+            {% if naw_key_search.item_list %}
+                <li>
+                    <a href="#"> {% if use_welsh and naw_key_search.description_cy %}{{ naw_key_search.description_cy }}{% else %}{{ naw_key_search.description }}{% endif %}<span class="fa arrow"></span></a>
+
+                    <ul class="nav nav-ul nav-second-level">
+
+                        {% for naw_key_two in naw_key_search.item_list %}
+
+                            {% if naw_key_two.item_list %}
+                                <li>
+                                    <a href="#"> {% if use_welsh and naw_key_two.description_cy %}{{ naw_key_two.description_cy }}{% else %}{{ naw_key_two.description }}{% endif %}<span class="fa arrow"></span></a>
+
+                                    <ul class="nav nav-ul nav-third-level scrollable_ul">
+
+                                        {% for naw_key_three in naw_key_two.item_list %}
+                                            <li>
+                                                <a href="#" data-naw_key_search_uid="{{ naw_key_three.uid }}" class="remote_data_uid">
+                                                    <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and naw_key_three.description_cy %}{{ naw_key_three.description_cy }}{% else %}{{ naw_key_three.description }}{% endif %}</a>
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="#" data-naw_key_search_uid="{{ naw_key_two.uid }}" class="remote_data_uid">
+                                        <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and naw_key_two.description_cy %}{{ naw_key_two.description_cy }}{% else %}{{ naw_key_two.description }}{% endif %}</a>
+                                </li>
+                            {% endif %}
+
+
+                        {% endfor %}
+
+                    </ul>
+                </li>
+            {% else %}
+                description_cy        <li>
+                <a href="#" data-naw_key_search_uid="{{ naw_key_search.uid }}" class="remote_data_uid">
+                    <i class="fa fa-map-marker fa-fw"></i> {% if use_welsh and naw_key_search.description_cy %}{{ naw_key_search.description_cy }}{% else %}{{ naw_key_search.description }}{% endif %}</a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    {% if tpt == 'default' %}
+        <li>
+            <a id="new_layer_btn" href="#"><i class="fa fa-feed fa-fw"></i> {% trans 'Remote Data' %}</a>
+        </li>
+        <li>
+            <a id="import_local_data_btn" href="#"><i class="fa fa-file-excel-o fa-fw"></i> {% trans 'MapMyData' %}</a>
+        </li>
+    {% endif %}
+
+    {% if not naw %}
+
+        <li>
+            <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>
+            <ul id="lle_wms" class="nav nav-ul nav-third-level">
+                <li>
+                    <input class="lle_search search" placeholder="Search" />
+                </li>
+                <ul class="list nav nav-ul scrollable_ul"></ul>
+            </ul>
+
+        </li>
+    {% endif %}
+    {% if tpt == 'default' %}
+
+        <li>
+            <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'WISERD Research' %}<span class="fa arrow"></span></a>
+            <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
+
+                {% for upload_layer in upload_layers %}
+                    <li>
+                        <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">
+                            <i class="fa fa-map-marker fa-fw"></i> {{ upload_layer.display_name }}</a>
+                    </li>
+                {% endfor %}
+
+                {% for wiserd_layer in wiserd_layers %}
+                    <li>
+                        <a href="#"
+                                {% if wiserd_layer.app_label %}
+                           data-app_label="{{ wiserd_layer.app_label }}"
+                                {% endif %}
+
+                                {% if wiserd_layer.field %}
+                           data-field="{{ wiserd_layer.field }}"
+                                {% endif %}
+
+                           data-layer_name="{{ wiserd_layer.table_name }}"
+                           class="wiserd_layer_toggle">
+                            <i class="fa fa-map-marker fa-fw"></i> {{ wiserd_layer.display_name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endif %}
+
+    {% if tpt == 'default' %}
+
+        <li>
+            <a href="#" class="brexit_btn"><i class="fa fa-flag-o fa-fw"></i> {% trans 'Brexit' %}<div class="brexit_eu"></div><div class="brexit_uk"></div><span class="fa arrow"></span></a>
+            <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
+
+                {% for brexit_layer in brexit_layers %}
+                    <li>
+                        <a href="#"
+                                {% if brexit_layer.app_label %}
+                           data-app_label="{{ brexit_layer.app_label }}"
+                                {% endif %}
+
+                                {% if brexit_layer.field %}
+                           data-field="{{ brexit_layer.field }}"
+                                {% endif %}
+
+                           data-layer_name="{{ brexit_layer.table_name }}"
+                           class="wiserd_layer_toggle">
+                            <i class="fa fa-map-marker fa-fw"></i> {{ brexit_layer.display_name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" class="brexit_btn"><i class="fa fa-window-close-o fa-fw"></i> {% trans 'General Elections' %}<span class="fa arrow"></span></a>
+            <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
+
+                {% for ge_layer in ge_layers %}
+                    <li>
+                        <a href="#"
+                                {% if ge_layer.app_label %}
+                           data-app_label="{{ ge_layer.app_label }}"
+                                {% endif %}
+
+                                {% if ge_layer.field %}
+                           data-field="{{ ge_layer.field }}"
+                                {% endif %}
+
+                           data-layer_name="{{ ge_layer.table_name }}"
+                           class="wiserd_layer_toggle">
+                            <i class="fa fa-calendar fa-fw"></i> {{ ge_layer.display_name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="row" style="height: 100%; margin-right: 0">
+        <div id="map_div_col" class="col-lg-9 col-sm-12 "  style="padding-right: 0">
+            <div id="map_div"></div>
+        </div>
+
+        {% if use_template %}
+            <div id="right_sidebar_col" class="col-lg-3 col-sm-12" style="padding-right: 0">
+
+                <div class="btn btn-default" id="show_right_sidebar"><i class="fa f-2x fa-angle-double-left"></i></div>
+
+                <div class="right_sidebar" id="right_sidebar"
+                     style="
+                             {#                         background-color: #f8f8f8;#}
+                             border-left: 1px solid #e7e7e7;
+                             height: 100%;
+                             {#                                  position: absolute; right: 0;#}
+                             {#                         width:250px;#}
+                             width: 100%;
+                             overflow-y: scroll;
+                             overflow-x: scroll">
+
+                    <div>
+                        <div class="btn btn-default" id="hide_right_sidebar"><i class="fa f-2x fa-angle-double-right"></i></div>
+                    </div>
+
+                    <div class="split-pane-component" id="right-component1"
+                         style="margin: 0.5em; word-break: normal;
+                                 word-wrap: break-word;"></div>
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+
+
+    <div id="chloropleth_option_form" title="{% trans 'Choropleth options' %}">
+
+        <div class="container dialog-container">
+
+            <div class="row">
+                <div class="pull-right"><a id="choro_help" class="btn btn-circle btn-default btn-help" href="#">
+                    <i class="fa fa-question-circle"></i></a></div>
+            </div>
+
+            <div class="row">
+                <table class="table">
+                    <tr>
+                        <td width="25%">
+                            <label for="layer_name_text_entry" class="control-label">{% trans 'Layer Name' %}</label>
+                        </td>
+                        <td>
+                            <div class="controls">
+                                <input autofocus="autofocus" class="form-control input-block-level tab_data_input"
+                                       id="layer_name_text_entry" type="text">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="bintype" class="control-label">{% trans "Category Types" %}</label>
+                        </td>
+                        <td>
+                            <div class="controls">
+                                <select name="bintype" id="bintype" class="form-control input-block-level tab_data_input">
+                                    <option value="e">{% trans 'Equal size categories' %}</option>
+                                    <option value="q" selected="selected">{% trans 'Quantiles' %}</option>
+                                    <option value="k">{% trans 'K-Means' %}</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="binno" class="control-label">{% trans 'Number of Categories' %}</label>
+                        </td>
+                        <td>
+                            <div class="controls">
+
+                                <select name="binno" id="binno" class="form-control input-block-level tab_data_input">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5" selected="selected">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="colorpicker" class="control-label">{% trans 'Choropleth colour scheme' %}</label>
+                        </td>
+                        <td>
+                            <div class="controls">
+
+                                <select name="colorpicker" id="colorpicker" class="form-control input-block-level tab_data_input">
+                                    <option value="OrRd">{% trans 'Orange - Red' %}</option>
+                                    <option value="RdYlBu">{% trans 'Red - Yellow - Blue' %}</option>
+                                    <option value="YlGnBu" selected="selected">{% trans 'Yellow - Green - Blue' %}</option>
+                                    <option value="Spectral">{% trans 'Spectral' %}</option>
+                                    <option value="b_w">{% trans 'Greyscale' %}</option>
+                                    <option value="WISERD">{% trans 'WISERD' %}</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="point_data_icon_select" style="display: none">
+                        <td>
+                            <label for="point_icon_type" class="control-label">{% trans "Icon for point data" %}</label>
+
+                            <div class="lead">
+                                <i class="fa fa-graduation-cap fa-3x picker-target" data-icon_fa="fa-graduation-cap"></i>
+
+                            </div>
+                        </td>
+                        <td>
+                            <label id="point_icon_type" data-placement="inline" class="icp icp-auto" data-selected="fa-align-justify"></label>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <div id="dataset_define_vars_form" title="{% trans 'Dataset Variables' %}">
+
+        <div id="dataset_variables" class="container dialog-container" >
+            <div class="row">
+                <div class="pull-right"><a id="dataset_define_vars_help" class="btn btn-circle btn-default btn-help" href="#">
+                    <i class="fa fa-question-circle"></i></a></div>
+            </div>
+
+            <div class="row">
+                <div id="dataset_title"></div>
+
+            </div>
+            <div class="row">
+                <div id="data_cell_radio"></div>
+
+            </div>
+
+            <div class="row">
+                <div>{% trans 'Geography' %}</div>
+                <div id="topojson_geography_radio" class="controls input-block-level tab_data_input">
+                    {% for geography in topojson_geographies %}
+                        <div>
+                            <input type="radio" name="geographies" id="{{ geography.geog_short_code }}"
+                                   value="{{ geography.geog_short_code }}"/>
+                            <label for="{{ geography.geog_short_code }}">{{ geography.name }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="local_dataset_define_vars_form" title="{% trans 'Dataset Variables' %}">
+
+        <div class="container dialog-container" >
+            <div class="row">
+                <div class="pull-right"><a id="local_dataset_define_vars_help" class="btn btn-circle btn-default btn-help" href="#">
+                    <i class="fa fa-question-circle"></i></a></div>
+            </div>
+
+            <div class="row">
+                <div id="local_dataset_title"></div>
+            </div>
+            <div class="row">
+                <div id="local_data_cell_radio"></div>
+
+                <div>{% trans 'Geography' %}</div>
+                <div id="topojson_geography_radio" class="controls input-block-level tab_data_input">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="welcome_form" title="{% trans 'Welcome' %}">
+        <div class="panel fill_properly">
+            <p>{% trans 'Welcome to the WISERD DataPortal.<br><br>For more information, follow this tutorial.' %}</p>
+            <p>{% trans 'Links to help and support links and PDF downloads here.' %}</p>
+        </div>
+    </div>
+
+
+    <div id="search-remote-form"
+
+         style="
+             display: flex;
+             flex-direction: column;
+             flex-flow: column nowrap;
+             "
+
+         title="{% trans 'Search Remote' %}">
+        <div
+                style="flex: none"
+
+                id="search-remote-form-input-container"
+                class="container dialog-container" >
+            <div class="row">
+                <div class="pull-right"><a id="search_remote_help" class="btn btn-circle btn-default btn-help" href="#">
+                    <i class="fa fa-question-circle"></i></a></div>
+            </div>
+
+            <div class="row">
+                <div class="input-group custom-search-form">
+                    <label for="remote_search_term" class="control-label">{% trans 'Search Remote' %}</label>
+                </div>
+                <div class="input-group custom-search-form">
+                    <input value="" autofocus="autofocus" type="text" id="remote_search_term" name="remote_search_term"
+                           class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
+                    <span class="input-group-btn">
+                            <button id="remote_search_btn" class="btn btn-default" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                </div>
+            </div>
+        </div>
+
+        <div
+                id="table_div"
+                class="container dialog-container"
+                style="
+            flex: auto;
+        "
+        >
+
+            <table
+                    class="table table-striped table-bordered table-hover responsive" id="remote_results_table"
+            >
+                <thead id="remote_results_thead">
+                <tr>
+                    <th>{% trans 'Title' %}</th>
+                    <th>{% trans 'Source' %}</th>
+                    <th id="metadata_column">{% trans 'Metadata' %}</th>
+                    <th id="view_column">{% trans 'View' %}</th>
+                    <th>{% trans 'Info' %}</th>
+                    <th>{% trans 'Disclosure' %}</th>
+                    <th>{% trans 'URL' %}</th>
+                </tr>
+                </thead>
+                <tbody id="remote_results_tbody">
+                <tr><td style="word-wrap: normal"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="local-data-form" title="{% trans 'MapMyData' %}">
+
+        <div class="container dialog-container"
+                {% if request.user.is_authenticated %}
+             hidden="hidden"
+                {% endif %}>
+            <p>
+                {% blocktrans %}The WISERD DataPortal allows users to map their own data for areas in Wales and to export this as a publishable map. This function has been specially designed so that all the mapping occurs inside the users browser rather than on the WISERD DataPortal server. This means that potentially sensitive data does not leave the users machine.{% endblocktrans %}
+            </p>
+            <p>
+                {% trans 'You can import your own data onto the DataPortal by clicking the MapMyData button.'%}
+            </p>
+            <div class="row">
+                <a style="color: white; border-width: 2px; border-style: outset;" href="{% url 'account_login' %}" class="btn btn-lg btn-success btn-block primaryAction">
+                    {% trans 'Please log in to use this feature.' %}
+                </a>
+            </div>
+
+        </div>
+
+        <div class="container dialog-container"
+                {% if not request.user.is_authenticated %}
+             hidden="hidden"
+                {% endif %}>
+
+            <div class="row">
+                <div class="pull-right"><a id="mapmydata_help" class="btn btn-circle btn-default btn-help" href="#">
+                    <i class="fa fa-question-circle"></i></a></div>
+            </div>
+
+            <div class="row">
+                <div class="input-group custom-search-form col-m-6">
+                    <label for="local_data_name_input" class="control-label">{% trans 'Name this Layer' %}</label>
+                </div>
+                <div class="input-group custom-search-form  col-m-6">
+                    <input type="text" id="local_data_name_input" name="local_data_name"
+                           class="form-control" placeholder="{% trans 'New Layer...' %}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="control-group">
+                    <label for="local_data_boundary_select" class="control-label cols-m-4">{% trans 'Select boundary type' %}</label>
+                    <div class="controls custom-search-form">
+                        <select id="local_data_boundary_select" name="local_data_boundary_select"
+                                class="form-control col-sm-8">
+                            <option value="pcode_point">Post Code</option>
+                            <option value="lsoa">LSOA</option>
+                            <option value="assembly_constituency">Assembly Constituency</option>
+                            <option value="assembly_region">Assembly Region</option>
+                            <option value="unitary_authority">Unitary Authority</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div id="local-data-drop-zone" class="input-group custom-search-form">
+                    <div id="drop">Drop an XLSX / XLSM / XLSB / ODS / XLS / XML file here to see sheet data</div>
+                    <p><input autofocus="autofocus"  type="file" name="xlfile" id="xlf" /></p>
+                </div>
+            </div>
+
+            <div id="local_column_headers_radio" class="row"></div>
+        </div>
+
+    </div>
+
+    <input hidden="hidden" type="checkbox" name="useworker" disabled>
+    <input hidden="hidden" type="checkbox" name="xferable" disabled>
+    <input hidden="hidden" type="checkbox" name="userabs" checked>
+
+{% endblock %}
+

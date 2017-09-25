@@ -84,6 +84,9 @@ Global pip install, the venv is specified in the uwsgi "home" below
     sudo systemctl daemon-reload
     sudo systemctl restart uwsgi
 
+### Redis is needed too, so restart that    
+    sudo systemstl restart redis
+
 ### Keep uWSGI on reboot
     sudo systemctl enable uwsgi
 
@@ -239,6 +242,7 @@ Shapefile import process, celery needs explicit export of settings module locati
     sudo systemctl start redis.service
     export DJANGO_SETTINGS_MODULE='wiserd3.settings'
     celery -A dataportal3.utils.ShapeFileImport worker --loglevel=info
+    sudo systemstl restart redis
 
 http://nominatim.openstreetmap.org/reverse?format=json&lat=51.5793876&lon=-3.1731345&zoom=18&addressdetails=1
 

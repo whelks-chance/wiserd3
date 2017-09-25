@@ -28,6 +28,7 @@ urlpatterns = [
                   url(r'^admin_tools/', include(admin.site.urls)),
                   url(r'^api/', include(api_urls, namespace='api')),
 
+                  url(r'^map_adv_test', views.map_adv_test, name='map_test'),
                   url(r'^map_test', views.map_test, name='map_test'),
                   url(r'^snippet_test', views.snippet_test, name='snippet_test'),
                   url(r'^d3_test/(?P<survey_id>\S+)', views.d3_test, name='d3_test'),
@@ -145,6 +146,11 @@ if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += patterns('',
                             url(r'^rosetta/', include('rosetta.urls')),
                             )
+
+if 'cancommute' in settings.INSTALLED_APPS:
+    import cancommute.views as canviews
+    urlpatterns += url(r'^cancommute_to_location', canviews.cancommute_to_location, name='cancommute_to_location'),
+
 
 # urlpatterns += i18n_patterns(
 #     url(r'^$', views.dashboard, name='home'),

@@ -62,7 +62,7 @@
 
     {#    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>#}
     {#    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js' %}"></script>#}
-{#    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/leaflet-image-0.3.0/leaflet-image.js' %}"></script>#}
+    {#    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/leaflet-image-0.3.0/leaflet-image.js' %}"></script>#}
 
     <script src="{% static 'leaflet-easyprint/easyprint-v2.js' %}"></script>
 
@@ -152,6 +152,10 @@
     {% if tpt == 'wmh' %}
         {% include 'wmh/top_nav_extras.html' %}
     {% endif %}
+
+    {% if tpt == 'can' %}
+        {% include 'can/top_nav_extras.html' %}
+    {% endif %}
 {% endblock %}
 
 {% block nav_extras %}
@@ -162,6 +166,10 @@
 
     {% if tpt == 'wmh' %}
         {% include 'wmh/map_menu_snippet.html' %}
+    {% endif %}
+
+    {% if tpt == 'can' %}
+        {% include 'can/map_menu_snippet.html' %}
     {% endif %}
 
     {% if naw %}
@@ -239,11 +247,6 @@
             <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'WISERD Research' %}<span class="fa arrow"></span></a>
             <ul class="nav nav-ul nav-third-level scrollable_ul collapse">
 
-                {#                <li>#}
-                {#                    <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">#}
-                {#                        <i class="fa fa-map-marker fa-fw"></i> {{ upload_layer.display_name }}</a>#}
-                {#                </li>#}
-
                 {% for upload_layer in upload_layers %}
                     <li>
                         <a href="#" data-layer_name="{{ upload_layer.table_name }}" class="upload_layer_toggle">
@@ -269,8 +272,6 @@
                 {% endfor %}
             </ul>
         </li>
-        {#            </ul>#}
-        {#        </li>#}
     {% endif %}
 
     {% if tpt == 'default' %}
@@ -397,13 +398,7 @@
             this.legend = null;
         }
 
-        window.ready = function(){
-            {#            $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
-            {#            $('#side-menu').metisMenu({toggle: true});#}
-
-
-
-        };
+        window.ready = function(){};
 
         $(document).ready(function () {
             var epsg27700 = new L.Proj.CRS("EPSG:27700","+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 +units=m +no_defs");
@@ -512,8 +507,6 @@
                                     var right_pane = $('#right-component1');
 
                                     var ppTable = prettyPrint(e.layer.feature);
-
-                                    {#                    right_pane.html('<pre id="lle_json">' + JSON.stringify(e.layer.feature, null, 2) + '</pre>');#}
                                     right_pane.empty().append($(ppTable));
 
                                     {#                                document.getElementById('right-component1').empty().appendChild(ppTable);#}
@@ -623,23 +616,30 @@
 
             {#            L.CRS.EPSG4326;#}
 
-            var map = L.map('map_div', {crs: L.CRS.EPSG3857}).setView([52.4, -3.51], 8);
+            var view_point = [52.4, -3.51];
+            var view_zoom = 8;
+            {% if tpt == 'can' %}
+                view_point = [65.4, -100.51];
+                view_zoom = 3;
+            {% endif %}
+
+            var map = L.map('map_div', {crs: L.CRS.EPSG3857}).setView(view_point, view_zoom);
 
             var hash = new L.Hash(map);
 
-                var powered_by = L.control({position: "topright"});
-                powered_by.onAdd = function(map) {
-                    var div = L.DomUtil.create("div", "powered_by");
-                    div.innerHTML = "<a target='_blank' href='{% url 'dashboard' %}'><div class='powered_txt'>{% trans 'Powered by the WISERD Dataportal' %}</div></a>";
-                    return div;
-                };
-                powered_by.addTo(map);
+            var powered_by = L.control({position: "topright"});
+            powered_by.onAdd = function(map) {
+                var div = L.DomUtil.create("div", "powered_by");
+                div.innerHTML = "<a target='_blank' href='{% url 'dashboard' %}'><div class='powered_txt'>{% trans 'Powered by the WISERD Dataportal' %}</div></a>";
+                return div;
+            };
+            powered_by.addTo(map);
 
             L.easyPrint({
                 title: '{% trans "Print and download" %}',
                 position: 'topleft',
-{#                sizeModes: "native",#}
-                                      sizeModes: ['CurrentSize', 'A4Landscape', 'A4Portrait'],
+                {#                sizeModes: "native",#}
+                sizeModes: ['CurrentSize', 'A4Landscape', 'A4Portrait'],
                 {#        elementsToHide: 'right_sidebar_col, h2'#}
             }).addTo(map);
 
@@ -651,48 +651,31 @@
 
             var openstreetmap = L.tileLayer(
 
-                    {#                    'http://d3rykcmoi4kytu.cloudfront.net/apu/1945/{x}/{y}/{z}.png',#}
-
-                    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    {
-                        {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
-                        {#                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',#}
-                        attribution: '<a target="_blank" href="{% url 'licence_attribution' %}">Licence & attribution</a> | Map data &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a> | Contains Ordnance Survey, Office of National Statistics and National Records Scotland data © Crown copyright and database right [2014]. Ordnance Survey data covered by OS OpenData Licence. Any further sub-licences must retain this attribution.',
-                        {#                        maxZoom: 15,#}
-                        id: 'your.mapbox.project.id',
-                        accessToken: 'your.mapbox.public.access.token',
-                        maxZoom: 20,
-                        maxNativeZoom: 18
-                    });
+                'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+                    {#            L.tileLayer('http://i7.cscloud.cf.ac.uk/osmcarto/{z}/{x}/{y}.png?access_token={accessToken}', {#}
+                    {#                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',#}
+                    attribution: '<a target="_blank" href="{% url 'licence_attribution' %}">Licence & attribution</a> | Map data &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a> | Contains Ordnance Survey, Office of National Statistics and National Records Scotland data © Crown copyright and database right [2014]. Ordnance Survey data covered by OS OpenData Licence. Any further sub-licences must retain this attribution.',
+                    {#                        maxZoom: 15,#}
+                    id: 'your.mapbox.project.id',
+                    accessToken: 'your.mapbox.public.access.token',
+                    maxZoom: 20,
+                    maxNativeZoom: 18
+                });
             {#            openstreetmap.options.crs = L.CRS.EPSG3857;#}
             openstreetmap.addTo(map);
 
             var openstreetmap_bw = L.tileLayer(
-
-
-                    'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
-                    {
-                        attribution: '<a target="_blank" href="{% url 'licence_attribution' %}">Licence & attribution</a> | Map data &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
-                        maxZoom: 20,
-                        id: 'your.mapbox.project.id',
-                        accessToken: 'your.mapbox.public.access.token'
-                    });
+                'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
+                {
+                    attribution: '<a target="_blank" href="{% url 'licence_attribution' %}">Licence & attribution</a> | Map data &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
+                    maxZoom: 20,
+                    id: 'your.mapbox.project.id',
+                    accessToken: 'your.mapbox.public.access.token'
+                });
 
 
             L.control.scale().addTo(map);
-
-            {#        var lidar = L.tileLayer('http://lt.houseprices.io/t/a/{z}/{x}/{y}.png', {#}
-            {#    		continuousWorld: true,#}
-            {#    		tileSize: 250#}
-            {#    	});#}
-            {##}
-            {#        var lidar_2m_dsm = L.tileLayer('http://d3rykcmoi4kytu.cloudfront.net/lidar/latest/2m_dsm/{z}/{x}/{y}.png', {#}
-            {#    		continuousWorld: true,#}
-            {#    		tileSize: 250#}
-            {#    	});#}
-            {#        lidar_2m_dsm.options.crs = L.CRS.EPSG3857;#}
-
-            {#        http://d3rykcmoi4kytu.cloudfront.net/lidar/latest/2m_dsm/{z}/{x}/{y}.png#}
 
             var layers_config = {
                 'OpenStreetMap': openstreetmap,
@@ -704,43 +687,10 @@
                 baseLayers: layers_config, //custom baselayers group that are static
                 selectedBasemap: 'Streets', //selected basemap when it loads
                 selectedOverlays: ["ASTER Digital Elevation Model 30M", "ASTER Digital Elevation Model Color 30M", "Cities"], //which overlays should be on by default
-                mapServers: [
-                    {#                    {#}
-                    {#                        "url": "http://services.arcgisonline.com/arcgis/rest/services",#}
-                    {#                        "dictionary": "http://services.arcgisonline.com/arcgis/rest/services?f=pjson",#}
-                    {#                        "tileUrl": "/MapServer/tile/{z}/{y}/{x}",#}
-                    {#                        "name": "ArcGIS Online",#}
-                    {#                        "type": "esri",#}
-                    {#                        "baseLayers": ["ESRI_Imagery_World_2D", "ESRI_StreetMap_World_2D", "NGS_Topo_US_2D"],#}
-                    {#                        "whitelist": ["ESRI_Imagery_World_2D", "ESRI_StreetMap_World_2D", "NGS_Topo_US_2D"]#}
-                    {#                    },#}
-                    {#                    {#}
-                    {#                        "url": "http://geoint.nrlssc.navy.mil/nrltileserver",#}
-                    {#                        "dictionary": "http://geoint.nrlssc.navy.mil/nrltileserver/wms?REQUEST=GetCapabilities&VERSION=1.1.1&SERVICE=WMS",#}
-                    {#                        "tileUrl": "/{z}/{x}/{y}.png",#}
-                    {#                        "name": "Navy NRL",#}
-                    {#                        "type": "nrltileserver",#}
-                    {#                        "baseLayers": ["bluemarble", "Landsat7", "DTED0_GRID_COLOR1", "ETOPO1_COLOR1", "NAIP", "DRG_AUTO"],#}
-                    {#                        "blacklist": ["BlackMarble"]#}
-                    {#                    }#}
-                ]
+                mapServers: []
             };
 
             var layerControl = L.control.autolayers(autolayers_config).addTo(map);
-            {#                var layerControl = L.control.layers({'OpenStreetMap': openstreetmap}, []).addTo(map);#}
-
-
-            {#               var layerControl = L.control.layers([openstreetmap, lidar, lidar_2m_dsm], []).addTo(map);#}
-
-            {#            var nE = new LatLng(52, -4);#}
-            {#            var sW = new LatLng(51, -1.5);#}
-            {#            var bounds = new L.LatLngBounds(sW, nE);#}
-            {##}
-            {#            var test_layer_url = 'http://ishare.cardiff.gov.uk//MapGetImage.aspx?mapsource=Cardiff_Live%2FAllMaps&transparent=true&RequestType=OLMap&MapID=-1&ServiceAction=ZoomToLocation&layers=SecondaryCatch,SecondarySchools&mapwidth=1514&mapheight=672&easting=317773.63595385&northing=178110.82010021&zoom=255000';#}
-            {#            var test_layer = L.imageOverlay(test_layer_url, bounds);#}
-            {#            test_layer.addTo(map);#}
-            {#            layerControl.addOverlay(test_layer, 'Cardiff Schools');#}
-
             var north = L.control({position: "bottomleft"});
             north.onAdd = function(map) {
                 var div = L.DomUtil.create("div", "north_arrow");
@@ -793,11 +743,8 @@
 
                     if (props.DATA_TITLE) {
                         header_title = props.DATA_TITLE;
-
-                        {#                        info_text += '<h3>' + props.DATA_TITLE + '</h3>';#}
                     } else {
                         header_title = '{% trans 'Region Data' %}';
-                        {#                        info_text += '<h3>{% trans 'Region Data' %}</h3>';#}
                     }
 
                     {% if use_welsh %}
@@ -829,7 +776,6 @@
                             info_text += '<h4>' + props.NameWelsh + '</h4>';
                         }
                     }
-                    {#                    info_text += '<h4>' + props.AREA_NAME + '</h4>';#}
                     info_text += '<p><b>{% trans 'VALUE' %} : </b>' + (value + (props.PERCENTAGE == true ? '%': '')) + '</p>';
 
                     if (props.DATA_GLOBAL_AVERAGE) {
@@ -844,7 +790,7 @@
                             if (props.STRING_DATA[item]['grouping']) {
                                 if (groups.hasOwnProperty(props.STRING_DATA[item]['grouping'])){
                                     groups[props.STRING_DATA[item]['grouping']]['list'].push(
-                                            get_sidebar_text(props, item)
+                                        get_sidebar_text(props, item)
                                     )
                                 } else {
                                     groups[props.STRING_DATA[item]['grouping']] = {
@@ -855,7 +801,6 @@
                             } else {
                                 strings += get_sidebar_text(props, item);
                             }
-
                         }
 
                         for (var group in groups) {
@@ -874,8 +819,8 @@
                     {% if request.user.is_superuser  %}
                         if (props.SEARCH_UUID) {
                             info_text += '<a target="_blank" ' +
-                                    'href="{% url 'search_data' 'replace_me'%}">'.replace('replace_me', props.SEARCH_UUID)
-                                    + 'Search layer data</a>';
+                                'href="{% url 'search_data' 'replace_me'%}">'.replace('replace_me', props.SEARCH_UUID)
+                                + 'Search layer data</a>';
                         }
                     {% endif %}
 
@@ -888,13 +833,13 @@
 
                     if (props.SEARCH_UUID) {
                         right_pane.append(
-                                $('<div/>')
-                                        .addClass('btn btn-info')
-                                        .text('Download Dataset')
-                                        .on('click', function(){
-                                            var dl_link = '{% url 'download_dataset_zip' %}' + '?dataset_id=' + props.SEARCH_UUID;
-                                            window.open(dl_link, '_blank');
-                                        })
+                            $('<div/>')
+                                .addClass('btn btn-info')
+                                .text('Download Dataset')
+                                .on('click', function(){
+                                    var dl_link = '{% url 'download_dataset_zip' %}' + '?dataset_id=' + props.SEARCH_UUID;
+                                    window.open(dl_link, '_blank');
+                                })
                         );
                     }
 
@@ -908,28 +853,28 @@
                     var string_data_value = props.STRING_DATA[item]['value'].toString();
                     {#  is it a link? #}
                     if (string_data_value.toLowerCase().indexOf('http://') == 0 ||
-                            string_data_value.toLowerCase().indexOf('https://') == 0) {
+                        string_data_value.toLowerCase().indexOf('https://') == 0) {
                         if (string_data_value.toLowerCase().indexOf('.jpg') > -1 ||
-                                string_data_value.toLowerCase().indexOf('.png') > -1) {
+                            string_data_value.toLowerCase().indexOf('.png') > -1) {
                             {#  it's an image? #}
                             strings += ''
-                                    {#                                    + '<p><b>' + props.STRING_DATA[item]['title'] + '</b></p>'#}
-                                    + '<p><img class="sidebar_img" src="' + string_data_value + '"></p>';
+                                {#                                    + '<p><b>' + props.STRING_DATA[item]['title'] + '</b></p>'#}
+                                + '<p><img class="sidebar_img" src="' + string_data_value + '"></p>';
                         } else {
                             {#                                        It's a hyperlink #}
                             strings += ''
-                                    {#                                    + '<p><b>' + props.STRING_DATA[item]['title']#}
-                                    {#                                    + '</b></p>'#}
-                                    + '<p><a target="_blank" href="'
-                                    + string_data_value
-                                    + '">' + props.STRING_DATA[item]['title'] + '</a></p>';
+                                {#                                    + '<p><b>' + props.STRING_DATA[item]['title']#}
+                                {#                                    + '</b></p>'#}
+                                + '<p><a target="_blank" href="'
+                                + string_data_value
+                                + '">' + props.STRING_DATA[item]['title'] + '</a></p>';
                         }
                     }
                     else {
                         if (string_data_value.length) {
 
                             strings += '<p><b>' + props.STRING_DATA[item]['title']
-                                    + '</b> : ' + string_data_value + '</p>';
+                                + '</b> : ' + string_data_value + '</p>';
                             {#                        console.log(string_data_value);#}
                         }
                     }
@@ -1024,56 +969,6 @@
                         return hashStringToColor(string_value)
                 }
 
-                {#                if (string_value == 'LAB'|| string_value == 'Lab') {#}
-                {#                    return '#e4002b'#}
-                {#                }#}
-                {#                if (string_value == 'CON' || string_value == 'Con') {#}
-                {#                    return '#0057b8'#}
-                {#                }#}
-                {#                if (string_value == 'LIB'|| string_value == 'LD') {#}
-                {#                    return '#fdbb30'#}
-                {#                }#}
-                {#                if (string_value == 'NAT') {#}
-                {#                    return '#4c8c2b'#}
-                {#                }#}
-                {#                if (string_value == 'PLC' || string_value == 'PC') {#}
-                {#                    return '#4c8c2b'#}
-                {#                }#}
-                {#                if (string_value == 'UKIP') {#}
-                {#                    return '#70147A'#}
-                {#                }#}
-                {#                if (string_value == 'OTH') {#}
-                {#                    return '#888b8d'#}
-                {#                }#}
-                {#                if (string_value == 'DT') {#}
-                {#                    return '#993366'#}
-                {#                }#}
-                {#                if (string_value == 'SNP') {#}
-                {#                    return '#FFF95D'#}
-                {#                }#}
-                {#                if (string_value == 'DUP') {#}
-                {#                    return '#cc0202'#}
-                {#                }#}
-                {#                if (string_value == 'SDLP') {#}
-                {#                    return '#99FF66'#}
-                {#                }#}
-                {#                if (string_value == 'SF') {#}
-                {#                    return '#008800'#}
-                {#                }#}
-                {#                if (string_value == 'UUP') {#}
-                {#                    return '#9999FF'#}
-                {#                }#}
-                {#                if (string_value == 'Ind') {#}
-                {#                    return '#dddddd'#}
-                {#                }#}
-                {#                if (string_value == 'Spk') {#}
-                {#                    return '#ffffff'#}
-                {#                }#}
-                {#                if (string_value == 'Green') {#}
-                {#                    return '#6AB023'#}
-                {#                }#}
-
-                {#                return hashStringToColor(string_value)#}
             }
 
             {#        TODO check what this is returning #}
@@ -1092,13 +987,13 @@
                 return chroma.random();
 
                 return d > 80 ? '#800026' :
-                        d > 75  ? '#BD0026' :
-                                d > 70  ? '#E31A1C' :
-                                        d > 60  ? '#FC4E2A' :
-                                                d > 50   ? '#FD8D3C' :
-                                                        d > 40   ? '#FEB24C' :
-                                                                d > 30   ? '#FED976' :
-                                                                        '#FFEDA0';
+                    d > 75  ? '#BD0026' :
+                        d > 70  ? '#E31A1C' :
+                            d > 60  ? '#FC4E2A' :
+                                d > 50   ? '#FD8D3C' :
+                                    d > 40   ? '#FEB24C' :
+                                        d > 30   ? '#FED976' :
+                                            '#FFEDA0';
             }
 
             function remove_layer(remove_button){
@@ -1134,8 +1029,6 @@
                     success: function(data) {
 
                         var name = layer_names[0];
-
-                        {#                        $('#side-menu').removeData("plugin_metisMenu").metisMenu({toggle: false});#}
 
                         $('.replace_layer').click(function () {
                             replace_layer(this)
@@ -1177,10 +1070,7 @@
 
                             });
                             geojson.addTo(map);
-
-                            {#                            Survey on highlight #}
                             geojson.bringToFront();
-
                             map_layers[data['properties']['name']] = geojson;
                         }
 
@@ -1197,6 +1087,7 @@
 
                                         layer.on({
                                             click: function (e) {
+                                                alert('click');
 
                                                 var layer = e.target;
                                                 {#                                                console.log(layer);#}
@@ -1225,7 +1116,7 @@
                                             color: 'orangered',
                                             dashArray: '3'
                                         };
-                                    },
+                                    }
                                 });
                                 layerControl.addOverlay(myLayer, name);
                                 myLayer.addTo(map);
@@ -1236,7 +1127,7 @@
 
                                     topojson_layers[layer_names] = data;
                                     $("#chloropleth_option_form").data(
-                                            {layer_names: layer_names}
+                                        {layer_names: layer_names}
                                     ).dialog("open");
 
                                 }
@@ -1260,15 +1151,12 @@
                 console.log('handling new layer');
                 {#                console.log(data);#}
                 {#                console.log(layer_data);#}
-
                 var remote_value_key = 'REMOTE_VALUE';
-
                 if (layer_data['remote_value_key']) {
                     remote_value_key = layer_data['remote_value_key'];
                 }
 
                 try {
-
 
                     info.update();
 
@@ -1384,17 +1272,15 @@
                     }
 
 
-
                     if (suppressed_data) {
                         alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
-                                "{% trans 'It looks like your query was too specific, for example, when data are suppressed due to statistical confidentiality considerations. \n\n' %}" +
-                                "{% trans 'In this case, try a larger area to map data for.' %}")
+                            "{% trans 'It looks like your query was too specific, for example, when data are suppressed due to statistical confidentiality considerations. \n\n' %}" +
+                            "{% trans 'In this case, try a larger area to map data for.' %}")
                     }
 
 
                     if (feature_string_data.length > 0) {
                     } else {
-
                         if (feature_data.length == 0) {
                             throw "feature_data_0";
                         }
@@ -1475,8 +1361,172 @@
                             {#                            console.log(layer);#}
                             layer.setStyle(styleFeature(layer.feature, grades, chroma_scale, opacity, remote_value_key));
                         }
+
+                        layer.on({
+                            add: function (e) {
+                                var layer = e.target;
+                                if (layer._icon) {
+                                    if (e.target.feature.properties.REMOTE_VALUE) {
+                                        e.target._icon.style.backgroundColor = getColorFromString(e.target.feature.properties.REMOTE_VALUE);
+                                    }
+                                    if (e.target.feature.properties.category) {
+                                        e.target._icon.style.backgroundColor = getColorFromString(e.target.feature.properties.category);
+                                    }
+
+                                    e.target._icon.style.color = 'white';
+                                    e.target._icon.style.border = '';
+                                }
+                            },
+                            mouseover: function (e) {
+
+                                var layer = e.target;
+
+                                if (layer.setStyle) {
+                                    layer.setStyle({
+                                        weight: 5,
+                                        color: '#666',
+                                        dashArray: '',
+                                        fillOpacity: {% if naw %}1{% else %}0.7{% endif %}
+                                    });
+                                }
+
+                                var col;
+                                var remote_value = layer.feature.properties[remote_value_key];
+                                if(isNaN(remote_value)) {
+                                    col = getColorFromString(remote_value);
+                                } else {
+                                    col = getColor(remote_value, feature_data, chroma_scale).hex();
+                                }
+                                var adv_col = '#' + ('000000' + (('0xffffff' ^ col.replace('#', '0x')).toString(16))).slice(-6);
+
+                                if (layer._icon) {
+                                    layer._icon.style.backgroundColor = col;
+                                    layer._icon.style.color = adv_col;
+                                }
+
+                                if(layer.feature.geometry.type == 'LineString') {
+                                    console.log(e.originalEvent);
+
+{#                                    console.log('mouseover line ' + col + ' : ' + adv_col);#}
+
+                                    layer.setStyle({
+                                        fillColor: adv_col,
+                                        weight: 5,
+                                        opacity: 1,
+                                        color: adv_col,
+                                        dashArray: '3',
+                                        fillOpacity: {% if naw %}1{% else %}0.7{% endif %}
+                                    });
+                                }
+                            },
+                            mouseout: function (e) {
+                                var layer = e.target;
+
+                                if (layer.setStyle) {
+                                    layer.setStyle({
+                                        fillOpacity: {% if naw %}1{% else %}0.7{% endif %},
+                                        weight: 2,
+                                        opacity: 1,
+                                        color: 'white',
+                                        dashArray: '3'
+                                    });
+                                }
+
+                                var col;
+                                var remote_value = layer.feature.properties[remote_value_key];
+                                if(isNaN(remote_value)) {
+                                    col = getColorFromString(remote_value);
+                                } else {
+                                    col = getColor(remote_value, feature_data, chroma_scale).hex();
+                                }
+
+                                if (layer._icon) {
+                                    layer._icon.style.backgroundColor = col;
+                                    layer._icon.style.color = 'white';
+                                    layer._icon.style.border = '';
+                                }
+
+                                if(layer.feature.geometry.type == 'LineString') {
+{#                                    console.log('mouseout line ' + col);#}
+
+                                    layer.setStyle({
+                                        fillColor: col,
+                                        weight: 5,
+                                        opacity: 1,
+                                        color: col,
+                                        dashArray: '3',
+                                        fillOpacity: {% if naw %}1{% else %}0.7{% endif %}
+                                    });
+                                }
+                            },
+                            click: function(e) {
+                                console.log(e.originalEvent);
+                                console.log('icon item 3');
+                                show_sidebar();
+
+                                try {
+                                    layer.bringToFront();
+                                }catch (e){}
+
+                                info.update(layer.feature.properties);
+
+                                var html = '';
+                                // look through each layer in order and see if the clicked point,
+                                // e.latlng, overlaps with one of the shapes in it.
+
+                                for (var i = 0; i < leaflet_layers.length; i++) {
+
+                                    var match = leafletPip.pointInLayer(
+                                        // the clicked point
+                                        e.latlng,
+                                        // this layer
+                                        leaflet_layers[i].layer,
+                                        // whether to stop at first match
+                                        true);
+
+                                    // if there's overlap, add some content to the popup: the layer name
+                                    // and a table of attributes
+
+                                    {#                            TODO - we've just checked all layers for a click, #}
+                                    {#                            TODO and totally ignored them #}
+                                    {#                            if (match.length) {#}
+                                    {#                                console.log(match[0].feature.properties);#}
+                                    {#                                html += '<strong>' + leaflet_layers[i].name + '</strong>';#}
+                                    {#                                html += propertyTable(match[0].feature.properties) + '<br><br>';#}
+                                    {#                            }#}
+                                }
+                                if (html) {
+                                    {#                            map.openPopup(html, e.latlng);#}
+                                    $('#right-component1').append(html);
+                                }
+
+{#                                This is just for the Canada Commute things #}
+                                if(layer.feature.properties['csduid']){
+                                    $.ajax({
+                                        url: "{% url 'cancommute_to_location' %}",
+                                        type: 'GET',
+                                        data: {
+                                            'csduid': layer.feature.properties['csduid']
+                                        },
+                                        success: function (data) {
+                                            handleUploadedLayer(
+                                                data,
+                                                'naw',
+                                                'q',
+                                                '5',
+                                                '',
+                                                'routes',
+                                                '',
+                                                {'remote_value_key': 'total'}
+                                            );
+                                        }
+                                    });
+                                }
+                            }
+                        });
+
                     });
-                    myLayer.eachLayer(handleLayer);
+                    {#                    myLayer.eachLayer(handleLayer);#}
 
                     layerControl.addOverlay(myLayer, layer_name_text);
 
@@ -1494,9 +1544,9 @@
                         if (eventLayer.name == layer_name_text) {
                             console.log(layer_name_text);
                             var div_inner = build_legend(feature_data,
-                                    unique_feature_string_data,
-                                    chroma_scale,
-                                    grades, is_percentage);
+                                unique_feature_string_data,
+                                chroma_scale,
+                                grades, is_percentage);
                             if (eventLayer._wdp_legend){
                                 addLegend(unique_layer_name_text, layer_name_text, eventLayer._wdp_legend, search_uuid);
                             } else {
@@ -1556,18 +1606,18 @@
 
                     if (e == 'feature_data_0') {
                         alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
-                                "{% trans 'Layer: ' %}" + layer_name_text + "\n\n" +
-                                "{% trans 'No data could be found for this query. \n\n' %}" +
-                                "{% trans 'Please try again, or report it.' %}")
+                            "{% trans 'Layer: ' %}" + layer_name_text + "\n\n" +
+                            "{% trans 'No data could be found for this query. \n\n' %}" +
+                            "{% trans 'Please try again, or report it.' %}")
                     } else {
 
                         console.log(e);
 
                         alert("{% trans 'Sorry, an error occurred. \n\n' %}" +
-                                "{% trans 'Unfortunately, some types of dataset are incompatible with this service. \n\n' %}" +
-                                "{% trans 'Try being more specific with the dataset variable you are trying to map. \n\n' %}" +
-                                "{% trans 'Or, it may be the case that your query was too specific. For example, when data are suppressed due to statistical confidentiality considerations. ' %}" +
-                                "{% trans 'In this case, try a larger area to map data for.' %}")
+                            "{% trans 'Unfortunately, some types of dataset are incompatible with this service. \n\n' %}" +
+                            "{% trans 'Try being more specific with the dataset variable you are trying to map. \n\n' %}" +
+                            "{% trans 'Or, it may be the case that your query was too specific. For example, when data are suppressed due to statistical confidentiality considerations. ' %}" +
+                            "{% trans 'In this case, try a larger area to map data for.' %}")
                     }
                 }
 
@@ -1592,111 +1642,6 @@
                 });
             }
 
-            function handleLayer(layer) {
-
-                layer.on({
-                    add: function (e) {
-                        var layer = e.target;
-                        if (layer._icon) {
-                            if (e.target.feature.properties.REMOTE_VALUE) {
-                                e.target._icon.style.backgroundColor = getColorFromString(e.target.feature.properties.REMOTE_VALUE);
-                            }
-                            if (e.target.feature.properties.category) {
-                                e.target._icon.style.backgroundColor = getColorFromString(e.target.feature.properties.category);
-                            }
-                            
-                            e.target._icon.style.color = 'white';
-                            e.target._icon.style.border = '';
-                        }
-                    },
-                    mouseover: function (e) {
-                        var layer = e.target;
-
-                        if(isNaN(layer.feature.properties.REMOTE_VALUE)) {
-                            {#                            console.log('icon item remote value ' + layer.feature.properties.REMOTE_VALUE);#}
-                        }
-
-                        if (layer._icon) {
-                            var col = getColorFromString(layer.feature.properties.REMOTE_VALUE);
-                            var adv_col = '#' + ('000000' + (('0xffffff' ^ col.replace('#', '0x')).toString(16))).slice(-6);
-
-                            {#                            console.log(col + ' ' + adv_col);#}
-                            layer._icon.style.backgroundColor = col;
-                            layer._icon.style.color = adv_col;
-                            {#                            layer._icon.style.border = 'red solid 2px';#}
-
-                        }
-
-                        if (layer.setStyle) {
-                            layer.setStyle({
-                                weight: 5,
-                                color: '#666',
-                                dashArray: '',
-                                fillOpacity: {% if naw %}1{% else %}0.7{% endif %}
-                            });
-                        }
-
-                    },
-                    mouseout: function (e) {
-
-                        if (e.target._icon) {
-                            e.target._icon.style.backgroundColor = getColorFromString(e.target.feature.properties.REMOTE_VALUE);
-                            e.target._icon.style.color = 'white';
-                            e.target._icon.style.border = '';
-                        }
-
-                        if (e.target.setStyle) {
-                            e.target.setStyle({
-                                fillOpacity: {% if naw %}1{% else %}0.7{% endif %},
-                                weight: 2,
-                                opacity: 1,
-                                color: 'white',
-                                dashArray: '3'
-                            });
-                        }
-                    },
-                    click: function(e) {
-                        console.log('icon item 3');
-                        show_sidebar();
-
-                        try {
-                            layer.bringToFront();
-                        }catch (e){}
-
-                        info.update(layer.feature.properties);
-
-                        var html = '';
-                        // look through each layer in order and see if the clicked point,
-                        // e.latlng, overlaps with one of the shapes in it.
-
-                        for (var i = 0; i < leaflet_layers.length; i++) {
-
-                            var match = leafletPip.pointInLayer(
-                                    // the clicked point
-                                    e.latlng,
-                                    // this layer
-                                    leaflet_layers[i].layer,
-                                    // whether to stop at first match
-                                    true);
-
-                            // if there's overlap, add some content to the popup: the layer name
-                            // and a table of attributes
-
-                            {#                            TODO - we've just checked all layers for a click, #}
-                            {#                            TODO and totally ignored them #}
-                            {#                            if (match.length) {#}
-                            {#                                console.log(match[0].feature.properties);#}
-                            {#                                html += '<strong>' + leaflet_layers[i].name + '</strong>';#}
-                            {#                                html += propertyTable(match[0].feature.properties) + '<br><br>';#}
-                            {#                            }#}
-                        }
-                        if (html) {
-                            {#                            map.openPopup(html, e.latlng);#}
-                            $('#right-component1').append(html);
-                        }
-                    }
-                });
-            }
 
             function build_legend(feature_data, unique_feature_string_data, chroma_scale, grades, is_percentage) {
                 console.log('Legend:');
@@ -1749,35 +1694,34 @@
                 {#                var tab_id = ("collapse_" + a_uid + '_' + div_id).replace(/\W/g, '');#}
                 var tab_id = ("collapse_" + unique_layer_name_text).replace(/\W/g, '');
                 var accordionInner = $('<div/>')
-                        .attr('id', 'accordion_inner_' + tab_id)
-                        .attr('search_uuid', search_uuid)
-                        .addClass("panel panel-default")
-                        .append(
+                    .attr('id', 'accordion_inner_' + tab_id)
+                    .attr('search_uuid', search_uuid)
+                    .addClass("panel panel-default")
+                    .append(
+                        $('<div/>')
+                            .addClass("panel-heading")
+                            .append(
+                                $('<h4/>')
+                                    .addClass("panel-title")
+                                    .append(
+                                        $('<a/>')
+                                            .attr('data-toggle', "collapse")
+                                            .attr('data-parent', "#legend_accordion")
+                                            .attr('href', "#" + tab_id)
+                                            .text(layer_name_text)
+                                    )
+                            )
+                    )
+                    .append(
+                        $('<div/>')
+                            .attr('id', tab_id)
+                            .addClass("panel-collapse collapse in")
+                            .append(
                                 $('<div/>')
-                                        .addClass("panel-heading")
-                                        .append(
-                                                $('<h4/>')
-                                                        .addClass("panel-title")
-                                                        .append(
-                                                                $('<a/>')
-                                                                        .attr('data-toggle', "collapse")
-                                                                        .attr('data-parent', "#legend_accordion")
-                                                                        .attr('href', "#" + tab_id)
-                                                                        .text(layer_name_text)
-                                                        )
-                                        )
-                        )
-                        .append(
-                                $('<div/>')
-                                        .attr('id', tab_id)
-                                        .addClass("panel-collapse collapse in")
-                                        .append(
-                                                $('<div/>')
-                                                        .addClass("panel-body")
-                                                        .wrapInner(contentHTML)
-                                                {#                                        .text('Lorem ipsum dolor sit amet, consectetur adipisicing elit, minim veniam, quis nostrud')#}
-                                        )
-                        ).append($('<div/>').attr('id', 'findme_' + search_uuid).attr('find_me', search_uuid));
+                                    .addClass("panel-body")
+                                    .wrapInner(contentHTML)
+                            )
+                    ).append($('<div/>').attr('id', 'findme_' + search_uuid).attr('find_me', search_uuid));
                 var accordionDiv = $('#legend_accordion');
                 $(accordionDiv).append(accordionInner);
             }
@@ -1789,16 +1733,12 @@
             legend_two.onAdd = function (map) {
                 var div = L.DomUtil.create('div', 'legend info');
 
-                {#                    var legendHeaderDiv = $('<div/>')#}
-                {#                            .addClass("panel-heading")#}
-                {#                            .text('Legend');#}
-
                 var accordionDiv = $('<div/>')
-                        .attr("id", "legend_accordion")
-                        .addClass("panel-group");
+                    .attr("id", "legend_accordion")
+                    .addClass("panel-group");
 
                 $(div).attr("id", "legend").append(accordionDiv)
-                        .css({'max-height': map_div.height() * 0.8, 'overflow-y': 'auto'});
+                    .css({'max-height': map_div.height() * 0.8, 'overflow-y': 'auto'});
                 {#                        .draggable().resizable();#}
                 return div;
             };
@@ -1837,6 +1777,8 @@
             }
 
             function styleFeature(feature, feature_data, chroma_scale, opacity, remote_value_key) {
+
+                {#                console.log('is this a line?');#}
                 {#            console.log(feature, feature_data, chroma_scale, opacity);#}
 
                 var colour = '';
@@ -1846,7 +1788,7 @@
                 } else {
                     var remote_value = feature.properties.REMOTE_VALUE;
                 }
-                console.log(remote_value);
+{#                console.log(remote_value);#}
                 if (remote_value === undefined){
                     return {
                         {#                        fillColor: '#333333',#}
@@ -1865,6 +1807,17 @@
                         colour = getColorFromString(remote_value);
                     } else {
                         colour = getColor(remote_value, feature_data, chroma_scale);
+                    }
+
+                    if(feature.geometry.type == 'LineString'){
+                        return {
+                            fillColor: colour,
+                            weight: 5,
+                            opacity: 1,
+                            color: colour,
+                            dashArray: '3',
+                            fillOpacity: opacity
+                        };
                     }
 
                     return {
@@ -1902,9 +1855,9 @@
                 onAdd: function (map2) {
                     var controlDiv = L.DomUtil.create('div', 'leaflet-control-command');
                     L.DomEvent
-                            .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
-                            .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
-                            .addListener(controlDiv, 'click', function () { take_screenshot()});
+                        .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
+                        .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
+                        .addListener(controlDiv, 'click', function () { take_screenshot()});
 
                     var controlUI = L.DomUtil.create('div', 'leaflet-control-command-interior', controlDiv);
                     controlUI.title = '{% trans "Screenshot" %}';
@@ -1924,9 +1877,9 @@
                 onAdd: function (map2) {
                     var controlDiv = L.DomUtil.create('div', 'leaflet-control-command');
                     L.DomEvent
-                            .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
-                            .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
-                            .addListener(controlDiv, 'click', function () { reset_map()});
+                        .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
+                        .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
+                        .addListener(controlDiv, 'click', function () { reset_map()});
 
                     var controlUI = L.DomUtil.create('div', 'leaflet-control-command-interior', controlDiv);
                     controlUI.title = '{% trans "Reset" %}';
@@ -1973,7 +1926,7 @@
 
                 for (var a = 0; a < shape_geojson['geometry']['coordinates'][0].length; a++) {
                     var ll2 = new LatLng(shape_geojson['geometry']['coordinates'][0][a][1],
-                            shape_geojson['geometry']['coordinates'][0][a][0]);
+                        shape_geojson['geometry']['coordinates'][0][a][0]);
                     var os2 = ll2.toOSRef();
                     new_coordinates.push([os2.easting, os2.northing]);
                 }
@@ -2184,21 +2137,21 @@
                                     });
 
                                     handleUploadedLayer(
-                                            topojson_data,
-                                            colorpicker,
-                                            bin_type,
-                                            bin_num,
-                                            nomis_variable,
-                                            layer_name_text,
-                                            csv_url,
-                                            {
-                                                'layer_id': layer_id,
-                                                'layer_name': layer_name_text,
-                                                'colorpicker': colorpicker,
-                                                'bin_type': bin_type,
-                                                'bin_num': bin_num,
-                                                'point_icon': point_icon
-                                            }
+                                        topojson_data,
+                                        colorpicker,
+                                        bin_type,
+                                        bin_num,
+                                        nomis_variable,
+                                        layer_name_text,
+                                        csv_url,
+                                        {
+                                            'layer_id': layer_id,
+                                            'layer_name': layer_name_text,
+                                            'colorpicker': colorpicker,
+                                            'bin_type': bin_type,
+                                            'bin_num': bin_num,
+                                            'point_icon': point_icon
+                                        }
                                     );
 
                                     $(this).dialog("close");
@@ -2287,7 +2240,7 @@
                                     for: remote_dataset_radio.id,
                                     text: remote_dataset_radio.name
                                 }).attr({'source': remote_dataset_radio.source})
-                                        .addClass(remote_dataset_radio.source));
+                                    .addClass(remote_dataset_radio.source));
 
                                 {#                                dataset_radio.append(radio_div);#}
 
@@ -2299,7 +2252,7 @@
 
                             if (data['datasets'].length == 0) {
                                 alert("{% trans 'Sorry, no results were found for that search.\n' %}" +
-                                        "{% trans 'Please refine the search terms and try again' %}");
+                                    "{% trans 'Please refine the search terms and try again' %}");
                             } else {
                                 dataset_radio.find('input[type=radio]').change(function () {
                                     $('#add_to_map_dialog_btn').button('enable');
@@ -2455,30 +2408,30 @@
                             add_ajax_waiting('{% trans 'Fetching map layer...' %}');
 
                             get_remote_dataset_topojson(
-                                    "{% url 'remote_data_topojson' %}",
-                                    topojson_geography,
-                                    dataset_id,
-                                    codelist_selected,
-                                    source,
-                                    function(data){
-                                        get_remote_dataset_csv_url(
-                                                "{% url 'data_api' %}",
-                                                topojson_geography,
-                                                dataset_id,
-                                                codelist_selected,
-                                                function(csv_url) {
+                                "{% url 'remote_data_topojson' %}",
+                                topojson_geography,
+                                dataset_id,
+                                codelist_selected,
+                                source,
+                                function(data){
+                                    get_remote_dataset_csv_url(
+                                        "{% url 'data_api' %}",
+                                        topojson_geography,
+                                        dataset_id,
+                                        codelist_selected,
+                                        function(csv_url) {
 
-                                                    ajax_finished();
-                                                    var layer_name = data['search_uuid'];
-                                                    topojson_layers[layer_name] = data['topojson'];
-                                                    $( "#chloropleth_option_form").data({
-                                                        layer_names: layer_name,
-                                                        nomis_variable: nomis_variable,
-                                                        csv_url: csv_url
-                                                    }).dialog( "open" );
-                                                }
-                                        );
-                                    }
+                                            ajax_finished();
+                                            var layer_name = data['search_uuid'];
+                                            topojson_layers[layer_name] = data['topojson'];
+                                            $( "#chloropleth_option_form").data({
+                                                layer_names: layer_name,
+                                                nomis_variable: nomis_variable,
+                                                csv_url: csv_url
+                                            }).dialog( "open" );
+                                        }
+                                    );
+                                }
                             );
                         }
                     },
@@ -2499,33 +2452,33 @@
 
             function do_screenshot(map_canvas, callback) {
                 html2canvas(
-                        map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-left'), {}
+                    map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-left'), {}
                 ).then(function(left_overlay_canvas) {
 
                     var ctx3 = map_canvas.getContext('2d');
                     ctx3.drawImage(
-                            left_overlay_canvas,
-                            0,
-                            map_canvas.height - left_overlay_canvas.height
+                        left_overlay_canvas,
+                        0,
+                        map_canvas.height - left_overlay_canvas.height
                     );
 
                     html2canvas(
-                            map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-right'), {}
+                        map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-right'), {}
                     ).then(function(right_overlay_canvas) {
                         ctx3.drawImage(
-                                right_overlay_canvas,
-                                map_canvas.width - right_overlay_canvas.width,
-                                map_canvas.height - right_overlay_canvas.height
+                            right_overlay_canvas,
+                            map_canvas.width - right_overlay_canvas.width,
+                            map_canvas.height - right_overlay_canvas.height
                         );
 
 
                         html2canvas(
-                                map_div.find('> div.leaflet-control-container > div.leaflet-top.leaflet-right > div.powered_by'), {}
+                            map_div.find('> div.leaflet-control-container > div.leaflet-top.leaflet-right > div.powered_by'), {}
                         ).then(function(right_overlay_canvas) {
                             ctx3.drawImage(
-                                    right_overlay_canvas,
-                                    map_canvas.width - right_overlay_canvas.width,
-                                    0
+                                right_overlay_canvas,
+                                map_canvas.width - right_overlay_canvas.width,
+                                0
                             );
 
                             var canvas_data_url = map_canvas.toDataURL("image/png", 0.5);
@@ -2660,22 +2613,22 @@
 
 
                             get_local_dataset_topojson(
-                                    "{% url 'local_data_topojson' %}",
-                                    topojson_geography,
-                                    survey_id,
-                                    local_available_data_selection,
-                                    function(data) {
-                                        ajax_finished();
+                                "{% url 'local_data_topojson' %}",
+                                topojson_geography,
+                                survey_id,
+                                local_available_data_selection,
+                                function(data) {
+                                    ajax_finished();
 
-                                        var layer_name = data['search_uuid'];
-                                        topojson_layers[layer_name] = data['topojson'];
+                                    var layer_name = data['search_uuid'];
+                                    topojson_layers[layer_name] = data['topojson'];
 
-                                        $( "#chloropleth_option_form").data({
-                                            layer_names: layer_name,
-                                            nomis_variable: '20301',
-                                            csv_url: ''
-                                        }).dialog( "open" );
-                                    }
+                                    $( "#chloropleth_option_form").data({
+                                        layer_names: layer_name,
+                                        nomis_variable: '20301',
+                                        csv_url: ''
+                                    }).dialog( "open" );
+                                }
                             );
 
                         }
@@ -2699,19 +2652,19 @@
 
                     (function(){
                         get_local_dataset_metadata(
-                                '{% url 'data_api' %}',
-                                local_data_layer['survey_id'],
-                                local_data_layer['boundary_name'],
-                                function(metadata){
-                                    {#                                    alert(metadata['local_data_metadata']['data_names']);#}
-                                    $("#local_dataset_define_vars_form").data({
-                                        survey_id: local_data_layer['survey_id'],
-                                        source: local_data_layer['source'],
-                                        boundary_name: local_data_layer['boundary_name'],
-                                        available_data: metadata['local_data_metadata']['data_names'],
-                                        unicode_data: metadata['local_data_metadata']['unicode_data']
-                                    }).dialog('open');
-                                }
+                            '{% url 'data_api' %}',
+                            local_data_layer['survey_id'],
+                            local_data_layer['boundary_name'],
+                            function(metadata){
+                                {#                                    alert(metadata['local_data_metadata']['data_names']);#}
+                                $("#local_dataset_define_vars_form").data({
+                                    survey_id: local_data_layer['survey_id'],
+                                    source: local_data_layer['source'],
+                                    boundary_name: local_data_layer['boundary_name'],
+                                    available_data: metadata['local_data_metadata']['data_names'],
+                                    unicode_data: metadata['local_data_metadata']['unicode_data']
+                                }).dialog('open');
+                            }
                         );
                     })();
 
@@ -2755,14 +2708,14 @@
                         var layer_data = topojson_data['layer_data'];
 
                         handleUploadedLayer(
-                                topojson_data['topojson'],
-                                layer_data['colorpicker'],
-                                layer_data['bin_type'],
-                                layer_data['bin_num'],
-                                '',
-                                layer_data['name'],
-                                '',
-                                layer_data
+                            topojson_data['topojson'],
+                            layer_data['colorpicker'],
+                            layer_data['bin_type'],
+                            layer_data['bin_num'],
+                            '',
+                            layer_data['name'],
+                            '',
+                            layer_data
                         );
                     },
                     complete: function() {
@@ -2783,13 +2736,13 @@
                     },
                     success: function (topojson_data) {
                         handleUploadedLayer(
-                                topojson_data['topojson'],
-                                topojson_data['layer_data']['colorpicker'],
-                                topojson_data['layer_data']['bin_type'],
-                                topojson_data['layer_data']['bin_num'],
-                                '',
-                                topojson_data['layer_data']['name'],
-                                '', topojson_data['layer_data']
+                            topojson_data['topojson'],
+                            topojson_data['layer_data']['colorpicker'],
+                            topojson_data['layer_data']['bin_type'],
+                            topojson_data['layer_data']['bin_num'],
+                            '',
+                            topojson_data['layer_data']['name'],
+                            '', topojson_data['layer_data']
                         );
                     },
                     complete: function() {
@@ -2810,25 +2763,25 @@
                     {#                console.log(remote_data_layer);#}
 
                     get_remote_dataset_topojson(
-                            "{% url 'remote_data_topojson' %}",
-                            remote_data_layer['geography_id'],
-                            remote_data_layer['dataset_id'],
-                            remote_data_layer['codelist'],
-                            remote_data_layer['source'],
-                            function(topojson_data) {
-                                {#                            console.log(remote_data_layer);#}
+                        "{% url 'remote_data_topojson' %}",
+                        remote_data_layer['geography_id'],
+                        remote_data_layer['dataset_id'],
+                        remote_data_layer['codelist'],
+                        remote_data_layer['source'],
+                        function(topojson_data) {
+                            {#                            console.log(remote_data_layer);#}
 
-                                handleUploadedLayer(
-                                        topojson_data['topojson'],
-                                        remote_data_layer['colorpicker'],
-                                        remote_data_layer['bin_type'],
-                                        remote_data_layer['bin_num'],
-                                        '',
-                                        remote_data_layer['name'],
-                                        '',
-                                        remote_data_layer
-                                );
-                            }
+                            handleUploadedLayer(
+                                topojson_data['topojson'],
+                                remote_data_layer['colorpicker'],
+                                remote_data_layer['bin_type'],
+                                remote_data_layer['bin_num'],
+                                '',
+                                remote_data_layer['name'],
+                                '',
+                                remote_data_layer
+                            );
+                        }
                     );
                 }());
             }
@@ -2838,10 +2791,10 @@
                 var remote_data_map = remote_layer_mapping[remote_data_map_idx];
 
                 ready_and_load_remote_var_form(
-                        "{% url 'data_api' %}",
-                        remote_data_map['id'],
-                        remote_data_map['src'],
-                        '0001'
+                    "{% url 'data_api' %}",
+                    remote_data_map['id'],
+                    remote_data_map['src'],
+                    '0001'
                 );
             }
 
@@ -2942,7 +2895,7 @@
                                         console.log('outer 2nd keys');
                                         console.log(secondary_data_keys);
                                         all_topojson_data = thing(all_topojson_data, ordered_data, local_data_name,
-                                                area_values, local_data_geography_column, secondary_data_keys);
+                                            area_values, local_data_geography_column, secondary_data_keys);
 
                                         {#                                    console.log(jQuery.extend(true, {}, all_topojson_data));#}
 
@@ -3009,13 +2962,13 @@
 
                         var topojson_data = localLayers[local_layer_names[name]];
                         handleUploadedLayer(
-                                topojson_data['topojson'],
-                                topojson_data['layer_data']['colorpicker'],
-                                topojson_data['layer_data']['bin_type'],
-                                topojson_data['layer_data']['bin_num'],
-                                '',
-                                topojson_data['layer_data']['name'],
-                                '', topojson_data['layer_data']
+                            topojson_data['topojson'],
+                            topojson_data['layer_data']['colorpicker'],
+                            topojson_data['layer_data']['bin_type'],
+                            topojson_data['layer_data']['bin_num'],
+                            '',
+                            topojson_data['layer_data']['name'],
+                            '', topojson_data['layer_data']
                         );
                     }
                 }
@@ -3509,9 +3462,9 @@
                         }
 
                         L.popup()
-                                .setLatLng(e.latlng)
-                                .setContent(content)
-                                .openOn(map);
+                            .setLatLng(e.latlng)
+                            .setContent(content)
+                            .openOn(map);
                     }
                 });
 
@@ -3659,8 +3612,8 @@
                     for (var idx in qual_dc_ids) {
                         $.ajax({
                             url: "{% url 'api:metadata:QualDcInfo-detail' pk="12345"%}".replace(
-                                    '12345',
-                                    qual_dc_ids[idx]
+                                '12345',
+                                qual_dc_ids[idx]
                             ),
                             type: 'GET',
                             dataType: 'json',
@@ -3951,7 +3904,7 @@
                 <div class="input-group custom-search-form">
                     <input value="" autofocus="autofocus" type="text" id="remote_search_term" name="remote_search_term"
                            class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
-                        <span class="input-group-btn">
+                    <span class="input-group-btn">
                             <button id="remote_search_btn" class="btn btn-default" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>

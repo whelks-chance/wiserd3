@@ -305,6 +305,9 @@ function thing(all_topojson_data, ordered_data, local_data_name,
 
     console.log('Error mapping: ');
     console.log(ordered_data);
+
+    console.log('OK mapping: ');
+    console.log(new_data);
     var unmapped_data_string = '';
     for(var unmapped in ordered_data) {
         if (ordered_data.hasOwnProperty(unmapped)) {

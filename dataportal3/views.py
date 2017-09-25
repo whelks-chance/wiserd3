@@ -33,6 +33,8 @@ from django.template.loader import get_template
 from django.utils.translation import get_language
 from django.views.decorators.csrf import csrf_exempt
 import operator
+
+from cancommute.models import Route, CanadaShape
 from dataportal3 import models
 from dataportal3.forms import ShapefileForm
 from dataportal3.models import ResponseTable
@@ -553,6 +555,182 @@ def map_search(request):
                   context_instance=RequestContext(request))
 
 
+def map_adv_test(request):
+    print request.GET
+
+    # Default template
+    template_name = 'navigation.html'
+    # Third Party Templating
+    tpt = request.GET.get('tpt', 'default')
+
+    naw = request.GET.get('naw', False)
+    if naw:
+        tpt = 'naw'
+        template_name = 'naw_navigation.html'
+
+    use_template = request.GET.get('use_template', True)
+    if use_template == 'False':
+        template_name = 'empty.html'
+        use_template = False
+
+    if tpt in settings.THIRD_PARTY_INTERFACES:
+        template_name = tpt + '_navigation.html'
+        if tpt == 'm4w':
+            template_name = 'm4w_navigation.html'
+
+        if tpt == 'naw':
+            naw = True
+            template_name = 'naw_navigation.html'
+
+        if tpt == 'wmh':
+            template_name = 'wmh_navigation.html'
+
+    if tpt == 'wiserd_projects':
+        template_name = 'wiserd_projects_navigation.html'
+
+    if tpt == 'partner_projects':
+        template_name = 'partner_projects_navigation.html'
+
+    if tpt == 'about':
+        template_name = 'about_navigation.html'
+
+    try:
+        get_template(template_name)
+    except TemplateDoesNotExist:
+        raise Http404
+
+    layer_uuids = request.GET.getlist('layers', [])
+    print 'layer_uuids', layer_uuids, type(layer_uuids)
+
+    wms_layers = {}
+
+    surveys = request.GET.getlist('surveys', [])
+    boundaries = request.GET.getlist('boundary', [])
+    local_data_layers = []
+
+    if len(surveys) == len(boundaries):
+        for idx, survey_id in enumerate(surveys):
+            print 'idx', idx
+            print 'survey_id', survey_id
+            print 'boundaries[idx]', boundaries[idx]
+
+            link_table_data = models.SpatialSurveyLink.objects.filter(survey__identifier=survey_id, boundary_name=boundaries[idx]).values_list('data_name', flat=True)
+            # datas = []
+            print 'data available for ', survey_id, list(link_table_data)
+            # for links in link_table:
+            #     datas.append()
+            local_data_layers.append({
+                'name': models.Survey.objects.get(identifier=survey_id).survey_title.replace('_', ' '),
+                'survey_id': survey_id,
+                'boundary_name': boundaries[idx],
+                'data': list(link_table_data)
+            })
+
+    uploaded_layers_clean = []
+    try:
+
+        uploaded_layers = models.FeatureCollectionStore.objects.filter(
+            shapefile_upload__progress=ShapeFileImport.progress_stage['import_success']
+        )
+        for uploaded_layer in uploaded_layers:
+            uploaded_layers_clean.append({
+                'display_name': uploaded_layer.name,
+                'table_name': uploaded_layer.id
+            })
+
+    except Exception as ex:
+        print ex
+        pass
+
+    area_names = request.GET.getlist('area_names', [])
+
+    topojson_geographies = []
+    for topojson in settings.TOPOJSON_OPTIONS:
+        topojson_geographies.append({
+            'name': topojson['name'],
+            'geog_short_code': topojson['geog_short_code'],
+        })
+
+    remote_layer_ids = request.GET.getlist('remote_layer_ids', [])
+    remote_layer_data, local_layer_data = get_remote_layer_render_data_for_uid(
+        remote_layer_ids,
+        get_request_user(request)
+    )
+
+    remote_data_layers = []
+    remote_data_ids = request.GET.getlist('rd_ids', [])
+    remote_data_sources = request.GET.getlist('rd_srcs', [])
+
+    if len(remote_data_ids) == len(remote_data_sources):
+        for count, data in enumerate(remote_data_ids):
+            remote_data_layers.append(
+                {
+                    'id': remote_data_ids[count],
+                    'src': remote_data_sources[count]
+                }
+            )
+
+
+    # TODO remove hard coded uids especially if they're not unique
+    naw_key_searches = [
+        # {
+        #     'uid': '40d5be16-c11f-43b2-9c29-45555dc07945',
+        #     'description': 'A quick postcode'
+        # }, {
+        #     'uid': '147b3009-5ce0-42ce-940e-38d594bf53be',
+        #     'description': 'Another layer'
+        # }
+    ]
+    naw_key_searches.extend(settings.NAW_SEARCH_LAYER_UUIDS)
+
+    m4w_key_searches = []
+    m4w_key_searches.extend(settings.M4W_SEARCH_LAYER_UUIDS)
+
+    use_welsh = False
+    user_prefs = get_user_preferences(request)
+    assert isinstance(user_prefs, models.UserPreferences)
+    if user_prefs.preferred_language:
+        if user_prefs.preferred_language.user_language_title == 'Welsh':
+            use_welsh = True
+
+    if get_language() == 'cy':
+        use_welsh = True
+
+    if naw:
+        if use_welsh:
+            layer_uuids.extend(NAW_CY_LAYER_UUIDS)
+        else:
+            layer_uuids.extend(NAW_LAYER_UUIDS)
+
+    return render(request, 'map_again.html',
+                  {
+                      'tpt': tpt,
+                      'naw': naw,
+                      'template_name': template_name,
+                      'use_template': use_template,
+                      'naw_key_searches': naw_key_searches,
+                      'm4w_key_searches': m4w_key_searches,
+                      'local_data_layers': local_data_layers,
+                      'remote_searches': remote_layer_data,
+                      'local_searches': local_layer_data,
+                      'layer_uuids': layer_uuids,
+                      'topojson_geographies': topojson_geographies,
+                      'preferences': get_user_preferences(request),
+                      'use_welsh': use_welsh,
+                      'searches': get_user_searches(request),
+                      'surveys': json.dumps(surveys),
+                      'wms_layers': wms_layers,
+                      'wiserd_layers': settings.KNOWING_LOCALITIES_TABLES,
+                      'brexit_layers': settings.BREXIT_LAYERS,
+                      'ge_layers': settings.GE_LAYERS,
+                      'upload_layers': uploaded_layers_clean,
+                      'area_names': json.dumps(area_names),
+                      'remote_data_layers': remote_data_layers
+                  },
+                  context_instance=RequestContext(request))
+
+
+
 def get_remote_layer_render_data_for_uid(nomissearch_uids, request_user):
     remote_layer_data = []
     local_layer_data = []
@@ -788,14 +966,19 @@ def get_wiserd_layer_topojson(
         layer_type,
         wiserd_layer,
         app_label,
-        layer_field,
+        remote_value_key, # this was layer_field before
         update_cache,
         remote_value_filter):
-    # from topojson import topojson
 
+    # Firstly:
+    # This method actually returns GeoJSON, not TopoJSON
+
+    # from topojson import topojson
     # spatial_table_name = str(wiserd_layer).replace('_', '').strip()
 
-    layer_key = '{}-{}-{}-{}-{}'.format(layer_type, app_label, wiserd_layer, layer_field, remote_value_filter)
+    # This key is used to refer to the result later, when pulling it from REDIS
+    layer_key = '{}-{}-{}-{}-{}'.format(layer_type, app_label, wiserd_layer, remote_value_key, remote_value_filter)
+    print layer_key
 
     redis_cached_data = None
     if not update_cache:
@@ -805,6 +988,7 @@ def get_wiserd_layer_topojson(
             redis_cached_data = None
 
     if redis_cached_data:
+        print 'Using cached data'
         s = redis_cached_data
 
     else:
@@ -880,6 +1064,25 @@ def get_wiserd_layer_topojson(
             shape_table_object = wiserd_layer_model.objects.filter(name__contains='Cardiff')
             print 'shape_table_object', shape_table_object.count()
 
+        elif wiserd_layer == 'CanadaShape':
+            wiserd_layer_model = apps.get_model(
+                app_label='cancommute',
+                model_name=wiserd_layer
+            )
+            # shape_table_object = wiserd_layer_model.objects.filter(csduid__istartswith='4')
+
+            # all_routes = Route.objects.all()
+            # dest_ids = []
+            # for r in all_routes:
+            #     assert isinstance(r, Route)
+            #     dest_ids.append(r.destination.csduid)
+            # shape_table_object = CanadaShape.objects.filter(csduid__in=dest_ids)
+
+            shape_table_object = wiserd_layer_model.objects.all()
+            print shape_table_object.count()
+            # print pprint.pformat(list(destinations))
+            print 'shape_table_object', shape_table_object.count()
+
         else:
 
             print("Looking for table {} in {}".format(wiserd_layer, app_label))
@@ -891,13 +1094,15 @@ def get_wiserd_layer_topojson(
 
             print remote_value_filter
             if remote_value_filter:
-                variable_column = layer_field
+                variable_column = remote_value_key
                 search_type = 'exact'
                 filter = variable_column + '__' + search_type
                 shape_table_object = wiserd_layer_model.objects.filter(**{filter: remote_value_filter})
                 # print shape_table_object.query
             else:
                 shape_table_object = wiserd_layer_model.objects.all()
+
+            print 'shape_table_object', shape_table_object.count()
 
         # shape_list = shape_table_object.extra(
         #     select={
@@ -909,37 +1114,33 @@ def get_wiserd_layer_topojson(
             shape_table_object,
             use_natural_keys=True,
             with_modelname=False,
-            simplify=0.00005
+
+            simplify=0.00005,
+
+            # properties=('csdname', 'csduid', 'prname')
         )
+
+        geo = json.loads(s)
+        # geo = geojson_points_to_topojson(geo)
+
+        #
+        # geo = topojson(
+        #     geo,
+        #     quantization=1e4,
+        #     # simplify=0.0005
+        # )
+
+        geo['properties'] = {'name': wiserd_layer}
+        if remote_value_key:
+            geo['properties']['remote_value_key'] = remote_value_key
+        s = json.dumps(geo)
 
         try:
             redis_cache.set(layer_key, s)
         except:
             pass
 
-    geo = json.loads(s)
-    # geo = geojson_points_to_topojson(geo)
-
-    #
-    # geo = topojson(
-    #     geo,
-    #     quantization=1e4,
-    #     # simplify=0.0005
-    # )
-
-    geo['properties'] = {'name': wiserd_layer}
-    # if wiserd_layer == 'SchoolData':
-    #     geo['properties']['remote_value_key'] = 'fsm_percent'
-    #     # geo['properties']['remote_value_key'] = 'schTypeEnglish'
-
-    # if wiserd_layer == 'TaxServicePropertyInformation':
-    #     geo['properties']['remote_value_key'] = 'building_type'
-
-    if layer_field:
-        geo['properties']['remote_value_key'] = layer_field
-
-    geos = json.dumps(geo)
-    return geos
+    return s
 
 
 @csrf_exempt
@@ -960,8 +1161,9 @@ def get_geojson(request):
             layer_type,
             wiserd_layer,
             app_label,
-            layer_field,
-            update_cache
+            None,  # this was layer_field before
+            update_cache,
+            None
         )
 
         return HttpResponse(geos, content_type="application/json")
@@ -3056,11 +3258,18 @@ def get_topojson_for_uuid(request, search_uuid):
 
         print layer_data['filter']
 
+        if '--' in dataset_id:
+            app_name = dataset_id.split('--')[0]
+            dataset_id = dataset_id.split('--')[1]
+        else:
+            app_name = 'dataportal3'
+
         geo = json.loads(
+            # Actually returns geojson...
             get_wiserd_layer_topojson(
                 'wiserd_layer',
-                found_search_model.dataset_id,
-                'dataportal3',
+                dataset_id,
+                app_name,
                 layer_data['remote_value_key'],
                 request.GET.get("update_cache", False),
                 layer_data['filter']
@@ -3078,14 +3287,16 @@ def get_topojson_for_uuid(request, search_uuid):
                         }
                     ]
 
-        topojson_conv = geojson_points_to_topojson(geo)
-        # from topojson import topojson
+        # TODO this assumes it's point data
+        # topojson_conv = geojson_points_to_topojson(geo)
 
-        # topojson_conv = topojson(
-        #     json.loads(geo),
-        #     quantization=1e4,
-        #     # simplify=0.0005
-        # )
+        # TODO use this one for other geometries
+        from topojson import topojson
+        topojson_conv = topojson(
+            geo,
+            quantization=1e4,
+            simplify=0.0005
+        )
 
         # TODO - this point data needs to be TopoJSON, not GeoJson
         response_data['topojson'] = topojson_conv

@@ -146,6 +146,7 @@ class NomisSearchAdmin(FiltersMixin, admin.ModelAdmin):
     list_filter = (
         ('uuid', SearchFilter),
         ('name', SearchFilter),
+        ('dataset_id', SearchFilter)
     )
 admin.site.register(NomisSearch, NomisSearchAdmin)
 

@@ -67,7 +67,8 @@ INSTALLED_APPS = (
     'rosetta',
     'djorm_pgfulltext',
     'djgeojson',
-    'scrape'
+    'scrape',
+    'cancommute'
 )
 
 SERIALIZATION_MODULES = {
@@ -342,7 +343,7 @@ NAW_CY_LAYER_UUIDS = []
 
 NAW_SEARCH_LAYER_UUIDS = []
 
-THIRD_PARTY_INTERFACES = ['naw', 'm4w', 'wmh', 'wiserd_projects', 'partner_projects', 'about']
+THIRD_PARTY_INTERFACES = ['naw', 'm4w', 'wmh', 'wiserd_projects', 'partner_projects', 'about', 'can']
 
 WMS_LAYERS = [
     {

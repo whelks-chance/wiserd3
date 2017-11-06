@@ -960,8 +960,9 @@ def get_geojson(request):
             layer_type,
             wiserd_layer,
             app_label,
-            layer_field,
-            update_cache
+            None,
+            update_cache,
+            None
         )
 
         return HttpResponse(geos, content_type="application/json")

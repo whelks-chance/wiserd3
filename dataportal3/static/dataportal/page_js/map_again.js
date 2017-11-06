@@ -1,3 +1,44 @@
+L.Control.Screenshot = L.Control.extend({
+    options: {
+        position: 'topleft'
+    },
+    onAdd: function (map2) {
+        var controlDiv = L.DomUtil.create('div', 'leaflet-control-command');
+        L.DomEvent
+            .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
+            .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
+            .addListener(controlDiv, 'click', DataPortal.mapping.map.take_screenshot.bind(DataPortal.mapping.map)
+            );
+
+        var controlUI = L.DomUtil.create('div', 'leaflet-control-command-interior', controlDiv);
+        controlUI.title = trans("Screenshot");
+        controlUI.innerHTML = '<a><i class="fa fa-camera"></a>';
+        return controlDiv;
+    }
+});
+
+
+L.Control.Reset = L.Control.extend({
+        options: {
+            position: 'topleft'
+        },
+        onAdd: function (map2) {
+            var controlDiv = L.DomUtil.create('div', 'leaflet-control-command');
+            L.DomEvent
+                .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
+                .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
+                .addListener(controlDiv, 'click', function () {
+                    DataPortal.mapping.map.reset_map()
+                });
+
+        var controlUI = L.DomUtil.create('div', 'leaflet-control-command-interior', controlDiv);
+        controlUI.title = trans("Reset");
+        controlUI.innerHTML = '<a><i class="fa fa-refresh"></a>';
+        return controlDiv;
+    }
+});
+
+
 // global namespace
 var DataPortal = DataPortal || {};
 
@@ -10,7 +51,7 @@ UnavailableFunctionError.prototype = Object.create(Error.prototype);
 UnavailableFunctionError.prototype.constructor = UnavailableFunctionError;
 
 
-DataPortal.tpt = 'can';
+DataPortal.tpt = 'default';
 DataPortal.use_welsh = false;
 
 // TODO populate this
@@ -61,6 +102,54 @@ DataPortal.django.static_urls = function(name, args){
     return '/static/' + name;
 };
 
+DataPortal.util = {
+    guid: {
+        uid: 0,
+        next_uid: function() {
+            DataPortal.util.guid.uid += 1;
+            return DataPortal.util.guid.uid;
+        }
+    },
+    resetFormElement: function(e) {
+        e.wrap('<form>').closest('form').get(0).reset();
+        e.unwrap();
+    },
+    djb2: function(str){
+        var hash = 5381;
+        for (var i = 0; i < str.length; i++) {
+            hash = ((hash << 5) + hash) + str.charCodeAt(i); /* hash * 33 + c */
+        }
+        return hash;
+    },
+    hashStringToColor: function(str) {
+        var hash = this.djb2(str);
+        var r = (hash & 0xFF0000) >> 16;
+        var g = (hash & 0x00FF00) >> 8;
+        var b = hash & 0x0000FF;
+        return "#" + ("0" + r.toString(16)).substr(-2) + ("0" + g.toString(16)).substr(-2) + ("0" + b.toString(16)).substr(-2);
+    },
+    convertPolygonToOS: function(shape_geojson){
+
+        var new_coordinates = [];
+        var new_geometry = {
+            "type": "Polygon",
+            "coordinates": [[]]
+        };
+
+        for (var a = 0; a < shape_geojson['geometry']['coordinates'][0].length; a++) {
+            var ll2 = new LatLng(shape_geojson['geometry']['coordinates'][0][a][1],
+                shape_geojson['geometry']['coordinates'][0][a][0]);
+            var os2 = ll2.toOSRef();
+            new_coordinates.push([os2.easting, os2.northing]);
+        }
+
+        new_geometry['coordinates'] = [new_coordinates];
+
+        return new_geometry
+
+    }
+};
+
 DataPortal.mapping = {};
 DataPortal.mapping.north_arrow = function(){
     return DataPortal.use_welsh? 'G' : 'N';
@@ -69,6 +158,8 @@ DataPortal.mapping.opacity = function(){
     switch (this.tpt) {
         case 'naw':
             return 1;
+        case 'can':
+            return 0.4;
         default:
             return 0.7
     }
@@ -120,19 +211,6 @@ DataPortal.mapping.remote_data_layers = function(){
 //    Todo from template
 };
 
-DataPortal.util = {
-    guid: {
-        uid: 0,
-        next_uid: function() {
-            DataPortal.util.guid.uid += 1;
-            return DataPortal.util.guid.uid;
-        }
-    },
-    resetFormElement: function(e) {
-        e.wrap('<form>').closest('form').get(0).reset();
-        e.unwrap();
-    }
-};
 
 DataPortal.mapping.gui = {
     show_sidebar: function() {
@@ -173,7 +251,7 @@ DataPortal.mapping.map = {
     center_lat_lng: '',
     search_area_geojson: '',
     geoJson_area_km2: '',
-
+    tilelayers: {},
     map_height: 0,
     header_height: 0,
     map: null,
@@ -222,9 +300,190 @@ DataPortal.mapping.map = {
 
         this.layer_group = new L.LayerGroup();
 
+        this.legend_two = L.control({
+            id: 'legend_control',
+            position: 'bottomright'
+        });
+        this.legend_two.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'legend info');
+            var accordionDiv = $('<div/>')
+                .attr("id", "legend_accordion")
+                .addClass("panel-group");
+
+            // ToDO hand "this" through properly
+            $(div).attr("id", "legend").append(accordionDiv)
+                .css({'max-height': DataPortal.mapping.map.map_div.height() * 0.8, 'overflow-y': 'auto'});
+            // {#                        .draggable().resizable();#}
+            return div;
+        };
+        this.legend_two.addTo(this.map);
+
         this.add_tilelayers.apply(this);
+
+        this.featureGroup = L.featureGroup().addTo(this.map);
+
+        this.map.addControl(new L.Control.Search({
+            textPlaceholder: trans('Search'),
+            url: 'http://nominatim.openstreetmap.org/search?format=json&q={s}',
+            jsonpParam: 'json_callback',
+            propertyName: 'display_name',
+            propertyLoc: ['lat','lon'],
+            circleLocation: false,
+            markerLocation: true,
+            autoType: false,
+            autoCollapse: true,
+            minLength: 2,
+            zoom:10
+        }));
+
+        this.screenshot_control = new L.Control.Screenshot();
+        this.screenshot_control.addTo(this.map);
+
+        this.reset_map_btn = new L.Control.Reset();
+        this.reset_map_btn.addTo(this.map);
+
+        if (DataPortal.tpt == 'default' ) {
+            this.drawControl = new L.Control.Draw({
+                edit: {
+                    featureGroup: this.featureGroup
+                },
+                draw: {
+                    polygon: true,
+                    polyline: false,
+                    rectangle: {
+                        shapeOptions: {
+                            color: '#888888'
+                        }
+                    },
+                    circle: true,
+                    marker: false
+                }
+            }).addTo(this.map);
+
+            this.map.on('draw:created', DataPortal.mapping.map.showPolygonArea);
+            this.map.on('draw:edited', DataPortal.mapping.map.showPolygonAreaEdited);
+        }
     },
-    tilelayers: {},
+    reset_map: function() {
+        this.map.setView([52.4, -3.51], 8);
+    },
+    take_screenshot: function() {
+        console.log('take_screenshot');
+        console.log(this);
+        leafletImage(this.map, this.do_screenshot_open_tab);
+    },
+    do_screenshot_open_tab: function(err, map_canvas) {
+        DataPortal.mapping.map.do_screenshot(map_canvas, function(canvas_data_url){
+            window.open(canvas_data_url, '_blank');
+        });
+    },
+    do_screenshot: function(map_canvas, callback) {
+        html2canvas(
+            DataPortal.mapping.map.map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-left'), {}
+        ).then(function(left_overlay_canvas) {
+
+            var ctx3 = map_canvas.getContext('2d');
+            ctx3.drawImage(
+                left_overlay_canvas,
+                0,
+                map_canvas.height - left_overlay_canvas.height
+            );
+
+            html2canvas(
+                DataPortal.mapping.map.map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-right'), {}
+            ).then(function(right_overlay_canvas) {
+                ctx3.drawImage(
+                    right_overlay_canvas,
+                    map_canvas.width - right_overlay_canvas.width,
+                    map_canvas.height - right_overlay_canvas.height
+                );
+
+                html2canvas(
+                    DataPortal.mapping.map.map_div.find('> div.leaflet-control-container > div.leaflet-top.leaflet-right > div.powered_by'), {}
+                ).then(function(right_overlay_canvas) {
+                    ctx3.drawImage(
+                        right_overlay_canvas,
+                        map_canvas.width - right_overlay_canvas.width,
+                        0
+                    );
+
+                    var canvas_data_url = map_canvas.toDataURL("image/png", 0.5);
+
+                    if (callback) {
+                        callback(canvas_data_url);
+                    }
+                    return canvas_data_url;
+                });
+            });
+        });
+    },
+    showPolygonAreaEdited: function (e) {
+        e.layers.eachLayer(function(layer) {
+            DataPortal.mapping.map.showPolygonArea({ layer: layer });
+        });
+    },
+    showPolygonArea: function(e) {
+
+        DataPortal.mapping.map.featureGroup.clearLayers();
+        DataPortal.mapping.map.featureGroup.addLayer(e.layer);
+
+        geoJson_area_km2 = (LGeo.area(e.layer) / 1000000).toFixed(2);
+        e.layer.bindPopup(geoJson_area_km2 + ' km<sup>2</sup>');
+        e.layer.openPopup();
+
+        search_area_geojson = e.layer.toGeoJSON();
+        $('#output').val(search_area_geojson);
+        var new_geojson = DataPortal.util.convertPolygonToOS(search_area_geojson);
+        wkt = $.geo.WKT.stringify(new_geojson);
+
+        DataPortal.mapping.map.map.fitBounds(DataPortal.mapping.map.featureGroup.getBounds());
+        center_lat_lng = DataPortal.mapping.map.featureGroup.getBounds().getCenter();
+        // {#                viewreset is really slow #}
+        DataPortal.mapping.map.map.addOneTimeEventListener('moveend', function() {
+            // {#                    alert('moveend');#}
+            setTimeout(function(){
+                leafletImage(DataPortal.mapping.map.map, DataPortal.mapping.map.doImage);
+            }, 1000);
+        });
+    },
+    doImage: function(err, canvas) {
+        var img = document.createElement('img');
+        var dimensions = DataPortal.mapping.map.map.getSize();
+        img.width = dimensions.x;
+        img.height = dimensions.y;
+        most_recent_search_png = canvas.toDataURL("image/jpeg", 0.5);
+        img.src = most_recent_search_png;
+        $.ajax({
+            url: DataPortal.django.urls('spatial_search'),
+            type: 'POST',
+            data: {
+                geography: wkt,
+                // {#                        geojson: search_area_geojson,#}
+                centre_lat_lng: [center_lat_lng.lat, center_lat_lng.lng],
+                geo_area_km2: geoJson_area_km2,
+                start: 0,
+                limit: 15,
+                type: "Qual",
+                uid_only: true,
+                image_png: most_recent_search_png
+            },
+            success: function(data) {
+                if (data['uid']) {
+                    // {#                            console.log("{% url 'tables' %}?search_id=" + data['uid']);#}
+                    // {#                            var snapshot = document.getElementById('output');#}
+                    // {#                            snapshot.innerHTML = "{% url 'tables' %}?search_id=" + data['uid'];#}
+
+                    setTimeout(function(){
+                        // {#                                TODO FINDME re-enable this #}
+                        window.location = DataPortal.django.urls('tables') + "?search_id=" + data['uid'];
+                    }, 1000);
+                }
+            },
+            complete: function() {
+                ajax_finished();
+            }
+        });
+    },
     add_tilelayers: function() {
         console.log('add_tilelayers');
         console.log(this);
@@ -285,7 +544,7 @@ DataPortal.mapping.map = {
         this.info = L.control();
         this.info.onAdd = function (map) {
             this._div = L.DomUtil.create('div', 'info');
-            this.update();
+            DataPortal.mapping.map.update_info();
             return this._div;
         };
     },
@@ -376,11 +635,11 @@ DataPortal.mapping.map = {
                         } else {
                             groups[props.STRING_DATA[item]['grouping']] = {
                                 'title': props.STRING_DATA[item]['grouping'],
-                                'list': [get_sidebar_text(props, item)]
+                                'list': [this.get_sidebar_text(props, item)]
                             }
                         }
                     } else {
-                        strings += get_sidebar_text(props, item);
+                        strings += this.get_sidebar_text(props, item);
                     }
                 }
 
@@ -422,9 +681,41 @@ DataPortal.mapping.map = {
                         })
                 );
             }
-
-
         }
+    },
+    get_sidebar_text: function(props, item) {
+        var strings = '';
+        if (props.STRING_DATA[item]['value']) {
+            var string_data_value = props.STRING_DATA[item]['value'].toString();
+            // {#  is it a link? #}
+            if (string_data_value.toLowerCase().indexOf('http://') == 0 ||
+                string_data_value.toLowerCase().indexOf('https://') == 0) {
+                if (string_data_value.toLowerCase().indexOf('.jpg') > -1 ||
+                    string_data_value.toLowerCase().indexOf('.png') > -1) {
+                    // {#  it's an image? #}
+                    strings += ''
+                        // {#                                    + '<p><b>' + props.STRING_DATA[item]['title'] + '</b></p>'#}
+                        + '<p><img class="sidebar_img" src="' + string_data_value + '"></p>';
+                } else {
+                    // {#                                        It's a hyperlink #}
+                    strings += ''
+                        // {#                                    + '<p><b>' + props.STRING_DATA[item]['title']#}
+                        // {#                                    + '</b></p>'#}
+                        + '<p><a target="_blank" href="'
+                        + string_data_value
+                        + '">' + props.STRING_DATA[item]['title'] + '</a></p>';
+                }
+            }
+            else {
+                if (string_data_value.length) {
+
+                    strings += '<p><b>' + props.STRING_DATA[item]['title']
+                        + '</b> : ' + string_data_value + '</p>';
+                    // {#                        console.log(string_data_value);#}
+                }
+            }
+        }
+        return strings;
     },
     addLegend: function(unique_layer_name_text, layer_name_text, contentHTML, search_uuid){
 
@@ -462,6 +753,134 @@ DataPortal.mapping.map = {
             ).append($('<div/>').attr('id', 'findme_' + search_uuid).attr('find_me', search_uuid));
         var accordionDiv = $('#legend_accordion');
         $(accordionDiv).append(accordionInner);
+    },
+
+    // {#        TODO check what this is returning #}
+    getColor: function(d, feature_data, chroma_scale) {
+
+        if (chroma_scale) {
+            return chroma_scale(parseFloat(d));
+        }
+
+        if (feature_data) {
+            var scale = chroma.scale('OrRd').classes(feature_data);
+            return scale(parseFloat(d));
+        }
+
+        d = parseFloat(d);
+        return chroma.random();
+
+        return d > 80 ? '#800026' :
+            d > 75  ? '#BD0026' :
+                d > 70  ? '#E31A1C' :
+                    d > 60  ? '#FC4E2A' :
+                        d > 50   ? '#FD8D3C' :
+                            d > 40   ? '#FEB24C' :
+                                d > 30   ? '#FED976' :
+                                    '#FFEDA0';
+    },
+    getColorFromString: function(string_value) {
+        switch (string_value) {
+
+            case 'LAB':
+                return '#e4002b';
+            case 'Lab':
+                return '#e4002b';
+
+            case 'CON':
+                return '#0057b8';
+            case 'Con':
+                return '#0057b8';
+
+            case 'LIB':
+                return '#fdbb30';
+            case 'LD':
+                return '#fdbb30';
+
+            case 'PLC':
+                return '#4c8c2b';
+            case 'PC':
+                return '#4c8c2b';
+
+            case 'NAT':
+                return '#4c8c2b';
+            case 'UKIP':
+                return '#70147A';
+            case 'OTH':
+                return '#888b8d';
+            case 'DT':
+                return '#993366';
+            case 'SNP':
+                return '#FFF95D';
+            case 'DUP':
+                return '#cc0202';
+            case 'SDLP':
+                return '#99FF66';
+            case 'SF':
+                return '#008800';
+            case 'UUP':
+                return '#9999FF';
+            case 'Ind':
+                return '#dddddd';
+            case 'Spk':
+                return '#ffffff';
+            case 'Green':
+                return '#6AB023';
+            default:
+                return DataPortal.util.hashStringToColor(string_value)
+        }
+
+    },
+
+
+    styleFeature: function(feature, feature_data, chroma_scale, opacity, remote_value_key) {
+        var colour = '';
+        if (remote_value_key) {
+            var remote_value = feature.properties[remote_value_key];
+
+        } else {
+            var remote_value = feature.properties.REMOTE_VALUE;
+        }
+        // {#                console.log(remote_value);#}
+        if (remote_value === undefined){
+            return {
+                fill: DataPortal.django.static_urls('leaflet-polygon-fillPattern-master/example/image.gif'),
+                stroke: '#fff',
+                'stroke-width': 2,
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: DataPortal.mapping.opacity
+            }
+        } else {
+
+            if (isNaN(remote_value)) {
+                colour = this.getColorFromString(remote_value);
+            } else {
+                colour = this.getColor(remote_value, feature_data, chroma_scale);
+            }
+
+            if(feature.geometry.type == 'LineString'){
+                return {
+                    fillColor: colour,
+                    weight: 5,
+                    opacity: 1,
+                    color: colour,
+                    dashArray: '3',
+                    fillOpacity: opacity
+                };
+            }
+
+            return {
+                fillColor: colour,
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: DataPortal.mapping.opacity
+            };
+        }
     }
 };
 
@@ -574,7 +993,8 @@ DataPortal.mapping.LayerStore = {
                 console.log(e);
             }
         }
-    }
+    },
+
 
 };
 //shortcut
@@ -670,7 +1090,7 @@ $(document).ready(function () {
             $(toggle_button).addClass('wms_layer_active');
             var legend_url = $(toggle_button).data('legend_img');
             if (legend_url) {
-                addLegend(btn_layer_name + '_' + DataPortal.util.guid.next_uid(), btn_layer_name, '<img src="' + legend_url + '" style="width:100%; max-width:8em !important">', '');
+                DataPortal.mapping.map.addLegend(btn_layer_name + '_' + DataPortal.util.guid.next_uid(), btn_layer_name, '<img src="' + legend_url + '" style="width:100%; max-width:8em !important">', '');
             }
 
             // // {#                    var inspire = L.tileLayer.wms("http://inspire.wales.gov.uk/maps/wms", {#}
@@ -958,40 +1378,6 @@ $(document).ready(function () {
 //     };
     // {#            info.addTo(map);#}
 
-    function get_sidebar_text(props, item) {
-        var strings = '';
-        if (props.STRING_DATA[item]['value']) {
-            var string_data_value = props.STRING_DATA[item]['value'].toString();
-            // {#  is it a link? #}
-            if (string_data_value.toLowerCase().indexOf('http://') == 0 ||
-                string_data_value.toLowerCase().indexOf('https://') == 0) {
-                if (string_data_value.toLowerCase().indexOf('.jpg') > -1 ||
-                    string_data_value.toLowerCase().indexOf('.png') > -1) {
-                    // {#  it's an image? #}
-                    strings += ''
-                        // {#                                    + '<p><b>' + props.STRING_DATA[item]['title'] + '</b></p>'#}
-                        + '<p><img class="sidebar_img" src="' + string_data_value + '"></p>';
-                } else {
-                    // {#                                        It's a hyperlink #}
-                    strings += ''
-                        // {#                                    + '<p><b>' + props.STRING_DATA[item]['title']#}
-                        // {#                                    + '</b></p>'#}
-                        + '<p><a target="_blank" href="'
-                        + string_data_value
-                        + '">' + props.STRING_DATA[item]['title'] + '</a></p>';
-                }
-            }
-            else {
-                if (string_data_value.length) {
-
-                    strings += '<p><b>' + props.STRING_DATA[item]['title']
-                        + '</b> : ' + string_data_value + '</p>';
-                    // {#                        console.log(string_data_value);#}
-                }
-            }
-        }
-        return strings;
-    }
 
     var geojson;
     function resetHighlight(e) {
@@ -1013,99 +1399,10 @@ $(document).ready(function () {
         info.update(layer.feature.properties);
     }
 
-    function djb2(str){
-        var hash = 5381;
-        for (var i = 0; i < str.length; i++) {
-            hash = ((hash << 5) + hash) + str.charCodeAt(i); /* hash * 33 + c */
-        }
-        return hash;
-    }
 
-    function hashStringToColor(str) {
-        var hash = djb2(str);
-        var r = (hash & 0xFF0000) >> 16;
-        var g = (hash & 0x00FF00) >> 8;
-        var b = hash & 0x0000FF;
-        return "#" + ("0" + r.toString(16)).substr(-2) + ("0" + g.toString(16)).substr(-2) + ("0" + b.toString(16)).substr(-2);
-    }
 
-    function getColorFromString(string_value) {
-        switch (string_value) {
 
-            case 'LAB':
-                return '#e4002b';
-            case 'Lab':
-                return '#e4002b';
 
-            case 'CON':
-                return '#0057b8';
-            case 'Con':
-                return '#0057b8';
-
-            case 'LIB':
-                return '#fdbb30';
-            case 'LD':
-                return '#fdbb30';
-
-            case 'PLC':
-                return '#4c8c2b';
-            case 'PC':
-                return '#4c8c2b';
-
-            case 'NAT':
-                return '#4c8c2b';
-            case 'UKIP':
-                return '#70147A';
-            case 'OTH':
-                return '#888b8d';
-            case 'DT':
-                return '#993366';
-            case 'SNP':
-                return '#FFF95D';
-            case 'DUP':
-                return '#cc0202';
-            case 'SDLP':
-                return '#99FF66';
-            case 'SF':
-                return '#008800';
-            case 'UUP':
-                return '#9999FF';
-            case 'Ind':
-                return '#dddddd';
-            case 'Spk':
-                return '#ffffff';
-            case 'Green':
-                return '#6AB023';
-            default:
-                return hashStringToColor(string_value)
-        }
-
-    }
-
-    // {#        TODO check what this is returning #}
-    function getColor(d, feature_data, chroma_scale) {
-
-        if (chroma_scale) {
-            return chroma_scale(parseFloat(d));
-        }
-
-        if (feature_data) {
-            var scale = chroma.scale('OrRd').classes(feature_data);
-            return scale(parseFloat(d));
-        }
-
-        d = parseFloat(d);
-        return chroma.random();
-
-        return d > 80 ? '#800026' :
-            d > 75  ? '#BD0026' :
-                d > 70  ? '#E31A1C' :
-                    d > 60  ? '#FC4E2A' :
-                        d > 50   ? '#FD8D3C' :
-                            d > 40   ? '#FEB24C' :
-                                d > 30   ? '#FED976' :
-                                    '#FFEDA0';
-    }
 
     function remove_layer(remove_button){
         DataPortal.mapping.map.map.removeLayer(map_layers[$(remove_button).data('layername')]);
@@ -1170,7 +1467,7 @@ $(document).ready(function () {
                         },
                         style: function (feature) {
                             return {
-                                fillColor: getColor(feature.properties.response_rate),
+                                fillColor: DataPortal.mapping.map.getColor(feature.properties.response_rate),
                                 weight: 2,
                                 opacity: 1,
                                 color: 'white',
@@ -1202,7 +1499,7 @@ $(document).ready(function () {
 
                                         var layer = e.target;
                                         // {#                                                console.log(layer);#}
-                                        info.update(layer.feature.properties);
+                                        DataPortal.mapping.map.update_info(layer.feature.properties);
 
                                         layer.setStyle({
                                             weight: 5,
@@ -1269,7 +1566,8 @@ $(document).ready(function () {
 
         try {
 
-            info.update();
+            // why are we clearing this?
+            // DataPortal.mapping.map.update_info();
 
             if (layer_name_counter.hasOwnProperty(layer_name_text)) {
                 var counter = layer_name_counter[layer_name_text];
@@ -1279,7 +1577,7 @@ $(document).ready(function () {
             } else {
                 layer_name_counter[layer_name_text] = 1
             }
-            var a_uid = DataPortal.util.guid.next_uid()();
+            var a_uid = DataPortal.util.guid.next_uid();
             var unique_layer_name_text = layer_name_text + '_' + a_uid;
 
 
@@ -1448,7 +1746,7 @@ $(document).ready(function () {
             myLayer.eachLayer(function (layer) {
                 if (typeof layer.setStyle === 'function') {
                     // {#                            console.log(layer);#}
-                    layer.setStyle(styleFeature(layer.feature, grades, chroma_scale, opacity, remote_value_key));
+                    layer.setStyle(DataPortal.mapping.map.styleFeature(layer.feature, grades, chroma_scale, opacity, remote_value_key));
                 }
 
                 layer.on({
@@ -1482,9 +1780,9 @@ $(document).ready(function () {
                         var col;
                         var remote_value = layer.feature.properties[remote_value_key];
                         if(isNaN(remote_value)) {
-                            col = getColorFromString(remote_value);
+                            col = DataPortal.mapping.map.getColorFromString(remote_value);
                         } else {
-                            col = getColor(remote_value, feature_data, chroma_scale).hex();
+                            col = DataPortal.mapping.map.getColor(remote_value, feature_data, chroma_scale).hex();
                         }
                         var adv_col = '#' + ('000000' + (('0xffffff' ^ col.replace('#', '0x')).toString(16))).slice(-6);
 
@@ -1524,9 +1822,9 @@ $(document).ready(function () {
                         var col;
                         var remote_value = layer.feature.properties[remote_value_key];
                         if(isNaN(remote_value)) {
-                            col = getColorFromString(remote_value);
+                            col = DataPortal.mapping.map.getColorFromString(remote_value);
                         } else {
-                            col = getColor(remote_value, feature_data, chroma_scale).hex();
+                            col = DataPortal.mapping.map.getColor(remote_value, feature_data, chroma_scale).hex();
                         }
 
                         if (layer._icon) {
@@ -1551,13 +1849,13 @@ $(document).ready(function () {
                     click: function(e) {
                         console.log(e.originalEvent);
                         console.log('icon item 3');
-                        show_sidebar();
+                        DataPortal.mapping.gui.show_sidebar();
 
                         try {
-                            layer.bringToFront();
+                            e.target.bringToFront();
                         }catch (e){}
 
-                        info.update(layer.feature.properties);
+                        DataPortal.mapping.map.update_info(layer.feature.properties);
 
                         var html = '';
                         // look through each layer in order and see if the clicked point,
@@ -1604,7 +1902,7 @@ $(document).ready(function () {
                                         'q',
                                         '5',
                                         '',
-                                        'routes',
+                                        data['properties']['destination_location_name']['eng'] + ', ' + data['properties']['destination_location_name']['prname'],
                                         '',
                                         {'remote_value_key': 'total'}
                                     );
@@ -1629,6 +1927,8 @@ $(document).ready(function () {
 
                 console.log('eventLayer');
                 console.log(eventLayer);
+                console.log('layer_name_text');
+                console.log(layer_name_text);
 
                 if (eventLayer.name == layer_name_text) {
                     console.log(layer_name_text);
@@ -1637,9 +1937,9 @@ $(document).ready(function () {
                         chroma_scale,
                         grades, is_percentage);
                     if (eventLayer._wdp_legend){
-                        addLegend(unique_layer_name_text, layer_name_text, eventLayer._wdp_legend, search_uuid);
+                        DataPortal.mapping.map.addLegend(unique_layer_name_text, layer_name_text, eventLayer._wdp_legend, search_uuid);
                     } else {
-                        addLegend(unique_layer_name_text, layer_name_text, div_inner, search_uuid);
+                        DataPortal.mapping.map.addLegend(unique_layer_name_text, layer_name_text, div_inner, search_uuid);
                         eventLayer._wdp_legend = div_inner;
                     }
                 }
@@ -1751,7 +2051,7 @@ $(document).ready(function () {
                 from = grades[i];
                 to = grades[i + 1];
 
-                var legend_row = '<p style="padding: 0 1em;"><i style="background:' + getColor(from, grades, chroma_scale) + '"></i> ';
+                var legend_row = '<p class="legend_item" style="padding: 0 1em;"><i style="background:' + DataPortal.mapping.map.getColor(from, grades, chroma_scale) + '"></i> ';
                 legend_row += from.toFixed(2);
                 if (to) {
                     legend_row += (to).toFixed(2) ? (i == 0 ? ' &ndash; ': ' &le; ') + (to).toFixed(2) + (is_percentage ? '%' : '') : (is_percentage ? '%+' : '+');
@@ -1768,7 +2068,7 @@ $(document).ready(function () {
         // {#                console.log(unique_feature_string_data);#}
         if (unique_feature_string_data.length > 0) {
             for (var string_idx in unique_feature_string_data.sort()) {
-                var legend_string_row = '<p style="white-space: nowrap; padding: 0 1em;"><i style="background:' + getColorFromString(unique_feature_string_data[string_idx]) + '"></i> ' + unique_feature_string_data[string_idx] + '</p>';
+                var legend_string_row = '<p style="white-space: nowrap; padding: 0 1em;"><i style="background:' + DataPortal.mapping.map.getColorFromString(unique_feature_string_data[string_idx]) + '"></i> ' + unique_feature_string_data[string_idx] + '</p>';
                 labels.push(legend_string_row);
             }
         }
@@ -1779,23 +2079,7 @@ $(document).ready(function () {
 
 
 
-    var legend_two = L.control({
-        id: 'legend_control',
-        position: 'bottomright'
-    });
-    legend_two.onAdd = function (map) {
-        var div = L.DomUtil.create('div', 'legend info');
 
-        var accordionDiv = $('<div/>')
-            .attr("id", "legend_accordion")
-            .addClass("panel-group");
-
-        $(div).attr("id", "legend").append(accordionDiv)
-            .css({'max-height': DataPortal.mapping.map.map_div.height() * 0.8, 'overflow-y': 'auto'});
-        // {#                        .draggable().resizable();#}
-        return div;
-    };
-    legend_two.addTo(DataPortal.mapping.map.map);
 
     // {#            FIXME re add and move me#}
     // {#            var div = L.DomUtil.create('div', 'info legend');#}
@@ -1829,244 +2113,49 @@ $(document).ready(function () {
         return propertyList;
     }
 
-    function styleFeature(feature, feature_data, chroma_scale, opacity, remote_value_key) {
 
-        // {#                console.log('is this a line?');#}
-        // {#            console.log(feature, feature_data, chroma_scale, opacity);#}
-
-        var colour = '';
-        if (remote_value_key) {
-            var remote_value = feature.properties[remote_value_key];
-
-        } else {
-            var remote_value = feature.properties.REMOTE_VALUE;
-        }
-        // {#                console.log(remote_value);#}
-        if (remote_value === undefined){
-            return {
-                fill: DataPortal.django.static_urls('leaflet-polygon-fillPattern-master/example/image.gif'),
-                stroke: '#fff',
-                'stroke-width': 2,
-                weight: 2,
-                opacity: 1,
-                color: 'white',
-                dashArray: '3',
-                fillOpacity: opacity
-            }
-        } else {
-
-            if (isNaN(remote_value)) {
-                colour = getColorFromString(remote_value);
-            } else {
-                colour = getColor(remote_value, feature_data, chroma_scale);
-            }
-
-            if(feature.geometry.type == 'LineString'){
-                return {
-                    fillColor: colour,
-                    weight: 5,
-                    opacity: 1,
-                    color: colour,
-                    dashArray: '3',
-                    fillOpacity: opacity
-                };
-            }
-
-            return {
-                fillColor: colour,
-                weight: 2,
-                opacity: 1,
-                color: 'white',
-                dashArray: '3',
-                fillOpacity: opacity
-            };
-        }
-    }
 
     var map_layers = {};
-    var featureGroup = L.featureGroup().addTo(DataPortal.mapping.map.map);
-
-    DataPortal.mapping.map.map.addControl( new L.Control.Search({
-        textPlaceholder: trans('Search'),
-        url: 'http://nominatim.openstreetmap.org/search?format=json&q={s}',
-        jsonpParam: 'json_callback',
-        propertyName: 'display_name',
-        propertyLoc: ['lat','lon'],
-        circleLocation: false,
-        markerLocation: true,
-        autoType: false,
-        autoCollapse: true,
-        minLength: 2,
-        zoom:10
-    }) );
-
-    L.Control.Screenshot = L.Control.extend({
-        options: {
-            position: 'topleft'
-        },
-        onAdd: function (map2) {
-            var controlDiv = L.DomUtil.create('div', 'leaflet-control-command');
-            L.DomEvent
-                .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
-                .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
-                .addListener(controlDiv, 'click', function () { take_screenshot()});
-
-            var controlUI = L.DomUtil.create('div', 'leaflet-control-command-interior', controlDiv);
-            controlUI.title = '{% trans "Screenshot" %}';
-            controlUI.innerHTML = '<a><i class="fa fa-camera"></a>';
-            return controlDiv;
-        }
-    });
-
-    var screenshot_control = new L.Control.Screenshot();
-    screenshot_control.addTo(DataPortal.mapping.map.map);
 
 
-    L.Control.Reset = L.Control.extend({
-        options: {
-            position: 'topleft'
-        },
-        onAdd: function (map2) {
-            var controlDiv = L.DomUtil.create('div', 'leaflet-control-command');
-            L.DomEvent
-                .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
-                .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
-                .addListener(controlDiv, 'click', function () { reset_map()});
-
-            var controlUI = L.DomUtil.create('div', 'leaflet-control-command-interior', controlDiv);
-            controlUI.title = '{% trans "Reset" %}';
-            controlUI.innerHTML = '<a><i class="fa fa-refresh"></a>';
-            return controlDiv;
-        }
-    });
-
-    var reset_map_btn = new L.Control.Reset();
-    reset_map_btn.addTo(DataPortal.mapping.map.map);
 
 
-    if (DataPortal.tpt == 'default' ) {
 
-        var drawControl = new L.Control.Draw({
-            edit: {
-                featureGroup: featureGroup
-            },
-            draw: {
-                polygon: true,
-                polyline: false,
-                rectangle: {
-                    shapeOptions: {
-                        color: '#888888'
-                    }
-                },
-                circle: true,
-                marker: false
-            }
-        }).addTo(DataPortal.mapping.map.map);
 
-        DataPortal.mapping.map.map.on('draw:created', showPolygonArea);
-        DataPortal.mapping.map.map.on('draw:edited', showPolygonAreaEdited);
 
-    }
 
-    function convertPolygonToOS(shape_geojson){
 
-        var new_coordinates = [];
-        var new_geometry = {
-            "type": "Polygon",
-            "coordinates": [[]]
-        };
 
-        for (var a = 0; a < shape_geojson['geometry']['coordinates'][0].length; a++) {
-            var ll2 = new LatLng(shape_geojson['geometry']['coordinates'][0][a][1],
-                shape_geojson['geometry']['coordinates'][0][a][0]);
-            var os2 = ll2.toOSRef();
-            new_coordinates.push([os2.easting, os2.northing]);
-        }
 
-        new_geometry['coordinates'] = [new_coordinates];
+    // if (DataPortal.tpt == 'default' ) {
+    //
+    //     var drawControl = new L.Control.Draw({
+    //         edit: {
+    //             featureGroup: featureGroup
+    //         },
+    //         draw: {
+    //             polygon: true,
+    //             polyline: false,
+    //             rectangle: {
+    //                 shapeOptions: {
+    //                     color: '#888888'
+    //                 }
+    //             },
+    //             circle: true,
+    //             marker: false
+    //         }
+    //     }).addTo(DataPortal.mapping.map.map);
+    //
+    //     DataPortal.mapping.map.map.on('draw:created', showPolygonArea);
+    //     DataPortal.mapping.map.map.on('draw:edited', showPolygonAreaEdited);
+    //
+    // }
 
-        return new_geometry
 
-    }
-    function showPolygonAreaEdited(e) {
-        e.layers.eachLayer(function(layer) {
-            showPolygonArea({ layer: layer });
-        });
-    }
 
-    function showPolygonArea(e) {
 
-        featureGroup.clearLayers();
-        featureGroup.addLayer(e.layer);
-
-        geoJson_area_km2 = (LGeo.area(e.layer) / 1000000).toFixed(2);
-        e.layer.bindPopup(geoJson_area_km2 + ' km<sup>2</sup>');
-        e.layer.openPopup();
-
-        search_area_geojson = e.layer.toGeoJSON();
-        $('#output').val(search_area_geojson);
-        var new_geojson = convertPolygonToOS(search_area_geojson);
-        wkt = $.geo.WKT.stringify(new_geojson);
-
-        DataPortal.mapping.map.map.fitBounds(featureGroup.getBounds());
-        center_lat_lng = featureGroup.getBounds().getCenter();
-        // {#                viewreset is really slow #}
-        DataPortal.mapping.map.map.addOneTimeEventListener('moveend', function() {
-            // {#                    alert('moveend');#}
-            setTimeout(function(){
-                leafletImage(DataPortal.mapping.map.map, doImage);
-            }, 1000);
-        });
-    }
 
     var most_recent_search_png = '';
-    function doImage(err, canvas) {
-        // {#                alert('doimage');#}
-        // {#                var snapshot = document.getElementById('snapshot');#}
-
-        var img = document.createElement('img');
-        var dimensions = DataPortal.mapping.map.map.getSize();
-        img.width = dimensions.x;
-        img.height = dimensions.y;
-        most_recent_search_png = canvas.toDataURL("image/jpeg", 0.5);
-        img.src = most_recent_search_png;
-        // {#                img.style.width = '100%';#}
-        // {#                snapshot.innerHTML = '';#}
-        // {#                snapshot.appendChild(img);#}
-
-        $.ajax({
-            url: DataPortal.django.urls('spatial_search'),
-            type: 'POST',
-            data: {
-                geography: wkt,
-                // {#                        geojson: search_area_geojson,#}
-                centre_lat_lng: [center_lat_lng.lat, center_lat_lng.lng],
-                geo_area_km2: geoJson_area_km2,
-                start: 0,
-                limit: 15,
-                type: "Qual",
-                uid_only: true,
-                image_png: most_recent_search_png
-            },
-            success: function(data) {
-                // {#                        alert(JSON.stringify(data['data']));#}
-
-                if (data['uid']) {
-                    // {#                            console.log("{% url 'tables' %}?search_id=" + data['uid']);#}
-                    // {#                            var snapshot = document.getElementById('output');#}
-                    // {#                            snapshot.innerHTML = "{% url 'tables' %}?search_id=" + data['uid'];#}
-
-                    setTimeout(function(){
-                        // {#                                TODO FINDME re-enable this #}
-                        window.location = "{% url 'tables' %}?search_id=" + data['uid'];
-                    }, 1000);
-                }
-            },
-            complete: function() {
-                ajax_finished();
-            }
-        });
-    }
 
     String.prototype.format = function() {
         var formatted = this;
@@ -2267,7 +2356,7 @@ $(document).ready(function () {
             },
             success: function (data) {
 
-                build_datatable(data, '#remote_results_table', "{% url 'data_api' %}");
+                build_datatable(data, '#remote_results_table', DataPortal.django.urls('data_api'));
 
 
                 var dataset_radio = $('#dataset_radio');
@@ -2411,7 +2500,7 @@ $(document).ready(function () {
         modal: true,
         buttons: [
             {
-                text: "{% trans 'Render to Map' %}",
+                text: trans("Render to Map"),
                 click: function() {
 
 
@@ -2449,7 +2538,7 @@ $(document).ready(function () {
 
                     var topojson_geography = $('#topojson_geography_radio').find(":radio:checked").attr('value');
                     if (topojson_geography == null) {
-                        missing_measures.push("{% trans 'Geography' %}");
+                        missing_measures.push(trans('Geography'));
                     }
                     if (missing_measures.length > 0) {
                         var err_msg = trans('Please select an option for each selection : \n\n') + missing_measures.join('\n');
@@ -2462,14 +2551,14 @@ $(document).ready(function () {
                     add_ajax_waiting(trans('Fetching map layer...'));
 
                     get_remote_dataset_topojson(
-                        "{% url 'remote_data_topojson' %}",
+                        DataPortal.django.urls('remote_data_topojson'),
                         topojson_geography,
                         dataset_id,
                         codelist_selected,
                         source,
                         function(data){
                             get_remote_dataset_csv_url(
-                                "{% url 'data_api' %}",
+                                DataPortal.django.urls('data_api'),
                                 topojson_geography,
                                 dataset_id,
                                 codelist_selected,
@@ -2504,61 +2593,12 @@ $(document).ready(function () {
     // {#                leafletImage(map, screenshot_open_tab);#}
     // {#            });#}
 
-    function do_screenshot(map_canvas, callback) {
-        html2canvas(
-            DataPortal.mapping.map.map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-left'), {}
-        ).then(function(left_overlay_canvas) {
-
-            var ctx3 = map_canvas.getContext('2d');
-            ctx3.drawImage(
-                left_overlay_canvas,
-                0,
-                map_canvas.height - left_overlay_canvas.height
-            );
-
-            html2canvas(
-                DataPortal.mapping.map.map_div.find('> div.leaflet-control-container > div.leaflet-bottom.leaflet-right'), {}
-            ).then(function(right_overlay_canvas) {
-                ctx3.drawImage(
-                    right_overlay_canvas,
-                    map_canvas.width - right_overlay_canvas.width,
-                    map_canvas.height - right_overlay_canvas.height
-                );
 
 
-                html2canvas(
-                    map_div.find('> div.leaflet-control-container > div.leaflet-top.leaflet-right > div.powered_by'), {}
-                ).then(function(right_overlay_canvas) {
-                    ctx3.drawImage(
-                        right_overlay_canvas,
-                        map_canvas.width - right_overlay_canvas.width,
-                        0
-                    );
 
-                    var canvas_data_url = map_canvas.toDataURL("image/png", 0.5);
 
-                    if (callback) {
-                        callback(canvas_data_url);
-                    }
-                    return canvas_data_url;
-                });
-            });
-        });
-    }
 
-    function reset_map() {
-        DataPortal.mapping.map.map.setView([52.4, -3.51], 8);
-    }
 
-    function take_screenshot() {
-        leafletImage(DataPortal.mapping.map.map, do_screenshot_open_tab);
-    }
-
-    function do_screenshot_open_tab(err, map_canvas) {
-        do_screenshot(map_canvas, function(canvas_data_url){
-            window.open(canvas_data_url, '_blank');
-        });
-    }
 
     // {#            var local_dataset_define_vars_radios = [];#}
     // {#            function local_dataset_define_vars_radio_select(myRadio) {#}

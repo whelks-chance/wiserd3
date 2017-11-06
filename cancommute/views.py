@@ -13,18 +13,18 @@ def cancommute_to_location(request):
     csduid = request.GET.get('csduid', None)
 
     if csduid:
-        origin_models = models.Route.objects.filter(destination__csduid=csduid)
-        # not_same_area_models = origin_models.exclude(origin__csduid=csduid)
+        destination_model = models.CanadaShape.objects.get(csduid=csduid)
+        destination_location_name = destination_model.csdname
+
+        route_models = models.Route.objects.filter(destination__csduid=csduid)
 
         origin_is_destination_total = ''
-        origin_is_destination = origin_models.filter(origin__csduid=csduid)
+        origin_is_destination = route_models.filter(origin__csduid=csduid)
         if origin_is_destination.count():
             origin_is_destination_total = origin_is_destination[0].total
 
-        # origin_models = models.Route.objects.all()
-
         s = GeoJSONSerializer().serialize(
-            origin_models,
+            route_models,
             use_natural_keys=True,
             with_modelname=False,
         )
@@ -35,8 +35,12 @@ def cancommute_to_location(request):
 
         geo['properties'] = {'name': 'Commute route'}
         geo['properties']['remote_value_key'] = 'total'
-        geo['properties']['number_of_routes'] = origin_models.count()
+        geo['properties']['number_of_routes'] = route_models.count()
         geo['properties']['origin_is_destination'] = origin_is_destination_total
+        geo['properties']['destination_location_name'] = {
+            'eng': destination_location_name,
+            'prname':destination_model.prname
+        }
 
         s = json.dumps(geo)
 

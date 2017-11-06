@@ -27,6 +27,10 @@
 
     <script type="text/javascript" src="{% static 'jscoord-1.1.1.js' %}"></script>
 
+        {#    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>#}
+        <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js' %}"></script>
+    {#    <script type="text/javascript" src="{% static 'mapbox.js/plugins/leaflet-image/leaflet-image-0.3.0/leaflet-image.js' %}"></script>#}
+
     <script src="{% static 'leaflet-easyprint/easyprint-v2.js' %}"></script>
 
     <script type="text/javascript" src="{% static 'leaflet-search/leaflet-search.min.js' %}"></script>
@@ -94,6 +98,7 @@
             {
                 'spatial_search': "{% url 'spatial_search' %}",
                 'data_api': "{% url 'data_api' %}",
+                'tables': "{% url 'tables' %}",
                 'download_dataset_zip': "{% url 'download_dataset_zip' %}",
 
                 'licence_attribution': "{% url 'licence_attribution' %}",
@@ -111,9 +116,9 @@
             };
             args = args || {};
             return extra_url_dict[name]
+        }
 
 
-    }
     </script>
 
 {% endblock %}

@@ -83,9 +83,13 @@ Global pip install, the venv is specified in the uwsgi "home" below
     sudo service nginx restart
     sudo systemctl daemon-reload
     sudo systemctl restart uwsgi
+    
 
 ### Keep uWSGI on reboot
     sudo systemctl enable uwsgi
+
+### Restart Redis
+    sudo service redis restart
 
 ### DB server security
 Install iptables and fail2ban

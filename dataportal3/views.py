@@ -3055,6 +3055,27 @@ def get_topojson_by_name(request, topojson_name):
         topojson_conv = topojson(json.loads(s))
         response_data['topojson'] = topojson_conv
 
+    if topojson_name == 'health_board':
+        filter_var_code = 'code__istartswith'
+        filter_var_name = 'lhb16nm__istartswith'
+        filter_var_altname = 'lhb16nmw__istartswith'
+
+        if len(codes) == 0:
+            region_subset = models.SpatialdataHealthBoard.objects.using('new').all()
+        else:
+            ors = []
+            for code in codes:
+                ors.append(Q(**{filter_var_code: code}))
+                ors.append(Q(**{filter_var_name: code.lower().strip()}))
+                ors.append(Q(**{filter_var_altname: code}))
+
+            region_subset = models.SpatialdataHealthBoard.objects.using('new').all().filter(
+                reduce(operator.or_, ors)
+            )
+        s = serialize('geojson', region_subset, properties=('geom', 'code', 'lhb16nm', 'lhb16nmw', 'REMOTE_VALUE'))
+        topojson_conv = topojson(json.loads(s))
+        response_data['topojson'] = topojson_conv
+
     elif topojson_name == 'unitary_authority':
         # filter_var_code = 'code__istartswith'
         filter_var_name = 'label__istartswith'

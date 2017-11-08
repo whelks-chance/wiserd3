@@ -1330,6 +1330,25 @@ class WMHpoints(models.Model):
         return "{} : {} : {}".format(self.name, self.community_town, self.category)
 
 
+class SpatialdataHealthBoard(models.Model):
+    gid = models.IntegerField(primary_key=True)
+    objectid = models.FloatField(max_length=10, blank=True, null=True)
+
+    code = models.CharField(max_length=80, blank=True, null=True)
+    lhb16nm = models.CharField(max_length=80, blank=True, null=True)
+    lhb16nmw = models.CharField(max_length=80, blank=True, null=True)
+
+    geom = models.GeometryField(blank=True, null=True)
+    objects = models.GeoManager()
+
+    def __unicode__(self):
+        return u'{} : {}'.format(self.code, self.lhb16nm)
+
+    class Meta:
+        managed = False
+        db_table = 'spatial_data_healthboard'
+
+
 class ResponseTable(models.Model):
     feature_attributes = JSONField(blank=True, null=True)
     survey = models.ForeignKey('Survey', blank=True, null=True)

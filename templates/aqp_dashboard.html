@@ -1,0 +1,211 @@
+{% extends "aqp_navigation.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block page_name %}{% trans 'Air Quality' %} | {% trans 'Air Quality Project' %}{% endblock %}
+
+{% block extra_head %}
+    <script type="text/javascript" src="{% static 'dataportal/page_js/dashboard.js' %}"></script>
+
+    <script>
+        $(document).ready(function () {
+            $.cookie("WDP_view_type", "aqp", {expires: 365, path: '/'});
+
+            var page = $('#wrapper');
+
+            var view_switch = $( "#dashboard_view_switch_form" ).dialog({
+                autoOpen: false,
+                height: page.height() / 2,
+                width: page.width() / 2,
+                position: {
+                    my: "center",
+                    at: "center",
+                    of: page
+                },
+                modal: true,
+                buttons: {
+                    "{% trans 'Stay on this page' %}": function () {
+                        $( this ).dialog( "close" );
+                    },
+                    "{% trans 'Navigate to WISERD HOME' %}": function () {
+                        window.location.href = "{% url 'dashboard' %}";
+                    }
+                }
+            });
+
+            {#            view_switch.data({}).dialog( "open" );#}
+
+            {#            $('naw_message').show();#}
+
+        });
+    </script>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-12">
+                {#            <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/Research-logo-2016-Welsh.png' %}{% else %}{% static 'dataportal/media/Research-logo-2016-English.png' %}{% endif %}">#}
+
+                <h1 class="page-header">{% trans 'Air Quality Project' %}</h1>
+            </div>
+            <div hidden="hidden" id="naw_message" class="row">
+                <div class="alert alert-info alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+
+                </div>
+            </div>
+        </div>
+
+        <!-- /.row -->
+        <div id="dashboard_grid" class="row">
+
+            {% if request.user.is_authenticated %}
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                {#                            <a href="{% url 'profile' %}">#}
+                                <div class="col-xs-3">
+                                    <i class="fa fa-user fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">_</div>
+                                    <div>{% trans 'Profile' %}</div>
+                                </div>
+                                {#                            </a>#}
+                            </div>
+                        </div>
+                        <a href="{% url 'profile' %}">
+                            <div class="panel-footer">
+                                <span class="pull-left">{% trans 'View Profile' %}</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+
+            {#        <div class="col-lg-4 col-md-6">#}
+            {#            <div class="panel panel-purple">#}
+            {#                <a href="{% url 'dashboard' %}" target="_blank">#}
+            {##}
+            {#                    <div class="panel-heading">#}
+            {#                        <div class="row">#}
+            {#                            <div class="col-xs-3">#}
+            {#                                <i class="fa fa-dashboard fa-5x"></i>#}
+            {#                            <img src="{% static 'dataportal/media/dataportowl.jpg' %}">#}
+            {#                            </div>#}
+            {#                            <div class="col-xs-9 text-right">#}
+            {#                                <div class="huge">_</div>#}
+            {#                                <div>WISERD</div>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </a>#}
+            {##}
+            {#                <a href="{% url 'dashboard' %}" target="_blank">#}
+            {#                    <div class="panel-footer">#}
+            {#                        <span class="pull-left">{% trans 'WISERD Dashboard' %}</span>#}
+            {#                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
+            {#                        <div class="clearfix"></div>#}
+            {#                    </div>#}
+            {#                </a>#}
+            {#            </div>#}
+            {#        </div>#}
+
+
+            <div class="col-lg-4 col-md-6">
+                <div class="panel naw-panel-map">
+                    <a href="{% url 'map' %}?tpt=m4w">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-globe fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">_</div>
+                                    <div>{% trans 'Mapping tools' %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{% url 'map' %}?tpt=m4w">
+                        <div class="panel-footer">
+                            <span class="pull-left">{% trans 'View Map' %}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        <div class="col-lg-4 col-md-6">
+                <div class="panel panel-yellow">
+                    <a href="{% url 'help_support' %}?tpt=m4w">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-question-circle fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">_</div>
+                                    <div>{% trans '-' %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{% url 'help_support' %}?tpt=m4w">
+                        <div class="panel-footer">
+                            <span class="pull-left">{% trans 'Help & Support' %}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        <div class="col-lg-12 col-md-12">
+            <div class="panel panel-dash_back">
+                <a href="{% url 'dashboard' %}">
+
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-arrow-circle-left fa-2x"></i>
+                                {#                            <img src="{% static 'dataportal/media/dataportowl.jpg' %}">#}
+                            </div>
+                            <div class="col-xs-9 text-right">
+{#                                <div class="huge">_</div>#}
+                                <div>Dashboard</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{% url 'dashboard' %}">
+                    <div class="panel-footer">
+                        <span class="pull-left">{% trans 'Back to the Dashboard' %}</span>
+                        <span class="pull-right"><i class="fa fa-dashboard fa-1.5x"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+
+
+    <div id="dashboard_view_switch_form" title="Navigation">
+        <p>It looks like you've previously used the WISERD DataPortal using the Wales National Assembley Dashboard</p>
+        <p>Would you like to continue with that, or use the full WISERD DataPortal feature set?</p>
+    </div>
+
+{% endblock %}

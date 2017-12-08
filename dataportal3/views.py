@@ -388,6 +388,9 @@ def map_search(request):
     if tpt == 'wiserd_projects':
         template_name = 'wiserd_projects_navigation.html'
 
+    if tpt == 'aqp':
+        template_name = 'aqp_navigation.html'
+
     if tpt == 'partner_projects':
         template_name = 'partner_projects_navigation.html'
 
@@ -3431,6 +3434,14 @@ def m4w_dashboard(request):
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
                   },context_instance=RequestContext(request))
+
+
+def aqp_dashboard(request):
+    return render(request, 'aqp_dashboard.html',
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request)
+                  }, context_instance=RequestContext(request))
 
 
 def wmh_dashboard(request):

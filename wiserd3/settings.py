@@ -342,7 +342,7 @@ NAW_CY_LAYER_UUIDS = []
 
 NAW_SEARCH_LAYER_UUIDS = []
 
-THIRD_PARTY_INTERFACES = ['naw', 'm4w', 'wmh', 'wiserd_projects', 'partner_projects', 'about']
+THIRD_PARTY_INTERFACES = ['naw', 'm4w', 'wmh', 'wiserd_projects', 'partner_projects', 'about', 'aqp']
 
 WMS_LAYERS = [
     {

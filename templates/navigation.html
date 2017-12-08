@@ -134,7 +134,11 @@
                         {% endblock %}
 
                         <li>
-                            <a href="{% url 'map' %}"><i class="fa fa-map-marker fa-fw"></i> {% trans 'Map' %}</a>
+                            <a href="{% url 'map' %}"><i class="fa fa-globe fa-fw"></i> {% trans 'Map' %}</a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'help_support' %}"><i class="fa fa-question-circle fa-fw"></i> {% trans 'Help and Support' %}</a>
                         </li>
 
                         <li id="Recent_Search_Results_li">

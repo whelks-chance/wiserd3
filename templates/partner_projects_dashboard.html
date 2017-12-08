@@ -122,6 +122,32 @@
                 </div>
             </div>
 
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-green">
+                    <a href="{% url 'aqp_dashboard' %}">
+                        <div class="panel-heading">
+                            <div class="row vertical-flex">
+                                <div class="col-xs-8">
+{#                                    <i class="fa fa-map-o fa-5x"></i>#}
+                                    <img src="{% static 'dataportal/media/aqp/aqp.png' %}" style="width: 60%">
+
+                                </div>
+                                <div class="col-xs-4 text-right">
+                                    <div class="huge">_</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{% url 'aqp_dashboard' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">{% trans 'Air Quality Project' %}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
             {% include 'snippets/dashboad_buttons.html' %}
 
         </div>

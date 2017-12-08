@@ -37,6 +37,7 @@ urlpatterns = [
                   url(r'^dashboard', views.dashboard, name='dashboard'),
                   url(r'^naw_dashboard', views.naw_dashboard, name='naw_dashboard'),
                   url(r'^m4w_dashboard', views.m4w_dashboard, name='m4w_dashboard'),
+                  url(r'^aqp_dashboard', views.aqp_dashboard, name='aqp_dashboard'),
                   url(r'^wmh_dashboard', views.wmh_dashboard, name='wmh_dashboard'),
                   url(r'^wiserd_projects_dashboard', views.wiserd_projects_dashboard, name='wiserd_projects_dashboard'),
                   url(r'^partner_projects_dashboard', views.partner_projects_dashboard, name='partner_projects_dashboard'),

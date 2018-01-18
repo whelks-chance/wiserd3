@@ -385,6 +385,9 @@ def map_search(request):
         if tpt == 'wmh':
             template_name = 'wmh_navigation.html'
 
+        if tpt == 'aqp':
+            template_name = 'aqp_navigation.html'
+
     if tpt == 'wiserd_projects':
         template_name = 'wiserd_projects_navigation.html'
 

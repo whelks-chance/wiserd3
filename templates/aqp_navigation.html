@@ -42,23 +42,23 @@
                 <a
                         class="navbar-brand"
                         href="{% url 'aqp_dashboard' %}"
-                            style="padding: 0 15px;">
+                        style="padding: 0 15px;">
 
-{#                    <h4>Map For Wales</h4>#}
-{#                        <i style="#}
-{#                    max-height: inherit;#}
-{#                            margin-left: 0.2em;#}
-{#                                    padding: 0.1em;#}
-{#                                    "#}
-{#                                           class="fa fa-2x fa-map-o"></i>#}
-{#                    <i style="#}
-{#                    max-height: inherit;#}
-{#                            margin-left: 0.2em;#}
-{#                                    padding: 0.1em;#}
-{#                                    "#}
-{#                                           class="fa fa-2x fa-globe"></i>#}
-                        <img src="{% static 'dataportal/media/aqp/aqp.png' %}" style="height:2.6em">
-{#                    </div>#}
+                    {#                    <h4>Map For Wales</h4>#}
+                    {#                        <i style="#}
+                    {#                    max-height: inherit;#}
+                    {#                            margin-left: 0.2em;#}
+                    {#                                    padding: 0.1em;#}
+                    {#                                    "#}
+                    {#                                           class="fa fa-2x fa-map-o"></i>#}
+                    {#                    <i style="#}
+                    {#                    max-height: inherit;#}
+                    {#                            margin-left: 0.2em;#}
+                    {#                                    padding: 0.1em;#}
+                    {#                                    "#}
+                    {#                                           class="fa fa-2x fa-globe"></i>#}
+                    <img src="{% static 'dataportal/media/aqp/aqp.png' %}" style="height:2.6em">
+                    {#                    </div>#}
 
                 </a>
             </div>
@@ -77,8 +77,8 @@
                 </li>
 
 
-            {% block top_nav_extras %}
-            {% endblock %}
+                {% block top_nav_extras %}
+                {% endblock %}
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -86,8 +86,8 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
 
-                                                <li><a href="https://cardiff.onlinesurveys.ac.uk/dataportal-lts" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {% trans 'Give Feedback' %}</a></li>
-                                                                        <li class="divider"></li>
+                        <li><a href="https://cardiff.onlinesurveys.ac.uk/dataportal-lts" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {% trans 'Give Feedback' %}</a></li>
+                        <li class="divider"></li>
                         {% if request.user.is_superuser  %}
                             <li><a href="{% url 'site_setup' %}" target="_blank"><i class="fa fa-cogs fa-fw"></i> {% trans 'Site Setup' %}</a>
                             </li>
@@ -120,7 +120,7 @@
                             <form action="{% url 'search_survey_question_gui' %}" method="get" role="search">
                                 <div class="input-group custom-search-form">
                                     <input type="text" class="form-control" placeholder="{% trans 'Search...' %}" name="search_terms">
-                                <span class="input-group-btn">
+                                    <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit">
                                         <i class="fa fa-search"></i>
                                     </button>
@@ -145,74 +145,15 @@
                             <a href="{% url 'help_support' %}"><i class="fa fa-question-circle fa-fw"></i> {% trans 'Help and Support' %}</a>
                         </li>
 
-                        <li id="Recent_Search_Results_li">
-                            <a id="Recent_Search_Results_btn" href="#"><i class="fa fa-search fa-fw"></i> {% trans 'Recent Search Results' %}<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#"> {% trans 'Text Results' %}<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        {% for s in searches.text|slice:":10" %}
-                                            {% if s.type == 'text' %}
-                                                <li>
-                                                    <a href="{% url 'search_survey_question_gui' %}?search_terms={{ s.query }}">
-                                                        {% if s.readable_name|length > 0 %}
-                                                            {{ s.type }} - {{ s.readable_name }}
-                                                        {% else %}
-                                                            {{ s.type }} - {{ s.id }}
-                                                        {% endif %}
-                                                    </a>
-                                                </li>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#"> {% trans 'Spatial Results' %}<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        {% for s in searches.spatial|slice:":10" %}
-                                            {% if s.type == 'spatial' %}
-                                                <li>
-                                                    <a href="{% url 'tables' %}?search_id={{ s.uid }}">
-                                                        {% if s.readable_name|length > 0 %}
-                                                            {{ s.type }} - {{ s.readable_name }}
-                                                        {% else %}
-                                                            {{ s.type }} - {{ s.id }}
-                                                        {% endif %}
-                                                    </a>
-                                                </li>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#"> {% trans 'Surveys' %}<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        {% for s in searches.survey %}
-                                            {% if s.type == 'survey' %}
-                                                <li>
-                                                    <a href="{% url 'survey_detail' survey_id=s.query %}">{{s.query}}</a>
-                                                </li>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                                <li>
-                                    <a href="#"> {% trans 'Questions' %}<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        {% for s in searches.question %}
-                                            {% if s.type == 'question' %}
-                                                <li>
-                                                    <a href="{% url 'question_detail' question_id=s.query %}">{{s.query}}</a>
-                                                </li>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
+
+                        <li>
+                            <a href="#" data-geojson_file="jakarta_geo.json" class="static_geojson"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> Jakarta air quality</a>
                         </li>
+                        <li>
+                            <a href="#" data-geojson_file="jakarta_bearing_geo.json" class="static_geojson"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> Jakarta locations</a>
+                        </li>
+
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

@@ -9,14 +9,14 @@
 
     <script>
         $(document).ready(function () {
-            $.cookie("WDP_view_type", "aqp", {expires: 365, path: '/'});
+            $.cookie("WDP_view_type", "wep", {expires: 365, path: '/'});
 
-            if ($.cookie("WDP_aqp_returning_user")) {
-                var view = parseInt($.cookie("WDP_aqp_returning_user"));
+            if ($.cookie("WDP_wep_returning_user")) {
+                var view = parseInt($.cookie("WDP_wep_returning_user"));
                 view += 1;
-                $.cookie("WDP_aqp_returning_user", view, {expires: 365, path: '/'});
+                $.cookie("WDP_wep_returning_user", view, {expires: 365, path: '/'});
             } else {
-                $.cookie("WDP_aqp_returning_user", 0, {expires: 365, path: '/'});
+                $.cookie("WDP_wep_returning_user", 0, {expires: 365, path: '/'});
             }
 
             $('#help_intro').click(function(){
@@ -25,7 +25,7 @@
         });
     </script>
 
-    <link rel="stylesheet" type="text/css" href="{% static 'dataportal/aqp.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dataportal/wep.css' %}" />
 
     <div id="wrapper">
 
@@ -41,7 +41,7 @@
 
                 <a
                         class="navbar-brand"
-                        href="{% url 'aqp_dashboard' %}"
+                        href="{% url 'wep_dashboard' %}"
                             style="padding: 0 15px;">
 
 {#                    <h4>Map For Wales</h4>#}
@@ -57,7 +57,11 @@
 {#                                    padding: 0.1em;#}
 {#                                    "#}
 {#                                           class="fa fa-2x fa-globe"></i>#}
-                        <img src="{% static 'dataportal/media/aqp/aqp.png' %}" style="height:2.6em">
+                        <img src="{% static 'dataportal/media/WISERDEducationIcoNew.png' %}" style="height:2.6em">
+                    <div class="navbar-brand-text">
+                        <div>WISERD DataPortal</div>
+                        <div class="navbar-version" id="version_tag">{% include 'version_number.html' %}</div>
+                    </div>
 {#                    </div>#}
 
                 </a>
@@ -130,7 +134,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="{% url 'aqp_dashboard' %}"><i class="fa fa-dashboard fa-fw"></i> {% trans 'Project Dashboard' %}</a>
+                            <a href="{% url 'wep_dashboard' %}"><i class="fa fa-dashboard fa-fw"></i> {% trans 'Project Dashboard' %}</a>
                         </li>
 
                         {% block nav_extras %}
@@ -138,7 +142,7 @@
                         {% endblock %}
 
                         <li>
-                            <a href="{% url 'map' %}?tpt=aqp"><i class="fa fa-globe fa-fw"></i> {% trans 'Map' %}</a>
+                            <a href="{% url 'map' %}?tpt=wep"><i class="fa fa-globe fa-fw"></i> {% trans 'Map' %}</a>
                         </li>
 
                         <li>

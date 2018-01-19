@@ -30,8 +30,8 @@
 }
 
 .lang-toggle {
-    border-top: #337ab7 solid 2px;
-    border-bottom: #337ab7 solid 2px;
+    border-top: #61507c solid 2px;
+    border-bottom: #61507c solid 2px;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
@@ -44,6 +44,7 @@
     padding-top: 0.5em !important;
     padding-bottom: 0.5em !important;
     min-height: 2em !important;
+    color: #61507c; !important;
 }
 
 .lang-toggle-split {
@@ -54,13 +55,13 @@
 }
 
 .lang-toggle-left {
-    border-left: #337ab7 solid 2px;
+    border-left: #61507c solid 2px;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
 }
 
 .lang-toggle-right {
-    border-right: #337ab7 solid 2px;
+    border-right: #61507c solid 2px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;}
 
@@ -294,6 +295,7 @@
     /*#side-menu > li > ul > li > ul > li > a {*/
     word-break: normal;
     line-break: strict;
+    color: #61507c;
 }
 
 .panel-group {
@@ -313,7 +315,18 @@
     color: #54075B;
 }
 
+.panel-wep {
+    border-color: #61507c;
+}
 
+.panel-wep .panel-heading {
+    color: white;
+    border-color: #61507c;
+    background-color: #61507c;
+}
+.panel-wep .panel-footer {
+    color: #61507c;
+}
 
 
 .panel-orange {
@@ -546,7 +559,7 @@
 }
 
 .btn-help {
-    color: #337ab7 !important;
+    color: #61507c !important;
 }
 
 .btn-help :hover {
@@ -568,8 +581,8 @@
 }
 
 .icon-background-blue {
-    background-color: #337ab7;
-    border: 1px solid #337ab7;
+    background-color: #61507c;
+    border: 1px solid #61507c;
 }
 
 .icon-background-purple {

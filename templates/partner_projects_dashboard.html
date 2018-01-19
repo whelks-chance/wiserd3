@@ -100,12 +100,12 @@
                     <a href="{% url 'm4w_dashboard' %}">
                         <div class="panel-heading">
                             <div class="row vertical-flex">
-                                <div class="col-xs-8">
+                                <div class="col-xs-8" style="padding-right: 0">
 {#                                    <i class="fa fa-map-o fa-5x"></i>#}
                                     <img src="{% static 'dataportal/media/m4w/m4wlogobw.gif' %}" style="width: 100%">
 
                                 </div>
-                                <div class="col-xs-4 text-right">
+                                <div class="col-xs-4 text-right" style="padding-left: 0">
                                     <div class="huge">_</div>
                                     <div>{% trans 'RTPI Cymru' %}</div>
                                 </div>
@@ -129,11 +129,19 @@
                             <div class="row vertical-flex">
                                 <div class="col-xs-8">
 {#                                    <i class="fa fa-map-o fa-5x"></i>#}
-                                    <img src="{% static 'dataportal/media/aqp/aqp.png' %}" style="width: 60%">
+                                    <img style="
+                                            {#                                            max-width: 90%;#}
+                                            {#                                background-color: white;#}
+                                            height: 4.5em;
+                                            {#                                                                            padding-top: 0.5em;#}
+                                            margin-top: 0.3em
+                                            "
+                                         src="{% static 'dataportal/media/aqp/aqp.png' %}">
 
                                 </div>
                                 <div class="col-xs-4 text-right">
                                     <div class="huge">_</div>
+                                    <div>{% trans 'Jakarta' %}</div>
                                 </div>
                             </div>
                         </div>

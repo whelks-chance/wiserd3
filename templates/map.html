@@ -26,6 +26,9 @@
     <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js" integrity="sha256-2/3+Q1kMYR8MDaqFPNBgmLgiqWJjySkg1wqLx/iE5Zo=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/uk.js" integrity="sha256-vdBxOXCFJ8UqQyiJrWLlnT1O/Bnvmpn+yrVrOg0Xafw=" crossorigin="anonymous"></script>
 
 
     {#    <script type="text/javascript" src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script>#}
@@ -220,7 +223,7 @@
         </li>
     {% endif %}
 
-    {% if not naw %}
+    {% if tpt == 'default' or tpt == 'm4w' %}
 
         <li>
             <a href="#"><i class="fa fa-map-o fa-fw"></i> {% trans 'Welsh Government Mapping Service' %}<span class="fa arrow"></span></a>
@@ -513,6 +516,7 @@
 
                                     var ppTable = prettyPrint(e.layer.feature);
 
+
                                     {#                    right_pane.html('<pre id="lle_json">' + JSON.stringify(e.layer.feature, null, 2) + '</pre>');#}
                                     right_pane.empty().append($(ppTable));
 
@@ -804,7 +808,29 @@
                         {#                        cleanedprops['model'] = null;#}
                         var ppTable = prettyPrint(cleanedprops);
                         {#                        value += JSON.stringify(props);#}
-                        value = $(ppTable).prop('outerHTML')
+{#                        value = $(ppTable).prop('outerHTML');#}
+
+                        var nice_table = '';
+                        var ignore_keys = ['marker-color', 'marker-symbol', 'to_tz', 'img_name'];
+                        for (var nice_item in cleanedprops) {
+                            if (ignore_keys.indexOf(nice_item) < 0) {
+
+                                var nice_key = nice_item;
+                                var nice_value = cleanedprops[nice_item];
+
+                                if (nice_key == 'datetime') {
+                                    var moment_obj = new moment(nice_value);
+                                    {#                                if(props['to_tz']) {#}
+                                    {#                                    moment_obj.tz(props['to_tz']);#}
+                                    {#                                }#}
+                                    nice_value = moment_obj.locale('en').format("dddd, MMMM Do YYYY, h:mm:ss a");
+                                }
+
+                                nice_table += '<p>' + nice_key + ' : ' + nice_value + '</p>'
+                            }
+                        }
+
+                        value += nice_table;
                     }
                 }
                 var info_text = '<div style="min-height: 10%">';

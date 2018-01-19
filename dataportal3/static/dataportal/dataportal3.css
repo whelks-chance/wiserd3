@@ -78,6 +78,11 @@
     margin: 0 auto;
 }
 
+.sidebar_img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
 #policy_papers > ul > ul > li > ul > li > a {
       display: flex;
     flex-direction: row;

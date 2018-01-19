@@ -1,10 +1,7 @@
 {
-    "type": "FeatureCollection",
     "features": [
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82194444444444,
@@ -14,19 +11,24 @@
                         106.82210904867583,
                         -6.207027871366036
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": 1.2353311386347132,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3710.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3710.JPG"
+                    }
+                ],
                 "bearing": 19.22076978939724,
-                "img_name": "IMG_3710.JPG",
-                "datetime": "2017-10-29T00:48:14Z",
-                "radians": 1.2353311386347132
-            }
+                "datetime": "2017-10-29T00:48:14Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82210904867583,
@@ -36,14 +38,14 @@
                         106.82210798346028,
                         -6.207077860017907
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82210904867583,
@@ -53,29 +55,34 @@
                         106.822078804306,
                         -6.207067686916938
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.82194444444444,
                     -6.2075000000000005
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3710.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3710.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3710.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82222222222222,
@@ -85,19 +92,24 @@
                         106.82197447260955,
                         -6.208212081967746
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": -2.0892058058309035,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3711.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3711.JPG"
+                    }
+                ],
                 "bearing": 209.70262390670553,
-                "img_name": "IMG_3711.JPG",
-                "datetime": "2017-10-29T00:48:34Z",
-                "radians": -2.0892058058309035
-            }
+                "datetime": "2017-10-29T00:48:34Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82197447260955,
@@ -107,14 +119,14 @@
                         106.82198461426036,
                         -6.208163121300688
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82197447260955,
@@ -124,29 +136,34 @@
                         106.82201145573545,
                         -6.20817843306882
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.82222222222222,
                     -6.207777777777778
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3711.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3711.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3711.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82222222222222,
@@ -156,19 +173,24 @@
                         106.82271344095317,
                         -6.207871073856887
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": -0.18769223412698413,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3715.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3715.JPG"
+                    }
+                ],
                 "bearing": 100.75396825396825,
-                "img_name": "IMG_3715.JPG",
-                "datetime": "2017-10-29T00:51:36Z",
-                "radians": -0.18769223412698413
-            }
+                "datetime": "2017-10-29T00:51:36Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82271344095317,
@@ -178,14 +200,14 @@
                         106.82266384026828,
                         -6.20787738036607
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82271344095317,
@@ -195,29 +217,34 @@
                         106.82266960628306,
                         -6.207847021378907
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.82222222222222,
                     -6.207777777777778
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3715.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3715.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3715.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82333333333332,
@@ -227,19 +254,24 @@
                         106.82343352350297,
                         -6.198399029796999
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": 1.3690502084621046,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3774.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3774.JPG"
+                    }
+                ],
                 "bearing": 11.559234731420162,
-                "img_name": "IMG_3774.JPG",
-                "datetime": "2017-10-29T05:11:32Z",
-                "radians": 1.3690502084621046
-            }
+                "datetime": "2017-10-29T05:11:32Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82343352350297,
@@ -249,14 +281,14 @@
                         106.82343913233002,
                         -6.198448714211649
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82343352350297,
@@ -266,29 +298,34 @@
                         106.82340885737318,
                         -6.198442522118631
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.82333333333332,
                     -6.198888888888889
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3774.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3774.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3774.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82333333333332,
@@ -298,19 +335,24 @@
                         106.82345166451832,
                         -6.198403092912517
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": 1.3318671388084822,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3775.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3775.JPG"
+                    }
+                ],
                 "bearing": 13.689666778862335,
-                "img_name": "IMG_3775.JPG",
-                "datetime": "2017-10-29T05:11:34Z",
-                "radians": 1.3318671388084822
-            }
+                "datetime": "2017-10-29T05:11:34Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82345166451832,
@@ -320,14 +362,14 @@
                         106.8234554224751,
                         -6.198452951490121
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82345166451832,
@@ -337,29 +379,34 @@
                         106.82342539863261,
                         -6.198445638220696
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.82333333333332,
                     -6.198888888888889
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3775.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3775.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3775.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82305555555556,
@@ -369,19 +416,24 @@
                         106.82278273034889,
                         -6.1993078953406435
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": -2.147961383183183,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3776.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3776.JPG"
+                    }
+                ],
                 "bearing": 213.06906906906906,
-                "img_name": "IMG_3776.JPG",
-                "datetime": "2017-10-29T05:12:00Z",
-                "radians": -2.147961383183183
-            }
+                "datetime": "2017-10-29T05:12:00Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82278273034889,
@@ -391,14 +443,14 @@
                         106.82279572955652,
                         -6.199259614696477
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82278273034889,
@@ -408,29 +460,34 @@
                         106.82282162557938,
                         -6.199276476221548
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.82305555555556,
                     -6.198888888888889
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3776.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3776.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3776.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82305555555556,
@@ -440,19 +497,24 @@
                         106.82271092527286,
                         -6.197971076562178
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": -3.9519210183556406,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3777.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3777.JPG"
+                    }
+                ],
                 "bearing": 316.4282982791587,
-                "img_name": "IMG_3777.JPG",
-                "datetime": "2017-10-29T05:15:04Z",
-                "radians": -3.9519210183556406
-            }
+                "datetime": "2017-10-29T05:15:04Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82271092527286,
@@ -462,14 +524,14 @@
                         106.82275489591032,
                         -6.197994879567043
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82271092527286,
@@ -479,29 +541,34 @@
                         106.8227325072106,
                         -6.198016178889869
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.82305555555556,
                     -6.198333333333333
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3777.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3777.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3777.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.8236111111111,
@@ -511,19 +578,24 @@
                         106.82311216900396,
                         -6.194411936388246
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": -3.2066546582159625,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3781.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3781.JPG"
+                    }
+                ],
                 "bearing": 273.7276995305164,
-                "img_name": "IMG_3781.JPG",
-                "datetime": "2017-10-29T05:47:34Z",
-                "radians": -3.2066546582159625
-            }
+                "datetime": "2017-10-29T05:47:34Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82311216900396,
@@ -533,14 +605,14 @@
                         106.82316062577237,
                         -6.194399609929082
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82311216900396,
@@ -550,29 +622,34 @@
                         106.823158616664,
                         -6.194430446247146
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.8236111111111,
                     -6.194444444444445
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3781.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3781.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3781.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.8236111111111,
@@ -582,19 +659,24 @@
                         106.82311291718162,
                         -6.194679762728402
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": -3.2266140356435646,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3782.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3782.JPG"
+                    }
+                ],
                 "bearing": 274.8712871287129,
-                "img_name": "IMG_3782.JPG",
-                "datetime": "2017-10-29T05:48:24Z",
-                "radians": -3.2266140356435646
-            }
+                "datetime": "2017-10-29T05:48:24Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82311291718162,
@@ -604,14 +686,14 @@
                         106.82316161031044,
                         -6.194668405827159
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82311291718162,
@@ -621,29 +703,34 @@
                         106.8231589861694,
                         -6.194699195905301
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.8236111111111,
                     -6.1947222222222225
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3782.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3782.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3782.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82222222222222,
@@ -653,19 +740,24 @@
                         106.82238793519251,
                         -6.207583814936698
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": 1.2329817912491652,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3785.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3785.JPG"
+                    }
+                ],
                 "bearing": 19.355377421509687,
-                "img_name": "IMG_3785.JPG",
-                "datetime": "2017-10-30T08:33:59Z",
-                "radians": 1.2329817912491652
-            }
+                "datetime": "2017-10-30T08:33:59Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82238793519251,
@@ -675,14 +767,14 @@
                         106.8223867525393,
                         -6.207633800948055
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82238793519251,
@@ -692,29 +784,34 @@
                         106.82235759736567,
                         -6.207623559323254
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.82222222222222,
                     -6.208055555555556
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3785.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3785.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3785.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82333333333332,
@@ -724,19 +821,24 @@
                         106.8234760177752,
                         -6.198131902231766
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": 1.2814050323725057,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3812.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3812.JPG"
+                    }
+                ],
                 "bearing": 16.580931263858094,
-                "img_name": "IMG_3812.JPG",
-                "datetime": "2017-10-30T09:19:26Z",
-                "radians": 1.2814050323725057
-            }
+                "datetime": "2017-10-30T09:19:26Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.8234760177752,
@@ -746,14 +848,14 @@
                         106.82347725604714,
                         -6.19818188689624
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.8234760177752,
@@ -763,29 +865,34 @@
                         106.82344763930962,
                         -6.198173068512765
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.82333333333332,
                     -6.198611111111111
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3812.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3812.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3812.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82305555555556,
@@ -795,19 +902,24 @@
                         106.8229057873177,
                         -6.19936593131355
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": -1.8750031124497992,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3814.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3814.JPG"
+                    }
+                ],
                 "bearing": 197.429718875502,
-                "img_name": "IMG_3814.JPG",
-                "datetime": "2017-10-30T09:20:42Z",
-                "radians": -1.8750031124497992
-            }
+                "datetime": "2017-10-30T09:20:42Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.8229057873177,
@@ -817,14 +929,14 @@
                         106.82290528970192,
                         -6.199315933789826
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.8229057873177,
@@ -834,29 +946,34 @@
                         106.82293477254518,
                         -6.199325189975969
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.82305555555556,
                     -6.198888888888889
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3814.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3814.JPG"
-            }
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3814.JPG"
+                    }
+                ]
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82333333333332,
@@ -866,19 +983,24 @@
                         106.82367327701708,
                         -6.1945333249433645
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
             "properties": {
+                "radians": -0.8231872963302755,
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3818.JPG",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3818.JPG"
+                    }
+                ],
                 "bearing": 137.1651376146789,
-                "img_name": "IMG_3818.JPG",
-                "datetime": "2017-10-30T09:45:12Z",
-                "radians": -0.8231872963302755
-            }
+                "datetime": "2017-10-30T09:45:12Z"
+            },
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82367327701708,
@@ -888,14 +1010,14 @@
                         106.82362961608766,
                         -6.194508958506575
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "LineString",
                 "coordinates": [
                     [
                         106.82367327701708,
@@ -905,1968 +1027,32 @@
                         106.82365227681538,
                         -6.194487948831492
                     ]
-                ]
+                ],
+                "type": "LineString"
             },
-            "properties": {}
+            "properties": {},
+            "type": "Feature"
         },
         {
-            "type": "Feature",
             "geometry": {
-                "type": "Point",
                 "coordinates": [
                     106.82333333333332,
                     -6.194166666666667
-                ]
+                ],
+                "type": "Point"
             },
             "properties": {
                 "marker-symbol": "circle",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3818.JPG",
                 "marker-color": "#ff0000",
-                "img": "IMG_3818.JPG"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -3.3660255180079147e-06,
-                        4.999999999998867
-                    ]
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3818.JPG"
+                    }
                 ]
             },
-            "properties": {
-                "bearing": 0,
-                "radians": 1.5707970000000002
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.3660255180079147e-06,
-                        4.999999999998867
-                    ],
-                    [
-                        0.15450545128997112,
-                        4.524471845867307
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.3660255180079147e-06,
-                        4.999999999998867
-                    ],
-                    [
-                        -0.15451154308490625,
-                        4.524471637835489
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        0.8682379417673614,
-                        4.924039284619445
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 10,
-                "radians": 1.3962640000000002
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0.8682379417673614,
-                        4.924039284619445
-                    ],
-                    [
-                        0.937824788537834,
-                        4.428905291889656
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0.8682379417673614,
-                        4.924039284619445
-                    ],
-                    [
-                        0.6335024245543805,
-                        4.482565347723104
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        1.7100982564941778,
-                        4.698463999344421
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 20,
-                "radians": 1.2217310000000001
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        1.7100982564941778,
-                        4.698463999344421
-                    ],
-                    [
-                        1.6926487697854316,
-                        4.198768576698184
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        1.7100982564941778,
-                        4.698463999344421
-                    ],
-                    [
-                        1.4022677251341702,
-                        4.304458461359718
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        2.4999980566240096,
-                        4.330128140930263
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 30,
-                "radians": 1.047198
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        2.4999980566240096,
-                        4.330128140930263
-                    ],
-                    [
-                        2.396042430713126,
-                        3.8410542939076726
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        2.4999980566240096,
-                        4.330128140930263
-                    ],
-                    [
-                        2.128425794039396,
-                        3.995562670987905
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        3.213936615918503,
-                        3.8302234176165646
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 40,
-                "radians": 0.872665
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        3.213936615918503,
-                        3.8302234176165646
-                    ],
-                    [
-                        3.026633492595255,
-                        3.3666314202812395
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        3.213936615918503,
-                        3.8302234176165646
-                    ],
-                    [
-                        2.7899126669359733,
-                        3.5652636269137847
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        3.8302212539771645,
-                        3.213939194443727
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 50,
-                "radians": 0.6981320000000001
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        3.8302212539771645,
-                        3.213939194443727
-                    ],
-                    [
-                        3.565261748729531,
-                        2.7899150670890105
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        3.8302212539771645,
-                        3.213939194443727
-                    ],
-                    [
-                        3.3666293827353626,
-                        3.0266357590280233
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        4.330126457917832,
-                        2.500000971687806
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 60,
-                "radians": 0.523599
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.330126457917832,
-                        2.500000971687806
-                    ],
-                    [
-                        3.995561238119892,
-                        2.1284284838720953
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.330126457917832,
-                        2.500000971687806
-                    ],
-                    [
-                        3.8410526808788097,
-                        2.3960450165299365
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        4.698462848096482,
-                        1.7101014195237334
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 70,
-                "radians": 0.34906600000000004
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.698462848096482,
-                        1.7101014195237334
-                    ],
-                    [
-                        4.304457517344953,
-                        1.4022706229172566
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.698462848096482,
-                        1.7101014195237334
-                    ],
-                    [
-                        4.198767437197442,
-                        1.6926515964174826
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        4.924038700116116,
-                        0.8682412566555411
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 80,
-                "radians": 0.17453300000000002
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.924038700116116,
-                        0.8682412566555411
-                    ],
-                    [
-                        4.482564921245023,
-                        0.6335054422401062
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.924038700116116,
-                        0.8682412566555411
-                    ],
-                    [
-                        4.428904660540218,
-                        0.9378277700992672
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        5.0,
-                        0.0
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 90,
-                "radians": -0.0
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        5.0,
-                        0.0
-                    ],
-                    [
-                        4.524471741852423,
-                        -0.15450849718747364
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        5.0,
-                        0.0
-                    ],
-                    [
-                        4.524471741852423,
-                        0.15450849718747375
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        4.924038700116116,
-                        -0.8682412566555411
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 100,
-                "radians": -0.17453300000000002
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.924038700116116,
-                        -0.8682412566555411
-                    ],
-                    [
-                        4.428904660540218,
-                        -0.9378277700992671
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.924038700116116,
-                        -0.8682412566555411
-                    ],
-                    [
-                        4.482564921245023,
-                        -0.6335054422401061
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        4.698462848096482,
-                        -1.7101014195237334
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 110,
-                "radians": -0.34906600000000004
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.698462848096482,
-                        -1.7101014195237334
-                    ],
-                    [
-                        4.198767437197442,
-                        -1.6926515964174824
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.698462848096482,
-                        -1.7101014195237334
-                    ],
-                    [
-                        4.304457517344953,
-                        -1.4022706229172563
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        4.330126457917832,
-                        -2.500000971687806
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 120,
-                "radians": -0.523599
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.330126457917832,
-                        -2.500000971687806
-                    ],
-                    [
-                        3.8410526808788097,
-                        -2.3960450165299365
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.330126457917832,
-                        -2.500000971687806
-                    ],
-                    [
-                        3.995561238119892,
-                        -2.1284284838720953
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        3.8302212539771645,
-                        -3.213939194443727
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 130,
-                "radians": -0.6981320000000001
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        3.8302212539771645,
-                        -3.213939194443727
-                    ],
-                    [
-                        3.366629382735363,
-                        -3.0266357590280233
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        3.8302212539771645,
-                        -3.213939194443727
-                    ],
-                    [
-                        3.565261748729531,
-                        -2.78991506708901
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        3.213936615918503,
-                        -3.8302234176165646
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 140,
-                "radians": -0.872665
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        3.213936615918503,
-                        -3.8302234176165646
-                    ],
-                    [
-                        2.7899126669359737,
-                        -3.5652636269137843
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        3.213936615918503,
-                        -3.8302234176165646
-                    ],
-                    [
-                        3.0266334925952556,
-                        -3.366631420281239
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        2.4999980566240096,
-                        -4.330128140930263
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 150,
-                "radians": -1.047198
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        2.4999980566240096,
-                        -4.330128140930263
-                    ],
-                    [
-                        2.1284257940393965,
-                        -3.995562670987905
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        2.4999980566240096,
-                        -4.330128140930263
-                    ],
-                    [
-                        2.396042430713126,
-                        -3.8410542939076726
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        1.7100982564941778,
-                        -4.698463999344421
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 160,
-                "radians": -1.2217310000000001
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        1.7100982564941778,
-                        -4.698463999344421
-                    ],
-                    [
-                        1.4022677251341702,
-                        -4.304458461359718
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        1.7100982564941778,
-                        -4.698463999344421
-                    ],
-                    [
-                        1.6926487697854318,
-                        -4.198768576698184
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        0.8682379417673614,
-                        -4.924039284619445
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 170,
-                "radians": -1.3962640000000002
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0.8682379417673614,
-                        -4.924039284619445
-                    ],
-                    [
-                        0.6335024245543807,
-                        -4.482565347723104
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0.8682379417673614,
-                        -4.924039284619445
-                    ],
-                    [
-                        0.937824788537834,
-                        -4.428905291889656
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -3.3660255180079147e-06,
-                        -4.999999999998867
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 180,
-                "radians": -1.5707970000000002
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.3660255180079147e-06,
-                        -4.999999999998867
-                    ],
-                    [
-                        -0.15451154308490636,
-                        -4.524471637835489
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.3660255180079147e-06,
-                        -4.999999999998867
-                    ],
-                    [
-                        0.15450545128997104,
-                        -4.524471845867307
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -0.8682445715433268,
-                        -4.924038115610555
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 190,
-                "radians": -1.74533
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -0.8682445715433268,
-                        -4.924038115610555
-                    ],
-                    [
-                        -0.9378307516602746,
-                        -4.428904029188774
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -0.8682445715433268,
-                        -4.924038115610555
-                    ],
-                    [
-                        -0.6335084599255439,
-                        -4.482564494764911
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -1.7101045825525139,
-                        -4.698461696846415
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 200,
-                "radians": -1.919863
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -1.7101045825525139,
-                        -4.698461696846415
-                    ],
-                    [
-                        -1.6926544230487661,
-                        -4.198766297694799
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -1.7101045825525139,
-                        -4.698461696846415
-                    ],
-                    [
-                        -1.4022735206997072,
-                        -4.304456573328238
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -2.50000388675047,
-                        -4.330124774903437
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 210,
-                "radians": -2.094396
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -2.50000388675047,
-                        -4.330124774903437
-                    ],
-                    [
-                        -2.3960476023456607,
-                        -3.8410510678482055
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -2.50000388675047,
-                        -4.330124774903437
-                    ],
-                    [
-                        -2.12843117370383,
-                        -3.995559805250069
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -3.213941772967494,
-                        -3.8302190903360294
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 220,
-                "radians": -2.268929
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.213941772967494,
-                        -3.8302190903360294
-                    ],
-                    [
-                        -3.026638025459419,
-                        -3.366627345187961
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.213941772967494,
-                        -3.8302190903360294
-                    ],
-                    [
-                        -2.789917467240782,
-                        -3.5652598705436622
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -3.830225581254229,
-                        -3.213934037391823
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 230,
-                "radians": -2.4434620000000002
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.830225581254229,
-                        -3.213934037391823
-                    ],
-                    [
-                        -3.5652655050964226,
-                        -2.7899102667816726
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.830225581254229,
-                        -3.213934037391823
-                    ],
-                    [
-                        -3.3666334578255905,
-                        -3.0266312261611166
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -4.330129823940732,
-                        -2.49999514155908
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 240,
-                "radians": -2.617995
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.330129823940732,
-                        -2.49999514155908
-                    ],
-                    [
-                        -3.9955641038541057,
-                        -2.1284231042057327
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.330129823940732,
-                        -2.49999514155908
-                    ],
-                    [
-                        -3.8410559069347943,
-                        -2.39603984489523
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -4.698465150590231,
-                        -1.710095093463847
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 250,
-                "radians": -2.7925280000000003
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.698465150590231,
-                        -1.710095093463847
-                    ],
-                    [
-                        -4.304459405372532,
-                        -1.402264827350448
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.698465150590231,
-                        -1.710095093463847
-                    ],
-                    [
-                        -4.198769716197024,
-                        -1.6926459431526137
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -4.924039869120543,
-                        -0.8682346268787889
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 260,
-                "radians": -2.967061
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.924039869120543,
-                        -0.8682346268787889
-                    ],
-                    [
-                        -4.482565774199154,
-                        -0.6334994068683687
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.924039869120543,
-                        -0.8682346268787889
-                    ],
-                    [
-                        -4.428905923237087,
-                        -0.9378218069759766
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -4.9999999999954685,
-                        6.732051036014304e-06
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 270,
-                "radians": -3.1415940000000004
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.9999999999954685,
-                        6.732051036014304e-06
-                    ],
-                    [
-                        -4.524471533816505,
-                        0.15451458898226902
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.9999999999954685,
-                        6.732051036014304e-06
-                    ],
-                    [
-                        -4.524471949880141,
-                        -0.1545024053923983
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -4.924037531102762,
-                        0.8682478864307197
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 280,
-                "radians": -3.3161270000000003
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.924037531102762,
-                        0.8682478864307197
-                    ],
-                    [
-                        -4.428903397835322,
-                        0.9378337332208578
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.924037531102762,
-                        0.8682478864307197
-                    ],
-                    [
-                        -4.482564068282766,
-                        0.6335114776106954
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -4.698460545594218,
-                        1.7101077455805185
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 290,
-                "radians": -3.49066
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.698460545594218,
-                        1.7101077455805185
-                    ],
-                    [
-                        -4.19876515819025,
-                        1.6926572496792818
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.698460545594218,
-                        1.7101077455805185
-                    ],
-                    [
-                        -4.304455629309572,
-                        1.4022764184815217
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -4.3301230918870806,
-                        2.5000068018120016
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 300,
-                "radians": -3.6651930000000004
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.3301230918870806,
-                        2.5000068018120016
-                    ],
-                    [
-                        -3.841049454815861,
-                        2.3960501881603005
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -4.3301230918870806,
-                        2.5000068018120016
-                    ],
-                    [
-                        -3.995558372378435,
-                        2.1284338635346005
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -3.8302169266931574,
-                        3.2139443514898054
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 310,
-                "radians": -3.839726
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.8302169266931574,
-                        3.2139443514898054
-                    ],
-                    [
-                        -3.3666253076390333,
-                        3.026640291889444
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.8302169266931574,
-                        3.2139443514898054
-                    ],
-                    [
-                        -3.565257992356177,
-                        2.7899198673912906
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -3.213931458863687,
-                        3.8302277448901565
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 320,
-                "radians": -4.014259
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.213931458863687,
-                        3.8302277448901565
-                    ],
-                    [
-                        -2.7899078666261086,
-                        3.5652673832774435
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.213931458863687,
-                        3.8302277448901565
-                    ],
-                    [
-                        -3.026628959725606,
-                        3.3666354953684143
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -2.499992226493017,
-                        4.330131506949239
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 330,
-                "radians": -4.188792
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -2.499992226493017,
-                        4.330131506949239
-                    ],
-                    [
-                        -2.1284204143711043,
-                        3.9955655367184963
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -2.499992226493017,
-                        4.330131506949239
-                    ],
-                    [
-                        -2.3960372590762473,
-                        3.8410575199601755
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -1.7100919304327409,
-                        4.698466301833911
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 340,
-                "radians": -4.363325000000001
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -1.7100919304327409,
-                        4.698466301833911
-                    ],
-                    [
-                        -1.4022619295660903,
-                        4.304460349383395
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -1.7100919304327409,
-                        4.698466301833911
-                    ],
-                    [
-                        -1.6926431165190283,
-                        4.19877085569396
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        0,
-                        0
-                    ],
-                    [
-                        -0.8682313119898242,
-                        4.9240404536194085
-                    ]
-                ]
-            },
-            "properties": {
-                "bearing": 350,
-                "radians": -4.537858
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -0.8682313119898242,
-                        4.9240404536194085
-                    ],
-                    [
-                        -0.6334963891820707,
-                        4.482566200673172
-                    ]
-                ]
-            },
-            "properties": {}
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -0.8682313119898242,
-                        4.9240404536194085
-                    ],
-                    [
-                        -0.9378188254136952,
-                        4.428906554582509
-                    ]
-                ]
-            },
-            "properties": {}
+            "type": "Feature"
         }
-    ]
+    ],
+    "type": "FeatureCollection"
 }

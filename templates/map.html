@@ -26,9 +26,9 @@
     <script type="text/javascript" src="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'leafletjs.com/leaflet-0.7.3/leaflet.css' %}" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js" integrity="sha256-2/3+Q1kMYR8MDaqFPNBgmLgiqWJjySkg1wqLx/iE5Zo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js" integrity="sha256-2/3+Q1kMYR8MDaqFPNBgmLgiqWJjySkg1wqLx/iE5Zo=" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/uk.js" integrity="sha256-vdBxOXCFJ8UqQyiJrWLlnT1O/Bnvmpn+yrVrOg0Xafw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/uk.js" integrity="sha256-vdBxOXCFJ8UqQyiJrWLlnT1O/Bnvmpn+yrVrOg0Xafw=" crossorigin="anonymous"></script>
 
 
     {#    <script type="text/javascript" src="https://rawgithub.com/kartena/Proj4Leaflet/master/lib/proj4-compressed.js"></script>#}
@@ -165,6 +165,10 @@
 
     {% if tpt == 'wmh' %}
         {% include 'wmh/map_menu_snippet.html' %}
+    {% endif %}
+
+        {% if tpt == 'aqp' %}
+        {% include 'aqp/map_menu_snippet.html' %}
     {% endif %}
 
     {% if naw %}
@@ -808,7 +812,7 @@
                         {#                        cleanedprops['model'] = null;#}
                         var ppTable = prettyPrint(cleanedprops);
                         {#                        value += JSON.stringify(props);#}
-{#                        value = $(ppTable).prop('outerHTML');#}
+                        {#                        value = $(ppTable).prop('outerHTML');#}
 
                         var nice_table = '';
                         var ignore_keys = ['marker-color', 'marker-symbol', 'to_tz', 'img_name'];
@@ -905,7 +909,7 @@
 
                         }
 
-                       for (var group in groups) {
+                        for (var group in groups) {
                             strings += '<div class="sidebar_group">';
                             for (var item_field in groups[group]['list']) {
                                 strings += groups[group]['list'][item_field];
@@ -2587,7 +2591,17 @@
             }
 
             function reset_map() {
-                map.setView([52.4, -3.51], 8);
+                var view_point = [52.4, -3.51];
+                var view_zoom = 8;
+                {% if tpt == 'can' %}
+                    view_point = [65.4, -100.51];
+                    view_zoom = 3;
+                {% elif tpt == 'aqp' %}
+                    view_point = [-6.1751, 106.8650];
+                    view_zoom = 10;
+                {% endif %}
+
+                map.setView(view_point, view_zoom);
             }
 
             function take_screenshot() {

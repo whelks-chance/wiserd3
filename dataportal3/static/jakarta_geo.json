@@ -3,703 +3,909 @@
     "features": [
         {
             "type": "Feature",
+            "properties": {
+                "value": "46",
+                "datetime": "2017-10-26T05:38:00Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3664.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3664.JPG"
+                    }
+                ],
+                "marker-color": "#d7eed1"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.83194444444445,
                     -6.180555555555556
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3664.JPG",
-                "datetime": "2017-10-26T05:38:00Z",
-                "marker-color": "#d7eed1",
-                "value": "46",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.83194444444445,
-                    -6.180277777777778
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3665.JPG",
+                "value": "46",
                 "datetime": "2017-10-26T05:38:30Z",
-                "marker-color": "#d7eed1",
-                "value": "46",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3665.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3665.JPG"
+                    }
+                ],
+                "marker-color": "#d7eed1"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.83194444444445,
                     -6.180277777777778
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3666.JPG",
-                "datetime": "2017-10-26T05:38:31Z",
-                "marker-color": "#d7eed1",
                 "value": "46",
-                "marker-symbol": "heart"
+                "datetime": "2017-10-26T05:38:31Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3666.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3666.JPG"
+                    }
+                ],
+                "marker-color": "#d7eed1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.83194444444445,
+                    -6.180277777777778
+                ]
             }
         },
         {
             "type": "Feature",
+            "properties": {
+                "value": "57",
+                "datetime": "2017-10-26T05:52:54Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3673(1).JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3673(1).JPG"
+                    }
+                ],
+                "marker-color": "#e1f2d2"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.83222222222221,
                     -6.180277777777778
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3673(1).JPG",
-                "datetime": "2017-10-26T05:52:54Z",
-                "marker-color": "#e1f2d2",
-                "value": "57",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
+            "properties": {
+                "value": "57",
+                "datetime": "2017-10-26T05:52:54Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3673.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3673.JPG"
+                    }
+                ],
+                "marker-color": "#e1f2d2"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.83222222222221,
                     -6.180277777777778
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3673.JPG",
-                "datetime": "2017-10-26T05:52:54Z",
-                "marker-color": "#e1f2d2",
-                "value": "57",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
+            "properties": {
+                "value": "185",
+                "datetime": "2017-10-29T00:45:26Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3709.jpg",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3709.jpg"
+                    }
+                ],
+                "marker-color": "#efbdbe"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82222222222222,
                     -6.207777777777778
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3709.jpg",
-                "datetime": "2017-10-29T00:45:26Z",
-                "marker-color": "#efbdbe",
-                "value": "185",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.82277777777777,
-                    -6.203055555555555
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3730.jpg",
-                "datetime": "2017-10-29T01:12:04Z",
-                "marker-color": "#f5c5c0",
                 "value": "175",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "datetime": "2017-10-29T01:12:04Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3730.jpg",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3730.jpg"
+                    }
+                ],
+                "marker-color": "#f5c5c0"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82277777777777,
                     -6.203055555555555
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3731.JPG",
+                "value": "182",
                 "datetime": "2017-10-29T01:14:33Z",
-                "marker-color": "#f2bfbe",
-                "value": "182",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3731.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3731.JPG"
+                    }
+                ],
+                "marker-color": "#f2bfbe"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82277777777777,
                     -6.203055555555555
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3732.JPG",
+                "value": "182",
                 "datetime": "2017-10-29T01:14:36Z",
-                "marker-color": "#f2bfbe",
-                "value": "182",
-                "marker-symbol": "heart"
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3732.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3732.JPG"
+                    }
+                ],
+                "marker-color": "#f2bfbe"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.82277777777777,
+                    -6.203055555555555
+                ]
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.82305555555556,
-                    -6.198333333333333
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3743.JPG",
+                "value": "165",
                 "datetime": "2017-10-29T01:44:33Z",
-                "marker-color": "#facfc5",
-                "value": "165",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3743.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3743.JPG"
+                    }
+                ],
+                "marker-color": "#facfc5"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82305555555556,
                     -6.198333333333333
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3745.JPG",
-                "datetime": "2017-10-29T01:44:37Z",
-                "marker-color": "#facfc5",
                 "value": "165",
-                "marker-symbol": "heart"
+                "datetime": "2017-10-29T01:44:37Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3745.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3745.JPG"
+                    }
+                ],
+                "marker-color": "#facfc5"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.82305555555556,
+                    -6.198333333333333
+                ]
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.8236111111111,
-                    -6.194444444444445
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3747.JPG",
+                "value": "182",
                 "datetime": "2017-10-29T02:07:6Z",
-                "marker-color": "#f2bfbe",
-                "value": "182",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3747.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3747.JPG"
+                    }
+                ],
+                "marker-color": "#f2bfbe"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.8236111111111,
                     -6.194444444444445
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3748.JPG",
-                "datetime": "2017-10-29T02:07:10Z",
-                "marker-color": "#f2bfbe",
-                "value": "182",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
+            "properties": {
+                "value": "182",
+                "datetime": "2017-10-29T02:07:10Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3748.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3748.JPG"
+                    }
+                ],
+                "marker-color": "#f2bfbe"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.8236111111111,
+                    -6.194444444444445
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "value": "168",
+                "datetime": "2017-10-29T02:08:37Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3749.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3749.JPG"
+                    }
+                ],
+                "marker-color": "#f8ccc3"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.8236111111111,
                     -6.1947222222222225
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3749.JPG",
-                "datetime": "2017-10-29T02:08:37Z",
-                "marker-color": "#f8ccc3",
-                "value": "168",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.82222222222222,
-                    -6.207777777777778
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3754.JPG",
+                "value": "158",
                 "datetime": "2017-10-29T03:08:44Z",
-                "marker-color": "#fcd5c8",
-                "value": "158",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3754.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3754.JPG"
+                    }
+                ],
+                "marker-color": "#fcd5c8"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82222222222222,
                     -6.207777777777778
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3755.JPG",
+                "value": "158",
                 "datetime": "2017-10-29T03:08:50Z",
-                "marker-color": "#fcd5c8",
-                "value": "158",
-                "marker-symbol": "heart"
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3755.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3755.JPG"
+                    }
+                ],
+                "marker-color": "#fcd5c8"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.82222222222222,
+                    -6.207777777777778
+                ]
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.82249999999999,
-                    -6.207777777777778
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3757.JPG",
+                "value": "132",
                 "datetime": "2017-10-29T04:11:38Z",
-                "marker-color": "#ffedd5",
-                "value": "132",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3757.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3757.JPG"
+                    }
+                ],
+                "marker-color": "#ffedd5"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82249999999999,
                     -6.207777777777778
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3758.JPG",
+                "value": "132",
                 "datetime": "2017-10-29T04:11:44Z",
-                "marker-color": "#ffedd5",
-                "value": "132",
-                "marker-symbol": "heart"
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3758.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3758.JPG"
+                    }
+                ],
+                "marker-color": "#ffedd5"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.82249999999999,
+                    -6.207777777777778
+                ]
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.82222222222222,
-                    -6.207777777777778
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3759.JPG",
+                "value": "132",
                 "datetime": "2017-10-29T04:13:4Z",
-                "marker-color": "#ffedd5",
-                "value": "132",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3759.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3759.JPG"
+                    }
+                ],
+                "marker-color": "#ffedd5"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82222222222222,
                     -6.207777777777778
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3760.JPG",
-                "datetime": "2017-10-29T04:13:16Z",
-                "marker-color": "#ffedd5",
-                "value": "132",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
+            "properties": {
+                "value": "132",
+                "datetime": "2017-10-29T04:13:16Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3760.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3760.JPG"
+                    }
+                ],
+                "marker-color": "#ffedd5"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.82222222222222,
+                    -6.207777777777778
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "value": "129",
+                "datetime": "2017-10-29T04:17:38Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3763.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3763.JPG"
+                    }
+                ],
+                "marker-color": "#ffefd7"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82222222222222,
                     -6.2075000000000005
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3763.JPG",
-                "datetime": "2017-10-29T04:17:38Z",
-                "marker-color": "#ffefd7",
-                "value": "129",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
+            "properties": {
+                "value": "129",
+                "datetime": "2017-10-29T04:18:17Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3764.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3764.JPG"
+                    }
+                ],
+                "marker-color": "#ffefd7"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82249999999999,
                     -6.207777777777778
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3764.JPG",
-                "datetime": "2017-10-29T04:18:17Z",
-                "marker-color": "#ffefd7",
-                "value": "129",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.82222222222222,
-                    -6.207777777777778
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3765.JPG",
-                "datetime": "2017-10-29T04:23:10Z",
-                "marker-color": "#fcd6c8",
                 "value": "157",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "datetime": "2017-10-29T04:23:10Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3765.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3765.JPG"
+                    }
+                ],
+                "marker-color": "#fcd6c8"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82222222222222,
                     -6.207777777777778
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3769.jpg",
+                "value": "166",
                 "datetime": "2017-10-29T04:44:52Z",
-                "marker-color": "#f9cec4",
-                "value": "166",
-                "marker-symbol": "heart"
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3769.jpg",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3769.jpg"
+                    }
+                ],
+                "marker-color": "#f9cec4"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.82222222222222,
+                    -6.207777777777778
+                ]
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.82277777777777,
-                    -6.203055555555555
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3771.jpg",
+                "value": "167",
                 "datetime": "2017-10-29T05:02:12Z",
-                "marker-color": "#f9cdc4",
-                "value": "167",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3771.jpg",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3771.jpg"
+                    }
+                ],
+                "marker-color": "#f9cdc4"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82277777777777,
                     -6.203055555555555
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3772.JPG",
+                "value": "167",
                 "datetime": "2017-10-29T05:02:21Z",
-                "marker-color": "#f9cdc4",
-                "value": "167",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3772.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3772.JPG"
+                    }
+                ],
+                "marker-color": "#f9cdc4"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82277777777777,
                     -6.203055555555555
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3773.jpg",
-                "datetime": "2017-10-29T05:02:51Z",
-                "marker-color": "#f9cdc4",
                 "value": "167",
-                "marker-symbol": "heart"
+                "datetime": "2017-10-29T05:02:51Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3773.jpg",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3773.jpg"
+                    }
+                ],
+                "marker-color": "#f9cdc4"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.82277777777777,
+                    -6.203055555555555
+                ]
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.82305555555556,
-                    -6.198333333333333
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3778.jpg",
-                "datetime": "2017-10-29T05:15:20Z",
-                "marker-color": "#f9cec4",
                 "value": "166",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "datetime": "2017-10-29T05:15:20Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3778.jpg",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3778.jpg"
+                    }
+                ],
+                "marker-color": "#f9cec4"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82305555555556,
                     -6.198333333333333
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3779.JPG",
-                "datetime": "2017-10-29T05:15:37Z",
-                "marker-color": "#f8ccc3",
                 "value": "168",
-                "marker-symbol": "heart"
+                "datetime": "2017-10-29T05:15:37Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3779.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3779.JPG"
+                    }
+                ],
+                "marker-color": "#f8ccc3"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.82305555555556,
+                    -6.198333333333333
+                ]
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.8236111111111,
-                    -6.194444444444445
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3783.JPG",
-                "datetime": "2017-10-29T05:49:58Z",
-                "marker-color": "#f5c5c0",
                 "value": "176",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "datetime": "2017-10-29T05:49:58Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3783.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3783.JPG"
+                    }
+                ],
+                "marker-color": "#f5c5c0"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.8236111111111,
                     -6.194444444444445
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3784.JPG",
-                "datetime": "2017-10-29T05:52:02Z",
-                "marker-color": "#f4c3bf",
-                "value": "178",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
+            "properties": {
+                "value": "178",
+                "datetime": "2017-10-29T05:52:02Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3784.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3784.JPG"
+                    }
+                ],
+                "marker-color": "#f4c3bf"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.8236111111111,
+                    -6.194444444444445
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "value": "82",
+                "datetime": "2017-10-30T08:45:43Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3790.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3790.JPG"
+                    }
+                ],
+                "marker-color": "#f5fbde"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82194444444444,
                     -6.207777777777778
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3790.JPG",
-                "datetime": "2017-10-30T08:45:43Z",
-                "marker-color": "#f5fbde",
-                "value": "82",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
+            "properties": {
+                "value": "159",
+                "datetime": "2017-10-30T09:05:16Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3792.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3792.JPG"
+                    }
+                ],
+                "marker-color": "#fcd4c7"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82277777777777,
                     -6.203333333333333
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3792.JPG",
-                "datetime": "2017-10-30T09:05:16Z",
-                "marker-color": "#fcd4c7",
-                "value": "159",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.82277777777777,
-                    -6.203055555555555
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3807.jpg",
-                "datetime": "2017-10-30T09:09:40Z",
-                "marker-color": "#fddaca",
                 "value": "153",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.82277777777777,
-                    -6.203055555555555
-                ]
-            },
-            "properties": {
-                "img_name": "IMG_3808.jpg",
                 "datetime": "2017-10-30T09:09:40Z",
-                "marker-color": "#fddaca",
-                "value": "153",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3807.jpg",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3807.jpg"
+                    }
+                ],
+                "marker-color": "#fddaca"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82277777777777,
                     -6.203055555555555
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3809.jpg",
+                "value": "153",
+                "datetime": "2017-10-30T09:09:40Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3808.jpg",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3808.jpg"
+                    }
+                ],
+                "marker-color": "#fddaca"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.82277777777777,
+                    -6.203055555555555
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "value": "153",
                 "datetime": "2017-10-30T09:09:41Z",
-                "marker-color": "#fddaca",
-                "value": "153",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3809.jpg",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3809.jpg"
+                    }
+                ],
+                "marker-color": "#fddaca"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82277777777777,
                     -6.203055555555555
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3810.JPG",
+                "value": "153",
                 "datetime": "2017-10-30T09:09:49Z",
-                "marker-color": "#fddaca",
-                "value": "153",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3810.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3810.JPG"
+                    }
+                ],
+                "marker-color": "#fddaca"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82277777777777,
                     -6.203055555555555
                 ]
-            },
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {
-                "img_name": "IMG_3811.JPG",
-                "datetime": "2017-10-30T09:09:59Z",
-                "marker-color": "#fddaca",
                 "value": "153",
-                "marker-symbol": "heart"
+                "datetime": "2017-10-30T09:09:59Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3811.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3811.JPG"
+                    }
+                ],
+                "marker-color": "#fddaca"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.82277777777777,
+                    -6.203055555555555
+                ]
             }
         },
         {
             "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    106.82305555555556,
-                    -6.198333333333333
-                ]
-            },
             "properties": {
-                "img_name": "IMG_3815.JPG",
-                "datetime": "2017-10-30T09:31:48Z",
-                "marker-color": "#fffeea",
                 "value": "102",
-                "marker-symbol": "heart"
-            }
-        },
-        {
-            "type": "Feature",
+                "datetime": "2017-10-30T09:31:48Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3815.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3815.JPG"
+                    }
+                ],
+                "marker-color": "#fffeea"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82305555555556,
                     -6.198333333333333
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3817.JPG",
-                "datetime": "2017-10-30T09:33:29Z",
-                "marker-color": "#fffae4",
-                "value": "110",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
+            "properties": {
+                "value": "110",
+                "datetime": "2017-10-30T09:33:29Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3817.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3817.JPG"
+                    }
+                ],
+                "marker-color": "#fffae4"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.82305555555556,
+                    -6.198333333333333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "value": "119",
+                "datetime": "2017-10-30T10:00:15Z",
+                "img_name": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3819.JPG",
+                "marker-symbol": "heart",
+                "STRING_DATA": [
+                    {
+                        "value": "http://dataportal1-wiserd.cf.ac.uk/static/dataportal/media/aqp/IMG_3819.JPG"
+                    }
+                ],
+                "marker-color": "#fff6dd"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     106.82333333333332,
                     -6.194444444444445
                 ]
-            },
-            "properties": {
-                "img_name": "IMG_3819.JPG",
-                "datetime": "2017-10-30T10:00:15Z",
-                "marker-color": "#fff6dd",
-                "value": "119",
-                "marker-symbol": "heart"
             }
         },
         {
             "type": "Feature",
+            "properties": {},
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
@@ -868,8 +1074,7 @@
                         -6.194444444444445
                     ]
                 ]
-            },
-            "properties": {}
+            }
         }
     ]
 }

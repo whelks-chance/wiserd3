@@ -1,0 +1,2840 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "80.4",
+                "Expected level - Core subject indicator Key Stage 2": "90.6",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6775501",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "41.2",
+                "Support Category": "Red",
+                "Number of students": "1576",
+                "School Type Name": "All-through",
+                "School Type": "Middle (ages 3-16)",
+                "Percentage of students eligible for FSM ": "30.1",
+                "Postcode-space": "NP13 1YL",
+                "% expected level - Core subject indicator (Key Stage 3)": "82.4",
+                "Region": "EAS",
+                "School name": "Abertillery Learning Community"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.13256,
+                    51.7348
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "86.1",
+                "Expected level - Core subject indicator Key Stage 2": "90.7",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6775500",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "42.8",
+                "Support Category": "Red",
+                "Number of students": "1325",
+                "School Type Name": "All-through",
+                "School Type": "Middle (ages 3-16)",
+                "Percentage of students eligible for FSM ": "22.8",
+                "Postcode-space": "NP23 6GL",
+                "% expected level - Core subject indicator (Key Stage 3)": "86.6",
+                "Region": "EAS",
+                "School name": "Ebbw Fawr Learning Community"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.20319,
+                    51.77599
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "94.7",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6745500",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "80.4",
+                "Support Category": "Green",
+                "Number of students": "578",
+                "School Type Name": "All-through",
+                "School Type": "Middle (ages 3-19)",
+                "Percentage of students eligible for FSM ": "7.8",
+                "Postcode-space": "CF72 9XE",
+                "% expected level - Core subject indicator (Key Stage 3)": "92.8",
+                "Region": "CSC",
+                "School name": "Ysgol Llanhari "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.43758,
+                    51.51159
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "93.3",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6735500",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "68.2",
+                "Support Category": "Yellow",
+                "Number of students": "1070",
+                "School Type Name": "All-through",
+                "School Type": "Middle (ages 3-19)",
+                "Percentage of students eligible for FSM ": "7.6",
+                "Postcode-space": "CF62 8YU",
+                "% expected level - Core subject indicator (Key Stage 3)": "95",
+                "Region": "CSC",
+                "School name": "Ysgol Gyfun Bro Morgannwg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.28661,
+                    51.41321
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "78.7",
+                "Expected level - Core subject indicator Key Stage 2": "92.3",
+                "Medium ": "English",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6732181",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "489",
+                "School Type Name": "Primary",
+                "School Type": "Infants & Juniors",
+                "Percentage of students eligible for FSM ": "36",
+                "Postcode-space": "CF63 2JS",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Cadoxton Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.25493,
+                    51.41434
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "86",
+                "Expected level - Core subject indicator Key Stage 2": "85.5",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6632264",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Amber",
+                "Number of students": "394",
+                "School Type Name": "Primary",
+                "School Type": "Infants & Juniors",
+                "Percentage of students eligible for FSM ": "27.2",
+                "Postcode-space": "LL19 8AH",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "GwE",
+                "School name": "Ysgol Clawdd Offa"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.42727,
+                    53.32803
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "82.1",
+                "Expected level - Core subject indicator Key Stage 2": "92.6",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6802043",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "235",
+                "School Type Name": "Primary",
+                "School Type": "Infants & Juniors",
+                "Percentage of students eligible for FSM ": "9.2",
+                "Postcode-space": "NP20 6LE",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Malpas Park Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.00653,
+                    51.617
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "95",
+                "Expected level - Core subject indicator Key Stage 2": "94.7",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6812147",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "457",
+                "School Type Name": "Primary",
+                "School Type": "Infants & Juniors",
+                "Percentage of students eligible for FSM ": "5.8",
+                "Postcode-space": "CF14 0TB",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Llysfaen Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.17424,
+                    51.54218
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "96",
+                "Expected level - Core subject indicator Key Stage 2": "100",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6792301",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "166",
+                "School Type Name": "Primary",
+                "School Type": "Infants & Juniors",
+                "Percentage of students eligible for FSM ": "4.5",
+                "Postcode-space": "NP25 4PA",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Trellech Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.72441,
+                    51.74755
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "96.7",
+                "Expected level - Core subject indicator Key Stage 2": "95",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6802300",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "416",
+                "School Type Name": "Primary",
+                "School Type": "Infants & Juniors",
+                "Percentage of students eligible for FSM ": "3.5",
+                "Postcode-space": "NP10 8JN",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Pentrepoeth Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.06021,
+                    51.57757
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "100",
+                "Expected level - Core subject indicator Key Stage 2": "100",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6792299",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "210",
+                "School Type Name": "Primary",
+                "School Type": "Infants & Juniors",
+                "Percentage of students eligible for FSM ": "0.2",
+                "Postcode-space": "NP16 6RN",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Shirenewton Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.75327,
+                    51.64277
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "80.6",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6662079",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "139",
+                "School Type Name": "Primary",
+                "School Type": "Juniors",
+                "Percentage of students eligible for FSM ": "9.5",
+                "Postcode-space": "LD3 7LU",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Mount Street Junior School       "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.39003,
+                    51.94969
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "91.7",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6622108",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "231",
+                "School Type Name": "Primary",
+                "School Type": "Nursery & Infants",
+                "Percentage of students eligible for FSM ": "17.8",
+                "Postcode-space": "LL29 9UA",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "GwE",
+                "School name": "Ysgol Babanod T. Gwynn Jones"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.70268,
+                    53.28821
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "88.6",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6662080",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "187",
+                "School Type Name": "Primary",
+                "School Type": "Nursery & Infants",
+                "Percentage of students eligible for FSM ": "10.9",
+                "Postcode-space": "LD3 7NG",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Mount Street Infant School  "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.38786,
+                    51.95034
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "100",
+                "Expected level - Core subject indicator Key Stage 2": "94.7",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6762378",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "135",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "50.8",
+                "Postcode-space": "NP12 2NT",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Penllwyn Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.20024,
+                    51.6559
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "81.8",
+                "Expected level - Core subject indicator Key Stage 2": "82.8",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6702084",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "276",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "48.2",
+                "Postcode-space": "SA7 9UJ",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Trallwn Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.89352,
+                    51.65828
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "85.7",
+                "Expected level - Core subject indicator Key Stage 2": "88.9",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6762316",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "124",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "44.7",
+                "Postcode-space": "NP24 6XE",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Phillipstown Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.24052,
+                    51.72424
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "94.3",
+                "Expected level - Core subject indicator Key Stage 2": "95.1",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6782315",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "304",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "37.7",
+                "Postcode-space": "NP4 7SJ",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Garnteg Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.06439,
+                    51.73598
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "72.2",
+                "Expected level - Core subject indicator Key Stage 2": "58.8",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6632067",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "156",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "37.3",
+                "Postcode-space": "LL19 8PE",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "GwE",
+                "School name": "Ysgol Melyd"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.41519,
+                    53.31638
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "93.3",
+                "Expected level - Core subject indicator Key Stage 2": "62.1",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6802022",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "226",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "36.9",
+                "Postcode-space": "NP20 6NS",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Malpas Court Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.01205,
+                    51.61764
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "80.4",
+                "Expected level - Core subject indicator Key Stage 2": "83.6",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6702238",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "460",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "36.7",
+                "Postcode-space": "SA5 7DJ",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Gwyrosydd Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.95043,
+                    51.65036
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "89.2",
+                "Expected level - Core subject indicator Key Stage 2": "96.7",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6813336",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "299",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "34.3",
+                "Postcode-space": "CF3 5NX",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "St Cadoc\u2019s Catholic Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.12637,
+                    51.52664
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "80.8",
+                "Expected level - Core subject indicator Key Stage 2": "87.9",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6642068",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Amber",
+                "Number of students": "203",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "32.1",
+                "Postcode-space": "CH7 1SU",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "GwE",
+                "School name": "Ysgol Bryn Gwalia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.1509,
+                    53.16679
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "86.5",
+                "Expected level - Core subject indicator Key Stage 2": "83.3",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6772311",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "312",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "28.2",
+                "Postcode-space": "NP13 3XG",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Ystruth Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.15435,
+                    51.76707
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "86",
+                "Expected level - Core subject indicator Key Stage 2": "86.4",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6812084",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Amber",
+                "Number of students": "471",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "26.3",
+                "Postcode-space": "CF10 5BS",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Mount Stuart Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.16963,
+                    51.46348
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "93.1",
+                "Expected level - Core subject indicator Key Stage 2": "96.6",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6762388",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "222",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "26.3",
+                "Postcode-space": "CF81 9FN",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Ysgol Bro Sannan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.21891,
+                    51.68976
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "81.8",
+                "Expected level - Core subject indicator Key Stage 2": "88.9",
+                "Medium ": "English",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6713309",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "171",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "24.7",
+                "Postcode-space": "SA11 1UR",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "St Joseph\u2019s Catholic Infant & Junior School                        "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.79889,
+                    51.65439
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "92.3",
+                "Expected level - Core subject indicator Key Stage 2": "90.5",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6722376",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "456",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "24.5",
+                "Postcode-space": "CF33 6ET",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Mynydd Cynffig Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.68154,
+                    51.53342
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "90.9",
+                "Expected level - Core subject indicator Key Stage 2": "88.2",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6742385",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "326",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "23",
+                "Postcode-space": "CF45 4SU",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Abercynon Community Primary"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.3283,
+                    51.64659
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "87.5",
+                "Expected level - Core subject indicator Key Stage 2": "94.1",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6742112",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "370",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "22.4",
+                "Postcode-space": "CF43 4LE",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Darran Park Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.45,
+                    51.66036
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "100",
+                "Expected level - Core subject indicator Key Stage 2": "97.8",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6813374",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "403",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "22.3",
+                "Postcode-space": "CF23 9NX",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "St Philip Evans Catholic Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.14969,
+                    51.51729
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "93.1",
+                "Expected level - Core subject indicator Key Stage 2": "93.4",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6782324",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "498",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "19.8",
+                "Postcode-space": "NP44 4TG",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Coed Eva Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.04667,
+                    51.64081
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "94.7",
+                "Expected level - Core subject indicator Key Stage 2": "87",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6762374",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "449",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "18.7",
+                "Postcode-space": "CF83 1WH",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Ysgol Gynradd y Castell"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.2248,
+                    51.5747
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "86.1",
+                "Expected level - Core subject indicator Key Stage 2": "93.6",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6712236",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "507",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "18.5",
+                "Postcode-space": "SA11 3AZ",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Crynallt Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.78502,
+                    51.65276
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "95.7",
+                "Expected level - Core subject indicator Key Stage 2": "95",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6802314",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "355",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "17.9",
+                "Postcode-space": "NP18 2LN",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Ysgol Gynradd Casnewydd"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.93469,
+                    51.58509
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "92.2",
+                "Expected level - Core subject indicator Key Stage 2": "93.3",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6802319",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "689",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "17.4",
+                "Postcode-space": "NP19 7HF",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Glan Usk Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.98731,
+                    51.60113
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "96.3",
+                "Expected level - Core subject indicator Key Stage 2": "85.2",
+                "Medium ": "Transitiona",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6692181",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "230",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "16.8",
+                "Postcode-space": "SA18 3JB",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Llandybie Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.01042,
+                    51.82061
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "100",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6802323",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "156",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "16.6",
+                "Postcode-space": "NP20 5QS",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Ysgol Gynradd Bro Teyrnon "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.00043,
+                    51.60695
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "90.5",
+                "Expected level - Core subject indicator Key Stage 2": "100",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6712149",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "189",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "16.6",
+                "Postcode-space": "SA18 1UN",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Ysgol Gynradd Gymraeg Gwaun Cae Gurwen"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.88045,
+                    51.79371
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "88.2",
+                "Expected level - Core subject indicator Key Stage 2": "100",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6762373",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "258",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "15.6",
+                "Postcode-space": "NP11 5GX",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Ysgol Gynradd Cwm Gwyddon "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.13332,
+                    51.64761
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "90.7",
+                "Expected level - Core subject indicator Key Stage 2": "91.7",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6782312",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "385",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "14.5",
+                "Postcode-space": "NP44 4HB",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Ysgol Gynradd Cwmbran"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.03424,
+                    51.64555
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "90.5",
+                "Expected level - Core subject indicator Key Stage 2": "100",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6722259",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "302",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "13.4",
+                "Postcode-space": "CF34 9YE",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Ysgol Gynradd Cynwyd Sant"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.66072,
+                    51.60367
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "88.9",
+                "Expected level - Core subject indicator Key Stage 2": "90.3",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6802320",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "213",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "12.8",
+                "Postcode-space": "NP20 7DU",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Ysgol Gynradd Ifor Hael"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.01692,
+                    51.6116
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "92.3",
+                "Expected level - Core subject indicator Key Stage 2": "93.5",
+                "Medium ": "English",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6702065",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "281",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "12.7",
+                "Postcode-space": "SA5 4QS",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Waunarlwydd Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.02534,
+                    51.63987
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "93.9",
+                "Expected level - Core subject indicator Key Stage 2": "98.3",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6752042",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "470",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "12.1",
+                "Postcode-space": "CF47 0HU",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Ysgol Gynradd Santes Tudful"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.36768,
+                    51.74693
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "93.4",
+                "Expected level - Core subject indicator Key Stage 2": "96.6",
+                "Medium ": "English",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6732182",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "727",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "12.1",
+                "Postcode-space": "CF62 6LF",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Romilly Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.28716,
+                    51.40105
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "96.7",
+                "Expected level - Core subject indicator Key Stage 2": "97.8",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6812329",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "705",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "11.5",
+                "Postcode-space": "CF14 1NL",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Whitchurch Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.22103,
+                    51.5095
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "94.5",
+                "Expected level - Core subject indicator Key Stage 2": "90.4",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6732178",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "456",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "10.9",
+                "Postcode-space": "CF62 8HQ",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Ysgol Gymraeg Sant Curig"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.27849,
+                    51.40599
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "97.9",
+                "Expected level - Core subject indicator Key Stage 2": "93.8",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6762282",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "404",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "10.7",
+                "Postcode-space": "CF83 3AH",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Ysgol Gynradd Caerffili"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.2207,
+                    51.58241
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "93.3",
+                "Expected level - Core subject indicator Key Stage 2": "100",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6612199",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "108",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "10.6",
+                "Postcode-space": "LL23 7UB",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "GwE",
+                "School name": "Ysgol O.M. Edwards"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.67483,
+                    52.85973
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "93.3",
+                "Expected level - Core subject indicator Key Stage 2": "94.8",
+                "Medium ": "English with significant Welsh",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6672361",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "448",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "10.2",
+                "Postcode-space": "SY23 1HL",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Plascrug Community Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.07497,
+                    52.41019
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "93.1",
+                "Expected level - Core subject indicator Key Stage 2": "96.7",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6802009",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "489",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "10.1",
+                "Postcode-space": "NP19 8GX",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Eveswell Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.97334,
+                    51.5896
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "63.6",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6723322",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Red",
+                "Number of students": "80",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "42.1",
+                "Postcode-space": "SA72 6PD",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "St Mary\u2019s Catholic Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.5861,
+                    51.50961
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "100",
+                "Expected level - Core subject indicator Key Stage 2": "93.4",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6702086",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "516",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "9",
+                "Postcode-space": "SA2 8NG",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Parkland Primary School  "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.99872,
+                    51.61473
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "63",
+                "Expected level - Core subject indicator Key Stage 2": "96.6",
+                "Medium ": "English",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6702226",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "230",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "8.6",
+                "Postcode-space": "SA6 6QF",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Glyncollen Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.91914,
+                    51.68223
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "96.6",
+                "Expected level - Core subject indicator Key Stage 2": "100",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6732109",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "460",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "8.4",
+                "Postcode-space": "CF64 1BX",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Albert Primary School (Abertillery Learning Community)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.17246,
+                    51.44147
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "95.3",
+                "Expected level - Core subject indicator Key Stage 2": "95.7",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6702036",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "509",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "6.9",
+                "Postcode-space": "SA7 9RW",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Ysgol Gynradd Gymraeg L\u00f4n Las"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.89909,
+                    51.66465
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "93.9",
+                "Expected level - Core subject indicator Key Stage 2": "93.5",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6712218",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "352",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "6.6",
+                "Postcode-space": "SA8 4JX",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Ysgol Gynradd Gymraeg Pontardawe"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.85331,
+                    51.7263
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "85.7",
+                "Expected level - Core subject indicator Key Stage 2": "93.9",
+                "Medium ": "English",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6662125",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "247",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "5.8",
+                "Postcode-space": "LD3 8EB",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Llanfaes Primary School                                "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.39897,
+                    51.94382
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "92.6",
+                "Expected level - Core subject indicator Key Stage 2": "96",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6762338",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "246",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "5.3",
+                "Postcode-space": "CF83 2RL",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Hendredenny Park Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.24694,
+                    51.58023
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "93.1",
+                "Expected level - Core subject indicator Key Stage 2": "93.5",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6702189",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Amber",
+                "Number of students": "250",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "4.4",
+                "Postcode-space": "SA4 8JA",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Ysgol Bryniago "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.03263,
+                    51.71307
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "96.6",
+                "Expected level - Core subject indicator Key Stage 2": "95.1",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6625201",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "451",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "4.4",
+                "Postcode-space": "LL29 6DD",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Ysgol Pen y Bryn  "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.7387,
+                    53.2878
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "96.7",
+                "Expected level - Core subject indicator Key Stage 2": "100",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6812041",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "523",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "3.6",
+                "Postcode-space": "CF14 0NX",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC",
+                "School name": "Rhydypenau Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.17666,
+                    51.52237
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "75",
+                "Expected level - Core subject indicator Key Stage 2": "94.7",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6702159",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "156",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "2.5",
+                "Postcode-space": "SA3 1EH",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Llanrhidian Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.1738,
+                    51.60622
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "77.8",
+                "Expected level - Core subject indicator Key Stage 2": "84.6",
+                "Medium ": "English",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6662115",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "142",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "2.3",
+                "Postcode-space": "LD3 9LR",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Cradoc Primary School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.43426,
+                    51.96516
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "100",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6662076",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "68",
+                "School Type Name": "Primary",
+                "School Type": "Nursery, Infants & Juniors",
+                "Percentage of students eligible for FSM ": "1.8",
+                "Postcode-space": "LD8 2SS",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Radnor Valley CP School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.15108,
+                    52.23944
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6754600",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "60.7",
+                "Support Category": "Green ",
+                "Number of students": "473",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-16)",
+                "Percentage of students eligible for FSM ": "21.7",
+                "Postcode-space": "CF47 9AN",
+                "% expected level - Core subject indicator (Key Stage 3)": "91.3",
+                "Region": "CSC",
+                "School name": "Bishop Hedley (Catholic) High School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.37201,
+                    51.75682
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6764046",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "57.9",
+                "Support Category": "Yellow",
+                "Number of students": "938",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-16)",
+                "Percentage of students eligible for FSM ": "20.5",
+                "Postcode-space": "NP12 1ER",
+                "% expected level - Core subject indicator (Key Stage 3)": "82.6",
+                "Region": "EAS",
+                "School name": "Blackwood Comprehensive School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.20371,
+                    51.67128
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6694054",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "69",
+                "Support Category": "Yellow",
+                "Number of students": "1009",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-16)",
+                "Percentage of students eligible for FSM ": "19.8",
+                "Postcode-space": "SA14 8RP",
+                "% expected level - Core subject indicator (Key Stage 3)": "93.3",
+                "Region": "ERW",
+                "School name": "Ysgol Bryngwyn"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.13759,
+                    51.69437
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Bilingual (Type A)",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6614031",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "67.9",
+                "Support Category": "Yellow",
+                "Number of students": "310",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-16)",
+                "Percentage of students eligible for FSM ": "13.4",
+                "Postcode-space": "LL41 3DW",
+                "% expected level - Core subject indicator (Key Stage 3)": "93.7",
+                "Region": "GwE",
+                "School name": "Ysgol y Moelwyn"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.93811,
+                    52.99185
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6704072",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "88.1",
+                "Support Category": "Green",
+                "Number of students": "794",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-16)",
+                "Percentage of students eligible for FSM ": "13.1",
+                "Postcode-space": "SA4 8PD",
+                "% expected level - Core subject indicator (Key Stage 3)": "95.8",
+                "Region": "ERW",
+                "School name": "Pontarddulais Comprehensive School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.03389,
+                    51.7174
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Bilingual (Type A)",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6614034",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "56.4",
+                "Support Category": "Yellow",
+                "Number of students": "276",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-16)",
+                "Percentage of students eligible for FSM ": "12.2",
+                "Postcode-space": "LL46 2UH",
+                "% expected level - Core subject indicator (Key Stage 3)": "96.7",
+                "Region": "GwE",
+                "School name": "Ysgol Ardudwy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.1114,
+                    52.86214
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Bilingual (Type A)",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6614030",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "78.6",
+                "Support Category": "Amber",
+                "Number of students": "308",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-16)",
+                "Percentage of students eligible for FSM ": "11.9",
+                "Postcode-space": "LL40 1HY",
+                "% expected level - Core subject indicator (Key Stage 3)": "93.9",
+                "Region": "GwE",
+                "School name": "Ysgol y Gader"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.87979,
+                    52.74139
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Bilingual (Type A)",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6614040",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "70.9",
+                "Support Category": "Yellow",
+                "Number of students": "474",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-16)",
+                "Percentage of students eligible for FSM ": "11.6",
+                "Postcode-space": "LL53 5NU",
+                "% expected level - Core subject indicator (Key Stage 3)": "96.6",
+                "Region": "ERW",
+                "School name": "Ysgol Glan-y-M\u00f4r "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.42257,
+                    52.88211
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Bilingual (Type A)",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6614032",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "75",
+                "Support Category": "Yellow",
+                "Number of students": "268",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-16)",
+                "Percentage of students eligible for FSM ": "11.4",
+                "Postcode-space": "LL36 9EU",
+                "% expected level - Core subject indicator (Key Stage 3)": "94.1",
+                "Region": "GwE",
+                "School name": "Ysgol Uwchradd Tywyn"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.08954,
+                    52.58469
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6654603",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "68.6",
+                "Support Category": "Yellow",
+                "Number of students": "689",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-16)",
+                "Percentage of students eligible for FSM ": "9.4",
+                "Postcode-space": "LL13 7EN",
+                "% expected level - Core subject indicator (Key Stage 3)": "95.5",
+                "Region": "GwE",
+                "School name": "St Joseph\u2019s Catholic and Anglican High School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.99679,
+                    53.03785
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6714601",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "68.3",
+                "Support Category": "Green",
+                "Number of students": "801",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "26",
+                "Postcode-space": "SA12 6EY",
+                "% expected level - Core subject indicator (Key Stage 3)": "83.6",
+                "Region": "ERW",
+                "School name": "St Joseph\u2019s Roman Catholic School, Port Talbot     "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.79453,
+                    51.5999
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6724071",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "48.4",
+                "Support Category": "Amber",
+                "Number of students": "1104",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "25.6",
+                "Postcode-space": "CF34 0LQ",
+                "% expected level - Core subject indicator (Key Stage 3)": "87",
+                "Region": "CSC",
+                "School name": "Maesteg Comprehensive School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.65215,
+                    51.61213
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6764075",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "58.5",
+                "Support Category": "Yellow",
+                "Number of students": "834",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "21.9",
+                "Postcode-space": "CF81 8LJ",
+                "% expected level - Core subject indicator (Key Stage 3)": "87.9",
+                "Region": "EAS",
+                "School name": "Lewis School Pengam"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.22429,
+                    51.67296
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Bilingual (Type B)",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6604029",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "56.2",
+                "Support Category": "Yellow",
+                "Number of students": "632",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "19",
+                "Postcode-space": "LL65 3SU",
+                "% expected level - Core subject indicator (Key Stage 3)": "89",
+                "Region": "GwE",
+                "School name": "Ysgol Gyfun Bodedern"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.50507,
+                    53.2912
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6624022",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "55",
+                "Support Category": "Amber",
+                "Number of students": "1237",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "14.3",
+                "Postcode-space": "LL30 1LF",
+                "% expected level - Core subject indicator (Key Stage 3)": "86.8",
+                "Region": "GwE",
+                "School name": "Ysgol John Bright"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.82567,
+                    53.31561
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6764103",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "62",
+                "Support Category": "Yellow",
+                "Number of students": "1539",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "13.7",
+                "Postcode-space": "NP12 3JQ",
+                "% expected level - Core subject indicator (Key Stage 3)": "84.5",
+                "Region": "EAS",
+                "School name": "Ysgol Gyfun Cwm Rhymni"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.21596,
+                    51.66066
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6724076",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "65.7",
+                "Support Category": "Green",
+                "Number of students": "884",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "13.3",
+                "Postcode-space": "CF35 5LZ",
+                "% expected level - Core subject indicator (Key Stage 3)": "89.4",
+                "Region": "CSC",
+                "School name": "Pencoed Comprehensive School "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.50166,
+                    51.51946
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6714060",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "69.9",
+                "Support Category": "Green",
+                "Number of students": "1099",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "12.2",
+                "Postcode-space": "SA9 2JJ",
+                "% expected level - Core subject indicator (Key Stage 3)": "88",
+                "Region": "ERW",
+                "School name": "Ysgol Gyfun Ystalyfera"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.78237,
+                    51.76455
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6644006",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "75.3",
+                "Support Category": "Green",
+                "Number of students": "1628",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "10.3",
+                "Postcode-space": "CH7 1EP",
+                "% expected level - Core subject indicator (Key Stage 3)": "93.2",
+                "Region": "GwE",
+                "School name": "Alun School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.14081,
+                    53.16107
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6814074",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "509",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "10.2",
+                "Postcode-space": "CF23 9DT",
+                "% expected level - Core subject indicator (Key Stage 3)": "96.3",
+                "Region": "CSC",
+                "School name": "Ysgol Gyfun Bro Edern"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.15589,
+                    51.50474
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6704078",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "67.6",
+                "Support Category": "Green",
+                "Number of students": "789",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "10",
+                "Postcode-space": "SA5 7BU",
+                "% expected level - Core subject indicator (Key Stage 3)": "92.7",
+                "Region": "ERW",
+                "School name": "Ysgol Gyfun Bryn Tawe"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.95948,
+                    51.65119
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6744054",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "68",
+                "Support Category": "Yellow",
+                "Number of students": "803",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "9.9",
+                "Postcode-space": "CF38 1DX",
+                "% expected level - Core subject indicator (Key Stage 3)": "94.7",
+                "Region": "CSC",
+                "School name": "Ysgol Gyfun Garth Olwg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.32393,
+                    51.56565
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6794066",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "69.7",
+                "Support Category": "Yellow",
+                "Number of students": "1282",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "9.4",
+                "Postcode-space": "NP26 5XA",
+                "% expected level - Core subject indicator (Key Stage 3)": "94.1",
+                "Region": "EAS",
+                "School name": "Caldicot Comprehensive School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.75114,
+                    51.58952
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6644000",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "68.6",
+                "Support Category": "Yellow",
+                "Number of students": "1171",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "8.9",
+                "Postcode-space": "CH5 3DJ",
+                "% expected level - Core subject indicator (Key Stage 3)": "95.8",
+                "Region": "GwE",
+                "School name": "Hawarden High School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.04164,
+                    53.18848
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6664024",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "86.5",
+                "Support Category": "Green",
+                "Number of students": "832",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "6.9",
+                "Postcode-space": "NP8 1AW",
+                "% expected level - Core subject indicator (Key Stage 3)": "99.2",
+                "Region": "ERW",
+                "School name": "Crickhowell High School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.14089,
+                    51.861
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6814072",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "75",
+                "Support Category": "Yellow",
+                "Number of students": "1086",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "6.4",
+                "Postcode-space": "CF5 3PZ",
+                "% expected level - Core subject indicator (Key Stage 3)": "94",
+                "Region": "CSC",
+                "School name": " Ysgol Gyfun Plasmawr"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.24631,
+                    51.49696
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "English",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6704032",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "84.6",
+                "Support Category": "Green",
+                "Number of students": "1693",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "6.3",
+                "Postcode-space": "SA2 7AB",
+                "% expected level - Core subject indicator (Key Stage 3)": "93.3",
+                "Region": "ERW",
+                "School name": "Olchfa School     "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.00543,
+                    51.6188
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Bilingual (Type A)",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6614033",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "72.1",
+                "Support Category": "Yellow",
+                "Number of students": "313",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "5.7",
+                "Postcode-space": "LL23 7BN",
+                "% expected level - Core subject indicator (Key Stage 3)": "91.5",
+                "Region": "GwE",
+                "School name": "Ysgol y Berwyn"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.59828,
+                    52.91286
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6704074",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "72",
+                "Support Category": "Green",
+                "Number of students": "856",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "5.2",
+                "Postcode-space": "SA4 3DB",
+                "% expected level - Core subject indicator (Key Stage 3)": "94.3",
+                "Region": "ERW",
+                "School name": "Ysgol Gyfun G\u0175yr "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.0392,
+                    51.6459
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Bilingual (Type A)",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6684064",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "81",
+                "Support Category": "Green",
+                "Number of students": "907",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "4.5",
+                "Postcode-space": "SA41 3QH",
+                "% expected level - Core subject indicator (Key Stage 3)": "97.7",
+                "Region": "ERW",
+                "School name": "Ysgol Gyfun Preseli"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.64742,
+                    51.97066
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "Welsh medium",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6694056",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "81.8",
+                "Support Category": "Green",
+                "Number of students": "883",
+                "School Type Name": "Seconday",
+                "School Type": "Secondary (11-19)",
+                "Percentage of students eligible for FSM ": "4.1",
+                "Postcode-space": "SA32 8DN",
+                "% expected level - Core subject indicator (Key Stage 3)": "96.4",
+                "Region": "ERW",
+                "School name": "Ysgol Gyfun Gymraeg Bro Myrddin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.30819,
+                    51.83539
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "N/A",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6697000",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "76",
+                "School Type Name": "Special",
+                "School Type": "Special (with post-16 provision)",
+                "Percentage of students eligible for FSM ": "43",
+                "Postcode-space": "SA15 3LS",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC/ERW",
+                "School name": "Ysgol Heol Goffa"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.15319,
+                    51.69085
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "N/A",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6787012",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "109",
+                "School Type Name": "Special",
+                "School Type": "Special (with post-16 provision)",
+                "Percentage of students eligible for FSM ": "37",
+                "Postcode-space": "NP44 2BJ",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "EAS",
+                "School name": "Crownbridge School "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.00444,
+                    51.65376
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "N/A",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6727003",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "239",
+                "School Type Name": "Special",
+                "School Type": "Special (with post-16 provision)",
+                "Percentage of students eligible for FSM ": "37",
+                "Postcode-space": "CF31 3HT",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC/ERW",
+                "School name": "Heronsbridge School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.57455,
+                    51.49878
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "N/A",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6717006",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "93",
+                "School Type Name": "Special",
+                "School Type": "Special (with post-16 provision)",
+                "Percentage of students eligible for FSM ": "",
+                "Postcode-space": "SA10 7TY",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Ysgol Maes y Coed"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.81982,
+                    51.68827
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "N/A",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6707008",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Amber",
+                "Number of students": "56",
+                "School Type Name": "Special",
+                "School Type": "Special (with post-16 provision)",
+                "Percentage of students eligible for FSM ": "",
+                "Postcode-space": "SA1 1QA",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Ysgol Crug Glas Swansea"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.94245,
+                    51.62819
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "N/A",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6817019",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "90",
+                "School Type Name": "Special",
+                "School Type": "Special (without post-16 provision)",
+                "Percentage of students eligible for FSM ": "34",
+                "Postcode-space": "CF23 7XG",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "CSC/ERW",
+                "School name": "The Hollies School"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.14243,
+                    51.52607
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "N/A",
+                "Became a Pioneer school": "Nov-15",
+                "Ref Number": "6647020",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Yellow",
+                "Number of students": "92",
+                "School Type Name": "Special",
+                "School Type": "Special (without post-16 provision)",
+                "Percentage of students eligible for FSM ": "",
+                "Postcode-space": "CH6 5NF",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "GwE",
+                "School name": "Ysgol Pen Coch"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.13292,
+                    53.24455
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Expected outcome in the Foundation Phase areas of learning": "",
+                "Expected level - Core subject indicator Key Stage 2": "",
+                "Medium ": "N/A",
+                "Became a Pioneer school": "Jan-16",
+                "Ref Number": "6717008",
+                "% Pupils achieving the level 2 threshold\u00a0(Key Stage 4)": "",
+                "Support Category": "Green",
+                "Number of students": "165",
+                "School Type Name": "Special",
+                "School Type": "Special (without post-16 provision)",
+                "Percentage of students eligible for FSM ": "",
+                "Postcode-space": "SA10 7TY",
+                "% expected level - Core subject indicator (Key Stage 3)": "",
+                "Region": "ERW",
+                "School name": "Ysgol Hendrefelin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.81949,
+                    51.6878
+                ]
+            }
+        }
+    ]
+}

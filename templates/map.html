@@ -158,9 +158,12 @@
 {% endblock %}
 
 {% block nav_extras %}
-
     {% if tpt == 'm4w' %}
         {% include 'm4w/map_menu_snippet.html' %}
+    {% endif %}
+
+    {% if tpt == 'wep' %}
+        {% include 'wep/map_menu_snippet.html' %}
     {% endif %}
 
     {% if tpt == 'wmh' %}

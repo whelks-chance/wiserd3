@@ -1,10 +1,15 @@
 import os
+# import imp
+# from geojson import Point, Feature, FeatureCollection, dumps
 import json
-import geojson
+
+# geojson = imp.load_source('geojson', '/home/ianh/venv/local/lib/python2.7/site-packages/geojson/__init__.py')
+# foo.MyClass()
+
 # from school_meals.py import FreeSchoolMeals
-filepath= '/home/kdickson/PycharmProjects/wiserd3/rubbish/schools/schools_ext'
-slash= '/'
-filelist= []
+filepath = './schools_ext'
+slash = '/'
+filelist = []
 # school_data= FreeSchoolMeals.get_school_data()
 
 for root, dir, files in os.walk(filepath):
@@ -14,8 +19,11 @@ for root, dir, files in os.walk(filepath):
 print filelist
 
 school_data= []
+all_points = []
 
 for file in filelist:
+    properties = {}
+
     fullfilepath= filepath+slash+file
     # with open(filepath+slash+file) as jsonfile:
     print fullfilepath
@@ -39,3 +47,25 @@ for file in filelist:
                 print json_fsmdata
                 json_fsmdata = json_fsmdata[-1]
                 print json_fsmdata
+
+                properties['json_fsmyear'] = json_fsmyear
+                properties['json_fsmdata'] = json_fsmdata
+                properties['json_fsmdata'] = json_fsmdata
+                properties['json_schoolname'] = json_schoolname
+                properties['json_type'] = json_type
+                properties['json_medium'] = json_medium
+
+#     all_points.append(
+#         Feature(
+#             geometry=Point((json_lng, json_lat)),
+#             properties=properties
+#         )
+#     )
+#
+# print(all_points)
+#
+# fc = FeatureCollection(all_points)
+# print(dumps(fc))
+#
+# with open('schools_geo.json', 'w') as geo1:
+#     geo1.write(dumps(fc, indent=4))

@@ -733,8 +733,14 @@
     box-sizing: content-box!important;
 }
 
+.leaflet-div-icon {
+    border-radius: 15px;
+    border-color: #ffffff;
+}
+
 .marker_bkgd {
-    border-radius: 5px;
+    padding-top: 5px;
+    padding-left: 0.1em;
 }
 
 .panel-search_survey {

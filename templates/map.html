@@ -3536,6 +3536,16 @@
                                 iconClassName += 'fa-camera-retro';
                             }
 
+                            var iconClassColour = 'black';
+                            if (feature.properties['point_icon_colour']) {
+                                iconClassColour += feature.properties['point_icon_colour']
+                            }
+
+                            var iconClassBackgroundColor = 'white';
+                            if (feature.properties['point_icon_bgcolour']) {
+                                iconClassBackgroundColor += feature.properties['point_icon_bgcolour']
+                            }
+
                             var myIcon = L.divIcon({
                                 className: iconClassName,
                                 iconSize: [35, 35],
@@ -3544,8 +3554,8 @@
                                 shadowSize: [0, 0]
                             });
                             var marker = L.marker(latlng, {icon: myIcon}).addTo(map);
-                            marker.valueOf()._icon.style.backgroundColor = 'white';
-                            marker.valueOf()._icon.style.color = 'black';
+                            marker.valueOf()._icon.style.backgroundColor = iconClassBackgroundColor;
+                            marker.valueOf()._icon.style.color = iconClassColour;
 
                             return marker
 
@@ -3553,7 +3563,7 @@
                             var geojsonMarkerOptions = {
                                 radius: 15,
                                 fillColor: "#ffffff",
-                                color: "#000",
+                                color: 'white',
                                 weight: 1,
                                 opacity: 1,
                                 fillOpacity: 1

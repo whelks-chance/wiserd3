@@ -3538,12 +3538,12 @@
 
                             var iconClassColour = 'black';
                             if (feature.properties['point_icon_colour']) {
-                                iconClassColour += feature.properties['point_icon_colour']
+                                iconClassColour = feature.properties['point_icon_colour']
                             }
 
                             var iconClassBackgroundColor = 'white';
                             if (feature.properties['point_icon_bgcolour']) {
-                                iconClassBackgroundColor += feature.properties['point_icon_bgcolour']
+                                iconClassBackgroundColor = feature.properties['point_icon_bgcolour']
                             }
 
                             var myIcon = L.divIcon({

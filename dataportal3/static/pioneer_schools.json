@@ -11,7 +11,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -54,7 +54,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa building", 
+                "point_icon": "fa-building", 
                 "Medium ": "N/A", 
                 "Region": "CSC/ERW", 
                 "Postcode-space": "CF31 3HT", 
@@ -82,7 +82,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa child", 
+                "point_icon": "fa-child", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -125,7 +125,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -168,7 +168,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -211,7 +211,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "Bilingual (Type A)", 
                 "json_fsmyear": [
                     "2011", 
@@ -254,7 +254,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -297,7 +297,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa building", 
+                "point_icon": "fa-building", 
                 "Medium ": "N/A", 
                 "Region": "ERW", 
                 "Postcode-space": "SA1 1QA", 
@@ -325,7 +325,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -368,7 +368,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa building-o", 
+                "point_icon": "fa-building-o", 
                 "Medium ": "N/A", 
                 "Region": "GwE", 
                 "Postcode-space": "CH6 5NF", 
@@ -396,7 +396,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -439,7 +439,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -482,7 +482,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -525,7 +525,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -568,7 +568,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -611,7 +611,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa mortar-board", 
+                "point_icon": "fa-mortar-board", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -654,7 +654,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -697,7 +697,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa mortar-board", 
+                "point_icon": "fa-mortar-board", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -740,7 +740,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -783,7 +783,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa scribd", 
+                "point_icon": "fa-scribd", 
                 "Medium ": "Bilingual (Type A)", 
                 "json_fsmyear": [
                     "2011", 
@@ -826,7 +826,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa scribd", 
+                "point_icon": "fa-scribd", 
                 "Medium ": "Bilingual (Type A)", 
                 "json_fsmyear": [
                     "2011", 
@@ -869,7 +869,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -912,7 +912,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa scribd", 
+                "point_icon": "fa-scribd", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -997,7 +997,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -1040,7 +1040,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1083,7 +1083,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1168,7 +1168,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1211,7 +1211,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1254,7 +1254,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1297,7 +1297,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1340,7 +1340,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa user", 
+                "point_icon": "fa-user", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1383,7 +1383,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa graduation-cap", 
+                "point_icon": "fa-graduation-cap", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1426,7 +1426,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -1469,7 +1469,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa building-o", 
+                "point_icon": "fa-building-o", 
                 "Medium ": "N/A", 
                 "Region": "CSC/ERW", 
                 "Postcode-space": "CF23 7XG", 
@@ -1497,7 +1497,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1540,7 +1540,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2013", 
@@ -1581,7 +1581,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "Bilingual (Type A)", 
                 "json_fsmyear": [
                     "2011", 
@@ -1624,7 +1624,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1667,7 +1667,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa scribd", 
+                "point_icon": "fa-scribd", 
                 "Medium ": "Bilingual (Type A)", 
                 "json_fsmyear": [
                     "2011", 
@@ -1710,7 +1710,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa scribd", 
+                "point_icon": "fa-scribd", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1753,7 +1753,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa scribd", 
+                "point_icon": "fa-scribd", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1796,7 +1796,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1839,7 +1839,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -1882,7 +1882,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa building", 
+                "point_icon": "fa-building", 
                 "Medium ": "N/A", 
                 "Region": "CSC/ERW", 
                 "Postcode-space": "SA15 3LS", 
@@ -1910,7 +1910,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1953,7 +1953,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa child", 
+                "point_icon": "fa-child", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -1996,7 +1996,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa child", 
+                "point_icon": "fa-child", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2039,7 +2039,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -2082,7 +2082,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2125,7 +2125,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa scribd", 
+                "point_icon": "fa-scribd", 
                 "Medium ": "Bilingual (Type A)", 
                 "json_fsmyear": [
                     "2011", 
@@ -2168,7 +2168,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2211,7 +2211,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -2254,7 +2254,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2297,7 +2297,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2340,7 +2340,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2383,7 +2383,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2428,7 +2428,7 @@
             "properties": {
                 "Expected level - Core subject indicator Key Stage 2": "94.8", 
                 "Support Category": "Green", 
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Became a Pioneer school": "Nov-15", 
                 "School Type Name": "Primary", 
                 "Medium ": "English with significant Welsh", 
@@ -2467,7 +2467,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2510,7 +2510,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2553,7 +2553,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2596,7 +2596,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2639,7 +2639,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2682,7 +2682,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2725,7 +2725,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -2768,7 +2768,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2811,7 +2811,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa building", 
+                "point_icon": "fa-building", 
                 "Medium ": "N/A", 
                 "Region": "ERW", 
                 "Postcode-space": "SA10 7TY", 
@@ -2839,7 +2839,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2882,7 +2882,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa building", 
+                "point_icon": "fa-building", 
                 "Medium ": "N/A", 
                 "Region": "EAS", 
                 "Postcode-space": "NP44 2BJ", 
@@ -2910,7 +2910,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -2953,7 +2953,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -2996,7 +2996,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3039,7 +3039,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa scribd", 
+                "point_icon": "fa-scribd", 
                 "Medium ": "Bilingual (Type A)", 
                 "json_fsmyear": [
                     "2011", 
@@ -3082,7 +3082,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa child", 
+                "point_icon": "fa-child", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3125,7 +3125,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -3168,7 +3168,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3211,7 +3211,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa child", 
+                "point_icon": "fa-child", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3254,7 +3254,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3297,7 +3297,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3340,7 +3340,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa scribd", 
+                "point_icon": "fa-scribd", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3383,7 +3383,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3426,7 +3426,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -3469,7 +3469,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3512,7 +3512,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -3555,7 +3555,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3598,7 +3598,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3641,7 +3641,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -3684,7 +3684,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3727,7 +3727,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa child", 
+                "point_icon": "fa-child", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3770,7 +3770,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2013", 
@@ -3811,7 +3811,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "Bilingual (Type B)", 
                 "json_fsmyear": [
                     "2011", 
@@ -3854,7 +3854,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -3897,7 +3897,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa child", 
+                "point_icon": "fa-child", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -3940,7 +3940,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -3983,7 +3983,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -4026,7 +4026,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -4069,7 +4069,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -4112,7 +4112,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa scribd", 
+                "point_icon": "fa-scribd", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -4155,7 +4155,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -4198,7 +4198,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa building-o", 
+                "point_icon": "fa-building-o", 
                 "Medium ": "N/A", 
                 "Region": "ERW", 
                 "Postcode-space": "SA10 7TY", 
@@ -4226,7 +4226,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa graduation-cap", 
+                "point_icon": "fa-graduation-cap", 
                 "Medium ": "English", 
                 "json_fsmyear": [
                     "2011", 
@@ -4269,7 +4269,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa male", 
+                "point_icon": "fa-male", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 
@@ -4314,7 +4314,7 @@
             "properties": {
                 "Expected level - Core subject indicator Key Stage 2": "85.2", 
                 "Support Category": "Yellow", 
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Became a Pioneer school": "Nov-15", 
                 "School Type Name": "Primary", 
                 "Medium ": "Transitiona", 
@@ -4353,7 +4353,7 @@
             }, 
             "type": "Feature", 
             "properties": {
-                "point_icon": "fa users", 
+                "point_icon": "fa-users", 
                 "Medium ": "Welsh medium", 
                 "json_fsmyear": [
                     "2011", 

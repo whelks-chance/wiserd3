@@ -82,6 +82,7 @@
                     'style': 'table',
                     'url': "{% url 'survey_questions' survey_id %}",
                     'columns': [
+                        {'display': true, 'displayName': '{% trans 'Survey Title' %}', 'id': 'survey_title'},
                         {'data': 'questionnumber'},
                         {'data': 'literal_question_text'},
                         {'data': 'questionnumber'},

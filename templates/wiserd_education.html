@@ -19,7 +19,7 @@
                 "oLanguage": datatables_language,
                 "data": {},
      columns: [
-                    {'data': 'survey'},
+{#                    {'data': 'survey_name'},#}
                     {'data': 'questionnumber'},
                     {'data': 'literal_question_text'},
                     {#                    {'data': 'questionnumber'},#}
@@ -76,6 +76,9 @@
             }).on( 'stateLoaded.dt', function (e, settings, data) {
                 attach_question_buttons();
             });
+{#        alert(questions_table);#}
+
+
 
          var survey_table = $('#survey_table').DataTable({
                 serverSide: false,
@@ -92,6 +95,7 @@
                     },
                     dataSrc: function ( json ) {
                         return json['search_result_data'];
+{#                        alert('search_result_data');#}
                     }
                 },
                 columns: [
@@ -142,7 +146,8 @@
             "wisid_cohortayear3",
             "wisid_cohortbyear7",
             "wisid_cohortayear2",
-            "wisid_cohortdmovers"
+            "wisid_cohortdmovers",
+            "sid_cohortcyear10"
             ];
 
         var async_request=[];
@@ -157,6 +162,7 @@
 
                     success: function(data){
                         questions_table.rows.add(data['results']).draw();
+{#                        alert(data['results']).draw();#}
                     },
                 error: function(){}
 
@@ -164,6 +170,10 @@
                 })
             );
         });
+
+{#        var survey_name=#}
+{#                if (surveyid=['id_cohortcyear10'])#}
+{#                    returns(survey_name =['Cohort C Year 10']);#}
 
         function tidy_tab_fields() {
             $(".tab_data_input").each( function() {
@@ -224,12 +234,11 @@
                         field, display_name, value
                 );
             }
-
-
  }
-
-
-
+{#        var Surveys_Questions_table = new DataTable();#}
+{#            Surveys_Questions_table.merge('#questions_table');#}
+{#            Surveys_Questions_table.merge('#survey_table');#}
+{#            alert('Surveys_Questions_table');#}
 
     </script>
 
@@ -303,7 +312,7 @@
                                         <table class="table table-striped table-bordered table-hover" id="questions_table">
                                             <thead>
                                             <tr>
-                                                <th>{% trans 'Survey Title' %}</th>
+{#                                                <th>{% trans 'Survey Title' %}</th>#}
                                                 <th>{% trans 'Question Number' %}</th>
                                                 <th>{% trans 'QuestionText' %}</th>
                                                 <th>{% trans 'Type' %}</th>

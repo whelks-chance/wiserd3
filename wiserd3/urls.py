@@ -43,7 +43,6 @@ urlpatterns = [
                   url(r'^wiserd_projects_dashboard', views.wiserd_projects_dashboard, name='wiserd_projects_dashboard'),
                   url(r'^partner_projects_dashboard', views.partner_projects_dashboard, name='partner_projects_dashboard'),
                   url(r'^about_dashboard', views.about_dashboard, name='about_dashboard'),
-                  url(r'^network_visualisation', views.network_visualisation, name='network_visualisation'),
                   url(r'^http_404', views.http_404_error, name='http_404'),
                   # Legacy - Because we shared this address once
                   url(r'^dataportal', views.dataportal, name='dataportal'),

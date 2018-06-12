@@ -3489,14 +3489,6 @@ def about_dashboard(request):
                   }, context_instance=RequestContext(request))
 
 
-def network_visualisation(request):
-    return render(request, 'network_visualisation.html',
-                  {
-                      'preferences': get_user_preferences(request),
-                      'searches': get_user_searches(request)
-                  }, context_instance=RequestContext(request))
-
-
 def admin_api(request):
     userr = get_request_user(request)
     method = request.GET.get("method", None)
@@ -3719,6 +3711,10 @@ def wiserd_education(request):
 
 def civil_society(request):
     return render(request, 'civil_society.html', {}, context_instance=RequestContext(request))
+
+
+def network_visualisation(request):
+    return render(request, 'network_visualisation.html', {}, context_instance=RequestContext(request))
 
 
 def snippet_test(request):

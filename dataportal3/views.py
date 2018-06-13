@@ -3472,6 +3472,7 @@ def wiserd_projects_dashboard(request):
                       'searches': get_user_searches(request)
                   }, context_instance=RequestContext(request))
 
+
 def partner_projects_dashboard(request):
     return render(request, 'partner_projects_dashboard.html',
                   {
@@ -3479,12 +3480,14 @@ def partner_projects_dashboard(request):
                       'searches': get_user_searches(request)
                   }, context_instance=RequestContext(request))
 
+
 def about_dashboard(request):
     return render(request, 'about_dashboard.html',
                   {
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
                   }, context_instance=RequestContext(request))
+
 
 def admin_api(request):
     userr = get_request_user(request)

@@ -445,10 +445,11 @@ function getTheRawData() {
     // blogwheel.json - blog only
     // sitewheel.json - both
     // allwheel.json - site
-
-    var dataUrl = getParameterByName('data') || "https://storage.googleapis.com/xliberation.com/dump/blogwheel.json";
-      
     // promise will be resolved when done
+
+
+//   var dataUrl = getParameterByName('data') || "https://storage.googleapis.com/xliberation.com/dump/blogwheel.json";
+    var dataUrl = getParameterByName('data') ||"https://github.com/whelks-chance/wiserd3/tree/master/dataportal3/static/test_data/keywords.json";
     return getPromiseData(dataUrl,proxyUrl);
 }
 

@@ -109,11 +109,13 @@ class QuestionSerializer(serializers.ModelSerializer):
     # subof_name = serializers.SlugRelatedField(many=True, read_only=True, slug_field='questionnumber')
 
     type = serializers.SlugRelatedField(read_only=True, slug_field='q_type_text')
-    survey = serializers.SlugRelatedField(read_only=True, slug_field='identifier')
+
+#    survey = serializers.SlugRelatedField(read_only=True, slug_field='identifier')
 
     class Meta:
         model = Question
         fields = '__all__'
+        depth = 1
 
 
 class ResponseTypeSerializer(serializers.ModelSerializer):

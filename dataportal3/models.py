@@ -410,6 +410,8 @@ class Survey(models.Model):
     updated = models.DateTimeField(blank=True, null=True)
     long = models.TextField(blank=True, null=True)
     spatialdata = models.NullBooleanField()
+    sweep = models.TextField(blank=True, null=True)
+    cohort = models.TextField(blank=True, null=True)
 
     # hide
     collectionstartdate = models.DateField(blank=True, null=True)

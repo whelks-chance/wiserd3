@@ -13,16 +13,17 @@
 
 
 
- var questions_table = $('#questions_table').DataTable({
+            var questions_table = $('#questions_table').DataTable({
                 serverSide: false,
                 processing: true,
                 "oLanguage": datatables_language,
                 "data": {},
-     columns: [
-{#                    {'data': 'survey_name'},#}
+                columns: [
+                    {'data': 'survey.cohort'},
+                    {'data': 'survey.sweep'},
+
                     {'data': 'questionnumber'},
                     {'data': 'literal_question_text'},
-                    {#                    {'data': 'questionnumber'},#}
                     {#                            {'data': 'thematic_groups'},#}
                     {#                            {'data': 'thematic_tags'},#}
                     {'data': 'type'},
@@ -76,11 +77,11 @@
             }).on( 'stateLoaded.dt', function (e, settings, data) {
                 attach_question_buttons();
             });
-{#        alert(questions_table);#}
+            {#        alert(questions_table);#}
 
 
 
-         var survey_table = $('#survey_table').DataTable({
+            var survey_table = $('#survey_table').DataTable({
                 serverSide: false,
                 processing: true,
                 "bAutoWidth": false,
@@ -95,13 +96,13 @@
                     },
                     dataSrc: function ( json ) {
                         return json['search_result_data'];
-{#                        alert('search_result_data');#}
+                        {#                        alert('search_result_data');#}
                     }
                 },
                 columns: [
                     {'data': 'survey_title'},
-{#                    {'data': 'surveystartdate'},#}
-{#                                        {'data': 'collectionsituation'},#}
+                    {#                    {'data': 'surveystartdate'},#}
+                    {#                                        {'data': 'collectionsituation'},#}
                     {'data': 'collectionstartdate'},
                     {
                         "targets": -1,
@@ -135,45 +136,45 @@
                 tidy_tab_fields()
             });
 
-        var surveyid=["wisid_cohortcyear11",
-            "wisid_cohortbyear9",
-            "wisid_cohortbyear8",
-            "wisid_cohortdyear11",
-            "wisid_cohortcyear9",
-            "wisid_cohortdyear10",
-            "wisid_cohortcyear8",
-            "wisid_cohortbyear6",
-            "wisid_cohortayear3",
-            "wisid_cohortbyear7",
-            "wisid_cohortayear2",
-            "wisid_cohortdmovers",
-            "sid_cohortcyear10"
+            var surveyid=["wisid_cohortcyear11",
+                "wisid_cohortbyear9",
+                "wisid_cohortbyear8",
+                "wisid_cohortdyear11",
+                "wisid_cohortcyear9",
+                "wisid_cohortdyear10",
+                "wisid_cohortcyear8",
+                "wisid_cohortbyear6",
+                "wisid_cohortayear3",
+                "wisid_cohortbyear7",
+                "wisid_cohortayear2",
+                "wisid_cohortdmovers",
+                "sid_cohortcyear10"
             ];
 
-        var async_request=[];
-        for(var i in surveyid)
+            var async_request=[];
+            for(var i in surveyid)
 
-            async_request.push($.ajax({
+                async_request.push($.ajax({
 
-                    url: "{% url 'api:metadata:Question-list' %}",
-                    type: 'GET',
-                    data: {
-                        "survey__identifier": surveyid[i]},
+                            url: "{% url 'api:metadata:Question-list' %}",
+                            type: 'GET',
+                            data: {
+                                "survey__identifier": surveyid[i]},
 
-                    success: function(data){
-                        questions_table.rows.add(data['results']).draw();
-{#                        alert(data['results']).draw();#}
-                    },
-                error: function(){}
+                            success: function(data){
+                                questions_table.rows.add(data['results']).draw();
+                                {#                        alert(data['results']).draw();#}
+                            },
+                            error: function(){}
 
 
-                })
-            );
+                        })
+                );
         });
 
-{#        var survey_name=#}
-{#                if (surveyid=['id_cohortcyear10'])#}
-{#                    returns(survey_name =['Cohort C Year 10']);#}
+        {#        var survey_name=#}
+        {#                if (surveyid=['id_cohortcyear10'])#}
+        {#                    returns(survey_name =['Cohort C Year 10']);#}
 
         function tidy_tab_fields() {
             $(".tab_data_input").each( function() {
@@ -234,11 +235,11 @@
                         field, display_name, value
                 );
             }
- }
-{#        var Surveys_Questions_table = new DataTable();#}
-{#            Surveys_Questions_table.merge('#questions_table');#}
-{#            Surveys_Questions_table.merge('#survey_table');#}
-{#            alert('Surveys_Questions_table');#}
+        }
+        {#        var Surveys_Questions_table = new DataTable();#}
+        {#            Surveys_Questions_table.merge('#questions_table');#}
+        {#            Surveys_Questions_table.merge('#survey_table');#}
+        {#            alert('Surveys_Questions_table');#}
 
     </script>
 
@@ -257,97 +258,99 @@
             </div>
         </div>
 
-    <ul class="nav nav-pills">
-        <li>
-            <a id="survey_tab_li" href="#survey_tab" data-toggle="tab">{% trans 'Surveys' %}</a>
-        </li>
-        <li class="active">
-            <a id="question_tab_li" href="#question_tab" data-toggle="tab">{% trans 'Questions' %}</a>
-        </li>
+        <ul class="nav nav-pills">
+            <li>
+                <a id="survey_tab_li" href="#survey_tab" data-toggle="tab">{% trans 'Surveys' %}</a>
+            </li>
+            <li class="active">
+                <a id="question_tab_li" href="#question_tab" data-toggle="tab">{% trans 'Questions' %}</a>
+            </li>
 
-    </ul>
+        </ul>
 
         <div class="tab-content">
-        <div class="tab-pane fade" id="survey_tab">
-                            <h4>{% trans 'Survey' %}</h4>
-                            <div id="survey_tab">
+            <div class="tab-pane fade" id="survey_tab">
+                <h4>{% trans 'Survey' %}</h4>
+                <div id="survey_tab">
 
-                                    <div class="panel-body">
-                <div class="dataTable_wrapper">
-                    <table class="table table-striped table-bordered table-hover" id="survey_table">
-                        <thead>
-                        <tr>
-                            <th>{% trans 'Title' %}</th>
-{#                                                                <th>{% trans 'Frequency' %}</th>#}
-                            {#                                    <th>{% trans 'Collection Method' %}</th>#}
-                            <th>{% trans 'Date' %}</th>
+                    <div class="panel-body">
+                        <div class="dataTable_wrapper">
+                            <table class="table table-striped table-bordered table-hover" id="survey_table">
+                                <thead>
+                                <tr>
+                                    <th>{% trans 'Title' %}</th>
+                                    {#                                                                <th>{% trans 'Frequency' %}</th>#}
+                                    {#                                    <th>{% trans 'Collection Method' %}</th>#}
+                                    <th>{% trans 'Date' %}</th>
 
-                            <th>{% trans 'View' %}</th>
-                            {#                                    <th>{% trans 'Area' %}</th>#}
-                            {#                                    <th>{% trans 'Map' %}</th>#}
+                                    <th>{% trans 'View' %}</th>
+                                    {#                                    <th>{% trans 'Area' %}</th>#}
+                                    {#                                    <th>{% trans 'Map' %}</th>#}
 
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td></tr>
-                        </tbody>
-                    </table>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 
 
-                            </div>
-                        </div>
+            <div class="tab-pane fade in active" id="question_tab">
+                <h4>{% trans 'Questions' %}</h4>
+                <div id="question_tab"></div>
+                <div class="panel-body">
+                    <div class="dataTable_wrapper">
+                        <table class="table table-striped table-bordered table-hover" id="questions_table">
+                            <thead>
+                            <tr>
+                                {#                                                <th>{% trans 'Survey Title' %}</th>#}
+                                <th>{% trans 'Sweep' %}</th>
+                                <th>{% trans 'Cohort' %}</th>
+                                <th>{% trans 'Question Number' %}</th>
+                                <th>{% trans 'QuestionText' %}</th>
+                                <th>{% trans 'Type' %}</th>
+                                <th>{% trans 'Notes' %}</th>
+                                <th>{% trans 'From' %}</th>
+                                <th>{% trans 'SubOf' %}</th>
+                                <th>{% trans 'Map It' %}</th>
+                                <th>{% trans 'View' %}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
 
 
-        <div class="tab-pane fade in active" id="question_tab">
-            <h4>{% trans 'Questions' %}</h4>
-            <div id="question_tab"></div>
-       <div class="panel-body">
-                                    <div class="dataTable_wrapper">
-                                        <table class="table table-striped table-bordered table-hover" id="questions_table">
-                                            <thead>
-                                            <tr>
-{#                                                <th>{% trans 'Survey Title' %}</th>#}
-                                                <th>{% trans 'Question Number' %}</th>
-                                                <th>{% trans 'QuestionText' %}</th>
-                                                <th>{% trans 'Type' %}</th>
-                                                <th>{% trans 'Notes' %}</th>
-                                                <th>{% trans 'From' %}</th>
-                                                <th>{% trans 'SubOf' %}</th>
-                                                <th>{% trans 'Map It' %}</th>
-                                                <th>{% trans 'View' %}</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                            </div>
-
-
-                            </div>
-                        </div>
-
+            </div>
         </div>
 
-</div>
+    </div>
 
-            <a id="survey_row" href="#survey_row" class="pull-right">
-                <button class="btn btn-info btn-outline">
-                    <i class="fa fa-arrow-circle-up"></i> {% trans 'Top' %}
-                </button>
-            </a>
+    </div>
+
+    <a id="survey_row" href="#survey_row" class="pull-right">
+        <button class="btn btn-info btn-outline">
+            <i class="fa fa-arrow-circle-up"></i> {% trans 'Top' %}
+        </button>
+    </a>
 
 
     </div>

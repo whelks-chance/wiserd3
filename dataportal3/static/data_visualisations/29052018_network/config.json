@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "https://wiserd.ac.uk/themes/wiserd/img/xlogo.png.pagespeed.ic.PLELxAJrmX.png",
+    "link": "https://wiserd.ac.uk",
+    "text": "Wil Chivers"
+  },
+  "text": {
+    "more": "On the 4th September 2017, UK McDonald\u0027s employees went on strike for the first time. The hastag used to promote the strike on social media was \u0027#McStrike\u0027.\n\nAs part of WISERD Civil Society research, we collected over 90,000 tweets containing \u0027#McStrike\u0027 from the 28th August-10th September 2017.\n\nThis network illustrates all retweets from Tuesday 29th August. Tweets were collected using COSMOS Open Data Analytics (https://http://socialdatalab.net/software) and visualised using Gephi (https://gephi.org).",
+    "intro": "This network illustrates all retweets from Tuesday 29th August 2017 containing the hashtag \u0027#McStrike\u0027.\nTweets were collected using COSMOS Open Data Analytics (https://http://socialdatalab.net/software) and visualised using Gephi (https://gephi.org). ",
+    "title": "#McStrike Retweets: Tuesday 29th August 2017"
+  },
+  "legend": {
+    "edgeLabel": "Retweet",
+    "colorLabel": "Modularity Class",
+    "nodeLabel": "Twitter user"
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "Modularity Class",
+    "hoverBehavior": "dim"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": false
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 0.5,
+      "minEdgeSize": 0.2,
+      "minNodeSize": 1,
+      "maxNodeSize": 7
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}

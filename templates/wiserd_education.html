@@ -28,18 +28,18 @@
                     {#                            {'data': 'thematic_tags'},#}
                     {'data': 'type'},
                     {'data': 'notes'},
-                    {
-                        "targets": -4,
-                        "data": null,
-                        "render": function ( data, type, full, meta ) {
+{#                    {#}
+{#                        "targets": -4,#}
+{#                        "data": null,#}
+{#                        "render": function ( data, type, full, meta ) {#}
                             {# if (data['from_name'] != null && data['from_name'].trim() != '' && data['from_name'].trim() != 'N/A' ) {#}
-                            if (data['link_from_name'] && data['link_from_name'].length > 0 && data['link_from_name'] != '' ) {
-                                return "<div class='btn btn-info search_from'>{% trans 'Previous' %}</div>";
-                            } else {
-                                return ""
-                            }
-                        }
-                    },
+{#                            if (data['link_from_name'] && data['link_from_name'].length > 0 && data['link_from_name'] != '' ) {#}
+{#                                return "<div class='btn btn-info search_from'>{% trans 'Previous' %}</div>";#}
+{#                            } else {#}
+{#                                return ""#}
+{#                            }#}
+{#                        }#}
+{#                    },#}
                     {
                         "targets": -3,
                         "data": null,
@@ -320,18 +320,18 @@
                                 <th>{% trans 'QuestionText' %}</th>
                                 <th>{% trans 'Type' %}</th>
                                 <th>{% trans 'Notes' %}</th>
-                                <th>{% trans 'From' %}</th>
+{#                                <th>{% trans 'From' %}</th>#}
                                 <th>{% trans 'SubOf' %}</th>
                                 <th>{% trans 'Map It' %}</th>
                                 <th>{% trans 'View' %}</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                             </tbody>
                         </table>
                     </div>

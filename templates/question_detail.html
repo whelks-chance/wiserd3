@@ -87,8 +87,14 @@
                     $('#question_info').append(dataContent);
 
                     var survey_button = "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
-                            "class='btn btn-info pull-right' href='/survey/" + data['survey'] + "'>{% trans 'View Survey' %}</a>";
+                            "class='btn btn-info pull-right' href='/survey/" + data['survey']['identifier'] + "'>{% trans 'View Survey' %}</a>";
                     $('#question_panel_nav').append(survey_button);
+
+                    if (data['link_from_id']) {
+                        var prev_q_button = "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                                "class='btn btn-info pull-right' href='/question/" + data['link_from_id'] + "'>{% trans 'Previous Question' %}</a>";
+                        $('#question_panel_nav').append(prev_q_button);
+                    }
                     tidy_tab_fields()
                 }
             });

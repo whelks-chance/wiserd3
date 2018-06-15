@@ -875,4 +875,8 @@
     color: #54075B;
 }
 
+.nav-pills.survey_tab_li a:active {
+    background-color: rebeccapurple!important;
+    color: whitesmoke!important;
+}
 

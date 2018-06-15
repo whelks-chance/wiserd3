@@ -247,14 +247,17 @@
 {% endblock %}
 
 
+
 {% block content %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'dataportal/wep.css' %}" />
     <div class="container-fluid">
 
         <div class="row">
             <div class="col-lg-12">
                 <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/wiserdedwelsh.jpg' %}{% else %}{% static 'dataportal/media/wiserd_education.jpg' %}{% endif %}">
 
-                <h1 class="page-header">{% trans 'WISERDEducation' %}</h1>
+                <p></p>
             </div>
         </div>
 

@@ -866,5 +866,13 @@
 .panel-dash_back .panel-footer {
     color: #54075B;
 }
+.nav-pills li.active a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    background-color: #3B028A!important;
+    color: whitesmoke!important;
+}
+.nav-pills li a {
+    color: #3B028A;
+    text-decoration: none;
+}
 
 

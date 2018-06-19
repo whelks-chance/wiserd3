@@ -22,6 +22,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 from wiserd3 import settings
 
+
 urlpatterns = [
                   url(r'^grappelli/', include('grappelli.urls')),
                   url(r'^explorer/', include('explorer.urls')),
@@ -138,7 +139,6 @@ urlpatterns = [
                   url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.STATIC_ROOT}),
                   # url(r'^i18n/', include('django.conf.urls.i18n')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 urlpatterns += patterns(
     'djcelery.views', url(r'^task/status/(?P<task_id>.+)/$', 'task_status', name='task-status')
 )

@@ -383,7 +383,8 @@ class SpatialLevel(models.Model):
 #     class Meta:
 #         db_table = 'spatial_ref_sys'
 
-
+# this is where you can add fields into the different tables (for example Sweep and response have been added recently.)
+# to apply changes to tables go to terminal and activate the virtual environment (check "updating the database" notes)
 class Survey(models.Model):
     dublin_core = models.ForeignKey('DcInfo', blank=True, null=True)
     frequency = models.ForeignKey('SurveyFrequency', blank=True, null=True)

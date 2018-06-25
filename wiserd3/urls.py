@@ -91,6 +91,7 @@ urlpatterns = [
 
                   url(r'^wiserd_education', views.wiserd_education, name='wiserd_education'),
                   url(r'^civil_society', views.civil_society, name='civil_society'),
+                  url(r'^testnetwork', views.testnetwork, name='testnetwork'),
 
                   url(r'^blank', views.blank, name='blank'),
 

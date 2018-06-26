@@ -29,6 +29,8 @@ urlpatterns = [
                   url(r'^admin_tools/', include(admin.site.urls)),
                   url(r'^api/', include(api_urls, namespace='api')),
 
+                  url(r'^test_api/', views.test_api, name='test_api'),
+
                   url(r'^map_test', views.map_test, name='map_test'),
                   url(r'^snippet_test', views.snippet_test, name='snippet_test'),
                   url(r'^d3_test/(?P<survey_id>\S+)', views.d3_test, name='d3_test'),

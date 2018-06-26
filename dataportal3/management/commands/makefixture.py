@@ -1,6 +1,8 @@
 
 #  Modified code to work with Django 1.9, and to add the --database option.
 
+# https://stackoverflow.com/questions/8313558/django-selective-dumpdata
+
 # Based on https://djangosnippets.org/snippets/10506/
 # This intermediary version had the following header:
 
@@ -55,6 +57,7 @@ class Command(LabelCommand):
         show_traceback = options.get('traceback', False)
         propagate = options.get('propagate', True)
         using = options.get('database')
+        filter = options.get('filter')
         use_natural_foreign_keys = options.get('use_natural_foreign_keys', False)
         use_natural_primary_keys = options.get('use_natural_primary_keys', False)
 

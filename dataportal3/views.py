@@ -3725,3 +3725,23 @@ def d3_test(request, survey_id):
 
 def terms_conditions(request):
     return render(request, 'terms_conditions.html', {}, context_instance=RequestContext(request))
+
+
+def test_api(request):
+    api_data = {
+        'get': {},
+        'post': {},
+        'file': {}
+    }
+
+    for g in request.GET.keys():
+        api_data['get'][g] = request.GET[g]
+
+    for g in request.POST.keys():
+        api_data['post'][g] = request.POST[g]
+
+    with open('dataportal3/static/test_data/qualtrics.json', 'r') as qualtrics_file:
+        json_blob = json.load(qualtrics_file)
+        api_data['file'] = json_blob
+
+    return HttpResponse(json.dumps(api_data, indent=4, default=date_handler), content_type="application/json")

@@ -49,23 +49,23 @@
     },
     {
       "key": "benefits_pension",
-      "option1": "",
-      "option2": ""
+      "option1": "❌",
+      "option2": "✔"
     },
     {
       "key": "benefits_insurance",
-      "option1": "",
-      "option2": ""
+      "option1": "✔",
+      "option2": "❌"
     },
     {
       "key": "benefits_healthinsurance",
-      "option1": "",
-      "option2": ""
+      "option1": "❌",
+      "option2": "✔"
     },
     {
       "key": "benefits_sickpay",
-      "option1": "",
-      "option2": ""
+      "option1": "✔",
+      "option2": "❌"
     },
     {
       "key": "benefits_commuting",

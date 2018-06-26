@@ -1,1 +1,4 @@
-{}
+{
+  "option1_name": "custom text for option 1",
+  "option2_name": "custom text for option 2"
+}

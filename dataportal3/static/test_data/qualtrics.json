@@ -1,4 +1,96 @@
 {
-  "option1_name": "custom text for option 1",
-  "option2_name": "custom text for option 2"
+  "populated_attrs": [
+    "salary",
+    "location",
+    "promotion",
+    "training",
+    "annualleave",
+    "benefits_vouchers",
+    "benefits_pension",
+    "benefits_insurance",
+    "benefits_healthinsurance",
+    "benefits_sickpay",
+    "benefits_commuting",
+    "benefits_gym",
+    "benefits_flex",
+    "hours",
+    "contract"
+  ],
+  "attrs": [
+    {
+      "key": "salary",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "location",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "promotion",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "training",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "annualleave",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "benefits_vouchers",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "benefits_pension",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "benefits_insurance",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "benefits_healthinsurance",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "benefits_sickpay",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "benefits_commuting",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "benefits_gym",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "benefits_flex",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "hours",
+      "option1": "",
+      "option2": ""
+    },
+    {
+      "key": "contract",
+      "option1": "",
+      "option2": ""
+    }
+  ]
 }

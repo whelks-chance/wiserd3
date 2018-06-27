@@ -1,0 +1,62 @@
+{
+  "salary": {
+    "a": "",
+    "b": ""
+  },
+  "location": {
+    "a": "",
+    "b": ""
+  },
+  "promotion": {
+    "a": "✔",
+    "b": "❌"
+  },
+  "training": {
+    "a": "❌",
+    "b": "✔"
+  },
+  "annualleave": {
+    "a": "",
+    "b": ""
+  },
+  "benefits_vouchers": {
+    "a": "",
+    "b": "❌"
+  },
+  "benefits_pension": {
+    "a": "❌",
+    "b": "✔"
+  },
+  "benefits_insurance": {
+    "a": "✔",
+    "b": "❌"
+  },
+  "benefits_healthinsurance": {
+    "a": "✔",
+    "b": "✔"
+  },
+  "benefits_sickpay": {
+    "a": "❌",
+    "b": "❌"
+  },
+  "benefits_commuting": {
+    "a": "",
+    "b": ""
+  },
+  "benefits_gym": {
+    "a": "",
+    "b": ""
+  },
+  "benefits_flex": {
+    "a": "",
+    "b": ""
+  },
+  "hours": {
+    "a": "",
+    "b": ""
+  },
+  "contract": {
+    "a": "",
+    "b": ""
+  }
+}

@@ -3524,6 +3524,29 @@
 
 
             function add_geojson(data, name) {
+                var icons = new Set();
+                var icon_colours = new Set();
+
+                for (var f_idx in data["features"]){
+
+                    var f_props = data["features"][f_idx]["properties"];
+                    if (f_props.hasOwnProperty('point_icon')){
+                        icons.add(f_props['point_icon']);
+                    }
+
+                    var colour_pair = ['black', 'white'];
+                    if (f_props.hasOwnProperty('point_icon_colour')){
+                        colour_pair[0] = f_props['point_icon_colour'];
+                    }
+                    if (f_props.hasOwnProperty('point_icon_bgcolour')){
+                        colour_pair[1] = f_props['point_icon_bgcolour'];
+                    }
+{#                    Annoyingly, this isn't how js sets work. Does not check within the array for value pairs already in the set. #}
+                    icon_colours.add(colour_pair);
+                }
+                console.log(icons);
+                console.log(icon_colours);
+
                 var geojson_obj = L.Proj.geoJson(data, {
                     pointToLayer: function (feature, latlng) {
 

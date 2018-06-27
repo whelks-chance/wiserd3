@@ -565,7 +565,7 @@ function nodeActive(a) {
                 h = "";
             if (attr!=image_attribute) {
                 if (d.search("http") != -1) {
-                    h = '<div class="' + attr.replace(/\s+/g,'') + '">' + attr.link(d) + '</div>';
+                    h = '<span><strong>' + attr + ':</strong>' + attr.link(d) + '</span><br/>';
                 } else {
                     h = '<span><strong>' + attr + ':</strong> ' + d + '</span><br/>'
                 }

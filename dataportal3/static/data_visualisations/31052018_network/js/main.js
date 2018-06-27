@@ -86,6 +86,7 @@ function initSigma(config) {
     a.active = !1;
     a.neighbors = {};
     a.detail = !1;
+    // a.activateFishEye();
 
 
     dataReady = function() {//This is called as soon as data is loaded

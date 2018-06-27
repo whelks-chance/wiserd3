@@ -199,7 +199,6 @@ function setupGUI(config) {
     $GP.cluster = new Cluster($GP.form.find("#attributeselect"));
     config.GP=$GP;
     initSigma(config);
-
 }
 
 function configSigmaElements(config) {
@@ -562,7 +561,7 @@ function nodeActive(a) {
         temp_array = [];
         g = 0;
         for (var attr in f.attributes) {
-            var d = f.attributes["Degree"],
+            var d = f.attributes[attr],
                 h = "";
 			if (attr!=image_attribute) {
                 h = '<span><strong>' + attr + ':</strong> ' + d + '</span><br/>'
@@ -581,7 +580,6 @@ function nodeActive(a) {
         $GP.info_data.html(e.join("<br/>"))
     }
     $GP.info_data.show();
-        console.log($GP.info_data);
     $GP.info_p.html("Connections:");
     $GP.info.animate({width:'show'},350);
 	$GP.info_donnees.hide();

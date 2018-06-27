@@ -2,6 +2,7 @@
   "type": "network",
   "version": "1.0",
   "data": "data.json",
+
   "logo": {
     "file": "https://wiserd.ac.uk/themes/wiserd/img/xlogo.png.pagespeed.ic.PLELxAJrmX.png",
     "link": "https://wiserd.ac.uk",

@@ -563,9 +563,13 @@ function nodeActive(a) {
         for (var attr in f.attributes) {
             var d = f.attributes[attr],
                 h = "";
-			if (attr!=image_attribute) {
-                h = '<span><strong>' + attr + ':</strong> ' + d + '</span><br/>'
-			}
+            if (attr!=image_attribute) {
+                if (d.search("http") != -1) {
+                    h = '<span><strong>' + attr + ':</strong>' + d.link(d) + '</span><br/>'; //creates hyperlink by searching for http
+                } else {
+                    h = '<span><strong>' + attr + ':</strong> ' + d + '</span><br/>'; //if no hyperlink found, this just returns the value
+                }
+            }
             //temp_array.push(f.attributes[g].attr);
             e.push(h)
         }

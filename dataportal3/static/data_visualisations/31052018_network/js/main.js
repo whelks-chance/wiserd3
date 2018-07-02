@@ -586,6 +586,7 @@ function nodeActive(a) {
         $GP.info_data.html(e.join(""))
     }
     $GP.info_data.show();
+    $GP.info_donnees.capitalize();
     $GP.info_p.html("Connections:");
     $GP.info.animate({width:'show'},350);
 	$GP.info_donnees.hide();
@@ -593,6 +594,10 @@ function nodeActive(a) {
     sigInst.active = a;
     window.location.hash = b.label;
 }
+
+string.prototype.capitalize = function(){
+    return this.charAt(0).toUpperCase() + this.slice(1);
+};
 
 function showCluster(a) {
     var b = sigInst.clusters[a];

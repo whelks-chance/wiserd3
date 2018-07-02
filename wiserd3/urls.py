@@ -94,6 +94,9 @@ urlpatterns = [
                   url(r'^wiserd_education', views.wiserd_education, name='wiserd_education'),
                   url(r'^civil_society', views.civil_society, name='civil_society'),
                   url(r'^mcstrike30052018', views.mcstrike30052018, name='mcstrike30052018'),
+                  url(r'^mcstrike28052018', views.mcstrike28052018, name='mcstrike28052018'),
+                  url(r'^mcstrike29052018', views.mcstrike29052018, name='mcstrike29052018'),
+                  url(r'^mcstrike31052018', views.mcstrike31052018, name='mcstrike31052018'),
 
                   url(r'^blank', views.blank, name='blank'),
 

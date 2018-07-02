@@ -3711,6 +3711,16 @@ def wiserd_education(request):
 def mcstrike30052018(request):
     return render(request, 'McStrike-30052018.html', {}, context_instance=RequestContext(request))
 
+def mcstrike28052018(request):
+    return render(request, 'McStrike-28052018.html', {}, context_instance=RequestContext(request))
+
+def mcstrike29052018(request):
+    return render(request, 'McStrike-29052018.html', {}, context_instance=RequestContext(request))
+
+def mcstrike31052018(request):
+    return render(request, 'McStrike-31052018.html', {}, context_instance=RequestContext(request))
+
+
 def civil_society(request):
     return render(request, 'civil_society.html', {}, context_instance=RequestContext(request))
 

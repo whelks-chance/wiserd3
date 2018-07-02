@@ -567,13 +567,13 @@ function nodeActive(a) {
                 if (d.search("http") != -1) {
                     h = '<span><strong>' + attr + ':</strong>' + d.link(d) + '</span><br/>'; //creates hyperlink by searching for http
                 } else {
-                    h = '<span><strong>' + attr + ':</strong> ' + d + '</span><br/>'; //if no hyperlink found, this just returns the value
+                    h = '<span><strong>' + attr + ':</strong>' + d + '</span><br/>'; //if no hyperlink found, this just returns the value
                 }
             }
             //temp_array.push(f.attributes[g].attr);
             e.push(h)
-        }
 
+       
         if (image_attribute) {
         	//image_index = jQuery.inArray(image_attribute, temp_array);
         	$GP.info_name.html("<div><img src=" + f.attributes[image_attribute] + " style=\"vertical-align:middle\" /> <span onmouseover=\"sigInst._core.plotter.drawHoverNode(sigInst._core.graph.nodesIndex['" + b.id + '\'])" onmouseout="sigInst.refresh()">' + b.label + "</span></div>");
@@ -622,6 +622,6 @@ function showCluster(a) {
         return !0
     }
     return !1
-}
+}}
 
 

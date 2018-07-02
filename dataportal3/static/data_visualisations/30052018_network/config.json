@@ -10,7 +10,7 @@
   "text": {
     "more": "On the 4th September 2017, UK McDonald\u0027s employees went on strike for the first time. The hastag used to promote the strike on social media was \u0027#McStrike\u0027.\n\nAs part of WISERD Civil Society research, we collected over 90,000 tweets containing \u0027#McStrike\u0027 from the 28th August-10th September 2017.\n\nThis network illustrates all retweets from Wednesday 30th August. Tweets were collected using COSMOS Open Data Analytics (https://http://socialdatalab.net/software) and visualised using Gephi (https://gephi.org). Data were collected and analysed by Dr Wil Chivers, Dr Helen Blakely and Dr Steve Davies, with assistance from Katie Dickson and Sam Jones.",
     "intro": "This network illustrates all retweets from Wednesday 30th August 2017 containing the hashtag \u0027#McStrike\u0027.\n\nTweets were collected using COSMOS Open Data Analytics (https://http://socialdatalab.net/software) and visualised using Gephi (https://gephi.org).\n\nThe most retweeted tweet is listed for each of the five top ranked nodes by in-degree.",
-    "title": "#McStrike Retweets: Tuesday 29th August 2017"
+    "title": "#McStrike Retweets: Wednesday 30th August 2017"
   },
   "legend": {
     "edgeLabel": "Retweet",

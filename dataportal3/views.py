@@ -3708,7 +3708,7 @@ def map_test(request):
 def wiserd_education(request):
     return render(request, 'wiserd_education.html', {}, context_instance=RequestContext(request))
 
-def testnetwork(request):
+def mcstrike30052018(request):
     return render(request, 'McStrike-30052018.html', {}, context_instance=RequestContext(request))
 
 def civil_society(request):

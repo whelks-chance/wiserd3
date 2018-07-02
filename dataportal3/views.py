@@ -3709,7 +3709,7 @@ def wiserd_education(request):
     return render(request, 'wiserd_education.html', {}, context_instance=RequestContext(request))
 
 def testnetwork(request):
-    return render(request, 'testnetwork.html', {}, context_instance=RequestContext(request))
+    return render(request, 'McStrike-30052018.html', {}, context_instance=RequestContext(request))
 
 def civil_society(request):
     return render(request, 'civil_society.html', {}, context_instance=RequestContext(request))

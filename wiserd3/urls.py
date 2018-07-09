@@ -97,6 +97,7 @@ urlpatterns = [
                   url(r'^mcstrike28052018', views.mcstrike28052018, name='mcstrike28052018'),
                   url(r'^mcstrike29052018', views.mcstrike29052018, name='mcstrike29052018'),
                   url(r'^mcstrike31052018', views.mcstrike31052018, name='mcstrike31052018'),
+                  url(r'^mcstrike_week1', views.mcstrike_week1, name='mcstrike_week1'),
 
                   url(r'^blank', views.blank, name='blank'),
 

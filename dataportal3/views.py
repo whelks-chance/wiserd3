@@ -3709,6 +3709,11 @@ def wiserd_education(request):
     return render(request, 'wiserd_education.html', {}, context_instance=RequestContext(request))
 
 
+def mcstrike_week1(request):
+    return render(request, 'mcstrike_week1.html', {}, context_instance=RequestContext(request))
+
+
+
 def mcstrike30052018(request):
     return render(request, 'McStrike-30052018.html', {}, context_instance=RequestContext(request))
 

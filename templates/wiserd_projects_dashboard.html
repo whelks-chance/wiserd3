@@ -8,9 +8,9 @@
 {% block extra_head %}
 
     <style>
-    .navbar-brand-text{
-        color: lightgrey;
-    }
+        .navbar-brand-text{
+            color: lightgrey;
+        }
     </style>
 
     <script type="text/javascript" src="{% static 'dataportal/page_js/dashboard.js' %}"></script>
@@ -124,43 +124,74 @@
                     </a>
                 </div>
             </div>
-
-            {% if request.user.is_staff %}
-                <div class="col-lg-4 col-md-6">
-                    <div class="panel panel-wmh">
-                        <a href="{% url 'wmh_dashboard' %}">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img style="
-                                                {#                                            max-width: 90%;#}
-                                                background-color: whitesmoke;
-                                                height: 4.5em;
-                                                padding-top: 0.5em;
-                                                margin-top: 0.3em;
-                                                border-radius: 5px;
-                                                "
-                                             src="{% static 'dataportal/media/wmh/pithead-40620_1280.png' %}">
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">_</div>
-                                        <div>{% trans 'Welsh Mining Heritage' %}</div>
-                                    </div>
-                                </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="panel panel-twitter">
+                <a href="{% url 'mcstrike28052018' %}">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <img style="
+                                        {#                                            max-width: 90%;#}
+                                        background-color: whitesmoke;
+                                        height: 4.5em;
+                                        padding-top: 0.5em;
+                                        margin-top: 0.3em;
+                                        border-radius: 3px;
+                                        "
+                                     src="{% static 'dataportal/media/twitter.png' %}">
                             </div>
-                        </a>
-                        <a href="{% url 'wmh_dashboard' %}">
-                            <div class="panel-footer">
-                                <span class="pull-left">{% trans 'Welsh Mining Heritage' %}</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">_</div>
+                                <div>{% trans '#McStrike Network Diagrams' %}</div>
                             </div>
-                        </a>
+                        </div>
                     </div>
-                </div>
-            {% endif %}
+                </a>
+                <a href="{% url 'mcstrike28052018' %}">
+                    <div class="panel-footer">
+                        <span class="pull-left">{% trans '#McStrike Network Diagrams' %}</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% if request.user.is_staff %}
+            <div class="col-lg-4 col-md-6">
+            <div class="panel panel-wmh">
+                <a href="{% url 'wmh_dashboard' %}">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <img style="
+                                        {#                                            max-width: 90%;#}
+                                        background-color: whitesmoke;
+                                        height: 4.5em;
+                                        padding-top: 0.5em;
+                                        margin-top: 0.3em;
+                                        border-radius: 5px;
+                                        "
+                                     src="{% static 'dataportal/media/wmh/pithead-40620_1280.png' %}">
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">_</div>
+                                <div>{% trans 'Welsh Mining Heritage' %}</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{% url 'wmh_dashboard' %}">
+                    <div class="panel-footer">
+                        <span class="pull-left">{% trans 'Welsh Mining Heritage' %}</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        {% endif %}
 
-            {% include 'snippets/dashboad_buttons.html' %}
+        {% include 'snippets/dashboad_buttons.html' %}
 
         </div>
     </div>

@@ -875,4 +875,15 @@
     text-decoration: none;
 }
 
+.panel-twitter {
+    border-color: #68A0CA;
+}
 
+.panel-twitter .panel-heading {
+    color: white;
+    border-color: #68A0CA;
+    background-color: #68A0CA;
+}
+.panel-twitter .panel-footer {
+    color: #68A0CA;
+}

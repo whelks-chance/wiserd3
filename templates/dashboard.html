@@ -133,16 +133,25 @@
                     </a>
                 </div>
             </div>
-
-
-            <div class="col-lg-4 col-md-6">
-                <div class="panel panel-partner_projects">
+        <div>
+            <div class="col-lg-4 col-md-4">
+                <div class="panel panel-purple">
                     <a href="{% url 'partner_projects_dashboard' %}">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                                                        <i class="fa fa-list-alt fa-5x"></i>
-
+                                   <img style="
+                                            height: 4em;
+                                            border-radius: 2.5em;
+                                            position: absolute
+                                            "
+                                         src=" /static/dataportal/media/naw-logo-circle.png">
+                                    <img style="
+                                            height: 2em;
+                                            position: absolute;
+                                            left: 6em;
+                                            "
+                                         src="/static/dataportal/media/m4w/m4wlogo.gif">
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">_</div>
@@ -153,16 +162,39 @@
                     </a>
                     <a href="{% url 'partner_projects_dashboard' %}">
                         <div class="panel-footer">
-                            <span class="pull-left">{% trans 'Partner Projects Dashboard' %}</span>
+                            <span class="pull-left">{% trans 'Partner Projects' %}</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
                     </a>
                 </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6">
+                </div>
+{#            <div class="col-lg-4 col-md-6">#}
+{#                <div class="panel panel-purple">#}
+{#                    <a href="{% url 'partner_projects_dashboard' %}">#}
+{#                        <div class="panel-heading">#}
+{#                            <div class="row">#}
+{#                                <div class="col-xs-3">#}
+{#                                                                        <i class="fa fa-list-alt fa-5x"></i>#}
+{##}
+{#                                </div>#}
+{#                                <div class="col-xs-9 text-right">#}
+{#                                    <div class="huge">_</div>#}
+{#                                    <div>{% trans 'Partner Projects' %}</div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                    <a href="{% url 'partner_projects_dashboard' %}">#}
+{#                        <div class="panel-footer">#}
+{#                            <span class="pull-left">{% trans 'Partner Projects Dashboard' %}</span>#}
+{#                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>#}
+{#                            <div class="clearfix"></div>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+            <div class="col-lg-4 col-md-4">
                 <div class="panel panel-purple">
                     <a href="{% url 'wiserd_projects_dashboard' %}">
                         <div class="panel-heading">
@@ -269,8 +301,8 @@
             {#            </div>#}
 
 
-            <div class="col-lg-4 col-md-6">
-                <div class="panel panel-light-purple">
+            <div class="col-lg-4 col-md-4">
+                <div class="panel panel-purple">
                     <a href="{% url 'about_dashboard' %}">
                         <div class="panel-heading">
                             <div class="row">
@@ -296,7 +328,6 @@
                     </a>
                 </div>
             </div>
-
 
         </div>
 

@@ -22,7 +22,7 @@
     "groupSelectorAttribute": false,
     "hoverBehavior": "dim"
   },
-  "informationPanel": {
+    "informationPanel": {
     "groupByEdgeDirection": false,
     "imageAttribute": false
   },

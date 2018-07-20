@@ -247,7 +247,7 @@ var commonjsGlobal = "undefined" != typeof window ? window : "undefined" != type
                             }
 
                             function o(t) {
-                                console.error(t), n("")
+                                console.error(t); n("")
                             }
                             var a = new XMLHttpRequest;
                             a.onreadystatechange = i, a.ontimeout = r, a.responseType = "blob", a.timeout = e, a.open("GET", t, !0), a.send()

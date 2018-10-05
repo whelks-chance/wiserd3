@@ -92,6 +92,7 @@ urlpatterns = [
                   url(r'gen_screenshot/(?P<search_uuid>\S+)', views.gen_screenshot, name='gen_screenshot'),
 
                   url(r'^wiserd_education', views.wiserd_education, name='wiserd_education'),
+                  url(r'^research_projects_dashboard', views.research_projects_dashboard, name='research_projects'),
                   url(r'^civil_society', views.civil_society, name='civil_society'),
                   url(r'^mcstrike30052018', views.mcstrike30052018, name='mcstrike30052018'),
                   url(r'^mcstrike28052018', views.mcstrike28052018, name='mcstrike28052018'),

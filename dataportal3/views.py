@@ -3465,6 +3465,14 @@ def wmh_dashboard(request):
                   },context_instance=RequestContext(request))
 
 
+def research_projects_dashboard(request):
+    return render(request, 'research_projects_dashboard.html',
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request)
+                  },context_instance=RequestContext(request))
+
+
 def wiserd_projects_dashboard(request):
     return render(request, 'wiserd_projects_dashboard.html',
                   {
@@ -3707,6 +3715,9 @@ def map_test(request):
 
 def wiserd_education(request):
     return render(request, 'wiserd_education.html', {}, context_instance=RequestContext(request))
+
+def research_projects(request):
+    return render(request, 'research_projects_dashboard.html', {}, context_instance=RequestContext(request))
 
 
 def mcstrike_week1(request):

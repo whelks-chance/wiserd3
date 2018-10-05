@@ -1,11 +1,14 @@
-{% extends "wiserd_projects_navigation.html" %}
+{% extends "navigation.html" %}
 {% load staticfiles %}
 {% load i18n %}
 
-{% block page_name %}{% trans 'WISERD Projects' %} | {% trans 'WISERD Projects' %}{% endblock %}
-
+{% block page_name %}{% trans 'Research Projects' %} | {% trans 'Research Projects' %}{% endblock %}
 
 {% block extra_head %}
+    <script type="text/javascript" src="{% static 'dataportal/page_js/dashboard.js' %}"></script>
+{#    <link rel="stylesheet" type="text/css" href="{% static 'dataportal/m4w.css' %}" />#}
+
+{% endblock %}
 
     <style>
         .navbar-brand-text{
@@ -15,39 +18,39 @@
 
     <script type="text/javascript" src="{% static 'dataportal/page_js/dashboard.js' %}"></script>
 
-    <script>
-        $(document).ready(function () {
-            $.cookie("WDP_view_type", "wiserd_projects", {expires: 365, path: '/'});
-
-            var page = $('#wrapper');
-
-            var view_switch = $( "#dashboard_view_switch_form" ).dialog({
-                autoOpen: false,
-                height: page.height() / 2,
-                width: page.width() / 2,
-                position: {
-                    my: "center",
-                    at: "center",
-                    of: page
-                },
-                modal: true,
-                buttons: {
-                    "{% trans 'Stay on this page' %}": function () {
-                        $( this ).dialog( "close" );
-                    },
-                    "{% trans 'Navigate to WISERD HOME' %}": function () {
-                        window.location.href = "{% url 'dashboard' %}";
-                    }
-                }
-            });
-
+{#    <script>#}
+{#        $(document).ready(function () {#}
+{#            $.cookie("WDP_view_type", "wiserd_projects", {expires: 365, path: '/'});#}
+{##}
+{#            var page = $('#wrapper');#}
+{##}
+{#            var view_switch = $( "#dashboard_view_switch_form" ).dialog({#}
+{#                autoOpen: false,#}
+{#                height: page.height() / 2,#}
+{#                width: page.width() / 2,#}
+{#                position: {#}
+{#                    my: "center",#}
+{#                    at: "center",#}
+{#                    of: page#}
+{#                },#}
+{#                modal: true,#}
+{#                buttons: {#}
+{#                    "{% trans 'Stay on this page' %}": function () {#}
+{#                        $( this ).dialog( "close" );#}
+{#                    },#}
+{#                    "{% trans 'Navigate to WISERD HOME' %}": function () {#}
+{#                        window.location.href = "{% url 'dashboard' %}";#}
+{#                    }#}
+{#                }#}
+{#            });#}
+{##}
             {#            view_switch.data({}).dialog( "open" );#}
-
+{##}
             {#            $('naw_message').show();#}
-
-        });
-    </script>
-{% endblock %}
+{##}
+{#        });#}
+{#    </script>#}
+{#{% endblock %}#}
 
 
 {% block content %}
@@ -57,7 +60,7 @@
             <div class="col-lg-12">
                 {#            <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/Research-logo-2016-Welsh.png' %}{% else %}{% static 'dataportal/media/Research-logo-2016-English.png' %}{% endif %}">#}
 
-                <h1 class="page-header">{% trans 'WISERD Projects' %}</h1>
+                <h1 class="page-header">{% trans 'Research Projects' %}</h1>
             </div>
             <div hidden="hidden" id="naw_message" class="row">
                 <div class="alert alert-info alert-dismissable">
@@ -75,7 +78,9 @@
                             <div class="row">
                                 <div class="col-xs-3">
                                     {#                                    <i class="fa fa-list-alt fa-5x"></i>#}
-                                    <img style="height: 5em"
+                                    <img style="height: 5em;
+                                         border-radius: 2.5em;
+{#                                            position: absolute;"
                                          src="{% static 'dataportal/media/WISERDEducationIcoNew.png' %}">
                                 </div>
                                 <div class="col-xs-9 text-right">
@@ -187,17 +192,114 @@
                     </div>
                 </a>
             </div>
+
 {#       {% endif %}#}
 
         </div>
+            <div class="row">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-naw">
+                    <a href="{% url 'naw_dashboard' %}">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <img style="
+                                            {#                                            max-width: 90%;#}
+                                            {#                                background-color: white;#}
+                                            height: 4.5em;
+                                            {#                                                                            padding-top: 0.5em;#}
+                                            margin-top: 0.3em
+                                            "
+                                         src="{% static 'dataportal/media/naw-logo-circle.png' %}">
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">_</div>
+                                    <div>{% trans 'National Assembly for Wales' %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{% url 'naw_dashboard' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">{% trans 'Constituency Mapper' %}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-m4w">
+                    <a href="{% url 'm4w_dashboard' %}">
+                        <div class="panel-heading">
+                            <div class="row vertical-flex">
+                                <div class="col-xs-8" style="padding-right: 0">
+{#                                    <i class="fa fa-map-o fa-5x"></i>#}
+                                    <img src="{% static 'dataportal/media/m4w/m4wlogobw.gif' %}" style="width: 100%">
+
+                                </div>
+                                <div class="col-xs-4 text-right" style="padding-left: 0">
+                                    <div class="huge">_</div>
+                                    <div>{% trans 'RTPI Cymru' %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{% url 'm4w_dashboard' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">{% trans 'Map for Wales' %}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-green">
+                    <a href="{% url 'aqp_dashboard' %}">
+                        <div class="panel-heading">
+                            <div class="row vertical-flex">
+                                <div class="col-xs-8">
+{#                                    <i class="fa fa-map-o fa-5x"></i>#}
+                                    <img style="
+                                            {#                                            max-width: 90%;#}
+                                            {#                                background-color: white;#}
+                                            height: 4.5em;
+                                            {#                                                                            padding-top: 0.5em;#}
+                                            margin-top: 0.3em
+                                            "
+                                         src="{% static 'dataportal/media/aqp/aqp.png' %}">
+
+                                </div>
+                                <div class="col-xs-4 text-right">
+                                    <div class="huge">_</div>
+                                    <div>{% trans 'Jakarta' %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{% url 'aqp_dashboard' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">{% trans 'Air Quality Project' %}</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
 {#        {% include 'snippets/dashboad_buttons.html' %}#}
      </div>
     </div>
 
 
-    <div id="dashboard_view_switch_form" title="Navigation">
-        <p>It looks like you've previously used the WISERD DataPortal using the Wales National Assembley Dashboard</p>
-        <p>Would you like to continue with that, or use the full WISERD DataPortal feature set?</p>
+{#    <div id="dashboard_view_switch_form" title="Navigation">#}
+{#        <p>It looks like you've previously used the WISERD DataPortal using the Wales National Assembley Dashboard</p>#}
+{#        <p>Would you like to continue with that, or use the full WISERD DataPortal feature set?</p>#}
+{#    </div>#}
     </div>
 
 {% endblock %}

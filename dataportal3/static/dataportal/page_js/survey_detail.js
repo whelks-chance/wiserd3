@@ -2,6 +2,8 @@
  * Created by ianh on 16/08/16.
  */
 
+var d3;
+
 
 function do_intro() {
     bootstro.start('', {
@@ -156,7 +158,7 @@ function do_wordcloud(element_name, survey_api_url) {
 
     function getWords(i) {
         return words[i]
-            .replace(/[!\.,:;\?]/g, '')
+            // .replace(/[!\.,:;\?]/g, '')
             .split(' ')
             .map(function(d) {
                 return {text: d, size: 10 + Math.random() * 60};

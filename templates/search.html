@@ -6,7 +6,6 @@
 
 {% block extra_head %}
     <script type="text/javascript" src="{% static 'dataportal/page_js/search.js' %}"></script>
-
     <script>
 
         $(document).ready(function(){
@@ -193,7 +192,7 @@
         <div id="table_nav_row" class="row">
             <h1 class="page-header">
                 <i class="icon-background icon-background-green fa fa-search"></i>   {% trans 'Search' %}</h1>
-        </div>
+
 
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
@@ -207,6 +206,17 @@
                                 </span>
                     </div>
                 </form>
+            </div>
+             <div class="col-lg-2 col-md-8 ol-lg-offset-3">
+                <div class="panel panel-browse_surveys">
+                    <a href="{% url 'browse_surveys' %}">
+                        <div class="panel-footer">
+                            <span class="pull-left">{% trans 'Not sure what you are looking for?' %}</span>
+                            <span>{% trans '<strong>Browse Surveys here</strong>  ' %}<i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="row">

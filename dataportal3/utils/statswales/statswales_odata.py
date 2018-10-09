@@ -82,6 +82,7 @@ class StatsWalesOData(RemoteDataDefault):
         for property in entity_properties:
             # print property['name'], property['type']
             property_data_types[property['name']] = property['type']
+        print "STATS WALES"
         return property_data_types
 
     def get_geographies_for_dataset(self, dataset_id):

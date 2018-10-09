@@ -2299,7 +2299,7 @@
 
             $("#remote_search_btn").click(function(e){
                 var search_term = $('#remote_search_term').val();
-                add_ajax_waiting('{% trans 'Searching NomisWeb/ StatsWales...' %}');
+                add_ajax_waiting('{% trans 'Searching NomisWeb...' %}');
 
                 $.ajax({
                     url: "{% url 'data_api' %}",
@@ -2372,7 +2372,7 @@
 
             $( "#welcome_form" ).dialog({
                 autoOpen: false,
-                height: map_div.height() * 0.8,
+                height: map_div.height() * 0.5,
                 position: {
                     my: "center",
                     at: "center",
@@ -2383,7 +2383,7 @@
                 buttons: [
                     {
                         id: 'cancel',
-                        text: '{% trans 'Cancel' %}',
+                        text: '{% trans 'I know how to use the map' %}',
                         click: function(){
                             $( this ).dialog( "close" );
 
@@ -2391,7 +2391,7 @@
                     },
                     {
                         id: 'learn_more',
-                        text: '{% trans 'Learn More' %}',
+                        text: '{% trans 'Show me how to map' %}',
                         click: function(){
                             $( this ).dialog( "close" );
 
@@ -3438,7 +3438,7 @@
                 var view = parseInt($.cookie("WDP_returning_user"));
                 view += 1;
                 $.cookie("WDP_returning_user", view, {expires: 365, path: '/'});
-                {#                $('#welcome_form').dialog('open');#}
+                                $('#welcome_form').dialog('open');
 
             } else {
                 $('#welcome_form').dialog('open');
@@ -4068,10 +4068,10 @@
         </div>
     </div>
 
-    <div id="welcome_form" title="{% trans 'Welcome' %}">
+    <div id="welcome_form" title="{% trans 'Welcome to the WISERD DataPortal Mapping Tool' %}">
         <div class="panel fill_properly">
-            <p>{% trans 'Welcome to the WISERD DataPortal.<br><br>For more information, follow this tutorial.' %}</p>
-            <p>{% trans 'Links to help and support links and PDF downloads here.' %}</p>
+            <p>{% trans 'Here you can map data from NOMIS or map your own data.<br><br>Need help getting started? Follow this short on screen guide by clicking "Learn More" at the bottom of this box.' %}</p>
+            <br><p><a href="http://data.wiserd.ac.uk/help_support" target="_blank">{% trans 'For our help and support page click here.' %}</a></p>
         </div>
     </div>
 

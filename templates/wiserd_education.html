@@ -101,6 +101,8 @@
                 },
                 columns: [
                     {'data': 'survey_title'},
+                    {'data': 'sweep'}, {#this adds a field from a different table#}
+                    {'data': 'cohort'},
                     {#                    {'data': 'surveystartdate'},#}
                     {#                                        {'data': 'collectionsituation'},#}
                     {'data': 'collectionstartdate'},
@@ -255,7 +257,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/wiserdedwelsh.jpg' %}{% else %}{% static 'dataportal/media/wiserd_education.jpg' %}{% endif %}">
+                <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/WISERD_EDUCATION_RGB.jpg' %}{% else %}{% static 'dataportal/media/WISERD_EDUCATION_RGB.jpg' %}{% endif %}">
 
                 <p></p>
             </div>
@@ -282,6 +284,8 @@
                                 <thead>
                                 <tr>
                                     <th>{% trans 'Title' %}</th>
+                                    <th>{% trans 'Sweep' %}</th>
+                                    <th>{% trans 'Cohort' %}</th>
                                     {#                                                                <th>{% trans 'Frequency' %}</th>#}
                                     {#                                    <th>{% trans 'Collection Method' %}</th>#}
                                     <th>{% trans 'Date' %}</th>
@@ -293,6 +297,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <tr><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td></tr>
                                 <tr><td></td><td></td><td></td></tr>
                                 <tr><td></td><td></td><td></td></tr>
                                 <tr><td></td><td></td><td></td></tr>

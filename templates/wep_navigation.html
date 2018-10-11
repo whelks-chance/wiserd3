@@ -41,7 +41,7 @@
 
                 <a
                         class="navbar-brand"
-                        href="{% url 'wep_dashboard' %}"
+                        href="{% url 'research_projects_dashboard' %}"
                             style="padding: 0 15px;">
 
 {#                    <h4>Map For Wales</h4>#}
@@ -134,16 +134,16 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="{% url 'wep_dashboard' %}"><i class="fa fa-dashboard fa-fw"></i> {% trans 'Project Dashboard' %}</a>
+                            <a href="{% url 'research_projects_dashboard' %}"><i class="fa fa-dashboard fa-fw"></i> {% trans 'Project Dashboard' %}</a>
                         </li>
 
                         {% block nav_extras %}
 
                         {% endblock %}
 
-                        <li>
-                            <a href="{% url 'map' %}?tpt=wep"><i class="fa fa-globe fa-fw"></i> {% trans 'Map' %}</a>
-                        </li>
+{#                        <li>#}
+{#                            <a href="{% url 'map' %}?tpt=wep"><i class="fa fa-globe fa-fw"></i> {% trans 'Map' %}</a>#}
+{#                        </li>#}
 
                         <li>
                             <a href="{% url 'help_support' %}"><i class="fa fa-question-circle fa-fw"></i> {% trans 'Help and Support' %}</a>

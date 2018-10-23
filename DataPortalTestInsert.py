@@ -16,7 +16,7 @@ def insert_data_sj():
     # If you want an exact match just do qid = ****
     questions = models.Question.objects.filter(qid__contains='qid_cohort')
     # open the csv lookup file
-    importfile = csv.DictReader(open("/home/kdickson/TestDataInsert.csv"))
+    importfile = csv.DictReader(open("TestDataInsert.csv"))
     # Iterate through every question in the database.
     for question in questions:
         # To access a field in the question use .fieldname

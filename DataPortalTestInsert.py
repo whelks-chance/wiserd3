@@ -15,9 +15,11 @@ def insert_data_sj():
     #qid is the field name.
     #__contains is the equivalent of 'like' in SQL.
     # If you want an exact match just do qid = ****
-    questions = models.Question.objects.filter(qid__contains='qid_cohort')
+    questions = models.Question.objects.filter(qid__contains='question')
+    print 'questions found: ',questions
     # open the csv lookup file
     importfile = csv.DictReader(open("TestDataInsert.csv"))
+    print 'import file: ',importfile
     # Iterate through every question in the database.
     for question in questions:
         print "Start loop through questions"

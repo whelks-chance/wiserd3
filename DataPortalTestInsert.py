@@ -10,6 +10,7 @@ import csv
 
 
 def insert_data_sj():
+    print "Start insert"
     #models.******.objects.get accesses the ****** table. e.g. 'Question' below.
     #qid is the field name.
     #__contains is the equivalent of 'like' in SQL.
@@ -19,6 +20,7 @@ def insert_data_sj():
     importfile = csv.DictReader(open("TestDataInsert.csv"))
     # Iterate through every question in the database.
     for question in questions:
+        print "Start loop through questions"
         # To access a field in the question use .fieldname
         questionid = question.qid
         print 'Testing: ',questionid
@@ -44,5 +46,6 @@ def insert_data_sj():
 if __name__ == "__main__":
     print "Starting"
     insert_data_sj()
+    print "Complete"
 
 

@@ -42,6 +42,7 @@ def insert_data_sj():
 
 
 if __name__ == "__main__":
+    print "Starting"
     insert_data_sj()
 
 

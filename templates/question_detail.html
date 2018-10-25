@@ -26,7 +26,7 @@
                         {'display': true, 'displayName': '{% trans 'Sub Of' %}', 'id': 'subof'},
                         {'display': true, 'displayName': '{% trans 'Question Type' %}', 'id': 'type'},
                         {'display': true, 'displayName': '{% trans 'Variable ID' %}', 'id': 'variableid'},
-                        {'display': true, 'displayName': '{% trans 'Notes' %}', 'id': 'notes'},
+                        {'display': true, 'displayName': '{% trans 'Question Themes' %}', 'id': 'notes'},
                         {'display': false, 'displayName': '{% trans 'user_id' %}', 'id': 'user_id'},
                         {'display': false, 'displayName': '{% trans 'created' %}', 'id': 'created'},
                         {'display': false, 'displayName': '{% trans 'Last Edit' %}', 'id': 'updated'}
@@ -288,9 +288,12 @@
                                             <th>{% trans 'QuestionID' %}</th>
                                             <th>{% trans 'QuestionText' %}</th>
                                             <th>{% trans 'Type' %}</th>
+                                            <th>{% trans 'Response Rate' %}</th>
+
                                         </tr>
                                         </thead>
                                         <tbody id="response_table_body">
+                                        <tr><td></td><td></td><td></td></tr>
                                         <tr><td></td><td></td><td></td></tr>
                                         <tr><td></td><td></td><td></td></tr>
                                         <tr><td></td><td></td><td></td></tr>

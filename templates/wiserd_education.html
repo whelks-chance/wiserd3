@@ -52,19 +52,19 @@
                             }
                         }
                     },
-                    {
-                        "targets": -2,
-                        "data": 'metadatatoremotemapping__remote_dataset__dataset_identifier',
-                        "render": function ( data, type, full, meta ) {
-                            if (data) {
-
-                                return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
-                                        "href='/map?rd_srcs=Nomis&rd_ids=" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Map Dataset' %}</a>";
-                            } else {
-                                return ''
-                            }
-                        }
-                    },
+{#                    {#}
+{#                        "targets": -2,#}
+{#                        "data": 'metadatatoremotemapping__remote_dataset__dataset_identifier',#}
+{#                        "render": function ( data, type, full, meta ) {#}
+{#                            if (data) {#}
+{##}
+{#                                return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +#}
+{#                                        "href='/map?rd_srcs=Nomis&rd_ids=" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Map Dataset' %}</a>";#}
+{#                            } else {#}
+{#                                return ''#}
+{#                            }#}
+{#                        }#}
+{#                    },#}
                     {
                         "targets": -1,
                         "data": 'qid',
@@ -328,19 +328,19 @@
                                 <th>{% trans 'Question Number' %}</th>
                                 <th>{% trans 'QuestionText' %}</th>
                                 <th>{% trans 'Type' %}</th>
-                                <th>{% trans 'Notes' %}</th>
+                                <th>{% trans 'Question Themes' %}</th>
 {#                                <th>{% trans 'From' %}</th>#}
                                 <th>{% trans 'SubOf' %}</th>
-                                <th>{% trans 'Map It' %}</th>
+{#                                <th>{% trans 'Map It' %}</th>#}
                                 <th>{% trans 'View' %}</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                             </tbody>
                         </table>
                     </div>

@@ -42,27 +42,27 @@
                 <a
                         class="navbar-brand"
                         href="{% url 'research_projects_dashboard' %}"
-                            style="padding: 0 15px;">
+                        style="padding: 0 15px;">
 
-{#                    <h4>Map For Wales</h4>#}
-{#                        <i style="#}
-{#                    max-height: inherit;#}
-{#                            margin-left: 0.2em;#}
-{#                                    padding: 0.1em;#}
-{#                                    "#}
-{#                                           class="fa fa-2x fa-map-o"></i>#}
-{#                    <i style="#}
-{#                    max-height: inherit;#}
-{#                            margin-left: 0.2em;#}
-{#                                    padding: 0.1em;#}
-{#                                    "#}
-{#                                           class="fa fa-2x fa-globe"></i>#}
-                        <img src="{% static 'dataportal/media/WISERDEducationIcoNew.png' %}" style="height:2.6em">
+                    {#                    <h4>Map For Wales</h4>#}
+                    {#                        <i style="#}
+                    {#                    max-height: inherit;#}
+                    {#                            margin-left: 0.2em;#}
+                    {#                                    padding: 0.1em;#}
+                    {#                                    "#}
+                    {#                                           class="fa fa-2x fa-map-o"></i>#}
+                    {#                    <i style="#}
+                    {#                    max-height: inherit;#}
+                    {#                            margin-left: 0.2em;#}
+                    {#                                    padding: 0.1em;#}
+                    {#                                    "#}
+                    {#                                           class="fa fa-2x fa-globe"></i>#}
+                    <img src="{% static 'dataportal/media/WISERDEducationIcoNew.png' %}" style="height:2.6em">
                     <div class="navbar-brand-text">
                         <div>WISERD DataPortal</div>
                         <div class="navbar-version" id="version_tag">{% include 'version_number.html' %}</div>
                     </div>
-{#                    </div>#}
+                    {#                    </div>#}
 
                 </a>
             </div>
@@ -81,8 +81,8 @@
                 </li>
 
 
-            {% block top_nav_extras %}
-            {% endblock %}
+                {% block top_nav_extras %}
+                {% endblock %}
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -90,8 +90,8 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
 
-                                                <li><a href="https://cardiff.onlinesurveys.ac.uk/dataportal-lts" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {% trans 'Give Feedback' %}</a></li>
-                                                                        <li class="divider"></li>
+                        <li><a href="https://cardiff.onlinesurveys.ac.uk/dataportal-lts" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {% trans 'Give Feedback' %}</a></li>
+                        <li class="divider"></li>
                         {% if request.user.is_superuser  %}
                             <li><a href="{% url 'site_setup' %}" target="_blank"><i class="fa fa-cogs fa-fw"></i> {% trans 'Site Setup' %}</a>
                             </li>
@@ -141,9 +141,9 @@
 
                         {% endblock %}
 
-{#                        <li>#}
-{#                            <a href="{% url 'map' %}?tpt=wep"><i class="fa fa-globe fa-fw"></i> {% trans 'Map' %}</a>#}
-{#                        </li>#}
+                        {#                        <li>#}
+                        {#                            <a href="{% url 'map' %}?tpt=wep"><i class="fa fa-globe fa-fw"></i> {% trans 'Map' %}</a>#}
+                        {#                        </li>#}
 
                         <li>
                             <a href="{% url 'help_support' %}"><i class="fa fa-question-circle fa-fw"></i> {% trans 'Help and Support' %}</a>
@@ -216,34 +216,36 @@
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
-{#                        </li>#}
+                            {#                        </li>#}
 
-                    <li id="Recent_Search_Results_li">
+                        <li id="Recent_Search_Results_li">
                             <a id="Recent_Search_Results_btn" href="#"><i class="fa fa-tags fa-fw"></i> {% trans 'Suggested Search Terms' %}<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                                    <li>
-                                                        <a href="wiserd_education?search_terms=friends"><i class="fa fa-users fa-fw"></i> {% trans 'Friends' %}</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wiserd_education?search_terms=school"><i class="fa fa-graduation-cap fa-fw"></i> {% trans 'School' %}</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wiserd_education/search?search_terms=homework"><i class="fa fa-file fa-fw"></i> {% trans 'Homework' %}</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wiserd_education/search?search_terms=family"><i class="fa fa-users fa-fw"></i> {% trans 'Family' %}</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wiserd_education/search?search_terms=politics"><i class="fa fa-users fa-fw"></i> {% trans 'Politics' %}</a>
-                                                    </li>
+                                    <div class="wep_filter_btn" data-filter-term="Background variables"><i class="fa fa-user fa-fw"></i> {% trans 'Background variables' %}</div>
                                 </li>
                                 <li>
-
+                                    <div class="wep_filter_btn" data-filter-term="School and learning"><i class="fa fa-graduation-cap fa-fw"></i> {% trans 'School and learning' %}</div>
+                                </li>
+                                <li>
+                                    <div class="wep_filter_btn" data-filter-term="Family, friends and relationships"><i class="fa fa-users fa-fw"></i> {% trans 'Family, friends and relationships' %}</div>
+                                </li>
+                                <li>
+                                    <div class="wep_filter_btn" data-filter-term="Out of school activities and routines"><i class="fa fa-users fa-fw"></i> {% trans 'Out of school activities and routines' %}</div>
+                                </li>
+                                <li>
+                                    <div class="wep_filter_btn" data-filter-term="Wellbeing"><i class="fa fa-users fa-fw"></i> {% trans 'Wellbeing' %}</div>
+                                </li>
+                                <li>
+                                    <div class="wep_filter_btn" data-filter-term="Confdence and aspirations"><i class="fa fa-users fa-fw"></i> {% trans 'Confidence and aspirations' %}</div>
+                                </li>
+                                <li>
+                                    <div class="wep_filter_btn" data-filter-term="Politics and society"><i class="fa fa-users fa-fw"></i> {% trans 'Politics and society' %}</div>
+                                </li>
                             </ul>
 
                             <!-- /.nav-second-level -->
-{#                        </li>#}
+                            {#                        </li>#}
 
                     </ul>
                 </div>

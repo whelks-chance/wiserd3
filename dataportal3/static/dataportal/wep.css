@@ -1,3 +1,20 @@
+.wep_filter_btn:hover{
+        background-color: #eee;
+
+}
+
+.wep_filter_btn {
+    padding-left: 25px !important;
+        position: relative;
+    display: block;
+        text-decoration: none;
+    background-color: transparent;
+        color: #61507c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
 #powered_by {
     position: fixed;
     bottom: 0;

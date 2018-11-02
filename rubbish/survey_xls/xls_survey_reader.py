@@ -1,4 +1,5 @@
 # utf-8
+import json
 import os
 
 import datetime
@@ -101,7 +102,7 @@ class SurveyReader:
 
                 new_response = models.Response()
                 new_response.responseid = 'res_{}'.format(new_q.qid)
-                new_response.responsetext
+                # new_response.responsetext
                 new_response.save()
 
                 new_q.response = new_response
@@ -148,6 +149,54 @@ class SurveyReader:
         print self.surveys
         print self.dcs
 
+    def build_from_description_file(self, survey_description_file, sweep, cohort):
+        dc, survey = self.get_dc_and_survey(sweep, cohort)
+
+        with open(survey_description_file, 'r') as f1:
+            json_blob = json.load(f1)
+
+            for q in json_blob['questions']:
+                print(q)
+                self.create_question(survey, q)
+
+    def create_question(self, survey, raw_question_data):
+
+        fullname = raw_question_data['variable_name'] + str(raw_question_data['question_number'])
+
+        qid = '{}_{}'.format(survey.surveyid, fullname)
+        new_q, created = models.Question.objects.get_or_create(qid=qid, survey=survey)
+        # new_q.survey = new_survey
+        new_q.questionnumber = raw_question_data['question_number']
+        new_q.literal_question_text = raw_question_data['question_text']
+
+        new_response = models.Response()
+        new_response.responseid = 'res_{}'.format(new_q.qid)
+        # new_response.responsetext
+        new_response.save()
+
+        new_q.response = new_response
+        new_q.save()
+
+        q_response_table = raw_question_data['response_table']
+        if q_response_table is not None:
+
+            if len(q_response_table):
+                new_response.response_type = models.ResponseType.objects.get(response_name='Closed-ended CATEGORICAL')
+            else:
+                new_response.response_type = models.ResponseType.objects.get(response_name='Open-ended QUALITATIVE')
+            new_response.save()
+
+            new_response_table, created = models.ResponseTable.objects.get_or_create(response=new_response)
+            # new_response_table.response = new_response
+            new_response_table.feature_attributes = q_response_table
+            new_response_table.save()
+        else:
+            print('No response table found')
+            new_response.response_type = models.ResponseType.objects.get(response_name='Open-ended QUALITATIVE')
+            new_response.save()
+
+        print 'Saved question {}'.format(new_q)
+
 
 if __name__ == "__main__":
 
@@ -156,4 +205,10 @@ if __name__ == "__main__":
     # filename = '/home/kdickson/educationdata_small.xlsx'
 
     sr = SurveyReader(filename)
-    sr.read_and_write()
+    # sr.read_and_write()
+    sr.build_from_description_file(
+        '/home/kdickson/PycharmProjects/wiserd3/rubbish/survey_xls/sample_4C.json',
+        '4',
+        'C'
+
+    )

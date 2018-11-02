@@ -10,7 +10,12 @@
     <script>
 
         $(document).ready(function(){
-
+{#this adds the data from the sidebar buttons into the filter box#}
+            $('.wep_filter_btn').on('click', function(){
+                questions_table.search(
+                        $(this).data('filter-term')
+                ).draw();
+            });
 
 
             var questions_table = $('#questions_table').DataTable({

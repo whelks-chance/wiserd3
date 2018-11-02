@@ -1917,33 +1917,33 @@ def data_api(request):
             datasets = []
             services = []
 
-            stats_wales_service = {
-                'name': 'StatsWales'
-            }
-            try:
-                swod = StatsWalesOData()
-                swod_datasets, statswales_request = swod.keyword_search(search_term.lower())
-
-                # formatted = []
-                # for d in swod_datasets:
-                #     if d['Tag_ENG'] == 'Title':
-                #         formatted.append({
-                #             'id': d['Dataset'],
-                #             'name': d['Description_ENG'],
-                #             'source': 'StatsWales'
-                #         })
-                # datasets += formatted
-
-                datasets += swod_datasets
-
-                stats_wales_service['message'] = 'Success'
-                stats_wales_service['time'] = statswales_request.elapsed.total_seconds()
-                stats_wales_service['success'] = True
-            except Exception as e87234:
-                stats_wales_service['message'] = 'The WISERD DataPortal failed to connect to the remote data service.'
-                stats_wales_service['error'] = (str(e87234), str(type(e87234)))
-                stats_wales_service['success'] = False
-            services.append(stats_wales_service)
+            # stats_wales_service = {
+            #     'name': 'StatsWales'
+            # }
+            # try:
+            #     swod = StatsWalesOData()
+            #     swod_datasets, statswales_request = swod.keyword_search(search_term.lower())
+            #
+            #     # formatted = []
+            #     # for d in swod_datasets:
+            #     #     if d['Tag_ENG'] == 'Title':
+            #     #         formatted.append({
+            #     #             'id': d['Dataset'],
+            #     #             'name': d['Description_ENG'],
+            #     #             'source': 'StatsWales'
+            #     #         })
+            #     # datasets += formatted
+            #
+            #     datasets += swod_datasets
+            #
+            #     stats_wales_service['message'] = 'Success'
+            #     stats_wales_service['time'] = statswales_request.elapsed.total_seconds()
+            #     stats_wales_service['success'] = True
+            # except Exception as e87234:
+            #     stats_wales_service['message'] = 'The WISERD DataPortal failed to connect to the remote data service.'
+            #     stats_wales_service['error'] = (str(e87234), str(type(e87234)))
+            #     stats_wales_service['success'] = False
+            # services.append(stats_wales_service)
 
             nomis_service = {
                 'name': 'NomisWeb'

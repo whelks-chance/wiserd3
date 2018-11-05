@@ -1,5 +1,7 @@
 import json
 import pprint
+import urllib
+
 import requests
 from BeautifulSoup import BeautifulStoneSoup, Tag
 
@@ -85,11 +87,15 @@ class StatsWalesOData(RemoteDataDefault):
         print "STATS WALES"
         return property_data_types
 
-    def get_geographies_for_dataset(self, dataset_id):
-
+    def get_geographies_for_dataset_upper_lower_hack(self, dataset_id, upper=True):
         # TODO figure out why sometimes we use the lower() or upper() dataset ids
+        if upper:
+            dataset_id_str = str(dataset_id).upper()
+        else:
+            dataset_id_str = str(dataset_id).lower()
+
         filter_args = [
-            ('Dataset', StatsWalesOData().equals_conditional, str(dataset_id).upper()),
+            ('Dataset', StatsWalesOData().equals_conditional, dataset_id_str),
             ('Tag_ENG', StatsWalesOData().equals_conditional, 'Lowest level of geographical disaggregation'),
         ]
 
@@ -98,23 +104,42 @@ class StatsWalesOData(RemoteDataDefault):
         )
         print(dataset_geog_url)
 
-        return_data = []
-
         dataset_metadata = requests.get(dataset_geog_url, timeout=10)
-
         if dataset_metadata.status_code == requests.codes.ok:
             dataset_metadata_objects = json.loads(dataset_metadata.text)
-
             print dataset_metadata_objects
+            return dataset_metadata_objects
+        else:
+            return None
 
-            for geog in dataset_metadata_objects['value']:
-                return_data.append(
-                    {
-                        'name': geog['Description_ENG'],
-                        'id': self.get_code_for_geog_text(geog['Description_ENG'])
-                    }
-                )
 
+    def get_geographies_for_dataset(self, dataset_id):
+
+        return_data = []
+
+        dataset_metadata_objects = self.get_geographies_for_dataset_upper_lower_hack(dataset_id)
+        if dataset_metadata_objects:
+            if len(dataset_metadata_objects['value']):
+
+                for geog in dataset_metadata_objects['value']:
+                    return_data.append(
+                        {
+                            'name': geog['Description_ENG'],
+                            'id': self.get_code_for_geog_text(geog['Description_ENG'])
+                        }
+                    )
+            else:
+                dataset_metadata_objects = self.get_geographies_for_dataset_upper_lower_hack(dataset_id, upper=False)
+                if dataset_metadata_objects:
+                    if len(dataset_metadata_objects['value']):
+
+                        for geog in dataset_metadata_objects['value']:
+                            return_data.append(
+                                {
+                                    'name': geog['Description_ENG'],
+                                    'id': self.get_code_for_geog_text(geog['Description_ENG'])
+                                }
+                            )
         return return_data
 
     def keyword_search(self, keyword_string, args=None):
@@ -280,8 +305,16 @@ class StatsWalesOData(RemoteDataDefault):
     def get_data_from_url(self, url):
         print (url)
 
+        # Fix things where the url has unescaped % in, eg code=%Disabled
+        url = urllib.unquote(url).decode('utf8')
+
         data = requests.get(url)
-        data_json = json.loads(data.text)
+
+        # print (data.status_code)
+        # print(data.text)
+
+        # data_json = json.loads(data.text)
+        data_json = data.json()
 
         # for data_value in data_json['value']:
         #     print(pprint.pformat(data_value, indent=4))
@@ -302,6 +335,9 @@ class StatsWalesOData(RemoteDataDefault):
         return self.odata_to_dict(data_list, options, constants)
 
     def odata_to_dict(self, all_data_list, options, constants):
+
+        # print(pprint.pformat(options, indent=4))
+
         all_data_dict = {}
         # area_codes = []
         for data_value in all_data_list:
@@ -357,13 +393,26 @@ class StatsWalesOData(RemoteDataDefault):
                     }
                 )
 
+            # print('string_data *****', string_data)
+
             name = data_value.get('Indicator_ItemName_ENG', None)
             if name is None:
-                name = data_value['Component_ItemName_ENG']
+                name = data_value.get('Component_ItemName_ENG', None)
+
+                if name is None:
+                    name = ''
+                    for data_key in data_value.keys():
+                        if '_ItemName_ENG' in data_key:
+                            name += '{} '.format(data_key.split('_ItemName_ENG')[0])
+            print('Name ****', name)
 
             data_title = data_value.get('Indicator_ItemName_ENG', None)
             if data_title is None:
-                data_title = data_value['Measure_ItemName_ENG']
+                data_title = data_value.get('Measure_ItemName_ENG', None)
+
+                # TODO is this daft?
+                if data_title is None:
+                    data_title = name
 
             data = data_value.get('Data', None)
             if data is None:
@@ -516,4 +565,19 @@ def do_test():
     print(len(all_data_dict))
 
 if __name__ == '__main__':
-    do_test()
+    # do_test()
+
+    data = requests.get(
+        'http://open.statswales.gov.wales/en-gb/dataset/econ0073?$filter=Year_Code%20eq%2020131%20and%20Gender_Code%20eq%20%27P%27%20and%20Disabilitytype_Code%20eq%20%27WLIM%27')
+
+    print(data.json())
+
+    print('\n\n\n')
+
+    url = 'http://open.statswales.gov.wales/en-gb/dataset/econ0073?$filter=Year_Code%20eq%2020124%20and%20Gender_Code%20eq%20%27M%27%20and%20Disabilitytype_Code%20eq%20%27%Disabled%27'
+
+    url = urllib.unquote(url).decode('utf8')
+
+    data = requests.get(url)
+
+    print(data.json())

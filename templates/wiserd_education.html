@@ -11,10 +11,12 @@
 
         $(document).ready(function(){
 {#this adds the data from the sidebar buttons into the filter box#}
+
             $('.wep_filter_btn').on('click', function(){
                 questions_table.search(
                         $(this).data('filter-term')
                 ).draw();
+                $.cookie("wep_filter_text", $(this).data('filter-term'), {expires: 365, path: '/'});
             });
 
 
@@ -81,9 +83,20 @@
                 ]
             }).on( 'stateLoaded.dt', function (e, settings, data) {
                 attach_question_buttons();
+            }).on( 'search.dt', function (e, settings, data) {
+{#                alert('filtered', $(this).search());#}
+{#                console.log(e);#}
+{#                console.log(questions_table.search());#}
+                $.cookie("wep_filter_text", questions_table.search(), {expires: 365, path: '/'});
+
             });
             {#        alert(questions_table);#}
 
+
+            if ($.cookie("wep_filter_text")) {
+                var wep_filter_text = $.cookie("wep_filter_text");
+                questions_table.search(wep_filter_text).draw();
+            }
 
 
             var survey_table = $('#survey_table').DataTable({

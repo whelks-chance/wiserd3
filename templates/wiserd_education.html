@@ -277,8 +277,29 @@
             <div class="col-lg-12">
                 <img style="max-width: 100%" src="{% if use_welsh %}{% static 'dataportal/media/WISERD_EDUCATION_RGB.jpg' %}{% else %}{% static 'dataportal/media/WISERD_EDUCATION_RGB.jpg' %}{% endif %}">
 
-                <p></p>
+                <p> </p>
             </div>
+
+        </div>
+    <div class="container dialog-container"
+                    {% if request.user.is_authenticated %}
+                 hidden="hidden"
+                    {% endif %}>
+                <div class="row">
+                    <a style="color: white; border-width: 2px; border-style: outset;" href="{% url 'account_login' %}" class="btn btn-lg btn-success btn-block primaryAction">
+                        {% trans 'Please log in to view this data.' %}
+                    </a>
+                </div>
+
+                </div>
+
+            <div class="container dialog-container"
+                    {% if not request.user.is_authenticated %}
+                 hidden="hidden"
+                    {% endif %}>
+
+        </div>
+        <p></p>
         </div>
 
         <ul class="nav nav-pills">
@@ -373,15 +394,5 @@
 
     </div>
 
-    </div>
-
-    <a id="survey_row" href="#survey_row" class="pull-right">
-        <button class="btn btn-info btn-outline">
-            <i class="fa fa-arrow-circle-up"></i> {% trans 'Top' %}
-        </button>
-    </a>
-
-
-    </div>
 
 {% endblock %}

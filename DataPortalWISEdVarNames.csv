@@ -1,0 +1,1181 @@
+ID,Label,VarName
+qid_cohortayear2q16,Have you ever visited any of these places with your family?,"FamAct[00], Hob[00]"
+qid_cohortayear2q1,Circle your age below.,age
+qid_cohortayear3q24,How did you get to school this morning?,RoutnTrav[00]
+qid_cohortayear3q34b,How often do you play video games?,HobFrq01
+qid_cohortayear3q36,have you ever visited any of these places with your family?,FamAct[00]
+qid_cohortayear3q20,"If you do see your grandparents, what kinds of things do they do with you?",FamActFrq[00]
+qid_cohortayear3q1,Circle your age below.,age
+qid_cohortbyear6q31,List up to three things you are most looking forward to about secondary school.,SchTranAtt[00]
+qid_cohortbyear6q32,List up to three things you are not looking forward to about secondary school:,SchTranAtt[00]
+qid_cohortbyear6q40,Name up to three famous people you most dislike:,FameAtt[00]
+qid_cohortbyear6q9c,How often do you spend time with your bother(s)?,FamActFrq06
+qid_cohortbyear6q9d,How much time do you spend with your sister(s)?,FamActFrq06
+qid_cohortbyear6q7,"If you speak Welsh, who do you speak Welsh with? You can tick more than one.",CymAtt[00]
+qid_cohortbyear6q10,Do you take part in any of these activities outside normal school lessons? Please circle all the activities you do.,Hob[00]
+qid_cohortbyear6q25,What do you do if you are worried about something? You can tick as many as you like.,WellHelp[00]
+qid_cohortbyear6q46,What is the name of your school?,schnamestr
+qid_cohortbyear6q41,Your name (first and last name):,"firstname, surname"
+qid_cohortbyear6q12a,"If yes, which do you take part in? You can tick as many as you like.",SchActEist[00]
+qid_cohortbyear6q45,What is the postcode where you live?,postcode
+qid_cohortbyear6q43,Are you a boy or a girl?,sex
+qid_cohortbyear7q9e,Please choose the best response from the options below: I have seen some of my primary school friends since I went to secondary school.,SchTranFrnd03
+qid_cohortbyear7q1,Please enter your First and Last name in the spaces provided below,"firstname, surname"
+qid_cohortbyear7q13b,Please choose the best response from the options below: The school staff have high expectations of me.,SchStafAtt08
+qid_cohortbyear7q17,"Please tick the boxes next to the subjects that you receive private tuition in. If you don’t receive private tuition in any of these subjects, please skip this question.",PrvtuSubj[00]
+qid_cohortbyear7q13d,Please choose the best response from the options below: My views are listened to and taken seriously by school staff.,SchStafAtt05
+qid_cohortbyear7q2,Please enter your date of birth in the spaces provided below,"dobday, dobmonth, dobyear"
+qid_cohortbyear7q13f,Please choose the best response from the options below: My teachers know me well.,SchStafAtt02
+qid_cohortbyear7q13a,Please choose the best response from the options below: My school cares about how much I improve in my studies.,SchStafAtt11
+qid_cohortbyear7q13c,Please choose the best response from the options below: The teaching staff set goals I can easily achieve.,SchStafAtt10
+qid_cohortbyear7q13e,lease choose the best response from the options below: My school rewards pupils who receive good marks or make good progress.,SchStafAtt16
+qid_cohortbyear7q19d,Do you bully others outside of school?,Bully03
+qid_cohortbyear7q20e,What social networking app do you use the most?,Bully09
+qid_cohortbyear7q19b,Do you bully other pupils at school?,BullySch03
+qid_cohortbyear7q19c,Are you bullied outside of school?,Bully01
+qid_cohortbyear7q20a,What social networking website do you use the most?,Bully05
+qid_cohortbyear7q20b,How many days in a typical week do you use the website?,Bully06
+qid_cohortbyear7q19a,Are you bullied at school?,BullySch01
+qid_cohortbyear7q20d,How many days in a typical week do you bully others using the website?,Bully08
+qid_cohortbyear7q20h,How many days in a typical week do you bully others using the app?,Bully12
+qid_cohortbyear7q20c,How many days in a typical week are you bullied using the website?,Bully07
+qid_cohortbyear7q20f,How many days in a typical week do you use the app?,Bully10
+qid_cohortbyear7q20g,How many days in a typical week are you bullied using the app?,Bully11
+qid_cohortbyear8q31,Please choose the two most common sources for your information about current events/news.,EngSoc[00]
+qid_cohortbyear8q14j,How much do you like the following subject at school? P.E.,SchSubjAtt12
+qid_cohortbyear8q15,"Please fill in the circles next to the subjects that you receive private tuition in. If you don’t receive private tuition, please skip this question.",PrvtuSubj[00]
+qid_cohortbyear8q1,Please enter your First and Last name in the spaces provided below.,"firstname, surname"
+qid_cohortbyear8q2,Please enter your date of birth in the spaces provided below.,"dobday, dobmonth, dobyear"
+qid_cohortbyear8q33f,"When you are an adult, do you think you will be financially ""well-off""?",AspLikely01
+qid_cohortbyear8q8,How do you travel to school each day?,RoutnTrav[00]
+qid_cohortbyear8q23d,How often do you bully others outside of school?,Bully03
+qid_cohortbyear8q23c,How often are you bullied outside of school?,Bully01
+qid_cohortbyear8q23b,How often do you bully other pupils at school?,BullySch03
+qid_cohortbyear8q23a,How often are you bullied at school?,BullySch01
+qid_cohortbyear9q23,Here is a list of items some young people of your age have. Please tell us whether you have each item on the list. Fill in as many items as needed.,Deprive[00]
+qid_cohortbyear9q28a,"On a scale of 1-5, with 1 being ""not at all"" and 5 being ""a lot"", how much do you look up to the following people?",ProfAtt[00]
+qid_cohortbyear9q28d,"On a scale of 1-5, with 1 being ""not at all"" and 5 being ""a lot"", how much do you look up to the following people?",ProfAtt[00]
+qid_cohortbyear9q28e,"On a scale of 1-5, with 1 being ""not at all"" and 5 being ""a lot"", how much do you look up to the following people?",ProfAtt[00]
+qid_cohortbyear9q28f,"On a scale of 1-5, with 1 being ""not at all"" and 5 being ""a lot"", how much do you look up to the following people?",ProfAtt[00]
+qid_cohortbyear9q8,What languages do your parents speak?,NatLang[00]
+qid_cohortbyear9q7,What languages do you speak?,NatLang[00]
+qid_cohortbyear9q40b,"If you know anyone who has any of the following religious beliefs, please fill in the appropriate circle below. Fill in as many circles as needed.",Relig[00]
+qid_cohortbyear9q32b,Answer if you don't know the name of the last charity your school supported.,PhilAct02
+qid_cohortbyear9q20c,"How confident are you when it comes to performing in front of people (e.g. singing, acting, etc.)?",WellConf04
+qid_cohortbyear9q38a,Do you eat meat?,Diet01
+qid_cohortbyear9q38b,Do you eat fish?,Diet02
+qid_cohortbyear9q37b,"If you do have pets, what kind?",AnimPet02
+qid_cohortbyear9q1,What is your name?,"firstname, surname"
+qid_cohortbyear9q38d,Do either of your parents eat fish?,EthicsFam01
+qid_cohortbyear9q33b,"If yes, please list the clubs you are involved with.",SchAct08
+qid_cohortbyear9q38c,Do either of your parents eat meat?,EthicsFam02
+qid_cohortbyear9q31b,"Have you given money to charity in the past year, month or week?",PhilAct08
+qid_cohortbyear9q31a,"Have you raised money for charity over the past year, month or week?",PhilAct06
+qid_cohortbyear9q31c,"Have ou given items to charity in the past year, month or week?",PhilAct05
+qid_cohortcyear8q9j,"Please choose the best response from the options below: overall, I like the staff at my school.",SchStafAtt06
+qid_cohortcyear8q13d,Please choose the best response from the options below: I made a lot of new friends when I came to secondary school.,SchTranFrnd04
+qid_cohortcyear8q9k,"Please choose the best response from the options below: overall, I feel I make a good effort in class.",SchAtt16
+qid_cohortcyear8q9l,Please choose the best response from the options below: I feel safe at school,SchAtt19
+qid_cohortcyear8q17e,How often do you use the internet for homework?,SchAct03
+qid_cohortcyear8q9f,Please choose the best response from the options below: the staff at my school make school fun.,SchStafAtt09
+qid_cohortcyear8q9c,Please choose the best response from the options below: my teachers/mentors/classrooms tutors set goals I can easily achieve.,SchStafAtt10
+qid_cohortcyear8q11b,Please list up to three words to describe what you dislike about school:,SchAtt[00]
+qid_cohortcyear8q22h,"How often do you spend time doing activities outside of the home with the following family members: Grandparents, aunts/uncles or cousins.",FamActFrq03
+qid_cohortcyear8q11a,Please list up to three words to describe what you like about school:,SchAtt[00]
+qid_cohortcyear8q34b,Please list up to three famous people that you most dislike.,FameAtt[00]
+qid_cohortcyear8q34a,Please list up to three famous people that you most admire.,FameAtt[00]
+qid_cohortcyear8q8,Please list up to three words that best describe your school:,SchAtt[00]
+qid_cohortcyear8q2,How many of your friends go to a different school than you?,FrndDivers05
+qid_cohortcyear8q5,Please list up to three words that best describe your neighbourhood:,NeighbAtt[00]
+qid_cohortcyear8q40,What is your gender?,sex
+qid_cohortcyear8q29d,How do you feel about the following part of your life? Your friends.,WellSat03
+qid_cohortcyear8q20,"Approximately how many messages do you send and receive (either on a computer, tablet or your phone) per day?",FrndCom01
+qid_cohortcyear8q29c,How do you feel about the following part of your life? Your family.,WellSat02
+qid_cohortcyear8q10h,How much do you like the following subjects at school? P.E.,SchSubjAtt12
+qid_cohortcyear8q19c,Do you receive private tuition for the following school subject? Maths.,PrvtuSubj02
+qid_cohortcyear8q19d,Do you receive private tuition for the following school subject? Welsh.,PrvtuSubj04
+qid_cohortcyear8q33h,"When you are an adult, do you think you will speak Welsh?",AspLikely08
+qid_cohortcyear8q37,Please enter your First and Last name in the spaces provided below.,"firstname, surname"
+qid_cohortcyear8q1,How many friends go to the same school as you?,FrndDivers02
+qid_cohortcyear8q25,Do you get up for school at the same time every school day?,RoutnSleep02
+qid_cohortcyear8q10l,How much do you like the following subjects at school? Design and Technology.,SchSubjAtt06
+qid_cohortcyear8q41,To which of the following groups do you think you belong?,NatEth01
+qid_cohortcyear8q12,"Which of the following choices best describe your feelings about leaving primary school and coming to secondary school? (tick as few, or as many, as you need)",SchTranAtt[00]
+qid_cohortcyear8q42,"What is your national identity (e.g. Welsh, English, British, etc)?",NatIden01
+qid_cohortcyear8q26,About what time did you wake up to get ready for school this morning?,RoutnSleep01
+qid_cohortcyear8q33a,"When you are an adult, do you think you will live in Wales?",AspLikely07
+qid_cohortcyear8q33c,"When you are an adult, do you think you will live abroad?",AspLikely05
+qid_cohortcyear8q23,Do you go to bed at the same time each school night?,RoutnSleep04
+qid_cohortcyear8q38,What is your date of birth? (dd/mm/yyyy),"dobday, dobmonth, dobyear"
+qid_cohortcyear8q15,Will you be doing the Welsh Baccalaureate?,SchStdySubj61
+qid_cohortcyear8q24,About what time did you go to bed last night?,RoutnSleep03
+qid_cohortcyear8q32,"By the time you are 30 years old, which one of the following would you most like to have achieved?",AspAchv01
+qid_cohortcyear8q3,"Are your friends mostly boys, mostly girls or a mixture of girls and boys?",FrndDivers01
+qid_cohortcyear8q31,"Please put the following items IN ORDER from 1 to 7 according to how ""wrong"" you think they are to do. ""1"" means the least wrong and ""7"" means the most wrong. (Please note, each statement must have a different number from the other statements)",Behave[00]
+qid_cohortcyear9q1,Please enter your First and Last name in the spaces provided below.,"firstname, surname"
+qid_cohortcyear9q2,Please enter your date of birth in the spaces provided below.,"dobday, dobmonth, dobyear"
+qid_cohortcyear9q4b,"If your teachers had to describe you in just one word, what word do you think they would use?",WellValue17
+qid_cohortcyear9q4c,"If your best friends had to describe you in just one word, what word do you think they would use?",WellValue15
+qid_cohortcyear9q4d,"If a stranger you've just met had to describe you in just one word, what word do you think they would use?",WellValue18
+qid_cohortcyear9q10a,What is your favourite subject this year?,SchSubjAtt14
+qid_cohortcyear9q10b,Why is this your favourite subject this year?,SchSubjAtt15
+qid_cohortcyear9q18d,do you bully others outside of school?,Bully03
+qid_cohortcyear9q21a,What social networking app do you use the most?,Bully09
+qid_cohortcyear9q18c,Are you bullied outside of school?,Bully01
+qid_cohortcyear9q20a,What social networking website do you use the most?,Bully05
+qid_cohortcyear9q18b,Do you bully other pupils at school?,BullySch03
+qid_cohortcyear9q20b,How many days in a typical week do you use the website?,Bully06
+qid_cohortcyear9q21b,How many days in a typical week do you use the app?,Bully10
+qid_cohortcyear9q18a,Are you bullied at school?,BullySch01
+qid_cohortcyear10q21k,,WellFeelAtt04
+qid_cohortcyear10q31,Please choose the two most common sources for your information about current events/news.,EngSoc[00]
+qid_cohortcyear10q14h,"Please state how much you agree or disagree with the following statements. “My school is a place where my teachers know me well""",0
+qid_cohortcyear10q22c,"Bullying is behaviour that is intended to hurt someone either physically or emotionally. This behaviour is often repeated and can take many forms including physical assault, teasing and threats. How often are you bullied outside of school?",Bully01
+qid_cohortcyear10q1,Please enter your First and Last name in the spaces provided below,"firstname, surname"
+qid_cohortcyear10q22b,"Bullying is behaviour that is intended to hurt someone either physically or emotionally. This behaviour is often repeated and can take many forms including physical assault, teasing and threats. How often do you bully other pupils at school?",BullySch03
+qid_cohortcyear10q22d,"Bullying is behaviour that is intended to hurt someone either physically or emotionally. This behaviour is often repeated and can take many forms including physical assault, teasing and threats. How often do you bully others outside of school?",Bully03
+qid_cohortcyear10q11e,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is talking on the phone for keeping in touch with your friends?",FrndActAtt06
+qid_cohortcyear10q11f,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is texting on your mobile phone for keeping in touch with your friends?",FrndActAtt07
+qid_cohortcyear10q2,Please enter your date of birth in the spaces provided below,"dobday, dobmonth, dobyear"
+qid_cohortcyear10q34a,Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below. English,SchAchvSubj01
+qid_cohortcyear10q34d,Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below. Biology,SchAchvSubj04
+qid_cohortcyear10q34e,Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below. Chemistry,SchAchvSubj05
+qid_cohortcyear10q34h,Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below. Maths,SchAchvSubj02
+qid_cohortcyear10q34i,Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below. PE,SchAchvSubj13
+qid_cohortcyear10q16g,Please choose the best response from the options below: School helps increase my interest in the politics of Wales,SchAtt21
+qid_cohortcyear10q33f,"When you are an adult, do you think you will be financially “well-off”?",AspLikely01
+qid_cohortcyear10q11a,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important are social networking sites (like Facebook, Skype, Snapchat, etc) for keeping in touch with your friends?",FrndActAtt05
+qid_cohortcyear10q18d,How much do you like foreign languages at school?,SchSubjAtt07
+qid_cohortcyear10q18g,How much do you like ICT at school?,SchSubjAtt10
+qid_cohortcyear10q11d,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is just ‘hanging out’ after school or on the weekends for keeping in touch with your friends?",FrndActAtt03
+qid_cohortcyear10q11g,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is playing video games online (like Xbox live or Playstation) for keeping in touch with your friends?",FrndActAtt04
+qid_cohortcyear10q18c,How much do you like English at school?,SchSubjAtt01
+qid_cohortcyear10q18f,How much do you like history at school?,SchSubjAtt09
+qid_cohortcyear10q18h,How much do you like Maths at school?,SchSubjAtt02
+qid_cohortcyear10q18i,How much do you like Music at school?,SchSubjAtt11
+qid_cohortcyear10q18j,How much do you like P.E. in school?,SchSubjAtt12
+qid_cohortcyear10q18k,How much do you like religious education at school?,SchSubjAtt13
+qid_cohortcyear10q18m,How much do you like Welsh in school?,SchSubjAtt04
+qid_cohortcyear10q18e,How much do you like geography at school?,SchSubjAtt08
+qid_cohortcyear10q18l,How much do you like Science in school?,SchSubjAtt03
+qid_cohortcyear10q17a,Please fill in the circles next to the subjects that you receive private tuition in : English,PrvtuSubj01
+qid_cohortcyear10q8,How do you typically travel to school each day?,RoutnTrav[00]
+qid_cohortcyear11q23,Here is a list of items some young people of your age have. Please tell us whether you have each item on the list. Fill in as many items as needed.,Deprive[00]
+qid_cohortcyear11q8,What languages do your parents speak?,NatLang[00]
+qid_cohortcyear11q7,What languages do you speak?,NatLang[00]
+qid_cohortcyear11q40b,"If you know anyone who has any of the following religious beliefs, please fill in the appropriate circle below. Fill in as many circles as needed.",Relig[00]
+qid_cohortcyear11q32b,"If you don't know the name of the last charity your school supported, why?",PhilAct02
+qid_cohortcyear11q24b,How often do you go to the cinema with your family?,FamActFrq16
+qid_cohortcyear11q24g,How often do you go to the library with your family?,FamActFrq17
+qid_cohortcyear11q19,"If you have been on a work experience placement, did you find the experience useful?",AspAdvice17
+qid_cohortcyear11q20c,"How confident are you when it comes to performing in front of people (e.g. singing, acting, etc.)?",WellConf04
+qid_cohortcyear11q24a,How often do you go to a museum with your family?,FamActFrq14
+qid_cohortcyear11q38a,Do you eat meat?,Diet01
+qid_cohortcyear11q24d,How often do you attend the theatre with your family?,FamActFrq13
+qid_cohortcyear11q24c,How often do you attend a sport event with your family?,FamActFrq12
+qid_cohortcyear11q24e,How often do you have dinner at a pub with your family?,FamActFrq18
+qid_cohortcyear11q33b,Please list the clubs you are involved with.,SchAct08
+qid_cohortcyear11q38b,Do you eat fish?,Diet02
+qid_cohortcyear11q1,What is your name?,"firstname, surname"
+qid_cohortcyear11q38d,Do either of your parents eat fish?,EthicsFam01
+qid_cohortcyear11q38c,Do either of our parents eat meat?,EthicsFam02
+qid_cohortcyear11q7b,"If you speak languages other than English and Welsh, what are they?",NatLang04
+qid_cohortcyear11q31a,"Have you raised money for charity in the past year, month or week?",PhilAct06
+qid_cohortcyear11q31b,"Have you given money to charity in the past year, month or week?",PhilAct08
+qid_cohortcyear11q8b,"If your parents speak languages other than English and Welsh, what are they?",NatLang08
+qid_cohortcyear11q31c,"Have you given items to charity in the past year, month or week?",PhilAct05
+qid_cohortdyear10q17d,Do you receive private tuition for the following school subject? Welsh.,PrvtuSubj04
+qid_cohortdyear10q20i,"How often do you spend time doing activities outside of the home with the following family members: Grandparents, aunts/uncles or cousins.",FamActFrq03
+qid_cohortdyear10q20j,"How often do you spend time with your friends chatting online (Facebook, Skype, etc.)?",FrndCom05
+qid_cohortdyear10q8,Please list up to three words that best describe your school,SchAtt[00]
+qid_cohortdyear10q10g,How much do you like the following subjects at school? Welsh.,SchSubjAtt04
+qid_cohortdyear10q10h,How much do you like the following subjects at school? P.E.,SchSubjAtt12
+qid_cohortdyear10q10b,How much do you like the following subjects at school? Art.,SchSubjAtt05
+qid_cohortdyear10q10c,How much do you like the following subjects at school? ICT.,SchSubjAtt10
+qid_cohortdyear10q1,About how many of your friends go to the same school as you? (Please enter a number),FrndDivers03
+qid_cohortdyear10q40,What is your gender?,sex
+qid_cohortdyear10q31h,"When you are an adult, do you think you will speak Welsh?",AspLikely08
+qid_cohortdyear10q5,Please list up to three words that best describe your neighbourhood in the spaces provided below:,NeighbAtt[00]
+qid_cohortdyear10q9j,"Please choose the best response from the options below: overall, I like the school staff.",SchStafAtt06
+qid_cohortdyear10q10l,How much do you like the following subjects at school? Design & Technology.,SchSubjAtt06
+qid_cohortdyear10q11a,Please list up to three words that describe you what you like about school.,SchAtt[00]
+qid_cohortdyear10q11b,Please list up to three words that describe you what you dislike about school.,SchAtt[00]
+qid_cohortdyear10q42,Which of the following best describes you?,NatIden01
+qid_cohortdyear10q31a,"When you are an adult, do you think you will live in Wales?",AspLikely07
+qid_cohortdyear10q36,What do you plan to do once you’ve finished Year 11?,AspPostSch03
+qid_cohortdyear10q12b,Please state how much you think the following activity helps you learn: working in a group.,SchLearnAtt08
+qid_cohortdyear10q38,What is your date of birth? (dd/mm/yyyy),"dobday, dobmonth, dobyear"
+qid_cohortdyear10q41,To which of the following groups do you think you belong?,NatEth01
+qid_cohortdyear10q43,"What is your national identity? (e.g. Welsh, English, British, etc)",NatIden02
+qid_cohortdyear10q32b,Please list up to three famous people that you most dislike in the spaces provided below.,FameAtt[00]
+qid_cohortdyear10q32a,Please list up to three famous people that you most admire in the spaces provided below.,FameAtt[00]
+qid_cohortdyear10q37,Please enter your First and Last name in the spaces provided below.,"firstname, surname"
+qid_cohortdyear10q39,Please choose the option that best describes how well you speak Welsh.,NatLang09
+qid_cohortdyear10q35,Please tick the circle next to each subject you are taking for your GCSE/BTEC from the list below:,SchStdySubj[00]
+qid_cohortdyear10q29,"Please put the following items IN ORDER from 1 to 7 according to how ""wrong"" you think they are to do. ""1"" means the least wrong and ""7"" means the most wrong. (Please note, each statement must have a different number from the other statements)",Behave[00]
+qid_cohortdyear11q13,"If you are staying in education, or doing an apprenticeship, where will you be doing your courses after year 11.",AspPostSch[00]
+qid_cohortdyear11q1,Please enter your First and Last name in the spaces provided below.,"firstname, surname"
+qid_cohortdyear11q5,"If you are doing the Welsh Baccalaureate, which level are you doing?",SchStdySubj[00]
+qid_cohortdyear11q6,"If you are doing qualifications/certificates in addition to GCSEs, such as BTECs or NVQs, please list them below. Please indicate what grades you expect to get in each course.",SchStdySubj[00]
+qid_cohortdyear11q2,Please enter your date of birth in the spaces provided below.,"dobday, dobmonth, dobyear"
+qid_cohortdyear11q3,Please enter the name of your school in the space provided below.,schnamestr
+qid_cohortdyear11q4,Please indicate which GCSE subjects you are doing this year.,SchStdySubj[00]
+qid_cohortdyear11q23,About what time did you go to bed last night?,RoutnSleep03
+qid_cohortdyear11q11,"Please tick the box next to the subjects that you receive private tuition in. If you don't receive tuition in any of these subjects, please skip this question.",PrvtuSubj[00]
+qid_cohortdyear11q27c,How many days in a typical week are you bullied while using this website?,Bully07
+qid_cohortdyear11q27d,How many days in a typical week do you bully others using this website?,Bully08
+qid_cohortdyear11q27e,What social networking app do you use the most?,Bully09
+qid_cohortdyear11q7a,What is your favourite subject this year?,SchSubjAtt14
+qid_cohortdyear11q27a,What social networking website do you use the most?,Bully05
+qid_cohortdyear11q7b,Why is this your favourite subject?,SchSubjAtt15
+qid_cohortdyear11q27b,How many days in a typical week do you use this website?,Bully06
+qid_cohortdmoversq12,Are you a member of any of the following organisations? (please tick all that apply),Hob[00]
+qid_cohortdmoversq34,Which two of the following do you get most of your information about current affairs / the news from?,EngSoc[00]
+qid_cohortdmoversq11,Do you do any of the following in your spare time? (please tick all that apply),Hob[00]
+qid_cohortdmoversq37,Please choose the two issues you feel most strongly about from the list below:,EngSoc[00]
+qid_cohortdmoversq27,Which of the phrases below describes how you are getting on at the moment? (tick as many as you like),WellFeel[00]
+qid_cohortdmoversq28,This year I feel I am taking more responsibility for: (tick as many as you like),Responsible[00]
+qid_cohortdmoversq50,What do you see yourself doing in ten years’ time?,AspTime02
+qid_cohortdmoversq30,Please indicate three words from the list below that describe how you are feeling today.,WellFeel[00]
+qid_cohortdmoversq47c,When you are older do you think you will: live abroad?,AspLikely05
+qid_cohortdmoversq2,Please enter your date of birth in the spaces provided below,"dobday, dobmonth, dobyear"
+qid_cohortdmoversq6,"The Welsh Government holds records about all pupils in Wales in the National Pupil Database (NPDB). We would like to link your answers here and those you gave in 2013 and 2014, with this database. The data will be kept secure and anonymous. If you are not happy for us to do this, please tick the box below.",npdbpermit
+qid_cohortdmoversq36b,"If yes, please write about it here.",EngSoc06
+qid_cohortdmoversq1,Please provide your contact details below so that we can contact you with information about this study,"mobno, email"
+qid_cohortdmoversq39,"If there were a general election tomorrow, and you were allowed to vote, which political party do you think you would vote for?",EngPol03
+qid_cohortayear2q14,How often does an adult read to you at home?,FamActFrq21
+qid_cohortayear2q15,How often do you read with an adult at home?,FamActFrq20
+qid_cohortayear2q18,Where do you usually eat breakfast?,RoutnFood02
+qid_cohortayear2q9,How much do you like school?,SchAtt01
+qid_cohortayear2q6,How much do you like writing?,HobAtt10
+qid_cohortayear2q8,How much do you like speaking Welsh?,CymAtt04
+qid_cohortayear2q7,How much do you like number work?,SchLearnAtt03
+qid_cohortayear2q3,Are you a boy or a girl?,sex
+qid_cohortayear2q4,How much do you like answering questions in class?,SchLearnAtt01
+qid_cohortayear2q5,How much do you like reading?,HobAtt06
+qid_cohortayear2q10,How much do you like your teacher?,SchStafAtt07
+qid_cohortayear2q13,How much do you like to play sport?,HobAtt07
+qid_cohortayear2q2,When is your birthday?,dobday
+qid_cohortayear2q12,"When you play inside the house, what do you like to do most?",Hob45
+qid_cohortayear2q19,What did you eat for breakfast this morning?,RoutnFood01
+qid_cohortayear2q11,"When you play outside, what do you like to do most?",Hob46
+qid_cohortayear2q17,Have you ever visited any of these places?,Hob49
+qid_cohortayear2q20,What do you want to do when you grow up?,AspCareer03
+qid_cohortayear3q21,Who is your favourite person in the world?,EngSoc30
+qid_cohortayear3q22,About what time did you go to bed last night?,RoutnSleep03
+qid_cohortayear3q25,What did you eat for dinner last night?,RoutnFood06
+qid_cohortayear3q26,What did you eat for breakfast this morning?,RoutnFood01
+qid_cohortayear3q27,How much do you like sports?,HobAtt07
+qid_cohortayear3q28,How often do you play sports or do exercise?,HobFrq02
+qid_cohortayear3q29,What is your favourite sport or game to play?,Hob44
+qid_cohortayear3q30,How much energy have you had this week?,WellFeelFrq08
+qid_cohortayear3q32,How much do you like the way you look?,WellSat07
+qid_cohortayear3q33,Do you have a mobile phone?,Deprive03
+qid_cohortayear3q34a,How often do you use the internet?,HobFrq06
+qid_cohortayear3q34d,How often do you read books?,HobFrq03
+qid_cohortayear3q35,Which video game is your favourite?,Hob47
+qid_cohortayear3q37,Do you get pocket money?,Money01
+qid_cohortayear3q38,How much pocket money do you get per week?,Money02
+qid_cohortayear3q39,What did you do with your pocket money this week?,Money03
+qid_cohortayear3q40,What do you want to be when you grow up?,AspCareer03
+qid_cohortayear3q12,What do you like to learn the most in school?,SchSubjAtt17
+qid_cohortayear3q13,What do you like to learn the least in school?,SchSubjAtt18
+qid_cohortayear3q14,How much have you tried in school this week?,SchAtt15
+qid_cohortayear3q15,How much do you like taking tests?,SchLearnAtt14
+qid_cohortayear3q18,How often do your parents or carers read with you at home?,FamActFrq21
+qid_cohortayear3q19,How often do you see your grandparents?,FamActFrq08
+qid_cohortayear3q3,Are you a boy or a girl?,sex
+qid_cohortayear3q5,How much do you like school?,SchAtt01
+qid_cohortayear3q6,How much do you like reading?,HobAtt06
+qid_cohortayear3q7,How much do you like writing?,HobAtt10
+qid_cohortayear3q8,How much do you like number work?,SchLearnAtt03
+qid_cohortayear3q9,How much do you like answering questions in class?,SchLearnAtt01
+qid_cohortayear3q10,How much do you like learning Welsh?,SchSubjAtt04
+qid_cohortayear3q11,How often do you speak Welsh in school?,CymFrq01
+qid_cohortayear3q23,About what time did you get up in the morning?,RoutnSleep01
+qid_cohortayear3q17,"Which do you like better, school this year or school last year?",SchTranAtt20
+qid_cohortayear3q4,Do you remember taking a survey like this last year?,doneprev
+qid_cohortayear3q34c,"How often do you use a tablet (iPad, etc.)?",HobFrq05
+qid_cohortayear3q16,Do you worry about tests?,SchLearnAtt15
+qid_cohortayear3q31,Have you felt lonely at all this week?,WellFeelFrq09
+qid_cohortayear3q2,When is your birthday?,dobday
+qid_cohortbyear6q2a,How much do you like English?,SchSubjAtt01
+qid_cohortbyear6q2b,How much do you like Maths?,SchSubjAtt02
+qid_cohortbyear6q2c,How much do you like Welsh?,SchSubjAtt04
+qid_cohortbyear6q2d,How much do you like Science?,SchSubjAtt03
+qid_cohortbyear6q2e,How much do you like PE?,SchSubjAtt12
+qid_cohortbyear6q2f,How much do you like learning new things?,SchLearnAtt02
+qid_cohortbyear6q2g,How much do you like answering questions in class?,SchLearnAtt01
+qid_cohortbyear6q3a,How often is school interesting?,SchAtt02
+qid_cohortbyear6q3b,How often do you get tired at school?,RoutnSleep06
+qid_cohortbyear6q3c,How often do you get fed up at school?,WellFeelFrq11
+qid_cohortbyear6q3e,How often do other children bully you?,BullySch02
+qid_cohortbyear6q3f,How often do you feel left out of things by other children at school?,WellFeelFrq10
+qid_cohortbyear6q4a,How much do you like listening to music?,HobAtt02
+qid_cohortbyear6q4b,How much do you like playing music on an instrument?,HobAtt03
+qid_cohortbyear6q4c,"How much do you like watching TV, videos or DVDs?",HobAtt09
+qid_cohortbyear6q4d,"How much do you like drawing, painting, or making things?",HobAtt01
+qid_cohortbyear6q4e,How much do you like using a computer or playing games like XBOX or Playstation?,HobAtt08
+qid_cohortbyear6q4f,How much do you like playing sports and games outside?,HobAtt05
+qid_cohortbyear6q4g,How much do you like playing sports and games inside?,HobAtt04
+qid_cohortbyear6q5,Do you have your own phone?,Deprive03
+qid_cohortbyear6q6,How well do you speak Welsh?,CymAtt05
+qid_cohortbyear6q8a,How often do you read for enjoyment?,HobFrq04
+qid_cohortbyear6q8b,How often do you play games on a computer or games console?,HobFrq01
+qid_cohortbyear6q8c,How often do you use the internet?,HobFrq06
+qid_cohortbyear6q8d,How often do you use the internet for homework?,SchAct03
+qid_cohortbyear6q8e,How often do you exchange messages with friends on the internet using instant messaging?,FrndCom05
+qid_cohortbyear6q8f,How often do you visit a social networking website?,HobFrq07
+qid_cohortbyear6q9e,How often do you spend time with your grandparents?,FamActFrq07
+qid_cohortbyear6q9f,How often do you spend time with your Aunts/Uncles?,FamActFrq09
+qid_cohortbyear6q9g,How often do you spend time with your cousins?,FamActFrq10
+qid_cohortbyear6q11,Do you have any extra help for your school work when you are at school?,SchAct06
+qid_cohortbyear6q12,Do you take part in the Urdd or Eisteddfod with school?,SchActEist01
+qid_cohortbyear6q13,How many friends do you have?,FrndDivers02
+qid_cohortbyear6q14,How many friends go to a different school?,FrndDivers04
+qid_cohortbyear6q15,How many friends do you have who live 10 minutes walk or less from your house?,FrndDivers08
+qid_cohortbyear6q16,How often do you argue or fall out with your friends?,FrndActFrq08
+qid_cohortbyear6q17,"When you are not at school, how often do you spend time with your friends?",FrndActFrq07
+qid_cohortbyear6q18,"At the weekend how often do you spend time with your friends, but without adults or older children, going to the shops or just 'hanging out'?",FrndActFrq02
+qid_cohortbyear6q19,"In the afternoon after school how often do you spend time with your friends, but without adults or older children, going to the shops or just 'hanging out'?",FrndActFrq03
+qid_cohortbyear6q20,"Are your friends mostly boys, mostly girls or a mixture of boys and girls?",FrndDivers01
+qid_cohortbyear6q21,Do you have any best friends?,FrndDivers07
+qid_cohortbyear6q22,How often do you misbehave or cause trouble in class?,BehaveSch07
+qid_cohortbyear6q26,How safe is it to walk or play on your street during the day?,NeighbAtt04
+qid_cohortbyear6q28,are you on a waiting list for another secondary school?,SchTran02
+qid_cohortbyear6q29,"If you are on a waiting list for another secondary school, which one is it?",SchTran03
+qid_cohortbyear6q30,How much are you looking forward to going to secondary school?,SchTranAtt01
+qid_cohortbyear6q33,How many of your friends are going to the same secondary school as you?,SchTranFrnd01
+qid_cohortbyear6q35,Do you want to stay on at school or college when you are 16?,AspPostSch01
+qid_cohortbyear6q36,Do you know what you want to be when you grow up?,AspCareer01
+qid_cohortbyear6q27,Which secondary school do you think your are going to in September?,SchTran01
+qid_cohortbyear6q34,"By the time you're grown-up, which one of these things would you like to have most (tick one)?",AspAchv01
+qid_cohortbyear6q38,"If someone gave you £1 million tomorrow, what would you like to do with it?",Money15
+qid_cohortbyear6q3d,How often do you talk to your friends when you should be doing work?,SchAct04
+qid_cohortbyear6q9a,How often do you spend time with your mother?,FamActFrq04
+qid_cohortbyear6q9b,How often do you spend time with your father?,FamActFrq05
+qid_cohortbyear6q39,Name up to three famous people you most like:,FameAtt02
+qid_cohortbyear6q37,"If yes, what would you like to be?",AspCareer03
+qid_cohortbyear6q44,What is your date of birth?,dobfull
+qid_cohortbyear6q1b,"Please indicate how happy you feel about the school you go to, where 1 means completely happy and 5 means not at all happy.",WellSat05
+qid_cohortbyear6q1a,Please indicate how happy you feel about your school work where 1 means completely happy and 5 means not at all happy.,WellSat06
+qid_cohortbyear7q26,About what time did you get up to get ready for school today?,RoutnSleep01
+qid_cohortbyear7q27,About what time did you go to bed last night?,RoutnSleep03
+qid_cohortbyear7q3,Please enter the name of your school in the space provided below,schnamestr
+qid_cohortbyear7q4a,Please choose the best response from the options below: I have better relationships with my friends than with my family.,FrndAtt01
+qid_cohortbyear7q4b,Please choose the best response from the options below: I have at least one friend that I can really trust.,FrndAtt03
+qid_cohortbyear7q5,Please write one word that best describes the area where you live.,NeighbAtt01
+qid_cohortbyear7q7,How many of your primary school friends have moved up with you to your new secondary school?,SchTranFrnd02
+qid_cohortbyear7q9a,Please choose the best response from the options below: Moving up from primary school to secondary school was stressful.,SchTranAtt19
+qid_cohortbyear7q9b,"Please choose the best response from the options below: When I was in primary school, I looked forward to coming to secondary school.",SchTranAtt08
+qid_cohortbyear7q9c,"Please choose the best response from the options below: Overall, I like primary school better than secondary school.",SchTranAtt09
+qid_cohortbyear7q9d,Please choose the best response from the options below: I made a lot of new friends when I came to secondary school.,SchTranFrnd04
+qid_cohortbyear7q11,Please write one word that best describes your secondary school.,SchAtt03
+qid_cohortbyear7q14a,"Please choose the best response from the options below: Overall, I feel I make a good effort in class.",SchAtt16
+qid_cohortbyear7q14b,Please choose the best response from the options below: The school staff make school fun.,SchStafAtt09
+qid_cohortbyear7q14c,"Please choose the best response from the options below: Overall, I like the school staff.",SchStafAtt06
+qid_cohortbyear7q14d,Please choose the best response from the options below: School helps me appreciate living in Wales.,SchAtt22
+qid_cohortbyear7q14e,Please choose the best response from the options below: School helps me develop my own sense of Welshness.,SchAtt23
+qid_cohortbyear7q14f,Please choose the best response from the options below: School helps increase my interest in the politics of Wales.,SchAtt21
+qid_cohortbyear7q16c,How much do you like the following subjects at school? English.,SchSubjAtt01
+qid_cohortbyear7q16d,How much do you like the following subjects at school? Foreign Languages.,SchSubjAtt07
+qid_cohortbyear7q16e,How much do you like the following subjects at school? Geography.,SchSubjAtt08
+qid_cohortbyear7q16f,How much do you like the following subjects at school? History.,SchSubjAtt09
+qid_cohortbyear7q16g,How much do you like the following subjects at school? ICT.,SchSubjAtt10
+qid_cohortbyear7q16h,How much do you like the following subjects at school? Maths.,SchSubjAtt02
+qid_cohortbyear7q16i,How much do you like the following subjects at school? Music.,SchSubjAtt11
+qid_cohortbyear7q16j,How much do you like the following subjects at school? P.E.,SchSubjAtt12
+qid_cohortbyear7q16k,How much do you like the following subjects at school? Religious Education.,SchSubjAtt13
+qid_cohortbyear7q16l,How much do you like the following subjects at school? Science.,SchSubjAtt03
+qid_cohortbyear7q16m,How much do you like the following subjects at school? Welsh.,SchSubjAtt04
+qid_cohortbyear7q22a,How often do you do the following outside of school? Speak Welsh with family.,CymActFrq04
+qid_cohortbyear7q22b,How often do you do the following outside of school? Speak Welsh with friends.,CymActFrq05
+qid_cohortbyear7q22c,How often do you do the following outside of school? Read Welsh books or magazines.,CymActFrq01
+qid_cohortbyear7q22d,How often do you do the following outside of school? Watch Welsh TV or listen to Welsh radio.,CymActFrq03
+qid_cohortbyear7q24a,How important do you think it is for you to learn Welsh?,CymAtt01
+qid_cohortbyear7q24b,How important do you think it is for you to speak Welsh?,CymAtt02
+qid_cohortbyear7q24c,How important do you think it is for Welsh to remain a living language?,CymAtt03
+qid_cohortbyear7q25a,Do you get up for school at the same time every day?,RoutnSleep02
+qid_cohortbyear7q29,What is the one thing you spend most of your money on?,Money13
+qid_cohortbyear7q30a,"When you are an adult, do you think you will live in Wales?",AspLikely07
+qid_cohortbyear7q30b,"When you are an adult, do you think you will live in the same neighbourhood as you do now?",AspLikely06
+qid_cohortbyear7q30d,"When you are an adult, do you think you will have a family of your own?",AspLikely02
+qid_cohortbyear7q30e,"When you are an adult, do you think you will have graduated from university?",AspLikely04
+qid_cohortbyear7q30g,"When you are an adult, do you think you will volunteer some of your time to help others?",AspLikely09
+qid_cohortbyear7q30h,"When you are an adult, do you think you will speak Welsh?",AspLikely08
+qid_cohortbyear7q30i,"When you are an adult, do you think you will have a job that you will enjoy?",AspLikely03
+qid_cohortbyear7q31,Do you plan to stay in full-time education when you are 16?,AspPostSch01
+qid_cohortbyear7q34,"What is your national identity (e.g. Welsh, English, British, etc)?",NatIden01
+qid_cohortbyear7q16a,How much do you like the following subject at school? Art.,SchSubjAtt05
+qid_cohortbyear7q23a,"Please state how much you agree with the following statement: If I could live anywhere in the world, I would live in Wales.",CymAtt15
+qid_cohortbyear7q23b,Please state how much you agree with the following statement: I feel Wales is my real home.,CymAtt13
+qid_cohortbyear7q23c,"Please state how much you agree with the following statement: I live in Wales, but I don't particularly feel Welsh.",CymAtt14
+qid_cohortbyear7q25b,Do you got to bed at the same time every day?,RoutnSleep04
+qid_cohortbyear7q33,o which of the following groups do you think you belong?,NatEth01
+qid_cohortbyear7q8,Which of the following choices best describes your feelings about leaving primary school and coming to secondary school?,SchTranAtt18
+qid_cohortbyear7q18a,Please state how much you think each of the following activity helps you learn: taking notes while the teacher talks.,SchLearnAtt05
+qid_cohortbyear7q18b,Please state how much you think each of the following activity helps you learn: working in a group.,SchLearnAtt08
+qid_cohortbyear7q18c,Please state how much you think each of the following activity helps you learn: working individually.,SchLearnAtt06
+qid_cohortbyear7q18d,Please state how much you think each of the following activity helps you learn: working on projects with detailed instructions.,SchLearnAtt11
+qid_cohortbyear7q18e,Please state how much you think each of the following activity helps you learn: working on projects without detailed instructions.,SchLearnAtt12
+qid_cohortbyear7q18f,Please state how much you think each of the following activity helps you learn: working on projects that involve a lot of class or group discussion.,SchLearnAtt09
+qid_cohortbyear7q18g,Please state how much you think each of the following activity helps you learn: working in projects that involve getting up out of your seat or going outside.,SchLearnAtt10
+qid_cohortbyear7q28a,About how much money per week do you get from the following source? Pocket money.,Money05
+qid_cohortbyear7q28c,About how much money per week do you get from the following source? Chores at home.,Money07
+qid_cohortbyear7q28d,About how much money per week do you get from the following source? Other.,Money11
+qid_cohortbyear7q10c,Please state how much you agree or disagree with the following statement. “ School is a place where my teachers treat me with respect.,SchStafAtt04
+qid_cohortbyear7q10d,Please state how much you agree or disagree with the following statement. “ School is a place where my teachers are fair to me.,SchStafAtt01
+qid_cohortbyear7q16b,How much do you like the following subjects at school? Design & Technology.,SchSubjAtt06
+qid_cohortbyear7q18h,Please state how much you think each of the following activity helps you learn: homework.,SchLearnAtt04
+qid_cohortbyear7q10b,"Please state how much you agree or disagree with the following statement. “ School is a place where I feel like I ""belong"".",WellValue10
+qid_cohortbyear7q4d,Please choose the best response from the options below: My family knows what my friends and I do when we’re together.,FrndActAtt08
+qid_cohortbyear7q30f,"When you are an adult, do you think you will be financially “well-off”?",AspLikely01
+qid_cohortbyear7q22e,How often do you do the following outside of school? Visit Welsh websites.,CymActFrq02
+qid_cohortbyear7q6a,"On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? Your school work.",WellSat06
+qid_cohortbyear7q6b,"On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? The way you look.",WellSat01
+qid_cohortbyear7q6c,"On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? Your family.",WellSat02
+qid_cohortbyear7q6d,"On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? Your friends.",WellSat03
+qid_cohortbyear7q6e,"On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? Your school overall.",WellSat05
+qid_cohortbyear7q6f,"On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? Your life as a whole.",WellSat04
+qid_cohortbyear7q10a,Please state how much you agree or disagree with the following statement. “ School is a place where I feel safe at school.,SchAtt19
+qid_cohortbyear7q4c,"Please choose the best response from the options below: Overall, my family approves of my friends.",FrndAtt02
+qid_cohortbyear7q21a,Please state how much you agree with the following statement: I am more confident speaking in Welsh now than I was at primary school.,CymAtt11
+qid_cohortbyear7q21b,Please state how much you agree with the following statement: I am more confident writing in Welsh now than I was at primary school.,CymAtt12
+qid_cohortbyear7q21c,Please state how much you agree with the following statement: I am more confident reading in Welsh now than I was at primary school.,CymAtt10
+qid_cohortbyear7q32,What job do you think you’ll have when you grow up?,AspCareer03
+qid_cohortbyear7q28b,About how much money per week do you get from the following source? Paid employment.,
+qid_cohortbyear7q30c,"When you are an adult, do you think you will live abroad (i.e. in another country)?",AspLikely05
+qid_cohortbyear7q12b,Please state what you dislike most about secondary school.,SchTranAtt11
+qid_cohortbyear7q12a,Please state what you like most about secondary school.,SchTranAtt12
+qid_cohortbyear7q15a,What is your favourite subject?,SchSubjAtt14
+qid_cohortbyear7q15b,Why is this your favourite subject?,SchSubjAtt15
+qid_cohortbyear8q3,Please enter the name of your school in the space provided below.,schnamestr
+qid_cohortbyear8q6,What time did you go to bed last night?,RoutnSleep03
+qid_cohortbyear8q9,How long does it take you to get to school each day?,RoutnTrav01
+qid_cohortbyear8q10,How many hours per week do you spend doing homework?,SchAct01
+qid_cohortbyear8q12a,How often do you do the following? Read for fun.,HobFrq04
+qid_cohortbyear8q16a,Please choose the best response from the options below: My school cares about how much I improve in my studies.,SchStafAtt11
+qid_cohortbyear8q16b,Please choose the best response from the options below: The school staff have high expectations of me.,SchStafAtt08
+qid_cohortbyear8q16c,Please choose the best response from the options below: The teaching staff set goals I can easily achieve.,SchStafAtt10
+qid_cohortbyear8q16d,Please choose the best response from the options below: My views are listened to and taken seriously by school staff.,SchStafAtt05
+qid_cohortbyear8q16e,Please choose the best response from the options below: My school rewards pupils who receive good marks or make good progress.,SchStafAtt16
+qid_cohortbyear8q16f,Please choose the best response from the options below: My teachers know me well.,SchStafAtt02
+qid_cohortbyear8q18a,"Please state how much you agree or disagree with the following statement: If I have a personal problem at school, I know where to go for help.",SchStafAtt13
+qid_cohortbyear8q18b,"Please state how much you agree or disagree with the following statement: If I have a personal problem at school, I can trust the school will help me.",SchStafAtt12
+qid_cohortbyear8q19a,"Please choose the best response from the options below: overall, I feel I make a good effort in class.",SchAtt16
+qid_cohortbyear8q19b,Please choose the best response from the options below: the school staff make school fun.,SchStafAtt09
+qid_cohortbyear8q19c,"Please choose the best response from the options below: overall, I like the school staff?",SchStafAtt06
+qid_cohortbyear8q19d,Please choose the best response from the options below: school helps me appreciate living in Wales.,SchAtt22
+qid_cohortbyear8q19e,Please choose the best response from the options below: school helps me develop my own sense of Welshness.,SchAtt23
+qid_cohortbyear8q24a,How often do you do the following outside of school? Speak Welsh with family.,CymActFrq04
+qid_cohortbyear8q24b,How often do you do the following outside of school? Speak Welsh with friends.,CymActFrq05
+qid_cohortbyear8q24c,How often do you do the following outside of school? Read Welsh books or magazines?,CymActFrq01
+qid_cohortbyear8q24e,How often do you do the following outside of school? Visit Welsh websites.,CymActFrq02
+qid_cohortbyear8q25a,How important do you think it is for you to learn Welsh?,CymAtt01
+qid_cohortbyear8q25b,How important do you think it is for you to speak Welsh?,CymAtt02
+qid_cohortbyear8q25c,How important do you think it is for Welsh to remain a living language?,CymAtt03
+qid_cohortbyear8q26,What is the best thing about living in Wales?,CymAtt17
+qid_cohortbyear8q27,What is the worst thing about living in Wales?,CymAtt18
+qid_cohortbyear8q28,Do you think the voting age in Wales should be lowered to 16?,EngPol02
+qid_cohortbyear8q29,"If an election was held today, and you could vote, what party would you vote for?",EngPol03
+qid_cohortbyear8q30,Do you think you are well-informed of what is going on in the world?,EngSoc01
+qid_cohortbyear8q32,What is one particular issue that you feel strongly about?,EngSoc06
+qid_cohortbyear8q33a,"When you are an adult, do you think you will live in Wales?",AspLikely07
+qid_cohortbyear8q33b,"When you are an adult, do you think you will live in the same neighbourhood as you do now?",AspLikely06
+qid_cohortbyear8q33c,"When you are an adult, do you think you will live abroad (i.e. in another country)?",AspLikely05
+qid_cohortbyear8q33d,"When you are an adult, do you think you will have a family of your own?",AspLikely02
+qid_cohortbyear8q33e,"When you are an adult, do you think you will have graduated from university?",AspLikely04
+qid_cohortbyear8q33g,"When you are an adult, do you think you will volunteer some of your time to help others?",AspLikely09
+qid_cohortbyear8q33h,"When you are an adult, do you think you will speak Welsh?",AspLikely08
+qid_cohortbyear8q33i,"When you are an adult, do you think you will have a job that you will enjoy?",AspLikely03
+qid_cohortbyear8q34,Do you plan to stay in full-time education when you are 16?,AspPostSch01
+qid_cohortbyear8q35,What job do you want as an adult?,AspCareer03
+qid_cohortbyear8q14a,How much do you like the following subject at school? Art.,SchSubjAtt05
+qid_cohortbyear8q14c,How much do you like the following subject at school? English.,SchSubjAtt01
+qid_cohortbyear8q14d,How much do you like the following subject at school? Foreign Languages.,SchSubjAtt07
+qid_cohortbyear8q14e,How much do you like the following subject at school? Geography.,SchSubjAtt08
+qid_cohortbyear8q14f,How much do you like the following subject at school? History.,SchSubjAtt09
+qid_cohortbyear8q14g,How much do you like the following subject at school? ICT.,SchSubjAtt10
+qid_cohortbyear8q14h,How much do you like the following subject at school? Maths.,SchSubjAtt02
+qid_cohortbyear8q14i,How much do you like the following subject at school? Music.,SchSubjAtt11
+qid_cohortbyear8q14k,How much do you like the following subject at school? Religious Education.,SchSubjAtt13
+qid_cohortbyear8q14l,How much do you like the following subject at school? Science.,SchSubjAtt03
+qid_cohortbyear8q14m,How much do you like the following subject at school? Welsh.,SchSubjAtt04
+qid_cohortbyear8q18c,Please state how much you agree or disagree with the following statement: my school deals with pupil conflicts well.,SchStafAtt14
+qid_cohortbyear8q18d,Please state how much you agree or disagree with the following statement: my school deals with bullying well.,BullySch08
+qid_cohortbyear8q18e,Please state how much you agree or disagree with the following statement: my school deals with pupils' poor behaviour well.,SchStafAtt15
+qid_cohortbyear8q22b,"How much do you agree or disagree with the following statements. ""In the past two weeks I have been having fun.""",WellFeelAtt10
+qid_cohortbyear8q22c,"How much do you agree or disagree with the following statements. ""In the past two weeks I didn't enjoy anything at all.""",WellFeelAtt03
+qid_cohortbyear8q22d,"How much do you agree or disagree with the following statements. ""In the past two weeks I felt so tired that I just sat around and did nothing.""",WellFeelAtt08
+qid_cohortbyear8q22e,"How much do you agree or disagree with the following statements. ""In the past two weeks I was very restless.""",WellFeelAtt11
+qid_cohortbyear8q22f,"How much do you agree or disagree with the following statements. ""In the past two weeks I felt I was no good anymore.""",WellValue12
+qid_cohortbyear8q22g,"How much do you agree or disagree with the following statements. ""In the past two weeks I cried a lot.""",WellFeelAtt02
+qid_cohortbyear8q22h,"How much do you agree or disagree with the following statements. ""In the past two weeks I felt happy.""",WellFeelAtt06
+qid_cohortbyear8q22i,"How much do you agree or disagree with the following statements. ""In the past two weeks I found it hard to think properly or concentrate.""",WellFeelAtt09
+qid_cohortbyear8q22j,"How much do you agree or disagree with the following statements. ""In the past two weeks I hated myself.""",WellValue13
+qid_cohortbyear8q22k,"How much do you agree or disagree with the following statements. ""In the past two weeks I enjoyed doing lots of things.""",WellFeelAtt04
+qid_cohortbyear8q22l,"How much do you agree or disagree with the following statements. ""In the past two weeks I felt I was a bad person.""",WellValue11
+qid_cohortbyear8q22m,"How much do you agree or disagree with the following statements. ""In the past two weeks I felt lonely.""",WellFeelAtt01
+qid_cohortbyear8q7,What time did you get up to get ready for school day?,RoutnSleep01
+qid_cohortbyear8q17a,"Please state how much you agree or disagree with the following statement. “My school is a place where my teachers are fair to me"".",SchStafAtt01
+qid_cohortbyear8q17b,"Please state how much you agree or disagree with the following statements. “My school is a place where I am lonely"".",WellFeelAtt13
+qid_cohortbyear8q17c,"Please state how much you agree or disagree with the following statements. “My school is a place where I am a successful pupil.""",WellValue09
+qid_cohortbyear8q17d,"Please state how much you agree or disagree with the following statements. “My school is a place where other pupils accept me as I am.""",SchAtt17
+qid_cohortbyear8q17e,"Please state how much you agree or disagree with the following statements. “My school is a place where I feel worried.""",WellFeelAtt05
+qid_cohortbyear8q17f,"Please state how much you agree or disagree with the following statements. “My school is a place where my teachers treat me with respect.""",SchStafAtt04
+qid_cohortbyear8q17g,"Please state how much you agree or disagree with the following statements. “My school is a place where I feel like I belong.""",WellValue10
+qid_cohortbyear8q22a,"How much do you agree or disagree with the following statement. ""In the past two weeks I felt miserable or unhappy.""",WellFeelAtt07
+qid_cohortbyear8q24d,How often do you do the following outside of school? Welsh TV or listen to Welsh radio.,CymActFrq03
+qid_cohortbyear8q14b,How much do you like the following subject at school? Design and Technology?,SchSubjAtt06
+qid_cohortbyear8q20a,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about the following parts of your life? Your school work.",WellSat06
+qid_cohortbyear8q20b,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about the following parts of your life? The way you look.",WellSat01
+qid_cohortbyear8q20c,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about the following parts of your life? Your family.",WellSat02
+qid_cohortbyear8q20d,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about the following parts of your life? Your friends.",WellSat03
+qid_cohortbyear8q20e,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about the following parts of your life? Your school overall.",WellSat05
+qid_cohortbyear8q20f,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about the following parts of your life? Your life as a whole.",WellSat04
+qid_cohortbyear8q21b,How much do you agree or disagree with the following statements about you? I feel that I have a number of good qualities.,WellValue05
+qid_cohortbyear8q21c,How much do you agree or disagree with the following statements about you? I am able to do things as well as most other people.,WellValue02
+qid_cohortbyear8q36,What do you see yourself doing in 10 years’ time?,AspTime02
+qid_cohortbyear8q5a,Do you get up for school at the same time every day?,RoutnSleep02
+qid_cohortbyear8q11a,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is the following for keeping in touch with your friends? Social netowrking sites (like Facebook, Skype, Snapchat, etc.)",FrndActAtt05
+qid_cohortbyear8q11c,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is the following for keeping in touch with your friends? Doing activities (like going to the cinema, sporting events).",FrndActAtt01
+qid_cohortbyear8q11g,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is the following for keeping in touch with your friends? Playing video games online (like Xbox live or Playstation).",FrndActAtt04
+qid_cohortbyear8q21a,"How much do you agree or disagree with the following statements about you? On the whole, I am satisfied with myself.",WellValue07
+qid_cohortbyear8q11b,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is the following for keeping in touch with your friends? Going to school.",FrndActAtt02
+qid_cohortbyear8q11d,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is the following for keeping in touch with your friends? Just 'hanging out' after school or on the weekends.",FrndActAtt03
+qid_cohortbyear8q11e,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is the following for keeping in touch with your friends? Talking on the phone.",FrndActAtt06
+qid_cohortbyear8q11f,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is the following for keeping in touch with your friends? Texting on your mobile phone.",FrndActAtt07
+qid_cohortbyear8q21d,How much do you agree or disagree with the following statements about you? I am a person of value.,WellValue08
+qid_cohortbyear8q21e,How much do you agree or disagree with the following statements about you? I feel good about myself.,WellValue04
+qid_cohortbyear8q5b,Do you go to bed at the same time every day?,RoutnSleep04
+qid_cohortbyear8q12e,How often do you spend time with friends just 'hanging out'?,FrndActFrq04
+qid_cohortbyear8q12f,"How often do you spend time at home doing activities with parents, brothers or sisters?",FamActFrq02
+qid_cohortbyear8q13d,"How much do you like drawing, painting or making things?",HobAtt01
+qid_cohortbyear8q13b,How much do you like playing a musical instrument?,HobAtt03
+qid_cohortbyear8q4,Have you completed one of our surveys before?,doneprev
+qid_cohortbyear8q12g,"How often do you spend time doing activities outside of the home with grandparents, aunts/uncles and/or cousins.",FamActFrq03
+qid_cohortbyear8q13c,"How much do you like watching TV, DVDs or videos?",HobAtt09
+qid_cohortbyear8q13f,How much do you like playing sports outside?,HobAtt05
+qid_cohortbyear8q12c,How often do you do volunteer work?,PhilAct01
+qid_cohortbyear8q13a,How much do you like listening to music?,HobAtt02
+qid_cohortbyear8q13e,How much do you like playing video games?,HobAtt08
+qid_cohortbyear8q12b,How often do you play video games?,HobFrq01
+qid_cohortbyear8q12d,How often do you do chores at home?,FamActFrq28
+qid_cohortbyear9q18,Have you been on a work experience placement through school?,AspAdvice16
+qid_cohortbyear9q22,Do you receive free school meals?,Deprive01
+qid_cohortbyear9q26,"In 2011, the European Union (EU) listed 10 problems facing the EU. These problems are listed below. Of these choices, which ONE do you think is the most important problem facing the EU today?",EngSoc07
+qid_cohortbyear9q27,"Do you know anyone who is serving, or has previously served, in the armed forces?",Military01
+qid_cohortbyear9q29d,How much do you agree with the following statement? We should not need charities because the government should help people.,PhilAtt04
+qid_cohortbyear9q29f,"How much do you agree with the following statement? The more money people have, the more they should give some of their money to charity.",PhilAtt07
+qid_cohortbyear9q32,What was the last charity your school supported?,PhilAct03
+qid_cohortbyear9q33,Are you involved in any clubs at school?,SchAct07
+qid_cohortbyear9q34b,"Please state how much you agree with the following statement. When I go out, my parents tell me I have to be home at a certain time.",Responsible06
+qid_cohortbyear9q35,What kind of home do you live in?,Deprive04
+qid_cohortbyear9q40a,Which of the following best describes your religious beliefs?,Relig01
+qid_cohortbyear9q41,"Do you attend special events like baptisms, weddings and funerals that are associated with a religion?",Relig03
+qid_cohortbyear9q42,"Apart from special events like baptisms, weddings and funerals, how often do you attend services or meetings associated with a religion?",Relig04
+qid_cohortbyear9q5,Where were you born?,NatBirth01
+qid_cohortbyear9q6,Where was your mother born?,NatBirth03
+qid_cohortbyear9q9,Please tell us what you will be doing after Year 11.,AspPostSch04
+qid_cohortbyear9q10,Where will you be doing your courses after Year 11?,AspPostSch05
+qid_cohortbyear9q29a,How much do you agree with the following statement? I would work for a charity.,PhilAtt06
+qid_cohortbyear9q29b,How much do you agree with the following statement? Charities help people I know.,PhilAtt01
+qid_cohortbyear9q29c,How much do you agree with the following statement? Charities play an important role in our country.,PhilAtt02
+qid_cohortbyear9q29e,How much do you agree with the following statement? Charities should do more to help people in other countries.,PhilAtt03
+qid_cohortbyear9q29g,How much do you agree with the following statement? Young people should give some of their time to charity.,PhilAtt05
+qid_cohortbyear9q34a,"Please state how much you agree with the following statement. Out of school, I am free to choose what clothes I want to wear.",Responsible05
+qid_cohortbyear9q34c,"Please state how much you agree with the following statement. When I have money, I am allowed to spend it however I want.",Money12
+qid_cohortbyear9q39a,Please state how much you agree with the following statement. Eating little or not meat is better for the environment.,EthicsAtt02
+qid_cohortbyear9q39b,Please state how much you agree with the following statement. Eating little or no meat is healthier.,EthicsAtt03
+qid_cohortbyear9q39c,Please state how much you agree with the following statement. Eating little or no meat is better for animal welfare.,EthicsAtt01
+qid_cohortbyear9q15a,"Please state how much you agree with the following statements? ""I want to have more say in decisions at school about school uniforms.""",SchAtt24
+qid_cohortbyear9q15b,"Please state how much you agree with the following statements? ""I want to have more say in decisions at school about the school timetable.""",SchAtt26
+qid_cohortbyear9q15c,"Please state how much you agree with the following statements? ""I want to have more say in decisions at school about teacher appointments.""",SchStafAtt21
+qid_cohortbyear9q15d,"Please state how much you agree with the following statements? ""I want to have more say in decisions at school about the food served at lunch.""",SchAtt25
+qid_cohortbyear9q15f,"Please state how much you agree with the following statements? ""I want to have more say in decisions at school about how the teachers teach pupils.""",SchStafAtt20
+qid_cohortbyear9q16,Which ONE of the following choices below do teachers at your school most value?,SchStafAtt18
+qid_cohortbyear9q25c,"On a scale of 1-5, with 1 being ""not at all interested"" and 5 being ""very interested"", how interested are you in the following topics? The politics of the UK",EngPol07
+qid_cohortbyear9q25d,"On a scale of 1-5, with 1 being ""not at all interested"" and 5 being ""very interested"", how interested are you in the following topic? World politics.",EngPol08
+qid_cohortbyear9q28b,"On a scale of 1-5, with 1 being ""not at all"" and 5 being ""a lot"", how much do you look up to the following people Members of the armed forces.",ProfAtt05
+qid_cohortbyear9q28c,"On a scale of 1-5, with 1 being ""not at all"" and 5 being ""a lot"", how much do you look up to the following people? Police.",ProfAtt04
+qid_cohortbyear9q25b,"On a scale of 1-5, with 1 being ""not at all interested"" and 5 being ""very interested"", how interested are you in the following topics? The politics of Wales",EngPol06
+qid_cohortbyear9q15e,"Please state how much you agree with the following statements? ""I want to have more say in decisions at school about what I'm learning at school.""",SchLearnAtt16
+qid_cohortbyear9q17,How important is school for your chosen career.,SchAtt13
+qid_cohortbyear9q24a,How often do you do the following activity with your family? Go to a museum.,FamActFrq14
+qid_cohortbyear9q24b,How often do you do the following activity with your family? Go to the cinema.,FamActFrq16
+qid_cohortbyear9q24c,How often do you do the following activity with your family? Attended a sport event.,FamActFrq12
+qid_cohortbyear9q24d,How often do you do the following activity with your family? Attended the theatre.,FamActFrq13
+qid_cohortbyear9q24e,How often do you do the following activity with your family? Have dinner at a pub.,FamActFrq18
+qid_cohortbyear9q24f,How often do you do the following activity with your family? Go to a park.,FamActFrq15
+qid_cohortbyear9q24g,How often do you do the following activity with your family? Go to the library.,FamActFrq17
+qid_cohortbyear9q36a,"On a scale of 1-5, with 1 being ""unacceptable"" and 5 being ""acceptable"", how acceptable is it to use animals in medical research.",EthicsAtt08
+qid_cohortbyear9q36b,"On a scale of 1-5, with 1 being ""unacceptable"" and 5 being ""acceptable"", how acceptable is it to hunt animals for sport?",EthicsAtt05
+qid_cohortbyear9q36c,"On a scale of 1-5, with 1 being ""unacceptable"" and 5 being ""acceptable"", how acceptable is it to kill animals for their fur?",EthicsAtt06
+qid_cohortbyear9q36d,"On a scale of 1-5, with 1 being ""unacceptable"" and 5 being ""acceptable"", how acceptable is it to hunt animals for food?",EthicsAtt04
+qid_cohortbyear9q36e,"On a scale of 1-5, with 1 being ""unacceptable"" and 5 being ""acceptable"", how acceptable is it to kill animals to stop the spread of disease?",EthicsAtt07
+qid_cohortbyear9q12,Are you thinking about applying for university?,AspPostSch19
+qid_cohortbyear9q37a,Do you have pets at home?,AnimPet01
+qid_cohortbyear9q25,"On a scale of 1-5, with 1 being ""not at all interested"" and 5 being ""very interested"", how interested are you in the following topic? Local politics, such as your country/city/village.",EngPol05
+qid_cohortbyear9q20a,"How confident are you when it comes to interviews (e.g. for college, university or jobs)?",WellConf02
+qid_cohortbyear9q20e,"How confident are you when it comes to speaking to authority figures (e.g. head teacher, police, etc.)?",WellConf06
+qid_cohortbyear9q30,"If you were to donate £10 to a charity, which ONE type of charity would you give it to?",PhilAct04
+qid_cohortbyear9q20d,How confident are you when it comes to meeting new people?,WellConf03
+qid_cohortbyear9q4,What is the name of your school?,schnamestr
+qid_cohortbyear9q20f,"How confident are you when it comes to being in charge of something (e.g. class project, etc.)",WellConf01
+qid_cohortbyear9q21,"From the options below, which ONE is the MOST important to you in your life at the moment?",WellValue19
+qid_cohortbyear9q2,What is your birthdate?,dobfull
+qid_cohortbyear9q3,What is your gender?,sex
+qid_cohortbyear9q19,"If you have been on a work experience placement, did you find the experience useful?",AspAdvice17
+qid_cohortbyear9q20b,"How confident are you when it comes to public speaking (e.g. presentations, etc.)?",WellConf05
+qid_cohortbyear9q11,"If you are thinking about leaving full-time education, why might you leave at the end of Year 11?",AspPostSch18
+qid_cohortbyear9q14,What subject(s) might you study while at university?,AspPostSch22
+qid_cohortbyear9q31d,"Have you watched a TV programme that raised money for a charity in the past year, month or week?",PhilAct07
+qid_cohortbyear9q13,"If yes, to which universities might you apply?",AspPostSch21
+qid_cohortcyear8q6a,Please choose the best response from the options below: I have better relationships with my friends than my family.,FrndAtt01
+qid_cohortcyear8q6b,Please choose the best response from the options below: I have at least one good friend that I can really trust.,FrndAtt03
+qid_cohortcyear8q6c,"Please choose the best response from the options below: Overall, my family approves of my friends.",FrndAtt02
+qid_cohortcyear8q6d,Please choose the best response from the options below: My family knows about what my friends and I do when we're together.,FrndActAtt08
+qid_cohortcyear8q7a,How safe do you feel walking in your neighbourhood during the day?,NeighbAtt04
+qid_cohortcyear8q7b,How safe do you feel walking in your neighbourhood at night?,NeighbAtt05
+qid_cohortcyear8q35,What kind of job do you want when you are an adult?,AspCareer03
+qid_cohortcyear8q36,If someone gave you £1 million today what would you do with it?,Money15
+qid_cohortcyear8q39,Please choose the option that best describes how well you speak Welsh.,NatLang09
+qid_cohortcyear8q27b,"How often do you wake up at night to message a friend, or check messages, on the computer, a tablet or your phone?",RoutnSleep05
+qid_cohortcyear8q22c,"How often do you do occasional work for pocket money, including chores at home, work in a family business or farm, etc.",Money04
+qid_cohortcyear8q22i,"How often do you spend time with your friends chatting online (Facebook, Skype, etc.)?",FrndCom05
+qid_cohortcyear8q22e,How often do spend time with your friends browsing the Internet?,FrndActFrq05
+qid_cohortcyear8q22f,How often do you spend time with your friends playing video games?,FrndActFrq06
+qid_cohortcyear8q27c,How often do you eat breakfast before school starts?,RoutnFood04
+qid_cohortcyear8q30a,How do you feel about having friends of a different skin colour from you?,DiversAtt01
+qid_cohortcyear8q22d,"How often do you spend time with your friends and just ""hanging out""?",FrndActFrq04
+qid_cohortcyear8q30b,How do you feel about having friends from countries outside of the UK?,DiversAtt11
+qid_cohortcyear8q9e,Please choose the best response from the options below: my school rewards pupils who receive good marks or make good progress.,SchStafAtt16
+qid_cohortcyear8q13b,"Please choose the best response from the options below: When I was in primary school, I looked forward to coming to secondary school.",SchTranAtt08
+qid_cohortcyear8q17b,How often do you play games on a computer or games console?,HobFrq01
+qid_cohortcyear8q14h,Please state how much you think the following activity helps you learn: Working on projects that involve getting up out of your seat or going outside.,SchLearnAtt10
+qid_cohortcyear8q27a,How often do you go to school feeling tired?,RoutnSleep07
+qid_cohortcyear8q30c,How do you feel about having friends from Northern Ireland?,DiversAtt10
+qid_cohortcyear8q9i,Please choose the best response from the options below: School helps increase my interest in the politics of Wales.,SchAtt21
+qid_cohortcyear8q13a,Please choose the best response from the options below: Moving up from primary school to secondary school was stressful.,SchTranAtt19
+qid_cohortcyear8q13c,"Please choose the best response from the options below: Overall, I like primary school better than secondary school.",SchTranAtt09
+qid_cohortcyear8q13e,"Please choose the best response from the options below: Overall, I like secondary school better than primary school.",SchTranAtt10
+qid_cohortcyear8q14g,Please state how much you think the following activity helps you learn: working on projects that involve a lot of class or group discussion.,SchLearnAtt09
+qid_cohortcyear8q18c,"Do you take Creative Arts (Painting, poetry, creative writing, sculpting, etc.) classes outside of school?",Hob01
+qid_cohortcyear8q9a,Please choose the best response from the options below: my school cares about how much I improve in my studies.,SchStafAtt11
+qid_cohortcyear8q18a,"Do you take performing Arts (Singing, dancing, playing an instrument, etc.) classes outside of school?",Hob04
+qid_cohortcyear8q18b,"Do you take Sports (Rugby, horseback riding, martial arts, gymnastics, etc.) classes outside of school.",Hob06
+qid_cohortcyear8q9b,Please choose the best response from the options below: the school staff have high expectations of me.,SchStafAtt08
+qid_cohortcyear8q9h,"Please choose the best response from the options below: school helps me develop my own sense of ""Welshness"".",SchAtt23
+qid_cohortcyear8q17c,How often do you play sports or active games?,HobFrq02
+qid_cohortcyear8q18e,"Do you take ICT/Design (Computer programming, Graphic design, etc.) classes outside of school?",Hob02
+qid_cohortcyear8q27d,How often do you skip lunch at school?,RoutnFood05
+qid_cohortcyear8q30d,How do you feel about having friends from Scotland?,DiversAtt09
+qid_cohortcyear8q30f,How do you feel about having friends of a different gender than you?,DiversAtt05
+qid_cohortcyear8q4c,"How often do you use the following to communicate with your friends? Sending messages on a computer, tablet or phone.",FrndActFrq09
+qid_cohortcyear8q9g,Please choose the best response from the options below: school helps me appreciate living in Wales.,SchAtt22
+qid_cohortcyear8q14f,Please state how much you think the following activity helps you learn: working on projects without detailed instructions.,SchLearnAtt12
+qid_cohortcyear8q30e,How do you feel about having friends from England?,DiversAtt08
+qid_cohortcyear8q14e,Please state how much you think the following activity helps you learn: working on projects with detailed instructions.,SchLearnAtt11
+qid_cohortcyear8q17d,"How often do you draw, paint or make things?",HobFrq08
+qid_cohortcyear8q19e,"Do you receive private tuition for the following school subject? Humanities (Geography, History, etc.)",PrvtuSubj06
+qid_cohortcyear8q10m,How much do you like the following subjects at school? Religious Education.,SchSubjAtt13
+qid_cohortcyear8q16a,Please state if you agree or disagree with the following statement: I think the work I do in school now will help me achieve my future goals.,SchAtt14
+qid_cohortcyear8q33b,"When you are an adult, do you think you will live in the same neighbourhood as you do now?",AspLikely06
+qid_cohortcyear8q9d,Please choose the best response from the options below: my views are listened to and taken seriously by the staff at my school.,SchStafAtt05
+qid_cohortcyear8q16c,"Please state if you agree or disagree with the following statement: When I'm older, I will have good memories of attending this school.",SchAtt12
+qid_cohortcyear8q19g,Do you receive private tuition for any school subject not listed?,PrvtuSubj07
+qid_cohortcyear8q33g,"When you are an adult, do you think you will volunteer some of your time to help others?",AspLikely09
+qid_cohortcyear8q14a,Please state how much you think the following activity helps you learn: taking notes while the teacher talks.,SchLearnAtt05
+qid_cohortcyear8q18d,"Do you take Languages (Welsh, Foreign languages, etc.) classes outside of school.",Hob03
+qid_cohortcyear8q22g,"How often do you spend time doing activities outside of the home with the following family members: Parents, brothers and/or sisters.",FamActFrq01
+qid_cohortcyear8q16b,Please state if you agree or disagree with the following statement: The things I learn in school now help me in my day-to-day life.,SchLearnAtt13
+qid_cohortcyear8q28c,How important do you think it is for Welsh to remain a living language?,CymAtt03
+qid_cohortcyear8q22a,How often do you do volunteer work?,PhilAct01
+qid_cohortcyear8q22b,How often do you do chores at home?,FamActFrq28
+qid_cohortcyear8q33e,"When you are an adult, do you think you will have graduated from university?",AspLikely04
+qid_cohortcyear8q10j,How much do you like the following subjects at school? Geography.,SchSubjAtt08
+qid_cohortcyear8q19f,Do you receive private tuition for the following school subject? Foreign Languages.,PrvtuSubj05
+qid_cohortcyear8q4a,How often do you use the following to communicate with your friends? Talking to them face to face.,FrndActFrq11
+qid_cohortcyear8q10d,How much do you like the following subjects at school? English.,SchSubjAtt01
+qid_cohortcyear8q10e,How much do you like the following subjects at school? Science.,SchSubjAtt03
+qid_cohortcyear8q10i,How much do you like the following subjects at school? History.,SchSubjAtt09
+qid_cohortcyear8q21,"How often do you discuss schoolwork with your friends through messaging (either on a computer, tablet or your phone)?",FrndCom04
+qid_cohortcyear8q29e,How do you feel about the following part of your life? Your school overall.,WellSat05
+qid_cohortcyear8q33i,"When you are an adult, do you think you will have a job that you will enjoy?",AspLikely03
+qid_cohortcyear8q14c,Please state how much you think the following activity helps you learn: working with a partner.,SchLearnAtt07
+qid_cohortcyear8q14d,Please state how much you think the following activity helps you learn: working individually.,SchLearnAtt06
+qid_cohortcyear8q17a,How often do you read for fun?,HobFrq04
+qid_cohortcyear8q29f,How do you feel about the following part of your life? Your life as a whole.,WellSat04
+qid_cohortcyear8q10a,How much do you like the following subjects at school? Music.,SchSubjAtt11
+qid_cohortcyear8q10f,How much do you like the following subjects at school? Maths.,SchSubjAtt02
+qid_cohortcyear8q10g,How much do you like the following subjects at school? Welsh.,SchSubjAtt04
+qid_cohortcyear8q29a,How do you feel about the following part of your life? Your school work.,WellSat06
+qid_cohortcyear8q10k,How much do you like the following subjects at school? Foreign Languages.,SchSubjAtt07
+qid_cohortcyear8q14b,Please state how much you think the following activity helps you learn: working in a group.,SchLearnAtt08
+qid_cohortcyear8q29b,How do you feel about the following part of your life? the way you look.,WellSat01
+qid_cohortcyear8q33d,"When you are an adult, do you think you will have a family of your own?",AspLikely02
+qid_cohortcyear8q33f,"When you are an adult, do you think you will be financially ""well-off""?",AspLikely01
+qid_cohortcyear8q4b,How often do you use the following to communicate with your friends? Talking to them on the phone.,FrndActFrq10
+qid_cohortcyear8q10b,How much do you like the following subjects at school? Art.,SchSubjAtt05
+qid_cohortcyear8q10c,How much do you like the following subjects at school? ICT.,SchSubjAtt10
+qid_cohortcyear8q19a,Do you receive private tuition for the following school subject? English.,PrvtuSubj01
+qid_cohortcyear8q19b,Do you receive private tuition for the following school subject? Science.,PrvtuSubj03
+qid_cohortcyear8q28a,How important do you think it is for you to learn Welsh?,CymAtt01
+qid_cohortcyear8q28b,How important do you think it is for you to speak Welsh?,CymAtt02
+qid_cohortcyear9q24,What is the one thing you spend most of your money on?,Money13
+qid_cohortcyear9q26a,How often do you do the following outside of school? Speak Welsh with family.,CymActFrq04
+qid_cohortcyear9q26b,How often do you do the following outside of school? Speak Welsh with friends.,CymActFrq05
+qid_cohortcyear9q26c,How often do you do the following outside of school? Read Welsh books or magazines?,CymActFrq01
+qid_cohortcyear9q26d,How often do you do the following outside of school? Watch Welsh TV or listen to Welsh radio?,CymActFrq03
+qid_cohortcyear9q26e,How often do you do the following outside of school? Visit Welsh websites.,CymActFrq02
+qid_cohortcyear9q5,What is the best advice you have ever received?,AspAdvice15
+qid_cohortcyear9q7,What is your greatest fear?,WellFeel30
+qid_cohortcyear9q8b,"On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? The way you look.",WellSat01
+qid_cohortcyear9q8c,"On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? Your family.",WellSat02
+qid_cohortcyear9q8d,"On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? Your friends.",WellSat03
+qid_cohortcyear9q8e,"On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? Your school overall.",WellSat05
+qid_cohortcyear9q8f,"On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? Your life as a whole.",WellSat04
+qid_cohortcyear9q11,Approximately how many hours per week do you spend doing homework?,SchAct01
+qid_cohortcyear9q13a,How often do you miss a lesson during a school day?,BehaveSch03
+qid_cohortcyear9q13b,How often do you miss more than one lesson during a school day?,BehaveSch04
+qid_cohortcyear9q13c,How often do you miss all lessons during a school day?,BehaveSch05
+qid_cohortcyear9q16,What is one piece of advice you would give a new teacher at your school?,SchStafAtt17
+qid_cohortcyear9q17a,"Please state how much you agree or disagree with the following statement: if I have a personal problem at school, I know where to go for help.",SchStafAtt13
+qid_cohortcyear9q17b,"Please state how much you agree or disagree with the following statement: if I have a personal problem at school, I can trust the school will help me.",SchStafAtt12
+qid_cohortcyear9q19a,"If you saw someone being bullied at school, how likely is it you would you do the following? Step in to help them.",BullySch04
+qid_cohortcyear9q19b,"If you saw someone being bullied at school, how likely is it you would you do the following? Join in and bully too.",BullySch05
+qid_cohortcyear9q19c,"If you saw someone being bullied at school, how likely is it you would you do the following? Get help from a teacher.",BullySch06
+qid_cohortcyear9q19d,"If you saw someone being bullied at school, how likely is it you would you do the following? Ignore them and move on.",BullySch07
+qid_cohortcyear9q22d,How much do you agree or disagree with the following statement: in the past two weeks I felt so tired that I just sat around and did nothing.,WellFeelAtt08
+qid_cohortcyear9q22i,How much do you agree or disagree with the following statement: in the past two weeks I found it hard to think properly or concentrate.,WellFeelAtt09
+qid_cohortcyear9q25a,Please state how much you agree with the following statement: I am more confident speaking Welsh now than I was a year ago.,CymAtt11
+qid_cohortcyear9q25b,Please state how much you agree with the following statement: I am more confident writing Welsh now than I was a year ago.,CymAtt12
+qid_cohortcyear9q25c,Please state how much you agree with the following statement: I am more confident reading Welsh now than I was a year ago.,CymAtt10
+qid_cohortcyear9q27a,"Please state how much you agree with the following statement: If I could live anywhere in the world, I would live in Wales.",CymAtt15
+qid_cohortcyear9q27b,Please state how much you agree with the following statement: I feel Wales is my real home.,CymAtt13
+qid_cohortcyear9q27c,"Please state how much you agree with the following statement: I live in Wales, but I don't particularly feel Welsh.",CymAtt14
+qid_cohortcyear9q8a,"8. On a scale of 1 to 7 where ‘1’ means completely happy and ‘7’ means not at all happy, how do you feel about the following part of your life? Your school work.",WellSat06
+qid_cohortcyear9q12a,Please state how much you agree or disagree with the following statement: my friends help/advise me with my homework.,SchAct05
+qid_cohortcyear9q12b,Please state how much you agree or disagree with the following statement: my parents make sure I do my homework.,FamAct09
+qid_cohortcyear9q12c,Please state how much you agree or disagree with the following statement: my teachers make sure I do my homework.,SchStafAtt03
+qid_cohortcyear9q12d,Please state how much you agree or disagree with the following statement: doing homework helps me learn.,SchLearnAtt04
+qid_cohortcyear9q17c,Please state how much you agree or disagree with the following statement: my school deals with pupil conflicts well.,SchStafAtt14
+qid_cohortcyear9q17d,Please state how much you agree or disagree with the following statement: my school deals with bullying well.,BullySch08
+qid_cohortcyear9q22a,How much do you agree or disagree with the following statement: in the past two weeks I felt miserable or unhappy.,WellFeelAtt07
+qid_cohortcyear9q22b,How much do you agree or disagree with the following statement: in the past two weeks I have been having fun.,WellFeelAtt10
+qid_cohortcyear9q22c,How much do you agree or disagree with the following statement: in the past two weeks I didn't enjoy anything at all.,WellFeelAtt03
+qid_cohortcyear9q22e,How much do you agree or disagree with the following statement: in the past two weeks I was very restless.,WellFeelAtt11
+qid_cohortcyear9q22f,How much do you agree or disagree with the following statement: in the past two weeks I felt I was no good anymore.,WellValue12
+qid_cohortcyear9q22g,How much do you agree or disagree with the following statement: in the past two weeks I cried a lot.,WellFeelAtt02
+qid_cohortcyear9q22h,How much do you agree or disagree with the following statement: in the past two weeks I felt happy.,WellFeelAtt06
+qid_cohortcyear9q22j,How much do you agree or disagree with the following statement: in the past two weeks I hated myself.,WellValue13
+qid_cohortcyear9q22k,How much do you agree or disagree with the following statement: in the past two weeks I e njoyed doing lots of things.,WellFeelAtt04
+qid_cohortcyear9q22l,How much do you agree or disagree with the following statement: in the past two weeks I felt I was a bad person.,WellValue11
+qid_cohortcyear9q22m,How much do you agree or disagree with the following statement: in the past two weeks I felt lonely.,WellFeelAtt01
+qid_cohortcyear9q3,Pkease enter the name of your school in the space provided below.,schnamestr
+qid_cohortcyear9q17e,Please state how much you agree or disagree with the following statement: my school deals with pupils' poor behaviour well.,SchStafAtt15
+qid_cohortcyear9q15f,Please state how much you agree or disagree with the following statements: My school is a place where my teachers treat me with respect.,SchStafAtt04
+qid_cohortcyear9q15a,Please state how much you agree or disagree with the following statements: My school is a place where my teachers are fair to me.,SchStafAtt01
+qid_cohortcyear9q15b,Please state how much you agree or disagree with the following statements: My school is a place where I am lonely.,WellFeelAtt13
+qid_cohortcyear9q15c,Please state how much you agree or disagree with the following statements: My school is a place where I am a successful pupil.,WellValue09
+qid_cohortcyear9q15d,Please state how much you agree or disagree with the following statements: My school is a place where other pupils accept me as I am.,SchAtt17
+qid_cohortcyear9q15e,Please state how much you agree or disagree with the following statements: My school is a place where I feel worried.,WellFeelAtt05
+qid_cohortcyear9q15g,Please state how much you agree or disagree with the following statements: My school is a place where I feel like I belong.,WellValue10
+qid_cohortcyear9q15h,Please state how much you agree or disagree with the following statements: My school is a place where my teachers know me well.,SchStafAtt02
+qid_cohortcyear9q9a,"How much do you agree or disagree with the following statement about you? On the whole, I am satisfied with myself.",WellValue07
+qid_cohortcyear9q9b,How much do you agree or disagree with the following statement about you? I feel that I have a number of good qualities.,WellValue05
+qid_cohortcyear9q9c,How much do you agree or disagree with the following statement about you? I am able to do things as well as most other people.,WellValue02
+qid_cohortcyear9q6b,What is your greatest thing you hope to achieve in your life?,AspAchv03
+qid_cohortcyear9q9e,How much do you agree or disagree with the following statement about you? I feel good about myself.,WellValue04
+qid_cohortcyear9q6a,What is your greatest thing you hope to achieve this year?,AspAchv02
+qid_cohortcyear9q9d,How much do you agree or disagree with the following statement about you? I am a person of value.,WellValue08
+qid_cohortcyear9q4a,"If your family had to describe you in just one word, what word do you think they would use?",WellValue16
+qid_cohortcyear9q23b,About how much money per week do you get from the following source? Paid employment.,Money06
+qid_cohortcyear9q23c,About how much money per week do you get from the following source? Chores at home.,Money07
+qid_cohortcyear9q23a,About how much money per week do you get from the following source? Pocket money.,Money05
+qid_cohortcyear9q14,"Truancy (sometimes called “dodging” or “skiving”) is defined as the following: 
+a) Absent from school without an excuse by a parent/guardian 
+b) Leaving school or a class without permission of the teacher or administrator.",BehaveSch06
+qid_cohortcyear9q20d,How many days in a typical week do you bully others using the website?,Bully08
+qid_cohortcyear9q21d,How many days in a typical week do you bully others using the app.,Bully12
+qid_cohortcyear9q20c,How many days in a typical week are you bullied using the website?,Bully07
+qid_cohortcyear9q21c,How many days in a typical week are you bullied using the app?,Bully11
+qid_cohortcyear10q13a,Please choose the best response from the options below: My school cares about how much I improve in my studies,SchStafAtt11
+qid_cohortcyear10q13b,Please choose the best response from the options below:The school staff have high expectations of me,SchStafAtt08
+qid_cohortcyear10q13c,Please choose the best response from the options below: The teaching staff set goals I can easily achieve,SchStafAtt10
+qid_cohortcyear10q13d,Please choose the best response from the options below: My views are listened to and taken seriously by school staff,SchStafAtt05
+qid_cohortcyear10q13e,Please choose the best response from the options below: My school rewards pupils who receive good marks or make good progress,SchStafAtt16
+qid_cohortcyear10q13f,Please choose the best response from the options below: My teachers know me well,SchStafAtt02
+qid_cohortcyear10q15a,"Please state how much you agree or disagree with the following statements: If I have a personal problem at school, I know where to go for help",SchStafAtt13
+qid_cohortcyear10q15b,"Please state how much you agree or disagree with the following statements: If I have a personal problem at school, I can trust the school will help me",SchStafAtt12
+qid_cohortcyear10q15c,Please state how much you agree or disagree with the following statements: My school deals with pupil conflicts well,SchStafAtt14
+qid_cohortcyear10q15d,Please state how much you agree or disagree with the following statements: My school deals with bullying well,BullySch08
+qid_cohortcyear10q16a,"Please choose the best response from the options below: Overall, I feel I make a good effort in class",SchAtt16
+qid_cohortcyear10q16b,Please choose the best response from the options below: The school staff make school fun,SchStafAtt09
+qid_cohortcyear10q16c,"Please choose the best response from the options below: Overall, I like the school staff",SchStafAtt06
+qid_cohortcyear10q16d,Please choose the best response from the options below: School helps me appreciate living in Wales,SchAtt22
+qid_cohortcyear10q16e,Please choose the best response from the options below: School helps me appreciate living in Wales,0
+qid_cohortcyear10q16f,Please choose the best response from the options below: School helps me develop my own sense of Welshness,SchAtt23
+qid_cohortcyear10q24a,How important do you think it is for you to learn Welsh?,CymAtt01
+qid_cohortcyear10q24b,How important do you think it is for you to speak Welsh?,CymAtt02
+qid_cohortcyear10q24c,How important do you think it is for Welsh to remain a living language?,CymAtt03
+qid_cohortcyear10q26,What is the best thing about living in Wales?,CymAtt17
+qid_cohortcyear10q27,What is the worst thing about living in Wales?,CymAtt18
+qid_cohortcyear10q28,Do you think the voting age in Wales should be lowered to 16?,EngPol02
+qid_cohortcyear10q29,"If an election was held today, and you could vote, what party would you vote for?",EngPol03
+qid_cohortcyear10q33a,"When you are an adult, do you think you will live in Wales?",AspLikely07
+qid_cohortcyear10q33b,"When you are an adult, do you think you will live in the same neighbourhood as you do now?",AspLikely06
+qid_cohortcyear10q33c,"When you are an adult, do you think you will live abroad (i.e. in another country)?",AspLikely05
+qid_cohortcyear10q33d,"When you are an adult, do you think you will have a family of your own?",AspLikely02
+qid_cohortcyear10q33e,"When you are an adult, do you think you will have graduated from university?",AspLikely04
+qid_cohortcyear10q33g,"When you are an adult, do you think you will volunteer some of your time to help others?",AspLikely09
+qid_cohortcyear10q33h,"When you are an adult, do you think you will speak Welsh?",AspLikely08
+qid_cohortcyear10q33i,"When you are an adult, do you think you will have a job that you will enjoy?",AspLikely03
+qid_cohortcyear10q3,Please enter the name of your school in the space provided below,schnamestr
+qid_cohortcyear10q15e,Please state how much you agree or disagree with the following statements: My school deals with pupils’ poor behaviour well,SchStafAtt15
+qid_cohortcyear10q21a,"How much do you agree or disagree with the following statements. ""In the past two weeks I felt miserable or unhappy""",WellFeelAtt07
+qid_cohortcyear10q21b,"How much do you agree or disagree with the following statements. ""In the past two weeks I have been having fun""",WellFeelAtt10
+qid_cohortcyear10q21c,"How much do you agree or disagree with the following statements. ""In the past two weeks I didn't enjoy anything at all""",WellFeelAtt03
+qid_cohortcyear10q21d,"How much do you agree or disagree with the following statements. ""In the past two weeks I felt so tired that I just sat around and did nothing""",WellFeelAtt08
+qid_cohortcyear10q21e,"How much do you agree or disagree with the following statements. ""In the past two weeks I was very restless""",WellFeelAtt11
+qid_cohortcyear10q21f,"How much do you agree or disagree with the following statements. ""In the past two weeks I felt I was no good anymore""",WellValue12
+qid_cohortcyear10q21g,"How much do you agree or disagree with the following statements. ""In the past two weeks I cried a lot""",WellFeelAtt02
+qid_cohortcyear10q21h,"How much do you agree or disagree with the following statements. ""In the past two weeks I felt happy""",WellFeelAtt06
+qid_cohortcyear10q21i,"How much do you agree or disagree with the following statements. ""In the past two weeks I found it hard to think properly or concentrate""",WellFeelAtt09
+qid_cohortcyear10q21j,"How much do you agree or disagree with the following statements. ""In the past two weeks I hated myself""",WellValue13
+qid_cohortcyear10q21l,"How much do you agree or disagree with the following statements. ""In the past two weeks I felt I was a bad person""",WellValue11
+qid_cohortcyear10q21m,"How much do you agree or disagree with the following statements. ""In the past two weeks I felt lonely""",WellFeelAtt01
+qid_cohortcyear10q14a,"Please state how much you agree or disagree with the following statements. “My school is a place where my teachers are fair to me""?",SchStafAtt01
+qid_cohortcyear10q14b,"Please state how much you agree or disagree with the following statements. “My school is a place where I am lonely""",WellFeelAtt13
+qid_cohortcyear10q14c,"Please state how much you agree or disagree with the following statements. “My school is a place where I am a successful pupil""",WellValue09
+qid_cohortcyear10q14d,"Please state how much you agree or disagree with the following statements. “My school is a place where other pupils accept me as I am""",SchAtt17
+qid_cohortcyear10q14e,"Please state how much you agree or disagree with the following statements. “My school is a place where I feel worried""",WellFeelAtt05
+qid_cohortcyear10q14f,"Please state how much you agree or disagree with the following statements. “My school is a place where my teachers treat me with respect""",SchStafAtt04
+qid_cohortcyear10q14g,"Please state how much you agree or disagree with the following statements. “My school is a place where I feel like I belong""",WellValue10
+qid_cohortcyear10q30,Do you think you are well-informed of what is going on in the world?,EngSoc01
+qid_cohortcyear10q32,What is one particular issue that you feel strongly about?,EngSoc06
+qid_cohortcyear10q19b,How much do you agree or disagree with the following statements about you? I feel that I have a number of good qualities,WellValue05
+qid_cohortcyear10q19c,How much do you agree or disagree with the following statements about you? I am able to do things as well as most other people,WellValue02
+qid_cohortcyear10q22a,"Bullying is behaviour that is intended to hurt someone either physically or emotionally. This behaviour is often repeated and can take many forms including physical assault, teasing and threats. How often are you bullied at school?",BullySch01
+qid_cohortcyear10q7,What time did you get up to get ready for school today?,RoutnSleep01
+qid_cohortcyear10q19a,"How much do you agree or disagree with the following statements about you? On the whole, I am satisfied with myself",WellValue07
+qid_cohortcyear10q6,Do you get up for school at the same time every day?,RoutnSleep02
+qid_cohortcyear10q6a,Do you get up for school at the same time every day?,
+qid_cohortcyear10q19d,How much do you agree or disagree with the following statements about you? I am a person of value,WellValue08
+qid_cohortcyear10q19e,How much do you agree or disagree with the following statements about you? I feel good about myself,WellValue04
+qid_cohortcyear10q5,What time did you go to bed last night?,RoutnSleep03
+qid_cohortcyear10q25d,"On a scale of 1 through 5, with 1 meaning ‘Very comfortable’ and 5 meaning ‘Very uncomfortable,’ how do you feel when you hear people in Wales, with an accent different than yours, speaking to each other in English",DiversAtt13
+qid_cohortcyear10q12g,How often do you spend time at home doing activities with parents or siblings?,FamActFrq02
+qid_cohortcyear10q25b,"On a scale of 1 through 5, with 1 meaning ‘Very comfortable’ and 5 meaning ‘Very uncomfortable,’ how do you feel when you hear people in Wales, with the same accent as you, speaking to each other in English",DiversAtt12
+qid_cohortcyear10q25c,"On a scale of 1 through 5, with 1 meaning ‘Very comfortable’ and 5 meaning ‘Very uncomfortable,’ how do you feel when you hear people in Wales speaking to each other in a language other than English or Welsh",DiversAtt15
+qid_cohortcyear10q25a,"On a scale of 1 through 5, with 1 meaning ‘Very comfortable’ and 5 meaning ‘Very uncomfortable,’ how do you feel when you hear people in Wales speaking to each other in Welsh",DiversAtt14
+qid_cohortcyear10q6b,Do you go to bed at the same time every day?,RoutnSleep04
+qid_cohortcyear10q10,How many hours per week do you spend doing homework?,SchAct01
+qid_cohortcyear10q12f,How often do you spend time with friends browsing the Internet?,FrndActFrq05
+qid_cohortcyear10q9,How long does it take you to get to school each day?,RoutnTrav01
+qid_cohortcyear10q12h,"How often do you spend time doing activities outside of the home with grandparents, aunts/uncles and/or cousins?",FamActFrq03
+qid_cohortcyear10q20a,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about your school work?",WellSat06
+qid_cohortcyear10q20b,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about the way you look?",WellSat01
+qid_cohortcyear10q20e,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about your school overall?",WellSat05
+qid_cohortcyear10q20f,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about your life as a whole?",WellSat04
+qid_cohortcyear10q4,Have you completed one of our surveys before?,doneprev
+qid_cohortcyear10q20c,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about your family?",WellSat02
+qid_cohortcyear10q20d,"On a scale of 1 to 7 where ‘1’ means COMPLETELY HAPPY and ‘7’ means NOT AT ALL HAPPY, how do you feel about your friends?",WellSat03
+qid_cohortcyear10q12e,How often do you spend time with friends just ‘hanging out’?,FrndActFrq04
+qid_cohortcyear10q11b,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is going to school for keeping in touch with your friends?",FrndActAtt02
+qid_cohortcyear10q12c,How often do you do volunteer work?,PhilAct01
+qid_cohortcyear10q12b,How often do you play video games?,HobFrq01
+qid_cohortcyear10q12d,How often do you do chores at home?,FamActFrq28
+qid_cohortcyear10q34b,Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below. Welsh (1st Language),SchAchvSubj07
+qid_cohortcyear10q34c,Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below. Welsh (2nd Language),SchAchvSubj08
+qid_cohortcyear10q12a,How often do you read for fun?,HobFrq04
+qid_cohortcyear10q34f,Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below. Physics,SchAchvSubj06
+qid_cohortcyear10q34g,Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below. Science,SchAchvSubj03
+qid_cohortcyear10q11c,"On a scale of 1 to 7 where ‘1’ means VERY IMPORTANT and ‘7’ means NOT AT ALL IMPORTANT, how important is doing activities (like going to the cinema, sporting events) for keeping in touch with your friends?",FrndActAtt01
+qid_cohortcyear10q17c,"Please fill in the circles next to the subjects that you receive private tuition in : Humanities (Geography, History, etc.)",PrvtuSubj06
+qid_cohortcyear10q18a,How much do you like art at school?,SchSubjAtt05
+qid_cohortcyear10q23d,How often do you Watch Welsh TV or listen to Welsh radio outside of school?,CymActFrq03
+qid_cohortcyear10q17b,Please fill in the circles next to the subjects that you receive private tuition in : Foreign Languages,PrvtuSubj05
+qid_cohortcyear10q17e,Please fill in the circles next to the subjects that you receive private tuition in : Science,PrvtuSubj03
+qid_cohortcyear10q23c,How often do you Read Welsh books or magazines outside of school?,CymActFrq01
+qid_cohortcyear10q17d,Please fill in the circles next to the subjects that you receive private tuition in : Maths,PrvtuSubj02
+qid_cohortcyear10q17f,Please fill in the circles next to the subjects that you receive private tuition in : Welsh,PrvtuSubj04
+qid_cohortcyear10q17g,Please fill in the circles next to the subjects that you receive private tuition in : Other,PrvtuSubj07
+qid_cohortcyear10q18b,How much do you like Design and Technology at school?,SchSubjAtt06
+qid_cohortcyear10q23b,How often do you speak welsh with friends outside of school?,CymActFrq05
+qid_cohortcyear10q23a,How often do you speak Welsh with family outside of school?,CymActFrq04
+qid_cohortcyear10q23e,How often do you Visit Welsh websites outside of school?,CymActFrq02
+qid_cohortcyear11q5,Where were you born?,NatBirth01
+qid_cohortcyear11q6,Where was your mother born?,NatBirth03
+qid_cohortcyear11q12,Are you thinking about applying for university?,AspPostSch19
+qid_cohortcyear11q18,Have you been on a work experience placement through school?,AspAdvice16
+qid_cohortcyear11q22,Do you receive free school meals?,Deprive01
+qid_cohortcyear11q26,"In 2011, the European Union (EU) listed 10 problems facing the EU. These problems are listed below. Of these choices, which ONE do you think is the most important problem facing the EU today?",EngSoc07
+qid_cohortcyear11q27,"Do you know anyone who is serving, or has previously served, in the armed forces?",Military01
+qid_cohortcyear11q29d,How much do you agree with the following statement? We should not need charities because the government should help people.,PhilAtt04
+qid_cohortcyear11q29f,"How much do you agree with the following statement? The more money people have, the more they should give some of their money to charity.",PhilAtt07
+qid_cohortcyear11q32a,What was the last charity your school supported?,PhilAct03
+qid_cohortcyear11q33a,Are you involved in any clubs at school?,SchAct07
+qid_cohortcyear11q34b,"Please state how much you agree with the following statement. When I go out, my parents tell me I have to be home at a certain time.",Responsible06
+qid_cohortcyear11q40a,Which of the following best describes your religious beliefs?,Relig01
+qid_cohortcyear11q41,"Do you attend special events like baptisms, weddings and funerals that are associated with a religion?",Relig03
+qid_cohortcyear11q42,"Apart from special events like baptisms, weddings and funerals, how often do you attend services or meetings associated with a religion?",Relig04
+qid_cohortcyear11q29a,How much do you agree with the following statement? I would work for a charity.,PhilAtt06
+qid_cohortcyear11q29b,How much do you agree with the following statement? Charities help people I know.,PhilAtt01
+qid_cohortcyear11q29c,How much do you agree with the following statement? Charities play an important role in our country.,PhilAtt02
+qid_cohortcyear11q29e,How much do you agree with the following statement? Charities should do more to help people in other countries.,PhilAtt03
+qid_cohortcyear11q29g,How much do you agree with the following statement? Young people should give some of their time to charity.,PhilAtt05
+qid_cohortcyear11q34a,"Please state how much you agree with the following statement. Out of school, I am free to choose what clothes I want to wear.",Responsible05
+qid_cohortcyear11q34c,"Please state how much you agree with the following statement. When I have money, I am allowed to spend it however I want.",Money12
+qid_cohortcyear11q39a,Please state how much you agree with the following statement. Eating little or no meat is better for the environment.,EthicsAtt02
+qid_cohortcyear11q39b,Please state how much you agree with the following statement. Eating little or no meat is healthier.,EthicsAtt03
+qid_cohortcyear11q39c,Please state how much you agree with the following statement. eating little or no meat is better for animal welfare.,EthicsAtt01
+qid_cohortcyear11q16,Which ONE of the following choices below do teachers at your school most value?,SchStafAtt18
+qid_cohortcyear11q35,What kind of a home do you live in?,Deprive04
+qid_cohortcyear11q15a,"Please state how much you agree with the following statement. “I want to have more say in decisions at school about school uniforms.""",SchAtt24
+qid_cohortcyear11q15b,"Please state how much you agree with the following statement. “I want to have more say in decisions at school about the school timetable.""",SchAtt26
+qid_cohortcyear11q15c,"Please state how much you agree with the following statement. “I want to have more say in decisions at school about teacher appointments.""",SchStafAtt21
+qid_cohortcyear11q15d,"Please state how much you agree with the following statement. “I want to have more say in decisions at school about the food served at lunch.""",SchAtt25
+qid_cohortcyear11q15f,"Please state how much you agree with the following statement. “I want to have more say in decisions at school about how the teachers teach pupils.""",SchStafAtt20
+qid_cohortcyear11q17,How important is school for your chosen career?,SchAtt13
+qid_cohortcyear11q15e,"Please state how much you agree with the following statement. “I want to have more say in decisions at school about what I'm learning at school.""",SchLearnAtt16
+qid_cohortcyear11q36a,"On a scale of 1-5, with 1 being ""unacceptable"" and 5 being ""acceptable"", how acceptable is it to use animals in medical research.",EthicsAtt08
+qid_cohortcyear11q36b,"On a scale of 1-5, with 1 being ""unacceptable"" and 5 being ""acceptable"", how acceptable is it to hunt animals for sport?",EthicsAtt05
+qid_cohortcyear11q36d,"On a scale of 1-5, with 1 being ""unacceptable"" and 5 being ""acceptable"", how acceptable is it to hunt animals for food?",EthicsAtt04
+qid_cohortcyear11q36e,"On a scale of 1-5, with 1 being ""unacceptable"" and 5 being ""acceptable"", how acceptable is it to kill animals to stop the spread of disease?",EthicsAtt07
+qid_cohortcyear11q36c,"On a scale of 1-5, with 1 being ""unacceptable"" and 5 being ""acceptable"", how acceptable is it to kill animals for their dur?",EthicsAtt06
+qid_cohortcyear11q37a,Do you have pets at home?,AnimPet01
+qid_cohortcyear11q25b,"On a scale of 1-5, with 1 being ""not at all interested"" and 5 being ""very interested"", how interested are you in the politics of Wales?",EngPol06
+qid_cohortcyear11q25c,"On a scale of 1-5, with 1 being ""not at all interested"" and 5 being ""very interested"", how interested are you in the politics of the UK?",EngPol07
+qid_cohortcyear11q25d,"On a scale of 1-5, with 1 being ""not at all interested"" and 5 being ""very interested"", how interested are you in world politics?",EngPol08
+qid_cohortcyear11q28b,"On a scale of 1-5, with 1 being ""not at all"" and 5 being ""a lot"", how much do you look up to members of the armed forces?",ProfAtt05
+qid_cohortcyear11q9,Please indicate what you will be doing after Year 11.,AspPostSch04
+qid_cohortcyear11q25a,"On a scale of 1-5, with 1 being ""not at all interested"" and 5 being ""very interested"", how interested are you in local politics, such as your county/city/village?",EngPol05
+qid_cohortcyear11q28c,"On a scale of 1-5, with 1 being ""not at all"" and 5 being ""a lot"", how much do you look up to the police?",ProfAtt04
+qid_cohortcyear11q28a,"On a scale of 1-5, with 1 being ""not at all"" and 5 being ""a lot"", how much do you look up to doctors.",ProfAtt02
+qid_cohortcyear11q28d,"On a scale of 1-5, with 1 being ""not at all"", and 5 being ""a lot"", how much do you look up to teachers?",ProfAtt01
+qid_cohortcyear11q28e,"On a scale of 1-5, with 1 being ""not at all"" and 5 being ""a lot"", how much do you look up to politicians?",ProfAtt06
+qid_cohortcyear11q28f,"On a scale of 1-5, with 1 being ""not at all"", and 5 being ""a lot"", how much do you look up to nurses?",ProfAtt03
+qid_cohortcyear11q30,"If you were to donate £10 to a charity, which ONE type of charity would you give it to?",PhilAct04
+qid_cohortcyear11q20d,How confident are you when it comes to meeting new people?,WellConf03
+qid_cohortcyear11q20e,"How confident are you when it comes to speaking to authority figures (e.g. head teacher, police, etc.)?",WellConf06
+qid_cohortcyear11q4,What is the name of your school?,schnamestr
+qid_cohortcyear11q20a,"How confident are you when it comes to interviews (e.g. for college, university or jobs)?",WellConf02
+qid_cohortcyear11q37b,What kind of pets do you have?,AnimPet02
+qid_cohortcyear11q21,"From the options below, which ONE is the MOST important to you in your life at the moment?",WellValue19
+qid_cohortcyear11q2,What is your birthdate?,dobfull
+qid_cohortcyear11q20f,"How confident are you when it comes to being in charge of something (e.g. class project, etc.)?",WellConf01
+qid_cohortcyear11q3,What is your gender?,sex
+qid_cohortcyear11q20b,"How confident are you when it comes to public speaking (e.g. presentations, etc.)?",WellConf05
+qid_cohortcyear11q24f,How often do you go to a park with your family?,FamActFrq15
+qid_cohortcyear11q10,"If you are staying on in education, or doing an apprenticeship, where will you be doing your course after Year 11?",AspPostSch05
+qid_cohortcyear11q11,"If you are thinking about leaving full-time education, why might you leave at the end of Year 11?",AspPostSch18
+qid_cohortcyear11q14,What subject(s) might you study while at university?,AspPostSch22
+qid_cohortcyear11q31d,"Have you watched a TV programme that raised money for charity in the past year, month or week?",PhilAct07
+qid_cohortcyear11q13,"If yes, to which universities might you apply?",AspPostSch21
+qid_cohortdyear10q7a,How safe do you feel walking in your neighbourhood during the day?,NeighbAtt04
+qid_cohortdyear10q7b,How safe do you feel walking in your neighbourhood at night?,NeighbAtt05
+qid_cohortdyear10q13,Are you doing the Welsh Baccalaureate?,SchStdySubj61
+qid_cohortdyear10q20a,How often do you work for an employer?,EmpActFrq01
+qid_cohortdyear10q20b,How often do you do volunteer work?,PhilAct01
+qid_cohortdyear10q20c,How often do you do chores at home?,FamActFrq28
+qid_cohortdyear10q20d,"How often do you do occasional work for pocket money, including chores at home, work in a family business or farm, etc.?",Money04
+qid_cohortdyear10q20f,How often do you spend time with your friends browsing the internet?,FrndActFrq05
+qid_cohortdyear10q20g,How often do you spend time with your friends playing video games?,FrndActFrq06
+qid_cohortdyear10q21,Do you go to bed at the same time each school night?,RoutnSleep04
+qid_cohortdyear10q25a,How often do you go to school feeling tired?,RoutnSleep07
+qid_cohortdyear10q25b,"how often do you wake up at night to message a friend, or check messages, on the computer, a tablet or your phone?",RoutnSleep05
+qid_cohortdyear10q25c,How often do you eat breakfast before school starts?,RoutnFood04
+qid_cohortdyear10q25d,How often do you skip lunch at school?,RoutnFood05
+qid_cohortdyear10q28a,How do you feel about having friends of a different skin colour from you?,DiversAtt01
+qid_cohortdyear10q28b,How do you feel about having friends from countries outside of the UK?,DiversAtt11
+qid_cohortdyear10q28c,How do you feel about having friends from Northern Ireland.,DiversAtt10
+qid_cohortdyear10q28d,How do you feel about having friends from Scotland?,DiversAtt09
+qid_cohortdyear10q28e,How do you feel about having friends from England?,DiversAtt08
+qid_cohortdyear10q28f,How do you feel about having friends of a different gender from you?,DiversAtt05
+qid_cohortdyear10q28g,How do you feel about having friends of a different sexual orientation from you?,DiversAtt06
+qid_cohortdyear10q33,What kind of job do you want when you’re an adult?,AspCareer03
+qid_cohortdyear10q20e,"How often do you spend time with your friend and just ""hang out""?",FrndActFrq04
+qid_cohortdyear10q23,Do you get up for school at the same time every school day?,RoutnSleep02
+qid_cohortdyear10q34,If someone gave you £1 million today what would you do with it?,Money15
+qid_cohortdyear10q22,About what time did you go to bed last night?,RoutnSleep03
+qid_cohortdyear10q26c,How important do you think it is for Welsh to remain a living language?,CymAtt03
+qid_cohortdyear10q15b,How often do you do the following? Play games on a computer or games console.,HobFrq01
+qid_cohortdyear10q26a,How important do you think it is for you to learn Welsh?,CymAtt01
+qid_cohortdyear10q26b,How important do you think it is for you to speak Welsh?,CymAtt02
+qid_cohortdyear10q15e,How often do you do the following? use the internet for homework.,SchAct03
+qid_cohortdyear10q4c,"How often do you do the following with your friends? Send them messages on the computer, tablet or phone.",FrndCom06
+qid_cohortdyear10q15d,"How often do you do the following? Draw, paint or make things.",HobFrq08
+qid_cohortdyear10q15c,How often do you do the following? Play sport or active games.,HobFrq02
+qid_cohortdyear10q17e,"Do you receive private tuition for the following school subject? Humanities (Geography, History, etc.)",PrvtuSubj06
+qid_cohortdyear10q17f,Do you receive private tuition for the following school subject? Foreign Languages.,PrvtuSubj05
+qid_cohortdyear10q19,"How often do you discuss schoolwork with your friends through messaging (either on a computer, tablet or your phone)?",FrndCom04
+qid_cohortdyear10q4b,How often do you do the following with your friends? Speak with them over the phone.,FrndCom02
+qid_cohortdyear10q15a,How often do you do the following? Read for fun.,HobFrq04
+qid_cohortdyear10q18,"Approximately how many messages do you send and receive (either on a computer, tablet or your phone) per day?",FrndCom01
+qid_cohortdyear10q16b,"Do you take Sports (Rugby, horseback riding, martial arts, gymnastics, etc.) outside of school?",Hob06
+qid_cohortdyear10q20h,"How often do you spend time doing activities outside of the home with the following family members: Parents, brothers and/or sisters?",FamActFrq01
+qid_cohortdyear10q17a,Do you receive private tuition for the following school subject? English.,PrvtuSubj01
+qid_cohortdyear10q17b,Do you receive private tuition for the following school subject? Science.,PrvtuSubj03
+qid_cohortdyear10q16c,"Do you take Creative Arts (Painting, poetry, creative writing, sculpting, etc.) classes outside of school?",Hob01
+qid_cohortdyear10q17c,Do you receive private tuition for the following school subject? Maths.,PrvtuSubj02
+qid_cohortdyear10q2,About how many of your friends go to a different school from you? (Please enter a number),FrndDivers04
+qid_cohortdyear10q9e,Please choose the best response from the options below: My school rewards pupils who receive good marks or make good progress.,SchStafAtt16
+qid_cohortdyear10q16a,"Do you take Performing Arts (Singing, dancing, playing an instrument, etc.) classes outside of school?",Hob04
+qid_cohortdyear10q24,About what time did you wake up to get ready for school this morning?,RoutnSleep01
+qid_cohortdyear10q27e,How do you feel about the following part of your life? Your school overall.,WellSat05
+qid_cohortdyear10q27f,How do you feel about the following part of your life? Your life as a whole.,WellSat04
+qid_cohortdyear10q10m,How much do you like the following subjects at school? Religious Education.,SchSubjAtt13
+qid_cohortdyear10q6d,Please choose the best response from the options below: My family knows about what my friends and I do when we're together.,FrndActAtt08
+qid_cohortdyear10q12h,Please state how much you think the following activity helps you learn: working on projects that involve getting up out of your seat or going outside.,SchLearnAtt10
+qid_cohortdyear10q16e,"Do you take ICT/Design (Computer programming, Graphic design, etc.) classes outside of school?",Hob02
+qid_cohortdyear10q27a,How do you feel about the following part of your life? Your school work.,WellSat06
+qid_cohortdyear10q27b,How do you feel about the following part of your life? The way you look.,WellSat01
+qid_cohortdyear10q6a,Please choose the best response from the options below: I have better relationships with my friends than my family.,FrndAtt01
+qid_cohortdyear10q9i,Please choose the best response from the options below: school helps increase my interest in the politics of Wales.,SchAtt21
+qid_cohortdyear10q12g,Please state how much you think the following activity helps you learn: working on projects that involve a lot of class or group discussion.,SchLearnAtt09
+qid_cohortdyear10q27c,How do you feel about the following part of your life? Your family.,WellSat02
+qid_cohortdyear10q27d,How do you feel about the following part of your life? Your friends.,WellSat03
+qid_cohortdyear10q9d,Please choose the best response from the options below: My views are listened to and taken seriously by the school staff.,SchStafAtt05
+qid_cohortdyear10q14a,Please state if you agree or disagree with the following statement: I think the work I do in school now will help me achieve my future goals.,SchAtt14
+qid_cohortdyear10q4a,How often do you do the following with your friends? Speak with them face to face.,FrndCom03
+qid_cohortdyear10q6b,Please choose the best response from the options below: I have at least one good friend that I can really trust.,FrndAtt03
+qid_cohortdyear10q14c,"Please state if you agree or disagree with the following statement: When I'm older, I will have good memories of attending this school.",SchAtt12
+qid_cohortdyear10q10j,How much do you like the following subjects at school? Geography.,SchSubjAtt08
+qid_cohortdyear10q12f,Please state how much you think the following activity helps you learn: working on projects without detailed instructions.,SchLearnAtt12
+qid_cohortdyear10q14b,Please state if you agree or disagree with the following statement: The things I learn in school now help me in my day-to-day life.,SchLearnAtt13
+qid_cohortdyear10q16d,"Do you take Languages (Welsh, Foreign languages, etc.) classes outside of school?",Hob03
+qid_cohortdyear10q9c,Please choose the best response from the options below: The school staff set goals I can easily achieve.,SchStafAtt10
+qid_cohortdyear10q9h,"Please choose the best response from the options below: school helps me develop my own sense of ""Welshness"".",SchAtt23
+qid_cohortdyear10q31b,"When you are an adult, do you think you will live in the same neighbourhood as you do now?",AspLikely06
+qid_cohortdyear10q31g,"When you are an adult, do you think you will volunteer some of your time to help others?",AspLikely09
+qid_cohortdyear10q3,"Are your friends mostly boys, mostly girls, or a mixture of boys and girls?",FrndDivers01
+qid_cohortdyear10q9b,Please choose the best response from the options below: The school staff have high expectations of me.,SchStafAtt08
+qid_cohortdyear10q10d,How much do you like the following subjects at school? English.,SchSubjAtt01
+qid_cohortdyear10q10e,How much do you like the following subjects at school?Science.,SchSubjAtt03
+qid_cohortdyear10q10i,How much do you like the following subjects at school? History.,SchSubjAtt09
+qid_cohortdyear10q12e,Please state how much you think the following activity helps you learn: working on projects with detailed instructions.,SchLearnAtt11
+qid_cohortdyear10q9a,Please choose the best response from the options below: The school staff cares about how much I improve in my studies.,SchStafAtt11
+qid_cohortdyear10q9g,Please choose the best response from the options below: school helps me appreciate living in Wales.,SchAtt22
+qid_cohortdyear10q6c,"Please choose the best response from the options below: Overall, my family approves of my friends.",FrndAtt02
+qid_cohortdyear10q9k,"Please choose the best response from the options below: overall, I feel I make a good effort in class.",SchAtt16
+qid_cohortdyear10q10a,How much do you like the following subjects at school? Music.,SchSubjAtt11
+qid_cohortdyear10q10f,How much do you like the following subjects at school? Maths.,SchSubjAtt02
+qid_cohortdyear10q10k,How much do you like the following subjects at school? Foreign Languages.,SchSubjAtt07
+qid_cohortdyear10q31e,"When you are an adult, do you think you will have graduated from university?",AspLikely04
+qid_cohortdyear10q12a,Please state how much you think the following activity helps you learn: taking notes while the teacher talks.,SchLearnAtt05
+qid_cohortdyear10q9l,Please choose the best response from the options below: I feel safe at school.,SchAtt19
+qid_cohortdyear10q9f,Please choose the best response from the options below: The school staff make school fun.,SchStafAtt09
+qid_cohortdyear10q30,"By the time you are 30 years old, which one of the following would you most like to have achieved?",AspAchv01
+qid_cohortdyear10q31c,"When you are an adult, do you think you will live abroad?",AspLikely05
+qid_cohortdyear10q31d,"When you are an adult, do you think you will have a family of your own?",AspLikely02
+qid_cohortdyear10q31f,"When you are an adult, do you think you will be financially ""well-off""?",AspLikely01
+qid_cohortdyear10q31i,"When you are an adult, do you think you will have a job that you will enjoy?",AspLikely03
+qid_cohortdyear10q12c,Please state how much you think the following activity helps you learn: working with a partner.,SchLearnAtt07
+qid_cohortdyear10q12d,Please state how much you think the following activity helps you learn: working individually.,SchLearnAtt06
+qid_cohortdyear11q8,Approximately how many hours a week do you spend doing homework?,SchAct01
+qid_cohortdyear11q10a,How often do you do the following outside school? Speak Welsh with friends and/or family.,CymActFrq05
+qid_cohortdyear11q10b,How often do you do the following outside school? Read Welsh books or magazines?,CymActFrq01
+qid_cohortdyear11q10c,How often do you do the following outside school? Watch Welsh TV or listen to Welsh radio?,CymActFrq03
+qid_cohortdyear11q10d,How often do you do the following outside school? Surf Welsh websites.,CymActFrq02
+qid_cohortdyear11q12,Please indicate what you will be doing after year 11.,AspPostSch04
+qid_cohortdyear11q16,What would be your ideal job?,AspCareer04
+qid_cohortdyear11q17,How likely do you think it is that you will get this job?,AspCareer06
+qid_cohortdyear11q18,How much do you think you will earn in this job?,AspCareer05
+qid_cohortdyear11q21,What is the one thing you spend most of your money on?,Money13
+qid_cohortdyear11q22a,Do you go to bed at the same time every school night?,RoutnSleep04
+qid_cohortdyear11q22b,Do you get up for school at the same time every school day?,RoutnSleep02
+qid_cohortdyear11q24,About what time did you get up to get ready for school this morning?,RoutnSleep01
+qid_cohortdyear11q26a,How often are you bullied at school?,BullySch01
+qid_cohortdyear11q26c,How often are you bullied outside school?,Bully01
+qid_cohortdyear11q26d,How often do you bully others outside school?,Bully03
+qid_cohortdyear11q28a,To what extent do you agree with the following statement: My school deals effectively with pupils conflicts.,SchStafAtt14
+qid_cohortdyear11q28b,To what extent do you agree with the following statement: My school deals effectively with bullying.,BullySch08
+qid_cohortdyear11q28c,To what extent do you agree with the following statement: My school deals effectively with pupils’ poor behaviour.,SchStafAtt15
+qid_cohortdyear11q9a,Please state to what extent you agree or disagree with the following statement: I am more confident speaking in Welsh than I was a year ago.,CymAtt11
+qid_cohortdyear11q9b,Please state to what extent you agree or disagree with the following statement: I am more confident writing in Welsh than I was a year ago.,CymAtt12
+qid_cohortdyear11q9c,Please state to what extent you agree or disagree with the following statement: I am more confident reading in Welsh than I was a year ago.,CymAtt10
+qid_cohortdyear11q26b,How often do you bully others at school?,BullySch03
+qid_cohortdyear11q19d,"How often do you do occasional work for pocket money (chores, work in family business, farm etc).",Money04
+qid_cohortdyear11q25a,"On a scale of 1 – 7, where “1” means completely happy and “7” means not at all happy, how do you feel about the following part of your life? Your school work.",WellSat06
+qid_cohortdyear11q25b,"On a scale of 1 – 7, where “1” means completely happy and “7” means not at all happy, how do you feel about the following part of your life? The way you look.",WellSat01
+qid_cohortdyear11q25d,"On a scale of 1 – 7, where “1” means completely happy and “7” means not at all happy, how do you feel about the following part of your life? Your friends.",WellSat03
+qid_cohortdyear11q25e,"On a scale of 1 – 7, where “1” means completely happy and “7” means not at all happy, how do you feel about the following part of your life? Your school overall.",WellSat05
+qid_cohortdyear11q25c,"On a scale of 1 – 7, where “1” means completely happy and “7” means not at all happy, how do you feel about the following part of your life? Your family.",WellSat02
+qid_cohortdyear11q25f,"On a scale of 1 – 7, where “1” means completely happy and “7” means not at all happy, how do you feel about the following part of your life? Your life as whole",WellSat04
+qid_cohortdyear11q15f,To what extent have the following influenced your thoughts about what you will be doing next? Further education college staff?,AspCareer13
+qid_cohortdyear11q19a,How often do you work for an employer?,EmpActFrq01
+qid_cohortdyear11q15b,To what extent have the following influenced your thoughts about what you will be doing next? Brothers/sisters.,AspCareer09
+qid_cohortdyear11q15e,To what extent have the following influenced your thoughts about what you will be doing next? Careers teachers.,AspCareer12
+qid_cohortdyear11q19b,How often do you do voluntary work?,PhilAct01
+qid_cohortdyear11q15h,To what extent has the following influenced your thoughts about what you will be doing next? An employment agency.,AspCareer15
+qid_cohortdyear11q19c,How often do you do chores at home?,FamActFrq28
+qid_cohortdyear11q15d,To what extent has the following influenced your thoughts about what you will be doing next? Teachers at school.,AspCareer11
+qid_cohortdyear11q15g,"To what extent have the following influenced your thoughts about what you will be doing next? ""Careers Wales"".",AspCareer14
+qid_cohortdyear11q20b,About how much money per week do you get from the following source? Paid employment.,Money06
+qid_cohortdyear11q20c,About how much money per week do you get from the following source? Chores at home.,Money07
+qid_cohortdyear11q20a,About how much money per week do you get from the following source? Pocket money.,Money05
+qid_cohortdyear11q15c,To what extent has the following influenced your thoughts about what you will be doing next? Friends.,AspCareer10
+qid_cohortdyear11q15a,To what extent has the following influenced your thoughts about what you will be doing next? Parents.,AspCareer08
+qid_cohortdyear11q14c,What subject(s) would you like to study?,AspPostSch22
+qid_cohortdyear11q14a,Are you thinking about applying for university?,AspPostSch19
+qid_cohortdyear11q27g,How many days in a typical week are you bullied while using this app?,Bully11
+qid_cohortdyear11q14b,"If you are, which one(s) are you considering applying to?",AspPostSch21
+qid_cohortdyear11q27h,How many days in a typical week do you bully others using this app?,Bully12
+qid_cohortdyear11q27f,How many days in a typical week do you use this app?,Bully10
+qid_cohortdmoversq20,Are any of your jobs temporary?,EmpAct02
+qid_cohortdmoversq38,Do you think the voting age in Wales should be lowered to 16?,EngPol02
+qid_cohortdmoversq47g,When you are older do you think you will: speak Welsh.,AspLikely08
+qid_cohortdmoversq47h,When you are older do you think you will: have a job that you will enjoy?,AspLikely03
+qid_cohortdmoversq48,Do you have a career plan?,AspCareer02
+qid_cohortdmoversq41,"If you have recently signed a petition, what was the issue?",EngSoc04
+qid_cohortdmoversq42,What is the likelihood you will go to university in the next three years?,AspPostSch20
+qid_cohortdmoversq44,"If you are not intending to apply for university next year, do you think you will apply for university at some point in the future?",AspPostSch23
+qid_cohortdmoversq45,What subject would you like to study at university?,AspPostSch22
+qid_cohortdmoversq47a,When you are older do you think you will: live in Wales?,AspLikely07
+qid_cohortdmoversq47b,When you are older do you think you will: live in the same neighbourhood as you do now?,AspLikely06
+qid_cohortdmoversq47d,When you are older do you think you will: have a family of your own?,AspLikely02
+qid_cohortdmoversq32,Please tell us about one incident in the past year that has made you sad.,WellFeel29
+qid_cohortdmoversq14,What is the best thing about living in Wales?,CymAtt17
+qid_cohortdmoversq3,Are you male or female?,sex
+qid_cohortdmoversq31,Please tell us about one incident in the past year that has made you happy.,WellFeel28
+qid_cohortdmoversq36a,Is there one particular topical issue that you feel strongly about?,EngSoc05
+qid_cohortdmoversq47f,When you are older do you think you will: volunteer some of your time to help others?,AspLikely09
+qid_cohortdmoversq9,About what time did you go to bed last night?,RoutnSleep03
+qid_cohortdmoversq17,"On average, how many hours a week do you do paid work?",EmpAct04
+qid_cohortdmoversq10,About what time did you wake up this morning?,RoutnSleep01
+qid_cohortdmoversq26,Which courses and qualifications are you doing this year? (please list them here),SchStdySubj01
+qid_cohortdmoversq18,Please list the job(s) that you have below:,EmpAct01
+qid_cohortdmoversq24,If you could change anything about your last year of school what would it be?,SchAtt18
+qid_cohortdmoversq15,What is the worst thing about living in Wales?,CymAtt18
+qid_cohortdmoversq33,Do you think you are well informed about current affairs?,EngSoc01
+qid_cohortdmoversq35,Politics affects my life:,EngPol09
+qid_cohortdmoversq47e,"When you are older do you think you will: be financially ""well-off?""",AspLikely01
+qid_cohortdmoversq21,Do you think you will still be doing the same type of job in five years’ time?,AspCareer07
+qid_cohortdmoversq13,Have you lived in Wales all of your life?,CymAtt16
+qid_cohortdmoversq43,"If you answered over 0% for the last question, what university would you most like to go to?",AspPostSch21
+qid_cohortdmoversq25a,Please indicate the most relevant response to this statement: I am resitting or planning to re-sit some of my GCSE courses.,SchAchv04
+qid_cohortdmoversq23,"Thinking about your GCSE results, please indicate how pleased or disappointed you were:",SchAchv03
+qid_cohortdmoversq25b,Please indicate the most relevant response to this statement: I wish I'd worked harder for my GCSEs.,SchAchv22
+qid_cohortdmoversq25c,Please indicate the most relevant response to this statement: I wish I hadn't worked as hard for my GCSEs.,SchAchv05
+qid_cohortdmoversq46,What job would you like in the future?,AspCareer03
+qid_cohortdmoversq19,Do any of your jobs have a ‘zero hours’ contract?,EmpAct03
+qid_cohortdmoversq49,What do you see yourself doing in five years’ time?,AspTime01
+qid_cohortdmoversq22,How much do you enjoy your job?,EmpActAtt01
+qid_cohortdmoversq16c,"On a scale of 1 (very comfortable) to 5 (very uncomfortable), how do you feel when you hear: people in Wales speaking to each other in a language other than English or Welsh.",DiversAtt15
+qid_cohortdmoversq16d,"On a scale of 1 (very comfortable) to 5 (very uncomfortable), how do you feel when you hear: people in Wales, with an accent different from yours, speaking to each other in English.",DiversAtt13
+qid_cohortdmoversq16b,"On a scale of 1 (very comfortable) to 5 (very uncomfortable), how do you feel when you hear: people in Wales, with the same accent as you, speaking to each other in English.",DiversAtt12
+qid_cohortdmoversq16a,"On a scale of 1 (very comfortable) to 5 (very uncomfortable), how do you feel when you hear: people in Wales speaking to each other in Welsh.",DiversAtt14
+qid_cohortdmoversq5,What is the name of your school or college?,schnamestr
+qid_cohortdmoversq40a,Do you think it matters who is in charge of the country?,EngSoc02
+qid_cohortdmoversq4,Have you taken one of our surveys before?,doneprev
+qid_cohortdmoversq29f,How do you feel about the following part of your life? Your school/college overall.,WellSat05
+qid_cohortdmoversq40b,Are you a member of any political groups?,EngPol10
+qid_cohortdmoversq29e,How do you feel about the following part of your life? Your school/college work.,WellSat06
+qid_cohortdmoversq29d,How do you feel about the following part of your life? Your life as a whole.,WellSat04
+qid_cohortdmoversq7,Do you go to bed at the same time every school or college night?,RoutnSleep04
+qid_cohortdmoversq29a,How do you feel about the following part of your life? The way you look.,WellSat01
+qid_cohortdmoversq29c,How do you feel about the following part of your life? Your friends.,WellSat03
+qid_cohortdmoversq29b,How do you feel about the following part of your life? Your family.,WellSat02
+qid_cohortdmoversq8,Do you get up at the same time every school or college day?,RoutnSleep02
+qid_cohortdmoversq40c,Have you signed any petitions?,EngSoc03

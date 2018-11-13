@@ -18,7 +18,7 @@ def insert_data_sj():
     questions = models.Question.objects.filter(qid__contains='question')
     print 'questions found: ',questions
     # open the csv lookup file
-    importfile = csv.DictReader(open("TestDataInsert.csv"))
+    importfile = csv.DictReader(open("DataPortalWISEdVarNames.csv"))
     print 'import file: ',importfile
     # Iterate through every question in the database.
     for question in questions:

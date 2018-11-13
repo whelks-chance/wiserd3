@@ -19,7 +19,7 @@ def insert_data_sj():
     print 'questions found: ',questions
     # open the csv lookup file
     importfile = csv.DictReader(open("DataPortalWISEdVarNames.csv"))
-    print 'import file: ',importfile
+    print 'import file: ', importfile
     # Iterate through every question in the database.
     for question in questions:
         print "Start loop through questions"

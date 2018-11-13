@@ -37,8 +37,8 @@ def insert_data_sj():
             else:
                 # Otherwise, move on to next record.
                 pass
-    ### for row in importfile:
-    ###     print row['ID']
+    for row in importfile:
+        print row['ID']
 
 
 if __name__ == "__main__":

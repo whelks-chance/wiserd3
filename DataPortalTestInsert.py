@@ -29,7 +29,7 @@ def insert_data_sj():
         #Iterate through every row in the import file
         for row in importfile:
             # Get the new variable name and the qid from the import file.
-            varname = row['VarName']
+            varname = row['varname']
             importid = row['qid']
             # If the import file qid matches the database qid
             if importid == questionid:

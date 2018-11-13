@@ -1,4 +1,4 @@
-qid,Label,VarName
+qid,label,varname
 qid_cohortayear2q16,Have you ever visited any of these places with your family?,"FamAct[00], Hob[00]"
 qid_cohortayear2q1,Circle your age below.,age
 qid_cohortayear3q24,How did you get to school this morning?,RoutnTrav[00]

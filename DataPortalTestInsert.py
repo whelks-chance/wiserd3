@@ -16,7 +16,7 @@ def insert_data_sj():
     #__contains is the equivalent of 'like' in SQL.
     # If you want an exact match just do qid = ****
     questions = models.Question.objects.filter(qid__contains='question')
-    print 'questions found: ',questions
+    print 'questions found: ', questions
     # open the csv lookup file
     importfile = csv.DictReader(open("DataPortalWISEdVarNames.csv"))
     print 'import file: ', importfile
@@ -25,7 +25,7 @@ def insert_data_sj():
         print "Start loop through questions"
         # To access a field in the question use .fieldname
         questionid = question.qid
-        print 'Testing: ',questionid
+        print 'Testing: ', questionid
         #Iterate through every row in the import file
         for row in importfile:
             # Get the new variable name and the qid from the import file.

@@ -16,13 +16,14 @@ def insert_data_sj():
     # If you want an exact match just do qid = ****
     questions = models.Question.objects.filter(qid__contains='qid_cohort')
     # open the csv lookup file
-    importfile = csv.DictReader(open("TestDataInsert.csv"))
+
     # Iterate through every question in the database.
     for question in questions:
         # To access a field in the question use .fieldname
         questionid = question.qid
         print 'Testing: ',questionid
         #Iterate through every row in the import file
+        importfile = csv.DictReader(open("TestDataInsert.csv"))
         for row in importfile:
             # Get the new variable name and the qid from the import file.
             varname = row['varname']

@@ -32,6 +32,7 @@ def insert_data_sj():
                 print 'importid matches: ', importid
                 # Update the database.
                 # Find the correct question ID to update. Update the variable name in that question
+                print 'input data: ', row
                 models.Question.objects.filter(qid=questionid).update(variableid=varname)
                 # print 'Output question: ',question
             else:

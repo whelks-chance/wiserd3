@@ -23,10 +23,11 @@ def insert_data_sj():
         questionid = question.qid
         print 'Testing: ',questionid
         #Iterate through every row in the import file
-        importfile = csv.DictReader(open("TestDataInsert.csv"))
+        importfile = csv.DictReader(open("themes.csv"))
         for row in importfile:
             # Get the new variable name and the qid from the import file.
-            varname = row['varname']
+            # varname = row['varname']
+            themes = row['themes']
             importid = row['qid']
             # If the import file qid matches the database qid
             if importid == questionid:
@@ -34,7 +35,8 @@ def insert_data_sj():
                 # Update the database.
                 # Find the correct question ID to update. Update the variable name in that question
                 print 'input data: ', row
-                models.Question.objects.filter(qid=questionid).update(variableid=varname)
+                # models.Question.objects.filter(qid=questionid).update(variableid=varname)
+                models.Question.objects.filter(qid=questionid).update(notes=themes)
                 # print 'Output question: ',question
             else:
                 # Otherwise, move on to next record.

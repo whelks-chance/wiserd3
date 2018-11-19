@@ -192,43 +192,7 @@
                     {#                            {'data': 'thematic_tags'},#}
                     {'data': 'type'},
                     {'data': 'notes'},
-                    {
-                        "targets": -4,
-                        "data": null,
-                        "render": function ( data, type, full, meta ) {
-                            {# if (data['from_name'] != null && data['from_name'].trim() != '' && data['from_name'].trim() != 'N/A' ) {#}
-                            if (data['link_from_name'] && data['link_from_name'].length > 0 && data['link_from_name'] != '' ) {
-                                return "<div class='btn btn-info search_from'>{% trans 'Previous' %}</div>";
-                            } else {
-                                return ""
-                            }
-                        }
-                    },
-                    {
-                        "targets": -3,
-                        "data": null,
-                        "render": function ( data, type, full, meta ) {
-                            {# if (data['subof_name'] != null && data['subof_name'].trim() != '' && data['subof_name'].trim() != 'N/A' ) {#}
-                            if (data['sub_of_name'] && data['sub_of_name'].length > 0 && data['sub_of_name'] != '' ) {
-                                return "<div class='btn btn-info search_parent'>{% trans 'Parent' %}</div>";
-                            } else {
-                                return ""
-                            }
-                        }
-                    },
-                    {
-                        "targets": -2,
-                        "data": 'metadatatoremotemapping__remote_dataset__dataset_identifier',
-                        "render": function ( data, type, full, meta ) {
-                            if (data) {
-
-                                return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
-                                        "href='/map?rd_srcs=Nomis&rd_ids=" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Map Dataset' %}</a>";
-                            } else {
-                                return ''
-                            }
-                        }
-                    },
+                    {'data': 'variableid'},
                     {
                         "targets": -1,
                         "data": 'qid',
@@ -416,10 +380,10 @@
                                                 <th>{% trans 'Question Number' %}</th>
                                                 <th>{% trans 'QuestionText' %}</th>
                                                 <th>{% trans 'Type' %}</th>
-                                                <th>{% trans 'Notes' %}</th>
-                                                <th>{% trans 'From' %}</th>
-                                                <th>{% trans 'SubOf' %}</th>
-                                                <th>{% trans 'Map It' %}</th>
+                                                <th>{% trans 'Question Themes' %}</th>
+                                                <th>{% trans 'Variable ID' %}</th>
+{#                                                <th>{% trans 'SubOf' %}</th>#}
+{#                                                <th>{% trans 'Map It' %}</th>#}
                                                 <th>{% trans 'View' %}</th>
                                             </tr>
                                             </thead>

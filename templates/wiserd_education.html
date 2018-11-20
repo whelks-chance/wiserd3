@@ -21,6 +21,7 @@
 
 
             var questions_table = $('#questions_table').DataTable({
+                    "order":[[0, "asc"]],
                 serverSide: false,
                 processing: true,
                 "oLanguage": datatables_language,
@@ -100,6 +101,7 @@
 
 
             var survey_table = $('#survey_table').DataTable({
+                "order":[[1, "asc"]],
                 serverSide: false,
                 processing: true,
                 "bAutoWidth": false,

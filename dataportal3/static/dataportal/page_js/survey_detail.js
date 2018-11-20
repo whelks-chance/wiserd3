@@ -167,7 +167,7 @@ function do_wordcloud(element_name, survey_api_url) {
     function showNewWords(vis, i) {
         i = i || 0;
         vis.update(getWords(i ++ % words.length));
-        setTimeout(function() { showNewWords(vis, i + 1)}, 2000000000)
+        setTimeout(function() { showNewWords(vis, i + 1)}, 2000)
     }
     var myWordCloud = wordCloud(element_name);
     showNewWords(myWordCloud);

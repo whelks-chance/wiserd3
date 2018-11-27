@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-#import base64
+# import base64
 import zipfile
-#from datetime import datetime
+# from datetime import datetime
 import json
 import os
 import pprint
@@ -56,6 +56,7 @@ import redis
 
 redis_cache = redis.StrictRedis(host=REDIS_DATA_CACHE_HOST, port=REDIS_DATA_CACHE_PORT, db=REDIS_DATA_CACHE_DB)
 
+
 def dashboard(request):
     tech_blog_posts = ''
     wiserd_blog_posts = ''
@@ -78,7 +79,7 @@ def dashboard(request):
                       'wiserd_blog_posts': wiserd_blog_posts,
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
-                  },context_instance=RequestContext(request))
+                  }, context_instance=RequestContext(request))
 
 
 # def user_settings(request):
@@ -294,7 +295,8 @@ def blank(request):
 def survey_detail(request, survey_id):
     user_profile = get_request_user(request)
 
-    search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=survey_id, type='survey')
+    search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=survey_id,
+                                                                       type='survey')
     search.save()
 
     # Check if we're allowed to show this data
@@ -302,6 +304,43 @@ def survey_detail(request, survey_id):
 
     if allowed:
         return render(request, 'survey_detail.html',
+                      {
+                          'preferences': get_user_preferences(request),
+                          'searches': get_user_searches(request),
+                          'survey_id': survey_id,
+                          'access_allow': {
+                              'method': 'survey_detail',
+                              'survey_id': survey_id,
+                              'document_type': 'survey',
+                              'access_data': access_data
+                          }
+                      }, context_instance=RequestContext(request))
+    else:
+        return render(request, 'access_fail.html',
+                      {
+                          'preferences': get_user_preferences(request),
+                          'searches': get_user_searches(request),
+                          'access_fail': {
+                              'method': 'survey_detail',
+                              'survey_id': survey_id,
+                              'document_type': 'survey',
+                              'access_data': access_data
+                          }
+                      }, context_instance=RequestContext(request))
+
+
+def wep_survey_detail(request, survey_id):
+    user_profile = get_request_user(request)
+
+    search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=survey_id,
+                                                                       type='survey')
+    search.save()
+
+    # Check if we're allowed to show this data
+    allowed, access_data = survey_visible_to_user(survey_id, user_profile)
+
+    if allowed:
+        return render(request, 'wep_survey_detail.html',
                       {
                           'preferences': get_user_preferences(request),
                           'searches': get_user_searches(request),
@@ -440,7 +479,9 @@ def map_search(request):
             print 'survey_id', survey_id
             print 'boundaries[idx]', boundaries[idx]
 
-            link_table_data = models.SpatialSurveyLink.objects.filter(survey__identifier=survey_id, boundary_name=boundaries[idx]).values_list('data_name', flat=True)
+            link_table_data = models.SpatialSurveyLink.objects.filter(survey__identifier=survey_id,
+                                                                      boundary_name=boundaries[idx]).values_list(
+                'data_name', flat=True)
             # datas = []
             print 'data available for ', survey_id, list(link_table_data)
             # for links in link_table:
@@ -501,7 +542,6 @@ def map_search(request):
                     'src': remote_data_sources[count]
                 }
             )
-
 
     # TODO remove hard coded uids especially if they're not unique
     naw_key_searches = [
@@ -624,10 +664,32 @@ def question(request, question_id):
     # user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
 
     user_profile = get_request_user(request)
-    search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=question_id, type='question')
+    search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=question_id,
+                                                                       type='question')
     search.save()
 
     return render(request, 'question_detail.html',
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request),
+                      'question_id': question_id
+                  },
+                  context_instance=RequestContext(request))
+
+
+def wep_question(request, question_id):
+    # print request.user
+    # user = auth.get_user(request)
+    # if type(user) is AnonymousUser:
+    #     user = get_anon_user()
+    # user_profile, created = models.UserProfile.objects.using('new').get_or_create(user=user)
+
+    user_profile = get_request_user(request)
+    search, created = models.Search.objects.using('new').get_or_create(user=user_profile, query=question_id,
+                                                                       type='question')
+    search.save()
+
+    return render(request, 'wep_question_detail.html',
                   {
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request),
@@ -721,7 +783,6 @@ def edit_metadata(request):
 
 @csrf_exempt
 def get_imported_feature(request):
-
     rd = RemoteData()
     a = rd.get_test_data('van', 'parl2011')
     a = json.dumps(a, indent=4)
@@ -953,7 +1014,6 @@ def get_wiserd_layer_topojson(
 
 @csrf_exempt
 def get_geojson(request):
-
     print request.POST
 
     # time1 = datetime.now()
@@ -1016,7 +1076,6 @@ def get_geojson(request):
             # shape_list = list(geojson_layers)
             shape_list = geojson_layers
             print geojson_layers.query
-
 
     # print shape_list
     # print type(shape_list[0])
@@ -1085,7 +1144,6 @@ def get_geojson(request):
 
 
 def file_management(request):
-
     user_shapefiles = models.ShapeFileUpload.objects.filter(user=get_request_user(request))
 
     return render(request, 'file_management.html',
@@ -1137,6 +1195,7 @@ def upload_shapefile(request):
                   },
                   context_instance=RequestContext(request))
 
+
 # @csrf_exempt
 # def get_upload_progress(request):
 #     cache_key = "%s_%s" % (request.META['REMOTE_ADDR'], request.GET['X-Progress-ID'])
@@ -1155,7 +1214,6 @@ def shapefile_list(request):
 
 @csrf_exempt
 def new_spatial_search(request):
-
     geo_wkt = request.POST.getlist('geography', '')
 
     #  OSGB WGS84
@@ -1206,7 +1264,7 @@ def logout(request):
         auth.logout(request)
         msg = 'You have successfully logged out'
         logout_success = True
-    #do logout
+    # do logout
     return render(request, 'dashboard.html',
                   {'logout_success': logout_success, 'msg': msg},
                   context_instance=RequestContext(request))
@@ -1227,7 +1285,8 @@ def profile(request):
                       'searches': get_user_searches(request),
                       'userr': userr,
                       'userr_dict': userr.__dict__,
-                  },context_instance=RequestContext(request))
+                  }, context_instance=RequestContext(request))
+
 
 # TODO way too casual
 @csrf_exempt
@@ -2331,12 +2390,13 @@ def search_qual_api(request):
 
 
 def qual_search(search_terms):
-
     fields = ['identifier']
     if search_terms:
         qual_models = models.QualTranscriptData.objects.filter(
             dc_info__qualcalais__value__icontains=search_terms
-        ).distinct('identifier').prefetch_related('dc_info').values('identifier', 'pages', 'dc_info__title', 'dc_info__date', 'dc_info__tier', 'dc_info__description')
+        ).distinct('identifier').prefetch_related('dc_info').values('identifier', 'pages', 'dc_info__title',
+                                                                    'dc_info__date', 'dc_info__tier',
+                                                                    'dc_info__description')
     else:
         qual_models = models.QualTranscriptData.objects.none()
 
@@ -2378,7 +2438,13 @@ def qual_transcript(request, qual_id):
 
 @csrf_exempt
 def qual_dc_data(request, qual_id):
-    qual_dc_models = models.QualDcInfo.objects.all().filter(identifier=qual_id).values("identifier", "title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "source", "language", "relation", "coverage", "rights", "user_id", "created")
+    qual_dc_models = models.QualDcInfo.objects.all().filter(identifier=qual_id).values("identifier", "title", "creator",
+                                                                                       "subject", "description",
+                                                                                       "publisher", "contributor",
+                                                                                       "date", "type", "format",
+                                                                                       "source", "language", "relation",
+                                                                                       "coverage", "rights", "user_id",
+                                                                                       "created")
 
     quals = []
     for dc_model in qual_dc_models:
@@ -2400,7 +2466,6 @@ def qual_metadata(request, qual_id):
     qual_trans_models = models.QualTranscriptData.objects.all().filter(identifier=qual_id)
     quals = []
     for qual_model in qual_trans_models:
-
         # print model_to_dict(qual_model)
 
         qual_details = {
@@ -2408,7 +2473,7 @@ def qual_metadata(request, qual_id):
             'qual_id': qual_id
         }
 
-        qual_calais = qual_model.dc_info.qualcalais_set.values('value', 'lat', 'lon', 'tagName', 'gazetteer','count')
+        qual_calais = qual_model.dc_info.qualcalais_set.values('value', 'lat', 'lon', 'tagName', 'gazetteer', 'count')
         # print type(qual_calais), qual_calais
         qual_details['calais'] = list(qual_calais)
 
@@ -2438,7 +2503,85 @@ def spatial_search(request):
 
     # A test set of data for if we don't want to wait for the DB
     if test_available and (len(request.POST.get('test', '')) or len(geography_wkt) == 0):
-        response_data = {'data': [{'area': u'Wales', 'survey_short_title': u'WERS', 'date': '2005 / 04 / 30', 'survey_id': u'sid_wersmq2004', 'survey_id_full': u'sid_wersmq2004                                                                                                                                                                                                                                                 ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31', 'survey_id': u'sid_whs2008_412', 'survey_id_full': u'sid_whs2008_412                                                                                                                                                                                                                                                ', 'areas': []}, {'area': '', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31', 'survey_id': u'sid_whs2007_03', 'survey_id_full': u'sid_whs2007_03                                                                                                                                                                                                                                                 ', 'areas': []}, {'area': u'Gwent, Monmouthshire, South East Wales, NP152, South Wales, W01001581', 'survey_short_title': u'LiW Property', 'date': '2004 / 10 / 04', 'survey_id': u'sid_liwps2004', 'survey_id_full': u'sid_liwps2004                                                                                                                                                                                                                                                  ', 'areas': [u'NP152', u'Gwent', u'South East Wales', u'Monmouthshire', u'South Wales', u'W01001581']}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31', 'survey_id': u'sid_whs2009_03', 'survey_id_full': u'sid_whs2009_03                                                                                                                                                                                                                                                 ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31', 'survey_id': u'sid_whs2007aq', 'survey_id_full': u'sid_whs2007aq                                                                                                                                                                                                                                                  ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2005 / 09 / 30', 'survey_id': u'sid_whs0306aq', 'survey_id_full': u'sid_whs0306aq                                                                                                                                                                                                                                                  ', 'areas': [u'Monmouthshire', u'Monmouthshire']}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31', 'survey_id': u'sid_whs2008_03', 'survey_id_full': u'sid_whs2008_03                                                                                                                                                                                                                                                 ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31', 'survey_id': u'sid_whs2008aq', 'survey_id_full': u'sid_whs2008aq                                                                                                                                                                                                                                                  ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31', 'survey_id': u'sid_whs2007_1315', 'survey_id_full': u'sid_whs2007_1315                                                                                                                                                                                                                                               ', 'areas': []}, {'area': u'Monmouthshire 005E, Gwent, Monmouthshire, Monmouth, NP151, South Wales', 'survey_short_title': u'LiW Household', 'date': '2007 / 07 / 31', 'survey_id': u'sid_liw2007', 'survey_id_full': u'sid_liw2007                                                                                                                                                                                                                                                    ', 'areas': [u'South Wales', u'NP151', u'Monmouthshire 005E', u'Monmouth', u'Gwent', u'Monmouthshire']}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31', 'survey_id': u'sid_whs2008_1315', 'survey_id_full': u'sid_whs2008_1315                                                                                                                                                                                                                                               ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31', 'survey_id': u'sid_whs2009_412', 'survey_id_full': u'sid_whs2009_412                                                                                                                                                                                                                                                ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31', 'survey_id': u'sid_whs2009aq', 'survey_id_full': u'sid_whs2009aq                                                                                                                                                                                                                                                  ', 'areas': []}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31', 'survey_id': u'sid_whs2007_412', 'survey_id_full': u'sid_whs2007_412                                                                                                                                                                                                                                                ', 'areas': []}, {'area': u'Monmouthshire 005E, Gwent, Monmouthshire, NP151, South East Wales, South Wales', 'survey_short_title': u'LiW Household', 'date': '2006 / 10 / 13', 'survey_id': u'sid_liwhh2006', 'survey_id_full': u'sid_liwhh2006                                                                                                                                                                                                                                                  ', 'areas': [u'Monmouthshire', u'Gwent', u'South Wales', u'Monmouthshire 005E', u'South East Wales', u'NP151']}, {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31', 'survey_id': u'sid_whs2009_1315', 'survey_id_full': u'sid_whs2009_1315                                                                                                                                                                                                                                               ', 'areas': []}, {'area': u'Monmouthshire 005E, Monmouthshire, Monmouth, NP151, South East Wales, South Wales', 'survey_short_title': u'LiW Household', 'date': '2004 / 10 / 04', 'survey_id': u'sid_liwhh2004', 'survey_id_full': u'sid_liwhh2004                                                                                                                                                                                                                                                  ', 'areas': [u'South Wales', u'NP151', u'Monmouthshire', u'South East Wales', u'Monmouthshire 005E', u'Monmouth']}, {'area': u'Monmouthshire 005E, Gwent, Monmouthshire, Monmouth, NP151, South Wales', 'survey_short_title': u'LiW Household', 'date': '2005 / 08 / 14', 'survey_id': u'sid_liwhh2005', 'survey_id_full': u'sid_liwhh2005                                                                                                                                                                                                                                                  ', 'areas': [u'Monmouthshire', u'Gwent', u'Monmouth', u'NP151', u'South Wales', u'Monmouthshire 005E']}], 'success': True}
+        response_data = {'data': [
+            {'area': u'Wales', 'survey_short_title': u'WERS', 'date': '2005 / 04 / 30', 'survey_id': u'sid_wersmq2004',
+             'survey_id_full': u'sid_wersmq2004                                                                                                                                                                                                                                                 ',
+             'areas': []},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31',
+             'survey_id': u'sid_whs2008_412',
+             'survey_id_full': u'sid_whs2008_412                                                                                                                                                                                                                                                ',
+             'areas': []}, {'area': '', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31',
+                            'survey_id': u'sid_whs2007_03',
+                            'survey_id_full': u'sid_whs2007_03                                                                                                                                                                                                                                                 ',
+                            'areas': []},
+            {'area': u'Gwent, Monmouthshire, South East Wales, NP152, South Wales, W01001581',
+             'survey_short_title': u'LiW Property', 'date': '2004 / 10 / 04', 'survey_id': u'sid_liwps2004',
+             'survey_id_full': u'sid_liwps2004                                                                                                                                                                                                                                                  ',
+             'areas': [u'NP152', u'Gwent', u'South East Wales', u'Monmouthshire', u'South Wales', u'W01001581']},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31',
+             'survey_id': u'sid_whs2009_03',
+             'survey_id_full': u'sid_whs2009_03                                                                                                                                                                                                                                                 ',
+             'areas': []},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31',
+             'survey_id': u'sid_whs2007aq',
+             'survey_id_full': u'sid_whs2007aq                                                                                                                                                                                                                                                  ',
+             'areas': []},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2005 / 09 / 30',
+             'survey_id': u'sid_whs0306aq',
+             'survey_id_full': u'sid_whs0306aq                                                                                                                                                                                                                                                  ',
+             'areas': [u'Monmouthshire', u'Monmouthshire']},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31',
+             'survey_id': u'sid_whs2008_03',
+             'survey_id_full': u'sid_whs2008_03                                                                                                                                                                                                                                                 ',
+             'areas': []},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31',
+             'survey_id': u'sid_whs2008aq',
+             'survey_id_full': u'sid_whs2008aq                                                                                                                                                                                                                                                  ',
+             'areas': []},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31',
+             'survey_id': u'sid_whs2007_1315',
+             'survey_id_full': u'sid_whs2007_1315                                                                                                                                                                                                                                               ',
+             'areas': []}, {'area': u'Monmouthshire 005E, Gwent, Monmouthshire, Monmouth, NP151, South Wales',
+                            'survey_short_title': u'LiW Household', 'date': '2007 / 07 / 31',
+                            'survey_id': u'sid_liw2007',
+                            'survey_id_full': u'sid_liw2007                                                                                                                                                                                                                                                    ',
+                            'areas': [u'South Wales', u'NP151', u'Monmouthshire 005E', u'Monmouth', u'Gwent',
+                                      u'Monmouthshire']},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2008 / 12 / 31',
+             'survey_id': u'sid_whs2008_1315',
+             'survey_id_full': u'sid_whs2008_1315                                                                                                                                                                                                                                               ',
+             'areas': []},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31',
+             'survey_id': u'sid_whs2009_412',
+             'survey_id_full': u'sid_whs2009_412                                                                                                                                                                                                                                                ',
+             'areas': []},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31',
+             'survey_id': u'sid_whs2009aq',
+             'survey_id_full': u'sid_whs2009aq                                                                                                                                                                                                                                                  ',
+             'areas': []},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2007 / 12 / 31',
+             'survey_id': u'sid_whs2007_412',
+             'survey_id_full': u'sid_whs2007_412                                                                                                                                                                                                                                                ',
+             'areas': []}, {'area': u'Monmouthshire 005E, Gwent, Monmouthshire, NP151, South East Wales, South Wales',
+                            'survey_short_title': u'LiW Household', 'date': '2006 / 10 / 13',
+                            'survey_id': u'sid_liwhh2006',
+                            'survey_id_full': u'sid_liwhh2006                                                                                                                                                                                                                                                  ',
+                            'areas': [u'Monmouthshire', u'Gwent', u'South Wales', u'Monmouthshire 005E',
+                                      u'South East Wales', u'NP151']},
+            {'area': u'Monmouthshire', 'survey_short_title': u'Welsh Health Survey', 'date': '2009 / 12 / 31',
+             'survey_id': u'sid_whs2009_1315',
+             'survey_id_full': u'sid_whs2009_1315                                                                                                                                                                                                                                               ',
+             'areas': []},
+            {'area': u'Monmouthshire 005E, Monmouthshire, Monmouth, NP151, South East Wales, South Wales',
+             'survey_short_title': u'LiW Household', 'date': '2004 / 10 / 04', 'survey_id': u'sid_liwhh2004',
+             'survey_id_full': u'sid_liwhh2004                                                                                                                                                                                                                                                  ',
+             'areas': [u'South Wales', u'NP151', u'Monmouthshire', u'South East Wales', u'Monmouthshire 005E',
+                       u'Monmouth']},
+            {'area': u'Monmouthshire 005E, Gwent, Monmouthshire, Monmouth, NP151, South Wales',
+             'survey_short_title': u'LiW Household', 'date': '2005 / 08 / 14', 'survey_id': u'sid_liwhh2005',
+             'survey_id_full': u'sid_liwhh2005                                                                                                                                                                                                                                                  ',
+             'areas': [u'Monmouthshire', u'Gwent', u'Monmouth', u'NP151', u'South Wales', u'Monmouthshire 005E']}],
+                         'success': True}
         return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
 
     # We need a geography to do a spatial search!
@@ -2448,7 +2591,6 @@ def spatial_search(request):
         return HttpResponse(json.dumps(response_data, indent=4), content_type="application/json")
 
     geojson = request.POST.get('geojson', '')
-
 
     # If we have a search ID, return the data for that ID
     search_id = request.POST.get('search_id', '')
@@ -2474,7 +2616,8 @@ def spatial_search(request):
             print center_lat_lng
             lat = center_lat_lng[0]
             lng = center_lat_lng[1]
-            nominatim_url = 'http://nominatim.openstreetmap.org/reverse?format=json&lat={0}&lon={1}&zoom=18&addressdetails=1'.format(lat, lng)
+            nominatim_url = 'http://nominatim.openstreetmap.org/reverse?format=json&lat={0}&lon={1}&zoom=18&addressdetails=1'.format(
+                lat, lng)
             print nominatim_url
             s = requests.Session()
             s.headers.update({'referer': 'data.wiserd.ac.uk'})
@@ -2537,7 +2680,9 @@ def spatial_search(request):
         # print survey_ids
 
         if len(survey_ids) > 0:
-            survey_model = models.Survey.objects.filter(identifier__in=survey_ids).values('short_title', 'collectionenddate', 'identifier')
+            survey_model = models.Survey.objects.filter(identifier__in=survey_ids).values('short_title',
+                                                                                          'collectionenddate',
+                                                                                          'identifier')
             print 'number of surveys', len(survey_model)
 
             for s in survey_model:
@@ -2786,19 +2931,19 @@ def geojson_points_to_topojson(geojson_object):
         if 'geometry' in f and f['geometry']:
             if 'coordinates' in f['geometry'] and f['geometry']['coordinates']:
                 blob["coordinates"] = f['geometry']['coordinates']
-            # else:
-            #     blob["coordinates"] = []
-        # else:
-        #     blob["coordinates"] = []
+                # else:
+                #     blob["coordinates"] = []
+                # else:
+                #     blob["coordinates"] = []
                 geometries.append(blob)
 
-        # geometries.append(
-        #     {
-        #         "type": "Point",
-        #         "properties": f['properties'],
-        #         "coordinates": f['geometry']['coordinates']
-        #     },
-        # )
+                # geometries.append(
+                #     {
+                #         "type": "Point",
+                #         "properties": f['properties'],
+                #         "coordinates": f['geometry']['coordinates']
+                #     },
+                # )
     topojson_conversion = {
         "objects": {
             "name": {
@@ -2859,7 +3004,7 @@ def get_topojson_by_name(request, topojson_name):
             region_subset = models.SpatialdataNawer.objects.using('new').all().filter(
                 reduce(operator.or_, ors)
             )
-        s = serialize('geojson', region_subset, properties=('geom', 'code','name', 'altname', 'REMOTE_VALUE'))
+        s = serialize('geojson', region_subset, properties=('geom', 'code', 'name', 'altname', 'REMOTE_VALUE'))
         topojson_conv = topojson(json.loads(s))
         response_data['topojson'] = topojson_conv
 
@@ -2999,7 +3144,6 @@ def get_topojson_by_name(request, topojson_name):
 
     response_data['all_data'] = {}
 
-
     response_data['search_uuid'] = nomis_search.uuid
     response_data['layer_data'] = layer_data
     # response_data['type'] = 'Topojson'
@@ -3012,7 +3156,7 @@ def get_topojson_for_uuid(request, search_uuid):
     user_prefs = get_user_preferences(request)
 
     response_data = {}
-    #FIXME add a check for user here
+    # FIXME add a check for user here
     found_search_model = models.NomisSearch.objects.get(uuid=search_uuid)
     assert isinstance(found_search_model, models.NomisSearch)
     dataset_id = found_search_model.dataset_id
@@ -3082,11 +3226,11 @@ def get_topojson_for_uuid(request, search_uuid):
         for f in geo['features']:
             if 'properties' in f:
                 f["properties"]['STRING_DATA'] = [
-                        {
-                            'title': 'test_img',
-                            'value': 'https://thumb7.shutterstock.com/display_pic_with_logo/1467269/284551751/stock-photo-heaps-of-coal-284551751.jpg'
-                        }
-                    ]
+                    {
+                        'title': 'test_img',
+                        'value': 'https://thumb7.shutterstock.com/display_pic_with_logo/1467269/284551751/stock-photo-heaps-of-coal-284551751.jpg'
+                    }
+                ]
 
         topojson_conv = geojson_points_to_topojson(geo)
         # from topojson import topojson
@@ -3104,7 +3248,8 @@ def get_topojson_for_uuid(request, search_uuid):
         # remote_search_layers.append(layer_data)
 
         rd = RemoteData()
-        a = rd.get_topojson_with_data(dataset_id, geog, '', codelist, high=user_prefs.topojson_high, search_uuid=search_uuid)
+        a = rd.get_topojson_with_data(dataset_id, geog, '', codelist, high=user_prefs.topojson_high,
+                                      search_uuid=search_uuid)
         response_data['topojson'] = a
 
     if search_type == 'StatsWales':
@@ -3116,7 +3261,7 @@ def get_topojson_for_uuid(request, search_uuid):
             [
                 # 'Area_Code': area_code,
                 ('Year_Code', swod.equals_conditional, 2015),
-                ('AgeGroup_Code', swod.equals_conditional , 'AllAges')
+                ('AgeGroup_Code', swod.equals_conditional, 'AllAges')
             ],
             {'search_uuid': search_uuid}
         )
@@ -3253,7 +3398,7 @@ def get_topojson_for_uuid(request, search_uuid):
                 }
             ]
 
-            spatial_survey_fields_cy =[
+            spatial_survey_fields_cy = [
                 {
                     'field': 'category_cy', 'name': 'Categorïau'
                 },
@@ -3431,7 +3576,7 @@ def naw_dashboard(request):
                   {
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
-                  },context_instance=RequestContext(request))
+                  }, context_instance=RequestContext(request))
 
 
 def m4w_dashboard(request):
@@ -3439,7 +3584,7 @@ def m4w_dashboard(request):
                   {
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
-                  },context_instance=RequestContext(request))
+                  }, context_instance=RequestContext(request))
 
 
 def aqp_dashboard(request):
@@ -3448,6 +3593,7 @@ def aqp_dashboard(request):
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
                   }, context_instance=RequestContext(request))
+
 
 def wep_dashboard(request):
     return render(request, 'wep_dashboard.html',
@@ -3462,7 +3608,7 @@ def wmh_dashboard(request):
                   {
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
-                  },context_instance=RequestContext(request))
+                  }, context_instance=RequestContext(request))
 
 
 def research_projects_dashboard(request):
@@ -3470,7 +3616,7 @@ def research_projects_dashboard(request):
                   {
                       'preferences': get_user_preferences(request),
                       'searches': get_user_searches(request)
-                  },context_instance=RequestContext(request))
+                  }, context_instance=RequestContext(request))
 
 
 def wiserd_projects_dashboard(request):
@@ -3522,13 +3668,13 @@ def admin_api(request):
                               'document_type': document_type
                           }
 
-                      },context_instance=RequestContext(request))
+                      }, context_instance=RequestContext(request))
     else:
         return render(request, 'dashboard.html',
                       {
                           'preferences': get_user_preferences(request),
                           'searches': get_user_searches(request)
-                      },context_instance=RequestContext(request))
+                      }, context_instance=RequestContext(request))
 
 
 def send_email_confirmation_view(request):
@@ -3541,7 +3687,6 @@ def dataportal(request):
 
 
 def http_404_error(request):
-
     return render(request, '404_template.html', {}, context_instance=RequestContext(request))
 
 
@@ -3571,7 +3716,6 @@ def download_dataset_zip(request):
     filenames = ['./dataportal3/static/dataportal/docs/licence_attribution_en.html']
 
     for fpath in filenames:
-
         # Calculate path for file in zip
         fdir, fname = os.path.split(fpath)
         zip_path = os.path.join(zip_subdir, fname)
@@ -3639,7 +3783,6 @@ def do_screenshot(search_uuid):
 
 
 def gen_screenshot(request, search_uuid):
-
     filename = do_screenshot(search_uuid)
 
     try:
@@ -3690,8 +3833,6 @@ def question_links(request):
     qs = QuestionSorter()
     qs.do_order_questions()
 
-
-
     api_data = {
         'text_output': qs.output_logs(),
 
@@ -3716,13 +3857,13 @@ def map_test(request):
 def wiserd_education(request):
     return render(request, 'wiserd_education.html', {}, context_instance=RequestContext(request))
 
+
 def research_projects(request):
     return render(request, 'research_projects_dashboard.html', {}, context_instance=RequestContext(request))
 
 
 def mcstrike_week1(request):
     return render(request, 'mcstrike_week1.html', {}, context_instance=RequestContext(request))
-
 
 
 def mcstrike30052018(request):

@@ -1,0 +1,314 @@
+
+{% extends "wep_navigation.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block page_name %}{% trans 'Question Detail' %}{% endblock %}
+
+{% block content %}
+        <script type="text/javascript" src="{% static 'dataportal/page_js/question_detail.js' %}"></script>
+
+    <script>
+
+        var question_description = {
+            'tabs' : {
+                'question':{
+                    'title': '{% trans 'Question' %}',
+                    'style': 'form',
+                    'url': "{% url 'survey_single_question' question_id %}",
+                    'fields': [
+                        {'display': false, 'displayName': '{% trans 'Question ID' %}', 'id': 'qid'},
+                        {'display': true, 'displayName': '{% trans 'Question Text' %}', 'id': 'literal_question_text'},
+                        {'display': true, 'displayName': '{% trans 'Question Number' %}', 'id': 'questionnumber'},
+                        {'display': true, 'displayName': '{% trans 'Thematic Groups' %}', 'id': 'thematic_groups_set'},
+                        {'display': true, 'displayName': '{% trans 'Thematic Tags' %}', 'id': 'thematic_tags_set'},
+                        {'display': true, 'displayName': '{% trans 'Link From' %}', 'id': 'link_from'},
+                        {'display': true, 'displayName': '{% trans 'Sub Of' %}', 'id': 'subof'},
+                        {'display': true, 'displayName': '{% trans 'Question Type' %}', 'id': 'type'},
+                        {'display': true, 'displayName': '{% trans 'Variable ID' %}', 'id': 'variableid'},
+                        {'display': true, 'displayName': '{% trans 'Question Themes' %}', 'id': 'notes'},
+                        {'display': false, 'displayName': '{% trans 'user_id' %}', 'id': 'user_id'},
+                        {'display': false, 'displayName': '{% trans 'created' %}', 'id': 'created'},
+                        {'display': false, 'displayName': '{% trans 'Last Edit' %}', 'id': 'updated'}
+                    ]
+                },
+
+                'results':{
+                    'title': '{% trans 'Response' %}',
+                    'style': 'form',
+                    'url': "{% url 'survey_question_results' question_id %}",
+                    'fields': [
+                        {'display': false, 'displayName': '{% trans 'Response ID' %}', 'id': 'responseid'},
+                        {'display': true, 'displayName': '{% trans 'Response Text' %}', 'id': 'responsetext'},
+                        {'display': false, 'displayName': '{% trans 'created' %}', 'id': 'created'},
+                        {'display': true, 'displayName': '{% trans 'Route Notes' %}', 'id': 'route_notes'},
+                        {'display': false, 'displayName': '{% trans 'Table IDs' %}', 'id': 'table_ids'},
+                        {'display': true, 'displayName': '{% trans 'Computed Variable' %}', 'id': 'computed_var'},
+                        {'display': true, 'displayName': '{% trans 'Response Type' %}', 'id': 'response_type'},
+                        {'display': false, 'displayName': '{% trans 'user_id' %}', 'id': 'user_id'},
+                        {'display': true, 'displayName': '{% trans 'Checks' %}', 'id': 'checks'},
+                        {'display': true, 'displayName': '{% trans 'Route Type' %}', 'id': 'routetype'},
+                        {'display': false, 'displayName': '{% trans 'Last Edit' %}', 'id': 'updated'}
+                    ]
+                }
+            }
+        };
+
+        $(document).ready(function () {
+            $.extend( $.fn.dataTable.defaults, {
+                fnInitComplete: function(oSettings, json) {
+                    var btnClear = $('<button class="btnClearDataTableFilter btn btn-info"><i class="fa fa-times"></button>');
+                    btnClear.appendTo($('#' + oSettings.sTableId).parents('.dataTables_wrapper').find('.dataTables_filter'));
+                    $('#' + oSettings.sTableId + '_wrapper .btnClearDataTableFilter').click(function () {
+                        $('#' + oSettings.sTableId).dataTable().fnFilter('');
+                    });
+                }
+            });
+
+            $.ajax({
+{#                url: "{% url 'survey_single_question' question_id %}",#}
+{#            {% url 'api:metadata:DcInfo-detail' pk=survey_id%}#}
+                url: "{% url 'api:metadata:Question-detail' pk=question_id%}",
+                type: 'GET',
+                success: function(data) {
+                    $('#question_number_header').html(data['questionnumber']);
+
+                    var dataContent = '';
+                    for (var j = 0; j < question_description['tabs']['question']['fields'].length; j++) {
+                        if (question_description['tabs']['question']['fields'][j]['display']) {
+                            var field = question_description['tabs']['question']['fields'][j]['id'];
+                            var value = data[field];
+                            var display_name = question_description['tabs']['question']['fields'][j]['displayName'];
+                            var type = question_description['tabs']['question']['fields'][j]['type'];
+
+                            dataContent += get_data_row_html(field, display_name, value, type);
+                        }
+                    }
+                    $('#question_info').append(dataContent);
+
+                    var survey_button = "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                            "class='btn btn-info pull-right' href='/wep_survey/" + data['survey']['identifier'] + "'>{% trans 'View Survey' %}</a>";
+                    $('#question_panel_nav').append(survey_button);
+
+                    if (data['link_from_id']) {
+                        var prev_q_button = "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                                "class='btn btn-info pull-right' href='/wep_question/" + data['link_from_id'] + "'>{% trans 'Previous Question' %}</a>";
+                        $('#question_panel_nav').append(prev_q_button);
+                    }
+                    tidy_tab_fields()
+                }
+            });
+
+            $.ajax({
+                url: "{% url 'survey_question_results' question_id %}",
+                type: 'POST',
+                success: function(data) {
+                    var dataContent = '';
+                    for (var j = 0; j < question_description['tabs']['results']['fields'].length; j++) {
+                        if (question_description['tabs']['results']['fields'][j]['display']) {
+                            var field = question_description['tabs']['results']['fields'][j]['id'];
+                            var value = data['search_result_data'][0]['data'][field];
+                            var display_name = question_description['tabs']['results']['fields'][j]['displayName'];
+                            var type = question_description['tabs']['results']['fields'][j]['type'];
+
+                            dataContent += get_data_row_html(field, display_name, value, type);
+                        }
+                    }
+                    $('#results_info').append(dataContent);
+                    tidy_tab_fields()
+                }
+            });
+
+            $.ajax({
+                url: "{% url 'response_table' question_id %}",
+                type: 'GET',
+                success: function(data) {
+                    var table_columns = data['columns'];
+                    var row_shim = $('</tr>');
+                    var header_shim = $('</tr>');
+
+                    var table_columns_complete = [];
+                    for (var k = 0; k < table_columns.length; k++) {
+                        if (table_columns[k] != 'res_table_id'
+                                && table_columns[k] != 'user_id'
+                                && table_columns[k] != 'date_time') {
+                            var column_title = table_columns[k].replace('_', ' ').split(" ").map(function(i){return i[0].toUpperCase() + i.substring(1)}).join(" ");
+
+                            table_columns_complete.push({
+                                'title': column_title,
+                                'data': table_columns[k]
+                            });
+                            row_shim.append($('</td>'));
+                            header_shim.append($('</th>'));
+                        }
+
+                    }
+                    $('#response_table_body').empty().append(row_shim);
+                    $('#response_table_header').empty().append(header_shim);
+                    console.log(table_columns_complete);
+
+                    var survey_questions_table = $('#survey_questions_table').DataTable({
+                        serverSide: false,
+                        processing: true,
+                        "pageLength": -1,
+                        "oLanguage": datatables_language,
+                        data: data['search_result_data'],
+                        columns: table_columns_complete
+                    }).on( 'stateLoaded.dt', function (e, settings, data) {
+                        {#                        attach_question_buttons();#}
+                    });
+                }
+            });
+
+
+            {#            function attach_question_buttons() {#}
+            {#                var survey_questions_table = $('#survey_questions_table');#}
+            {#                var survey_questions_table_datatable = survey_questions_table.DataTable();#}
+            {#                var table_body = survey_questions_table.find('tbody');#}
+            {#                table_body.on('click', '.search_from', function () {#}
+            {#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
+            {#                    survey_questions_table.search( data['link_from'].trim() ).draw();#}
+            {#                });#}
+            {#                table_body.on('click', '.search_parent', function () {#}
+            {#                    var data = survey_questions_table.row($(this).parents('tr')).data();#}
+            {#                    survey_questions_table.search( data['subof'].trim() ).draw();#}
+            {#                });#}
+            {#            }#}
+            {#            attach_question_buttons();#}
+
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                tidy_tab_fields()
+            });
+
+        });
+
+        function tidy_tab_fields() {
+            $(".tab_data_input").each( function() {
+                $(this).height(this.scrollHeight);
+            });
+        }
+
+        function get_data_row_html(field, display_name, value, type) {
+            if (value == null) {
+                return '';
+            }
+            if (type == undefined) {
+
+                if (value != null && value.constructor === Array) {
+                    var break_value = '';
+                    for (var val in value) {
+                        break_value += '\n' + value[val];
+                    }
+                    value = break_value;
+                }
+
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
+                '<div class="controls">' +
+                '<textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input" name="text_input_{0}" ' +
+                'id="text_input_{0}" size="20" value="{2}">{2}</textarea>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            } else if (type == 'link') {
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
+                '<div class="controls">' +
+                '<div class="col-sm-8" name="text_input_{0}" ' +
+                'style="padding-top: 4px; padding-bottom: 4px; border: 1px solid rgb(169, 169, 169); ' +
+                'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; ' +
+                'white-space: -o-pre-wrap; word-wrap: break-word;" ' +
+                'id="text_input_{0}" size="20" value="{2}"><a src="{2}" href>{2}</a></div>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            } else {
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-6">{1}</label>' +
+                '<div class="controls">' +
+                '<textarea readonly="true" type="text" class="input-block-level col-sm-6 tab_data_input" name="text_input_{0}" ' +
+                'id="text_input_{0}" size="20" value="{2}">{2}</textarea>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            }
+
+        }
+
+
+    </script>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header" id="question_number_header">{% trans 'Question Details for: ' %}{{ question_id }}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-info">
+                <div id="question_panel_header" class="panel-heading">
+                    {% trans 'Question Metadata' %}
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <!-- Nav tabs -->
+                    <ul id="question_panel_nav" class="nav nav-pills">
+                        <li class="active">
+                            <a id="question_tab_li" href="#question_tab" data-toggle="tab">{% trans 'Question' %}</a>
+                        </li>
+                        <li>
+                            <a  id="results_tab_li" href="#results_tab" data-toggle="tab">{% trans 'Response' %}</a>
+                        </li>
+                        <li >
+                            <a id="response_table_li" href="#response_table" data-toggle="tab"
+{#                               class="disabled" style="cursor: not-allowed;"#}
+                            >{% trans 'Response Table' %}</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="question_tab">
+                            <h4>{% trans 'Question' %}</h4>
+                            <div id="question_info"></div>
+                        </div>
+                        <div class="tab-pane fade" id="results_tab">
+                            <h4>{% trans 'Response' %}</h4>
+                            <div id="results_info"></div>
+                        </div>
+                        <div class="tab-pane fade" id="response_table">
+                            <h4>{% trans 'Response Table' %}</h4>
+
+                            <div class="panel-body">
+                                <div class="dataTable_wrapper">
+                                    <table class="table table-striped table-bordered table-hover" id="survey_questions_table">
+                                        <thead>
+                                        <tr id="response_table_header">
+                                            <th>{% trans 'QuestionID' %}</th>
+                                            <th>{% trans 'QuestionText' %}</th>
+                                            <th>{% trans 'Type' %}</th>
+                                            <th>{% trans 'Response Rate' %}</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody id="response_table_body">
+                                        <tr><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td></tr>
+                                        <tr><td></td><td></td><td></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+    </div>
+
+{% endblock %}

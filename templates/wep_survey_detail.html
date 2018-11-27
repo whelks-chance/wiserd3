@@ -1,0 +1,464 @@
+{% extends "wep_navigation.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block page_name %}{% trans 'Survey' %}{% endblock %}
+
+{% block content %}
+    <script type="text/javascript" src="{% static 'dataportal/page_js/survey_detail.js' %}"></script>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+    <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+
+    <script>
+
+        var survey_description = {
+            'tabs' : {
+                'survey': {
+                    'title': 'Survey',
+                    'style': 'form',
+                    'url': "{% url 'survey_metadata' survey_id %}",
+                    'columns': [],
+                    'fields': [
+                        {'display': false, 'displayName': '{% trans 'Survey ID' %}', 'id': 'surveyid'},
+                        {'display': false, 'displayName': '{% trans 'Identifier' %}', 'id': 'identifier'},
+                        {'display': true, 'displayName': '{% trans 'Survey Title' %}', 'id': 'survey_title'},
+                        {'display': true, 'displayName': '{% trans 'Data Collector' %}', 'id': 'datacollector'},
+                        {'display': false, 'displayName': '{% trans 'Collection Start Date' %}', 'id': 'collectionstartdate'},
+                        {'display': false, 'displayName': '{% trans 'Collection End Date' %}', 'id': 'collectionenddate'},
+                        {'display': true, 'displayName': '{% trans 'Method of Collection Description' %}', 'id': 'moc_description'},
+                        {'display': true, 'displayName': '{% trans 'Sampling Procedure' %}', 'id': 'samp_procedure'},
+                        {'display': true, 'displayName': '{% trans 'Collection Situation' %}', 'id': 'collectionsituation'},
+                        {'display': true, 'displayName': '{% trans 'Survey Frequency' %}', 'id': 'surveyfrequency'},
+                        {'display': true, 'displayName': '{% trans 'Survey Start Date' %}', 'id': 'surveystartdate'},
+                        {'display': true, 'displayName': '{% trans 'Survey End Date' %}', 'id': 'surveyenddate'},
+                        {'display': true, 'displayName': '{% trans 'Weighting' %}', 'id': 'des_weighting'},
+                        {'display': true, 'displayName': '{% trans 'Sample Size' %}', 'id': 'samplesize'},
+                        {'display': true, 'displayName': '{% trans 'Response Rate' %}', 'id': 'responserate'},
+                        {'display': true, 'displayName': '{% trans 'Description Of Sampling Error' %}', 'id': 'descriptionofsamplingerror'},
+                        {'display': false, 'displayName': '{% trans 'Data Product' %}', 'id': 'dataproduct'},
+                        {'display': false, 'displayName': '{% trans 'Data Product ID' %}', 'id': 'dataproductid'},
+                        {'display': false, 'displayName': '{% trans 'Location' %}', 'id': 'location'},
+                        {'display': false, 'displayName': '{% trans 'URL' %}', 'id': 'link', 'type': 'link'},
+                        {'display': false, 'displayName': '{% trans 'Notes' %}', 'id': 'notes'},
+                        {'display': false, 'displayName': '{% trans 'User ID' %}', 'id': 'user_id'},
+                        {'display': true, 'displayName': '{% trans 'Created' %}', 'id': 'created'},
+                        {'display': true, 'displayName': '{% trans 'Updated' %}', 'id': 'updated'},
+                        {'display': false, 'displayName': '{% trans 'Long' %}', 'id': 'long'},
+                        {'display': false, 'displayName': '{% trans 'Short Title' %}', 'id': 'short_title'},
+                        {'display': false, 'displayName': '{% trans 'Spatial Data' %}', 'id': 'spatialdata'}]
+                },
+                'dc' : {
+                    'title': '{% trans 'Dublin Core' %}',
+                    'style': 'form',
+                    'url': "{% url 'api:metadata:DcInfo-detail' pk=survey_id%}",
+                    'columns': [],
+                    'fields': [
+                        {'display': false, 'displayName': '{% trans 'Identifier' %}', 'id': 'identifier'},
+                        {'display': true, 'displayName': '{% trans 'Title' %}', 'id': 'title'},
+                        {'display': true, 'displayName': '{% trans 'Creators' %}', 'id': 'creators'},
+                        {'display': true, 'displayName': '{% trans 'Subjects' %}', 'id': 'subjects'},
+                        {'display': true, 'displayName': '{% trans 'Description' %}', 'id': 'description'},
+                        {'display': true, 'displayName': '{% trans 'Publishers' %}', 'id': 'publishers'},
+                        {'display': true, 'displayName': '{% trans 'Contributors' %}', 'id': 'contributors'},
+                        {'display': true, 'displayName': '{% trans 'Type' %}', 'id': 'type'},
+                        {'display': true, 'displayName': '{% trans 'Format' %}', 'id': 'format'},
+                        {'display': true, 'displayName': '{% trans 'Source : URL' %}', 'id': 'source_url', 'type': 'link'},
+                        {'display': true, 'displayName': '{% trans 'Source : DOI' %}', 'id': 'source_doi', 'type': 'link'},
+                        {'display': true, 'displayName': '{% trans 'Language' %}', 'id': 'language'},
+                        {'display': true, 'displayName': '{% trans 'Relation : Same Collection' %}', 'id': 'relation_same_collection'},
+                        {'display': true, 'displayName': '{% trans 'Relation : Different Collection' %}', 'id': 'relation_different_collection'},
+                        {'display': true, 'displayName': '{% trans 'Coverage : Spatial ' %}', 'id': 'coverage_spatial'},
+                        {'display': true, 'displayName': '{% trans 'Coverage : Start Date' %}', 'id': 'coverage_temporal_start'},
+                        {'display': true, 'displayName': '{% trans 'Coverage : End Date' %}', 'id': 'coverage_temporal_end'},
+                        {'display': true, 'displayName': '{% trans 'Rights' %}', 'id': 'rights'},
+                        {'display': false, 'displayName': '{% trans 'User ID' %}', 'id': 'user_id'},
+                        {'display': true, 'displayName': '{% trans 'Created' %}', 'id': 'created'},
+                        {'display': true, 'displayName': '{% trans 'Updated' %}', 'id': 'updated'}]
+                },
+                'question':{
+                    'title': '{% trans 'Question' %}',
+                    'style': 'table',
+                    'url': "{% url 'survey_questions' survey_id %}",
+                    'columns': [
+                        {'display': true, 'displayName': '{% trans 'Survey Title' %}', 'id': 'survey_title'},
+                        {'data': 'questionnumber'},
+                        {'data': 'literal_question_text'},
+                        {'data': 'questionnumber'},
+                        {#                            {'data': 'thematic_groups'},#}
+                        {#                            {'data': 'thematic_tags'},#}
+                        {'data': 'link_from'},
+                        {'data': 'subof'},
+                        {'data': 'type'},
+                        {#                            {'data': 'variableid'},#}
+                        {'data': 'notes'},
+                        {#                            {'data': 'user_id'},#}
+                        {#                            {'data': 'created'},#}
+                        {#                            {'data': 'updated'}#}
+                    ]
+                }
+
+            }
+        };
+
+        $(document).ready(function () {
+            $.extend( $.fn.dataTable.defaults, {
+                fnInitComplete: function(oSettings, json) {
+                    var btnClear = $('<button class="btnClearDataTableFilter btn btn-info"><i class="fa fa-times"></button>');
+                    btnClear.appendTo($('#' + oSettings.sTableId).parents('.dataTables_wrapper').find('.dataTables_filter'));
+                    $('#' + oSettings.sTableId + '_wrapper .btnClearDataTableFilter').click(function () {
+                        $('#' + oSettings.sTableId).dataTable().fnFilter('');
+                    });
+                }
+            });
+
+            $.ajax({
+                url: "{% url 'survey_metadata' survey_id %}",
+                type: 'POST',
+                success: function(data) {
+                    $('#survey_title_header').html(data['search_result_data'][0]['data']['survey_title']);
+
+                    var dataContent = '';
+                    for (var j = 0; j < survey_description['tabs']['survey']['fields'].length; j++) {
+                        if (survey_description['tabs']['survey']['fields'][j]['display']) {
+                            var field = survey_description['tabs']['survey']['fields'][j]['id'];
+                            var value = data['search_result_data'][0]['data'][field];
+                            var display_name = survey_description['tabs']['survey']['fields'][j]['displayName'];
+                            var type = survey_description['tabs']['survey']['fields'][j]['type'];
+
+                            dataContent += get_data_row_html(field, display_name, value, type);
+                        }
+                    }
+                    $('#survey_info').append(dataContent);
+                    tidy_tab_fields()
+                }
+            });
+
+            $.ajax({
+                {#                url: "{% url 'survey_dc_data' survey_id %}",#}
+                url: "{% url 'api:metadata:DcInfo-detail' pk=survey_id%}",
+                {#                data: {#}
+                {#                    csrfmiddlewaretoken: '{{ csrf_token }}'#}
+                {#                },#}
+                type: 'GET',
+                success: function(data) {
+                    var dataContent = '';
+                    for (var j = 0; j < survey_description['tabs']['dc']['fields'].length; j++) {
+                        if (survey_description['tabs']['dc']['fields'][j]['display']) {
+                            var field = survey_description['tabs']['dc']['fields'][j]['id'];
+                            {#                            var value = data['search_result_data'][0]['data'][field];#}
+                            var value = data[field];
+                            var display_name = survey_description['tabs']['dc']['fields'][j]['displayName'];
+                            var type = survey_description['tabs']['dc']['fields'][j]['type'];
+
+                            dataContent += get_data_row_html(field, display_name, value, type);
+                        }
+                    }
+                    $('#dc_info').append(dataContent);
+                    tidy_tab_fields()
+                }
+            });
+
+            var survey_questions_table = $('#survey_questions_table').DataTable({
+                serverSide: false,
+                processing: true,
+                "oLanguage": datatables_language,
+                ajax: {
+
+
+                    {#                    url: "{% url 'survey_questions' survey_id %}",#}
+                    {#                    type: 'POST',#}
+                    {#                    data: function (d) {},#}
+                    {#                    dataSrc: function ( json ) {#}
+                    {#                        return json['search_result_data'];#}
+                    {#                    }#}
+
+                    url: "{% url 'api:metadata:Question-list' %}",
+                    type: 'GET',
+                    data: function (d) {
+                        d.survey__identifier = "{{ survey_id }}"
+                    },
+                    dataSrc: function ( json ) {
+                        return json['results'];
+                    }
+
+                },
+                columns: [
+                    {'data': 'questionnumber'},
+                    {'data': 'literal_question_text'},
+                    {#                    {'data': 'questionnumber'},#}
+                    {#                            {'data': 'thematic_groups'},#}
+                    {#                            {'data': 'thematic_tags'},#}
+                    {'data': 'type'},
+                    {'data': 'notes'},
+                    {'data': 'variableid'},
+                    {
+                        "targets": -1,
+                        "data": 'qid',
+                        "render": function ( data, type, full, meta ) {
+                            return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
+                                    "href='/wep_question/" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Question' %}</a>";
+                        }
+                    }
+                ]
+            }).on( 'stateLoaded.dt', function (e, settings, data) {
+                attach_question_buttons();
+            });
+
+            function attach_question_buttons() {
+                var table_body = $('#survey_questions_table').find('tbody');
+                table_body.on('click', '.search_from', function () {
+                    var data = survey_questions_table.row($(this).parents('tr')).data();
+                    survey_questions_table.search(data['link_from_name']).draw();
+                });
+
+                {#                "^\\s*"+'1'+"\\s*$"#}
+
+                table_body.on('click', '.search_parent', function () {
+                    var data = survey_questions_table.row($(this).parents('tr')).data();
+                    survey_questions_table.column(0).search( '^' + data['sub_of_name'] + '$', true, false, true).draw();
+                });
+            }
+            attach_question_buttons();
+
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                tidy_tab_fields()
+            });
+
+            do_wordcloud('wordcloud', "{% url 'api:metadata:Survey-list' %}?identifier={{ survey_id }}")
+
+        });
+
+        function tidy_tab_fields() {
+            $(".tab_data_input").each( function() {
+                $(this).height(this.scrollHeight);
+            });
+        }
+
+        function get_data_row_html(field, display_name, value, type) {
+            if (type == undefined) {
+
+                if (value != null && value.constructor === Array) {
+                    var break_value = '';
+                    for (var val in value) {
+                        break_value += '\n' + value[val];
+                    }
+                    value = break_value;
+                }
+
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
+                '<div class="controls">' +
+                '<textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input" name="text_input_{0}" ' +
+                'id="text_input_{0}" size="20" value="{2}">{2}</textarea>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            } else if (type == 'link') {
+
+                var link_formatted = '<div class="control-group" id="link_{0}">' +
+                        '<label for="text_input_{0}" class="control-label col-sm-4">{1}</label>' +
+                        '<div class="controls">';
+
+                if (value != 'N/A') {
+
+                    link_formatted += '<div class="col-sm-8" name="text_input_{0}" ' +
+                            'style="padding-top: 4px; padding-bottom: 4px; border: 1px solid rgb(169, 169, 169); ' +
+                            'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; ' +
+                            'white-space: -o-pre-wrap; word-wrap: break-word;" ' +
+                            'id="text_input_{0}" size="20" value="{2}">' +
+                            '<a href="{2}" target="_blank">{2}</a>';
+                } else {
+                    link_formatted += '<textarea readonly="true" type="text" class="input-block-level col-sm-8 tab_data_input" name="text_input_{0}" ' +
+                            'id="text_input_{0}" size="20" value="{2}">{2}</textarea>';
+                }
+                link_formatted += '</div></div></div>';
+
+                return (link_formatted).format(
+                        field, display_name, value
+                );
+
+            } else {
+                return ('<div class="control-group">' +
+                '<label for="text_input_{0}" class="control-label col-sm-6">{1}</label>' +
+                '<div class="controls">' +
+                '<textarea readonly="true" type="text" class="input-block-level col-sm-6 tab_data_input" name="text_input_{0}" ' +
+                'id="text_input_{0}" size="20" value="{2}">{2}</textarea>' +
+                '</div></div>').format(
+                        field, display_name, value
+                );
+            }
+
+        }
+
+
+    </script>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header" id="survey_title_header">{% trans 'Survey Details for : ' %}{{ survey_id }}</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    {% if access_allow %}
+        {% for access in access_allow.access_data %}
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <p>{% trans 'You have access to this {{ access_allow.document_type }} because you are a member of the "{{ access.survey_collection_user_group_name }}" group.' %}</p>
+                <p>{% trans 'Please be aware that the information for "{{ access.survey_collection_name}}" has restricted access.' %}</p>
+                <p>{% trans 'Contact the WISERD DataPortal admin team for more information' %}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {% trans 'Survey Metadata' %}
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-pills">
+                        <li class="active">
+                            <a id="survey_dc_tab_li" href="#survey_dc_tab" data-toggle="tab">{% trans 'Dublin Core' %}</a>
+                        </li>
+                        <li>
+                            <a id="survey_tab_li" href="#survey_tab" data-toggle="tab">{% trans 'Survey' %}</a>
+                        </li>
+                        <li>
+                            <a id="survey_questions_li" href="#survey_questions" data-toggle="tab">{% trans 'Questions' %}</a>
+                        </li>
+                        <li>
+                            <a id="survey_visuals_li" href="#survey_visuals" data-toggle="tab">{% trans 'Visuals' %}</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="survey_dc_tab">
+                            <h4>{% trans 'Dublin Core' %}</h4>
+                            <div id="dc_info">{% if not user.is_authenticated %}
+
+                                        <div class="container dialog-container"
+                {% if request.user.is_authenticated %}
+             hidden="hidden"
+                {% endif %}>
+            <p>
+                {% blocktrans %}The WISERD DataPortal allows users to search and discover survey metadata.{% endblocktrans %}
+            </p>
+            <p>
+                {% trans 'You can view Dublin Core data for this survey here.'%}
+            </p>
+            <div class="row">
+                <a style="color: white; border-width: 2px; border-style: outset;" href="{% url 'account_login' %}" class="btn btn-lg btn-success btn-block primaryAction">
+                    {% trans 'Please log in to use this feature.' %}
+                </a>
+            </div>
+
+        </div>
+
+
+                            {% endif %}</div>
+                        </div>
+                        <div class="tab-pane fade" id="survey_tab">
+                            <h4>{% trans 'Survey' %}</h4>
+                            <div id="survey_info"></div>
+                        </div>
+                        <div class="tab-pane fade" id="survey_questions">
+                            <h4>{% trans 'Questions' %}</h4>
+                                {% if user.is_authenticated %}
+
+                            <div class="panel-body">
+                                    <div class="dataTable_wrapper">
+                                        <table class="table table-striped table-bordered table-hover" id="survey_questions_table">
+                                            <thead>
+                                            <tr>
+                                                <th>{% trans 'Question Number' %}</th>
+                                                <th>{% trans 'QuestionText' %}</th>
+                                                <th>{% trans 'Type' %}</th>
+                                                <th>{% trans 'Question Themes' %}</th>
+                                                <th>{% trans 'Variable ID' %}</th>
+{#                                                <th>{% trans 'SubOf' %}</th>#}
+{#                                                <th>{% trans 'Map It' %}</th>#}
+                                                <th>{% trans 'View' %}</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                            </div>
+
+                                {% else %}
+
+        <div class="container dialog-container"
+                {% if request.user.is_authenticated %}
+             hidden="hidden"
+                {% endif %}>
+                <p>
+                {% blocktrans %}The WISERD DataPortal allows users to search and discover survey metadata.{% endblocktrans %}
+            </p>
+            <p>
+                {% trans 'You can view the questions for this survey here.'%}
+            </p>
+            <div class="row">
+                <a style="color: white; border-width: 2px; border-style: outset;" href="{% url 'account_login' %}" class="btn btn-lg btn-success btn-block primaryAction">
+                    {% trans 'Please log in to use this feature.' %}
+                </a>
+            </div>
+
+        </div>
+
+                                {% endif %}
+
+
+                        </div>
+                        <div class="tab-pane fade" id="survey_visuals">
+                            <h4>{% trans 'Visuals' %}</h4>
+
+                            {% if user.is_authenticated %}
+
+                            <wordcloud id="wordcloud"></wordcloud>
+
+                                {% else %}
+
+        <div class="container dialog-container"
+                {% if request.user.is_authenticated %}
+             hidden="hidden"
+                {% endif %}>
+            <p>
+                {% blocktrans %}The WISERD DataPortal allows users to search and discover survey metadata.{% endblocktrans %}
+            </p>
+            <p>
+                {% trans 'You can view visualisations of data for this survey here.'%}
+            </p>
+            <div class="row">
+                <a style="color: white; border-width: 2px; border-style: outset;" href="{% url 'account_login' %}" class="btn btn-lg btn-success btn-block primaryAction">
+                    {% trans 'Please log in to use this feature.' %}
+                </a>
+            </div>
+
+        </div>
+
+                                {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+    </div>
+
+{% endblock %}

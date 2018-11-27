@@ -78,7 +78,7 @@
                         "data": 'qid',
                         "render": function ( data, type, full, meta ) {
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
-                                    "href='/question/" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Question' %}</a>";
+                                    "href='/wep_question/" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Question' %}</a>";
                         }
                     }
                 ]
@@ -131,7 +131,7 @@
                         "data": 'identifier',
                         "render": function ( data, type, full, meta ) {
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
-                                    "href='/survey/" + data.trim() + "' class='btn btn-success view_survey'>View</a>";
+                                    "href='/wep_survey/" + data.trim() + "' class='btn btn-success view_survey'>View</a>";
                         }
                     }
 

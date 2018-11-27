@@ -134,7 +134,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="{% url 'research_projects_dashboard' %}"><i class="fa fa-dashboard fa-fw"></i> {% trans 'Project Dashboard' %}</a>
+                            <a href="{% url 'dashboard' %}"><i class="fa fa-chevron-circle-left fa-fw"></i> {% trans 'Back to DataPortal Dashboard' %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'wiserd_education' %}"><i class="fa fa-dashboard fa-fw"></i> {% trans 'Project Dashboard' %}</a>
                         </li>
 
                         {% block nav_extras %}

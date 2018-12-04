@@ -1,4 +1,4 @@
-{% extends "navigation.html" %}
+{% extends "wep_navigation.html" %}
 {% load staticfiles %}
 {% load i18n %}
 
@@ -198,7 +198,7 @@
                         "data": 'qid',
                         "render": function ( data, type, full, meta ) {
                             return "<a {% if preferences.links_new_tab %}target='_blank'{% endif %} " +
-                                    "href='/question/" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Question' %}</a>";
+                                    "href='/wep_question/" + data.trim() + "' class='btn btn-success view_question'>{% trans 'Question' %}</a>";
                         }
                     }
                 ]

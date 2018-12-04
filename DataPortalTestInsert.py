@@ -33,7 +33,7 @@ def insert_data_sj():
             importid = row['qid']
             # If the import file qid matches the database qid
             if importid == questionid:
-                print 'importid matches: ', importid
+                print 'importid matches: ',importid
                 # Update the database.
                 # Find the correct question ID to update. Update the variable name in that question
                 models.Question.objects.filter(qid=questionid).update(variableid=varname)

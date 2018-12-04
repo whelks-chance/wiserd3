@@ -16,29 +16,33 @@ def insert_data_sj():
     # If you want an exact match just do qid = ****
     questions = models.Question.objects.filter(qid__contains='qid_cohort')
     # open the csv lookup file
-    importfile = csv.DictReader(open("TestDataInsert1.csv"))
+
     # Iterate through every question in the database.
     for question in questions:
         # To access a field in the question use .fieldname
         questionid = question.qid
         print 'Testing: ',questionid
         #Iterate through every row in the import file
+        importfile = csv.DictReader(open("themes.csv"))
         for row in importfile:
             # Get the new variable name and the qid from the import file.
-            varname = row['varname']
+            # varname = row['varname']
+            themes = row['themes']
             importid = row['qid']
             # If the import file qid matches the database qid
             if importid == questionid:
                 print 'importid matches: ', importid
                 # Update the database.
                 # Find the correct question ID to update. Update the variable name in that question
-                models.Question.objects.filter(qid=questionid).update(variableid=varname)
+                print 'input data: ', row
+                # models.Question.objects.filter(qid=questionid).update(variableid=varname)
+                models.Question.objects.filter(qid=questionid).update(notes=themes)
                 # print 'Output question: ',question
             else:
                 # Otherwise, move on to next record.
                 pass
-    ### for row in importfile:
-    ###     print row['ID']
+    # for row in importfile:
+    #     print row['ID']
 
 
 if __name__ == "__main__":

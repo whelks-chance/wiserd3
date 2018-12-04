@@ -832,6 +832,9 @@ class SpatialdataPostCode(models.Model):
     geom = models.GeometryField(blank=True, null=True)
     objects = models.GeoManager()
 
+    def __unicode__(self):
+        return '{}'.format(self.label)
+
     class Meta:
         managed = False
         db_table = 'spatialdata_pcode'
@@ -917,6 +920,9 @@ class SpatialdataPostCodeS(models.Model):
     label = models.CharField(max_length=254, blank=True, null=True)
     geom = models.GeometryField(blank=True, null=True)  # This field type is a guess.
     objects = models.GeoManager()
+
+    def __unicode__(self):
+        return '{}'.format(self.label)
 
     class Meta:
         managed = False

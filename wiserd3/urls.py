@@ -83,6 +83,9 @@ urlpatterns = [
                   url(r'^upload_shapefile', views.upload_shapefile, name='upload_shapefile'),
                   url(r'^shapefile_list', views.shapefile_list, name='shapefile_list'),
 
+                  url(r'^upload_questions', views.upload_questions, name='upload_questions'),
+                  url(r'^question_management', views.question_management, name='question_management'),
+
                   url(r'^browse_surveys', views.browse_surveys, name='browse_surveys'),
                   url(r'^tables', views.tables, name='tables'),
                   url(r'^survey/(?P<survey_id>\S+)', views.survey_detail, name='survey_detail'),

@@ -135,6 +135,13 @@ The topojson file is printed all on a single line in the file, which breaks edit
     node -e "console.log(JSON.stringify(JSON.parse(require('fs') \
       .readFileSync(process.argv[1])), null, 4));" output-fixed-1.json > pretty.json
 
+### DB users
+create user dataportal_username;
+alter user dataportal_username with encrypted password "supersecretpassword";
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO dataportal_username; 
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO dataportal_username; 
+
+
 ## Backup the Database
 
     sudo -u <postgres_user> pg_dump new2 --file /tmp/new_survey_jun_16_dir --format=d

@@ -1156,6 +1156,19 @@ def file_management(request):
                   context_instance=RequestContext(request))
 
 
+def question_management(request):
+
+    all_surveys = models.Survey.objects.all()
+    return render(request, 'upload_questions.html',
+                  {
+                      'preferences': get_user_preferences(request),
+                      'searches': get_user_searches(request),
+                      'shapefile_form': ShapefileForm(),
+                      'all_surveys': all_surveys
+                  },
+                  context_instance=RequestContext(request))
+
+
 # TODO dont be csrf exempt, check logged in
 # @csrf_exempt
 def upload_shapefile(request):
@@ -1194,6 +1207,10 @@ def upload_shapefile(request):
                       'searches': get_user_searches(request)
                   },
                   context_instance=RequestContext(request))
+
+
+def upload_questions(request):
+    pass
 
 
 # @csrf_exempt

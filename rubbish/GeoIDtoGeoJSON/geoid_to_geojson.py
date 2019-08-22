@@ -82,7 +82,7 @@ class GEOIDtoGEOJSON:
                     use_natural_keys=True,
                     with_modelname=False,
                     simplify=0.00005,
-                    precision=5
+                    precision=6
                 )
                 print len(s), '\n'
 
@@ -92,7 +92,7 @@ class GEOIDtoGEOJSON:
                         use_natural_keys=True,
                         with_modelname=False,
                         simplify=0.00005,
-                        precision=4
+                        precision=5
                     )
                     print len(s), ' After compression'
 
@@ -103,7 +103,7 @@ class GEOIDtoGEOJSON:
                             use_natural_keys=True,
                             with_modelname=False,
                             simplify=0.00005,
-                            precision=3
+                            precision=4
                         )
                         if len(s) > 32767:
                             print len(s), ' Again still too big at 3sf'

@@ -200,6 +200,9 @@ class SurveyReader:
 
 if __name__ == "__main__":
 
+    # /home/ianh/Downloads/educationdata.xlsx
+# /home/ianh/Downloads/sample_4C.json
+
     # filename = '/home/kdickson/text_survey.xlsx'
     filename = '/home/kdickson/educationdata.xlsx'
     # filename = '/home/kdickson/educationdata_small.xlsx'

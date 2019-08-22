@@ -1,4 +1,3 @@
-import csv
 from django.core.management.base import BaseCommand
 
 from rubbish.survey_xls.xls_survey_reader import SurveyReader

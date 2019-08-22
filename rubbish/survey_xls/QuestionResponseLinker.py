@@ -74,6 +74,7 @@ class QuestionResponseLinker:
 
                 rq = RawQuestion(variable_name_cell.value)
 
+                # codings for responses e.g. 1 'Yes' 2 'No'
                 mapping_cell = response_value_map_col[variable_name_cell.row-1]
                 mapping_dict = {}
 
@@ -84,10 +85,21 @@ class QuestionResponseLinker:
                 else:
                     if not mapping_cell.value == '0':
                         # Only populate this if the questionbank file says how
+
+                        # Turn 1 'Yes' 2 'No' into
+                        # 1 'Yes'
+                        # 2 'No'
                         mapping_list = str(mapping_cell.value).split("' ")
                         for map in mapping_list:
                             map_text_value = map.split(' ')
+                            # 1 'Yes' into
+                            # 1
+                            # 'Yes'
                             print(map_text_value)
+                            # produces Yes without speech marks or spaces as the key, and the number as the value.
+                            # {
+                            #     'Yes': 1
+                            # }
                             mapping_dict[
                                     " ".join(map_text_value[1:]).lstrip("'").rstrip("'")
                                 ] = map_text_value[0].strip()
@@ -96,6 +108,8 @@ class QuestionResponseLinker:
 
                 question_text = question_text_col[variable_name_cell.row-1]
                 print(question_text.value)
+
+                # Add question text to RawQuestion object defined above
                 rq.question_text = question_text.value
 
                 # question_number_str = str(question_number)
@@ -112,13 +126,14 @@ class QuestionResponseLinker:
 
                 # print('*********************************\n\n')
 
-                # For each column header in the first row of results xlsx, look for the variable_name above
                 for row in ws2.iter_rows(min_row=1, max_row=1):
                     for idx, cell in enumerate(row):
 
+                        # For each column header in the first row of results xlsx, look for the variable_name above
+                        # Question answers in the redacted responses file are by column
                         if cell.value == variable_name_cell.value:
 
-                            print('The response xlsx column number {} labeleld {} is for question {}'.format(
+                            print('The response xlsx column number {} labelled {} is for question {}'.format(
                                 idx, cell.column, variable_name_cell.value))
 
                             print(idx, cell.value)
@@ -131,12 +146,16 @@ class QuestionResponseLinker:
 
                             results_and_freqs = {}
 
+                            # Once we have the right cell in the column headers
+                            # Get the column for that header, move down the column
                             for cell in ws2[cell.column][1:]:
                                 # print(cell.value)
 
+                                # If we've seen this response before, +1 to the counter
                                 if cell.value in results_and_freqs:
                                     results_and_freqs[cell.value] += 1
                                 else:
+                                    # New response, add it to the dict, set count to 1
                                     results_and_freqs[cell.value] = 1
 
                             print('Question {} has result freq :'.format(variable_name_cell.value))
@@ -145,6 +164,7 @@ class QuestionResponseLinker:
                             response_table = []
                             # we didn't populate the mapping dict, as it was 0 in the question bank file
                             if len(mapping_dict):
+                                # Build the response table
                                 for response in results_and_freqs:
                                     response_detail = {
                                         'response': response,
@@ -160,10 +180,12 @@ class QuestionResponseLinker:
                             print('\n')
                             print pprint.pformat(response_table)
 
+                            # Add response table to RawQuestion object
                             rq.response_table = response_table
 
                             print(rq.__dict__)
 
+                            # Add question to the sample bank and move on
                             sample.questions.append(rq)
 
                             print('****\n\n')

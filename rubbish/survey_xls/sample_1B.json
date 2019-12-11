@@ -3,40 +3,47 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 40
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 22
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 57
-                }, 
-                {
-                    "response": 4, 
-                    "response (n)": 72
-                }, 
-                {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "Having children", 
                     "response (n)": 30
                 }, 
                 {
-                    "response": 6, 
-                    "response (n)": 34
+                    "value": "2", 
+                    "response": "Having a good car", 
+                    "response (n)": 22
                 }, 
                 {
-                    "response": 7, 
-                    "response (n)": 25
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 16
                 }, 
                 {
-                    "response": 8, 
+                    "value": "1", 
+                    "response": "Owning your own home", 
+                    "response (n)": 40
+                }, 
+                {
+                    "response": "Having a personal achievement in sport, the arts or travel", 
                     "response (n)": 45
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 16
+                    "value": "6", 
+                    "response": "Having a partner or being married", 
+                    "response (n)": 34
+                }, 
+                {
+                    "response": "Being famous or making a name for yourself", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Having a worthwhile job", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Earning a lot of money", 
+                    "response (n)": 57
                 }
             ], 
             "question_text": "By the time you\u2019re grown-up, which one of these things would you like to have most (tick one)?", 
@@ -46,16 +53,19 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 76
-                }, 
-                {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "Yes", 
                     "response (n)": 257
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 76
                 }
             ], 
             "question_text": "Do you know what you want to be when you grow up?", 
@@ -71,20 +81,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 6
-                }, 
-                {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "Yes", 
                     "response (n)": 194
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 23
+                    "value": "3", 
+                    "response": "Dont know", 
+                    "response (n)": 118
                 }, 
                 {
-                    "response": 3, 
-                    "response (n)": 118
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 23
                 }
             ], 
             "question_text": "Do you want to stay on at school or college when you are 16?", 
@@ -94,20 +108,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 1
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 30
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 223
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 87
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 30
                 }
             ], 
             "question_text": "How often are you quiet?", 
@@ -117,20 +135,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 2
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 8
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 183
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 148
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 8
                 }
             ], 
             "question_text": "How often do you like to be alone?", 
@@ -140,24 +162,29 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 3
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 4
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Most of the time", 
                     "response (n)": 17
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Some of the time", 
                     "response (n)": 171
                 }, 
                 {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Never", 
                     "response (n)": 146
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 4
                 }
             ], 
             "question_text": "How often do you misbehave or cause trouble in class?", 
@@ -167,24 +194,29 @@
         {
             "response_table": [
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Autumn", 
                     "response (n)": 15
                 }, 
                 {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "Spring", 
                     "response (n)": 10
                 }, 
                 {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Summer", 
                     "response (n)": 6
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 301
+                    "value": "4", 
+                    "response": "Winter", 
+                    "response (n)": 9
                 }, 
                 {
-                    "response": 4, 
-                    "response (n)": 9
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 301
                 }
             ], 
             "question_text": "Season of Birth", 
@@ -194,20 +226,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 14
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 16
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 66
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 245
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
                 }
             ], 
             "question_text": "How often do other children bully you?", 
@@ -223,20 +259,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 1
+                    "value": "3", 
+                    "response": "I dont speak Welsh at all", 
+                    "response (n)": 32
                 }, 
                 {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "I speak Welsh well", 
                     "response (n)": 101
                 }, 
                 {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "I speak Welsh a little bit", 
                     "response (n)": 207
                 }, 
                 {
-                    "response": 3, 
-                    "response (n)": 32
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
                 }
             ], 
             "question_text": "How well do you speak Welsh?", 
@@ -246,12 +286,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 317
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 24
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 24
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 317
                 }
             ], 
             "question_text": "If you speak Welsh, do you speak it with your Family?", 
@@ -261,12 +303,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 316
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 25
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 25
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 316
                 }
             ], 
             "question_text": "If you speak Welsh, do you speak it with your Friends?", 
@@ -276,12 +320,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 275
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 66
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 66
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 275
                 }
             ], 
             "question_text": "If you speak Welsh, do you speak it with your Teachers?", 
@@ -291,12 +337,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 329
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 12
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 329
                 }
             ], 
             "question_text": "I don't speak Welsh with anyone", 
@@ -306,16 +354,19 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 51
-                }, 
-                {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "Yes", 
                     "response (n)": 274
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 16
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 51
                 }
             ], 
             "question_text": "Do you have your own phone?", 
@@ -325,28 +376,34 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 298
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 27
-                }, 
-                {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Once a week", 
                     "response (n)": 4
                 }, 
                 {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "Less often", 
                     "response (n)": 5
                 }, 
                 {
-                    "response": 6, 
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
                     "response (n)": 4
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 3
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 298
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2-3 times a week", 
+                    "response (n)": 27
                 }
             ], 
             "question_text": "How often do you spend time with your Mother / Carer 1?", 
@@ -356,32 +413,39 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 226
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 48
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 20
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Once a month", 
                     "response (n)": 8
                 }, 
                 {
-                    "response": 5, 
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Less often", 
                     "response (n)": 22
                 }, 
                 {
-                    "response": 6, 
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
                     "response (n)": 12
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 5
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 226
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2-3 times a week", 
+                    "response (n)": 48
                 }
             ], 
             "question_text": "How often do you spend time with your  Father / Carer 2?", 
@@ -391,32 +455,39 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 250
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 34
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 11
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Once a month", 
                     "response (n)": 6
                 }, 
                 {
-                    "response": 5, 
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Less often", 
                     "response (n)": 13
                 }, 
                 {
-                    "response": 6, 
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
                     "response (n)": 17
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 10
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 250
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2-3 times a week", 
+                    "response (n)": 34
                 }
             ], 
             "question_text": "How often do you spend time with your Brothers / Sisters?", 
@@ -426,32 +497,39 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 48
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 100
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 81
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Once a month", 
                     "response (n)": 34
                 }, 
                 {
-                    "response": 5, 
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Less often", 
                     "response (n)": 46
                 }, 
                 {
-                    "response": 6, 
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
                     "response (n)": 23
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 9
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2-3 times a week", 
+                    "response (n)": 100
                 }
             ], 
             "question_text": "How often do you spend time with your Grandparents?", 
@@ -461,32 +539,39 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 26
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 73
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 71
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Once a month", 
                     "response (n)": 61
                 }, 
                 {
-                    "response": 5, 
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Less often", 
                     "response (n)": 80
                 }, 
                 {
-                    "response": 6, 
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
                     "response (n)": 24
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 6
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2-3 times a week", 
+                    "response (n)": 73
                 }
             ], 
             "question_text": "How often do you spend time with your Aunts / Uncles?", 
@@ -496,32 +581,39 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 42
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 69
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 51
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Once a month", 
                     "response (n)": 58
                 }, 
                 {
-                    "response": 5, 
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Less often", 
                     "response (n)": 84
                 }, 
                 {
-                    "response": 6, 
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
                     "response (n)": 25
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 12
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2-3 times a week", 
+                    "response (n)": 69
                 }
             ], 
             "question_text": "How often do you spend time with your Cousins?", 
@@ -531,20 +623,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 20
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 88
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 179
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 54
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 88
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 20
                 }
             ], 
             "question_text": "How often do you get along well with your brother(s) or sister(s)?", 
@@ -554,20 +650,24 @@
         {
             "response_table": [
                 {
-                    "response": 3, 
-                    "response (n)": 9
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 187
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 141
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 4
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 187
                 }
             ], 
             "question_text": "How often do you have fun with your family at the weekends?", 
@@ -613,32 +713,39 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 269
+                    "value": "4", 
+                    "response": "Once a month", 
+                    "response (n)": 1
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 58
-                }, 
-                {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Once a week", 
                     "response (n)": 5
                 }, 
                 {
-                    "response": 4, 
-                    "response (n)": 1
-                }, 
-                {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "Less often", 
                     "response (n)": 4
                 }, 
                 {
-                    "response": 6, 
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
                     "response (n)": 1
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 3
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 269
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2-3 times a week", 
+                    "response (n)": 58
                 }
             ], 
             "question_text": "How often do you spend time with your Friends?", 
@@ -648,24 +755,24 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 119
+                    "value": "4", 
+                    "response": "Once a month", 
+                    "response (n)": 77
                 }, 
                 {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "2-3 times a month", 
                     "response (n)": 95
                 }, 
                 {
-                    "response": 3, 
-                    "response (n)": 28
-                }, 
-                {
-                    "response": 4, 
-                    "response (n)": 49
-                }, 
-                {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "Less often", 
                     "response (n)": 50
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every weekend", 
+                    "response (n)": 119
                 }
             ], 
             "question_text": "At the weekend how often do you spend time with your friends, but without adults or older children, going to the shops or just 'hanging out'?", 
@@ -675,32 +782,39 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 67
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 92
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 41
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Once a month", 
                     "response (n)": 26
                 }, 
                 {
-                    "response": 5, 
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Less often", 
                     "response (n)": 55
                 }, 
                 {
-                    "response": 6, 
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
                     "response (n)": 59
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 1
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 67
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2-3 times a week", 
+                    "response (n)": 92
                 }
             ], 
             "question_text": "In the afternoon after school how often do you spend time with your friends, but without adults or older children, going to the shops or just 'hanging out'?", 
@@ -710,28 +824,34 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 113
+                    "value": "4", 
+                    "response": "Once a month", 
+                    "response (n)": 12
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 101
-                }, 
-                {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Once a week", 
                     "response (n)": 71
                 }, 
                 {
-                    "response": 4, 
-                    "response (n)": 12
-                }, 
-                {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "Less often", 
                     "response (n)": 32
                 }, 
                 {
-                    "response": 6, 
+                    "value": "6", 
+                    "response": "Never", 
                     "response (n)": 12
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 113
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2-3 times a week", 
+                    "response (n)": 101
                 }
             ], 
             "question_text": "When you are not at school, how often do you spend time with your friends?", 
@@ -741,24 +861,29 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 31
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 41
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 61
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Less often than once a month", 
                     "response (n)": 116
                 }, 
                 {
-                    "response": 5, 
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
                     "response (n)": 92
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 31
                 }
             ], 
             "question_text": "How often do you argue or fall out with your friends?", 
@@ -768,28 +893,34 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 120
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 72
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 19
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Less often than once a month", 
                     "response (n)": 24
                 }, 
                 {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "Never", 
                     "response (n)": 101
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 5
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 72
                 }
             ], 
             "question_text": "How often do you exchange messages with friends on the Internet using instant messaging?", 
@@ -799,24 +930,28 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 1
+                    "response": "Dont know", 
+                    "response (n)": 2
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 85
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 90
-                }, 
-                {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "A mixture of boys and girls", 
                     "response (n)": 163
                 }, 
                 {
-                    "response": 4, 
-                    "response (n)": 2
+                    "value": "2", 
+                    "response": "Mostly girls", 
+                    "response (n)": 90
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Mostly boys", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
                 }
             ], 
             "question_text": "Are your friends mostly boys, mostly girls or a mixture of boys and girls?", 
@@ -826,20 +961,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 5
+                    "value": "5", 
+                    "response": "11+ friends", 
+                    "response (n)": 18
                 }, 
                 {
-                    "response": 3, 
-                    "response (n)": 9
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "4-10 friends", 
                     "response (n)": 309
                 }, 
                 {
-                    "response": 5, 
-                    "response (n)": 18
+                    "value": "3", 
+                    "response": "2-3 friends", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
                 }
             ], 
             "question_text": "How many friends do you have?", 
@@ -849,12 +988,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 323
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 18
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 18
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 323
                 }
             ], 
             "question_text": "Do you take part in Athletics outside normal school lessons?", 
@@ -864,12 +1005,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 339
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 2
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 339
                 }
             ], 
             "question_text": "Do you take part in Chess outside normal school lessons?", 
@@ -879,12 +1022,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 337
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 4
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 337
                 }
             ], 
             "question_text": "Do you take part in Choir outside normal school lessons?", 
@@ -894,12 +1039,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 340
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 1
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 340
                 }
             ], 
             "question_text": "Do you take part in Cooking Club outside normal school lessons?", 
@@ -909,12 +1056,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 337
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 4
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 337
                 }
             ], 
             "question_text": "Do you take part in Craft class outside normal school lessons?", 
@@ -924,12 +1073,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 328
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 13
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 13
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 328
                 }
             ], 
             "question_text": "Do you take part in Cricket outside normal school lessons?", 
@@ -939,12 +1090,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 321
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 20
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 20
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 321
                 }
             ], 
             "question_text": "Do you take part in Dance outside normal school lessons?", 
@@ -954,12 +1107,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 334
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 7
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 7
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 334
                 }
             ], 
             "question_text": "Do you take part in Drama Club outside normal school lessons?", 
@@ -969,12 +1124,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 339
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 2
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 339
                 }
             ], 
             "question_text": "Do you take part in Drawing class outside normal school lessons?", 
@@ -984,12 +1141,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 336
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 5
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 336
                 }
             ], 
             "question_text": "Do you take part in Fishing outside normal school lessons?", 
@@ -999,12 +1158,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 307
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 34
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 34
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 307
                 }
             ], 
             "question_text": "Do you take part in Football outside normal school lessons?", 
@@ -1014,12 +1175,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 339
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 2
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 339
                 }
             ], 
             "question_text": "Do you take part in Gilrs'/ Boys' brigade outside normal school lessons?", 
@@ -1029,12 +1192,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 330
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 11
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 11
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 330
                 }
             ], 
             "question_text": "Do you take part in Gymnastics outside normal school lessons?", 
@@ -1044,7 +1209,8 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
+                    "value": "0", 
+                    "response": "No", 
                     "response (n)": 341
                 }
             ], 
@@ -1055,12 +1221,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 340
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 1
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 340
                 }
             ], 
             "question_text": "Do you take part in Hockey outside normal school lessons?", 
@@ -1070,12 +1238,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 335
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 6
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 6
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 335
                 }
             ], 
             "question_text": "Do you take part in Horse Riding outside normal school lessons?", 
@@ -1085,12 +1255,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 337
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 4
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 337
                 }
             ], 
             "question_text": "Do you take part in Ice Skating outside normal school lessons?", 
@@ -1100,12 +1272,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 332
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 9
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 9
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 332
                 }
             ], 
             "question_text": "Do you take part in Martial Art outside normal school lessons?", 
@@ -1115,12 +1289,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 331
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 10
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 10
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 331
                 }
             ], 
             "question_text": "Do you take part in Music Lessons outside normal school lessons?", 
@@ -1130,12 +1306,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 329
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 12
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 329
                 }
             ], 
             "question_text": "Do you take part in Netball outside normal school lessons?", 
@@ -1145,12 +1323,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 316
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 25
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 25
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 316
                 }
             ], 
             "question_text": "Do you take part in Rugby outside normal school lessons?", 
@@ -1160,12 +1340,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 340
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 1
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 340
                 }
             ], 
             "question_text": "Do you take part in Science club outside normal school lessons?", 
@@ -1175,12 +1357,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 332
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 9
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 9
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 332
                 }
             ], 
             "question_text": "Do you take part in Scouts/Guides outside normal school lessons?", 
@@ -1190,12 +1374,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 333
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 8
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 8
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 333
                 }
             ], 
             "question_text": "Do you take part in Skateboarding outside normal school lessons?", 
@@ -1205,12 +1391,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 338
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 3
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 338
                 }
             ], 
             "question_text": "Do you take part in Surfing outside normal school lessons?", 
@@ -1220,12 +1408,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 298
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 43
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 43
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 298
                 }
             ], 
             "question_text": "Do you take part in Swimming outside normal school lessons?", 
@@ -1235,12 +1425,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 337
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 4
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 337
                 }
             ], 
             "question_text": "Do you take part in Table Tennis outside normal school lessons?", 
@@ -1250,12 +1442,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 324
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 17
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 17
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 324
                 }
             ], 
             "question_text": "Do you take part in Tennis outside normal school lessons?", 
@@ -1265,12 +1459,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 332
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 9
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 9
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 332
                 }
             ], 
             "question_text": "Do you take part in Walking outside normal school lessons?", 
@@ -1280,12 +1476,12 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 325
+                    "response": "Yes", 
+                    "response (n)": 16
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 16
+                    "response": "No", 
+                    "response (n)": 325
                 }
             ], 
             "question_text": "Any other activities you take part in outside normal school lessons (1)", 
@@ -1301,24 +1497,28 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 7
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 222
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 78
-                }, 
-                {
-                    "response": 3, 
+                    "response": "Not at all", 
                     "response (n)": 28
                 }, 
                 {
-                    "response": 4, 
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 222
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "4", 
+                    "response": "I dont know", 
                     "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 78
                 }
             ], 
             "question_text": "How much do you like drawing, painting or making things?", 
@@ -1328,24 +1528,28 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 6
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 241
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 82
-                }, 
-                {
-                    "response": 3, 
+                    "response": "Not at all", 
                     "response (n)": 9
                 }, 
                 {
-                    "response": 4, 
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "I dont know", 
                     "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 241
                 }
             ], 
             "question_text": "How much do you like listening to music?", 
@@ -1355,24 +1559,28 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 6
+                    "value": "4", 
+                    "response": "I dont know", 
+                    "response (n)": 26
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 115
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 119
-                }, 
-                {
-                    "response": 3, 
+                    "response": "Not at all", 
                     "response (n)": 75
                 }, 
                 {
-                    "response": 4, 
-                    "response (n)": 26
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 119
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 115
                 }
             ], 
             "question_text": "How much do you like playing music on an instrument?", 
@@ -1382,24 +1590,28 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 8
+                    "value": "4", 
+                    "response": "I dont know", 
+                    "response (n)": 13
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 175
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "A bit", 
                     "response (n)": 128
                 }, 
                 {
-                    "response": 3, 
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "response": "Not at all", 
                     "response (n)": 17
                 }, 
                 {
-                    "response": 4, 
-                    "response (n)": 13
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 175
                 }
             ], 
             "question_text": "How much do you like playing sports and games inside?", 
@@ -1409,20 +1621,23 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
+                    "response": "Not at all", 
                     "response (n)": 7
                 }, 
                 {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "A lot", 
                     "response (n)": 246
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 81
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
                 }, 
                 {
-                    "response": 3, 
-                    "response (n)": 7
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 81
                 }
             ], 
             "question_text": "How much do you like playing sports and games outside?", 
@@ -1432,24 +1647,28 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 4
+                    "value": "4", 
+                    "response": "I dont know", 
+                    "response (n)": 7
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 204
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 101
-                }, 
-                {
-                    "response": 3, 
+                    "response": "Not at all", 
                     "response (n)": 25
                 }, 
                 {
-                    "response": 4, 
-                    "response (n)": 7
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 204
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 101
                 }
             ], 
             "question_text": "How much do you like using a computer or playing games like XBOX or Playstation?", 
@@ -1459,24 +1678,28 @@
         {
             "response_table": [
                 {
-                    "response": 3, 
+                    "response": "Not at all", 
                     "response (n)": 7
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 222
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "A bit", 
                     "response (n)": 103
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 7
                 }, 
                 {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "I dont know", 
                     "response (n)": 2
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 222
                 }
             ], 
             "question_text": "How much do you like watching TV, videos or DVDs?", 
@@ -1486,28 +1709,34 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 178
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 105
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 29
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Less often than once a month", 
                     "response (n)": 22
                 }, 
                 {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "Never", 
                     "response (n)": 3
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 4
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 178
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 105
                 }
             ], 
             "question_text": "How often do you play games on a computer or games console?", 
@@ -1517,28 +1746,34 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 156
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 106
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 24
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Less often than once a month", 
                     "response (n)": 17
                 }, 
                 {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "Never", 
                     "response (n)": 32
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 6
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 156
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 106
                 }
             ], 
             "question_text": "How often do you read for enjoyment?", 
@@ -1548,28 +1783,34 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 216
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 90
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 15
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Less often than once a month", 
                     "response (n)": 10
                 }, 
                 {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "Never", 
                     "response (n)": 6
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 4
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 216
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 90
                 }
             ], 
             "question_text": "How often do you use the Internet?", 
@@ -1579,28 +1820,34 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 89
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 67
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 25
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Less often than once a month", 
                     "response (n)": 29
                 }, 
                 {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "Never", 
                     "response (n)": 125
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 6
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 89
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 67
                 }
             ], 
             "question_text": "How often do you visit a social networking website?", 
@@ -1610,16 +1857,19 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 41
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Welsh", 
                     "response (n)": 279
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 21
+                }, 
+                {
+                    "value": "1", 
+                    "response": "English", 
+                    "response (n)": 41
                 }
             ], 
             "question_text": "Survey Language", 
@@ -1635,20 +1885,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 4
+                    "value": "4", 
+                    "response": "Not very safe at all", 
+                    "response (n)": 8
                 }, 
                 {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "Very safe", 
                     "response (n)": 246
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Not very safe", 
                     "response (n)": 83
                 }, 
                 {
-                    "response": 4, 
-                    "response (n)": 8
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
                 }
             ], 
             "question_text": "How safe is it to walk or play on your street during the day?", 
@@ -1658,20 +1912,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 12
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 40
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 216
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 73
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 40
                 }
             ], 
             "question_text": "How often do you get tired at school?", 
@@ -1681,28 +1939,34 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 85
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 114
-                }, 
-                {
-                    "response": 3, 
-                    "response (n)": 47
-                }, 
-                {
-                    "response": 4, 
+                    "value": "4", 
+                    "response": "Less often than once a month", 
                     "response (n)": 41
                 }, 
                 {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "Never", 
                     "response (n)": 49
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 5
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 114
                 }
             ], 
             "question_text": "How often do you use the Internet for homework?", 
@@ -1712,20 +1976,24 @@
         {
             "response_table": [
                 {
-                    "response": 3, 
-                    "response (n)": 31
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 52
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 246
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 12
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 52
                 }
             ], 
             "question_text": "How often do you talk to your friends when you should be doing your work?", 
@@ -1735,16 +2003,19 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 226
-                }, 
-                {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "Yes", 
                     "response (n)": 109
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 226
                 }
             ], 
             "question_text": "Do you have any extra help for your school work when you are at school?", 
@@ -1754,16 +2025,19 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 136
-                }, 
-                {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "Yes", 
                     "response (n)": 193
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 12
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 136
                 }
             ], 
             "question_text": "Do you take part in the Urdd or Eisteddfod with school?", 
@@ -1773,12 +2047,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 335
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 6
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 6
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 335
                 }
             ], 
             "question_text": "If yes, do you act at the Eisteddfod?", 
@@ -1788,12 +2064,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 329
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 12
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 329
                 }
             ], 
             "question_text": "If yes, do you do disco dancing at the Eisteddfod?", 
@@ -1803,12 +2081,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 334
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 7
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 7
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 334
                 }
             ], 
             "question_text": "If yes, do you do folk dancing at the Eisteddfod?", 
@@ -1818,12 +2098,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 328
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 13
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 13
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 328
                 }
             ], 
             "question_text": "If yes, do you do reciting at the Eisteddfod?", 
@@ -1833,12 +2115,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 326
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 15
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 15
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 326
                 }
             ], 
             "question_text": "If yes, do you draw/paint at the Eisteddfod?", 
@@ -1848,12 +2132,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 330
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 11
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 11
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 330
                 }
             ], 
             "question_text": "If yes, do you play a musical instrucment at the Eisteddfod?", 
@@ -1863,12 +2149,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 322
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 19
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 322
                 }
             ], 
             "question_text": "If yes, do you sing at the Eisteddfod?", 
@@ -1878,12 +2166,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 331
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 10
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 10
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 331
                 }
             ], 
             "question_text": "If yes, do you write poems/ short stories at the Eisteddfod?", 
@@ -1893,20 +2183,24 @@
         {
             "response_table": [
                 {
-                    "response": 3, 
-                    "response (n)": 6
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 66
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 259
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 10
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 66
                 }
             ], 
             "question_text": "How often is school interesting?", 
@@ -1916,20 +2210,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 3
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 257
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 71
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 10
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 257
                 }
             ], 
             "question_text": "How often do you feel safe in the playground?", 
@@ -1939,20 +2237,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 15
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 52
                 }, 
                 {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "A lot", 
                     "response (n)": 88
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 186
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
                 }, 
                 {
-                    "response": 3, 
-                    "response (n)": 52
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 186
                 }
             ], 
             "question_text": "How much do you like answering questions in class?", 
@@ -1962,20 +2264,24 @@
         {
             "response_table": [
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Not at all", 
                     "response (n)": 8
                 }, 
                 {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "A lot", 
                     "response (n)": 203
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 117
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 13
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 117
                 }
             ], 
             "question_text": "How much do you like learning new things?", 
@@ -1985,20 +2291,24 @@
         {
             "response_table": [
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Not at all", 
                     "response (n)": 11
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 133
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "A bit", 
                     "response (n)": 182
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 15
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 133
                 }
             ], 
             "question_text": "How much do you like English?", 
@@ -2008,20 +2318,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 11
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 143
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "A bit", 
                     "response (n)": 139
                 }, 
                 {
-                    "response": 3, 
-                    "response (n)": 48
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 143
                 }
             ], 
             "question_text": "How much do you like Maths?", 
@@ -2031,20 +2345,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 13
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 25
                 }, 
                 {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "A lot", 
                     "response (n)": 166
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 137
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
                 }, 
                 {
-                    "response": 3, 
-                    "response (n)": 25
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 137
                 }
             ], 
             "question_text": "How much do you like Science?", 
@@ -2054,20 +2372,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 16
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 108
                 }, 
                 {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "A lot", 
                     "response (n)": 68
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 149
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 16
                 }, 
                 {
-                    "response": 3, 
-                    "response (n)": 108
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 149
                 }
             ], 
             "question_text": "How much do you like Welsh?", 
@@ -2077,20 +2399,24 @@
         {
             "response_table": [
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Not at all", 
                     "response (n)": 14
                 }, 
                 {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "A lot", 
                     "response (n)": 250
                 }, 
                 {
-                    "response": 2, 
-                    "response (n)": 69
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
                 }, 
                 {
-                    "response": 99, 
-                    "response (n)": 8
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 69
                 }
             ], 
             "question_text": "How much do you like PE?", 
@@ -2100,16 +2426,19 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 317
-                }, 
-                {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "Yes", 
                     "response (n)": 17
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 317
                 }
             ], 
             "question_text": "Are you on a waiting list for another secondary school?", 
@@ -2119,24 +2448,29 @@
         {
             "response_table": [
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Not at all", 
                     "response (n)": 10
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 227
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "A bit", 
                     "response (n)": 100
                 }, 
                 {
-                    "response": 99, 
+                    "value": "4", 
+                    "response": "Already at secondary school", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 3
                 }, 
                 {
-                    "response": 4, 
-                    "response (n)": 1
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 227
                 }
             ], 
             "question_text": "How much are you looking forward to going to secondary school?", 
@@ -2182,28 +2516,34 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 130
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 152
-                }, 
-                {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 3
                 }, 
                 {
-                    "response": 4, 
-                    "response (n)": 9
-                }, 
-                {
-                    "response": 6, 
+                    "value": "6", 
+                    "response": "Already at secondary school", 
                     "response (n)": 1
                 }, 
                 {
-                    "response": 3, 
+                    "value": "4", 
+                    "response": "None of them", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of them", 
                     "response (n)": 46
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All of them", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Most of them", 
+                    "response (n)": 152
                 }
             ], 
             "question_text": "How many of your friends are going to the same secondary school as you?", 
@@ -2213,11 +2553,13 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
+                    "value": "1", 
+                    "response": "Male", 
                     "response (n)": 160
                 }, 
                 {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Female", 
                     "response (n)": 181
                 }
             ], 
@@ -2234,20 +2576,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 3
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 9
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 129
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 200
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 9
                 }
             ], 
             "question_text": "How often do you feel afraid or scared?", 
@@ -2257,20 +2603,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 5
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 8
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 206
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 122
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 8
                 }
             ], 
             "question_text": "How often do you feel cross?", 
@@ -2280,20 +2630,24 @@
         {
             "response_table": [
                 {
-                    "response": 3, 
-                    "response (n)": 1
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 199
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 138
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 199
                 }
             ], 
             "question_text": "How often do you feel happy?", 
@@ -2303,20 +2657,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 7
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 9
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 208
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 117
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 9
                 }
             ], 
             "question_text": "How often do you feel sad?", 
@@ -2326,20 +2684,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 4
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 25
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 200
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 112
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 25
                 }
             ], 
             "question_text": "How often do you get worried?", 
@@ -2349,20 +2711,24 @@
         {
             "response_table": [
                 {
-                    "response": 3, 
-                    "response (n)": 1
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 234
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 103
                 }, 
                 {
-                    "response": 99, 
+                    "value": "99", 
+                    "response": "Missing", 
                     "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 234
                 }
             ], 
             "question_text": "How often do you laugh?", 
@@ -2372,20 +2738,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 12
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 16
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 111
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 202
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
                 }
             ], 
             "question_text": "How often do you feel left out of things by other children at school?", 
@@ -2395,20 +2765,24 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 15
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 31
-                }, 
-                {
-                    "response": 2, 
+                    "value": "2", 
+                    "response": "Some of the time", 
                     "response (n)": 194
                 }, 
                 {
-                    "response": 3, 
+                    "value": "3", 
+                    "response": "Never", 
                     "response (n)": 101
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 31
                 }
             ], 
             "question_text": "How often do you get fed up at school?", 
@@ -2418,12 +2792,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 318
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 23
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 23
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 318
                 }
             ], 
             "question_text": "What would you do if you were worried about something? (A) I keep it to myself", 
@@ -2433,12 +2809,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 297
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 44
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 44
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 297
                 }
             ], 
             "question_text": "What would you do if you were worried about something? (A) I tell a friend", 
@@ -2448,12 +2826,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 312
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 29
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 29
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 312
                 }
             ], 
             "question_text": "What would you do if you were worried about something? (A) I tell a teacher", 
@@ -2463,12 +2843,14 @@
         {
             "response_table": [
                 {
-                    "response": 0, 
-                    "response (n)": 293
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 48
                 }, 
                 {
-                    "response": 1, 
-                    "response (n)": 48
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 293
                 }
             ], 
             "question_text": "What would you do if you were worried about something? (A) I tell someone at home", 
@@ -2478,28 +2860,34 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 156
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 121
-                }, 
-                {
-                    "response": 99, 
-                    "response (n)": 9
-                }, 
-                {
-                    "response": 4, 
-                    "response (n)": 3
-                }, 
-                {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "5 - Not happy at all", 
                     "response (n)": 1
                 }, 
                 {
-                    "response": 3, 
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 156
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
                     "response (n)": 51
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 121
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 3
                 }
             ], 
             "question_text": "How happy do you feel about the school you go to?", 
@@ -2509,28 +2897,34 @@
         {
             "response_table": [
                 {
-                    "response": 1, 
-                    "response (n)": 135
-                }, 
-                {
-                    "response": 2, 
-                    "response (n)": 139
-                }, 
-                {
-                    "response": 99, 
-                    "response (n)": 8
-                }, 
-                {
-                    "response": 4, 
-                    "response (n)": 10
-                }, 
-                {
-                    "response": 5, 
+                    "value": "5", 
+                    "response": "5 - Not happy at all", 
                     "response (n)": 6
                 }, 
                 {
-                    "response": 3, 
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 135
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
                     "response (n)": 43
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 139
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 10
                 }
             ], 
             "question_text": "How happy do you feel about your school work?", 
@@ -2540,20 +2934,23 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 7
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 261
-                }, 
-                {
-                    "response": 2, 
+                    "response": "Neither agree nor disagree", 
                     "response (n)": 65
                 }, 
                 {
-                    "response": 3, 
+                    "value": "2", 
+                    "response": "Disagree", 
                     "response (n)": 8
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 261
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
                 }
             ], 
             "question_text": "How much do you agreee: I am a good person", 
@@ -2563,20 +2960,23 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 7
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 217
-                }, 
-                {
-                    "response": 2, 
+                    "response": "Neither agree nor disagree", 
                     "response (n)": 90
                 }, 
                 {
-                    "response": 3, 
+                    "value": "2", 
+                    "response": "Disagree", 
                     "response (n)": 27
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 217
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
                 }
             ], 
             "question_text": "How much do you agreee: I am able to do things as well as most people", 
@@ -2586,20 +2986,23 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 5
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 270
-                }, 
-                {
-                    "response": 2, 
+                    "response": "Neither agree nor disagree", 
                     "response (n)": 59
                 }, 
                 {
-                    "response": 3, 
+                    "value": "2", 
+                    "response": "Disagree", 
                     "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 270
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
                 }
             ], 
             "question_text": "How much do you agreee: I care about how well I do at school", 
@@ -2609,20 +3012,23 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 8
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 248
-                }, 
-                {
-                    "response": 2, 
+                    "response": "Neither agree nor disagree", 
                     "response (n)": 73
                 }, 
                 {
-                    "response": 3, 
+                    "value": "2", 
+                    "response": "Disagree", 
                     "response (n)": 12
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 248
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
                 }
             ], 
             "question_text": "How much do you agreee: I feel good about myself", 
@@ -2632,20 +3038,23 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 9
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 246
-                }, 
-                {
-                    "response": 2, 
+                    "response": "Neither agree nor disagree", 
                     "response (n)": 70
                 }, 
                 {
-                    "response": 3, 
+                    "value": "2", 
+                    "response": "Disagree", 
                     "response (n)": 16
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 246
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
                 }
             ], 
             "question_text": "How much do you agreee: I feel that I have a number of good qualities", 
@@ -2655,20 +3064,23 @@
         {
             "response_table": [
                 {
-                    "response": 99, 
-                    "response (n)": 6
-                }, 
-                {
-                    "response": 1, 
-                    "response (n)": 241
-                }, 
-                {
-                    "response": 2, 
+                    "response": "Neither agree nor disagree", 
                     "response (n)": 75
                 }, 
                 {
-                    "response": 3, 
+                    "value": "2", 
+                    "response": "Disagree", 
                     "response (n)": 19
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 241
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
                 }
             ], 
             "question_text": "How much do you agreee: On the whole, I am happy with myself", 

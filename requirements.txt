@@ -5,7 +5,7 @@ BeautifulSoup==3.2.1
 Django==1.9
 
 PyJWT==1.4.0
-PyYAML==3.11
+PyYAML==5.1
 VerbalExpressions==0.0.1
 amqp==1.4.6
 anyjson==0.3.3

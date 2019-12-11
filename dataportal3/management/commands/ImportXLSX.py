@@ -21,7 +21,7 @@ class Command(BaseCommand):
             sr = SurveyReader(filename)
             sr.build_from_description_file(
                 description_file,
-                '4',
-                'C'
+                '1',
+                'B'
             )
 

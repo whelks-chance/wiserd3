@@ -210,8 +210,8 @@ if __name__ == "__main__":
     sr = SurveyReader(filename)
     # sr.read_and_write()
     sr.build_from_description_file(
-        '/home/kdickson/PycharmProjects/wiserd3/rubbish/survey_xls/sample_4C.json',
-        '4',
-        'C'
+        '/home/kdickson/Downloads/sample_1B.json',
+        '1',
+        'B'
 
     )

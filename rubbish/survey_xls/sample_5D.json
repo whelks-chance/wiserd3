@@ -1,3 +1,4992 @@
 {
-    "questions": []
+    "questions": [
+        {
+            "response_table": [], 
+            "question_text": "Where were you born? - Other* (please specify - Text", 
+            "question_number": 3, 
+            "variable_name": "NatBirth02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "response": "Don't know/Can't remember", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "Have you taken one of our surveys before?", 
+            "question_number": 4, 
+            "variable_name": "doneprev_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "Which of the following best describes what you are doing at the moment? - Selected Choice Doing an apprenticeship (including on the job training)", 
+            "question_number": 6, 
+            "variable_name": "PostSchAct01_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Working full time in paid employment (if so, please say what your job is)", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": null, 
+                    "response (n)": 25
+                }
+            ], 
+            "question_text": "Which of the following best describes what you are doing at the moment? - Selected Choice Working full time in paid employment (if so, please say what your job is)", 
+            "question_number": 12, 
+            "variable_name": "PostSchAct02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Studying at University", 
+                    "response (n)": 15
+                }, 
+                {
+                    "response": 99, 
+                    "response (n)": 9
+                }, 
+                {
+                    "response": null, 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Which of the following best describes what you are doing at the moment? - Selected Choice Studying at University", 
+            "question_number": 5, 
+            "variable_name": "PostSchAct03_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Which of the following best describes what you are doing at the moment? - Selected Choice Not currently in paid employment", 
+            "question_number": 7, 
+            "variable_name": "PostSchAct04_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Which of the following best describes what you are doing at the moment? - Selected Choice I'm not currently in paid employment; I care for my children during working hours", 
+            "question_number": 9, 
+            "variable_name": "PostSchAct05_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Which of the following best describes what you are doing at the moment? - Selected Choice Studying in a further education college", 
+            "question_number": 10, 
+            "variable_name": "PostSchAct06_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Which of the following best describes what you are doing at the moment? - Selected Choice I'm a carer for a parent, sibling, other (full time or part-time)", 
+            "question_number": 8, 
+            "variable_name": "PostSchAct07_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Other (please specify)", 
+                    "response (n)": 7
+                }, 
+                {
+                    "response": null, 
+                    "response (n)": 21
+                }
+            ], 
+            "question_text": "Which of the following best describes what you are doing at the moment? - Selected Choice Other (please specify)", 
+            "question_number": 13, 
+            "variable_name": "PostSchAct08_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Which of the following best describes what you are doing at the moment? - Selected Choice I am a full time parent", 
+            "question_number": 11, 
+            "variable_name": "PostSchAct09_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Which of the following best describes what you are doing at the moment? - Working full time in paid employment (if so, please say what your job is) - Text", 
+            "question_number": 14, 
+            "variable_name": "PostSchAct10_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Which of the following best describes what you are doing at the moment? - Other (please specify) - Text", 
+            "question_number": 15, 
+            "variable_name": "PostSchAct11_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Looking back, what was the BEST thing about secondary school?", 
+            "question_number": 16, 
+            "variable_name": "SchAtt29_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Looking back, what was the WORST thing about secondary school?", 
+            "question_number": 17, 
+            "variable_name": "SchAtt30_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Somewhat unhappy", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither happy nor unhappy", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Very unhappy", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Very happy", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat happy", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "How happy would you say you were at school in general ?", 
+            "question_number": 18, 
+            "variable_name": "WellSat08_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Very Important", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not important", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat important", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Please rank each of these according to how important they were to you at school - Having a laugh with my friends", 
+            "question_number": 19, 
+            "variable_name": "WellValue24_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Very Important", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not important", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat important", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Please rank each of these according to how important they were to you at school - Doing well at my school work", 
+            "question_number": 20, 
+            "variable_name": "WellValue25_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Very Important", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not important", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat important", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Please rank each of these according to how important they were to you at school - Being popular", 
+            "question_number": 21, 
+            "variable_name": "WellValue26_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Very Important", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not important", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat important", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Please rank each of these according to how important they were to you at school - Being attractive", 
+            "question_number": 22, 
+            "variable_name": "WellValue27_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Very Important", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not important", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat important", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Please rank each of these according to how important they were to you at school - Being caring", 
+            "question_number": 23, 
+            "variable_name": "WellValue28_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 27
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Popular", 
+            "question_number": 24, 
+            "variable_name": "WellFeel31_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 27
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Lazy", 
+            "question_number": 25, 
+            "variable_name": "WellFeel32_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 26
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Sad", 
+            "question_number": 26, 
+            "variable_name": "WellFeel33_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 26
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Keen", 
+            "question_number": 27, 
+            "variable_name": "WellFeel34_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 28
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Fashionable", 
+            "question_number": 28, 
+            "variable_name": "WellFeel35_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 22
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Confident", 
+            "question_number": 29, 
+            "variable_name": "WellFeel36_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 25
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Disorganized", 
+            "question_number": 30, 
+            "variable_name": "WellFeel37_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 21
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Kind", 
+            "question_number": 31, 
+            "variable_name": "WellFeel38_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 22
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Cheerful", 
+            "question_number": 32, 
+            "variable_name": "WellFeel39_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 23
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Shy", 
+            "question_number": 33, 
+            "variable_name": "WellFeel40_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 27
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Troublemaker", 
+            "question_number": 34, 
+            "variable_name": "WellFeel41_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how you think OTHERS saw you at school: Clever", 
+            "question_number": 35, 
+            "variable_name": "WellFeel42_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 28
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Popular", 
+            "question_number": 36, 
+            "variable_name": "WellFeel43_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 25
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Lazy", 
+            "question_number": 37, 
+            "variable_name": "WellFeel44_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 22
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Sad", 
+            "question_number": 38, 
+            "variable_name": "WellFeel45_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 27
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Keen", 
+            "question_number": 39, 
+            "variable_name": "WellFeel46_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 28
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Fashionable", 
+            "question_number": 40, 
+            "variable_name": "WellFeel47_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 25
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Confident", 
+            "question_number": 41, 
+            "variable_name": "WellFeel48_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 23
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Disorganized", 
+            "question_number": 42, 
+            "variable_name": "WellFeel49_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 21
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Kind", 
+            "question_number": 43, 
+            "variable_name": "WellFeel50_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 23
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Cheerful", 
+            "question_number": 44, 
+            "variable_name": "WellFeel51_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 22
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Shy", 
+            "question_number": 45, 
+            "variable_name": "WellFeel52_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 26
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Troublemaker", 
+            "question_number": 46, 
+            "variable_name": "WellFeel53_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "Please tick up to TWO words which you think best describe how YOU felt at school: Clever", 
+            "question_number": 47, 
+            "variable_name": "WellFeel54_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Worried you a little", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never worried you", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Worried you a lot", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Thinking back to when you were in school, did any of the following worry you? - Feeling ashamed of your home", 
+            "question_number": 48, 
+            "variable_name": "WellSat09_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Worried you a little", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never worried you", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Thinking back to when you were in school, did any of the following worry you? - Feeling ashamed of your clothes", 
+            "question_number": 49, 
+            "variable_name": "WellSat10_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Worried you a little", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never worried you", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Worried you a lot", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Thinking back to when you were in school, did any of the following worry you? - Feeling that some pupils look down on you", 
+            "question_number": 50, 
+            "variable_name": "WellSat11_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Worried you a little", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never worried you", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Worried you a lot", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Thinking back to when you were in school, did any of the following worry you? - Feeling left out of things", 
+            "question_number": 51, 
+            "variable_name": "WellSat12_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Worried you a little", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never worried you", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Worried you a lot", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Thinking back to when you were in school, did any of the following worry you? - Feeling ashamed of the way that you look", 
+            "question_number": 52, 
+            "variable_name": "WellSat13_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Worried you a little", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never worried you", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Worried you a lot", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Thinking back to your schoolwork- when you were at school, did any of the following worry you? - Not being able to keep up with the work", 
+            "question_number": 53, 
+            "variable_name": "WellSat14_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Worried you a little", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never worried you", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Worried you a lot", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Thinking back to your schoolwork- when you were at school, did any of the following worry you? - Other pupils thinking you were too clever or a 'teacher's pet'", 
+            "question_number": 54, 
+            "variable_name": "WellSat15_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Worried you a little", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never worried you", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Worried you a lot", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Thinking back to your schoolwork- when you were at school, did any of the following worry you? - Other pupils making fun of you for not being able to keep up in class", 
+            "question_number": 55, 
+            "variable_name": "WellSat16_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Worried you a little", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never worried you", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Worried you a lot", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Thinking back to your schoolwork- when you were at school, did any of the following worry you? - Being made fun of for doing well at school", 
+            "question_number": 56, 
+            "variable_name": "WellSat17_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "My school: - Encouraged me to be a more caring person", 
+            "question_number": 57, 
+            "variable_name": "SchAtt31_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "My school: - Taught me how to learn", 
+            "question_number": 58, 
+            "variable_name": "SchAtt38_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "My school: - Helped me be more creative", 
+            "question_number": 59, 
+            "variable_name": "SchAtt34_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "My school: - Helped me be healthier and fitter", 
+            "question_number": 60, 
+            "variable_name": "SchAtt32_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "My school: - Helped me be more confident", 
+            "question_number": 61, 
+            "variable_name": "SchAtt33_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "My school: - Helped prepare me for life after school", 
+            "question_number": 62, 
+            "variable_name": "SchAtt36_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "My school: - Made me believe I can achieve whatever I want", 
+            "question_number": 63, 
+            "variable_name": "SchAtt37_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "My school: - Helped me understand the history of Wales", 
+            "question_number": 64, 
+            "variable_name": "SchAtt35_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements about your fellow students? - Students who were good at schoolwork were less popular", 
+            "question_number": 65, 
+            "variable_name": "SchLearnAtt19_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements about your fellow students? - My friends had a good influence on my learning at school", 
+            "question_number": 66, 
+            "variable_name": "SchLearnAtt18_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements about your fellow students? - Most of my friends wanted to go to University", 
+            "question_number": 67, 
+            "variable_name": "PostSchAct12_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements about your fellow students? - Most of my friends left school at 16 to begin jobs or apprenticeships", 
+            "question_number": 68, 
+            "variable_name": "PostSchAct13_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes (if so please tell us what it was)", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "Did you ever hold a position of responsibility within your school? (e.g. club captain, head boy, head girl?) - Selected Choice", 
+            "question_number": 69, 
+            "variable_name": "Responsible07_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Did you ever hold a position of responsibility within your school? (e.g. club captain, head boy, head girl?) - Yes (if so, please tell us what it was) - Text", 
+            "question_number": 70, 
+            "variable_name": "Responsible08_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Which qualifications, if any, have you obtained since your GCSEs?  Tick all that apply - Selected Choice A Levels", 
+            "question_number": 71, 
+            "variable_name": "Qualif01_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 17
+                }
+            ], 
+            "question_text": "Which qualifications, if any, have you obtained since your GCSEs?  Tick all that apply - Selected Choice BTEC", 
+            "question_number": 72, 
+            "variable_name": "Qualif02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "Which qualifications, if any, have you obtained since your GCSEs?  Tick all that apply - Selected Choice NVQs (Level 1-4)", 
+            "question_number": 73, 
+            "variable_name": "Qualif03_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Which qualifications, if any, have you obtained since your GCSEs?  Tick all that apply - Selected Choice HND", 
+            "question_number": 74, 
+            "variable_name": "Qualif04_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 18
+                }
+            ], 
+            "question_text": "Which qualifications, if any, have you obtained since your GCSEs?  Tick all that apply - Selected Choice Other (please write in)", 
+            "question_number": 75, 
+            "variable_name": "Qualif05_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Which qualifications, if any, have you obtained since your GCSEs?  Tick all that apply - Other (please write in) - Text", 
+            "question_number": 76, 
+            "variable_name": "Qualif06_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Qualification (e.g., A Level, BTEC)", 
+            "question_number": 77, 
+            "variable_name": "Qualif07_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Subject (e.g. English, etc)", 
+            "question_number": 78, 
+            "variable_name": "SchStdySubj83_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Grade", 
+            "question_number": 79, 
+            "variable_name": "SchAchv23_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Qualification (e.g. A Level, BTEC)", 
+            "question_number": 80, 
+            "variable_name": "Qualif08_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Subject", 
+            "question_number": 81, 
+            "variable_name": "SchStdySubj84_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Grade", 
+            "question_number": 82, 
+            "variable_name": "SchAchv24_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Qualification (e.g. A Level, BTEC)", 
+            "question_number": 83, 
+            "variable_name": "Qualif09_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Subject", 
+            "question_number": 84, 
+            "variable_name": "SchStdySubj85_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Grade", 
+            "question_number": 85, 
+            "variable_name": "SchAchv25_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Qualification (e.g., A Level, BTEC)", 
+            "question_number": 86, 
+            "variable_name": "Qualif10_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Subject", 
+            "question_number": 87, 
+            "variable_name": "SchStdySubj86_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grades did you get in your most recent qualifications? Please list the subject you took and the grade below - Grade", 
+            "question_number": 88, 
+            "variable_name": "SchAchv26_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very pleased", 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": "Somewhat disappointed", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "Somewhat pleased", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither pleased nor disappointed", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Thinking about your most recent qualification results, please indicate how pleased or disappointed you were", 
+            "question_number": 89, 
+            "variable_name": "SchAchv03_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is the name of your University?", 
+            "question_number": 90, 
+            "variable_name": "uninamestr_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "No (if not, please tell us what your first choice University was)", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "Is your current University your first choice University? - Selected Choice", 
+            "question_number": 91, 
+            "variable_name": "Uni01_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Is your current University your first choice University? - No (if not, please tell us what your first choice University was) - Text", 
+            "question_number": 92, 
+            "variable_name": "Uni02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements about University? - I feel like I fit in and belong at University", 
+            "question_number": 93, 
+            "variable_name": "UniAtt01_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements about University? - University is what I expected it to be like", 
+            "question_number": 94, 
+            "variable_name": "UniAtt02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements about University? - Most of the people I have met at University are from similar backgrounds to me", 
+            "question_number": 95, 
+            "variable_name": "UniAtt03_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements about University? - I find the academic work at University hard", 
+            "question_number": 96, 
+            "variable_name": "UniAtt04_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements about University? - Teaching is better at University than it was at my school", 
+            "question_number": 97, 
+            "variable_name": "UniAtt05_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements about University? - I have a good social life at University", 
+            "question_number": 98, 
+            "variable_name": "UniAtt06_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements about University? - My school prepared me well for University", 
+            "question_number": 99, 
+            "variable_name": "UniAtt07_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What job/career would you like when you graduate from University?", 
+            "question_number": 100, 
+            "variable_name": "AspCareer17_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Somewhat confident", 
+                    "response (n)": 9
+                }, 
+                {
+                    "response": "Very Confident", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "How confident are you that you will get this job?", 
+            "question_number": 101, 
+            "variable_name": "AspCareer06_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "response": "Yes (if so, please tell us what it is and approximately how many hours you work a week)", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Do you have a part time job whilst at University? - Selected Choice", 
+            "question_number": 102, 
+            "variable_name": "EmpAct05_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you have a part time job whilst at University? - Yes (if so, please tell us what it is and approximately how many hours you work a week) - Text", 
+            "question_number": 103, 
+            "variable_name": "EmpAct06_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Somewhat confident", 
+                    "response (n)": 13
+                }, 
+                {
+                    "response": "Very Confident", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "How confident are you when it comes to the following things? - Interviews (e.g. for University or jobs)", 
+            "question_number": 104, 
+            "variable_name": "WellConf02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Somewhat confident", 
+                    "response (n)": 7
+                }, 
+                {
+                    "response": "Very Confident", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "How confident are you when it comes to the following things? - Performing in front of people (e.g. singing, acting)", 
+            "question_number": 105, 
+            "variable_name": "WellConf04_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Somewhat confident", 
+                    "response (n)": 8
+                }, 
+                {
+                    "response": "Very Confident", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "How confident are you when it comes to the following things? - Public speaking (e.g. presenting work in front of the seminar class, giving a speech, etc)", 
+            "question_number": 106, 
+            "variable_name": "WellConf05_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Somewhat confident", 
+                    "response (n)": 10
+                }, 
+                {
+                    "response": "Very Confident", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How confident are you when it comes to the following things? - Speaking to authority figures (e.g. senior lecturers, managers at work, the police, etc)", 
+            "question_number": 107, 
+            "variable_name": "WellConf06_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Somewhat confident", 
+                    "response (n)": 7
+                }, 
+                {
+                    "response": "Very Confident", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How confident are you when it comes to the following things? - Being in charge of something (e.g. a group project, captain of a team)", 
+            "question_number": 108, 
+            "variable_name": "WellConf01_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Somewhat confident", 
+                    "response (n)": 13
+                }, 
+                {
+                    "response": "Very Confident", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "How confident are you when it comes to the following things? - Putting your hand up in a class, lecture or seminar to ask for help (if you are no longer in education you may skip this question)", 
+            "question_number": 109, 
+            "variable_name": "WellConf07_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very comfortable", 
+                    "response (n)": 11
+                }, 
+                {
+                    "response": "Slightly Uncomfortable", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": "Quite Comfortable", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "How comfortable are you being around people who: (please tick all that apply) - Speak languages other than English or Welsh?", 
+            "question_number": 110, 
+            "variable_name": "DiversAtt26_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very comfortable", 
+                    "response (n)": 19
+                }, 
+                {
+                    "response": "Quite Comfortable", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How comfortable are you being around people who: (please tick all that apply) - Are of a different gender from you?", 
+            "question_number": 111, 
+            "variable_name": "DiversAtt22_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very comfortable", 
+                    "response (n)": 19
+                }, 
+                {
+                    "response": "Quite Comfortable", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How comfortable are you being around people who: (please tick all that apply) - Are of a different race or skin colour to your own?", 
+            "question_number": 112, 
+            "variable_name": "DiversAtt23_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very comfortable", 
+                    "response (n)": 20
+                }, 
+                {
+                    "response": "Quite Comfortable", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How comfortable are you being around people who: (please tick all that apply) - Are of a different sexual orientation?", 
+            "question_number": 113, 
+            "variable_name": "DiversAtt24_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very comfortable", 
+                    "response (n)": 18
+                }, 
+                {
+                    "response": "Quite Comfortable", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How comfortable are you being around people who: (please tick all that apply) - Have a different religion to your own?", 
+            "question_number": 114, 
+            "variable_name": "DiversAtt25_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Do you have friends who are of a different race or skin colour to your own?", 
+            "question_number": 115, 
+            "variable_name": "DiversAtt16_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Very comfortable", 
+                    "response (n)": 18
+                }, 
+                {
+                    "response": "Somewhat comfortable", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How comfortable are you being around people who wear:  (Please tick all that apply) - a turban?", 
+            "question_number": 116, 
+            "variable_name": "DiversAtt20_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Very comfortable", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I wear one", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Somewhat comfortable", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How comfortable are you being around people who wear:  (Please tick all that apply) - A hijab (a head scarf covering the hair and neck, worn by some Muslim women)", 
+            "question_number": 117, 
+            "variable_name": "DiversAtt19_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Very comfortable", 
+                    "response (n)": 9
+                }, 
+                {
+                    "response": "Slightly Uncomfortable", 
+                    "response (n)": 8
+                }, 
+                {
+                    "response": "Somewhat comfortable", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How comfortable are you being around people who wear:  (Please tick all that apply) - a burka (a long garment covering the whole face and body, worn by some Muslim women)", 
+            "question_number": 118, 
+            "variable_name": "DiversAtt17_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Very comfortable", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I wear one", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Somewhat comfortable", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How comfortable are you being around people who wear:  (Please tick all that apply) - a cross", 
+            "question_number": 119, 
+            "variable_name": "DiversAtt18_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Very comfortable", 
+                    "response (n)": 18
+                }, 
+                {
+                    "response": "Somewhat comfortable", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How comfortable are you being around people who wear:  (Please tick all that apply) - a yarmulke or kippah (a cap worn by some Jewish men)", 
+            "question_number": 120, 
+            "variable_name": "DiversAtt21_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using sexist language? At your University or College (if you are not at University or College you can ignore this column)", 
+            "question_number": 121, 
+            "variable_name": "DiversAtt35_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using sexist language? At your workplace? (if you are not in work you can ignore this column)", 
+            "question_number": 122, 
+            "variable_name": "DiversAtt37_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using sexist language? In your local area?", 
+            "question_number": 123, 
+            "variable_name": "DiversAtt36_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using racist language? At your University or College (if you are not at University or College you can ignore this column)", 
+            "question_number": 124, 
+            "variable_name": "DiversAtt33_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using racist language? At your workplace? (if you are not in work you can ignore this column)", 
+            "question_number": 125, 
+            "variable_name": "DiversAtt38_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using racist language? In your local area?", 
+            "question_number": 126, 
+            "variable_name": "DiversAtt34_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about people of different religions? At your University or College (if you are not at University or College you can ignore this column)", 
+            "question_number": 127, 
+            "variable_name": "DiversAtt29_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about people of different religions? At your workplace? (if you are not in work you can ignore this column)", 
+            "question_number": 128, 
+            "variable_name": "DiversAtt39_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about people of different religions? In your local area?", 
+            "question_number": 129, 
+            "variable_name": "DiversAtt30_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about lesbian, gay or bisexual people? At your University or College (if you are not at University or College you can ignore this column)", 
+            "question_number": 130, 
+            "variable_name": "DiversAtt27_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about lesbian, gay or bisexual people? At your workplace? (if you are not in work you can ignore this column)", 
+            "question_number": 131, 
+            "variable_name": "DiversAtt40_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about lesbian, gay or bisexual people? In your local area?", 
+            "question_number": 132, 
+            "variable_name": "DiversAtt28_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about people who are refugees or immigrants? At your University or College (if you are not at University or College you can ignore this column)", 
+            "question_number": 133, 
+            "variable_name": "DiversAtt31_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about people who are refugees or immigrants? At your workplace? (if you are not in work you can ignore this column)", 
+            "question_number": 134, 
+            "variable_name": "DiversAtt41_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about people who are refugees or immigrants? In your local area?", 
+            "question_number": 135, 
+            "variable_name": "DiversAtt32_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Who do you think should be allowed to move to Wales from other countries? (Please tick all that apply) People from abroad who want to escape poverty", 
+            "question_number": 136, 
+            "variable_name": "EthicsAtt09_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Who do you think should be allowed to move to Wales from other countries? (Please tick all that apply) People from abroad with useful skills to do jobs", 
+            "question_number": 137, 
+            "variable_name": "EthicsAtt10_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Who do you think should be allowed to move to Wales from other countries? (Please tick all that apply) People from England", 
+            "question_number": 138, 
+            "variable_name": "EthicsAtt11_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Who do you think should be allowed to move to Wales from other countries? (Please tick all that apply) Adults trying to escape wars in their own countries", 
+            "question_number": 139, 
+            "variable_name": "EthicsAtt12_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Who do you think should be allowed to move to Wales from other countries? (Please tick all that apply) Children  trying to escape wars in their own countries", 
+            "question_number": 140, 
+            "variable_name": "EthicsAtt13_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Who do you think should be allowed to move to Wales from other countries? (Please tick all that apply) None of the above", 
+            "question_number": 141, 
+            "variable_name": "EthicsAtt14_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": "I wasnt old enough to vote", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Stay", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Leave", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "I was old enough to vote but not registered to vote", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Prefer not to say", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "As you may know, the UK voted to leave the European Union (EU) in a referendum last year.   Did you vote to stay in the EU or to leave the EU?", 
+            "question_number": 142, 
+            "variable_name": "EngPol11_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Dont know", 
+                    "response (n)": 10
+                }, 
+                {
+                    "response": "Yes, it will be good for young people (please briefly tell us why you think that)", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": "No, I think it will be bad for young people (please briefly tell us why you think that)", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "Do you think the decision to leave the EU will be good for young people in Wales? - Selected Choice", 
+            "question_number": 143, 
+            "variable_name": "EngPol12_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you think the decision to leave the EU will be good for young people in Wales? - Yes, it will be good for young people (please briefly tell us why you think that) - Text", 
+            "question_number": 144, 
+            "variable_name": "EngPol23_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you think the decision to leave the EU will be good for young people in Wales? - No, I think it will be bad for young people (please briefly tell us why you think that) - Text", 
+            "question_number": 145, 
+            "variable_name": "EngPol24_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": "Dont know", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "Do you think the voting age should be lowered to 16?", 
+            "question_number": 146, 
+            "variable_name": "EngPol02_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "If you could do ONE thing to make the WORLD a better place, what would it be?", 
+            "question_number": 147, 
+            "variable_name": "EngSoc38_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Which of the phrases below describes how you're getting on at the moment? Tick all that apply I'm struggling", 
+            "question_number": 148, 
+            "variable_name": "WellFeel24_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "Which of the phrases below describes how you're getting on at the moment? Tick all that apply I'm finding it easy", 
+            "question_number": 149, 
+            "variable_name": "WellFeel23_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Which of the phrases below describes how you're getting on at the moment? Tick all that apply I feel I'm being challenged", 
+            "question_number": 150, 
+            "variable_name": "WellFeel26_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Which of the phrases below describes how you're getting on at the moment? Tick all that apply I have made new friends recently", 
+            "question_number": 151, 
+            "variable_name": "WellFeel27_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Which of the phrases below describes how you're getting on at the moment? Tick all that apply I feel independent", 
+            "question_number": 152, 
+            "variable_name": "WellFeelAtt12_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 17
+                }
+            ], 
+            "question_text": "Which of the phrases below describes how you're getting on at the moment? Tick all that apply I feel lonely", 
+            "question_number": 153, 
+            "variable_name": "WellFeel20_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Which of the phrases below describes how you're getting on at the moment? Tick all that apply I'm enjoying myself", 
+            "question_number": 154, 
+            "variable_name": "WellFeel22_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "Which of the phrases below describes how you're getting on at the moment? Tick all that apply I have enough money to buy the things I need", 
+            "question_number": 155, 
+            "variable_name": "WellFeel55_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements? - When it comes to doing well in life, it\u2019s not about what you know, it\u2019s who you know", 
+            "question_number": 156, 
+            "variable_name": "EngSoc39_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements? - Private schools are better than state schools", 
+            "question_number": 157, 
+            "variable_name": "SchAtt40_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements? - Private school children get an unfair advantage in life", 
+            "question_number": 158, 
+            "variable_name": "SchAtt39_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements? - The more qualifications you have, the more likely you are to get the job you want", 
+            "question_number": 159, 
+            "variable_name": "SchAtt42_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements? - The main point of school is to pass exams and get qualifications", 
+            "question_number": 160, 
+            "variable_name": "SchAtt41_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": 2, 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": 99, 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": 4, 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": 5, 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Least important", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": 3, 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "What are the most important things you look for in a job? (Please drag this is order of most to least important to you). It should be a job that... - helps people", 
+            "question_number": 161, 
+            "variable_name": "AspCareerAtt02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": 2, 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": 3, 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": 4, 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": 5, 
+                    "response (n)": 7
+                }, 
+                {
+                    "response": 6, 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Least important", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": 99, 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "What are the most important things you look for in a job? (Please drag this is order of most to least important to you). It should be a job that... - makes people respect me", 
+            "question_number": 162, 
+            "variable_name": "AspCareerAtt06_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": 2, 
+                    "response (n)": 7
+                }, 
+                {
+                    "response": 99, 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": 4, 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": 6, 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": 3, 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "What are the most important things you look for in a job? (Please drag this is order of most to least important to you). It should be a job that... - is well paid", 
+            "question_number": 163, 
+            "variable_name": "AspCareerAtt04_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": 2, 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": 3, 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": 4, 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": 5, 
+                    "response (n)": 8
+                }, 
+                {
+                    "response": 6, 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Least important", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": 99, 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "What are the most important things you look for in a job? (Please drag this is order of most to least important to you). It should be a job that... - lets me do things my own way", 
+            "question_number": 164, 
+            "variable_name": "AspCareerAtt05_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": 2, 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": 99, 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": 4, 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": 5, 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": 6, 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Least important", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": 3, 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "What are the most important things you look for in a job? (Please drag this is order of most to least important to you). It should be a job that... - allows me to spend lots of time with my family", 
+            "question_number": 165, 
+            "variable_name": "AspCareerAtt01_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "7", 
+                    "response": "7 - Least important", 
+                    "response (n)": 13
+                }, 
+                {
+                    "response": 99, 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": 4, 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": 5, 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": 6, 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "What are the most important things you look for in a job? (Please drag this is order of most to least important to you). It should be a job that... - puts me in charge of other people", 
+            "question_number": 166, 
+            "variable_name": "AspCareerAtt07_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": 3, 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 10
+                }, 
+                {
+                    "response": 2, 
+                    "response (n)": 8
+                }, 
+                {
+                    "response": 99, 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": 4, 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "What are the most important things you look for in a job? (Please drag this is order of most to least important to you). It should be a job that... - is secure", 
+            "question_number": 167, 
+            "variable_name": "AspCareerAtt03_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "Here is a list of things some people your age have. Please tell us which ones you have.  (Please tick all that apply) Some money saved up (e.g. in a savings bank account)", 
+            "question_number": 168, 
+            "variable_name": "Deprive07_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "Here is a list of things some people your age have. Please tell us which ones you have.  (Please tick all that apply) Designer clothes", 
+            "question_number": 169, 
+            "variable_name": "Deprive23_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Here is a list of things some people your age have. Please tell us which ones you have.  (Please tick all that apply) A smartphone", 
+            "question_number": 170, 
+            "variable_name": "Deprive10_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Here is a list of things some people your age have. Please tell us which ones you have.  (Please tick all that apply) Cable or satellite TV at home", 
+            "question_number": 172, 
+            "variable_name": "Deprive11_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "Here is a list of things some people your age have. Please tell us which ones you have.  (Please tick all that apply) Your own car", 
+            "question_number": 173, 
+            "variable_name": "Deprive24_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Here is a list of things some people your age have. Please tell us which ones you have.  (Please tick all that apply) High speed internet in your house", 
+            "question_number": 174, 
+            "variable_name": "Deprive21_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Here is a list of things some people your age have. Please tell us which ones you have.  (Please tick all that apply) A laptop or pc", 
+            "question_number": 171, 
+            "variable_name": "Deprive20_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Here is a list of things some people your age have. Please tell us which ones you have.  (Please tick all that apply) None of the above", 
+            "question_number": 175, 
+            "variable_name": "Deprive25_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "If you have savings, what things are you mainly saving up for?", 
+            "question_number": 176, 
+            "variable_name": "Money16_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Which of the following best describes your current living arrangements? Tick up to two I live with my parents or other relatives", 
+            "question_number": 177, 
+            "variable_name": "LiveArr01_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Which of the following best describes your current living arrangements? Tick up to two I live with my partner", 
+            "question_number": 178, 
+            "variable_name": "LiveArr02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Which of the following best describes your current living arrangements? Tick up to two I have a mortgage", 
+            "question_number": 179, 
+            "variable_name": "LiveArr03_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "Which of the following best describes your current living arrangements? Tick up to two I am renting a house or flat", 
+            "question_number": 180, 
+            "variable_name": "LiveArr04_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "Which of the following best describes your current living arrangements? Tick up to two I live in student accommodation", 
+            "question_number": 181, 
+            "variable_name": "LiveArr05_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Which of the following best describes your current living arrangements? Tick up to two I live in sheltered accommodation (e.g. a hostel)", 
+            "question_number": 182, 
+            "variable_name": "LiveArr06_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Regularly", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": "Occassionally", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Have you done any of the following activities to help other people or the environment in the last 12 months? - Donated money", 
+            "question_number": 183, 
+            "variable_name": "PhilAct09_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Regularly", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 8
+                }, 
+                {
+                    "response": "Occassionally", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Have you done any of the following activities to help other people or the environment in the last 12 months? - Donated goods (e.g. clothes, food)", 
+            "question_number": 184, 
+            "variable_name": "PhilAct10_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Regularly", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 10
+                }, 
+                {
+                    "response": "Occassionally", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Have you done any of the following activities to help other people or the environment in the last 12 months? - Done any fundraising or a sponsored event", 
+            "question_number": 185, 
+            "variable_name": "PhilAct11_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 16
+                }, 
+                {
+                    "response": "Occassionally", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "Have you done any of the following activities to help other people or the environment in the last 12 months? - Helped improve your local area", 
+            "question_number": 186, 
+            "variable_name": "PhilAct12_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Regularly", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 12
+                }, 
+                {
+                    "response": "Occassionally", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "Have you done any of the following activities to help other people or the environment in the last 12 months? - Campaigned for something you believe in", 
+            "question_number": 187, 
+            "variable_name": "PhilAct13_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Regularly", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 8
+                }, 
+                {
+                    "response": "Occassionally", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Have you done any of the following activities to help other people or the environment in the last 12 months? - Given time to help a charity or cause", 
+            "question_number": 188, 
+            "variable_name": "PhilAct14_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Regularly", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 11
+                }, 
+                {
+                    "response": "Occassionally", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "Have you done any of the following activities to help other people or the environment in the last 12 months? - Supported other people who aren't friends or relatives", 
+            "question_number": 189, 
+            "variable_name": "PhilAct15_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Selected Choice I really enjoy it", 
+            "question_number": 190, 
+            "variable_name": "PhilActWhy01_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Selected Choice To improve things/help people", 
+            "question_number": 191, 
+            "variable_name": "PhilActWhy02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 18
+                }
+            ], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Selected Choice To meet people/make friends", 
+            "question_number": 192, 
+            "variable_name": "PhilActWhy03_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Selected Choice My friends/family do it", 
+            "question_number": 193, 
+            "variable_name": "PhilActWhy04_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Selected Choice To use my skills/learn new ones", 
+            "question_number": 194, 
+            "variable_name": "PhilActWhy05_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Selected Choice It\u2019s my philosophy or religious belief", 
+            "question_number": 195, 
+            "variable_name": "PhilActWhy06_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Selected Choice To get a recognised qualification", 
+            "question_number": 196, 
+            "variable_name": "PhilActWhy07_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Selected Choice There was no one else to do it", 
+            "question_number": 197, 
+            "variable_name": "PhilActWhy08_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Selected Choice I was asked to do it", 
+            "question_number": 198, 
+            "variable_name": "PhilActWhy09_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Selected Choice None of these", 
+            "question_number": 199, 
+            "variable_name": "PhilActWhy10_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Selected Choice Other", 
+            "question_number": 200, 
+            "variable_name": "PhilActWhy11_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Thinking about these activities, why did you get involved? Please tick all that apply: - Other - Text", 
+            "question_number": 201, 
+            "variable_name": "PhilActWhy12_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What do you see yourself doing in 5 years time?", 
+            "question_number": 202, 
+            "variable_name": "AspTime01_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": "Definitely not", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "In ten years time, do you think you will... - Be living in Wales", 
+            "question_number": 203, 
+            "variable_name": "AspLikely07_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Definitely not", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "In ten years time, do you think you will... - Own your own home", 
+            "question_number": 204, 
+            "variable_name": "AspLikely11_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "Definitely not", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "In ten years time, do you think you will... - Have started a family", 
+            "question_number": 205, 
+            "variable_name": "AspLikely02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Definitely not", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "In ten years time, do you think you will... - Have travelled the world", 
+            "question_number": 206, 
+            "variable_name": "AspLikely12_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 14
+                }, 
+                {
+                    "response": "Definitely not", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "In ten years time, do you think you will... - Be in a senior or leadership position in your chosen career", 
+            "question_number": 207, 
+            "variable_name": "AspLikely13_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice Facebook", 
+            "question_number": 208, 
+            "variable_name": "SocialMed01_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice Instagram", 
+            "question_number": 209, 
+            "variable_name": "SocialMed02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice Twitter", 
+            "question_number": 210, 
+            "variable_name": "SocialMed03_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice WhatsApp", 
+            "question_number": 211, 
+            "variable_name": "SocialMed04_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice Snapchat", 
+            "question_number": 212, 
+            "variable_name": "SocialMed05_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice Other (please write in)", 
+            "question_number": 213, 
+            "variable_name": "SocialMed06_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Other (please write in) - Text", 
+            "question_number": 214, 
+            "variable_name": "SocialMed07_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I can only speak a little Welsh", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Fluently", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "I can only say a few words", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "I can speak a fair amount of Welsh", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Do you speak Welsh?", 
+            "question_number": 215, 
+            "variable_name": "NatLang11_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than once per month", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "How often do you use Welsh\u2026 - For web searches (e.g. Google)", 
+            "question_number": 216, 
+            "variable_name": "CymActFrq08_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than once per month", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "How often do you use Welsh\u2026 - On Facebook", 
+            "question_number": 217, 
+            "variable_name": "CymActFrq10_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than once per month", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "How often do you use Welsh\u2026 - On Twitter", 
+            "question_number": 218, 
+            "variable_name": "CymActFrq13_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than once per month", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "How often do you use Welsh\u2026 - On Instagram", 
+            "question_number": 219, 
+            "variable_name": "CymActFrq11_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than once per month", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "How often do you use Welsh\u2026 - On Snapchat", 
+            "question_number": 220, 
+            "variable_name": "CymActFrq12_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than once per month", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "How often do you use Welsh\u2026 - On WhatsApp or in text messages", 
+            "question_number": 221, 
+            "variable_name": "CymActFrq14_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than once per month", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "How often do you use Welsh\u2026 - In e-mails", 
+            "question_number": 222, 
+            "variable_name": "CymActFrq09_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than once per month", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "How often do you use Welsh\u2026 - At home speaking to your family", 
+            "question_number": 223, 
+            "variable_name": "CymActFrq04_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than once per month", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "How often do you use Welsh\u2026 - When speaking to your friends in school", 
+            "question_number": 224, 
+            "variable_name": "CymActFrq06_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than once per month", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "How often do you use Welsh\u2026 - When socialising with friends outside school", 
+            "question_number": 225, 
+            "variable_name": "CymActFrq05_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "How often do you use Welsh\u2026 - When speaking to people in your community", 
+            "question_number": 226, 
+            "variable_name": "CymActFrq07_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": "Yes (if yes, what would you have done?)", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "Would you ever consider having plastic surgery? - Selected Choice", 
+            "question_number": 227, 
+            "variable_name": "WellValue20_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Would you ever consider having plastic surgery? - Yes (if yes, what would you have done?) - Text", 
+            "question_number": 228, 
+            "variable_name": "WellValue21_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 22
+                }
+            ], 
+            "question_text": "Would you ever consider taking steroids? - Selected Choice", 
+            "question_number": 229, 
+            "variable_name": "WellValue22_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Would you ever consider taking steroids? - Yes (if yes, please tell us why) - Text", 
+            "question_number": 230, 
+            "variable_name": "WellValue23_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Wales", 
+                    "response (n)": 15
+                }, 
+                {
+                    "response": "Other - Write in", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Scotland", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "England", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Where was your mother (or female carer) born? - Selected Choice", 
+            "question_number": 231, 
+            "variable_name": "NatBirth03_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Where was your mother (or female carer) born? - Somewhere else (Please tell us where in box): - Text", 
+            "question_number": 232, 
+            "variable_name": "NatBirth04_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Wales", 
+                    "response (n)": 14
+                }, 
+                {
+                    "response": "Other - Write in", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Scotland", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "England", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Where was your father (or male carer) born? - Selected Choice", 
+            "question_number": 233, 
+            "variable_name": "NatBirth05_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Where was your father (or male carer) born? - Somewhere else (Please tell us where in box): - Text", 
+            "question_number": 234, 
+            "variable_name": "NatBirth06_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "Did your parents or carers go to University? - Did your mother (or female carer) go to University?", 
+            "question_number": 235, 
+            "variable_name": "FamEdu02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "Did your parents or carers go to University? - Did your father (or male carer) go to University?", 
+            "question_number": 236, 
+            "variable_name": "FamEdu01_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Welsh", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other (please write in)", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "British", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Which of the following best describes you? - Selected Choice", 
+            "question_number": 237, 
+            "variable_name": "NatIden01_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Which of the following best describes you? - Other (please write in) - Text", 
+            "question_number": 238, 
+            "variable_name": "NatEth02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "In your home, what language(s) do you mainly speak? - Selected Choice English", 
+            "question_number": 239, 
+            "variable_name": "NatLang01_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 25
+                }
+            ], 
+            "question_text": "In your home, what language(s) do you mainly speak? - Selected Choice Welsh", 
+            "question_number": 240, 
+            "variable_name": "NatLang02_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 26
+                }
+            ], 
+            "question_text": "In your home, what language(s) do you mainly speak? - Selected Choice Both English and Welsh", 
+            "question_number": 241, 
+            "variable_name": "NatLang10_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 28
+                }
+            ], 
+            "question_text": "In your home, what language(s) do you mainly speak? - Selected Choice Other (Please tell us which languages)", 
+            "question_number": 242, 
+            "variable_name": "NatLang03_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "In your home, what language(s) do you mainly speak? - Other (Please tell us which languages) - Text", 
+            "question_number": 243, 
+            "variable_name": "NatLang04_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Male", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Female", 
+                    "response (n)": 21
+                }
+            ], 
+            "question_text": "What is your gender?", 
+            "question_number": 0, 
+            "variable_name": "sex_5D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Wales", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "2", 
+                    "response": "England", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "Other - Write in", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "Where were you born? - Selected Choice", 
+            "question_number": 2, 
+            "variable_name": "NatBirth01_5D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Where were you born? - Other* (please specify - Text", 
+            "question_number": 3, 
+            "variable_name": "NatBirth02_5D"
+        }
+    ]
 }

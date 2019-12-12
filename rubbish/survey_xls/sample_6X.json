@@ -1,0 +1,4492 @@
+{
+    "questions": [
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Male", 
+                    "response (n)": 413
+                }, 
+                {
+                    "response": "Id prefer not to say", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Female", 
+                    "response (n)": 432
+                }
+            ], 
+            "question_text": "2. What is your gender?", 
+            "question_number": 6, 
+            "variable_name": "sex_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Here is a list of things some young people your age have. Please tell us which ones you have - Some pocket money each week to spend on yourself", 
+            "question_number": 7, 
+            "variable_name": "Deprive06_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Here is a list of things some young people your age have. Please tell us which ones you have - Some money that you can save each month, either in a bank or at home", 
+            "question_number": 8, 
+            "variable_name": "Deprive07_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Here is a list of things some young people your age have. Please tell us which ones you have - A pair of designer or brand name trainers (like Nike or Vans)", 
+            "question_number": 9, 
+            "variable_name": "Deprive08_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Here is a list of things some young people your age have. Please tell us which ones you have - An iPod or other personal music player", 
+            "question_number": 10, 
+            "variable_name": "Deprive09_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Here is a list of things some young people your age have. Please tell us which ones you have - A smartphone", 
+            "question_number": 11, 
+            "variable_name": "Deprive10_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 728
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 127
+                }
+            ], 
+            "question_text": "Here is a list of things some young people your age have. Please tell us which ones you have - Cable or satellite TV at home", 
+            "question_number": 12, 
+            "variable_name": "Deprive11_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 716
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 139
+                }
+            ], 
+            "question_text": "Here is a list of things some young people your age have. Please tell us which ones you have - A garden at home, or somewhere nearby like a park where you can safely spend time with your friends", 
+            "question_number": 13, 
+            "variable_name": "Deprive12_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 749
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 106
+                }
+            ], 
+            "question_text": "Here is a list of things some young people your age have. Please tell us which ones you have - A family car for transport when you need it", 
+            "question_number": 14, 
+            "variable_name": "Deprive13_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 736
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 119
+                }
+            ], 
+            "question_text": "Here is a list of things some young people your age have. Please tell us which ones you have - The right kind of clothes to fit in with other people your age", 
+            "question_number": 15, 
+            "variable_name": "Deprive14_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 579
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 276
+                }
+            ], 
+            "question_text": "Here is a list of things some young people your age have. Please tell us which ones you have - At least one family holiday away from home each year", 
+            "question_number": 16, 
+            "variable_name": "Deprive15_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 451
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 404
+                }
+            ], 
+            "question_text": "Here is a list of things some young people your age have. Please tell us which ones you have - Family trips or days out at least once a month", 
+            "question_number": 17, 
+            "variable_name": "Deprive16_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Most of the time", 
+                    "response (n)": 220
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 247
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite a lot of the time", 
+                    "response (n)": 327
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "6. How much do you agree with these statements about school? - I get enough help from my teachers if I find something difficult", 
+            "question_number": 1, 
+            "variable_name": "SchStafAtt22_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Most of the time", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 299
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 270
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite a lot of the time", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 228
+                }
+            ], 
+            "question_text": "6. How much do you agree with these statements about school? - My teachers should be stricter", 
+            "question_number": 18, 
+            "variable_name": "SchStafAtt24_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Most of the time", 
+                    "response (n)": 179
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 259
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite a lot of the time", 
+                    "response (n)": 278
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 119
+                }
+            ], 
+            "question_text": "6. How much do you agree with these statements about school? - My teachers listen to me & take my views seriously", 
+            "question_number": 2, 
+            "variable_name": "SchStafAtt05_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Most of the time", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 299
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 205
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite a lot of the time", 
+                    "response (n)": 157
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 107
+                }
+            ], 
+            "question_text": "6. How much do you agree with these statements about school? - I look up to my teachers", 
+            "question_number": 19, 
+            "variable_name": "SchStafAtt23_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Most of the time", 
+                    "response (n)": 251
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 209
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite a lot of the time", 
+                    "response (n)": 356
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "6. How much do you agree with these statements about school? - I understand my lessons", 
+            "question_number": 3, 
+            "variable_name": "SchLearnAtt17_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 277
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 368
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 105
+                }
+            ], 
+            "question_text": "7. How much do you agree with these statements about school? My school ... - Encourages me to be a more caring person", 
+            "question_number": 20, 
+            "variable_name": "SchAtt31_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 158
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 433
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 187
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 57
+                }
+            ], 
+            "question_text": "7. How much do you agree with these statements about school? My school ... - Teaches me how to learn", 
+            "question_number": 21, 
+            "variable_name": "SchAtt36_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 246
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 366
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 107
+                }
+            ], 
+            "question_text": "7. How much do you agree with these statements about school? My school ... - Helps me be more creative", 
+            "question_number": 22, 
+            "variable_name": "SchAtt34_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 252
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 349
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 119
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 103
+                }
+            ], 
+            "question_text": "7. How much do you agree with these statements about school? My school ... - Helps me be healthier and fitter", 
+            "question_number": 23, 
+            "variable_name": "SchAtt32_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "7. How much do you agree with these statements about school? My school ... - Helps me be more confident", 
+            "question_number": 24, 
+            "variable_name": "SchAtt33_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "7. How much do you agree with these statements about school? My school ... - Helps me understand the history of Wales", 
+            "question_number": 25, 
+            "variable_name": "SchAtt35_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "8. Lots of schools in Wales have school councils, pupil parliaments, or pupil assemblies. They are there to give pupils a say on what happens in schools. Which of these does your school have? A school council", 
+            "question_number": 26, 
+            "variable_name": "SchGov01_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "8. Lots of schools in Wales have school councils, pupil parliaments, or pupil assemblies. They are there to give pupils a say on what happens in schools. Which of these does your school have? A pupil parliament", 
+            "question_number": 27, 
+            "variable_name": "SchGov03_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "8. Lots of schools in Wales have school councils, pupil parliaments, or pupil assemblies. They are there to give pupils a say on what happens in schools. Which of these does your school have? A pupil assembly", 
+            "question_number": 28, 
+            "variable_name": "SchGov05_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 156
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 682
+                }
+            ], 
+            "question_text": "8. Lots of schools in Wales have school councils, pupil parliaments, or pupil assemblies. They are there to give pupils a say on what happens in schools. Which of these does your school have? I dont know", 
+            "question_number": 29, 
+            "variable_name": "SchGov07_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 91
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 694
+                }
+            ], 
+            "question_text": "9. Are you, or have you ever been, a member of your school council, pupil parliament or pupil assembly?", 
+            "question_number": 30, 
+            "variable_name": "schgov08_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 764
+                }
+            ], 
+            "question_text": "10. Have you ever thought about being on your school council, pupil parliament or pupil assembly?", 
+            "question_number": 31, 
+            "variable_name": "SchGov10_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 764
+                }
+            ], 
+            "question_text": "11. Do you know anyone who is on it?", 
+            "question_number": 32, 
+            "variable_name": "SchGov12_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 694
+                }
+            ], 
+            "question_text": "12. Can you think of any issues that your school council, pupil parliament or pupil assembly has raised this year?", 
+            "question_number": 33, 
+            "variable_name": "SchGov14_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "13. Please let us know what any of these issues were:", 
+            "question_number": 34, 
+            "variable_name": "SchGov16_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 124
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 694
+                }
+            ], 
+            "question_text": "14. Have you ever raised an issue with your school council, pupil parliament or pupil assembly?", 
+            "question_number": 35, 
+            "variable_name": "SchGov18_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "15. What was that issue?", 
+            "question_number": 36, 
+            "variable_name": "SchGov20_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 677
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot of difference", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - No difference", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 35
+                }
+            ], 
+            "question_text": "16. On a scale of 1 to 5, how much difference does your school council, pupil parliament or pupil assembly make to what happens in school? - Please move the slider", 
+            "question_number": 37, 
+            "variable_name": "SchGovAtt02_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 677
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 34
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - The food served at lunch", 
+            "question_number": 38, 
+            "variable_name": "SchGovAtt03_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 677
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 78
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - Where I can go at lunchtime", 
+            "question_number": 39, 
+            "variable_name": "SchGovAtt05_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 677
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 63
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - What I can wear to school", 
+            "question_number": 40, 
+            "variable_name": "SchGovAtt07_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 677
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 35
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - The school timetable", 
+            "question_number": 41, 
+            "variable_name": "SchGovAtt09_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 677
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 80
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - The subjects I can take", 
+            "question_number": 42, 
+            "variable_name": "SchGovAtt11_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 677
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 29
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - Which teachers get appointed to the school", 
+            "question_number": 43, 
+            "variable_name": "SchGovAtt13_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "18. If you were in charge of the school, how would YOU make sure students have a say in what goes on?", 
+            "question_number": 44, 
+            "variable_name": "SchGov22_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "8. Lots of schools in Wales have school councils or pupil parliaments. They are there to give pupils a say on what happens in schools.  Which of these does your school have? A school council", 
+            "question_number": 45, 
+            "variable_name": "SchGov02_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "8. Lots of schools in Wales have school councils or pupil parliaments. They are there to give pupils a say on what happens in schools.  Which of these does your school have? A pupil parliament", 
+            "question_number": 46, 
+            "variable_name": "SchGov04_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "8. Lots of schools in Wales have school councils or pupil parliaments. They are there to give pupils a say on what happens in schools.  Which of these does your school have? I don't know", 
+            "question_number": 47, 
+            "variable_name": "SchGov06_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "9. Are you, or have you ever been, a member of your school council or pupil parliament?", 
+            "question_number": 48, 
+            "variable_name": "SchGov09_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 117
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 293
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 445
+                }
+            ], 
+            "question_text": "10. Have you ever thought about being on your school council or pupil parliament?", 
+            "question_number": 49, 
+            "variable_name": "SchGov11_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 350
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 60
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 445
+                }
+            ], 
+            "question_text": "11. Do you know anyone who is on it?", 
+            "question_number": 50, 
+            "variable_name": "SchGov13_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 127
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 281
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 447
+                }
+            ], 
+            "question_text": "12. Can you think of any issues that your school council or pupil parliament has raised this year?", 
+            "question_number": 51, 
+            "variable_name": "SchGov15_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "13. Please let us know what any of these issues were:", 
+            "question_number": 52, 
+            "variable_name": "SchGov17_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 114
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 281
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 460
+                }
+            ], 
+            "question_text": "14. Have you ever raised an issue with your school council or pupil parliament?", 
+            "question_number": 53, 
+            "variable_name": "SchGov19_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "15. What was that issue?", 
+            "question_number": 54, 
+            "variable_name": "SchGov21_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - No difference", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 178
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot of difference", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 265
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 199
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 95
+                }
+            ], 
+            "question_text": "16. On a scale of 1 to 5, how much difference does your school council or pupil parliament make to what happens in school? - Please move the slider", 
+            "question_number": 55, 
+            "variable_name": "SchGovAtt01_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 180
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 206
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 154
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 122
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - The food served at lunch", 
+            "question_number": 56, 
+            "variable_name": "SchGovAtt04_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 180
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 154
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 200
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 222
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - Where I can go at lunchtime", 
+            "question_number": 57, 
+            "variable_name": "SchGovAtt06_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 180
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 141
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 91
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 134
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 236
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - What I can wear to school", 
+            "question_number": 58, 
+            "variable_name": "SchGovAtt08_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 180
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 183
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 149
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 121
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 94
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - The school timetable", 
+            "question_number": 59, 
+            "variable_name": "SchGovAtt10_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 180
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 133
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 162
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 252
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - The subjects I can take", 
+            "question_number": 60, 
+            "variable_name": "SchGovAtt12_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1 - I dont want to have a say in this", 
+                    "response (n)": 134
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 180
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 202
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 116
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 109
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Id like to have a lot of say in this", 
+                    "response (n)": 114
+                }
+            ], 
+            "question_text": "17. How much say would you like to have in decisions about ..... - Which teachers get appointed to the school", 
+            "question_number": 61, 
+            "variable_name": "SchGovAtt14_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "18. If you were in charge of the school, how would YOU make sure students have a say in what goes on?", 
+            "question_number": 62, 
+            "variable_name": "SchGov23_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 834
+                }
+            ], 
+            "question_text": "19. Tick the top THREE things you'd like in your IDEAL FRIEND. Someone who... Is good looking", 
+            "question_number": 63, 
+            "variable_name": "FrndValue01_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "19. Tick the top THREE things you'd like in your IDEAL FRIEND. Someone who... Has a good sense of humour", 
+            "question_number": 64, 
+            "variable_name": "FrndValue02_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "19. Tick the top THREE things you'd like in your IDEAL FRIEND. Someone who... Is popular", 
+            "question_number": 65, 
+            "variable_name": "FrndValue03_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "19. Tick the top THREE things you'd like in your IDEAL FRIEND. Someone who... Can see things from other people's perspectives", 
+            "question_number": 66, 
+            "variable_name": "FrndValue04_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "19. Tick the top THREE things you'd like in your IDEAL FRIEND. Someone who... Is rich", 
+            "question_number": 67, 
+            "variable_name": "FrndValue05_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "19. Tick the top THREE things you'd like in your IDEAL FRIEND. Someone who... Is comfortable meeting new people", 
+            "question_number": 68, 
+            "variable_name": "FrndValue06_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 116
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 739
+                }
+            ], 
+            "question_text": "19. Tick the top THREE things you'd like in your IDEAL FRIEND. Someone who... Is intelligent", 
+            "question_number": 69, 
+            "variable_name": "FrndValue07_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 827
+                }
+            ], 
+            "question_text": "19. Tick the top THREE things you'd like in your IDEAL FRIEND. Someone who... Is fashionable", 
+            "question_number": 70, 
+            "variable_name": "FrndValue08_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 574
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 281
+                }
+            ], 
+            "question_text": "19. Tick the top THREE things you'd like in your IDEAL FRIEND. Someone who... Is honest", 
+            "question_number": 71, 
+            "variable_name": "FrndValue09_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 521
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 334
+                }
+            ], 
+            "question_text": "19. Tick the top THREE things you'd like in your IDEAL FRIEND. Someone who... Is kind", 
+            "question_number": 72, 
+            "variable_name": "FrndValue10_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 163
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 692
+                }
+            ], 
+            "question_text": "19. Tick the top THREE things you'd like in your IDEAL FRIEND. Someone who... Is confident", 
+            "question_number": 73, 
+            "variable_name": "FrndValue11_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "20. Thinking about all the students in this classroom, who would you consider to be your closest friends? Please list up to three: - Selected Choice Friend 1", 
+            "question_number": 74, 
+            "variable_name": "FrndSch01_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "20. Thinking about all the students in this classroom, who would you consider to be your closest friends? Please list up to three: - Selected Choice Friend 2", 
+            "question_number": 75, 
+            "variable_name": "FrndSch02_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "20. Thinking about all the students in this classroom, who would you consider to be your closest friends? Please list up to three: - Selected Choice Friend 3", 
+            "question_number": 76, 
+            "variable_name": "FrndSch03_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "20. Thinking about all the students in this classroom, who would you consider to be your closest friends? Please list up to three: - Friend 1 - Text", 
+            "question_number": 77, 
+            "variable_name": "FrndSch04_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "20. Thinking about all the students in this classroom, who would you consider to be your closest friends? Please list up to three: - Friend 2 - Text", 
+            "question_number": 78, 
+            "variable_name": "FrndSch05_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "20. Thinking about all the students in this classroom, who would you consider to be your closest friends? Please list up to three: - Friend 3 - Text", 
+            "question_number": 79, 
+            "variable_name": "FrndSch06_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 618
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 237
+                }
+            ], 
+            "question_text": "21. Do you have any closer friends at school than those in this room?", 
+            "question_number": 80, 
+            "variable_name": "FrndDivers09_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 330
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 134
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 355
+                }
+            ], 
+            "question_text": "22. On a scale of 1-5, how much do you think YOU... - understand YOUR FRIENDS?", 
+            "question_number": 81, 
+            "variable_name": "FrndAtt04_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 581
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 177
+                }
+            ], 
+            "question_text": "22. On a scale of 1-5, how much do you think YOU... - care about YOUR FRIENDS?", 
+            "question_number": 82, 
+            "variable_name": "FrndAtt05_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 460
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 103
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 239
+                }
+            ], 
+            "question_text": "22. On a scale of 1-5, how much do you think YOU... - support YOUR FRIENDS with their personal  concerns?  (for example  relationships, problems at home)", 
+            "question_number": 83, 
+            "variable_name": "FrndAtt06_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "22. On a scale of 1-5, how much do you think YOU... - stand up for YOUR FRIENDS when they are being teased or bullied?", 
+            "question_number": 84, 
+            "variable_name": "FrndAtt07_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "22. On a scale of 1-5, how much do you think YOU... - fall out with YOUR FRIENDS?", 
+            "question_number": 85, 
+            "variable_name": "FrndAtt08_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "22. On a scale of 1-5, how much do you think YOU... - help YOUR FRIENDS with home work or revision for exams?", 
+            "question_number": 86, 
+            "variable_name": "FrndAtt09_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "23. On a scale of 1-5, how much do you think YOUR FRIENDS... - understand YOU?", 
+            "question_number": 87, 
+            "variable_name": "FrndAtt10_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "23. On a scale of 1-5, how much do you think YOUR FRIENDS... - care about YOU?", 
+            "question_number": 88, 
+            "variable_name": "FrndAtt11_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 158
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 247
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 315
+                }
+            ], 
+            "question_text": "23. On a scale of 1-5, how much do you think YOUR FRIENDS... - support YOU with personal  concerns? (for example  relationships, problems at home)", 
+            "question_number": 89, 
+            "variable_name": "FrndAtt12_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 127
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 345
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 268
+                }
+            ], 
+            "question_text": "23. On a scale of 1-5, how much do you think YOUR FRIENDS... - stand up for YOU when you are being teased or bullied?", 
+            "question_number": 90, 
+            "variable_name": "FrndAtt13_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 283
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 167
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 297
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 39
+                }
+            ], 
+            "question_text": "23. On a scale of 1-5, how much do you think YOUR FRIENDS... - fall out with YOU?", 
+            "question_number": 91, 
+            "variable_name": "FrndAtt14_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 140
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 197
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 151
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 173
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 194
+                }
+            ], 
+            "question_text": "23. On a scale of 1-5, how much do you think YOUR FRIENDS... - help YOU  with home work or revision for exams?", 
+            "question_number": 92, 
+            "variable_name": "FrndAtt15_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 772
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 82
+                }
+            ], 
+            "question_text": "24. Do you have any friends from other schools?", 
+            "question_number": 93, 
+            "variable_name": "FrndDivers10_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 663
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 192
+                }
+            ], 
+            "question_text": "25. Please tick boxes to show if you have friends who\u2026\u00a0 - Q29#1 - are in a different year group from you AT SCHOOL?", 
+            "question_number": 94, 
+            "variable_name": "FrndDivers11_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 246
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 609
+                }
+            ], 
+            "question_text": "25. Please tick boxes to show if you have friends who\u2026\u00a0 - Q29#1 - are from countries OUTSIDE of the UK AT SCHOOL?", 
+            "question_number": 95, 
+            "variable_name": "FrndDivers12_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 710
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 145
+                }
+            ], 
+            "question_text": "25. Please tick boxes to show if you have friends who\u2026\u00a0 - Q29#1 - are a different gender from you AT SCHOOL?", 
+            "question_number": 96, 
+            "variable_name": "FrndDivers13_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 519
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 336
+                }
+            ], 
+            "question_text": "25. Please tick boxes to show if you have friends who\u2026\u00a0 - Q29#1 - are a different race or ethnicity from you AT SCHOOL?", 
+            "question_number": 97, 
+            "variable_name": "FrndDivers14_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 406
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 449
+                }
+            ], 
+            "question_text": "25. Please tick boxes to show if you have friends who\u2026\u00a0 - Q29#1 - are of a different sexual orientation to you (this is whether someone is straight, gay, lesbian or bisexual) AT SCHOOL?", 
+            "question_number": 98, 
+            "variable_name": "FrndDivers15_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 512
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 343
+                }
+            ], 
+            "question_text": "25. Please tick boxes to show if you have friends who\u2026\u00a0 - Q29#2 - are in a different year group from you OUTSIDE OF SCHOOL?", 
+            "question_number": 99, 
+            "variable_name": "FrndDivers16_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 357
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 498
+                }
+            ], 
+            "question_text": "25. Please tick boxes to show if you have friends who\u2026\u00a0 - Q29#2 - are from countries OUTSIDE of the UK OUTSIDE OF SCHOOL?", 
+            "question_number": 100, 
+            "variable_name": "FrndDivers17_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 516
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 339
+                }
+            ], 
+            "question_text": "25. Please tick boxes to show if you have friends who\u2026\u00a0 - Q29#2 - are a different gender from you OUTSIDE OF SCHOOL?", 
+            "question_number": 101, 
+            "variable_name": "FrndDivers18_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 384
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 471
+                }
+            ], 
+            "question_text": "25. Please tick boxes to show if you have friends who\u2026\u00a0 - Q29#2 - are a different race or ethnicity from you OUTSIDE OF SCHOOL?", 
+            "question_number": 102, 
+            "variable_name": "FrndDivers19_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 259
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 596
+                }
+            ], 
+            "question_text": "25. Please tick boxes to show if you have friends who\u2026\u00a0 - Q29#2 - are of a different sexual orientation to you (this is whether someone is straight, gay, lesbian or bisexual) OUTSIDE OF SCHOOL?", 
+            "question_number": 103, 
+            "variable_name": "FrndDivers20_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "26. Who would you go to FIRST for advice and support if... - Other - you were being bullied? - If 'other' (please write in):", 
+            "question_number": 104, 
+            "variable_name": "AdvBully02_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "26. Who would you go to FIRST for advice and support if... - Other - you had a family issue? - If 'other' (please write in):", 
+            "question_number": 105, 
+            "variable_name": "AdvFamily02_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "26. Who would you go to FIRST for advice and support if... - Other - you had difficulty with school work or exam revision? - If 'other' (please write in):", 
+            "question_number": 106, 
+            "variable_name": "AdvSchool02_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "26. Who would you go to FIRST for advice and support if... - Other - you had a dating or relationship problem? - If 'other' (please write in):", 
+            "question_number": 107, 
+            "variable_name": "AdvRelat02_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "26. Who would you go to FIRST for advice and support if... - Other - you needed career or job advice? - If 'other' (please write in):", 
+            "question_number": 108, 
+            "variable_name": "AdvCareer02_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A friend", 
+                    "response (n)": 348
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Nobody", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "3", 
+                    "response": "A parent/carer", 
+                    "response (n)": 317
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A teacher", 
+                    "response (n)": 64
+                }
+            ], 
+            "question_text": "26. Who would you go to FIRST for advice and support if... - People who might support you - you were being bullied?", 
+            "question_number": 109, 
+            "variable_name": "AdvBully01_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A friend", 
+                    "response (n)": 452
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Nobody", 
+                    "response (n)": 114
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "3", 
+                    "response": "A parent/carer", 
+                    "response (n)": 194
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A teacher", 
+                    "response (n)": 47
+                }
+            ], 
+            "question_text": "26. Who would you go to FIRST for advice and support if... - People who might support you - you had a family issue?", 
+            "question_number": 110, 
+            "variable_name": "AdvFamily01_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A friend", 
+                    "response (n)": 158
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Nobody", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "3", 
+                    "response": "A parent/carer", 
+                    "response (n)": 277
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A teacher", 
+                    "response (n)": 337
+                }
+            ], 
+            "question_text": "26. Who would you go to FIRST for advice and support if... - People who might support you - you had difficulty with school work or exam revision?", 
+            "question_number": 111, 
+            "variable_name": "AdvSchool01_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A friend", 
+                    "response (n)": 564
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Nobody", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "3", 
+                    "response": "A parent/carer", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A teacher", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "26. Who would you go to FIRST for advice and support if... - People who might support you - you had a dating or relationship problem?", 
+            "question_number": 112, 
+            "variable_name": "AdvRelat01_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A friend", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Nobody", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "3", 
+                    "response": "A parent/carer", 
+                    "response (n)": 519
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A teacher", 
+                    "response (n)": 188
+                }
+            ], 
+            "question_text": "26. Who would you go to FIRST for advice and support if... - People who might support you - you needed career or job advice?", 
+            "question_number": 113, 
+            "variable_name": "AdvCareer01_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Maybe", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 709
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "27. In the future do you think you will have friends who... - are a different gender from you?", 
+            "question_number": 114, 
+            "variable_name": "FrndDivers21_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Maybe", 
+                    "response (n)": 311
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 503
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 34
+                }
+            ], 
+            "question_text": "27. In the future do you think you will have friends who... - are from countries OUTSIDE of the UK", 
+            "question_number": 115, 
+            "variable_name": "FrndDivers22_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Maybe", 
+                    "response (n)": 238
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 582
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 22
+                }
+            ], 
+            "question_text": "27. In the future do you think you will have friends who... - are a different race or ethnicity from you?", 
+            "question_number": 116, 
+            "variable_name": "FrndDivers23_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Maybe", 
+                    "response (n)": 342
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 424
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 76
+                }
+            ], 
+            "question_text": "27. In the future do you think you will have friends who... - are of a different sexual orientation from you? (this is whether someone is straight, gay, lesbian or bisexual)", 
+            "question_number": 117, 
+            "variable_name": "FrndDivers24_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 348
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 507
+                }
+            ], 
+            "question_text": "28. Have you ever been asked to leave the classroom or go home early by one of your teachers?", 
+            "question_number": 118, 
+            "variable_name": "BehaveSch16_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "29. Why were you asked to leave?", 
+            "question_number": 119, 
+            "variable_name": "BehaveSch17_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Maybe", 
+                    "response (n)": 109
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 111
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 509
+                }, 
+                {
+                    "value": "3", 
+                    "response": "No", 
+                    "response (n)": 126
+                }
+            ], 
+            "question_text": "30. Did you think that was fair?", 
+            "question_number": 120, 
+            "variable_name": "BehaveSch18_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "31. Why do you think this was unfair?", 
+            "question_number": 121, 
+            "variable_name": "BehaveSch19_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "32. What kind of behaviour by other pupils disturbs YOU most when you are at school?", 
+            "question_number": 122, 
+            "variable_name": "BehaveSch20_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "33. On a scale of 1-5, how well-behaved are the pupils in this school? - Please move the slider", 
+            "question_number": 123, 
+            "variable_name": "BehaveSchAtt01_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "34. On a scale of 1-5, how strict are teachers in this school when dealing with problem behaviour? - Please move the slider", 
+            "question_number": 124, 
+            "variable_name": "BehaveSchAtt02_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "35. What do you think should happen to students who are disruptive in the classroom? (please tick all that apply) - Selected Choice They should be asked to leave the class", 
+            "question_number": 125, 
+            "variable_name": "BehaveSchAtt03_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "35. What do you think should happen to students who are disruptive in the classroom? (please tick all that apply) - Selected Choice They should be asked to leave the school", 
+            "question_number": 126, 
+            "variable_name": "BehaveSchAtt04_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "35. What do you think should happen to students who are disruptive in the classroom? (please tick all that apply) - Selected Choice They should be sent to a separate classroom to work", 
+            "question_number": 127, 
+            "variable_name": "BehaveSchAtt05_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "35. What do you think should happen to students who are disruptive in the classroom? (please tick all that apply) - Selected Choice They should be given detentions each time", 
+            "question_number": 128, 
+            "variable_name": "BehaveSchAtt06_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 153
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 702
+                }
+            ], 
+            "question_text": "35. What do you think should happen to students who are disruptive in the classroom? (please tick all that apply) - Selected Choice They should have special lessons which interest them", 
+            "question_number": 129, 
+            "variable_name": "BehaveSchAtt07_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 404
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 451
+                }
+            ], 
+            "question_text": "35. What do you think should happen to students who are disruptive in the classroom? (please tick all that apply) - Selected Choice They should be able to speak to someone about their problems", 
+            "question_number": 130, 
+            "variable_name": "BehaveSchAtt08_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 760
+                }
+            ], 
+            "question_text": "35. What do you think should happen to students who are disruptive in the classroom? (please tick all that apply) - Selected Choice Other", 
+            "question_number": 131, 
+            "variable_name": "BehaveSchAtt09_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "35. What do you think should happen to students who are disruptive in the classroom? (please tick all that apply) - Other - Text", 
+            "question_number": 132, 
+            "variable_name": "BehaveSchAtt10_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "36. If YOU were in charge of this school, how would you make sure that pupils behave themselves in class?", 
+            "question_number": 133, 
+            "variable_name": "BehaveSchAtt11_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 668
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 187
+                }
+            ], 
+            "question_text": "37. Employers value the following skills. Which do you think are most important for schools to encourage young people to develop? Teamwork", 
+            "question_number": 134, 
+            "variable_name": "SchAtt50_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 451
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 404
+                }
+            ], 
+            "question_text": "37. Employers value the following skills. Which do you think are most important for schools to encourage young people to develop? Self-discipline", 
+            "question_number": 135, 
+            "variable_name": "SchAtt51_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 535
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 320
+                }
+            ], 
+            "question_text": "37. Employers value the following skills. Which do you think are most important for schools to encourage young people to develop? Effective communication", 
+            "question_number": 136, 
+            "variable_name": "SchAtt52_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 287
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 568
+                }
+            ], 
+            "question_text": "37. Employers value the following skills. Which do you think are most important for schools to encourage young people to develop? Initiative", 
+            "question_number": 137, 
+            "variable_name": "SchAtt53_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 721
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 134
+                }
+            ], 
+            "question_text": "37. Employers value the following skills. Which do you think are most important for schools to encourage young people to develop? Confidence", 
+            "question_number": 138, 
+            "variable_name": "SchAtt54_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 538
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 317
+                }
+            ], 
+            "question_text": "37. Employers value the following skills. Which do you think are most important for schools to encourage young people to develop? Decision-making & planning", 
+            "question_number": 139, 
+            "variable_name": "SchAtt55_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 497
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 358
+                }
+            ], 
+            "question_text": "37. Employers value the following skills. Which do you think are most important for schools to encourage young people to develop? Problem-solving", 
+            "question_number": 140, 
+            "variable_name": "SchAtt56_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 339
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 516
+                }
+            ], 
+            "question_text": "37. Employers value the following skills. Which do you think are most important for schools to encourage young people to develop? Technology skills", 
+            "question_number": 141, 
+            "variable_name": "SchAtt57_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "38. How much do you think your school is encouraging you to develop these skills? - Please move the slider", 
+            "question_number": 142, 
+            "variable_name": "SchAtt58_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 409
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 446
+                }
+            ], 
+            "question_text": "39. Which of the following personal qualities do you think are most important for schools to encourage young people to develop? Gratefulness", 
+            "question_number": 143, 
+            "variable_name": "SchAtt59_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "39. Which of the following personal qualities do you think are most important for schools to encourage young people to develop? Courage", 
+            "question_number": 144, 
+            "variable_name": "SchAtt60_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "39. Which of the following personal qualities do you think are most important for schools to encourage young people to develop? Honesty", 
+            "question_number": 145, 
+            "variable_name": "SchAtt61_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "39. Which of the following personal qualities do you think are most important for schools to encourage young people to develop? Hopefulness", 
+            "question_number": 146, 
+            "variable_name": "SchAtt62_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "39. Which of the following personal qualities do you think are most important for schools to encourage young people to develop? Fairness", 
+            "question_number": 147, 
+            "variable_name": "SchAtt63_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "39. Which of the following personal qualities do you think are most important for schools to encourage young people to develop? Kindness", 
+            "question_number": 148, 
+            "variable_name": "SchAtt64_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 402
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 453
+                }
+            ], 
+            "question_text": "39. Which of the following personal qualities do you think are most important for schools to encourage young people to develop? Generosity", 
+            "question_number": 149, 
+            "variable_name": "SchAtt65_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 737
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 118
+                }
+            ], 
+            "question_text": "39. Which of the following personal qualities do you think are most important for schools to encourage young people to develop? Respect for others", 
+            "question_number": 150, 
+            "variable_name": "SchAtt66_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "40. How much do you think your school is encouraging you to develop these personal qualities? - Please move the slider", 
+            "question_number": 151, 
+            "variable_name": "SchAtt67_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 524
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 182
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3 - Least important", 
+                    "response (n)": 147
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "41. What do you think is the most important thing your school wants you to have gained by the time you leave? Please rank the following options by dragging them into the order you want: - Gain academic qualifications", 
+            "question_number": 152, 
+            "variable_name": "SchAchv27_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 137
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 256
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3 - Least important", 
+                    "response (n)": 460
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "41. What do you think is the most important thing your school wants you to have gained by the time you leave?  Please rank the following options by dragging them into the order you want: - Develop personal qualities which will be good for you and your community", 
+            "question_number": 153, 
+            "variable_name": "SchAchv28_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 192
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 415
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3 - Least important", 
+                    "response (n)": 246
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "41. What do you think is the most important thing your school wants you to have gained by the time you leave?  Please rank the following options by dragging them into the order you want: - Gain skills that will help you in employment", 
+            "question_number": 154, 
+            "variable_name": "SchAchv29_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "42. What do YOU hope to have gained from your time at school?", 
+            "question_number": 155, 
+            "variable_name": "SchAchv30_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes, but not enough", 
+                    "response (n)": 168
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 253
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 434
+                }
+            ], 
+            "question_text": "43. At school have you had an opportunity to: - Take part in work experience?", 
+            "question_number": 156, 
+            "variable_name": "AspCareer19_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes, but not enough", 
+                    "response (n)": 176
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 573
+                }
+            ], 
+            "question_text": "43. At school have you had an opportunity to: - Learn how to set up a business?", 
+            "question_number": 157, 
+            "variable_name": "AspCareer20_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes, but not enough", 
+                    "response (n)": 355
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 233
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 267
+                }
+            ], 
+            "question_text": "43. At school have you had an opportunity to: - Learn about different careers and jobs?", 
+            "question_number": 158, 
+            "variable_name": "AspCareer21_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes, but not enough", 
+                    "response (n)": 320
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 170
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 365
+                }
+            ], 
+            "question_text": "43. At school have you had an opportunity to: - Take part in business related activities and challenges?", 
+            "question_number": 159, 
+            "variable_name": "AspCareer22_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Very Important", 
+                    "response (n)": 308
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Important", 
+                    "response (n)": 314
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Slightly important", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Fairly important", 
+                    "response (n)": 156
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Not very important", 
+                    "response (n)": 26
+                }
+            ], 
+            "question_text": "44. How important do you think it is that your school helps you to: - Learn about the skills employers are looking for", 
+            "question_number": 160, 
+            "variable_name": "SchAtt68_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Very Important", 
+                    "response (n)": 344
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Important", 
+                    "response (n)": 314
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Slightly important", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Fairly important", 
+                    "response (n)": 142
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Not very important", 
+                    "response (n)": 23
+                }
+            ], 
+            "question_text": "44. How important do you think it is that your school helps you to: - Learn about different careers and jobs you could do in the future", 
+            "question_number": 161, 
+            "variable_name": "SchAtt69_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Very Important", 
+                    "response (n)": 338
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Important", 
+                    "response (n)": 324
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Slightly important", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Fairly important", 
+                    "response (n)": 126
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Not very important", 
+                    "response (n)": 25
+                }
+            ], 
+            "question_text": "44. How important do you think it is that your school helps you to: - Have opportunity to gain work experience", 
+            "question_number": 162, 
+            "variable_name": "SchAtt70_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Year 11", 
+                    "response (n)": 284
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Year 13", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Year 8", 
+                    "response (n)": 475
+                }
+            ], 
+            "question_text": "What year are you in now?", 
+            "question_number": 163, 
+            "variable_name": "SchYear_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 99
+                }, 
+                {
+                    "value": "6", 
+                    "response": "I dont know", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Stay in school or go to college to study A-Levels", 
+                    "response (n)": 462
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Go to college to study vocational qualifications", 
+                    "response (n)": 127
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Start looking for a job", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Take time off", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "45. What are your plans after year 11? - Selected Choice", 
+            "question_number": 164, 
+            "variable_name": "AspPostSch03_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "45. What are your plans after year 11? - Other - Text", 
+            "question_number": 165, 
+            "variable_name": "AspPostSch17_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Look for an apprenticeship", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "6", 
+                    "response": "I dont know", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Start looking for a job", 
+                    "response (n)": 176
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Take time off", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Go to university", 
+                    "response (n)": 468
+                }
+            ], 
+            "question_text": "46. What are your plans after leaving school or college? - Selected Choice", 
+            "question_number": 166, 
+            "variable_name": "AspPostSch37_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "46. What are your plans after leaving school or college? - Other - Text", 
+            "question_number": 167, 
+            "variable_name": "AspPostSch38_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 143
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 519
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6 - Least important", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "47. Listed below are some of the things that people say they want to achieve when they're older.  Again, thinking about yourself when you're 30, please rank them to show which are the most important for YOU.You can rank them by dragging them into the order you want. - Having a job which I enjoy", 
+            "question_number": 168, 
+            "variable_name": "AspAchv04_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 181
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 241
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 159
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 121
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 113
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6 - Least important", 
+                    "response (n)": 35
+                }
+            ], 
+            "question_text": "47. Listed below are some of the things that people say they want to achieve when they're older.  Again, thinking about yourself when you're 30, please rank them to show which are the most important for YOU.You can rank them by dragging them into the order you want. - Earning a lot of money", 
+            "question_number": 169, 
+            "variable_name": "AspAchv05_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 197
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 196
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 108
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 233
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6 - Least important", 
+                    "response (n)": 31
+                }
+            ], 
+            "question_text": "47. Listed below are some of the things that people say they want to achieve when they're older.  Again, thinking about yourself when you're 30, please rank them to show which are the most important for YOU.You can rank them by dragging them into the order you want. - Being in a long-term relationship", 
+            "question_number": 170, 
+            "variable_name": "AspAchv06_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 272
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 191
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 99
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 195
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6 - Least important", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "47. Listed below are some of the things that people say they want to achieve when they're older.  Again, thinking about yourself when you're 30, please rank them to show which are the most important for YOU.You can rank them by dragging them into the order you want. - Buying my own home", 
+            "question_number": 171, 
+            "variable_name": "AspAchv07_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 354
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 183
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6 - Least important", 
+                    "response (n)": 155
+                }
+            ], 
+            "question_text": "47. Listed below are some of the things that people say they want to achieve when they're older.  Again, thinking about yourself when you're 30, please rank them to show which are the most important for YOU.You can rank them by dragging them into the order you want. - Having children", 
+            "question_number": 172, 
+            "variable_name": "AspAchv08_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 99
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Most important", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6 - Least important", 
+                    "response (n)": 604
+                }
+            ], 
+            "question_text": "47. Listed below are some of the things that people say they want to achieve when they're older.  Again, thinking about yourself when you're 30, please rank them to show which are the most important for YOU.You can rank them by dragging them into the order you want. - Being famous or in the process of making a name for myself", 
+            "question_number": 173, 
+            "variable_name": "AspAchv09_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Probably", 
+                    "response (n)": 435
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definitely", 
+                    "response (n)": 231
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely not", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Maybe", 
+                    "response (n)": 178
+                }
+            ], 
+            "question_text": "48. Now we want you to think how LIKELY it is that you will achieve these following things when you are 30: - Having a job which I enjoy", 
+            "question_number": 174, 
+            "variable_name": "AspAchv10_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Probably", 
+                    "response (n)": 300
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definitely", 
+                    "response (n)": 116
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely not", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Maybe", 
+                    "response (n)": 415
+                }
+            ], 
+            "question_text": "48. Now we want you to think how LIKELY it is that you will achieve these following things when you are 30: - Earning a lot of money", 
+            "question_number": 175, 
+            "variable_name": "AspAchv11_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Probably", 
+                    "response (n)": 365
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definitely", 
+                    "response (n)": 118
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely not", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Maybe", 
+                    "response (n)": 337
+                }
+            ], 
+            "question_text": "48. Now we want you to think how LIKELY it is that you will achieve these following things when you are 30: - Being in a long-term relationship", 
+            "question_number": 176, 
+            "variable_name": "AspAchv12_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Maybe", 
+                    "response (n)": 189
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definitely", 
+                    "response (n)": 245
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely not", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Probably", 
+                    "response (n)": 401
+                }
+            ], 
+            "question_text": "48. Now we want you to think how LIKELY it is that you will achieve these following things when you are 30: - Buying my own home", 
+            "question_number": 177, 
+            "variable_name": "AspAchv13_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Probably", 
+                    "response (n)": 303
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definitely", 
+                    "response (n)": 137
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely not", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Maybe", 
+                    "response (n)": 333
+                }
+            ], 
+            "question_text": "48. Now we want you to think how LIKELY it is that you will achieve these following things when you are 30: - Having children", 
+            "question_number": 178, 
+            "variable_name": "AspAchv14_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Maybe", 
+                    "response (n)": 349
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definitely", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely not", 
+                    "response (n)": 421
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Probably", 
+                    "response (n)": 45
+                }
+            ], 
+            "question_text": "48. Now we want you to think how LIKELY it is that you will achieve these following things when you are 30: - Being famous", 
+            "question_number": 179, 
+            "variable_name": "AspAchv15_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 361
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 493
+                }
+            ], 
+            "question_text": "Please answer the following questions about the kind of partner and friend you'd like to have whe... Is good looking", 
+            "question_number": 180, 
+            "variable_name": "RelAtt01_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 592
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 262
+                }
+            ], 
+            "question_text": "Please answer the following questions about the kind of partner and friend you'd like to have whe... Has a good sense of humour", 
+            "question_number": 181, 
+            "variable_name": "RelAtt02_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 835
+                }
+            ], 
+            "question_text": "Please answer the following questions about the kind of partner and friend you'd like to have whe... Is popular", 
+            "question_number": 182, 
+            "variable_name": "RelAtt03_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 142
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 712
+                }
+            ], 
+            "question_text": "Please answer the following questions about the kind of partner and friend you'd like to have whe... Can see things from other people's perspectives", 
+            "question_number": 183, 
+            "variable_name": "RelAtt04_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 814
+                }
+            ], 
+            "question_text": "Please answer the following questions about the kind of partner and friend you'd like to have whe... Is rich", 
+            "question_number": 184, 
+            "variable_name": "RelAtt05_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 801
+                }
+            ], 
+            "question_text": "Please answer the following questions about the kind of partner and friend you'd like to have whe... Comfortable meeting new people", 
+            "question_number": 185, 
+            "variable_name": "RelAtt06_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 147
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 707
+                }
+            ], 
+            "question_text": "Please answer the following questions about the kind of partner and friend you'd like to have whe... Is intelligent", 
+            "question_number": 186, 
+            "variable_name": "RelAtt07_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 817
+                }
+            ], 
+            "question_text": "Please answer the following questions about the kind of partner and friend you'd like to have whe... Is fashionable", 
+            "question_number": 187, 
+            "variable_name": "RelAtt08_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 518
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 336
+                }
+            ], 
+            "question_text": "Please answer the following questions about the kind of partner and friend you'd like to have whe... Is honest", 
+            "question_number": 188, 
+            "variable_name": "RelAtt09_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 492
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 362
+                }
+            ], 
+            "question_text": "Please answer the following questions about the kind of partner and friend you'd like to have whe... Is kind", 
+            "question_number": 189, 
+            "variable_name": "RelAtt10_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 118
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 736
+                }
+            ], 
+            "question_text": "Please answer the following questions about the kind of partner and friend you'd like to have whe... Is confident", 
+            "question_number": 190, 
+            "variable_name": "RelAtt11_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "50. Which famous person do you think would make an ideal partner?", 
+            "question_number": 191, 
+            "variable_name": "RelAtt12_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 343
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 182
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Agree", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 147
+                }
+            ], 
+            "question_text": "51. Thinking about your ideal partner, please tell us how important the following things are to you: It's important that my partner... - has the same religious or non-religious beliefs as me", 
+            "question_number": 192, 
+            "variable_name": "RelAtt13_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 355
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 98
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Agree", 
+                    "response (n)": 315
+                }
+            ], 
+            "question_text": "51. Thinking about your ideal partner, please tell us how important the following things are to you: It's important that my partner... - has the same hobbies or interests as me", 
+            "question_number": 193, 
+            "variable_name": "RelAtt14_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 444
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 179
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Agree", 
+                    "response (n)": 126
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 66
+                }
+            ], 
+            "question_text": "51. Thinking about your ideal partner, please tell us how important the following things are to you: It's important that my partner... - has the same political views as me", 
+            "question_number": 194, 
+            "variable_name": "RelAtt15_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 344
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 113
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Agree", 
+                    "response (n)": 302
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 22
+                }
+            ], 
+            "question_text": "51. Thinking about your ideal partner, please tell us how important the following things are to you: It's important that my partner... - has the same morals as me", 
+            "question_number": 195, 
+            "variable_name": "RelAtt16_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 426
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 192
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Agree", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 101
+                }
+            ], 
+            "question_text": "51. Thinking about your ideal partner, please tell us how important the following things are to you: It's important that my partner... - earns as much money as me", 
+            "question_number": 196, 
+            "variable_name": "RelAtt17_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I do most of it", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Dont know", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "3", 
+                    "response": "My partner does most of it", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "2", 
+                    "response": "We both do the same amount", 
+                    "response (n)": 725
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "52. Imagine that you are living with a partner and have children. How would you like to share the following tasks with your partner? - Childcare", 
+            "question_number": 197, 
+            "variable_name": "RelAtt18_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I do most of it", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Dont know", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "3", 
+                    "response": "My partner does most of it", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "2", 
+                    "response": "We both do the same amount", 
+                    "response (n)": 638
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "52. Imagine that you are living with a partner and have children. How would you like to share the following tasks with your partner? - Tasks around the house like cooking and cleaning", 
+            "question_number": 198, 
+            "variable_name": "RelAtt19_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I do most of it", 
+                    "response (n)": 123
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Dont know", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "3", 
+                    "response": "My partner does most of it", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "2", 
+                    "response": "We both do the same amount", 
+                    "response (n)": 613
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "52. Imagine that you are living with a partner and have children. How would you like to share the following tasks with your partner? - Earning money for the family", 
+            "question_number": 199, 
+            "variable_name": "RelAtt20_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 602
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Dont know", 
+                    "response (n)": 206
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 44
+                }
+            ], 
+            "question_text": "53. Do you want to get married or be in a civil partnership in the future?", 
+            "question_number": 200, 
+            "variable_name": "AspRel01_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "My partner changes their last name to mine", 
+                    "response (n)": 230
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Dont know", 
+                    "response (n)": 150
+                }, 
+                {
+                    "value": "3", 
+                    "response": "We both keep our original last names", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "2", 
+                    "response": "I change my last name to my partners", 
+                    "response (n)": 227
+                }, 
+                {
+                    "value": "4", 
+                    "response": "We add our last names together and both use the new one (eg Jones-Smith)", 
+                    "response (n)": 110
+                }
+            ], 
+            "question_text": "54. If you get married or enter into a civil partnership, what would you like to do with your last names? - Selected Choice", 
+            "question_number": 201, 
+            "variable_name": "RelAtt21_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "54. If you get married or enter into a civil partnership, what would you like to do with your last names? - Other - Text", 
+            "question_number": 202, 
+            "variable_name": "RelAtt22_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Chinese", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "8", 
+                    "response": "Black/ Caribbean", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Bangladeshi", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "10", 
+                    "response": "Arab", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Black / African", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Mixed Asian", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Indian", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "9", 
+                    "response": "Mixed Black", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "1", 
+                    "response": "White", 
+                    "response (n)": 708
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Pakistani", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "11", 
+                    "response": "Any other racial/ethnic group, please describe", 
+                    "response (n)": 41
+                }
+            ], 
+            "question_text": "55. Which of the following racial/ethnic groups best describes you? - Selected Choice", 
+            "question_number": 203, 
+            "variable_name": "NatEth03_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "55. Which of the following racial/ethnic groups best describes you? - Any other racial/ethnic group, please describe - Text", 
+            "question_number": 204, 
+            "variable_name": "NatEth02_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Welsh", 
+                    "response (n)": 444
+                }, 
+                {
+                    "value": "2", 
+                    "response": "British", 
+                    "response (n)": 189
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other (please write in)", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "3", 
+                    "response": "English", 
+                    "response (n)": 134
+                }, 
+                {
+                    "value": "4", 
+                    "response": "European", 
+                    "response (n)": 28
+                }
+            ], 
+            "question_text": "56. Which of the following best describes you? - Selected Choice", 
+            "question_number": 205, 
+            "variable_name": "NatIden01_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "56. Which of the following best describes you? - Other (please write in) - Text", 
+            "question_number": 206, 
+            "variable_name": "NatIden03_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Buddhist", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Christian", 
+                    "response (n)": 197
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Jewish", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I dont know if there is a God", 
+                    "response (n)": 136
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Muslim", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "11", 
+                    "response": "Id prefer not to say", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Hindu", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "I dont believe in God", 
+                    "response (n)": 347
+                }, 
+                {
+                    "value": "8", 
+                    "response": "Sikh", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "57. Which of the following best describes your religious beliefs? (Please tick one)", 
+            "question_number": 207, 
+            "variable_name": "Relig01_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "England", 
+                    "response (n)": 255
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Scotland", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Northern Ireland", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Wales", 
+                    "response (n)": 430
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other - Write in", 
+                    "response (n)": 118
+                }
+            ], 
+            "question_text": "58. Where was your mother (or female carer) born? - Selected Choice", 
+            "question_number": 208, 
+            "variable_name": "NatBirth03_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "58. Where was your mother (or female carer) born? - Somewhere else (Please tell us where in box): - Text", 
+            "question_number": 209, 
+            "variable_name": "NatBirth04_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "England", 
+                    "response (n)": 224
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Scotland", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Northern Ireland", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Wales", 
+                    "response (n)": 437
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other - Write in", 
+                    "response (n)": 120
+                }
+            ], 
+            "question_text": "59. Where was your father (or male carer) born? - Selected Choice", 
+            "question_number": 210, 
+            "variable_name": "NatBirth05_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "59. Where was your father (or male carer) born? - Somewhere else (Please tell us where in box): - Text", 
+            "question_number": 211, 
+            "variable_name": "NatBirth06_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 623
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 232
+                }
+            ], 
+            "question_text": "60. In your home, what language(s) do you speak? - Selected Choice English", 
+            "question_number": 212, 
+            "variable_name": "NatLang01_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 803
+                }
+            ], 
+            "question_text": "60. In your home, what language(s) do you speak? - Selected Choice Welsh", 
+            "question_number": 213, 
+            "variable_name": "NatLang02_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 149
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 706
+                }
+            ], 
+            "question_text": "60. In your home, what language(s) do you speak? - Selected Choice Both English and Welsh", 
+            "question_number": 214, 
+            "variable_name": "NatLang10_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 770
+                }
+            ], 
+            "question_text": "60. In your home, what language(s) do you speak? - Selected Choice Other (Please tell us which languages)", 
+            "question_number": 215, 
+            "variable_name": "NatLang03_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "60. In your home, what language(s) do you speak? - Other (Please tell us which languages) - Text", 
+            "question_number": 216, 
+            "variable_name": "NatLang04_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "I dont know", 
+                    "response (n)": 169
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 686
+                }
+            ], 
+            "question_text": "61. What is your mother's or (or female carer\u2019s) current or most recent job? - Selected Choice", 
+            "question_number": 217, 
+            "variable_name": "FamEmp03_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "61. What is your mother's or (or female carer\u2019s) current or most recent job? - Please tell us their job here - Text", 
+            "question_number": 218, 
+            "variable_name": "FamEmp04_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "I dont know", 
+                    "response (n)": 178
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I know", 
+                    "response (n)": 648
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 29
+                }
+            ], 
+            "question_text": "62. What is your father's or (or male carer\u2019s) current or most recent job? - Selected Choice", 
+            "question_number": 219, 
+            "variable_name": "FamEmp01_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "62. What is your father's or (or male carer\u2019s) current or most recent job? - Please tell us their job here - Text", 
+            "question_number": 220, 
+            "variable_name": "FamEmp02_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 298
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 224
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 333
+                }
+            ], 
+            "question_text": "63.   Did your parents or carers go to university? - Did your mother (or female carer) go to University?", 
+            "question_number": 221, 
+            "variable_name": "FamEdu02_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 229
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 274
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 352
+                }
+            ], 
+            "question_text": "63.   Did your parents or carers go to university? - Did your father (or male carer) go to University?", 
+            "question_number": 222, 
+            "variable_name": "FamEdu01_6X"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 114
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 741
+                }
+            ], 
+            "question_text": "64. Free School Meals Please tick this box if you're eligible for Free School Meals (FSM)", 
+            "question_number": 223, 
+            "variable_name": "Deprive01_6X"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "65. Please let us know if you liked this survey or if you have any ideas of things we should ask you next time:", 
+            "question_number": 224, 
+            "variable_name": "notes_6X"
+        }
+    ]
+}

@@ -1,0 +1,1213 @@
+{
+    "questions": [
+        {
+            "response_table": [], 
+            "question_text": "What do you want to be when you grow up?", 
+            "question_number": 58, 
+            "variable_name": "AspCareer03_3A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Cohort", 
+            "question_number": 61, 
+            "variable_name": "cohort_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 197
+                }
+            ], 
+            "question_text": "How often do you speak Welsh in school?", 
+            "question_number": 8, 
+            "variable_name": "CymFrq01_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 136
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 209
+                }
+            ], 
+            "question_text": "Do you have a mobile phone?", 
+            "question_number": 40, 
+            "variable_name": "Deprive03_3A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Who is your favourite person in the world?", 
+            "question_number": 23, 
+            "variable_name": "EngSoc30_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 145
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 205
+                }
+            ], 
+            "question_text": "Castles:Have you visited any of these places with your family? Please click on each one you have been to", 
+            "question_number": 46, 
+            "variable_name": "FamAct01_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 189
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 161
+                }
+            ], 
+            "question_text": "Cinema:Have you visited any of these places with your family? Please click on each one you have been to", 
+            "question_number": 49, 
+            "variable_name": "FamAct02_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 273
+                }
+            ], 
+            "question_text": "Concert:Have you visited any of these places with your family? Please click on each one you have been to", 
+            "question_number": 53, 
+            "variable_name": "FamAct03_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 294
+                }
+            ], 
+            "question_text": "Eisteddfodau:Have you visited any of these places with your family? Please click on each one you have been to", 
+            "question_number": 47, 
+            "variable_name": "FamAct04_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 230
+                }
+            ], 
+            "question_text": "Museums:Have you visited any of these places with your family? Please click on each one you have been to", 
+            "question_number": 54, 
+            "variable_name": "FamAct08_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 248
+                }
+            ], 
+            "question_text": "Sports event:Have you visited any of these places with your family? Please click on each one you have been to", 
+            "question_number": 48, 
+            "variable_name": "FamAct10_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 107
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 243
+                }
+            ], 
+            "question_text": "Theatre:Have you visited any of these places with your family? Please click on each one you have been to", 
+            "question_number": 50, 
+            "variable_name": "FamAct11_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 144
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 206
+                }
+            ], 
+            "question_text": "Theme  Park:Have you visited any of these places with your family? Please click on each one you have been to", 
+            "question_number": 52, 
+            "variable_name": "FamAct12_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 178
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 172
+                }
+            ], 
+            "question_text": "Zoo:Have you visited any of these places with your family? Please click on each one you have been to", 
+            "question_number": 51, 
+            "variable_name": "FamAct13_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 141
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "I dont have grandparents", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 162
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 31
+                }
+            ], 
+            "question_text": "How often do you see your grandparents?", 
+            "question_number": 16, 
+            "variable_name": "FamActFrq08_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "All of the time", 
+                    "response (n)": 103
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite often", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 52
+                }
+            ], 
+            "question_text": "How often do your parents or carers read with you at home?", 
+            "question_number": 15, 
+            "variable_name": "FamActFrq21_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 271
+                }
+            ], 
+            "question_text": "Babysit me when my parents or carers go out:What kinds of things do your grandparents do with you?", 
+            "question_number": 18, 
+            "variable_name": "FamActFrq22_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 60
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 290
+                }
+            ], 
+            "question_text": "Help me with my homework:What kinds of things do your grandparents do with you?", 
+            "question_number": 20, 
+            "variable_name": "FamActFrq23_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 97
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 253
+                }
+            ], 
+            "question_text": "Look after me while my parents or carers are at work:What kinds of things do your grandparents do with you?", 
+            "question_number": 17, 
+            "variable_name": "FamActFrq24_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 304
+                }
+            ], 
+            "question_text": "Play computer games with me:What kinds of things do your grandparents do with you?", 
+            "question_number": 22, 
+            "variable_name": "FamActFrq25_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 284
+                }
+            ], 
+            "question_text": "Take me shopping, to the cinema, to watch sports games, or other events:What kinds of things do your grandparents do with you?", 
+            "question_number": 19, 
+            "variable_name": "FamActFrq26_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 97
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 253
+                }
+            ], 
+            "question_text": "Watch TV or play card or board games with me:What kinds of things do your grandparents do with you?", 
+            "question_number": 21, 
+            "variable_name": "FamActFrq27_3A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is your favourite sport or game to play?", 
+            "question_number": 36, 
+            "variable_name": "Hob44_3A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Which video game is your favourite?", 
+            "question_number": 45, 
+            "variable_name": "Hob47_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 200
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 107
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 41
+                }
+            ], 
+            "question_text": "How much do you like reading?", 
+            "question_number": 4, 
+            "variable_name": "HobAtt06_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 265
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 60
+                }
+            ], 
+            "question_text": "How much do you like sports?", 
+            "question_number": 34, 
+            "variable_name": "HobAtt07_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 285
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "How much do you like writing?", 
+            "question_number": 60, 
+            "variable_name": "HobAtt10_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Some days", 
+                    "response (n)": 140
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 122
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "How often do you play computer games (e g  Playstation, Xbox, Wii)?", 
+            "question_number": 42, 
+            "variable_name": "HobFrq01_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Most days", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 118
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some days", 
+                    "response (n)": 104
+                }
+            ], 
+            "question_text": "How often do you play sports or do exercise?", 
+            "question_number": 35, 
+            "variable_name": "HobFrq02_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Some days", 
+                    "response (n)": 176
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 125
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "How often do you read books?", 
+            "question_number": 44, 
+            "variable_name": "HobFrq03_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Some days", 
+                    "response (n)": 148
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 145
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "How often do you use a tablet (e g  iPad, Pebble etc)?", 
+            "question_number": 43, 
+            "variable_name": "HobFrq05_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Some days", 
+                    "response (n)": 169
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 117
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Never", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "How often do you use the internet?", 
+            "question_number": 41, 
+            "variable_name": "HobFrq06_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Welsh", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "1", 
+                    "response": "English", 
+                    "response (n)": 282
+                }
+            ], 
+            "question_text": "Language completed", 
+            "question_number": 59, 
+            "variable_name": "langresponse_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 233
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 109
+                }
+            ], 
+            "question_text": "Do you get pocket money?", 
+            "question_number": 55, 
+            "variable_name": "Money01_3A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How much pocket money do you get per week?", 
+            "question_number": 56, 
+            "variable_name": "Money02_3A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What did you do with your pocket money this week?", 
+            "question_number": 57, 
+            "variable_name": "Money03_3A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What did you eat for breakfast this morning?", 
+            "question_number": 33, 
+            "variable_name": "RoutnFood01_3A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What did you eat for dinner last night?", 
+            "question_number": 32, 
+            "variable_name": "RoutnFood06_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Between 6am and 7am", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Between 7am and 8am", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Before 5am", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Between 5am and 6am", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Later than 8am", 
+                    "response (n)": 36
+                }
+            ], 
+            "question_text": "About what time do you get up in the mornings?", 
+            "question_number": 25, 
+            "variable_name": "RoutnSleep01_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Between 6pm and 7pm", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Between 8pm and 9pm", 
+                    "response (n)": 103
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Earlier than 6pm", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Between 7pm and 8pm", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Between 9pm and 10pm", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Between 10pm and 11pm", 
+                    "response (n)": 47
+                }
+            ], 
+            "question_text": "About what time did you go to bed last night?", 
+            "question_number": 24, 
+            "variable_name": "RoutnSleep03_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 345
+                }
+            ], 
+            "question_text": "I cycled:How did you get to school this morning?", 
+            "question_number": 27, 
+            "variable_name": "RoutnTrav02_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 159
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 191
+                }
+            ], 
+            "question_text": "In the car:How did you get to school this morning?", 
+            "question_number": 28, 
+            "variable_name": "RoutnTrav03_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 339
+                }
+            ], 
+            "question_text": "I caught the bus:How did you get to school this morning?", 
+            "question_number": 29, 
+            "variable_name": "RoutnTrav04_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 124
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 226
+                }
+            ], 
+            "question_text": "I walked:How did you get to school this morning?", 
+            "question_number": 26, 
+            "variable_name": "RoutnTrav05_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 343
+                }
+            ], 
+            "question_text": "I got a taxi:How did you get to school this morning?", 
+            "question_number": 31, 
+            "variable_name": "RoutnTrav06_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 348
+                }
+            ], 
+            "question_text": "I got the train:How did you get to school this morning?", 
+            "question_number": 30, 
+            "variable_name": "RoutnTrav07_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 220
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 90
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 37
+                }
+            ], 
+            "question_text": "How much do you like school?", 
+            "question_number": 3, 
+            "variable_name": "SchAtt01_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 271
+                }
+            ], 
+            "question_text": "How much have you tried in school this week?", 
+            "question_number": 11, 
+            "variable_name": "SchAtt15_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 153
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 149
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 45
+                }
+            ], 
+            "question_text": "How much do you like answering questions in class?", 
+            "question_number": 6, 
+            "variable_name": "SchLearnAtt01_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 122
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 175
+                }
+            ], 
+            "question_text": "How much do you like number work?", 
+            "question_number": 5, 
+            "variable_name": "SchLearnAtt03_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 118
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 99
+                }
+            ], 
+            "question_text": "How much do you like taking tests?", 
+            "question_number": 12, 
+            "variable_name": "SchLearnAtt14_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 136
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 129
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 79
+                }
+            ], 
+            "question_text": "Do you worry about taking tests?", 
+            "question_number": 13, 
+            "variable_name": "SchLearnAtt15_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 83
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 156
+                }
+            ], 
+            "question_text": "How much do you like learning Welsh?", 
+            "question_number": 7, 
+            "variable_name": "SchSubjAtt04_3A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What do you like to learn the most in school?", 
+            "question_number": 9, 
+            "variable_name": "SchSubjAtt17_3A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What do you like to learn the least in school?", 
+            "question_number": 10, 
+            "variable_name": "SchSubjAtt18_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Last year", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Dont know", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "3", 
+                    "response": "About the same", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "1", 
+                    "response": "This year", 
+                    "response (n)": 181
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "Which do you like better, school this year or last year?", 
+            "question_number": 14, 
+            "variable_name": "SchTranAtt20_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Male", 
+                    "response (n)": 184
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Female", 
+                    "response (n)": 166
+                }
+            ], 
+            "question_text": "Are you a boy or a girl?", 
+            "question_number": 2, 
+            "variable_name": "sex_3A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Sweep", 
+            "question_number": 62, 
+            "variable_name": "sweep_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 223
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 109
+                }
+            ], 
+            "question_text": "How much energy have you had this week?", 
+            "question_number": 37, 
+            "variable_name": "WellFeelFrq08_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 221
+                }
+            ], 
+            "question_text": "How much have you felt lonely this week?", 
+            "question_number": 38, 
+            "variable_name": "WellFeelFrq09_3A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 218
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 96
+                }
+            ], 
+            "question_text": "How much do you like the way you look?", 
+            "question_number": 39, 
+            "variable_name": "WellSat07_3A"
+        }
+    ]
+}

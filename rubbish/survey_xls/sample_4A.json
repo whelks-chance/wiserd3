@@ -1,0 +1,2232 @@
+{
+    "questions": [
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 380
+                }
+            ], 
+            "question_text": "Do you have livestock (e g  cows, pigs, sheep, etc ) on your farm?", 
+            "question_number": 35, 
+            "variable_name": "AnimFarm01_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 281
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 109
+                }
+            ], 
+            "question_text": "Do you have a pet at home?", 
+            "question_number": 60, 
+            "variable_name": "AnimPet01_4A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "If yes, what pet(s) do you have?", 
+            "question_number": 61, 
+            "variable_name": "AnimPet02_4A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What do you want to be when you grow up?", 
+            "question_number": 67, 
+            "variable_name": "AspCareer03_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Flat", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Farm", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Semi-detached house", 
+                    "response (n)": 86
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Terraced house", 
+                    "response (n)": 118
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Detached house", 
+                    "response (n)": 137
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Bungalow", 
+                    "response (n)": 13
+                }, 
+                {
+                    "response": "I dont know", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Other - Write in", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "What kind of home do you live in most often?", 
+            "question_number": 33, 
+            "variable_name": "Deprive04_4A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other - Write In (Required):What kind of home do you live in most often?", 
+            "question_number": 34, 
+            "variable_name": "Deprive05_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 190
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 207
+                }
+            ], 
+            "question_text": "Some pocket money each week to spend on yourself:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 15, 
+            "variable_name": "Deprive06_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 259
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 138
+                }
+            ], 
+            "question_text": "Some money that you can save each month, either in a bank or at home:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 16, 
+            "variable_name": "Deprive07_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 271
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 126
+                }
+            ], 
+            "question_text": "A pair of designer or brand name trainers (like Nike or Vans):Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 17, 
+            "variable_name": "Deprive08_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 271
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 126
+                }
+            ], 
+            "question_text": "An iPod or other personal music player:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 18, 
+            "variable_name": "Deprive09_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 162
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 235
+                }
+            ], 
+            "question_text": "A smartphone:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 19, 
+            "variable_name": "Deprive10_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 320
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 77
+                }
+            ], 
+            "question_text": "Cable or satellite TV at home:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 20, 
+            "variable_name": "Deprive11_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 330
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 67
+                }
+            ], 
+            "question_text": "A garden at home, or somewhere nearby like a park where you can safely spend time with their friends:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 21, 
+            "variable_name": "Deprive12_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 321
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 76
+                }
+            ], 
+            "question_text": "A family car for transport when you need it:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 22, 
+            "variable_name": "Deprive13_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 302
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 95
+                }
+            ], 
+            "question_text": "The right kind of clothes to fit in with other people your age:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 23, 
+            "variable_name": "Deprive14_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 285
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 112
+                }
+            ], 
+            "question_text": "At least one family holiday away from home each year:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 24, 
+            "variable_name": "Deprive15_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 284
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 113
+                }
+            ], 
+            "question_text": "Family trips or days out at least once a month:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 25, 
+            "variable_name": "Deprive16_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 359
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 35
+                }
+            ], 
+            "question_text": "Do you eat meat?:Please answer the following questions about eating meat and fish", 
+            "question_number": 62, 
+            "variable_name": "Diet01_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 290
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 105
+                }
+            ], 
+            "question_text": "Do you eat fish?:Please answer the following questions about eating meat and fish", 
+            "question_number": 63, 
+            "variable_name": "Diet02_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 109
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 212
+                }
+            ], 
+            "question_text": "Hunt animals for food:Do you think it's OK to", 
+            "question_number": 58, 
+            "variable_name": "EthicsAtt04_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 357
+                }
+            ], 
+            "question_text": "Hunt animals for sport:Do you think it's OK to", 
+            "question_number": 56, 
+            "variable_name": "EthicsAtt05_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 361
+                }
+            ], 
+            "question_text": "Kill animals for their fur:Do you think it's OK to", 
+            "question_number": 57, 
+            "variable_name": "EthicsAtt06_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 129
+                }, 
+                {
+                    "response": 99, 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 170
+                }
+            ], 
+            "question_text": "Kill animals to stop the spread of disease:Do you think it's OK to", 
+            "question_number": 59, 
+            "variable_name": "EthicsAtt07_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 308
+                }
+            ], 
+            "question_text": "Use animals in medical research:Do you think it's OK to", 
+            "question_number": 55, 
+            "variable_name": "EthicsAtt08_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 345
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 45
+                }
+            ], 
+            "question_text": "Do either of your parents eat fish:Please answer the following questions about eating meat and fish", 
+            "question_number": 65, 
+            "variable_name": "EthicsFam01_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 377
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 18
+                }
+            ], 
+            "question_text": "Do either of your parents eat meat?:Please answer the following questions about eating meat and fish", 
+            "question_number": 64, 
+            "variable_name": "EthicsFam02_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 191
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 206
+                }
+            ], 
+            "question_text": "Castles:Which of the following places have you visited WITH YOUR FAMILY in the past year (since the beginning of school)?", 
+            "question_number": 43, 
+            "variable_name": "FamAct01_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 268
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 129
+                }
+            ], 
+            "question_text": "The Cinema:Which of the following places have you visited WITH YOUR FAMILY in the past year (since the beginning of school)?", 
+            "question_number": 46, 
+            "variable_name": "FamAct02_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 90
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 307
+                }
+            ], 
+            "question_text": "A Music Concert:Which of the following places have you visited WITH YOUR FAMILY in the past year (since the beginning of school)?", 
+            "question_number": 50, 
+            "variable_name": "FamAct03_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 293
+                }
+            ], 
+            "question_text": "The National Eisteddfod:Which of the following places have you visited WITH YOUR FAMILY in the past year (since the beginning of school)?", 
+            "question_number": 44, 
+            "variable_name": "FamAct04_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 154
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 243
+                }
+            ], 
+            "question_text": "Museums:Which of the following places have you visited WITH YOUR FAMILY in the past year (since the beginning of school)?", 
+            "question_number": 42, 
+            "variable_name": "FamAct08_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 167
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 230
+                }
+            ], 
+            "question_text": "Sports Events:Which of the following places have you visited WITH YOUR FAMILY in the past year (since the beginning of school)?", 
+            "question_number": 45, 
+            "variable_name": "FamAct10_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 158
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 239
+                }
+            ], 
+            "question_text": "The Theatre:Which of the following places have you visited WITH YOUR FAMILY in the past year (since the beginning of school)?", 
+            "question_number": 47, 
+            "variable_name": "FamAct11_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 212
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 185
+                }
+            ], 
+            "question_text": "A Theme Park:Which of the following places have you visited WITH YOUR FAMILY in the past year (since the beginning of school)?", 
+            "question_number": 49, 
+            "variable_name": "FamAct12_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 196
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 201
+                }
+            ], 
+            "question_text": "The Zoo:Which of the following places have you visited WITH YOUR FAMILY in the past year (since the beginning of school)?", 
+            "question_number": 48, 
+            "variable_name": "FamAct13_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I dont know", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 234
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 90
+                }
+            ], 
+            "question_text": "Do you know anyone who is serving, or has previously served, in the armed forces?", 
+            "question_number": 26, 
+            "variable_name": "Military01_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I dont know", 
+                    "response (n)": 51
+                }, 
+                {
+                    "response": "Yes", 
+                    "response (n)": 239
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "response": "No", 
+                    "response (n)": 96
+                }
+            ], 
+            "question_text": "When you have money, are you allowed to spend it however  you want?:Please state how much you agree with the following statements about you?", 
+            "question_number": 54, 
+            "variable_name": "Money12_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "England", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "6", 
+                    "response": "I dont know", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Scotland", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Northern Ireland", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Wales", 
+                    "response (n)": 316
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other - Write in", 
+                    "response (n)": 30
+                }
+            ], 
+            "question_text": "Where were you born?", 
+            "question_number": 2, 
+            "variable_name": "NatBirth01_4A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other - Write In:Where were you born?", 
+            "question_number": 3, 
+            "variable_name": "NatBirth02_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "England", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "I dont know", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Scotland", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Northern Ireland", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Wales", 
+                    "response (n)": 212
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other - Write in", 
+                    "response (n)": 67
+                }
+            ], 
+            "question_text": "Where was your mother born?", 
+            "question_number": 4, 
+            "variable_name": "NatBirth03_4A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other - Write In:Where was your mother born?", 
+            "question_number": 5, 
+            "variable_name": "NatBirth04_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 336
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 61
+                }
+            ], 
+            "question_text": "English:What languages do you speak at home with your family?", 
+            "question_number": 7, 
+            "variable_name": "NatLang01_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 173
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 224
+                }
+            ], 
+            "question_text": "Welsh:What languages do you speak at home with your family?", 
+            "question_number": 6, 
+            "variable_name": "NatLang02_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 326
+                }
+            ], 
+            "question_text": "Other(s):What languages do you speak at home with your family?", 
+            "question_number": 8, 
+            "variable_name": "NatLang03_4A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other(s):What languages do you speak at home with your family?", 
+            "question_number": 9, 
+            "variable_name": "NatLang04_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 308
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 89
+                }
+            ], 
+            "question_text": "English:What languages do you hear parents speak at home?", 
+            "question_number": 11, 
+            "variable_name": "NatLang05_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 117
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 280
+                }
+            ], 
+            "question_text": "Welsh:What languages do you hear parents speak at home?", 
+            "question_number": 10, 
+            "variable_name": "NatLang06_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 320
+                }
+            ], 
+            "question_text": "Other(s):What languages do you hear parents speak at home?", 
+            "question_number": 12, 
+            "variable_name": "NatLang07_4A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other(s):What languages do you hear parents speak at home?", 
+            "question_number": 13, 
+            "variable_name": "NatLang08_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "charity to old people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Helping people in different countries", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "I wood give ti to animulus trarete (animal charity)", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Wateraid, Save the Children, Animals, Cancer, Old people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "children", 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": "helps animals", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "sport relief", 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": "Animal charity, cancer charity", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Save Sharks", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "cancer", 
+                    "response (n)": 7
+                }, 
+                {
+                    "response": "Homeless people", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "epilepsy society", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Wildlife", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "cancer macmillan", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Poor people", 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": "people with no homes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "None", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "children charity", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "heart disease", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I don't know", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "poor people", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Children In Need", 
+                    "response (n)": 17
+                }, 
+                {
+                    "response": "Old people, children", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Race for Life", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "water aid", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Lego charity", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Hospitals", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Greenacres", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": null, 
+                    "response (n)": 39
+                }, 
+                {
+                    "response": "Ty Hafan", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Help the Aged", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "sick children", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Sports", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "WWF, MacMillan, Greenacres", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "canse", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "canca", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Old people, animals", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Syrian children", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "To stop cutting down trees", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "old people", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "British red cross", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "children that have illness", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Animals & sick people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "rags to riches", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Animals & British Red Cross", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Muslim people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "cancer research", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "Children's hospital", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Cancer/People who need food", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Children & disabled", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Haverfordwest", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Ill people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "WWF", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "Special Needs for children", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Starving people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "charity that helps people with cancer", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Red Cross", 
+                    "response (n)": 9
+                }, 
+                {
+                    "response": "to help military forces", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "The Dogs Trust", 
+                    "response (n)": 8
+                }, 
+                {
+                    "response": "Children in Need", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Cancer Research", 
+                    "response (n)": 69
+                }, 
+                {
+                    "response": "Cancer Hair Care", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "Childline, WaterAid, Safe Place to Live", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "a charity helps animals", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Old people", 
+                    "response (n)": 7
+                }, 
+                {
+                    "response": "Endangered species", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Child Care Cancer", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Childline", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "young children", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "Helping children, helping animals, helping old people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Water Aid/Endangered animals/Help the aged", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Little children who have illnesses", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Poppy's", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "British Heart Foundation", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Broke", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Hospital", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "CAFOD", 
+                    "response (n)": 11
+                }, 
+                {
+                    "response": "charity for children", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "cancer support", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "Animals", 
+                    "response (n)": 38
+                }, 
+                {
+                    "response": "red nose", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "poor children", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "tenovus cancer research charity", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "a charity that help people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "African children", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "a charity that looks after animals and people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "animals", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Cancer", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Macmillan", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "cancer charity", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "To help people in other countries", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "people with no water", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Children & Animals", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Clean water for ill & shy people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Breast cancer", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Macmillan, Water Aid", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Sick children", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "Children in need", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Helping children", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "cick children and parent (Africa)", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Disabled people", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "NHS", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "charity for heart disease", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Lung cancer charity", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I would give it to donation", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Wolf conservation, Defenders of wildlife, Macmillan", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Cancer/Lost limbs", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Syria", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Poor children & sick people", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "homeless people", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "Cancer Research/Children in Need", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Helping the disabled", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Animal charity", 
+                    "response (n)": 10
+                }, 
+                {
+                    "response": "Animal cancer", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "sira (Syria?)", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Fairtrade, Childcare, Pudsey, Cancer", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Water Aid", 
+                    "response (n)": 15
+                }, 
+                {
+                    "response": "CAFOD, Sport Relief", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "If you were to donate \u00a310 to a charity, which one of the following charities would you give it to?", 
+            "question_number": 36, 
+            "variable_name": "PhilAct04_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 126
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 175
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 77
+                }
+            ], 
+            "question_text": "Charities help people I know:How much do you agree with the following statements?", 
+            "question_number": 38, 
+            "variable_name": "PhilAtt01_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 335
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "Charities should do more to help people in other countries:How much do you agree with the following statements?", 
+            "question_number": 39, 
+            "variable_name": "PhilAtt03_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 134
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 200
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 49
+                }
+            ], 
+            "question_text": "Young people should give some of their time to charity:How much do you agree with the following statements?", 
+            "question_number": 41, 
+            "variable_name": "PhilAtt05_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 118
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 208
+                }
+            ], 
+            "question_text": "When I'm older, I would work for a charity:How much do you agree with the following statements?", 
+            "question_number": 37, 
+            "variable_name": "PhilAtt06_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 283
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 32
+                }
+            ], 
+            "question_text": "The more money people have, the more they should give some of their money to charity:How much do you agree with the following statements?", 
+            "question_number": 40, 
+            "variable_name": "PhilAtt07_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 281
+                }, 
+                {
+                    "value": "3", 
+                    "response": "None", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 89
+                }
+            ], 
+            "question_text": "Teachers:How much do you respect do you have for the following people?", 
+            "question_number": 30, 
+            "variable_name": "ProfAtt01_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 255
+                }, 
+                {
+                    "value": "3", 
+                    "response": "None", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 123
+                }
+            ], 
+            "question_text": "Doctors:How much do you respect do you have for the following people?", 
+            "question_number": 27, 
+            "variable_name": "ProfAtt02_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 253
+                }, 
+                {
+                    "value": "3", 
+                    "response": "None", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 100
+                }
+            ], 
+            "question_text": "Nurses:How much do you respect do you have for the following people?", 
+            "question_number": 32, 
+            "variable_name": "ProfAtt03_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 316
+                }, 
+                {
+                    "value": "3", 
+                    "response": "None", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "Police:How much do you respect do you have for the following people?", 
+            "question_number": 29, 
+            "variable_name": "ProfAtt04_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 254
+                }, 
+                {
+                    "value": "3", 
+                    "response": "None", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 84
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Members of the armed forces:How much do you respect do you have for the following people?", 
+            "question_number": 28, 
+            "variable_name": "ProfAtt05_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 110
+                }, 
+                {
+                    "value": "3", 
+                    "response": "None", 
+                    "response (n)": 84
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 177
+                }
+            ], 
+            "question_text": "Members of Parliament:How much do you respect do you have for the following people?", 
+            "question_number": 31, 
+            "variable_name": "ProfAtt06_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Atheist (A person who doesnt believe in a God)", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Christian", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 370
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Muslim", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agnostic (A person who believes it is impossible to know if a God exists)", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "10", 
+                    "response": "I dont care enough for form an opinion", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "[OLD VERSION] Which of the following best describes your religious beliefs?", 
+            "question_number": 69, 
+            "variable_name": "Relig01_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 380
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "[OLD VERSION] Do you attend special events (like baptisms, weddings and funerals) that are associated with a religion?", 
+            "question_number": 66, 
+            "variable_name": "Relig03_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Once a month", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Less than once a month", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "8", 
+                    "response": "Never", 
+                    "response (n)": 230
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 12
+                }, 
+                {
+                    "response": "Only on holidays", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "2", 
+                    "response": "More than once a week", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "4", 
+                    "response": "More than once a month", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "Apart from special events like baptisms, weddings and funerals, how often do you attend services or meetings associated with a religion?", 
+            "question_number": 68, 
+            "variable_name": "Relig04_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 319
+                }
+            ], 
+            "question_text": "Someone who doesn't know if there's a God:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 85, 
+            "variable_name": "Relig05_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 113
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 284
+                }
+            ], 
+            "question_text": "Someone who doesn't believe in a God:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 86, 
+            "variable_name": "Relig06_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 388
+                }
+            ], 
+            "question_text": "Buddhist:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 79, 
+            "variable_name": "Relig07_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 251
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 146
+                }
+            ], 
+            "question_text": "Christian:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 80, 
+            "variable_name": "Relig08_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 363
+                }
+            ], 
+            "question_text": "Hindu:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 81, 
+            "variable_name": "Relig09_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 357
+                }
+            ], 
+            "question_text": "Jewish:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 82, 
+            "variable_name": "Relig10_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 126
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 271
+                }
+            ], 
+            "question_text": "Muslim:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 83, 
+            "variable_name": "Relig11_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 381
+                }
+            ], 
+            "question_text": "Sikh:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 84, 
+            "variable_name": "Relig12_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 395
+                }
+            ], 
+            "question_text": "Buddhist:Which of the following best describes your religious beliefs?", 
+            "question_number": 70, 
+            "variable_name": "Relig13_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 177
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 220
+                }
+            ], 
+            "question_text": "Christian:Which of the following best describes your religious beliefs?", 
+            "question_number": 71, 
+            "variable_name": "Relig14_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 396
+                }
+            ], 
+            "question_text": "Hindu:Which of the following best describes your religious beliefs?", 
+            "question_number": 72, 
+            "variable_name": "Relig15_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 393
+                }
+            ], 
+            "question_text": "Jewish:Which of the following best describes your religious beliefs?", 
+            "question_number": 73, 
+            "variable_name": "Relig16_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 358
+                }
+            ], 
+            "question_text": "Muslim:Which of the following best describes your religious beliefs?", 
+            "question_number": 74, 
+            "variable_name": "Relig17_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 393
+                }
+            ], 
+            "question_text": "Sikh:Which of the following best describes your religious beliefs?", 
+            "question_number": 75, 
+            "variable_name": "Relig18_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 344
+                }
+            ], 
+            "question_text": "I don't know if there is a God:Which of the following best describes your religious beliefs?", 
+            "question_number": 76, 
+            "variable_name": "Relig19_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 361
+                }
+            ], 
+            "question_text": "I don't believe in a God:Which of the following best describes your religious beliefs?", 
+            "question_number": 77, 
+            "variable_name": "Relig20_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 355
+                }
+            ], 
+            "question_text": "I don't care enough to form an opinion:Which of the following best describes your religious beliefs?", 
+            "question_number": 78, 
+            "variable_name": "Relig21_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 320
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 51
+                }
+            ], 
+            "question_text": "When you're out of school, are you allowed to wear the clothes you want to wear?:Please state how much you agree with the following statements about you?", 
+            "question_number": 52, 
+            "variable_name": "Responsible05_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 221
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "When you go out, do your parents tell you to be home at a certain time?:Please state how much you agree with the following statements about you?", 
+            "question_number": 53, 
+            "variable_name": "Responsible06_4A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "If you belong to any clubs at school, (like Urdd, sports clubs, etc) please list them in the box below", 
+            "question_number": 51, 
+            "variable_name": "SchAct08_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Male", 
+                    "response (n)": 205
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Female", 
+                    "response (n)": 192
+                }
+            ], 
+            "question_text": "Are you a boy or a girl?", 
+            "question_number": 1, 
+            "variable_name": "sex_4A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Being physically attractive", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Being popular", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Being successful in your school or college", 
+                    "response (n)": 139
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Being caring", 
+                    "response (n)": 109
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Being successful at sports", 
+                    "response (n)": 85
+                }
+            ], 
+            "question_text": "Which ONE of the following is the MOST important to you right now?", 
+            "question_number": 14, 
+            "variable_name": "WellValue19_4A"
+        }
+    ]
+}

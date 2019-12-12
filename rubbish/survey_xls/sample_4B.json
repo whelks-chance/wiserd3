@@ -1,0 +1,3225 @@
+{
+    "questions": [
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 263
+                }
+            ], 
+            "question_text": "Do you have livestock (e g  cows, pigs, sheep, etc ) on your farm?", 
+            "question_number": 93, 
+            "variable_name": "AnimFarm01_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 248
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "Do you have a pet at home?", 
+            "question_number": 99, 
+            "variable_name": "AnimPet01_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "If yes, what pet(s) do you have?", 
+            "question_number": 100, 
+            "variable_name": "AnimPet02_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 286
+                }
+            ], 
+            "question_text": "Have you been on a work experience placement through school?", 
+            "question_number": 32, 
+            "variable_name": "AspAdvice16_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 287
+                }
+            ], 
+            "question_text": "Did you find your work experience placement useful?", 
+            "question_number": 33, 
+            "variable_name": "AspAdvice17_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "I dont know", 
+                    "response (n)": 131
+                }, 
+                {
+                    "value": "3", 
+                    "response": "A combination of academic and vocational qualifications", 
+                    "response (n)": 8
+                }, 
+                {
+                    "response": "Academic qualifications (eg A levels)", 
+                    "response (n)": 135
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Leave full time education", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "An Apprentiship", 
+                    "response (n)": 14
+                }, 
+                {
+                    "response": "Vocational qualifications (eg BTECH)", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Please tell us what you will be doing after Year 11", 
+            "question_number": 14, 
+            "variable_name": "AspPostSch04_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 144
+                }, 
+                {
+                    "value": "5", 
+                    "response": "I dont know", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "1", 
+                    "response": "6th form at this school", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Other - Write in", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "6th form at another school (Please specify)", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Further education college (Please specify)", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "Where will you be doing your courses after Year 11?", 
+            "question_number": 15, 
+            "variable_name": "AspPostSch05_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "6th form at another school (Please specify):Where will you be doing your courses after Year 11?", 
+            "question_number": 16, 
+            "variable_name": "AspPostSch08_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Further education college (Please specify):Where will you be doing your courses after Year 11?", 
+            "question_number": 17, 
+            "variable_name": "AspPostSch10_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other - Write In (Required):Where will you be doing your courses after Year 11?", 
+            "question_number": 18, 
+            "variable_name": "AspPostSch16_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Why might you not stay on in full-time education at the end of Year 11?", 
+            "question_number": 19, 
+            "variable_name": "AspPostSch18_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 165
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "Are you thinking about applying to university?", 
+            "question_number": 20, 
+            "variable_name": "AspPostSch19_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "To which university (universities) might you apply?:Please answer the following questions about applying to university", 
+            "question_number": 21, 
+            "variable_name": "AspPostSch21_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What subjects might you study while at university?:Please answer the following questions about applying to university", 
+            "question_number": 22, 
+            "variable_name": "AspPostSch22_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Prefer not to say", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 254
+                }
+            ], 
+            "question_text": "Do you receive free school meals?", 
+            "question_number": 41, 
+            "variable_name": "Deprive01_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Flat", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Terraced house", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Semi-detached house", 
+                    "response (n)": 90
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Farm", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Detached house", 
+                    "response (n)": 83
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Bungalow", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Other - Write in", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "What kind of home do you live in?", 
+            "question_number": 91, 
+            "variable_name": "Deprive04_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other - Write In (Required):What kind of home do you live in?", 
+            "question_number": 92, 
+            "variable_name": "Deprive05_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 135
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 167
+                }
+            ], 
+            "question_text": "Some pocket money each week to spend on yourself:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 42, 
+            "variable_name": "Deprive06_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 168
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 134
+                }
+            ], 
+            "question_text": "Some money that you can save each month, either in a bank or at home:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 43, 
+            "variable_name": "Deprive07_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 217
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 85
+                }
+            ], 
+            "question_text": "A pair of designer or brand name trainers (like Nike or Vans):Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 44, 
+            "variable_name": "Deprive08_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 186
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 116
+                }
+            ], 
+            "question_text": "An iPod or other personal music player:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 45, 
+            "variable_name": "Deprive09_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 249
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 53
+                }
+            ], 
+            "question_text": "A smartphone:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 46, 
+            "variable_name": "Deprive10_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 264
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 38
+                }
+            ], 
+            "question_text": "Cable or satellite TV at home:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 47, 
+            "variable_name": "Deprive11_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 267
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 35
+                }
+            ], 
+            "question_text": "A garden at home, or somewhere nearby like a park where you can safely spend time with their friends:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 48, 
+            "variable_name": "Deprive12_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 254
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 48
+                }
+            ], 
+            "question_text": "A family car for transport when you need it:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 49, 
+            "variable_name": "Deprive13_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 251
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 51
+                }
+            ], 
+            "question_text": "The right kind of clothes to fit in with other people your age:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 50, 
+            "variable_name": "Deprive14_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 190
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 112
+                }
+            ], 
+            "question_text": "At least one family holiday away from home each year:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 51, 
+            "variable_name": "Deprive15_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 180
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 122
+                }
+            ], 
+            "question_text": "Family trips or days out at least once a month:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
+            "question_number": 52, 
+            "variable_name": "Deprive16_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 286
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "Do you eat meat?:Please answer the following questions about eating meat and fish", 
+            "question_number": 101, 
+            "variable_name": "Diet01_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 223
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 74
+                }
+            ], 
+            "question_text": "Do you eat fish?:Please answer the following questions about eating meat and fish", 
+            "question_number": 102, 
+            "variable_name": "Diet02_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 67
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very interested", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all interested", 
+                    "response (n)": 125
+                }
+            ], 
+            "question_text": "Local politics (e g  your county, city or village):On a scale of 1-5, with 1 being not at all interested and 5 being very interested, how interested are you in the following topics?", 
+            "question_number": 60, 
+            "variable_name": "EngPol05_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very interested", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all interested", 
+                    "response (n)": 122
+                }
+            ], 
+            "question_text": "The politics of Wales:On a scale of 1-5, with 1 being not at all interested and 5 being very interested, how interested are you in the following topics?", 
+            "question_number": 61, 
+            "variable_name": "EngPol06_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 67
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very interested", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all interested", 
+                    "response (n)": 118
+                }
+            ], 
+            "question_text": "The politics of the UK:On a scale of 1-5, with 1 being not at all interested and 5 being very interested, how interested are you in the following topics?", 
+            "question_number": 62, 
+            "variable_name": "EngPol07_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very interested", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all interested", 
+                    "response (n)": 115
+                }
+            ], 
+            "question_text": "World politics:On a scale of 1-5, with 1 being not at all interested and 5 being very interested, how interested are you in the following topics?", 
+            "question_number": 63, 
+            "variable_name": "EngPol08_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "8", 
+                    "response": "Spread of nuclear weapons", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "10", 
+                    "response": "I dont know", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Climate change", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Population growth", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Economic instability", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "5", 
+                    "response": "International terrorism", 
+                    "response (n)": 99
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Poverty", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Infectious diseases", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "9", 
+                    "response": "War", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Availability of energy", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "In 2011, the European Union (EU) listed 10 problems facing the EU  These problems are listed below  Of these choices, which ONE do you think is the most important problem facing the EU today?\u00a0", 
+            "question_number": 64, 
+            "variable_name": "EngSoc07_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 139
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "Eating little or no meat is better for animal welfare:Please state how much you agree with the following statements", 
+            "question_number": 107, 
+            "variable_name": "EthicsAtt01_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 133
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 33
+                }
+            ], 
+            "question_text": "Eating little or no meat is better for the environment:Please state how much you agree with the following statements", 
+            "question_number": 105, 
+            "variable_name": "EthicsAtt02_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 113
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 54
+                }
+            ], 
+            "question_text": "Eating little or no meat is healthier:Please state how much you agree with the following statements", 
+            "question_number": 106, 
+            "variable_name": "EthicsAtt03_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Unacceptable", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Acceptable", 
+                    "response (n)": 67
+                }
+            ], 
+            "question_text": "Hunt animals for food:On a scale of 1-5, with 1 being \u201cunacceptable\u201d and 5 being \u201cacceptable,\u201d how acceptable is it to", 
+            "question_number": 97, 
+            "variable_name": "EthicsAtt04_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Unacceptable", 
+                    "response (n)": 194
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Acceptable", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "Hunt animals for sport:On a scale of 1-5, with 1 being \u201cunacceptable\u201d and 5 being \u201cacceptable,\u201d how acceptable is it to", 
+            "question_number": 95, 
+            "variable_name": "EthicsAtt05_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Unacceptable", 
+                    "response (n)": 209
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Acceptable", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "Kill animals for their fur:On a scale of 1-5, with 1 being \u201cunacceptable\u201d and 5 being \u201cacceptable,\u201d how acceptable is it to", 
+            "question_number": 96, 
+            "variable_name": "EthicsAtt06_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Unacceptable", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Acceptable", 
+                    "response (n)": 78
+                }
+            ], 
+            "question_text": "Kill animals to stop the spread of disease:On a scale of 1-5, with 1 being \u201cunacceptable\u201d and 5 being \u201cacceptable,\u201d how acceptable is it to", 
+            "question_number": 98, 
+            "variable_name": "EthicsAtt07_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Unacceptable", 
+                    "response (n)": 156
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Acceptable", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "Use animals in medical research:On a scale of 1-5, with 1 being \u201cunacceptable\u201d and 5 being \u201cacceptable,\u201d how acceptable is it to", 
+            "question_number": 94, 
+            "variable_name": "EthicsAtt08_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 287
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Do either of your parents eat fish:Please answer the following questions about eating meat and fish", 
+            "question_number": 104, 
+            "variable_name": "EthicsFam01_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 290
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "Do either of your parents eat meat?:Please answer the following questions about eating meat and fish", 
+            "question_number": 103, 
+            "variable_name": "EthicsFam02_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a month", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "5", 
+                    "response": "About once or twice a year", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "4", 
+                    "response": "More than once a month", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Weekly", 
+                    "response (n)": 68
+                }
+            ], 
+            "question_text": "Attended a sport event:How often do you do the following activities with your family?", 
+            "question_number": 55, 
+            "variable_name": "FamActFrq12_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a month", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 159
+                }, 
+                {
+                    "value": "5", 
+                    "response": "About once or twice a year", 
+                    "response (n)": 110
+                }, 
+                {
+                    "value": "4", 
+                    "response": "More than once a month", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Weekly", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "Attended the theatre:How often do you do the following activities with your family?", 
+            "question_number": 56, 
+            "variable_name": "FamActFrq13_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a month", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 181
+                }, 
+                {
+                    "value": "5", 
+                    "response": "About once or twice a year", 
+                    "response (n)": 108
+                }, 
+                {
+                    "value": "4", 
+                    "response": "More than once a month", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Weekly", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "Go to a museum:How often do you do the following activities with your family?", 
+            "question_number": 53, 
+            "variable_name": "FamActFrq14_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a month", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "5", 
+                    "response": "About once or twice a year", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "4", 
+                    "response": "More than once a month", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Weekly", 
+                    "response (n)": 60
+                }
+            ], 
+            "question_text": "Go to a park:How often do you do the following activities with your family?", 
+            "question_number": 58, 
+            "variable_name": "FamActFrq15_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a month", 
+                    "response (n)": 88
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "About once or twice a year", 
+                    "response (n)": 136
+                }, 
+                {
+                    "value": "4", 
+                    "response": "More than once a month", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Weekly", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Go to the cinema:How often do you do the following activities with your family?", 
+            "question_number": 54, 
+            "variable_name": "FamActFrq16_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a month", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 185
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "5", 
+                    "response": "About once or twice a year", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "4", 
+                    "response": "More than once a month", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Weekly", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "Go to the library:How often do you do the following activities with your family?", 
+            "question_number": 59, 
+            "variable_name": "FamActFrq17_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a month", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "5", 
+                    "response": "About once or twice a year", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "4", 
+                    "response": "More than once a month", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Weekly", 
+                    "response (n)": 24
+                }
+            ], 
+            "question_text": "Have dinner at a pub:How often do you do the following activities with your family?", 
+            "question_number": 57, 
+            "variable_name": "FamActFrq18_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I dont know", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 158
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 85
+                }
+            ], 
+            "question_text": "Do you know anyone who is serving, or has previously served, in the armed forces?", 
+            "question_number": 65, 
+            "variable_name": "Military01_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 97
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "When I have money, I am allowed to spend it however I want:Please state how much you agree with the following statements", 
+            "question_number": 90, 
+            "variable_name": "Money12_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "6", 
+                    "response": "I dont know", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Wales", 
+                    "response (n)": 225
+                }, 
+                {
+                    "value": "2", 
+                    "response": "England", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Scotland", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other - Write in", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Where were you born?", 
+            "question_number": 2, 
+            "variable_name": "NatBirth01_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other - Write In:Where were you born?", 
+            "question_number": 3, 
+            "variable_name": "NatBirth02_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "England", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "I dont know", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Scotland", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Northern Ireland", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Wales", 
+                    "response (n)": 174
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other - Write in", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "Where was your mother born?", 
+            "question_number": 4, 
+            "variable_name": "NatBirth03_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other - Write In:Where was your mother born?", 
+            "question_number": 5, 
+            "variable_name": "NatBirth04_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 282
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "English:What languages do you speak?", 
+            "question_number": 7, 
+            "variable_name": "NatLang01_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 182
+                }
+            ], 
+            "question_text": "Welsh:What languages do you speak?", 
+            "question_number": 6, 
+            "variable_name": "NatLang02_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 263
+                }
+            ], 
+            "question_text": "Other(s):What languages do you speak?", 
+            "question_number": 8, 
+            "variable_name": "NatLang03_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other(s):What languages do you speak?", 
+            "question_number": 9, 
+            "variable_name": "NatLang04_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 272
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 30
+                }
+            ], 
+            "question_text": "English:What languages do your parents speak?", 
+            "question_number": 11, 
+            "variable_name": "NatLang05_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 215
+                }
+            ], 
+            "question_text": "Welsh:What languages do your parents speak?", 
+            "question_number": 10, 
+            "variable_name": "NatLang06_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 272
+                }
+            ], 
+            "question_text": "Other(s):What languages do your parents speak?", 
+            "question_number": 12, 
+            "variable_name": "NatLang07_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other(s):What languages do your parents speak?", 
+            "question_number": 13, 
+            "variable_name": "NatLang08_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "I dont know", 
+                    "response (n)": 172
+                }, 
+                {
+                    "value": "3", 
+                    "response": "My school has not supported any charities", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Enter the name, or type, or charity here", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "What was the last charity your school supported?", 
+            "question_number": 84, 
+            "variable_name": "PhilAct02_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Enter the name, or type, of charity here:What was the last charity your school supported?", 
+            "question_number": 85, 
+            "variable_name": "PhilAct03_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "9", 
+                    "response": "A charity that helps the environment", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "3", 
+                    "response": "A charity that helps children", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A charity that helps hospitals", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "4", 
+                    "response": "A charity that helps animals", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A medical charity that helps cure diseases", 
+                    "response (n)": 129
+                }, 
+                {
+                    "value": "5", 
+                    "response": "A charity that helps disabled people", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "7", 
+                    "response": "A charity that helps old people", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "6", 
+                    "response": "A charity that helps homeless people", 
+                    "response (n)": 27
+                }
+            ], 
+            "question_text": "If you were to donate \u00a310 to a charity, which one of the following charities would you give it to?", 
+            "question_number": 79, 
+            "variable_name": "PhilAct04_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Within the past week", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Within the past year", 
+                    "response (n)": 123
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Within the past month", 
+                    "response (n)": 94
+                }
+            ], 
+            "question_text": "Give items to charity:Which of the following have you done in the past week, month or year?", 
+            "question_number": 82, 
+            "variable_name": "PhilAct05_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Within the past week", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Within the past month", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Within the past year", 
+                    "response (n)": 186
+                }
+            ], 
+            "question_text": "Raise money for charity:Which of the following have you done in the past week, month or year?", 
+            "question_number": 80, 
+            "variable_name": "PhilAct06_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Within the past week", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Within the past month", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Within the past year", 
+                    "response (n)": 119
+                }
+            ], 
+            "question_text": "Watched a TV programme that raised money for a charity:Which of the following have you done in the past week, month or year?", 
+            "question_number": 83, 
+            "variable_name": "PhilAct07_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Within the past week", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Within the past year", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Within the past month", 
+                    "response (n)": 92
+                }
+            ], 
+            "question_text": "Given money to charity:Which of the following have you done in the past week, month or year?", 
+            "question_number": 81, 
+            "variable_name": "PhilAct08_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 99
+                }
+            ], 
+            "question_text": "Charities help people I know:How much do you agree with the following statements?", 
+            "question_number": 73, 
+            "variable_name": "PhilAtt01_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 158
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "Charities play an important role in our country:How much do you agree with the following statements?", 
+            "question_number": 74, 
+            "variable_name": "PhilAtt02_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 123
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "Charities should do more to help people in other countries:How much do you agree with the following statements?", 
+            "question_number": 76, 
+            "variable_name": "PhilAtt03_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 25
+                }
+            ], 
+            "question_text": "We should not need charities because the government should help people:How much do you agree with the following statements?", 
+            "question_number": 75, 
+            "variable_name": "PhilAtt04_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 151
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 91
+                }
+            ], 
+            "question_text": "Young people should give some of their time to charity:How much do you agree with the following statements?", 
+            "question_number": 78, 
+            "variable_name": "PhilAtt05_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 122
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "I would work for a charity:How much do you agree with the following statements?", 
+            "question_number": 72, 
+            "variable_name": "PhilAtt06_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 113
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "The more money people have, the more they should give some of their money to charity:How much do you agree with the following statements?", 
+            "question_number": 77, 
+            "variable_name": "PhilAtt07_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 62
+                }
+            ], 
+            "question_text": "Teachers:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
+            "question_number": 69, 
+            "variable_name": "ProfAtt01_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 97
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 75
+                }
+            ], 
+            "question_text": "Doctors:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
+            "question_number": 66, 
+            "variable_name": "ProfAtt02_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 85
+                }
+            ], 
+            "question_text": "Nurses:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
+            "question_number": 71, 
+            "variable_name": "ProfAtt03_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 109
+                }
+            ], 
+            "question_text": "Police:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
+            "question_number": 68, 
+            "variable_name": "ProfAtt04_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 133
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 76
+                }
+            ], 
+            "question_text": "Members of the armed forces:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
+            "question_number": 67, 
+            "variable_name": "ProfAtt05_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - Not at all", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - A lot", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 32
+                }
+            ], 
+            "question_text": "Politicians:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
+            "question_number": 70, 
+            "variable_name": "ProfAtt06_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Atheist (A person who doesnt believe in a God)", 
+                    "response (n)": 89
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Buddhist", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Christian", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "9", 
+                    "response": "I dont know", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Hindu", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Muslim", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Jewish", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agnostic (A person who believes it is impossible to know if a God exists)", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "10", 
+                    "response": "I dont care enough for form an opinion", 
+                    "response (n)": 27
+                }
+            ], 
+            "question_text": "Which of the following best describes your religious beliefs?", 
+            "question_number": 108, 
+            "variable_name": "Relig01_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 191
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 100
+                }
+            ], 
+            "question_text": "Do you attend special events (like baptisms, weddings and funerals) that are associated with a religion?", 
+            "question_number": 117, 
+            "variable_name": "Relig03_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Once a month", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Less than once a month", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "8", 
+                    "response": "Never", 
+                    "response (n)": 180
+                }, 
+                {
+                    "value": "2", 
+                    "response": "More than once a week", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Only on religious holidays", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "4", 
+                    "response": "More than once a month", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "Apart from special events like baptisms, weddings and funerals, how often do you attend services or meetings associated with a religion?", 
+            "question_number": 118, 
+            "variable_name": "Relig04_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 208
+                }
+            ], 
+            "question_text": "Agnostic (A person who believes it is impossible to know if a God exists):If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 109, 
+            "variable_name": "Relig05_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 136
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 166
+                }
+            ], 
+            "question_text": "Atheist (A person who doesn't believe in a God):If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 110, 
+            "variable_name": "Relig06_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 289
+                }
+            ], 
+            "question_text": "Buddhist:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 111, 
+            "variable_name": "Relig07_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 182
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 120
+                }
+            ], 
+            "question_text": "Christian:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 112, 
+            "variable_name": "Relig08_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 288
+                }
+            ], 
+            "question_text": "Hindu:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 113, 
+            "variable_name": "Relig09_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 269
+                }
+            ], 
+            "question_text": "Jewish:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 114, 
+            "variable_name": "Relig10_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 239
+                }
+            ], 
+            "question_text": "Muslim:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 115, 
+            "variable_name": "Relig11_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 293
+                }
+            ], 
+            "question_text": "Sikh:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
+            "question_number": 116, 
+            "variable_name": "Relig12_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 212
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Out of school, I am free to choose what clothes I want to wear:Please state how much you agree with the following statements", 
+            "question_number": 88, 
+            "variable_name": "Responsible05_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 93
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 121
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "When I go out, my parents tell me I have to be home at a certain time:Please state how much you agree with the following statements", 
+            "question_number": 89, 
+            "variable_name": "Responsible06_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 103
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 186
+                }
+            ], 
+            "question_text": "Are you involved in any clubs at school?", 
+            "question_number": 86, 
+            "variable_name": "SchAct07_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Yes (please list the clubs in the space provided):Are you involved in any clubs at school?", 
+            "question_number": 87, 
+            "variable_name": "SchAct08_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very important", 
+                    "response (n)": 134
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Its pointless for what I want to do in my future career", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Important", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Unsure", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very important", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "How important it school for your chosen career?", 
+            "question_number": 31, 
+            "variable_name": "SchAtt13_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 88
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 96
+                }
+            ], 
+            "question_text": "school uniforms:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
+            "question_number": 23, 
+            "variable_name": "SchAtt24_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "the food served at lunch:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
+            "question_number": 26, 
+            "variable_name": "SchAtt25_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 117
+                }
+            ], 
+            "question_text": "the school timetable:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
+            "question_number": 24, 
+            "variable_name": "SchAtt26_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 145
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "what I\u2019m learning at school:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
+            "question_number": 27, 
+            "variable_name": "SchLearnAtt16_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Pupils who do well in the arts (e g  visual arts, music, dance)", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Pupils who care about others", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Pupils who do well academically", 
+                    "response (n)": 206
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Pupils who are good athletes", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other - Write in", 
+                    "response (n)": 17
+                }
+            ], 
+            "question_text": "Which of the following choices below do teachers at your school most value?", 
+            "question_number": 29, 
+            "variable_name": "SchStafAtt18_4B"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other - Write In (Required):Which of the following choices below do teachers at your school most value?", 
+            "question_number": 30, 
+            "variable_name": "SchStafAtt19_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 98
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "how the teachers teach pupils:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
+            "question_number": 28, 
+            "variable_name": "SchStafAtt20_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 175
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 51
+                }
+            ], 
+            "question_text": "teacher appointments:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
+            "question_number": 25, 
+            "variable_name": "SchStafAtt21_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Male", 
+                    "response (n)": 144
+                }, 
+                {
+                    "response": "Id prefer not to say", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Female", 
+                    "response (n)": 148
+                }
+            ], 
+            "question_text": "Please tell us your gender", 
+            "question_number": 1, 
+            "variable_name": "sex_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Quite confident", 
+                    "response (n)": 141
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Very confident", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 61
+                }
+            ], 
+            "question_text": "Being in charge of something (e g  leading a project in class, being captain of a team, etc):How confident are you when it comes to the following things:", 
+            "question_number": 39, 
+            "variable_name": "WellConf01_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Quite confident", 
+                    "response (n)": 171
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Very confident", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 90
+                }
+            ], 
+            "question_text": "Interviews (e g , for College, University, jobs):How confident are you when it comes to the following things:", 
+            "question_number": 34, 
+            "variable_name": "WellConf02_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Quite confident", 
+                    "response (n)": 166
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Very confident", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 44
+                }
+            ], 
+            "question_text": "Meeting new people:How confident are you when it comes to the following things:", 
+            "question_number": 37, 
+            "variable_name": "WellConf03_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Quite confident", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Very confident", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 147
+                }
+            ], 
+            "question_text": "Performing in front of people (e g  singing or acting in a show, playing a musical instrument, playing in a sports competition, etc ):How confident are you when it comes to the following things:", 
+            "question_number": 36, 
+            "variable_name": "WellConf04_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Quite confident", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Very confident", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 129
+                }
+            ], 
+            "question_text": "Public speaking (e g  speaking in front of the class or other people):How confident are you when it comes to the following things:", 
+            "question_number": 35, 
+            "variable_name": "WellConf05_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Quite confident", 
+                    "response (n)": 147
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Very confident", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very confident", 
+                    "response (n)": 67
+                }
+            ], 
+            "question_text": "Speaking to authority figures (e g  Head Teacher, Police Officers, etc):How confident are you when it comes to the following things:", 
+            "question_number": 38, 
+            "variable_name": "WellConf06_4B"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Being physically attractive", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Being popular", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Being successful in your school or college", 
+                    "response (n)": 163
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Being caring", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Being successful at sports", 
+                    "response (n)": 46
+                }
+            ], 
+            "question_text": "Which of the items listed below is the\u00a0MOST\u00a0important to you in your life at the moment?", 
+            "question_number": 40, 
+            "variable_name": "WellValue19_4B"
+        }
+    ]
+}

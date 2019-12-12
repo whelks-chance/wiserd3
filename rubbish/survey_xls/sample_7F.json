@@ -1,0 +1,3483 @@
+{
+    "questions": [
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Male", 
+                    "response (n)": 305
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Id prefer not to say", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Female", 
+                    "response (n)": 352
+                }
+            ], 
+            "question_text": "What is your gender?", 
+            "question_number": 3, 
+            "variable_name": "sex_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 299
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 374
+                }
+            ], 
+            "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). Some pocket money each week to spend on yourself", 
+            "question_number": 4, 
+            "variable_name": "Deprive06_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 367
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 306
+                }
+            ], 
+            "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). Some money that you can save each month, either in a bank or at home", 
+            "question_number": 5, 
+            "variable_name": "Deprive07_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 470
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 203
+                }
+            ], 
+            "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). A pair of designer or brand name trainers (like Nike or Vans)", 
+            "question_number": 6, 
+            "variable_name": "Deprive08_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 298
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 375
+                }
+            ], 
+            "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). An iPod or other personal music player", 
+            "question_number": 7, 
+            "variable_name": "Deprive09_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 562
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 111
+                }
+            ], 
+            "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). A smartphone", 
+            "question_number": 8, 
+            "variable_name": "Deprive10_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 534
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 139
+                }
+            ], 
+            "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). Cable or satellite TV at home", 
+            "question_number": 9, 
+            "variable_name": "Deprive11_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 554
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 119
+                }
+            ], 
+            "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). A garden at home, or somewhere nearby like a park where you can safely spend time with your friends", 
+            "question_number": 10, 
+            "variable_name": "Deprive12_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 562
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 111
+                }
+            ], 
+            "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). A family car for transport when you need it", 
+            "question_number": 11, 
+            "variable_name": "Deprive13_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 543
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 130
+                }
+            ], 
+            "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). The right kind of clothes to fit in with other people your age", 
+            "question_number": 12, 
+            "variable_name": "Deprive14_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 506
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 167
+                }
+            ], 
+            "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). At least one family holiday away from home each year", 
+            "question_number": 13, 
+            "variable_name": "Deprive15_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 440
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 233
+                }
+            ], 
+            "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). Family trips or days out at least once a month", 
+            "question_number": 14, 
+            "variable_name": "Deprive16_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 213
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 115
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Always", 
+                    "response (n)": 123
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite a lot of the time", 
+                    "response (n)": 162
+                }
+            ], 
+            "question_text": "How much do you agree with these statements about school? - I get enough help from my teachers if I find something difficult", 
+            "question_number": 18, 
+            "variable_name": "SchStafAtt23_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 177
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 203
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite a lot of the time", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 268
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Always", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "How much do you agree with these statements about school? - My teachers should be stricter", 
+            "question_number": 16, 
+            "variable_name": "SchStafAtt24_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 173
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Always", 
+                    "response (n)": 189
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite a lot of the time", 
+                    "response (n)": 241
+                }
+            ], 
+            "question_text": "How much do you agree with these statements about school? - My teachers listen to me & take my views seriously", 
+            "question_number": 17, 
+            "variable_name": "SchStafAtt05_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 213
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 115
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Always", 
+                    "response (n)": 123
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite a lot of the time", 
+                    "response (n)": 162
+                }
+            ], 
+            "question_text": "How much do you agree with these statements about school? - I look up to my teachers", 
+            "question_number": 18, 
+            "variable_name": "SchStafAtt23_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Always", 
+                    "response (n)": 166
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not very often", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite a lot of the time", 
+                    "response (n)": 341
+                }
+            ], 
+            "question_text": "How much do you agree with these statements about school? - I understand my lessons", 
+            "question_number": 19, 
+            "variable_name": "SchLearnAtt17_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is the BEST thing about secondary school so far?", 
+            "question_number": 22, 
+            "variable_name": "SchAtt30_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 229
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 154
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 136
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements: - I would like to have fewer subjects to study at school.", 
+            "question_number": 23, 
+            "variable_name": "SchLearnAtt51_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 205
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 169
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 160
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements: - It would be good if some subjects were combined together when they were taught.", 
+            "question_number": 24, 
+            "variable_name": "SchLearnAtt52_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 164
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 122
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 138
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 202
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements: - I would like to be taught by fewer teachers, like at Primary school.", 
+            "question_number": 25, 
+            "variable_name": "SchLearnAtt53_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 202
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 259
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 163
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements: - Teachers should take more account of students' interests when deciding what to teach.", 
+            "question_number": 26, 
+            "variable_name": "SchLearnAtt54_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 198
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 231
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 91
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements: - Having to do tests at school helps me to learn.", 
+            "question_number": 27, 
+            "variable_name": "SchLearnAtt55_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 162
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 119
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 125
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 207
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements: - I rarely prepare or revise for tests I have at school.", 
+            "question_number": 28, 
+            "variable_name": "SchLearnAtt56_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 280
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 204
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 99
+                }
+            ], 
+            "question_text": "To what extent do you agree with the following statements: - I normally do well in tests compared to other people.", 
+            "question_number": 29, 
+            "variable_name": "SchLearnAtt57_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1", 
+                    "response (n)": 113
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 108
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 138
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 166
+                }
+            ], 
+            "question_text": "What qualities of a teacher do you rate most highly? Please place the following in rank order: - Good at managing behaviour in lessons.", 
+            "question_number": 30, 
+            "variable_name": "SchStafAtt25_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1", 
+                    "response (n)": 211
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 146
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 175
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 84
+                }
+            ], 
+            "question_text": "What qualities of a teacher do you rate most highly? Please place the following in rank order: - Good at explaining and talking about the subject.", 
+            "question_number": 31, 
+            "variable_name": "SchStafAtt26_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1", 
+                    "response (n)": 174
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 121
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 148
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 111
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 101
+                }
+            ], 
+            "question_text": "What qualities of a teacher do you rate most highly? Please place the following in rank order: - Good at making lessons fun and engaging.", 
+            "question_number": 32, 
+            "variable_name": "SchStafAtt27_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1", 
+                    "response (n)": 121
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 156
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 147
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 139
+                }
+            ], 
+            "question_text": "What qualities of a teacher do you rate most highly? Please place the following in rank order: - Good to talk to - friendly and approachable.", 
+            "question_number": 33, 
+            "variable_name": "SchStafAtt28_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 124
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 275
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 165
+                }
+            ], 
+            "question_text": "What qualities of a teacher do you rate most highly? Please place the following in rank order: - Good at providing feedback on work.", 
+            "question_number": 34, 
+            "variable_name": "SchStafAtt29_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "response": "A piece of course work that needs to be at least 4 pages long and completed within a week", 
+                    "response (n)": 236
+                }, 
+                {
+                    "response": "An exam thats at least an hour", 
+                    "response (n)": 427
+                }
+            ], 
+            "question_text": "How would you prefer your progress in learning a subject was assessed?", 
+            "question_number": 35, 
+            "variable_name": "SchLearnAtt58_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Not sure", 
+                    "response (n)": 140
+                }, 
+                {
+                    "value": "1", 
+                    "response": "By exam", 
+                    "response (n)": 248
+                }, 
+                {
+                    "value": "2", 
+                    "response": "By course work (completed at home)", 
+                    "response (n)": 146
+                }, 
+                {
+                    "value": "3", 
+                    "response": "By controlled assessment within school", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "How would you prefer to be assessed in the following subjects for GCSEs? - Maths", 
+            "question_number": 36, 
+            "variable_name": "SchLearnAtt59_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Not sure", 
+                    "response (n)": 132
+                }, 
+                {
+                    "value": "2", 
+                    "response": "By course work (completed at home)", 
+                    "response (n)": 170
+                }, 
+                {
+                    "value": "1", 
+                    "response": "By exam", 
+                    "response (n)": 210
+                }, 
+                {
+                    "value": "3", 
+                    "response": "By controlled assessment within school", 
+                    "response (n)": 153
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "How would you prefer to be assessed in the following subjects for GCSEs? - English", 
+            "question_number": 37, 
+            "variable_name": "SchLearnAtt60_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Not sure", 
+                    "response (n)": 146
+                }, 
+                {
+                    "value": "1", 
+                    "response": "By exam", 
+                    "response (n)": 191
+                }, 
+                {
+                    "value": "2", 
+                    "response": "By course work (completed at home)", 
+                    "response (n)": 137
+                }, 
+                {
+                    "value": "3", 
+                    "response": "By controlled assessment within school", 
+                    "response (n)": 188
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "How would you prefer to be assessed in the following subjects for GCSEs? - Science", 
+            "question_number": 38, 
+            "variable_name": "SchLearnAtt61_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not sure", 
+                    "response (n)": 306
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 311
+                }
+            ], 
+            "question_text": "Do you know what vocational qualifications are?", 
+            "question_number": 40, 
+            "variable_name": "PostSch01_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 242
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 431
+                }
+            ], 
+            "question_text": "In the past 12 months have you been on any of the following (select all that apply)? A residential school trip within the UK (with an overnight stay somewhere)", 
+            "question_number": 67, 
+            "variable_name": "SchAct36_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 626
+                }
+            ], 
+            "question_text": "In the past 12 months have you been on any of the following (select all that apply)? A residential school trip outside the UK (with an overnight stay somewhere)", 
+            "question_number": 68, 
+            "variable_name": "SchAct37_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 329
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 344
+                }
+            ], 
+            "question_text": "In the past 12 months have you been on any of the following (select all that apply)? A day-trip during school hours that was sport-related", 
+            "question_number": 69, 
+            "variable_name": "SchAct38_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 397
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 276
+                }
+            ], 
+            "question_text": "In the past 12 months have you been on any of the following (select all that apply)? A day-trip during school hours that was not sport-related", 
+            "question_number": 70, 
+            "variable_name": "SchAct39_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 252
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 403
+                }
+            ], 
+            "question_text": "Have there been any residential school trips that you would have liked to have attended but couldn't?", 
+            "question_number": 71, 
+            "variable_name": "DepriveAct01_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 630
+                }
+            ], 
+            "question_text": "Why couldn't you go on these (select all that apply)? My parents did not think I should go on the trip", 
+            "question_number": 72, 
+            "variable_name": "DepriveAct02_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 644
+                }
+            ], 
+            "question_text": "Why couldn't you go on these (select all that apply)? My school/teachers would not let me go on the trip", 
+            "question_number": 73, 
+            "variable_name": "DepriveAct03_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 608
+                }
+            ], 
+            "question_text": "Why couldn't you go on these (select all that apply)? My parents/carers said they could not afford for me to go on the trip", 
+            "question_number": 74, 
+            "variable_name": "DepriveAct04_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 577
+                }
+            ], 
+            "question_text": "Why couldn't you go on these (select all that apply)? It would have meant I missed something else that I preferred to do", 
+            "question_number": 75, 
+            "variable_name": "DepriveAct05_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 620
+                }
+            ], 
+            "question_text": "Why couldn't you go on these (select all that apply)? I have already been on residential trips outside school", 
+            "question_number": 76, 
+            "variable_name": "DepriveAct06_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Where did you go when you left the classroom? - Other - Text", 
+            "question_number": 77, 
+            "variable_name": "BehaveSch16_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I accidentally talked out loud when I thought I said it in my head", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I threw a bit of paper across the class", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "beahvaior", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Shouting across the class room", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For being silly", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For asking a teacher if they were imagining stuff", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "attitude", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "because i was saying \"your a wizard barry\"", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Talking    messing about", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because I said the lesson was boring", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "i dont know when but for talking", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because of a boy said something to me and I said something back and I was the one who got into trouble", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "bieng silly and noisy", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Being silly and not listening", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Why didn't I stop", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Standing up", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For talking when I was not supposed to", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "i was talking to much", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Cuz I passed a note to my friend", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because I wasn't listening to the teacher and not doing the actions she was asking the whole class to do.", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because I was laughing when the teacher was talking to another student", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because of my behaviour", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For walking around and shouting out", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Taking", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Being daft", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because  I was not consertrating", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For being cheeky", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "talking and laghing to much", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Taking a picture", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "It was in reg class I was behavung badly", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because I had bad atechud when I didn't", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I don't know", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because I was late", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Talking", 
+                    "response (n)": 7
+                }, 
+                {
+                    "response": "idont now", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Talking in class instead of working and fiddling.", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": null, 
+                    "response (n)": 535
+                }, 
+                {
+                    "response": "Cuz I said I'm not gonna tuck my shirt in", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Someone was chasing me with a pencil", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "playing arawnd", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I was silly", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Did somthing wrong", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because me and my friend turned eachothers computers off", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I was wrongly accused of lobbing a pencil across the class.", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Talking g", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "shouting rong asers i mean why", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "i was being cheeky", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because I was being cheeky", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Walking to get my bag from the class", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Dunno", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I was talking and joking around", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I was giggling alot", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Just messing about", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I can't remember", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Don't know", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I'm not sure probably for taking to much \ud83d\ude1b", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Apparently I was talking but I was not because a .mean  teacher madam Rocher sent me out", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "spinning a rular on my pencil", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "dnt today", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "messing about  talking", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Juring Welsh I was sent out for smiling at somphing funny on a vidio", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I can't remenber", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because I was late for class", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For shouting Jack Jones", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because a fall out.", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "swearing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "4 weeks ago and speaking", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "History for singing a song\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude18", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I had my coat on and I was talking loudly", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Doing default dance in class from fortnite", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because someone threw a dictionary at the back of my head so then I threw it back", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Answering back", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Talking to much", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "For talking and looing back", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Being rude", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "chatting to my mates", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For talking about work", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Bad behaviour", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For talking", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Because the teacher doesn't like me", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "for being disruptive", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "for talking when  shouldnt have been", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because I was disrespectful to my supply teacher", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "because i was messing around", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Talking , not behaveing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because talking to ronan", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "i was asked to leave because me and my mates were playing knife hit", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Swearing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "Because I kept talking when not surprise to", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For not being nice and getting into an argument with someone", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because of talking to another student and not listening.", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Arguing with pupils", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "laughing non stop during a pe lesson", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "because i was laughing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because I was `talking back `. That's code for answering a rhetorical question", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Being stupid and talking too much", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For talking and laughing playing silly", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I shouted out.", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I find it hard to focus/ concentrate", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I forgot", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Shouting", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For apparently arguing with the teacher I said I have no pen she said tough and I said what am I gonna do and she sent me out", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I was talking to much", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Not sure I can't remember", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because I was trying to help my friend", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I'm not to sure", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Me and a few others were talking when we weren't supposed to ( unnamed ) only for 5 minutes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because of chattyness", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because I was disrupting the class", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "i was late and once i was talking", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Having Fun and Mesing around", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Talking over the teachers", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "for saying sorry", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "200", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For laughing at my friend's joke", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Being silly", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Laughing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "I lend over the table", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "My Welsh teacher said something funny and the whole class laughed, i was in her eye view so she asked me why I was laughing. I said \"because we found it funny\" and she sent me out.", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "in year 6 this boy was saying jokes and i laughed and got sent out but it was not myfaultt", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Because a girl was making me laugh and I got told off for it", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Answering back or shouting out", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "For dancing on the school roof naked", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Problems with other students", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "talikng when i shouldnt have been", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Messing about and not doing my work", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Shouted \"your nans a tramp!\"", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Talking in class", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "What activities did you do after you had been sent out of the classroom? - Selected Choice", 
+            "question_number": 79, 
+            "variable_name": "BehaveSch17_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "At lunchtime", 
+                    "response (n)": 162
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At the end of the school day", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Other", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Before lessons start", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 455
+                }
+            ], 
+            "question_text": "When did you have to do the detention? - Selected Choice", 
+            "question_number": 86, 
+            "variable_name": "BehaveSch21_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "When did you have to do the detention? - Other - Text", 
+            "question_number": 87, 
+            "variable_name": "BehaveSch22_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Frequently - about once a week", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Occasionally - a few times this year", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Rarely - only once or twice this year", 
+                    "response (n)": 135
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 457
+                }
+            ], 
+            "question_text": "How often are you given a detention?", 
+            "question_number": 88, 
+            "variable_name": "BehaveSch23_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "At lunchtime", 
+                    "response (n)": 174
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At the end of the school day", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Other", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Before lessons start", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 456
+                }
+            ], 
+            "question_text": "When do you usually have to do the detention? - Selected Choice", 
+            "question_number": 89, 
+            "variable_name": "BehaveSch24_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "When do you usually have to do the detention? - Other - Text", 
+            "question_number": 90, 
+            "variable_name": "BehaveSch25_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Hardly any time", 
+                    "response (n)": 159
+                }, 
+                {
+                    "value": "4", 
+                    "response": "A lot of the time", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Quite a lot of time", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit of the time", 
+                    "response (n)": 339
+                }
+            ], 
+            "question_text": "Your parents' and carers' mobile phone use - How much time do your parents or carers spend using their mobile phones when they're with you?", 
+            "question_number": 91, 
+            "variable_name": "FamCom01_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Quite difficult", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Very difficult", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite easy", 
+                    "response (n)": 292
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Very easy", 
+                    "response (n)": 247
+                }
+            ], 
+            "question_text": "Your parents' and carers' mobile phone use - How easy is it to get your parents' or carers' attention when they are using their mobile phone?", 
+            "question_number": 92, 
+            "variable_name": "FamCom02_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 396
+                }, 
+                {
+                    "value": "3", 
+                    "response": "A lot of the time", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite often", 
+                    "response (n)": 215
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Sometimes", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "How often do you ask your parents or carers to stop using their mobile phones?", 
+            "question_number": 93, 
+            "variable_name": "FamCom03_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Please tell us what's the main reason you ask your parent or carer to stop using their mobile phone", 
+            "question_number": 94, 
+            "variable_name": "FamCom04_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 567
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Facebook", 
+            "question_number": 99, 
+            "variable_name": "SocialMed08_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 395
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 278
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Instagram", 
+            "question_number": 100, 
+            "variable_name": "SocialMed09_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 586
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Pinterest", 
+            "question_number": 101, 
+            "variable_name": "SocialMed10_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 196
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 477
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Playstation", 
+            "question_number": 102, 
+            "variable_name": "SocialMed11_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 642
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Reddit", 
+            "question_number": 103, 
+            "variable_name": "SocialMed12_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 604
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Skype", 
+            "question_number": 104, 
+            "variable_name": "SocialMed13_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 391
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 282
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Snapchat", 
+            "question_number": 105, 
+            "variable_name": "SocialMed14_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 266
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 407
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice TikTok", 
+            "question_number": 106, 
+            "variable_name": "SocialMed15_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 656
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Tumblr", 
+            "question_number": 107, 
+            "variable_name": "SocialMed16_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 107
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 566
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Twitch", 
+            "question_number": 108, 
+            "variable_name": "SocialMed17_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 608
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Twitter", 
+            "question_number": 109, 
+            "variable_name": "SocialMed18_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 422
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 251
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice WhatsApp", 
+            "question_number": 110, 
+            "variable_name": "SocialMed19_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 251
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 422
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice XBOX", 
+            "question_number": 111, 
+            "variable_name": "SocialMed20_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 265
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 408
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Online games (apart from XBOX and Playstation)", 
+            "question_number": 112, 
+            "variable_name": "SocialMed21_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 608
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 65
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice YouTube", 
+            "question_number": 113, 
+            "variable_name": "SocialMed22_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 138
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 535
+                }
+            ], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Other", 
+            "question_number": 114, 
+            "variable_name": "SocialMed23_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Other - Text", 
+            "question_number": 115, 
+            "variable_name": "SocialMed24_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 237
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 436
+                }
+            ], 
+            "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures only of me", 
+            "question_number": 129, 
+            "variable_name": "SocialMed25_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 115
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 558
+                }
+            ], 
+            "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures of my friends", 
+            "question_number": 130, 
+            "variable_name": "SocialMed26_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 338
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 335
+                }
+            ], 
+            "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures of me and my friends", 
+            "question_number": 131, 
+            "variable_name": "SocialMed27_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 195
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 478
+                }
+            ], 
+            "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures of family", 
+            "question_number": 132, 
+            "variable_name": "SocialMed28_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 257
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 416
+                }
+            ], 
+            "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures of pets/animals", 
+            "question_number": 133, 
+            "variable_name": "SocialMed29_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 321
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 352
+                }
+            ], 
+            "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures of places and things", 
+            "question_number": 134, 
+            "variable_name": "SocialMed30_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 129
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 544
+                }
+            ], 
+            "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Other", 
+            "question_number": 135, 
+            "variable_name": "SocialMed31_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Other - Text", 
+            "question_number": 136, 
+            "variable_name": "SocialMed32_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "None", 
+                    "response (n)": 307
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "6", 
+                    "response": "I dont know", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Six to ten friends", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "2", 
+                    "response": "One to five friends", 
+                    "response (n)": 167
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Sixteen or more friends", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Eleven to fifteen friends", 
+                    "response (n)": 18
+                }
+            ], 
+            "question_text": "Your routine communication with your friends How many ... - friends' posts have you commented on in the last 24 hours?", 
+            "question_number": 138, 
+            "variable_name": "FrndComFrq08_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Yes", 
+                    "response (n)": 340
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not sure", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No", 
+                    "response (n)": 213
+                }
+            ], 
+            "question_text": "Have you met everyone in person who you ... - play games with online?", 
+            "question_number": 139, 
+            "variable_name": "FrndCom07_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Yes", 
+                    "response (n)": 389
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not sure", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No", 
+                    "response (n)": 170
+                }
+            ], 
+            "question_text": "Have you met everyone in person who you ... - are friends with on social media?", 
+            "question_number": 140, 
+            "variable_name": "FrndCom08_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Face to face", 
+                    "response (n)": 285
+                }, 
+                {
+                    "value": "3", 
+                    "response": "It depends on the issue", 
+                    "response (n)": 320
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Online", 
+                    "response (n)": 64
+                }
+            ], 
+            "question_text": "Do you prefer to communicate with your school friends online or     face-to-face?", 
+            "question_number": 141, 
+            "variable_name": "FrndComAtt01_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Please explain why", 
+            "question_number": 142, 
+            "variable_name": "FrndComAtt02_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 366
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 282
+                }
+            ], 
+            "question_text": "Have you ever blocked a friend online?", 
+            "question_number": 143, 
+            "variable_name": "FrndCom09_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Please explain why.", 
+            "question_number": 144, 
+            "variable_name": "FrndCom10_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 197
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 470
+                }
+            ], 
+            "question_text": "The National Assembly for Wales has set up a Welsh Youth Parliament which had elections in November 2018. Have you heard of the Welsh Youth Parliament?", 
+            "question_number": 146, 
+            "variable_name": "Pol01_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 477
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 155
+                }
+            ], 
+            "question_text": "Did you think about standing for election as a Member of the Welsh Youth Parliament?", 
+            "question_number": 147, 
+            "variable_name": "EngPol25_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 478
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 164
+                }
+            ], 
+            "question_text": "Did you register to vote in the elections for the Welsh Youth Parliament?", 
+            "question_number": 148, 
+            "variable_name": "EngPol26_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 607
+                }
+            ], 
+            "question_text": "Why didn't you register to vote? (tick as many as apply) - Selected Choice I didn't know how to register", 
+            "question_number": 149, 
+            "variable_name": "EngPol27_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 659
+                }
+            ], 
+            "question_text": "Why didn't you register to vote? (tick as many as apply) - Selected Choice It was too difficult to register", 
+            "question_number": 150, 
+            "variable_name": "EngPol28_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 607
+                }
+            ], 
+            "question_text": "Why didn't you register to vote? (tick as many as apply) - Selected Choice I couldn't see the point of it", 
+            "question_number": 151, 
+            "variable_name": "EngPol29_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 622
+                }
+            ], 
+            "question_text": "Why didn't you register to vote? (tick as many as apply) - Selected Choice Other", 
+            "question_number": 152, 
+            "variable_name": "EngPol30_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Why didn't you register to vote? (tick as many as apply) - Other - Text", 
+            "question_number": 153, 
+            "variable_name": "EngPol31_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 477
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 169
+                }
+            ], 
+            "question_text": "Did you vote in the election for the Welsh Youth Parliament?", 
+            "question_number": 154, 
+            "variable_name": "EngPol32_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 506
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I didnt know how to vote", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "3", 
+                    "response": "I didnt know who to vote for", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "4", 
+                    "response": "I didnt think it would make any difference whether I voted or not", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "2", 
+                    "response": "I forgot to vote", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "Why didn't you vote? - Selected Choice", 
+            "question_number": 155, 
+            "variable_name": "EngPol33_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Why didn't you vote? - Other - Text", 
+            "question_number": 156, 
+            "variable_name": "EngPol34_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What are the three most important issues that you would like to see the Welsh Youth Parliament take forward? - 1", 
+            "question_number": 157, 
+            "variable_name": "EngPol35_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What are the three most important issues that you would like to see the Welsh Youth Parliament take forward? - 2", 
+            "question_number": 158, 
+            "variable_name": "EngPol36_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What are the three most important issues that you would like to see the Welsh Youth Parliament take forward? - 3", 
+            "question_number": 159, 
+            "variable_name": "EngPol37_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What do you look forward to the most after school?", 
+            "question_number": 160, 
+            "variable_name": "ActAtt01_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What do you look forward to the most at the weekend (during school term)?", 
+            "question_number": 161, 
+            "variable_name": "ActAtt02_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What don't you look forward to at the end of the school day?", 
+            "question_number": 162, 
+            "variable_name": "ActAtt03_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What do you least look forward to at the weekend (during school term)?", 
+            "question_number": 163, 
+            "variable_name": "ActAtt04_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What time did you go to bed last night?", 
+            "question_number": 164, 
+            "variable_name": "RoutnSleep03_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What time did you get up for school this morning?", 
+            "question_number": 165, 
+            "variable_name": "RoutnSleep01_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Usually", 
+                    "response (n)": 292
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 118
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Sometimes", 
+                    "response (n)": 153
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "4", 
+                    "response": "No", 
+                    "response (n)": 91
+                }
+            ], 
+            "question_text": "Do you go to bed at the same time each school night?", 
+            "question_number": 166, 
+            "variable_name": "RoutnSleep04_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Almost always", 
+                    "response (n)": 179
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 101
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 116
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a week", 
+                    "response (n)": 180
+                }
+            ], 
+            "question_text": "How often do you... - go to school feeling tired?", 
+            "question_number": 167, 
+            "variable_name": "RoutnSleep07_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Almost always", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 413
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a week", 
+                    "response (n)": 69
+                }
+            ], 
+            "question_text": "How often do you... - wake up at night to message a friend, or check messages, on the computer, tablet or your phone?", 
+            "question_number": 168, 
+            "variable_name": "RoutnSleep05_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Almost always", 
+                    "response (n)": 448
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a week", 
+                    "response (n)": 62
+                }
+            ], 
+            "question_text": "How often do you... - eat breakfast before school starts?", 
+            "question_number": 169, 
+            "variable_name": "RoutnFood04_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Almost always", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 103
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 368
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a week", 
+                    "response (n)": 86
+                }
+            ], 
+            "question_text": "How often do you... - skip lunch at school?", 
+            "question_number": 170, 
+            "variable_name": "RoutnFood05_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "10", 
+                    "response": "10-completely happy", 
+                    "response (n)": 125
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1-Not happy at all", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7", 
+                    "response (n)": 114
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "9", 
+                    "response": "9", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "8", 
+                    "response": "8", 
+                    "response (n)": 87
+                }
+            ], 
+            "question_text": "These questions use a scale of 1 to 10. 1 means not happy with the sentence, 10 means that you're totally happy. - How happy are you with how much free time you have?", 
+            "question_number": 171, 
+            "variable_name": "WellSat18_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 126
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Five or six times a week", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 116
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 91
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 185
+                }
+            ], 
+            "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Helping out around the house (household chores)", 
+            "question_number": 173, 
+            "variable_name": "FamActFrq28_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Five or six times a week", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 200
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 91
+                }
+            ], 
+            "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Taking care of brothers or sisters or other family members", 
+            "question_number": 174, 
+            "variable_name": "FamActFrq29_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Five or six times a week", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 200
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 91
+                }
+            ], 
+            "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Working with family (e.g. family business, family farm)", 
+            "question_number": 174, 
+            "variable_name": "FamActFrq29_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Five or six times a week", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 455
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 51
+                }
+            ], 
+            "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Doing other work (not with family) for money or food", 
+            "question_number": 176, 
+            "variable_name": "EmpAct07_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 164
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Five or six times a week", 
+                    "response (n)": 101
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 197
+                }
+            ], 
+            "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Doing homework and studying", 
+            "question_number": 178, 
+            "variable_name": "SchActFrq01_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Five or six times a week", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 463
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 55
+                }
+            ], 
+            "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Going to religious places or services", 
+            "question_number": 179, 
+            "variable_name": "Relig04_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 192
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Five or six times a week", 
+                    "response (n)": 201
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 146
+                }
+            ], 
+            "question_text": "And how often do you usually spend time doing the following activities when you are not at school? - Playing sports or doing exercise", 
+            "question_number": 181, 
+            "variable_name": "HobFrq02_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 202
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Five or six times a week", 
+                    "response (n)": 285
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 102
+                }
+            ], 
+            "question_text": "And how often do you usually spend time doing the following activities when you are not at school? - Relaxing, talking or having fun with family", 
+            "question_number": 182, 
+            "variable_name": "FamActFrq30_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Five or six times a week", 
+                    "response (n)": 371
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 119
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 60
+                }
+            ], 
+            "question_text": "And how often do you usually spend time doing the following activities when you are not at school? - Using social media (on a computer, tablet or phone)", 
+            "question_number": 184, 
+            "variable_name": "SocialMed33_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 170
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Five or six times a week", 
+                    "response (n)": 266
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 67
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 90
+                }
+            ], 
+            "question_text": "And how often do you usually spend time doing the following activities when you are not at school? - Playing electronic games (on a computer or other device)", 
+            "question_number": 185, 
+            "variable_name": "HobFrq01_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 343
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 311
+                }
+            ], 
+            "question_text": "Do you receive money each week?", 
+            "question_number": 187, 
+            "variable_name": "Money17_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 231
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 442
+                }
+            ], 
+            "question_text": "Does the money you receive come from ... (Tick as many as you like) - Selected Choice your parents as regular 'pocket money'?", 
+            "question_number": 188, 
+            "variable_name": "Money05_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 545
+                }
+            ], 
+            "question_text": "Does the money you receive come from ... (Tick as many as you like) - Selected Choice other relatives?", 
+            "question_number": 189, 
+            "variable_name": "Money08_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 151
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 522
+                }
+            ], 
+            "question_text": "Does the money you receive come from ... (Tick as many as you like) - Selected Choice doing chores around the home?", 
+            "question_number": 190, 
+            "variable_name": "Money07_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 649
+                }
+            ], 
+            "question_text": "Does the money you receive come from ... (Tick as many as you like) - Selected Choice part-time jobs?", 
+            "question_number": 191, 
+            "variable_name": "Money09_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 622
+                }
+            ], 
+            "question_text": "Does the money you receive come from ... (Tick as many as you like) - Selected Choice other", 
+            "question_number": 192, 
+            "variable_name": "Money11_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Does the money you receive come from ... (Tick as many as you like) - other - Text", 
+            "question_number": 193, 
+            "variable_name": "Money18_7F"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 403
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 247
+                }
+            ], 
+            "question_text": "Are you saving up for something at the moment?", 
+            "question_number": 194, 
+            "variable_name": "Money14_7F"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is it you're saving up for?", 
+            "question_number": 195, 
+            "variable_name": "Money16_7F"
+        }
+    ]
+}

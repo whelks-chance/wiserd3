@@ -1,0 +1,2720 @@
+{
+    "questions": [
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes, I know exactly what I want to do and how I am going to get there", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Kind of, I have an idea of where I want to end up", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not really, I will just wait to see where I end up", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Kind of, I know what I am doing for the next few years", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "5", 
+                    "response": "No, living in the moment is for me!", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Do you have a career plan?", 
+            "question_number": 109, 
+            "variable_name": "AspCareer02_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What job would you like to have in the future?", 
+            "question_number": 100, 
+            "variable_name": "AspCareer03_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Do you think you will still be doing the same type of job in five years' time?", 
+            "question_number": 38, 
+            "variable_name": "AspCareer07_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 67
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 64
+                }
+            ], 
+            "question_text": "be financially well-off?:When you are older, do you think you will", 
+            "question_number": 105, 
+            "variable_name": "AspLikely01_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 53
+                }
+            ], 
+            "question_text": "have a family of your own?:When you are older, do you think you will", 
+            "question_number": 104, 
+            "variable_name": "AspLikely02_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 72
+                }
+            ], 
+            "question_text": "have a job that you will enjoy?:When you are older, do you think you will", 
+            "question_number": 108, 
+            "variable_name": "AspLikely03_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 22
+                }
+            ], 
+            "question_text": "live abroad (i e  in another country)?:When you are older, do you think you will", 
+            "question_number": 103, 
+            "variable_name": "AspLikely05_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "live in the same neighbourhood as you do now?:When you are older, do you think you will", 
+            "question_number": 102, 
+            "variable_name": "AspLikely06_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 68
+                }
+            ], 
+            "question_text": "live in Wales?:When you are older, do you think you will", 
+            "question_number": 101, 
+            "variable_name": "AspLikely07_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 28
+                }
+            ], 
+            "question_text": "speak Welsh?:When you are older, do you think you will", 
+            "question_number": 107, 
+            "variable_name": "AspLikely08_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 50
+                }
+            ], 
+            "question_text": "volunteer some of your time to help others?:When you are older, do you think you will", 
+            "question_number": 106, 
+            "variable_name": "AspLikely09_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "5", 
+                    "response": "100%", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "3", 
+                    "response": "50%", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "2", 
+                    "response": "25%", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "75%", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "1", 
+                    "response": "0%", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "What is the likelihood you will go to university in the next three years?", 
+            "question_number": 96, 
+            "variable_name": "AspPostSch20_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "If you answered over 0% for the last question, what university would you most like to attend?", 
+            "question_number": 97, 
+            "variable_name": "AspPostSch21_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What subject would you like to study at university?", 
+            "question_number": 99, 
+            "variable_name": "AspPostSch22_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Yes - in my twenties", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not sure", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes - within the next five years", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "5", 
+                    "response": "No, I will never apply to university", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 38
+                }
+            ], 
+            "question_text": "If you are not intending to apply for university next year, do you think you will apply for university at some point in the future?", 
+            "question_number": 98, 
+            "variable_name": "AspPostSch23_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What do you see yourself doing in 5 years' time?", 
+            "question_number": 110, 
+            "variable_name": "AspTime01_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What do you see yourself doing in 10 years' time?", 
+            "question_number": 111, 
+            "variable_name": "AspTime02_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Cohort", 
+            "question_number": 139, 
+            "variable_name": "cohort_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 125
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 29
+                }
+            ], 
+            "question_text": "Have you lived in Wales all your life?", 
+            "question_number": 27, 
+            "variable_name": "CymAtt16_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is the best thing about living in Wales?", 
+            "question_number": 28, 
+            "variable_name": "CymAtt17_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is the worst thing about living in Wales?", 
+            "question_number": 29, 
+            "variable_name": "CymAtt18_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very comfortable", 
+                    "response (n)": 110
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very uncomfortable", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "people in Wales, with the same accent as you, speaking to each other in English:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
+            "question_number": 31, 
+            "variable_name": "DiversAtt12_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very comfortable", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very uncomfortable", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "people in Wales, with an accent different from yours, speaking to each other in English:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
+            "question_number": 33, 
+            "variable_name": "DiversAtt13_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very comfortable", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very uncomfortable", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "people in Wales speaking to each other in Welsh:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
+            "question_number": 30, 
+            "variable_name": "DiversAtt14_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very comfortable", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very uncomfortable", 
+                    "response (n)": 24
+                }
+            ], 
+            "question_text": "people in Wales speaking to each other in a language other than English or Welsh:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
+            "question_number": 32, 
+            "variable_name": "DiversAtt15_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Please list the job(s) that you have below:", 
+            "question_number": 35, 
+            "variable_name": "EmpAct01_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 63
+                }
+            ], 
+            "question_text": "Are any of your jobs temporary?", 
+            "question_number": 37, 
+            "variable_name": "EmpAct02_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 72
+                }
+            ], 
+            "question_text": "Do any of your jobs have a 'zero hours' contract?", 
+            "question_number": 36, 
+            "variable_name": "EmpAct03_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "6", 
+                    "response": "30-34 hours", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "7", 
+                    "response": "35-39 hours", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "4", 
+                    "response": "18-23 hours", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "5", 
+                    "response": "24-29 hours", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "10", 
+                    "response": "I am not working", 
+                    "response (n)": 83
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1-5 hours", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "3", 
+                    "response": "12-17 hours", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "6-11 hours", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "9", 
+                    "response": "More than 40 hours", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "On average, how many hours a week do you do paid work?", 
+            "question_number": 34, 
+            "variable_name": "EmpAct04_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "7", 
+                    "response": "7- Not at all", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - A lot", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "Response:How much do you enjoy your job?", 
+            "question_number": 39, 
+            "variable_name": "EmpActAtt01_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 153
+                }
+            ], 
+            "question_text": "Political parties:Are you a member of any of the following organisations? (please tick all that apply)", 
+            "question_number": 21, 
+            "variable_name": "EngPol01_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 75
+                }
+            ], 
+            "question_text": "Do you think the voting age in Wales should be lowered to 16?", 
+            "question_number": 89, 
+            "variable_name": "EngPol02_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "The Green Party", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "9", 
+                    "response": "I dont know", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "6", 
+                    "response": "UKIP", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Liberal Democrats", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Conservative", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Plaid Cymru", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "12", 
+                    "response": "I would not vote", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Labour", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "11", 
+                    "response": "Respect", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "If an election was held today, and you could vote, what party would you vote for?", 
+            "question_number": 90, 
+            "variable_name": "EngPol03_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other (please specify):If an election was held today, and you could vote, what party would you vote for?", 
+            "question_number": 91, 
+            "variable_name": "EngPol04_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 71
+                }
+            ], 
+            "question_text": "Politics affect my life", 
+            "question_number": 78, 
+            "variable_name": "EngPol09_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 137
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "Are you a member of any political groups?:Please answer the following questions", 
+            "question_number": 93, 
+            "variable_name": "EngPol10_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 42
+                }
+            ], 
+            "question_text": "Do you think you are well-informed about current affairs?", 
+            "question_number": 73, 
+            "variable_name": "EngSoc01_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 127
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 21
+                }
+            ], 
+            "question_text": "Do you think it matters who is in charge of the country?:Please answer the following questions", 
+            "question_number": 92, 
+            "variable_name": "EngSoc02_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 111
+                }
+            ], 
+            "question_text": "Have you signed any petitions?:Please answer the following questions", 
+            "question_number": 94, 
+            "variable_name": "EngSoc03_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "If you have recently signed a petition, what was the issue?", 
+            "question_number": 95, 
+            "variable_name": "EngSoc04_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 94
+                }
+            ], 
+            "question_text": "Is there one particular topical issue that you feel strongly about?", 
+            "question_number": 79, 
+            "variable_name": "EngSoc05_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "If you responded yes to the previous question, please tell us about the issue here", 
+            "question_number": 80, 
+            "variable_name": "EngSoc06_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 150
+                }
+            ], 
+            "question_text": "Flooding due to climate change:Please choose the two (2) issues you feel most strongly about from the list below:", 
+            "question_number": 81, 
+            "variable_name": "EngSoc08_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 133
+                }
+            ], 
+            "question_text": "Privacy invasions through social networking sites:Please choose the two (2) issues you feel most strongly about from the list below:", 
+            "question_number": 82, 
+            "variable_name": "EngSoc09_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 146
+                }
+            ], 
+            "question_text": "Immigration:Please choose the two (2) issues you feel most strongly about from the list below:", 
+            "question_number": 83, 
+            "variable_name": "EngSoc10_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 127
+                }
+            ], 
+            "question_text": "Terrorism:Please choose the two (2) issues you feel most strongly about from the list below:", 
+            "question_number": 84, 
+            "variable_name": "EngSoc11_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 143
+                }
+            ], 
+            "question_text": "Economic recession:Please choose the two (2) issues you feel most strongly about from the list below:", 
+            "question_number": 85, 
+            "variable_name": "EngSoc12_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 144
+                }
+            ], 
+            "question_text": "Sustainable energy problems (e g  oil shortage):Please choose the two (2) issues you feel most strongly about from the list below:", 
+            "question_number": 86, 
+            "variable_name": "EngSoc13_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 154
+                }
+            ], 
+            "question_text": "Other (please specifcy):Please choose the two (2) issues you feel most strongly about from the list below:", 
+            "question_number": 87, 
+            "variable_name": "EngSoc14_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other (please specifcy):Please choose the two (2) issues you feel most strongly about from the list below:", 
+            "question_number": 88, 
+            "variable_name": "EngSoc15_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 124
+                }
+            ], 
+            "question_text": "News Websites: Find out about current affairs", 
+            "question_number": 129, 
+            "variable_name": "EngSoc17_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 130
+                }
+            ], 
+            "question_text": "YouTube/vlogs: Find out about current affairs", 
+            "question_number": 130, 
+            "variable_name": "EngSoc18_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 60
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 96
+                }
+            ], 
+            "question_text": "Facebook: Find out about current affairs", 
+            "question_number": 131, 
+            "variable_name": "EngSoc19_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 137
+                }
+            ], 
+            "question_text": "Newspapers: Find out about current affairs", 
+            "question_number": 132, 
+            "variable_name": "EngSoc20_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 154
+                }
+            ], 
+            "question_text": "Blogs: Find out about current affairs", 
+            "question_number": 133, 
+            "variable_name": "EngSoc21_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 127
+                }
+            ], 
+            "question_text": "TV Updates: Find out about current affairs", 
+            "question_number": 134, 
+            "variable_name": "EngSoc22_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 110
+                }
+            ], 
+            "question_text": "Twitter: Find out about current affairs", 
+            "question_number": 135, 
+            "variable_name": "EngSoc23_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 90
+                }
+            ], 
+            "question_text": "TV or radio main broadcast: Find out about current affairs", 
+            "question_number": 136, 
+            "variable_name": "EngSoc24_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Twitter", 
+                    "response (n)": 28
+                }, 
+                {
+                    "response": "YouTube", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "9", 
+                    "response": "Other", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Facebook", 
+                    "response (n)": 31
+                }, 
+                {
+                    "response": "Newspapers / News websites", 
+                    "response (n)": 31
+                }, 
+                {
+                    "response": "TV/Radio", 
+                    "response (n)": 41
+                }
+            ], 
+            "question_text": "Source #1:Which two of the following do you get most of your information about current affairs / the news from?", 
+            "question_number": 74, 
+            "variable_name": "EngSoc25_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 23
+                }, 
+                {
+                    "response": "TV/Radio", 
+                    "response (n)": 51
+                }, 
+                {
+                    "response": "YouTube", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Blogs", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "9", 
+                    "response": "Other", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Facebook", 
+                    "response (n)": 26
+                }, 
+                {
+                    "response": "Newspapers / News websites", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Twitter", 
+                    "response (n)": 18
+                }
+            ], 
+            "question_text": "Source #2:Which two of the following do you get most of your information about current affairs / the news from?", 
+            "question_number": 75, 
+            "variable_name": "EngSoc26_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 149
+                }
+            ], 
+            "question_text": "Other: Find out about current affairs", 
+            "question_number": 137, 
+            "variable_name": "EngSoc27_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Source #1:If you chose 'other' in the previous question, please specify your answer below", 
+            "question_number": 76, 
+            "variable_name": "EngSoc28_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Source #2:If you chose 'other' in the previous question, please specify your answer below", 
+            "question_number": 77, 
+            "variable_name": "EngSoc29_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 152
+                }
+            ], 
+            "question_text": "Creative Arts (Painting, poetry, creative writing, sculpting, etc ):Do you do any of the following in your spare time? (Please tick all that apply)", 
+            "question_number": 11, 
+            "variable_name": "Hob01_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 152
+                }
+            ], 
+            "question_text": "ICT/Design (computer programming, graphic design, etc ):Do you do any of the following in your spare time? (Please tick all that apply)", 
+            "question_number": 14, 
+            "variable_name": "Hob02_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 140
+                }
+            ], 
+            "question_text": "Performing Arts (singing, dancing, etc ):Do you do any of the following in your spare time? (Please tick all that apply)", 
+            "question_number": 8, 
+            "variable_name": "Hob04_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 148
+                }
+            ], 
+            "question_text": "Music/band:Do you do any of the following in your spare time? (Please tick all that apply)", 
+            "question_number": 9, 
+            "variable_name": "Hob05_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 132
+                }
+            ], 
+            "question_text": "Sports (Rugby, horse riding, martial arts, gymnastics, etc ):Do you do any of the following in your spare time? (Please tick all that apply)", 
+            "question_number": 10, 
+            "variable_name": "Hob06_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 152
+                }
+            ], 
+            "question_text": "Guides:Are you a member of any of the following organisations? (please tick all that apply)", 
+            "question_number": 20, 
+            "variable_name": "Hob30_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 156
+                }
+            ], 
+            "question_text": "Scouts:Are you a member of any of the following organisations? (please tick all that apply)", 
+            "question_number": 19, 
+            "variable_name": "Hob31_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 137
+                }
+            ], 
+            "question_text": "Gaming:Do you do any of the following in your spare time? (Please tick all that apply)", 
+            "question_number": 12, 
+            "variable_name": "Hob38_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 153
+                }
+            ], 
+            "question_text": "Go to evening or weekend classes:Do you do any of the following in your spare time? (Please tick all that apply)", 
+            "question_number": 16, 
+            "variable_name": "Hob39_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 141
+                }
+            ], 
+            "question_text": "Read for pleasure:Do you do any of the following in your spare time? (Please tick all that apply)", 
+            "question_number": 13, 
+            "variable_name": "Hob40_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 156
+                }
+            ], 
+            "question_text": "UK Youth parliament:Are you a member of any of the following organisations? (please tick all that apply)", 
+            "question_number": 24, 
+            "variable_name": "Hob43_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 152
+                }
+            ], 
+            "question_text": "Youth club:Are you a member of any of the following organisations? (please tick all that apply)", 
+            "question_number": 23, 
+            "variable_name": "Hob48_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 139
+                }
+            ], 
+            "question_text": "Volunteering:Do you do any of the following in your spare time? (Please tick all that apply)", 
+            "question_number": 15, 
+            "variable_name": "Hob50_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 150
+                }
+            ], 
+            "question_text": "Other (please specify):Do you do any of the following in your spare time? (Please tick all that apply)", 
+            "question_number": 17, 
+            "variable_name": "Hob51_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other (please specify):Do you do any of the following in your spare time? (Please tick all that apply)", 
+            "question_number": 18, 
+            "variable_name": "Hob52_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 153
+                }
+            ], 
+            "question_text": "Other:Are you a member of any of the following organisations? (please tick all that apply)", 
+            "question_number": 25, 
+            "variable_name": "Hob53_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other:Are you a member of any of the following organisations? (please tick all that apply)", 
+            "question_number": 26, 
+            "variable_name": "Hob54_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Welsh", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "1", 
+                    "response": "English", 
+                    "response (n)": 146
+                }
+            ], 
+            "question_text": "Language completed", 
+            "question_number": 138, 
+            "variable_name": "langresponse_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Extra Notes", 
+            "question_number": 112, 
+            "variable_name": "notes_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 146
+                }
+            ], 
+            "question_text": "I DO NOT give permission for my NPDB record to be linked with the answers I have given to this study:The Welsh Government holds records about all pupils in Wales in the National Pupil Database (NPDB)  We would like to link your answers here and those you", 
+            "question_number": 3, 
+            "variable_name": "npdbpermit_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 156
+                }
+            ], 
+            "question_text": "Religious social group:Are you a member of any of the following organisations? (please tick all that apply)", 
+            "question_number": 22, 
+            "variable_name": "Relig02_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 126
+                }
+            ], 
+            "question_text": "My own time:This year I feel I am taking more responsibility for: (tick as many as you like)", 
+            "question_number": 59, 
+            "variable_name": "Responsible01_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 138
+                }
+            ], 
+            "question_text": "My relationships:This year I feel I am taking more responsibility for: (tick as many as you like)", 
+            "question_number": 61, 
+            "variable_name": "Responsible02_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 136
+                }
+            ], 
+            "question_text": "My social life:This year I feel I am taking more responsibility for: (tick as many as you like)", 
+            "question_number": 60, 
+            "variable_name": "Responsible03_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 112
+                }
+            ], 
+            "question_text": "My workload:This year I feel I am taking more responsibility for: (tick as many as you like)", 
+            "question_number": 58, 
+            "variable_name": "Responsible04_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Between 6am and 7am", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Between 8am and 9am", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Between 7am and 8am", 
+                    "response (n)": 88
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Before 5am", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Between 10am and 11am", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Between 9am and 10am", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Between 5am and 6am", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "About what time did you wake up this morning?", 
+            "question_number": 7, 
+            "variable_name": "RoutnSleep01_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 111
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 44
+                }
+            ], 
+            "question_text": "Do you get up at the same time every school or college day?:Please answer the following questions about sleeping and waking up", 
+            "question_number": 5, 
+            "variable_name": "RoutnSleep02_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Earlier than 9pm", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "7", 
+                    "response": "After 2am", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Between 12am (midnight) and 1am", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Between 10pm and 11pm", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Between 9pm and 10pm", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Between 11pm and 12am (midnight)", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "6", 
+                    "response": "between 1am and 2am", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "About what time did you go to bed last night?", 
+            "question_number": 6, 
+            "variable_name": "RoutnSleep03_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 104
+                }
+            ], 
+            "question_text": "Do you go to bed at the same time every school or college night?:Please answer the following questions about sleeping and waking up", 
+            "question_number": 4, 
+            "variable_name": "RoutnSleep04_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "7", 
+                    "response": "7 - Disappointed", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Pleased", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "Response:Thinking about your GCSE results, please indicate how pleased or disappointed you were:", 
+            "question_number": 40, 
+            "variable_name": "SchAchv03_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 121
+                }
+            ], 
+            "question_text": "I am resitting or planning to re-sit some of my GCSE courses:Please indicate the most relevant response to each of these statements:", 
+            "question_number": 42, 
+            "variable_name": "SchAchv04_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 138
+                }
+            ], 
+            "question_text": "I wish I hadn't worked so hard for my GCSEs:Please indicate the most relevant response to each of these statements:", 
+            "question_number": 44, 
+            "variable_name": "SchAchv05_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 151
+                }
+            ], 
+            "question_text": "I wish I'd gone to college:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 54, 
+            "variable_name": "SchAchv19_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 148
+                }
+            ], 
+            "question_text": "I wish I'd left education after Year 11:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 57, 
+            "variable_name": "SchAchv20_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 155
+                }
+            ], 
+            "question_text": "I wish I'd stayed at school:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 52, 
+            "variable_name": "SchAchv21_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 90
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 54
+                }
+            ], 
+            "question_text": "I wish I'd worked harder for my GCSEs:Please indicate the most relevant response to each of these statements:", 
+            "question_number": 43, 
+            "variable_name": "SchAchv22_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "If you could change anything about your last year of school, what would it be?", 
+            "question_number": 41, 
+            "variable_name": "SchAtt18_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Which courses and qualifications are you doing this year? (Please list them here)", 
+            "question_number": 45, 
+            "variable_name": "SchStdySubj01_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Male", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Female", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "Are you male or female?", 
+            "question_number": 2, 
+            "variable_name": "sex_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Sweep", 
+            "question_number": 140, 
+            "variable_name": "sweep_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Word #1:Options:Please indicate three words from the lists below that best describe how you are feeling today", 
+            "question_number": 68, 
+            "variable_name": "WellFeel01_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Word #2:Options:Please indicate three words from the lists below that best describe how you are feeling today", 
+            "question_number": 69, 
+            "variable_name": "WellFeel02_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Word #3:Options:Please indicate three words from the lists below that best describe how you are feeling today", 
+            "question_number": 70, 
+            "variable_name": "WellFeel03_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 152
+                }
+            ], 
+            "question_text": "Afriad: Describe how you feel today", 
+            "question_number": 125, 
+            "variable_name": "WellFeel04_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 141
+                }
+            ], 
+            "question_text": "Agitated: Describe how you feel today", 
+            "question_number": 122, 
+            "variable_name": "WellFeel05_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 148
+                }
+            ], 
+            "question_text": "Angry: Describe how you feel today", 
+            "question_number": 114, 
+            "variable_name": "WellFeel06_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 123
+                }
+            ], 
+            "question_text": "Bored: Describe how you feel today", 
+            "question_number": 123, 
+            "variable_name": "WellFeel07_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 102
+                }
+            ], 
+            "question_text": "Calm: Describe how you feel today", 
+            "question_number": 116, 
+            "variable_name": "WellFeel08_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 120
+                }
+            ], 
+            "question_text": "Confident: Describe how you feel today", 
+            "question_number": 117, 
+            "variable_name": "WellFeel09_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 150
+                }
+            ], 
+            "question_text": "Decisive: Describe how you feel today", 
+            "question_number": 124, 
+            "variable_name": "WellFeel10_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 128
+                }
+            ], 
+            "question_text": "Energetic: Describe how you feel today", 
+            "question_number": 119, 
+            "variable_name": "WellFeel11_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 148
+                }
+            ], 
+            "question_text": "Excited: Describe how you feel today", 
+            "question_number": 127, 
+            "variable_name": "WellFeel12_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 114
+                }
+            ], 
+            "question_text": "Friendly: Describe how you feel today", 
+            "question_number": 118, 
+            "variable_name": "WellFeel13_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 76
+                }
+            ], 
+            "question_text": "Happy: Describe how you feel today", 
+            "question_number": 113, 
+            "variable_name": "WellFeel14_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 109
+                }
+            ], 
+            "question_text": "No energy: Describe how you feel today", 
+            "question_number": 120, 
+            "variable_name": "WellFeel15_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 133
+                }
+            ], 
+            "question_text": "Peaceful: Describe how you feel today", 
+            "question_number": 128, 
+            "variable_name": "WellFeel16_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 148
+                }
+            ], 
+            "question_text": "Sad: Describe how you feel today", 
+            "question_number": 121, 
+            "variable_name": "WellFeel17_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 129
+                }
+            ], 
+            "question_text": "Uncertain: Describe how you feel today", 
+            "question_number": 115, 
+            "variable_name": "WellFeel18_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 156
+                }
+            ], 
+            "question_text": "Unfriendly: Describe how you feel today", 
+            "question_number": 126, 
+            "variable_name": "WellFeel19_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 152
+                }
+            ], 
+            "question_text": "I feel lonely:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 55, 
+            "variable_name": "WellFeel20_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 139
+                }
+            ], 
+            "question_text": "I feel under a lot of pressure to do well:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 53, 
+            "variable_name": "WellFeel21_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 134
+                }
+            ], 
+            "question_text": "I'm enjoying myself:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 56, 
+            "variable_name": "WellFeel22_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 153
+                }
+            ], 
+            "question_text": "I'm finding it easy:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 47, 
+            "variable_name": "WellFeel23_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 148
+                }
+            ], 
+            "question_text": "I'm struggling:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 46, 
+            "variable_name": "WellFeel24_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 153
+                }
+            ], 
+            "question_text": "I felt under a lot of pressure to leave education:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 51, 
+            "variable_name": "WellFeel25_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 123
+                }
+            ], 
+            "question_text": "I feel I'm being challenged:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 48, 
+            "variable_name": "WellFeel26_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 135
+                }
+            ], 
+            "question_text": "I have made new friends:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 49, 
+            "variable_name": "WellFeel27_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Please tell us about one incident in the past year that has made you happy", 
+            "question_number": 71, 
+            "variable_name": "WellFeel28_3D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Please tell us about one incident in the past year that has made you sad", 
+            "question_number": 72, 
+            "variable_name": "WellFeel29_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 130
+                }
+            ], 
+            "question_text": "I feel independent:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
+            "question_number": 50, 
+            "variable_name": "WellFeelAtt12_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Not at all happy", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "Somewhat happy", 
+                    "response (n)": 96
+                }, 
+                {
+                    "response": "Happy", 
+                    "response (n)": 43
+                }
+            ], 
+            "question_text": "The way you look:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 62, 
+            "variable_name": "WellSat01_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Not at all happy", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Somewhat happy", 
+                    "response (n)": 49
+                }, 
+                {
+                    "response": "Happy", 
+                    "response (n)": 100
+                }
+            ], 
+            "question_text": "Your family:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 63, 
+            "variable_name": "WellSat02_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Not at all happy", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Somewhat happy", 
+                    "response (n)": 49
+                }, 
+                {
+                    "response": "Happy", 
+                    "response (n)": 101
+                }
+            ], 
+            "question_text": "Your friends:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 64, 
+            "variable_name": "WellSat03_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Not at all happy", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "Somewhat happy", 
+                    "response (n)": 78
+                }, 
+                {
+                    "response": "Happy", 
+                    "response (n)": 67
+                }
+            ], 
+            "question_text": "Your life as a whole:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 65, 
+            "variable_name": "WellSat04_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Not at all happy", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "Somewhat happy", 
+                    "response (n)": 85
+                }, 
+                {
+                    "response": "Happy", 
+                    "response (n)": 42
+                }
+            ], 
+            "question_text": "Your school / college overall:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 67, 
+            "variable_name": "WellSat05_3D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Not at all happy", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "Somewhat happy", 
+                    "response (n)": 86
+                }, 
+                {
+                    "response": "Happy", 
+                    "response (n)": 38
+                }
+            ], 
+            "question_text": "Your school / college work:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 66, 
+            "variable_name": "WellSat06_3D"
+        }
+    ]
+}

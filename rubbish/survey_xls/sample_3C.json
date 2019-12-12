@@ -1,0 +1,5225 @@
+{
+    "questions": [
+        {
+            "response_table": [], 
+            "question_text": "What job do you want as an adult?", 
+            "question_number": 148, 
+            "variable_name": "AspCareer03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 148
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 99
+                }
+            ], 
+            "question_text": "be financially well off (to have enough money to do what you want)?:When you are an adult, do you think you will", 
+            "question_number": 127, 
+            "variable_name": "AspLikely01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 119
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 155
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "have a family of your own?:When you are an adult, do you think you will", 
+            "question_number": 125, 
+            "variable_name": "AspLikely02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 115
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 144
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "have a job that you will enjoy?:When you are an adult, do you think you will", 
+            "question_number": 130, 
+            "variable_name": "AspLikely03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 93
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 106
+                }
+            ], 
+            "question_text": "have graduated from university?:When you are an adult, do you think you will", 
+            "question_number": 126, 
+            "variable_name": "AspLikely04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 60
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 160
+                }
+            ], 
+            "question_text": "live abroad (i e  in another country)?:When you are an adult, do you think you will", 
+            "question_number": 124, 
+            "variable_name": "AspLikely05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 147
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 38
+                }
+            ], 
+            "question_text": "live in the same neighbourhood as you do now?:When you are an adult, do you think you will", 
+            "question_number": 123, 
+            "variable_name": "AspLikely06_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 121
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 93
+                }
+            ], 
+            "question_text": "live in Wales?:When you are an adult, do you think you will", 
+            "question_number": 122, 
+            "variable_name": "AspLikely07_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 56
+                }
+            ], 
+            "question_text": "speak Welsh?:When you are an adult, do you think you will", 
+            "question_number": 129, 
+            "variable_name": "AspLikely08_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 127
+                }
+            ], 
+            "question_text": "volunteer some of your time to help others?:When you are an adult, do you think you will", 
+            "question_number": 128, 
+            "variable_name": "AspLikely09_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Go to a college", 
+                    "response (n)": 90
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Other not listed", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Get a job", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Take time off from studies", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Stay at school for 6th form", 
+                    "response (n)": 164
+                }, 
+                {
+                    "response": "Dont know", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "What do you plan to do once you've finished Year 11?", 
+            "question_number": 146, 
+            "variable_name": "AspPostSch03_3C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "other:What do you plan to do once you've finished Year 11?", 
+            "question_number": 147, 
+            "variable_name": "AspPostSch17_3C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What do you see yourself doing in 10 years' time?", 
+            "question_number": 149, 
+            "variable_name": "AspTime02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 293
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 16
+                }, 
+                {
+                    "response": "Less than once a week", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "are you bullied outside of school?:Bullying is behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats  With this in mind, how of", 
+            "question_number": 99, 
+            "variable_name": "Bully01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 315
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Less than once a week", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "do you bully others outside of school?:Bullying is behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats  With this in mind, ho", 
+            "question_number": 100, 
+            "variable_name": "Bully03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 242
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 39
+                }, 
+                {
+                    "response": "Less than once a week", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 25
+                }
+            ], 
+            "question_text": "are you bullied at school?:Bullying is behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats  With this in mind, how often???", 
+            "question_number": 97, 
+            "variable_name": "BullySch01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 305
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 14
+                }, 
+                {
+                    "response": "Less than once a week", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "do you bully other pupils at school?:Bullying is behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats  With this in mind, how", 
+            "question_number": 98, 
+            "variable_name": "BullySch03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 115
+                }
+            ], 
+            "question_text": "My school deals with bullying well:Please state how much you agree or disagree with the following statements", 
+            "question_number": 46, 
+            "variable_name": "BullySch08_3C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Cohort", 
+            "question_number": 153, 
+            "variable_name": "cohort_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 266
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 32
+                }, 
+                {
+                    "response": "Less than once a week", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Read Welsh books or magazines:How often do you do the following outside of school?", 
+            "question_number": 103, 
+            "variable_name": "CymActFrq01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 246
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 42
+                }, 
+                {
+                    "response": "Less than once a week", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "Visit Welsh websites:How often do you do the following outside of school?", 
+            "question_number": 105, 
+            "variable_name": "CymActFrq02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 226
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 32
+                }, 
+                {
+                    "response": "Less than once a week", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 26
+                }
+            ], 
+            "question_text": "Watch Welsh TV or listen to Welsh radio:How often do you do the following outside of school?", 
+            "question_number": 104, 
+            "variable_name": "CymActFrq03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 201
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 40
+                }, 
+                {
+                    "response": "Less than once a week", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "Speak Welsh with family:How often do you do the following outside of school?", 
+            "question_number": 101, 
+            "variable_name": "CymActFrq04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 212
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 33
+                }, 
+                {
+                    "response": "Less than once a week", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 25
+                }
+            ], 
+            "question_text": "Speak Welsh with friends:How often do you do the following outside of school?", 
+            "question_number": 102, 
+            "variable_name": "CymActFrq05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very impotant", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Important", 
+                    "response (n)": 116
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very important", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not at all important", 
+                    "response (n)": 68
+                }
+            ], 
+            "question_text": "for you to learn Welsh?:How important do you think it is", 
+            "question_number": 106, 
+            "variable_name": "CymAtt01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very impotant", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Important", 
+                    "response (n)": 103
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very important", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not at all important", 
+                    "response (n)": 70
+                }
+            ], 
+            "question_text": "for you to speak Welsh?:How important do you think it is", 
+            "question_number": 107, 
+            "variable_name": "CymAtt02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very impotant", 
+                    "response (n)": 121
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Important", 
+                    "response (n)": 112
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very important", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not at all important", 
+                    "response (n)": 50
+                }
+            ], 
+            "question_text": "for Welsh to remain a living language?:How important do you think it is", 
+            "question_number": 108, 
+            "variable_name": "CymAtt03_3C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is the best thing about living in Wales?", 
+            "question_number": 113, 
+            "variable_name": "CymAtt17_3C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is the worst thing about living in Wales?", 
+            "question_number": 114, 
+            "variable_name": "CymAtt18_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very comfortable", 
+                    "response (n)": 183
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very uncomfortable", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "people in Wales, with the same accent as you, speaking to each other in English:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
+            "question_number": 110, 
+            "variable_name": "DiversAtt12_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 91
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very comfortable", 
+                    "response (n)": 152
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very uncomfortable", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "people in Wales, with an accent different than yours, speaking to each other in English:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
+            "question_number": 112, 
+            "variable_name": "DiversAtt13_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very comfortable", 
+                    "response (n)": 140
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very uncomfortable", 
+                    "response (n)": 24
+                }
+            ], 
+            "question_text": "people in Wales speaking to each other in Welsh:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
+            "question_number": 109, 
+            "variable_name": "DiversAtt14_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very comfortable", 
+                    "response (n)": 89
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Very uncomfortable", 
+                    "response (n)": 49
+                }
+            ], 
+            "question_text": "people in Wales speaking to each other in a language other than English or Welsh:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
+            "question_number": 111, 
+            "variable_name": "DiversAtt15_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 197
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 135
+                }
+            ], 
+            "question_text": "Do you think the voting age in Wales should be lowered to 16?", 
+            "question_number": 115, 
+            "variable_name": "EngPol02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "8", 
+                    "response": "None", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "2", 
+                    "response": "The Green Party", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "9", 
+                    "response": "I dont know", 
+                    "response (n)": 124
+                }, 
+                {
+                    "value": "6", 
+                    "response": "UKIP", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Liberal Democrats", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Conservative", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Labour", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Plaid Cymru", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Other", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "If an election was held today, and you could vote, what party would you vote for?", 
+            "question_number": 116, 
+            "variable_name": "EngPol03_3C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other:If an election was held today, and you could vote, what party would you vote for?", 
+            "question_number": 117, 
+            "variable_name": "EngPol04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 219
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 118
+                }
+            ], 
+            "question_text": "Do you think you are well-informed of what is going in the world?", 
+            "question_number": 118, 
+            "variable_name": "EngSoc01_3C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is one particular issue you feel strongly about?", 
+            "question_number": 121, 
+            "variable_name": "EngSoc06_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Social news sites (Reddit, Tumblr etc)", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Twitter", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "7", 
+                    "response": "YouTube", 
+                    "response (n)": 17
+                }, 
+                {
+                    "response": "Newspapers / News websites", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "8", 
+                    "response": "Other", 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": "Facebook", 
+                    "response (n)": 132
+                }, 
+                {
+                    "value": "9", 
+                    "response": "School lessons", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Family/Friends", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "6", 
+                    "response": "TV/Radio", 
+                    "response (n)": 55
+                }
+            ], 
+            "question_text": "Source #1:Please choose the two most common sources for your information on current events/news", 
+            "question_number": 119, 
+            "variable_name": "EngSoc25_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Social news sites (Reddit, Tumblr etc)", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "6", 
+                    "response": "TV/Radio", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "7", 
+                    "response": "YouTube", 
+                    "response (n)": 35
+                }, 
+                {
+                    "response": "Newspapers / News websites", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "8", 
+                    "response": "Other", 
+                    "response (n)": 21
+                }, 
+                {
+                    "response": "Facebook", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "9", 
+                    "response": "School lessons", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Family/Friends", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Twitter", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "Source #2:Please choose the two most common sources for your information on current events/news", 
+            "question_number": 120, 
+            "variable_name": "EngSoc26_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 60
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 108
+                }
+            ], 
+            "question_text": "Spend time at home doing activities with parents or siblings:How often do you do the following?", 
+            "question_number": 28, 
+            "variable_name": "FamActFrq02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 89
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 83
+                }
+            ], 
+            "question_text": "Spend time doing activities outside of the home with extended family (grandparents, aunts/uncles, cousins, etc ):How often do you do the following?", 
+            "question_number": 29, 
+            "variable_name": "FamActFrq03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 153
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 101
+                }
+            ], 
+            "question_text": "Do chores at home:How often do you do the following?", 
+            "question_number": 26, 
+            "variable_name": "FamActFrq28_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all important", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very important", 
+                    "response (n)": 84
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 86
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Doing activities (like going to the cinema, sporting events, etc ):On a scale of 1 to 7 where '1' means VERY IMPORTANT and '7' means NOT AT ALL IMPORTANT, how important are the following for keeping in touch with your friends?", 
+            "question_number": 18, 
+            "variable_name": "FrndActAtt01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all important", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very important", 
+                    "response (n)": 166
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 88
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Going to school:On a scale of 1 to 7 where '1' means VERY IMPORTANT and '7' means NOT AT ALL IMPORTANT, how important are the following for keeping in touch with your friends?", 
+            "question_number": 17, 
+            "variable_name": "FrndActAtt02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all important", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very important", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 83
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "Just 'hanging out' after school or on the weekends:On a scale of 1 to 7 where '1' means VERY IMPORTANT and '7' means NOT AT ALL IMPORTANT, how important are the following for keeping in touch with your friends?", 
+            "question_number": 19, 
+            "variable_name": "FrndActAtt03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all important", 
+                    "response (n)": 108
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very important", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 45
+                }
+            ], 
+            "question_text": "Playing video games online (like Xbox or Playstation):On a scale of 1 to 7 where '1' means VERY IMPORTANT and '7' means NOT AT ALL IMPORTANT, how important are the following for keeping in touch with your friends?", 
+            "question_number": 22, 
+            "variable_name": "FrndActAtt04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all important", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very important", 
+                    "response (n)": 89
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 83
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "Social networking sites (like Facebook, Skype, Snapchat, etc ):On a scale of 1 to 7 where '1' means VERY IMPORTANT and '7' means NOT AT ALL IMPORTANT, how important are the following for keeping in touch with your friends?", 
+            "question_number": 16, 
+            "variable_name": "FrndActAtt05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all important", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very important", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 42
+                }
+            ], 
+            "question_text": "Talking on the phone:On a scale of 1 to 7 where '1' means VERY IMPORTANT and '7' means NOT AT ALL IMPORTANT, how important are the following for keeping in touch with your friends?", 
+            "question_number": 20, 
+            "variable_name": "FrndActAtt06_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all important", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Very important", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 22
+                }
+            ], 
+            "question_text": "Texting on your mobile phone:On a scale of 1 to 7 where '1' means VERY IMPORTANT and '7' means NOT AT ALL IMPORTANT, how important are the following for keeping in touch with your friends?", 
+            "question_number": 21, 
+            "variable_name": "FrndActAtt07_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 109
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 112
+                }
+            ], 
+            "question_text": "Spend time with friends just 'hanging out':How often do you do the following?", 
+            "question_number": 27, 
+            "variable_name": "FrndActFrq04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 314
+                }
+            ], 
+            "question_text": "Spend time with friends browsing the internet", 
+            "question_number": 150, 
+            "variable_name": "FrndActFrq05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 88
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 119
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 63
+                }
+            ], 
+            "question_text": "Play video games:How often do you do the following?", 
+            "question_number": 24, 
+            "variable_name": "HobFrq01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 67
+                }
+            ], 
+            "question_text": "Read for fun:How often do you do the following?", 
+            "question_number": 23, 
+            "variable_name": "HobFrq04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Welsh", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "1", 
+                    "response": "English", 
+                    "response (n)": 324
+                }
+            ], 
+            "question_text": "Language completed", 
+            "question_number": 152, 
+            "variable_name": "langresponse_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 136
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "Do volunteer work:How often do you do the following?", 
+            "question_number": 25, 
+            "variable_name": "PhilAct01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 342
+                }
+            ], 
+            "question_text": "English:Please tick the boxes next to the subjects you receive private tuition in  If you don't receive private tuition, please skip this question", 
+            "question_number": 53, 
+            "variable_name": "PrvtuSubj01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 338
+                }
+            ], 
+            "question_text": "Maths:Please tick the boxes next to the subjects you receive private tuition in  If you don't receive private tuition, please skip this question", 
+            "question_number": 56, 
+            "variable_name": "PrvtuSubj02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 339
+                }
+            ], 
+            "question_text": "Science:Please tick the boxes next to the subjects you receive private tuition in  If you don't receive private tuition, please skip this question", 
+            "question_number": 57, 
+            "variable_name": "PrvtuSubj03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 343
+                }
+            ], 
+            "question_text": "Welsh:Please tick the boxes next to the subjects you receive private tuition in  If you don't receive private tuition, please skip this question", 
+            "question_number": 58, 
+            "variable_name": "PrvtuSubj04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 343
+                }
+            ], 
+            "question_text": "Foreign Languages:Please tick the boxes next to the subjects you receive private tuition in  If you don't receive private tuition, please skip this question", 
+            "question_number": 54, 
+            "variable_name": "PrvtuSubj05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 342
+                }
+            ], 
+            "question_text": "Humanities (Geography, History, etc ):Please tick the boxes next to the subjects you receive private tuition in  If you don't receive private tuition, please skip this question", 
+            "question_number": 55, 
+            "variable_name": "PrvtuSubj06_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 343
+                }
+            ], 
+            "question_text": "Other:Please tick the boxes next to the subjects you receive private tuition in  If you don't receive private tuition, please skip this question", 
+            "question_number": 59, 
+            "variable_name": "PrvtuSubj07_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Between 6am and 7am", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "Between 7am and 8am", 
+                    "response (n)": 194
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Before 5am", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "Between 5am and 6am", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Later than 8am", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "About what time did you get up to get ready for school today?", 
+            "question_number": 5, 
+            "variable_name": "RoutnSleep01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 247
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "No", 
+                    "response (n)": 85
+                }
+            ], 
+            "question_text": "Do you get up for school at the same time every day?:Do you  ?", 
+            "question_number": 2, 
+            "variable_name": "RoutnSleep02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "After 1am", 
+                    "response (n)": 21
+                }, 
+                {
+                    "response": "Between 11pm and 12pm", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": "Earlier than 8pm", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "Between 10pm and 11pm", 
+                    "response (n)": 134
+                }, 
+                {
+                    "response": "Between 12pm and 1am", 
+                    "response (n)": 27
+                }, 
+                {
+                    "response": "Between 9pm and 10pm", 
+                    "response (n)": 81
+                }, 
+                {
+                    "response": "Between 8pm and 9pm", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "About what time did you go to bed last night?", 
+            "question_number": 4, 
+            "variable_name": "RoutnSleep03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "No", 
+                    "response (n)": 243
+                }
+            ], 
+            "question_text": "Go to bed at the same time every night?:Do you  ?", 
+            "question_number": 3, 
+            "variable_name": "RoutnSleep04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "More than one hour", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "15 - 30 minutes", 
+                    "response (n)": 151
+                }, 
+                {
+                    "value": "2", 
+                    "response": "31 - 45 minutes", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "3", 
+                    "response": "46 - 60 minutes", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Less than 15 minutes", 
+                    "response (n)": 134
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "Approximately how long does it take you to get to school each day?", 
+            "question_number": 14, 
+            "variable_name": "RoutnTrav01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 342
+                }
+            ], 
+            "question_text": "Bike:How do you travel to school each day? You may choose as many answers as you need", 
+            "question_number": 8, 
+            "variable_name": "RoutnTrav02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 329
+                }
+            ], 
+            "question_text": "Car:How do you travel to school each day? You may choose as many answers as you need", 
+            "question_number": 6, 
+            "variable_name": "RoutnTrav03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 340
+                }
+            ], 
+            "question_text": "Public bus:How do you travel to school each day? You may choose as many answers as you need", 
+            "question_number": 10, 
+            "variable_name": "RoutnTrav04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 330
+                }
+            ], 
+            "question_text": "School bus:How do you travel to school each day? You may choose as many answers as you need", 
+            "question_number": 11, 
+            "variable_name": "RoutnTrav05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 343
+                }
+            ], 
+            "question_text": "Train:How do you travel to school each day? You may choose as many answers as you need", 
+            "question_number": 9, 
+            "variable_name": "RoutnTrav07_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 332
+                }
+            ], 
+            "question_text": "Walk:How do you travel to school each day? You may choose as many answers as you need", 
+            "question_number": 7, 
+            "variable_name": "RoutnTrav08_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 343
+                }
+            ], 
+            "question_text": "other:How do you travel to school each day? You may choose as many answers as you need", 
+            "question_number": 12, 
+            "variable_name": "RoutnTrav09_3C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "other:How do you travel to school each day? You may choose as many answers as you need", 
+            "question_number": 13, 
+            "variable_name": "RoutnTrav10_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 83
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "English:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 131, 
+            "variable_name": "SchAchvSubj01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 83
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 89
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "7", 
+                    "response": "G", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "Maths:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 138, 
+            "variable_name": "SchAchvSubj02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "7", 
+                    "response": "G", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "Science:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 137, 
+            "variable_name": "SchAchvSubj03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "7", 
+                    "response": "G", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "Biology:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 134, 
+            "variable_name": "SchAchvSubj04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "7", 
+                    "response": "G", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "Chemistry:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 135, 
+            "variable_name": "SchAchvSubj05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 97
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Physics:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 136, 
+            "variable_name": "SchAchvSubj06_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "7", 
+                    "response": "G", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 117
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "Welsh (1st language):Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 132, 
+            "variable_name": "SchAchvSubj07_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "7", 
+                    "response": "G", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "Welsh (2nd language):Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 133, 
+            "variable_name": "SchAchvSubj08_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 122
+                }, 
+                {
+                    "value": "7", 
+                    "response": "G", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 112
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "Design Technology:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 144, 
+            "variable_name": "SchAchvSubj09_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "7", 
+                    "response": "G", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 93
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Geography:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 140, 
+            "variable_name": "SchAchvSubj10_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "7", 
+                    "response": "G", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 97
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "History:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 143, 
+            "variable_name": "SchAchvSubj11_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 121
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "ICT:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 142, 
+            "variable_name": "SchAchvSubj12_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "7", 
+                    "response": "G", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "Physical Education:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 139, 
+            "variable_name": "SchAchvSubj13_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 88
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "Religious Studies:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 141, 
+            "variable_name": "SchAchvSubj14_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "4", 
+                    "response": "C", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "3", 
+                    "response": "B", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "5", 
+                    "response": "D", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "7", 
+                    "response": "G", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 136
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A*", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "9", 
+                    "response": "N/A", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "8", 
+                    "response": "U", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "6", 
+                    "response": "F", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "Other:Please indicate which GCSE subjects you are doing this year and what grade you expect to get in the table below  If you are not taking one of the following subjects, please choose 'N/A'", 
+            "question_number": 145, 
+            "variable_name": "SchAchvSubj15_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "0 hours", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "6", 
+                    "response": "21-25 hours", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "5", 
+                    "response": "16-20 hours", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "3", 
+                    "response": "6-10 hours", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "2", 
+                    "response": "1-5 hours", 
+                    "response (n)": 215
+                }, 
+                {
+                    "value": "4", 
+                    "response": "11-15 hours", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "Approximately how many hours per week do you spend doing homework?", 
+            "question_number": 15, 
+            "variable_name": "SchAct01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 212
+                }
+            ], 
+            "question_text": "Overall, I feel I make a good effort in class:Please choose the best response from the options below:", 
+            "question_number": 48, 
+            "variable_name": "SchAtt16_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 60
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 177
+                }
+            ], 
+            "question_text": "Other pupils accept me as I am:Please state how much you agree or disagree with the following statements  ???My school is a place where??????", 
+            "question_number": 39, 
+            "variable_name": "SchAtt17_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 313
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "School helps increase my interest in the politics of Wales", 
+            "question_number": 151, 
+            "variable_name": "SchAtt21_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 50
+                }
+            ], 
+            "question_text": "School helps me appreciate living in Wales:Please choose the best response from the options below:", 
+            "question_number": 51, 
+            "variable_name": "SchAtt22_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 60
+                }
+            ], 
+            "question_text": "School helps me develop my own sense of Welshness:Please choose the best response from the options below:", 
+            "question_number": 52, 
+            "variable_name": "SchAtt23_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 86
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 155
+                }
+            ], 
+            "question_text": "My teachers are fair to me:Please state how much you agree or disagree with the following statements  ???My school is a place where??????", 
+            "question_number": 36, 
+            "variable_name": "SchStafAtt01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 130
+                }
+            ], 
+            "question_text": "My teachers know me well:Please choose the best response from the options below:", 
+            "question_number": 35, 
+            "variable_name": "SchStafAtt02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 149
+                }
+            ], 
+            "question_text": "My teachers treat me with respect:Please state how much you agree or disagree with the following statements  ???My school is a place where??????", 
+            "question_number": 41, 
+            "variable_name": "SchStafAtt04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 126
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 96
+                }
+            ], 
+            "question_text": "My views are listened to and taken seriously by school staff:Please choose the best response from the options below:", 
+            "question_number": 33, 
+            "variable_name": "SchStafAtt05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 93
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 156
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 26
+                }
+            ], 
+            "question_text": "Overall, I like the school staff:Please choose the best response from the options below:", 
+            "question_number": 50, 
+            "variable_name": "SchStafAtt06_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 149
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "The school staff have high expectations of me:Please choose the best response from the options below:", 
+            "question_number": 31, 
+            "variable_name": "SchStafAtt08_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 131
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 60
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 69
+                }
+            ], 
+            "question_text": "The school staff make school fun:Please choose the best response from the options below:", 
+            "question_number": 49, 
+            "variable_name": "SchStafAtt09_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 150
+                }
+            ], 
+            "question_text": "The teaching staff set goals I can easily achieve:Please choose the best response from the options below:", 
+            "question_number": 32, 
+            "variable_name": "SchStafAtt10_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 180
+                }
+            ], 
+            "question_text": "My school cares about how much I improve in my studies:Please choose the best response from the options below:", 
+            "question_number": 30, 
+            "variable_name": "SchStafAtt11_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 86
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 118
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 35
+                }
+            ], 
+            "question_text": "If I have a personal problem at school, I can trust the school will help me:Please state how much you agree or disagree with the following statements", 
+            "question_number": 44, 
+            "variable_name": "SchStafAtt12_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 141
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 25
+                }
+            ], 
+            "question_text": "If I have a personal problem at school, I know where to go for help:Please state how much you agree or disagree with the following statements", 
+            "question_number": 43, 
+            "variable_name": "SchStafAtt13_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 113
+                }
+            ], 
+            "question_text": "My school deals with pupil conflicts well:Please state how much you agree or disagree with the following statements", 
+            "question_number": 45, 
+            "variable_name": "SchStafAtt14_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 108
+                }
+            ], 
+            "question_text": "My school deals with pupils??? poor behaviour well:Please state how much you agree or disagree with the following statements", 
+            "question_number": 47, 
+            "variable_name": "SchStafAtt15_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 93
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 141
+                }
+            ], 
+            "question_text": "My school rewards pupils who receive good marks or make good progress:Please choose the best response from the options below:", 
+            "question_number": 34, 
+            "variable_name": "SchStafAtt16_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 162
+                }
+            ], 
+            "question_text": "English:How much do you like the following subjects at school?", 
+            "question_number": 62, 
+            "variable_name": "SchSubjAtt01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 147
+                }
+            ], 
+            "question_text": "Maths:How much do you like the following subjects at school?", 
+            "question_number": 67, 
+            "variable_name": "SchSubjAtt02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 121
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 156
+                }
+            ], 
+            "question_text": "Science:How much do you like the following subjects at school?", 
+            "question_number": 71, 
+            "variable_name": "SchSubjAtt03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 133
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 123
+                }
+            ], 
+            "question_text": "Welsh:How much do you like the following subjects at school?", 
+            "question_number": 72, 
+            "variable_name": "SchSubjAtt04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 97
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 142
+                }
+            ], 
+            "question_text": "Art:How much do you like the following subjects at school?", 
+            "question_number": 60, 
+            "variable_name": "SchSubjAtt05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 89
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 147
+                }
+            ], 
+            "question_text": "Design & Technology:How much do you like the following subjects at school?", 
+            "question_number": 61, 
+            "variable_name": "SchSubjAtt06_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 112
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 166
+                }
+            ], 
+            "question_text": "Foreign Languages:How much do you like the following subjects at school?", 
+            "question_number": 63, 
+            "variable_name": "SchSubjAtt07_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 117
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 108
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 108
+                }
+            ], 
+            "question_text": "Geography:How much do you like the following subjects at school?", 
+            "question_number": 64, 
+            "variable_name": "SchSubjAtt08_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 131
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 115
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 89
+                }
+            ], 
+            "question_text": "History:How much do you like the following subjects at school?", 
+            "question_number": 65, 
+            "variable_name": "SchSubjAtt09_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 155
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 75
+                }
+            ], 
+            "question_text": "ICT:How much do you like the following subjects at school?", 
+            "question_number": 66, 
+            "variable_name": "SchSubjAtt10_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 164
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 72
+                }
+            ], 
+            "question_text": "Music:How much do you like the following subjects at school?", 
+            "question_number": 68, 
+            "variable_name": "SchSubjAtt11_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 170
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 103
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 64
+                }
+            ], 
+            "question_text": "Physical Education:How much do you like the following subjects at school?", 
+            "question_number": 69, 
+            "variable_name": "SchSubjAtt12_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 110
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 125
+                }
+            ], 
+            "question_text": "Religious Education:How much do you like the following subjects at school?", 
+            "question_number": 70, 
+            "variable_name": "SchSubjAtt13_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 89
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 140
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 47
+                }
+            ], 
+            "question_text": "I felt lonely:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 96, 
+            "variable_name": "WellFeelAtt01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 155
+                }
+            ], 
+            "question_text": "I cried a lot:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 90, 
+            "variable_name": "WellFeelAtt02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 102
+                }
+            ], 
+            "question_text": "I didn't enjoy anything at all:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 86, 
+            "variable_name": "WellFeelAtt03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 150
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "I enjoyed doing lots of things:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 94, 
+            "variable_name": "WellFeelAtt04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 107
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 89
+                }
+            ], 
+            "question_text": "I feel worried:Please state how much you agree or disagree with the following statements  ???My school is a place where??????", 
+            "question_number": 40, 
+            "variable_name": "WellFeelAtt05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 91
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 158
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "I felt happy:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 91, 
+            "variable_name": "WellFeelAtt06_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 86
+                }
+            ], 
+            "question_text": "I felt miserable or unhappy:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 84, 
+            "variable_name": "WellFeelAtt07_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 93
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 83
+                }
+            ], 
+            "question_text": "I felt so tired that I just sat around and did nothing:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 87, 
+            "variable_name": "WellFeelAtt08_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 86
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 44
+                }
+            ], 
+            "question_text": "I found it hard to think properly or concentrate:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 92, 
+            "variable_name": "WellFeelAtt09_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 167
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "I have been having fun:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 85, 
+            "variable_name": "WellFeelAtt10_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 67
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 55
+                }
+            ], 
+            "question_text": "I was very restless:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 88, 
+            "variable_name": "WellFeelAtt11_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 157
+                }
+            ], 
+            "question_text": "I am lonely:Please state how much you agree or disagree with the following statements  ???My school is a place where??????", 
+            "question_number": 37, 
+            "variable_name": "WellFeelAtt13_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 17
+                }
+            ], 
+            "question_text": "The way you look:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 79, 
+            "variable_name": "WellSat01_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 178
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Your family:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 80, 
+            "variable_name": "WellSat02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 176
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 98
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Your friends:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 81, 
+            "variable_name": "WellSat03_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 125
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "Your life as a whole:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 83, 
+            "variable_name": "WellSat04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 90
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "Your school overall:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 82, 
+            "variable_name": "WellSat05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 139
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "Your school work:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 78, 
+            "variable_name": "WellSat06_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 170
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "I am able to do things as well as most other people:How much do you agree with the following statements about you?", 
+            "question_number": 75, 
+            "variable_name": "WellValue02_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 144
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 28
+                }
+            ], 
+            "question_text": "I feel good about myself:How much do you agree with the following statements about you?", 
+            "question_number": 77, 
+            "variable_name": "WellValue04_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 183
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 26
+                }
+            ], 
+            "question_text": "I feel that I have a number of good qualities:How much do you agree with the following statements about you?", 
+            "question_number": 74, 
+            "variable_name": "WellValue05_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 67
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 165
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 29
+                }
+            ], 
+            "question_text": "On the whole, I am satisfied with myself:How much do you agree with the following statements about you?", 
+            "question_number": 73, 
+            "variable_name": "WellValue07_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 151
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 24
+                }
+            ], 
+            "question_text": "I am a person of value:How much do you agree with the following statements about you?", 
+            "question_number": 76, 
+            "variable_name": "WellValue08_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 98
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 166
+                }
+            ], 
+            "question_text": "I am a successful pupil:Please state how much you agree or disagree with the following statements  ???My school is a place where??????", 
+            "question_number": 38, 
+            "variable_name": "WellValue09_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 98
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 138
+                }
+            ], 
+            "question_text": "I feel like I belong:Please state how much you agree or disagree with the following statements  ???My school is a place where??????", 
+            "question_number": 42, 
+            "variable_name": "WellValue10_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 103
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 117
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 45
+                }
+            ], 
+            "question_text": "I felt I was a bad person:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 95, 
+            "variable_name": "WellValue11_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 127
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 46
+                }
+            ], 
+            "question_text": "I felt I was no good anymore:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 89, 
+            "variable_name": "WellValue12_3C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 146
+                }
+            ], 
+            "question_text": "I hated myself:How much do you agree or disagree with the following statements? In the past two weeks", 
+            "question_number": 93, 
+            "variable_name": "WellValue13_3C"
+        }
+    ]
+}

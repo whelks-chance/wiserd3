@@ -22,6 +22,6 @@ class Command(BaseCommand):
             sr.build_from_description_file(
                 description_file,
                 '3',
-                'C'
+                'D'
             )
 

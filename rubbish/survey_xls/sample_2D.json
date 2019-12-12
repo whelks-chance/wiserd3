@@ -1,0 +1,2666 @@
+{
+    "questions": [
+        {
+            "response_table": [], 
+            "question_text": "What would be your ideal job?", 
+            "question_number": 80, 
+            "variable_name": "AspCareer04_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "\u00a370,001 - \u00a380,000", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 49
+                }, 
+                {
+                    "response": "\u00a350,001 - \u00a360,000", 
+                    "response (n)": 15
+                }, 
+                {
+                    "response": "\u00a320,001 - \u00a330,000", 
+                    "response (n)": 69
+                }, 
+                {
+                    "response": "\u00a310,001 - \u00a320,000", 
+                    "response (n)": 46
+                }, 
+                {
+                    "response": "\u00a340,001 - \u00a350,000", 
+                    "response (n)": 37
+                }, 
+                {
+                    "response": "\u00a360,001 - \u00a370,000", 
+                    "response (n)": 9
+                }, 
+                {
+                    "response": "\u00a330,001 - \u00a340,000", 
+                    "response (n)": 52
+                }, 
+                {
+                    "response": "More than \u00a380,000", 
+                    "response (n)": 17
+                }, 
+                {
+                    "response": "Up to \u00a310,000", 
+                    "response (n)": 25
+                }
+            ], 
+            "question_text": "How much do you think you will earn in this job?", 
+            "question_number": 82, 
+            "variable_name": "AspCareer05_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Very likely", 
+                    "response (n)": 33
+                }, 
+                {
+                    "response": "I don\u2019t know", 
+                    "response (n)": 140
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Likely", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Very unlikely", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Unlikely", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "How likely do you think it is that you will get this job?", 
+            "question_number": 81, 
+            "variable_name": "AspCareer06_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "A lot of influence", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some influence", 
+                    "response (n)": 169
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No influence", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "Parents:To what extent have the following influenced your thoughts about careers and further education?", 
+            "question_number": 71, 
+            "variable_name": "AspCareer08_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "A lot of influence", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some influence", 
+                    "response (n)": 115
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No influence", 
+                    "response (n)": 164
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "Brothers / sisters:To what extent have the following influenced your thoughts about careers and further education?", 
+            "question_number": 72, 
+            "variable_name": "AspCareer09_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "A lot of influence", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some influence", 
+                    "response (n)": 188
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No influence", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Friends:To what extent have the following influenced your thoughts about careers and further education?", 
+            "question_number": 73, 
+            "variable_name": "AspCareer10_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "A lot of influence", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some influence", 
+                    "response (n)": 167
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No influence", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Teachers at school:To what extent have the following influenced your thoughts about careers and further education?", 
+            "question_number": 74, 
+            "variable_name": "AspCareer11_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "A lot of influence", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some influence", 
+                    "response (n)": 117
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No influence", 
+                    "response (n)": 154
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Careers teachers:To what extent have the following influenced your thoughts about careers and further education?", 
+            "question_number": 75, 
+            "variable_name": "AspCareer12_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "A lot of influence", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some influence", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No influence", 
+                    "response (n)": 193
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 17
+                }
+            ], 
+            "question_text": "Further education college staff:To what extent have the following influenced your thoughts about careers and further education?", 
+            "question_number": 76, 
+            "variable_name": "AspCareer13_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "A lot of influence", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some influence", 
+                    "response (n)": 115
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No influence", 
+                    "response (n)": 167
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "Careers Wales:To what extent have the following influenced your thoughts about careers and further education?", 
+            "question_number": 77, 
+            "variable_name": "AspCareer14_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "A lot of influence", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some influence", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No influence", 
+                    "response (n)": 244
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 17
+                }
+            ], 
+            "question_text": "An employment agency:To what extent have the following influenced your thoughts about careers and further education?", 
+            "question_number": 78, 
+            "variable_name": "AspCareer15_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "A lot of influence", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some influence", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No influence", 
+                    "response (n)": 134
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 136
+                }
+            ], 
+            "question_text": "Other:To what extent have the following influenced your thoughts about careers and further education?", 
+            "question_number": 79, 
+            "variable_name": "AspCareer16_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "I dont know", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "3", 
+                    "response": "A combination of academic and vocational qualifications", 
+                    "response (n)": 18
+                }, 
+                {
+                    "response": "Academic qualifications (eg A levels)", 
+                    "response (n)": 213
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Leave full time education", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "4", 
+                    "response": "An Apprentiship", 
+                    "response (n)": 17
+                }, 
+                {
+                    "response": "Vocational qualifications (eg BTECH)", 
+                    "response (n)": 36
+                }
+            ], 
+            "question_text": "Please indicate what you will be doing after year 11?", 
+            "question_number": 62, 
+            "variable_name": "AspPostSch04_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 139
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 185
+                }
+            ], 
+            "question_text": "6th form at this school:If you are staying in education, or doing an apprenticeship, where will you be doing your courses after year 11?", 
+            "question_number": 63, 
+            "variable_name": "AspPostSch06_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 293
+                }
+            ], 
+            "question_text": "6th form at another school:If you are staying in education, or doing an apprenticeship, where will you be doing your courses after year 11?", 
+            "question_number": 64, 
+            "variable_name": "AspPostSch07_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 245
+                }
+            ], 
+            "question_text": "Further education college:If you are staying in education, or doing an apprenticeship, where will you be doing your courses after year 11?", 
+            "question_number": 65, 
+            "variable_name": "AspPostSch09_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 302
+                }
+            ], 
+            "question_text": "I don't know:If you are staying in education, or doing an apprenticeship, where will you be doing your courses after year 11?", 
+            "question_number": 67, 
+            "variable_name": "AspPostSch14_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 316
+                }
+            ], 
+            "question_text": "Other:If you are staying in education, or doing an apprenticeship, where will you be doing your courses after year 11?", 
+            "question_number": 66, 
+            "variable_name": "AspPostSch15_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "I dont know", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 179
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 55
+                }
+            ], 
+            "question_text": "Will you apply for university?", 
+            "question_number": 68, 
+            "variable_name": "AspPostSch19_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Are you thinking of applying for university? Yes / No / Not sure:Applying for university", 
+            "question_number": 68, 
+            "variable_name": "AspPostSch19_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "If you are, which university / universities would you consider applying to?:Applying for university", 
+            "question_number": 69, 
+            "variable_name": "AspPostSch21_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What subject would you like to study?:Applying for university", 
+            "question_number": 70, 
+            "variable_name": "AspPostSch22_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 296
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "are you bullied outside school?:How often", 
+            "question_number": 105, 
+            "variable_name": "Bully01_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 324
+                }
+            ], 
+            "question_text": "are you bullied via text or online (cyber-bullying)?:How often", 
+            "question_number": 107, 
+            "variable_name": "Bully02_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 306
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "do you bully others outside school?:How often", 
+            "question_number": 106, 
+            "variable_name": "Bully03_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 324
+                }
+            ], 
+            "question_text": "do you bully others via text or online (cyber-bullying)?:How often", 
+            "question_number": 108, 
+            "variable_name": "Bully04_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What social networking website  do you use the most?:Website:Please answer the following questions about your use of social networking websites  If you do not use websites, please enter a '0'", 
+            "question_number": 109, 
+            "variable_name": "Bully05_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week do you use the website?:Website:Please answer the following questions about your use of social networking websites  If you do not use websites, please enter a '0'", 
+            "question_number": 111, 
+            "variable_name": "Bully06_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week are you bullied while using the website?:Website:Please answer the following questions about your use of social networking websites  If you do not use websites, please enter a '0'", 
+            "question_number": 113, 
+            "variable_name": "Bully07_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week do you bully other while using the website?:Website:Please answer the following questions about your use of social networking websites  If you do not use websites, please enter a '0'", 
+            "question_number": 115, 
+            "variable_name": "Bully08_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What social networking app do you use the most?:App:Please now answer the same question but about apps  If you don't use apps, please write 0", 
+            "question_number": 117, 
+            "variable_name": "Bully09_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week do you use this app?:App:Please now answer the same question but about apps  If you don't use apps, please write 0", 
+            "question_number": 119, 
+            "variable_name": "Bully10_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week are you bullied while using this app?:App:Please now answer the same question but about apps  If you don't use apps, please write 0", 
+            "question_number": 121, 
+            "variable_name": "Bully11_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week do you bully others while using this app?:App:Please now answer the same question but about apps  If you don't use apps, please write 0", 
+            "question_number": 123, 
+            "variable_name": "Bully12_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 264
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "are you bullied at school?:How often", 
+            "question_number": 103, 
+            "variable_name": "BullySch01_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 302
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "do you bully other pupils at school?:How often", 
+            "question_number": 104, 
+            "variable_name": "BullySch03_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 99
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 136
+                }
+            ], 
+            "question_text": "My school deals effectively with bullying:To what extent do you agree with the following statements?", 
+            "question_number": 126, 
+            "variable_name": "BullySch08_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Cohort", 
+            "question_number": 130, 
+            "variable_name": "cohort_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Less than once a month", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 244
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a month", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "Read Welsh books or magazines:How often do you do the following outside school?", 
+            "question_number": 51, 
+            "variable_name": "CymActFrq01_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Less than once a month", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 234
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a month", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "Surf Welsh websites:How often do you do the following outside school?", 
+            "question_number": 53, 
+            "variable_name": "CymActFrq02_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Less than once a month", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 172
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a month", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 36
+                }
+            ], 
+            "question_text": "Watch Welsh TV or listen to Welsh radio:How often do you do the following outside school?", 
+            "question_number": 52, 
+            "variable_name": "CymActFrq03_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Less than once a month", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 169
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a month", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 36
+                }
+            ], 
+            "question_text": "Speak Welsh with friends and/or family:How often do you do the following outside school?", 
+            "question_number": 50, 
+            "variable_name": "CymActFrq05_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 84
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 38
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 45
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 131
+                }
+            ], 
+            "question_text": "I am more confident reading in Welsh than I was a year ago:Please state the extent to which you agree or disagree with the following statements", 
+            "question_number": 49, 
+            "variable_name": "CymAtt10_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 89
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 44
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 46
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 115
+                }
+            ], 
+            "question_text": "I am more confident speaking in Welsh than I was a year ago:Please state the extent to which you agree or disagree with the following statements", 
+            "question_number": 47, 
+            "variable_name": "CymAtt11_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 40
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 48
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 128
+                }
+            ], 
+            "question_text": "I am more confident writing in Welsh than I was a year ago:Please state the extent to which you agree or disagree with the following statements", 
+            "question_number": 48, 
+            "variable_name": "CymAtt12_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 180
+                }, 
+                {
+                    "response": "Most days", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 77
+                }
+            ], 
+            "question_text": "Work for an employer:How often do you do the following?", 
+            "question_number": 83, 
+            "variable_name": "EmpActFrq01_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Less often than once a month", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 18
+                }, 
+                {
+                    "response": "Most days", 
+                    "response (n)": 159
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 99
+                }
+            ], 
+            "question_text": "Do chores at home:How often do you do the following?", 
+            "question_number": 85, 
+            "variable_name": "FamActFrq28_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Welsh", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "1", 
+                    "response": "English", 
+                    "response (n)": 292
+                }
+            ], 
+            "question_text": "Language", 
+            "question_number": 128, 
+            "variable_name": "langresponse_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "response": "Less often than once a month", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 80
+                }, 
+                {
+                    "response": "Most days", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 86
+                }
+            ], 
+            "question_text": "Do occasional work for pocket money (chores, work in family business, farm etc):How often do you do the following?", 
+            "question_number": 86, 
+            "variable_name": "Money04_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "\u00a3700", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a310.00", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a312.99", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a33", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "\u00a32", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "\u00a31", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a30", 
+                    "response (n)": 65
+                }, 
+                {
+                    "response": "\u00a37", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a35", 
+                    "response (n)": 39
+                }, 
+                {
+                    "response": "\u00a34", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "\u00a37 week", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a320", 
+                    "response (n)": 17
+                }, 
+                {
+                    "response": "\u00a312/15", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a325", 
+                    "response (n)": 7
+                }, 
+                {
+                    "response": "\u00a35.00", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a31.25", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a3ddim yn siwr", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a310-20", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "\u00a3depends", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a30.50", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a33.50", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a3", 
+                    "response (n)": 72
+                }, 
+                {
+                    "response": "\u00a37.50", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a32.30", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a31.50", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a35-10", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "\u00a34.00", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a350", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "\u00a370", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "\u00a350-70", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a33000", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a32.50", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "\u00a335", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "\u00a312", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a311", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a310", 
+                    "response (n)": 62
+                }, 
+                {
+                    "response": "\u00a330", 
+                    "response (n)": 7
+                }, 
+                {
+                    "response": "\u00a315", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "Pocket money - without strings:If you have your own money to spend, please indicate how much you get from each of the following  If you don't get money from some of these sources, please leave them blank or type in \u00c2\u00a30 00", 
+            "question_number": 87, 
+            "variable_name": "Money05_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Pocket money:About how much money PER WEEK do you get from the following sources? If you don't get any, just write a 0 in the box(es)", 
+            "question_number": 87, 
+            "variable_name": "Money05_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Paid employment:About how much money PER WEEK do you get from the following sources? If you don't get any, just write a 0 in the box(es)", 
+            "question_number": 88, 
+            "variable_name": "Money06_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "\u00a310-15", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a32.50", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "\u00a33", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "\u00a32", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "\u00a31", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "\u00a30", 
+                    "response (n)": 45
+                }, 
+                {
+                    "response": "10.00", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a35", 
+                    "response (n)": 30
+                }, 
+                {
+                    "response": "\u00a34", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a3", 
+                    "response (n)": 108
+                }, 
+                {
+                    "response": "20", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "21", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a35.00", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "1", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "0", 
+                    "response (n)": 66
+                }, 
+                {
+                    "response": "3", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "2", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "5", 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": "5-10", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a315-20", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a35 per chore", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a320", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "10", 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": "\u00a35-10", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "15", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "\u00a370", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "depends really...", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "-0", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a310", 
+                    "response (n)": 26
+                }, 
+                {
+                    "response": "\u00a315", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "Earned in the house (e g  chores):If you have your own money to spend, please indicate how much you get from each of the following  If you don't get money from some of these sources, please leave them blank or type in \u00c2\u00a30 00", 
+            "question_number": 89, 
+            "variable_name": "Money07_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Chores at home:About how much money PER WEEK do you get from the following sources? If you don't get any, just write a 0 in the box(es)", 
+            "question_number": 89, 
+            "variable_name": "Money07_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "1.5", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a3", 
+                    "response (n)": 169
+                }, 
+                {
+                    "response": "\u00a310", 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": "20", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a350", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "30", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a320-50", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": null, 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a320", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "40", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "0", 
+                    "response (n)": 81
+                }, 
+                {
+                    "response": "Birthday/ Christmas - \u00a3500", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "5", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a3200", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a31", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a30", 
+                    "response (n)": 49
+                }, 
+                {
+                    "response": "\u00a330", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "\u00a35", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "10", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "Other: what and how much:If you have your own money to spend, please indicate how much you get from each of the following  If you don't get money from some of these sources, please leave them blank or type in \u00c2\u00a30 00", 
+            "question_number": 90, 
+            "variable_name": "Money11_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other:About how much money PER WEEK do you get from the following sources? If you don't get any, just write a 0 in the box(es)", 
+            "question_number": 90, 
+            "variable_name": "Money11_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is the one thing you spend most of your money on?", 
+            "question_number": 91, 
+            "variable_name": "Money13_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 324
+                }
+            ], 
+            "question_text": "Do you save any of your money?", 
+            "question_number": 92, 
+            "variable_name": "Money14_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "response": "Less often than once a month", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 137
+                }, 
+                {
+                    "response": "Most days", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 52
+                }
+            ], 
+            "question_text": "Do voluntary work:How often do you do the following?", 
+            "question_number": 84, 
+            "variable_name": "PhilAct01_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes", 
+                    "response (n)": 14
+                }, 
+                {
+                    "response": "No", 
+                    "response (n)": 310
+                }
+            ], 
+            "question_text": "English?:Do you receive private tuition for any of these school subjects? Tick all that apply", 
+            "question_number": 54, 
+            "variable_name": "PrvtuSubj01_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 310
+                }
+            ], 
+            "question_text": "English:Do you receive any private tuition outside school, paid for by your parents, in any of the subjects below? Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subje", 
+            "question_number": 54, 
+            "variable_name": "PrvtuSubj01_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes", 
+                    "response (n)": 46
+                }, 
+                {
+                    "response": "No", 
+                    "response (n)": 278
+                }
+            ], 
+            "question_text": "Maths?:Do you receive private tuition for any of these school subjects? Tick all that apply", 
+            "question_number": 57, 
+            "variable_name": "PrvtuSubj02_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 278
+                }
+            ], 
+            "question_text": "Maths:Do you receive any private tuition outside school, paid for by your parents, in any of the subjects below? Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subject", 
+            "question_number": 57, 
+            "variable_name": "PrvtuSubj02_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes", 
+                    "response (n)": 15
+                }, 
+                {
+                    "response": "No", 
+                    "response (n)": 309
+                }
+            ], 
+            "question_text": "Science?:Do you receive private tuition for any of these school subjects? Tick all that apply", 
+            "question_number": 56, 
+            "variable_name": "PrvtuSubj03_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 309
+                }
+            ], 
+            "question_text": "Science:Do you receive any private tuition outside school, paid for by your parents, in any of the subjects below? Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subje", 
+            "question_number": 56, 
+            "variable_name": "PrvtuSubj03_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "No", 
+                    "response (n)": 323
+                }
+            ], 
+            "question_text": "Welsh?:Do you receive private tuition for any of these school subjects? Tick all that apply", 
+            "question_number": 55, 
+            "variable_name": "PrvtuSubj04_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 323
+                }
+            ], 
+            "question_text": "Welsh:Do you receive any private tuition outside school, paid for by your parents, in any of the subjects below? Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subject", 
+            "question_number": 55, 
+            "variable_name": "PrvtuSubj04_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "response": "No", 
+                    "response (n)": 320
+                }
+            ], 
+            "question_text": "Foreign Languages?:Do you receive private tuition for any of these school subjects? Tick all that apply", 
+            "question_number": 59, 
+            "variable_name": "PrvtuSubj05_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 320
+                }
+            ], 
+            "question_text": "Foreign Languages:Do you receive any private tuition outside school, paid for by your parents, in any of the subjects below? Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of t", 
+            "question_number": 59, 
+            "variable_name": "PrvtuSubj05_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "No", 
+                    "response (n)": 323
+                }
+            ], 
+            "question_text": "Humanities (Geography, History, etc )?:Do you receive private tuition for any of these school subjects? Tick all that apply", 
+            "question_number": 58, 
+            "variable_name": "PrvtuSubj06_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 323
+                }
+            ], 
+            "question_text": "History / Geography:Do you receive any private tuition outside school, paid for by your parents, in any of the subjects below? Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of", 
+            "question_number": 58, 
+            "variable_name": "PrvtuSubj06_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Yes", 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": "No", 
+                    "response (n)": 318
+                }
+            ], 
+            "question_text": "other not listed:Do you receive private tuition for any of these school subjects? Tick all that apply", 
+            "question_number": 60, 
+            "variable_name": "PrvtuSubj07_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 318
+                }
+            ], 
+            "question_text": "Other:Do you receive any private tuition outside school, paid for by your parents, in any of the subjects below? Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subject", 
+            "question_number": 60, 
+            "variable_name": "PrvtuSubj07_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Between 6am and 7am", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "Between 7am and 8am", 
+                    "response (n)": 189
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Before 5am", 
+                    "response (n)": 2
+                }, 
+                {
+                    "response": "After 8am", 
+                    "response (n)": 39
+                }, 
+                {
+                    "response": "Between 5am and 6am", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "About what time did you get up to get ready for school this morning?", 
+            "question_number": 96, 
+            "variable_name": "RoutnSleep01_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 251
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "No", 
+                    "response (n)": 71
+                }
+            ], 
+            "question_text": "get up for school at the same time every school day?:Do you", 
+            "question_number": 94, 
+            "variable_name": "RoutnSleep02_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "9", 
+                    "response": "Later than 1am", 
+                    "response (n)": 32
+                }, 
+                {
+                    "response": "Between 9pm and 10pm", 
+                    "response (n)": 38
+                }, 
+                {
+                    "response": "Between 10pm and 11pm", 
+                    "response (n)": 120
+                }, 
+                {
+                    "response": "Earlier than 8pm", 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": "Between 12am and 1am", 
+                    "response (n)": 42
+                }, 
+                {
+                    "response": "Between 11pm and 12am", 
+                    "response (n)": 83
+                }, 
+                {
+                    "response": "Between 8pm and 9pm", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Time for bed", 
+            "question_number": 95, 
+            "variable_name": "RoutnSleep03_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "4", 
+                    "response": "No", 
+                    "response (n)": 204
+                }
+            ], 
+            "question_text": "go to bed at the same time every school night?:Do you", 
+            "question_number": 93, 
+            "variable_name": "RoutnSleep04_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 324
+                }
+            ], 
+            "question_text": "How well do you think you will do in your GCSE subjects?", 
+            "question_number": 61, 
+            "variable_name": "SchAchv01_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grade do you expect to get?:1:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 22, 
+            "variable_name": "SchAchv11_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grade do you expect to get?:2:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 25, 
+            "variable_name": "SchAchv12_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grade do you expect to get?:3:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 28, 
+            "variable_name": "SchAchv13_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grade do you expect to get?:4:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 31, 
+            "variable_name": "SchAchv14_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grade do you expect to get?:5:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 34, 
+            "variable_name": "SchAchv15_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grade do you expect to get?:6:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 37, 
+            "variable_name": "SchAchv16_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grade do you expect to get?:7:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 40, 
+            "variable_name": "SchAchv17_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What grade do you expect to get?:8:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 43, 
+            "variable_name": "SchAchv18_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "0 hours", 
+                    "response (n)": 29
+                }, 
+                {
+                    "response": "21-25 hours", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "response": "16-20 hours", 
+                    "response (n)": 10
+                }, 
+                {
+                    "response": "6-10 hours", 
+                    "response (n)": 55
+                }, 
+                {
+                    "response": "1-5 hours", 
+                    "response (n)": 190
+                }, 
+                {
+                    "response": "11-15 hours", 
+                    "response (n)": 31
+                }
+            ], 
+            "question_text": "homework?:delete", 
+            "question_number": 46, 
+            "variable_name": "SchAct01_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "0 hours", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "6", 
+                    "response": "21-25 hours", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "5", 
+                    "response": "16-20 hours", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "3", 
+                    "response": "6-10 hours", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "2", 
+                    "response": "1-5 hours", 
+                    "response (n)": 190
+                }, 
+                {
+                    "value": "4", 
+                    "response": "11-15 hours", 
+                    "response (n)": 31
+                }
+            ], 
+            "question_text": "Approximately how many hours a week do you spend doing homework?", 
+            "question_number": 46, 
+            "variable_name": "SchAct01_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 101
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 144
+                }
+            ], 
+            "question_text": "My school deals effectively with pupil conflicts:To what extent do you agree with the following statements?", 
+            "question_number": 125, 
+            "variable_name": "SchStafAtt14_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 119
+                }
+            ], 
+            "question_text": "My school deals effectively with pupils' poor behaviour:To what extent do you agree with the following statements?", 
+            "question_number": 127, 
+            "variable_name": "SchStafAtt15_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What qualification (e g  NVQ, BTEC)?:1:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 21, 
+            "variable_name": "SchStdySubj03_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What qualification (e g  NVQ, BTEC)?:2:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 24, 
+            "variable_name": "SchStdySubj04_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What qualification (e g  NVQ, BTEC)?:3:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 27, 
+            "variable_name": "SchStdySubj05_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What qualification (e g  NVQ, BTEC)?:4:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 30, 
+            "variable_name": "SchStdySubj06_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What qualification (e g  NVQ, BTEC)?:5:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 33, 
+            "variable_name": "SchStdySubj07_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What qualification (e g  NVQ, BTEC)?:6:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 36, 
+            "variable_name": "SchStdySubj08_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What qualification (e g  NVQ, BTEC)?:7:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 39, 
+            "variable_name": "SchStdySubj09_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What qualification (e g  NVQ, BTEC)?:8:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 42, 
+            "variable_name": "SchStdySubj10_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What subject / course?:1:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 20, 
+            "variable_name": "SchStdySubj11_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What subject / course?:2:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 23, 
+            "variable_name": "SchStdySubj12_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What subject / course?:3:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 26, 
+            "variable_name": "SchStdySubj13_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What subject / course?:4:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 29, 
+            "variable_name": "SchStdySubj14_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What subject / course?:5:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 32, 
+            "variable_name": "SchStdySubj15_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What subject / course?:6:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 35, 
+            "variable_name": "SchStdySubj16_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What subject / course?:7:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 38, 
+            "variable_name": "SchStdySubj17_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What subject / course?:8:If you are doing any qualifications / certificates in addition to GCSEs, such as BTECs or NVQs, please list them below  Please also indicate what grades you expect to get in each course", 
+            "question_number": 41, 
+            "variable_name": "SchStdySubj18_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 307
+                }
+            ], 
+            "question_text": "Foundation (Core Certificate at Level 1):If you are doing the Welsh Baccalaureate, which level are you doing?", 
+            "question_number": 17, 
+            "variable_name": "SchStdySubj62_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 260
+                }
+            ], 
+            "question_text": "Intermediate (Core Certificate at Level 2):If you are doing the Welsh Baccalaureate, which level are you doing?", 
+            "question_number": 18, 
+            "variable_name": "SchStdySubj63_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 115
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 209
+                }
+            ], 
+            "question_text": "I don't know:If you are doing the Welsh Baccalaureate, which level are you doing?", 
+            "question_number": 19, 
+            "variable_name": "SchStdySubj64_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "English:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 2, 
+            "variable_name": "SchStdySubj66_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Maths:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 9, 
+            "variable_name": "SchStdySubj67_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Science:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 8, 
+            "variable_name": "SchStdySubj68_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Biology:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 5, 
+            "variable_name": "SchStdySubj69_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Chemistry:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 6, 
+            "variable_name": "SchStdySubj70_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Physics:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 7, 
+            "variable_name": "SchStdySubj71_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Welsh (1st Language):Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 3, 
+            "variable_name": "SchStdySubj72_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Welsh (2nd Language):Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 4, 
+            "variable_name": "SchStdySubj73_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "DT:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 15, 
+            "variable_name": "SchStdySubj74_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Geography:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 11, 
+            "variable_name": "SchStdySubj75_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "History:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 14, 
+            "variable_name": "SchStdySubj76_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "ICT:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 13, 
+            "variable_name": "SchStdySubj77_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "PE:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 10, 
+            "variable_name": "SchStdySubj78_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "RS:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 12, 
+            "variable_name": "SchStdySubj79_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other:Please indicate which GCSE subjects you are doing this year and what grade you expect to get for each one in the table below  If you are not taking one or more of these subjects, just enter 0", 
+            "question_number": 16, 
+            "variable_name": "SchStdySubj80_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is your favourite subject this year?:Please answer the following questions regarding your favourite subject in the spaces provided below", 
+            "question_number": 44, 
+            "variable_name": "SchSubjAtt14_2D"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Why?:Please answer the following questions regarding your favourite subject in the spaces provided below", 
+            "question_number": 45, 
+            "variable_name": "SchSubjAtt15_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 28
+                }
+            ], 
+            "question_text": "The way you look:On a scale of 1 - 7, where '1' means completely happy and '7' means not at all happy, how do you feel about the following parts of your life?", 
+            "question_number": 98, 
+            "variable_name": "WellSat01_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 171
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Your family:On a scale of 1 - 7, where '1' means completely happy and '7' means not at all happy, how do you feel about the following parts of your life?", 
+            "question_number": 99, 
+            "variable_name": "WellSat02_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 167
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Your friends:On a scale of 1 - 7, where '1' means completely happy and '7' means not at all happy, how do you feel about the following parts of your life?", 
+            "question_number": 100, 
+            "variable_name": "WellSat03_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 88
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 109
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "Your life as a whole:On a scale of 1 - 7, where '1' means completely happy and '7' means not at all happy, how do you feel about the following parts of your life?", 
+            "question_number": 102, 
+            "variable_name": "WellSat04_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 97
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "Your school overall:On a scale of 1 - 7, where '1' means completely happy and '7' means not at all happy, how do you feel about the following parts of your life?", 
+            "question_number": 101, 
+            "variable_name": "WellSat05_2D"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 89
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 107
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "Your school work:On a scale of 1 - 7, where '1' means completely happy and '7' means not at all happy, how do you feel about the following parts of your life?", 
+            "question_number": 97, 
+            "variable_name": "WellSat06_2D"
+        }
+    ]
+}

@@ -1,0 +1,2570 @@
+{
+    "questions": [
+        {
+            "response_table": [], 
+            "question_text": "this year?:What is the greatest thing you hope to achieve", 
+            "question_number": 7, 
+            "variable_name": "AspAchv02_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "in your life?:What is the greatest thing you hope to achieve", 
+            "question_number": 8, 
+            "variable_name": "AspAchv03_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is the best advice you have ever received?", 
+            "question_number": 6, 
+            "variable_name": "AspAdvice15_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 199
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a week", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a month", 
+                    "response (n)": 117
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "miss a lesson during a school day?:How often do you", 
+            "question_number": 28, 
+            "variable_name": "BehaveSch03_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 257
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a week", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a month", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "miss more than one lesson during a school day?:How often do you", 
+            "question_number": 29, 
+            "variable_name": "BehaveSch04_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 253
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a week", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a month", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "miss all lessons during a school day?:How often do you", 
+            "question_number": 30, 
+            "variable_name": "BehaveSch05_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 60
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 292
+                }, 
+                {
+                    "value": "1", 
+                    "response": "More than once a week", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "3", 
+                    "response": "More than once a month", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "Truancy (sometimes called \u00e2\u20ac\u0153dodging\u00e2\u20ac\ufffd or \u00e2\u20ac\u0153skiving\u00e2\u20ac\ufffd) is defined as the following: a) Absent from school without an excuse by a parent/guardianb) Leaving school or a class without permission of the teacher or administrator How often are you truant fro", 
+            "question_number": 31, 
+            "variable_name": "BehaveSch06_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 324
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "are you bullied outside of school?:Bullying is behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats  With this in mind, how of", 
+            "question_number": 48, 
+            "variable_name": "Bully01_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 359
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "do you bully others outside of school?:Bullying is behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats  With this in mind, ho", 
+            "question_number": 49, 
+            "variable_name": "Bully03_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What social networking website do you use the most?:Please answer the following questions about social networking websites in the spaces provided below", 
+            "question_number": 54, 
+            "variable_name": "Bully05_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week do you use the website? (please enter a number):Please answer the following questions about social networking websites in the spaces provided below", 
+            "question_number": 56, 
+            "variable_name": "Bully06_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week are you bullied using the website? (please enter a number):Please answer the following questions about social networking websites in the spaces provided below", 
+            "question_number": 58, 
+            "variable_name": "Bully07_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week do you bully others using the website?:Please answer the following questions about social networking websites in the spaces provided below", 
+            "question_number": 60, 
+            "variable_name": "Bully08_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What social networking app do you use the most?:Please answer the following questions about social networking apps in the spaces provided below", 
+            "question_number": 62, 
+            "variable_name": "Bully09_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week do you use the app? (please enter a number):Please answer the following questions about social networking apps in the spaces provided below", 
+            "question_number": 64, 
+            "variable_name": "Bully10_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week are you bullied using the app? (please enter a number):Please answer the following questions about social networking apps in the spaces provided below", 
+            "question_number": 66, 
+            "variable_name": "Bully11_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "How many days in a typical week do you bully others using the app?:Please answer the following questions about social networking apps in the spaces provided below", 
+            "question_number": 68, 
+            "variable_name": "Bully12_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 270
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 21
+                }
+            ], 
+            "question_text": "are you bullied at school?:Bullying is behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats  With this in mind, how often\u00e2\u20ac\u00a6", 
+            "question_number": 46, 
+            "variable_name": "BullySch01_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Less than once a month", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 344
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 1
+                }
+            ], 
+            "question_text": "do you bully other pupils at school?:Bullying is behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats  With this in mind, how", 
+            "question_number": 47, 
+            "variable_name": "BullySch03_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Most likely", 
+                    "response (n)": 163
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "5", 
+                    "response": "I dont know", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Most likely not", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "Step in to help them:If you saw someone being bullied at school, how likely is it you would you do the following?", 
+            "question_number": 50, 
+            "variable_name": "BullySch04_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Most likely", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "5", 
+                    "response": "I dont know", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Most likely not", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 315
+                }
+            ], 
+            "question_text": "Join in and bully too:If you saw someone being bullied at school, how likely is it you would you do the following?", 
+            "question_number": 51, 
+            "variable_name": "BullySch05_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Most likely", 
+                    "response (n)": 145
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "5", 
+                    "response": "I dont know", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Most likely not", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 39
+                }
+            ], 
+            "question_text": "Get help from a teacher:If you saw someone being bullied at school, how likely is it you would you do the following?", 
+            "question_number": 52, 
+            "variable_name": "BullySch06_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Most likely", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "5", 
+                    "response": "I dont know", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Most likely not", 
+                    "response (n)": 91
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Definitely", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 119
+                }
+            ], 
+            "question_text": "Ignore them and move on:If you saw someone being bullied at school, how likely is it you would you do the following?", 
+            "question_number": 53, 
+            "variable_name": "BullySch07_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 88
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 58
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 52
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 146
+                }
+            ], 
+            "question_text": "My school deals with bullying well:Please state how much you agree or disagree with the following statements", 
+            "question_number": 44, 
+            "variable_name": "BullySch08_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Cohort", 
+            "question_number": 101, 
+            "variable_name": "cohort_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Less than once a month", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 219
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a month", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Less than once a week", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "Read Welsh books or magazines:How often do you do the following outside of school?", 
+            "question_number": 93, 
+            "variable_name": "CymActFrq01_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Less than once a month", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 226
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a month", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Less than once a week", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "Visit Welsh websites:How often do you do the following outside of school?", 
+            "question_number": 95, 
+            "variable_name": "CymActFrq02_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Less than once a month", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 184
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a month", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Less than once a week", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 40
+                }
+            ], 
+            "question_text": "Watch Welsh TV or listen to Welsh radio:How often do you do the following outside of school?", 
+            "question_number": 94, 
+            "variable_name": "CymActFrq03_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Less than once a month", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 161
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a month", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Less than once a week", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 40
+                }
+            ], 
+            "question_text": "Speak Welsh with family:How often do you do the following outside of school?", 
+            "question_number": 91, 
+            "variable_name": "CymActFrq04_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "Less than once a month", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Never", 
+                    "response (n)": 191
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Daily", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "4", 
+                    "response": "At least once a month", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Less than once a week", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 34
+                }
+            ], 
+            "question_text": "Speak Welsh with friends:How often do you do the following outside of school?", 
+            "question_number": 92, 
+            "variable_name": "CymActFrq05_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 23
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 136
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 42
+                }
+            ], 
+            "question_text": "I am more confident reading Welsh now than I was a year ago:Please state how much you agree with the following statements", 
+            "question_number": 90, 
+            "variable_name": "CymAtt10_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 32
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 131
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 37
+                }
+            ], 
+            "question_text": "I am more confident speaking Welsh now than I was a year ago:Please state how much you agree with the following statements", 
+            "question_number": 88, 
+            "variable_name": "CymAtt11_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 31
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 144
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 33
+                }
+            ], 
+            "question_text": "I am more confident writing Welsh now than I was a year ago:Please state how much you agree with the following statements", 
+            "question_number": 89, 
+            "variable_name": "CymAtt12_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 25
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 113
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 121
+                }
+            ], 
+            "question_text": "I feel Wales is my real home:Please state how much you agree with the following statements", 
+            "question_number": 97, 
+            "variable_name": "CymAtt13_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 69
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 57
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 112
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 65
+                }
+            ], 
+            "question_text": "I live in Wales, but I don't particularly feel Welsh:Please state how much you agree with the following statements", 
+            "question_number": 98, 
+            "variable_name": "CymAtt14_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 109
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 74
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 66
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 75
+                }
+            ], 
+            "question_text": "If I could live anywhere in the world, I would live in Wales:Please state how much you agree with the following statements", 
+            "question_number": 96, 
+            "variable_name": "CymAtt15_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 145
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 146
+                }
+            ], 
+            "question_text": "My parents make sure I do my homework:Please state how much you agree or disagree with the following statements", 
+            "question_number": 25, 
+            "variable_name": "FamAct09_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Welsh", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "1", 
+                    "response": "English", 
+                    "response (n)": 347
+                }
+            ], 
+            "question_text": "Language", 
+            "question_number": 99, 
+            "variable_name": "langresponse_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Pocket Money:About much much money per week do you get from the following sources? Please enter the amount as a number", 
+            "question_number": 83, 
+            "variable_name": "Money05_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Paid Employment:About much much money per week do you get from the following sources? Please enter the amount as a number", 
+            "question_number": 84, 
+            "variable_name": "Money06_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Chores at Home:About much much money per week do you get from the following sources? Please enter the amount as a number", 
+            "question_number": 85, 
+            "variable_name": "Money07_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other:About much much money per week do you get from the following sources? Please enter the amount as a number", 
+            "question_number": 86, 
+            "variable_name": "Money11_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is the one thing you spend most of your money on?", 
+            "question_number": 87, 
+            "variable_name": "Money13_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "0 hours", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "5", 
+                    "response": "16-20 hours", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "8", 
+                    "response": "More than 30 hours", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "6-10 hours", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "2", 
+                    "response": "1-5 hours", 
+                    "response (n)": 242
+                }, 
+                {
+                    "value": "4", 
+                    "response": "11-15 hours", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "Approximately how many hours per week do you spend doing homework?", 
+            "question_number": 23, 
+            "variable_name": "SchAct01_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 51
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 41
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 162
+                }
+            ], 
+            "question_text": "My friends help/advise me with my homework:Please state how much you agree or disagree with the following statements", 
+            "question_number": 24, 
+            "variable_name": "SchAct05_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 41
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 67
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 172
+                }
+            ], 
+            "question_text": "Other pupils accept me as I am:Please state how much you agree or disagree with the following statements  \u00e2\u20ac\u0153My school is a place where\u00e2\u20ac\u00a6\u00e2\u20ac\ufffd", 
+            "question_number": 35, 
+            "variable_name": "SchAtt17_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 50
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 63
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 101
+                }
+            ], 
+            "question_text": "Doing homework helps me learn:Please state how much you agree or disagree with the following statements", 
+            "question_number": 27, 
+            "variable_name": "SchLearnAtt04_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 40
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 179
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "My teachers are fair to me:Please state how much you agree or disagree with the following statements  \u00e2\u20ac\u0153My school is a place where\u00e2\u20ac\u00a6\u00e2\u20ac\ufffd", 
+            "question_number": 32, 
+            "variable_name": "SchStafAtt01_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 38
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 82
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 148
+                }
+            ], 
+            "question_text": "My teachers know me well:Please state how much you agree or disagree with the following statements  \u00e2\u20ac\u0153My school is a place where\u00e2\u20ac\u00a6\u00e2\u20ac\ufffd", 
+            "question_number": 39, 
+            "variable_name": "SchStafAtt02_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 119
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 160
+                }
+            ], 
+            "question_text": "My teachers make sure I do my homework:Please state how much you agree or disagree with the following statements", 
+            "question_number": 26, 
+            "variable_name": "SchStafAtt03_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 98
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 27
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 162
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "My teachers treat me with respect:Please state how much you agree or disagree with the following statements  \u00e2\u20ac\u0153My school is a place where\u00e2\u20ac\u00a6\u00e2\u20ac\ufffd", 
+            "question_number": 37, 
+            "variable_name": "SchStafAtt04_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 101
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 55
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 50
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 146
+                }
+            ], 
+            "question_text": "If I have a personal problem at school, I can trust the school will help me:Please state how much you agree or disagree with the following statements", 
+            "question_number": 42, 
+            "variable_name": "SchStafAtt12_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 19
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 192
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "If I have a personal problem at school, I know where to go for help:Please state how much you agree or disagree with the following statements", 
+            "question_number": 41, 
+            "variable_name": "SchStafAtt13_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 53
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 42
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 145
+                }
+            ], 
+            "question_text": "My school deals with pupil conflicts well:Please state how much you agree or disagree with the following statements", 
+            "question_number": 43, 
+            "variable_name": "SchStafAtt14_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 64
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 136
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 30
+                }
+            ], 
+            "question_text": "My school deals with pupils\u00e2\u20ac\u2122 poor behaviour well:Please state how much you agree or disagree with the following statements", 
+            "question_number": 45, 
+            "variable_name": "SchStafAtt15_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is one piece of advice you would give a new teacher at your school?", 
+            "question_number": 40, 
+            "variable_name": "SchStafAtt17_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is your favourite subject this year?:Please answer the questions regarding your favourite school subject in the spaces provided below", 
+            "question_number": 21, 
+            "variable_name": "SchSubjAtt14_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Why is this your favourite subject this year?:Please answer the questions regarding your favourite school subject in the spaces provided below", 
+            "question_number": 22, 
+            "variable_name": "SchSubjAtt15_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Sweep", 
+            "question_number": 100, 
+            "variable_name": "sweep_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What is your greatest fear?", 
+            "question_number": 9, 
+            "variable_name": "WellFeel30_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 77
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 37
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 176
+                }
+            ], 
+            "question_text": "I felt lonely:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 82, 
+            "variable_name": "WellFeelAtt01_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 69
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 33
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 198
+                }
+            ], 
+            "question_text": "I cried a lot:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 76, 
+            "variable_name": "WellFeelAtt02_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 143
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 19
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 135
+                }
+            ], 
+            "question_text": "I didn't enjoy anything at all:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 72, 
+            "variable_name": "WellFeelAtt03_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 29
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 116
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 146
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "I enjoyed doing lots of things:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 80, 
+            "variable_name": "WellFeelAtt04_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 83
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 115
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 57
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 99
+                }
+            ], 
+            "question_text": "I feel worried:Please state how much you agree or disagree with the following statements  \u00e2\u20ac\u0153My school is a place where\u00e2\u20ac\u00a6\u00e2\u20ac\ufffd", 
+            "question_number": 36, 
+            "variable_name": "WellFeelAtt05_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 107
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 161
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 21
+                }
+            ], 
+            "question_text": "I felt happy:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 77, 
+            "variable_name": "WellFeelAtt06_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 106
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 68
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 81
+                }
+            ], 
+            "question_text": "I felt miserable or unhappy:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 70, 
+            "variable_name": "WellFeelAtt07_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 126
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 75
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 69
+                }
+            ], 
+            "question_text": "I felt so tired that I just sat around and did nothing:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 73, 
+            "variable_name": "WellFeelAtt08_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 96
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 49
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 81
+                }
+            ], 
+            "question_text": "I found it hard to think properly or concentrate:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 78, 
+            "variable_name": "WellFeelAtt09_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 17
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 108
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 204
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "I have been having fun:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 71, 
+            "variable_name": "WellFeelAtt10_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 117
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 31
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 47
+                }
+            ], 
+            "question_text": "I was very restless:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 74, 
+            "variable_name": "WellFeelAtt11_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 111
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 20
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 188
+                }
+            ], 
+            "question_text": "I am lonely:Please state how much you agree or disagree with the following statements  \u00e2\u20ac\u0153My school is a place where\u00e2\u20ac\u00a6\u00e2\u20ac\ufffd", 
+            "question_number": 33, 
+            "variable_name": "WellFeelAtt13_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 23
+                }
+            ], 
+            "question_text": "The way you look:On a scale of 1 to 7 where \u00e2\u20ac\u02dc1\u00e2\u20ac\u2122 means COMPLETELY HAPPY and \u00e2\u20ac\u02dc7\u00e2\u20ac\u2122 means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 11, 
+            "variable_name": "WellSat01_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 234
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Your family:On a scale of 1 to 7 where \u00e2\u20ac\u02dc1\u00e2\u20ac\u2122 means COMPLETELY HAPPY and \u00e2\u20ac\u02dc7\u00e2\u20ac\u2122 means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 12, 
+            "variable_name": "WellSat02_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 211
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Your friends:On a scale of 1 to 7 where \u00e2\u20ac\u02dc1\u00e2\u20ac\u2122 means COMPLETELY HAPPY and \u00e2\u20ac\u02dc7\u00e2\u20ac\u2122 means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 13, 
+            "variable_name": "WellSat03_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 119
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "Your life as a whole:On a scale of 1 to 7 where \u00e2\u20ac\u02dc1\u00e2\u20ac\u2122 means COMPLETELY HAPPY and \u00e2\u20ac\u02dc7\u00e2\u20ac\u2122 means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 15, 
+            "variable_name": "WellSat04_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 108
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 23
+                }
+            ], 
+            "question_text": "Your school overall:On a scale of 1 to 7 where \u00e2\u20ac\u02dc1\u00e2\u20ac\u2122 means COMPLETELY HAPPY and \u00e2\u20ac\u02dc7\u00e2\u20ac\u2122 means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 14, 
+            "variable_name": "WellSat05_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Not at all happy", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Completely happy", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 137
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "Your school work:On a scale of 1 to 7 where \u00e2\u20ac\u02dc1\u00e2\u20ac\u2122 means COMPLETELY HAPPY and \u00e2\u20ac\u02dc7\u00e2\u20ac\u2122 means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
+            "question_number": 10, 
+            "variable_name": "WellSat06_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 22
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 176
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "I am able to do things as well as most other people:How much do you agree with the following statements about you?", 
+            "question_number": 18, 
+            "variable_name": "WellValue02_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 33
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 90
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 162
+                }
+            ], 
+            "question_text": "I feel good about myself:How much do you agree with the following statements about you?", 
+            "question_number": 20, 
+            "variable_name": "WellValue04_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 24
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 83
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 183
+                }
+            ], 
+            "question_text": "I feel that I have a number of good qualities:How much do you agree with the following statements about you?", 
+            "question_number": 17, 
+            "variable_name": "WellValue05_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 34
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 76
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 190
+                }
+            ], 
+            "question_text": "On the whole, I am satisfied with myself:How much do you agree with the following statements about you?", 
+            "question_number": 16, 
+            "variable_name": "WellValue07_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 29
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 86
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 142
+                }
+            ], 
+            "question_text": "I am a person of value:How much do you agree with the following statements about you?", 
+            "question_number": 19, 
+            "variable_name": "WellValue08_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 64
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 190
+                }
+            ], 
+            "question_text": "I am a successful pupil:Please state how much you agree or disagree with the following statements  \u00e2\u20ac\u0153My school is a place where\u00e2\u20ac\u00a6\u00e2\u20ac\ufffd", 
+            "question_number": 34, 
+            "variable_name": "WellValue09_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 98
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 35
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 62
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 160
+                }
+            ], 
+            "question_text": "I feel like I belong:Please state how much you agree or disagree with the following statements  \u00e2\u20ac\u0153My school is a place where\u00e2\u20ac\u00a6\u00e2\u20ac\ufffd", 
+            "question_number": 38, 
+            "variable_name": "WellValue10_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 93
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 27
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 155
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 36
+                }
+            ], 
+            "question_text": "I felt I was a bad person:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 81, 
+            "variable_name": "WellValue11_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 89
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 43
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 147
+                }
+            ], 
+            "question_text": "I felt I was no good anymore:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 75, 
+            "variable_name": "WellValue12_2C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Disagree", 
+                    "response (n)": 69
+                }, 
+                {
+                    "response": "Strongly agree", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Agree", 
+                    "response (n)": 25
+                }, 
+                {
+                    "response": "Strongly disagree", 
+                    "response (n)": 183
+                }
+            ], 
+            "question_text": "I hated myself:How much do you agree or disagree with the following statements  In the past two weeks", 
+            "question_number": 79, 
+            "variable_name": "WellValue13_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Your best friends:If the following people had to describe you in just one word, what word do you think they would use?", 
+            "question_number": 4, 
+            "variable_name": "WellValue15_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Your family:If the following people had to describe you in just one word, what word do you think they would use?", 
+            "question_number": 2, 
+            "variable_name": "WellValue16_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Your teachers:If the following people had to describe you in just one word, what word do you think they would use?", 
+            "question_number": 3, 
+            "variable_name": "WellValue17_2C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "A stranger you've just met:If the following people had to describe you in just one word, what word do you think they would use?", 
+            "question_number": 5, 
+            "variable_name": "WellValue18_2C"
+        }
+    ]
+}

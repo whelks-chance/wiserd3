@@ -1,0 +1,522 @@
+{
+    "questions": [
+        {
+            "response_table": [], 
+            "question_text": "What do you want to do when your grown up? (Please write your answer)", 
+            "question_number": 27, 
+            "variable_name": "AspCareer03_2A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Cohort", 
+            "question_number": 29, 
+            "variable_name": "cohort_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 208
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 126
+                }
+            ], 
+            "question_text": "How much do you like speaking Welsh?", 
+            "question_number": 7, 
+            "variable_name": "CymAtt04_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 269
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 161
+                }
+            ], 
+            "question_text": "Castles:Have you ever visited any of these places with your family? (tap each one you have visited)", 
+            "question_number": 16, 
+            "variable_name": "FamAct01_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 366
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 64
+                }
+            ], 
+            "question_text": "Cinema:Have you ever visited any of these places? (tap each one you have visited)", 
+            "question_number": 19, 
+            "variable_name": "FamAct02_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 132
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 298
+                }
+            ], 
+            "question_text": "Concert:Have you ever visited any of these places? (tap each one you have visited)", 
+            "question_number": 23, 
+            "variable_name": "FamAct03_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 325
+                }
+            ], 
+            "question_text": "Eisteddfodau:Have you ever visited any of these places with your family? (tap each one you have visited)", 
+            "question_number": 17, 
+            "variable_name": "FamAct04_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 211
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 219
+                }
+            ], 
+            "question_text": "Museums:Have you ever visited any of these places with your family? (tap each one you have visited)", 
+            "question_number": 15, 
+            "variable_name": "FamAct08_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 268
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 162
+                }
+            ], 
+            "question_text": "Theme Park:Have you ever visited any of these places? (tap each one you have visited)", 
+            "question_number": 22, 
+            "variable_name": "FamAct12_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 214
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 118
+                }
+            ], 
+            "question_text": "How often do you read with an adult at home?", 
+            "question_number": 14, 
+            "variable_name": "FamActFrq20_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 138
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 123
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 165
+                }
+            ], 
+            "question_text": "How often does an adult read to you at home?", 
+            "question_number": 13, 
+            "variable_name": "FamActFrq21_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 172
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 258
+                }
+            ], 
+            "question_text": "Sport Event:Have you ever visited any of these places? (tap each one you have visited)", 
+            "question_number": 18, 
+            "variable_name": "Hob41_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 202
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 228
+                }
+            ], 
+            "question_text": "Theatre:Have you ever visited any of these places? (tap each one you have visited)", 
+            "question_number": 20, 
+            "variable_name": "Hob42_2A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "When you play inside the house, what do you like to do most? (Please write your answer)", 
+            "question_number": 11, 
+            "variable_name": "Hob45_2A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "When you play outside, what do you like to do the most? (Please write your answer)", 
+            "question_number": 10, 
+            "variable_name": "Hob46_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 272
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 158
+                }
+            ], 
+            "question_text": "Zoo:Have you ever visited any of these places? (tap each one you have visited)", 
+            "question_number": 21, 
+            "variable_name": "Hob49_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 330
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 65
+                }
+            ], 
+            "question_text": "How much do you like reading?", 
+            "question_number": 4, 
+            "variable_name": "HobAtt06_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 346
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 46
+                }
+            ], 
+            "question_text": "How much do you like to play sport?", 
+            "question_number": 12, 
+            "variable_name": "HobAtt07_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 251
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 108
+                }
+            ], 
+            "question_text": "How much do you like writing?", 
+            "question_number": 5, 
+            "variable_name": "HobAtt10_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Welsh", 
+                    "response (n)": 101
+                }, 
+                {
+                    "value": "1", 
+                    "response": "English", 
+                    "response (n)": 329
+                }
+            ], 
+            "question_text": "Language", 
+            "question_number": 28, 
+            "variable_name": "langresponse_2A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What did you eat for breakfast this morning? (Please write your answer)", 
+            "question_number": 26, 
+            "variable_name": "RoutnFood01_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Family members house", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A friends house", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "4", 
+                    "response": "My school", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "1", 
+                    "response": "My house", 
+                    "response (n)": 352
+                }, 
+                {
+                    "response": "Other (please write the answer)", 
+                    "response (n)": 4
+                }
+            ], 
+            "question_text": "Where do you usually eat breakfast?", 
+            "question_number": 24, 
+            "variable_name": "RoutnFood02_2A"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Other (please write the answer):Where do you usually eat breakfast?", 
+            "question_number": 25, 
+            "variable_name": "RoutnFood03_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 290
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 84
+                }
+            ], 
+            "question_text": "How much do you like school?", 
+            "question_number": 8, 
+            "variable_name": "SchAtt01_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 234
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 154
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 38
+                }
+            ], 
+            "question_text": "How much do you like answering questions in class?", 
+            "question_number": 3, 
+            "variable_name": "SchLearnAtt01_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 274
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 99
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 56
+                }
+            ], 
+            "question_text": "How much do you like number work?", 
+            "question_number": 6, 
+            "variable_name": "SchLearnAtt03_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 359
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "How much do you like your teacher?", 
+            "question_number": 9, 
+            "variable_name": "SchStafAtt07_2A"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Male", 
+                    "response (n)": 232
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Female", 
+                    "response (n)": 198
+                }
+            ], 
+            "question_text": "Are you a boy or a girl?", 
+            "question_number": 2, 
+            "variable_name": "sex_2A"
+        }
+    ]
+}

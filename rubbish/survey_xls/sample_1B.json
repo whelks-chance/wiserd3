@@ -47,8 +47,8 @@
                 }
             ], 
             "question_text": "By the time you\u2019re grown-up, which one of these things would you like to have most (tick one)?", 
-            "question_number": 125, 
-            "variable_name": "AspAchv01_1B"
+            "variableid": "AspAchv01_1B", 
+            "question_number": 125
         }, 
         {
             "response_table": [
@@ -69,14 +69,14 @@
                 }
             ], 
             "question_text": "Do you know what you want to be when you grow up?", 
-            "question_number": 127, 
-            "variable_name": "AspCareer01_1B"
+            "variableid": "AspCareer01_1B", 
+            "question_number": 127
         }, 
         {
             "response_table": [], 
             "question_text": "If yes, what would you like to be when you grow up?", 
-            "question_number": 128, 
-            "variable_name": "AspCareer03_1B"
+            "variableid": "AspCareer03_1B", 
+            "question_number": 128
         }, 
         {
             "response_table": [
@@ -102,8 +102,8 @@
                 }
             ], 
             "question_text": "Do you want to stay on at school or college when you are 16?", 
-            "question_number": 126, 
-            "variable_name": "AspPostSch01_1B"
+            "variableid": "AspPostSch01_1B", 
+            "question_number": 126
         }, 
         {
             "response_table": [
@@ -129,8 +129,8 @@
                 }
             ], 
             "question_text": "How often are you quiet?", 
-            "question_number": 94, 
-            "variable_name": "Behave06_1B"
+            "variableid": "Behave06_1B", 
+            "question_number": 94
         }, 
         {
             "response_table": [
@@ -156,8 +156,8 @@
                 }
             ], 
             "question_text": "How often do you like to be alone?", 
-            "question_number": 95, 
-            "variable_name": "Behave07_1B"
+            "variableid": "Behave07_1B", 
+            "question_number": 95
         }, 
         {
             "response_table": [
@@ -188,8 +188,8 @@
                 }
             ], 
             "question_text": "How often do you misbehave or cause trouble in class?", 
-            "question_number": 93, 
-            "variable_name": "BehaveSch07_1B"
+            "variableid": "BehaveSch07_1B", 
+            "question_number": 93
         }, 
         {
             "response_table": [
@@ -220,8 +220,8 @@
                 }
             ], 
             "question_text": "Season of Birth", 
-            "question_number": 137, 
-            "variable_name": "birthseason_1B"
+            "variableid": "birthseason_1B", 
+            "question_number": 137
         }, 
         {
             "response_table": [
@@ -247,14 +247,14 @@
                 }
             ], 
             "question_text": "How often do other children bully you?", 
-            "question_number": 15, 
-            "variable_name": "BullySch02_1B"
+            "variableid": "BullySch02_1B", 
+            "question_number": 15
         }, 
         {
             "response_table": [], 
             "question_text": "Cohort", 
-            "question_number": 139, 
-            "variable_name": "cohort_1B"
+            "variableid": "cohort_1B", 
+            "question_number": 139
         }, 
         {
             "response_table": [
@@ -280,8 +280,8 @@
                 }
             ], 
             "question_text": "How well do you speak Welsh?", 
-            "question_number": 25, 
-            "variable_name": "CymAtt05_1B"
+            "variableid": "CymAtt05_1B", 
+            "question_number": 25
         }, 
         {
             "response_table": [
@@ -297,8 +297,8 @@
                 }
             ], 
             "question_text": "If you speak Welsh, do you speak it with your Family?", 
-            "question_number": 27, 
-            "variable_name": "CymAtt06_1B"
+            "variableid": "CymAtt06_1B", 
+            "question_number": 27
         }, 
         {
             "response_table": [
@@ -314,8 +314,8 @@
                 }
             ], 
             "question_text": "If you speak Welsh, do you speak it with your Friends?", 
-            "question_number": 26, 
-            "variable_name": "CymAtt07_1B"
+            "variableid": "CymAtt07_1B", 
+            "question_number": 26
         }, 
         {
             "response_table": [
@@ -331,8 +331,8 @@
                 }
             ], 
             "question_text": "If you speak Welsh, do you speak it with your Teachers?", 
-            "question_number": 28, 
-            "variable_name": "CymAtt08_1B"
+            "variableid": "CymAtt08_1B", 
+            "question_number": 28
         }, 
         {
             "response_table": [
@@ -348,8 +348,8 @@
                 }
             ], 
             "question_text": "I don't speak Welsh with anyone", 
-            "question_number": 29, 
-            "variable_name": "CymAtt09_1B"
+            "variableid": "CymAtt09_1B", 
+            "question_number": 29
         }, 
         {
             "response_table": [
@@ -370,8 +370,8 @@
                 }
             ], 
             "question_text": "Do you have your own phone?", 
-            "question_number": 24, 
-            "variable_name": "Deprive03_1B"
+            "variableid": "Deprive03_1B", 
+            "question_number": 24
         }, 
         {
             "response_table": [
@@ -407,8 +407,8 @@
                 }
             ], 
             "question_text": "How often do you spend time with your Mother / Carer 1?", 
-            "question_number": 36, 
-            "variable_name": "FamActFrq04_1B"
+            "variableid": "FamActFrq04_1B", 
+            "question_number": 36
         }, 
         {
             "response_table": [
@@ -449,8 +449,8 @@
                 }
             ], 
             "question_text": "How often do you spend time with your  Father / Carer 2?", 
-            "question_number": 37, 
-            "variable_name": "FamActFrq05_1B"
+            "variableid": "FamActFrq05_1B", 
+            "question_number": 37
         }, 
         {
             "response_table": [
@@ -491,8 +491,8 @@
                 }
             ], 
             "question_text": "How often do you spend time with your Brothers / Sisters?", 
-            "question_number": 38, 
-            "variable_name": "FamActFrq06_1B"
+            "variableid": "FamActFrq06_1B", 
+            "question_number": 38
         }, 
         {
             "response_table": [
@@ -533,8 +533,8 @@
                 }
             ], 
             "question_text": "How often do you spend time with your Grandparents?", 
-            "question_number": 39, 
-            "variable_name": "FamActFrq07_1B"
+            "variableid": "FamActFrq07_1B", 
+            "question_number": 39
         }, 
         {
             "response_table": [
@@ -575,8 +575,8 @@
                 }
             ], 
             "question_text": "How often do you spend time with your Aunts / Uncles?", 
-            "question_number": 40, 
-            "variable_name": "FamActFrq09_1B"
+            "variableid": "FamActFrq09_1B", 
+            "question_number": 40
         }, 
         {
             "response_table": [
@@ -617,8 +617,8 @@
                 }
             ], 
             "question_text": "How often do you spend time with your Cousins?", 
-            "question_number": 41, 
-            "variable_name": "FamActFrq10_1B"
+            "variableid": "FamActFrq10_1B", 
+            "question_number": 41
         }, 
         {
             "response_table": [
@@ -644,8 +644,8 @@
                 }
             ], 
             "question_text": "How often do you get along well with your brother(s) or sister(s)?", 
-            "question_number": 97, 
-            "variable_name": "FamActFrq11_1B"
+            "variableid": "FamActFrq11_1B", 
+            "question_number": 97
         }, 
         {
             "response_table": [
@@ -671,44 +671,44 @@
                 }
             ], 
             "question_text": "How often do you have fun with your family at the weekends?", 
-            "question_number": 98, 
-            "variable_name": "FamActFrq19_1B"
+            "variableid": "FamActFrq19_1B", 
+            "question_number": 98
         }, 
         {
             "response_table": [], 
             "question_text": "Name up to three famous people you most like: Person #1", 
-            "question_number": 130, 
-            "variable_name": "FameAtt01_1B"
+            "variableid": "FameAtt01_1B", 
+            "question_number": 130
         }, 
         {
             "response_table": [], 
             "question_text": "Name up to three famous people you most like: Person #2", 
-            "question_number": 131, 
-            "variable_name": "FameAtt02_1B"
+            "variableid": "FameAtt02_1B", 
+            "question_number": 131
         }, 
         {
             "response_table": [], 
             "question_text": "Name up to three famous people you most like: Person #3", 
-            "question_number": 132, 
-            "variable_name": "FameAtt03_1B"
+            "variableid": "FameAtt03_1B", 
+            "question_number": 132
         }, 
         {
             "response_table": [], 
             "question_text": "Name up to three famous people you most dislike: Person #1", 
-            "question_number": 133, 
-            "variable_name": "FameAtt04_1B"
+            "variableid": "FameAtt04_1B", 
+            "question_number": 133
         }, 
         {
             "response_table": [], 
             "question_text": "Name up to three famous people you most dislike: Person #2", 
-            "question_number": 134, 
-            "variable_name": "FameAtt05_1B"
+            "variableid": "FameAtt05_1B", 
+            "question_number": 134
         }, 
         {
             "response_table": [], 
             "question_text": "Name up to three famous people you most dislike: Person #3", 
-            "question_number": 135, 
-            "variable_name": "FameAtt06_1B"
+            "variableid": "FameAtt06_1B", 
+            "question_number": 135
         }, 
         {
             "response_table": [
@@ -749,8 +749,8 @@
                 }
             ], 
             "question_text": "How often do you spend time with your Friends?", 
-            "question_number": 42, 
-            "variable_name": "FrndActFrq01_1B"
+            "variableid": "FrndActFrq01_1B", 
+            "question_number": 42
         }, 
         {
             "response_table": [
@@ -776,8 +776,8 @@
                 }
             ], 
             "question_text": "At the weekend how often do you spend time with your friends, but without adults or older children, going to the shops or just 'hanging out'?", 
-            "question_number": 89, 
-            "variable_name": "FrndActFrq02_1B"
+            "variableid": "FrndActFrq02_1B", 
+            "question_number": 89
         }, 
         {
             "response_table": [
@@ -818,8 +818,8 @@
                 }
             ], 
             "question_text": "In the afternoon after school how often do you spend time with your friends, but without adults or older children, going to the shops or just 'hanging out'?", 
-            "question_number": 90, 
-            "variable_name": "FrndActFrq03_1B"
+            "variableid": "FrndActFrq03_1B", 
+            "question_number": 90
         }, 
         {
             "response_table": [
@@ -855,8 +855,8 @@
                 }
             ], 
             "question_text": "When you are not at school, how often do you spend time with your friends?", 
-            "question_number": 88, 
-            "variable_name": "FrndActFrq07_1B"
+            "variableid": "FrndActFrq07_1B", 
+            "question_number": 88
         }, 
         {
             "response_table": [
@@ -887,8 +887,8 @@
                 }
             ], 
             "question_text": "How often do you argue or fall out with your friends?", 
-            "question_number": 87, 
-            "variable_name": "FrndActFrq08_1B"
+            "variableid": "FrndActFrq08_1B", 
+            "question_number": 87
         }, 
         {
             "response_table": [
@@ -924,8 +924,8 @@
                 }
             ], 
             "question_text": "How often do you exchange messages with friends on the Internet using instant messaging?", 
-            "question_number": 34, 
-            "variable_name": "FrndCom05_1B"
+            "variableid": "FrndCom05_1B", 
+            "question_number": 34
         }, 
         {
             "response_table": [
@@ -955,8 +955,8 @@
                 }
             ], 
             "question_text": "Are your friends mostly boys, mostly girls or a mixture of boys and girls?", 
-            "question_number": 91, 
-            "variable_name": "FrndDivers01_1B"
+            "variableid": "FrndDivers01_1B", 
+            "question_number": 91
         }, 
         {
             "response_table": [
@@ -982,8 +982,8 @@
                 }
             ], 
             "question_text": "How many friends do you have?", 
-            "question_number": 84, 
-            "variable_name": "FrndDivers02_1B"
+            "variableid": "FrndDivers02_1B", 
+            "question_number": 84
         }, 
         {
             "response_table": [
@@ -999,8 +999,8 @@
                 }
             ], 
             "question_text": "Do you take part in Athletics outside normal school lessons?", 
-            "question_number": 58, 
-            "variable_name": "Hob07_1B"
+            "variableid": "Hob07_1B", 
+            "question_number": 58
         }, 
         {
             "response_table": [
@@ -1016,8 +1016,8 @@
                 }
             ], 
             "question_text": "Do you take part in Chess outside normal school lessons?", 
-            "question_number": 60, 
-            "variable_name": "Hob08_1B"
+            "variableid": "Hob08_1B", 
+            "question_number": 60
         }, 
         {
             "response_table": [
@@ -1033,8 +1033,8 @@
                 }
             ], 
             "question_text": "Do you take part in Choir outside normal school lessons?", 
-            "question_number": 50, 
-            "variable_name": "Hob09_1B"
+            "variableid": "Hob09_1B", 
+            "question_number": 50
         }, 
         {
             "response_table": [
@@ -1050,8 +1050,8 @@
                 }
             ], 
             "question_text": "Do you take part in Cooking Club outside normal school lessons?", 
-            "question_number": 68, 
-            "variable_name": "Hob10_1B"
+            "variableid": "Hob10_1B", 
+            "question_number": 68
         }, 
         {
             "response_table": [
@@ -1067,8 +1067,8 @@
                 }
             ], 
             "question_text": "Do you take part in Craft class outside normal school lessons?", 
-            "question_number": 65, 
-            "variable_name": "Hob11_1B"
+            "variableid": "Hob11_1B", 
+            "question_number": 65
         }, 
         {
             "response_table": [
@@ -1084,8 +1084,8 @@
                 }
             ], 
             "question_text": "Do you take part in Cricket outside normal school lessons?", 
-            "question_number": 51, 
-            "variable_name": "Hob12_1B"
+            "variableid": "Hob12_1B", 
+            "question_number": 51
         }, 
         {
             "response_table": [
@@ -1101,8 +1101,8 @@
                 }
             ], 
             "question_text": "Do you take part in Dance outside normal school lessons?", 
-            "question_number": 48, 
-            "variable_name": "Hob13_1B"
+            "variableid": "Hob13_1B", 
+            "question_number": 48
         }, 
         {
             "response_table": [
@@ -1118,8 +1118,8 @@
                 }
             ], 
             "question_text": "Do you take part in Drama Club outside normal school lessons?", 
-            "question_number": 47, 
-            "variable_name": "Hob14_1B"
+            "variableid": "Hob14_1B", 
+            "question_number": 47
         }, 
         {
             "response_table": [
@@ -1135,8 +1135,8 @@
                 }
             ], 
             "question_text": "Do you take part in Drawing class outside normal school lessons?", 
-            "question_number": 56, 
-            "variable_name": "Hob15_1B"
+            "variableid": "Hob15_1B", 
+            "question_number": 56
         }, 
         {
             "response_table": [
@@ -1152,8 +1152,8 @@
                 }
             ], 
             "question_text": "Do you take part in Fishing outside normal school lessons?", 
-            "question_number": 57, 
-            "variable_name": "Hob16_1B"
+            "variableid": "Hob16_1B", 
+            "question_number": 57
         }, 
         {
             "response_table": [
@@ -1169,8 +1169,8 @@
                 }
             ], 
             "question_text": "Do you take part in Football outside normal school lessons?", 
-            "question_number": 49, 
-            "variable_name": "Hob17_1B"
+            "variableid": "Hob17_1B", 
+            "question_number": 49
         }, 
         {
             "response_table": [
@@ -1186,8 +1186,8 @@
                 }
             ], 
             "question_text": "Do you take part in Gilrs'/ Boys' brigade outside normal school lessons?", 
-            "question_number": 66, 
-            "variable_name": "Hob18_1B"
+            "variableid": "Hob18_1B", 
+            "question_number": 66
         }, 
         {
             "response_table": [
@@ -1203,8 +1203,8 @@
                 }
             ], 
             "question_text": "Do you take part in Gymnastics outside normal school lessons?", 
-            "question_number": 59, 
-            "variable_name": "Hob19_1B"
+            "variableid": "Hob19_1B", 
+            "question_number": 59
         }, 
         {
             "response_table": [
@@ -1215,8 +1215,8 @@
                 }
             ], 
             "question_text": "Do you take part in History Club outside normal school lessons?", 
-            "question_number": 71, 
-            "variable_name": "Hob20_1B"
+            "variableid": "Hob20_1B", 
+            "question_number": 71
         }, 
         {
             "response_table": [
@@ -1232,8 +1232,8 @@
                 }
             ], 
             "question_text": "Do you take part in Hockey outside normal school lessons?", 
-            "question_number": 67, 
-            "variable_name": "Hob21_1B"
+            "variableid": "Hob21_1B", 
+            "question_number": 67
         }, 
         {
             "response_table": [
@@ -1249,8 +1249,8 @@
                 }
             ], 
             "question_text": "Do you take part in Horse Riding outside normal school lessons?", 
-            "question_number": 64, 
-            "variable_name": "Hob22_1B"
+            "variableid": "Hob22_1B", 
+            "question_number": 64
         }, 
         {
             "response_table": [
@@ -1266,8 +1266,8 @@
                 }
             ], 
             "question_text": "Do you take part in Ice Skating outside normal school lessons?", 
-            "question_number": 62, 
-            "variable_name": "Hob23_1B"
+            "variableid": "Hob23_1B", 
+            "question_number": 62
         }, 
         {
             "response_table": [
@@ -1283,8 +1283,8 @@
                 }
             ], 
             "question_text": "Do you take part in Martial Art outside normal school lessons?", 
-            "question_number": 69, 
-            "variable_name": "Hob24_1B"
+            "variableid": "Hob24_1B", 
+            "question_number": 69
         }, 
         {
             "response_table": [
@@ -1300,8 +1300,8 @@
                 }
             ], 
             "question_text": "Do you take part in Music Lessons outside normal school lessons?", 
-            "question_number": 53, 
-            "variable_name": "Hob25_1B"
+            "variableid": "Hob25_1B", 
+            "question_number": 53
         }, 
         {
             "response_table": [
@@ -1317,8 +1317,8 @@
                 }
             ], 
             "question_text": "Do you take part in Netball outside normal school lessons?", 
-            "question_number": 44, 
-            "variable_name": "Hob26_1B"
+            "variableid": "Hob26_1B", 
+            "question_number": 44
         }, 
         {
             "response_table": [
@@ -1334,8 +1334,8 @@
                 }
             ], 
             "question_text": "Do you take part in Rugby outside normal school lessons?", 
-            "question_number": 43, 
-            "variable_name": "Hob27_1B"
+            "variableid": "Hob27_1B", 
+            "question_number": 43
         }, 
         {
             "response_table": [
@@ -1351,8 +1351,8 @@
                 }
             ], 
             "question_text": "Do you take part in Science club outside normal school lessons?", 
-            "question_number": 63, 
-            "variable_name": "Hob28_1B"
+            "variableid": "Hob28_1B", 
+            "question_number": 63
         }, 
         {
             "response_table": [
@@ -1368,8 +1368,8 @@
                 }
             ], 
             "question_text": "Do you take part in Scouts/Guides outside normal school lessons?", 
-            "question_number": 45, 
-            "variable_name": "Hob29_1B"
+            "variableid": "Hob29_1B", 
+            "question_number": 45
         }, 
         {
             "response_table": [
@@ -1385,8 +1385,8 @@
                 }
             ], 
             "question_text": "Do you take part in Skateboarding outside normal school lessons?", 
-            "question_number": 46, 
-            "variable_name": "Hob32_1B"
+            "variableid": "Hob32_1B", 
+            "question_number": 46
         }, 
         {
             "response_table": [
@@ -1402,8 +1402,8 @@
                 }
             ], 
             "question_text": "Do you take part in Surfing outside normal school lessons?", 
-            "question_number": 70, 
-            "variable_name": "Hob33_1B"
+            "variableid": "Hob33_1B", 
+            "question_number": 70
         }, 
         {
             "response_table": [
@@ -1419,8 +1419,8 @@
                 }
             ], 
             "question_text": "Do you take part in Swimming outside normal school lessons?", 
-            "question_number": 54, 
-            "variable_name": "Hob34_1B"
+            "variableid": "Hob34_1B", 
+            "question_number": 54
         }, 
         {
             "response_table": [
@@ -1436,8 +1436,8 @@
                 }
             ], 
             "question_text": "Do you take part in Table Tennis outside normal school lessons?", 
-            "question_number": 52, 
-            "variable_name": "Hob35_1B"
+            "variableid": "Hob35_1B", 
+            "question_number": 52
         }, 
         {
             "response_table": [
@@ -1453,8 +1453,8 @@
                 }
             ], 
             "question_text": "Do you take part in Tennis outside normal school lessons?", 
-            "question_number": 55, 
-            "variable_name": "Hob36_1B"
+            "variableid": "Hob36_1B", 
+            "question_number": 55
         }, 
         {
             "response_table": [
@@ -1470,8 +1470,8 @@
                 }
             ], 
             "question_text": "Do you take part in Walking outside normal school lessons?", 
-            "question_number": 61, 
-            "variable_name": "Hob37_1B"
+            "variableid": "Hob37_1B", 
+            "question_number": 61
         }, 
         {
             "response_table": [
@@ -1485,14 +1485,14 @@
                 }
             ], 
             "question_text": "Any other activities you take part in outside normal school lessons (1)", 
-            "question_number": 72, 
-            "variable_name": "Hob51_1B"
+            "variableid": "Hob51_1B", 
+            "question_number": 72
         }, 
         {
             "response_table": [], 
             "question_text": "Any other activities you take part in outside normal school lessons (2)", 
-            "question_number": 73, 
-            "variable_name": "Hob52_1B"
+            "variableid": "Hob52_1B", 
+            "question_number": 73
         }, 
         {
             "response_table": [
@@ -1522,8 +1522,8 @@
                 }
             ], 
             "question_text": "How much do you like drawing, painting or making things?", 
-            "question_number": 20, 
-            "variable_name": "HobAtt01_1B"
+            "variableid": "HobAtt01_1B", 
+            "question_number": 20
         }, 
         {
             "response_table": [
@@ -1553,8 +1553,8 @@
                 }
             ], 
             "question_text": "How much do you like listening to music?", 
-            "question_number": 17, 
-            "variable_name": "HobAtt02_1B"
+            "variableid": "HobAtt02_1B", 
+            "question_number": 17
         }, 
         {
             "response_table": [
@@ -1584,8 +1584,8 @@
                 }
             ], 
             "question_text": "How much do you like playing music on an instrument?", 
-            "question_number": 18, 
-            "variable_name": "HobAtt03_1B"
+            "variableid": "HobAtt03_1B", 
+            "question_number": 18
         }, 
         {
             "response_table": [
@@ -1615,8 +1615,8 @@
                 }
             ], 
             "question_text": "How much do you like playing sports and games inside?", 
-            "question_number": 23, 
-            "variable_name": "HobAtt04_1B"
+            "variableid": "HobAtt04_1B", 
+            "question_number": 23
         }, 
         {
             "response_table": [
@@ -1641,8 +1641,8 @@
                 }
             ], 
             "question_text": "How much do you like playing sports and games outside?", 
-            "question_number": 22, 
-            "variable_name": "HobAtt05_1B"
+            "variableid": "HobAtt05_1B", 
+            "question_number": 22
         }, 
         {
             "response_table": [
@@ -1672,8 +1672,8 @@
                 }
             ], 
             "question_text": "How much do you like using a computer or playing games like XBOX or Playstation?", 
-            "question_number": 21, 
-            "variable_name": "HobAtt08_1B"
+            "variableid": "HobAtt08_1B", 
+            "question_number": 21
         }, 
         {
             "response_table": [
@@ -1703,8 +1703,8 @@
                 }
             ], 
             "question_text": "How much do you like watching TV, videos or DVDs?", 
-            "question_number": 19, 
-            "variable_name": "HobAtt09_1B"
+            "variableid": "HobAtt09_1B", 
+            "question_number": 19
         }, 
         {
             "response_table": [
@@ -1740,8 +1740,8 @@
                 }
             ], 
             "question_text": "How often do you play games on a computer or games console?", 
-            "question_number": 31, 
-            "variable_name": "HobFrq01_1B"
+            "variableid": "HobFrq01_1B", 
+            "question_number": 31
         }, 
         {
             "response_table": [
@@ -1777,8 +1777,8 @@
                 }
             ], 
             "question_text": "How often do you read for enjoyment?", 
-            "question_number": 30, 
-            "variable_name": "HobFrq04_1B"
+            "variableid": "HobFrq04_1B", 
+            "question_number": 30
         }, 
         {
             "response_table": [
@@ -1814,8 +1814,8 @@
                 }
             ], 
             "question_text": "How often do you use the Internet?", 
-            "question_number": 32, 
-            "variable_name": "HobFrq06_1B"
+            "variableid": "HobFrq06_1B", 
+            "question_number": 32
         }, 
         {
             "response_table": [
@@ -1851,8 +1851,8 @@
                 }
             ], 
             "question_text": "How often do you visit a social networking website?", 
-            "question_number": 35, 
-            "variable_name": "HobFrq07_1B"
+            "variableid": "HobFrq07_1B", 
+            "question_number": 35
         }, 
         {
             "response_table": [
@@ -1873,14 +1873,14 @@
                 }
             ], 
             "question_text": "Survey Language", 
-            "question_number": 138, 
-            "variable_name": "langresponse_1B"
+            "variableid": "langresponse_1B", 
+            "question_number": 138
         }, 
         {
             "response_table": [], 
             "question_text": "If someone gave you \u00a31 million tomorrow, what would you like to do with it?", 
-            "question_number": 129, 
-            "variable_name": "Money15_1B"
+            "variableid": "Money15_1B", 
+            "question_number": 129
         }, 
         {
             "response_table": [
@@ -1906,8 +1906,8 @@
                 }
             ], 
             "question_text": "How safe is it to walk or play on your street during the day?", 
-            "question_number": 115, 
-            "variable_name": "NeighbAtt04_1B"
+            "variableid": "NeighbAtt04_1B", 
+            "question_number": 115
         }, 
         {
             "response_table": [
@@ -1933,8 +1933,8 @@
                 }
             ], 
             "question_text": "How often do you get tired at school?", 
-            "question_number": 12, 
-            "variable_name": "RoutnSleep06_1B"
+            "variableid": "RoutnSleep06_1B", 
+            "question_number": 12
         }, 
         {
             "response_table": [
@@ -1970,8 +1970,8 @@
                 }
             ], 
             "question_text": "How often do you use the Internet for homework?", 
-            "question_number": 33, 
-            "variable_name": "SchAct03_1B"
+            "variableid": "SchAct03_1B", 
+            "question_number": 33
         }, 
         {
             "response_table": [
@@ -1997,8 +1997,8 @@
                 }
             ], 
             "question_text": "How often do you talk to your friends when you should be doing your work?", 
-            "question_number": 14, 
-            "variable_name": "SchAct04_1B"
+            "variableid": "SchAct04_1B", 
+            "question_number": 14
         }, 
         {
             "response_table": [
@@ -2019,8 +2019,8 @@
                 }
             ], 
             "question_text": "Do you have any extra help for your school work when you are at school?", 
-            "question_number": 74, 
-            "variable_name": "SchAct06_1B"
+            "variableid": "SchAct06_1B", 
+            "question_number": 74
         }, 
         {
             "response_table": [
@@ -2041,8 +2041,8 @@
                 }
             ], 
             "question_text": "Do you take part in the Urdd or Eisteddfod with school?", 
-            "question_number": 75, 
-            "variable_name": "SchActEist01_1B"
+            "variableid": "SchActEist01_1B", 
+            "question_number": 75
         }, 
         {
             "response_table": [
@@ -2058,8 +2058,8 @@
                 }
             ], 
             "question_text": "If yes, do you act at the Eisteddfod?", 
-            "question_number": 81, 
-            "variable_name": "SchActEist02_1B"
+            "variableid": "SchActEist02_1B", 
+            "question_number": 81
         }, 
         {
             "response_table": [
@@ -2075,8 +2075,8 @@
                 }
             ], 
             "question_text": "If yes, do you do disco dancing at the Eisteddfod?", 
-            "question_number": 82, 
-            "variable_name": "SchActEist03_1B"
+            "variableid": "SchActEist03_1B", 
+            "question_number": 82
         }, 
         {
             "response_table": [
@@ -2092,8 +2092,8 @@
                 }
             ], 
             "question_text": "If yes, do you do folk dancing at the Eisteddfod?", 
-            "question_number": 77, 
-            "variable_name": "SchActEist04_1B"
+            "variableid": "SchActEist04_1B", 
+            "question_number": 77
         }, 
         {
             "response_table": [
@@ -2109,8 +2109,8 @@
                 }
             ], 
             "question_text": "If yes, do you do reciting at the Eisteddfod?", 
-            "question_number": 78, 
-            "variable_name": "SchActEist05_1B"
+            "variableid": "SchActEist05_1B", 
+            "question_number": 78
         }, 
         {
             "response_table": [
@@ -2126,8 +2126,8 @@
                 }
             ], 
             "question_text": "If yes, do you draw/paint at the Eisteddfod?", 
-            "question_number": 80, 
-            "variable_name": "SchActEist06_1B"
+            "variableid": "SchActEist06_1B", 
+            "question_number": 80
         }, 
         {
             "response_table": [
@@ -2143,8 +2143,8 @@
                 }
             ], 
             "question_text": "If yes, do you play a musical instrucment at the Eisteddfod?", 
-            "question_number": 79, 
-            "variable_name": "SchActEist07_1B"
+            "variableid": "SchActEist07_1B", 
+            "question_number": 79
         }, 
         {
             "response_table": [
@@ -2160,8 +2160,8 @@
                 }
             ], 
             "question_text": "If yes, do you sing at the Eisteddfod?", 
-            "question_number": 76, 
-            "variable_name": "SchActEist08_1B"
+            "variableid": "SchActEist08_1B", 
+            "question_number": 76
         }, 
         {
             "response_table": [
@@ -2177,8 +2177,8 @@
                 }
             ], 
             "question_text": "If yes, do you write poems/ short stories at the Eisteddfod?", 
-            "question_number": 83, 
-            "variable_name": "SchActEist09_1B"
+            "variableid": "SchActEist09_1B", 
+            "question_number": 83
         }, 
         {
             "response_table": [
@@ -2204,8 +2204,8 @@
                 }
             ], 
             "question_text": "How often is school interesting?", 
-            "question_number": 11, 
-            "variable_name": "SchAtt02_1B"
+            "variableid": "SchAtt02_1B", 
+            "question_number": 11
         }, 
         {
             "response_table": [
@@ -2231,8 +2231,8 @@
                 }
             ], 
             "question_text": "How often do you feel safe in the playground?", 
-            "question_number": 103, 
-            "variable_name": "SchAtt20_1B"
+            "variableid": "SchAtt20_1B", 
+            "question_number": 103
         }, 
         {
             "response_table": [
@@ -2258,8 +2258,8 @@
                 }
             ], 
             "question_text": "How much do you like answering questions in class?", 
-            "question_number": 10, 
-            "variable_name": "SchLearnAtt01_1B"
+            "variableid": "SchLearnAtt01_1B", 
+            "question_number": 10
         }, 
         {
             "response_table": [
@@ -2285,8 +2285,8 @@
                 }
             ], 
             "question_text": "How much do you like learning new things?", 
-            "question_number": 9, 
-            "variable_name": "SchLearnAtt02_1B"
+            "variableid": "SchLearnAtt02_1B", 
+            "question_number": 9
         }, 
         {
             "response_table": [
@@ -2312,8 +2312,8 @@
                 }
             ], 
             "question_text": "How much do you like English?", 
-            "question_number": 4, 
-            "variable_name": "SchSubjAtt01_1B"
+            "variableid": "SchSubjAtt01_1B", 
+            "question_number": 4
         }, 
         {
             "response_table": [
@@ -2339,8 +2339,8 @@
                 }
             ], 
             "question_text": "How much do you like Maths?", 
-            "question_number": 5, 
-            "variable_name": "SchSubjAtt02_1B"
+            "variableid": "SchSubjAtt02_1B", 
+            "question_number": 5
         }, 
         {
             "response_table": [
@@ -2366,8 +2366,8 @@
                 }
             ], 
             "question_text": "How much do you like Science?", 
-            "question_number": 7, 
-            "variable_name": "SchSubjAtt03_1B"
+            "variableid": "SchSubjAtt03_1B", 
+            "question_number": 7
         }, 
         {
             "response_table": [
@@ -2393,8 +2393,8 @@
                 }
             ], 
             "question_text": "How much do you like Welsh?", 
-            "question_number": 6, 
-            "variable_name": "SchSubjAtt04_1B"
+            "variableid": "SchSubjAtt04_1B", 
+            "question_number": 6
         }, 
         {
             "response_table": [
@@ -2420,8 +2420,8 @@
                 }
             ], 
             "question_text": "How much do you like PE?", 
-            "question_number": 8, 
-            "variable_name": "SchSubjAtt12_1B"
+            "variableid": "SchSubjAtt12_1B", 
+            "question_number": 8
         }, 
         {
             "response_table": [
@@ -2442,8 +2442,8 @@
                 }
             ], 
             "question_text": "Are you on a waiting list for another secondary school?", 
-            "question_number": 116, 
-            "variable_name": "SchTran02_1B"
+            "variableid": "SchTran02_1B", 
+            "question_number": 116
         }, 
         {
             "response_table": [
@@ -2474,44 +2474,44 @@
                 }
             ], 
             "question_text": "How much are you looking forward to going to secondary school?", 
-            "question_number": 117, 
-            "variable_name": "SchTranAtt01_1B"
+            "variableid": "SchTranAtt01_1B", 
+            "question_number": 117
         }, 
         {
             "response_table": [], 
             "question_text": "List up to three things you are most looking forward to about secondary school: Thing #1", 
-            "question_number": 118, 
-            "variable_name": "SchTranAtt02_1B"
+            "variableid": "SchTranAtt02_1B", 
+            "question_number": 118
         }, 
         {
             "response_table": [], 
             "question_text": "List up to three things you are most looking forward to about secondary school: Thing #2", 
-            "question_number": 119, 
-            "variable_name": "SchTranAtt03_1B"
+            "variableid": "SchTranAtt03_1B", 
+            "question_number": 119
         }, 
         {
             "response_table": [], 
             "question_text": "List up to three things you are most looking forward to about secondary school: Thing #3", 
-            "question_number": 120, 
-            "variable_name": "SchTranAtt04_1B"
+            "variableid": "SchTranAtt04_1B", 
+            "question_number": 120
         }, 
         {
             "response_table": [], 
             "question_text": "Thing #1:lookfor 3-List up to three things you are not looking forward to about secondary school: Thing #1", 
-            "question_number": 121, 
-            "variable_name": "SchTranAtt05_1B"
+            "variableid": "SchTranAtt05_1B", 
+            "question_number": 121
         }, 
         {
             "response_table": [], 
             "question_text": "Thing #1:lookfor 3-List up to three things you are not looking forward to about secondary school: Thing #2", 
-            "question_number": 122, 
-            "variable_name": "SchTranAtt06_1B"
+            "variableid": "SchTranAtt06_1B", 
+            "question_number": 122
         }, 
         {
             "response_table": [], 
             "question_text": "Thing #1:lookfor 3-List up to three things you are not looking forward to about secondary school: Thing #3", 
-            "question_number": 123, 
-            "variable_name": "SchTranAtt07_1B"
+            "variableid": "SchTranAtt07_1B", 
+            "question_number": 123
         }, 
         {
             "response_table": [
@@ -2547,8 +2547,8 @@
                 }
             ], 
             "question_text": "How many of your friends are going to the same secondary school as you?", 
-            "question_number": 124, 
-            "variable_name": "SchTranFrnd01_1B"
+            "variableid": "SchTranFrnd01_1B", 
+            "question_number": 124
         }, 
         {
             "response_table": [
@@ -2564,14 +2564,14 @@
                 }
             ], 
             "question_text": "Gender", 
-            "question_number": 136, 
-            "variable_name": "sex_1B"
+            "variableid": "sex_1B", 
+            "question_number": 136
         }, 
         {
             "response_table": [], 
             "question_text": "sweep", 
-            "question_number": 140, 
-            "variable_name": "sweep_1B"
+            "variableid": "sweep_1B", 
+            "question_number": 140
         }, 
         {
             "response_table": [
@@ -2597,8 +2597,8 @@
                 }
             ], 
             "question_text": "How often do you feel afraid or scared?", 
-            "question_number": 104, 
-            "variable_name": "WellFeelFrq01_1B"
+            "variableid": "WellFeelFrq01_1B", 
+            "question_number": 104
         }, 
         {
             "response_table": [
@@ -2624,8 +2624,8 @@
                 }
             ], 
             "question_text": "How often do you feel cross?", 
-            "question_number": 96, 
-            "variable_name": "WellFeelFrq02_1B"
+            "variableid": "WellFeelFrq02_1B", 
+            "question_number": 96
         }, 
         {
             "response_table": [
@@ -2651,8 +2651,8 @@
                 }
             ], 
             "question_text": "How often do you feel happy?", 
-            "question_number": 99, 
-            "variable_name": "WellFeelFrq03_1B"
+            "variableid": "WellFeelFrq03_1B", 
+            "question_number": 99
         }, 
         {
             "response_table": [
@@ -2678,8 +2678,8 @@
                 }
             ], 
             "question_text": "How often do you feel sad?", 
-            "question_number": 101, 
-            "variable_name": "WellFeelFrq04_1B"
+            "variableid": "WellFeelFrq04_1B", 
+            "question_number": 101
         }, 
         {
             "response_table": [
@@ -2705,8 +2705,8 @@
                 }
             ], 
             "question_text": "How often do you get worried?", 
-            "question_number": 100, 
-            "variable_name": "WellFeelFrq06_1B"
+            "variableid": "WellFeelFrq06_1B", 
+            "question_number": 100
         }, 
         {
             "response_table": [
@@ -2732,8 +2732,8 @@
                 }
             ], 
             "question_text": "How often do you laugh?", 
-            "question_number": 102, 
-            "variable_name": "WellFeelFrq07_1B"
+            "variableid": "WellFeelFrq07_1B", 
+            "question_number": 102
         }, 
         {
             "response_table": [
@@ -2759,8 +2759,8 @@
                 }
             ], 
             "question_text": "How often do you feel left out of things by other children at school?", 
-            "question_number": 16, 
-            "variable_name": "WellFeelFrq10_1B"
+            "variableid": "WellFeelFrq10_1B", 
+            "question_number": 16
         }, 
         {
             "response_table": [
@@ -2786,8 +2786,8 @@
                 }
             ], 
             "question_text": "How often do you get fed up at school?", 
-            "question_number": 13, 
-            "variable_name": "WellFeelFrq11_1B"
+            "variableid": "WellFeelFrq11_1B", 
+            "question_number": 13
         }, 
         {
             "response_table": [
@@ -2803,8 +2803,8 @@
                 }
             ], 
             "question_text": "What would you do if you were worried about something? (A) I keep it to myself", 
-            "question_number": 111, 
-            "variable_name": "WellHelp01_1B"
+            "variableid": "WellHelp01_1B", 
+            "question_number": 111
         }, 
         {
             "response_table": [
@@ -2820,8 +2820,8 @@
                 }
             ], 
             "question_text": "What would you do if you were worried about something? (A) I tell a friend", 
-            "question_number": 112, 
-            "variable_name": "WellHelp02_1B"
+            "variableid": "WellHelp02_1B", 
+            "question_number": 112
         }, 
         {
             "response_table": [
@@ -2837,8 +2837,8 @@
                 }
             ], 
             "question_text": "What would you do if you were worried about something? (A) I tell a teacher", 
-            "question_number": 114, 
-            "variable_name": "WellHelp03_1B"
+            "variableid": "WellHelp03_1B", 
+            "question_number": 114
         }, 
         {
             "response_table": [
@@ -2854,8 +2854,8 @@
                 }
             ], 
             "question_text": "What would you do if you were worried about something? (A) I tell someone at home", 
-            "question_number": 113, 
-            "variable_name": "WellHelp04_1B"
+            "variableid": "WellHelp04_1B", 
+            "question_number": 113
         }, 
         {
             "response_table": [
@@ -2891,8 +2891,8 @@
                 }
             ], 
             "question_text": "How happy do you feel about the school you go to?", 
-            "question_number": 2, 
-            "variable_name": "WellSat05_1B"
+            "variableid": "WellSat05_1B", 
+            "question_number": 2
         }, 
         {
             "response_table": [
@@ -2928,8 +2928,8 @@
                 }
             ], 
             "question_text": "How happy do you feel about your school work?", 
-            "question_number": 3, 
-            "variable_name": "WellSat06_1B"
+            "variableid": "WellSat06_1B", 
+            "question_number": 3
         }, 
         {
             "response_table": [
@@ -2954,8 +2954,8 @@
                 }
             ], 
             "question_text": "How much do you agreee: I am a good person", 
-            "question_number": 108, 
-            "variable_name": "WellValue01_1B"
+            "variableid": "WellValue01_1B", 
+            "question_number": 108
         }, 
         {
             "response_table": [
@@ -2980,8 +2980,8 @@
                 }
             ], 
             "question_text": "How much do you agreee: I am able to do things as well as most people", 
-            "question_number": 107, 
-            "variable_name": "WellValue02_1B"
+            "variableid": "WellValue02_1B", 
+            "question_number": 107
         }, 
         {
             "response_table": [
@@ -3006,8 +3006,8 @@
                 }
             ], 
             "question_text": "How much do you agreee: I care about how well I do at school", 
-            "question_number": 110, 
-            "variable_name": "WellValue03_1B"
+            "variableid": "WellValue03_1B", 
+            "question_number": 110
         }, 
         {
             "response_table": [
@@ -3032,8 +3032,8 @@
                 }
             ], 
             "question_text": "How much do you agreee: I feel good about myself", 
-            "question_number": 109, 
-            "variable_name": "WellValue04_1B"
+            "variableid": "WellValue04_1B", 
+            "question_number": 109
         }, 
         {
             "response_table": [
@@ -3058,8 +3058,8 @@
                 }
             ], 
             "question_text": "How much do you agreee: I feel that I have a number of good qualities", 
-            "question_number": 106, 
-            "variable_name": "WellValue05_1B"
+            "variableid": "WellValue05_1B", 
+            "question_number": 106
         }, 
         {
             "response_table": [
@@ -3084,8 +3084,8 @@
                 }
             ], 
             "question_text": "How much do you agreee: On the whole, I am happy with myself", 
-            "question_number": 105, 
-            "variable_name": "WellValue07_1B"
+            "variableid": "WellValue07_1B", 
+            "question_number": 105
         }
     ]
 }

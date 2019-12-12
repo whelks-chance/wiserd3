@@ -169,7 +169,7 @@ class SurveyReader:
         # new_q.survey = new_survey
         new_q.questionnumber = raw_question_data['question_number']
         new_q.literal_question_text = raw_question_data['question_text']
-
+        new_q.variableid = raw_question_data['variableid']
         new_response = models.Response()
         new_response.responseid = 'res_{}'.format(new_q.qid)
         # new_response.responsetext

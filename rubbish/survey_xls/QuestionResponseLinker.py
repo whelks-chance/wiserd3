@@ -89,7 +89,7 @@ class QuestionResponseLinker:
                         # Turn 1 'Yes' 2 'No' into
                         # 1 'Yes'
                         # 2 'No'
-                        mapping_list = str(mapping_cell.value).split("' ")
+                        mapping_list = str(mapping_cell.value.encode('utf-8')).split("' ")
                         for map in mapping_list:
                             map_text_value = map.split(' ')
                             # 1 'Yes' into

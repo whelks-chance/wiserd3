@@ -1,0 +1,4006 @@
+{
+    "questions": [
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Having a worthwhile job", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Having a good car", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Owning your own home", 
+                    "response (n)": 51
+                }, 
+                {
+                    "response": "Having a personal achievement in sport the arts or travel", 
+                    "response (n)": 32
+                }, 
+                {
+                    "response": "Being famous or making a name for yourself", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Having children", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Earning a lot of money", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Having a partner or being married", 
+                    "response (n)": 63
+                }
+            ], 
+            "question_text": "Achvmnt@30", 
+            "question_number": 133, 
+            "variable_name": "AspAchv01_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What kind of job do you want when you are an adult?", 
+            "question_number": 150, 
+            "variable_name": "AspCareer03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 123
+                }, 
+                {
+                    "response": "Definately", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 143
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 18
+                }
+            ], 
+            "question_text": "be financially well-off?:Likelihoods", 
+            "question_number": 140, 
+            "variable_name": "AspLikely01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 151
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 64
+                }, 
+                {
+                    "response": "Definately", 
+                    "response (n)": 169
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "have a family of your own?:Likelihoods", 
+            "question_number": 138, 
+            "variable_name": "AspLikely02_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 33
+                }, 
+                {
+                    "response": "Definately", 
+                    "response (n)": 239
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 113
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 20
+                }
+            ], 
+            "question_text": "have a job that you will enjoy?:Likelihoods", 
+            "question_number": 143, 
+            "variable_name": "AspLikely03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 84
+                }, 
+                {
+                    "response": "Definately", 
+                    "response (n)": 158
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 136
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "have graduated from university?:Likelihoods", 
+            "question_number": 139, 
+            "variable_name": "AspLikely04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 174
+                }, 
+                {
+                    "response": "Definately", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 118
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "live abroad?:Likelihoods", 
+            "question_number": 137, 
+            "variable_name": "AspLikely05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 166
+                }, 
+                {
+                    "response": "Definately", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 146
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "live in the same neighbourhood as you do now?:Likelihoods", 
+            "question_number": 135, 
+            "variable_name": "AspLikely06_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 131
+                }, 
+                {
+                    "response": "Definately", 
+                    "response (n)": 98
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 127
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "live in Wales?:Likelihoods", 
+            "question_number": 134, 
+            "variable_name": "AspLikely07_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 117
+                }, 
+                {
+                    "response": "Definately", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }
+            ], 
+            "question_text": "speak Welsh ?:Likelihoods", 
+            "question_number": 142, 
+            "variable_name": "AspLikely08_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Maybe", 
+                    "response (n)": 121
+                }, 
+                {
+                    "response": "Definately", 
+                    "response (n)": 101
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Probably", 
+                    "response (n)": 152
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Definately not", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 16
+                }
+            ], 
+            "question_text": "volunteer some of your time to help others?:Likelihoods", 
+            "question_number": 141, 
+            "variable_name": "AspLikely09_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Least wrong", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Most wrong", 
+                    "response (n)": 60
+                }
+            ], 
+            "question_text": "Act rudely to a stranger:WrngBhvior", 
+            "question_number": 126, 
+            "variable_name": "Behave01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Least wrong", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 99
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Most wrong", 
+                    "response (n)": 34
+                }
+            ], 
+            "question_text": "Download copyrighted music and/or video from the Internet without the owner's permission:WrngBhvior", 
+            "question_number": 130, 
+            "variable_name": "Behave02_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 90
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Least wrong", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Most wrong", 
+                    "response (n)": 59
+                }
+            ], 
+            "question_text": "Purposefully break something that doesn't belong to you:WrngBhvior", 
+            "question_number": 129, 
+            "variable_name": "Behave03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 115
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Least wrong", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Most wrong", 
+                    "response (n)": 72
+                }
+            ], 
+            "question_text": "Spray paint on a building:WrngBhvior", 
+            "question_number": 128, 
+            "variable_name": "Behave04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 114
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Least wrong", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Most wrong", 
+                    "response (n)": 79
+                }
+            ], 
+            "question_text": "Take a sweet from a shop without paying for it:WrngBhvior", 
+            "question_number": 127, 
+            "variable_name": "Behave05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Least wrong", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Most wrong", 
+                    "response (n)": 28
+                }
+            ], 
+            "question_text": "Copy information from the Internet to complete an assignment without citing the source:WrngBhvior", 
+            "question_number": 132, 
+            "variable_name": "BehaveSch01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 81
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 - Least wrong", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 107
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7 - Most wrong", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "Copy someone else's work at school:WrngBhvior", 
+            "question_number": 131, 
+            "variable_name": "BehaveSch02_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Cohort", 
+            "question_number": 161, 
+            "variable_name": "cohort_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very impotant", 
+                    "response (n)": 136
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Important", 
+                    "response (n)": 147
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very important", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not at all important", 
+                    "response (n)": 47
+                }
+            ], 
+            "question_text": "for you to learn Welsh?:FeelAbtWelsh", 
+            "question_number": 111, 
+            "variable_name": "CymAtt01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very impotant", 
+                    "response (n)": 122
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Important", 
+                    "response (n)": 144
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very important", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not at all important", 
+                    "response (n)": 44
+                }
+            ], 
+            "question_text": "for you to speak Welsh?:FeelAbtWelsh", 
+            "question_number": 112, 
+            "variable_name": "CymAtt02_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very impotant", 
+                    "response (n)": 188
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Important", 
+                    "response (n)": 118
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very important", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not at all important", 
+                    "response (n)": 34
+                }
+            ], 
+            "question_text": "for Welsh to remain a living language?:FeelAbtWelsh", 
+            "question_number": 113, 
+            "variable_name": "CymAtt03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I dont like having these friends", 
+                    "response (n)": 16
+                }, 
+                {
+                    "response": "It doesnt make any difference to me", 
+                    "response (n)": 230
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I like having these friends", 
+                    "response (n)": 162
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "having friends of a different skin colour from you?:Diversity", 
+            "question_number": 120, 
+            "variable_name": "DiversAtt01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I dont like having these friends", 
+                    "response (n)": 10
+                }, 
+                {
+                    "response": "It doesnt make any difference to me", 
+                    "response (n)": 178
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I like having these friends", 
+                    "response (n)": 214
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "having friends of a different gender from you?:Diversity", 
+            "question_number": 125, 
+            "variable_name": "DiversAtt05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I dont like having these friends", 
+                    "response (n)": 27
+                }, 
+                {
+                    "response": "It doesnt make any difference to me", 
+                    "response (n)": 209
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I like having these friends", 
+                    "response (n)": 162
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "having friends from England?:Diversity", 
+            "question_number": 124, 
+            "variable_name": "DiversAtt08_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I dont like having these friends", 
+                    "response (n)": 24
+                }, 
+                {
+                    "response": "It doesnt make any difference to me", 
+                    "response (n)": 260
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I like having these friends", 
+                    "response (n)": 119
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "having friends from Scotland?:Diversity", 
+            "question_number": 123, 
+            "variable_name": "DiversAtt09_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I dont like having these friends", 
+                    "response (n)": 30
+                }, 
+                {
+                    "response": "It doesnt make any difference to me", 
+                    "response (n)": 251
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I like having these friends", 
+                    "response (n)": 123
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "having friends from Northern Ireland?:Diversity", 
+            "question_number": 122, 
+            "variable_name": "DiversAtt10_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "I dont like having these friends", 
+                    "response (n)": 18
+                }, 
+                {
+                    "response": "It doesnt make any difference to me", 
+                    "response (n)": 211
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I like having these friends", 
+                    "response (n)": 178
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "having friends from countries outside of the UK?:Diversity", 
+            "question_number": 121, 
+            "variable_name": "DiversAtt11_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 35
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 134
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 120
+                }
+            ], 
+            "question_text": "Spend time doing activities outside of the home with the following family members: Parents, brothers and/or sisters:Wrk/FamActivities", 
+            "question_number": 100, 
+            "variable_name": "FamActFrq01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 86
+                }
+            ], 
+            "question_text": "Spend time doing activities outside of the home with the following family members: Grandparents, aunts/uncles or cousins:Wrk/FamActivities", 
+            "question_number": 101, 
+            "variable_name": "FamActFrq03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 185
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 111
+                }
+            ], 
+            "question_text": "Do chores at home:Wrk/FamActivities", 
+            "question_number": 95, 
+            "variable_name": "FamActFrq28_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Famous people I admire:Person #1:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
+            "question_number": 144, 
+            "variable_name": "FameAtt01_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Famous people I admire:Person #2:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
+            "question_number": 146, 
+            "variable_name": "FameAtt02_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Famous people I admire:Person #3:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
+            "question_number": 148, 
+            "variable_name": "FameAtt03_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Famous people I dislike:Person #1:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
+            "question_number": 145, 
+            "variable_name": "FameAtt04_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Famous people I dislike:Person #2:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
+            "question_number": 147, 
+            "variable_name": "FameAtt05_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Famous people I dislike:Person #3:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
+            "question_number": 149, 
+            "variable_name": "FameAtt06_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 99
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 237
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "My family knows about what my friends and I do when we're together:Please choose the best response from the options below", 
+            "question_number": 14, 
+            "variable_name": "FrndActAtt08_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 210
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 108
+                }
+            ], 
+            "question_text": "Spend time with your friends and just hanging out:Wrk/FamActivities", 
+            "question_number": 97, 
+            "variable_name": "FrndActFrq04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 110
+                }
+            ], 
+            "question_text": "Spend time with your friends browsing the Internet:Wrk/FamActivities", 
+            "question_number": 98, 
+            "variable_name": "FrndActFrq05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 114
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 77
+                }
+            ], 
+            "question_text": "Spend time with your friends playing video games:Wrk/FamActivities", 
+            "question_number": 99, 
+            "variable_name": "FrndActFrq06_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Rarely", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Frequently", 
+                    "response (n)": 126
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Sometimes", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Almost always", 
+                    "response (n)": 149
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "Sending messages on the computer, tablet or phone:Comm withFriends", 
+            "question_number": 7, 
+            "variable_name": "FrndActFrq09_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Frequently", 
+                    "response (n)": 86
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Sometimes", 
+                    "response (n)": 161
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Rarely", 
+                    "response (n)": 127
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Almost always", 
+                    "response (n)": 21
+                }
+            ], 
+            "question_text": "Speaking over the phone:Comm withFriends", 
+            "question_number": 6, 
+            "variable_name": "FrndActFrq10_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Rarely", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Frequently", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Sometimes", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Almost always", 
+                    "response (n)": 257
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Talking face to face :Comm withFriends", 
+            "question_number": 5, 
+            "variable_name": "FrndActFrq11_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 183
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 84
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "I have better relationships with my friends than my family:Please choose the best response from the options below", 
+            "question_number": 11, 
+            "variable_name": "FrndAtt01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 83
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 294
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "Overall, my family approves of my friends:Please choose the best response from the options below", 
+            "question_number": 13, 
+            "variable_name": "FrndAtt02_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 351
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "I have at least one good friend that I can really trust:Please choose the best response from the options below", 
+            "question_number": 12, 
+            "variable_name": "FrndAtt03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "6", 
+                    "response": "I dont send and receive messages", 
+                    "response (n)": 25
+                }, 
+                {
+                    "response": "26-50", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "1-25", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "4", 
+                    "response": "76-100", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "5", 
+                    "response": "101 or more", 
+                    "response (n)": 98
+                }, 
+                {
+                    "value": "3", 
+                    "response": "51-75", 
+                    "response (n)": 35
+                }
+            ], 
+            "question_text": "#Msgs/Day", 
+            "question_number": 92, 
+            "variable_name": "FrndCom01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "I dont send or receive messages", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Almost always", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "response": "I dont know", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Sometimes", 
+                    "response (n)": 175
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Rarely", 
+                    "response (n)": 127
+                }
+            ], 
+            "question_text": "MsgngSchoolwork", 
+            "question_number": 93, 
+            "variable_name": "FrndCom04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 196
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 83
+                }
+            ], 
+            "question_text": "Spend time with your friends chatting online (Facebook, Skype, etc ):Wrk/FamActivities", 
+            "question_number": 102, 
+            "variable_name": "FrndCom05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "I dont have any friends", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "3", 
+                    "response": "A mixture of boys and girls", 
+                    "response (n)": 219
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Mostly girls", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Mostly boys", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Friends Mix", 
+            "question_number": 4, 
+            "variable_name": "FrndDivers01_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "#SchoolFriends", 
+            "question_number": 156, 
+            "variable_name": "FrndDivers02_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "#SchoolFriends", 
+            "question_number": 2, 
+            "variable_name": "FrndDivers03_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "OtherSchoolFriends", 
+            "question_number": 157, 
+            "variable_name": "FrndDivers04_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "OtherSchoolFriends", 
+            "question_number": 3, 
+            "variable_name": "FrndDivers05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 350
+                }
+            ], 
+            "question_text": "Creative Arts (Painting, poetry, creative writing, sculpting, etc ):Non-schoolClasses", 
+            "question_number": 81, 
+            "variable_name": "Hob01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 345
+                }
+            ], 
+            "question_text": "ICT/Design (Computer programming, Graphic design, etc ):Non-schoolClasses", 
+            "question_number": 83, 
+            "variable_name": "Hob02_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 354
+                }
+            ], 
+            "question_text": "Languages (Welsh, Foreign languages, etc ):Non-schoolClasses", 
+            "question_number": 82, 
+            "variable_name": "Hob03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 304
+                }
+            ], 
+            "question_text": "Performing Arts (Singing, dancing, playing an instrument, etc ):Non-schoolClasses", 
+            "question_number": 79, 
+            "variable_name": "Hob04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 250
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 154
+                }
+            ], 
+            "question_text": "Sports (Rugby, horseback riding, martial arts, gymnastics, etc ):Non-schoolClasses", 
+            "question_number": 80, 
+            "variable_name": "Hob06_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 143
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 248
+                }
+            ], 
+            "question_text": "Any other not listed:Non-schoolClasses", 
+            "question_number": 84, 
+            "variable_name": "Hob51_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 201
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 94
+                }
+            ], 
+            "question_text": "Play games on a computer or games console:Non-schoolActivities", 
+            "question_number": 75, 
+            "variable_name": "HobFrq01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 227
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 131
+                }
+            ], 
+            "question_text": "Play sports or active games:Non-schoolActivities", 
+            "question_number": 76, 
+            "variable_name": "HobFrq02_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 67
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 102
+                }
+            ], 
+            "question_text": "Read for fun:Non-schoolActivities", 
+            "question_number": 74, 
+            "variable_name": "HobFrq04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 98
+                }
+            ], 
+            "question_text": "Draw, paint or make things:Non-schoolActivities", 
+            "question_number": 77, 
+            "variable_name": "HobFrq08_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "English", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 377
+                }
+            ], 
+            "question_text": "surveylanguage", 
+            "question_number": 159, 
+            "variable_name": "langresponse_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 112
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 122
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 80
+                }
+            ], 
+            "question_text": "Do occasional work for pocket money, including chores at home, work in a family business or farm, etc :Wrk/FamActivities", 
+            "question_number": 96, 
+            "variable_name": "Money04_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "If someone gave you \u00c2\u00a31 million today, what would you do with it?", 
+            "question_number": 151, 
+            "variable_name": "Money15_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Mixed", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "4", 
+                    "response": "White", 
+                    "response (n)": 360
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Black", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Asian", 
+                    "response (n)": 17
+                }
+            ], 
+            "question_text": "Ethnicity", 
+            "question_number": 154, 
+            "variable_name": "NatEth01_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Nationality", 
+            "question_number": 155, 
+            "variable_name": "NatIden01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "I speak Welsh fluently", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "2", 
+                    "response": "I can speak a few Welsh words and phrases", 
+                    "response (n)": 137
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I cant speak Welsh at all", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "3", 
+                    "response": "I can speak a lot in Welsh but not fluently", 
+                    "response (n)": 143
+                }
+            ], 
+            "question_text": "Please choose the option that best describes how well you speak Welsh", 
+            "question_number": 152, 
+            "variable_name": "NatLang09_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Word #1:NbrhdDescrptn", 
+            "question_number": 8, 
+            "variable_name": "NeighbAtt01_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Word #2:NbrhdDescrptn", 
+            "question_number": 9, 
+            "variable_name": "NeighbAtt02_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Word #3:NbrhdDescrptn", 
+            "question_number": 10, 
+            "variable_name": "NeighbAtt03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Not very safe at all", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Very safe", 
+                    "response (n)": 224
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Safe", 
+                    "response (n)": 164
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very safe", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "walking in your neighbourhood during the day?:How safe do you feel", 
+            "question_number": 15, 
+            "variable_name": "NeighbAtt04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Not very safe at all", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Very safe", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Safe", 
+                    "response (n)": 188
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very safe", 
+                    "response (n)": 99
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "walking in your neighbourhood at night?:How safe do you feel", 
+            "question_number": 16, 
+            "variable_name": "NeighbAtt05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 176
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 58
+                }
+            ], 
+            "question_text": "Do volunteer work:Wrk/FamActivities", 
+            "question_number": 94, 
+            "variable_name": "PhilAct01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 374
+                }
+            ], 
+            "question_text": "English:PrivateTuition", 
+            "question_number": 85, 
+            "variable_name": "PrvtuSubj01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 365
+                }
+            ], 
+            "question_text": "Maths:PrivateTuition", 
+            "question_number": 87, 
+            "variable_name": "PrvtuSubj02_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 381
+                }
+            ], 
+            "question_text": "Science:PrivateTuition", 
+            "question_number": 86, 
+            "variable_name": "PrvtuSubj03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 385
+                }
+            ], 
+            "question_text": "Welsh:PrivateTuition", 
+            "question_number": 88, 
+            "variable_name": "PrvtuSubj04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 381
+                }
+            ], 
+            "question_text": "Foreign Languages:PrivateTuition", 
+            "question_number": 90, 
+            "variable_name": "PrvtuSubj05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 388
+                }
+            ], 
+            "question_text": "Humanities (Geography, History, etc ):PrivateTuition", 
+            "question_number": 89, 
+            "variable_name": "PrvtuSubj06_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 368
+                }
+            ], 
+            "question_text": "Any other not listed:PrivateTuition", 
+            "question_number": 91, 
+            "variable_name": "PrvtuSubj07_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Almost always", 
+                    "response (n)": 272
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "response": "Less often than once a month", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 67
+                }, 
+                {
+                    "response": "At least once a month", 
+                    "response (n)": 8
+                }, 
+                {
+                    "response": "At least once a week", 
+                    "response (n)": 43
+                }
+            ], 
+            "question_text": "eat breakfast before school starts?:TiredFood", 
+            "question_number": 109, 
+            "variable_name": "RoutnFood04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Almost always", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "response": "Less often than once a month", 
+                    "response (n)": 37
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 222
+                }, 
+                {
+                    "response": "At least once a month", 
+                    "response (n)": 23
+                }, 
+                {
+                    "response": "At least once a week", 
+                    "response (n)": 78
+                }
+            ], 
+            "question_text": "skip lunch at school?:TiredFood", 
+            "question_number": 110, 
+            "variable_name": "RoutnFood05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "7am", 
+                    "response (n)": 281
+                }, 
+                {
+                    "value": "3", 
+                    "response": "6am", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Before 5am", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "5am", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "5", 
+                    "response": "8am", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Later than 8am", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "Wakeup2", 
+            "question_number": 106, 
+            "variable_name": "RoutnSleep01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Usually", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 238
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Sometimes", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "No", 
+                    "response (n)": 28
+                }
+            ], 
+            "question_text": "Wakeup1", 
+            "question_number": 105, 
+            "variable_name": "RoutnSleep02_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "10pm", 
+                    "response (n)": 145
+                }, 
+                {
+                    "value": "3", 
+                    "response": "8pm", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "6", 
+                    "response": "11pm", 
+                    "response (n)": 99
+                }, 
+                {
+                    "value": "9", 
+                    "response": "Later than 1am", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "7", 
+                    "response": "12am", 
+                    "response (n)": 33
+                }, 
+                {
+                    "value": "2", 
+                    "response": "7pm", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "8", 
+                    "response": "1am", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Earlier than 7pm", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "4", 
+                    "response": "9pm", 
+                    "response (n)": 83
+                }
+            ], 
+            "question_text": "Bedtime2", 
+            "question_number": 104, 
+            "variable_name": "RoutnSleep03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Usually", 
+                    "response (n)": 153
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Sometimes", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "No", 
+                    "response (n)": 103
+                }
+            ], 
+            "question_text": "Bedtime1", 
+            "question_number": 103, 
+            "variable_name": "RoutnSleep04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Almost always", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 202
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 55
+                }
+            ], 
+            "question_text": "wake up at night to message a friend, or check messages, on the computer, a tablet or your phone?:TiredFood", 
+            "question_number": 108, 
+            "variable_name": "RoutnSleep05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Almost always", 
+                    "response (n)": 129
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 140
+                }
+            ], 
+            "question_text": "go to school feeling tired?:TiredFood", 
+            "question_number": 107, 
+            "variable_name": "RoutnSleep07_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often than once a month", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Most days", 
+                    "response (n)": 176
+                }, 
+                {
+                    "value": "3", 
+                    "response": "At least once a month", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "2", 
+                    "response": "At least once a week", 
+                    "response (n)": 142
+                }
+            ], 
+            "question_text": "Use the Internet for homework:Non-schoolActivities", 
+            "question_number": 78, 
+            "variable_name": "SchAct03_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Word #1:SchoolDescription", 
+            "question_number": 17, 
+            "variable_name": "SchAtt03_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What I like about school:Word #1:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
+            "question_number": 45, 
+            "variable_name": "SchAtt04_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What I like about school:Word #2:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
+            "question_number": 46, 
+            "variable_name": "SchAtt05_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What I like about school:Word #3:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
+            "question_number": 47, 
+            "variable_name": "SchAtt06_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What I dislike about school:Word #1:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
+            "question_number": 48, 
+            "variable_name": "SchAtt07_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What I dislike about school:Word #2:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
+            "question_number": 49, 
+            "variable_name": "SchAtt08_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "What I dislike about school:Word #3:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
+            "question_number": 50, 
+            "variable_name": "SchAtt09_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Word #2:SchoolDescription", 
+            "question_number": 18, 
+            "variable_name": "SchAtt10_1C"
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Word #3:SchoolDescription", 
+            "question_number": 19, 
+            "variable_name": "SchAtt11_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 334
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }
+            ], 
+            "question_text": "When I'm older, I will have good memories of attending this school:FlngsFrndsFamSchool", 
+            "question_number": 73, 
+            "variable_name": "SchAtt12_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 372
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }
+            ], 
+            "question_text": "I think the work I do in school now will help me achieve my future goals:FlngsFrndsFamSchool", 
+            "question_number": 71, 
+            "variable_name": "SchAtt14_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 83
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 306
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Overall, I feel I make a good effort in class:SchoolOpinion", 
+            "question_number": 30, 
+            "variable_name": "SchAtt16_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 98
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 278
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "I feel safe at school:SchoolOpinion", 
+            "question_number": 31, 
+            "variable_name": "SchAtt19_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 133
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 194
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "School helps increase my interest in the politics of Wales:SchoolOpinion", 
+            "question_number": 28, 
+            "variable_name": "SchAtt21_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 135
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 84
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 185
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "School helps me appreciate living in Wales:SchoolOpinion", 
+            "question_number": 26, 
+            "variable_name": "SchAtt22_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 149
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 79
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 175
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "School helps me develop my own sense of Welshness:SchoolOpinion", 
+            "question_number": 27, 
+            "variable_name": "SchAtt23_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 198
+                }
+            ], 
+            "question_text": "Taking notes while the teacher talks:ClassActivities", 
+            "question_number": 62, 
+            "variable_name": "SchLearnAtt05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 156
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 175
+                }
+            ], 
+            "question_text": "Working individually:ClassActivities", 
+            "question_number": 65, 
+            "variable_name": "SchLearnAtt06_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 260
+                }
+            ], 
+            "question_text": "Working with a partner:ClassActivities", 
+            "question_number": 64, 
+            "variable_name": "SchLearnAtt07_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 225
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 134
+                }
+            ], 
+            "question_text": "Working in a group:ClassActivities", 
+            "question_number": 63, 
+            "variable_name": "SchLearnAtt08_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 213
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 142
+                }
+            ], 
+            "question_text": "Working on projects that involve a lot of class or group discussion:ClassActivities", 
+            "question_number": 68, 
+            "variable_name": "SchLearnAtt09_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 236
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 119
+                }
+            ], 
+            "question_text": "Working on projects that involve getting up out of your seat or going outside:ClassActivities", 
+            "question_number": 69, 
+            "variable_name": "SchLearnAtt10_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 224
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 145
+                }
+            ], 
+            "question_text": "Working on projects with detailed instructions:ClassActivities", 
+            "question_number": 66, 
+            "variable_name": "SchLearnAtt11_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 162
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 97
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 139
+                }
+            ], 
+            "question_text": "Working on projects without detailed instructions:ClassActivities", 
+            "question_number": 67, 
+            "variable_name": "SchLearnAtt12_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 325
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "The things I learn in school now help me in my day-to-day life:FlngsFrndsFamSchool", 
+            "question_number": 72, 
+            "variable_name": "SchLearnAtt13_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 176
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 171
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "My views are listened to and taken seriously by school staff:SchoolOpinion", 
+            "question_number": 23, 
+            "variable_name": "SchStafAtt05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 160
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 197
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "Overall, I like the school staff:SchoolOpinion", 
+            "question_number": 29, 
+            "variable_name": "SchStafAtt06_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 145
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 238
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "The school staff have high expectations of me:SchoolOpinion", 
+            "question_number": 21, 
+            "variable_name": "SchStafAtt08_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 198
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "The school staff make school fun:SchoolOpinion", 
+            "question_number": 25, 
+            "variable_name": "SchStafAtt09_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 189
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 173
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "The school staff set goals I can easily achieve:SchoolOpinion", 
+            "question_number": 22, 
+            "variable_name": "SchStafAtt10_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 310
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 3
+                }
+            ], 
+            "question_text": "My school cares about how much I improve in my studies:SchoolOpinion", 
+            "question_number": 20, 
+            "variable_name": "SchStafAtt11_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 280
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }
+            ], 
+            "question_text": "My school rewards pupils who receive good marks or make good progress:SchoolOpinion", 
+            "question_number": 24, 
+            "variable_name": "SchStafAtt16_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Dont know", 
+                    "response (n)": 292
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 34
+                }
+            ], 
+            "question_text": "WlshBacc", 
+            "question_number": 70, 
+            "variable_name": "SchStdySubj61_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 189
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 170
+                }
+            ], 
+            "question_text": "English:LikeSchoolSubjects", 
+            "question_number": 35, 
+            "variable_name": "SchSubjAtt01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 147
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 158
+                }
+            ], 
+            "question_text": "Maths:LikeSchoolSubjects", 
+            "question_number": 37, 
+            "variable_name": "SchSubjAtt02_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 181
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 177
+                }
+            ], 
+            "question_text": "Science:LikeSchoolSubjects", 
+            "question_number": 36, 
+            "variable_name": "SchSubjAtt03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 91
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 170
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 142
+                }
+            ], 
+            "question_text": "Welsh:LikeSchoolSubjects", 
+            "question_number": 38, 
+            "variable_name": "SchSubjAtt04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 197
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 138
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 69
+                }
+            ], 
+            "question_text": "Art:LikeSchoolSubjects", 
+            "question_number": 33, 
+            "variable_name": "SchSubjAtt05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 256
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 107
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 40
+                }
+            ], 
+            "question_text": "Design & Technology (e g  Resistant materials, Food technology, Textiles technology   ):LikeSchoolSubjects", 
+            "question_number": 43, 
+            "variable_name": "SchSubjAtt06_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 122
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 119
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 162
+                }
+            ], 
+            "question_text": "Foreign languages (e g  Spanish, French, German   ):LikeSchoolSubjects", 
+            "question_number": 42, 
+            "variable_name": "SchSubjAtt07_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 160
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 171
+                }
+            ], 
+            "question_text": "Geography:LikeSchoolSubjects", 
+            "question_number": 41, 
+            "variable_name": "SchSubjAtt08_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 171
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 162
+                }
+            ], 
+            "question_text": "History:LikeSchoolSubjects", 
+            "question_number": 40, 
+            "variable_name": "SchSubjAtt09_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 174
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 149
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 80
+                }
+            ], 
+            "question_text": "ICT:LikeSchoolSubjects", 
+            "question_number": 34, 
+            "variable_name": "SchSubjAtt10_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 69
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 149
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 185
+                }
+            ], 
+            "question_text": "Music:LikeSchoolSubjects", 
+            "question_number": 32, 
+            "variable_name": "SchSubjAtt11_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 261
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 46
+                }
+            ], 
+            "question_text": "PE:LikeSchoolSubjects", 
+            "question_number": 39, 
+            "variable_name": "SchSubjAtt12_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "A bit", 
+                    "response (n)": 159
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot", 
+                    "response (n)": 126
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not at all", 
+                    "response (n)": 119
+                }
+            ], 
+            "question_text": "Religious Education:LikeSchoolSubjects", 
+            "question_number": 44, 
+            "variable_name": "SchSubjAtt13_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 285
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }
+            ], 
+            "question_text": "When I was in primary school, I looked forward to coming to secondary school:Transition1", 
+            "question_number": 58, 
+            "variable_name": "SchTranAtt08_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 131
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 156
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 116
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "Overall, I like primary school better than secondary school:Transition1", 
+            "question_number": 59, 
+            "variable_name": "SchTranAtt09_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 123
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 203
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "Overall, I like secondary school better than primary school:Transition1", 
+            "question_number": 61, 
+            "variable_name": "SchTranAtt10_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 231
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 179
+                }
+            ], 
+            "question_text": "Happy:Transition2", 
+            "question_number": 51, 
+            "variable_name": "SchTranAtt13_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 129
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 281
+                }
+            ], 
+            "question_text": "Eager:Transition2", 
+            "question_number": 55, 
+            "variable_name": "SchTranAtt14_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 175
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 235
+                }
+            ], 
+            "question_text": "Confident:Transition2", 
+            "question_number": 53, 
+            "variable_name": "SchTranAtt15_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 115
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 295
+                }
+            ], 
+            "question_text": "Afraid:Transition2", 
+            "question_number": 54, 
+            "variable_name": "SchTranAtt16_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 407
+                }
+            ], 
+            "question_text": "Reluctant:Transition2", 
+            "question_number": 56, 
+            "variable_name": "SchTranAtt17_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 116
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 294
+                }
+            ], 
+            "question_text": "Sad:Transition2", 
+            "question_number": 52, 
+            "variable_name": "SchTranAtt18_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 108
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 167
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "Moving up from primary school to secondary school was stressful:Transition1", 
+            "question_number": 57, 
+            "variable_name": "SchTranAtt19_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Disagree", 
+                    "response (n)": 9
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Agree", 
+                    "response (n)": 365
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "I made a lot of new friends when I came to secondary school:Transition1", 
+            "question_number": 60, 
+            "variable_name": "SchTranFrnd04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Male", 
+                    "response (n)": 204
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Female", 
+                    "response (n)": 206
+                }
+            ], 
+            "question_text": "Resp  Gender", 
+            "question_number": 153, 
+            "variable_name": "sex_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all happy", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Happy", 
+                    "response (n)": 154
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Happy", 
+                    "response (n)": 173
+                }
+            ], 
+            "question_text": "The way you look:HappyAbtLife", 
+            "question_number": 115, 
+            "variable_name": "WellSat01_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all happy", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Happy", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Happy", 
+                    "response (n)": 319
+                }
+            ], 
+            "question_text": "Your family:HappyAbtLife", 
+            "question_number": 116, 
+            "variable_name": "WellSat02_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all happy", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Happy", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Happy", 
+                    "response (n)": 326
+                }
+            ], 
+            "question_text": "Your friends:HappyAbtLife", 
+            "question_number": 117, 
+            "variable_name": "WellSat03_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all happy", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Happy", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Happy", 
+                    "response (n)": 270
+                }
+            ], 
+            "question_text": "Your life as a whole:HappyAbtLife", 
+            "question_number": 119, 
+            "variable_name": "WellSat04_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all happy", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Happy", 
+                    "response (n)": 172
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Happy", 
+                    "response (n)": 194
+                }
+            ], 
+            "question_text": "Your school overall:HappyAbtLife", 
+            "question_number": 118, 
+            "variable_name": "WellSat05_1C"
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not at all happy", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Happy", 
+                    "response (n)": 171
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Happy", 
+                    "response (n)": 208
+                }
+            ], 
+            "question_text": "Your school work:HappyAbtLife", 
+            "question_number": 114, 
+            "variable_name": "WellSat06_1C"
+        }
+    ]
+}

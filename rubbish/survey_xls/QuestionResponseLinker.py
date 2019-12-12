@@ -199,11 +199,11 @@ class QuestionResponseLinker:
 
 
 if __name__ == '__main__':
-    qbank_file = '/home/kdickson/QuestionBank_Education.xlsx'
-    sweep_cohort_responses_file = '/home/kdickson/Surveys/Sweep1CohortB_Redacted.xlsx'
+    qbank_file = '/home/kdickson/QuestionBank_Education_2019.xlsx'
+    sweep_cohort_responses_file = '/home/kdickson/Surveys/Sweep6CohortX_Redacted.xlsx'
 
-    qrl = QuestionResponseLinker(qbank_file, sweep_cohort_responses_file, '1B')
+    qrl = QuestionResponseLinker(qbank_file, sweep_cohort_responses_file, '6x')
 
     sample = qrl.run()
-    with open('sample_1B.json', 'w') as outputfile:
+    with open('sample_6x.json', 'w') as outputfile:
         outputfile.write(json.dumps(sample.description(), indent=4))

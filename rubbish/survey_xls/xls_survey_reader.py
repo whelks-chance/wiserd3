@@ -99,6 +99,7 @@ class SurveyReader:
                 # new_q.survey = new_survey
                 new_q.questionnumber = q_name
                 new_q.literal_question_text = q_label
+                new_q.variableid = q_name
 
                 new_response = models.Response()
                 new_response.responseid = 'res_{}'.format(new_q.qid)

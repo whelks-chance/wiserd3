@@ -161,7 +161,7 @@ class SurveyReader:
 
     def create_question(self, survey, raw_question_data):
 
-        fullname = raw_question_data['variable_name'] + str(raw_question_data['question_number'])
+        fullname = raw_question_data['variableid'] + str(raw_question_data['question_number'])
 
         qid = '{}_{}'.format(survey.surveyid, fullname)
         new_q, created = models.Question.objects.get_or_create(qid=qid, survey=survey)

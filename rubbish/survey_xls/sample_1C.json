@@ -47,14 +47,14 @@
                 }
             ], 
             "question_text": "Achvmnt@30", 
-            "question_number": 133, 
-            "variable_name": "AspAchv01_1C"
+            "variableid": "AspAchv01_1C", 
+            "question_number": 133
         }, 
         {
             "response_table": [], 
             "question_text": "What kind of job do you want when you are an adult?", 
-            "question_number": 150, 
-            "variable_name": "AspCareer03_1C"
+            "variableid": "AspCareer03_1C", 
+            "question_number": 150
         }, 
         {
             "response_table": [
@@ -84,8 +84,8 @@
                 }
             ], 
             "question_text": "be financially well-off?:Likelihoods", 
-            "question_number": 140, 
-            "variable_name": "AspLikely01_1C"
+            "variableid": "AspLikely01_1C", 
+            "question_number": 140
         }, 
         {
             "response_table": [
@@ -115,8 +115,8 @@
                 }
             ], 
             "question_text": "have a family of your own?:Likelihoods", 
-            "question_number": 138, 
-            "variable_name": "AspLikely02_1C"
+            "variableid": "AspLikely02_1C", 
+            "question_number": 138
         }, 
         {
             "response_table": [
@@ -146,8 +146,8 @@
                 }
             ], 
             "question_text": "have a job that you will enjoy?:Likelihoods", 
-            "question_number": 143, 
-            "variable_name": "AspLikely03_1C"
+            "variableid": "AspLikely03_1C", 
+            "question_number": 143
         }, 
         {
             "response_table": [
@@ -177,8 +177,8 @@
                 }
             ], 
             "question_text": "have graduated from university?:Likelihoods", 
-            "question_number": 139, 
-            "variable_name": "AspLikely04_1C"
+            "variableid": "AspLikely04_1C", 
+            "question_number": 139
         }, 
         {
             "response_table": [
@@ -208,8 +208,8 @@
                 }
             ], 
             "question_text": "live abroad?:Likelihoods", 
-            "question_number": 137, 
-            "variable_name": "AspLikely05_1C"
+            "variableid": "AspLikely05_1C", 
+            "question_number": 137
         }, 
         {
             "response_table": [
@@ -239,8 +239,8 @@
                 }
             ], 
             "question_text": "live in the same neighbourhood as you do now?:Likelihoods", 
-            "question_number": 135, 
-            "variable_name": "AspLikely06_1C"
+            "variableid": "AspLikely06_1C", 
+            "question_number": 135
         }, 
         {
             "response_table": [
@@ -270,8 +270,8 @@
                 }
             ], 
             "question_text": "live in Wales?:Likelihoods", 
-            "question_number": 134, 
-            "variable_name": "AspLikely07_1C"
+            "variableid": "AspLikely07_1C", 
+            "question_number": 134
         }, 
         {
             "response_table": [
@@ -301,8 +301,8 @@
                 }
             ], 
             "question_text": "speak Welsh ?:Likelihoods", 
-            "question_number": 142, 
-            "variable_name": "AspLikely08_1C"
+            "variableid": "AspLikely08_1C", 
+            "question_number": 142
         }, 
         {
             "response_table": [
@@ -332,8 +332,8 @@
                 }
             ], 
             "question_text": "volunteer some of your time to help others?:Likelihoods", 
-            "question_number": 141, 
-            "variable_name": "AspLikely09_1C"
+            "variableid": "AspLikely09_1C", 
+            "question_number": 141
         }, 
         {
             "response_table": [
@@ -379,8 +379,8 @@
                 }
             ], 
             "question_text": "Act rudely to a stranger:WrngBhvior", 
-            "question_number": 126, 
-            "variable_name": "Behave01_1C"
+            "variableid": "Behave01_1C", 
+            "question_number": 126
         }, 
         {
             "response_table": [
@@ -426,8 +426,8 @@
                 }
             ], 
             "question_text": "Download copyrighted music and/or video from the Internet without the owner's permission:WrngBhvior", 
-            "question_number": 130, 
-            "variable_name": "Behave02_1C"
+            "variableid": "Behave02_1C", 
+            "question_number": 130
         }, 
         {
             "response_table": [
@@ -473,8 +473,8 @@
                 }
             ], 
             "question_text": "Purposefully break something that doesn't belong to you:WrngBhvior", 
-            "question_number": 129, 
-            "variable_name": "Behave03_1C"
+            "variableid": "Behave03_1C", 
+            "question_number": 129
         }, 
         {
             "response_table": [
@@ -520,8 +520,8 @@
                 }
             ], 
             "question_text": "Spray paint on a building:WrngBhvior", 
-            "question_number": 128, 
-            "variable_name": "Behave04_1C"
+            "variableid": "Behave04_1C", 
+            "question_number": 128
         }, 
         {
             "response_table": [
@@ -567,8 +567,8 @@
                 }
             ], 
             "question_text": "Take a sweet from a shop without paying for it:WrngBhvior", 
-            "question_number": 127, 
-            "variable_name": "Behave05_1C"
+            "variableid": "Behave05_1C", 
+            "question_number": 127
         }, 
         {
             "response_table": [
@@ -614,8 +614,8 @@
                 }
             ], 
             "question_text": "Copy information from the Internet to complete an assignment without citing the source:WrngBhvior", 
-            "question_number": 132, 
-            "variable_name": "BehaveSch01_1C"
+            "variableid": "BehaveSch01_1C", 
+            "question_number": 132
         }, 
         {
             "response_table": [
@@ -661,14 +661,14 @@
                 }
             ], 
             "question_text": "Copy someone else's work at school:WrngBhvior", 
-            "question_number": 131, 
-            "variable_name": "BehaveSch02_1C"
+            "variableid": "BehaveSch02_1C", 
+            "question_number": 131
         }, 
         {
             "response_table": [], 
             "question_text": "Cohort", 
-            "question_number": 161, 
-            "variable_name": "cohort_1C"
+            "variableid": "cohort_1C", 
+            "question_number": 161
         }, 
         {
             "response_table": [
@@ -699,8 +699,8 @@
                 }
             ], 
             "question_text": "for you to learn Welsh?:FeelAbtWelsh", 
-            "question_number": 111, 
-            "variable_name": "CymAtt01_1C"
+            "variableid": "CymAtt01_1C", 
+            "question_number": 111
         }, 
         {
             "response_table": [
@@ -731,8 +731,8 @@
                 }
             ], 
             "question_text": "for you to speak Welsh?:FeelAbtWelsh", 
-            "question_number": 112, 
-            "variable_name": "CymAtt02_1C"
+            "variableid": "CymAtt02_1C", 
+            "question_number": 112
         }, 
         {
             "response_table": [
@@ -763,8 +763,8 @@
                 }
             ], 
             "question_text": "for Welsh to remain a living language?:FeelAbtWelsh", 
-            "question_number": 113, 
-            "variable_name": "CymAtt03_1C"
+            "variableid": "CymAtt03_1C", 
+            "question_number": 113
         }, 
         {
             "response_table": [
@@ -788,8 +788,8 @@
                 }
             ], 
             "question_text": "having friends of a different skin colour from you?:Diversity", 
-            "question_number": 120, 
-            "variable_name": "DiversAtt01_1C"
+            "variableid": "DiversAtt01_1C", 
+            "question_number": 120
         }, 
         {
             "response_table": [
@@ -813,8 +813,8 @@
                 }
             ], 
             "question_text": "having friends of a different gender from you?:Diversity", 
-            "question_number": 125, 
-            "variable_name": "DiversAtt05_1C"
+            "variableid": "DiversAtt05_1C", 
+            "question_number": 125
         }, 
         {
             "response_table": [
@@ -838,8 +838,8 @@
                 }
             ], 
             "question_text": "having friends from England?:Diversity", 
-            "question_number": 124, 
-            "variable_name": "DiversAtt08_1C"
+            "variableid": "DiversAtt08_1C", 
+            "question_number": 124
         }, 
         {
             "response_table": [
@@ -863,8 +863,8 @@
                 }
             ], 
             "question_text": "having friends from Scotland?:Diversity", 
-            "question_number": 123, 
-            "variable_name": "DiversAtt09_1C"
+            "variableid": "DiversAtt09_1C", 
+            "question_number": 123
         }, 
         {
             "response_table": [
@@ -888,8 +888,8 @@
                 }
             ], 
             "question_text": "having friends from Northern Ireland?:Diversity", 
-            "question_number": 122, 
-            "variable_name": "DiversAtt10_1C"
+            "variableid": "DiversAtt10_1C", 
+            "question_number": 122
         }, 
         {
             "response_table": [
@@ -913,8 +913,8 @@
                 }
             ], 
             "question_text": "having friends from countries outside of the UK?:Diversity", 
-            "question_number": 121, 
-            "variable_name": "DiversAtt11_1C"
+            "variableid": "DiversAtt11_1C", 
+            "question_number": 121
         }, 
         {
             "response_table": [
@@ -950,8 +950,8 @@
                 }
             ], 
             "question_text": "Spend time doing activities outside of the home with the following family members: Parents, brothers and/or sisters:Wrk/FamActivities", 
-            "question_number": 100, 
-            "variable_name": "FamActFrq01_1C"
+            "variableid": "FamActFrq01_1C", 
+            "question_number": 100
         }, 
         {
             "response_table": [
@@ -987,8 +987,8 @@
                 }
             ], 
             "question_text": "Spend time doing activities outside of the home with the following family members: Grandparents, aunts/uncles or cousins:Wrk/FamActivities", 
-            "question_number": 101, 
-            "variable_name": "FamActFrq03_1C"
+            "variableid": "FamActFrq03_1C", 
+            "question_number": 101
         }, 
         {
             "response_table": [
@@ -1024,44 +1024,44 @@
                 }
             ], 
             "question_text": "Do chores at home:Wrk/FamActivities", 
-            "question_number": 95, 
-            "variable_name": "FamActFrq28_1C"
+            "variableid": "FamActFrq28_1C", 
+            "question_number": 95
         }, 
         {
             "response_table": [], 
             "question_text": "Famous people I admire:Person #1:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
-            "question_number": 144, 
-            "variable_name": "FameAtt01_1C"
+            "variableid": "FameAtt01_1C", 
+            "question_number": 144
         }, 
         {
             "response_table": [], 
             "question_text": "Famous people I admire:Person #2:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
-            "question_number": 146, 
-            "variable_name": "FameAtt02_1C"
+            "variableid": "FameAtt02_1C", 
+            "question_number": 146
         }, 
         {
             "response_table": [], 
             "question_text": "Famous people I admire:Person #3:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
-            "question_number": 148, 
-            "variable_name": "FameAtt03_1C"
+            "variableid": "FameAtt03_1C", 
+            "question_number": 148
         }, 
         {
             "response_table": [], 
             "question_text": "Famous people I dislike:Person #1:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
-            "question_number": 145, 
-            "variable_name": "FameAtt04_1C"
+            "variableid": "FameAtt04_1C", 
+            "question_number": 145
         }, 
         {
             "response_table": [], 
             "question_text": "Famous people I dislike:Person #2:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
-            "question_number": 147, 
-            "variable_name": "FameAtt05_1C"
+            "variableid": "FameAtt05_1C", 
+            "question_number": 147
         }, 
         {
             "response_table": [], 
             "question_text": "Famous people I dislike:Person #3:Please list up to three famous people that you most admire and dislike in the spaces provided below", 
-            "question_number": 149, 
-            "variable_name": "FameAtt06_1C"
+            "variableid": "FameAtt06_1C", 
+            "question_number": 149
         }, 
         {
             "response_table": [
@@ -1086,8 +1086,8 @@
                 }
             ], 
             "question_text": "My family knows about what my friends and I do when we're together:Please choose the best response from the options below", 
-            "question_number": 14, 
-            "variable_name": "FrndActAtt08_1C"
+            "variableid": "FrndActAtt08_1C", 
+            "question_number": 14
         }, 
         {
             "response_table": [
@@ -1123,8 +1123,8 @@
                 }
             ], 
             "question_text": "Spend time with your friends and just hanging out:Wrk/FamActivities", 
-            "question_number": 97, 
-            "variable_name": "FrndActFrq04_1C"
+            "variableid": "FrndActFrq04_1C", 
+            "question_number": 97
         }, 
         {
             "response_table": [
@@ -1160,8 +1160,8 @@
                 }
             ], 
             "question_text": "Spend time with your friends browsing the Internet:Wrk/FamActivities", 
-            "question_number": 98, 
-            "variable_name": "FrndActFrq05_1C"
+            "variableid": "FrndActFrq05_1C", 
+            "question_number": 98
         }, 
         {
             "response_table": [
@@ -1197,8 +1197,8 @@
                 }
             ], 
             "question_text": "Spend time with your friends playing video games:Wrk/FamActivities", 
-            "question_number": 99, 
-            "variable_name": "FrndActFrq06_1C"
+            "variableid": "FrndActFrq06_1C", 
+            "question_number": 99
         }, 
         {
             "response_table": [
@@ -1229,8 +1229,8 @@
                 }
             ], 
             "question_text": "Sending messages on the computer, tablet or phone:Comm withFriends", 
-            "question_number": 7, 
-            "variable_name": "FrndActFrq09_1C"
+            "variableid": "FrndActFrq09_1C", 
+            "question_number": 7
         }, 
         {
             "response_table": [
@@ -1261,8 +1261,8 @@
                 }
             ], 
             "question_text": "Speaking over the phone:Comm withFriends", 
-            "question_number": 6, 
-            "variable_name": "FrndActFrq10_1C"
+            "variableid": "FrndActFrq10_1C", 
+            "question_number": 6
         }, 
         {
             "response_table": [
@@ -1293,8 +1293,8 @@
                 }
             ], 
             "question_text": "Talking face to face :Comm withFriends", 
-            "question_number": 5, 
-            "variable_name": "FrndActFrq11_1C"
+            "variableid": "FrndActFrq11_1C", 
+            "question_number": 5
         }, 
         {
             "response_table": [
@@ -1319,8 +1319,8 @@
                 }
             ], 
             "question_text": "I have better relationships with my friends than my family:Please choose the best response from the options below", 
-            "question_number": 11, 
-            "variable_name": "FrndAtt01_1C"
+            "variableid": "FrndAtt01_1C", 
+            "question_number": 11
         }, 
         {
             "response_table": [
@@ -1345,8 +1345,8 @@
                 }
             ], 
             "question_text": "Overall, my family approves of my friends:Please choose the best response from the options below", 
-            "question_number": 13, 
-            "variable_name": "FrndAtt02_1C"
+            "variableid": "FrndAtt02_1C", 
+            "question_number": 13
         }, 
         {
             "response_table": [
@@ -1371,8 +1371,8 @@
                 }
             ], 
             "question_text": "I have at least one good friend that I can really trust:Please choose the best response from the options below", 
-            "question_number": 12, 
-            "variable_name": "FrndAtt03_1C"
+            "variableid": "FrndAtt03_1C", 
+            "question_number": 12
         }, 
         {
             "response_table": [
@@ -1411,8 +1411,8 @@
                 }
             ], 
             "question_text": "#Msgs/Day", 
-            "question_number": 92, 
-            "variable_name": "FrndCom01_1C"
+            "variableid": "FrndCom01_1C", 
+            "question_number": 92
         }, 
         {
             "response_table": [
@@ -1447,8 +1447,8 @@
                 }
             ], 
             "question_text": "MsgngSchoolwork", 
-            "question_number": 93, 
-            "variable_name": "FrndCom04_1C"
+            "variableid": "FrndCom04_1C", 
+            "question_number": 93
         }, 
         {
             "response_table": [
@@ -1484,8 +1484,8 @@
                 }
             ], 
             "question_text": "Spend time with your friends chatting online (Facebook, Skype, etc ):Wrk/FamActivities", 
-            "question_number": 102, 
-            "variable_name": "FrndCom05_1C"
+            "variableid": "FrndCom05_1C", 
+            "question_number": 102
         }, 
         {
             "response_table": [
@@ -1516,32 +1516,32 @@
                 }
             ], 
             "question_text": "Friends Mix", 
-            "question_number": 4, 
-            "variable_name": "FrndDivers01_1C"
+            "variableid": "FrndDivers01_1C", 
+            "question_number": 4
         }, 
         {
             "response_table": [], 
             "question_text": "#SchoolFriends", 
-            "question_number": 156, 
-            "variable_name": "FrndDivers02_1C"
+            "variableid": "FrndDivers02_1C", 
+            "question_number": 156
         }, 
         {
             "response_table": [], 
             "question_text": "#SchoolFriends", 
-            "question_number": 2, 
-            "variable_name": "FrndDivers03_1C"
+            "variableid": "FrndDivers03_1C", 
+            "question_number": 2
         }, 
         {
             "response_table": [], 
             "question_text": "OtherSchoolFriends", 
-            "question_number": 157, 
-            "variable_name": "FrndDivers04_1C"
+            "variableid": "FrndDivers04_1C", 
+            "question_number": 157
         }, 
         {
             "response_table": [], 
             "question_text": "OtherSchoolFriends", 
-            "question_number": 3, 
-            "variable_name": "FrndDivers05_1C"
+            "variableid": "FrndDivers05_1C", 
+            "question_number": 3
         }, 
         {
             "response_table": [
@@ -1562,8 +1562,8 @@
                 }
             ], 
             "question_text": "Creative Arts (Painting, poetry, creative writing, sculpting, etc ):Non-schoolClasses", 
-            "question_number": 81, 
-            "variable_name": "Hob01_1C"
+            "variableid": "Hob01_1C", 
+            "question_number": 81
         }, 
         {
             "response_table": [
@@ -1584,8 +1584,8 @@
                 }
             ], 
             "question_text": "ICT/Design (Computer programming, Graphic design, etc ):Non-schoolClasses", 
-            "question_number": 83, 
-            "variable_name": "Hob02_1C"
+            "variableid": "Hob02_1C", 
+            "question_number": 83
         }, 
         {
             "response_table": [
@@ -1606,8 +1606,8 @@
                 }
             ], 
             "question_text": "Languages (Welsh, Foreign languages, etc ):Non-schoolClasses", 
-            "question_number": 82, 
-            "variable_name": "Hob03_1C"
+            "variableid": "Hob03_1C", 
+            "question_number": 82
         }, 
         {
             "response_table": [
@@ -1628,8 +1628,8 @@
                 }
             ], 
             "question_text": "Performing Arts (Singing, dancing, playing an instrument, etc ):Non-schoolClasses", 
-            "question_number": 79, 
-            "variable_name": "Hob04_1C"
+            "variableid": "Hob04_1C", 
+            "question_number": 79
         }, 
         {
             "response_table": [
@@ -1650,8 +1650,8 @@
                 }
             ], 
             "question_text": "Sports (Rugby, horseback riding, martial arts, gymnastics, etc ):Non-schoolClasses", 
-            "question_number": 80, 
-            "variable_name": "Hob06_1C"
+            "variableid": "Hob06_1C", 
+            "question_number": 80
         }, 
         {
             "response_table": [
@@ -1672,8 +1672,8 @@
                 }
             ], 
             "question_text": "Any other not listed:Non-schoolClasses", 
-            "question_number": 84, 
-            "variable_name": "Hob51_1C"
+            "variableid": "Hob51_1C", 
+            "question_number": 84
         }, 
         {
             "response_table": [
@@ -1709,8 +1709,8 @@
                 }
             ], 
             "question_text": "Play games on a computer or games console:Non-schoolActivities", 
-            "question_number": 75, 
-            "variable_name": "HobFrq01_1C"
+            "variableid": "HobFrq01_1C", 
+            "question_number": 75
         }, 
         {
             "response_table": [
@@ -1746,8 +1746,8 @@
                 }
             ], 
             "question_text": "Play sports or active games:Non-schoolActivities", 
-            "question_number": 76, 
-            "variable_name": "HobFrq02_1C"
+            "variableid": "HobFrq02_1C", 
+            "question_number": 76
         }, 
         {
             "response_table": [
@@ -1783,8 +1783,8 @@
                 }
             ], 
             "question_text": "Read for fun:Non-schoolActivities", 
-            "question_number": 74, 
-            "variable_name": "HobFrq04_1C"
+            "variableid": "HobFrq04_1C", 
+            "question_number": 74
         }, 
         {
             "response_table": [
@@ -1820,8 +1820,8 @@
                 }
             ], 
             "question_text": "Draw, paint or make things:Non-schoolActivities", 
-            "question_number": 77, 
-            "variable_name": "HobFrq08_1C"
+            "variableid": "HobFrq08_1C", 
+            "question_number": 77
         }, 
         {
             "response_table": [
@@ -1837,8 +1837,8 @@
                 }
             ], 
             "question_text": "surveylanguage", 
-            "question_number": 159, 
-            "variable_name": "langresponse_1C"
+            "variableid": "langresponse_1C", 
+            "question_number": 159
         }, 
         {
             "response_table": [
@@ -1874,14 +1874,14 @@
                 }
             ], 
             "question_text": "Do occasional work for pocket money, including chores at home, work in a family business or farm, etc :Wrk/FamActivities", 
-            "question_number": 96, 
-            "variable_name": "Money04_1C"
+            "variableid": "Money04_1C", 
+            "question_number": 96
         }, 
         {
             "response_table": [], 
             "question_text": "If someone gave you \u00c2\u00a31 million today, what would you do with it?", 
-            "question_number": 151, 
-            "variable_name": "Money15_1C"
+            "variableid": "Money15_1C", 
+            "question_number": 151
         }, 
         {
             "response_table": [
@@ -1912,14 +1912,14 @@
                 }
             ], 
             "question_text": "Ethnicity", 
-            "question_number": 154, 
-            "variable_name": "NatEth01_1C"
+            "variableid": "NatEth01_1C", 
+            "question_number": 154
         }, 
         {
             "response_table": [], 
             "question_text": "Nationality", 
-            "question_number": 155, 
-            "variable_name": "NatIden01_1C"
+            "variableid": "NatIden01_1C", 
+            "question_number": 155
         }, 
         {
             "response_table": [
@@ -1950,26 +1950,26 @@
                 }
             ], 
             "question_text": "Please choose the option that best describes how well you speak Welsh", 
-            "question_number": 152, 
-            "variable_name": "NatLang09_1C"
+            "variableid": "NatLang09_1C", 
+            "question_number": 152
         }, 
         {
             "response_table": [], 
             "question_text": "Word #1:NbrhdDescrptn", 
-            "question_number": 8, 
-            "variable_name": "NeighbAtt01_1C"
+            "variableid": "NeighbAtt01_1C", 
+            "question_number": 8
         }, 
         {
             "response_table": [], 
             "question_text": "Word #2:NbrhdDescrptn", 
-            "question_number": 9, 
-            "variable_name": "NeighbAtt02_1C"
+            "variableid": "NeighbAtt02_1C", 
+            "question_number": 9
         }, 
         {
             "response_table": [], 
             "question_text": "Word #3:NbrhdDescrptn", 
-            "question_number": 10, 
-            "variable_name": "NeighbAtt03_1C"
+            "variableid": "NeighbAtt03_1C", 
+            "question_number": 10
         }, 
         {
             "response_table": [
@@ -2000,8 +2000,8 @@
                 }
             ], 
             "question_text": "walking in your neighbourhood during the day?:How safe do you feel", 
-            "question_number": 15, 
-            "variable_name": "NeighbAtt04_1C"
+            "variableid": "NeighbAtt04_1C", 
+            "question_number": 15
         }, 
         {
             "response_table": [
@@ -2032,8 +2032,8 @@
                 }
             ], 
             "question_text": "walking in your neighbourhood at night?:How safe do you feel", 
-            "question_number": 16, 
-            "variable_name": "NeighbAtt05_1C"
+            "variableid": "NeighbAtt05_1C", 
+            "question_number": 16
         }, 
         {
             "response_table": [
@@ -2069,8 +2069,8 @@
                 }
             ], 
             "question_text": "Do volunteer work:Wrk/FamActivities", 
-            "question_number": 94, 
-            "variable_name": "PhilAct01_1C"
+            "variableid": "PhilAct01_1C", 
+            "question_number": 94
         }, 
         {
             "response_table": [
@@ -2091,8 +2091,8 @@
                 }
             ], 
             "question_text": "English:PrivateTuition", 
-            "question_number": 85, 
-            "variable_name": "PrvtuSubj01_1C"
+            "variableid": "PrvtuSubj01_1C", 
+            "question_number": 85
         }, 
         {
             "response_table": [
@@ -2113,8 +2113,8 @@
                 }
             ], 
             "question_text": "Maths:PrivateTuition", 
-            "question_number": 87, 
-            "variable_name": "PrvtuSubj02_1C"
+            "variableid": "PrvtuSubj02_1C", 
+            "question_number": 87
         }, 
         {
             "response_table": [
@@ -2135,8 +2135,8 @@
                 }
             ], 
             "question_text": "Science:PrivateTuition", 
-            "question_number": 86, 
-            "variable_name": "PrvtuSubj03_1C"
+            "variableid": "PrvtuSubj03_1C", 
+            "question_number": 86
         }, 
         {
             "response_table": [
@@ -2157,8 +2157,8 @@
                 }
             ], 
             "question_text": "Welsh:PrivateTuition", 
-            "question_number": 88, 
-            "variable_name": "PrvtuSubj04_1C"
+            "variableid": "PrvtuSubj04_1C", 
+            "question_number": 88
         }, 
         {
             "response_table": [
@@ -2179,8 +2179,8 @@
                 }
             ], 
             "question_text": "Foreign Languages:PrivateTuition", 
-            "question_number": 90, 
-            "variable_name": "PrvtuSubj05_1C"
+            "variableid": "PrvtuSubj05_1C", 
+            "question_number": 90
         }, 
         {
             "response_table": [
@@ -2201,8 +2201,8 @@
                 }
             ], 
             "question_text": "Humanities (Geography, History, etc ):PrivateTuition", 
-            "question_number": 89, 
-            "variable_name": "PrvtuSubj06_1C"
+            "variableid": "PrvtuSubj06_1C", 
+            "question_number": 89
         }, 
         {
             "response_table": [
@@ -2223,8 +2223,8 @@
                 }
             ], 
             "question_text": "Any other not listed:PrivateTuition", 
-            "question_number": 91, 
-            "variable_name": "PrvtuSubj07_1C"
+            "variableid": "PrvtuSubj07_1C", 
+            "question_number": 91
         }, 
         {
             "response_table": [
@@ -2257,8 +2257,8 @@
                 }
             ], 
             "question_text": "eat breakfast before school starts?:TiredFood", 
-            "question_number": 109, 
-            "variable_name": "RoutnFood04_1C"
+            "variableid": "RoutnFood04_1C", 
+            "question_number": 109
         }, 
         {
             "response_table": [
@@ -2291,8 +2291,8 @@
                 }
             ], 
             "question_text": "skip lunch at school?:TiredFood", 
-            "question_number": 110, 
-            "variable_name": "RoutnFood05_1C"
+            "variableid": "RoutnFood05_1C", 
+            "question_number": 110
         }, 
         {
             "response_table": [
@@ -2333,8 +2333,8 @@
                 }
             ], 
             "question_text": "Wakeup2", 
-            "question_number": 106, 
-            "variable_name": "RoutnSleep01_1C"
+            "variableid": "RoutnSleep01_1C", 
+            "question_number": 106
         }, 
         {
             "response_table": [
@@ -2365,8 +2365,8 @@
                 }
             ], 
             "question_text": "Wakeup1", 
-            "question_number": 105, 
-            "variable_name": "RoutnSleep02_1C"
+            "variableid": "RoutnSleep02_1C", 
+            "question_number": 105
         }, 
         {
             "response_table": [
@@ -2422,8 +2422,8 @@
                 }
             ], 
             "question_text": "Bedtime2", 
-            "question_number": 104, 
-            "variable_name": "RoutnSleep03_1C"
+            "variableid": "RoutnSleep03_1C", 
+            "question_number": 104
         }, 
         {
             "response_table": [
@@ -2454,8 +2454,8 @@
                 }
             ], 
             "question_text": "Bedtime1", 
-            "question_number": 103, 
-            "variable_name": "RoutnSleep04_1C"
+            "variableid": "RoutnSleep04_1C", 
+            "question_number": 103
         }, 
         {
             "response_table": [
@@ -2491,8 +2491,8 @@
                 }
             ], 
             "question_text": "wake up at night to message a friend, or check messages, on the computer, a tablet or your phone?:TiredFood", 
-            "question_number": 108, 
-            "variable_name": "RoutnSleep05_1C"
+            "variableid": "RoutnSleep05_1C", 
+            "question_number": 108
         }, 
         {
             "response_table": [
@@ -2528,8 +2528,8 @@
                 }
             ], 
             "question_text": "go to school feeling tired?:TiredFood", 
-            "question_number": 107, 
-            "variable_name": "RoutnSleep07_1C"
+            "variableid": "RoutnSleep07_1C", 
+            "question_number": 107
         }, 
         {
             "response_table": [
@@ -2565,62 +2565,62 @@
                 }
             ], 
             "question_text": "Use the Internet for homework:Non-schoolActivities", 
-            "question_number": 78, 
-            "variable_name": "SchAct03_1C"
+            "variableid": "SchAct03_1C", 
+            "question_number": 78
         }, 
         {
             "response_table": [], 
             "question_text": "Word #1:SchoolDescription", 
-            "question_number": 17, 
-            "variable_name": "SchAtt03_1C"
+            "variableid": "SchAtt03_1C", 
+            "question_number": 17
         }, 
         {
             "response_table": [], 
             "question_text": "What I like about school:Word #1:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
-            "question_number": 45, 
-            "variable_name": "SchAtt04_1C"
+            "variableid": "SchAtt04_1C", 
+            "question_number": 45
         }, 
         {
             "response_table": [], 
             "question_text": "What I like about school:Word #2:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
-            "question_number": 46, 
-            "variable_name": "SchAtt05_1C"
+            "variableid": "SchAtt05_1C", 
+            "question_number": 46
         }, 
         {
             "response_table": [], 
             "question_text": "What I like about school:Word #3:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
-            "question_number": 47, 
-            "variable_name": "SchAtt06_1C"
+            "variableid": "SchAtt06_1C", 
+            "question_number": 47
         }, 
         {
             "response_table": [], 
             "question_text": "What I dislike about school:Word #1:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
-            "question_number": 48, 
-            "variable_name": "SchAtt07_1C"
+            "variableid": "SchAtt07_1C", 
+            "question_number": 48
         }, 
         {
             "response_table": [], 
             "question_text": "What I dislike about school:Word #2:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
-            "question_number": 49, 
-            "variable_name": "SchAtt08_1C"
+            "variableid": "SchAtt08_1C", 
+            "question_number": 49
         }, 
         {
             "response_table": [], 
             "question_text": "What I dislike about school:Word #3:Please list up to three words that describe you what you like and dislike about school in the spaces provided below", 
-            "question_number": 50, 
-            "variable_name": "SchAtt09_1C"
+            "variableid": "SchAtt09_1C", 
+            "question_number": 50
         }, 
         {
             "response_table": [], 
             "question_text": "Word #2:SchoolDescription", 
-            "question_number": 18, 
-            "variable_name": "SchAtt10_1C"
+            "variableid": "SchAtt10_1C", 
+            "question_number": 18
         }, 
         {
             "response_table": [], 
             "question_text": "Word #3:SchoolDescription", 
-            "question_number": 19, 
-            "variable_name": "SchAtt11_1C"
+            "variableid": "SchAtt11_1C", 
+            "question_number": 19
         }, 
         {
             "response_table": [
@@ -2640,8 +2640,8 @@
                 }
             ], 
             "question_text": "When I'm older, I will have good memories of attending this school:FlngsFrndsFamSchool", 
-            "question_number": 73, 
-            "variable_name": "SchAtt12_1C"
+            "variableid": "SchAtt12_1C", 
+            "question_number": 73
         }, 
         {
             "response_table": [
@@ -2661,8 +2661,8 @@
                 }
             ], 
             "question_text": "I think the work I do in school now will help me achieve my future goals:FlngsFrndsFamSchool", 
-            "question_number": 71, 
-            "variable_name": "SchAtt14_1C"
+            "variableid": "SchAtt14_1C", 
+            "question_number": 71
         }, 
         {
             "response_table": [
@@ -2687,8 +2687,8 @@
                 }
             ], 
             "question_text": "Overall, I feel I make a good effort in class:SchoolOpinion", 
-            "question_number": 30, 
-            "variable_name": "SchAtt16_1C"
+            "variableid": "SchAtt16_1C", 
+            "question_number": 30
         }, 
         {
             "response_table": [
@@ -2713,8 +2713,8 @@
                 }
             ], 
             "question_text": "I feel safe at school:SchoolOpinion", 
-            "question_number": 31, 
-            "variable_name": "SchAtt19_1C"
+            "variableid": "SchAtt19_1C", 
+            "question_number": 31
         }, 
         {
             "response_table": [
@@ -2739,8 +2739,8 @@
                 }
             ], 
             "question_text": "School helps increase my interest in the politics of Wales:SchoolOpinion", 
-            "question_number": 28, 
-            "variable_name": "SchAtt21_1C"
+            "variableid": "SchAtt21_1C", 
+            "question_number": 28
         }, 
         {
             "response_table": [
@@ -2765,8 +2765,8 @@
                 }
             ], 
             "question_text": "School helps me appreciate living in Wales:SchoolOpinion", 
-            "question_number": 26, 
-            "variable_name": "SchAtt22_1C"
+            "variableid": "SchAtt22_1C", 
+            "question_number": 26
         }, 
         {
             "response_table": [
@@ -2791,8 +2791,8 @@
                 }
             ], 
             "question_text": "School helps me develop my own sense of Welshness:SchoolOpinion", 
-            "question_number": 27, 
-            "variable_name": "SchAtt23_1C"
+            "variableid": "SchAtt23_1C", 
+            "question_number": 27
         }, 
         {
             "response_table": [
@@ -2818,8 +2818,8 @@
                 }
             ], 
             "question_text": "Taking notes while the teacher talks:ClassActivities", 
-            "question_number": 62, 
-            "variable_name": "SchLearnAtt05_1C"
+            "variableid": "SchLearnAtt05_1C", 
+            "question_number": 62
         }, 
         {
             "response_table": [
@@ -2845,8 +2845,8 @@
                 }
             ], 
             "question_text": "Working individually:ClassActivities", 
-            "question_number": 65, 
-            "variable_name": "SchLearnAtt06_1C"
+            "variableid": "SchLearnAtt06_1C", 
+            "question_number": 65
         }, 
         {
             "response_table": [
@@ -2872,8 +2872,8 @@
                 }
             ], 
             "question_text": "Working with a partner:ClassActivities", 
-            "question_number": 64, 
-            "variable_name": "SchLearnAtt07_1C"
+            "variableid": "SchLearnAtt07_1C", 
+            "question_number": 64
         }, 
         {
             "response_table": [
@@ -2899,8 +2899,8 @@
                 }
             ], 
             "question_text": "Working in a group:ClassActivities", 
-            "question_number": 63, 
-            "variable_name": "SchLearnAtt08_1C"
+            "variableid": "SchLearnAtt08_1C", 
+            "question_number": 63
         }, 
         {
             "response_table": [
@@ -2926,8 +2926,8 @@
                 }
             ], 
             "question_text": "Working on projects that involve a lot of class or group discussion:ClassActivities", 
-            "question_number": 68, 
-            "variable_name": "SchLearnAtt09_1C"
+            "variableid": "SchLearnAtt09_1C", 
+            "question_number": 68
         }, 
         {
             "response_table": [
@@ -2953,8 +2953,8 @@
                 }
             ], 
             "question_text": "Working on projects that involve getting up out of your seat or going outside:ClassActivities", 
-            "question_number": 69, 
-            "variable_name": "SchLearnAtt10_1C"
+            "variableid": "SchLearnAtt10_1C", 
+            "question_number": 69
         }, 
         {
             "response_table": [
@@ -2980,8 +2980,8 @@
                 }
             ], 
             "question_text": "Working on projects with detailed instructions:ClassActivities", 
-            "question_number": 66, 
-            "variable_name": "SchLearnAtt11_1C"
+            "variableid": "SchLearnAtt11_1C", 
+            "question_number": 66
         }, 
         {
             "response_table": [
@@ -3007,8 +3007,8 @@
                 }
             ], 
             "question_text": "Working on projects without detailed instructions:ClassActivities", 
-            "question_number": 67, 
-            "variable_name": "SchLearnAtt12_1C"
+            "variableid": "SchLearnAtt12_1C", 
+            "question_number": 67
         }, 
         {
             "response_table": [
@@ -3028,8 +3028,8 @@
                 }
             ], 
             "question_text": "The things I learn in school now help me in my day-to-day life:FlngsFrndsFamSchool", 
-            "question_number": 72, 
-            "variable_name": "SchLearnAtt13_1C"
+            "variableid": "SchLearnAtt13_1C", 
+            "question_number": 72
         }, 
         {
             "response_table": [
@@ -3054,8 +3054,8 @@
                 }
             ], 
             "question_text": "My views are listened to and taken seriously by school staff:SchoolOpinion", 
-            "question_number": 23, 
-            "variable_name": "SchStafAtt05_1C"
+            "variableid": "SchStafAtt05_1C", 
+            "question_number": 23
         }, 
         {
             "response_table": [
@@ -3080,8 +3080,8 @@
                 }
             ], 
             "question_text": "Overall, I like the school staff:SchoolOpinion", 
-            "question_number": 29, 
-            "variable_name": "SchStafAtt06_1C"
+            "variableid": "SchStafAtt06_1C", 
+            "question_number": 29
         }, 
         {
             "response_table": [
@@ -3106,8 +3106,8 @@
                 }
             ], 
             "question_text": "The school staff have high expectations of me:SchoolOpinion", 
-            "question_number": 21, 
-            "variable_name": "SchStafAtt08_1C"
+            "variableid": "SchStafAtt08_1C", 
+            "question_number": 21
         }, 
         {
             "response_table": [
@@ -3132,8 +3132,8 @@
                 }
             ], 
             "question_text": "The school staff make school fun:SchoolOpinion", 
-            "question_number": 25, 
-            "variable_name": "SchStafAtt09_1C"
+            "variableid": "SchStafAtt09_1C", 
+            "question_number": 25
         }, 
         {
             "response_table": [
@@ -3158,8 +3158,8 @@
                 }
             ], 
             "question_text": "The school staff set goals I can easily achieve:SchoolOpinion", 
-            "question_number": 22, 
-            "variable_name": "SchStafAtt10_1C"
+            "variableid": "SchStafAtt10_1C", 
+            "question_number": 22
         }, 
         {
             "response_table": [
@@ -3184,8 +3184,8 @@
                 }
             ], 
             "question_text": "My school cares about how much I improve in my studies:SchoolOpinion", 
-            "question_number": 20, 
-            "variable_name": "SchStafAtt11_1C"
+            "variableid": "SchStafAtt11_1C", 
+            "question_number": 20
         }, 
         {
             "response_table": [
@@ -3210,8 +3210,8 @@
                 }
             ], 
             "question_text": "My school rewards pupils who receive good marks or make good progress:SchoolOpinion", 
-            "question_number": 24, 
-            "variable_name": "SchStafAtt16_1C"
+            "variableid": "SchStafAtt16_1C", 
+            "question_number": 24
         }, 
         {
             "response_table": [
@@ -3237,8 +3237,8 @@
                 }
             ], 
             "question_text": "WlshBacc", 
-            "question_number": 70, 
-            "variable_name": "SchStdySubj61_1C"
+            "variableid": "SchStdySubj61_1C", 
+            "question_number": 70
         }, 
         {
             "response_table": [
@@ -3264,8 +3264,8 @@
                 }
             ], 
             "question_text": "English:LikeSchoolSubjects", 
-            "question_number": 35, 
-            "variable_name": "SchSubjAtt01_1C"
+            "variableid": "SchSubjAtt01_1C", 
+            "question_number": 35
         }, 
         {
             "response_table": [
@@ -3291,8 +3291,8 @@
                 }
             ], 
             "question_text": "Maths:LikeSchoolSubjects", 
-            "question_number": 37, 
-            "variable_name": "SchSubjAtt02_1C"
+            "variableid": "SchSubjAtt02_1C", 
+            "question_number": 37
         }, 
         {
             "response_table": [
@@ -3318,8 +3318,8 @@
                 }
             ], 
             "question_text": "Science:LikeSchoolSubjects", 
-            "question_number": 36, 
-            "variable_name": "SchSubjAtt03_1C"
+            "variableid": "SchSubjAtt03_1C", 
+            "question_number": 36
         }, 
         {
             "response_table": [
@@ -3345,8 +3345,8 @@
                 }
             ], 
             "question_text": "Welsh:LikeSchoolSubjects", 
-            "question_number": 38, 
-            "variable_name": "SchSubjAtt04_1C"
+            "variableid": "SchSubjAtt04_1C", 
+            "question_number": 38
         }, 
         {
             "response_table": [
@@ -3372,8 +3372,8 @@
                 }
             ], 
             "question_text": "Art:LikeSchoolSubjects", 
-            "question_number": 33, 
-            "variable_name": "SchSubjAtt05_1C"
+            "variableid": "SchSubjAtt05_1C", 
+            "question_number": 33
         }, 
         {
             "response_table": [
@@ -3399,8 +3399,8 @@
                 }
             ], 
             "question_text": "Design & Technology (e g  Resistant materials, Food technology, Textiles technology   ):LikeSchoolSubjects", 
-            "question_number": 43, 
-            "variable_name": "SchSubjAtt06_1C"
+            "variableid": "SchSubjAtt06_1C", 
+            "question_number": 43
         }, 
         {
             "response_table": [
@@ -3426,8 +3426,8 @@
                 }
             ], 
             "question_text": "Foreign languages (e g  Spanish, French, German   ):LikeSchoolSubjects", 
-            "question_number": 42, 
-            "variable_name": "SchSubjAtt07_1C"
+            "variableid": "SchSubjAtt07_1C", 
+            "question_number": 42
         }, 
         {
             "response_table": [
@@ -3453,8 +3453,8 @@
                 }
             ], 
             "question_text": "Geography:LikeSchoolSubjects", 
-            "question_number": 41, 
-            "variable_name": "SchSubjAtt08_1C"
+            "variableid": "SchSubjAtt08_1C", 
+            "question_number": 41
         }, 
         {
             "response_table": [
@@ -3480,8 +3480,8 @@
                 }
             ], 
             "question_text": "History:LikeSchoolSubjects", 
-            "question_number": 40, 
-            "variable_name": "SchSubjAtt09_1C"
+            "variableid": "SchSubjAtt09_1C", 
+            "question_number": 40
         }, 
         {
             "response_table": [
@@ -3507,8 +3507,8 @@
                 }
             ], 
             "question_text": "ICT:LikeSchoolSubjects", 
-            "question_number": 34, 
-            "variable_name": "SchSubjAtt10_1C"
+            "variableid": "SchSubjAtt10_1C", 
+            "question_number": 34
         }, 
         {
             "response_table": [
@@ -3534,8 +3534,8 @@
                 }
             ], 
             "question_text": "Music:LikeSchoolSubjects", 
-            "question_number": 32, 
-            "variable_name": "SchSubjAtt11_1C"
+            "variableid": "SchSubjAtt11_1C", 
+            "question_number": 32
         }, 
         {
             "response_table": [
@@ -3561,8 +3561,8 @@
                 }
             ], 
             "question_text": "PE:LikeSchoolSubjects", 
-            "question_number": 39, 
-            "variable_name": "SchSubjAtt12_1C"
+            "variableid": "SchSubjAtt12_1C", 
+            "question_number": 39
         }, 
         {
             "response_table": [
@@ -3588,8 +3588,8 @@
                 }
             ], 
             "question_text": "Religious Education:LikeSchoolSubjects", 
-            "question_number": 44, 
-            "variable_name": "SchSubjAtt13_1C"
+            "variableid": "SchSubjAtt13_1C", 
+            "question_number": 44
         }, 
         {
             "response_table": [
@@ -3614,8 +3614,8 @@
                 }
             ], 
             "question_text": "When I was in primary school, I looked forward to coming to secondary school:Transition1", 
-            "question_number": 58, 
-            "variable_name": "SchTranAtt08_1C"
+            "variableid": "SchTranAtt08_1C", 
+            "question_number": 58
         }, 
         {
             "response_table": [
@@ -3640,8 +3640,8 @@
                 }
             ], 
             "question_text": "Overall, I like primary school better than secondary school:Transition1", 
-            "question_number": 59, 
-            "variable_name": "SchTranAtt09_1C"
+            "variableid": "SchTranAtt09_1C", 
+            "question_number": 59
         }, 
         {
             "response_table": [
@@ -3666,8 +3666,8 @@
                 }
             ], 
             "question_text": "Overall, I like secondary school better than primary school:Transition1", 
-            "question_number": 61, 
-            "variable_name": "SchTranAtt10_1C"
+            "variableid": "SchTranAtt10_1C", 
+            "question_number": 61
         }, 
         {
             "response_table": [
@@ -3683,8 +3683,8 @@
                 }
             ], 
             "question_text": "Happy:Transition2", 
-            "question_number": 51, 
-            "variable_name": "SchTranAtt13_1C"
+            "variableid": "SchTranAtt13_1C", 
+            "question_number": 51
         }, 
         {
             "response_table": [
@@ -3700,8 +3700,8 @@
                 }
             ], 
             "question_text": "Eager:Transition2", 
-            "question_number": 55, 
-            "variable_name": "SchTranAtt14_1C"
+            "variableid": "SchTranAtt14_1C", 
+            "question_number": 55
         }, 
         {
             "response_table": [
@@ -3717,8 +3717,8 @@
                 }
             ], 
             "question_text": "Confident:Transition2", 
-            "question_number": 53, 
-            "variable_name": "SchTranAtt15_1C"
+            "variableid": "SchTranAtt15_1C", 
+            "question_number": 53
         }, 
         {
             "response_table": [
@@ -3734,8 +3734,8 @@
                 }
             ], 
             "question_text": "Afraid:Transition2", 
-            "question_number": 54, 
-            "variable_name": "SchTranAtt16_1C"
+            "variableid": "SchTranAtt16_1C", 
+            "question_number": 54
         }, 
         {
             "response_table": [
@@ -3751,8 +3751,8 @@
                 }
             ], 
             "question_text": "Reluctant:Transition2", 
-            "question_number": 56, 
-            "variable_name": "SchTranAtt17_1C"
+            "variableid": "SchTranAtt17_1C", 
+            "question_number": 56
         }, 
         {
             "response_table": [
@@ -3768,8 +3768,8 @@
                 }
             ], 
             "question_text": "Sad:Transition2", 
-            "question_number": 52, 
-            "variable_name": "SchTranAtt18_1C"
+            "variableid": "SchTranAtt18_1C", 
+            "question_number": 52
         }, 
         {
             "response_table": [
@@ -3794,8 +3794,8 @@
                 }
             ], 
             "question_text": "Moving up from primary school to secondary school was stressful:Transition1", 
-            "question_number": 57, 
-            "variable_name": "SchTranAtt19_1C"
+            "variableid": "SchTranAtt19_1C", 
+            "question_number": 57
         }, 
         {
             "response_table": [
@@ -3820,8 +3820,8 @@
                 }
             ], 
             "question_text": "I made a lot of new friends when I came to secondary school:Transition1", 
-            "question_number": 60, 
-            "variable_name": "SchTranFrnd04_1C"
+            "variableid": "SchTranFrnd04_1C", 
+            "question_number": 60
         }, 
         {
             "response_table": [
@@ -3837,8 +3837,8 @@
                 }
             ], 
             "question_text": "Resp  Gender", 
-            "question_number": 153, 
-            "variable_name": "sex_1C"
+            "variableid": "sex_1C", 
+            "question_number": 153
         }, 
         {
             "response_table": [
@@ -3864,8 +3864,8 @@
                 }
             ], 
             "question_text": "The way you look:HappyAbtLife", 
-            "question_number": 115, 
-            "variable_name": "WellSat01_1C"
+            "variableid": "WellSat01_1C", 
+            "question_number": 115
         }, 
         {
             "response_table": [
@@ -3891,8 +3891,8 @@
                 }
             ], 
             "question_text": "Your family:HappyAbtLife", 
-            "question_number": 116, 
-            "variable_name": "WellSat02_1C"
+            "variableid": "WellSat02_1C", 
+            "question_number": 116
         }, 
         {
             "response_table": [
@@ -3918,8 +3918,8 @@
                 }
             ], 
             "question_text": "Your friends:HappyAbtLife", 
-            "question_number": 117, 
-            "variable_name": "WellSat03_1C"
+            "variableid": "WellSat03_1C", 
+            "question_number": 117
         }, 
         {
             "response_table": [
@@ -3945,8 +3945,8 @@
                 }
             ], 
             "question_text": "Your life as a whole:HappyAbtLife", 
-            "question_number": 119, 
-            "variable_name": "WellSat04_1C"
+            "variableid": "WellSat04_1C", 
+            "question_number": 119
         }, 
         {
             "response_table": [
@@ -3972,8 +3972,8 @@
                 }
             ], 
             "question_text": "Your school overall:HappyAbtLife", 
-            "question_number": 118, 
-            "variable_name": "WellSat05_1C"
+            "variableid": "WellSat05_1C", 
+            "question_number": 118
         }, 
         {
             "response_table": [
@@ -3999,8 +3999,8 @@
                 }
             ], 
             "question_text": "Your school work:HappyAbtLife", 
-            "question_number": 114, 
-            "variable_name": "WellSat06_1C"
+            "variableid": "WellSat06_1C", 
+            "question_number": 114
         }
     ]
 }

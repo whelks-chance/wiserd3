@@ -3,8 +3,8 @@
         {
             "response_table": [], 
             "question_text": "What job do you think you'll have when you're grown up?", 
-            "question_number": 127, 
-            "variable_name": "AspCareer03_2B"
+            "variableid": "AspCareer03_2B", 
+            "question_number": 127
         }, 
         {
             "response_table": [
@@ -34,8 +34,8 @@
                 }
             ], 
             "question_text": "be financially well-off?:When you are an adult,  do you think you will:", 
-            "question_number": 122, 
-            "variable_name": "AspLikely01_2B"
+            "variableid": "AspLikely01_2B", 
+            "question_number": 122
         }, 
         {
             "response_table": [
@@ -65,8 +65,8 @@
                 }
             ], 
             "question_text": "have a family of your own?:When you are an adult,  do you think you will:", 
-            "question_number": 120, 
-            "variable_name": "AspLikely02_2B"
+            "variableid": "AspLikely02_2B", 
+            "question_number": 120
         }, 
         {
             "response_table": [
@@ -96,8 +96,8 @@
                 }
             ], 
             "question_text": "have a job that you will enjoy?:When you are an adult,  do you think you will:", 
-            "question_number": 125, 
-            "variable_name": "AspLikely03_2B"
+            "variableid": "AspLikely03_2B", 
+            "question_number": 125
         }, 
         {
             "response_table": [
@@ -127,8 +127,8 @@
                 }
             ], 
             "question_text": "have graduated from university?:When you are an adult,  do you think you will:", 
-            "question_number": 121, 
-            "variable_name": "AspLikely04_2B"
+            "variableid": "AspLikely04_2B", 
+            "question_number": 121
         }, 
         {
             "response_table": [
@@ -158,8 +158,8 @@
                 }
             ], 
             "question_text": "live abroad?:When you are an adult,  do you think you will:", 
-            "question_number": 119, 
-            "variable_name": "AspLikely05_2B"
+            "variableid": "AspLikely05_2B", 
+            "question_number": 119
         }, 
         {
             "response_table": [
@@ -189,8 +189,8 @@
                 }
             ], 
             "question_text": "live in the same neighbourhood as you do now?:When you are an adult,  do you think you will:", 
-            "question_number": 118, 
-            "variable_name": "AspLikely06_2B"
+            "variableid": "AspLikely06_2B", 
+            "question_number": 118
         }, 
         {
             "response_table": [
@@ -220,8 +220,8 @@
                 }
             ], 
             "question_text": "live in Wales?:When you are an adult,  do you think you will:", 
-            "question_number": 117, 
-            "variable_name": "AspLikely07_2B"
+            "variableid": "AspLikely07_2B", 
+            "question_number": 117
         }, 
         {
             "response_table": [
@@ -251,8 +251,8 @@
                 }
             ], 
             "question_text": "speak Welsh?:When you are an adult,  do you think you will:", 
-            "question_number": 124, 
-            "variable_name": "AspLikely08_2B"
+            "variableid": "AspLikely08_2B", 
+            "question_number": 124
         }, 
         {
             "response_table": [
@@ -282,8 +282,8 @@
                 }
             ], 
             "question_text": "volunteer some of your time to help others?:When you are an adult,  do you think you will:", 
-            "question_number": 123, 
-            "variable_name": "AspLikely09_2B"
+            "variableid": "AspLikely09_2B", 
+            "question_number": 123
         }, 
         {
             "response_table": [
@@ -309,8 +309,8 @@
                 }
             ], 
             "question_text": "Do you plan to stay in full-time education when you are 16?", 
-            "question_number": 126, 
-            "variable_name": "AspPostSch01_2B"
+            "variableid": "AspPostSch01_2B", 
+            "question_number": 126
         }, 
         {
             "response_table": [
@@ -346,8 +346,8 @@
                 }
             ], 
             "question_text": "are you bullied outside school?: Bullying is a behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats", 
-            "question_number": 77, 
-            "variable_name": "Bully01_2B"
+            "variableid": "Bully01_2B", 
+            "question_number": 77
         }, 
         {
             "response_table": [
@@ -378,56 +378,56 @@
                 }
             ], 
             "question_text": "do you bully other pupils outside school?: Bullying is a behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats", 
-            "question_number": 78, 
-            "variable_name": "Bully03_2B"
+            "variableid": "Bully03_2B", 
+            "question_number": 78
         }, 
         {
             "response_table": [], 
             "question_text": "What social networking website  do you use the most?:Website:Cyber-bullying is a type of bullying that occurs via mobile phone or online (e g  email, social media and instant message)  With this in mind, please answer the following questions about using s", 
-            "question_number": 79, 
-            "variable_name": "Bully05_2B"
+            "variableid": "Bully05_2B", 
+            "question_number": 79
         }, 
         {
             "response_table": [], 
             "question_text": "How many days in a typical week do you use the website?:Website:Cyber-bullying is a type of bullying that occurs via mobile phone or online (e g  email, social media and instant message)  With this in mind, please answer the following questions about usin", 
-            "question_number": 81, 
-            "variable_name": "Bully06_2B"
+            "variableid": "Bully06_2B", 
+            "question_number": 81
         }, 
         {
             "response_table": [], 
             "question_text": "How many days in a typical week are you bullied when using the website?:Website:Cyber-bullying is a type of bullying that occurs via mobile phone or online (e g  email, social media and instant message)  With this in mind, please answer the following ques", 
-            "question_number": 83, 
-            "variable_name": "Bully07_2B"
+            "variableid": "Bully07_2B", 
+            "question_number": 83
         }, 
         {
             "response_table": [], 
             "question_text": "How many days in a typical week do you bully others while using the website?:Website:Cyber-bullying is a type of bullying that occurs via mobile phone or online (e g  email, social media and instant message)  With this in mind, please answer the following", 
-            "question_number": 85, 
-            "variable_name": "Bully08_2B"
+            "variableid": "Bully08_2B", 
+            "question_number": 85
         }, 
         {
             "response_table": [], 
             "question_text": "Which app do you use the most?:App:Cyber-bullying is a type of bullying that occurs via mobile phone or online (e g  email, social media and instant message)  With this in mind, please answer the following questions about using social networking apps in t", 
-            "question_number": 87, 
-            "variable_name": "Bully09_2B"
+            "variableid": "Bully09_2B", 
+            "question_number": 87
         }, 
         {
             "response_table": [], 
             "question_text": "How many days in a typical week do you use the app?:App:Cyber-bullying is a type of bullying that occurs via mobile phone or online (e g  email, social media and instant message)  With this in mind, please answer the following questions about using social", 
-            "question_number": 89, 
-            "variable_name": "Bully10_2B"
+            "variableid": "Bully10_2B", 
+            "question_number": 89
         }, 
         {
             "response_table": [], 
             "question_text": "How many days in a typical week are you bullied when using the app?:App:Cyber-bullying is a type of bullying that occurs via mobile phone or online (e g  email, social media and instant message)  With this in mind, please answer the following questions ab", 
-            "question_number": 91, 
-            "variable_name": "Bully11_2B"
+            "variableid": "Bully11_2B", 
+            "question_number": 91
         }, 
         {
             "response_table": [], 
             "question_text": "How many days in a typical week do you bully others while using the app?:App:Cyber-bullying is a type of bullying that occurs via mobile phone or online (e g  email, social media and instant message)  With this in mind, please answer the following questio", 
-            "question_number": 93, 
-            "variable_name": "Bully12_2B"
+            "variableid": "Bully12_2B", 
+            "question_number": 93
         }, 
         {
             "response_table": [
@@ -463,8 +463,8 @@
                 }
             ], 
             "question_text": "are you bullied at school?: Bullying is a behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats", 
-            "question_number": 75, 
-            "variable_name": "BullySch01_2B"
+            "variableid": "BullySch01_2B", 
+            "question_number": 75
         }, 
         {
             "response_table": [
@@ -500,8 +500,8 @@
                 }
             ], 
             "question_text": "do you bully other pupils at school?: Bullying is a behaviour that is intended to hurt someone either physically or emotionally  This behaviour is often repeated and can take many forms including physical assault, teasing and threats", 
-            "question_number": 76, 
-            "variable_name": "BullySch03_2B"
+            "variableid": "BullySch03_2B", 
+            "question_number": 76
         }, 
         {
             "response_table": [
@@ -537,8 +537,8 @@
                 }
             ], 
             "question_text": "Read Welsh books or magazines:How often do you do the following outside of school?", 
-            "question_number": 103, 
-            "variable_name": "CymActFrq01_2B"
+            "variableid": "CymActFrq01_2B", 
+            "question_number": 103
         }, 
         {
             "response_table": [
@@ -574,8 +574,8 @@
                 }
             ], 
             "question_text": "Surf Welsh websites:How often do you do the following outside of school?", 
-            "question_number": 105, 
-            "variable_name": "CymActFrq02_2B"
+            "variableid": "CymActFrq02_2B", 
+            "question_number": 105
         }, 
         {
             "response_table": [
@@ -611,8 +611,8 @@
                 }
             ], 
             "question_text": "Watch Welsh TV, or listen to Welsh radio:How often do you do the following outside of school?", 
-            "question_number": 104, 
-            "variable_name": "CymActFrq03_2B"
+            "variableid": "CymActFrq03_2B", 
+            "question_number": 104
         }, 
         {
             "response_table": [
@@ -648,8 +648,8 @@
                 }
             ], 
             "question_text": "Speak Welsh with family:How often do you do the following outside of school?", 
-            "question_number": 102, 
-            "variable_name": "CymActFrq04_2B"
+            "variableid": "CymActFrq04_2B", 
+            "question_number": 102
         }, 
         {
             "response_table": [
@@ -685,8 +685,8 @@
                 }
             ], 
             "question_text": "Speak Welsh with friends:How often do you do the following outside of school?", 
-            "question_number": 101, 
-            "variable_name": "CymActFrq05_2B"
+            "variableid": "CymActFrq05_2B", 
+            "question_number": 101
         }, 
         {
             "response_table": [
@@ -717,8 +717,8 @@
                 }
             ], 
             "question_text": "for you to learn Welsh?:How important do you think it is", 
-            "question_number": 106, 
-            "variable_name": "CymAtt01_2B"
+            "variableid": "CymAtt01_2B", 
+            "question_number": 106
         }, 
         {
             "response_table": [
@@ -749,8 +749,8 @@
                 }
             ], 
             "question_text": "for you to speak Welsh?:How important do you think it is", 
-            "question_number": 107, 
-            "variable_name": "CymAtt02_2B"
+            "variableid": "CymAtt02_2B", 
+            "question_number": 107
         }, 
         {
             "response_table": [
@@ -781,8 +781,8 @@
                 }
             ], 
             "question_text": "for Welsh to remain a living language?:How important do you think it is", 
-            "question_number": 108, 
-            "variable_name": "CymAtt03_2B"
+            "variableid": "CymAtt03_2B", 
+            "question_number": 108
         }, 
         {
             "response_table": [
@@ -818,8 +818,8 @@
                 }
             ], 
             "question_text": "I am more confident reading in Welsh now than I was at primary school:Please state if you agree with the following or not:", 
-            "question_number": 97, 
-            "variable_name": "CymAtt10_2B"
+            "variableid": "CymAtt10_2B", 
+            "question_number": 97
         }, 
         {
             "response_table": [
@@ -855,8 +855,8 @@
                 }
             ], 
             "question_text": "I am more confident speaking in Welsh now than I was at primary school:Please state if you agree with the following or not:", 
-            "question_number": 95, 
-            "variable_name": "CymAtt11_2B"
+            "variableid": "CymAtt11_2B", 
+            "question_number": 95
         }, 
         {
             "response_table": [
@@ -892,8 +892,8 @@
                 }
             ], 
             "question_text": "I am more confident writing in Welsh now than I was at primary school:Please state if you agree with the following or not:", 
-            "question_number": 96, 
-            "variable_name": "CymAtt12_2B"
+            "variableid": "CymAtt12_2B", 
+            "question_number": 96
         }, 
         {
             "response_table": [
@@ -929,8 +929,8 @@
                 }
             ], 
             "question_text": "I feel Wales is my real home:Please state how much you agree with the following statements", 
-            "question_number": 99, 
-            "variable_name": "CymAtt13_2B"
+            "variableid": "CymAtt13_2B", 
+            "question_number": 99
         }, 
         {
             "response_table": [
@@ -966,8 +966,8 @@
                 }
             ], 
             "question_text": "I live in Wales, but I don't particularly feel Welsh:Please state how much you agree with the following statements", 
-            "question_number": 100, 
-            "variable_name": "CymAtt14_2B"
+            "variableid": "CymAtt14_2B", 
+            "question_number": 100
         }, 
         {
             "response_table": [
@@ -1003,8 +1003,8 @@
                 }
             ], 
             "question_text": "If I could live anywhere in the world, I would live in Wales:Please state how much you agree with the following statements", 
-            "question_number": 98, 
-            "variable_name": "CymAtt15_2B"
+            "variableid": "CymAtt15_2B", 
+            "question_number": 98
         }, 
         {
             "response_table": [
@@ -1035,8 +1035,8 @@
                 }
             ], 
             "question_text": "My family knows about what my friends and I do when we're together:Please choose the best response from the options below:", 
-            "question_number": 5, 
-            "variable_name": "FrndActAtt08_2B"
+            "variableid": "FrndActAtt08_2B", 
+            "question_number": 5
         }, 
         {
             "response_table": [
@@ -1072,8 +1072,8 @@
                 }
             ], 
             "question_text": "I have better relationships with my friends than with my family:Please choose the best response from the options below:", 
-            "question_number": 2, 
-            "variable_name": "FrndAtt01_2B"
+            "variableid": "FrndAtt01_2B", 
+            "question_number": 2
         }, 
         {
             "response_table": [
@@ -1109,8 +1109,8 @@
                 }
             ], 
             "question_text": "Overall, my family like my friends:Please choose the best response from the options below:", 
-            "question_number": 4, 
-            "variable_name": "FrndAtt02_2B"
+            "variableid": "FrndAtt02_2B", 
+            "question_number": 4
         }, 
         {
             "response_table": [
@@ -1146,8 +1146,8 @@
                 }
             ], 
             "question_text": "I have at least one friend that I can really trust:Please choose the best response from the options below:", 
-            "question_number": 3, 
-            "variable_name": "FrndAtt03_2B"
+            "variableid": "FrndAtt03_2B", 
+            "question_number": 3
         }, 
         {
             "response_table": [
@@ -1163,32 +1163,32 @@
                 }
             ], 
             "question_text": "Language", 
-            "question_number": 131, 
-            "variable_name": "langresponse_2B"
+            "variableid": "langresponse_2B", 
+            "question_number": 131
         }, 
         {
             "response_table": [], 
             "question_text": "Pocket Money \u00c2\u00a3:About how much money PER WEEK do you get from the following sources?", 
-            "question_number": 113, 
-            "variable_name": "Money05_2B"
+            "variableid": "Money05_2B", 
+            "question_number": 113
         }, 
         {
             "response_table": [], 
             "question_text": "Chores at home \u00c2\u00a3:About how much money PER WEEK do you get from the following sources?", 
-            "question_number": 114, 
-            "variable_name": "Money07_2B"
+            "variableid": "Money07_2B", 
+            "question_number": 114
         }, 
         {
             "response_table": [], 
             "question_text": "Other \u00c2\u00a3:About how much money PER WEEK do you get from the following sources?", 
-            "question_number": 115, 
-            "variable_name": "Money11_2B"
+            "variableid": "Money11_2B", 
+            "question_number": 115
         }, 
         {
             "response_table": [], 
             "question_text": "What is the one thing you spend most of your money on?", 
-            "question_number": 116, 
-            "variable_name": "Money13_2B"
+            "variableid": "Money13_2B", 
+            "question_number": 116
         }, 
         {
             "response_table": [
@@ -1224,26 +1224,26 @@
                 }
             ], 
             "question_text": "To which of the following groups do you think you belong?", 
-            "question_number": 128, 
-            "variable_name": "NatEth01_2B"
+            "variableid": "NatEth01_2B", 
+            "question_number": 128
         }, 
         {
             "response_table": [], 
             "question_text": "Other (please specify)::To which of the following groups do you think you belong?", 
-            "question_number": 129, 
-            "variable_name": "NatEth02_2B"
+            "variableid": "NatEth02_2B", 
+            "question_number": 129
         }, 
         {
             "response_table": [], 
             "question_text": "What is your national identity (e g  Welsh, English, British, etc)?", 
-            "question_number": 130, 
-            "variable_name": "NatIden01_2B"
+            "variableid": "NatIden01_2B", 
+            "question_number": 130
         }, 
         {
             "response_table": [], 
             "question_text": "Please write one word that best describes the area where you live", 
-            "question_number": 6, 
-            "variable_name": "NeighbAtt01_2B"
+            "variableid": "NeighbAtt01_2B", 
+            "question_number": 6
         }, 
         {
             "response_table": [
@@ -1259,8 +1259,8 @@
                 }
             ], 
             "question_text": "English:Private tuition is when you receive extra lessons with a tutor outside of school  Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subjects, please skip this que", 
-            "question_number": 59, 
-            "variable_name": "PrvtuSubj01_2B"
+            "variableid": "PrvtuSubj01_2B", 
+            "question_number": 59
         }, 
         {
             "response_table": [
@@ -1276,8 +1276,8 @@
                 }
             ], 
             "question_text": "Maths:Private tuition is when you receive extra lessons with a tutor outside of school  Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subjects, please skip this quest", 
-            "question_number": 62, 
-            "variable_name": "PrvtuSubj02_2B"
+            "variableid": "PrvtuSubj02_2B", 
+            "question_number": 62
         }, 
         {
             "response_table": [
@@ -1288,8 +1288,8 @@
                 }
             ], 
             "question_text": "Science:Private tuition is when you receive extra lessons with a tutor outside of school  Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subjects, please skip this que", 
-            "question_number": 63, 
-            "variable_name": "PrvtuSubj03_2B"
+            "variableid": "PrvtuSubj03_2B", 
+            "question_number": 63
         }, 
         {
             "response_table": [
@@ -1300,8 +1300,8 @@
                 }
             ], 
             "question_text": "Welsh:Private tuition is when you receive extra lessons with a tutor outside of school  Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subjects, please skip this quest", 
-            "question_number": 64, 
-            "variable_name": "PrvtuSubj04_2B"
+            "variableid": "PrvtuSubj04_2B", 
+            "question_number": 64
         }, 
         {
             "response_table": [
@@ -1312,8 +1312,8 @@
                 }
             ], 
             "question_text": "Foreign Languages:Private tuition is when you receive extra lessons with a tutor outside of school  Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subjects, please ski", 
-            "question_number": 60, 
-            "variable_name": "PrvtuSubj05_2B"
+            "variableid": "PrvtuSubj05_2B", 
+            "question_number": 60
         }, 
         {
             "response_table": [
@@ -1324,8 +1324,8 @@
                 }
             ], 
             "question_text": "History / Geography:Private tuition is when you receive extra lessons with a tutor outside of school  Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subjects, please s", 
-            "question_number": 61, 
-            "variable_name": "PrvtuSubj06_2B"
+            "variableid": "PrvtuSubj06_2B", 
+            "question_number": 61
         }, 
         {
             "response_table": [
@@ -1341,8 +1341,8 @@
                 }
             ], 
             "question_text": "Other:Private tuition is when you receive extra lessons with a tutor outside of school  Please tick the boxes next to the subjects that you receive private tuition in  If you don\u00e2\u20ac\u2122t receive private tuition in any of these subjects, please skip this quest", 
-            "question_number": 65, 
-            "variable_name": "PrvtuSubj07_2B"
+            "variableid": "PrvtuSubj07_2B", 
+            "question_number": 65
         }, 
         {
             "response_table": [
@@ -1377,8 +1377,8 @@
                 }
             ], 
             "question_text": "About what time did you get up to get ready for school today?", 
-            "question_number": 111, 
-            "variable_name": "RoutnSleep01_2B"
+            "variableid": "RoutnSleep01_2B", 
+            "question_number": 111
         }, 
         {
             "response_table": [
@@ -1399,8 +1399,8 @@
                 }
             ], 
             "question_text": "get up for school at the same time every day?:Do you", 
-            "question_number": 109, 
-            "variable_name": "RoutnSleep02_2B"
+            "variableid": "RoutnSleep02_2B", 
+            "question_number": 109
         }, 
         {
             "response_table": [
@@ -1436,8 +1436,8 @@
                 }
             ], 
             "question_text": "About what time did you go to bed last night?", 
-            "question_number": 112, 
-            "variable_name": "RoutnSleep03_2B"
+            "variableid": "RoutnSleep03_2B", 
+            "question_number": 112
         }, 
         {
             "response_table": [
@@ -1458,14 +1458,14 @@
                 }
             ], 
             "question_text": "go to bed at the same time every day?:Do you", 
-            "question_number": 110, 
-            "variable_name": "RoutnSleep04_2B"
+            "variableid": "RoutnSleep04_2B", 
+            "question_number": 110
         }, 
         {
             "response_table": [], 
             "question_text": "Please write one word that best describes your secondary school", 
-            "question_number": 29, 
-            "variable_name": "SchAtt03_2B"
+            "variableid": "SchAtt03_2B", 
+            "question_number": 29
         }, 
         {
             "response_table": [
@@ -1496,8 +1496,8 @@
                 }
             ], 
             "question_text": "Overall, I feel I make a good effort in class:Please choose the best response from the options below:", 
-            "question_number": 38, 
-            "variable_name": "SchAtt16_2B"
+            "variableid": "SchAtt16_2B", 
+            "question_number": 38
         }, 
         {
             "response_table": [
@@ -1533,8 +1533,8 @@
                 }
             ], 
             "question_text": "I feel safe :Please state how much you agree or disagree with the following statements  My school is a place where", 
-            "question_number": 25, 
-            "variable_name": "SchAtt19_2B"
+            "variableid": "SchAtt19_2B", 
+            "question_number": 25
         }, 
         {
             "response_table": [
@@ -1570,8 +1570,8 @@
                 }
             ], 
             "question_text": "School helps increase my interest in the politics of Wales:Please choose the best response from the options below:", 
-            "question_number": 43, 
-            "variable_name": "SchAtt21_2B"
+            "variableid": "SchAtt21_2B", 
+            "question_number": 43
         }, 
         {
             "response_table": [
@@ -1607,8 +1607,8 @@
                 }
             ], 
             "question_text": "School helps me appreciate living in Wales:Please choose the best response from the options below:", 
-            "question_number": 41, 
-            "variable_name": "SchAtt22_2B"
+            "variableid": "SchAtt22_2B", 
+            "question_number": 41
         }, 
         {
             "response_table": [
@@ -1644,8 +1644,8 @@
                 }
             ], 
             "question_text": "School helps me develop my own sense of Welshness:Please choose the best response from the options below:", 
-            "question_number": 42, 
-            "variable_name": "SchAtt23_2B"
+            "variableid": "SchAtt23_2B", 
+            "question_number": 42
         }, 
         {
             "response_table": [
@@ -1671,8 +1671,8 @@
                 }
             ], 
             "question_text": "Homework:Please state how much you think each of the following activities helps you learn", 
-            "question_number": 74, 
-            "variable_name": "SchLearnAtt04_2B"
+            "variableid": "SchLearnAtt04_2B", 
+            "question_number": 74
         }, 
         {
             "response_table": [
@@ -1698,8 +1698,8 @@
                 }
             ], 
             "question_text": "Taking notes while the teacher talks:Please state how much you think each of the following activities helps you learn", 
-            "question_number": 66, 
-            "variable_name": "SchLearnAtt05_2B"
+            "variableid": "SchLearnAtt05_2B", 
+            "question_number": 66
         }, 
         {
             "response_table": [
@@ -1725,8 +1725,8 @@
                 }
             ], 
             "question_text": "Working individually:Please state how much you think each of the following activities helps you learn", 
-            "question_number": 69, 
-            "variable_name": "SchLearnAtt06_2B"
+            "variableid": "SchLearnAtt06_2B", 
+            "question_number": 69
         }, 
         {
             "response_table": [
@@ -1752,8 +1752,8 @@
                 }
             ], 
             "question_text": "Working with a partner:Please state how much you think each of the following activities helps you learn", 
-            "question_number": 68, 
-            "variable_name": "SchLearnAtt07_2B"
+            "variableid": "SchLearnAtt07_2B", 
+            "question_number": 68
         }, 
         {
             "response_table": [
@@ -1779,8 +1779,8 @@
                 }
             ], 
             "question_text": "Working in a group:Please state how much you think each of the following activities helps you learn", 
-            "question_number": 67, 
-            "variable_name": "SchLearnAtt08_2B"
+            "variableid": "SchLearnAtt08_2B", 
+            "question_number": 67
         }, 
         {
             "response_table": [
@@ -1806,8 +1806,8 @@
                 }
             ], 
             "question_text": "Working on projects that involve a lot of class or group discussion:Please state how much you think each of the following activities helps you learn", 
-            "question_number": 72, 
-            "variable_name": "SchLearnAtt09_2B"
+            "variableid": "SchLearnAtt09_2B", 
+            "question_number": 72
         }, 
         {
             "response_table": [
@@ -1833,8 +1833,8 @@
                 }
             ], 
             "question_text": "Working on projects that involve getting up out of your seat or going outside:Please state how much you think each of the following activities helps you learn", 
-            "question_number": 73, 
-            "variable_name": "SchLearnAtt10_2B"
+            "variableid": "SchLearnAtt10_2B", 
+            "question_number": 73
         }, 
         {
             "response_table": [
@@ -1860,8 +1860,8 @@
                 }
             ], 
             "question_text": "Working on projects with detailed instructions:Please state how much you think each of the following activities helps you learn", 
-            "question_number": 70, 
-            "variable_name": "SchLearnAtt11_2B"
+            "variableid": "SchLearnAtt11_2B", 
+            "question_number": 70
         }, 
         {
             "response_table": [
@@ -1887,8 +1887,8 @@
                 }
             ], 
             "question_text": "Working on projects without detailed instructions:Please state how much you think each of the following activities helps you learn", 
-            "question_number": 71, 
-            "variable_name": "SchLearnAtt12_2B"
+            "variableid": "SchLearnAtt12_2B", 
+            "question_number": 71
         }, 
         {
             "response_table": [
@@ -1924,8 +1924,8 @@
                 }
             ], 
             "question_text": "My teachers are fair to me:Please state how much you agree or disagree with the following statements  My school is a place where", 
-            "question_number": 28, 
-            "variable_name": "SchStafAtt01_2B"
+            "variableid": "SchStafAtt01_2B", 
+            "question_number": 28
         }, 
         {
             "response_table": [
@@ -1961,8 +1961,8 @@
                 }
             ], 
             "question_text": "My teachers know me well:Please state how much you agree or disagree with the following statements  My school is a place where", 
-            "question_number": 37, 
-            "variable_name": "SchStafAtt02_2B"
+            "variableid": "SchStafAtt02_2B", 
+            "question_number": 37
         }, 
         {
             "response_table": [
@@ -1998,8 +1998,8 @@
                 }
             ], 
             "question_text": "My teachers treat me with respect:Please state how much you agree or disagree with the following statements  My school is a place where", 
-            "question_number": 27, 
-            "variable_name": "SchStafAtt04_2B"
+            "variableid": "SchStafAtt04_2B", 
+            "question_number": 27
         }, 
         {
             "response_table": [
@@ -2035,8 +2035,8 @@
                 }
             ], 
             "question_text": "My views are listened to and taken seriously by the teaching staff at my school:Please state how much you agree or disagree with the following statements  My school is a place where", 
-            "question_number": 35, 
-            "variable_name": "SchStafAtt05_2B"
+            "variableid": "SchStafAtt05_2B", 
+            "question_number": 35
         }, 
         {
             "response_table": [
@@ -2072,8 +2072,8 @@
                 }
             ], 
             "question_text": "Overall, I like the school staff:Please choose the best response from the options below:", 
-            "question_number": 40, 
-            "variable_name": "SchStafAtt06_2B"
+            "variableid": "SchStafAtt06_2B", 
+            "question_number": 40
         }, 
         {
             "response_table": [
@@ -2104,8 +2104,8 @@
                 }
             ], 
             "question_text": "The school staff have high expectations of me:Please state how much you agree or disagree with the following statements  My school is a place where", 
-            "question_number": 33, 
-            "variable_name": "SchStafAtt08_2B"
+            "variableid": "SchStafAtt08_2B", 
+            "question_number": 33
         }, 
         {
             "response_table": [
@@ -2141,8 +2141,8 @@
                 }
             ], 
             "question_text": "The school staff make school fun:Please choose the best response from the options below:", 
-            "question_number": 39, 
-            "variable_name": "SchStafAtt09_2B"
+            "variableid": "SchStafAtt09_2B", 
+            "question_number": 39
         }, 
         {
             "response_table": [
@@ -2178,8 +2178,8 @@
                 }
             ], 
             "question_text": "The teaching staff set goals I can easily achieve:Please state how much you agree or disagree with the following statements  My school is a place where", 
-            "question_number": 34, 
-            "variable_name": "SchStafAtt10_2B"
+            "variableid": "SchStafAtt10_2B", 
+            "question_number": 34
         }, 
         {
             "response_table": [
@@ -2215,8 +2215,8 @@
                 }
             ], 
             "question_text": "My school staff care about how much I improve in my studies:Please state how much you agree or disagree with the following statements  My school is a place where", 
-            "question_number": 32, 
-            "variable_name": "SchStafAtt11_2B"
+            "variableid": "SchStafAtt11_2B", 
+            "question_number": 32
         }, 
         {
             "response_table": [
@@ -2252,8 +2252,8 @@
                 }
             ], 
             "question_text": "Pupils who receive good marks or make good progress are rewarded:Please state how much you agree or disagree with the following statements  My school is a place where", 
-            "question_number": 36, 
-            "variable_name": "SchStafAtt16_2B"
+            "variableid": "SchStafAtt16_2B", 
+            "question_number": 36
         }, 
         {
             "response_table": [
@@ -2279,8 +2279,8 @@
                 }
             ], 
             "question_text": "English:How much do you like the following subjects at school?", 
-            "question_number": 48, 
-            "variable_name": "SchSubjAtt01_2B"
+            "variableid": "SchSubjAtt01_2B", 
+            "question_number": 48
         }, 
         {
             "response_table": [
@@ -2306,8 +2306,8 @@
                 }
             ], 
             "question_text": "Maths:How much do you like the following subjects at school?", 
-            "question_number": 53, 
-            "variable_name": "SchSubjAtt02_2B"
+            "variableid": "SchSubjAtt02_2B", 
+            "question_number": 53
         }, 
         {
             "response_table": [
@@ -2333,8 +2333,8 @@
                 }
             ], 
             "question_text": "Science:How much do you like the following subjects at school?", 
-            "question_number": 57, 
-            "variable_name": "SchSubjAtt03_2B"
+            "variableid": "SchSubjAtt03_2B", 
+            "question_number": 57
         }, 
         {
             "response_table": [
@@ -2360,8 +2360,8 @@
                 }
             ], 
             "question_text": "Welsh:How much do you like the following subjects at school?", 
-            "question_number": 58, 
-            "variable_name": "SchSubjAtt04_2B"
+            "variableid": "SchSubjAtt04_2B", 
+            "question_number": 58
         }, 
         {
             "response_table": [
@@ -2387,8 +2387,8 @@
                 }
             ], 
             "question_text": "Art:How much do you like the following subjects at school?", 
-            "question_number": 46, 
-            "variable_name": "SchSubjAtt05_2B"
+            "variableid": "SchSubjAtt05_2B", 
+            "question_number": 46
         }, 
         {
             "response_table": [
@@ -2414,8 +2414,8 @@
                 }
             ], 
             "question_text": "Design and Technology:How much do you like the following subjects at school?", 
-            "question_number": 47, 
-            "variable_name": "SchSubjAtt06_2B"
+            "variableid": "SchSubjAtt06_2B", 
+            "question_number": 47
         }, 
         {
             "response_table": [
@@ -2441,8 +2441,8 @@
                 }
             ], 
             "question_text": "Foreign Languages:How much do you like the following subjects at school?", 
-            "question_number": 49, 
-            "variable_name": "SchSubjAtt07_2B"
+            "variableid": "SchSubjAtt07_2B", 
+            "question_number": 49
         }, 
         {
             "response_table": [
@@ -2468,8 +2468,8 @@
                 }
             ], 
             "question_text": "Geography:How much do you like the following subjects at school?", 
-            "question_number": 50, 
-            "variable_name": "SchSubjAtt08_2B"
+            "variableid": "SchSubjAtt08_2B", 
+            "question_number": 50
         }, 
         {
             "response_table": [
@@ -2495,8 +2495,8 @@
                 }
             ], 
             "question_text": "History:How much do you like the following subjects at school?", 
-            "question_number": 51, 
-            "variable_name": "SchSubjAtt09_2B"
+            "variableid": "SchSubjAtt09_2B", 
+            "question_number": 51
         }, 
         {
             "response_table": [
@@ -2522,8 +2522,8 @@
                 }
             ], 
             "question_text": "ICT:How much do you like the following subjects at school?", 
-            "question_number": 52, 
-            "variable_name": "SchSubjAtt10_2B"
+            "variableid": "SchSubjAtt10_2B", 
+            "question_number": 52
         }, 
         {
             "response_table": [
@@ -2549,8 +2549,8 @@
                 }
             ], 
             "question_text": "Music:How much do you like the following subjects at school?", 
-            "question_number": 54, 
-            "variable_name": "SchSubjAtt11_2B"
+            "variableid": "SchSubjAtt11_2B", 
+            "question_number": 54
         }, 
         {
             "response_table": [
@@ -2576,8 +2576,8 @@
                 }
             ], 
             "question_text": "P E :How much do you like the following subjects at school?", 
-            "question_number": 55, 
-            "variable_name": "SchSubjAtt12_2B"
+            "variableid": "SchSubjAtt12_2B", 
+            "question_number": 55
         }, 
         {
             "response_table": [
@@ -2603,20 +2603,20 @@
                 }
             ], 
             "question_text": "Religious Education:How much do you like the following subjects at school?", 
-            "question_number": 56, 
-            "variable_name": "SchSubjAtt13_2B"
+            "variableid": "SchSubjAtt13_2B", 
+            "question_number": 56
         }, 
         {
             "response_table": [], 
             "question_text": "Your favourite subject::What is your favourite subject, and why?", 
-            "question_number": 44, 
-            "variable_name": "SchSubjAtt14_2B"
+            "variableid": "SchSubjAtt14_2B", 
+            "question_number": 44
         }, 
         {
             "response_table": [], 
             "question_text": "Why it's your favourite::What is your favourite subject, and why?", 
-            "question_number": 45, 
-            "variable_name": "SchSubjAtt15_2B"
+            "variableid": "SchSubjAtt15_2B", 
+            "question_number": 45
         }, 
         {
             "response_table": [
@@ -2652,8 +2652,8 @@
                 }
             ], 
             "question_text": "When I was in primary school, I looked forward to coming to secondary school:Please choose the best response from the options below:", 
-            "question_number": 21, 
-            "variable_name": "SchTranAtt08_2B"
+            "variableid": "SchTranAtt08_2B", 
+            "question_number": 21
         }, 
         {
             "response_table": [
@@ -2689,20 +2689,20 @@
                 }
             ], 
             "question_text": "Overall, I like primary school better than secondary school:Please choose the best response from the options below:", 
-            "question_number": 22, 
-            "variable_name": "SchTranAtt09_2B"
+            "variableid": "SchTranAtt09_2B", 
+            "question_number": 22
         }, 
         {
             "response_table": [], 
             "question_text": "What I like most about secondary school:Please state what you like and dislike most about secondary school", 
-            "question_number": 30, 
-            "variable_name": "SchTranAtt11_2B"
+            "variableid": "SchTranAtt11_2B", 
+            "question_number": 30
         }, 
         {
             "response_table": [], 
             "question_text": "What I dislike most about secondary school:Please state what you like and dislike most about secondary school", 
-            "question_number": 31, 
-            "variable_name": "SchTranAtt12_2B"
+            "variableid": "SchTranAtt12_2B", 
+            "question_number": 31
         }, 
         {
             "response_table": [
@@ -2718,8 +2718,8 @@
                 }
             ], 
             "question_text": "Happy:Which of the following choices best describe your feelings about leaving primary school and coming to secondary school", 
-            "question_number": 14, 
-            "variable_name": "SchTranAtt13_2B"
+            "variableid": "SchTranAtt13_2B", 
+            "question_number": 14
         }, 
         {
             "response_table": [
@@ -2735,8 +2735,8 @@
                 }
             ], 
             "question_text": "Eager:Which of the following choices best describe your feelings about leaving primary school and coming to secondary school", 
-            "question_number": 18, 
-            "variable_name": "SchTranAtt14_2B"
+            "variableid": "SchTranAtt14_2B", 
+            "question_number": 18
         }, 
         {
             "response_table": [
@@ -2752,8 +2752,8 @@
                 }
             ], 
             "question_text": "Confident:Which of the following choices best describe your feelings about leaving primary school and coming to secondary school", 
-            "question_number": 16, 
-            "variable_name": "SchTranAtt15_2B"
+            "variableid": "SchTranAtt15_2B", 
+            "question_number": 16
         }, 
         {
             "response_table": [
@@ -2769,8 +2769,8 @@
                 }
             ], 
             "question_text": "Afraid:Which of the following choices best describe your feelings about leaving primary school and coming to secondary school", 
-            "question_number": 17, 
-            "variable_name": "SchTranAtt16_2B"
+            "variableid": "SchTranAtt16_2B", 
+            "question_number": 17
         }, 
         {
             "response_table": [
@@ -2786,8 +2786,8 @@
                 }
             ], 
             "question_text": "Reluctant:Which of the following choices best describe your feelings about leaving primary school and coming to secondary school", 
-            "question_number": 19, 
-            "variable_name": "SchTranAtt17_2B"
+            "variableid": "SchTranAtt17_2B", 
+            "question_number": 19
         }, 
         {
             "response_table": [
@@ -2803,8 +2803,8 @@
                 }
             ], 
             "question_text": "Sad:Which of the following choices best describe your feelings about leaving primary school and coming to secondary school", 
-            "question_number": 15, 
-            "variable_name": "SchTranAtt18_2B"
+            "variableid": "SchTranAtt18_2B", 
+            "question_number": 15
         }, 
         {
             "response_table": [
@@ -2840,14 +2840,14 @@
                 }
             ], 
             "question_text": "Moving up from primary school to secondary school was stressful:Please choose the best response from the options below:", 
-            "question_number": 20, 
-            "variable_name": "SchTranAtt19_2B"
+            "variableid": "SchTranAtt19_2B", 
+            "question_number": 20
         }, 
         {
             "response_table": [], 
             "question_text": "How many of your primary school friends have moved up with you to your new secondary school?", 
-            "question_number": 13, 
-            "variable_name": "SchTranFrnd02_2B"
+            "variableid": "SchTranFrnd02_2B", 
+            "question_number": 13
         }, 
         {
             "response_table": [
@@ -2883,8 +2883,8 @@
                 }
             ], 
             "question_text": "I haven't seen some of my primary school friends since I went to secondary school:Please choose the best response from the options below:", 
-            "question_number": 24, 
-            "variable_name": "SchTranFrnd03_2B"
+            "variableid": "SchTranFrnd03_2B", 
+            "question_number": 24
         }, 
         {
             "response_table": [
@@ -2920,14 +2920,14 @@
                 }
             ], 
             "question_text": "I made a lot of new friends when I came to secondary school:Please choose the best response from the options below:", 
-            "question_number": 23, 
-            "variable_name": "SchTranFrnd04_2B"
+            "variableid": "SchTranFrnd04_2B", 
+            "question_number": 23
         }, 
         {
             "response_table": [], 
             "question_text": "sweep", 
-            "question_number": 132, 
-            "variable_name": "sweep_2B"
+            "variableid": "sweep_2B", 
+            "question_number": 132
         }, 
         {
             "response_table": [
@@ -2966,8 +2966,8 @@
                 }
             ], 
             "question_text": "The way you look:On a scale of 1 to 7 where 1 means 'Completely Happy' and 7 means 'Not at all happy', how do you feel about the following parts of your life?", 
-            "question_number": 8, 
-            "variable_name": "WellSat01_2B"
+            "variableid": "WellSat01_2B", 
+            "question_number": 8
         }, 
         {
             "response_table": [
@@ -3001,8 +3001,8 @@
                 }
             ], 
             "question_text": "Your family:On a scale of 1 to 7 where 1 means 'Completely Happy' and 7 means 'Not at all happy', how do you feel about the following parts of your life?", 
-            "question_number": 9, 
-            "variable_name": "WellSat02_2B"
+            "variableid": "WellSat02_2B", 
+            "question_number": 9
         }, 
         {
             "response_table": [
@@ -3041,8 +3041,8 @@
                 }
             ], 
             "question_text": "Your friends:On a scale of 1 to 7 where 1 means 'Completely Happy' and 7 means 'Not at all happy', how do you feel about the following parts of your life?", 
-            "question_number": 10, 
-            "variable_name": "WellSat03_2B"
+            "variableid": "WellSat03_2B", 
+            "question_number": 10
         }, 
         {
             "response_table": [
@@ -3081,8 +3081,8 @@
                 }
             ], 
             "question_text": "Your life as a whole:On a scale of 1 to 7 where 1 means 'Completely Happy' and 7 means 'Not at all happy', how do you feel about the following parts of your life?", 
-            "question_number": 12, 
-            "variable_name": "WellSat04_2B"
+            "variableid": "WellSat04_2B", 
+            "question_number": 12
         }, 
         {
             "response_table": [
@@ -3121,8 +3121,8 @@
                 }
             ], 
             "question_text": "Your school overall:On a scale of 1 to 7 where 1 means 'Completely Happy' and 7 means 'Not at all happy', how do you feel about the following parts of your life?", 
-            "question_number": 11, 
-            "variable_name": "WellSat05_2B"
+            "variableid": "WellSat05_2B", 
+            "question_number": 11
         }, 
         {
             "response_table": [
@@ -3161,8 +3161,8 @@
                 }
             ], 
             "question_text": "Your school work:On a scale of 1 to 7 where 1 means 'Completely Happy' and 7 means 'Not at all happy', how do you feel about the following parts of your life?", 
-            "question_number": 7, 
-            "variable_name": "WellSat06_2B"
+            "variableid": "WellSat06_2B", 
+            "question_number": 7
         }, 
         {
             "response_table": [
@@ -3198,8 +3198,8 @@
                 }
             ], 
             "question_text": "I feel like I belong:Please state how much you agree or disagree with the following statements  My school is a place where", 
-            "question_number": 26, 
-            "variable_name": "WellValue10_2B"
+            "variableid": "WellValue10_2B", 
+            "question_number": 26
         }
     ]
 }

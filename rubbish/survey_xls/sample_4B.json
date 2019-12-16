@@ -19,8 +19,8 @@
                 }
             ], 
             "question_text": "Do you have livestock (e g  cows, pigs, sheep, etc ) on your farm?", 
-            "question_number": 93, 
-            "variable_name": "AnimFarm01_4B"
+            "variableid": "AnimFarm01_4B", 
+            "question_number": 93
         }, 
         {
             "response_table": [
@@ -41,14 +41,14 @@
                 }
             ], 
             "question_text": "Do you have a pet at home?", 
-            "question_number": 99, 
-            "variable_name": "AnimPet01_4B"
+            "variableid": "AnimPet01_4B", 
+            "question_number": 99
         }, 
         {
             "response_table": [], 
             "question_text": "If yes, what pet(s) do you have?", 
-            "question_number": 100, 
-            "variable_name": "AnimPet02_4B"
+            "variableid": "AnimPet02_4B", 
+            "question_number": 100
         }, 
         {
             "response_table": [
@@ -69,8 +69,8 @@
                 }
             ], 
             "question_text": "Have you been on a work experience placement through school?", 
-            "question_number": 32, 
-            "variable_name": "AspAdvice16_4B"
+            "variableid": "AspAdvice16_4B", 
+            "question_number": 32
         }, 
         {
             "response_table": [
@@ -91,8 +91,8 @@
                 }
             ], 
             "question_text": "Did you find your work experience placement useful?", 
-            "question_number": 33, 
-            "variable_name": "AspAdvice17_4B"
+            "variableid": "AspAdvice17_4B", 
+            "question_number": 33
         }, 
         {
             "response_table": [
@@ -130,8 +130,8 @@
                 }
             ], 
             "question_text": "Please tell us what you will be doing after Year 11", 
-            "question_number": 14, 
-            "variable_name": "AspPostSch04_4B"
+            "variableid": "AspPostSch04_4B", 
+            "question_number": 14
         }, 
         {
             "response_table": [
@@ -167,32 +167,32 @@
                 }
             ], 
             "question_text": "Where will you be doing your courses after Year 11?", 
-            "question_number": 15, 
-            "variable_name": "AspPostSch05_4B"
+            "variableid": "AspPostSch05_4B", 
+            "question_number": 15
         }, 
         {
             "response_table": [], 
             "question_text": "6th form at another school (Please specify):Where will you be doing your courses after Year 11?", 
-            "question_number": 16, 
-            "variable_name": "AspPostSch08_4B"
+            "variableid": "AspPostSch08_4B", 
+            "question_number": 16
         }, 
         {
             "response_table": [], 
             "question_text": "Further education college (Please specify):Where will you be doing your courses after Year 11?", 
-            "question_number": 17, 
-            "variable_name": "AspPostSch10_4B"
+            "variableid": "AspPostSch10_4B", 
+            "question_number": 17
         }, 
         {
             "response_table": [], 
             "question_text": "Other - Write In (Required):Where will you be doing your courses after Year 11?", 
-            "question_number": 18, 
-            "variable_name": "AspPostSch16_4B"
+            "variableid": "AspPostSch16_4B", 
+            "question_number": 18
         }, 
         {
             "response_table": [], 
             "question_text": "Why might you not stay on in full-time education at the end of Year 11?", 
-            "question_number": 19, 
-            "variable_name": "AspPostSch18_4B"
+            "variableid": "AspPostSch18_4B", 
+            "question_number": 19
         }, 
         {
             "response_table": [
@@ -218,20 +218,20 @@
                 }
             ], 
             "question_text": "Are you thinking about applying to university?", 
-            "question_number": 20, 
-            "variable_name": "AspPostSch19_4B"
+            "variableid": "AspPostSch19_4B", 
+            "question_number": 20
         }, 
         {
             "response_table": [], 
             "question_text": "To which university (universities) might you apply?:Please answer the following questions about applying to university", 
-            "question_number": 21, 
-            "variable_name": "AspPostSch21_4B"
+            "variableid": "AspPostSch21_4B", 
+            "question_number": 21
         }, 
         {
             "response_table": [], 
             "question_text": "What subjects might you study while at university?:Please answer the following questions about applying to university", 
-            "question_number": 22, 
-            "variable_name": "AspPostSch22_4B"
+            "variableid": "AspPostSch22_4B", 
+            "question_number": 22
         }, 
         {
             "response_table": [
@@ -262,8 +262,8 @@
                 }
             ], 
             "question_text": "Do you receive free school meals?", 
-            "question_number": 41, 
-            "variable_name": "Deprive01_4B"
+            "variableid": "Deprive01_4B", 
+            "question_number": 41
         }, 
         {
             "response_table": [
@@ -309,14 +309,14 @@
                 }
             ], 
             "question_text": "What kind of home do you live in?", 
-            "question_number": 91, 
-            "variable_name": "Deprive04_4B"
+            "variableid": "Deprive04_4B", 
+            "question_number": 91
         }, 
         {
             "response_table": [], 
             "question_text": "Other - Write In (Required):What kind of home do you live in?", 
-            "question_number": 92, 
-            "variable_name": "Deprive05_4B"
+            "variableid": "Deprive05_4B", 
+            "question_number": 92
         }, 
         {
             "response_table": [
@@ -332,8 +332,8 @@
                 }
             ], 
             "question_text": "Some pocket money each week to spend on yourself:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
-            "question_number": 42, 
-            "variable_name": "Deprive06_4B"
+            "variableid": "Deprive06_4B", 
+            "question_number": 42
         }, 
         {
             "response_table": [
@@ -349,8 +349,8 @@
                 }
             ], 
             "question_text": "Some money that you can save each month, either in a bank or at home:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
-            "question_number": 43, 
-            "variable_name": "Deprive07_4B"
+            "variableid": "Deprive07_4B", 
+            "question_number": 43
         }, 
         {
             "response_table": [
@@ -366,8 +366,8 @@
                 }
             ], 
             "question_text": "A pair of designer or brand name trainers (like Nike or Vans):Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
-            "question_number": 44, 
-            "variable_name": "Deprive08_4B"
+            "variableid": "Deprive08_4B", 
+            "question_number": 44
         }, 
         {
             "response_table": [
@@ -383,8 +383,8 @@
                 }
             ], 
             "question_text": "An iPod or other personal music player:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
-            "question_number": 45, 
-            "variable_name": "Deprive09_4B"
+            "variableid": "Deprive09_4B", 
+            "question_number": 45
         }, 
         {
             "response_table": [
@@ -400,8 +400,8 @@
                 }
             ], 
             "question_text": "A smartphone:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
-            "question_number": 46, 
-            "variable_name": "Deprive10_4B"
+            "variableid": "Deprive10_4B", 
+            "question_number": 46
         }, 
         {
             "response_table": [
@@ -417,8 +417,8 @@
                 }
             ], 
             "question_text": "Cable or satellite TV at home:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
-            "question_number": 47, 
-            "variable_name": "Deprive11_4B"
+            "variableid": "Deprive11_4B", 
+            "question_number": 47
         }, 
         {
             "response_table": [
@@ -434,8 +434,8 @@
                 }
             ], 
             "question_text": "A garden at home, or somewhere nearby like a park where you can safely spend time with their friends:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
-            "question_number": 48, 
-            "variable_name": "Deprive12_4B"
+            "variableid": "Deprive12_4B", 
+            "question_number": 48
         }, 
         {
             "response_table": [
@@ -451,8 +451,8 @@
                 }
             ], 
             "question_text": "A family car for transport when you need it:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
-            "question_number": 49, 
-            "variable_name": "Deprive13_4B"
+            "variableid": "Deprive13_4B", 
+            "question_number": 49
         }, 
         {
             "response_table": [
@@ -468,8 +468,8 @@
                 }
             ], 
             "question_text": "The right kind of clothes to fit in with other people your age:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
-            "question_number": 50, 
-            "variable_name": "Deprive14_4B"
+            "variableid": "Deprive14_4B", 
+            "question_number": 50
         }, 
         {
             "response_table": [
@@ -485,8 +485,8 @@
                 }
             ], 
             "question_text": "At least one family holiday away from home each year:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
-            "question_number": 51, 
-            "variable_name": "Deprive15_4B"
+            "variableid": "Deprive15_4B", 
+            "question_number": 51
         }, 
         {
             "response_table": [
@@ -502,8 +502,8 @@
                 }
             ], 
             "question_text": "Family trips or days out at least once a month:Here is a list of items some young people of your age have  Please tell us whether you have each item on the list  Fill in as many items as needed", 
-            "question_number": 52, 
-            "variable_name": "Deprive16_4B"
+            "variableid": "Deprive16_4B", 
+            "question_number": 52
         }, 
         {
             "response_table": [
@@ -524,8 +524,8 @@
                 }
             ], 
             "question_text": "Do you eat meat?:Please answer the following questions about eating meat and fish", 
-            "question_number": 101, 
-            "variable_name": "Diet01_4B"
+            "variableid": "Diet01_4B", 
+            "question_number": 101
         }, 
         {
             "response_table": [
@@ -546,8 +546,8 @@
                 }
             ], 
             "question_text": "Do you eat fish?:Please answer the following questions about eating meat and fish", 
-            "question_number": 102, 
-            "variable_name": "Diet02_4B"
+            "variableid": "Diet02_4B", 
+            "question_number": 102
         }, 
         {
             "response_table": [
@@ -583,8 +583,8 @@
                 }
             ], 
             "question_text": "Local politics (e g  your county, city or village):On a scale of 1-5, with 1 being not at all interested and 5 being very interested, how interested are you in the following topics?", 
-            "question_number": 60, 
-            "variable_name": "EngPol05_4B"
+            "variableid": "EngPol05_4B", 
+            "question_number": 60
         }, 
         {
             "response_table": [
@@ -620,8 +620,8 @@
                 }
             ], 
             "question_text": "The politics of Wales:On a scale of 1-5, with 1 being not at all interested and 5 being very interested, how interested are you in the following topics?", 
-            "question_number": 61, 
-            "variable_name": "EngPol06_4B"
+            "variableid": "EngPol06_4B", 
+            "question_number": 61
         }, 
         {
             "response_table": [
@@ -657,8 +657,8 @@
                 }
             ], 
             "question_text": "The politics of the UK:On a scale of 1-5, with 1 being not at all interested and 5 being very interested, how interested are you in the following topics?", 
-            "question_number": 62, 
-            "variable_name": "EngPol07_4B"
+            "variableid": "EngPol07_4B", 
+            "question_number": 62
         }, 
         {
             "response_table": [
@@ -694,8 +694,8 @@
                 }
             ], 
             "question_text": "World politics:On a scale of 1-5, with 1 being not at all interested and 5 being very interested, how interested are you in the following topics?", 
-            "question_number": 63, 
-            "variable_name": "EngPol08_4B"
+            "variableid": "EngPol08_4B", 
+            "question_number": 63
         }, 
         {
             "response_table": [
@@ -756,8 +756,8 @@
                 }
             ], 
             "question_text": "In 2011, the European Union (EU) listed 10 problems facing the EU  These problems are listed below  Of these choices, which ONE do you think is the most important problem facing the EU today?\u00a0", 
-            "question_number": 64, 
-            "variable_name": "EngSoc07_4B"
+            "variableid": "EngSoc07_4B", 
+            "question_number": 64
         }, 
         {
             "response_table": [
@@ -793,8 +793,8 @@
                 }
             ], 
             "question_text": "Eating little or no meat is better for animal welfare:Please state how much you agree with the following statements", 
-            "question_number": 107, 
-            "variable_name": "EthicsAtt01_4B"
+            "variableid": "EthicsAtt01_4B", 
+            "question_number": 107
         }, 
         {
             "response_table": [
@@ -830,8 +830,8 @@
                 }
             ], 
             "question_text": "Eating little or no meat is better for the environment:Please state how much you agree with the following statements", 
-            "question_number": 105, 
-            "variable_name": "EthicsAtt02_4B"
+            "variableid": "EthicsAtt02_4B", 
+            "question_number": 105
         }, 
         {
             "response_table": [
@@ -867,8 +867,8 @@
                 }
             ], 
             "question_text": "Eating little or no meat is healthier:Please state how much you agree with the following statements", 
-            "question_number": 106, 
-            "variable_name": "EthicsAtt03_4B"
+            "variableid": "EthicsAtt03_4B", 
+            "question_number": 106
         }, 
         {
             "response_table": [
@@ -904,8 +904,8 @@
                 }
             ], 
             "question_text": "Hunt animals for food:On a scale of 1-5, with 1 being \u201cunacceptable\u201d and 5 being \u201cacceptable,\u201d how acceptable is it to", 
-            "question_number": 97, 
-            "variable_name": "EthicsAtt04_4B"
+            "variableid": "EthicsAtt04_4B", 
+            "question_number": 97
         }, 
         {
             "response_table": [
@@ -941,8 +941,8 @@
                 }
             ], 
             "question_text": "Hunt animals for sport:On a scale of 1-5, with 1 being \u201cunacceptable\u201d and 5 being \u201cacceptable,\u201d how acceptable is it to", 
-            "question_number": 95, 
-            "variable_name": "EthicsAtt05_4B"
+            "variableid": "EthicsAtt05_4B", 
+            "question_number": 95
         }, 
         {
             "response_table": [
@@ -978,8 +978,8 @@
                 }
             ], 
             "question_text": "Kill animals for their fur:On a scale of 1-5, with 1 being \u201cunacceptable\u201d and 5 being \u201cacceptable,\u201d how acceptable is it to", 
-            "question_number": 96, 
-            "variable_name": "EthicsAtt06_4B"
+            "variableid": "EthicsAtt06_4B", 
+            "question_number": 96
         }, 
         {
             "response_table": [
@@ -1015,8 +1015,8 @@
                 }
             ], 
             "question_text": "Kill animals to stop the spread of disease:On a scale of 1-5, with 1 being \u201cunacceptable\u201d and 5 being \u201cacceptable,\u201d how acceptable is it to", 
-            "question_number": 98, 
-            "variable_name": "EthicsAtt07_4B"
+            "variableid": "EthicsAtt07_4B", 
+            "question_number": 98
         }, 
         {
             "response_table": [
@@ -1052,8 +1052,8 @@
                 }
             ], 
             "question_text": "Use animals in medical research:On a scale of 1-5, with 1 being \u201cunacceptable\u201d and 5 being \u201cacceptable,\u201d how acceptable is it to", 
-            "question_number": 94, 
-            "variable_name": "EthicsAtt08_4B"
+            "variableid": "EthicsAtt08_4B", 
+            "question_number": 94
         }, 
         {
             "response_table": [
@@ -1074,8 +1074,8 @@
                 }
             ], 
             "question_text": "Do either of your parents eat fish:Please answer the following questions about eating meat and fish", 
-            "question_number": 104, 
-            "variable_name": "EthicsFam01_4B"
+            "variableid": "EthicsFam01_4B", 
+            "question_number": 104
         }, 
         {
             "response_table": [
@@ -1096,8 +1096,8 @@
                 }
             ], 
             "question_text": "Do either of your parents eat meat?:Please answer the following questions about eating meat and fish", 
-            "question_number": 103, 
-            "variable_name": "EthicsFam02_4B"
+            "variableid": "EthicsFam02_4B", 
+            "question_number": 103
         }, 
         {
             "response_table": [
@@ -1138,8 +1138,8 @@
                 }
             ], 
             "question_text": "Attended a sport event:How often do you do the following activities with your family?", 
-            "question_number": 55, 
-            "variable_name": "FamActFrq12_4B"
+            "variableid": "FamActFrq12_4B", 
+            "question_number": 55
         }, 
         {
             "response_table": [
@@ -1175,8 +1175,8 @@
                 }
             ], 
             "question_text": "Attended the theatre:How often do you do the following activities with your family?", 
-            "question_number": 56, 
-            "variable_name": "FamActFrq13_4B"
+            "variableid": "FamActFrq13_4B", 
+            "question_number": 56
         }, 
         {
             "response_table": [
@@ -1212,8 +1212,8 @@
                 }
             ], 
             "question_text": "Go to a museum:How often do you do the following activities with your family?", 
-            "question_number": 53, 
-            "variable_name": "FamActFrq14_4B"
+            "variableid": "FamActFrq14_4B", 
+            "question_number": 53
         }, 
         {
             "response_table": [
@@ -1254,8 +1254,8 @@
                 }
             ], 
             "question_text": "Go to a park:How often do you do the following activities with your family?", 
-            "question_number": 58, 
-            "variable_name": "FamActFrq15_4B"
+            "variableid": "FamActFrq15_4B", 
+            "question_number": 58
         }, 
         {
             "response_table": [
@@ -1296,8 +1296,8 @@
                 }
             ], 
             "question_text": "Go to the cinema:How often do you do the following activities with your family?", 
-            "question_number": 54, 
-            "variable_name": "FamActFrq16_4B"
+            "variableid": "FamActFrq16_4B", 
+            "question_number": 54
         }, 
         {
             "response_table": [
@@ -1338,8 +1338,8 @@
                 }
             ], 
             "question_text": "Go to the library:How often do you do the following activities with your family?", 
-            "question_number": 59, 
-            "variable_name": "FamActFrq17_4B"
+            "variableid": "FamActFrq17_4B", 
+            "question_number": 59
         }, 
         {
             "response_table": [
@@ -1380,8 +1380,8 @@
                 }
             ], 
             "question_text": "Have dinner at a pub:How often do you do the following activities with your family?", 
-            "question_number": 57, 
-            "variable_name": "FamActFrq18_4B"
+            "variableid": "FamActFrq18_4B", 
+            "question_number": 57
         }, 
         {
             "response_table": [
@@ -1406,8 +1406,8 @@
                 }
             ], 
             "question_text": "Do you know anyone who is serving, or has previously served, in the armed forces?", 
-            "question_number": 65, 
-            "variable_name": "Military01_4B"
+            "variableid": "Military01_4B", 
+            "question_number": 65
         }, 
         {
             "response_table": [
@@ -1443,8 +1443,8 @@
                 }
             ], 
             "question_text": "When I have money, I am allowed to spend it however I want:Please state how much you agree with the following statements", 
-            "question_number": 90, 
-            "variable_name": "Money12_4B"
+            "variableid": "Money12_4B", 
+            "question_number": 90
         }, 
         {
             "response_table": [
@@ -1475,14 +1475,14 @@
                 }
             ], 
             "question_text": "Where were you born?", 
-            "question_number": 2, 
-            "variable_name": "NatBirth01_4B"
+            "variableid": "NatBirth01_4B", 
+            "question_number": 2
         }, 
         {
             "response_table": [], 
             "question_text": "Other - Write In:Where were you born?", 
-            "question_number": 3, 
-            "variable_name": "NatBirth02_4B"
+            "variableid": "NatBirth02_4B", 
+            "question_number": 3
         }, 
         {
             "response_table": [
@@ -1523,14 +1523,14 @@
                 }
             ], 
             "question_text": "Where was your mother born?", 
-            "question_number": 4, 
-            "variable_name": "NatBirth03_4B"
+            "variableid": "NatBirth03_4B", 
+            "question_number": 4
         }, 
         {
             "response_table": [], 
             "question_text": "Other - Write In:Where was your mother born?", 
-            "question_number": 5, 
-            "variable_name": "NatBirth04_4B"
+            "variableid": "NatBirth04_4B", 
+            "question_number": 5
         }, 
         {
             "response_table": [
@@ -1546,8 +1546,8 @@
                 }
             ], 
             "question_text": "English:What languages do you speak?", 
-            "question_number": 7, 
-            "variable_name": "NatLang01_4B"
+            "variableid": "NatLang01_4B", 
+            "question_number": 7
         }, 
         {
             "response_table": [
@@ -1563,8 +1563,8 @@
                 }
             ], 
             "question_text": "Welsh:What languages do you speak?", 
-            "question_number": 6, 
-            "variable_name": "NatLang02_4B"
+            "variableid": "NatLang02_4B", 
+            "question_number": 6
         }, 
         {
             "response_table": [
@@ -1580,14 +1580,14 @@
                 }
             ], 
             "question_text": "Other(s):What languages do you speak?", 
-            "question_number": 8, 
-            "variable_name": "NatLang03_4B"
+            "variableid": "NatLang03_4B", 
+            "question_number": 8
         }, 
         {
             "response_table": [], 
             "question_text": "Other(s):What languages do you speak?", 
-            "question_number": 9, 
-            "variable_name": "NatLang04_4B"
+            "variableid": "NatLang04_4B", 
+            "question_number": 9
         }, 
         {
             "response_table": [
@@ -1603,8 +1603,8 @@
                 }
             ], 
             "question_text": "English:What languages do your parents speak?", 
-            "question_number": 11, 
-            "variable_name": "NatLang05_4B"
+            "variableid": "NatLang05_4B", 
+            "question_number": 11
         }, 
         {
             "response_table": [
@@ -1620,8 +1620,8 @@
                 }
             ], 
             "question_text": "Welsh:What languages do your parents speak?", 
-            "question_number": 10, 
-            "variable_name": "NatLang06_4B"
+            "variableid": "NatLang06_4B", 
+            "question_number": 10
         }, 
         {
             "response_table": [
@@ -1637,14 +1637,14 @@
                 }
             ], 
             "question_text": "Other(s):What languages do your parents speak?", 
-            "question_number": 12, 
-            "variable_name": "NatLang07_4B"
+            "variableid": "NatLang07_4B", 
+            "question_number": 12
         }, 
         {
             "response_table": [], 
             "question_text": "Other(s):What languages do your parents speak?", 
-            "question_number": 13, 
-            "variable_name": "NatLang08_4B"
+            "variableid": "NatLang08_4B", 
+            "question_number": 13
         }, 
         {
             "response_table": [
@@ -1670,14 +1670,14 @@
                 }
             ], 
             "question_text": "What was the last charity your school supported?", 
-            "question_number": 84, 
-            "variable_name": "PhilAct02_4B"
+            "variableid": "PhilAct02_4B", 
+            "question_number": 84
         }, 
         {
             "response_table": [], 
             "question_text": "Enter the name, or type, of charity here:What was the last charity your school supported?", 
-            "question_number": 85, 
-            "variable_name": "PhilAct03_4B"
+            "variableid": "PhilAct03_4B", 
+            "question_number": 85
         }, 
         {
             "response_table": [
@@ -1728,8 +1728,8 @@
                 }
             ], 
             "question_text": "If you were to donate \u00a310 to a charity, which one of the following charities would you give it to?", 
-            "question_number": 79, 
-            "variable_name": "PhilAct04_4B"
+            "variableid": "PhilAct04_4B", 
+            "question_number": 79
         }, 
         {
             "response_table": [
@@ -1760,8 +1760,8 @@
                 }
             ], 
             "question_text": "Give items to charity:Which of the following have you done in the past week, month or year?", 
-            "question_number": 82, 
-            "variable_name": "PhilAct05_4B"
+            "variableid": "PhilAct05_4B", 
+            "question_number": 82
         }, 
         {
             "response_table": [
@@ -1792,8 +1792,8 @@
                 }
             ], 
             "question_text": "Raise money for charity:Which of the following have you done in the past week, month or year?", 
-            "question_number": 80, 
-            "variable_name": "PhilAct06_4B"
+            "variableid": "PhilAct06_4B", 
+            "question_number": 80
         }, 
         {
             "response_table": [
@@ -1824,8 +1824,8 @@
                 }
             ], 
             "question_text": "Watched a TV programme that raised money for a charity:Which of the following have you done in the past week, month or year?", 
-            "question_number": 83, 
-            "variable_name": "PhilAct07_4B"
+            "variableid": "PhilAct07_4B", 
+            "question_number": 83
         }, 
         {
             "response_table": [
@@ -1856,8 +1856,8 @@
                 }
             ], 
             "question_text": "Given money to charity:Which of the following have you done in the past week, month or year?", 
-            "question_number": 81, 
-            "variable_name": "PhilAct08_4B"
+            "variableid": "PhilAct08_4B", 
+            "question_number": 81
         }, 
         {
             "response_table": [
@@ -1893,8 +1893,8 @@
                 }
             ], 
             "question_text": "Charities help people I know:How much do you agree with the following statements?", 
-            "question_number": 73, 
-            "variable_name": "PhilAtt01_4B"
+            "variableid": "PhilAtt01_4B", 
+            "question_number": 73
         }, 
         {
             "response_table": [
@@ -1930,8 +1930,8 @@
                 }
             ], 
             "question_text": "Charities play an important role in our country:How much do you agree with the following statements?", 
-            "question_number": 74, 
-            "variable_name": "PhilAtt02_4B"
+            "variableid": "PhilAtt02_4B", 
+            "question_number": 74
         }, 
         {
             "response_table": [
@@ -1967,8 +1967,8 @@
                 }
             ], 
             "question_text": "Charities should do more to help people in other countries:How much do you agree with the following statements?", 
-            "question_number": 76, 
-            "variable_name": "PhilAtt03_4B"
+            "variableid": "PhilAtt03_4B", 
+            "question_number": 76
         }, 
         {
             "response_table": [
@@ -2004,8 +2004,8 @@
                 }
             ], 
             "question_text": "We should not need charities because the government should help people:How much do you agree with the following statements?", 
-            "question_number": 75, 
-            "variable_name": "PhilAtt04_4B"
+            "variableid": "PhilAtt04_4B", 
+            "question_number": 75
         }, 
         {
             "response_table": [
@@ -2041,8 +2041,8 @@
                 }
             ], 
             "question_text": "Young people should give some of their time to charity:How much do you agree with the following statements?", 
-            "question_number": 78, 
-            "variable_name": "PhilAtt05_4B"
+            "variableid": "PhilAtt05_4B", 
+            "question_number": 78
         }, 
         {
             "response_table": [
@@ -2078,8 +2078,8 @@
                 }
             ], 
             "question_text": "I would work for a charity:How much do you agree with the following statements?", 
-            "question_number": 72, 
-            "variable_name": "PhilAtt06_4B"
+            "variableid": "PhilAtt06_4B", 
+            "question_number": 72
         }, 
         {
             "response_table": [
@@ -2115,8 +2115,8 @@
                 }
             ], 
             "question_text": "The more money people have, the more they should give some of their money to charity:How much do you agree with the following statements?", 
-            "question_number": 77, 
-            "variable_name": "PhilAtt07_4B"
+            "variableid": "PhilAtt07_4B", 
+            "question_number": 77
         }, 
         {
             "response_table": [
@@ -2152,8 +2152,8 @@
                 }
             ], 
             "question_text": "Teachers:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
-            "question_number": 69, 
-            "variable_name": "ProfAtt01_4B"
+            "variableid": "ProfAtt01_4B", 
+            "question_number": 69
         }, 
         {
             "response_table": [
@@ -2189,8 +2189,8 @@
                 }
             ], 
             "question_text": "Doctors:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
-            "question_number": 66, 
-            "variable_name": "ProfAtt02_4B"
+            "variableid": "ProfAtt02_4B", 
+            "question_number": 66
         }, 
         {
             "response_table": [
@@ -2226,8 +2226,8 @@
                 }
             ], 
             "question_text": "Nurses:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
-            "question_number": 71, 
-            "variable_name": "ProfAtt03_4B"
+            "variableid": "ProfAtt03_4B", 
+            "question_number": 71
         }, 
         {
             "response_table": [
@@ -2263,8 +2263,8 @@
                 }
             ], 
             "question_text": "Police:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
-            "question_number": 68, 
-            "variable_name": "ProfAtt04_4B"
+            "variableid": "ProfAtt04_4B", 
+            "question_number": 68
         }, 
         {
             "response_table": [
@@ -2300,8 +2300,8 @@
                 }
             ], 
             "question_text": "Members of the armed forces:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
-            "question_number": 67, 
-            "variable_name": "ProfAtt05_4B"
+            "variableid": "ProfAtt05_4B", 
+            "question_number": 67
         }, 
         {
             "response_table": [
@@ -2337,8 +2337,8 @@
                 }
             ], 
             "question_text": "Politicians:On a scale of 1-5, with 1 being not at all and 5 being A lot, how much do you look up to the following people?", 
-            "question_number": 70, 
-            "variable_name": "ProfAtt06_4B"
+            "variableid": "ProfAtt06_4B", 
+            "question_number": 70
         }, 
         {
             "response_table": [
@@ -2394,8 +2394,8 @@
                 }
             ], 
             "question_text": "Which of the following best describes your religious beliefs?", 
-            "question_number": 108, 
-            "variable_name": "Relig01_4B"
+            "variableid": "Relig01_4B", 
+            "question_number": 108
         }, 
         {
             "response_table": [
@@ -2416,8 +2416,8 @@
                 }
             ], 
             "question_text": "Do you attend special events (like baptisms, weddings and funerals) that are associated with a religion?", 
-            "question_number": 117, 
-            "variable_name": "Relig03_4B"
+            "variableid": "Relig03_4B", 
+            "question_number": 117
         }, 
         {
             "response_table": [
@@ -2463,8 +2463,8 @@
                 }
             ], 
             "question_text": "Apart from special events like baptisms, weddings and funerals, how often do you attend services or meetings associated with a religion?", 
-            "question_number": 118, 
-            "variable_name": "Relig04_4B"
+            "variableid": "Relig04_4B", 
+            "question_number": 118
         }, 
         {
             "response_table": [
@@ -2480,8 +2480,8 @@
                 }
             ], 
             "question_text": "Agnostic (A person who believes it is impossible to know if a God exists):If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
-            "question_number": 109, 
-            "variable_name": "Relig05_4B"
+            "variableid": "Relig05_4B", 
+            "question_number": 109
         }, 
         {
             "response_table": [
@@ -2497,8 +2497,8 @@
                 }
             ], 
             "question_text": "Atheist (A person who doesn't believe in a God):If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
-            "question_number": 110, 
-            "variable_name": "Relig06_4B"
+            "variableid": "Relig06_4B", 
+            "question_number": 110
         }, 
         {
             "response_table": [
@@ -2514,8 +2514,8 @@
                 }
             ], 
             "question_text": "Buddhist:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
-            "question_number": 111, 
-            "variable_name": "Relig07_4B"
+            "variableid": "Relig07_4B", 
+            "question_number": 111
         }, 
         {
             "response_table": [
@@ -2531,8 +2531,8 @@
                 }
             ], 
             "question_text": "Christian:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
-            "question_number": 112, 
-            "variable_name": "Relig08_4B"
+            "variableid": "Relig08_4B", 
+            "question_number": 112
         }, 
         {
             "response_table": [
@@ -2548,8 +2548,8 @@
                 }
             ], 
             "question_text": "Hindu:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
-            "question_number": 113, 
-            "variable_name": "Relig09_4B"
+            "variableid": "Relig09_4B", 
+            "question_number": 113
         }, 
         {
             "response_table": [
@@ -2565,8 +2565,8 @@
                 }
             ], 
             "question_text": "Jewish:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
-            "question_number": 114, 
-            "variable_name": "Relig10_4B"
+            "variableid": "Relig10_4B", 
+            "question_number": 114
         }, 
         {
             "response_table": [
@@ -2582,8 +2582,8 @@
                 }
             ], 
             "question_text": "Muslim:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
-            "question_number": 115, 
-            "variable_name": "Relig11_4B"
+            "variableid": "Relig11_4B", 
+            "question_number": 115
         }, 
         {
             "response_table": [
@@ -2599,8 +2599,8 @@
                 }
             ], 
             "question_text": "Sikh:If you know anyone who has the following religious beliefs, please tick the appropriate boxes below \u00a0", 
-            "question_number": 116, 
-            "variable_name": "Relig12_4B"
+            "variableid": "Relig12_4B", 
+            "question_number": 116
         }, 
         {
             "response_table": [
@@ -2636,8 +2636,8 @@
                 }
             ], 
             "question_text": "Out of school, I am free to choose what clothes I want to wear:Please state how much you agree with the following statements", 
-            "question_number": 88, 
-            "variable_name": "Responsible05_4B"
+            "variableid": "Responsible05_4B", 
+            "question_number": 88
         }, 
         {
             "response_table": [
@@ -2673,8 +2673,8 @@
                 }
             ], 
             "question_text": "When I go out, my parents tell me I have to be home at a certain time:Please state how much you agree with the following statements", 
-            "question_number": 89, 
-            "variable_name": "Responsible06_4B"
+            "variableid": "Responsible06_4B", 
+            "question_number": 89
         }, 
         {
             "response_table": [
@@ -2695,14 +2695,14 @@
                 }
             ], 
             "question_text": "Are you involved in any clubs at school?", 
-            "question_number": 86, 
-            "variable_name": "SchAct07_4B"
+            "variableid": "SchAct07_4B", 
+            "question_number": 86
         }, 
         {
             "response_table": [], 
             "question_text": "Yes (please list the clubs in the space provided):Are you involved in any clubs at school?", 
-            "question_number": 87, 
-            "variable_name": "SchAct08_4B"
+            "variableid": "SchAct08_4B", 
+            "question_number": 87
         }, 
         {
             "response_table": [
@@ -2733,8 +2733,8 @@
                 }
             ], 
             "question_text": "How important it school for your chosen career?", 
-            "question_number": 31, 
-            "variable_name": "SchAtt13_4B"
+            "variableid": "SchAtt13_4B", 
+            "question_number": 31
         }, 
         {
             "response_table": [
@@ -2770,8 +2770,8 @@
                 }
             ], 
             "question_text": "school uniforms:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
-            "question_number": 23, 
-            "variable_name": "SchAtt24_4B"
+            "variableid": "SchAtt24_4B", 
+            "question_number": 23
         }, 
         {
             "response_table": [
@@ -2807,8 +2807,8 @@
                 }
             ], 
             "question_text": "the food served at lunch:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
-            "question_number": 26, 
-            "variable_name": "SchAtt25_4B"
+            "variableid": "SchAtt25_4B", 
+            "question_number": 26
         }, 
         {
             "response_table": [
@@ -2844,8 +2844,8 @@
                 }
             ], 
             "question_text": "the school timetable:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
-            "question_number": 24, 
-            "variable_name": "SchAtt26_4B"
+            "variableid": "SchAtt26_4B", 
+            "question_number": 24
         }, 
         {
             "response_table": [
@@ -2881,8 +2881,8 @@
                 }
             ], 
             "question_text": "what I\u2019m learning at school:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
-            "question_number": 27, 
-            "variable_name": "SchLearnAtt16_4B"
+            "variableid": "SchLearnAtt16_4B", 
+            "question_number": 27
         }, 
         {
             "response_table": [
@@ -2918,14 +2918,14 @@
                 }
             ], 
             "question_text": "Which of the following choices below do teachers at your school most value?", 
-            "question_number": 29, 
-            "variable_name": "SchStafAtt18_4B"
+            "variableid": "SchStafAtt18_4B", 
+            "question_number": 29
         }, 
         {
             "response_table": [], 
             "question_text": "Other - Write In (Required):Which of the following choices below do teachers at your school most value?", 
-            "question_number": 30, 
-            "variable_name": "SchStafAtt19_4B"
+            "variableid": "SchStafAtt19_4B", 
+            "question_number": 30
         }, 
         {
             "response_table": [
@@ -2961,8 +2961,8 @@
                 }
             ], 
             "question_text": "how the teachers teach pupils:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
-            "question_number": 28, 
-            "variable_name": "SchStafAtt20_4B"
+            "variableid": "SchStafAtt20_4B", 
+            "question_number": 28
         }, 
         {
             "response_table": [
@@ -2998,8 +2998,8 @@
                 }
             ], 
             "question_text": "teacher appointments:Please state how much you agree with the following statements  \u201cI want to have more say in decisions at school about   \u201d", 
-            "question_number": 25, 
-            "variable_name": "SchStafAtt21_4B"
+            "variableid": "SchStafAtt21_4B", 
+            "question_number": 25
         }, 
         {
             "response_table": [
@@ -3019,8 +3019,8 @@
                 }
             ], 
             "question_text": "Please tell us your gender", 
-            "question_number": 1, 
-            "variable_name": "sex_4B"
+            "variableid": "sex_4B", 
+            "question_number": 1
         }, 
         {
             "response_table": [
@@ -3046,8 +3046,8 @@
                 }
             ], 
             "question_text": "Being in charge of something (e g  leading a project in class, being captain of a team, etc):How confident are you when it comes to the following things:", 
-            "question_number": 39, 
-            "variable_name": "WellConf01_4B"
+            "variableid": "WellConf01_4B", 
+            "question_number": 39
         }, 
         {
             "response_table": [
@@ -3073,8 +3073,8 @@
                 }
             ], 
             "question_text": "Interviews (e g , for College, University, jobs):How confident are you when it comes to the following things:", 
-            "question_number": 34, 
-            "variable_name": "WellConf02_4B"
+            "variableid": "WellConf02_4B", 
+            "question_number": 34
         }, 
         {
             "response_table": [
@@ -3100,8 +3100,8 @@
                 }
             ], 
             "question_text": "Meeting new people:How confident are you when it comes to the following things:", 
-            "question_number": 37, 
-            "variable_name": "WellConf03_4B"
+            "variableid": "WellConf03_4B", 
+            "question_number": 37
         }, 
         {
             "response_table": [
@@ -3127,8 +3127,8 @@
                 }
             ], 
             "question_text": "Performing in front of people (e g  singing or acting in a show, playing a musical instrument, playing in a sports competition, etc ):How confident are you when it comes to the following things:", 
-            "question_number": 36, 
-            "variable_name": "WellConf04_4B"
+            "variableid": "WellConf04_4B", 
+            "question_number": 36
         }, 
         {
             "response_table": [
@@ -3154,8 +3154,8 @@
                 }
             ], 
             "question_text": "Public speaking (e g  speaking in front of the class or other people):How confident are you when it comes to the following things:", 
-            "question_number": 35, 
-            "variable_name": "WellConf05_4B"
+            "variableid": "WellConf05_4B", 
+            "question_number": 35
         }, 
         {
             "response_table": [
@@ -3181,8 +3181,8 @@
                 }
             ], 
             "question_text": "Speaking to authority figures (e g  Head Teacher, Police Officers, etc):How confident are you when it comes to the following things:", 
-            "question_number": 38, 
-            "variable_name": "WellConf06_4B"
+            "variableid": "WellConf06_4B", 
+            "question_number": 38
         }, 
         {
             "response_table": [
@@ -3218,8 +3218,8 @@
                 }
             ], 
             "question_text": "Which of the items listed below is the\u00a0MOST\u00a0important to you in your life at the moment?", 
-            "question_number": 40, 
-            "variable_name": "WellValue19_4B"
+            "variableid": "WellValue19_4B", 
+            "question_number": 40
         }
     ]
 }

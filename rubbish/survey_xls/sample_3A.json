@@ -3,14 +3,14 @@
         {
             "response_table": [], 
             "question_text": "What do you want to be when you grow up?", 
-            "question_number": 58, 
-            "variable_name": "AspCareer03_3A"
+            "variableid": "AspCareer03_3A", 
+            "question_number": 58
         }, 
         {
             "response_table": [], 
             "question_text": "Cohort", 
-            "question_number": 61, 
-            "variable_name": "cohort_3A"
+            "variableid": "cohort_3A", 
+            "question_number": 61
         }, 
         {
             "response_table": [
@@ -36,8 +36,8 @@
                 }
             ], 
             "question_text": "How often do you speak Welsh in school?", 
-            "question_number": 8, 
-            "variable_name": "CymFrq01_3A"
+            "variableid": "CymFrq01_3A", 
+            "question_number": 8
         }, 
         {
             "response_table": [
@@ -58,14 +58,14 @@
                 }
             ], 
             "question_text": "Do you have a mobile phone?", 
-            "question_number": 40, 
-            "variable_name": "Deprive03_3A"
+            "variableid": "Deprive03_3A", 
+            "question_number": 40
         }, 
         {
             "response_table": [], 
             "question_text": "Who is your favourite person in the world?", 
-            "question_number": 23, 
-            "variable_name": "EngSoc30_3A"
+            "variableid": "EngSoc30_3A", 
+            "question_number": 23
         }, 
         {
             "response_table": [
@@ -81,8 +81,8 @@
                 }
             ], 
             "question_text": "Castles:Have you visited any of these places with your family? Please click on each one you have been to", 
-            "question_number": 46, 
-            "variable_name": "FamAct01_3A"
+            "variableid": "FamAct01_3A", 
+            "question_number": 46
         }, 
         {
             "response_table": [
@@ -98,8 +98,8 @@
                 }
             ], 
             "question_text": "Cinema:Have you visited any of these places with your family? Please click on each one you have been to", 
-            "question_number": 49, 
-            "variable_name": "FamAct02_3A"
+            "variableid": "FamAct02_3A", 
+            "question_number": 49
         }, 
         {
             "response_table": [
@@ -115,8 +115,8 @@
                 }
             ], 
             "question_text": "Concert:Have you visited any of these places with your family? Please click on each one you have been to", 
-            "question_number": 53, 
-            "variable_name": "FamAct03_3A"
+            "variableid": "FamAct03_3A", 
+            "question_number": 53
         }, 
         {
             "response_table": [
@@ -132,8 +132,8 @@
                 }
             ], 
             "question_text": "Eisteddfodau:Have you visited any of these places with your family? Please click on each one you have been to", 
-            "question_number": 47, 
-            "variable_name": "FamAct04_3A"
+            "variableid": "FamAct04_3A", 
+            "question_number": 47
         }, 
         {
             "response_table": [
@@ -149,8 +149,8 @@
                 }
             ], 
             "question_text": "Museums:Have you visited any of these places with your family? Please click on each one you have been to", 
-            "question_number": 54, 
-            "variable_name": "FamAct08_3A"
+            "variableid": "FamAct08_3A", 
+            "question_number": 54
         }, 
         {
             "response_table": [
@@ -166,8 +166,8 @@
                 }
             ], 
             "question_text": "Sports event:Have you visited any of these places with your family? Please click on each one you have been to", 
-            "question_number": 48, 
-            "variable_name": "FamAct10_3A"
+            "variableid": "FamAct10_3A", 
+            "question_number": 48
         }, 
         {
             "response_table": [
@@ -183,8 +183,8 @@
                 }
             ], 
             "question_text": "Theatre:Have you visited any of these places with your family? Please click on each one you have been to", 
-            "question_number": 50, 
-            "variable_name": "FamAct11_3A"
+            "variableid": "FamAct11_3A", 
+            "question_number": 50
         }, 
         {
             "response_table": [
@@ -200,8 +200,8 @@
                 }
             ], 
             "question_text": "Theme  Park:Have you visited any of these places with your family? Please click on each one you have been to", 
-            "question_number": 52, 
-            "variable_name": "FamAct12_3A"
+            "variableid": "FamAct12_3A", 
+            "question_number": 52
         }, 
         {
             "response_table": [
@@ -217,8 +217,8 @@
                 }
             ], 
             "question_text": "Zoo:Have you visited any of these places with your family? Please click on each one you have been to", 
-            "question_number": 51, 
-            "variable_name": "FamAct13_3A"
+            "variableid": "FamAct13_3A", 
+            "question_number": 51
         }, 
         {
             "response_table": [
@@ -248,8 +248,8 @@
                 }
             ], 
             "question_text": "How often do you see your grandparents?", 
-            "question_number": 16, 
-            "variable_name": "FamActFrq08_3A"
+            "variableid": "FamActFrq08_3A", 
+            "question_number": 16
         }, 
         {
             "response_table": [
@@ -285,8 +285,8 @@
                 }
             ], 
             "question_text": "How often do your parents or carers read with you at home?", 
-            "question_number": 15, 
-            "variable_name": "FamActFrq21_3A"
+            "variableid": "FamActFrq21_3A", 
+            "question_number": 15
         }, 
         {
             "response_table": [
@@ -302,8 +302,8 @@
                 }
             ], 
             "question_text": "Babysit me when my parents or carers go out:What kinds of things do your grandparents do with you?", 
-            "question_number": 18, 
-            "variable_name": "FamActFrq22_3A"
+            "variableid": "FamActFrq22_3A", 
+            "question_number": 18
         }, 
         {
             "response_table": [
@@ -319,8 +319,8 @@
                 }
             ], 
             "question_text": "Help me with my homework:What kinds of things do your grandparents do with you?", 
-            "question_number": 20, 
-            "variable_name": "FamActFrq23_3A"
+            "variableid": "FamActFrq23_3A", 
+            "question_number": 20
         }, 
         {
             "response_table": [
@@ -336,8 +336,8 @@
                 }
             ], 
             "question_text": "Look after me while my parents or carers are at work:What kinds of things do your grandparents do with you?", 
-            "question_number": 17, 
-            "variable_name": "FamActFrq24_3A"
+            "variableid": "FamActFrq24_3A", 
+            "question_number": 17
         }, 
         {
             "response_table": [
@@ -353,8 +353,8 @@
                 }
             ], 
             "question_text": "Play computer games with me:What kinds of things do your grandparents do with you?", 
-            "question_number": 22, 
-            "variable_name": "FamActFrq25_3A"
+            "variableid": "FamActFrq25_3A", 
+            "question_number": 22
         }, 
         {
             "response_table": [
@@ -370,8 +370,8 @@
                 }
             ], 
             "question_text": "Take me shopping, to the cinema, to watch sports games, or other events:What kinds of things do your grandparents do with you?", 
-            "question_number": 19, 
-            "variable_name": "FamActFrq26_3A"
+            "variableid": "FamActFrq26_3A", 
+            "question_number": 19
         }, 
         {
             "response_table": [
@@ -387,20 +387,20 @@
                 }
             ], 
             "question_text": "Watch TV or play card or board games with me:What kinds of things do your grandparents do with you?", 
-            "question_number": 21, 
-            "variable_name": "FamActFrq27_3A"
+            "variableid": "FamActFrq27_3A", 
+            "question_number": 21
         }, 
         {
             "response_table": [], 
             "question_text": "What is your favourite sport or game to play?", 
-            "question_number": 36, 
-            "variable_name": "Hob44_3A"
+            "variableid": "Hob44_3A", 
+            "question_number": 36
         }, 
         {
             "response_table": [], 
             "question_text": "Which video game is your favourite?", 
-            "question_number": 45, 
-            "variable_name": "Hob47_3A"
+            "variableid": "Hob47_3A", 
+            "question_number": 45
         }, 
         {
             "response_table": [
@@ -426,8 +426,8 @@
                 }
             ], 
             "question_text": "How much do you like reading?", 
-            "question_number": 4, 
-            "variable_name": "HobAtt06_3A"
+            "variableid": "HobAtt06_3A", 
+            "question_number": 4
         }, 
         {
             "response_table": [
@@ -453,8 +453,8 @@
                 }
             ], 
             "question_text": "How much do you like sports?", 
-            "question_number": 34, 
-            "variable_name": "HobAtt07_3A"
+            "variableid": "HobAtt07_3A", 
+            "question_number": 34
         }, 
         {
             "response_table": [
@@ -480,8 +480,8 @@
                 }
             ], 
             "question_text": "How much do you like writing?", 
-            "question_number": 60, 
-            "variable_name": "HobAtt10_3A"
+            "variableid": "HobAtt10_3A", 
+            "question_number": 60
         }, 
         {
             "response_table": [
@@ -507,8 +507,8 @@
                 }
             ], 
             "question_text": "How often do you play computer games (e g  Playstation, Xbox, Wii)?", 
-            "question_number": 42, 
-            "variable_name": "HobFrq01_3A"
+            "variableid": "HobFrq01_3A", 
+            "question_number": 42
         }, 
         {
             "response_table": [
@@ -544,8 +544,8 @@
                 }
             ], 
             "question_text": "How often do you play sports or do exercise?", 
-            "question_number": 35, 
-            "variable_name": "HobFrq02_3A"
+            "variableid": "HobFrq02_3A", 
+            "question_number": 35
         }, 
         {
             "response_table": [
@@ -571,8 +571,8 @@
                 }
             ], 
             "question_text": "How often do you read books?", 
-            "question_number": 44, 
-            "variable_name": "HobFrq03_3A"
+            "variableid": "HobFrq03_3A", 
+            "question_number": 44
         }, 
         {
             "response_table": [
@@ -598,8 +598,8 @@
                 }
             ], 
             "question_text": "How often do you use a tablet (e g  iPad, Pebble etc)?", 
-            "question_number": 43, 
-            "variable_name": "HobFrq05_3A"
+            "variableid": "HobFrq05_3A", 
+            "question_number": 43
         }, 
         {
             "response_table": [
@@ -625,8 +625,8 @@
                 }
             ], 
             "question_text": "How often do you use the internet?", 
-            "question_number": 41, 
-            "variable_name": "HobFrq06_3A"
+            "variableid": "HobFrq06_3A", 
+            "question_number": 41
         }, 
         {
             "response_table": [
@@ -642,8 +642,8 @@
                 }
             ], 
             "question_text": "Language completed", 
-            "question_number": 59, 
-            "variable_name": "langresponse_3A"
+            "variableid": "langresponse_3A", 
+            "question_number": 59
         }, 
         {
             "response_table": [
@@ -664,32 +664,32 @@
                 }
             ], 
             "question_text": "Do you get pocket money?", 
-            "question_number": 55, 
-            "variable_name": "Money01_3A"
+            "variableid": "Money01_3A", 
+            "question_number": 55
         }, 
         {
             "response_table": [], 
             "question_text": "How much pocket money do you get per week?", 
-            "question_number": 56, 
-            "variable_name": "Money02_3A"
+            "variableid": "Money02_3A", 
+            "question_number": 56
         }, 
         {
             "response_table": [], 
             "question_text": "What did you do with your pocket money this week?", 
-            "question_number": 57, 
-            "variable_name": "Money03_3A"
+            "variableid": "Money03_3A", 
+            "question_number": 57
         }, 
         {
             "response_table": [], 
             "question_text": "What did you eat for breakfast this morning?", 
-            "question_number": 33, 
-            "variable_name": "RoutnFood01_3A"
+            "variableid": "RoutnFood01_3A", 
+            "question_number": 33
         }, 
         {
             "response_table": [], 
             "question_text": "What did you eat for dinner last night?", 
-            "question_number": 32, 
-            "variable_name": "RoutnFood06_3A"
+            "variableid": "RoutnFood06_3A", 
+            "question_number": 32
         }, 
         {
             "response_table": [
@@ -725,8 +725,8 @@
                 }
             ], 
             "question_text": "About what time do you get up in the mornings?", 
-            "question_number": 25, 
-            "variable_name": "RoutnSleep01_3A"
+            "variableid": "RoutnSleep01_3A", 
+            "question_number": 25
         }, 
         {
             "response_table": [
@@ -767,8 +767,8 @@
                 }
             ], 
             "question_text": "About what time did you go to bed last night?", 
-            "question_number": 24, 
-            "variable_name": "RoutnSleep03_3A"
+            "variableid": "RoutnSleep03_3A", 
+            "question_number": 24
         }, 
         {
             "response_table": [
@@ -784,8 +784,8 @@
                 }
             ], 
             "question_text": "I cycled:How did you get to school this morning?", 
-            "question_number": 27, 
-            "variable_name": "RoutnTrav02_3A"
+            "variableid": "RoutnTrav02_3A", 
+            "question_number": 27
         }, 
         {
             "response_table": [
@@ -801,8 +801,8 @@
                 }
             ], 
             "question_text": "In the car:How did you get to school this morning?", 
-            "question_number": 28, 
-            "variable_name": "RoutnTrav03_3A"
+            "variableid": "RoutnTrav03_3A", 
+            "question_number": 28
         }, 
         {
             "response_table": [
@@ -818,8 +818,8 @@
                 }
             ], 
             "question_text": "I caught the bus:How did you get to school this morning?", 
-            "question_number": 29, 
-            "variable_name": "RoutnTrav04_3A"
+            "variableid": "RoutnTrav04_3A", 
+            "question_number": 29
         }, 
         {
             "response_table": [
@@ -835,8 +835,8 @@
                 }
             ], 
             "question_text": "I walked:How did you get to school this morning?", 
-            "question_number": 26, 
-            "variable_name": "RoutnTrav05_3A"
+            "variableid": "RoutnTrav05_3A", 
+            "question_number": 26
         }, 
         {
             "response_table": [
@@ -852,8 +852,8 @@
                 }
             ], 
             "question_text": "I got a taxi:How did you get to school this morning?", 
-            "question_number": 31, 
-            "variable_name": "RoutnTrav06_3A"
+            "variableid": "RoutnTrav06_3A", 
+            "question_number": 31
         }, 
         {
             "response_table": [
@@ -869,8 +869,8 @@
                 }
             ], 
             "question_text": "I got the train:How did you get to school this morning?", 
-            "question_number": 30, 
-            "variable_name": "RoutnTrav07_3A"
+            "variableid": "RoutnTrav07_3A", 
+            "question_number": 30
         }, 
         {
             "response_table": [
@@ -896,8 +896,8 @@
                 }
             ], 
             "question_text": "How much do you like school?", 
-            "question_number": 3, 
-            "variable_name": "SchAtt01_3A"
+            "variableid": "SchAtt01_3A", 
+            "question_number": 3
         }, 
         {
             "response_table": [
@@ -923,8 +923,8 @@
                 }
             ], 
             "question_text": "How much have you tried in school this week?", 
-            "question_number": 11, 
-            "variable_name": "SchAtt15_3A"
+            "variableid": "SchAtt15_3A", 
+            "question_number": 11
         }, 
         {
             "response_table": [
@@ -950,8 +950,8 @@
                 }
             ], 
             "question_text": "How much do you like answering questions in class?", 
-            "question_number": 6, 
-            "variable_name": "SchLearnAtt01_3A"
+            "variableid": "SchLearnAtt01_3A", 
+            "question_number": 6
         }, 
         {
             "response_table": [
@@ -977,8 +977,8 @@
                 }
             ], 
             "question_text": "How much do you like number work?", 
-            "question_number": 5, 
-            "variable_name": "SchLearnAtt03_3A"
+            "variableid": "SchLearnAtt03_3A", 
+            "question_number": 5
         }, 
         {
             "response_table": [
@@ -1004,8 +1004,8 @@
                 }
             ], 
             "question_text": "How much do you like taking tests?", 
-            "question_number": 12, 
-            "variable_name": "SchLearnAtt14_3A"
+            "variableid": "SchLearnAtt14_3A", 
+            "question_number": 12
         }, 
         {
             "response_table": [
@@ -1031,8 +1031,8 @@
                 }
             ], 
             "question_text": "Do you worry about taking tests?", 
-            "question_number": 13, 
-            "variable_name": "SchLearnAtt15_3A"
+            "variableid": "SchLearnAtt15_3A", 
+            "question_number": 13
         }, 
         {
             "response_table": [
@@ -1058,20 +1058,20 @@
                 }
             ], 
             "question_text": "How much do you like learning Welsh?", 
-            "question_number": 7, 
-            "variable_name": "SchSubjAtt04_3A"
+            "variableid": "SchSubjAtt04_3A", 
+            "question_number": 7
         }, 
         {
             "response_table": [], 
             "question_text": "What do you like to learn the most in school?", 
-            "question_number": 9, 
-            "variable_name": "SchSubjAtt17_3A"
+            "variableid": "SchSubjAtt17_3A", 
+            "question_number": 9
         }, 
         {
             "response_table": [], 
             "question_text": "What do you like to learn the least in school?", 
-            "question_number": 10, 
-            "variable_name": "SchSubjAtt18_3A"
+            "variableid": "SchSubjAtt18_3A", 
+            "question_number": 10
         }, 
         {
             "response_table": [
@@ -1102,8 +1102,8 @@
                 }
             ], 
             "question_text": "Which do you like better, school this year or last year?", 
-            "question_number": 14, 
-            "variable_name": "SchTranAtt20_3A"
+            "variableid": "SchTranAtt20_3A", 
+            "question_number": 14
         }, 
         {
             "response_table": [
@@ -1119,14 +1119,14 @@
                 }
             ], 
             "question_text": "Are you a boy or a girl?", 
-            "question_number": 2, 
-            "variable_name": "sex_3A"
+            "variableid": "sex_3A", 
+            "question_number": 2
         }, 
         {
             "response_table": [], 
             "question_text": "Sweep", 
-            "question_number": 62, 
-            "variable_name": "sweep_3A"
+            "variableid": "sweep_3A", 
+            "question_number": 62
         }, 
         {
             "response_table": [
@@ -1152,8 +1152,8 @@
                 }
             ], 
             "question_text": "How much energy have you had this week?", 
-            "question_number": 37, 
-            "variable_name": "WellFeelFrq08_3A"
+            "variableid": "WellFeelFrq08_3A", 
+            "question_number": 37
         }, 
         {
             "response_table": [
@@ -1179,8 +1179,8 @@
                 }
             ], 
             "question_text": "How much have you felt lonely this week?", 
-            "question_number": 38, 
-            "variable_name": "WellFeelFrq09_3A"
+            "variableid": "WellFeelFrq09_3A", 
+            "question_number": 38
         }, 
         {
             "response_table": [
@@ -1206,8 +1206,8 @@
                 }
             ], 
             "question_text": "How much do you like the way you look?", 
-            "question_number": 39, 
-            "variable_name": "WellSat07_3A"
+            "variableid": "WellSat07_3A", 
+            "question_number": 39
         }
     ]
 }

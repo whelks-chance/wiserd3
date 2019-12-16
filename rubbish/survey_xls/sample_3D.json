@@ -34,20 +34,20 @@
                 }
             ], 
             "question_text": "Do you have a career plan?", 
-            "question_number": 109, 
-            "variable_name": "AspCareer02_3D"
+            "variableid": "AspCareer02_3D", 
+            "question_number": 109
         }, 
         {
             "response_table": [], 
             "question_text": "What job would you like to have in the future?", 
-            "question_number": 100, 
-            "variable_name": "AspCareer03_3D"
+            "variableid": "AspCareer03_3D", 
+            "question_number": 100
         }, 
         {
             "response_table": [], 
             "question_text": "Do you think you will still be doing the same type of job in five years' time?", 
-            "question_number": 38, 
-            "variable_name": "AspCareer07_3D"
+            "variableid": "AspCareer07_3D", 
+            "question_number": 38
         }, 
         {
             "response_table": [
@@ -78,8 +78,8 @@
                 }
             ], 
             "question_text": "be financially well-off?:When you are older, do you think you will", 
-            "question_number": 105, 
-            "variable_name": "AspLikely01_3D"
+            "variableid": "AspLikely01_3D", 
+            "question_number": 105
         }, 
         {
             "response_table": [
@@ -110,8 +110,8 @@
                 }
             ], 
             "question_text": "have a family of your own?:When you are older, do you think you will", 
-            "question_number": 104, 
-            "variable_name": "AspLikely02_3D"
+            "variableid": "AspLikely02_3D", 
+            "question_number": 104
         }, 
         {
             "response_table": [
@@ -142,8 +142,8 @@
                 }
             ], 
             "question_text": "have a job that you will enjoy?:When you are older, do you think you will", 
-            "question_number": 108, 
-            "variable_name": "AspLikely03_3D"
+            "variableid": "AspLikely03_3D", 
+            "question_number": 108
         }, 
         {
             "response_table": [
@@ -174,8 +174,8 @@
                 }
             ], 
             "question_text": "live abroad (i e  in another country)?:When you are older, do you think you will", 
-            "question_number": 103, 
-            "variable_name": "AspLikely05_3D"
+            "variableid": "AspLikely05_3D", 
+            "question_number": 103
         }, 
         {
             "response_table": [
@@ -201,8 +201,8 @@
                 }
             ], 
             "question_text": "live in the same neighbourhood as you do now?:When you are older, do you think you will", 
-            "question_number": 102, 
-            "variable_name": "AspLikely06_3D"
+            "variableid": "AspLikely06_3D", 
+            "question_number": 102
         }, 
         {
             "response_table": [
@@ -233,8 +233,8 @@
                 }
             ], 
             "question_text": "live in Wales?:When you are older, do you think you will", 
-            "question_number": 101, 
-            "variable_name": "AspLikely07_3D"
+            "variableid": "AspLikely07_3D", 
+            "question_number": 101
         }, 
         {
             "response_table": [
@@ -265,8 +265,8 @@
                 }
             ], 
             "question_text": "speak Welsh?:When you are older, do you think you will", 
-            "question_number": 107, 
-            "variable_name": "AspLikely08_3D"
+            "variableid": "AspLikely08_3D", 
+            "question_number": 107
         }, 
         {
             "response_table": [
@@ -297,8 +297,8 @@
                 }
             ], 
             "question_text": "volunteer some of your time to help others?:When you are older, do you think you will", 
-            "question_number": 106, 
-            "variable_name": "AspLikely09_3D"
+            "variableid": "AspLikely09_3D", 
+            "question_number": 106
         }, 
         {
             "response_table": [
@@ -334,20 +334,20 @@
                 }
             ], 
             "question_text": "What is the likelihood you will go to university in the next three years?", 
-            "question_number": 96, 
-            "variable_name": "AspPostSch20_3D"
+            "variableid": "AspPostSch20_3D", 
+            "question_number": 96
         }, 
         {
             "response_table": [], 
             "question_text": "If you answered over 0% for the last question, what university would you most like to attend?", 
-            "question_number": 97, 
-            "variable_name": "AspPostSch21_3D"
+            "variableid": "AspPostSch21_3D", 
+            "question_number": 97
         }, 
         {
             "response_table": [], 
             "question_text": "What subject would you like to study at university?", 
-            "question_number": 99, 
-            "variable_name": "AspPostSch22_3D"
+            "variableid": "AspPostSch22_3D", 
+            "question_number": 99
         }, 
         {
             "response_table": [
@@ -378,26 +378,26 @@
                 }
             ], 
             "question_text": "If you are not intending to apply for university next year, do you think you will apply for university at some point in the future?", 
-            "question_number": 98, 
-            "variable_name": "AspPostSch23_3D"
+            "variableid": "AspPostSch23_3D", 
+            "question_number": 98
         }, 
         {
             "response_table": [], 
             "question_text": "What do you see yourself doing in 5 years' time?", 
-            "question_number": 110, 
-            "variable_name": "AspTime01_3D"
+            "variableid": "AspTime01_3D", 
+            "question_number": 110
         }, 
         {
             "response_table": [], 
             "question_text": "What do you see yourself doing in 10 years' time?", 
-            "question_number": 111, 
-            "variable_name": "AspTime02_3D"
+            "variableid": "AspTime02_3D", 
+            "question_number": 111
         }, 
         {
             "response_table": [], 
             "question_text": "Cohort", 
-            "question_number": 139, 
-            "variable_name": "cohort_3D"
+            "variableid": "cohort_3D", 
+            "question_number": 139
         }, 
         {
             "response_table": [
@@ -418,20 +418,20 @@
                 }
             ], 
             "question_text": "Have you lived in Wales all your life?", 
-            "question_number": 27, 
-            "variable_name": "CymAtt16_3D"
+            "variableid": "CymAtt16_3D", 
+            "question_number": 27
         }, 
         {
             "response_table": [], 
             "question_text": "What is the best thing about living in Wales?", 
-            "question_number": 28, 
-            "variable_name": "CymAtt17_3D"
+            "variableid": "CymAtt17_3D", 
+            "question_number": 28
         }, 
         {
             "response_table": [], 
             "question_text": "What is the worst thing about living in Wales?", 
-            "question_number": 29, 
-            "variable_name": "CymAtt18_3D"
+            "variableid": "CymAtt18_3D", 
+            "question_number": 29
         }, 
         {
             "response_table": [
@@ -467,8 +467,8 @@
                 }
             ], 
             "question_text": "people in Wales, with the same accent as you, speaking to each other in English:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
-            "question_number": 31, 
-            "variable_name": "DiversAtt12_3D"
+            "variableid": "DiversAtt12_3D", 
+            "question_number": 31
         }, 
         {
             "response_table": [
@@ -504,8 +504,8 @@
                 }
             ], 
             "question_text": "people in Wales, with an accent different from yours, speaking to each other in English:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
-            "question_number": 33, 
-            "variable_name": "DiversAtt13_3D"
+            "variableid": "DiversAtt13_3D", 
+            "question_number": 33
         }, 
         {
             "response_table": [
@@ -541,8 +541,8 @@
                 }
             ], 
             "question_text": "people in Wales speaking to each other in Welsh:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
-            "question_number": 30, 
-            "variable_name": "DiversAtt14_3D"
+            "variableid": "DiversAtt14_3D", 
+            "question_number": 30
         }, 
         {
             "response_table": [
@@ -578,14 +578,14 @@
                 }
             ], 
             "question_text": "people in Wales speaking to each other in a language other than English or Welsh:On a scale of 1 to 5, with 1 meaning 'very comfortable' and 5 meaning 'not at all comfortable,' how do you feel when you hear", 
-            "question_number": 32, 
-            "variable_name": "DiversAtt15_3D"
+            "variableid": "DiversAtt15_3D", 
+            "question_number": 32
         }, 
         {
             "response_table": [], 
             "question_text": "Please list the job(s) that you have below:", 
-            "question_number": 35, 
-            "variable_name": "EmpAct01_3D"
+            "variableid": "EmpAct01_3D", 
+            "question_number": 35
         }, 
         {
             "response_table": [
@@ -611,8 +611,8 @@
                 }
             ], 
             "question_text": "Are any of your jobs temporary?", 
-            "question_number": 37, 
-            "variable_name": "EmpAct02_3D"
+            "variableid": "EmpAct02_3D", 
+            "question_number": 37
         }, 
         {
             "response_table": [
@@ -638,8 +638,8 @@
                 }
             ], 
             "question_text": "Do any of your jobs have a 'zero hours' contract?", 
-            "question_number": 36, 
-            "variable_name": "EmpAct03_3D"
+            "variableid": "EmpAct03_3D", 
+            "question_number": 36
         }, 
         {
             "response_table": [
@@ -695,8 +695,8 @@
                 }
             ], 
             "question_text": "On average, how many hours a week do you do paid work?", 
-            "question_number": 34, 
-            "variable_name": "EmpAct04_3D"
+            "variableid": "EmpAct04_3D", 
+            "question_number": 34
         }, 
         {
             "response_table": [
@@ -742,8 +742,8 @@
                 }
             ], 
             "question_text": "Response:How much do you enjoy your job?", 
-            "question_number": 39, 
-            "variable_name": "EmpActAtt01_3D"
+            "variableid": "EmpActAtt01_3D", 
+            "question_number": 39
         }, 
         {
             "response_table": [
@@ -759,8 +759,8 @@
                 }
             ], 
             "question_text": "Political parties:Are you a member of any of the following organisations? (please tick all that apply)", 
-            "question_number": 21, 
-            "variable_name": "EngPol01_3D"
+            "variableid": "EngPol01_3D", 
+            "question_number": 21
         }, 
         {
             "response_table": [
@@ -786,8 +786,8 @@
                 }
             ], 
             "question_text": "Do you think the voting age in Wales should be lowered to 16?", 
-            "question_number": 89, 
-            "variable_name": "EngPol02_3D"
+            "variableid": "EngPol02_3D", 
+            "question_number": 89
         }, 
         {
             "response_table": [
@@ -843,14 +843,14 @@
                 }
             ], 
             "question_text": "If an election was held today, and you could vote, what party would you vote for?", 
-            "question_number": 90, 
-            "variable_name": "EngPol03_3D"
+            "variableid": "EngPol03_3D", 
+            "question_number": 90
         }, 
         {
             "response_table": [], 
             "question_text": "Other (please specify):If an election was held today, and you could vote, what party would you vote for?", 
-            "question_number": 91, 
-            "variable_name": "EngPol04_3D"
+            "variableid": "EngPol04_3D", 
+            "question_number": 91
         }, 
         {
             "response_table": [
@@ -876,8 +876,8 @@
                 }
             ], 
             "question_text": "Politics affect my life", 
-            "question_number": 78, 
-            "variable_name": "EngPol09_3D"
+            "variableid": "EngPol09_3D", 
+            "question_number": 78
         }, 
         {
             "response_table": [
@@ -903,8 +903,8 @@
                 }
             ], 
             "question_text": "Are you a member of any political groups?:Please answer the following questions", 
-            "question_number": 93, 
-            "variable_name": "EngPol10_3D"
+            "variableid": "EngPol10_3D", 
+            "question_number": 93
         }, 
         {
             "response_table": [
@@ -930,8 +930,8 @@
                 }
             ], 
             "question_text": "Do you think you are well-informed about current affairs?", 
-            "question_number": 73, 
-            "variable_name": "EngSoc01_3D"
+            "variableid": "EngSoc01_3D", 
+            "question_number": 73
         }, 
         {
             "response_table": [
@@ -957,8 +957,8 @@
                 }
             ], 
             "question_text": "Do you think it matters who is in charge of the country?:Please answer the following questions", 
-            "question_number": 92, 
-            "variable_name": "EngSoc02_3D"
+            "variableid": "EngSoc02_3D", 
+            "question_number": 92
         }, 
         {
             "response_table": [
@@ -984,14 +984,14 @@
                 }
             ], 
             "question_text": "Have you signed any petitions?:Please answer the following questions", 
-            "question_number": 94, 
-            "variable_name": "EngSoc03_3D"
+            "variableid": "EngSoc03_3D", 
+            "question_number": 94
         }, 
         {
             "response_table": [], 
             "question_text": "If you have recently signed a petition, what was the issue?", 
-            "question_number": 95, 
-            "variable_name": "EngSoc04_3D"
+            "variableid": "EngSoc04_3D", 
+            "question_number": 95
         }, 
         {
             "response_table": [
@@ -1007,14 +1007,14 @@
                 }
             ], 
             "question_text": "Is there one particular topical issue that you feel strongly about?", 
-            "question_number": 79, 
-            "variable_name": "EngSoc05_3D"
+            "variableid": "EngSoc05_3D", 
+            "question_number": 79
         }, 
         {
             "response_table": [], 
             "question_text": "If you responded yes to the previous question, please tell us about the issue here", 
-            "question_number": 80, 
-            "variable_name": "EngSoc06_3D"
+            "variableid": "EngSoc06_3D", 
+            "question_number": 80
         }, 
         {
             "response_table": [
@@ -1030,8 +1030,8 @@
                 }
             ], 
             "question_text": "Flooding due to climate change:Please choose the two (2) issues you feel most strongly about from the list below:", 
-            "question_number": 81, 
-            "variable_name": "EngSoc08_3D"
+            "variableid": "EngSoc08_3D", 
+            "question_number": 81
         }, 
         {
             "response_table": [
@@ -1047,8 +1047,8 @@
                 }
             ], 
             "question_text": "Privacy invasions through social networking sites:Please choose the two (2) issues you feel most strongly about from the list below:", 
-            "question_number": 82, 
-            "variable_name": "EngSoc09_3D"
+            "variableid": "EngSoc09_3D", 
+            "question_number": 82
         }, 
         {
             "response_table": [
@@ -1064,8 +1064,8 @@
                 }
             ], 
             "question_text": "Immigration:Please choose the two (2) issues you feel most strongly about from the list below:", 
-            "question_number": 83, 
-            "variable_name": "EngSoc10_3D"
+            "variableid": "EngSoc10_3D", 
+            "question_number": 83
         }, 
         {
             "response_table": [
@@ -1081,8 +1081,8 @@
                 }
             ], 
             "question_text": "Terrorism:Please choose the two (2) issues you feel most strongly about from the list below:", 
-            "question_number": 84, 
-            "variable_name": "EngSoc11_3D"
+            "variableid": "EngSoc11_3D", 
+            "question_number": 84
         }, 
         {
             "response_table": [
@@ -1098,8 +1098,8 @@
                 }
             ], 
             "question_text": "Economic recession:Please choose the two (2) issues you feel most strongly about from the list below:", 
-            "question_number": 85, 
-            "variable_name": "EngSoc12_3D"
+            "variableid": "EngSoc12_3D", 
+            "question_number": 85
         }, 
         {
             "response_table": [
@@ -1115,8 +1115,8 @@
                 }
             ], 
             "question_text": "Sustainable energy problems (e g  oil shortage):Please choose the two (2) issues you feel most strongly about from the list below:", 
-            "question_number": 86, 
-            "variable_name": "EngSoc13_3D"
+            "variableid": "EngSoc13_3D", 
+            "question_number": 86
         }, 
         {
             "response_table": [
@@ -1132,14 +1132,14 @@
                 }
             ], 
             "question_text": "Other (please specifcy):Please choose the two (2) issues you feel most strongly about from the list below:", 
-            "question_number": 87, 
-            "variable_name": "EngSoc14_3D"
+            "variableid": "EngSoc14_3D", 
+            "question_number": 87
         }, 
         {
             "response_table": [], 
             "question_text": "Other (please specifcy):Please choose the two (2) issues you feel most strongly about from the list below:", 
-            "question_number": 88, 
-            "variable_name": "EngSoc15_3D"
+            "variableid": "EngSoc15_3D", 
+            "question_number": 88
         }, 
         {
             "response_table": [
@@ -1155,8 +1155,8 @@
                 }
             ], 
             "question_text": "News Websites: Find out about current affairs", 
-            "question_number": 129, 
-            "variable_name": "EngSoc17_3D"
+            "variableid": "EngSoc17_3D", 
+            "question_number": 129
         }, 
         {
             "response_table": [
@@ -1172,8 +1172,8 @@
                 }
             ], 
             "question_text": "YouTube/vlogs: Find out about current affairs", 
-            "question_number": 130, 
-            "variable_name": "EngSoc18_3D"
+            "variableid": "EngSoc18_3D", 
+            "question_number": 130
         }, 
         {
             "response_table": [
@@ -1189,8 +1189,8 @@
                 }
             ], 
             "question_text": "Facebook: Find out about current affairs", 
-            "question_number": 131, 
-            "variable_name": "EngSoc19_3D"
+            "variableid": "EngSoc19_3D", 
+            "question_number": 131
         }, 
         {
             "response_table": [
@@ -1206,8 +1206,8 @@
                 }
             ], 
             "question_text": "Newspapers: Find out about current affairs", 
-            "question_number": 132, 
-            "variable_name": "EngSoc20_3D"
+            "variableid": "EngSoc20_3D", 
+            "question_number": 132
         }, 
         {
             "response_table": [
@@ -1223,8 +1223,8 @@
                 }
             ], 
             "question_text": "Blogs: Find out about current affairs", 
-            "question_number": 133, 
-            "variable_name": "EngSoc21_3D"
+            "variableid": "EngSoc21_3D", 
+            "question_number": 133
         }, 
         {
             "response_table": [
@@ -1240,8 +1240,8 @@
                 }
             ], 
             "question_text": "TV Updates: Find out about current affairs", 
-            "question_number": 134, 
-            "variable_name": "EngSoc22_3D"
+            "variableid": "EngSoc22_3D", 
+            "question_number": 134
         }, 
         {
             "response_table": [
@@ -1257,8 +1257,8 @@
                 }
             ], 
             "question_text": "Twitter: Find out about current affairs", 
-            "question_number": 135, 
-            "variable_name": "EngSoc23_3D"
+            "variableid": "EngSoc23_3D", 
+            "question_number": 135
         }, 
         {
             "response_table": [
@@ -1274,8 +1274,8 @@
                 }
             ], 
             "question_text": "TV or radio main broadcast: Find out about current affairs", 
-            "question_number": 136, 
-            "variable_name": "EngSoc24_3D"
+            "variableid": "EngSoc24_3D", 
+            "question_number": 136
         }, 
         {
             "response_table": [
@@ -1313,8 +1313,8 @@
                 }
             ], 
             "question_text": "Source #1:Which two of the following do you get most of your information about current affairs / the news from?", 
-            "question_number": 74, 
-            "variable_name": "EngSoc25_3D"
+            "variableid": "EngSoc25_3D", 
+            "question_number": 74
         }, 
         {
             "response_table": [
@@ -1357,8 +1357,8 @@
                 }
             ], 
             "question_text": "Source #2:Which two of the following do you get most of your information about current affairs / the news from?", 
-            "question_number": 75, 
-            "variable_name": "EngSoc26_3D"
+            "variableid": "EngSoc26_3D", 
+            "question_number": 75
         }, 
         {
             "response_table": [
@@ -1374,20 +1374,20 @@
                 }
             ], 
             "question_text": "Other: Find out about current affairs", 
-            "question_number": 137, 
-            "variable_name": "EngSoc27_3D"
+            "variableid": "EngSoc27_3D", 
+            "question_number": 137
         }, 
         {
             "response_table": [], 
             "question_text": "Source #1:If you chose 'other' in the previous question, please specify your answer below", 
-            "question_number": 76, 
-            "variable_name": "EngSoc28_3D"
+            "variableid": "EngSoc28_3D", 
+            "question_number": 76
         }, 
         {
             "response_table": [], 
             "question_text": "Source #2:If you chose 'other' in the previous question, please specify your answer below", 
-            "question_number": 77, 
-            "variable_name": "EngSoc29_3D"
+            "variableid": "EngSoc29_3D", 
+            "question_number": 77
         }, 
         {
             "response_table": [
@@ -1403,8 +1403,8 @@
                 }
             ], 
             "question_text": "Creative Arts (Painting, poetry, creative writing, sculpting, etc ):Do you do any of the following in your spare time? (Please tick all that apply)", 
-            "question_number": 11, 
-            "variable_name": "Hob01_3D"
+            "variableid": "Hob01_3D", 
+            "question_number": 11
         }, 
         {
             "response_table": [
@@ -1420,8 +1420,8 @@
                 }
             ], 
             "question_text": "ICT/Design (computer programming, graphic design, etc ):Do you do any of the following in your spare time? (Please tick all that apply)", 
-            "question_number": 14, 
-            "variable_name": "Hob02_3D"
+            "variableid": "Hob02_3D", 
+            "question_number": 14
         }, 
         {
             "response_table": [
@@ -1437,8 +1437,8 @@
                 }
             ], 
             "question_text": "Performing Arts (singing, dancing, etc ):Do you do any of the following in your spare time? (Please tick all that apply)", 
-            "question_number": 8, 
-            "variable_name": "Hob04_3D"
+            "variableid": "Hob04_3D", 
+            "question_number": 8
         }, 
         {
             "response_table": [
@@ -1454,8 +1454,8 @@
                 }
             ], 
             "question_text": "Music/band:Do you do any of the following in your spare time? (Please tick all that apply)", 
-            "question_number": 9, 
-            "variable_name": "Hob05_3D"
+            "variableid": "Hob05_3D", 
+            "question_number": 9
         }, 
         {
             "response_table": [
@@ -1471,8 +1471,8 @@
                 }
             ], 
             "question_text": "Sports (Rugby, horse riding, martial arts, gymnastics, etc ):Do you do any of the following in your spare time? (Please tick all that apply)", 
-            "question_number": 10, 
-            "variable_name": "Hob06_3D"
+            "variableid": "Hob06_3D", 
+            "question_number": 10
         }, 
         {
             "response_table": [
@@ -1488,8 +1488,8 @@
                 }
             ], 
             "question_text": "Guides:Are you a member of any of the following organisations? (please tick all that apply)", 
-            "question_number": 20, 
-            "variable_name": "Hob30_3D"
+            "variableid": "Hob30_3D", 
+            "question_number": 20
         }, 
         {
             "response_table": [
@@ -1500,8 +1500,8 @@
                 }
             ], 
             "question_text": "Scouts:Are you a member of any of the following organisations? (please tick all that apply)", 
-            "question_number": 19, 
-            "variable_name": "Hob31_3D"
+            "variableid": "Hob31_3D", 
+            "question_number": 19
         }, 
         {
             "response_table": [
@@ -1517,8 +1517,8 @@
                 }
             ], 
             "question_text": "Gaming:Do you do any of the following in your spare time? (Please tick all that apply)", 
-            "question_number": 12, 
-            "variable_name": "Hob38_3D"
+            "variableid": "Hob38_3D", 
+            "question_number": 12
         }, 
         {
             "response_table": [
@@ -1534,8 +1534,8 @@
                 }
             ], 
             "question_text": "Go to evening or weekend classes:Do you do any of the following in your spare time? (Please tick all that apply)", 
-            "question_number": 16, 
-            "variable_name": "Hob39_3D"
+            "variableid": "Hob39_3D", 
+            "question_number": 16
         }, 
         {
             "response_table": [
@@ -1551,8 +1551,8 @@
                 }
             ], 
             "question_text": "Read for pleasure:Do you do any of the following in your spare time? (Please tick all that apply)", 
-            "question_number": 13, 
-            "variable_name": "Hob40_3D"
+            "variableid": "Hob40_3D", 
+            "question_number": 13
         }, 
         {
             "response_table": [
@@ -1563,8 +1563,8 @@
                 }
             ], 
             "question_text": "UK Youth parliament:Are you a member of any of the following organisations? (please tick all that apply)", 
-            "question_number": 24, 
-            "variable_name": "Hob43_3D"
+            "variableid": "Hob43_3D", 
+            "question_number": 24
         }, 
         {
             "response_table": [
@@ -1580,8 +1580,8 @@
                 }
             ], 
             "question_text": "Youth club:Are you a member of any of the following organisations? (please tick all that apply)", 
-            "question_number": 23, 
-            "variable_name": "Hob48_3D"
+            "variableid": "Hob48_3D", 
+            "question_number": 23
         }, 
         {
             "response_table": [
@@ -1597,8 +1597,8 @@
                 }
             ], 
             "question_text": "Volunteering:Do you do any of the following in your spare time? (Please tick all that apply)", 
-            "question_number": 15, 
-            "variable_name": "Hob50_3D"
+            "variableid": "Hob50_3D", 
+            "question_number": 15
         }, 
         {
             "response_table": [
@@ -1614,14 +1614,14 @@
                 }
             ], 
             "question_text": "Other (please specify):Do you do any of the following in your spare time? (Please tick all that apply)", 
-            "question_number": 17, 
-            "variable_name": "Hob51_3D"
+            "variableid": "Hob51_3D", 
+            "question_number": 17
         }, 
         {
             "response_table": [], 
             "question_text": "Other (please specify):Do you do any of the following in your spare time? (Please tick all that apply)", 
-            "question_number": 18, 
-            "variable_name": "Hob52_3D"
+            "variableid": "Hob52_3D", 
+            "question_number": 18
         }, 
         {
             "response_table": [
@@ -1637,14 +1637,14 @@
                 }
             ], 
             "question_text": "Other:Are you a member of any of the following organisations? (please tick all that apply)", 
-            "question_number": 25, 
-            "variable_name": "Hob53_3D"
+            "variableid": "Hob53_3D", 
+            "question_number": 25
         }, 
         {
             "response_table": [], 
             "question_text": "Other:Are you a member of any of the following organisations? (please tick all that apply)", 
-            "question_number": 26, 
-            "variable_name": "Hob54_3D"
+            "variableid": "Hob54_3D", 
+            "question_number": 26
         }, 
         {
             "response_table": [
@@ -1660,14 +1660,14 @@
                 }
             ], 
             "question_text": "Language completed", 
-            "question_number": 138, 
-            "variable_name": "langresponse_3D"
+            "variableid": "langresponse_3D", 
+            "question_number": 138
         }, 
         {
             "response_table": [], 
             "question_text": "Extra Notes", 
-            "question_number": 112, 
-            "variable_name": "notes_3D"
+            "variableid": "notes_3D", 
+            "question_number": 112
         }, 
         {
             "response_table": [
@@ -1683,8 +1683,8 @@
                 }
             ], 
             "question_text": "I DO NOT give permission for my NPDB record to be linked with the answers I have given to this study:The Welsh Government holds records about all pupils in Wales in the National Pupil Database (NPDB)  We would like to link your answers here and those you", 
-            "question_number": 3, 
-            "variable_name": "npdbpermit_3D"
+            "variableid": "npdbpermit_3D", 
+            "question_number": 3
         }, 
         {
             "response_table": [
@@ -1695,8 +1695,8 @@
                 }
             ], 
             "question_text": "Religious social group:Are you a member of any of the following organisations? (please tick all that apply)", 
-            "question_number": 22, 
-            "variable_name": "Relig02_3D"
+            "variableid": "Relig02_3D", 
+            "question_number": 22
         }, 
         {
             "response_table": [
@@ -1712,8 +1712,8 @@
                 }
             ], 
             "question_text": "My own time:This year I feel I am taking more responsibility for: (tick as many as you like)", 
-            "question_number": 59, 
-            "variable_name": "Responsible01_3D"
+            "variableid": "Responsible01_3D", 
+            "question_number": 59
         }, 
         {
             "response_table": [
@@ -1729,8 +1729,8 @@
                 }
             ], 
             "question_text": "My relationships:This year I feel I am taking more responsibility for: (tick as many as you like)", 
-            "question_number": 61, 
-            "variable_name": "Responsible02_3D"
+            "variableid": "Responsible02_3D", 
+            "question_number": 61
         }, 
         {
             "response_table": [
@@ -1746,8 +1746,8 @@
                 }
             ], 
             "question_text": "My social life:This year I feel I am taking more responsibility for: (tick as many as you like)", 
-            "question_number": 60, 
-            "variable_name": "Responsible03_3D"
+            "variableid": "Responsible03_3D", 
+            "question_number": 60
         }, 
         {
             "response_table": [
@@ -1763,8 +1763,8 @@
                 }
             ], 
             "question_text": "My workload:This year I feel I am taking more responsibility for: (tick as many as you like)", 
-            "question_number": 58, 
-            "variable_name": "Responsible04_3D"
+            "variableid": "Responsible04_3D", 
+            "question_number": 58
         }, 
         {
             "response_table": [
@@ -1810,8 +1810,8 @@
                 }
             ], 
             "question_text": "About what time did you wake up this morning?", 
-            "question_number": 7, 
-            "variable_name": "RoutnSleep01_3D"
+            "variableid": "RoutnSleep01_3D", 
+            "question_number": 7
         }, 
         {
             "response_table": [
@@ -1832,8 +1832,8 @@
                 }
             ], 
             "question_text": "Do you get up at the same time every school or college day?:Please answer the following questions about sleeping and waking up", 
-            "question_number": 5, 
-            "variable_name": "RoutnSleep02_3D"
+            "variableid": "RoutnSleep02_3D", 
+            "question_number": 5
         }, 
         {
             "response_table": [
@@ -1878,8 +1878,8 @@
                 }
             ], 
             "question_text": "About what time did you go to bed last night?", 
-            "question_number": 6, 
-            "variable_name": "RoutnSleep03_3D"
+            "variableid": "RoutnSleep03_3D", 
+            "question_number": 6
         }, 
         {
             "response_table": [
@@ -1900,8 +1900,8 @@
                 }
             ], 
             "question_text": "Do you go to bed at the same time every school or college night?:Please answer the following questions about sleeping and waking up", 
-            "question_number": 4, 
-            "variable_name": "RoutnSleep04_3D"
+            "variableid": "RoutnSleep04_3D", 
+            "question_number": 4
         }, 
         {
             "response_table": [
@@ -1947,8 +1947,8 @@
                 }
             ], 
             "question_text": "Response:Thinking about your GCSE results, please indicate how pleased or disappointed you were:", 
-            "question_number": 40, 
-            "variable_name": "SchAchv03_3D"
+            "variableid": "SchAchv03_3D", 
+            "question_number": 40
         }, 
         {
             "response_table": [
@@ -1974,8 +1974,8 @@
                 }
             ], 
             "question_text": "I am resitting or planning to re-sit some of my GCSE courses:Please indicate the most relevant response to each of these statements:", 
-            "question_number": 42, 
-            "variable_name": "SchAchv04_3D"
+            "variableid": "SchAchv04_3D", 
+            "question_number": 42
         }, 
         {
             "response_table": [
@@ -2001,8 +2001,8 @@
                 }
             ], 
             "question_text": "I wish I hadn't worked so hard for my GCSEs:Please indicate the most relevant response to each of these statements:", 
-            "question_number": 44, 
-            "variable_name": "SchAchv05_3D"
+            "variableid": "SchAchv05_3D", 
+            "question_number": 44
         }, 
         {
             "response_table": [
@@ -2018,8 +2018,8 @@
                 }
             ], 
             "question_text": "I wish I'd gone to college:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 54, 
-            "variable_name": "SchAchv19_3D"
+            "variableid": "SchAchv19_3D", 
+            "question_number": 54
         }, 
         {
             "response_table": [
@@ -2035,8 +2035,8 @@
                 }
             ], 
             "question_text": "I wish I'd left education after Year 11:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 57, 
-            "variable_name": "SchAchv20_3D"
+            "variableid": "SchAchv20_3D", 
+            "question_number": 57
         }, 
         {
             "response_table": [
@@ -2052,8 +2052,8 @@
                 }
             ], 
             "question_text": "I wish I'd stayed at school:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 52, 
-            "variable_name": "SchAchv21_3D"
+            "variableid": "SchAchv21_3D", 
+            "question_number": 52
         }, 
         {
             "response_table": [
@@ -2079,20 +2079,20 @@
                 }
             ], 
             "question_text": "I wish I'd worked harder for my GCSEs:Please indicate the most relevant response to each of these statements:", 
-            "question_number": 43, 
-            "variable_name": "SchAchv22_3D"
+            "variableid": "SchAchv22_3D", 
+            "question_number": 43
         }, 
         {
             "response_table": [], 
             "question_text": "If you could change anything about your last year of school, what would it be?", 
-            "question_number": 41, 
-            "variable_name": "SchAtt18_3D"
+            "variableid": "SchAtt18_3D", 
+            "question_number": 41
         }, 
         {
             "response_table": [], 
             "question_text": "Which courses and qualifications are you doing this year? (Please list them here)", 
-            "question_number": 45, 
-            "variable_name": "SchStdySubj01_3D"
+            "variableid": "SchStdySubj01_3D", 
+            "question_number": 45
         }, 
         {
             "response_table": [
@@ -2113,32 +2113,32 @@
                 }
             ], 
             "question_text": "Are you male or female?", 
-            "question_number": 2, 
-            "variable_name": "sex_3D"
+            "variableid": "sex_3D", 
+            "question_number": 2
         }, 
         {
             "response_table": [], 
             "question_text": "Sweep", 
-            "question_number": 140, 
-            "variable_name": "sweep_3D"
+            "variableid": "sweep_3D", 
+            "question_number": 140
         }, 
         {
             "response_table": [], 
             "question_text": "Word #1:Options:Please indicate three words from the lists below that best describe how you are feeling today", 
-            "question_number": 68, 
-            "variable_name": "WellFeel01_3D"
+            "variableid": "WellFeel01_3D", 
+            "question_number": 68
         }, 
         {
             "response_table": [], 
             "question_text": "Word #2:Options:Please indicate three words from the lists below that best describe how you are feeling today", 
-            "question_number": 69, 
-            "variable_name": "WellFeel02_3D"
+            "variableid": "WellFeel02_3D", 
+            "question_number": 69
         }, 
         {
             "response_table": [], 
             "question_text": "Word #3:Options:Please indicate three words from the lists below that best describe how you are feeling today", 
-            "question_number": 70, 
-            "variable_name": "WellFeel03_3D"
+            "variableid": "WellFeel03_3D", 
+            "question_number": 70
         }, 
         {
             "response_table": [
@@ -2154,8 +2154,8 @@
                 }
             ], 
             "question_text": "Afriad: Describe how you feel today", 
-            "question_number": 125, 
-            "variable_name": "WellFeel04_3D"
+            "variableid": "WellFeel04_3D", 
+            "question_number": 125
         }, 
         {
             "response_table": [
@@ -2171,8 +2171,8 @@
                 }
             ], 
             "question_text": "Agitated: Describe how you feel today", 
-            "question_number": 122, 
-            "variable_name": "WellFeel05_3D"
+            "variableid": "WellFeel05_3D", 
+            "question_number": 122
         }, 
         {
             "response_table": [
@@ -2188,8 +2188,8 @@
                 }
             ], 
             "question_text": "Angry: Describe how you feel today", 
-            "question_number": 114, 
-            "variable_name": "WellFeel06_3D"
+            "variableid": "WellFeel06_3D", 
+            "question_number": 114
         }, 
         {
             "response_table": [
@@ -2205,8 +2205,8 @@
                 }
             ], 
             "question_text": "Bored: Describe how you feel today", 
-            "question_number": 123, 
-            "variable_name": "WellFeel07_3D"
+            "variableid": "WellFeel07_3D", 
+            "question_number": 123
         }, 
         {
             "response_table": [
@@ -2222,8 +2222,8 @@
                 }
             ], 
             "question_text": "Calm: Describe how you feel today", 
-            "question_number": 116, 
-            "variable_name": "WellFeel08_3D"
+            "variableid": "WellFeel08_3D", 
+            "question_number": 116
         }, 
         {
             "response_table": [
@@ -2239,8 +2239,8 @@
                 }
             ], 
             "question_text": "Confident: Describe how you feel today", 
-            "question_number": 117, 
-            "variable_name": "WellFeel09_3D"
+            "variableid": "WellFeel09_3D", 
+            "question_number": 117
         }, 
         {
             "response_table": [
@@ -2256,8 +2256,8 @@
                 }
             ], 
             "question_text": "Decisive: Describe how you feel today", 
-            "question_number": 124, 
-            "variable_name": "WellFeel10_3D"
+            "variableid": "WellFeel10_3D", 
+            "question_number": 124
         }, 
         {
             "response_table": [
@@ -2273,8 +2273,8 @@
                 }
             ], 
             "question_text": "Energetic: Describe how you feel today", 
-            "question_number": 119, 
-            "variable_name": "WellFeel11_3D"
+            "variableid": "WellFeel11_3D", 
+            "question_number": 119
         }, 
         {
             "response_table": [
@@ -2290,8 +2290,8 @@
                 }
             ], 
             "question_text": "Excited: Describe how you feel today", 
-            "question_number": 127, 
-            "variable_name": "WellFeel12_3D"
+            "variableid": "WellFeel12_3D", 
+            "question_number": 127
         }, 
         {
             "response_table": [
@@ -2307,8 +2307,8 @@
                 }
             ], 
             "question_text": "Friendly: Describe how you feel today", 
-            "question_number": 118, 
-            "variable_name": "WellFeel13_3D"
+            "variableid": "WellFeel13_3D", 
+            "question_number": 118
         }, 
         {
             "response_table": [
@@ -2324,8 +2324,8 @@
                 }
             ], 
             "question_text": "Happy: Describe how you feel today", 
-            "question_number": 113, 
-            "variable_name": "WellFeel14_3D"
+            "variableid": "WellFeel14_3D", 
+            "question_number": 113
         }, 
         {
             "response_table": [
@@ -2341,8 +2341,8 @@
                 }
             ], 
             "question_text": "No energy: Describe how you feel today", 
-            "question_number": 120, 
-            "variable_name": "WellFeel15_3D"
+            "variableid": "WellFeel15_3D", 
+            "question_number": 120
         }, 
         {
             "response_table": [
@@ -2358,8 +2358,8 @@
                 }
             ], 
             "question_text": "Peaceful: Describe how you feel today", 
-            "question_number": 128, 
-            "variable_name": "WellFeel16_3D"
+            "variableid": "WellFeel16_3D", 
+            "question_number": 128
         }, 
         {
             "response_table": [
@@ -2375,8 +2375,8 @@
                 }
             ], 
             "question_text": "Sad: Describe how you feel today", 
-            "question_number": 121, 
-            "variable_name": "WellFeel17_3D"
+            "variableid": "WellFeel17_3D", 
+            "question_number": 121
         }, 
         {
             "response_table": [
@@ -2392,8 +2392,8 @@
                 }
             ], 
             "question_text": "Uncertain: Describe how you feel today", 
-            "question_number": 115, 
-            "variable_name": "WellFeel18_3D"
+            "variableid": "WellFeel18_3D", 
+            "question_number": 115
         }, 
         {
             "response_table": [
@@ -2404,8 +2404,8 @@
                 }
             ], 
             "question_text": "Unfriendly: Describe how you feel today", 
-            "question_number": 126, 
-            "variable_name": "WellFeel19_3D"
+            "variableid": "WellFeel19_3D", 
+            "question_number": 126
         }, 
         {
             "response_table": [
@@ -2421,8 +2421,8 @@
                 }
             ], 
             "question_text": "I feel lonely:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 55, 
-            "variable_name": "WellFeel20_3D"
+            "variableid": "WellFeel20_3D", 
+            "question_number": 55
         }, 
         {
             "response_table": [
@@ -2438,8 +2438,8 @@
                 }
             ], 
             "question_text": "I feel under a lot of pressure to do well:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 53, 
-            "variable_name": "WellFeel21_3D"
+            "variableid": "WellFeel21_3D", 
+            "question_number": 53
         }, 
         {
             "response_table": [
@@ -2455,8 +2455,8 @@
                 }
             ], 
             "question_text": "I'm enjoying myself:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 56, 
-            "variable_name": "WellFeel22_3D"
+            "variableid": "WellFeel22_3D", 
+            "question_number": 56
         }, 
         {
             "response_table": [
@@ -2472,8 +2472,8 @@
                 }
             ], 
             "question_text": "I'm finding it easy:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 47, 
-            "variable_name": "WellFeel23_3D"
+            "variableid": "WellFeel23_3D", 
+            "question_number": 47
         }, 
         {
             "response_table": [
@@ -2489,8 +2489,8 @@
                 }
             ], 
             "question_text": "I'm struggling:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 46, 
-            "variable_name": "WellFeel24_3D"
+            "variableid": "WellFeel24_3D", 
+            "question_number": 46
         }, 
         {
             "response_table": [
@@ -2506,8 +2506,8 @@
                 }
             ], 
             "question_text": "I felt under a lot of pressure to leave education:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 51, 
-            "variable_name": "WellFeel25_3D"
+            "variableid": "WellFeel25_3D", 
+            "question_number": 51
         }, 
         {
             "response_table": [
@@ -2523,8 +2523,8 @@
                 }
             ], 
             "question_text": "I feel I'm being challenged:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 48, 
-            "variable_name": "WellFeel26_3D"
+            "variableid": "WellFeel26_3D", 
+            "question_number": 48
         }, 
         {
             "response_table": [
@@ -2540,20 +2540,20 @@
                 }
             ], 
             "question_text": "I have made new friends:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 49, 
-            "variable_name": "WellFeel27_3D"
+            "variableid": "WellFeel27_3D", 
+            "question_number": 49
         }, 
         {
             "response_table": [], 
             "question_text": "Please tell us about one incident in the past year that has made you happy", 
-            "question_number": 71, 
-            "variable_name": "WellFeel28_3D"
+            "variableid": "WellFeel28_3D", 
+            "question_number": 71
         }, 
         {
             "response_table": [], 
             "question_text": "Please tell us about one incident in the past year that has made you sad", 
-            "question_number": 72, 
-            "variable_name": "WellFeel29_3D"
+            "variableid": "WellFeel29_3D", 
+            "question_number": 72
         }, 
         {
             "response_table": [
@@ -2569,8 +2569,8 @@
                 }
             ], 
             "question_text": "I feel independent:Which of the phrases below describes how you are getting on at the moment? (tick as many as you like)", 
-            "question_number": 50, 
-            "variable_name": "WellFeelAtt12_3D"
+            "variableid": "WellFeelAtt12_3D", 
+            "question_number": 50
         }, 
         {
             "response_table": [
@@ -2593,8 +2593,8 @@
                 }
             ], 
             "question_text": "The way you look:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
-            "question_number": 62, 
-            "variable_name": "WellSat01_3D"
+            "variableid": "WellSat01_3D", 
+            "question_number": 62
         }, 
         {
             "response_table": [
@@ -2617,8 +2617,8 @@
                 }
             ], 
             "question_text": "Your family:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
-            "question_number": 63, 
-            "variable_name": "WellSat02_3D"
+            "variableid": "WellSat02_3D", 
+            "question_number": 63
         }, 
         {
             "response_table": [
@@ -2641,8 +2641,8 @@
                 }
             ], 
             "question_text": "Your friends:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
-            "question_number": 64, 
-            "variable_name": "WellSat03_3D"
+            "variableid": "WellSat03_3D", 
+            "question_number": 64
         }, 
         {
             "response_table": [
@@ -2665,8 +2665,8 @@
                 }
             ], 
             "question_text": "Your life as a whole:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
-            "question_number": 65, 
-            "variable_name": "WellSat04_3D"
+            "variableid": "WellSat04_3D", 
+            "question_number": 65
         }, 
         {
             "response_table": [
@@ -2689,8 +2689,8 @@
                 }
             ], 
             "question_text": "Your school / college overall:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
-            "question_number": 67, 
-            "variable_name": "WellSat05_3D"
+            "variableid": "WellSat05_3D", 
+            "question_number": 67
         }, 
         {
             "response_table": [
@@ -2713,8 +2713,8 @@
                 }
             ], 
             "question_text": "Your school / college work:On a scale of 1 to 7 where ???1??? means COMPLETELY HAPPY and ???7??? means NOT AT ALL HAPPY, how do you feel about the following parts of your life?", 
-            "question_number": 66, 
-            "variable_name": "WellSat06_3D"
+            "variableid": "WellSat06_3D", 
+            "question_number": 66
         }
     ]
 }

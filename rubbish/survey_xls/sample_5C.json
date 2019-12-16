@@ -23,14 +23,14 @@
                 }
             ], 
             "question_text": "What are you currently studying towards in school? - Selected Choice", 
-            "question_number": 6, 
-            "variable_name": "SchStdySubj81_5C"
+            "variableid": "SchStdySubj81_5C", 
+            "question_number": 6
         }, 
         {
             "response_table": [], 
             "question_text": "What are you currently studying towards in school? - Other (please write in) - Text", 
-            "question_number": 7, 
-            "variable_name": "SchStdySubj82_5C"
+            "variableid": "SchStdySubj82_5C", 
+            "question_number": 7
         }, 
         {
             "response_table": [
@@ -61,8 +61,8 @@
                 }
             ], 
             "question_text": "How much do you agree with these statements about school? - I get enough help from my teachers if I find something difficult", 
-            "question_number": 8, 
-            "variable_name": "SchStafAtt22_5C"
+            "variableid": "SchStafAtt22_5C", 
+            "question_number": 8
         }, 
         {
             "response_table": [
@@ -93,8 +93,8 @@
                 }
             ], 
             "question_text": "How much do you agree with these statements about school? - My teachers have high expectations of me", 
-            "question_number": 9, 
-            "variable_name": "SchStafAtt08_5C"
+            "variableid": "SchStafAtt08_5C", 
+            "question_number": 9
         }, 
         {
             "response_table": [
@@ -130,8 +130,8 @@
                 }
             ], 
             "question_text": "How much do you agree with these statements about school? - My teachers should be stricter", 
-            "question_number": 10, 
-            "variable_name": "SchStafAtt24_5C"
+            "variableid": "SchStafAtt24_5C", 
+            "question_number": 10
         }, 
         {
             "response_table": [
@@ -167,8 +167,8 @@
                 }
             ], 
             "question_text": "How much do you agree with these statements about school? - My teachers listen to me & take my views seriously", 
-            "question_number": 11, 
-            "variable_name": "SchStafAtt05_5C"
+            "variableid": "SchStafAtt05_5C", 
+            "question_number": 11
         }, 
         {
             "response_table": [
@@ -204,8 +204,8 @@
                 }
             ], 
             "question_text": "How much do you agree with these statements about school? - I look up to my teachers", 
-            "question_number": 12, 
-            "variable_name": "SchStafAtt23_5C"
+            "variableid": "SchStafAtt23_5C", 
+            "question_number": 12
         }, 
         {
             "response_table": [
@@ -236,8 +236,8 @@
                 }
             ], 
             "question_text": "How much do you agree with these statements about school? - I understand my lessons", 
-            "question_number": 13, 
-            "variable_name": "SchLearnAtt17_5C"
+            "variableid": "SchLearnAtt17_5C", 
+            "question_number": 13
         }, 
         {
             "response_table": [
@@ -273,8 +273,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements about your fellow students? - Students who are good at schoolwork are less popular", 
-            "question_number": 14, 
-            "variable_name": "SchLearnAtt19_5C"
+            "variableid": "SchLearnAtt19_5C", 
+            "question_number": 14
         }, 
         {
             "response_table": [
@@ -310,8 +310,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements about your fellow students? - My friends have a good influence on my learning at school", 
-            "question_number": 15, 
-            "variable_name": "SchLearnAtt18_5C"
+            "variableid": "SchLearnAtt18_5C", 
+            "question_number": 15
         }, 
         {
             "response_table": [
@@ -347,8 +347,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements about your fellow students? - Most of my friends want to go to University", 
-            "question_number": 16, 
-            "variable_name": "AspPostSch31_5C"
+            "variableid": "AspPostSch31_5C", 
+            "question_number": 16
         }, 
         {
             "response_table": [
@@ -380,20 +380,20 @@
                 }
             ], 
             "question_text": "Thinking about your GCSE results, please indicate how pleased or disappointed you were", 
-            "question_number": 17, 
-            "variable_name": "SchAchv03_5C"
+            "variableid": "SchAchv03_5C", 
+            "question_number": 17
         }, 
         {
             "response_table": [], 
             "question_text": "If you could go back in time and give some advice to yourself in year 7 about school, what would it be?", 
-            "question_number": 18, 
-            "variable_name": "SchAtt28_5C"
+            "variableid": "SchAtt28_5C", 
+            "question_number": 18
         }, 
         {
             "response_table": [], 
             "question_text": "If you could do one thing to make your experience of school better, what would it be?", 
-            "question_number": 19, 
-            "variable_name": "SchAtt27_5C"
+            "variableid": "SchAtt27_5C", 
+            "question_number": 19
         }, 
         {
             "response_table": [
@@ -429,8 +429,8 @@
                 }
             ], 
             "question_text": "My school: - Encourages me to be a more caring person", 
-            "question_number": 20, 
-            "variable_name": "SchAtt31_5C"
+            "variableid": "SchAtt31_5C", 
+            "question_number": 20
         }, 
         {
             "response_table": [
@@ -466,8 +466,8 @@
                 }
             ], 
             "question_text": "My school: - Teaches me how to learn", 
-            "question_number": 21, 
-            "variable_name": "SchAtt38_5C"
+            "variableid": "SchAtt38_5C", 
+            "question_number": 21
         }, 
         {
             "response_table": [
@@ -503,8 +503,8 @@
                 }
             ], 
             "question_text": "My school: - Helps me be more creative", 
-            "question_number": 22, 
-            "variable_name": "SchAtt34_5C"
+            "variableid": "SchAtt34_5C", 
+            "question_number": 22
         }, 
         {
             "response_table": [
@@ -540,8 +540,8 @@
                 }
             ], 
             "question_text": "My school: - Helps me be healthier and fitter", 
-            "question_number": 23, 
-            "variable_name": "SchAtt32_5C"
+            "variableid": "SchAtt32_5C", 
+            "question_number": 23
         }, 
         {
             "response_table": [
@@ -577,8 +577,8 @@
                 }
             ], 
             "question_text": "My school: - Helps me be more confident", 
-            "question_number": 24, 
-            "variable_name": "SchAtt33_5C"
+            "variableid": "SchAtt33_5C", 
+            "question_number": 24
         }, 
         {
             "response_table": [
@@ -614,8 +614,8 @@
                 }
             ], 
             "question_text": "My school: - Helps prepare me for life after school", 
-            "question_number": 25, 
-            "variable_name": "SchAtt36_5C"
+            "variableid": "SchAtt36_5C", 
+            "question_number": 25
         }, 
         {
             "response_table": [
@@ -651,8 +651,8 @@
                 }
             ], 
             "question_text": "My school: - Makes me believe I can achieve whatever I want", 
-            "question_number": 26, 
-            "variable_name": "SchAtt37_5C"
+            "variableid": "SchAtt37_5C", 
+            "question_number": 26
         }, 
         {
             "response_table": [
@@ -688,8 +688,8 @@
                 }
             ], 
             "question_text": "My school: - Helps me understand the history of Wales", 
-            "question_number": 27, 
-            "variable_name": "SchAtt35_5C"
+            "variableid": "SchAtt35_5C", 
+            "question_number": 27
         }, 
         {
             "response_table": [
@@ -708,14 +708,14 @@
                 }
             ], 
             "question_text": "Which system do you prefer for A Levels?", 
-            "question_number": 28, 
-            "variable_name": "SchLearnAtt50_5C"
+            "variableid": "SchLearnAtt50_5C", 
+            "question_number": 28
         }, 
         {
             "response_table": [], 
             "question_text": "Approximately how many hours per week do you have to spend doing homework? (Please write your best guess below)", 
-            "question_number": 29, 
-            "variable_name": "SchActStr01_5C"
+            "variableid": "SchActStr01_5C", 
+            "question_number": 29
         }, 
         {
             "response_table": [
@@ -731,8 +731,8 @@
                 }
             ], 
             "question_text": "Where do you normally do your homework? (Please tick all that apply) - Selected Choice At home", 
-            "question_number": 30, 
-            "variable_name": "SchAct31_5C"
+            "variableid": "SchAct31_5C", 
+            "question_number": 30
         }, 
         {
             "response_table": [
@@ -748,8 +748,8 @@
                 }
             ], 
             "question_text": "Where do you normally do your homework? (Please tick all that apply) - Selected Choice In class", 
-            "question_number": 31, 
-            "variable_name": "SchAct33_5C"
+            "variableid": "SchAct33_5C", 
+            "question_number": 31
         }, 
         {
             "response_table": [
@@ -765,8 +765,8 @@
                 }
             ], 
             "question_text": "Where do you normally do your homework? (Please tick all that apply) - Selected Choice At an afterschool club or youth club", 
-            "question_number": 32, 
-            "variable_name": "SchAct30_5C"
+            "variableid": "SchAct30_5C", 
+            "question_number": 32
         }, 
         {
             "response_table": [
@@ -782,8 +782,8 @@
                 }
             ], 
             "question_text": "Where do you normally do your homework? (Please tick all that apply) - Selected Choice At a homework club", 
-            "question_number": 33, 
-            "variable_name": "SchAct29_5C"
+            "variableid": "SchAct29_5C", 
+            "question_number": 33
         }, 
         {
             "response_table": [
@@ -799,8 +799,8 @@
                 }
             ], 
             "question_text": "Where do you normally do your homework? (Please tick all that apply) - Selected Choice At a friend's house", 
-            "question_number": 34, 
-            "variable_name": "SchAct28_5C"
+            "variableid": "SchAct28_5C", 
+            "question_number": 34
         }, 
         {
             "response_table": [
@@ -816,8 +816,8 @@
                 }
             ], 
             "question_text": "Where do you normally do your homework? (Please tick all that apply) - Selected Choice At the school library", 
-            "question_number": 35, 
-            "variable_name": "SchAct32_5C"
+            "variableid": "SchAct32_5C", 
+            "question_number": 35
         }, 
         {
             "response_table": [
@@ -833,14 +833,14 @@
                 }
             ], 
             "question_text": "Where do you normally do your homework? (Please tick all that apply) - Selected Choice Somewhere else (please write in where)", 
-            "question_number": 36, 
-            "variable_name": "SchAct34_5C"
+            "variableid": "SchAct34_5C", 
+            "question_number": 36
         }, 
         {
             "response_table": [], 
             "question_text": "Where do you normally do your homework? (Please tick all that apply) - Somewhere else (please write in where) - Text", 
-            "question_number": 37, 
-            "variable_name": "SchAct35_5C"
+            "variableid": "SchAct35_5C", 
+            "question_number": 37
         }, 
         {
             "response_table": [
@@ -856,8 +856,8 @@
                 }
             ], 
             "question_text": "Which of these do you have in your home? (Please tick all that apply) The internet", 
-            "question_number": 38, 
-            "variable_name": "Deprive21_5C"
+            "variableid": "Deprive21_5C", 
+            "question_number": 38
         }, 
         {
             "response_table": [
@@ -873,8 +873,8 @@
                 }
             ], 
             "question_text": "Which of these do you have in your home? (Please tick all that apply) A computer or laptop that you can use for your homework", 
-            "question_number": 39, 
-            "variable_name": "Deprive20_5C"
+            "variableid": "Deprive20_5C", 
+            "question_number": 39
         }, 
         {
             "response_table": [
@@ -890,8 +890,8 @@
                 }
             ], 
             "question_text": "Which of these do you have in your home? (Please tick all that apply) Your own desk or quiet workspace", 
-            "question_number": 40, 
-            "variable_name": "Deprive22_5C"
+            "variableid": "Deprive22_5C", 
+            "question_number": 40
         }, 
         {
             "response_table": [
@@ -917,8 +917,8 @@
                 }
             ], 
             "question_text": "My parents or carers\u2026 (Please tick all that apply) - encourage me to do my homework", 
-            "question_number": 41, 
-            "variable_name": "FamEduFrq01_5C"
+            "variableid": "FamEduFrq01_5C", 
+            "question_number": 41
         }, 
         {
             "response_table": [
@@ -944,8 +944,8 @@
                 }
             ], 
             "question_text": "My parents or carers\u2026 (Please tick all that apply) - help me understand subjects I find difficult", 
-            "question_number": 42, 
-            "variable_name": "FamEduFrq06_5C"
+            "variableid": "FamEduFrq06_5C", 
+            "question_number": 42
         }, 
         {
             "response_table": [
@@ -971,8 +971,8 @@
                 }
             ], 
             "question_text": "My parents or carers\u2026 (Please tick all that apply) - help me do my homework", 
-            "question_number": 43, 
-            "variable_name": "FamEduFrq03_5C"
+            "variableid": "FamEduFrq03_5C", 
+            "question_number": 43
         }, 
         {
             "response_table": [
@@ -998,8 +998,8 @@
                 }
             ], 
             "question_text": "My parents or carers\u2026 (Please tick all that apply) - help me revise for exams", 
-            "question_number": 44, 
-            "variable_name": "FamEduFrq05_5C"
+            "variableid": "FamEduFrq05_5C", 
+            "question_number": 44
         }, 
         {
             "response_table": [
@@ -1025,8 +1025,8 @@
                 }
             ], 
             "question_text": "My parents or carers\u2026 (Please tick all that apply) - go to parents evenings", 
-            "question_number": 45, 
-            "variable_name": "FamEduFrq02_5C"
+            "variableid": "FamEduFrq02_5C", 
+            "question_number": 45
         }, 
         {
             "response_table": [
@@ -1046,8 +1046,8 @@
                 }
             ], 
             "question_text": "Do you have a tutor for any subjects? - Selected Choice", 
-            "question_number": 46, 
-            "variable_name": "PrvtuSubj08_5C"
+            "variableid": "PrvtuSubj08_5C", 
+            "question_number": 46
         }, 
         {
             "response_table": [
@@ -1089,8 +1089,8 @@
                 }
             ], 
             "question_text": "Do you have a tutor for any subjects? - Yes (if so, which subjects do you receive tutoring for?) - Text", 
-            "question_number": 47, 
-            "variable_name": "PrvtuSubj09_5C"
+            "variableid": "PrvtuSubj09_5C", 
+            "question_number": 47
         }, 
         {
             "response_table": [
@@ -1106,8 +1106,8 @@
                 }
             ], 
             "question_text": "During SCHOOL TIME, have you ever\u2026(Please tick all that apply) Been on holiday with your family", 
-            "question_number": 48, 
-            "variable_name": "SchAbsent03_5C"
+            "variableid": "SchAbsent03_5C", 
+            "question_number": 48
         }, 
         {
             "response_table": [
@@ -1123,8 +1123,8 @@
                 }
             ], 
             "question_text": "During SCHOOL TIME, have you ever\u2026(Please tick all that apply) Been on a family day out (e.g. to the cinema or to the park)", 
-            "question_number": 49, 
-            "variable_name": "SchAbsent02_5C"
+            "variableid": "SchAbsent02_5C", 
+            "question_number": 49
         }, 
         {
             "response_table": [
@@ -1140,8 +1140,8 @@
                 }
             ], 
             "question_text": "During SCHOOL TIME, have you ever\u2026(Please tick all that apply) Been allowed to stay home from school when you weren\u2019t ill because you didn\u2019t want to go in", 
-            "question_number": 50, 
-            "variable_name": "SchAbsent01_5C"
+            "variableid": "SchAbsent01_5C", 
+            "question_number": 50
         }, 
         {
             "response_table": [
@@ -1157,8 +1157,8 @@
                 }
             ], 
             "question_text": "During SCHOOL TIME, have you ever\u2026(Please tick all that apply) Been shopping with your family", 
-            "question_number": 51, 
-            "variable_name": "SchAbsent04_5C"
+            "variableid": "SchAbsent04_5C", 
+            "question_number": 51
         }, 
         {
             "response_table": [
@@ -1174,8 +1174,8 @@
                 }
             ], 
             "question_text": "During SCHOOL TIME, have you ever\u2026(Please tick all that apply) Stayed home from school to look after a member of your family", 
-            "question_number": 52, 
-            "variable_name": "SchAbsent05_5C"
+            "variableid": "SchAbsent05_5C", 
+            "question_number": 52
         }, 
         {
             "response_table": [
@@ -1191,8 +1191,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Clubs and organisations (e.g. cadets, scouts, guides) IN SCHOOL (outside your normal timetable)", 
-            "question_number": 53, 
-            "variable_name": "SchAct13_5C"
+            "variableid": "SchAct13_5C", 
+            "question_number": 53
         }, 
         {
             "response_table": [
@@ -1208,8 +1208,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Clubs and organisations (e.g. cadets, scouts, guides) OUTSIDE SCHOOL (run by non-school groups in your local area)", 
-            "question_number": 54, 
-            "variable_name": "Hob59_5C"
+            "variableid": "Hob59_5C", 
+            "question_number": 54
         }, 
         {
             "response_table": [
@@ -1225,8 +1225,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Sports club or team (e.g. rugby, hockey, football, netball, boxing, gymnastics) IN SCHOOL (outside your normal timetable)", 
-            "question_number": 55, 
-            "variable_name": "SchAct19_5C"
+            "variableid": "SchAct19_5C", 
+            "question_number": 55
         }, 
         {
             "response_table": [
@@ -1242,8 +1242,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Sports club or team (e.g. rugby, hockey, football, netball, boxing, gymnastics) OUTSIDE SCHOOL (run by non-school groups in your local area)", 
-            "question_number": 56, 
-            "variable_name": "Hob65_5C"
+            "variableid": "Hob65_5C", 
+            "question_number": 56
         }, 
         {
             "response_table": [
@@ -1259,8 +1259,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Dance or drama IN SCHOOL (outside your normal timetable)", 
-            "question_number": 57, 
-            "variable_name": "SchAct14_5C"
+            "variableid": "SchAct14_5C", 
+            "question_number": 57
         }, 
         {
             "response_table": [
@@ -1276,8 +1276,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Dance or drama OUTSIDE SCHOOL (run by non-school groups in your local area)", 
-            "question_number": 58, 
-            "variable_name": "Hob60_5C"
+            "variableid": "Hob60_5C", 
+            "question_number": 58
         }, 
         {
             "response_table": [
@@ -1293,8 +1293,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Playing a musical instrument IN SCHOOL (outside your normal timetable)", 
-            "question_number": 59, 
-            "variable_name": "SchAct17_5C"
+            "variableid": "SchAct17_5C", 
+            "question_number": 59
         }, 
         {
             "response_table": [
@@ -1310,8 +1310,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Playing a musical instrument OUTSIDE SCHOOL (run by non-school groups in your local area)", 
-            "question_number": 60, 
-            "variable_name": "Hob63_5C"
+            "variableid": "Hob63_5C", 
+            "question_number": 60
         }, 
         {
             "response_table": [
@@ -1327,8 +1327,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Choir IN SCHOOL (outside your normal timetable)", 
-            "question_number": 61, 
-            "variable_name": "SchAct12_5C"
+            "variableid": "SchAct12_5C", 
+            "question_number": 61
         }, 
         {
             "response_table": [
@@ -1344,8 +1344,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Choir OUTSIDE SCHOOL (run by non-school groups in your local area)", 
-            "question_number": 62, 
-            "variable_name": "Hob58_5C"
+            "variableid": "Hob58_5C", 
+            "question_number": 62
         }, 
         {
             "response_table": [
@@ -1361,8 +1361,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Playing in a band or orchestra IN SCHOOL (outside your normal timetable)", 
-            "question_number": 63, 
-            "variable_name": "SchAct18_5C"
+            "variableid": "SchAct18_5C", 
+            "question_number": 63
         }, 
         {
             "response_table": [
@@ -1378,8 +1378,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Playing in a band or orchestra OUTSIDE SCHOOL (run by non-school groups in your local area)", 
-            "question_number": 64, 
-            "variable_name": "Hob64_5C"
+            "variableid": "Hob64_5C", 
+            "question_number": 64
         }, 
         {
             "response_table": [
@@ -1395,8 +1395,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Charity fundraising IN SCHOOL (outside your normal timetable)", 
-            "question_number": 65, 
-            "variable_name": "SchAct11_5C"
+            "variableid": "SchAct11_5C", 
+            "question_number": 65
         }, 
         {
             "response_table": [
@@ -1412,8 +1412,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Charity fundraising OUTSIDE SCHOOL (run by non-school groups in your local area)", 
-            "question_number": 66, 
-            "variable_name": "Hob57_5C"
+            "variableid": "Hob57_5C", 
+            "question_number": 66
         }, 
         {
             "response_table": [
@@ -1429,8 +1429,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Duke of Edinburgh award IN SCHOOL (outside your normal timetable)", 
-            "question_number": 67, 
-            "variable_name": "SchAct15_5C"
+            "variableid": "SchAct15_5C", 
+            "question_number": 67
         }, 
         {
             "response_table": [
@@ -1446,8 +1446,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Duke of Edinburgh award OUTSIDE SCHOOL (run by non-school groups in your local area)", 
-            "question_number": 68, 
-            "variable_name": "Hob61_5C"
+            "variableid": "Hob61_5C", 
+            "question_number": 68
         }, 
         {
             "response_table": [
@@ -1463,8 +1463,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - A club that helps you with schoolwork IN SCHOOL (outside your normal timetable)", 
-            "question_number": 69, 
-            "variable_name": "SchAct10_5C"
+            "variableid": "SchAct10_5C", 
+            "question_number": 69
         }, 
         {
             "response_table": [
@@ -1480,8 +1480,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - A club that helps you with schoolwork OUTSIDE SCHOOL (run by non-school groups in your local area)", 
-            "question_number": 70, 
-            "variable_name": "Hob56_5C"
+            "variableid": "Hob56_5C", 
+            "question_number": 70
         }, 
         {
             "response_table": [
@@ -1497,8 +1497,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Non-competitive sport or exercise (e.g. yoga, going to the gym) IN SCHOOL (outside your normal timetable)", 
-            "question_number": 71, 
-            "variable_name": "SchAct16_5C"
+            "variableid": "SchAct16_5C", 
+            "question_number": 71
         }, 
         {
             "response_table": [
@@ -1514,8 +1514,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - Non-competitive sport or exercise (e.g. yoga, going to the gym) OUTSIDE SCHOOL (run by non-school groups in your local area)", 
-            "question_number": 72, 
-            "variable_name": "Hob62_5C"
+            "variableid": "Hob62_5C", 
+            "question_number": 72
         }, 
         {
             "response_table": [
@@ -1531,8 +1531,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - A chess club IN SCHOOL (outside your normal timetable)", 
-            "question_number": 73, 
-            "variable_name": "SchAct09_5C"
+            "variableid": "SchAct09_5C", 
+            "question_number": 73
         }, 
         {
             "response_table": [
@@ -1548,8 +1548,8 @@
                 }
             ], 
             "question_text": "Which of the following have you been involved in? (Please tick all that apply) - A chess club OUTSIDE SCHOOL (run by non-school groups in your local area)", 
-            "question_number": 74, 
-            "variable_name": "Hob55_5C"
+            "variableid": "Hob55_5C", 
+            "question_number": 74
         }, 
         {
             "response_table": [
@@ -1569,14 +1569,14 @@
                 }
             ], 
             "question_text": "Are there any activities you\u2019d like to try that you haven\u2019t been able to take part in so far in outside of school? - Selected Choice", 
-            "question_number": 75, 
-            "variable_name": "HobStop01_5C"
+            "variableid": "HobStop01_5C", 
+            "question_number": 75
         }, 
         {
             "response_table": [], 
             "question_text": "Are there any activities you\u2019d like to try that you haven\u2019t been able to take part in so far in outside of school? - Yes (if yes, please tell us the one activity you'd most like to do) - Text", 
-            "question_number": 76, 
-            "variable_name": "HobStop02_5C"
+            "variableid": "HobStop02_5C", 
+            "question_number": 76
         }, 
         {
             "response_table": [
@@ -1592,8 +1592,8 @@
                 }
             ], 
             "question_text": "What stops you from taking part in extra activities outside of class? (Please tick all that apply) - Selected Choice I don\u2019t have enough time", 
-            "question_number": 77, 
-            "variable_name": "HobStop05_5C"
+            "variableid": "HobStop05_5C", 
+            "question_number": 77
         }, 
         {
             "response_table": [
@@ -1609,8 +1609,8 @@
                 }
             ], 
             "question_text": "What stops you from taking part in extra activities outside of class? (Please tick all that apply) - Selected Choice I don\u2019t have a way to get there", 
-            "question_number": 78, 
-            "variable_name": "HobStop04_5C"
+            "variableid": "HobStop04_5C", 
+            "question_number": 78
         }, 
         {
             "response_table": [
@@ -1626,8 +1626,8 @@
                 }
             ], 
             "question_text": "What stops you from taking part in extra activities outside of class? (Please tick all that apply) - Selected Choice The activity or club isn\u2019t available", 
-            "question_number": 79, 
-            "variable_name": "HobStop11_5C"
+            "variableid": "HobStop11_5C", 
+            "question_number": 79
         }, 
         {
             "response_table": [
@@ -1643,8 +1643,8 @@
                 }
             ], 
             "question_text": "What stops you from taking part in extra activities outside of class? (Please tick all that apply) - Selected Choice I have too much homework", 
-            "question_number": 80, 
-            "variable_name": "HobStop07_5C"
+            "variableid": "HobStop07_5C", 
+            "question_number": 80
         }, 
         {
             "response_table": [
@@ -1660,8 +1660,8 @@
                 }
             ], 
             "question_text": "What stops you from taking part in extra activities outside of class? (Please tick all that apply) - Selected Choice I have family responsibilities or chores which come first", 
-            "question_number": 81, 
-            "variable_name": "HobStop06_5C"
+            "variableid": "HobStop06_5C", 
+            "question_number": 81
         }, 
         {
             "response_table": [
@@ -1677,8 +1677,8 @@
                 }
             ], 
             "question_text": "What stops you from taking part in extra activities outside of class? (Please tick all that apply) - Selected Choice My parents don\u2019t like me taking part in them", 
-            "question_number": 82, 
-            "variable_name": "HobStop10_5C"
+            "variableid": "HobStop10_5C", 
+            "question_number": 82
         }, 
         {
             "response_table": [
@@ -1694,8 +1694,8 @@
                 }
             ], 
             "question_text": "What stops you from taking part in extra activities outside of class? (Please tick all that apply) - Selected Choice My friends don\u2019t take part", 
-            "question_number": 83, 
-            "variable_name": "HobStop09_5C"
+            "variableid": "HobStop09_5C", 
+            "question_number": 83
         }, 
         {
             "response_table": [
@@ -1711,8 +1711,8 @@
                 }
             ], 
             "question_text": "What stops you from taking part in extra activities outside of class? (Please tick all that apply) - Selected Choice I can\u2019t afford it", 
-            "question_number": 84, 
-            "variable_name": "HobStop03_5C"
+            "variableid": "HobStop03_5C", 
+            "question_number": 84
         }, 
         {
             "response_table": [
@@ -1728,8 +1728,8 @@
                 }
             ], 
             "question_text": "What stops you from taking part in extra activities outside of class? (Please tick all that apply) - Selected Choice I think they\u2019re pointless", 
-            "question_number": 85, 
-            "variable_name": "HobStop08_5C"
+            "variableid": "HobStop08_5C", 
+            "question_number": 85
         }, 
         {
             "response_table": [
@@ -1745,14 +1745,14 @@
                 }
             ], 
             "question_text": "What stops you from taking part in extra activities outside of class? (Please tick all that apply) - Selected Choice Other reason (please write in)", 
-            "question_number": 86, 
-            "variable_name": "HobStop12_5C"
+            "variableid": "HobStop12_5C", 
+            "question_number": 86
         }, 
         {
             "response_table": [], 
             "question_text": "What stops you from taking part in extra activities outside of class? (Please tick all that apply) - Other reason (please write in) - Text", 
-            "question_number": 87, 
-            "variable_name": "HobStop13_5C"
+            "variableid": "HobStop13_5C", 
+            "question_number": 87
         }, 
         {
             "response_table": [
@@ -1778,8 +1778,8 @@
                 }
             ], 
             "question_text": "How confident are you when it comes to the following things? - Interviews (e.g. for college, university or jobs)", 
-            "question_number": 88, 
-            "variable_name": "WellConf02_5C"
+            "variableid": "WellConf02_5C", 
+            "question_number": 88
         }, 
         {
             "response_table": [
@@ -1805,8 +1805,8 @@
                 }
             ], 
             "question_text": "How confident are you when it comes to the following things? - Performing in front of people (e.g. singing, acting)", 
-            "question_number": 89, 
-            "variable_name": "WellConf04_5C"
+            "variableid": "WellConf04_5C", 
+            "question_number": 89
         }, 
         {
             "response_table": [
@@ -1832,8 +1832,8 @@
                 }
             ], 
             "question_text": "How confident are you when it comes to the following things? - Public speaking (e.g. presenting work in front of the class)", 
-            "question_number": 90, 
-            "variable_name": "WellConf05_5C"
+            "variableid": "WellConf05_5C", 
+            "question_number": 90
         }, 
         {
             "response_table": [
@@ -1859,8 +1859,8 @@
                 }
             ], 
             "question_text": "How confident are you when it comes to the following things? - Speaking to authority figures (e.g. senior teachers or head teacher, police)", 
-            "question_number": 91, 
-            "variable_name": "WellConf06_5C"
+            "variableid": "WellConf06_5C", 
+            "question_number": 91
         }, 
         {
             "response_table": [
@@ -1886,8 +1886,8 @@
                 }
             ], 
             "question_text": "How confident are you when it comes to the following things? - Being in charge of something (e.g. a class project, captain of a team)", 
-            "question_number": 92, 
-            "variable_name": "WellConf01_5C"
+            "variableid": "WellConf01_5C", 
+            "question_number": 92
         }, 
         {
             "response_table": [
@@ -1913,8 +1913,8 @@
                 }
             ], 
             "question_text": "How confident are you when it comes to the following things? - Putting your hand up in class to ask for help", 
-            "question_number": 93, 
-            "variable_name": "WellConf07_5C"
+            "variableid": "WellConf07_5C", 
+            "question_number": 93
         }, 
         {
             "response_table": [
@@ -1934,14 +1934,14 @@
                 }
             ], 
             "question_text": "Do you have a part time job? - Selected Choice", 
-            "question_number": 94, 
-            "variable_name": "EmpAct05_5C"
+            "variableid": "EmpAct05_5C", 
+            "question_number": 94
         }, 
         {
             "response_table": [], 
             "question_text": "Do you have a part time job? - Yes (if so, please tell us what your job is and approximately how many hours you work per week) - Text", 
-            "question_number": 95, 
-            "variable_name": "EmpAct06_5C"
+            "variableid": "EmpAct06_5C", 
+            "question_number": 95
         }, 
         {
             "response_table": [
@@ -1977,8 +1977,8 @@
                 }
             ], 
             "question_text": "How comfortable are you being around people who: (please tick all that apply) - Speak languages other than English or Welsh?", 
-            "question_number": 96, 
-            "variable_name": "DiversAtt26_5C"
+            "variableid": "DiversAtt26_5C", 
+            "question_number": 96
         }, 
         {
             "response_table": [
@@ -2009,8 +2009,8 @@
                 }
             ], 
             "question_text": "How comfortable are you being around people who: (please tick all that apply) - Are of a different gender from you?", 
-            "question_number": 97, 
-            "variable_name": "DiversAtt22_5C"
+            "variableid": "DiversAtt22_5C", 
+            "question_number": 97
         }, 
         {
             "response_table": [
@@ -2046,8 +2046,8 @@
                 }
             ], 
             "question_text": "How comfortable are you being around people who: (please tick all that apply) - Are of a different race or skin colour to your own?", 
-            "question_number": 98, 
-            "variable_name": "DiversAtt23_5C"
+            "variableid": "DiversAtt23_5C", 
+            "question_number": 98
         }, 
         {
             "response_table": [
@@ -2083,8 +2083,8 @@
                 }
             ], 
             "question_text": "How comfortable are you being around people who: (please tick all that apply) - Are of a different sexual orientation? (e.g. gay, lesbian or bisexual)", 
-            "question_number": 99, 
-            "variable_name": "DiversAtt24_5C"
+            "variableid": "DiversAtt24_5C", 
+            "question_number": 99
         }, 
         {
             "response_table": [
@@ -2120,8 +2120,8 @@
                 }
             ], 
             "question_text": "How comfortable are you being around people who: (please tick all that apply) - Have a different religion to your own?", 
-            "question_number": 100, 
-            "variable_name": "DiversAtt25_5C"
+            "variableid": "DiversAtt25_5C", 
+            "question_number": 100
         }, 
         {
             "response_table": [
@@ -2142,8 +2142,8 @@
                 }
             ], 
             "question_text": "Do you have friends who are of a different race or skin colour to your own?", 
-            "question_number": 101, 
-            "variable_name": "DiversAtt16_5C"
+            "variableid": "DiversAtt16_5C", 
+            "question_number": 101
         }, 
         {
             "response_table": [
@@ -2157,8 +2157,8 @@
                 }
             ], 
             "question_text": "Do you celebrate the following things in school? (Please tick all that apply) Chinese New Year", 
-            "question_number": 102, 
-            "variable_name": "SchAct20_5C"
+            "variableid": "SchAct20_5C", 
+            "question_number": 102
         }, 
         {
             "response_table": [
@@ -2172,8 +2172,8 @@
                 }
             ], 
             "question_text": "Do you celebrate the following things in school? (Please tick all that apply) Christmas", 
-            "question_number": 103, 
-            "variable_name": "SchAct21_5C"
+            "variableid": "SchAct21_5C", 
+            "question_number": 103
         }, 
         {
             "response_table": [
@@ -2187,8 +2187,8 @@
                 }
             ], 
             "question_text": "Do you celebrate the following things in school? (Please tick all that apply) Diwali", 
-            "question_number": 104, 
-            "variable_name": "SchAct22_5C"
+            "variableid": "SchAct22_5C", 
+            "question_number": 104
         }, 
         {
             "response_table": [
@@ -2202,8 +2202,8 @@
                 }
             ], 
             "question_text": "Do you celebrate the following things in school? (Please tick all that apply) Easter", 
-            "question_number": 105, 
-            "variable_name": "SchAct23_5C"
+            "variableid": "SchAct23_5C", 
+            "question_number": 105
         }, 
         {
             "response_table": [
@@ -2217,8 +2217,8 @@
                 }
             ], 
             "question_text": "Do you celebrate the following things in school? (Please tick all that apply) Eid-ul-Adha or Ramadan", 
-            "question_number": 106, 
-            "variable_name": "SchAct24_5C"
+            "variableid": "SchAct24_5C", 
+            "question_number": 106
         }, 
         {
             "response_table": [
@@ -2232,8 +2232,8 @@
                 }
             ], 
             "question_text": "Do you celebrate the following things in school? (Please tick all that apply) Hanukkah", 
-            "question_number": 107, 
-            "variable_name": "SchAct25_5C"
+            "variableid": "SchAct25_5C", 
+            "question_number": 107
         }, 
         {
             "response_table": [
@@ -2247,8 +2247,8 @@
                 }
             ], 
             "question_text": "Do you celebrate the following things in school? (Please tick all that apply) Remembrance Day (Poppy day)", 
-            "question_number": 108, 
-            "variable_name": "SchAct26_5C"
+            "variableid": "SchAct26_5C", 
+            "question_number": 108
         }, 
         {
             "response_table": [
@@ -2262,8 +2262,8 @@
                 }
             ], 
             "question_text": "Do you celebrate the following things in school? (Please tick all that apply) St David\u2019s Day (Eisteddfod)", 
-            "question_number": 109, 
-            "variable_name": "SchAct27_5C"
+            "variableid": "SchAct27_5C", 
+            "question_number": 109
         }, 
         {
             "response_table": [
@@ -2294,8 +2294,8 @@
                 }
             ], 
             "question_text": "How often do you think schools in Wales should hold a religious assembly?", 
-            "question_number": 110, 
-            "variable_name": "Relig22_5C"
+            "variableid": "Relig22_5C", 
+            "question_number": 110
         }, 
         {
             "response_table": [
@@ -2321,8 +2321,8 @@
                 }
             ], 
             "question_text": "How comfortable are you being around people who wear: (Please tick all that apply) - a turban?", 
-            "question_number": 111, 
-            "variable_name": "DiversAtt20_5C"
+            "variableid": "DiversAtt20_5C", 
+            "question_number": 111
         }, 
         {
             "response_table": [
@@ -2358,8 +2358,8 @@
                 }
             ], 
             "question_text": "How comfortable are you being around people who wear: (Please tick all that apply) - A hijab (a head scarf covering the hair and neck, worn by some Muslim women)", 
-            "question_number": 112, 
-            "variable_name": "DiversAtt19_5C"
+            "variableid": "DiversAtt19_5C", 
+            "question_number": 112
         }, 
         {
             "response_table": [
@@ -2395,8 +2395,8 @@
                 }
             ], 
             "question_text": "How comfortable are you being around people who wear: (Please tick all that apply) - a burka (a long garment covering the whole face and body, worn by some Muslim women)", 
-            "question_number": 113, 
-            "variable_name": "DiversAtt17_5C"
+            "variableid": "DiversAtt17_5C", 
+            "question_number": 113
         }, 
         {
             "response_table": [
@@ -2432,8 +2432,8 @@
                 }
             ], 
             "question_text": "How comfortable are you being around people who wear: (Please tick all that apply) - a cross", 
-            "question_number": 114, 
-            "variable_name": "DiversAtt18_5C"
+            "variableid": "DiversAtt18_5C", 
+            "question_number": 114
         }, 
         {
             "response_table": [
@@ -2464,68 +2464,68 @@
                 }
             ], 
             "question_text": "How comfortable are you being around people who wear: (Please tick all that apply) - a yarmulke or kippah (a cap worn by some Jewish men)", 
-            "question_number": 115, 
-            "variable_name": "DiversAtt21_5C"
+            "variableid": "DiversAtt21_5C", 
+            "question_number": 115
         }, 
         {
             "response_table": [], 
             "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using sexist language? At your school?", 
-            "question_number": 116, 
-            "variable_name": "DiversAtt35_5C"
+            "variableid": "DiversAtt35_5C", 
+            "question_number": 116
         }, 
         {
             "response_table": [], 
             "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using sexist language? In your local area?", 
-            "question_number": 117, 
-            "variable_name": "DiversAtt36_5C"
+            "variableid": "DiversAtt36_5C", 
+            "question_number": 117
         }, 
         {
             "response_table": [], 
             "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using racist language? At your school?", 
-            "question_number": 118, 
-            "variable_name": "DiversAtt33_5C"
+            "variableid": "DiversAtt33_5C", 
+            "question_number": 118
         }, 
         {
             "response_table": [], 
             "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using racist language? In your local area?", 
-            "question_number": 119, 
-            "variable_name": "DiversAtt34_5C"
+            "variableid": "DiversAtt34_5C", 
+            "question_number": 119
         }, 
         {
             "response_table": [], 
             "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about people of different religions? At your school?", 
-            "question_number": 120, 
-            "variable_name": "DiversAtt29_5C"
+            "variableid": "DiversAtt29_5C", 
+            "question_number": 120
         }, 
         {
             "response_table": [], 
             "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about people of different religions? In your local area?", 
-            "question_number": 121, 
-            "variable_name": "DiversAtt30_5C"
+            "variableid": "DiversAtt30_5C", 
+            "question_number": 121
         }, 
         {
             "response_table": [], 
             "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about lesbian, gay or bisexual people? At your school?", 
-            "question_number": 122, 
-            "variable_name": "DiversAtt27_5C"
+            "variableid": "DiversAtt27_5C", 
+            "question_number": 122
         }, 
         {
             "response_table": [], 
             "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about lesbian, gay or bisexual people? In your local area?", 
-            "question_number": 123, 
-            "variable_name": "DiversAtt28_5C"
+            "variableid": "DiversAtt28_5C", 
+            "question_number": 123
         }, 
         {
             "response_table": [], 
             "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about people who are refugees or immigrants? At your school?", 
-            "question_number": 124, 
-            "variable_name": "DiversAtt31_5C"
+            "variableid": "DiversAtt31_5C", 
+            "question_number": 124
         }, 
         {
             "response_table": [], 
             "question_text": "Do you ever hear people \u2026 (Please tick all that apply) - Using abusive language about people who are refugees or immigrants? In your local area?", 
-            "question_number": 125, 
-            "variable_name": "DiversAtt32_5C"
+            "variableid": "DiversAtt32_5C", 
+            "question_number": 125
         }, 
         {
             "response_table": [
@@ -2541,8 +2541,8 @@
                 }
             ], 
             "question_text": "Who do you think should be allowed to move to Wales from other countries? (Please tick all that apply) People from abroad who want to escape poverty", 
-            "question_number": 126, 
-            "variable_name": "EthicsAtt09_5C"
+            "variableid": "EthicsAtt09_5C", 
+            "question_number": 126
         }, 
         {
             "response_table": [
@@ -2558,8 +2558,8 @@
                 }
             ], 
             "question_text": "Who do you think should be allowed to move to Wales from other countries? (Please tick all that apply) People from abroad with useful skills to do jobs", 
-            "question_number": 127, 
-            "variable_name": "EthicsAtt10_5C"
+            "variableid": "EthicsAtt10_5C", 
+            "question_number": 127
         }, 
         {
             "response_table": [
@@ -2575,8 +2575,8 @@
                 }
             ], 
             "question_text": "Who do you think should be allowed to move to Wales from other countries? (Please tick all that apply) People from England", 
-            "question_number": 128, 
-            "variable_name": "EthicsAtt11_5C"
+            "variableid": "EthicsAtt11_5C", 
+            "question_number": 128
         }, 
         {
             "response_table": [
@@ -2592,8 +2592,8 @@
                 }
             ], 
             "question_text": "Who do you think should be allowed to move to Wales from other countries? (Please tick all that apply) Adults trying to escape wars in their own countries", 
-            "question_number": 129, 
-            "variable_name": "EthicsAtt12_5C"
+            "variableid": "EthicsAtt12_5C", 
+            "question_number": 129
         }, 
         {
             "response_table": [
@@ -2609,8 +2609,8 @@
                 }
             ], 
             "question_text": "Who do you think should be allowed to move to Wales from other countries? (Please tick all that apply) Children trying to escape wars in their own countries", 
-            "question_number": 130, 
-            "variable_name": "EthicsAtt13_5C"
+            "variableid": "EthicsAtt13_5C", 
+            "question_number": 130
         }, 
         {
             "response_table": [
@@ -2635,8 +2635,8 @@
                 }
             ], 
             "question_text": "In many schools students are put into classes with people of a similar ability to them. This is called setting.  Thinking back to your own experiences throughout school, please answer the following questions as best you can. 31. Do you think schoF4000IME20", 
-            "question_number": 131, 
-            "variable_name": "SchLearnAtt25_5C"
+            "variableid": "SchLearnAtt25_5C", 
+            "question_number": 131
         }, 
         {
             "response_table": [
@@ -2672,8 +2672,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - Sets are mainly for the benefit of the top students", 
-            "question_number": 132, 
-            "variable_name": "SchLearnAtt26_5C"
+            "variableid": "SchLearnAtt26_5C", 
+            "question_number": 132
         }, 
         {
             "response_table": [
@@ -2709,8 +2709,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - Being put in lower sets makes you feel less motivated", 
-            "question_number": 133, 
-            "variable_name": "SchLearnAtt27_5C"
+            "variableid": "SchLearnAtt27_5C", 
+            "question_number": 133
         }, 
         {
             "response_table": [
@@ -2746,8 +2746,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - The top sets have too much work", 
-            "question_number": 134, 
-            "variable_name": "SchLearnAtt28_5C"
+            "variableid": "SchLearnAtt28_5C", 
+            "question_number": 134
         }, 
         {
             "response_table": [
@@ -2783,8 +2783,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - Once you are in a set, it\u2019s hard to move up", 
-            "question_number": 135, 
-            "variable_name": "SchLearnAtt29_5C"
+            "variableid": "SchLearnAtt29_5C", 
+            "question_number": 135
         }, 
         {
             "response_table": [
@@ -2820,8 +2820,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - The lower sets are not challenged enough", 
-            "question_number": 136, 
-            "variable_name": "SchLearnAtt30_5C"
+            "variableid": "SchLearnAtt30_5C", 
+            "question_number": 136
         }, 
         {
             "response_table": [
@@ -2857,8 +2857,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - Mixed ability sets don't challenge the high ability students", 
-            "question_number": 137, 
-            "variable_name": "SchLearnAtt31_5C"
+            "variableid": "SchLearnAtt31_5C", 
+            "question_number": 137
         }, 
         {
             "response_table": [
@@ -2883,8 +2883,8 @@
                 }
             ], 
             "question_text": "As you may know, adults in the UK voted to leave the European Union (EU) in a referendum last year. Would you have voted to stay in the EU or to leave the EU?", 
-            "question_number": 138, 
-            "variable_name": "EngPol11_5C"
+            "variableid": "EngPol11_5C", 
+            "question_number": 138
         }, 
         {
             "response_table": [
@@ -2905,14 +2905,14 @@
                 }
             ], 
             "question_text": "Do you think the decision to leave the EU will be good for young people in Wales?", 
-            "question_number": 139, 
-            "variable_name": "EngPol12_5C"
+            "variableid": "EngPol12_5C", 
+            "question_number": 139
         }, 
         {
             "response_table": [], 
             "question_text": "Please tell us why it would be good or bad for young people in Wales:", 
-            "question_number": 140, 
-            "variable_name": "EngPol13_5C"
+            "variableid": "EngPol13_5C", 
+            "question_number": 140
         }, 
         {
             "response_table": [
@@ -2933,8 +2933,8 @@
                 }
             ], 
             "question_text": "Do you think the voting age should be lowered to 16?", 
-            "question_number": 141, 
-            "variable_name": "EngPol02_5C"
+            "variableid": "EngPol02_5C", 
+            "question_number": 141
         }, 
         {
             "response_table": [
@@ -2965,8 +2965,8 @@
                 }
             ], 
             "question_text": "As far as you can, please match the following people to their jobs using the drop down scale. - Jeremy Corbyn", 
-            "question_number": 142, 
-            "variable_name": "EngPol15_5C"
+            "variableid": "EngPol15_5C", 
+            "question_number": 142
         }, 
         {
             "response_table": [
@@ -2992,8 +2992,8 @@
                 }
             ], 
             "question_text": "As far as you can, please match the following people to their jobs using the drop down scale. - Theresa May", 
-            "question_number": 143, 
-            "variable_name": "EngPol17_5C"
+            "variableid": "EngPol17_5C", 
+            "question_number": 143
         }, 
         {
             "response_table": [
@@ -3019,8 +3019,8 @@
                 }
             ], 
             "question_text": "As far as you can, please match the following people to their jobs using the drop down scale. - Leanne Wood", 
-            "question_number": 144, 
-            "variable_name": "EngPol16_5C"
+            "variableid": "EngPol16_5C", 
+            "question_number": 144
         }, 
         {
             "response_table": [
@@ -3051,8 +3051,8 @@
                 }
             ], 
             "question_text": "As far as you can, please match the following people to their jobs using the drop down scale. - Carwyn Jones", 
-            "question_number": 145, 
-            "variable_name": "EngPol14_5C"
+            "variableid": "EngPol14_5C", 
+            "question_number": 145
         }, 
         {
             "response_table": [
@@ -3078,8 +3078,8 @@
                 }
             ], 
             "question_text": "Who do you think is in charge of the following areas in Wales: (Please tick one per row) - The National Health Service (NHS)", 
-            "question_number": 146, 
-            "variable_name": "EngPol21_5C"
+            "variableid": "EngPol21_5C", 
+            "question_number": 146
         }, 
         {
             "response_table": [
@@ -3105,8 +3105,8 @@
                 }
             ], 
             "question_text": "Who do you think is in charge of the following areas in Wales: (Please tick one per row) - Education", 
-            "question_number": 147, 
-            "variable_name": "EngPol19_5C"
+            "variableid": "EngPol19_5C", 
+            "question_number": 147
         }, 
         {
             "response_table": [
@@ -3132,8 +3132,8 @@
                 }
             ], 
             "question_text": "Who do you think is in charge of the following areas in Wales: (Please tick one per row) - The police", 
-            "question_number": 148, 
-            "variable_name": "EngPol22_5C"
+            "variableid": "EngPol22_5C", 
+            "question_number": 148
         }, 
         {
             "response_table": [
@@ -3159,8 +3159,8 @@
                 }
             ], 
             "question_text": "Who do you think is in charge of the following areas in Wales: (Please tick one per row) - Income tax", 
-            "question_number": 149, 
-            "variable_name": "EngPol20_5C"
+            "variableid": "EngPol20_5C", 
+            "question_number": 149
         }, 
         {
             "response_table": [
@@ -3186,8 +3186,8 @@
                 }
             ], 
             "question_text": "Who do you think is in charge of the following areas in Wales: (Please tick one per row) - Defence/armed forces", 
-            "question_number": 150, 
-            "variable_name": "EngPol18_5C"
+            "variableid": "EngPol18_5C", 
+            "question_number": 150
         }, 
         {
             "response_table": [
@@ -3208,8 +3208,8 @@
                 }
             ], 
             "question_text": "Would you rather run your own business or work for someone else?", 
-            "question_number": 151, 
-            "variable_name": "AspPostSch36_5C"
+            "variableid": "AspPostSch36_5C", 
+            "question_number": 151
         }, 
         {
             "response_table": [
@@ -3235,8 +3235,8 @@
                 }
             ], 
             "question_text": "Who do you think would be best at running each of the following things? - Schools", 
-            "question_number": 152, 
-            "variable_name": "EngSoc34_5C"
+            "variableid": "EngSoc34_5C", 
+            "question_number": 152
         }, 
         {
             "response_table": [
@@ -3262,8 +3262,8 @@
                 }
             ], 
             "question_text": "Who do you think would be best at running each of the following things? - Universities", 
-            "question_number": 153, 
-            "variable_name": "EngSoc37_5C"
+            "variableid": "EngSoc37_5C", 
+            "question_number": 153
         }, 
         {
             "response_table": [
@@ -3289,8 +3289,8 @@
                 }
             ], 
             "question_text": "Who do you think would be best at running each of the following things? - Hospitals", 
-            "question_number": 154, 
-            "variable_name": "EngSoc31_5C"
+            "variableid": "EngSoc31_5C", 
+            "question_number": 154
         }, 
         {
             "response_table": [
@@ -3316,8 +3316,8 @@
                 }
             ], 
             "question_text": "Who do you think would be best at running each of the following things? - The police", 
-            "question_number": 155, 
-            "variable_name": "EngSoc36_5C"
+            "variableid": "EngSoc36_5C", 
+            "question_number": 155
         }, 
         {
             "response_table": [
@@ -3343,8 +3343,8 @@
                 }
             ], 
             "question_text": "Who do you think would be best at running each of the following things? - Prisons", 
-            "question_number": 156, 
-            "variable_name": "EngSoc32_5C"
+            "variableid": "EngSoc32_5C", 
+            "question_number": 156
         }, 
         {
             "response_table": [
@@ -3370,8 +3370,8 @@
                 }
             ], 
             "question_text": "Who do you think would be best at running each of the following things? - Railways", 
-            "question_number": 157, 
-            "variable_name": "EngSoc33_5C"
+            "variableid": "EngSoc33_5C", 
+            "question_number": 157
         }, 
         {
             "response_table": [
@@ -3397,14 +3397,14 @@
                 }
             ], 
             "question_text": "Who do you think would be best at running each of the following things? - The country", 
-            "question_number": 158, 
-            "variable_name": "EngSoc35_5C"
+            "variableid": "EngSoc35_5C", 
+            "question_number": 158
         }, 
         {
             "response_table": [], 
             "question_text": "If you could do ONE thing to make the WORLD a better place, what would it be?", 
-            "question_number": 159, 
-            "variable_name": "EngSoc38_5C"
+            "variableid": "EngSoc38_5C", 
+            "question_number": 159
         }, 
         {
             "response_table": [
@@ -3440,8 +3440,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - When I\u2019m older I want to live in Wales", 
-            "question_number": 160, 
-            "variable_name": "AspLoc01_5C"
+            "variableid": "AspLoc01_5C", 
+            "question_number": 160
         }, 
         {
             "response_table": [
@@ -3477,8 +3477,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - When I\u2019m older I want to live in the same place as I live now", 
-            "question_number": 161, 
-            "variable_name": "AspLoc02_5C"
+            "variableid": "AspLoc02_5C", 
+            "question_number": 161
         }, 
         {
             "response_table": [
@@ -3514,8 +3514,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - When I\u2019m older I want to live in England", 
-            "question_number": 162, 
-            "variable_name": "AspLoc03_5C"
+            "variableid": "AspLoc03_5C", 
+            "question_number": 162
         }, 
         {
             "response_table": [
@@ -3551,14 +3551,14 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - When I\u2019m older I want to live outside the UK", 
-            "question_number": 163, 
-            "variable_name": "AspLoc04_5C"
+            "variableid": "AspLoc04_5C", 
+            "question_number": 163
         }, 
         {
             "response_table": [], 
             "question_text": "What do you want to do when you are older?", 
-            "question_number": 164, 
-            "variable_name": "AspCareer03_5C"
+            "variableid": "AspCareer03_5C", 
+            "question_number": 164
         }, 
         {
             "response_table": [
@@ -3594,8 +3594,8 @@
                 }
             ], 
             "question_text": "Think about the job you would like to do when you are older. To what extent do you agree with the following statements? (Please tick all that apply) - I think I will have to leave my town to do the job I want", 
-            "question_number": 165, 
-            "variable_name": "AspCareerLoc01_5C"
+            "variableid": "AspCareerLoc01_5C", 
+            "question_number": 165
         }, 
         {
             "response_table": [
@@ -3631,8 +3631,8 @@
                 }
             ], 
             "question_text": "Think about the job you would like to do when you are older. To what extent do you agree with the following statements? (Please tick all that apply) - I think I will have to leave Wales to do the job I want", 
-            "question_number": 166, 
-            "variable_name": "AspCareerLoc02_5C"
+            "variableid": "AspCareerLoc02_5C", 
+            "question_number": 166
         }, 
         {
             "response_table": [
@@ -3668,8 +3668,8 @@
                 }
             ], 
             "question_text": "Think about the job you would like to do when you are older. To what extent do you agree with the following statements? (Please tick all that apply) - I think I will have to leave the UK to do the job I want", 
-            "question_number": 167, 
-            "variable_name": "AspCareerLoc03_5C"
+            "variableid": "AspCareerLoc03_5C", 
+            "question_number": 167
         }, 
         {
             "response_table": [
@@ -3685,8 +3685,8 @@
                 }
             ], 
             "question_text": "Think about when you are older, what are the most important things you would look for in a job? (Tick the THREE most important things). It should be a job that... helps people", 
-            "question_number": 168, 
-            "variable_name": "AspCareerAtt02_5C"
+            "variableid": "AspCareerAtt02_5C", 
+            "question_number": 168
         }, 
         {
             "response_table": [
@@ -3702,8 +3702,8 @@
                 }
             ], 
             "question_text": "Think about when you are older, what are the most important things you would look for in a job? (Tick the THREE most important things). It should be a job that... makes people respect me", 
-            "question_number": 169, 
-            "variable_name": "AspCareerAtt06_5C"
+            "variableid": "AspCareerAtt06_5C", 
+            "question_number": 169
         }, 
         {
             "response_table": [
@@ -3719,8 +3719,8 @@
                 }
             ], 
             "question_text": "Think about when you are older, what are the most important things you would look for in a job? (Tick the THREE most important things). It should be a job that... is well paid", 
-            "question_number": 170, 
-            "variable_name": "AspCareerAtt04_5C"
+            "variableid": "AspCareerAtt04_5C", 
+            "question_number": 170
         }, 
         {
             "response_table": [
@@ -3736,8 +3736,8 @@
                 }
             ], 
             "question_text": "Think about when you are older, what are the most important things you would look for in a job? (Tick the THREE most important things). It should be a job that... lets me do things my own way", 
-            "question_number": 171, 
-            "variable_name": "AspCareerAtt05_5C"
+            "variableid": "AspCareerAtt05_5C", 
+            "question_number": 171
         }, 
         {
             "response_table": [
@@ -3753,8 +3753,8 @@
                 }
             ], 
             "question_text": "Think about when you are older, what are the most important things you would look for in a job? (Tick the THREE most important things). It should be a job that... allows me to spend lots of time with my family", 
-            "question_number": 172, 
-            "variable_name": "AspCareerAtt01_5C"
+            "variableid": "AspCareerAtt01_5C", 
+            "question_number": 172
         }, 
         {
             "response_table": [
@@ -3770,8 +3770,8 @@
                 }
             ], 
             "question_text": "Think about when you are older, what are the most important things you would look for in a job? (Tick the THREE most important things). It should be a job that... puts me in charge of other people", 
-            "question_number": 173, 
-            "variable_name": "AspCareerAtt07_5C"
+            "variableid": "AspCareerAtt07_5C", 
+            "question_number": 173
         }, 
         {
             "response_table": [
@@ -3787,8 +3787,8 @@
                 }
             ], 
             "question_text": "Think about when you are older, what are the most important things you would look for in a job? (Tick the THREE most important things). It should be a job that... is secure", 
-            "question_number": 174, 
-            "variable_name": "AspCareerAtt03_5C"
+            "variableid": "AspCareerAtt03_5C", 
+            "question_number": 174
         }, 
         {
             "response_table": [
@@ -3813,8 +3813,8 @@
                 }
             ], 
             "question_text": "Do you want to go to University?", 
-            "question_number": 175, 
-            "variable_name": "AspPostSch19_5C"
+            "variableid": "AspPostSch19_5C", 
+            "question_number": 175
         }, 
         {
             "response_table": [
@@ -3845,14 +3845,14 @@
                 }
             ], 
             "question_text": "How confident are you that you will go to university?", 
-            "question_number": 176, 
-            "variable_name": "AspPostSch24_5C"
+            "variableid": "AspPostSch24_5C", 
+            "question_number": 176
         }, 
         {
             "response_table": [], 
             "question_text": "Which University do you want to go to?", 
-            "question_number": 177, 
-            "variable_name": "AspPostSch21_5C"
+            "variableid": "AspPostSch21_5C", 
+            "question_number": 177
         }, 
         {
             "response_table": [
@@ -3883,8 +3883,8 @@
                 }
             ], 
             "question_text": "How confident are you that you will be able to go to this University?", 
-            "question_number": 178, 
-            "variable_name": "AspPostSch25_5C"
+            "variableid": "AspPostSch25_5C", 
+            "question_number": 178
         }, 
         {
             "response_table": [
@@ -3920,8 +3920,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements about University? - I feel like I have to go to University", 
-            "question_number": 179, 
-            "variable_name": "AspPostSch28_5C"
+            "variableid": "AspPostSch28_5C", 
+            "question_number": 179
         }, 
         {
             "response_table": [
@@ -3957,8 +3957,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements about University? - I feel prepared for University", 
-            "question_number": 180, 
-            "variable_name": "AspPostSch29_5C"
+            "variableid": "AspPostSch29_5C", 
+            "question_number": 180
         }, 
         {
             "response_table": [
@@ -3994,8 +3994,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements about University? - I'm worried about the cost of University", 
-            "question_number": 181, 
-            "variable_name": "AspPostSch30_5C"
+            "variableid": "AspPostSch30_5C", 
+            "question_number": 181
         }, 
         {
             "response_table": [
@@ -4026,20 +4026,20 @@
                 }
             ], 
             "question_text": "What is the main reason you want to go to University? Please tick one - Selected Choice", 
-            "question_number": 182, 
-            "variable_name": "AspPostSch26_5C"
+            "variableid": "AspPostSch26_5C", 
+            "question_number": 182
         }, 
         {
             "response_table": [], 
             "question_text": "What is the main reason you want to go to University? Please tick one - Other (please write in) - Text", 
-            "question_number": 183, 
-            "variable_name": "AspPostSch27_5C"
+            "variableid": "AspPostSch27_5C", 
+            "question_number": 183
         }, 
         {
             "response_table": [], 
             "question_text": "What job would you like when you are older?", 
-            "question_number": 184, 
-            "variable_name": "AspCareer17_5C"
+            "variableid": "AspCareer17_5C", 
+            "question_number": 184
         }, 
         {
             "response_table": [
@@ -4062,8 +4062,8 @@
                 }
             ], 
             "question_text": "How confident are you that you will get this job?", 
-            "question_number": 185, 
-            "variable_name": "AspCareer06_5C"
+            "variableid": "AspCareer06_5C", 
+            "question_number": 185
         }, 
         {
             "response_table": [
@@ -4099,8 +4099,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - I feel well informed of the career and education choices available to me when I leave school", 
-            "question_number": 186, 
-            "variable_name": "AspPostSch33_5C"
+            "variableid": "AspPostSch33_5C", 
+            "question_number": 186
         }, 
         {
             "response_table": [
@@ -4136,8 +4136,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - I would like more advice in school about other career routes (e.g. apprenticeships)", 
-            "question_number": 187, 
-            "variable_name": "AspPostSch35_5C"
+            "variableid": "AspPostSch35_5C", 
+            "question_number": 187
         }, 
         {
             "response_table": [
@@ -4173,8 +4173,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - I would have done an apprenticeship if you got paid more during your training", 
-            "question_number": 188, 
-            "variable_name": "AspPostSch34_5C"
+            "variableid": "AspPostSch34_5C", 
+            "question_number": 188
         }, 
         {
             "response_table": [
@@ -4210,8 +4210,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - I feel under pressure to get a job as soon as I leave school", 
-            "question_number": 189, 
-            "variable_name": "AspPostSch32_5C"
+            "variableid": "AspPostSch32_5C", 
+            "question_number": 189
         }, 
         {
             "response_table": [
@@ -4237,8 +4237,8 @@
                 }
             ], 
             "question_text": "Have the armed forces (Army, Navy or Royal Air Force) ever visited your school?", 
-            "question_number": 190, 
-            "variable_name": "Military02_5C"
+            "variableid": "Military02_5C", 
+            "question_number": 190
         }, 
         {
             "response_table": [
@@ -4274,8 +4274,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - When it comes to doing well in life, it\u2019s not about what you know, it\u2019s who you know", 
-            "question_number": 191, 
-            "variable_name": "EngSoc39_5C"
+            "variableid": "EngSoc39_5C", 
+            "question_number": 191
         }, 
         {
             "response_table": [
@@ -4311,8 +4311,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - Private schools are better than state schools", 
-            "question_number": 192, 
-            "variable_name": "SchAtt40_5C"
+            "variableid": "SchAtt40_5C", 
+            "question_number": 192
         }, 
         {
             "response_table": [
@@ -4348,8 +4348,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - Private school children get an unfair advantage in life", 
-            "question_number": 193, 
-            "variable_name": "SchAtt39_5C"
+            "variableid": "SchAtt39_5C", 
+            "question_number": 193
         }, 
         {
             "response_table": [
@@ -4385,8 +4385,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - The more qualifications you have, the more likely you are to get the job you want", 
-            "question_number": 194, 
-            "variable_name": "SchAtt42_5C"
+            "variableid": "SchAtt42_5C", 
+            "question_number": 194
         }, 
         {
             "response_table": [
@@ -4422,8 +4422,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements? - The main point of school is to pass exams and get qualifications", 
-            "question_number": 195, 
-            "variable_name": "SchAtt41_5C"
+            "variableid": "SchAtt41_5C", 
+            "question_number": 195
         }, 
         {
             "response_table": [
@@ -4439,8 +4439,8 @@
                 }
             ], 
             "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice Facebook", 
-            "question_number": 196, 
-            "variable_name": "SocialMed01_5C"
+            "variableid": "SocialMed01_5C", 
+            "question_number": 196
         }, 
         {
             "response_table": [
@@ -4456,8 +4456,8 @@
                 }
             ], 
             "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice Instagram", 
-            "question_number": 197, 
-            "variable_name": "SocialMed02_5C"
+            "variableid": "SocialMed02_5C", 
+            "question_number": 197
         }, 
         {
             "response_table": [
@@ -4473,8 +4473,8 @@
                 }
             ], 
             "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice Twitter", 
-            "question_number": 198, 
-            "variable_name": "SocialMed03_5C"
+            "variableid": "SocialMed03_5C", 
+            "question_number": 198
         }, 
         {
             "response_table": [
@@ -4490,8 +4490,8 @@
                 }
             ], 
             "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice WhatsApp", 
-            "question_number": 199, 
-            "variable_name": "SocialMed04_5C"
+            "variableid": "SocialMed04_5C", 
+            "question_number": 199
         }, 
         {
             "response_table": [
@@ -4507,8 +4507,8 @@
                 }
             ], 
             "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice Snapchat", 
-            "question_number": 200, 
-            "variable_name": "SocialMed05_5C"
+            "variableid": "SocialMed05_5C", 
+            "question_number": 200
         }, 
         {
             "response_table": [
@@ -4524,14 +4524,14 @@
                 }
             ], 
             "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Selected Choice Other (please write in)", 
-            "question_number": 201, 
-            "variable_name": "SocialMed06_5C"
+            "variableid": "SocialMed06_5C", 
+            "question_number": 201
         }, 
         {
             "response_table": [], 
             "question_text": "What type of social media do you regularly use? (at least once a month) Please tick all that apply - Other (please write in) - Text", 
-            "question_number": 202, 
-            "variable_name": "SocialMed07_5C"
+            "variableid": "SocialMed07_5C", 
+            "question_number": 202
         }, 
         {
             "response_table": [
@@ -4562,8 +4562,8 @@
                 }
             ], 
             "question_text": "Do you speak Welsh?", 
-            "question_number": 203, 
-            "variable_name": "NatLang11_5C"
+            "variableid": "NatLang11_5C", 
+            "question_number": 203
         }, 
         {
             "response_table": [
@@ -4599,8 +4599,8 @@
                 }
             ], 
             "question_text": "How often do you use Welsh\u2026 - For web searches (e.g. Google)", 
-            "question_number": 204, 
-            "variable_name": "CymActFrq08_5C"
+            "variableid": "CymActFrq08_5C", 
+            "question_number": 204
         }, 
         {
             "response_table": [
@@ -4636,8 +4636,8 @@
                 }
             ], 
             "question_text": "How often do you use Welsh\u2026 - On Facebook", 
-            "question_number": 205, 
-            "variable_name": "CymActFrq10_5C"
+            "variableid": "CymActFrq10_5C", 
+            "question_number": 205
         }, 
         {
             "response_table": [
@@ -4673,8 +4673,8 @@
                 }
             ], 
             "question_text": "How often do you use Welsh\u2026 - On Twitter", 
-            "question_number": 206, 
-            "variable_name": "CymActFrq13_5C"
+            "variableid": "CymActFrq13_5C", 
+            "question_number": 206
         }, 
         {
             "response_table": [
@@ -4710,8 +4710,8 @@
                 }
             ], 
             "question_text": "How often do you use Welsh\u2026 - On Instagram", 
-            "question_number": 207, 
-            "variable_name": "CymActFrq11_5C"
+            "variableid": "CymActFrq11_5C", 
+            "question_number": 207
         }, 
         {
             "response_table": [
@@ -4747,8 +4747,8 @@
                 }
             ], 
             "question_text": "How often do you use Welsh\u2026 - On Snapchat", 
-            "question_number": 208, 
-            "variable_name": "CymActFrq12_5C"
+            "variableid": "CymActFrq12_5C", 
+            "question_number": 208
         }, 
         {
             "response_table": [
@@ -4784,8 +4784,8 @@
                 }
             ], 
             "question_text": "How often do you use Welsh\u2026 - On WhatsApp or in text messages", 
-            "question_number": 209, 
-            "variable_name": "CymActFrq14_5C"
+            "variableid": "CymActFrq14_5C", 
+            "question_number": 209
         }, 
         {
             "response_table": [
@@ -4821,8 +4821,8 @@
                 }
             ], 
             "question_text": "How often do you use Welsh\u2026 - In e-mails", 
-            "question_number": 210, 
-            "variable_name": "CymActFrq09_5C"
+            "variableid": "CymActFrq09_5C", 
+            "question_number": 210
         }, 
         {
             "response_table": [
@@ -4858,8 +4858,8 @@
                 }
             ], 
             "question_text": "How often do you use Welsh\u2026 - At home speaking to your family", 
-            "question_number": 211, 
-            "variable_name": "CymActFrq04_5C"
+            "variableid": "CymActFrq04_5C", 
+            "question_number": 211
         }, 
         {
             "response_table": [
@@ -4895,8 +4895,8 @@
                 }
             ], 
             "question_text": "How often do you use Welsh\u2026 - When speaking to your friends in school", 
-            "question_number": 212, 
-            "variable_name": "CymActFrq06_5C"
+            "variableid": "CymActFrq06_5C", 
+            "question_number": 212
         }, 
         {
             "response_table": [
@@ -4932,8 +4932,8 @@
                 }
             ], 
             "question_text": "How often do you use Welsh\u2026 - When socialising with friends outside school", 
-            "question_number": 213, 
-            "variable_name": "CymActFrq05_5C"
+            "variableid": "CymActFrq05_5C", 
+            "question_number": 213
         }, 
         {
             "response_table": [
@@ -4969,8 +4969,8 @@
                 }
             ], 
             "question_text": "How often do you use Welsh\u2026 - When speaking to people in your community", 
-            "question_number": 214, 
-            "variable_name": "CymActFrq07_5C"
+            "variableid": "CymActFrq07_5C", 
+            "question_number": 214
         }, 
         {
             "response_table": [
@@ -4991,8 +4991,8 @@
                 }
             ], 
             "question_text": "Please answer the following questions: - Have you ever heard students say cruel things about other pupils\u2019 bodies?", 
-            "question_number": 215, 
-            "variable_name": "BullySch13_5C"
+            "variableid": "BullySch13_5C", 
+            "question_number": 215
         }, 
         {
             "response_table": [
@@ -5013,8 +5013,8 @@
                 }
             ], 
             "question_text": "Please answer the following questions: - Have you ever heard students say cruel things about other pupils\u2019 clothes?", 
-            "question_number": 216, 
-            "variable_name": "BullySch14_5C"
+            "variableid": "BullySch14_5C", 
+            "question_number": 216
         }, 
         {
             "response_table": [
@@ -5035,14 +5035,14 @@
                 }
             ], 
             "question_text": "Would you ever consider taking steroids? - Selected Choice", 
-            "question_number": 217, 
-            "variable_name": "WellValue22_5C"
+            "variableid": "WellValue22_5C", 
+            "question_number": 217
         }, 
         {
             "response_table": [], 
             "question_text": "Would you ever consider taking steroids? - Yes (if yes, please tell us why) - Text", 
-            "question_number": 218, 
-            "variable_name": "WellValue23_5C"
+            "variableid": "WellValue23_5C", 
+            "question_number": 218
         }, 
         {
             "response_table": [
@@ -5063,14 +5063,14 @@
                 }
             ], 
             "question_text": "Would you ever consider having plastic surgery? - Selected Choice", 
-            "question_number": 219, 
-            "variable_name": "WellValue20_5C"
+            "variableid": "WellValue20_5C", 
+            "question_number": 219
         }, 
         {
             "response_table": [], 
             "question_text": "Would you ever consider having plastic surgery? - Yes (if yes, what would you have done?) - Text", 
-            "question_number": 220, 
-            "variable_name": "WellValue21_5C"
+            "variableid": "WellValue21_5C", 
+            "question_number": 220
         }, 
         {
             "response_table": [
@@ -5121,14 +5121,14 @@
                 }
             ], 
             "question_text": "Which of the following racial/ethnic groups best describes you? - Selected Choice", 
-            "question_number": 221, 
-            "variable_name": "NatEth03_5C"
+            "variableid": "NatEth03_5C", 
+            "question_number": 221
         }, 
         {
             "response_table": [], 
             "question_text": "Which of the following racial/ethnic groups best describes you? - Any other racial/ethnic group, please describe - Text", 
-            "question_number": 222, 
-            "variable_name": "NatEth02_5C"
+            "variableid": "NatEth02_5C", 
+            "question_number": 222
         }, 
         {
             "response_table": [
@@ -5164,14 +5164,14 @@
                 }
             ], 
             "question_text": "Which of the following best describes you? - Selected Choice", 
-            "question_number": 223, 
-            "variable_name": "NatIden01_5C"
+            "variableid": "NatIden01_5C", 
+            "question_number": 223
         }, 
         {
             "response_table": [], 
             "question_text": "Which of the following best describes you? - Other (please write in) - Text", 
-            "question_number": 224, 
-            "variable_name": "NatIden03_5C"
+            "variableid": "NatIden03_5C", 
+            "question_number": 224
         }, 
         {
             "response_table": [
@@ -5220,8 +5220,8 @@
                 }
             ], 
             "question_text": "Which of the following best describes your religious beliefs? (Please tick one)", 
-            "question_number": 225, 
-            "variable_name": "Relig01_5C"
+            "variableid": "Relig01_5C", 
+            "question_number": 225
         }, 
         {
             "response_table": [
@@ -5251,14 +5251,14 @@
                 }
             ], 
             "question_text": "Where was your mother (or female carer) born? - Selected Choice", 
-            "question_number": 226, 
-            "variable_name": "NatBirth03_5C"
+            "variableid": "NatBirth03_5C", 
+            "question_number": 226
         }, 
         {
             "response_table": [], 
             "question_text": "Where was your mother (or female carer) born? - Somewhere else (Please tell us where in box): - Text", 
-            "question_number": 227, 
-            "variable_name": "NatBirth04_5C"
+            "variableid": "NatBirth04_5C", 
+            "question_number": 227
         }, 
         {
             "response_table": [
@@ -5288,14 +5288,14 @@
                 }
             ], 
             "question_text": "Where was your father (or male carer) born? - Selected Choice", 
-            "question_number": 228, 
-            "variable_name": "NatBirth05_5C"
+            "variableid": "NatBirth05_5C", 
+            "question_number": 228
         }, 
         {
             "response_table": [], 
             "question_text": "Where was your father (or male carer) born? - Somewhere else (Please tell us where in box): - Text", 
-            "question_number": 229, 
-            "variable_name": "NatBirth06_5C"
+            "variableid": "NatBirth06_5C", 
+            "question_number": 229
         }, 
         {
             "response_table": [
@@ -5311,8 +5311,8 @@
                 }
             ], 
             "question_text": "In your home, what language(s) do you speak? - Selected Choice English", 
-            "question_number": 230, 
-            "variable_name": "NatLang01_5C"
+            "variableid": "NatLang01_5C", 
+            "question_number": 230
         }, 
         {
             "response_table": [
@@ -5328,8 +5328,8 @@
                 }
             ], 
             "question_text": "In your home, what language(s) do you speak? - Selected Choice Welsh", 
-            "question_number": 231, 
-            "variable_name": "NatLang02_5C"
+            "variableid": "NatLang02_5C", 
+            "question_number": 231
         }, 
         {
             "response_table": [
@@ -5345,8 +5345,8 @@
                 }
             ], 
             "question_text": "In your home, what language(s) do you speak? - Selected Choice Both English and Welsh", 
-            "question_number": 232, 
-            "variable_name": "NatLang10_5C"
+            "variableid": "NatLang10_5C", 
+            "question_number": 232
         }, 
         {
             "response_table": [
@@ -5362,14 +5362,14 @@
                 }
             ], 
             "question_text": "In your home, what language(s) do you speak? - Selected Choice Other (Please tell us which languages)", 
-            "question_number": 233, 
-            "variable_name": "NatLang03_5C"
+            "variableid": "NatLang03_5C", 
+            "question_number": 233
         }, 
         {
             "response_table": [], 
             "question_text": "In your home, what language(s) do you speak? - Other (Please tell us which languages) - Text", 
-            "question_number": 234, 
-            "variable_name": "NatLang04_5C"
+            "variableid": "NatLang04_5C", 
+            "question_number": 234
         }, 
         {
             "response_table": [
@@ -5389,14 +5389,14 @@
                 }
             ], 
             "question_text": "What is your mother's or (or female carer\u2019s) current or most recent job? - Selected Choice", 
-            "question_number": 235, 
-            "variable_name": "FamEmp03_5C"
+            "variableid": "FamEmp03_5C", 
+            "question_number": 235
         }, 
         {
             "response_table": [], 
             "question_text": "What is your mother's or (or female carer\u2019s) current or most recent job? - Please tell us their job here - Text", 
-            "question_number": 236, 
-            "variable_name": "FamEmp04_5C"
+            "variableid": "FamEmp04_5C", 
+            "question_number": 236
         }, 
         {
             "response_table": [
@@ -5416,14 +5416,14 @@
                 }
             ], 
             "question_text": "What is your father's or (or male carer\u2019s) current or most recent job? - Selected Choice", 
-            "question_number": 237, 
-            "variable_name": "FamEmp01_5C"
+            "variableid": "FamEmp01_5C", 
+            "question_number": 237
         }, 
         {
             "response_table": [], 
             "question_text": "What is your father's or (or male carer\u2019s) current or most recent job? - Please tell us their job here - Text", 
-            "question_number": 238, 
-            "variable_name": "FamEmp02_5C"
+            "variableid": "FamEmp02_5C", 
+            "question_number": 238
         }, 
         {
             "response_table": [
@@ -5444,8 +5444,8 @@
                 }
             ], 
             "question_text": "Did your parents or carers go to University? - Did your mother (or female carer) go to University?", 
-            "question_number": 239, 
-            "variable_name": "FamEdu02_5C"
+            "variableid": "FamEdu02_5C", 
+            "question_number": 239
         }, 
         {
             "response_table": [
@@ -5466,8 +5466,8 @@
                 }
             ], 
             "question_text": "Did your parents or carers go to University? - Did your father (or male carer) go to University?", 
-            "question_number": 240, 
-            "variable_name": "FamEdu01_5C"
+            "variableid": "FamEdu01_5C", 
+            "question_number": 240
         }, 
         {
             "response_table": [
@@ -5488,8 +5488,8 @@
                 }
             ], 
             "question_text": "Do you get Free School Meals (FSM)?", 
-            "question_number": 241, 
-            "variable_name": "Deprive01_5C"
+            "variableid": "Deprive01_5C", 
+            "question_number": 241
         }, 
         {
             "response_table": [
@@ -5509,14 +5509,14 @@
                 }
             ], 
             "question_text": "Do you receive Educational Maintenance Allowance? (EMA) - Selected Choice", 
-            "question_number": 242, 
-            "variable_name": "Deprive02_5C"
+            "variableid": "Deprive02_5C", 
+            "question_number": 242
         }, 
         {
             "response_table": [], 
             "question_text": "Do you receive Educational Maintenance Allowance? (EMA) - Yes (if so, what do you mainly spend it on?) - Text", 
-            "question_number": 243, 
-            "variable_name": "Deprive17_5C"
+            "variableid": "Deprive17_5C", 
+            "question_number": 243
         }, 
         {
             "response_table": [
@@ -5536,14 +5536,14 @@
                 }
             ], 
             "question_text": "Do you receive any other type of financial support for education and training? - Selected Choice", 
-            "question_number": 244, 
-            "variable_name": "Deprive18_5C"
+            "variableid": "Deprive18_5C", 
+            "question_number": 244
         }, 
         {
             "response_table": [], 
             "question_text": "Do you receive any other type of financial support for education and training? - Yes (if yes, please tell us what you receive and roughly how much you get per month) - Text", 
-            "question_number": 245, 
-            "variable_name": "Deprive19_5C"
+            "variableid": "Deprive19_5C", 
+            "question_number": 245
         }, 
         {
             "response_table": [
@@ -5563,8 +5563,8 @@
                 }
             ], 
             "question_text": "What is your gender?", 
-            "question_number": 3, 
-            "variable_name": "sex_5C"
+            "variableid": "sex_5C", 
+            "question_number": 3
         }, 
         {
             "response_table": [
@@ -5584,8 +5584,8 @@
                 }
             ], 
             "question_text": "Where were you born? - Selected Choice", 
-            "question_number": 4, 
-            "variable_name": "NatBirth01_5C"
+            "variableid": "NatBirth01_5C", 
+            "question_number": 4
         }
     ]
 }

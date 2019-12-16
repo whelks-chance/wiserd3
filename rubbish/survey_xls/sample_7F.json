@@ -19,8 +19,8 @@
                 }
             ], 
             "question_text": "What is your gender?", 
-            "question_number": 3, 
-            "variable_name": "sex_7F"
+            "variableid": "sex_7F", 
+            "question_number": 3
         }, 
         {
             "response_table": [
@@ -36,8 +36,8 @@
                 }
             ], 
             "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). Some pocket money each week to spend on yourself", 
-            "question_number": 4, 
-            "variable_name": "Deprive06_7F"
+            "variableid": "Deprive06_7F", 
+            "question_number": 4
         }, 
         {
             "response_table": [
@@ -53,8 +53,8 @@
                 }
             ], 
             "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). Some money that you can save each month, either in a bank or at home", 
-            "question_number": 5, 
-            "variable_name": "Deprive07_7F"
+            "variableid": "Deprive07_7F", 
+            "question_number": 5
         }, 
         {
             "response_table": [
@@ -70,8 +70,8 @@
                 }
             ], 
             "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). A pair of designer or brand name trainers (like Nike or Vans)", 
-            "question_number": 6, 
-            "variable_name": "Deprive08_7F"
+            "variableid": "Deprive08_7F", 
+            "question_number": 6
         }, 
         {
             "response_table": [
@@ -87,8 +87,8 @@
                 }
             ], 
             "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). An iPod or other personal music player", 
-            "question_number": 7, 
-            "variable_name": "Deprive09_7F"
+            "variableid": "Deprive09_7F", 
+            "question_number": 7
         }, 
         {
             "response_table": [
@@ -104,8 +104,8 @@
                 }
             ], 
             "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). A smartphone", 
-            "question_number": 8, 
-            "variable_name": "Deprive10_7F"
+            "variableid": "Deprive10_7F", 
+            "question_number": 8
         }, 
         {
             "response_table": [
@@ -121,8 +121,8 @@
                 }
             ], 
             "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). Cable or satellite TV at home", 
-            "question_number": 9, 
-            "variable_name": "Deprive11_7F"
+            "variableid": "Deprive11_7F", 
+            "question_number": 9
         }, 
         {
             "response_table": [
@@ -138,8 +138,8 @@
                 }
             ], 
             "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). A garden at home, or somewhere nearby like a park where you can safely spend time with your friends", 
-            "question_number": 10, 
-            "variable_name": "Deprive12_7F"
+            "variableid": "Deprive12_7F", 
+            "question_number": 10
         }, 
         {
             "response_table": [
@@ -155,8 +155,8 @@
                 }
             ], 
             "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). A family car for transport when you need it", 
-            "question_number": 11, 
-            "variable_name": "Deprive13_7F"
+            "variableid": "Deprive13_7F", 
+            "question_number": 11
         }, 
         {
             "response_table": [
@@ -172,8 +172,8 @@
                 }
             ], 
             "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). The right kind of clothes to fit in with other people your age", 
-            "question_number": 12, 
-            "variable_name": "Deprive14_7F"
+            "variableid": "Deprive14_7F", 
+            "question_number": 12
         }, 
         {
             "response_table": [
@@ -189,8 +189,8 @@
                 }
             ], 
             "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). At least one family holiday away from home each year", 
-            "question_number": 13, 
-            "variable_name": "Deprive15_7F"
+            "variableid": "Deprive15_7F", 
+            "question_number": 13
         }, 
         {
             "response_table": [
@@ -206,8 +206,8 @@
                 }
             ], 
             "question_text": "About You: Here is a list of things some young people your age have. Please tell us which ones you have.(Please tick all that apply). Family trips or days out at least once a month", 
-            "question_number": 14, 
-            "variable_name": "Deprive16_7F"
+            "variableid": "Deprive16_7F", 
+            "question_number": 14
         }, 
         {
             "response_table": [
@@ -243,8 +243,8 @@
                 }
             ], 
             "question_text": "How much do you agree with these statements about school? - I get enough help from my teachers if I find something difficult", 
-            "question_number": 18, 
-            "variable_name": "SchStafAtt23_7F"
+            "variableid": "SchStafAtt23_7F", 
+            "question_number": 18
         }, 
         {
             "response_table": [
@@ -275,8 +275,8 @@
                 }
             ], 
             "question_text": "How much do you agree with these statements about school? - My teachers should be stricter", 
-            "question_number": 16, 
-            "variable_name": "SchStafAtt24_7F"
+            "variableid": "SchStafAtt24_7F", 
+            "question_number": 16
         }, 
         {
             "response_table": [
@@ -312,8 +312,8 @@
                 }
             ], 
             "question_text": "How much do you agree with these statements about school? - My teachers listen to me & take my views seriously", 
-            "question_number": 17, 
-            "variable_name": "SchStafAtt05_7F"
+            "variableid": "SchStafAtt05_7F", 
+            "question_number": 17
         }, 
         {
             "response_table": [
@@ -349,8 +349,8 @@
                 }
             ], 
             "question_text": "How much do you agree with these statements about school? - I look up to my teachers", 
-            "question_number": 18, 
-            "variable_name": "SchStafAtt23_7F"
+            "variableid": "SchStafAtt23_7F", 
+            "question_number": 18
         }, 
         {
             "response_table": [
@@ -386,14 +386,14 @@
                 }
             ], 
             "question_text": "How much do you agree with these statements about school? - I understand my lessons", 
-            "question_number": 19, 
-            "variable_name": "SchLearnAtt17_7F"
+            "variableid": "SchLearnAtt17_7F", 
+            "question_number": 19
         }, 
         {
             "response_table": [], 
             "question_text": "What is the BEST thing about secondary school so far?", 
-            "question_number": 22, 
-            "variable_name": "SchAtt30_7F"
+            "variableid": "SchAtt30_7F", 
+            "question_number": 22
         }, 
         {
             "response_table": [
@@ -429,8 +429,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements: - I would like to have fewer subjects to study at school.", 
-            "question_number": 23, 
-            "variable_name": "SchLearnAtt51_7F"
+            "variableid": "SchLearnAtt51_7F", 
+            "question_number": 23
         }, 
         {
             "response_table": [
@@ -466,8 +466,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements: - It would be good if some subjects were combined together when they were taught.", 
-            "question_number": 24, 
-            "variable_name": "SchLearnAtt52_7F"
+            "variableid": "SchLearnAtt52_7F", 
+            "question_number": 24
         }, 
         {
             "response_table": [
@@ -503,8 +503,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements: - I would like to be taught by fewer teachers, like at Primary school.", 
-            "question_number": 25, 
-            "variable_name": "SchLearnAtt53_7F"
+            "variableid": "SchLearnAtt53_7F", 
+            "question_number": 25
         }, 
         {
             "response_table": [
@@ -540,8 +540,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements: - Teachers should take more account of students' interests when deciding what to teach.", 
-            "question_number": 26, 
-            "variable_name": "SchLearnAtt54_7F"
+            "variableid": "SchLearnAtt54_7F", 
+            "question_number": 26
         }, 
         {
             "response_table": [
@@ -577,8 +577,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements: - Having to do tests at school helps me to learn.", 
-            "question_number": 27, 
-            "variable_name": "SchLearnAtt55_7F"
+            "variableid": "SchLearnAtt55_7F", 
+            "question_number": 27
         }, 
         {
             "response_table": [
@@ -614,8 +614,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements: - I rarely prepare or revise for tests I have at school.", 
-            "question_number": 28, 
-            "variable_name": "SchLearnAtt56_7F"
+            "variableid": "SchLearnAtt56_7F", 
+            "question_number": 28
         }, 
         {
             "response_table": [
@@ -651,8 +651,8 @@
                 }
             ], 
             "question_text": "To what extent do you agree with the following statements: - I normally do well in tests compared to other people.", 
-            "question_number": 29, 
-            "variable_name": "SchLearnAtt57_7F"
+            "variableid": "SchLearnAtt57_7F", 
+            "question_number": 29
         }, 
         {
             "response_table": [
@@ -688,8 +688,8 @@
                 }
             ], 
             "question_text": "What qualities of a teacher do you rate most highly? Please place the following in rank order: - Good at managing behaviour in lessons.", 
-            "question_number": 30, 
-            "variable_name": "SchStafAtt25_7F"
+            "variableid": "SchStafAtt25_7F", 
+            "question_number": 30
         }, 
         {
             "response_table": [
@@ -725,8 +725,8 @@
                 }
             ], 
             "question_text": "What qualities of a teacher do you rate most highly? Please place the following in rank order: - Good at explaining and talking about the subject.", 
-            "question_number": 31, 
-            "variable_name": "SchStafAtt26_7F"
+            "variableid": "SchStafAtt26_7F", 
+            "question_number": 31
         }, 
         {
             "response_table": [
@@ -762,8 +762,8 @@
                 }
             ], 
             "question_text": "What qualities of a teacher do you rate most highly? Please place the following in rank order: - Good at making lessons fun and engaging.", 
-            "question_number": 32, 
-            "variable_name": "SchStafAtt27_7F"
+            "variableid": "SchStafAtt27_7F", 
+            "question_number": 32
         }, 
         {
             "response_table": [
@@ -799,8 +799,8 @@
                 }
             ], 
             "question_text": "What qualities of a teacher do you rate most highly? Please place the following in rank order: - Good to talk to - friendly and approachable.", 
-            "question_number": 33, 
-            "variable_name": "SchStafAtt28_7F"
+            "variableid": "SchStafAtt28_7F", 
+            "question_number": 33
         }, 
         {
             "response_table": [
@@ -836,8 +836,8 @@
                 }
             ], 
             "question_text": "What qualities of a teacher do you rate most highly? Please place the following in rank order: - Good at providing feedback on work.", 
-            "question_number": 34, 
-            "variable_name": "SchStafAtt29_7F"
+            "variableid": "SchStafAtt29_7F", 
+            "question_number": 34
         }, 
         {
             "response_table": [
@@ -856,8 +856,8 @@
                 }
             ], 
             "question_text": "How would you prefer your progress in learning a subject was assessed?", 
-            "question_number": 35, 
-            "variable_name": "SchLearnAtt58_7F"
+            "variableid": "SchLearnAtt58_7F", 
+            "question_number": 35
         }, 
         {
             "response_table": [
@@ -888,8 +888,8 @@
                 }
             ], 
             "question_text": "How would you prefer to be assessed in the following subjects for GCSEs? - Maths", 
-            "question_number": 36, 
-            "variable_name": "SchLearnAtt59_7F"
+            "variableid": "SchLearnAtt59_7F", 
+            "question_number": 36
         }, 
         {
             "response_table": [
@@ -920,8 +920,8 @@
                 }
             ], 
             "question_text": "How would you prefer to be assessed in the following subjects for GCSEs? - English", 
-            "question_number": 37, 
-            "variable_name": "SchLearnAtt60_7F"
+            "variableid": "SchLearnAtt60_7F", 
+            "question_number": 37
         }, 
         {
             "response_table": [
@@ -952,8 +952,8 @@
                 }
             ], 
             "question_text": "How would you prefer to be assessed in the following subjects for GCSEs? - Science", 
-            "question_number": 38, 
-            "variable_name": "SchLearnAtt61_7F"
+            "variableid": "SchLearnAtt61_7F", 
+            "question_number": 38
         }, 
         {
             "response_table": [
@@ -974,8 +974,8 @@
                 }
             ], 
             "question_text": "Do you know what vocational qualifications are?", 
-            "question_number": 40, 
-            "variable_name": "PostSch01_7F"
+            "variableid": "PostSch01_7F", 
+            "question_number": 40
         }, 
         {
             "response_table": [
@@ -991,8 +991,8 @@
                 }
             ], 
             "question_text": "In the past 12 months have you been on any of the following (select all that apply)? A residential school trip within the UK (with an overnight stay somewhere)", 
-            "question_number": 67, 
-            "variable_name": "SchAct36_7F"
+            "variableid": "SchAct36_7F", 
+            "question_number": 67
         }, 
         {
             "response_table": [
@@ -1008,8 +1008,8 @@
                 }
             ], 
             "question_text": "In the past 12 months have you been on any of the following (select all that apply)? A residential school trip outside the UK (with an overnight stay somewhere)", 
-            "question_number": 68, 
-            "variable_name": "SchAct37_7F"
+            "variableid": "SchAct37_7F", 
+            "question_number": 68
         }, 
         {
             "response_table": [
@@ -1025,8 +1025,8 @@
                 }
             ], 
             "question_text": "In the past 12 months have you been on any of the following (select all that apply)? A day-trip during school hours that was sport-related", 
-            "question_number": 69, 
-            "variable_name": "SchAct38_7F"
+            "variableid": "SchAct38_7F", 
+            "question_number": 69
         }, 
         {
             "response_table": [
@@ -1042,8 +1042,8 @@
                 }
             ], 
             "question_text": "In the past 12 months have you been on any of the following (select all that apply)? A day-trip during school hours that was not sport-related", 
-            "question_number": 70, 
-            "variable_name": "SchAct39_7F"
+            "variableid": "SchAct39_7F", 
+            "question_number": 70
         }, 
         {
             "response_table": [
@@ -1064,8 +1064,8 @@
                 }
             ], 
             "question_text": "Have there been any residential school trips that you would have liked to have attended but couldn't?", 
-            "question_number": 71, 
-            "variable_name": "DepriveAct01_7F"
+            "variableid": "DepriveAct01_7F", 
+            "question_number": 71
         }, 
         {
             "response_table": [
@@ -1081,8 +1081,8 @@
                 }
             ], 
             "question_text": "Why couldn't you go on these (select all that apply)? My parents did not think I should go on the trip", 
-            "question_number": 72, 
-            "variable_name": "DepriveAct02_7F"
+            "variableid": "DepriveAct02_7F", 
+            "question_number": 72
         }, 
         {
             "response_table": [
@@ -1098,8 +1098,8 @@
                 }
             ], 
             "question_text": "Why couldn't you go on these (select all that apply)? My school/teachers would not let me go on the trip", 
-            "question_number": 73, 
-            "variable_name": "DepriveAct03_7F"
+            "variableid": "DepriveAct03_7F", 
+            "question_number": 73
         }, 
         {
             "response_table": [
@@ -1115,8 +1115,8 @@
                 }
             ], 
             "question_text": "Why couldn't you go on these (select all that apply)? My parents/carers said they could not afford for me to go on the trip", 
-            "question_number": 74, 
-            "variable_name": "DepriveAct04_7F"
+            "variableid": "DepriveAct04_7F", 
+            "question_number": 74
         }, 
         {
             "response_table": [
@@ -1132,8 +1132,8 @@
                 }
             ], 
             "question_text": "Why couldn't you go on these (select all that apply)? It would have meant I missed something else that I preferred to do", 
-            "question_number": 75, 
-            "variable_name": "DepriveAct05_7F"
+            "variableid": "DepriveAct05_7F", 
+            "question_number": 75
         }, 
         {
             "response_table": [
@@ -1149,14 +1149,14 @@
                 }
             ], 
             "question_text": "Why couldn't you go on these (select all that apply)? I have already been on residential trips outside school", 
-            "question_number": 76, 
-            "variable_name": "DepriveAct06_7F"
+            "variableid": "DepriveAct06_7F", 
+            "question_number": 76
         }, 
         {
             "response_table": [], 
             "question_text": "Where did you go when you left the classroom? - Other - Text", 
-            "question_number": 77, 
-            "variable_name": "BehaveSch16_7F"
+            "variableid": "BehaveSch16_7F", 
+            "question_number": 77
         }, 
         {
             "response_table": [
@@ -1674,8 +1674,8 @@
                 }
             ], 
             "question_text": "What activities did you do after you had been sent out of the classroom? - Selected Choice", 
-            "question_number": 79, 
-            "variable_name": "BehaveSch17_7F"
+            "variableid": "BehaveSch17_7F", 
+            "question_number": 79
         }, 
         {
             "response_table": [
@@ -1706,14 +1706,14 @@
                 }
             ], 
             "question_text": "When did you have to do the detention? - Selected Choice", 
-            "question_number": 86, 
-            "variable_name": "BehaveSch21_7F"
+            "variableid": "BehaveSch21_7F", 
+            "question_number": 86
         }, 
         {
             "response_table": [], 
             "question_text": "When did you have to do the detention? - Other - Text", 
-            "question_number": 87, 
-            "variable_name": "BehaveSch22_7F"
+            "variableid": "BehaveSch22_7F", 
+            "question_number": 87
         }, 
         {
             "response_table": [
@@ -1739,8 +1739,8 @@
                 }
             ], 
             "question_text": "How often are you given a detention?", 
-            "question_number": 88, 
-            "variable_name": "BehaveSch23_7F"
+            "variableid": "BehaveSch23_7F", 
+            "question_number": 88
         }, 
         {
             "response_table": [
@@ -1771,14 +1771,14 @@
                 }
             ], 
             "question_text": "When do you usually have to do the detention? - Selected Choice", 
-            "question_number": 89, 
-            "variable_name": "BehaveSch24_7F"
+            "variableid": "BehaveSch24_7F", 
+            "question_number": 89
         }, 
         {
             "response_table": [], 
             "question_text": "When do you usually have to do the detention? - Other - Text", 
-            "question_number": 90, 
-            "variable_name": "BehaveSch25_7F"
+            "variableid": "BehaveSch25_7F", 
+            "question_number": 90
         }, 
         {
             "response_table": [
@@ -1804,8 +1804,8 @@
                 }
             ], 
             "question_text": "Your parents' and carers' mobile phone use - How much time do your parents or carers spend using their mobile phones when they're with you?", 
-            "question_number": 91, 
-            "variable_name": "FamCom01_7F"
+            "variableid": "FamCom01_7F", 
+            "question_number": 91
         }, 
         {
             "response_table": [
@@ -1836,8 +1836,8 @@
                 }
             ], 
             "question_text": "Your parents' and carers' mobile phone use - How easy is it to get your parents' or carers' attention when they are using their mobile phone?", 
-            "question_number": 92, 
-            "variable_name": "FamCom02_7F"
+            "variableid": "FamCom02_7F", 
+            "question_number": 92
         }, 
         {
             "response_table": [
@@ -1868,14 +1868,14 @@
                 }
             ], 
             "question_text": "How often do you ask your parents or carers to stop using their mobile phones?", 
-            "question_number": 93, 
-            "variable_name": "FamCom03_7F"
+            "variableid": "FamCom03_7F", 
+            "question_number": 93
         }, 
         {
             "response_table": [], 
             "question_text": "Please tell us what's the main reason you ask your parent or carer to stop using their mobile phone", 
-            "question_number": 94, 
-            "variable_name": "FamCom04_7F"
+            "variableid": "FamCom04_7F", 
+            "question_number": 94
         }, 
         {
             "response_table": [
@@ -1891,8 +1891,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Facebook", 
-            "question_number": 99, 
-            "variable_name": "SocialMed08_7F"
+            "variableid": "SocialMed08_7F", 
+            "question_number": 99
         }, 
         {
             "response_table": [
@@ -1908,8 +1908,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Instagram", 
-            "question_number": 100, 
-            "variable_name": "SocialMed09_7F"
+            "variableid": "SocialMed09_7F", 
+            "question_number": 100
         }, 
         {
             "response_table": [
@@ -1925,8 +1925,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Pinterest", 
-            "question_number": 101, 
-            "variable_name": "SocialMed10_7F"
+            "variableid": "SocialMed10_7F", 
+            "question_number": 101
         }, 
         {
             "response_table": [
@@ -1942,8 +1942,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Playstation", 
-            "question_number": 102, 
-            "variable_name": "SocialMed11_7F"
+            "variableid": "SocialMed11_7F", 
+            "question_number": 102
         }, 
         {
             "response_table": [
@@ -1959,8 +1959,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Reddit", 
-            "question_number": 103, 
-            "variable_name": "SocialMed12_7F"
+            "variableid": "SocialMed12_7F", 
+            "question_number": 103
         }, 
         {
             "response_table": [
@@ -1976,8 +1976,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Skype", 
-            "question_number": 104, 
-            "variable_name": "SocialMed13_7F"
+            "variableid": "SocialMed13_7F", 
+            "question_number": 104
         }, 
         {
             "response_table": [
@@ -1993,8 +1993,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Snapchat", 
-            "question_number": 105, 
-            "variable_name": "SocialMed14_7F"
+            "variableid": "SocialMed14_7F", 
+            "question_number": 105
         }, 
         {
             "response_table": [
@@ -2010,8 +2010,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice TikTok", 
-            "question_number": 106, 
-            "variable_name": "SocialMed15_7F"
+            "variableid": "SocialMed15_7F", 
+            "question_number": 106
         }, 
         {
             "response_table": [
@@ -2027,8 +2027,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Tumblr", 
-            "question_number": 107, 
-            "variable_name": "SocialMed16_7F"
+            "variableid": "SocialMed16_7F", 
+            "question_number": 107
         }, 
         {
             "response_table": [
@@ -2044,8 +2044,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Twitch", 
-            "question_number": 108, 
-            "variable_name": "SocialMed17_7F"
+            "variableid": "SocialMed17_7F", 
+            "question_number": 108
         }, 
         {
             "response_table": [
@@ -2061,8 +2061,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Twitter", 
-            "question_number": 109, 
-            "variable_name": "SocialMed18_7F"
+            "variableid": "SocialMed18_7F", 
+            "question_number": 109
         }, 
         {
             "response_table": [
@@ -2078,8 +2078,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice WhatsApp", 
-            "question_number": 110, 
-            "variable_name": "SocialMed19_7F"
+            "variableid": "SocialMed19_7F", 
+            "question_number": 110
         }, 
         {
             "response_table": [
@@ -2095,8 +2095,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice XBOX", 
-            "question_number": 111, 
-            "variable_name": "SocialMed20_7F"
+            "variableid": "SocialMed20_7F", 
+            "question_number": 111
         }, 
         {
             "response_table": [
@@ -2112,8 +2112,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Online games (apart from XBOX and Playstation)", 
-            "question_number": 112, 
-            "variable_name": "SocialMed21_7F"
+            "variableid": "SocialMed21_7F", 
+            "question_number": 112
         }, 
         {
             "response_table": [
@@ -2129,8 +2129,8 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice YouTube", 
-            "question_number": 113, 
-            "variable_name": "SocialMed22_7F"
+            "variableid": "SocialMed22_7F", 
+            "question_number": 113
         }, 
         {
             "response_table": [
@@ -2146,14 +2146,14 @@
                 }
             ], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Selected Choice Other", 
-            "question_number": 114, 
-            "variable_name": "SocialMed23_7F"
+            "variableid": "SocialMed23_7F", 
+            "question_number": 114
         }, 
         {
             "response_table": [], 
             "question_text": "Which of the following online accounts have you used in the last week? (select as many as apply) - Other - Text", 
-            "question_number": 115, 
-            "variable_name": "SocialMed24_7F"
+            "variableid": "SocialMed24_7F", 
+            "question_number": 115
         }, 
         {
             "response_table": [
@@ -2169,8 +2169,8 @@
                 }
             ], 
             "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures only of me", 
-            "question_number": 129, 
-            "variable_name": "SocialMed25_7F"
+            "variableid": "SocialMed25_7F", 
+            "question_number": 129
         }, 
         {
             "response_table": [
@@ -2186,8 +2186,8 @@
                 }
             ], 
             "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures of my friends", 
-            "question_number": 130, 
-            "variable_name": "SocialMed26_7F"
+            "variableid": "SocialMed26_7F", 
+            "question_number": 130
         }, 
         {
             "response_table": [
@@ -2203,8 +2203,8 @@
                 }
             ], 
             "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures of me and my friends", 
-            "question_number": 131, 
-            "variable_name": "SocialMed27_7F"
+            "variableid": "SocialMed27_7F", 
+            "question_number": 131
         }, 
         {
             "response_table": [
@@ -2220,8 +2220,8 @@
                 }
             ], 
             "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures of family", 
-            "question_number": 132, 
-            "variable_name": "SocialMed28_7F"
+            "variableid": "SocialMed28_7F", 
+            "question_number": 132
         }, 
         {
             "response_table": [
@@ -2237,8 +2237,8 @@
                 }
             ], 
             "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures of pets/animals", 
-            "question_number": 133, 
-            "variable_name": "SocialMed29_7F"
+            "variableid": "SocialMed29_7F", 
+            "question_number": 133
         }, 
         {
             "response_table": [
@@ -2254,8 +2254,8 @@
                 }
             ], 
             "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Pictures of places and things", 
-            "question_number": 134, 
-            "variable_name": "SocialMed30_7F"
+            "variableid": "SocialMed30_7F", 
+            "question_number": 134
         }, 
         {
             "response_table": [
@@ -2271,14 +2271,14 @@
                 }
             ], 
             "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Selected Choice Other", 
-            "question_number": 135, 
-            "variable_name": "SocialMed31_7F"
+            "variableid": "SocialMed31_7F", 
+            "question_number": 135
         }, 
         {
             "response_table": [], 
             "question_text": "When I post pictures on social media they are usually... (select as many as apply) - Other - Text", 
-            "question_number": 136, 
-            "variable_name": "SocialMed32_7F"
+            "variableid": "SocialMed32_7F", 
+            "question_number": 136
         }, 
         {
             "response_table": [
@@ -2319,8 +2319,8 @@
                 }
             ], 
             "question_text": "Your routine communication with your friends How many ... - friends' posts have you commented on in the last 24 hours?", 
-            "question_number": 138, 
-            "variable_name": "FrndComFrq08_7F"
+            "variableid": "FrndComFrq08_7F", 
+            "question_number": 138
         }, 
         {
             "response_table": [
@@ -2346,8 +2346,8 @@
                 }
             ], 
             "question_text": "Have you met everyone in person who you ... - play games with online?", 
-            "question_number": 139, 
-            "variable_name": "FrndCom07_7F"
+            "variableid": "FrndCom07_7F", 
+            "question_number": 139
         }, 
         {
             "response_table": [
@@ -2373,8 +2373,8 @@
                 }
             ], 
             "question_text": "Have you met everyone in person who you ... - are friends with on social media?", 
-            "question_number": 140, 
-            "variable_name": "FrndCom08_7F"
+            "variableid": "FrndCom08_7F", 
+            "question_number": 140
         }, 
         {
             "response_table": [
@@ -2400,14 +2400,14 @@
                 }
             ], 
             "question_text": "Do you prefer to communicate with your school friends online or     face-to-face?", 
-            "question_number": 141, 
-            "variable_name": "FrndComAtt01_7F"
+            "variableid": "FrndComAtt01_7F", 
+            "question_number": 141
         }, 
         {
             "response_table": [], 
             "question_text": "Please explain why", 
-            "question_number": 142, 
-            "variable_name": "FrndComAtt02_7F"
+            "variableid": "FrndComAtt02_7F", 
+            "question_number": 142
         }, 
         {
             "response_table": [
@@ -2428,14 +2428,14 @@
                 }
             ], 
             "question_text": "Have you ever blocked a friend online?", 
-            "question_number": 143, 
-            "variable_name": "FrndCom09_7F"
+            "variableid": "FrndCom09_7F", 
+            "question_number": 143
         }, 
         {
             "response_table": [], 
             "question_text": "Please explain why.", 
-            "question_number": 144, 
-            "variable_name": "FrndCom10_7F"
+            "variableid": "FrndCom10_7F", 
+            "question_number": 144
         }, 
         {
             "response_table": [
@@ -2456,8 +2456,8 @@
                 }
             ], 
             "question_text": "The National Assembly for Wales has set up a Welsh Youth Parliament which had elections in November 2018. Have you heard of the Welsh Youth Parliament?", 
-            "question_number": 146, 
-            "variable_name": "Pol01_7F"
+            "variableid": "Pol01_7F", 
+            "question_number": 146
         }, 
         {
             "response_table": [
@@ -2478,8 +2478,8 @@
                 }
             ], 
             "question_text": "Did you think about standing for election as a Member of the Welsh Youth Parliament?", 
-            "question_number": 147, 
-            "variable_name": "EngPol25_7F"
+            "variableid": "EngPol25_7F", 
+            "question_number": 147
         }, 
         {
             "response_table": [
@@ -2500,8 +2500,8 @@
                 }
             ], 
             "question_text": "Did you register to vote in the elections for the Welsh Youth Parliament?", 
-            "question_number": 148, 
-            "variable_name": "EngPol26_7F"
+            "variableid": "EngPol26_7F", 
+            "question_number": 148
         }, 
         {
             "response_table": [
@@ -2517,8 +2517,8 @@
                 }
             ], 
             "question_text": "Why didn't you register to vote? (tick as many as apply) - Selected Choice I didn't know how to register", 
-            "question_number": 149, 
-            "variable_name": "EngPol27_7F"
+            "variableid": "EngPol27_7F", 
+            "question_number": 149
         }, 
         {
             "response_table": [
@@ -2534,8 +2534,8 @@
                 }
             ], 
             "question_text": "Why didn't you register to vote? (tick as many as apply) - Selected Choice It was too difficult to register", 
-            "question_number": 150, 
-            "variable_name": "EngPol28_7F"
+            "variableid": "EngPol28_7F", 
+            "question_number": 150
         }, 
         {
             "response_table": [
@@ -2551,8 +2551,8 @@
                 }
             ], 
             "question_text": "Why didn't you register to vote? (tick as many as apply) - Selected Choice I couldn't see the point of it", 
-            "question_number": 151, 
-            "variable_name": "EngPol29_7F"
+            "variableid": "EngPol29_7F", 
+            "question_number": 151
         }, 
         {
             "response_table": [
@@ -2568,14 +2568,14 @@
                 }
             ], 
             "question_text": "Why didn't you register to vote? (tick as many as apply) - Selected Choice Other", 
-            "question_number": 152, 
-            "variable_name": "EngPol30_7F"
+            "variableid": "EngPol30_7F", 
+            "question_number": 152
         }, 
         {
             "response_table": [], 
             "question_text": "Why didn't you register to vote? (tick as many as apply) - Other - Text", 
-            "question_number": 153, 
-            "variable_name": "EngPol31_7F"
+            "variableid": "EngPol31_7F", 
+            "question_number": 153
         }, 
         {
             "response_table": [
@@ -2596,8 +2596,8 @@
                 }
             ], 
             "question_text": "Did you vote in the election for the Welsh Youth Parliament?", 
-            "question_number": 154, 
-            "variable_name": "EngPol32_7F"
+            "variableid": "EngPol32_7F", 
+            "question_number": 154
         }, 
         {
             "response_table": [
@@ -2633,68 +2633,68 @@
                 }
             ], 
             "question_text": "Why didn't you vote? - Selected Choice", 
-            "question_number": 155, 
-            "variable_name": "EngPol33_7F"
+            "variableid": "EngPol33_7F", 
+            "question_number": 155
         }, 
         {
             "response_table": [], 
             "question_text": "Why didn't you vote? - Other - Text", 
-            "question_number": 156, 
-            "variable_name": "EngPol34_7F"
+            "variableid": "EngPol34_7F", 
+            "question_number": 156
         }, 
         {
             "response_table": [], 
             "question_text": "What are the three most important issues that you would like to see the Welsh Youth Parliament take forward? - 1", 
-            "question_number": 157, 
-            "variable_name": "EngPol35_7F"
+            "variableid": "EngPol35_7F", 
+            "question_number": 157
         }, 
         {
             "response_table": [], 
             "question_text": "What are the three most important issues that you would like to see the Welsh Youth Parliament take forward? - 2", 
-            "question_number": 158, 
-            "variable_name": "EngPol36_7F"
+            "variableid": "EngPol36_7F", 
+            "question_number": 158
         }, 
         {
             "response_table": [], 
             "question_text": "What are the three most important issues that you would like to see the Welsh Youth Parliament take forward? - 3", 
-            "question_number": 159, 
-            "variable_name": "EngPol37_7F"
+            "variableid": "EngPol37_7F", 
+            "question_number": 159
         }, 
         {
             "response_table": [], 
             "question_text": "What do you look forward to the most after school?", 
-            "question_number": 160, 
-            "variable_name": "ActAtt01_7F"
+            "variableid": "ActAtt01_7F", 
+            "question_number": 160
         }, 
         {
             "response_table": [], 
             "question_text": "What do you look forward to the most at the weekend (during school term)?", 
-            "question_number": 161, 
-            "variable_name": "ActAtt02_7F"
+            "variableid": "ActAtt02_7F", 
+            "question_number": 161
         }, 
         {
             "response_table": [], 
             "question_text": "What don't you look forward to at the end of the school day?", 
-            "question_number": 162, 
-            "variable_name": "ActAtt03_7F"
+            "variableid": "ActAtt03_7F", 
+            "question_number": 162
         }, 
         {
             "response_table": [], 
             "question_text": "What do you least look forward to at the weekend (during school term)?", 
-            "question_number": 163, 
-            "variable_name": "ActAtt04_7F"
+            "variableid": "ActAtt04_7F", 
+            "question_number": 163
         }, 
         {
             "response_table": [], 
             "question_text": "What time did you go to bed last night?", 
-            "question_number": 164, 
-            "variable_name": "RoutnSleep03_7F"
+            "variableid": "RoutnSleep03_7F", 
+            "question_number": 164
         }, 
         {
             "response_table": [], 
             "question_text": "What time did you get up for school this morning?", 
-            "question_number": 165, 
-            "variable_name": "RoutnSleep01_7F"
+            "variableid": "RoutnSleep01_7F", 
+            "question_number": 165
         }, 
         {
             "response_table": [
@@ -2725,8 +2725,8 @@
                 }
             ], 
             "question_text": "Do you go to bed at the same time each school night?", 
-            "question_number": 166, 
-            "variable_name": "RoutnSleep04_7F"
+            "variableid": "RoutnSleep04_7F", 
+            "question_number": 166
         }, 
         {
             "response_table": [
@@ -2762,8 +2762,8 @@
                 }
             ], 
             "question_text": "How often do you... - go to school feeling tired?", 
-            "question_number": 167, 
-            "variable_name": "RoutnSleep07_7F"
+            "variableid": "RoutnSleep07_7F", 
+            "question_number": 167
         }, 
         {
             "response_table": [
@@ -2799,8 +2799,8 @@
                 }
             ], 
             "question_text": "How often do you... - wake up at night to message a friend, or check messages, on the computer, tablet or your phone?", 
-            "question_number": 168, 
-            "variable_name": "RoutnSleep05_7F"
+            "variableid": "RoutnSleep05_7F", 
+            "question_number": 168
         }, 
         {
             "response_table": [
@@ -2836,8 +2836,8 @@
                 }
             ], 
             "question_text": "How often do you... - eat breakfast before school starts?", 
-            "question_number": 169, 
-            "variable_name": "RoutnFood04_7F"
+            "variableid": "RoutnFood04_7F", 
+            "question_number": 169
         }, 
         {
             "response_table": [
@@ -2873,8 +2873,8 @@
                 }
             ], 
             "question_text": "How often do you... - skip lunch at school?", 
-            "question_number": 170, 
-            "variable_name": "RoutnFood05_7F"
+            "variableid": "RoutnFood05_7F", 
+            "question_number": 170
         }, 
         {
             "response_table": [
@@ -2935,8 +2935,8 @@
                 }
             ], 
             "question_text": "These questions use a scale of 1 to 10. 1 means not happy with the sentence, 10 means that you're totally happy. - How happy are you with how much free time you have?", 
-            "question_number": 171, 
-            "variable_name": "WellSat18_7F"
+            "variableid": "WellSat18_7F", 
+            "question_number": 171
         }, 
         {
             "response_table": [
@@ -2977,8 +2977,8 @@
                 }
             ], 
             "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Helping out around the house (household chores)", 
-            "question_number": 173, 
-            "variable_name": "FamActFrq28_7F"
+            "variableid": "FamActFrq28_7F", 
+            "question_number": 173
         }, 
         {
             "response_table": [
@@ -3019,8 +3019,8 @@
                 }
             ], 
             "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Taking care of brothers or sisters or other family members", 
-            "question_number": 174, 
-            "variable_name": "FamActFrq29_7F"
+            "variableid": "FamActFrq29_7F", 
+            "question_number": 174
         }, 
         {
             "response_table": [
@@ -3061,8 +3061,8 @@
                 }
             ], 
             "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Working with family (e.g. family business, family farm)", 
-            "question_number": 174, 
-            "variable_name": "FamActFrq29_7F"
+            "variableid": "FamActFrq29_7F", 
+            "question_number": 174
         }, 
         {
             "response_table": [
@@ -3103,8 +3103,8 @@
                 }
             ], 
             "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Doing other work (not with family) for money or food", 
-            "question_number": 176, 
-            "variable_name": "EmpAct07_7F"
+            "variableid": "EmpAct07_7F", 
+            "question_number": 176
         }, 
         {
             "response_table": [
@@ -3145,8 +3145,8 @@
                 }
             ], 
             "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Doing homework and studying", 
-            "question_number": 178, 
-            "variable_name": "SchActFrq01_7F"
+            "variableid": "SchActFrq01_7F", 
+            "question_number": 178
         }, 
         {
             "response_table": [
@@ -3187,8 +3187,8 @@
                 }
             ], 
             "question_text": "How often do you usually spend time doing the following activities when you are not at school? - Going to religious places or services", 
-            "question_number": 179, 
-            "variable_name": "Relig04_7F"
+            "variableid": "Relig04_7F", 
+            "question_number": 179
         }, 
         {
             "response_table": [
@@ -3224,8 +3224,8 @@
                 }
             ], 
             "question_text": "And how often do you usually spend time doing the following activities when you are not at school? - Playing sports or doing exercise", 
-            "question_number": 181, 
-            "variable_name": "HobFrq02_7F"
+            "variableid": "HobFrq02_7F", 
+            "question_number": 181
         }, 
         {
             "response_table": [
@@ -3261,8 +3261,8 @@
                 }
             ], 
             "question_text": "And how often do you usually spend time doing the following activities when you are not at school? - Relaxing, talking or having fun with family", 
-            "question_number": 182, 
-            "variable_name": "FamActFrq30_7F"
+            "variableid": "FamActFrq30_7F", 
+            "question_number": 182
         }, 
         {
             "response_table": [
@@ -3298,8 +3298,8 @@
                 }
             ], 
             "question_text": "And how often do you usually spend time doing the following activities when you are not at school? - Using social media (on a computer, tablet or phone)", 
-            "question_number": 184, 
-            "variable_name": "SocialMed33_7F"
+            "variableid": "SocialMed33_7F", 
+            "question_number": 184
         }, 
         {
             "response_table": [
@@ -3335,8 +3335,8 @@
                 }
             ], 
             "question_text": "And how often do you usually spend time doing the following activities when you are not at school? - Playing electronic games (on a computer or other device)", 
-            "question_number": 185, 
-            "variable_name": "HobFrq01_7F"
+            "variableid": "HobFrq01_7F", 
+            "question_number": 185
         }, 
         {
             "response_table": [
@@ -3357,8 +3357,8 @@
                 }
             ], 
             "question_text": "Do you receive money each week?", 
-            "question_number": 187, 
-            "variable_name": "Money17_7F"
+            "variableid": "Money17_7F", 
+            "question_number": 187
         }, 
         {
             "response_table": [
@@ -3374,8 +3374,8 @@
                 }
             ], 
             "question_text": "Does the money you receive come from ... (Tick as many as you like) - Selected Choice your parents as regular 'pocket money'?", 
-            "question_number": 188, 
-            "variable_name": "Money05_7F"
+            "variableid": "Money05_7F", 
+            "question_number": 188
         }, 
         {
             "response_table": [
@@ -3391,8 +3391,8 @@
                 }
             ], 
             "question_text": "Does the money you receive come from ... (Tick as many as you like) - Selected Choice other relatives?", 
-            "question_number": 189, 
-            "variable_name": "Money08_7F"
+            "variableid": "Money08_7F", 
+            "question_number": 189
         }, 
         {
             "response_table": [
@@ -3408,8 +3408,8 @@
                 }
             ], 
             "question_text": "Does the money you receive come from ... (Tick as many as you like) - Selected Choice doing chores around the home?", 
-            "question_number": 190, 
-            "variable_name": "Money07_7F"
+            "variableid": "Money07_7F", 
+            "question_number": 190
         }, 
         {
             "response_table": [
@@ -3425,8 +3425,8 @@
                 }
             ], 
             "question_text": "Does the money you receive come from ... (Tick as many as you like) - Selected Choice part-time jobs?", 
-            "question_number": 191, 
-            "variable_name": "Money09_7F"
+            "variableid": "Money09_7F", 
+            "question_number": 191
         }, 
         {
             "response_table": [
@@ -3442,14 +3442,14 @@
                 }
             ], 
             "question_text": "Does the money you receive come from ... (Tick as many as you like) - Selected Choice other", 
-            "question_number": 192, 
-            "variable_name": "Money11_7F"
+            "variableid": "Money11_7F", 
+            "question_number": 192
         }, 
         {
             "response_table": [], 
             "question_text": "Does the money you receive come from ... (Tick as many as you like) - other - Text", 
-            "question_number": 193, 
-            "variable_name": "Money18_7F"
+            "variableid": "Money18_7F", 
+            "question_number": 193
         }, 
         {
             "response_table": [
@@ -3470,14 +3470,14 @@
                 }
             ], 
             "question_text": "Are you saving up for something at the moment?", 
-            "question_number": 194, 
-            "variable_name": "Money14_7F"
+            "variableid": "Money14_7F", 
+            "question_number": 194
         }, 
         {
             "response_table": [], 
             "question_text": "What is it you're saving up for?", 
-            "question_number": 195, 
-            "variable_name": "Money16_7F"
+            "variableid": "Money16_7F", 
+            "question_number": 195
         }
     ]
 }

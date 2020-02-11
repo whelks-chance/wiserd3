@@ -2,7 +2,7 @@ pyvirtualdisplay
 BeautifulSoup==3.2.1
 
 #Django==1.8.3
-Django==1.9
+Django==1.11.28
 
 PyJWT==1.4.0
 PyYAML==3.11

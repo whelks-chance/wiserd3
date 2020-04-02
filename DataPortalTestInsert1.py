@@ -21,8 +21,8 @@ def insert_data_sj():
     for question in questions:
         # To access a field in the question use .fieldname
         questionid = question.qid
-        print 'Testing: ',questionid
-        #Iterate through every row in the import file
+        print 'Testing: ', questionid
+        #Iterate through every row in the import filel
         importfile = csv.DictReader(open("themes.csv"))
         for row in importfile:
             # Get the new variable name and the qid from the import file.

@@ -15,7 +15,7 @@ class RawQuestion:
 
     def description(self):
         return {
-            'variable_name': self.variable_name,
+            'variableid': self.variable_name,
             'question_text': self.question_text,
             'response_table': self.response_table,
             'question_number': self.question_number
@@ -89,7 +89,7 @@ class QuestionResponseLinker:
                         # Turn 1 'Yes' 2 'No' into
                         # 1 'Yes'
                         # 2 'No'
-                        mapping_list = str(mapping_cell.value.encode('utf-8')).split("' ")
+                        mapping_list = str(mapping_cell.value).split("' ")
                         for map in mapping_list:
                             map_text_value = map.split(' ')
                             # 1 'Yes' into
@@ -199,11 +199,11 @@ class QuestionResponseLinker:
 
 
 if __name__ == '__main__':
-    qbank_file = '/home/kdickson/QuestionBank_Education_2019.xlsx'
-    sweep_cohort_responses_file = '/home/kdickson/Surveys/Sweep6CohortX_Redacted.xlsx'
+    qbank_file = '/home/kdickson/QuestionBank_Education.xlsx'
+    sweep_cohort_responses_file = '/home/kdickson/Surveys/Sweep7CohortF_Redacted.xlsx'
 
-    qrl = QuestionResponseLinker(qbank_file, sweep_cohort_responses_file, '6x')
+    qrl = QuestionResponseLinker(qbank_file, sweep_cohort_responses_file, '7F')
 
     sample = qrl.run()
-    with open('sample_6x.json', 'w') as outputfile:
+    with open('sample_7F.json', 'w') as outputfile:
         outputfile.write(json.dumps(sample.description(), indent=4))

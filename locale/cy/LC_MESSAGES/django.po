@@ -1038,6 +1038,9 @@ msgstr "Cynulliad Cenedlaethol Cymru"
 msgid "Senedd Research"
 msgstr "Ymchwil y Senedd"
 
+msgid "WElsh Parliament"
+msgstr "Senedd Cymru"
+
 #: templates/dashboard.html:191 templates/dashboard.html.py:198
 #: templates/wiserd_education.html:5 templates/wiserd_education.html.py:63
 msgid "WISERDEducation"

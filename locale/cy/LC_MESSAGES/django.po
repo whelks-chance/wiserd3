@@ -1038,7 +1038,7 @@ msgstr "Cynulliad Cenedlaethol Cymru"
 msgid "Senedd Research"
 msgstr "Ymchwil y Senedd"
 
-msgid "WElsh Parliament"
+msgid "Welsh Parliament"
 msgstr "Senedd Cymru"
 
 #: templates/dashboard.html:191 templates/dashboard.html.py:198

@@ -28,6 +28,7 @@
                 <div class="panel-body">
 
                     <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+                  <p>{% blocktrans %}Please be aware that on signing up you will find a Server Error 500 page - you can still sign up and navigate back to the dataportal to sign in after.{% endblocktrans %}</p>
 
                     <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                         {% csrf_token %}

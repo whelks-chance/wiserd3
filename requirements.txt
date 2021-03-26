@@ -72,7 +72,7 @@ pandaSDMX
 pandas==0.16.2
 
 psycopg2==2.6.1
-pyOpenSSL==0.15.1
+pyOpenSSL==17.5.0
 pyasn1==0.1.8
 pycparser==2.14
 

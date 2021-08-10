@@ -12,7 +12,7 @@
         "tile_name": "cadw_world_heritage_sites_combined"
     }, 
     {
-        "legend_img": "https://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Areas_Affecting_Bathing_Waters",
+        "legend_img": "http://lle.gov.wales/services/inspire-nrw/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=Areas_Affecting_Bathing_Waters",
         "wfs_geometry_field": [
             "GEOM", 
             "fme_geometry", 
@@ -1995,7 +1995,7 @@
         ], 
         "name": "All Schools Wales", 
         "tile_name": "All_Schools_Wales", 
-        "source": "https://lle.wales.gov.uk/services/inspire-wg/wms",
+        "source": "http://lle.wales.gov.uk/services/inspire-wg/wms",
         "wfs_namespace": "inspire-wg"
     }, 
     {

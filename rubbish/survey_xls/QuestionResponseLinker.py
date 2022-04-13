@@ -70,6 +70,8 @@ class QuestionResponseLinker:
             assert isinstance(variable_name_cell, Cell)
 
             if self.variable_name_filter_str in variable_name_cell.value:
+                if self.variable_name_filter_str in variable_name_cell.value is None:
+                    continue
                 print('We are on row {}'.format(variable_name_cell.row))
 
                 rq = RawQuestion(variable_name_cell.value)
@@ -89,7 +91,8 @@ class QuestionResponseLinker:
                         # Turn 1 'Yes' 2 'No' into
                         # 1 'Yes'
                         # 2 'No'
-                        mapping_list = str(mapping_cell.value).split("' ")
+                        print('MAPPING CELL VALUE', mapping_cell.value)
+                        mapping_list = str(mapping_cell.value).encode('utf-8').split("' ")
                         for map in mapping_list:
                             map_text_value = map.split(' ')
                             # 1 'Yes' into
@@ -189,6 +192,7 @@ class QuestionResponseLinker:
                             sample.questions.append(rq)
 
                             print('****\n\n')
+
         return sample
 
 
@@ -200,10 +204,10 @@ class QuestionResponseLinker:
 
 if __name__ == '__main__':
     qbank_file = '/home/kdickson/QuestionBank_Education.xlsx'
-    sweep_cohort_responses_file = '/home/kdickson/Surveys/Sweep7CohortF_Redacted.xlsx'
+    sweep_cohort_responses_file = '/home/kdickson/Surveys/Sweep9_Redacted.xlsx'
 
-    qrl = QuestionResponseLinker(qbank_file, sweep_cohort_responses_file, '7F')
+    qrl = QuestionResponseLinker(qbank_file, sweep_cohort_responses_file, '9')
 
     sample = qrl.run()
-    with open('sample_7F.json', 'w') as outputfile:
+    with open('sample_9.json', 'w') as outputfile:
         outputfile.write(json.dumps(sample.description(), indent=4))

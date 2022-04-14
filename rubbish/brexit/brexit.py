@@ -21,7 +21,7 @@ class BrexitRecording:
                 print 'Loaded from file'
         else:
             url = 'https://public.broker.elections.api.bbci.co.uk/components/batch?components%5Beu_ref_banner_data_en%5D%5Bcomponent%5D=eu_ref_banner_data_en&components%5Beu_ref_ticker_en%5D%5Bcomponent%5D=eu_ref_ticker_en&components%5Bpolling_policy%5D%5Bcomponent%5D=polling_policy&components%5Beu_ref_nation_results_data_en%5D%5Bcomponent%5D=eu_ref_nation_results_data_en&components%5Beu_ref_latest_local_results_en%5D%5Bcomponent%5D=eu_ref_latest_local_results_en&components%5Beu_ref_map_data%5D%5Bcomponent%5D=eu_ref_map_data'
-
+            # url = 'http://explore.data.parliament.uk/?learnmore=Election%20Results'
             res = requests.get(url)
             res_text = res.text
             print 'Loaded from URL'

@@ -1,0 +1,596 @@
+{
+    "questions": [
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 40
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 705
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 31
+                }
+            ], 
+            "question_text": "Do you agree with the following statements? - Moving up from primary school to secondary school was stressful", 
+            "variableid": "SchTranAtt19", 
+            "question_number": 12
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 205
+                }, 
+                {
+                    "value": "3", 
+                    "response": "No", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Mostly", 
+                    "response (n)": 141
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 573
+                }
+            ], 
+            "question_text": "Were you happy with the choices available to you?", 
+            "variableid": "SchSubjAtt19", 
+            "question_number": 27
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "By course work (completed at home or online)", 
+                    "response (n)": 131
+                }, 
+                {
+                    "value": "3", 
+                    "response": "By controlled assessment in school", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "1", 
+                    "response": "By exam", 
+                    "response (n)": 139
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not sure", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 489
+                }
+            ], 
+            "question_text": "How would you prefer to be assessed in the following subjects for GCSEs? - Maths", 
+            "variableid": "SchLearnAtt59", 
+            "question_number": 36
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "My own bedroom", 
+                    "response (n)": 529
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Lounge/Living room", 
+                    "response (n)": 115
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A shared bedroom", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Spare room/office", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "6", 
+                    "response": "I dont have a space to do schoolwork at home", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Kitchen", 
+                    "response (n)": 72
+                }
+            ], 
+            "question_text": "Where do your schoolwork at home?", 
+            "variableid": "CovidSchAct09", 
+            "question_number": 48
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 491
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 319
+                }
+            ], 
+            "question_text": "Please choose your 3 favourite ways to learn at home - Selected Choice Online live videos from my teachers", 
+            "variableid": "CovidSchLearn19", 
+            "question_number": 49
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 202
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 75
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 256
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 190
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 111
+                }
+            ], 
+            "question_text": "When learning at home... - I miss the structure school gives me", 
+            "variableid": "CovidSchLearn29", 
+            "question_number": 60
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Which subjects do you receive tutoring for? - Other (please specify) - Text", 
+            "variableid": "PrvtuSubj09", 
+            "question_number": 67
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 206
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 164
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 560
+                }
+            ], 
+            "question_text": "What two qualities of a teacher do you rate most highly? Good at providing feedback on work.", 
+            "variableid": "SchStafAtt39", 
+            "question_number": 87
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 586
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 140
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 204
+                }
+            ], 
+            "question_text": "Why do you want this job? (Choose your top 2 reasons) - Selected Choice I would enjoy it", 
+            "variableid": "AspCareerAtt09", 
+            "question_number": 92
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "I dont know", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "1", 
+                    "response": "I do most of it", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "3", 
+                    "response": "My partner does most of it", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "2", 
+                    "response": "We both do the same amount", 
+                    "response (n)": 541
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 230
+                }
+            ], 
+            "question_text": "Imagine that you are living with a partner and have children. How would you like to share the following tasks with your partner? - Tasks around the house like cooking and cleaning", 
+            "variableid": "RelAtt19", 
+            "question_number": 105
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "An apprenticeship", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Welsh Baccalaureate", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 444
+                }, 
+                {
+                    "value": "4", 
+                    "response": "A vocational qualification", 
+                    "response (n)": 7
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Look for a job", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "3", 
+                    "response": "A-levels", 
+                    "response (n)": 347
+                }
+            ], 
+            "question_text": "What do you think you will do after Year 11?", 
+            "variableid": "AspPostSch39", 
+            "question_number": 108
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 543
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 141
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 246
+                }
+            ], 
+            "question_text": "By the time you are 25, what 3 things would you most like to have or have done? - Selected Choice A job you enjoy", 
+            "variableid": "AspAchv19", 
+            "question_number": 113
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "No", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 179
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Im not sure", 
+                    "response (n)": 147
+                }, 
+                {
+                    "value": "2", 
+                    "response": "About the same", 
+                    "response (n)": 232
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 329
+                }
+            ], 
+            "question_text": "Do you think you will have a better standard of living when you are an adult than your parents/caregivers?", 
+            "variableid": "AspQoL09", 
+            "question_number": 126
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Not very much", 
+                    "response (n)": 389
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Completely", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 152
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Mostly", 
+                    "response (n)": 169
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not at all", 
+                    "response (n)": 169
+                }
+            ], 
+            "question_text": "How much do you generally trust the following people? - Youtubers", 
+            "variableid": "ProfAtt09", 
+            "question_number": 134
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Picture 3 - Vaughan Gething", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Picture 1 - Joe Biden", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Dont know", 
+                    "response (n)": 87
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Picture 2 - Mark Drakeford", 
+                    "response (n)": 631
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 163
+                }
+            ], 
+            "question_text": "Which one of these people is First Minister of Wales, Mark Drakeford?", 
+            "variableid": "EngPol39", 
+            "question_number": 139
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "The Welsh Government", 
+                    "response (n)": 451
+                }, 
+                {
+                    "value": "2", 
+                    "response": "The UK Government", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 359
+                }
+            ], 
+            "question_text": "Who do you think is in charge of the following areas in Wales: (Please tick one per row) - Education", 
+            "variableid": "EngPol19", 
+            "question_number": 156
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 197
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 728
+                }
+            ], 
+            "question_text": "Who did your parents/caregivers vote for? - The Liberal Democrats Parent/caregiver 1", 
+            "variableid": "EngPolFam09", 
+            "question_number": 172
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 114
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 194
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 622
+                }
+            ], 
+            "question_text": "Who did your parents/caregivers vote for? - Don't know Parent/caregiver 2", 
+            "variableid": "EngPolFam19", 
+            "question_number": 182
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 196
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 718
+                }
+            ], 
+            "question_text": "How did you protest? - Selected Choice Wrote a letter", 
+            "variableid": "CivilSocProt09", 
+            "question_number": 194
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 200
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Prefer not to say", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 677
+                }
+            ], 
+            "question_text": "Have you ever taken part in any of these protests or campaigns? - Welsh Independence", 
+            "variableid": "CivilSocProt19", 
+            "question_number": 204
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Neither agree nor disagree", 
+                    "response (n)": 259
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 205
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 184
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 152
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 60
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 70
+                }
+            ], 
+            "question_text": "Please tell us how much you agree or disagree with the following statements about protests - I need to protest for people who don't have a voice", 
+            "variableid": "CivilSocProt29", 
+            "question_number": 214
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Are there any issues you care particularly strongly about? (You may care about all of these issues, but please choose up to three you think about most). - Other - Text", 
+            "variableid": "EngSoc49", 
+            "question_number": 227
+        }
+    ]
+}

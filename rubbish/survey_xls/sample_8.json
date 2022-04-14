@@ -1,0 +1,4055 @@
+{
+    "questions": [
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Male", 
+                    "response (n)": 219
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Id prefer not to say", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Female", 
+                    "response (n)": 328
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "What is your gender? - Selected Choice", 
+            "variableid": "sex", 
+            "question_number": 3
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "You have come to the end of our questions - please use this space to tell us how you felt about completing the survey and if there is anything that we might have missed:", 
+            "variableid": "notes", 
+            "question_number": 147
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Sweep", 
+            "variableid": "sweep", 
+            "question_number": 150
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Cohort", 
+            "variableid": "cohort", 
+            "question_number": 153
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Cardiff", 
+                    "response (n)": 313
+                }, 
+                {
+                    "response": "Powys", 
+                    "response (n)": 135
+                }, 
+                {
+                    "response": "Swansea", 
+                    "response (n)": 64
+                }, 
+                {
+                    "response": "Pembrokeshire", 
+                    "response (n)": 48
+                }
+            ], 
+            "question_text": "Local Authority code", 
+            "variableid": "lacode", 
+            "question_number": 151
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Welsh", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "0", 
+                    "response": "English", 
+                    "response (n)": 542
+                }
+            ], 
+            "question_text": "Language completed", 
+            "variableid": "langresponse", 
+            "question_number": 152
+        }, 
+        {
+            "response_table": [], 
+            "question_text": null, 
+            "variableid": "schoolid", 
+            "question_number": 1
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Male", 
+                    "response (n)": 219
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Id prefer not to say", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Female", 
+                    "response (n)": 328
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "1.2 What is your gender?", 
+            "variableid": "sex", 
+            "question_number": 3
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Year 9", 
+                    "response (n)": 73
+                }, 
+                {
+                    "response": "Year 8", 
+                    "response (n)": 164
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Year 11", 
+                    "response (n)": 7
+                }, 
+                {
+                    "response": "Year 10", 
+                    "response (n)": 166
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Year 7", 
+                    "response (n)": 119
+                }, 
+                {
+                    "response": "Year 12", 
+                    "response (n)": 31
+                }
+            ], 
+            "question_text": "1.4 What year group are you in?", 
+            "variableid": "schyear", 
+            "question_number": 4
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 145
+                }, 
+                {
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 344
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 5
+                }
+            ], 
+            "question_text": "2.1 Please tell us how you feel about the following statements - I miss seeing my school friends", 
+            "variableid": "CovidAtt01", 
+            "question_number": 5
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 161
+                }, 
+                {
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 178
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 96
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 39
+                }
+            ], 
+            "question_text": "2.1 Please tell us how you feel about the following statements - I enjoy not having to go to school", 
+            "variableid": "CovidAtt02", 
+            "question_number": 6
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 203
+                }, 
+                {
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 207
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 33
+                }
+            ], 
+            "question_text": "2.1 Please tell us how you feel about the following statements - I miss seeing my teachers", 
+            "variableid": "CovidAtt03", 
+            "question_number": 7
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 108
+                }, 
+                {
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 108
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 42
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 133
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 142
+                }
+            ], 
+            "question_text": "2.1 Please tell us how you feel about the following statements - I find I work better at my own home", 
+            "variableid": "CovidAtt04", 
+            "question_number": 8
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 196
+                }, 
+                {
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 127
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 34
+                }
+            ], 
+            "question_text": "2.1 Please tell us how you feel about the following statements - I worry about not being able to catch up with work I've missed", 
+            "variableid": "CovidAtt05", 
+            "question_number": 9
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 201
+                }, 
+                {
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 102
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 192
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 9
+                }
+            ], 
+            "question_text": "2.1 Please tell us how you feel about the following statements - I think my school is doing everything it can to keep us on track with our learning", 
+            "variableid": "CovidAtt06", 
+            "question_number": 10
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Yes - I have a balcony", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 16
+                }, 
+                {
+                    "value": "1", 
+                    "response": "No I dont have a garden or balcony", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Yes - I have a small garden", 
+                    "response (n)": 189
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Yes - I have a big garden", 
+                    "response (n)": 295
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Other (please tell us)", 
+                    "response (n)": 42
+                }
+            ], 
+            "question_text": "2.2 Does your house or flat have any outside space? - Selected Choice", 
+            "variableid": "CovidDeprive01", 
+            "question_number": 11
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "2.2 Does your house or flat have any outside space? - Other (please tell us) - Text", 
+            "variableid": "CovidDeprive02", 
+            "question_number": 12
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 415
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 128
+                }
+            ], 
+            "question_text": "2.3 Are you exercising most days?", 
+            "variableid": "CovidAct01", 
+            "question_number": 13
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 390
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not sure", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 79
+                }
+            ], 
+            "question_text": "2.4 Are you allowed to leave the house to exercise on your own (without other family members)?", 
+            "variableid": "CovidAct02", 
+            "question_number": 14
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 538
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 7
+                }
+            ], 
+            "question_text": "2.5 Do you ever go online?", 
+            "variableid": "ActCom01", 
+            "question_number": 15
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 365
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 161
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Stay in touch with friends at school", 
+            "variableid": "HobFrndCom01", 
+            "question_number": 16
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 156
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 349
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Stay in touch with friends outside of school", 
+            "variableid": "HobFrndCom02", 
+            "question_number": 17
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 468
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Stay in touch with teachers", 
+            "variableid": "HobSchCom01", 
+            "question_number": 18
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 355
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 165
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 40
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Do my schoolwork", 
+            "variableid": "ActSchCom01", 
+            "question_number": 19
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 60
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 443
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Share media (e.g. photos, videos)", 
+            "variableid": "HobFrndCom03", 
+            "question_number": 20
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 489
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Comment on friends photos", 
+            "variableid": "HobFrndCom04", 
+            "question_number": 21
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 359
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 34
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 167
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Watch videos (e.g. Netflix, YouTube)", 
+            "variableid": "Hob07", 
+            "question_number": 22
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 188
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 329
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Play games", 
+            "variableid": "Hob08", 
+            "question_number": 23
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 492
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Update my status", 
+            "variableid": "HobFrndCom05", 
+            "question_number": 24
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 453
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Get updates on the news and world events", 
+            "variableid": "HobFrndCom06", 
+            "question_number": 25
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 477
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Sign or share online petitions", 
+            "variableid": "HobFrndCom07", 
+            "question_number": 26
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 493
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Blog", 
+            "variableid": "HobFrndCom08", 
+            "question_number": 27
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 492
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Vlog", 
+            "variableid": "HobFrndCom09", 
+            "question_number": 28
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 477
+                }
+            ], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Selected Choice Other", 
+            "variableid": "HobFrndCom10", 
+            "question_number": 29
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "2.6 I primarily go online to ... (please select your top three reasons for going online) - Other - Text", 
+            "variableid": "HobFrndCom11", 
+            "question_number": 30
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 128
+                }, 
+                {
+                    "response": "About one day a week", 
+                    "response (n)": 81
+                }, 
+                {
+                    "response": "I haven't returned to school at all since 29th June", 
+                    "response (n)": 107
+                }, 
+                {
+                    "response": "1-3 hours a week", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "5", 
+                    "response": "More than one day a week", 
+                    "response (n)": 40
+                }, 
+                {
+                    "response": "About half a day a week", 
+                    "response (n)": 131
+                }
+            ], 
+            "question_text": "3.3 Since school has re-opened, how much time have you spent at school?", 
+            "variableid": "CovidSchFrq01", 
+            "question_number": 32
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - No", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 252
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Yes", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 148
+                }
+            ], 
+            "question_text": "3.4 Have you enjoyed attending school during the COVID-19 lockdown?", 
+            "variableid": "CovidSchAtt01", 
+            "question_number": 33
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very safe", 
+                    "response (n)": 186
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite safe", 
+                    "response (n)": 126
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very safe", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 242
+                }
+            ], 
+            "question_text": "3.5 How safe have you felt whilst travelling to and from school?", 
+            "variableid": "CovidSchAtt02", 
+            "question_number": 34
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Very safe", 
+                    "response (n)": 151
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Quite safe", 
+                    "response (n)": 147
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very safe", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Not at all safe", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 249
+                }
+            ], 
+            "question_text": "3.6 How safe have you felt whilst at school?", 
+            "variableid": "CovidSchAtt03", 
+            "question_number": 35
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "3.7 Please describe in your own words what you have been doing at school", 
+            "variableid": "CovidSchAct01", 
+            "question_number": 36
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 319
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not sure", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 236
+                }
+            ], 
+            "question_text": "3.8 In school, are you required to follow social distancing rules (keeping two metres apart)?", 
+            "variableid": "CovidSch02", 
+            "question_number": 37
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Some of the time", 
+                    "response (n)": 163
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 1
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All of the time", 
+                    "response (n)": 145
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Not very often", 
+                    "response (n)": 6
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 245
+                }
+            ], 
+            "question_text": "3.9 Have you managed to follow social distancing rules whilst at school?", 
+            "variableid": "CovidSch03", 
+            "question_number": 38
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 92
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 240
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Cant remember", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 172
+                }
+            ], 
+            "question_text": "Did you stop going to school before the lockdown started on Friday 19th March?", 
+            "variableid": "CovidSch04", 
+            "question_number": 39
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Some of the time", 
+                    "response (n)": 119
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All of the time", 
+                    "response (n)": 167
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Rarely", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 248
+                }
+            ], 
+            "question_text": "3.12 Do you have a quiet space to do your schoolwork at home?", 
+            "variableid": "Deprive22", 
+            "question_number": 41
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "5 days a week", 
+                    "response (n)": 151
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4 days a week", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 day a week", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 248
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3 days a week", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2 days a week", 
+                    "response (n)": 23
+                }
+            ], 
+            "question_text": "3.13 Approximately how many days a week have you done schoolwork at home?", 
+            "variableid": "CovidSchAct02", 
+            "question_number": 42
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "4 hours a day", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2 hours a day", 
+                    "response (n)": 73
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 248
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1 hour a day", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6 or more hours a day", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3 hours a day", 
+                    "response (n)": 98
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 hours a day", 
+                    "response (n)": 35
+                }
+            ], 
+            "question_text": "3.14 On these days, roughly how many hours have you spent on schoolwork? (if the number of hours varies each day just let us know the number of hours you do most often)", 
+            "variableid": "CovidSchAct03", 
+            "question_number": 43
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 280
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 235
+                }
+            ], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Selected Choice English", 
+            "variableid": "CovidSchSubj01", 
+            "question_number": 44
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 265
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 248
+                }
+            ], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Selected Choice Welsh", 
+            "variableid": "CovidSchSubj11", 
+            "question_number": 45
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 167
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 343
+                }
+            ], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Selected Choice Other languages", 
+            "variableid": "CovidSchSubj08", 
+            "question_number": 46
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 293
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 222
+                }
+            ], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Selected Choice Science", 
+            "variableid": "CovidSchSubj10", 
+            "question_number": 47
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 289
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 226
+                }
+            ], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Selected Choice Maths and Numeracy", 
+            "variableid": "CovidSchSubj06", 
+            "question_number": 48
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 198
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 312
+                }
+            ], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Selected Choice Geography", 
+            "variableid": "CovidSchSubj04", 
+            "question_number": 49
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 207
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 304
+                }
+            ], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Selected Choice History", 
+            "variableid": "CovidSchSubj05", 
+            "question_number": 50
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 201
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 307
+                }
+            ], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Selected Choice Religious Education", 
+            "variableid": "CovidSchSubj09", 
+            "question_number": 51
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 175
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 336
+                }
+            ], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Selected Choice Craft, design and technology", 
+            "variableid": "CovidSchSubj02", 
+            "question_number": 52
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 124
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 381
+                }
+            ], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Selected Choice Welsh Baccalaureate", 
+            "variableid": "CovidSchSubj12", 
+            "question_number": 53
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 113
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 388
+                }
+            ], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Selected Choice Other (please tell us)", 
+            "variableid": "CovidSchSubj07", 
+            "question_number": 54
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "3.15 For which of the following subjects are you being sent work to do at home? - Other (please tell us) - Text", 
+            "variableid": "CovidSchSubj03", 
+            "question_number": 55
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 97
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 252
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 211
+                }
+            ], 
+            "question_text": "3.16 Have you been using a timetable to organise when you are doing school work?", 
+            "variableid": "CovidSchAct04", 
+            "question_number": 56
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "My parent(s) or carer(s) suggested it", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "3", 
+                    "response": "I decided for myself", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "1", 
+                    "response": "My school/teachers suggested it", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 457
+                }
+            ], 
+            "question_text": "3.17 How did you decide to use a timetable?", 
+            "variableid": "CovidSchAct05", 
+            "question_number": 57
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "All of the time", 
+                    "response (n)": 164
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 267
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Most of the time", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Rarely", 
+                    "response (n)": 2
+                }
+            ], 
+            "question_text": "3.18 How do you decide what school work to do? - My teachers set me tasks", 
+            "variableid": "CovidSchAct06", 
+            "question_number": 58
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "All of the time", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 282
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Most of the time", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Rarely", 
+                    "response (n)": 70
+                }
+            ], 
+            "question_text": "3.18 How do you decide what school work to do? - My parents set me tasks", 
+            "variableid": "CovidSchAct07", 
+            "question_number": 59
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "All of the time", 
+                    "response (n)": 67
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 269
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Most of the time", 
+                    "response (n)": 113
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Rarely", 
+                    "response (n)": 27
+                }
+            ], 
+            "question_text": "3.18 How do you decide what school work to do? - I choose what I want to do", 
+            "variableid": "CovidSchAct08", 
+            "question_number": 60
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 274
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 186
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A few times a week", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "3.19 Have you use any of these ways communicate with your teachers since the COVID-19 lockdown? - Phone", 
+            "variableid": "CovidSchCom03", 
+            "question_number": 61
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 256
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A few times a week", 
+                    "response (n)": 93
+                }
+            ], 
+            "question_text": "3.19 Have you use any of these ways communicate with your teachers since the COVID-19 lockdown? - Email", 
+            "variableid": "CovidSchCom01", 
+            "question_number": 62
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 13
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often", 
+                    "response (n)": 29
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 275
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 220
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A few times a week", 
+                    "response (n)": 19
+                }
+            ], 
+            "question_text": "3.19 Have you use any of these ways communicate with your teachers since the COVID-19 lockdown? - Video call", 
+            "variableid": "CovidSchCom05", 
+            "question_number": 63
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 268
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 198
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A few times a week", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 35
+                }
+            ], 
+            "question_text": "3.19 Have you use any of these ways communicate with your teachers since the COVID-19 lockdown? - Google classrooms", 
+            "variableid": "CovidSchCom02", 
+            "question_number": 64
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A few times a week", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 257
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 275
+                }
+            ], 
+            "question_text": "3.19 Have you use any of these ways communicate with your teachers since the COVID-19 lockdown? - Sending letters", 
+            "variableid": "CovidSchCom04", 
+            "question_number": 65
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 269
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 185
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A few times a week", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 39
+                }
+            ], 
+            "question_text": "3.20 Have you used any of these resources for your schoolwork? - Hwb", 
+            "variableid": "CovidSchLearn04", 
+            "question_number": 66
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 272
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 190
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A few times a week", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 53
+                }
+            ], 
+            "question_text": "3.20 Have you used any of these resources for your schoolwork? - Google classrooms", 
+            "variableid": "CovidSchLearn03", 
+            "question_number": 67
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 59
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 264
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 14
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A few times a week", 
+                    "response (n)": 74
+                }
+            ], 
+            "question_text": "3.20 Have you used any of these resources for your schoolwork? - BBC Bitesize", 
+            "variableid": "CovidSchLearn02", 
+            "question_number": 68
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A few times a week", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 268
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 279
+                }
+            ], 
+            "question_text": "3.20 Have you used any of these resources for your schoolwork? - Oak National Academy", 
+            "variableid": "CovidSchLearn05", 
+            "question_number": 69
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 265
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A few times a week", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 36
+                }
+            ], 
+            "question_text": "3.20 Have you used any of these resources for your schoolwork? - School website", 
+            "variableid": "CovidSchLearn07", 
+            "question_number": 70
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "Once a week", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less often", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 264
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "2", 
+                    "response": "A few times a week", 
+                    "response (n)": 77
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Every day", 
+                    "response (n)": 59
+                }
+            ], 
+            "question_text": "3.20 Have you used any of these resources for your schoolwork? - Other educational sites", 
+            "variableid": "CovidSchLearn06", 
+            "question_number": 71
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "More than usual", 
+                    "response (n)": 41
+                }, 
+                {
+                    "value": "3", 
+                    "response": "About the same as usual", 
+                    "response (n)": 144
+                }, 
+                {
+                    "value": "1", 
+                    "response": "A lot more than usual", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 256
+                }, 
+                {
+                    "value": "5", 
+                    "response": "A lot less than usual", 
+                    "response (n)": 25
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Less than usual", 
+                    "response (n)": 83
+                }
+            ], 
+            "question_text": "3.21 Thinking about the past week, how much schoolwork do you think you have been doing?", 
+            "variableid": "CovidSchLearn08", 
+            "question_number": 72
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Most of the time", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some of the time", 
+                    "response (n)": 127
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Rarely", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 251
+                }
+            ], 
+            "question_text": "3.22 Please tell us how often you are doing the following things: - Asking my parents for help with school work", 
+            "variableid": "CovidSchLearn09", 
+            "question_number": 73
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Most of the time", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some of the time", 
+                    "response (n)": 93
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Rarely", 
+                    "response (n)": 95
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 61
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 254
+                }
+            ], 
+            "question_text": "3.22 Please tell us how often you are doing the following things: - Sharing my schoolwork with my parents", 
+            "variableid": "CovidSchLearn10", 
+            "question_number": 74
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Most of the time", 
+                    "response (n)": 233
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some of the time", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Rarely", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 251
+                }
+            ], 
+            "question_text": "3.22 Please tell us how often you are doing the following things: - Submitting schoolwork for my teachers to see", 
+            "variableid": "CovidSchLearn11", 
+            "question_number": 75
+        }, 
+        {
+            "response_table": [
+                {
+                    "response": "Most of the time", 
+                    "response (n)": 148
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Some of the time", 
+                    "response (n)": 127
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Rarely", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Never", 
+                    "response (n)": 3
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 258
+                }
+            ], 
+            "question_text": "3.23 Do your teachers give you feedback on any school work that you have submitted?", 
+            "variableid": "CovidSchLearn12", 
+            "question_number": 76
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "1 - No", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 268
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5 - Yes", 
+                    "response (n)": 111
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 32
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 82
+                }
+            ], 
+            "question_text": "3.24 Are you looking forward to lessons returning to normal?", 
+            "variableid": "CovidSchAtt04", 
+            "question_number": 77
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "3.25 What are you most and least worried about returning to school? - Safety of my teachers and other people who work at school", 
+            "variableid": "CovidSchAtt05", 
+            "question_number": 78
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "3.25 What are you most and least worried about returning to school? - Safety of me and my family", 
+            "variableid": "CovidSchAtt06", 
+            "question_number": 79
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "3.25 What are you most and least worried about returning to school? - Being behind on my work", 
+            "variableid": "CovidSchAtt07", 
+            "question_number": 80
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "3.25 What are you most and least worried about returning to school? - Friends and friendship groups", 
+            "variableid": "CovidSchAtt08", 
+            "question_number": 81
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "3.25 What are you most and least worried about returning to school? - Getting used to being around other people again", 
+            "variableid": "CovidSchAtt09", 
+            "question_number": 82
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "3.25 What are you most and least worried about returning to school? - Missing my family or pets", 
+            "variableid": "CovidSchAtt10", 
+            "question_number": 83
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "3.25 What are you most and least worried about returning to school? - Missing the things I'm allowed to do when I'm at home", 
+            "variableid": "CovidSchAtt11", 
+            "question_number": 84
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Monday", 
+                    "response (n)": 217
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 44
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Tuesday", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Friday", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Wednesday", 
+                    "response (n)": 122
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Thursday", 
+                    "response (n)": 58
+                }, 
+                {
+                    "value": "7", 
+                    "response": "Sunday", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Saturday", 
+                    "response (n)": 10
+                }
+            ], 
+            "question_text": "4.1 What day of the week are you filling this in?", 
+            "variableid": "DayCompleted", 
+            "question_number": 85
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "4.2 What time did you go to bed last night?", 
+            "variableid": "RoutnSleep03", 
+            "question_number": 86
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "4.3 What time did you get up for this morning?", 
+            "variableid": "RoutnSleep01", 
+            "question_number": 87
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Usually", 
+                    "response (n)": 221
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 146
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Sometimes", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "4", 
+                    "response": "No", 
+                    "response (n)": 53
+                }
+            ], 
+            "question_text": "4.4 At the moment, do you go to bed at roughly the same time each night?", 
+            "variableid": "RoutnSleep04", 
+            "question_number": 88
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Occasionally", 
+                    "response (n)": 256
+                }, 
+                {
+                    "value": "3", 
+                    "response": "About half of the time", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Most days", 
+                    "response (n)": 86
+                }
+            ], 
+            "question_text": "4.5 Since the lockdown, how often do you... - Get up feeling tired?", 
+            "variableid": "CovidRoutnSleep07", 
+            "question_number": 89
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "Occasionally", 
+                    "response (n)": 107
+                }, 
+                {
+                    "value": "3", 
+                    "response": "About half of the time", 
+                    "response (n)": 36
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 326
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Most days", 
+                    "response (n)": 44
+                }
+            ], 
+            "question_text": "4.5 Since the lockdown, how often do you... - Wake up at night to check messages or message a friend?", 
+            "variableid": "CovidRoutnSleep05", 
+            "question_number": 90
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "About half of the time", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Occasionally", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Most days", 
+                    "response (n)": 350
+                }
+            ], 
+            "question_text": "4.5 Since the lockdown, how often do you... - Eat breakfast?", 
+            "variableid": "CovidRoutnFood04", 
+            "question_number": 91
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Most days", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Occasionally", 
+                    "response (n)": 134
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 308
+                }, 
+                {
+                    "value": "3", 
+                    "response": "About half of the time", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 49
+                }
+            ], 
+            "question_text": "4.5 Since the lockdown, how often do you... - Skip lunch?", 
+            "variableid": "CovidRoutnFood05", 
+            "question_number": 92
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 46
+                }, 
+                {
+                    "value": "10", 
+                    "response": "10-Completely happy", 
+                    "response (n)": 155
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1-Not happy at all", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 4
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "9", 
+                    "response": "9", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "8", 
+                    "response": "8", 
+                    "response (n)": 86
+                }
+            ], 
+            "question_text": "4.6 These questions use a scale of 1 to 10. 1 means not happy with the sentence, 10 means that you're totally happy. - How happy are you with how much free time you have during lockdown?", 
+            "variableid": "CovidRoutnAtt01", 
+            "question_number": 93
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "10", 
+                    "response": "10-Completely happy", 
+                    "response (n)": 111
+                }, 
+                {
+                    "value": "1", 
+                    "response": "1-Not happy at all", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "3", 
+                    "response": "3", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "2", 
+                    "response": "2", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "5", 
+                    "response": "5", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "4", 
+                    "response": "4", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "7", 
+                    "response": "7", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "6", 
+                    "response": "6", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "9", 
+                    "response": "9", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "8", 
+                    "response": "8", 
+                    "response (n)": 73
+                }
+            ], 
+            "question_text": "4.6 These questions use a scale of 1 to 10. 1 means not happy with the sentence, 10 means that you're totally happy. - How happy are you with what you can do in your free time during lockdown?", 
+            "variableid": "CovidWellSat19", 
+            "question_number": 94
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 54
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 30
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 199
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 93
+                }
+            ], 
+            "question_text": "4.7 And how often do you usually spend time doing the following activities when you are not doing schoolwork? - Watching TV", 
+            "variableid": "ActFreq01", 
+            "question_number": 95
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 145
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 12
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 198
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 107
+                }
+            ], 
+            "question_text": "4.7 And how often do you usually spend time doing the following activities when you are not doing schoolwork? - Playing sports or doing exercise", 
+            "variableid": "HobFrq02", 
+            "question_number": 96
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 130
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 11
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 240
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 88
+                }
+            ], 
+            "question_text": "4.7 And how often do you usually spend time doing the following activities when you are not doing schoolwork? - Relaxing, talking or having fun with family", 
+            "variableid": "FamActFrq30", 
+            "question_number": 97
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 161
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 173
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 55
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 105
+                }
+            ], 
+            "question_text": "4.7 And how often do you usually spend time doing the following activities when you are not doing schoolwork? - Playing or spending time outside", 
+            "variableid": "FamActFrq31", 
+            "question_number": 98
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 380
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 18
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 29
+                }
+            ], 
+            "question_text": "4.7 And how often do you usually spend time doing the following activities when you are not doing schoolwork? - Using social media (on a computer, tablet or phone)", 
+            "variableid": "SocialMed33", 
+            "question_number": 99
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 94
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 53
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 83
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 193
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 73
+                }
+            ], 
+            "question_text": "4.7 And how often do you usually spend time doing the following activities when you are not doing schoolwork? - Playing electronic games (on a computer or other device)", 
+            "variableid": "HobFrq01", 
+            "question_number": 100
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "4", 
+                    "response": "Three or four times a week", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 52
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Never", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Every day", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Less than once a week", 
+                    "response (n)": 129
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Once or twice a week", 
+                    "response (n)": 127
+                }
+            ], 
+            "question_text": "4.7 And how often do you usually spend time doing the following activities when you are not doing schoolwork? - Doing nothing or resting (apart from sleeping at night)", 
+            "variableid": "HobFrq32", 
+            "question_number": 101
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Most of the time", 
+                    "response (n)": 47
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Some of the time", 
+                    "response (n)": 139
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Never", 
+                    "response (n)": 124
+                }, 
+                {
+                    "value": "1", 
+                    "response": "All the time", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Rarely", 
+                    "response (n)": 172
+                }
+            ], 
+            "question_text": "4.8 Do you have disagreements with your parent(s)/carer(s) about how you are spending your time during lockdown?", 
+            "variableid": "CovidFam01", 
+            "question_number": 102
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "5", 
+                    "response": "My phone", 
+                    "response (n)": 57
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 188
+                }, 
+                {
+                    "value": "1", 
+                    "response": "My schoolwork", 
+                    "response (n)": 88
+                }, 
+                {
+                    "value": "4", 
+                    "response": "When I get up/go to bed", 
+                    "response (n)": 60
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Housework", 
+                    "response (n)": 67
+                }, 
+                {
+                    "value": "6", 
+                    "response": "Other (please tell us)", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Going outside", 
+                    "response (n)": 44
+                }
+            ], 
+            "question_text": "4.9 What sort of thing are you most likely to disagree on? (please tick all that apply) - Selected Choice", 
+            "variableid": "CovidFam02", 
+            "question_number": 103
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "4.9 What sort of thing are you most likely to disagree on? (please tick all that apply) - Other (please tell us) - Text", 
+            "variableid": "CovidFam03", 
+            "question_number": 104
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "4.10 What do you look forward to the most on weekdays?", 
+            "variableid": "CovidActAtt01", 
+            "question_number": 105
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "4.11 What dont you look forward to on weekdays?", 
+            "variableid": "CovidActAtt03", 
+            "question_number": 106
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "4.12 What do you look forward to the most at the weekend?", 
+            "variableid": "CovidActAtt02", 
+            "question_number": 107
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "4.13 What dont you look forward to at the weekend?", 
+            "variableid": "CovidActAtt04", 
+            "question_number": 108
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 475
+                }
+            ], 
+            "question_text": "5.1 -       Have you done any of these things to support others during lockdown? (please tick all that apply to you) - Selected Choice Writing letters to people in care homes or hospitals", 
+            "variableid": "CovidAct03", 
+            "question_number": 109
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 367
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 131
+                }
+            ], 
+            "question_text": "5.1 -       Have you done any of these things to support others during lockdown? (please tick all that apply to you) - Selected Choice Helping out more around the house", 
+            "variableid": "CovidAct04", 
+            "question_number": 110
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 183
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 314
+                }
+            ], 
+            "question_text": "5.1 -       Have you done any of these things to support others during lockdown? (please tick all that apply to you) - Selected Choice Looking after my younger brothers or sisters", 
+            "variableid": "CovidAct05", 
+            "question_number": 111
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 106
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 65
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 389
+                }
+            ], 
+            "question_text": "5.1 -       Have you done any of these things to support others during lockdown? (please tick all that apply to you) - Selected Choice Looking after older relatives who need extra help", 
+            "variableid": "CovidAct06", 
+            "question_number": 112
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 110
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 386
+                }
+            ], 
+            "question_text": "5.1 -       Have you done any of these things to support others during lockdown? (please tick all that apply to you) - Selected Choice Dropping off food or other items to my neighbours", 
+            "variableid": "CovidAct07", 
+            "question_number": 113
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 325
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 172
+                }
+            ], 
+            "question_text": "5.1 -       Have you done any of these things to support others during lockdown? (please tick all that apply to you) - Selected Choice Clapping for key workers at 8pm on Thursdays", 
+            "variableid": "CovidAct08", 
+            "question_number": 114
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 161
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 335
+                }
+            ], 
+            "question_text": "5.1 -       Have you done any of these things to support others during lockdown? (please tick all that apply to you) - Selected Choice Decorating the windows of my home with drawings and messages of support for key workers", 
+            "variableid": "CovidAct09", 
+            "question_number": 115
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 426
+                }
+            ], 
+            "question_text": "5.1 -       Have you done any of these things to support others during lockdown? (please tick all that apply to you) - Selected Choice Other (please tell us", 
+            "variableid": "CovidAct10", 
+            "question_number": 116
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "5.1 -       Have you done any of these things to support others during lockdown? (please tick all that apply to you) - Other (please tell us - Text", 
+            "variableid": "CovidAct11", 
+            "question_number": 117
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 197
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 301
+                }
+            ], 
+            "question_text": "5.2  Do you know if your parents/carers have been doing anything to support other people during lockdown? (please tick all that apply) - Selected Choice They are key workers", 
+            "variableid": "CovidFamAct01", 
+            "question_number": 118
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 259
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 63
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 238
+                }
+            ], 
+            "question_text": "5.2  Do you know if your parents/carers have been doing anything to support other people during lockdown? (please tick all that apply) - Selected Choice They have been doing their normal job but at home", 
+            "variableid": "CovidFamAct02", 
+            "question_number": 119
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 146
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 352
+                }
+            ], 
+            "question_text": "5.2  Do you know if your parents/carers have been doing anything to support other people during lockdown? (please tick all that apply) - Selected Choice They have been going out of the house to help other people with things like food deliveries", 
+            "variableid": "CovidFamAct03", 
+            "question_number": 120
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 314
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 62
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 184
+                }
+            ], 
+            "question_text": "5.2  Do you know if your parents/carers have been doing anything to support other people during lockdown? (please tick all that apply) - Selected Choice They have been phoning people to check on them", 
+            "variableid": "CovidFamAct04", 
+            "question_number": 121
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 112
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 384
+                }
+            ], 
+            "question_text": "5.2  Do you know if your parents/carers have been doing anything to support other people during lockdown? (please tick all that apply) - Selected Choice They have been looking after family members who are unwell", 
+            "variableid": "CovidFamAct05", 
+            "question_number": 122
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 66
+                }, 
+                {
+                    "value": "0", 
+                    "response": "No", 
+                    "response (n)": 455
+                }
+            ], 
+            "question_text": "5.2  Do you know if your parents/carers have been doing anything to support other people during lockdown? (please tick all that apply) - Selected Choice Other (please tell us)", 
+            "variableid": "CovidFamAct06", 
+            "question_number": 123
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "5.2  Do you know if your parents/carers have been doing anything to support other people during lockdown? (please tick all that apply) - Other (please tell us) - Text", 
+            "variableid": "CovidFamAct07", 
+            "question_number": 124
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 56
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 138
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 23
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 104
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 168
+                }
+            ], 
+            "question_text": "5.3 This question is about whether the COVID-19 lockdown has changed how you feel about different issues. Please tell us how much you agree or disagree with the following statements: - Climate change is less important now", 
+            "variableid": "CovidAtt07", 
+            "question_number": 125
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 190
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 107
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 125
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 38
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 26
+                }
+            ], 
+            "question_text": "5.3 This question is about whether the COVID-19 lockdown has changed how you feel about different issues. Please tell us how much you agree or disagree with the following statements: - I'm thinking more about what I want to do when I grow up", 
+            "variableid": "CovidAtt08", 
+            "question_number": 126
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 156
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 108
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 183
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 27
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 12
+                }
+            ], 
+            "question_text": "5.3 This question is about whether the COVID-19 lockdown has changed how you feel about different issues. Please tell us how much you agree or disagree with the following statements: - I'm appreciating my family more", 
+            "variableid": "CovidAtt09", 
+            "question_number": 127
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 111
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 176
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 48
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 64
+                }
+            ], 
+            "question_text": "5.3 This question is about whether the COVID-19 lockdown has changed how you feel about different issues. Please tell us how much you agree or disagree with the following statements: - I'm thinking more about where my food comes from", 
+            "variableid": "CovidAtt10", 
+            "question_number": 128
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 74
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 82
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 126
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 123
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 112
+                }
+            ], 
+            "question_text": "5.3 This question is about whether the COVID-19 lockdown has changed how you feel about different issues. Please tell us how much you agree or disagree with the following statements: - I'm worried about money and whether my family has enough to get by", 
+            "variableid": "CovidAtt11", 
+            "question_number": 129
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 123
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 196
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 51
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 44
+                }
+            ], 
+            "question_text": "5.3 This question is about whether the COVID-19 lockdown has changed how you feel about different issues. Please tell us how much you agree or disagree with the following statements: - Its easier for me to get involved with new activities online", 
+            "variableid": "CovidAtt12", 
+            "question_number": 130
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 80
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 70
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 255
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 20
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 15
+                }
+            ], 
+            "question_text": "5.3 This question is about whether the COVID-19 lockdown has changed how you feel about different issues. Please tell us how much you agree or disagree with the following statements: - I'm missing my grandparent(s)", 
+            "variableid": "CovidAtt13", 
+            "question_number": 131
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 166
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 141
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 86
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 45
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 46
+                }
+            ], 
+            "question_text": "5.3 This question is about whether the COVID-19 lockdown has changed how you feel about different issues. Please tell us how much you agree or disagree with the following statements: - I'm more interested in what is going on in other countries", 
+            "variableid": "CovidAtt14", 
+            "question_number": 132
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 76
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 122
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 118
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 94
+                }
+            ], 
+            "question_text": "5.3 This question is about whether the COVID-19 lockdown has changed how you feel about different issues. Please tell us how much you agree or disagree with the following statements: - I'm more interested in politics and what the government is doing", 
+            "variableid": "CovidAtt15", 
+            "question_number": 133
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 99
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 49
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 116
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 19
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 48
+                }, 
+                {
+                    "response": "Agree", 
+                    "response (n)": 86
+                }
+            ], 
+            "question_text": "5.4 Here are some questions about what you think about lockdown: - Children should be allowed out more during lockdown", 
+            "variableid": "CovidAtt16", 
+            "question_number": 134
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 102
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 88
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 85
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 21
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 53
+                }, 
+                {
+                    "response": "Agree", 
+                    "response (n)": 97
+                }
+            ], 
+            "question_text": "5.4 Here are some questions about what you think about lockdown: - Children should be allowed to see their friends during lockdown", 
+            "variableid": "CovidAtt17", 
+            "question_number": 135
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 51
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 39
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 228
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 10
+                }, 
+                {
+                    "response": "Agree", 
+                    "response (n)": 150
+                }
+            ], 
+            "question_text": "5.4 Here are some questions about what you think about lockdown: - Lockdown is harder for children who have lots of arguments at home", 
+            "variableid": "CovidAtt18", 
+            "question_number": 136
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 92
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 24
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 128
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 79
+                }, 
+                {
+                    "response": "Agree", 
+                    "response (n)": 100
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 43
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 23
+                }
+            ], 
+            "question_text": "5.4 Here are some questions about what you think about lockdown: - I have been getting on better with my family since lockdown started", 
+            "variableid": "CovidAtt19", 
+            "question_number": 137
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 80
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 15
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 78
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 143
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 17
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 18
+                }, 
+                {
+                    "response": "Agree", 
+                    "response (n)": 137
+                }
+            ], 
+            "question_text": "5.4 Here are some questions about what you think about lockdown: - Lockdown has made me appreciate spending time outside more", 
+            "variableid": "CovidAtt20", 
+            "question_number": 138
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 72
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 104
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 105
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 101
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 8
+                }, 
+                {
+                    "response": "Agree", 
+                    "response (n)": 160
+                }
+            ], 
+            "question_text": "5.4 Here are some questions about what you think about lockdown: - It is more important to look after neighbours and friends", 
+            "variableid": "CovidAtt21", 
+            "question_number": 139
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 71
+                }, 
+                {
+                    "value": "2", 
+                    "response": "Somewhat Agree", 
+                    "response (n)": 65
+                }, 
+                {
+                    "response": "Disagree", 
+                    "response (n)": 50
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Neither agree or disagree", 
+                    "response (n)": 146
+                }, 
+                {
+                    "value": "1", 
+                    "response": "Strongly Agree", 
+                    "response (n)": 26
+                }, 
+                {
+                    "value": "5", 
+                    "response": "Strongly Disagree", 
+                    "response (n)": 68
+                }, 
+                {
+                    "value": "4", 
+                    "response": "Somewhat Disagree", 
+                    "response (n)": 72
+                }, 
+                {
+                    "response": "Agree", 
+                    "response (n)": 62
+                }
+            ], 
+            "question_text": "5.4 Here are some questions about what you think about lockdown: - Politicians like Boris Johnson are doing the right thing to keep us safe", 
+            "variableid": "CovidAtt22", 
+            "question_number": 140
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Yes", 
+                    "response (n)": 450
+                }, 
+                {
+                    "value": "2", 
+                    "response": "No", 
+                    "response (n)": 5
+                }, 
+                {
+                    "value": "3", 
+                    "response": "Unsure", 
+                    "response (n)": 22
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 83
+                }
+            ], 
+            "question_text": "5.5 Did you know that the rules about lockdown are different in Wales than in England?", 
+            "variableid": "Covid01", 
+            "question_number": 141
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "False", 
+                    "response (n)": 28
+                }, 
+                {
+                    "value": "1", 
+                    "response": "True", 
+                    "response (n)": 382
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 150
+                }
+            ], 
+            "question_text": "5.6 Can you tell us whether these statements are true or false: - People in England have more freedom to see people they dont live with", 
+            "variableid": "Covid02", 
+            "question_number": 142
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "True", 
+                    "response (n)": 111
+                }, 
+                {
+                    "value": "2", 
+                    "response": "False", 
+                    "response (n)": 260
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 189
+                }
+            ], 
+            "question_text": "5.6 Can you tell us whether these statements are true or false: - People in Wales must wear facemasks in public places", 
+            "variableid": "Covid03", 
+            "question_number": 143
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "True", 
+                    "response (n)": 203
+                }, 
+                {
+                    "value": "2", 
+                    "response": "False", 
+                    "response (n)": 155
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 202
+                }
+            ], 
+            "question_text": "5.6 Can you tell us whether these statements are true or false: - People in Wales can drive to visit the beach", 
+            "variableid": "Covid04", 
+            "question_number": 144
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "2", 
+                    "response": "False", 
+                    "response (n)": 290
+                }, 
+                {
+                    "value": "1", 
+                    "response": "True", 
+                    "response (n)": 120
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 150
+                }
+            ], 
+            "question_text": "5.6 Can you tell us whether these statements are true or false: - People in Wales can only go outside to exercise once a day", 
+            "variableid": "Covid05", 
+            "question_number": 145
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "1", 
+                    "response": "Wales", 
+                    "response (n)": 313
+                }, 
+                {
+                    "value": "2", 
+                    "response": "England", 
+                    "response (n)": 31
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 216
+                }
+            ], 
+            "question_text": "5.7 Which country has the better approach to dealing with the COVID-19 lockdown?", 
+            "variableid": "Covid06", 
+            "question_number": 146
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "You have come to the end of our questions - please use this space to tell us how you felt about completing the survey and if there is anything that we might have missed:", 
+            "variableid": "notes", 
+            "question_number": 147
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "3.2 Why have you been attending a school? (please give as many reasons as you like)", 
+            "variableid": "CovidSch06", 
+            "question_number": 148
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "3", 
+                    "response": "4-6 hours a day", 
+                    "response (n)": 2
+                }, 
+                {
+                    "value": "99", 
+                    "response": "Missing", 
+                    "response (n)": 558
+                }
+            ], 
+            "question_text": "3.3 Approximately how many hours a day have you been attending school?", 
+            "variableid": "CovidSchFrq02", 
+            "question_number": 149
+        }, 
+        {
+            "response_table": [], 
+            "question_text": "Sweep", 
+            "variableid": "sweep", 
+            "question_number": 150
+        }, 
+        {
+            "response_table": [
+                {
+                    "value": "13", 
+                    "response": "Cardiff", 
+                    "response (n)": 313
+                }, 
+                {
+                    "value": "26", 
+                    "response": "Powys", 
+                    "response (n)": 135
+                }, 
+                {
+                    "value": "28", 
+                    "response": "Swansea", 
+                    "response (n)": 64
+                }, 
+                {
+                    "value": "25", 
+                    "response": "Pembrokeshire", 
+                    "response (n)": 48
+                }
+            ], 
+            "question_text": "Local Authority code", 
+            "variableid": "lacode", 
+            "question_number": 151
+        }
+    ]
+}

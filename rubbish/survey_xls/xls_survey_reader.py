@@ -211,8 +211,8 @@ if __name__ == "__main__":
     sr = SurveyReader(filename)
     # sr.read_and_write()
     sr.build_from_description_file(
-        '/home/kdickson/Downloads/sample_9.json',
-        '9',
+        '/home/kdickson/Downloads/sample_8.json',
+        '8',
         ''
 
     )

@@ -69,9 +69,9 @@ class QuestionResponseLinker:
         for variable_name_cell in variable_name_col[1:]:
             assert isinstance(variable_name_cell, Cell)
 
-            if self.variable_name_filter_str in variable_name_cell.value:
-                if self.variable_name_filter_str in variable_name_cell.value is None:
-                    continue
+            if not self.variable_name_filter_str in variable_name_cell.value == None:
+                # if self.variable_name_filter_str in variable_name_cell.value is None:
+                #     continue
                 print('We are on row {}'.format(variable_name_cell.row))
 
                 rq = RawQuestion(variable_name_cell.value)
@@ -204,10 +204,10 @@ class QuestionResponseLinker:
 
 if __name__ == '__main__':
     qbank_file = '/home/kdickson/QuestionBank_Education.xlsx'
-    sweep_cohort_responses_file = '/home/kdickson/Surveys/Sweep9_Redacted.xlsx'
+    sweep_cohort_responses_file = '/home/kdickson/Surveys/Sweep8_Redacted.xlsx'
 
-    qrl = QuestionResponseLinker(qbank_file, sweep_cohort_responses_file, '9')
+    qrl = QuestionResponseLinker(qbank_file, sweep_cohort_responses_file, '8')
 
     sample = qrl.run()
-    with open('sample_9.json', 'w') as outputfile:
+    with open('sample_8.json', 'w') as outputfile:
         outputfile.write(json.dumps(sample.description(), indent=4))

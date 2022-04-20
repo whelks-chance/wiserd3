@@ -5,7 +5,7 @@ from openpyxl.reader.excel import load_workbook
 from openpyxl.worksheet.worksheet import Worksheet
 from openpyxl.cell import Cell
 
-
+# NOTES ON USING THE IMPORT ARE ON THE SHARED DRIVE - /ICT/DATAPORTAL/DEVELOPMENT NOTES/import_data
 class RawQuestion:
     def __init__(self, variable_name):
         self.question_number = ''

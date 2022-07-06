@@ -63,7 +63,7 @@ ipaddress==1.0.14
 # kombu==3.0.26
 kombu<=4.0.0
 
-lxml==3.4.4
+lxml==4.9.1
 ndg-httpsclient==0.4.0
 nltk
 numpy==1.9.2

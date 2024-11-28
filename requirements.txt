@@ -89,7 +89,7 @@ python-memcached==1.57
 python-openid==2.2.5
 pytz==2015.4
 redis==2.10.3
-requests==2.11.1
+requests==2.20.0
 requests-oauthlib==0.7.0
 selenium==2.53.5
 six==1.9.0
